@@ -21,7 +21,7 @@
       synopsis = "Avro serialization support for Haskell";
       description = "Avro serialization and deserialization support for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -92,12 +92,12 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."avro" or (errorHandler.buildDepError "avro"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,13 +106,13 @@
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."avro" or (errorHandler.buildDepError "avro"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-time" = {
           depends = [
@@ -131,9 +131,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."avro" or (errorHandler.buildDepError "avro"))
-            ] ++ (pkgs.lib).optional (system.isX86_64 || system.isI386) (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"));
+          ] ++ pkgs.lib.optional (system.isX86_64 || system.isI386) (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

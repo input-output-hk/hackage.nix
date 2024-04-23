@@ -21,7 +21,7 @@
       synopsis = "Emanate a structured view of your plain-text notes";
       description = "Create beautiful websites -- such as personal webpage, blog, wiki, Zettelkasten, notebook, knowledge-base, documentation, etc. from future-proof plain-text notes and arbitrary data -- with live preview that updates in real-time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -87,9 +87,9 @@
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "emanote" = {
           depends = [
@@ -155,9 +155,9 @@
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
             (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

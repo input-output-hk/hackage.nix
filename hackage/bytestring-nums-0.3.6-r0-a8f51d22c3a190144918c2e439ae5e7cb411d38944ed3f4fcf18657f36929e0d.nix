@@ -21,18 +21,18 @@
       synopsis = "Parse numeric literals from ByteStrings.";
       description = "Parse numeric literals from ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "spoj-eugene" = { buildable = if flags.cli then true else false; };
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see README.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hamlog" = {
           depends = [
@@ -61,19 +61,19 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ham-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ham" or (errorHandler.buildDepError "ham"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

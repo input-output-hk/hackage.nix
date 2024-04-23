@@ -21,14 +21,14 @@
       synopsis = "export useful functions from `lens`.";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nexport useful functions from `lens`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

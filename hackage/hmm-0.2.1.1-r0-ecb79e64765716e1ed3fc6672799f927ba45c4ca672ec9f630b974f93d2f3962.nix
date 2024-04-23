@@ -21,7 +21,7 @@
       synopsis = "A hidden markov model library";
       description = "Data.HMM is a library for using Hidden Markov Models with Haskell.  Commonly used algoriths (i.e. the forward and backwards algorithms, Viterbi, and Baum-Welch) are implemented.  The best way to learn to use it is to visit the tutorial at http:\\/\\/izbicki.me\\/blog\\/using-hmms-in-haskell-for-bioinformatics.  The tutorial also includes performance benchmarks that you should be aware of.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-memocombinators" or (errorHandler.buildDepError "data-memocombinators"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

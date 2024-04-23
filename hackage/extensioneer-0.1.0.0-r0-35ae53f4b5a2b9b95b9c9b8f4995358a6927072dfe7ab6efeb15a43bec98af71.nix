@@ -21,7 +21,7 @@
       synopsis = "Inspect extensions in cabal and hpack files";
       description = "\nextensioneer - Inspect extensions in cabal and hpack files\n\nSee readme for more: https://github.com/eyeinsky/extensioneer";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "extensioneer" = {
@@ -34,9 +34,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

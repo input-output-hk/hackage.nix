@@ -6,8 +6,8 @@
         nix = import ../hackage/quipper-language-0.9.0.0-r0-98bc942fb992ac2b709630b9885d4b802e0a80618dbee6a698d06cd4ee412a9d.nix;
         revNum = 0;
         sha256 = "98bc942fb992ac2b709630b9885d4b802e0a80618dbee6a698d06cd4ee412a9d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

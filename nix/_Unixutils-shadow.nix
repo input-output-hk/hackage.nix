@@ -6,8 +6,8 @@
         nix = import ../hackage/Unixutils-shadow-1.0.0-r0-4d3ad7472a9e4e2f5978ba312bdebadc0250d6b84a6ea0cf82a60c382325063f.nix;
         revNum = 0;
         sha256 = "4d3ad7472a9e4e2f5978ba312bdebadc0250d6b84a6ea0cf82a60c382325063f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

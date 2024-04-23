@@ -6,8 +6,8 @@
         nix = import ../hackage/jump-0.0.0.0-r0-4a3630186f225d32ba5d27e6d13025c2c08a7c08a822c5e22d36568cd5e0233e.nix;
         revNum = 0;
         sha256 = "4a3630186f225d32ba5d27e6d13025c2c08a7c08a822c5e22d36568cd5e0233e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A numeric class heirarchy.";
       description = "This package provides numeric classes alternate to the prelude specified in [haskell98](https://www.haskell.org/onlinereport/standard-prelude.html).\n\nThe numeric class constellation looks somewhat like:\n\n![nh](other/nh.svg)\n\n== Usage\n\n>>> {-# LANGUAGE NegativeLiterals #-}\n>>> {-# LANGUAGE RebindableSyntax #-}\n>>> import NumHask.Prelude\n\nSee \"NumHask\" for a detailed overview.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

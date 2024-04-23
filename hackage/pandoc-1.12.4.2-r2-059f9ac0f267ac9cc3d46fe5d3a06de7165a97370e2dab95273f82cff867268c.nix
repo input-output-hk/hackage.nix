@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -69,16 +69,16 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ] ++ (pkgs.lib).optionals (flags.http-conduit) [
+        ] ++ pkgs.lib.optionals (flags.http-conduit) [
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
@@ -96,9 +96,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "make-pandoc-man-pages" = {
           depends = [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -107,10 +107,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -132,10 +132,10 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -143,9 +143,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

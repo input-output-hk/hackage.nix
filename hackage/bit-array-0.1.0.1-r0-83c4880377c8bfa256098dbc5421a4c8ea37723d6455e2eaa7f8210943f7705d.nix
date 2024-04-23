@@ -21,7 +21,7 @@
       synopsis = "A bit array (aka bitset, bitmap, bit vector) API for numeric types";
       description = "The library extends the numeric types with an array-like interface\nover individual set bits.\nIt also provides an API for conversion to and\nfrom the binary notation.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."numeric-qq" or (errorHandler.buildDepError "numeric-qq"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

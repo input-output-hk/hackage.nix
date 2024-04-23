@@ -21,7 +21,7 @@
       synopsis = "A library implementing the Noise protocol.";
       description = "This library implements the <https://github.com/trevp/noise/blob/master/noise.md Noise>\nprotocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,12 +33,12 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "echo-server" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
@@ -52,11 +52,11 @@
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
+        };
         "echo-client" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
@@ -66,10 +66,10 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -81,17 +81,17 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
+          depends = pkgs.lib.optionals (!!flags.hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.hlint then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

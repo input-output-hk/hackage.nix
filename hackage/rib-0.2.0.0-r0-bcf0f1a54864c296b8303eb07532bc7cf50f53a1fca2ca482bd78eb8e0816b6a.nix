@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Haskell library for writing your own static site generator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

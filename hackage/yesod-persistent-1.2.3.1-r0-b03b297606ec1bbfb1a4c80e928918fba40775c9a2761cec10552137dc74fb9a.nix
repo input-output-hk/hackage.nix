@@ -21,7 +21,7 @@
       synopsis = "Some helpers for using Persistent from Yesod.";
       description = "Some helpers for using Persistent from Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

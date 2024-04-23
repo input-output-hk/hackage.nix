@@ -21,15 +21,15 @@
       synopsis = "An \"optparse-applicative\" parser for \"hasql-postgres\"";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."hasql-postgres" or (errorHandler.buildDepError "hasql-postgres"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

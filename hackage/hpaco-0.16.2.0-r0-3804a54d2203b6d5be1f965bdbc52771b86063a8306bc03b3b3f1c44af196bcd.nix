@@ -21,7 +21,7 @@
       synopsis = "Modular template compiler";
       description = "CLI front-end to the hpaco-lib library. Compiles Paco\ntemplate source code to JavaScript or PHP, or interprets\nit directly.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpaco" = {
@@ -31,9 +31,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."hpaco-lib" or (errorHandler.buildDepError "hpaco-lib"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

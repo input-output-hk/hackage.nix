@@ -21,7 +21,7 @@
       synopsis = "Process lists easily";
       description = "A tool for processing lists easily";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rei" = {
@@ -33,9 +33,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

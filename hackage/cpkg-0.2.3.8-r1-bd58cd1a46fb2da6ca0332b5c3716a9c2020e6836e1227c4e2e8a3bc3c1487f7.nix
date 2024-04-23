@@ -21,7 +21,7 @@
       synopsis = "Build tool for C";
       description = "A build tool and package manager configured using [Dhall](https://github.com/dhall-lang/dhall-haskell).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,12 +55,12 @@
           (hsPkgs."lzlib" or (errorHandler.buildDepError "lzlib"))
           (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
           (hsPkgs."zstd" or (errorHandler.buildDepError "zstd"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cpkg" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cpkg-test" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

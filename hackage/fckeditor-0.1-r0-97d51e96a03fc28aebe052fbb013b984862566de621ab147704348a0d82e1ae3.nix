@@ -21,7 +21,7 @@
       synopsis = "Server-Side Integration for FCKeditor";
       description = "Provides Server-Side Integration for FCKeditor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

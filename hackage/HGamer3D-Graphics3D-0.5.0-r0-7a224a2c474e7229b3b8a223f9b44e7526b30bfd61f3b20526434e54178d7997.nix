@@ -21,7 +21,7 @@
       synopsis = "Toolset for the Haskell Game Programmer - 3D Graphics Functionality";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. This package provides the 3D Graphics functionality\nbased on the package HGamer3D-Ogre-Binding. HGamer3D-Graphics3D is\navailable on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."HGamer3D-Ogre-Binding" or (errorHandler.buildDepError "HGamer3D-Ogre-Binding"))
           (hsPkgs."HGamer3D-SDL2-Binding" or (errorHandler.buildDepError "HGamer3D-SDL2-Binding"))
           (hsPkgs."HGamer3D-CEGUI-Binding" or (errorHandler.buildDepError "HGamer3D-CEGUI-Binding"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

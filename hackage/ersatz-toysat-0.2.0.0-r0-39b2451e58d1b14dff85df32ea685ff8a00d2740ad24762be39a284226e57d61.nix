@@ -21,7 +21,7 @@
       synopsis = "toysat driver as backend for ersatz";
       description = "toysat driver as backend for ersatz";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ersatz" or (errorHandler.buildDepError "ersatz"))
           (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ersatz-toysat-regexp-grid" = {
-          depends = (pkgs.lib).optionals (flags.examples) ([
+          depends = pkgs.lib.optionals (flags.examples) ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ersatz" or (errorHandler.buildDepError "ersatz"))
@@ -44,19 +44,19 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")));
           buildable = if flags.examples then true else false;
-          };
+        };
         "ersatz-toysat-sudoku" = {
-          depends = (pkgs.lib).optionals (flags.examples) ([
+          depends = pkgs.lib.optionals (flags.examples) ([
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ersatz" or (errorHandler.buildDepError "ersatz"))
             (hsPkgs."ersatz-toysat" or (errorHandler.buildDepError "ersatz-toysat"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")));
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

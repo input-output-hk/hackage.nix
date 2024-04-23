@@ -21,7 +21,7 @@
       synopsis = "Lenses for Hexpat.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."hexpat-tagsoup" or (errorHandler.buildDepError "hexpat-tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

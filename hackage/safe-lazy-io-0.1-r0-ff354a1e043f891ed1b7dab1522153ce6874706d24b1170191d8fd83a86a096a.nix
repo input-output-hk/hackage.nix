@@ -21,7 +21,7 @@
       synopsis = "A library providing safe lazy IO features.";
       description = "Provides a safer API for incremental IO processing in a way very\nclose to standard lazy IO.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."strict-io" or (errorHandler.buildDepError "strict-io"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Another Haskell web toolkit based on scotty";
       description = "This toolbox provides everything you need to get a quick start into web hacking with haskell: sessions, database helper, authentication and the power of scotty";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

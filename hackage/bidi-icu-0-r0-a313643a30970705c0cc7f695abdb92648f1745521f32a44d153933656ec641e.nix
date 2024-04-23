@@ -21,7 +21,7 @@
       synopsis = "The unicode bidirectional algorithm via ICU";
       description = "The unicode bidirectional algorithm via ICU.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,14 +35,14 @@
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
-        libs = (pkgs.lib).optional (system.isOsx) (pkgs."icuuc" or (errorHandler.sysDepError "icuuc"));
-        pkgconfig = (pkgs.lib).optional (!system.isOsx) (pkgconfPkgs."icu-uc" or (errorHandler.pkgConfDepError "icu-uc"));
+        ];
+        libs = pkgs.lib.optional (system.isOsx) (pkgs."icuuc" or (errorHandler.sysDepError "icuuc"));
+        pkgconfig = pkgs.lib.optional (!system.isOsx) (pkgconfPkgs."icu-uc" or (errorHandler.pkgConfDepError "icu-uc"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

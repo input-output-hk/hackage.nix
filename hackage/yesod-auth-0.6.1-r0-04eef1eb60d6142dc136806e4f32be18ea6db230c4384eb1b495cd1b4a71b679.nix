@@ -21,7 +21,7 @@
       synopsis = "Authentication for Yesod.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."web-routes-quasi" or (errorHandler.buildDepError "web-routes-quasi"))
           (hsPkgs."pwstore-fast" or (errorHandler.buildDepError "pwstore-fast"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

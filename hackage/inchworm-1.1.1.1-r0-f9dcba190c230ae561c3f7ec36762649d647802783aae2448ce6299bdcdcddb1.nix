@@ -21,11 +21,11 @@
       synopsis = "Simple parser combinators for lexical analysis.";
       description = "Parser combinator framework specialized to lexical analysis.\nTokens are specified via simple fold functions, and we include\nbaked in source location handling.\nComes with matchers for standard lexemes like integers,\ncomments, and Haskell style strings with escape handling.\nNo dependencies other than the Haskell 'base' library.\nIf you want to parse expressions instead of tokens then try\ntry the @parsec@ or @attoparsec@ packages, which have more\ngeneral purpose combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

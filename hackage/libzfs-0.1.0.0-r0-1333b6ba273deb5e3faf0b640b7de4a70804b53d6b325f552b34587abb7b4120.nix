@@ -21,33 +21,33 @@
       synopsis = "Bindings to libzfs, for dealing with the Z File System and Zpools.";
       description = "These are just some (high and low level) bindings to the real libzfs. Note that libzfs is licensed under the CDDL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [
           (pkgs."zfs" or (errorHandler.sysDepError "zfs"))
           (pkgs."nvpair" or (errorHandler.sysDepError "nvpair"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           libs = [
             (pkgs."zfs" or (errorHandler.sysDepError "zfs"))
             (pkgs."nvpair" or (errorHandler.sysDepError "nvpair"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

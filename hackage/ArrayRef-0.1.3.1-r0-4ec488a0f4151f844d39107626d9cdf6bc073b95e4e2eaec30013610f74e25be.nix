@@ -21,11 +21,11 @@
       synopsis = "Unboxed references, dynamic arrays and more";
       description = "This array library supports: unboxed references,\nMonad-independent references, syntax sugar for mutable types,\na reimplemented Arrays library, changes in MArray usage,\nand using dynamic (resizable) arrays";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

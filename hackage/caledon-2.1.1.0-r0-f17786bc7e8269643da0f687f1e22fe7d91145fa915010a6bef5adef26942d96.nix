@@ -21,7 +21,7 @@
       synopsis = "a logic programming language based on the calculus of constructions";
       description = "a dependently typed, polymorphic, higher order logic programming language based on the calculus of constructions designed for easier metaprogramming capabilities. ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "caledon" = {
@@ -31,9 +31,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

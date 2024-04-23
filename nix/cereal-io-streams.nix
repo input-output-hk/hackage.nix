@@ -6,8 +6,8 @@
         nix = import ../hackage/cereal-io-streams-0.0.1.0-r0-3884fd5d2992f834e60b7191fd2e217a9c6185960446ce65891eb194f995010e.nix;
         revNum = 0;
         sha256 = "3884fd5d2992f834e60b7191fd2e217a9c6185960446ce65891eb194f995010e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

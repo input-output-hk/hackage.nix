@@ -14,7 +14,7 @@
       identifier = {
         name = "clckwrks-theme-geo-bootstrap";
         version = "0.1.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jeremy@n-heptane.com";
@@ -24,7 +24,7 @@
       synopsis = "geo bootstrap based template for clckwrks";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."clckwrks" or (errorHandler.buildDepError "clckwrks"))
           (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A higher-order effect system where the sky's the limit";
       description = "A low-boilerplate effect system with easy higher-order effects and very high expressive power";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "in-other-words-test" = {
           depends = [
@@ -49,12 +49,12 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

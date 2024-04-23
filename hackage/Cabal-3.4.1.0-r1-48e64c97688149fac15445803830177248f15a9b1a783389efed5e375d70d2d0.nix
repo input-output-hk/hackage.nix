@@ -21,7 +21,7 @@
       synopsis = "A framework for packaging Haskell software";
       description = "The Haskell Common Architecture for Building Applications and\nLibraries: a framework defining a common interface for authors to more\neasily build their Haskell applications in a portable way.\n\nThe Haskell Cabal is part of a larger infrastructure for distributing,\norganizing, and cataloging Haskell libraries and tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -39,18 +39,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ]) ++ (if system.isWindows
+        ]) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+          ])) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."void" or (errorHandler.buildDepError "void"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs."void" or (errorHandler.buildDepError "void"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = ([
@@ -76,9 +76,9 @@
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."void" or (errorHandler.buildDepError "void"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs."void" or (errorHandler.buildDepError "void"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
+        };
         "parser-tests" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"));
           buildable = true;
-          };
+        };
         "check-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
+        };
         "custom-setup-tests" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
@@ -115,9 +115,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackage-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -133,9 +133,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"));
           buildable = if system.isWindows then false else true;
-          };
+        };
         "rpmvercmp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -145,9 +145,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

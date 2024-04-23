@@ -21,15 +21,15 @@
       synopsis = "Compatibility with old-time for the time package";
       description = "Compatibility with the <old-time> package for the \\\"new\\\"\n<time> package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

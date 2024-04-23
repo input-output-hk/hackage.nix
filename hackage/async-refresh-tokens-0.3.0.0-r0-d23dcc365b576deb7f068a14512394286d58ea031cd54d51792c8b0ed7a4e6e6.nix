@@ -21,7 +21,7 @@
       synopsis = "Package implementing core logic for refreshing of expiring access tokens";
       description = "This package can be used for renewal of expiring access tokens according to user-provided actions. Tokens will be stored in a transactional variable (TVar).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "async-refresh-tokens-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tracking http redirects ";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "http-trace" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http-trace" or (errorHandler.buildDepError "http-trace"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

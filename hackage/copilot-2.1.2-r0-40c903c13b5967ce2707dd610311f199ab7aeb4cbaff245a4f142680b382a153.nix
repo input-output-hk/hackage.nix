@@ -21,7 +21,7 @@
       synopsis = "A stream DSL for writing embedded C programs.";
       description = "This package is the main entry-point for using Copilot.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language (DSL) in\nHaskell that compiles into embedded C.  Copilot contains an interpreter,\nmultiple back-end compilers, and other verification tools.  A tutorial, bug\nreports, and todos are available at\n<https://github.com/leepike/copilot-discussion>.\n\nExamples are available at <https://github.com/leepike/Copilot/tree/master/Examples>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."copilot-sbv" or (errorHandler.buildDepError "copilot-sbv"))
           (hsPkgs."copilot-cbmc" or (errorHandler.buildDepError "copilot-cbmc"))
           (hsPkgs."copilot-c99" or (errorHandler.buildDepError "copilot-c99"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "copilot-regression" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."copilot-c99" or (errorHandler.buildDepError "copilot-c99"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

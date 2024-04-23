@@ -21,7 +21,7 @@
       synopsis = "Utility CLI for working with protobuf files";
       description = "`pb-next` is a CLI for generating \"next\" protocol buffer field values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pbhelp" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pb-next-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

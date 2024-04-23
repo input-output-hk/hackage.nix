@@ -6,8 +6,8 @@
         nix = import ../hackage/sydtest-mongo-0.0.0.0-r0-07ac19e378ea7e1766a9f76971a6b3c67adca956c9bc0e6a330223ba936dcbe8.nix;
         revNum = 0;
         sha256 = "07ac19e378ea7e1766a9f76971a6b3c67adca956c9bc0e6a330223ba936dcbe8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

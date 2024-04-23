@@ -21,7 +21,7 @@
       synopsis = "A write buffer for STM channels and queues.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."write-buffer-core" or (errorHandler.buildDepError "write-buffer-core"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

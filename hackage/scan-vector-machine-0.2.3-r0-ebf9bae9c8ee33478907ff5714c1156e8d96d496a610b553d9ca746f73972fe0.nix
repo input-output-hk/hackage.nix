@@ -21,7 +21,7 @@
       synopsis = "An implementation of the Scan Vector Machine instruction set in Haskell";
       description = "An implementation of the Scan Vector Machine instruction set in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."dph-seq" or (errorHandler.buildDepError "dph-seq"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
             (hsPkgs."haskell2010" or (errorHandler.buildDepError "haskell2010"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

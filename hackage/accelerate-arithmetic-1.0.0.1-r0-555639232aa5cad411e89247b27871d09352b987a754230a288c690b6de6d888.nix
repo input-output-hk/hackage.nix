@@ -21,7 +21,7 @@
       synopsis = "Linear algebra and interpolation using the Accelerate framework";
       description = "Linear algebra and interpolation via the @accelerate@ package.\nThis can be used for computations on GPUs\nbut it does not contain processor optimizations\nor optimizations for CUDA.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

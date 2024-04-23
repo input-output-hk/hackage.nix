@@ -21,7 +21,7 @@
       synopsis = "IRC bouncer";
       description = "A very simple IRC bouncer.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ircbouncer" = {
@@ -32,9 +32,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/newhoggy/hw-dsv#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-dsv" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-dsv-space" = {
           depends = [
@@ -70,12 +70,12 @@
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hw-dsv-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,13 +92,13 @@
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -116,9 +116,9 @@
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

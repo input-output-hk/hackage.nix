@@ -21,18 +21,18 @@
       synopsis = "Interface to the Online Encyclopedia of Integer Sequences (OEIS)";
       description = "Interface to the <http://oeis.org/ Online Encyclopedia of Integer Sequences (OEIS)>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "main" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."oeis" or (errorHandler.buildDepError "oeis"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

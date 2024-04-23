@@ -21,7 +21,7 @@
       synopsis = "Chemistry";
       description = "This library contains:\n\n* periodic table with information about elements\n\n* Readers and writers for different formula formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

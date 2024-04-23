@@ -21,7 +21,7 @@
       synopsis = "A build tool for multiple docker image layers";
       description = "Build and manage multiple docker image layers to speed up deployment";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,19 +55,19 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dockercook" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dockercook" or (errorHandler.buildDepError "dockercook"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dockercook-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

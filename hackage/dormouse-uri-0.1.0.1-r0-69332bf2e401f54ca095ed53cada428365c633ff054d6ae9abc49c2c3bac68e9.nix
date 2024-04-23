@@ -21,7 +21,7 @@
       synopsis = "Library for type-safe representations of Uri/Urls";
       description = "Dormouse-Uri provides type safe handling of `Uri`s and `Url`s.\n\n`Uri` sytax is well defined according to [RFC 3986](https://tools.ietf.org/html/rfc3986), Dormouse-Uri parses and encodes `Uri`s according to the syntax defined in this document.\n\nWe define `Url` as an absolute URI associated with web resources, the current version of Dormouse-Uri restricts `Url`s to the `http` and `https` schemes.\n\nDormouse-Uri has the following features:\n\n- The `Uri` and `Url` data types use `Data.Text` internally, this allows you to freely include percent-decoded characters which will be properly rendered when the `Url`/`Uri` is encoded.\n- Quasiquoters to allow safe construction of `Uri`/`Url`s from string literals.\n- `DataKinds` allow `Url`s to be restricted to the `http` or `https` schemes are the type level.\n- A UrlBuilder syntax to allow type-safe construction/concatenation of `Url`s from their components, e.g. path and query parameters.\n\nPlease see https://dormouse.io for full documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dormouse-uri-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

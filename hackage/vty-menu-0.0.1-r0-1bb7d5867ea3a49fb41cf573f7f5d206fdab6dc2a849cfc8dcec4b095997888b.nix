@@ -21,14 +21,14 @@
       synopsis = "A lib for displaying a menu and getting a selection using VTY";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

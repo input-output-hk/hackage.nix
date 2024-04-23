@@ -21,15 +21,15 @@
       synopsis = "A programming language for text modification.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."chatty-text" or (errorHandler.buildDepError "chatty-text"))
           (hsPkgs."chatty-utils" or (errorHandler.buildDepError "chatty-utils"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

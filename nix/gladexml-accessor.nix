@@ -6,8 +6,8 @@
         nix = import ../hackage/gladexml-accessor-0.0-r0-1fed7c6f72c69812ee4be1c9bae2aeee769464efea965c1752e4ba9d97916e7c.nix;
         revNum = 0;
         sha256 = "1fed7c6f72c69812ee4be1c9bae2aeee769464efea965c1752e4ba9d97916e7c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

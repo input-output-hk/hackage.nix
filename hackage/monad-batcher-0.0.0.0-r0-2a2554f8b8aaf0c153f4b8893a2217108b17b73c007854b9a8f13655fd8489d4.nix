@@ -21,14 +21,14 @@
       synopsis = "An applicative monad that batches commands for later more efficient execution";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "GHC plugin to desugar ! into do-notation";
       description = "A plugin for GHC which takes expressions prefixed with a !\nand effectively takes them out of their monadic context, by\ncreating bind statements in the do-block surrounding the\nexpression. Inspired by Idris's !-notation. For more\ninformation, see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "monadic-bang-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."monadic-bang" or (errorHandler.buildDepError "monadic-bang"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Restarts the current executable (on binary change)";
       description = "Allows restarting the currently running executable.\n\nCan restart the running program binary using @exec()@,\neither manually or when the binary changes.\n\nAlso works with runhaskell/runghc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

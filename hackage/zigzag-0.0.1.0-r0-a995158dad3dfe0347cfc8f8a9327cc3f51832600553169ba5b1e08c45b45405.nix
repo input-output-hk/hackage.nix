@@ -21,12 +21,12 @@
       synopsis = "Zigzag encoding of integers into unsigned integers.";
       description = "Zigzag encoding is usually a precursor to a varint encoding such as LEB128.\nIt has the advantage that numbers nearer zero are represented with only the lower-order bits set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."zigzag" or (errorHandler.buildDepError "zigzag"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

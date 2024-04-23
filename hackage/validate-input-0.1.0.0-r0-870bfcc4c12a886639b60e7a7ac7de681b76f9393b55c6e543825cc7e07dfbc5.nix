@@ -21,7 +21,7 @@
       synopsis = "Input validation combinator library";
       description = "A small Haskell combinator library that provides a simple way of validating user provided data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
           (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

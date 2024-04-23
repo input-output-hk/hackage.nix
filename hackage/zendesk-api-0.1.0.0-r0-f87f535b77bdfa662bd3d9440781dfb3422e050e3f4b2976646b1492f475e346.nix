@@ -21,7 +21,7 @@
       synopsis = "Zendesk API for Haskell programming language.";
       description = "This is a library for accessing zendesk api using haskell bindings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

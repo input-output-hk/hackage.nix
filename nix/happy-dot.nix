@@ -6,8 +6,8 @@
         nix = import ../hackage/happy-dot-1.0.0.0-r0-5c91ddfcdafbe42c4d47325c81e5f9f3455125915052296245944ad5207a2aaf.nix;
         revNum = 0;
         sha256 = "5c91ddfcdafbe42c4d47325c81e5f9f3455125915052296245944ad5207a2aaf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

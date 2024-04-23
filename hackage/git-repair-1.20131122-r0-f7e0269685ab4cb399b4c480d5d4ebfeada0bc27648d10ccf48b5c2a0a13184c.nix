@@ -21,7 +21,7 @@
       synopsis = "repairs a damanged git repisitory";
       description = "git-repair can repair various forms of damage to git repositories.\n\nIt is a complement to git fsck, which finds problems, but does not fix\nthem.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "git-repair" = {
@@ -47,9 +47,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

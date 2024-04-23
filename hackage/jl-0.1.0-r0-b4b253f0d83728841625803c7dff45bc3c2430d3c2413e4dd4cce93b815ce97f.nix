@@ -21,7 +21,7 @@
       synopsis = "Functional sed for JSON";
       description = "jl (\"JSON lambda\") is a tiny functional language for querying and manipulating JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jl" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

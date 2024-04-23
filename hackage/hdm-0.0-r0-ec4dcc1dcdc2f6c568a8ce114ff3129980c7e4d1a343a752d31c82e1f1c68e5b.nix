@@ -21,7 +21,7 @@
       synopsis = "a small display manager.";
       description = "A small display manager which loads from shell and just provides a text based menu for selecting the xinitrc file of your choice.  I created it for use with xmonad, where I often wish to start up gnome or xfce4 as well.  Since this uses startx, it handles multiple xsessions seamlessly.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hdm" = {
@@ -31,9 +31,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "NCurses interface to view multiple ByteString streams in parallel.";
       description = "Output from parallel subprocesses is an ugly, many-headed beast.\nPiping though hydra-print provides a NCurses interface to a dynamic\nset output streams, displayed without interleaving.  This is a\ncommon problem, for example, with parallel compiles, or\ndata-processing scripts.\n\nSpecifically, this small library will split the screen when\nparallelism occurs, and unsplit it when the parallelism is\nfinished (i.e. dynamically growing and losing \\\"heads\\\").\nThe @io-streams@ library is used for all stream inputs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hydra-view" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hydra-head" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -83,10 +83,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-hydra-print" = {
           depends = [
@@ -111,9 +111,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

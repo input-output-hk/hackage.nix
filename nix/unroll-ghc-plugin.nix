@@ -6,10 +6,10 @@
         nix = import ../hackage/unroll-ghc-plugin-0.1-r0-b08c8abcb0e533bfb35903e1d9436d8eb9f1d7799410e89c0c0be627986a7a73.nix;
         revNum = 0;
         sha256 = "b08c8abcb0e533bfb35903e1d9436d8eb9f1d7799410e89c0c0be627986a7a73";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.1.1" = {
     sha256 = "f7a04a48840e2111628f32af3939d12ac8c0bd22602999a07deb62ecce390558";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/unroll-ghc-plugin-0.1.1-r0-6ace3460a529ed2e14e4aedb16246043675fd665f27bf994bba05a9d199aecf4.nix;
         revNum = 0;
         sha256 = "6ace3460a529ed2e14e4aedb16246043675fd665f27bf994bba05a9d199aecf4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "BERT implementation";
       description = "Implements the BERT serialization and RPC protocols\ndescribed at <http://bert-rpc.org/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

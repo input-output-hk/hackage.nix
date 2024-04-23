@@ -21,7 +21,7 @@
       synopsis = "Simple generic unification algorithms.";
       description = "Generic functions for single-sorted first-order structural\nunification (think of programming in Prolog, or of the metavariables\nin type inference).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

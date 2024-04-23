@@ -6,8 +6,8 @@
         nix = import ../hackage/hommage-ds-0.0.5-r0-5555d0369acd519b999241acdabf1c42768b2d5bf992b814b5295634a33f8ec1.nix;
         revNum = 0;
         sha256 = "5555d0369acd519b999241acdabf1c42768b2d5bf992b814b5295634a33f8ec1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Vim plugin manager written in Haskell";
       description = "The miv command is a cli tool to manage Vim plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "miv" = {
@@ -42,10 +42,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A simple and fast bytestring packer";
       description = "A simple and fast bytestring packer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."bspack" or (errorHandler.buildDepError "bspack"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-bspack" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."bspack" or (errorHandler.buildDepError "bspack"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

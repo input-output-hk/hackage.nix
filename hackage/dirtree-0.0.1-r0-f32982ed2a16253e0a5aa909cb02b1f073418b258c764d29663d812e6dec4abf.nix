@@ -21,7 +21,7 @@
       synopsis = "A small library for working with directories.";
       description = "A small library for working with directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dirtree-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."hspec-expectations-pretty-diff" or (errorHandler.buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

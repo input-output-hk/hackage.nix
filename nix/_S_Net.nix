@@ -6,8 +6,8 @@
         nix = import ../hackage/SNet-0.1.0-r0-2e5367afe8f6cf6e5189d2b6417a23a3149cba615ed57f6535c8e61ad1e6c9fa.nix;
         revNum = 0;
         sha256 = "2e5367afe8f6cf6e5189d2b6417a23a3149cba615ed57f6535c8e61ad1e6c9fa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

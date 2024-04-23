@@ -21,7 +21,7 @@
       synopsis = "Driver for real ethernet devices for HaNS";
       description = "Network ethernet device for HaNS(Currently requires hans-2.4 from the github), which can tap into a real ethernet interface, all using pcap library and preform raw packet reads & writes.\nThis is a very simple. But requires: root - to be able to use PCAP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
           (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

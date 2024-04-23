@@ -6,8 +6,8 @@
         nix = import ../hackage/Snusmumrik-0.0.1-r0-7b9ba9ddb7c4aec329ff003a4560d34d0020238c069aabb17a321cf9c31deaa5.nix;
         revNum = 0;
         sha256 = "7b9ba9ddb7c4aec329ff003a4560d34d0020238c069aabb17a321cf9c31deaa5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

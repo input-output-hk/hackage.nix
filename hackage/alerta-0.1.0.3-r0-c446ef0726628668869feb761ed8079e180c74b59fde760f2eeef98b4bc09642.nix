@@ -21,7 +21,7 @@
       synopsis = "Bindings to the alerta REST API";
       description = "<http://alerta.io Alerta> is an alert monitoring tool developed by the\n<https://www.theguardian.com Guardian> newspaper\n\nThis package supplies bindings to the alerta REST API so that it can be used\nfrom Haskell.\n\nBuilt with <http://hackage.haskell.org/package/servant Servant>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

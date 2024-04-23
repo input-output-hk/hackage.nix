@@ -21,7 +21,7 @@
       synopsis = "Library for invertible parsing and printing";
       description = "Specify single unified grammar which can be used for parsing and pretty-printing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

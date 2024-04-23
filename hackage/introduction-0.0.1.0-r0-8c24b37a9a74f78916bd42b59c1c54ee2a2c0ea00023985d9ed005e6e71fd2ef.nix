@@ -21,7 +21,7 @@
       synopsis = "A prelude for safe new projects";
       description = "A prelude for safe new projects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

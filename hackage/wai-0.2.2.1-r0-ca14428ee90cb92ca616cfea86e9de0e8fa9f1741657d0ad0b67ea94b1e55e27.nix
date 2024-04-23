@@ -21,15 +21,15 @@
       synopsis = "Web Application Interface.";
       description = "Provides a common protocol for communication between web aplications and web servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-ivschat-2.0-r0-d68b0684361f0528f0469bdead34c7cde0ef843e440650e187cb9bd09eab897d.nix;
         revNum = 0;
         sha256 = "d68b0684361f0528f0469bdead34c7cde0ef843e440650e187cb9bd09eab897d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

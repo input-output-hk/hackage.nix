@@ -21,7 +21,7 @@
       synopsis = "Parsing all context-free grammars using Earley's algorithm.";
       description = "See <https://www.github.com/ollef/Earley> for more\ninformation and\n<https://github.com/ollef/Earley/tree/master/examples> for\nexamples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

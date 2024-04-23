@@ -21,7 +21,7 @@
       synopsis = "Hey! Hey! Can u rel8?";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

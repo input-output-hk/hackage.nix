@@ -21,7 +21,7 @@
       synopsis = "";
       description = "PCAP-NG and PCAP format reader and writer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pcapng-exe" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pcapng-test" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

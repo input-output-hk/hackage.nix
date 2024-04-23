@@ -21,7 +21,7 @@
       synopsis = "Parse and display tibetan numerals";
       description = "This package provides a [megaparsec](http://hackage.haskell.org/package/megaparsec) parser for Tibetan numerals, as well as efficient means to display numbers using Tibetan numerals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tibetan-utils-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

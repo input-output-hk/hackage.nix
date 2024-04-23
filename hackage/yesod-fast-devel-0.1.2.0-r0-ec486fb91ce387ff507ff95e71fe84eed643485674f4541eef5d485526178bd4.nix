@@ -21,7 +21,7 @@
       synopsis = "Fast live-reloading for yesod applications.";
       description = "https://github.com/haskellbr/yesod-fast-devel";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yesod-fast-devel" = {
@@ -40,9 +40,9 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

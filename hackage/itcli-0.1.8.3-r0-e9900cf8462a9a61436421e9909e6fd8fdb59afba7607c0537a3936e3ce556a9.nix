@@ -21,7 +21,7 @@
       synopsis = "Issue Tracker for the CLI";
       description = "This is a simplified issue tracker designed with the UNIX\nphilosophy in mind. It aims to have a similiar interface\nto git";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "itcli" = {
@@ -36,9 +36,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

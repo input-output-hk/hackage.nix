@@ -21,7 +21,7 @@
       synopsis = "Finds out whether an entity comes from different distributions (statuses).";
       description = "Uses statistical tests to find whether an entity comes from one or two distributions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "differential" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

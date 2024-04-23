@@ -21,14 +21,14 @@
       synopsis = "Ad-hoc type classes for lifting";
       description = "This simple and lightweight library provides type classes\nfor lifting monad transformer operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

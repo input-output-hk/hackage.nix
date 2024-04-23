@@ -6,8 +6,8 @@
         nix = import ../hackage/data-index-0.1.0.0-r0-f883a2131f214db027f1b269d3e21b046749c407d7b36aec5b996df567ce6f47.nix;
         revNum = 0;
         sha256 = "f883a2131f214db027f1b269d3e21b046749c407d7b36aec5b996df567ce6f47";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

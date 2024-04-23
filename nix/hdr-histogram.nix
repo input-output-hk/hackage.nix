@@ -6,8 +6,8 @@
         nix = import ../hackage/hdr-histogram-0.1.0.0-r0-88ee7385aecf7648eaff73095b69648c9fd74bbfa5796e521e3b252ba1002080.nix;
         revNum = 0;
         sha256 = "88ee7385aecf7648eaff73095b69648c9fd74bbfa5796e521e3b252ba1002080";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

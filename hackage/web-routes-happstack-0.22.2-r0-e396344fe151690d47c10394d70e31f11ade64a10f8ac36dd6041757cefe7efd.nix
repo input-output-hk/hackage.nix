@@ -21,15 +21,15 @@
       synopsis = "Adds support for using web-routes with Happstack";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with OpenGL's GLSL shading language and vinyl records.";
       description = "Using \"Data.Vinyl\" records (similar in spirit to @HList@)\nto carry GLSL uniform parameters and vertex data enables\nlibrary code to reflect over the types of the data to\nfacilitate interaction between Haskell and GLSL. See the\n@examples@ directory in the repository for more\ninformation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."vinyl-gl" or (errorHandler.buildDepError "vinyl-gl"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

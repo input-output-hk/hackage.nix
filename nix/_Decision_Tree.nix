@@ -6,8 +6,8 @@
         nix = import ../hackage/DecisionTree-0.0-r0-0329f7c5139bc51df941c5b0801dd556bf537923cf8e1563775eaf79eff5eab0.nix;
         revNum = 0;
         sha256 = "0329f7c5139bc51df941c5b0801dd556bf537923cf8e1563775eaf79eff5eab0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The PCRE backend to accompany regex-base, see www.pcre.org";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-          ];
+        ];
         libs = [ (pkgs."pcre" or (errorHandler.sysDepError "pcre")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple library for accessing Google Trends";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

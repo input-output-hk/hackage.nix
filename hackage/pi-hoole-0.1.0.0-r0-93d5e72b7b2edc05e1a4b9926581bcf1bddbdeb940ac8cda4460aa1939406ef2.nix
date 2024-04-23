@@ -21,7 +21,7 @@
       synopsis = "Lightweight access control solution for the pijul vcs";
       description = "Please see the introductory post at <https://lthms.xyz/blog/pi-hoole>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pi-hoole-cfg" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pi-hoole-shell" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -64,9 +64,9 @@
             (hsPkgs."pi-hoole" or (errorHandler.buildDepError "pi-hoole"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pi-hoole-web" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -83,18 +83,18 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pi-hoole-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pi-hoole" or (errorHandler.buildDepError "pi-hoole"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

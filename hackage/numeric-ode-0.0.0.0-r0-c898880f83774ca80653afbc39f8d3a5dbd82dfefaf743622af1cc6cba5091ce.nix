@@ -21,7 +21,7 @@
       synopsis = "Ode solvers";
       description = "Some ode solvers, e.g., Störmer-Verlet";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Kepler" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."plots" or (errorHandler.buildDepError "plots"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

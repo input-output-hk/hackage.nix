@@ -6,8 +6,8 @@
         nix = import ../hackage/fnmatch-0.1.0.0-r0-4c826ea03a7556287ac6e3da2305770dc341fe97ea913f6f441c90d37999435b.nix;
         revNum = 0;
         sha256 = "4c826ea03a7556287ac6e3da2305770dc341fe97ea913f6f441c90d37999435b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

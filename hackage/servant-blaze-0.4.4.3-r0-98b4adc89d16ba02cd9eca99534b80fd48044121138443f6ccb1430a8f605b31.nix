@@ -21,7 +21,7 @@
       synopsis = "Blaze-html support for servant";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

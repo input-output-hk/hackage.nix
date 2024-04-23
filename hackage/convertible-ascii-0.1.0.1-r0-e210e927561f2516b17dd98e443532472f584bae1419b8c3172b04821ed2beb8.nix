@@ -21,7 +21,7 @@
       synopsis = "convertible instances for ascii";
       description = "\nThis package provides convertible instances for ascii:\n\n* <http://hackage.haskell.org/package/convertible-text>\n\n* <http://hackage.haskell.org/package/ascii>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."convertible-text" or (errorHandler.buildDepError "convertible-text"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

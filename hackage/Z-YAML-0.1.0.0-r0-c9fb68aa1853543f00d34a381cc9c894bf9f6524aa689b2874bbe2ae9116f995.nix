@@ -21,7 +21,7 @@
       synopsis = "YAML tools";
       description = "YAML reading & writing tools for Z project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
           (hsPkgs."Z-IO" or (errorHandler.buildDepError "Z-IO"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

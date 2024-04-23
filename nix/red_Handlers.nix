@@ -6,8 +6,8 @@
         nix = import ../hackage/redHandlers-0.1-r0-de0b0eb8b4c9316d82ce18d98a2f2a1ba9c17af8860025891fed4fd8bd10b454.nix;
         revNum = 0;
         sha256 = "de0b0eb8b4c9316d82ce18d98a2f2a1ba9c17af8860025891fed4fd8bd10b454";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "CLI executable of NetSpider.RPL.";
       description = "CLI executable of \"NetSpider.RPL\". It's also an example of \"NetSpider.CLI\" module.\n\n__This package is an experimental release. CLI interface and functionality may change drastically in future.__\n\nFor detail, see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "net-spider-rpl-cli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."net-spider-rpl-cli" or (errorHandler.buildDepError "net-spider-rpl-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

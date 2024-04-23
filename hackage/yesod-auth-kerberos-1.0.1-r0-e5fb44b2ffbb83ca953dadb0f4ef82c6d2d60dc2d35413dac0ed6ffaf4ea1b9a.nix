@@ -21,7 +21,7 @@
       synopsis = "Kerberos Authentication for Yesod.";
       description = "Kerberos Authentication for Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

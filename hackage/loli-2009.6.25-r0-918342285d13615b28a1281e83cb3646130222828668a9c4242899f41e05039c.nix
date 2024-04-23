@@ -21,7 +21,7 @@
       synopsis = "loli";
       description = "A minimum web dev DSL in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

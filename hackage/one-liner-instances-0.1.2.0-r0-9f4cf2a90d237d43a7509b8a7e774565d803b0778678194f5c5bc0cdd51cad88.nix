@@ -21,15 +21,15 @@
       synopsis = "Generics-based implementations for common typeclasses";
       description = "Provides generics-based implementations for common typeclasses using\nGenerics.\n\nPlease see the README on Github at <https://github.com/mstksg/one-liner-instances#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."one-liner" or (errorHandler.buildDepError "one-liner"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

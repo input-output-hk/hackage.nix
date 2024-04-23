@@ -21,11 +21,11 @@
       synopsis = "Haskell implementation of a HandlerSocket client (API).";
       description = "This package implemets API for a HandlerSocket client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

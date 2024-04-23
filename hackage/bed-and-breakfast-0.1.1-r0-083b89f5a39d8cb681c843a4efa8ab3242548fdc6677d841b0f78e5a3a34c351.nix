@@ -21,14 +21,14 @@
       synopsis = "Efficient Matrix operations in 100% Haskell.";
       description = "Efficient Matrix operations in 100% Haskell.\n\n[@v0.1.1@] Fixed wrong algorithm for computing the\ninverse of a Matrix.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

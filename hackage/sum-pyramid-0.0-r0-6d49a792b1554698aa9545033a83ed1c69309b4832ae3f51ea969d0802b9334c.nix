@@ -21,7 +21,7 @@
       synopsis = "Create Sum Pyramid (Additionstreppe) exercises";
       description = "Create Sum Pyramid (Additionstreppe) exercises.\nYou specify the size of the pyramid and the number range of the base line\nand the program emits LaTeX code for puzzles.\n\n> sum-pyramid create --size 5";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sum-pyramid" = {
@@ -37,10 +37,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sum-pyramid-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

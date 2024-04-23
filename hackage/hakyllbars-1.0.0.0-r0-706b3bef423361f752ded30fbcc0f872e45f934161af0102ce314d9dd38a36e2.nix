@@ -21,7 +21,7 @@
       synopsis = "A Hakyll compiler for Handlebars-like templates";
       description = "Hakyllbars brings a handlebars-like template syntax to Hakyll. Please see the\nREADME at <https://github.com/keywordsalad/hakyllbars#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyllbars-site" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."hakyllbars" or (errorHandler.buildDepError "hakyllbars"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

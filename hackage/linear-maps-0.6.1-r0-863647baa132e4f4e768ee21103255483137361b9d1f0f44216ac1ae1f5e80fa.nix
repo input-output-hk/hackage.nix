@@ -21,19 +21,19 @@
       synopsis = "Finite maps for linear use";
       description = "Finite maps for linear use.\n\nThis package contains three different implementations with the same interface.\nThe implementations are controlled by Cabal flags which can be set at installation time\nwith the following commands:\n\n[@cabal install -fcheck@]\nInstalls an implementation where linear use of maps is needed and checked (at runtime).\nIt is recommended to use this version during development.\n\n[@cabal install@]\nInstalls an implementation where linear use of maps is needed but not checked.\nIt is the fastest implementation so it is ideal for the final product.\nInstall this only if you are certain that maps are used linearly.\n\n[@cabal install -fpure@]\nInstalls an implementation where linear use of maps is not needed and not checked.\nThis is the simplest implementation so it can be read as a documentation.\nDo not install this version because it is slow and does not check the linear use of maps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "linear-maps-introduction" = { buildable = true; };
         "linear-maps-exercises" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

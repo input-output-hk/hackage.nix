@@ -21,7 +21,7 @@
       synopsis = "Markov process monad";
       description = "A monad transformer providing a monad in which computations have\naccess to state and a probabilistic transition function.\nThis can be used to model Markov chains.\n\nA type class is provided with one operation, \"nextState\",\nwhich transitions to the next state.\n\nThe transformer is built on top of MonadRandom\n(https://hackage.haskell.org/package/MonadRandom).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

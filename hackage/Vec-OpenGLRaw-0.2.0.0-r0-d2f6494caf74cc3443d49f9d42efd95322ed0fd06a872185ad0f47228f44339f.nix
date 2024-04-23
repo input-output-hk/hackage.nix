@@ -21,15 +21,15 @@
       synopsis = "Instances and functions to interoperate Vec and OpenGL.";
       description = "Provides:\n* NearZero instances for all OpenGL numeric types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

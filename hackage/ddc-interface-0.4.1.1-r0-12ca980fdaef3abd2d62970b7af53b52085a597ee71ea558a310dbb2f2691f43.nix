@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler user interface support.";
       description = "Disciplined Disciple Compiler user interface support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."ddc-base" or (errorHandler.buildDepError "ddc-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

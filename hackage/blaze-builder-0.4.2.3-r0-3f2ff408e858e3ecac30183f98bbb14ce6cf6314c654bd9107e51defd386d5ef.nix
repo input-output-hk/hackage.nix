@@ -21,7 +21,7 @@
       synopsis = "Efficient buffered output.";
       description = "This library allows to efficiently serialize Haskell values to lazy bytestrings\nwith a large average chunk size. The large average chunk size allows to make\ngood use of cache prefetching in later processing steps (e.g. compression) and\nreduces the system call overhead when writing the resulting lazy bytestring to a\nfile or sending it over the network.\n\nThis library was inspired by the module Data.Binary.Builder provided by the\nbinary package. It was originally developed with the specific needs of the\nblaze-html package in mind. Since then it has been restructured to serve as a\ndrop-in replacement for Data.Binary.Builder, which it improves upon both in\nspeed as well as expressivity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,15 +30,15 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "7.8"
+        ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
           then [
             (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
-            ]
+          ]
           else [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Full-weight string formatting library, analog of Python's string.format";
       description = "This package contains full-featured string formatting function, similar to Python's string.format. Features include:\n* Automatically numbered variable placeholders;\n* Positional variable placeholders;\n* Named variable placeholders;\n* Placeholders can be used in any order; one variable can be used several\ntimes or not used at all.\n\n* Specific format can be used for each variable substitution.\nThis package prefers functionality over \"light weight\" and (probably) performance.  It also exposes all required interfaces to extend and customize it.\nFor more details, please refer to <https://github.com/portnov/text-format-heavy/wiki Wiki>. See also the @examples/@ directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text-format-heavy" or (errorHandler.buildDepError "text-format-heavy"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

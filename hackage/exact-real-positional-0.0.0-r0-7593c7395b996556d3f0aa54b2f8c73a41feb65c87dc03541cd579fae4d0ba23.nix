@@ -21,11 +21,11 @@
       synopsis = "Framework for Exact Real Arithmetic in the Positional Number System";
       description = "Computable real numbers are represented in a signed digit floating point representation. Each number consists of an infinitly sequence of these digits. Basic arithmetic operators are implemented, conversion from and into other Haskell number types is possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

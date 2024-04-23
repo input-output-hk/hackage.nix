@@ -21,7 +21,7 @@
       synopsis = "DepTrack applied to DevOps.";
       description = "Describe your infrastructure with a directed-acyclic graph. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

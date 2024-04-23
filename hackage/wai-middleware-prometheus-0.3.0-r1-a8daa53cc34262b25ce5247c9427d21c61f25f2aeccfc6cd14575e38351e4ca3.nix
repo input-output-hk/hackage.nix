@@ -21,7 +21,7 @@
       synopsis = "WAI middlware for exposing http://prometheus.io metrics.";
       description = "WAI middlware for exposing http://prometheus.io metrics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."prometheus-client" or (errorHandler.buildDepError "prometheus-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."prometheus-client" or (errorHandler.buildDepError "prometheus-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

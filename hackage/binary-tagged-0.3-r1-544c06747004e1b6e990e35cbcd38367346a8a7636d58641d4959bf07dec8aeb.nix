@@ -21,7 +21,7 @@
       synopsis = "Tagged binary serialisation.";
       description = "Structurally tag binary serialisation stream.\n\nSay you have:\n\nSay you have a data type\n\n@\ndata Record = Record\n\\  { _recordFields  :: HM.HashMap Text (Integer, ByteString)\n\\  , _recordEnabled :: Bool\n\\  }\n\\  deriving (Eq, Show, Generic)\n\ninstance @Binary@ Record\ninstance 'Structured' Record\n@\n\nthen you can serialise and deserialise @Record@ values with a structure tag by simply\n\n@\n'structuredEncode' record :: LBS.ByteString\n'structuredDecode' lbs    :: IO Record\n@\n\nIf structure of @Record@ changes in between, deserialisation will fail early.\n\nThe overhead is next to non-observable.\n\n@\nbenchmarking encode/Binary\ntime                 352.8 μs   (349.5 μs .. 355.9 μs)\n\nbenchmarking encode/Tagged\ntime                 350.8 μs   (349.0 μs .. 353.1 μs)\n\nbenchmarking decode/Binary\ntime                 346.8 μs   (344.7 μs .. 349.9 μs)\n\nbenchmarking decode/Tagged\ntime                 353.8 μs   (352.0 μs .. 355.8 μs)\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "binary-tagged-test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "binary-tagged-bench" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

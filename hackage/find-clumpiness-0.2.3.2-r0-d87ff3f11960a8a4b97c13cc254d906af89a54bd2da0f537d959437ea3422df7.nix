@@ -21,7 +21,7 @@
       synopsis = "Find the clumpiness of labels in a tree";
       description = "Use a clumpiness measure to find the aggregation relationship between labels inside of a tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."tree-fun" or (errorHandler.buildDepError "tree-fun"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "find-clumpiness" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tree-fun" or (errorHandler.buildDepError "tree-fun"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small strongly, statically typed programming language with expressive types, inspired by Haskell and compiling to Javascript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "psc" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psc-docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -107,9 +107,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psc-publish" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -117,9 +117,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psc-hierarchy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -131,9 +131,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psc-bundle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -145,10 +145,10 @@
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -164,9 +164,9 @@
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psci-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -184,9 +184,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

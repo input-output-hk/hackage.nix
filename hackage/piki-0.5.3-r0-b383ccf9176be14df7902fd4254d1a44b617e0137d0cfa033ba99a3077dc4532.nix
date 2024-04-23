@@ -21,7 +21,7 @@
       synopsis = "Yet another text-to-html converter";
       description = "\"piki\" is a script to convert a simple text file\nto an HTML file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "piki" = {
@@ -30,9 +30,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

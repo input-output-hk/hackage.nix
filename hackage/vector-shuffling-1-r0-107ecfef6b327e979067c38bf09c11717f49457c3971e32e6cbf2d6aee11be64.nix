@@ -21,15 +21,15 @@
       synopsis = "Algorithms for vector shuffling";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

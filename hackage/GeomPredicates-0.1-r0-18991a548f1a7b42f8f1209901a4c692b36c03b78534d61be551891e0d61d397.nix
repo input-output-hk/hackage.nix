@@ -21,11 +21,11 @@
       synopsis = "Geometric predicates ";
       description = "Exact computation of common geometric predicates. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

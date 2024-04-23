@@ -21,15 +21,15 @@
       synopsis = "Manipulate name strings for TH";
       description = "This package includes functions to manipulate name string\nand extra library functions for Template Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

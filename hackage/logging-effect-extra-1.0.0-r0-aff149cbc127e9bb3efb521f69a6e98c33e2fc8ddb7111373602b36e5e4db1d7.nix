@@ -21,7 +21,7 @@
       synopsis = "Batteries-included `logging-effect`.";
       description = "Batteries-included `logging-effect`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
           (hsPkgs."logging-effect-extra-file" or (errorHandler.buildDepError "logging-effect-extra-file"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "log-extra" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."logging-effect-extra" or (errorHandler.buildDepError "logging-effect-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

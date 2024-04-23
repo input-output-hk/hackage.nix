@@ -21,14 +21,14 @@
       synopsis = "Amazon Config SDK.";
       description = "Amazon Config is a fully managed service that provides you with an\nAmazon resource inventory, configuration history, and configuration\nchange notifications to enable security and governance. With Amazon\nConfig you can discover existing Amazon resources, export a complete\ninventory of your Amazon resources with all configuration details, and\ndetermine how a resource was configured at any point in time. These\ncapabilities enable compliance auditing, security analysis, resource\nchange tracking, and troubleshooting.\n\n/See:/ <http://docs.aws.amazon.com/config/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

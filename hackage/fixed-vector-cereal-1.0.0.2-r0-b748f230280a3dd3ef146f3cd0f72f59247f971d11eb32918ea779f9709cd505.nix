@@ -21,16 +21,16 @@
       synopsis = "Cereal instances for fixed-vector";
       description = "This package contains Cereal instances for data types defined in\nfixed-vector package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

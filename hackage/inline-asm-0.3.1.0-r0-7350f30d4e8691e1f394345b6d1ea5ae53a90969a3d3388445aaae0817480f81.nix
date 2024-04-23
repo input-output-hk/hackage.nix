@@ -21,7 +21,7 @@
       synopsis = "Inline some Assembly in ur Haskell!";
       description = "Please see the README on GitHub at <https://github.com/0xd34df00d/inline-asm#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "inline-asm-exe" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "inline-asm-test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

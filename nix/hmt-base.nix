@@ -6,8 +6,8 @@
         nix = import ../hackage/hmt-base-0.20-r0-7950347cc7b7a43ce78cc82e5286c0e15699588d655d7a0ac26e507c982120da.nix;
         revNum = 0;
         sha256 = "7950347cc7b7a43ce78cc82e5286c0e15699588d655d7a0ac26e507c982120da";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

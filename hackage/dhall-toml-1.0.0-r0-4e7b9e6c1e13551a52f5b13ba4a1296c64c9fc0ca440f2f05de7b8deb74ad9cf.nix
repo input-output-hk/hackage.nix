@@ -21,7 +21,7 @@
       synopsis = "Convert between Dhall and TOML";
       description = "Use this package if you want to convert between dhall expressions and TOML.\nYou can use this package as a library or an executable:\n\n* See \"Dhall.DhallToToml\" or \"Dhall.TomlToDhall\" modules if you want to use this\npackage as a library\n* Use @dhall-to-toml@, @toml-to-dhall@ programs from this package if you\nwant an executable.\n\nThe \"Dhall.DhallToToml\" and \"Dhall.TomlToDhall\" modules also contains instructions\nfor how to use this package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,25 +32,25 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dhall-to-toml" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dhall-toml" or (errorHandler.buildDepError "dhall-toml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "toml-to-dhall" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dhall-toml" or (errorHandler.buildDepError "dhall-toml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dhall-toml-test" = {
           depends = [
@@ -61,18 +61,18 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

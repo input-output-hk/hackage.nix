@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to inotify, using ByteString filepaths";
       description = "This library provides a wrapper to the Linux Kernel's inotify feature,\nallowing applications to subscribe to notifications when a file is\naccessed or modified. Filepaths are represented as ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test001" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test002" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,9 +55,9 @@
             (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test003" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test004" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test005" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,9 +91,9 @@
             (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple streaming RPC mechanism using WebSockets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "example-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,10 +66,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

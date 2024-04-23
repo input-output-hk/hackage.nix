@@ -21,7 +21,7 @@
       synopsis = "Wire Functionality for HGamer3D";
       description = "HGamer3D is a game engine for developing 3D games in the programming\nlanguage Haskell. This package provides wiring functionality,\nbased on the packages HGamer3D and netwire. HGamer3D-Wire\nis available on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."HGamer3D-InputSystem" or (errorHandler.buildDepError "HGamer3D-InputSystem"))
           (hsPkgs."HGamer3D-Audio" or (errorHandler.buildDepError "HGamer3D-Audio"))
           (hsPkgs."HGamer3D-WinEvent" or (errorHandler.buildDepError "HGamer3D-WinEvent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

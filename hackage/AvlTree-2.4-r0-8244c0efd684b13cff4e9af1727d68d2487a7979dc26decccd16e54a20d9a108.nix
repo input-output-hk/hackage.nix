@@ -21,15 +21,15 @@
       synopsis = "Balanced binary trees using AVL algorithm.";
       description = "A comprehensive library and efficient implementation of AVL trees. The raw AVL\nAPI has been designed with efficiency and generality in mind, not elagance. It\ncontains all the stuff you really don't want to write yourself if you can avoid\nit. This library may be useful for rolling your own Sets, Maps, Sequences, Queues\n(for example).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."COrdering" or (errorHandler.buildDepError "COrdering"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

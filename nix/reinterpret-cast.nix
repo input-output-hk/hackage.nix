@@ -6,8 +6,8 @@
         nix = import ../hackage/reinterpret-cast-0.1.0-r0-6cfecfff3eb4edcda7388794f23ca03408a884a87d733357d17377fbe45110b8.nix;
         revNum = 0;
         sha256 = "6cfecfff3eb4edcda7388794f23ca03408a884a87d733357d17377fbe45110b8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

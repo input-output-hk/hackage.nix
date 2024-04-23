@@ -21,7 +21,7 @@
       synopsis = "Launches CoreNLP and parses the JSON output";
       description = "Launches CoreNLP and parses the JSON output";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         libs = [ (pkgs."rocksdb" or (errorHandler.sysDepError "rocksdb")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

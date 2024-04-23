@@ -6,8 +6,8 @@
         nix = import ../hackage/fixed-width-0.1.0.0-r0-f70021e312789c4e4da32cb0a39cdd6157d0e410f0cad375e66db5b562d09fb0.nix;
         revNum = 0;
         sha256 = "f70021e312789c4e4da32cb0a39cdd6157d0e410f0cad375e66db5b562d09fb0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

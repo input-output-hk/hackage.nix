@@ -21,7 +21,7 @@
       synopsis = "N-back memory game";
       description = "N-back memory game using gtk2hs.\n\nInstructions on installation and gameplay available at:\n<http://hback.googlecode.com/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hback" = {
@@ -33,15 +33,15 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."svgcairo" or (errorHandler.buildDepError "svgcairo"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

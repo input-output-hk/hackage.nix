@@ -21,11 +21,11 @@
       synopsis = "minimal fork of io-reactive";
       description = "API for generating reactive objects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A driver for MongoDB";
       description = "This module lets you connect to MongoDB, do inserts, queries, updates, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."nano-md5" or (errorHandler.buildDepError "nano-md5"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

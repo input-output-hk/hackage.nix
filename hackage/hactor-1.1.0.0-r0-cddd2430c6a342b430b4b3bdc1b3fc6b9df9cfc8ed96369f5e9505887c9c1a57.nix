@@ -21,7 +21,7 @@
       synopsis = "Lightweight Erlang-style actors for Haskell.";
       description = "Hactor is a library which aims to provide lightweight Erlang-style actors for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

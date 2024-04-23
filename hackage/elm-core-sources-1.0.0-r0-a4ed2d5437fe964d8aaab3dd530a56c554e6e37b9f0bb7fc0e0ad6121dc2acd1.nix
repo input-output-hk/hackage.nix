@@ -21,7 +21,7 @@
       synopsis = "Source files for the Elm runtime and standard libraries";
       description = "Embeds the  standard libraries and runtime files of the Elm language as Haskell strings,\nso that they can be used for compilation and served in a Haskell web server.\nFor more information on the Elm language, see http://elm-lang.org.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

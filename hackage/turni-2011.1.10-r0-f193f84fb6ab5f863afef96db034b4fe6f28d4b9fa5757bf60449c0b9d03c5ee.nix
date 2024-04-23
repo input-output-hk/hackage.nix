@@ -21,7 +21,7 @@
       synopsis = "tool per la creazione dei turni commessi in un negozio di vestiti";
       description = "..";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "settimana" = {
@@ -30,9 +30,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "http-api-data instances for refined types";
       description = "Orphan instances of Web.HttpApiData for refinement types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
           (hsPkgs."refined" or (errorHandler.buildDepError "refined"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,27 +21,27 @@
       synopsis = "A Haskell interface to simdutf";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."simdutf" or (errorHandler.buildDepError "simdutf"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

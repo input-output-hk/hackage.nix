@@ -21,11 +21,11 @@
       synopsis = "Generic and niche utility functions and more for Haskell.";
       description = "Hextra is a library containing useful functions etc. that I sometimes use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

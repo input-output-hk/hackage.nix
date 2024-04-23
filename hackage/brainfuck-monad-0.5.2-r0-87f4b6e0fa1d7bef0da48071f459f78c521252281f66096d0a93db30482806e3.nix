@@ -21,15 +21,15 @@
       synopsis = "BrainFuck monad";
       description = "This is a BrainFuck monad, for generating brainfuck programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

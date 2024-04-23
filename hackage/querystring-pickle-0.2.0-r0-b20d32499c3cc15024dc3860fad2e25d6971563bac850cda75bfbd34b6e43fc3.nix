@@ -21,16 +21,16 @@
       synopsis = "Picklers for de/serialising Generic data types to and from query strings";
       description = "Type classes, pickling combinators, and GHC.Generics implementations for Query Strings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "querystring-pickle-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

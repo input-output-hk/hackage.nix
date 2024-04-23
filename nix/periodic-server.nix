@@ -6,8 +6,8 @@
         nix = import ../hackage/periodic-server-1.1.7.1-r0-e0d39294b68880a7ae778994f0dba54b3657fe09cf3d4d9165c0662f6a79d671.nix;
         revNum = 0;
         sha256 = "e0d39294b68880a7ae778994f0dba54b3657fe09cf3d4d9165c0662f6a79d671";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

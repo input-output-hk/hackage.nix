@@ -21,30 +21,30 @@
       synopsis = "Self-normalizing applicative expressions";
       description = "An applicative functor transformer to normalize expressions using @(\\<$>)@,\n@(\\<*>)@, and @pure@ into a linear list of actions.\nSee \"ApNormalize\" to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "example-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             (hsPkgs."ap-normalize" or (errorHandler.buildDepError "ap-normalize"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "assoc-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ap-normalize" or (errorHandler.buildDepError "ap-normalize"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

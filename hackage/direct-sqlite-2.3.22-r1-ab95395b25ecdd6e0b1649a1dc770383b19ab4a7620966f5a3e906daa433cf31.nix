@@ -14,7 +14,7 @@
       urifilenames = true;
       haveusleep = true;
       json1 = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "direct-sqlite"; version = "2.3.22"; };
@@ -27,19 +27,19 @@
       synopsis = "Low-level binding to SQLite3.  Includes UTF8 and BLOB support.";
       description = "This package is not very different from the other SQLite3 bindings out\nthere, but it fixes a few deficiencies I was finding.  As compared to\nbindings-sqlite3, it is slightly higher-level, in that it supports\nmarshalling of data values to and from the database.  In particular, it\nsupports strings encoded as UTF8, and BLOBs represented as ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = if flags.systemlib
           then [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ]
-          else (pkgs.lib).optional (!system.isWindows) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+          else pkgs.lib.optional (!system.isWindows) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

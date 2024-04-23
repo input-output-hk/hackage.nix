@@ -21,7 +21,7 @@
       synopsis = "Very simple static blog software";
       description = "Blogination reads files written in markdown and outputs xhtml. Supports syntax highlighting. Philosophy is simplicity. Can be used as a library, in a web application for example. Intended use is a simple commandline program to run after changes are made. Ideally use darcs or git with it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."higherorder" or (errorHandler.buildDepError "higherorder"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blogination" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

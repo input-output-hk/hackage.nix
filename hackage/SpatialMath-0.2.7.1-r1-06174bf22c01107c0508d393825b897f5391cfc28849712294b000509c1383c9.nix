@@ -21,7 +21,7 @@
       synopsis = "3d math including quaternions/euler angles/dcms and utility functions";
       description = "This is a fork of Greg Horn's spatial-math package.  It's reason for\nbeing is that its most recent version does not require deprecated\npackages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unit-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -49,9 +49,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,14 +37,14 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ] ++ (pkgs.lib).optional (flags.gpl) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
+        ] ++ pkgs.lib.optional (flags.gpl) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
         buildable = true;
-        };
+      };
       exes = {
         "hlint" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

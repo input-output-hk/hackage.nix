@@ -21,16 +21,16 @@
       synopsis = "Set and Map from lazy/infinite lists.";
       description = "A Set and Map implementation that is completly lazy and works for infinite sets and maps.    ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "settest" = {
           depends = [
@@ -38,19 +38,19 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "maptest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

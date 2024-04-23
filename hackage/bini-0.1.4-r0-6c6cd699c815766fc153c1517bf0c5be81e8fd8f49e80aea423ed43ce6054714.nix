@@ -21,15 +21,15 @@
       synopsis = "A collection of various methods for reading and writing bini files.";
       description = "A manipulation library for b(inary)ini files used in windows programms like the game Freelancer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

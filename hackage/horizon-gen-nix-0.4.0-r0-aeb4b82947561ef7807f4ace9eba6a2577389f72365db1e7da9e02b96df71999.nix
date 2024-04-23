@@ -21,7 +21,7 @@
       synopsis = "Generate nix expressions from horizon-spec definitions";
       description = "Generate nix expressions from horizon-spec definitions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "horizon-gen-nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."horizon-gen-nix" or (errorHandler.buildDepError "horizon-gen-nix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "horizon-gen-nix-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."horizon-gen-nix" or (errorHandler.buildDepError "horizon-gen-nix"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

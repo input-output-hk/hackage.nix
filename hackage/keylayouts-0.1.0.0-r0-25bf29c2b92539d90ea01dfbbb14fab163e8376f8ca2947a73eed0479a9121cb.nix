@@ -21,7 +21,7 @@
       synopsis = "Tools for macOS .keylayout files";
       description = "Datatypes, parsing, and printing for .keylayout files, Used for advanced keyboard mappings on macOS. https://developer.apple.com/library/archive/technotes/tn2056/_index.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

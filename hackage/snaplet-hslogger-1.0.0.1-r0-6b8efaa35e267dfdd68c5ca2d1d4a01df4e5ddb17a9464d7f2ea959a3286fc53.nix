@@ -21,7 +21,7 @@
       synopsis = "Snap framework snaplet for the Logger API library.";
       description = "<<https://travis-ci.org/ixmatus/snaplet-hslogger.svg?branch=master>>\n\n`snaplet-hslogger` is a snaplet for the Snap web framework providing\nconvenience functions and state management for the Haskell HSLogger\npackage.\n\nPlease refer to the README for an example - Cabal descriptions don't\nmake it easy to do so.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

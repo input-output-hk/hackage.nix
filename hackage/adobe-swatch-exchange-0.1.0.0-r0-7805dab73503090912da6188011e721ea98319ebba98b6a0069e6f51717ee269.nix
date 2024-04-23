@@ -21,7 +21,7 @@
       synopsis = "parse Adobe Swatch Exchange files and (optionally) output .css files with the colors";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."language-css" or (errorHandler.buildDepError "language-css"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ase2css" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
             (hsPkgs."language-css" or (errorHandler.buildDepError "language-css"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

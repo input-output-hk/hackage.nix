@@ -21,7 +21,7 @@
       synopsis = "GitHub WebHook Handler";
       description = "Generic definition of a GitHub Webhook Handler. Specialized version for Snap\ncan be found in the 'github-webhook-handler-snap' package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

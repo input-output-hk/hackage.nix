@@ -21,7 +21,7 @@
       synopsis = "A Minio Haskell Library for Amazon S3 compatible cloud\nstorage.";
       description = "The Minio Haskell client library provides simple APIs to\naccess Minio, Amazon S3 and other API compatible cloud\nstorage servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "minio-hs-live-server-test" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = if !flags.live-test then false else true;
-          };
+        };
         "minio-hs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,9 +129,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

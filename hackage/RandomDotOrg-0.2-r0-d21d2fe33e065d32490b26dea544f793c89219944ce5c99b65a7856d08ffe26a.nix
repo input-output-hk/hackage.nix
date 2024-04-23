@@ -21,15 +21,15 @@
       synopsis = "Interface to random numbers on random.org";
       description = "Using this package you can generate random numbers\n(based on the atmosphere, not a PRNG) via the random.org website";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HTTP-Simple" or (errorHandler.buildDepError "HTTP-Simple"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

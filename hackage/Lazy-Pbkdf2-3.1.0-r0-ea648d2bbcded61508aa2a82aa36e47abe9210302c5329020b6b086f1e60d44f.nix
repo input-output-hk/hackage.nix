@@ -21,16 +21,16 @@
       synopsis = "Lazy PBKDF2 generator.";
       description = "A PBKDF2 generator that generates either a lazy ByteString of\nPRNG data or a lazy list of strict ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Known-answer" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-hashers" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

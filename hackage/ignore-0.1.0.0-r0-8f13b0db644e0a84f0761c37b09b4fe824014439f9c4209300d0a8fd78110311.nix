@@ -21,7 +21,7 @@
       synopsis = "Handle ignore files of different VCSes";
       description = "Library and tiny tool for working with ignore files of different version control systems";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ignore" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."ignore" or (errorHandler.buildDepError "ignore"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ignore-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."ignore" or (errorHandler.buildDepError "ignore"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

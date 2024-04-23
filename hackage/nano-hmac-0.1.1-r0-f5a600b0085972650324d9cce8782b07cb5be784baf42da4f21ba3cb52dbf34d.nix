@@ -21,17 +21,17 @@
       synopsis = "Bindings to OpenSSL HMAC.";
       description = "Bindings to OpenSSL HMAC.  Initially only supporting md5.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

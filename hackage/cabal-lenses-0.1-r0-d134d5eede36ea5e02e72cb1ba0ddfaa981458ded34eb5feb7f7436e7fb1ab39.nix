@@ -21,7 +21,7 @@
       synopsis = "Lenses and traversals for the Cabal library.";
       description = "Lenses and traversals (compatible with the <https://hackage.haskell.org/package/lens lens>) library) for\nthe <https://hackage.haskell.org/package/Cabal Cabal> library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

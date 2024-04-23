@@ -21,7 +21,7 @@
       synopsis = "Distributed instant messaging over Tor";
       description = "A Distributed instant messaging application built on Tor Hidden Services.\nCompatible with the original TorChat client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hstorchat" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hstorchat-tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

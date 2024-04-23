@@ -21,16 +21,16 @@
       synopsis = "A preprocessor for Bird-style Literate Haskell comments with Haddock markup.";
       description = "Literate preprocessor that allows intuitive Haddock comments.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "BirdPP" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A parser/serializer for Minecraft's Named Binary Tag (NBT)\ndata format.";
       description = "This package includes a data type for the NBT file\nformat, notably used to represent saved data in Minecraft and\nsignificant parts of the Minecraft network protocol.  All thirteen\ntags used in Minecraft 1.13 are implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "round-trip" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."nbt" or (errorHandler.buildDepError "nbt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Generic implementation for QuickCheck's Arbitrary";
       description = "Generic implementations of methods of the 'Arbitrary' class from the\nQuickCheck library. The approach taken here can lead to diverging instances\nfor mutually recursive types but is safe for simply recursive ones and guarantees\nflat distribution for constructors of sum-types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,12 +41,12 @@
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

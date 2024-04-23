@@ -21,25 +21,25 @@
       synopsis = "packrat parser";
       description = "blah blah blah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "papillon" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

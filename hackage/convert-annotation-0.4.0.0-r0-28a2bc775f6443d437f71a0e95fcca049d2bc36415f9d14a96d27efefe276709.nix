@@ -21,7 +21,7 @@
       synopsis = "Convert the annotation of a gene to another in a delimited file using a variety of different databases.";
       description = "Please see README.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "convert-annotation" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."pipes-csv" or (errorHandler.buildDepError "pipes-csv"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

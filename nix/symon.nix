@@ -6,8 +6,8 @@
         nix = import ../hackage/symon-0.1-r0-8cf6382cb4775316dbab3b4b22d5af558f506272fd2d982999632346dcfe2b51.nix;
         revNum = 0;
         sha256 = "8cf6382cb4775316dbab3b4b22d5af558f506272fd2d982999632346dcfe2b51";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

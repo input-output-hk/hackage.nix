@@ -21,7 +21,7 @@
       synopsis = "Parser for JavaScript";
       description = "Parses Javascript into an Abstract Syntax Tree (AST).  Initially intended as frontend to hjsmin.\n\nNote: Version 0.5.0 breaks compatibility with prior versions, the AST has been reworked to allow\nround trip processing of JavaScript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,13 +33,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Microformats 2 types for Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

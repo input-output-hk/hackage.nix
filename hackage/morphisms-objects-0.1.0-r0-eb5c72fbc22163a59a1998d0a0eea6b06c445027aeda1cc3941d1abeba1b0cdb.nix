@@ -21,13 +21,13 @@
       synopsis = "Algebraic structures";
       description = "Attempt to define algebraic structures in more robust and useful way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."morphisms" or (errorHandler.buildDepError "morphisms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

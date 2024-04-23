@@ -21,7 +21,7 @@
       synopsis = "Arch Linux official and AUR web interface binding";
       description = "Arch Linux official and AUR web interface binding.\nSee README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "arch-web-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."arch-web" or (errorHandler.buildDepError "arch-web"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

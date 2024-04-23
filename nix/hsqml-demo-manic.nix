@@ -6,8 +6,8 @@
         nix = import ../hackage/hsqml-demo-manic-0.3.4.0-r0-a49e7e107aa54d2fb1f210fe7f518f142ccb224276868b39e747e95d622384c3.nix;
         revNum = 0;
         sha256 = "a49e7e107aa54d2fb1f210fe7f518f142ccb224276868b39e747e95d622384c3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

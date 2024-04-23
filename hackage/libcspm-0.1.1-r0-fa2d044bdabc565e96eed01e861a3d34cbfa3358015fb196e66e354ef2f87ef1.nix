@@ -21,7 +21,7 @@
       synopsis = "A library providing a parser, type checker and evaluator for CSPM.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."graph-wrapper" or (errorHandler.buildDepError "graph-wrapper"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

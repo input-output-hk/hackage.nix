@@ -21,7 +21,7 @@
       synopsis = "Hidden Markov Model algorithms";
       description = "A simple library for working with Hidden Markov Models.\nShould be usable even by people who are not familiar with\nHMMs. Includes implementations of Viterbi's algorithm and\nthe forward algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -29,12 +29,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

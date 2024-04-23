@@ -6,8 +6,8 @@
         nix = import ../hackage/EuroIT-2010.2.5-r0-727d00394cb14dfd670e33af86628d94cf4229c2b96effc6e62f896888c3a652.nix;
         revNum = 0;
         sha256 = "727d00394cb14dfd670e33af86628d94cf4229c2b96effc6e62f896888c3a652";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

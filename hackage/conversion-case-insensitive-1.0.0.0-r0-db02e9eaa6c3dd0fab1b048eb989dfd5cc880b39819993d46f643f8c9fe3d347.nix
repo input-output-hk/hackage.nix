@@ -14,7 +14,7 @@
       identifier = {
         name = "conversion-case-insensitive";
         version = "1.0.0.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2015, Nikita Volkov";
       maintainer = "Nikita Volkov <nikita.y.volkov@mail.ru>";
@@ -24,14 +24,14 @@
       synopsis = "\"Conversion\" instances for the \"case-insensitive\" library ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."conversion" or (errorHandler.buildDepError "conversion"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

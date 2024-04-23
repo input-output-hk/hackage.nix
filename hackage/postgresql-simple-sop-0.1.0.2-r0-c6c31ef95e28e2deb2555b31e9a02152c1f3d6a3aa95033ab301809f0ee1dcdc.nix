@@ -21,15 +21,15 @@
       synopsis = "Generic functions for postgresql-simple";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

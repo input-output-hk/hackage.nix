@@ -21,7 +21,7 @@
       synopsis = "Read and write URIs (deprecated)";
       description = "This package is deprecated in favor of uri-conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

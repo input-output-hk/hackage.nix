@@ -21,7 +21,7 @@
       synopsis = "cfipu processor for toy brainfuck-like language";
       description = "A cfipu processor that can interpret and process cfipu source.\n\ncfipu is a toy brainfuck-like language.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cfipu" = {
@@ -32,12 +32,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."dequeue" or (errorHandler.buildDepError "dequeue"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

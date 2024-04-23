@@ -21,7 +21,7 @@
       synopsis = "zifter-stack";
       description = "zifter-stack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Wrapper for flock(2)";
       description = "Simple wrapper around flock(2).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

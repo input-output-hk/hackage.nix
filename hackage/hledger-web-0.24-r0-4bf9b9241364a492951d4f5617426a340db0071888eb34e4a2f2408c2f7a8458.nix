@@ -21,7 +21,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,9 +60,9 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger-web" = {
           depends = [
@@ -102,10 +102,10 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -114,9 +114,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

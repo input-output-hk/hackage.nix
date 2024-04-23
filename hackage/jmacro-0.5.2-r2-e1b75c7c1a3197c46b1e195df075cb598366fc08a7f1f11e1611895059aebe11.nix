@@ -21,7 +21,7 @@
       synopsis = "QuasiQuotation library for programmatic generation of Javascript code.";
       description = "Javascript syntax, functional syntax, hygienic names, compile-time guarantees of syntactic correctness, limited typechecking. Additional documentation available at <http://www.haskell.org/haskellwiki/Jmacro>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,16 +39,16 @@
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jmacro" = {
           depends = [
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

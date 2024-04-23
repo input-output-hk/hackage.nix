@@ -21,7 +21,7 @@
       synopsis = "A Haskell syntax extension for generalised sections.";
       description = "This package provides an preprocessor executable, \\'freesect\\',\nwhich implements a generalisation of sections (\\'free sections\\')\nfor partial application and higher-order style.  Some examples\nof free sections can be found in the included test suite; refer\nto the homepage for more info.  Should be built manually (this\nis very easy; please see the 000-readme file).";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "freesect" = {
@@ -34,12 +34,12 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

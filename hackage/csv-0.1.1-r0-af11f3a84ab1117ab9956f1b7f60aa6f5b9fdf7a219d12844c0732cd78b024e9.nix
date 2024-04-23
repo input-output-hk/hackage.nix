@@ -21,15 +21,15 @@
       synopsis = "CSV loader and dumper";
       description = "CSV loader and dumper\n\nThis library parses and dumps documents that are formatted\naccording to RFC 4180, \\\"The common Format and MIME Type for\nComma-Separated Values (CSV) Files\\\". This format is used, among\nmany other things, as a lingua franca for spreadsheets, and for\ncertain web services.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

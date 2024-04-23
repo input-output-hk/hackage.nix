@@ -6,8 +6,8 @@
         nix = import ../hackage/HUnit-Diff-0.1-r0-e5b30a50366d8f09a8149bb345bf57f8bd3250c439c4542ff76a039054f41a7b.nix;
         revNum = 0;
         sha256 = "e5b30a50366d8f09a8149bb345bf57f8bd3250c439c4542ff76a039054f41a7b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "A Haskell parser for SMT-LIB version 2.6";
       description = "Please see the README on GitHub at <https://github.com/crvdgc/smt2-parser#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smt2-parser-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."smt2-parser" or (errorHandler.buildDepError "smt2-parser"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Well-typed filesystem operation effects.";
       description = "Please see the README on GitLab at <https://gitlab.com/hisaket/polysemy-scoped-fs/-/blob/master/README.adoc>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."polysemy-path" or (errorHandler.buildDepError "polysemy-path"))
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-scoped-fs-doctest" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."polysemy-scoped-fs" or (errorHandler.buildDepError "polysemy-scoped-fs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "polysemy-scoped-fs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."polysemy-scoped-fs" or (errorHandler.buildDepError "polysemy-scoped-fs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

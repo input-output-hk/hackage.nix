@@ -21,7 +21,7 @@
       synopsis = "Client instances for the 'servant-docs' package.";
       description = "This package defines instances that allow using the 'StreamBody' and 'StreamResponse' combinators in combination with 'servant-docs'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
           (hsPkgs."servant-streaming" or (errorHandler.buildDepError "servant-streaming"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

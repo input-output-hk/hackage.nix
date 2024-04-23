@@ -21,7 +21,7 @@
       synopsis = "OASIS Security Assertion Markup Language (SAML) V2.0";
       description = "Direct implementation of the SAML XML standard (https://www.oasis-open.org/standards#samlv2.0), along with some related dependencies.  This is currently partial, as the standard is quite extensive, but is sufficient to build a functioning SP and fully validate responses.  The module layout basically follows the standard definition documentation.  Its use still requires a fairly extensive understanding of SAML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,12 +49,12 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libxml-2.0" or (errorHandler.pkgConfDepError "libxml-2.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

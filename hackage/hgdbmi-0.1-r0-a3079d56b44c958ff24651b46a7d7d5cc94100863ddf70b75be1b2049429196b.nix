@@ -21,7 +21,7 @@
       synopsis = "GDBMI interface (program-driven control of GDB)";
       description = "GDB\\/MI lets programs drive GDB.  It can be used, for example, by GDB\nfrontends.  This module wraps attaching GDB to a process and parsing the\n(surprisingly complicated) GDB\\/MI output.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

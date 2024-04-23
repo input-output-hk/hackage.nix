@@ -6,8 +6,8 @@
         nix = import ../hackage/shapefile-0.0.0.1-r0-55e70bbb1368af1ed6117074a6934c27914d73876f73a0ade058439e425e6449.nix;
         revNum = 0;
         sha256 = "55e70bbb1368af1ed6117074a6934c27914d73876f73a0ade058439e425e6449";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,20 +21,20 @@
       synopsis = "Gray code encoder/decoder.";
       description = "Gray code is a binary numeral system where two successive numbers\ndiffer in only one bit.\n\nThis package allows to convert numbers to one of the possible Gray\ncodes and back. Two binary representations of a number are supported:\n@[Bool]@ and types of @FiniteBits@ type class.\n@FiniteBits@ is the default implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-qc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

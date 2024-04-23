@@ -21,7 +21,7 @@
       synopsis = "Simple, pure, file-system-free reading of tar files";
       description = "This library is for reading \\\"@.tar@\\\" files found from\nsome other source, and providing a mechanism for accessing\ntheir files. It specifically supports the USTAR tar format;\nother formats may come in the future by request.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

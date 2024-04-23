@@ -21,7 +21,7 @@
       synopsis = "AWS SQS conduit";
       description = "AWS SQS conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-aws-sqs-conduit-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hw-aws-sqs-conduit" or (errorHandler.buildDepError "hw-aws-sqs-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

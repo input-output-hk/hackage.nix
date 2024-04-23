@@ -21,7 +21,7 @@
       synopsis = "Tool to maintain a database of CABAL packages and their dependencies";
       description = "Helper tool for people maintaining a set of CABAL packages for their\ndistribution.  It maintains a database of packages and verifies\ndependencies of the entire set as packages are added or updated.  It also\nmakes it trivial to track packages as new versions are released on Hackage.\nIt can also be used to build source packages for the ArchLinux distribution.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "cblrepo" = {
@@ -40,19 +40,19 @@
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

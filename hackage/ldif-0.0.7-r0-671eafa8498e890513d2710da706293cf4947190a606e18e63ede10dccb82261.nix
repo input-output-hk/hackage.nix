@@ -21,7 +21,7 @@
       synopsis = "The LDAP Data Interchange Format (LDIF) parser ";
       description = "LDIF files parser implementation using Parsec and based\non RFC 2849 - The LDAP Data Interchange Format (LDIF).\n\nCurrent implementation is unfinished and need to be enhanced\nfor base64 encoded values and various DN escaping.\n\nIt includes following tool:\n\n- diffLDIF command generates change LDIF between two\ncontent LDIF files.\n- ldif2html command generates hypertext HTML browsable\nLDIF file.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "diffLDIF" = { buildable = true; };
         "ldif2html" = { buildable = true; };
@@ -45,9 +45,9 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

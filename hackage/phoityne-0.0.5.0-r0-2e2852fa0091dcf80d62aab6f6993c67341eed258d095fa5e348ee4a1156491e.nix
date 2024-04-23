@@ -21,7 +21,7 @@
       synopsis = "Deprecated - ghci debug viewer with simple editor.";
       description = "Deprecated - use phoityne-vscode package instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phoityne" = {
@@ -47,18 +47,18 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "phoityne-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Google Service Broker SDK.";
       description = "The Google Cloud Platform Service Broker API provides Google hosted\nimplementation of the Open Service Broker API\n(https:\\/\\/www.openservicebrokerapi.org\\/).\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v1@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

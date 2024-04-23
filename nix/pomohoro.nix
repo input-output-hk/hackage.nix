@@ -6,8 +6,8 @@
         nix = import ../hackage/pomohoro-0.1.2.4-r0-ec9b7d8f82bfe42d3134d9f7e4b2c4b8e6e8bfa026587e36ab5c1a073da3779b.nix;
         revNum = 0;
         sha256 = "ec9b7d8f82bfe42d3134d9f7e4b2c4b8e6e8bfa026587e36ab5c1a073da3779b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

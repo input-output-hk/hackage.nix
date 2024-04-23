@@ -21,7 +21,7 @@
       synopsis = "everything breaking the Fairbairn threshold";
       description = "Everything breaking the Fairbairn threshold\nbut in the same time usable in other projects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

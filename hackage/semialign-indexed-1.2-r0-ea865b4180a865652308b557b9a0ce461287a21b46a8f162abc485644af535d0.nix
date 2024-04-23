@@ -21,15 +21,15 @@
       synopsis = "SemialignWithIndex, i.e. izipWith and ialignWith";
       description = "This package is deprecated.\nIt simply re-exports [semialign](https://hackage.haskell.org/package/semialign)\n(and adds a @lens@ constraint).\n\nThis package provided @SemialignWithIndex@ with two members\n\n@\nclass (FunctorWithIndex i f, Semialign f) => SemialignWithIndex i f | f -> i where\n\\    ialignWith :: (i -> These a b -> c) -> f a -> f b -> f c\n@\n\n@\nclass (SemialignWithIndex i f, Zip f) => ZipWithIndex i f | f -> i where\n\\    izipWith   :: (i -> a -> b -> c)    -> f a -> f b -> f c\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Type inference for Hindley-Milner based languages";
       description = "This package contains an implemention of Hindley-Milner inference algorithm.\nIt supports reporting of source code locations for errors.\nLanguage for type inference is labda-calculus augmented with primitive\nfunctions, let-expressions,  case-expressions and bottom.\nSee github repo for tutorial and test-cases for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hindley-milner-tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Efficiently run periodic, on-demand actions";
       description = "API docs and the README are available at <http://www.stackage.org/package/auto-update>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -36,9 +36,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

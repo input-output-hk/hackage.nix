@@ -21,7 +21,7 @@
       synopsis = "Quasiquoters that act on a sequence of patterns and compiles these view into patterns and expressions.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

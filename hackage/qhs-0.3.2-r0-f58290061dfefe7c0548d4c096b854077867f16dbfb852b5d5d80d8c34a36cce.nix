@@ -21,7 +21,7 @@
       synopsis = "Command line tool qhs, SQL queries on CSV and TSV files.";
       description = "This is a Haskell port of q command (https://github.com/harelba/q).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "qhs" = {
@@ -37,10 +37,10 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

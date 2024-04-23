@@ -21,7 +21,7 @@
       synopsis = "A Haskell shell based on shell-conduit";
       description = "A Haskell shell based on shell-conduit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,13 +47,13 @@
           (hsPkgs."shell-conduit" or (errorHandler.buildDepError "shell-conduit"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.6"
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.6"
           then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
           else [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hell" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hell" or (errorHandler.buildDepError "hell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

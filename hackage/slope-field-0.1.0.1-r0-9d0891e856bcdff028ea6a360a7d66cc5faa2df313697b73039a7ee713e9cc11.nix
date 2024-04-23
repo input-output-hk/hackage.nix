@@ -21,16 +21,16 @@
       synopsis = "Visualize mathematical function's slope fields";
       description = "Visualize mathematical function's slope fields";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mathexpr" or (errorHandler.buildDepError "mathexpr"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "slope-field" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

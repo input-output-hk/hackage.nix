@@ -21,7 +21,7 @@
       synopsis = "Build composable, idempotent & transparent application cleanup sub-routines";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "teardown-doctest" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."teardown" or (errorHandler.buildDepError "teardown"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "teardown-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,10 +60,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."teardown" or (errorHandler.buildDepError "teardown"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "teardown-benchmark" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."teardown" or (errorHandler.buildDepError "teardown"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

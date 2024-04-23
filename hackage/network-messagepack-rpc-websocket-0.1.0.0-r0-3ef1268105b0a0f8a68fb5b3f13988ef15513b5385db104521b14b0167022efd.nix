@@ -14,7 +14,7 @@
       identifier = {
         name = "network-messagepack-rpc-websocket";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yuji-yamamoto@iij.ad.jp, kazu@iij.ad.jp";
@@ -24,7 +24,7 @@
       synopsis = "WebSocket backend for MessagePack RPC";
       description = "WebSocket backend for \"network-messagepack-rpc\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wss-client" or (errorHandler.buildDepError "wss-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."skews" or (errorHandler.buildDepError "skews"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wss-client" or (errorHandler.buildDepError "wss-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Routing and retractable back button for reflex-dom";
       description = "Library that automates widget switches and back button retract stack. See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

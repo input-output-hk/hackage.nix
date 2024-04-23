@@ -21,14 +21,14 @@
       synopsis = "OpenGL support for the `vect' low-dimensional linear algebra library.";
       description = "OpenGL support for the `vect' low-dimensional linear algebra library. ";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
-          ] ++ [ (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL")) ];
+        ] ++ [ (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

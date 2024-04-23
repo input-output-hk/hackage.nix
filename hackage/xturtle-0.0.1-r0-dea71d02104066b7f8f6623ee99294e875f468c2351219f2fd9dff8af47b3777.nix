@@ -21,7 +21,7 @@
       synopsis = "turtle like LOGO";
       description = "In ghci\n\n> :m Graphics.X11.Turtle\n> initTurtle\n> forward 100\n> left 50\n\netc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."yjtools" or (errorHandler.buildDepError "yjtools"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

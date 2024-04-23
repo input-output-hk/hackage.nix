@@ -21,7 +21,7 @@
       synopsis = "A tool to quickly switch between directories";
       description = "This is a command-line tool to \"teleport\" between directories";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "teleport-hask" = {
@@ -37,9 +37,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

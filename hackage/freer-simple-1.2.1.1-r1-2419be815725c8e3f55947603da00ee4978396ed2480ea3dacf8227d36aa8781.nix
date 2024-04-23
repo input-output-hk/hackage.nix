@@ -21,7 +21,7 @@
       synopsis = "Implementation of a friendly effect system for Haskell.";
       description = "An implementation of an effect system for Haskell (a fork of\n<http://hackage.haskell.org/package/freer-effects freer-effects>), which is\nbased on the work of Oleg Kiselyov et al.:\n\n* <http://okmij.org/ftp/Haskell/extensible/more.pdf Freer Monads, More Extensible Effects>\n* <http://okmij.org/ftp/Haskell/zseq.pdf Reflection without Remorse>\n* <http://okmij.org/ftp/Haskell/extensible/exteff.pdf Extensible Effects>\n\nThe key features are:\n\n* An efficient effect system for Haskell - as a library!\n* Reimplementations of several common Haskell monad transformers as effects.\n* Core components for defining your own Effects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."natural-transformation" or (errorHandler.buildDepError "natural-transformation"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "freer-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."freer-simple" or (errorHandler.buildDepError "freer-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "core" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."freer-simple" or (errorHandler.buildDepError "freer-simple"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Typesafe URLs for Wai applications.";
       description = "Provides easy to use typesafe URLs for Wai Applications. See README for more information. Also see examples/ directory for usage examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

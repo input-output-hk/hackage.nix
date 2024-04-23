@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-sesv2-2.0-r0-0b329f0d9a384bd8a708d946701869bf8accc5808d3a83f0132797ab316663b2.nix;
         revNum = 0;
         sha256 = "0b329f0d9a384bd8a708d946701869bf8accc5808d3a83f0132797ab316663b2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

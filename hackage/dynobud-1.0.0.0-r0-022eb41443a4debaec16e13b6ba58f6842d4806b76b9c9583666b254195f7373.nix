@@ -21,7 +21,7 @@
       synopsis = "your dynamic optimization buddy";
       description = "See readme at <http://www.github.com/ghorn/dynobud http://www.github.com/ghorn/dynobud>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "multiple_shooting" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "plotSofa" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -86,9 +86,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "sofaTime" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -99,25 +99,25 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "homotopy" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "vec" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "ocpMonad" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -126,9 +126,9 @@
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "rocket" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -137,41 +137,41 @@
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "staticExample" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "basic" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "basicJ" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "daeColl" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "glider" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -182,9 +182,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "sailboat" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -196,9 +196,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "dynoplot" = {
           depends = [
             (hsPkgs."dynobud" or (errorHandler.buildDepError "dynobud"))
@@ -209,10 +209,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -227,9 +227,9 @@
             (hsPkgs."casadi-bindings" or (errorHandler.buildDepError "casadi-bindings"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

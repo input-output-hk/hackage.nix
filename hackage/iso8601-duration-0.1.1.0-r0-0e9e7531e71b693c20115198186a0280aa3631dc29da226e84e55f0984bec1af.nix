@@ -21,7 +21,7 @@
       synopsis = "Types and parser for ISO8601 durations";
       description = "Types and parser for ISO8601 durations and intervals";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."iso8601-duration" or (errorHandler.buildDepError "iso8601-duration"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

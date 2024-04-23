@@ -6,8 +6,8 @@
         nix = import ../hackage/beam-mysql-0.2.0.0-r0-6c64358de5094463a70e8c71dbc99a38ae937d04a44cee9858e8a0779bb7b8dd.nix;
         revNum = 0;
         sha256 = "6c64358de5094463a70e8c71dbc99a38ae937d04a44cee9858e8a0779bb7b8dd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       profiling = false;
       eventlog = false;
       testing = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "yi"; version = "0.10.1"; };
@@ -27,7 +27,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is\nto provide a flexible, powerful, and correct editor for haskell hacking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -68,36 +68,36 @@
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."oo-prototypes" or (errorHandler.buildDepError "oo-prototypes"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "7.8"
+        ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
           then [
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ]
+          ]
           else [
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.testing) [
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (flags.testing) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ]) ++ (pkgs.lib).optionals (flags.pango) [
+        ]) ++ pkgs.lib.optionals (flags.pango) [
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."pango" or (errorHandler.buildDepError "pango"))
-          ]) ++ (pkgs.lib).optionals (flags.vty) [
+        ]) ++ pkgs.lib.optionals (flags.vty) [
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -115,9 +115,9 @@
             (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
             (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

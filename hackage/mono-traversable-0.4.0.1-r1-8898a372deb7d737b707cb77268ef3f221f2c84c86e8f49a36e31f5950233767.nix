@@ -21,7 +21,7 @@
       synopsis = "Type classes for mapping, folding, and traversing monomorphic containers";
       description = "Monomorphic variants of the Functor, Foldable, and Traversable typeclasses. Contains even more experimental code for abstracting containers and sequences.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

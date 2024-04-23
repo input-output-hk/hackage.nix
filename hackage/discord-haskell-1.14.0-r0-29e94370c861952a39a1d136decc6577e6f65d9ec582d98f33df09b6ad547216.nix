@@ -21,7 +21,7 @@
       synopsis = "Write bots for Discord in Haskell";
       description = "Functions and data types to write discord bots.\nOfficial discord docs <https://discord.com/developers/docs/reference>.\n\nSee the project readme for quickstart notes\n<https://github.com/discord-haskell/discord-haskell#discord-haskell->";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ping-pong" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."discord-haskell" or (errorHandler.buildDepError "discord-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

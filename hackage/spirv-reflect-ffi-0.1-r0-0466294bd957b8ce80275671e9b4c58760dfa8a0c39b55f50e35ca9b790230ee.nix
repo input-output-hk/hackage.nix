@@ -21,7 +21,7 @@
       synopsis = "C-library loader for spirv-reflect tool.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."spirv-reflect-types" or (errorHandler.buildDepError "spirv-reflect-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spirv-reflect-yaml-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."spirv-reflect-ffi" or (errorHandler.buildDepError "spirv-reflect-ffi"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

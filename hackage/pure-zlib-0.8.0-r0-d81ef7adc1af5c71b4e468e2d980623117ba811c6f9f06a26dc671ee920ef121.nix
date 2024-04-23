@@ -21,7 +21,7 @@
       synopsis = "A Haskell-only implementation of zlib / DEFLATE";
       description = "A Haskell-only implementation of the zlib / DEFLATE\nprotocol. Currently only implements the decompression\nalgorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       exes = {
         "deflate" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."pure-zlib" or (errorHandler.buildDepError "pure-zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-zlib" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-zlib" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."pure-zlib" or (errorHandler.buildDepError "pure-zlib"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

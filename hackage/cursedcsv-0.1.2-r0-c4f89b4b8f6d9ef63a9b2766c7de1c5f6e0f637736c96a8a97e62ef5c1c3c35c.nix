@@ -21,7 +21,7 @@
       synopsis = "Terminal tool for viewing tabular data";
       description = "Curses-based tool for quick display, searching, sorting, etc. of\ntabular data. Help available in the app with either '?' or 'h'.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cursedcsv" = {
@@ -36,9 +36,9 @@
             (hsPkgs."csv-enumerator" or (errorHandler.buildDepError "csv-enumerator"))
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

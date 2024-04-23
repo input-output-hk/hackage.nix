@@ -21,7 +21,7 @@
       synopsis = "Go and Checkers game in Haskell";
       description = "This is an implementation fo Go and Checkers game in haskell using GLOSS for GUI.\nFor more rules of Go visit https://www.britgo.org/intro/intro2.html.\nFor more rules of Checkers visit https://www.thespruce.com/play-checkers-using-standard-rules-409287.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskell-go-checkers" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

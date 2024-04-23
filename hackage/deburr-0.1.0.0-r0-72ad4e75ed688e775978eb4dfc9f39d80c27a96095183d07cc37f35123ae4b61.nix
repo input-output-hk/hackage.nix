@@ -21,12 +21,12 @@
       synopsis = "Convert Unicode characters with burrs to their ASCII counterparts.";
       description = "A small package exposing the deburr function, which converts unicode\ncharacters with burrs (umlauts, accents, etc) to their ASCII counterparts.\nThe function intelligently handles capitals and some other edge cases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "deburr-test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."deburr" or (errorHandler.buildDepError "deburr"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

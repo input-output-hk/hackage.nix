@@ -21,7 +21,7 @@
       synopsis = "A cross-platform RPC library";
       description = "A cross-platform RPC library";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."binary-strict" or (errorHandler.buildDepError "binary-strict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

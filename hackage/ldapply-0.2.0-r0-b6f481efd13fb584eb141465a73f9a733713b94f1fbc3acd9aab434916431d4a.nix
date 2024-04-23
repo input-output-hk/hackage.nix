@@ -21,7 +21,7 @@
       synopsis = "LDIF idempotent apply tool";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ldapply" = {
@@ -33,9 +33,9 @@
             (hsPkgs."LDAP" or (errorHandler.buildDepError "LDAP"))
             (hsPkgs."ldif" or (errorHandler.buildDepError "ldif"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

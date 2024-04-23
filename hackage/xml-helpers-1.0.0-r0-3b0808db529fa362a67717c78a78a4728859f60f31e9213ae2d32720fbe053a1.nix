@@ -21,14 +21,14 @@
       synopsis = "Some useful helper functions for the xml library.";
       description = "Included are some folds and maps I've found useful in parsing XML data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

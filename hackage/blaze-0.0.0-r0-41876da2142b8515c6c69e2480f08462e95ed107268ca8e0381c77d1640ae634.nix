@@ -21,15 +21,15 @@
       synopsis = "Common blaze operations";
       description = "Common blaze operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

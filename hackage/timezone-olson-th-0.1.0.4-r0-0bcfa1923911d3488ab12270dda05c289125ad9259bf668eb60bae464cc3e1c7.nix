@@ -21,7 +21,7 @@
       synopsis = "Load TimeZoneSeries from an Olson file at compile time.";
       description = "Template Haskell to load a TimeZoneSeries from an Olson file at compile time.\nFor Example:";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

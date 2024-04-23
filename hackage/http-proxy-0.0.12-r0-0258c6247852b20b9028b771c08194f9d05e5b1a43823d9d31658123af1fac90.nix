@@ -21,7 +21,7 @@
       synopsis = "A library for writing HTTP and HTTPS proxies";
       description = "http-proxy is a library for writing HTTP and HTTPS proxies.\n\nUse of the Conduit library provides file streaming via the proxy in both\ndirections. Memory usage of the proxy scales linearly with the number of\nsimultaneous connections and is independent of the size of the files being\nuploaded or downloaded.\n\nThe Settings data type provided by the library allows the caller to supply\na functions for exception reporting and request re-writing.  Eventually, this\ncapability will be expanded to allow optional logging, disk caching etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,15 +41,15 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.network-bytestring
+        ] ++ (if flags.network-bytestring
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for working with geospatial data types.";
       description = "Naqsha is a library to work with geospatial data types like latitudes and longitudes. It provides\nsome basic operations like distance calculations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."naqsha" or (errorHandler.buildDepError "naqsha"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

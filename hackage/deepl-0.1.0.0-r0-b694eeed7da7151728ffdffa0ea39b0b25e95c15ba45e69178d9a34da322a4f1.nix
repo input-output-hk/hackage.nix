@@ -21,7 +21,7 @@
       synopsis = "Call DeepL to translate you files";
       description = "Please see the README on GitHub at <https://gitlab.com/global-access-public/deepl/-/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "deepl" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

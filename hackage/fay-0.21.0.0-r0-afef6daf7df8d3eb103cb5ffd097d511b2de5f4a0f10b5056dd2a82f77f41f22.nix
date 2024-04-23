@@ -21,7 +21,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which is type-checked\nwith GHC, and compiled to JavaScript. It is lazy, pure, has a Fay monad,\nan FFI, tail-recursion optimization (experimental), and support for cabal packages.\n\n/Documentation/\n\nSee <https://github.com/faylang/fay/wiki>\n\n/Examples/\n\nSee the examples directory and <https://github.com/faylang/fay/wiki#fay-in-the-wild>\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fay" = {
           depends = [
@@ -61,11 +61,11 @@
             (hsPkgs."fay" or (errorHandler.buildDepError "fay"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fay-tests" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -80,9 +80,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

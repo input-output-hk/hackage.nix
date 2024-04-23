@@ -21,7 +21,7 @@
       synopsis = "Data types for programs for hoodle file format";
       description = "Hoodle file format data type including generic interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

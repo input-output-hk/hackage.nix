@@ -21,7 +21,7 @@
       synopsis = "An HTML building library without the need for pesky operators.";
       description = "An HTML building library without the need for pesky operators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,18 +21,18 @@
       synopsis = "Haskell client library for Apache Zookeeper";
       description = "A haskell binding to Apache Zookeeper C library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."zookeeper_mt" or (errorHandler.sysDepError "zookeeper_mt"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-zookeeper" = {
           depends = [
@@ -40,12 +40,12 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           libs = [
             (pkgs."zookeeper_mt" or (errorHandler.sysDepError "zookeeper_mt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

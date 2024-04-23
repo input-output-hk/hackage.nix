@@ -21,7 +21,7 @@
       synopsis = "TokyoCabinet CLI interface";
       description = "Simple TokyoCabinet CLI interface";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tchcli" = {
@@ -30,9 +30,9 @@
             (hsPkgs."tokyocabinet-haskell" or (errorHandler.buildDepError "tokyocabinet-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Emacs keymap for Yi editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."yi-misc-modes" or (errorHandler.buildDepError "yi-misc-modes"))
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

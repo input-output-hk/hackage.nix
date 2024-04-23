@@ -21,7 +21,7 @@
       synopsis = "Automatic generation of hslogger functions";
       description = "A function for generating hslogger functions automatically using Template\nHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

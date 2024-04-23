@@ -21,7 +21,7 @@
       synopsis = "host controller for batchd, which controls virtual machines via libvirt library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."heavy-logger" or (errorHandler.buildDepError "heavy-logger"))
           (hsPkgs."batchd-core" or (errorHandler.buildDepError "batchd-core"))
           (hsPkgs."libvirt-hs" or (errorHandler.buildDepError "libvirt-hs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

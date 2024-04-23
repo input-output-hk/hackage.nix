@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to libsystemd-journal";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
-          ];
+        ];
         libs = [
           (pkgs."systemd-journal" or (errorHandler.sysDepError "systemd-journal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

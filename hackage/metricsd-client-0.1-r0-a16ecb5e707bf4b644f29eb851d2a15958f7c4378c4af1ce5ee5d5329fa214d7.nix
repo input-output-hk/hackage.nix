@@ -21,14 +21,14 @@
       synopsis = "Client for the metrics aggregator Metricsd";
       description = "A client for the metrics aggregator Metricsd (a replacement for Statsd).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

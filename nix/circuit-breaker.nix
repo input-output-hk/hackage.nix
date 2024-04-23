@@ -6,8 +6,8 @@
         nix = import ../hackage/circuit-breaker-0.1.0.0-r0-1661559760c9e0e2c76e48ea8ac415d9b33f2a5ef5013cf33a6955ec67665fde.nix;
         revNum = 0;
         sha256 = "1661559760c9e0e2c76e48ea8ac415d9b33f2a5ef5013cf33a6955ec67665fde";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Specify valid redis globs";
       description = "Supplies functions that parse and use redis __glob__ patterns.\nAs in redis commands like [KEYS](https://redis.io/commands/keys), that filter using globs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,17 +43,17 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."redis-glob" or (errorHandler.buildDepError "redis-glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."redis-glob" or (errorHandler.buildDepError "redis-glob"))
-            ];
+          ];
           buildable = if flags.use-doc-tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

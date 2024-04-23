@@ -21,7 +21,7 @@
       synopsis = "crypto tokens";
       description = "Encrypted tokens/tickets to keep state in the client side.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."network-byte-order" or (errorHandler.buildDepError "network-byte-order"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,12 +41,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."crypto-token" or (errorHandler.buildDepError "crypto-token"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

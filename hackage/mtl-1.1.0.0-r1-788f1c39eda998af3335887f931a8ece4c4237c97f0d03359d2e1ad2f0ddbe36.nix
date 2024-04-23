@@ -21,11 +21,11 @@
       synopsis = "Monad transformer library";
       description = "A monad transformer library, inspired by the paper \"Functional\nProgramming with Overloading and Higher-Order Polymorphism\",\nby Mark P Jones (<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>),\nAdvanced School of Functional Programming, 1995.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

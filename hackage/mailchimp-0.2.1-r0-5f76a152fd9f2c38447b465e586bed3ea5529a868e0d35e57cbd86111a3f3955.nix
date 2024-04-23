@@ -21,7 +21,7 @@
       synopsis = "Bindings for the MailChimp API";
       description = "Haskell bindings for the MailChimp API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mailchimp" or (errorHandler.buildDepError "mailchimp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

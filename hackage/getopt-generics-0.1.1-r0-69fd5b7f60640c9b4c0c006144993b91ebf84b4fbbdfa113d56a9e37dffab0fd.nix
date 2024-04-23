@@ -21,16 +21,16 @@
       synopsis = "Simple command line argument parsing";
       description = "\"getopt-generics\" tries to make it very simple to create command line argument\nparsers. Documentation can be found in the\n<https://github.com/zalora/getopt-generics#getopt-generics README>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

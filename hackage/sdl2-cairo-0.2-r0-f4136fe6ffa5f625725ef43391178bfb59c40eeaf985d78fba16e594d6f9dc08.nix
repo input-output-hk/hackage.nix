@@ -21,7 +21,7 @@
       synopsis = "Render with Cairo on SDL textures.";
       description = "This small library provides glue functions to draw\non SDL2 textures with Cairo.\nNOTE: The Processing-style drawing API has been moved\nto a separate the package cairo-canvas.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

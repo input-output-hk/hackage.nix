@@ -6,8 +6,8 @@
         nix = import ../hackage/data-list-sequences-0.1-r0-7117c2a19e817c76b2785d44e0ca13b44e0364c351e8931999c0be357c34e5f6.nix;
         revNum = 0;
         sha256 = "7117c2a19e817c76b2785d44e0ca13b44e0364c351e8931999c0be357c34e5f6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

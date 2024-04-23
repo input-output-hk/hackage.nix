@@ -21,17 +21,17 @@
       synopsis = "Testing Infrastructure for Temporal AbstractioNs - Yampa record-and-replay layer";
       description = "Yampa debugger that allows you to run an FRP program and control its\nexecution.\n\nTITAN (Testing Infrastructure for Temporal AbstractioNs) is a framework to\ntest and debug FRP programs. It allows you to write temporal unit tests, check\nthem, QuickCheck them, run FRP programs with a fine-tuned debugger, obtain\ninformation to replicate tests, and follow and control the execution of a\nYampa program from an interactive GUI.\n\nThis library provides a replacement function for Yampa's standard simulation\nfunction (@reactimate@), that enables recording input into a file and reading\ninput from a file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.bearriver
+        ] ++ (if flags.bearriver
           then [
             (hsPkgs."bearriver" or (errorHandler.buildDepError "bearriver"))
-            ]
+          ]
           else [ (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple command line tool for converting XML files to json";
       description = "This simple tool converts XMLs to json format, gaining readability while losing information such as comments, attribute ordering, and such.\nThe main purpose is to convert legacy XML-based data into a format that can be imported into JSON databases such as CouchDB and MongoDB.\n\nSee <https://github.com/sinelaw/xml-to-json#readme> for details and usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xml-to-json" = {
@@ -37,9 +37,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hxt-tagsoup" or (errorHandler.buildDepError "hxt-tagsoup"))
             (hsPkgs."hxt-expat" or (errorHandler.buildDepError "hxt-expat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

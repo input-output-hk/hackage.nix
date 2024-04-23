@@ -13,7 +13,7 @@
       embed_data_files = false;
       trypandoc = false;
       network-uri = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "pandoc"; version = "2.2"; };
@@ -29,8 +29,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = (((([
@@ -82,26 +82,26 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.network-uri
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"));
+          ])) ++ pkgs.lib.optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"));
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = ([
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
+        };
         "trypandoc" = {
-          depends = ((pkgs.lib).optionals (flags.trypandoc) [
+          depends = (pkgs.lib.optionals (flags.trypandoc) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -109,10 +109,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = if flags.trypandoc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = ([
@@ -139,10 +139,10 @@
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "weigh-pandoc" = {
           depends = ([
@@ -151,9 +151,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
+        };
         "benchmark-pandoc" = {
           depends = ([
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -163,9 +163,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

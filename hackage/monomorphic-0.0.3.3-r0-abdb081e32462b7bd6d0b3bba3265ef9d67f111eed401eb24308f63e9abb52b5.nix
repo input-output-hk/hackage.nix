@@ -21,11 +21,11 @@
       synopsis = "Library to convert polymorphic datatypes to/from its monomorphic represetation";
       description = "This library provides the type-class and functions to convert between polymorphic data-types and its monomorphic representation type, such as length-indexed vectors, singletons for type-level natural numbers, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

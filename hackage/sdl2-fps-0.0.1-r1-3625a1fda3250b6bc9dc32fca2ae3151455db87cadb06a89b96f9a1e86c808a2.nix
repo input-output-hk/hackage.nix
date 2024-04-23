@@ -21,14 +21,14 @@
       synopsis = "Run of the mill, frames per second timer implementation";
       description = "Run of the mill, frames per second timer implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

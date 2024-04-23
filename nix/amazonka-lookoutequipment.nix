@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-lookoutequipment-2.0-r0-6e9debe5ccfbc4bdb8c9a02c8948d000d92f3257258a354274b0d2d2d9ec59a5.nix;
         revNum = 0;
         sha256 = "6e9debe5ccfbc4bdb8c9a02c8948d000d92f3257258a354274b0d2d2d9ec59a5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Convert Cabal manifests into hpack's package.yamls";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hpack-convert" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
             (hsPkgs."aeson-qq" or (errorHandler.buildDepError "aeson-qq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

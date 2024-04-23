@@ -21,7 +21,7 @@
       synopsis = "Parse Google Protocol Buffer specifications";
       description = "Parse http://code.google.com/apis/protocolbuffers/docs/proto.html\nand perhaps general haskell code to use them";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hprotoc" = {
@@ -32,7 +32,7 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -42,13 +42,13 @@
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
               (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "See README for more info";
       description = "A backend using PostgreSQL for wai-rate-limit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-rate-limit-postgres-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai-rate-limit" or (errorHandler.buildDepError "wai-rate-limit"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

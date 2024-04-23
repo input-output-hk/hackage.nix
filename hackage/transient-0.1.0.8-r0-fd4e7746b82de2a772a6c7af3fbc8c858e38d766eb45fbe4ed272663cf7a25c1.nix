@@ -21,7 +21,7 @@
       synopsis = "A monad for extensible effects and primitives for unrestricted composability of applications";
       description = "see <http://github.com/agocorona/transient>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

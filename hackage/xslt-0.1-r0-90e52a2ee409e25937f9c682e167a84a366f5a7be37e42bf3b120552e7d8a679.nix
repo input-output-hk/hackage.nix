@@ -21,15 +21,15 @@
       synopsis = "Binding to libxslt";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"))
-          ];
+        ];
         libs = [ (pkgs."xslt" or (errorHandler.sysDepError "xslt")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

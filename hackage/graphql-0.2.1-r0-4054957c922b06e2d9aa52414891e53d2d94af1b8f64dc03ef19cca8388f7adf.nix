@@ -21,16 +21,16 @@
       synopsis = "Haskell GraphQL implementation";
       description = "This package provides a rudimentary parser for the\n<https://facebook.github.io/graphql/ GraphQL> language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."graphql" or (errorHandler.buildDepError "graphql"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

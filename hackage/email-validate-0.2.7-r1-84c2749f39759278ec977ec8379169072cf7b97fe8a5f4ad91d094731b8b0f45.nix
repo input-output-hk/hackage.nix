@@ -21,7 +21,7 @@
       synopsis = "Validating an email address string against RFC 5322";
       description = "Validating an email address string against RFC 5322";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."ranges" or (errorHandler.buildDepError "ranges"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

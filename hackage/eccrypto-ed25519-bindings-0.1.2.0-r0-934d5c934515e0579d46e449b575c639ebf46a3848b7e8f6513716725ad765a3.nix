@@ -21,15 +21,15 @@
       synopsis = "provides \"ed25519\" API using \"eccrypto\"";
       description = "These are bindings providing the functionality of the \"ed25519\" package using a pure Haskell implementation from the \"eccrypto\" package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."eccrypto" or (errorHandler.buildDepError "eccrypto"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

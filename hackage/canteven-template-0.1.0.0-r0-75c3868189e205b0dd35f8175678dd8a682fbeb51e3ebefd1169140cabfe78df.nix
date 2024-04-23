@@ -21,7 +21,7 @@
       synopsis = "A few utilites and helpers for using Template Haskell in your projects.";
       description = "Provides a few \"batteries included\" functions for doing common things with Template Haskell.\nIn particular, adds 'readFileAsStrLiteral', which lets you use TH to access on-disk files at compile time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "GHCJS DOM Hello World, an example package";
       description = "This is an implementation of the classic \"Hello World\" program using GHCJS DOM,\nas an example of how to create a minimal GHCJS DOM application.\nPlease submit any suggestions and improvements.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghcjs-dom-hello" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

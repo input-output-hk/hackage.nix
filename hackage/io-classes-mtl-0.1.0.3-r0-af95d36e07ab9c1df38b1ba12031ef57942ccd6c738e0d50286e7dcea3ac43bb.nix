@@ -21,7 +21,7 @@
       synopsis = "Experimental MTL instances for io-classes";
       description = "MTL instances for\n[io-classes](https://hackage.hasekll.org/package/io-classes) package.\nSome of the instances are novel and some are still experimental.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."io-classes" or (errorHandler.buildDepError "io-classes"))
           (hsPkgs."si-timers" or (errorHandler.buildDepError "si-timers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

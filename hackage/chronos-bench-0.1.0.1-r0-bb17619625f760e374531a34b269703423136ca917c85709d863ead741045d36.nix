@@ -21,7 +21,7 @@
       synopsis = "Benchmarking tool with focus on comparing results.";
       description = "This tool performs lazy benchmarking of functions and shell commands with continuous feedback and improving precision.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,27 +34,27 @@
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chronos" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."chronos-bench" or (errorHandler.buildDepError "chronos-bench"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."chronos-bench" or (errorHandler.buildDepError "chronos-bench"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

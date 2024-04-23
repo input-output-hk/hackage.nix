@@ -21,13 +21,13 @@
       synopsis = "DOM FFI wrapper library for Fay";
       description = "DOM FFI wrapper library for Fay.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

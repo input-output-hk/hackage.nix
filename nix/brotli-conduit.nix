@@ -6,8 +6,8 @@
         nix = import ../hackage/brotli-conduit-0.0.0.0-r0-b17e191d725bd38a76dcf43315de1896683f1547faee0b42d680a6a432375ad5.nix;
         revNum = 0;
         sha256 = "b17e191d725bd38a76dcf43315de1896683f1547faee0b42d680a6a432375ad5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

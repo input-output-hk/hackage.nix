@@ -21,7 +21,7 @@
       synopsis = "Start and stop a temporary postgres";
       description = "Start and stop a temporary postgres. See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "soak-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "with-cache-loop" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,10 +70,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -91,10 +91,10 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -104,9 +104,9 @@
             (hsPkgs."postgres-options" or (errorHandler.buildDepError "postgres-options"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utility functions for manipulating bitcoin blocks";
       description = "This library provides functionality for parsing, inspecting,\nhashing and serialization of bitcoin blocks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."largeword" or (errorHandler.buildDepError "largeword"))
           (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
           (hsPkgs."bitcoin-types" or (errorHandler.buildDepError "bitcoin-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
             (hsPkgs."bitcoin-types" or (errorHandler.buildDepError "bitcoin-types"))
             (hsPkgs."bitcoin-block" or (errorHandler.buildDepError "bitcoin-block"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

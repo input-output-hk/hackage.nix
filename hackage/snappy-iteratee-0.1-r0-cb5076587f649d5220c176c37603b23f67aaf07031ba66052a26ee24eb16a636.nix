@@ -21,7 +21,7 @@
       synopsis = "An enumeratee that uses Google's snappy compression library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."snappy" or (errorHandler.buildDepError "snappy"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

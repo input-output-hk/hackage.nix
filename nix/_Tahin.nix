@@ -6,8 +6,8 @@
         nix = import ../hackage/Tahin-0.1.2-r0-49924f00a0641e369f286f8ed786ea9d2a0b67d6f4332dd927d1d1983fb04411.nix;
         revNum = 0;
         sha256 = "49924f00a0641e369f286f8ed786ea9d2a0b67d6f4332dd927d1d1983fb04411";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

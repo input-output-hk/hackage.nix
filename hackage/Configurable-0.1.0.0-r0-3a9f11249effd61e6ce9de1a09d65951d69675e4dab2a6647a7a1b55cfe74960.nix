@@ -21,11 +21,11 @@
       synopsis = "Declare types as Configurable then specialize them all in one place";
       description = "Declare types as Configurable then specialize them all in one place";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

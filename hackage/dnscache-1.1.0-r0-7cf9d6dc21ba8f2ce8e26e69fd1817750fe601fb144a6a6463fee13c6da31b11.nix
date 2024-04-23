@@ -21,7 +21,7 @@
       synopsis = "Caching DNS resolver library and mass DNS resolver utility";
       description = "This library implements a caching, asynchronous DNS resolver and\nprovides a command line utility for mass DNS resolution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,14 @@
           (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "massdns" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

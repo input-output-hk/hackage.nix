@@ -6,13 +6,13 @@
         nix = import ../hackage/graphula-core-2.0.0.1-r0-207f821991afae271792ef1433bd4d28bc8db324e7303f01cafeb39f6130a31d.nix;
         revNum = 0;
         sha256 = "207f821991afae271792ef1433bd4d28bc8db324e7303f01cafeb39f6130a31d";
-        };
+      };
       r1 = {
         nix = import ../hackage/graphula-core-2.0.0.1-r1-927a73b85df70b62611f70ce314c6109301107721725fe3e0586e38d46faeb72.nix;
         revNum = 1;
         sha256 = "927a73b85df70b62611f70ce314c6109301107721725fe3e0586e38d46faeb72";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

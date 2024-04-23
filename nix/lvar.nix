@@ -6,8 +6,8 @@
         nix = import ../hackage/lvar-0.1.0.0-r0-e901135387866b01deac6a643498682a5692bb2b59089b66bd2142018160908b.nix;
         revNum = 0;
         sha256 = "e901135387866b01deac6a643498682a5692bb2b59089b66bd2142018160908b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

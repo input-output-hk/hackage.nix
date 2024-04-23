@@ -21,7 +21,7 @@
       synopsis = "Fast, incremental SHA hashing for bytestrings";
       description = "A zero-copy binding to Aaron Gifford's SHA implementation, including a copy of that implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."AES" or (errorHandler.buildDepError "AES"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

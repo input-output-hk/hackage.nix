@@ -21,7 +21,7 @@
       synopsis = "Clear to write, read and edit DSL for HTML";
       description = "Clear to write, read and edit DSL for HTML. See the 'Lucid' module\nfor description and documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

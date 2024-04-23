@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of High Dynamic Range (HDR) Histograms";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hdr-histogram-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hdr-histogram-bench" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

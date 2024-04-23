@@ -21,7 +21,7 @@
       synopsis = "blaze-html instances for xml-enumerator types";
       description = "blaze-html instances for xml-enumerator types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."xml-enumerator" or (errorHandler.buildDepError "xml-enumerator"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

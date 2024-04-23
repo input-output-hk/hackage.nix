@@ -21,7 +21,7 @@
       synopsis = "Haskell interface to Fedora's mdapi";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

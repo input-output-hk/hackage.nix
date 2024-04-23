@@ -21,7 +21,7 @@
       synopsis = "Reactive Banana integration for Keid engine.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."vulkan" or (errorHandler.buildDepError "vulkan"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

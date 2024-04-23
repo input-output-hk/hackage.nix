@@ -21,7 +21,7 @@
       synopsis = "Process management and supervision daemon";
       description = "@scrz@ is a daemon that runs and monitors other processes.\nIt is similar to djb's `daemontools`, the Ruby project `god`\nor Haskell's `Angel`.\nIt's goals are to keep a set of services running, and to\nfacilitate the easy configuration and restart of those\nservices.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scrz" = {
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

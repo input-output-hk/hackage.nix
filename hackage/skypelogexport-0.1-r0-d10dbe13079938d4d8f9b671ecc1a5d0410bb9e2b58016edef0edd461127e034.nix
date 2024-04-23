@@ -21,7 +21,7 @@
       synopsis = "Export Skype chat logs to text files";
       description = "The purpose of this software is to export logs of Skype into\ntext files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "skypelogexport" = {
@@ -38,9 +38,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."ghc-binary" or (errorHandler.buildDepError "ghc-binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

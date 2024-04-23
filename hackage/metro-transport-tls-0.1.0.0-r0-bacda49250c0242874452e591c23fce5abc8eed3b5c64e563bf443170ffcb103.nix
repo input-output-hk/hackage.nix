@@ -21,7 +21,7 @@
       synopsis = "TLS transport for metro";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro/tree/master/metro-transport-tls#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tool for refactoring expressions into pointfree form";
       description = "The pointfree tool is a standalone command-line version of the pl\nplugin for lambdabot.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pointfree" = {
@@ -31,9 +31,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tools to build the Gtk2Hs suite of User Interface libraries.";
       description = "This package provides a set of helper programs necessary to\nbuild the Gtk2Hs suite of libraries. These tools include\na modified c2hs binding tool that is used to generate\nFFI declarations, a tool to build a type hierarchy that\nmirrors the C type hierarchy of GObjects found in glib,\nand a generator for signal declarations that are used\nto call back from C to Haskell. These tools are not needed\nto actually run Gtk2Hs programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gtk2hsTypeGen" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "gtk2hsHookGenerator" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "gtk2hsC2hs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,13 +52,13 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"));
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

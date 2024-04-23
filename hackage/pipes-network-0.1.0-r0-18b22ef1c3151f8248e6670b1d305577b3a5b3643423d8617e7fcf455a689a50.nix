@@ -21,7 +21,7 @@
       synopsis = "Use network sockets together with the pipes library.";
       description = "Use network sockets together with the @pipes@ library.\n\nThis package is organized using the following namespaces:\n\n* \"Control.Proxy.TCP\" exports @pipes@ proxies and functions to deal with TCP\nconnections. Such proxies don't acquire nor release new resources within a\nproxy pipeline.\n\n* \"Control.Proxy.TCP.Safe\" exports @pipes-safe@ proxies and functions to deal\nwith TCP connections. Such proxies may safely acquire and release resources\nwithin a pipeline, using the facilities provided by the @pipes-safe@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

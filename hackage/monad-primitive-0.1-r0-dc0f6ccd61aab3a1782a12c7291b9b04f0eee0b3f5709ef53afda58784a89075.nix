@@ -21,15 +21,15 @@
       synopsis = "Type class for monad transformers stack with pirimitive base monad.";
       description = "Type class for for monad transformers stack with pirimitive base\nmonad and mutable references whic could use either ST or IO monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

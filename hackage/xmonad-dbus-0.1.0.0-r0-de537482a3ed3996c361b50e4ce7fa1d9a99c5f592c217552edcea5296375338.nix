@@ -21,16 +21,16 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/githubuser/xmonad-dbus#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xmonad-dbus" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xmonad-dbus" or (errorHandler.buildDepError "xmonad-dbus"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "xmonad-dbus-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xmonad-dbus" or (errorHandler.buildDepError "xmonad-dbus"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

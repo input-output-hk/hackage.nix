@@ -21,7 +21,7 @@
       synopsis = "Restructure GHC profile reports";
       description = "Given a GHC profile output, this tool generates alternative views on the data,\nwhich are typically more concise and may reveal new insights.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "profiterole" = {
@@ -35,9 +35,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

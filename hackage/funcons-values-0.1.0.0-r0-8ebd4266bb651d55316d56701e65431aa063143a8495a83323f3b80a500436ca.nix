@@ -21,7 +21,7 @@
       synopsis = "Library providing values and operations on values.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."random-strings" or (errorHandler.buildDepError "random-strings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

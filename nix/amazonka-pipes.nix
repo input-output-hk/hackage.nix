@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-pipes-2.0-r0-fc2c017694f55ba6a6bf637bd57c0ac167be04aeb8df5460446b171316905805.nix;
         revNum = 0;
         sha256 = "fc2c017694f55ba6a6bf637bd57c0ac167be04aeb8df5460446b171316905805";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

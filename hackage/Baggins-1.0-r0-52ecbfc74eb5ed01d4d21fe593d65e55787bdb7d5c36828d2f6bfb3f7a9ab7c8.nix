@@ -21,7 +21,7 @@
       synopsis = "Tools for self-assembly";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

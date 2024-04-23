@@ -21,7 +21,7 @@
       synopsis = "A simple to understand static site generator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

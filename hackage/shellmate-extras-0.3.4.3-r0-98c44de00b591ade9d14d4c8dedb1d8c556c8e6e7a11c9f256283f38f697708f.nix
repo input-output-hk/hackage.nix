@@ -21,7 +21,7 @@
       synopsis = "Extra functionality for shellmate.";
       description = "HTTP downloads and parsing for various file formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Helper for writing redo scripts in Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

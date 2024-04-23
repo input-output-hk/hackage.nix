@@ -21,11 +21,11 @@
       synopsis = "Collection of functions for dealing with Either values.";
       description = "Collection of functions for dealing with Either values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

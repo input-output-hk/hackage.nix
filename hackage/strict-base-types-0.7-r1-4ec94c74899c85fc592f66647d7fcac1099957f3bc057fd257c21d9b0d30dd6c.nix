@@ -21,7 +21,7 @@
       synopsis = "Strict variants of the types provided in base.";
       description = "Since version 0.7 the functionality in this package\nhave been merged into `strict`, `aeson` and `quickcheck-instances`\npackages, and lens functionality moved into `strict-lens` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."strict-lens" or (errorHandler.buildDepError "strict-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

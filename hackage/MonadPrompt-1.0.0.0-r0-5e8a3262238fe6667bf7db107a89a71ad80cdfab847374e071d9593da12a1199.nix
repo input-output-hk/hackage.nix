@@ -21,14 +21,14 @@
       synopsis = "MonadPrompt, implementation & examples";
       description = "\"prompting\" monad that allows splitting the description\nof a computation from the implementation of the effects\nused in that computation.\nhttp://www.haskell.org/pipermail/haskell-cafe/2008-January/038301.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

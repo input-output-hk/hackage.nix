@@ -21,7 +21,7 @@
       synopsis = "A technical demo for Antisplice.";
       description = "This is an example dungeon on top of Antisplice.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."antisplice" or (errorHandler.buildDepError "antisplice"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ironforge" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."antisplice" or (errorHandler.buildDepError "antisplice"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

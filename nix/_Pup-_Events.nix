@@ -6,8 +6,8 @@
         nix = import ../hackage/Pup-Events-1.0-r0-a9f4d627095fad105cc28b7fb14abeaebb702dd3863807a8c029e528cb532e57.nix;
         revNum = 0;
         sha256 = "a9f4d627095fad105cc28b7fb14abeaebb702dd3863807a8c029e528cb532e57";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

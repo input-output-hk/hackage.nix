@@ -21,7 +21,7 @@
       synopsis = "Transloadit support for Yesod";
       description = "Drop in Transloadit capabilites for Yesod web apps";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."mime" or (errorHandler.buildDepError "mime"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mime" or (errorHandler.buildDepError "mime"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

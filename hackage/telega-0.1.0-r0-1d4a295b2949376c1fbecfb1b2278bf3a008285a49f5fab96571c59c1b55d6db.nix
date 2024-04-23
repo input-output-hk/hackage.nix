@@ -21,7 +21,7 @@
       synopsis = "Telegram Bot API binding";
       description = "High-level bindings, typed entities, inline mode only";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

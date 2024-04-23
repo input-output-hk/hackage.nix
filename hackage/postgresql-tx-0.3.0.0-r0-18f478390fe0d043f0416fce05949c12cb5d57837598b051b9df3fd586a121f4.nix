@@ -21,14 +21,14 @@
       synopsis = "A safe transaction monad for use with various PostgreSQL Haskell libraries.";
       description = "Please see the README on GitHub at <https://github.com/simspace/postgresql-tx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

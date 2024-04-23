@@ -21,7 +21,7 @@
       synopsis = "gopher server daemon";
       description = "simple gopher server daemon";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."hxt-unicode" or (errorHandler.buildDepError "hxt-unicode"))
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "spacecookie" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."spacecookie" or (errorHandler.buildDepError "spacecookie"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

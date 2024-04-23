@@ -21,7 +21,7 @@
       synopsis = "A library for writing CGI programs";
       description = "This is a Haskell library for writing CGI programs. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,22 +29,22 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (if flags.bytestring-in-base
+          ])) ++ (if flags.bytestring-in-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

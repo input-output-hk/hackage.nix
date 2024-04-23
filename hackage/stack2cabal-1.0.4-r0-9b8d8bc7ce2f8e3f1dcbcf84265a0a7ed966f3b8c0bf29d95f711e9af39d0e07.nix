@@ -21,7 +21,7 @@
       synopsis = "Convert stack projects to cabal.project + cabal.project.freeze";
       description = "Convert @stack.yaml@ \\/ @package.yaml@ to @cabal.project@ \\/ @cabal.project.freeze@\\/ @*.cabal@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stack2cabal" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stack2cabal" or (errorHandler.buildDepError "stack2cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

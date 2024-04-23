@@ -24,23 +24,23 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

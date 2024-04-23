@@ -21,7 +21,7 @@
       synopsis = "RISC-V";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,19 +40,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."risc-v" or (errorHandler.buildDepError "risc-v"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."risc-v" or (errorHandler.buildDepError "risc-v"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

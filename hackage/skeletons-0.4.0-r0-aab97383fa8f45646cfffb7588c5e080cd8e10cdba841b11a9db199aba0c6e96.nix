@@ -21,7 +21,7 @@
       synopsis = "Manage project skeletons";
       description = "skeletons manages project skeletons by applying\ntemplates stored in a skeleton closet directory. skeletons\nmay also prompt for each variable in the project templates.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "skeletons" = {
@@ -35,9 +35,9 @@
             (hsPkgs."tinytemplate" or (errorHandler.buildDepError "tinytemplate"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

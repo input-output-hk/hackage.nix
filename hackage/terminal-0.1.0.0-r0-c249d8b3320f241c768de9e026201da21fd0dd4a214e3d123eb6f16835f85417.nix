@@ -21,7 +21,7 @@
       synopsis = "Portable terminal interaction library";
       description = "Please see the README on Github at <https://github.com/lpeterse/haskell-terminal#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "terminal-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."terminal" or (errorHandler.buildDepError "terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

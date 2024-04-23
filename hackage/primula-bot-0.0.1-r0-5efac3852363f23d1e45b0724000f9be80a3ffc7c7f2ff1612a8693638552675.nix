@@ -21,7 +21,7 @@
       synopsis = "Jabber-bot for primula-board ImageBoard";
       description = "Jabber-bot for communication with primula-board.\nSettings stored in ~/.primularc file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "primula-bot" = {
@@ -35,9 +35,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

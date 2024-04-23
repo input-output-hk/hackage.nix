@@ -21,7 +21,7 @@
       synopsis = "MIDI support for tidal";
       description = "Initial MIDI support for Tidal. Currently only supports Volca Keys synth, and the interface is likely to change significantly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

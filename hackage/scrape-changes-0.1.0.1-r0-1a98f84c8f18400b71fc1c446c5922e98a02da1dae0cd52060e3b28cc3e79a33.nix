@@ -21,7 +21,7 @@
       synopsis = "Scrape websites for changes";
       description = "This library scrapes websites and invokes callbacks when there are changes, similar to a RSS reader.\nSending an email by invoking sendmail is a built-in callback mechanism. Of course, users can provide\ntheir own callback function in addition.\n\nLook at \"Network.ScrapeChanges\" for a full working example on how to use \"scrape-changes\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "scrapechanges-tests" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."scrape-changes" or (errorHandler.buildDepError "scrape-changes"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-controltower-2.0-r0-94ee3d34e8e0bb0abab8b54955f56f13cdac082935f97e89e9c066585d72a3b4.nix;
         revNum = 0;
         sha256 = "94ee3d34e8e0bb0abab8b54955f56f13cdac082935f97e89e9c066585d72a3b4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

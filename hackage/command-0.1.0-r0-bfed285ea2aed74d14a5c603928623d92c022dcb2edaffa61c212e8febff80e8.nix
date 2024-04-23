@@ -21,15 +21,15 @@
       synopsis = "Conveniently run shell commands";
       description = "This is a standalone version of the powerful and intuitive command line\nfunctions present in the Shake build system.\n\nThey are intended as an easy-to-remember, easy-to-use alternative\nto the System.Process functions.\n\nAll credit goes to the Shake author!\nI hope he'll take it over as a standalone project.\n\nCHANGELOG\n\nVersion 0.1.0\n\n* Initial version, copied from Shake.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

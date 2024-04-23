@@ -21,7 +21,7 @@
       synopsis = "Sized sequence data-types";
       description = "A wrapper to make length-parametrized data-type from functorial data-types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "optimisaion-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

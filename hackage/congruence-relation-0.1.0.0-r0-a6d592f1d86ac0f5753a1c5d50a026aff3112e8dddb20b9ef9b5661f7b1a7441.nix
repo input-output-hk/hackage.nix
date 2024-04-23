@@ -21,15 +21,15 @@
       synopsis = "Decidable congruence relations for Haskell: up to you whether this is a joke";
       description = "The laws of 'Eq' only require that you have a decidable equivalence relation defined on a type; they do not force you to guarantee abstraction with respect to the relation, i.e. you can write anti-extensional operations without violating the laws. This package provides an alternative for when functionality with respect to an equivalence relation is desired.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

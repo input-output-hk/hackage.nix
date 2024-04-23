@@ -21,7 +21,7 @@
       synopsis = "Open algebraic data type examples.";
       description = "Example usage of open-adt with haddock documentation. Read the\n\"Data.OpenADT.Tutorial\" module from top to bottom.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "open-adt-tutorial" = {
           depends = [
             (hsPkgs."open-adt-tutorial" or (errorHandler.buildDepError "open-adt-tutorial"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

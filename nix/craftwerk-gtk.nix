@@ -6,8 +6,8 @@
         nix = import ../hackage/craftwerk-gtk-0.1-r0-2f4a3db4daa1bff3d069a77e6fe4d027475a98894bf1acac564b832c48a2525c.nix;
         revNum = 0;
         sha256 = "2f4a3db4daa1bff3d069a77e6fe4d027475a98894bf1acac564b832c48a2525c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

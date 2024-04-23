@@ -21,7 +21,7 @@
       synopsis = "Postmark snaplet for the Snap Framework";
       description = "This snaplet contains support for using the Postmark\nemail system with a Snap Framework application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."postmark" or (errorHandler.buildDepError "postmark"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

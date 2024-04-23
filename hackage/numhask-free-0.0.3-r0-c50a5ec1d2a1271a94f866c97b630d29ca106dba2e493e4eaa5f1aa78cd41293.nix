@@ -21,7 +21,7 @@
       synopsis = "numerical free algebras";
       description = "__The Free Num is a Sequence of Bags.__\n\n\"NumHask.FreeAlgebra\" explains.\n\n/But when we really delve into the reasons for why we can't let something go, there are only two: an attachment to the past or a fear for the future./ ~ Marie Kondo";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
             (hsPkgs."numhask-free" or (errorHandler.buildDepError "numhask-free"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

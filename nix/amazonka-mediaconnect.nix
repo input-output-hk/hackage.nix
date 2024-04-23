@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-mediaconnect-2.0-r0-30b1e7df2c22f4a7a8d379d09a28e541a2ba5b6650c44395d977107b2ec38ca6.nix;
         revNum = 0;
         sha256 = "30b1e7df2c22f4a7a8d379d09a28e541a2ba5b6650c44395d977107b2ec38ca6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

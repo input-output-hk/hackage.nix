@@ -21,7 +21,7 @@
       synopsis = "gRPC clients from Mu definitions";
       description = "With @mu-grpc-client@ you can easily build gRPC clients for mu-haskell!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."tracing" or (errorHandler.buildDepError "tracing"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

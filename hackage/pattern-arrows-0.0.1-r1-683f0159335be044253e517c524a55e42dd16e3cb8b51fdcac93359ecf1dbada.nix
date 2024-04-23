@@ -21,14 +21,14 @@
       synopsis = "Arrows for Pretty Printing";
       description = "A library for generating concise pretty printers based on precedence rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "A fixed length list type";
       description = "A fixed length list type that encodes its length in its type in a natural way, and is a member of Applicative, Functor, Foldable, Traversable, and Monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

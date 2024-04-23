@@ -21,7 +21,7 @@
       synopsis = "Bind media keys to work with Spotify";
       description = "Bind media keys to work with Spotify using dbus.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

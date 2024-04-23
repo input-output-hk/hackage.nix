@@ -21,7 +21,7 @@
       synopsis = "process and route HTTP requests and generate responses on top of WAI";
       description = "a Haskell library built on top of WAI for processing and routing HTTP requests and generating responses.  see the source repository for a simple example application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,22 +21,22 @@
       synopsis = "OIS bindings";
       description = "Bindings to the OIS input system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."OIS" or (errorHandler.sysDepError "OIS")) ];
         buildable = true;
-        };
+      };
       exes = {
         "OISConsole" = {
           depends = [
             (hsPkgs."hois" or (errorHandler.buildDepError "hois"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

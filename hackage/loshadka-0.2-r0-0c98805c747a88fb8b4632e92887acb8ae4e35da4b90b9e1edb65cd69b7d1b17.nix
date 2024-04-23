@@ -21,7 +21,7 @@
       synopsis = "Minecraft 1.7 server proxy that answers to queries when the server is offline";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "loshadka" = {
@@ -36,9 +36,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."hex" or (errorHandler.buildDepError "hex"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

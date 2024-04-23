@@ -21,11 +21,11 @@
       synopsis = "A todo bottom.";
       description = "This library provides \"todo:s\", wrapping error and undefined,\nand throws compile time warnings on todo:s still in your code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

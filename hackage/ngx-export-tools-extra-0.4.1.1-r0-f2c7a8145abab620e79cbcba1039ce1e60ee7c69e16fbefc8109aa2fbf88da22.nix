@@ -21,7 +21,7 @@
       synopsis = "More extra tools for Nginx haskell module";
       description = "More extra tools for\n<https://github.com/lyokha/nginx-haskell-module Nginx haskell module>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,18 +43,18 @@
           (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optionals (flags.ede) (if flags.experimentalede
+        ] ++ pkgs.lib.optionals (flags.ede) (if flags.experimentalede
           then [
             (hsPkgs."ede" or (errorHandler.buildDepError "ede"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ]
+          ]
           else [
             (hsPkgs."ede" or (errorHandler.buildDepError "ede"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

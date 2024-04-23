@@ -21,7 +21,7 @@
       synopsis = "A file-packing application.";
       description = "Returns progressively better subsets of the specified files, selected to fit into a limited space, without wasting more than the specific ratio.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "squeeze" = {
@@ -34,11 +34,11 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

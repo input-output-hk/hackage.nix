@@ -21,16 +21,16 @@
       synopsis = "Safe type-level dimensionality for multidimensional data.";
       description = "Safe type-level dimensionality for multidimensional data. Please see the README on GitHub at <https://github.com/achirkin/easytensor#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dimensions-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

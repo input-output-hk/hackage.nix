@@ -21,7 +21,7 @@
       synopsis = "Plays videos using GStreamer and GTK+.";
       description = "Desktop video player that uses GStreamer and GTK+.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "movie-monad" = {
@@ -38,9 +38,9 @@
             (hsPkgs."gi-xlib" or (errorHandler.buildDepError "gi-xlib"))
             (hsPkgs."gi-gstvideo" or (errorHandler.buildDepError "gi-gstvideo"))
             (hsPkgs."gi-gdkx11" or (errorHandler.buildDepError "gi-gdkx11"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

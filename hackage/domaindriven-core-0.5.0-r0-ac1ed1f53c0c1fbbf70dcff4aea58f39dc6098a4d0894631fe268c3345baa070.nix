@@ -21,7 +21,7 @@
       synopsis = "Batteries included event sourcing and CQRS";
       description = "Please see the README on GitHub at <https://github.com/tommyengstrom/domaindriven/tree/master/domaindriven-core#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "domaindriven-core-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio-pool" or (errorHandler.buildDepError "unliftio-pool"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

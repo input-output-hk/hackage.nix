@@ -21,15 +21,15 @@
       synopsis = "Generic Data.Binary instances using MultiRec.";
       description = "Generic Data.Binary instances using MultiRec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."multirec" or (errorHandler.buildDepError "multirec"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Predicates for route definitions.";
       description = "Provides a definition of a predicate type-class together\nwith several concrete implementations which are used to\nconstrain the set of possible Snap handlers in a type-safe\nway.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "snap-predicates-test-suite" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

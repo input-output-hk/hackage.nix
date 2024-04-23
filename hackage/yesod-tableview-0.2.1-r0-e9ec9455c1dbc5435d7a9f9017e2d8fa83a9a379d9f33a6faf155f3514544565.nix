@@ -21,7 +21,7 @@
       synopsis = "Table view for Yesod applications";
       description = "Table view for Yesod applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

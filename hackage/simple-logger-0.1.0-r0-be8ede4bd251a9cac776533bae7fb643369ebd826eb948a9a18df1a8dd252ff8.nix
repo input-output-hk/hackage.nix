@@ -21,7 +21,7 @@
       synopsis = "A very simple but efficient logging framework";
       description = "A very simple but efficient logging framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

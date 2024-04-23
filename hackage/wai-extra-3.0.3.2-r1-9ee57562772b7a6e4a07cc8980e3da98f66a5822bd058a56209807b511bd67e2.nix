@@ -21,7 +21,7 @@
       synopsis = "Provides some basic WAI handlers and middleware.";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-extra>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

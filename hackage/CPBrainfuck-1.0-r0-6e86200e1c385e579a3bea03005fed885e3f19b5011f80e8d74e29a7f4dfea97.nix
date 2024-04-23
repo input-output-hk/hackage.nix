@@ -21,16 +21,16 @@
       synopsis = "A simple Brainfuck interpretter.";
       description = "This is a very simple brainfuck interpretter, that's easy\nto understand.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

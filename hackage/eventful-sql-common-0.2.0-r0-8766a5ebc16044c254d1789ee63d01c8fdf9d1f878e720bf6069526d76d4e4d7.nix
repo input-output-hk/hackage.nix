@@ -21,7 +21,7 @@
       synopsis = "Common library for SQL event stores";
       description = "Common library for SQL event stores";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

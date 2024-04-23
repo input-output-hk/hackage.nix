@@ -21,7 +21,7 @@
       synopsis = "Support for deriving PathInfo using Template Haskell";
       description = "web-routes is a portable library for type-safe URLs. This module adds\nsupport for creating the URL parsers/printers automatically using\nTemplate Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
             (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "GUI library for source code management systems";
       description = "Provides library functions to expose some commonly needed scm tasks to the user.\nUses GTK+ and GTKBuilder to organize and display windows.\nUses vcswrapper to acces the scm functions.\nCurrently git, SVN and mercurial (hg) are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
           (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
           (hsPkgs."gi-gtk-hs" or (errorHandler.buildDepError "gi-gtk-hs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vcsgui" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
             (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
             (hsPkgs."gi-gtk-hs" or (errorHandler.buildDepError "gi-gtk-hs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vcsgui-askpass" = {
           depends = [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -66,9 +66,9 @@
             (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
             (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
             (hsPkgs."gi-gtk-hs" or (errorHandler.buildDepError "gi-gtk-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

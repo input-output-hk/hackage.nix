@@ -21,26 +21,26 @@
       synopsis = "ICU transliteration";
       description = "Bindings to the transliteration features by the\nInternational Components for Unicode (ICU) library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [
           (pkgs."icuuc" or (errorHandler.sysDepError "icuuc"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (pkgs."icuin" or (errorHandler.sysDepError "icuin"))
             (pkgs."icudt" or (errorHandler.sysDepError "icudt"))
-            ]
+          ]
           else [
             (pkgs."icui18n" or (errorHandler.sysDepError "icui18n"))
             (pkgs."icudata" or (errorHandler.sysDepError "icudata"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

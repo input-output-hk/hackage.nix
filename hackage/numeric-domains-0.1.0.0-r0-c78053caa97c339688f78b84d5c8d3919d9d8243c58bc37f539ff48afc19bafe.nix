@@ -21,11 +21,11 @@
       synopsis = "Numeric Domains";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/numeric-domains#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

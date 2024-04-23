@@ -21,15 +21,15 @@
       synopsis = "List with a minimum length of 2";
       description = "List with a minimum length of 2 e.g. find all duplicates in a list";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

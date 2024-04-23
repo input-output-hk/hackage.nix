@@ -21,7 +21,7 @@
       synopsis = "Typeclasses for representing monad transformer unlifting";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

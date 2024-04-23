@@ -21,14 +21,14 @@
       synopsis = "It provides the functionality like unix \"uniq\" utility";
       description = "Library provides the functions to find unique and duplicate elements in the list";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

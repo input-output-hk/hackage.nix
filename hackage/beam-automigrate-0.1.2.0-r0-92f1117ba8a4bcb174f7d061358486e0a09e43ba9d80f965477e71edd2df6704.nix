@@ -21,7 +21,7 @@
       synopsis = "DB migration library for beam, targeting Postgres.";
       description = "This package offers an alternative to @<https://hackage.haskell.org/package/beam-migrate beam-migrate>@\nand can be used to migrate a database between different versions of a Haskell schema. It doesn't depend\non @beam-migrate@ if not transitively (@beam-postgres@ depends on it, for example).\n\n<<https://i.imgur.com/xuPyUfg.gif>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "beam-automigrate-examples" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (flags.ghcipretty) (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"));
+          ] ++ pkgs.lib.optional (flags.ghcipretty) (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"));
           buildable = true;
-          };
+        };
         "beam-automigrate-large-migration-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,10 +86,10 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "beam-automigrate-tests" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "beam-automigrate-integration-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -116,10 +116,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = if !flags.integration-tests then false else true;
-          };
         };
+      };
       benchmarks = {
         "beam-automigrate-bench" = {
           depends = [
@@ -133,9 +133,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."splitmix" or (errorHandler.buildDepError "splitmix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

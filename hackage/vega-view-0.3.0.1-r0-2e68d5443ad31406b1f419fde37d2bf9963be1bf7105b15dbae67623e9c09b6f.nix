@@ -21,7 +21,7 @@
       synopsis = "Easily view Vega or Vega-Lite visualizations.";
       description = "A web server that is used to view all the Vega and Vega-Lite\nspecifications in a directory, or sub-directory. It is similar\nin overall scope to the\n<https://github.com/vega/vega-desktop vega destkop>\ntool. Please see the README on GitHub at\n<https://github.com/DougBurke/vega-view#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "vegaview" = {
@@ -36,9 +36,9 @@
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

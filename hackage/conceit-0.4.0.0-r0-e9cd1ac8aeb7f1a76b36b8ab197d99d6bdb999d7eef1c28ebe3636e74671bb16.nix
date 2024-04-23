@@ -21,7 +21,7 @@
       synopsis = "Concurrent actions that may fail with a value.";
       description = "A version of the async package's 'Control.Concurrent.Async.Concurrently' for which the actions may fail with a value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

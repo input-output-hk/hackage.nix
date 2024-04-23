@@ -21,11 +21,11 @@
       synopsis = "Simple reflection of expressions containing variables";
       description = "This package allows simple reflection of expressions containing variables.\nReflection here means that a Haskell expression is turned into a string.\nThe primary aim of this package is teaching and understanding;\nthere are no options for manipulating the reflected expressions beyond showing them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

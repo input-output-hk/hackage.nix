@@ -21,7 +21,7 @@
       synopsis = "Higher-order, low-boilerplate, zero-cost free monads.";
       description = "Please see the README on GitHub at <https://github.com/isovector/polysemy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
+        ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-test" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "polysemy-bench" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

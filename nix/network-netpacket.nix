@@ -6,8 +6,8 @@
         nix = import ../hackage/network-netpacket-0.0.1-r0-70f3041b385a79317d6a4dcd72a23a2fb9cf2ef2237373226c0acc9dc03dd59b.nix;
         revNum = 0;
         sha256 = "70f3041b385a79317d6a4dcd72a23a2fb9cf2ef2237373226c0acc9dc03dd59b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

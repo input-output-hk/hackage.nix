@@ -21,7 +21,7 @@
       synopsis = "Sending eMail in Haskell made easy";
       description = "A simple and small library for sending eMail.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

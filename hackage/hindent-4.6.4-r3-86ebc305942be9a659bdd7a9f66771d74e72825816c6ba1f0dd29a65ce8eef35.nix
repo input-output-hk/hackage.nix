@@ -21,7 +21,7 @@
       synopsis = "Extensible Haskell pretty printer";
       description = "Extensible Haskell pretty printer. Both a library and an executable.\n\nSee the Github page for usage\\/explanation: <https://github.com/chrisdone/hindent>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hindent" = {
           depends = [
@@ -45,19 +45,19 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hindent-generate-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hindent" or (errorHandler.buildDepError "hindent"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hindent-bench" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

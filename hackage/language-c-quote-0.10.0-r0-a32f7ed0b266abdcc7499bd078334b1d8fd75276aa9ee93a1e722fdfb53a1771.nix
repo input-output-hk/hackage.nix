@@ -21,7 +21,7 @@
       synopsis = "C/CUDA/OpenCL/Objective-C quasiquoting library.";
       description = "This package provides a general parser for the C language, including most GCC\nextensions and some CUDA and OpenCL extensions as well as the entire Objective-C\nlanguage.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,16 +39,16 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
-        build-tools = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.4") [
+        ];
+        build-tools = pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.4") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

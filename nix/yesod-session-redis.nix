@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-session-redis-0.1.0-r0-75bf82dd9e892b58430415b67530b6acb2cc73218bffe9b6ea7fe64a526291c7.nix;
         revNum = 0;
         sha256 = "75bf82dd9e892b58430415b67530b6acb2cc73218bffe9b6ea7fe64a526291c7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

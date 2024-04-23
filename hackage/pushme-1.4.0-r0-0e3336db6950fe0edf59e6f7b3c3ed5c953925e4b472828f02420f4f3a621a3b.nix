@@ -21,7 +21,7 @@
       synopsis = "Tool to synchronize multiple directories with rsync, zfs or git-annex";
       description = "Script I use for synchronizing my data among machines.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pushme" = {
@@ -48,9 +48,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

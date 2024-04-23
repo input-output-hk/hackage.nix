@@ -21,7 +21,7 @@
       synopsis = "A programming language for simple GUIs";
       description = "Sindre is a language inspired by Awk, meant for creating very simple\ngraphical user interfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,13 +43,13 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."permute" or (errorHandler.buildDepError "permute"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."xft" or (errorHandler.pkgConfDepError "xft"))
           (pkgconfPkgs."xext" or (errorHandler.pkgConfDepError "xext"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sindre" = {
           depends = [
@@ -71,13 +71,13 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."permute" or (errorHandler.buildDepError "permute"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."xft" or (errorHandler.pkgConfDepError "xft"))
             (pkgconfPkgs."xext" or (errorHandler.pkgConfDepError "xext"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

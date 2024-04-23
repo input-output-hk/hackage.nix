@@ -6,8 +6,8 @@
         nix = import ../hackage/proof-combinators-0.1.0.0-r0-459ce675b7579bf5d1aabf8853cd5dad8e64728e29387db4e8c646cfe2e3d0da.nix;
         revNum = 0;
         sha256 = "459ce675b7579bf5d1aabf8853cd5dad8e64728e29387db4e8c646cfe2e3d0da";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

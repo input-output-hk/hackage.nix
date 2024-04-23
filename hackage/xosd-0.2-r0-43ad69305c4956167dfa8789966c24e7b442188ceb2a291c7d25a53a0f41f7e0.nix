@@ -21,12 +21,12 @@
       synopsis = "A binding to the X on-screen display ";
       description = "A binding to the X on-screen display\n\nxosd is a library for displaying an on-screen display (like the one\non many TVs) on your X display.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."xosd" or (errorHandler.sysDepError "xosd")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

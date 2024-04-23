@@ -21,7 +21,7 @@
       synopsis = "Test symantic-http and its companion libraries";
       description = "Test-Suite for:\n\n* <https://hackage.haskell.org/package/symantic-http symantic-http>\n* <https://hackage.haskell.org/package/symantic-http-client symantic-http-client>.\n* <https://hackage.haskell.org/package/symantic-http-pipes symantic-http-pipes>.\n* <https://hackage.haskell.org/package/symantic-http-server symantic-http-server>.";
       buildType = "Simple";
-      };
+    };
     components = {
       tests = {
         "symantic-http-test" = {
@@ -58,9 +58,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

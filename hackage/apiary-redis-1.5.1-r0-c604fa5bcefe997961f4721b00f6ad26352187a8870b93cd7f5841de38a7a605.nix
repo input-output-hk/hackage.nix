@@ -21,7 +21,7 @@
       synopsis = "redis support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/redis.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."apiary" or (errorHandler.buildDepError "apiary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

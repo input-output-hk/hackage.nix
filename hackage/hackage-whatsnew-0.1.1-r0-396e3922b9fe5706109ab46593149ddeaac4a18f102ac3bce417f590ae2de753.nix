@@ -21,7 +21,7 @@
       synopsis = "Check for differences between working directory and hackage";
       description = "This tool checks to see if the package in a local working directory\nhas changes which are not yet on hackage. This is useful to check if\nyou have forgetton to upload your changes to hackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackage-whatsnew" = {
@@ -34,9 +34,9 @@
             (hsPkgs."hackage-db" or (errorHandler.buildDepError "hackage-db"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

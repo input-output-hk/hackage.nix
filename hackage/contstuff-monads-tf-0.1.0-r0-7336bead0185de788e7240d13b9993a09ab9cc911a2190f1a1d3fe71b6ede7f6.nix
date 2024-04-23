@@ -21,15 +21,15 @@
       synopsis = "ContStuff instances for monads-tf transformers";
       description = "This package provides contstuff class instances for the monads from\nthe monads-tf package.  This makes using both transformer libraries\nin a single project much more convenient.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."contstuff" or (errorHandler.buildDepError "contstuff"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

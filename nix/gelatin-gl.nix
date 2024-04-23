@@ -6,8 +6,8 @@
         nix = import ../hackage/gelatin-gl-0.1.0.0-r0-e8a566cf3b2a49842e195aaa11cb895b0990224750a3d5b45356e8d90e4ebc55.nix;
         revNum = 0;
         sha256 = "e8a566cf3b2a49842e195aaa11cb895b0990224750a3d5b45356e8d90e4ebc55";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

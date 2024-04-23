@@ -21,7 +21,7 @@
       synopsis = "Lattice iCE40 Primitive IP";
       description = "Clash primitives to instantiate Lattice Semiconductor's iCE40 FPGA hard IP";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
           (hsPkgs."ghc-typelits-extra" or (errorHandler.buildDepError "ghc-typelits-extra"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

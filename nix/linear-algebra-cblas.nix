@@ -6,8 +6,8 @@
         nix = import ../hackage/linear-algebra-cblas-0.1-r0-abdaee8a2ebae50801372fd0c2b3a1869fb1d5a78169eef13c369e18972447be.nix;
         revNum = 0;
         sha256 = "abdaee8a2ebae50801372fd0c2b3a1869fb1d5a78169eef13c369e18972447be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

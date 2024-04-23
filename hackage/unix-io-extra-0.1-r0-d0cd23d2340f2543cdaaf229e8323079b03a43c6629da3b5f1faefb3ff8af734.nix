@@ -21,11 +21,11 @@
       synopsis = "Support for writev, pwrite and pread.";
       description = "Support for writev, pwrite and pread using Ptrs and unix Fds.\nFds can be obtained using System.Posix.IO from the unix package\nand using /handleToFd/ or /openFd/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

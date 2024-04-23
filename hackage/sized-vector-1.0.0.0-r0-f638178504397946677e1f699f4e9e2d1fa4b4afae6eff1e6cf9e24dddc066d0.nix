@@ -21,7 +21,7 @@
       synopsis = "Size-parameterized vector types and functions.";
       description = "Size-parameterized vector types and functions using a data-type promotion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
           (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
           (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Yet Another Binary Serialisation Library (compatibility shim)";
       description = "This package is a shim around @cborg@, exposing an interface compatible with\nthe previous @binary-serialise-cbor@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cborg" or (errorHandler.buildDepError "cborg"))
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

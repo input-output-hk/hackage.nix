@@ -21,7 +21,7 @@
       synopsis = "A MinIO Haskell Library for Amazon S3 compatible cloud\nstorage.";
       description = "The MinIO Haskell client library provides simple APIs to\naccess MinIO, Amazon S3 and other API compatible cloud\nstorage servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,9 +58,9 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "BucketExists" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "CopyObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,9 +93,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "FileUploader" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "GetConfig" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -127,9 +127,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "GetObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,9 +144,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "HeadObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -161,9 +161,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "Heal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -178,9 +178,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ListBuckets" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -195,9 +195,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ListIncompleteUploads" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -212,9 +212,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ListObjects" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -229,9 +229,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "MakeBucket" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -246,9 +246,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "PresignedGetObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -263,9 +263,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "PresignedPostPolicy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -280,9 +280,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "PresignedPutObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -297,9 +297,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "PutObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -314,9 +314,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "RemoveBucket" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -331,9 +331,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "RemoveIncompleteUpload" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -348,9 +348,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "RemoveObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -365,9 +365,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "SelectObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -382,9 +382,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ServerInfo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -399,9 +399,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ServiceSendRestart" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -416,9 +416,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ServiceSendStop" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -433,9 +433,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "ServiceStatus" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -450,9 +450,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "SetConfig" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -467,10 +467,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "minio-hs-live-server-test" = {
           depends = [
@@ -513,9 +513,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if !flags.live-test then false else true;
-          };
+        };
         "minio-hs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -557,9 +557,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

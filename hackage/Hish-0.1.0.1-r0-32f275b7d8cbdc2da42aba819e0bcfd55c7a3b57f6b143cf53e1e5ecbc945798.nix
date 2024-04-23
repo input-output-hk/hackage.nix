@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Generating a beautiful and useful prompt.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hish" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Sandwich integration with Slack";
       description = "Please see the <https://codedownio.github.io/sandwich/docs/extensions/sandwich-slack documentation>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sandwich-slack-exe" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sandwich-slack-test" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

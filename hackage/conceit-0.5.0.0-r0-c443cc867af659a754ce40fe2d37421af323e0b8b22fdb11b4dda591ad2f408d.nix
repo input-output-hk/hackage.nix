@@ -21,11 +21,11 @@
       synopsis = "Concurrent actions that may fail with a value.  ";
       description = "A version of the async package's 'Control.Concurrent.Async.Concurrently' for\nwhich the actions may fail with a value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

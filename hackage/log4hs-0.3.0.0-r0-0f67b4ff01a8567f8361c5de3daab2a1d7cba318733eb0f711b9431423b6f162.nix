@@ -21,7 +21,7 @@
       synopsis = "A python logging style log library";
       description = "Please see the http://hackage.haskell.org/package/log4hs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "log4hs-test" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "log4hs-bench" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Horizon Stable Package Set Pretty Printer";
       description = "This package contains the pretty printer for the Horizon stable package set types (https://horizon-haskell.net). This is a schema used to define package sets sourcing from hackage and git.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

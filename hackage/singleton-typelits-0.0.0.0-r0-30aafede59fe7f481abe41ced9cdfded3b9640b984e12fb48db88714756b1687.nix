@@ -21,11 +21,11 @@
       synopsis = "Singletons and induction over GHC TypeLits";
       description = "Singletons and induction schemes over 'GHC.TypeLits.Nat'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

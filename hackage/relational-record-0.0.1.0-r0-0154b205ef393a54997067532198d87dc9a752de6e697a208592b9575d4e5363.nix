@@ -21,13 +21,13 @@
       synopsis = "Meta package of Relational Record";
       description = "Meta package to install Relational Record quickly";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

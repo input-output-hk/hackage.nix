@@ -21,14 +21,14 @@
       synopsis = "Cross platform library for the sendfile system call";
       description = "Cross platform library for the sendfile system call.\nThis library tries to call minimum system calls which\nare the bottleneck of web servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if system.isFreebsd && flags.allow-bsd && !flags.fallback
+        ] ++ (if system.isFreebsd && flags.allow-bsd && !flags.fallback
           then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
           else if system.isOsx && !flags.fallback
             then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
@@ -39,9 +39,9 @@
                 (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
                 (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
                 (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-                ]);
+              ]);
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -57,12 +57,12 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."simple-sendfile" or (errorHandler.buildDepError "simple-sendfile"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

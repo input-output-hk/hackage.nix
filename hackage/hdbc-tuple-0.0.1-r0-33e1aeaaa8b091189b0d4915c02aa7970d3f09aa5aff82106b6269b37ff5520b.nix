@@ -21,7 +21,7 @@
       synopsis = "Type save tuples for HDBC";
       description = "Type save tuples for HDBC";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."typical" or (errorHandler.buildDepError "typical"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

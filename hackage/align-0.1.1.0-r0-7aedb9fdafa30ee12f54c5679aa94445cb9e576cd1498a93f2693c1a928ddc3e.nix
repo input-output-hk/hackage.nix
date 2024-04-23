@@ -21,15 +21,15 @@
       synopsis = "Sequence alignment algorithms.";
       description = "Global or local sequence alignment, not exclusively for text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

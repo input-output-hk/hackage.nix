@@ -21,7 +21,7 @@
       synopsis = "Utilities to convert an Attoparsec parser into a pipe Pipe.";
       description = "Utilities to convert an Attoparsec 'Data.Attoparsec.Types.Parser' into\na 'Control.Proxy.Synonym.Pipe'.\n\nSee \"Control.Proxy.Attoparsec.Tutorial\" for an extensive introduction with\nexamples.\n\nVersion 0.1.* is not backwards compatible with previous versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

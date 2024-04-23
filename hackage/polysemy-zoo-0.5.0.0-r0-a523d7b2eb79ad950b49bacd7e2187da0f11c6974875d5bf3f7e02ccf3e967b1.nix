@@ -21,7 +21,7 @@
       synopsis = "Experimental, user-contributed effects and interpreters for polysemy";
       description = "Please see the README on GitHub at <https://github.com/isovector/polysemy-zoo#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-zoo-test" = {
           depends = [
@@ -59,12 +59,12 @@
             (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

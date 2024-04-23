@@ -21,7 +21,7 @@
       synopsis = "A modern, lightweight, complete client for CouchDB";
       description = "Based on http-client, with intended extensions for streaming through Conduit and other libraries.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -67,12 +67,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.couchdb.components.exes.couchdb or (pkgs.buildPackages.couchdb or (errorHandler.buildToolDepError "couchdb:couchdb")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

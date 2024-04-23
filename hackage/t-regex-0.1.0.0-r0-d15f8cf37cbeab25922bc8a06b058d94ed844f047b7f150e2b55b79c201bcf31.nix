@@ -21,7 +21,7 @@
       synopsis = "Matchers and grammars using tree regular expressions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

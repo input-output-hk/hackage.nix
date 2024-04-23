@@ -21,14 +21,14 @@
       synopsis = "Monadic loops for STM";
       description = "Some useful control operators for looping.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

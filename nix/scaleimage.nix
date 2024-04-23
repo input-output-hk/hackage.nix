@@ -6,8 +6,8 @@
         nix = import ../hackage/scaleimage-0.1-r0-a8acb33bb07bafd6f7783ae63581c6a201f9ae112ecb6a1372b55ced136a3850.nix;
         revNum = 0;
         sha256 = "a8acb33bb07bafd6f7783ae63581c6a201f9ae112ecb6a1372b55ced136a3850";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

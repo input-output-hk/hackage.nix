@@ -21,7 +21,7 @@
       synopsis = "A small, toy roguelike";
       description = "A small roguelike; perhaps 10% of a real one. In development";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoodie" = {
@@ -35,9 +35,9 @@
             (hsPkgs."astar" or (errorHandler.buildDepError "astar"))
             (hsPkgs."ncurses" or (errorHandler.buildDepError "ncurses"))
             (hsPkgs."hfov" or (errorHandler.buildDepError "hfov"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

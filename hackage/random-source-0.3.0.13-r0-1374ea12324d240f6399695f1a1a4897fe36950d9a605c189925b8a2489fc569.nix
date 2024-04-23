@@ -21,7 +21,7 @@
       synopsis = "Generic basis for random number generators";
       description = "Random number generation based on entropy sources\nable to produce a small but well-defined set of\nprimitive variates.  Also includes facilities for\n\\\"completing\\\" partial implementations, making it\neasy to define new entropy sources in a way that\nis naturally forward-compatible.\nNow DEPRECATED: see [README](#readme) for further\ndetails.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -32,15 +32,15 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-extras" or (errorHandler.buildDepError "th-extras"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))) ++ [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))) ++ [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ]) ++ (if flags.base4
+        ]) ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

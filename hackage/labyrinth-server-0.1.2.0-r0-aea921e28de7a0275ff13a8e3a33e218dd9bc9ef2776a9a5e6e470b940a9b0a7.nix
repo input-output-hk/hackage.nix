@@ -21,7 +21,7 @@
       synopsis = "A complicated turn-based game - Web server";
       description = "Players take turns in a labyrinth, competing with each\nother to pick a treasure and carry it out. They only know\neveryone's moves and responses, but do not see the map and\nmust deduce it themselves.\nThis package contains a Web server to play the game.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "labyrinth-server" = {
@@ -53,10 +53,10 @@
             (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."wai-test" or (errorHandler.buildDepError "wai-test"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

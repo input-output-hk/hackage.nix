@@ -21,7 +21,7 @@
       synopsis = "Backend for uploading benchmark data to CodeSpeed";
       description = "The CodeSpeed project provides a performance dashboard and\nis described at 'https://github.com/tobami/codespeed'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."hsbencher" or (errorHandler.buildDepError "hsbencher"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

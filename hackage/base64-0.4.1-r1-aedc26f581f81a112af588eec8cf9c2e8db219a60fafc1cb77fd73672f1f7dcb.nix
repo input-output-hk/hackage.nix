@@ -21,16 +21,16 @@
       synopsis = "Fast RFC 4648-compliant Base64 encoding";
       description = "RFC 4648-compliant padded and unpadded base64 and base64url encoding and decoding. This library provides\nperformant encoding and decoding primitives, as well as support for textual values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."random-bytestring" or (errorHandler.buildDepError "random-bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

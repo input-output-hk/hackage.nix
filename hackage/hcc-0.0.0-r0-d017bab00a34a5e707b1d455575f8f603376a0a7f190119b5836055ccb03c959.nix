@@ -21,7 +21,7 @@
       synopsis = "A toy C compiler.";
       description = "A toy C compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hcc" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cross-request user interactions for Happstack";
       description = "A mechanism for user interactions that extend through\nmultiple request/response cycles on the Happstack\nserver, inspired by Chris Eidhof.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."applicative-extras" or (errorHandler.buildDepError "applicative-extras"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

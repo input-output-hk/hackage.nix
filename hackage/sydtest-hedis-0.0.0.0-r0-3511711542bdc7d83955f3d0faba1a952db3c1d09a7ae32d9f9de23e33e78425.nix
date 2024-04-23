@@ -21,7 +21,7 @@
       synopsis = "An hedis companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."sydtest-typed-process" or (errorHandler.buildDepError "sydtest-typed-process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-hedis-test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."sydtest-hedis" or (errorHandler.buildDepError "sydtest-hedis"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = if flags.sydtest_integration_tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

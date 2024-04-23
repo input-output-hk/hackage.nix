@@ -21,7 +21,7 @@
       synopsis = "Excess";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-excess-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-excess" or (errorHandler.buildDepError "hw-excess"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

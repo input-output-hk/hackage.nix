@@ -21,7 +21,7 @@
       synopsis = "Type-level serialization of type constructors";
       description = "Any @type-spine@-enabled type constructor can be converted to a\nunique @type-digits@ type-level numeral.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."data-hash" or (errorHandler.buildDepError "data-hash"))
           (hsPkgs."type-spine" or (errorHandler.buildDepError "type-spine"))
           (hsPkgs."type-digits" or (errorHandler.buildDepError "type-digits"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

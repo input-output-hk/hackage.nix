@@ -21,12 +21,12 @@
       synopsis = "Haskell binding to the Cal3D animation library.";
       description = "Haskell binding to the Cal3D, a skeletal-based animation\nlibrary written in C++.\nSee also the related packages cal3d-opengl and cal3d-examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."cal3d" or (errorHandler.sysDepError "cal3d")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench-effects" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."interlude-l" or (errorHandler.buildDepError "interlude-l"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."simple-effects" or (errorHandler.buildDepError "simple-effects"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

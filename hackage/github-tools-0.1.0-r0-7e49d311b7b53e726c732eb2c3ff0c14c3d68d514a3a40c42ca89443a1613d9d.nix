@@ -21,7 +21,7 @@
       synopsis = "Various Github helper utilities.";
       description = "- Pull Request status tool.\n- Change log generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pull-status" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "changelog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,9 +55,9 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Multiplate instance for JavaScript.";
       description = "Provides a Multiplate instance for the JavaScript AST in the WebBits package.\nThe MultiplateSimplified module is based on the multiplate-simplified package,\nwhich makes it a bit more readable, and easier to work with\nbut the extra type class it uses might affect performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."multiplate" or (errorHandler.buildDepError "multiplate"))
           (hsPkgs."multiplate-simplified" or (errorHandler.buildDepError "multiplate-simplified"))
           (hsPkgs."WebBits" or (errorHandler.buildDepError "WebBits"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

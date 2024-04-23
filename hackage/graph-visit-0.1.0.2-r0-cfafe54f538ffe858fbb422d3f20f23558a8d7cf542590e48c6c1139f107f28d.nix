@@ -21,7 +21,7 @@
       synopsis = "Graph walk abstraction";
       description = "Walk over a graph, abstracting away from the underlying representation, not caring about precise order";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-lens-template" or (errorHandler.buildDepError "data-lens-template"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

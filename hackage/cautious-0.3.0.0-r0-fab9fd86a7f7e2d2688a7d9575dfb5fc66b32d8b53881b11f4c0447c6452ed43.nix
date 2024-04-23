@@ -21,7 +21,7 @@
       synopsis = "Keep track of warnings and errors during calculations.";
       description = "A Cautious monad \"Monoid w => Cautious w e a\" which keeps track of the success of a task. The options are \"CautiousWarning w a\" (where \"CautiousWarning mempty a\" represents \"success\") and \"CautiousError e\". In addition, there is a monadtransformer \"Monad m, Monoid w => CautiousT w e m a\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

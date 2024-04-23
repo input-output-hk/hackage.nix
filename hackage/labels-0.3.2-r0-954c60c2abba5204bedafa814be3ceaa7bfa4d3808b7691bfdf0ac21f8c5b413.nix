@@ -21,14 +21,14 @@
       synopsis = "Anonymous records via named tuples";
       description = "Declare and access tuple fields with labels. An approach to anonymous records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

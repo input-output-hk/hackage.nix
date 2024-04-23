@@ -6,8 +6,8 @@
         nix = import ../hackage/persistent-eventsource-0.2.0-r0-0a5190cf018843899e11e9706069e5f920348163d9172a8354a826b5c7eb8fb9.nix;
         revNum = 0;
         sha256 = "0a5190cf018843899e11e9706069e5f920348163d9172a8354a826b5c7eb8fb9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "HMEP Multi Expression Programming –\na genetic programming variant";
       description = "A multi expression programming implementation with\nfocus on speed.\n\nhttps://en.wikipedia.org/wiki/Multi_expression_programming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hmep-demo" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."monad-mersenne-random" or (errorHandler.buildDepError "monad-mersenne-random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hmep" or (errorHandler.buildDepError "hmep"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hmep-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hmep" or (errorHandler.buildDepError "hmep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Renders backgrounds & borders";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Mondrian" = {
           depends = [
@@ -54,22 +54,22 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."css-syntax" or (errorHandler.buildDepError "css-syntax"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Convert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Mondrian-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

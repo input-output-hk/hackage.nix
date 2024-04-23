@@ -21,11 +21,11 @@
       synopsis = "the * -> * types, operators, and covariant instances.";
       description = "Fundamental * -> * types, operators, and covariant instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

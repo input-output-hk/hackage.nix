@@ -21,7 +21,7 @@
       synopsis = "A suckless minimalist KISSy browser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hbro" = {
@@ -35,9 +35,9 @@
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

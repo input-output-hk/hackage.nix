@@ -21,7 +21,7 @@
       synopsis = "JavaScript analysis tools";
       description = "Some tools for working with ECMAScript 3 (popularly known as JavaScript).\nIncludes a parser, pretty-printer, and basic building blocks for more\nsophisticated tools.\nThis package supercedes package WebBits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unittest" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

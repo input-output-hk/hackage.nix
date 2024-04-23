@@ -21,7 +21,7 @@
       synopsis = "Tools for manipulating annotated ropes of bytestrings";
       description = "Tools for manipulating annotated ropes of bytestrings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

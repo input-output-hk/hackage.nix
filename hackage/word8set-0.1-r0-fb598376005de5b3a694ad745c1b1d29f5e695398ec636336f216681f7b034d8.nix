@@ -21,7 +21,7 @@
       synopsis = "Word8 set";
       description = "Set of Word8 numbers. Backed up by Word256.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

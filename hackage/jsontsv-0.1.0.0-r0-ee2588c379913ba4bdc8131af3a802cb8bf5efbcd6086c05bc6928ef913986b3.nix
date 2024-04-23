@@ -21,7 +21,7 @@
       synopsis = "JSON to TSV transformer";
       description = "Transforms JSON into tab-separated line-oriented output, for easier processing in Unix-style pipelines.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jsontsv" = {
@@ -35,9 +35,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Smooth curves via several interpolation modes";
       description = "This package exports several splines you can use\nto interpolate points in between. It includes instances for\n<https://hackage.haskell.org/package/aeson aeson> so that\nyou can quickly store the splines and restore them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

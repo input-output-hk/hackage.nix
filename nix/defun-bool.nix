@@ -6,8 +6,8 @@
         nix = import ../hackage/defun-bool-0.1-r0-bd31788d8685be39c10b0f5003bd73b1fdf6a9916e78bf5d6861b50155477096.nix;
         revNum = 0;
         sha256 = "bd31788d8685be39c10b0f5003bd73b1fdf6a9916e78bf5d6861b50155477096";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

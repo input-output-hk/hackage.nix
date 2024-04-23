@@ -21,7 +21,7 @@
       synopsis = "Example application using syntax, a library for abstract syntax descriptions.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "syntax-example" = {
@@ -35,9 +35,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell client for Moss";
       description = "Please see the README on Github at <https://github.com/mbg/moss#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

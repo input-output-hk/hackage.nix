@@ -21,7 +21,7 @@
       synopsis = "hscim json schema and server implementation";
       description = "The README file will answer all the questions you might have";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,9 +61,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hscim-server" = {
           depends = [
@@ -104,10 +104,10 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -148,12 +148,12 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

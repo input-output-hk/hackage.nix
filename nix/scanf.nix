@@ -6,8 +6,8 @@
         nix = import ../hackage/scanf-0.1.0.0-r0-a4d760fc31120be424a3527553336679493882d7fac78c148cb8797a67c35f36.nix;
         revNum = 0;
         sha256 = "a4d760fc31120be424a3527553336679493882d7fac78c148cb8797a67c35f36";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

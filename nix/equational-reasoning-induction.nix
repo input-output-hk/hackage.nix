@@ -6,8 +6,8 @@
         nix = import ../hackage/equational-reasoning-induction-0.6.0.0-r0-1fe97d2a805dc01469ebe441ef52a67d27d8b59ec0337a8f00f6fc79e7a0a3c0.nix;
         revNum = 0;
         sha256 = "1fe97d2a805dc01469ebe441ef52a67d27d8b59ec0337a8f00f6fc79e7a0a3c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

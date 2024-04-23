@@ -21,14 +21,14 @@
       synopsis = "Parse and produce literals efficiently from strict or lazy bytestrings.";
       description = "Parse and produce literals efficiently from strict or lazy bytestrings.\n\nSome benchmarks for this package can be found at:\n<http://community.haskell.org/~wren/bytestring-lexing/bench/html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

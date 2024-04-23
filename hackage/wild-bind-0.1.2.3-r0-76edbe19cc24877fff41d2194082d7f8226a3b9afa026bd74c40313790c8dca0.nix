@@ -21,7 +21,7 @@
       synopsis = "Dynamic key binding framework";
       description = "Dynamic key binding framework. See <https://github.com/debug-ito/wild-bind>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

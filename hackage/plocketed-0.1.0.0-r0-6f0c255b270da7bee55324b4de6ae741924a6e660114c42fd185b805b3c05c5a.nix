@@ -21,7 +21,7 @@
       synopsis = "plot data from stdin through socketed";
       description = "plot data from stdin through socketed";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "plocketed" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."socketed" or (errorHandler.buildDepError "socketed"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

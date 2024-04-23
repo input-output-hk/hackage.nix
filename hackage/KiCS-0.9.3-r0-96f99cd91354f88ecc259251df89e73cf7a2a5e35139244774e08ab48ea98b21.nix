@@ -21,7 +21,7 @@
       synopsis = "A compiler from Curry to Haskell";
       description = "This package builds the Curry to Haskell compiler \"kics\".\nThis package also includes many Curry libraries.\nHave a look at the list of modules \"Curry.Module.*\"";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,12 +36,12 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.kics.components.exes.kics or (pkgs.buildPackages.kics or (errorHandler.buildToolDepError "kics:kics")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kics" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
             (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "kicsi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
             (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lambdabot plugin for XMPP (Jabber) protocol";
       description = "Usage: cabal build && .\\/dist\\/build\\/lambdabot\\/lambdabot -e 'xmpp-connect asdfasdf example.com 5222 username nick password haskell@conference.example.com'";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdabot-xmpp" = {
@@ -44,9 +44,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatically generate GHC API counterparts to Haskell\ndeclarations.";
       description = "Template Haskell functions for automatically generating\ndefinitions for @TyCon@s, @Var@s, and @DataCon@s of known\ntype constructors, functions, and data constructors.\nPrimarily intended for the development of type checker\nplugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

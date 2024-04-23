@@ -21,7 +21,7 @@
       synopsis = "compile es2015";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

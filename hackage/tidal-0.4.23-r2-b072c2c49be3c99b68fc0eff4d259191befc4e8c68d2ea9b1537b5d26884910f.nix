@@ -21,7 +21,7 @@
       synopsis = "Pattern language for improvised music";
       description = "Tidal is a domain specific language for live coding pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."hmt" or (errorHandler.buildDepError "hmt"))
           (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
           (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

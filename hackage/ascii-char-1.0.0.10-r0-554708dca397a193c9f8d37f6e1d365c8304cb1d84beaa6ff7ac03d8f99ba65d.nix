@@ -21,23 +21,23 @@
       synopsis = "A Char type representing an ASCII character";
       description = "This package defines a @Char@ type that has 128 constructors, one for each ASCII character.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."ascii-char" or (errorHandler.buildDepError "ascii-char"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Combinators for building memo tables.";
       description = "Combinators for building memo tables.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."data-inttrie" or (errorHandler.buildDepError "data-inttrie"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

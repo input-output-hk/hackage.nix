@@ -21,7 +21,7 @@
       synopsis = "JSON Feed";
       description = "This is an implementation of the JSON Feed spec in Haskell. The spec is\navailable at <https://jsonfeed.org>. JSON Feed is similar to the Atom and RSS\nfeed formats, but it is serialized as JSON rather than XML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "json-feed-test-suite" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."json-feed" or (errorHandler.buildDepError "json-feed"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

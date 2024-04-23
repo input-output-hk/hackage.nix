@@ -6,8 +6,8 @@
         nix = import ../hackage/PlayHangmanGame-0.2-r0-648147438f16c5ebc24fd48eae8d6f38a1e9cd26f310be534e92197549dc4fca.nix;
         revNum = 0;
         sha256 = "648147438f16c5ebc24fd48eae8d6f38a1e9cd26f310be534e92197549dc4fca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Rapid Gtk Application Development - I18N";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

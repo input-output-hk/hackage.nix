@@ -21,19 +21,19 @@
       synopsis = "Parse literals efficiently from bytestrings";
       description = "Parse literals efficiently from bytestrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

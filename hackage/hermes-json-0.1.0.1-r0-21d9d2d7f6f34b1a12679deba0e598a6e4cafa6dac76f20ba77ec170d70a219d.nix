@@ -21,7 +21,7 @@
       synopsis = "Fast JSON decoding via simdjson C++ bindings";
       description = "A JSON parsing library focused on speed that binds to the simdjson C++ library using\nthe Haskell FFI. Hermes offers some helpful functions for building fast JSON decoders\nfor your Haskell types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,10 +39,10 @@
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
+      };
       tests = {
         "hermes-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

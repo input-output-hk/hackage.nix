@@ -21,7 +21,7 @@
       synopsis = "Library for accessing S3 compatible storage services";
       description = "This library provides a lightweight API for interacting with storage services compatible with Amazon's <https://en.wikipedia.org/wiki/Amazon_S3 Simple Storage Service> or S3 protocol.\n\nThe current version of this library provides support for\n\n* Creating, listing, and deleting buckets\n* Creating, copying, listing, and deleting objects\n* Conditionally (i.e. via @if-match@/@if-none-match@) creating, listing, and deleting objects\n* Setting canned ACLs on bucket and object creation\n* AWS Signature protocols version 2 and version 4\n\nSee the \"Network.S3\" module for documentation and usage examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

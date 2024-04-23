@@ -21,7 +21,7 @@
       synopsis = "A type-safe interface to communicate with an SMT solver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ] ++ (pkgs.lib).optional (flags.withconstraints) (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"));
+        ] ++ pkgs.lib.optional (flags.withconstraints) (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

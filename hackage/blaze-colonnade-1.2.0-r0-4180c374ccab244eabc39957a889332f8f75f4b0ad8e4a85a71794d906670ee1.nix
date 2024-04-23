@@ -21,7 +21,7 @@
       synopsis = "Helper functions for using blaze-html with colonnade";
       description = "Blaze HTML and colonnade";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."colonnade" or (errorHandler.buildDepError "colonnade"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

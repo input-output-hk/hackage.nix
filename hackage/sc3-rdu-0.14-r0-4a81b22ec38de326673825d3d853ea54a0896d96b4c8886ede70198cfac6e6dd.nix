@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings to sc3-rdu (sc3 rd ugens)";
       description = "Haskell bindings to sc3-rdu (sc3 rd ugens)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
           (hsPkgs."hsc3-db" or (errorHandler.buildDepError "hsc3-db"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Quick parsing of fixed-width data formats.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

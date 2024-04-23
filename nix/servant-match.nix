@@ -6,8 +6,8 @@
         nix = import ../hackage/servant-match-0.1.1-r0-7d904400d3766ffe2cac30f9cd5eee36afdd3cb16ddcceff2dc68d271a78f3e9.nix;
         revNum = 0;
         sha256 = "7d904400d3766ffe2cac30f9cd5eee36afdd3cb16ddcceff2dc68d271a78f3e9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

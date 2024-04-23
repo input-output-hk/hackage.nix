@@ -21,7 +21,7 @@
       synopsis = "Concurrent DNS cache";
       description = "Concurrent DNS cache";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "main" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."concurrent-dns-cache" or (errorHandler.buildDepError "concurrent-dns-cache"))
             (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

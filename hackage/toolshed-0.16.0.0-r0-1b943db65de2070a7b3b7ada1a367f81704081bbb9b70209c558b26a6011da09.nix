@@ -21,7 +21,7 @@
       synopsis = "Ill-defined library.";
       description = "Ill-defined unrelated utilities used by other packages from <http://functionalley.eu>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickCheck" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

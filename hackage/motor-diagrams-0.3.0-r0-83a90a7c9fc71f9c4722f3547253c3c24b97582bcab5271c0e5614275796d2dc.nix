@@ -21,7 +21,7 @@
       synopsis = "Generate state diagrams from Motor FSM typeclasses";
       description = "Generate state diagrams from Motor FSM typeclasses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."motor" or (errorHandler.buildDepError "motor"))
           (hsPkgs."motor-reflection" or (errorHandler.buildDepError "motor-reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -43,12 +43,12 @@
             (hsPkgs."motor" or (errorHandler.buildDepError "motor"))
             (hsPkgs."motor-reflection" or (errorHandler.buildDepError "motor-reflection"))
             (hsPkgs."motor-diagrams" or (errorHandler.buildDepError "motor-diagrams"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

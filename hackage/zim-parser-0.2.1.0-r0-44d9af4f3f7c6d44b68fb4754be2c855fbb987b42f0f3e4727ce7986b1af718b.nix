@@ -21,7 +21,7 @@
       synopsis = "Read and parse ZIM files";
       description = "zim-parser is a library to read and parse ZIM (http://openzim.org) files.\nZiM files contain offline web content (eg. Wikipedia) which can be browsed\nlocally without an Internet connection.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
           (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."binary-conduit" or (errorHandler.buildDepError "binary-conduit"))
             (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

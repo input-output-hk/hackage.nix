@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Nix language";
       description = "Haskell implementation of the Nix language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,13 +38,13 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."regex-tdfa-text" or (errorHandler.buildDepError "regex-tdfa-text"))
-          ] ++ (if flags.parsec
+        ] ++ (if flags.parsec
           then [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ]
           else [
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hnix" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hnix-tests" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hnix-benchmarks" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hnix" or (errorHandler.buildDepError "hnix"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

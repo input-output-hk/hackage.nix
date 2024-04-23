@@ -6,8 +6,8 @@
         nix = import ../hackage/earclipper-0.0.0.1-r0-47cffb3e280050c934f9c551a7894a62fd0a35c895d8fab240343e64b831fb0d.nix;
         revNum = 0;
         sha256 = "47cffb3e280050c934f9c551a7894a62fd0a35c895d8fab240343e64b831fb0d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Support for serialising Haskell to and from Yaml.";
       description = "Binds to the libyaml library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,11 +30,11 @@
           (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

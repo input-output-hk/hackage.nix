@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         build-tools = [
           (hsPkgs.buildPackages.cabal-helper.components.exes.cabal-helper-wrapper or (pkgs.buildPackages.cabal-helper-wrapper or (errorHandler.buildToolDepError "cabal-helper:cabal-helper-wrapper")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-helper-wrapper" = {
           depends = ([
@@ -65,13 +65,13 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
             (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
             (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-helper-main" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,10 +81,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = if flags.dev then true else false;
-          };
         };
+      };
       tests = {
         "compile-test" = {
           depends = ([
@@ -104,14 +104,14 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
             (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
             (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
             (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghc-session" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -134,13 +134,13 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
             (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
             (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

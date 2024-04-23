@@ -21,7 +21,7 @@
       synopsis = "Generic programming API for large-records and large-anon";
       description = "The large-generics package offers a style of generic\nprogramming inspired by generics-sop, but optimized for\ncompilation time. For more information, see the blog posts\n\"Avoiding quadratic core code size with large records\"\n<https://well-typed.com/blog/2021/08/large-records/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-large-generics" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

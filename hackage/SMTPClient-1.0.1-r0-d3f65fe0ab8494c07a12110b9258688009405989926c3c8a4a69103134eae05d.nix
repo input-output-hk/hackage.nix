@@ -21,7 +21,7 @@
       synopsis = "A simple SMTP client";
       description = "A simple SMTP client for applications that want to send emails.\n\nDARCS repository:\n<http://blacksapphire.com/SMTPClient/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

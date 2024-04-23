@@ -21,16 +21,16 @@
       synopsis = "Install Haskell software";
       description = "This is a tool for deploying software projects into directory structures suitable for installation on a system. It builds upon the `stack install` command and adds more features. It's also a tool for easier AppImage creation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hsinstall" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."heredoc" or (errorHandler.buildDepError "heredoc"))
             (hsPkgs."hsinstall" or (errorHandler.buildDepError "hsinstall"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

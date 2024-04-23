@@ -21,7 +21,7 @@
       synopsis = "Alpino data processing tools";
       description = "Tools for processing data of the Alpino parser/generator\nfor Dutch.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,15 +34,15 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "at_model_rescore_data" = { buildable = true; };
         "at_model_filter_data" = { buildable = true; };
         "at_model_oracle" = { buildable = true; };
         "at_model_random_sample" = { buildable = true; };
         "at_model_statistics_data" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

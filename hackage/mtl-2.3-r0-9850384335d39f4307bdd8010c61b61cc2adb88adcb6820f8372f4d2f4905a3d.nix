@@ -21,14 +21,14 @@
       synopsis = "Monad classes for transformers, using functional dependencies";
       description = "MTL is a collection of monad classes, extending the 'transformers'\npackage, using functional dependencies for generic lifting of\nmonadic actions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

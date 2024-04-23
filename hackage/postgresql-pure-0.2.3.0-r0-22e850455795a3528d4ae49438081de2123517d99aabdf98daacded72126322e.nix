@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -57,21 +57,21 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (if flags.pure-md5
+        ] ++ (if flags.pure-md5
           then [ (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5")) ]
           else [
             (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hdbc-postgresql" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,9 +85,9 @@
             (hsPkgs."postgresql-placeholder-converter" or (errorHandler.buildDepError "postgresql-placeholder-converter"))
             (hsPkgs."postgresql-pure" or (errorHandler.buildDepError "postgresql-pure"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "original" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,12 +102,12 @@
             (hsPkgs."postgresql-pure" or (errorHandler.buildDepError "postgresql-pure"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "relational-record" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -118,10 +118,10 @@
             (hsPkgs."postgresql-pure" or (errorHandler.buildDepError "postgresql-pure"))
             (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
             (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "requests-per-second" = {
           depends = [
@@ -137,9 +137,9 @@
             (hsPkgs."postgresql-pure" or (errorHandler.buildDepError "postgresql-pure"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (!system.isWindows && (compiler.isGhc && (compiler.version).lt "8.8.0")) (hsPkgs."postgres-wire" or (errorHandler.buildDepError "postgres-wire"));
+          ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.lt "8.8.0")) (hsPkgs."postgres-wire" or (errorHandler.buildDepError "postgres-wire"));
           buildable = true;
-          };
+        };
         "requests-per-second-constant" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -161,9 +161,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!system.isWindows && (compiler.isGhc && (compiler.version).lt "8.8.0")) (hsPkgs."postgres-wire" or (errorHandler.buildDepError "postgres-wire"));
+          ] ++ pkgs.lib.optional (!system.isWindows && (compiler.isGhc && compiler.version.lt "8.8.0")) (hsPkgs."postgres-wire" or (errorHandler.buildDepError "postgres-wire"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

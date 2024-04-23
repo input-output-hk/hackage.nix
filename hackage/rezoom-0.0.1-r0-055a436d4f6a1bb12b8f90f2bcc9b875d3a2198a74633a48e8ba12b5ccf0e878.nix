@@ -21,7 +21,7 @@
       synopsis = "Github resume generator";
       description = "Generates a resume from your github page.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rezoom" = {
@@ -34,9 +34,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."datetime" or (errorHandler.buildDepError "datetime"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

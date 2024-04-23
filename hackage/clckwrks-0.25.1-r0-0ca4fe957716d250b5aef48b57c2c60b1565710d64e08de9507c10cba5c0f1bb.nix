@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -75,19 +75,19 @@
           (hsPkgs."web-routes-hsp" or (errorHandler.buildDepError "web-routes-hsp"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
           (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         libs = [ (pkgs."ssl" or (errorHandler.sysDepError "ssl")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsx2hs.components.exes.hsx2hs or (pkgs.buildPackages.hsx2hs or (errorHandler.buildToolDepError "hsx2hs:hsx2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

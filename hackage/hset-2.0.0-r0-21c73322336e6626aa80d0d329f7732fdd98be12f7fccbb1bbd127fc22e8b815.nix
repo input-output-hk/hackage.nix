@@ -21,16 +21,16 @@
       synopsis = "Primitive list with elements of unique types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hset" or (errorHandler.buildDepError "hset"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

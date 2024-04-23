@@ -21,7 +21,7 @@
       synopsis = "Ingredient for tasty which generates per-test coverage reports";
       description = "An ingredient for the tasty testing framework which allows to generate per-test coverage reports.\nFor every test \"foo\" a file \"foo.PASSED.tix\" or \"foo.FAILED.tix\" is generated, depending on whether the test passed or failed. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Consistent and safe JSON APIs with snap-core and (by default) postgresql-simple";
       description = "Straightforward JSON API tools and idioms for snap-core and datastore access\n(by default PostgreSQL via postgresql-simple), that provide:\n\n- Safe access to pools of DB connections (preventing connection leaks)\n- Simple and consistent JSON responses for successes and failures\n(including unexpected failures)\n- An optional read-only/maintenance mode for keeping services up during\ne.g. database migrations\n\nSee the README for a tutorial and example use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gingersnap-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

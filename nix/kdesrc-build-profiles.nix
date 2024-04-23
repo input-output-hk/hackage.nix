@@ -6,8 +6,8 @@
         nix = import ../hackage/kdesrc-build-profiles-0.2.0-r0-0d6621a50d614c270e87d6ebc7b01be25145cfbf37559c6ef6652d0a5d7013c2.nix;
         revNum = 0;
         sha256 = "0d6621a50d614c270e87d6ebc7b01be25145cfbf37559c6ef6652d0a5d7013c2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

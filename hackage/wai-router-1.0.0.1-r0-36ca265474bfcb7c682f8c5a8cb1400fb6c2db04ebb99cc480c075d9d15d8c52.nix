@@ -21,15 +21,15 @@
       synopsis = "Provides basic routing on URL paths for WAI.";
       description = "Simple routing based on a URL path pieces mapped to web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

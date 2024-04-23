@@ -21,7 +21,7 @@
       synopsis = "Combinator parsing with Data.ByteString.Lazy";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.split-base
@@ -30,8 +30,8 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]) ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ]) ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

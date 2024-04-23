@@ -21,7 +21,7 @@
       synopsis = "A GLPK backend to the math-programming library.";
       description = "Please see the README on GitHub at <https://github.com/prsteele/math-programming-glpk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."math-programming" or (errorHandler.buildDepError "math-programming"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "math-programming-glpk-test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           libs = [ (pkgs."glpk" or (errorHandler.sysDepError "glpk")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

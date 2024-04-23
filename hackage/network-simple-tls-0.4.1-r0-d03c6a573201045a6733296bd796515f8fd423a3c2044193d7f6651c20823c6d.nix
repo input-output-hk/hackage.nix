@@ -21,7 +21,7 @@
       synopsis = "Simple interface to TLS secured network sockets.";
       description = "Simple interface to TLS secured network sockets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

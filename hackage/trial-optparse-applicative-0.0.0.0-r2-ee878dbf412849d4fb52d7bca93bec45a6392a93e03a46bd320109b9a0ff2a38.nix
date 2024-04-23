@@ -14,7 +14,7 @@
       identifier = {
         name = "trial-optparse-applicative";
         version = "0.0.0.0";
-        };
+      };
       license = "MPL-2.0";
       copyright = "2020 Kowainik";
       maintainer = "Kowainik <xrom.xkov@gmail.com>";
@@ -24,15 +24,15 @@
       synopsis = "Trial helper functions for optparse-applicative";
       description = "@Trial@ data structure related helper functions\nfor [optparse-applicative](https://hackage.haskell.org/package/optparse-applicative).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."trial" or (errorHandler.buildDepError "trial"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

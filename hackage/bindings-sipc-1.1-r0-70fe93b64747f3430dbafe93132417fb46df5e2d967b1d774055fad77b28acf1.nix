@@ -21,42 +21,42 @@
       synopsis = "Low level bindings to SIPC. ";
       description = "Low level bindings for the SELinux Secure Inter-Process\nCommunications (SIPC) Library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."sipc" or (errorHandler.sysDepError "sipc")) ];
         buildable = true;
-        };
+      };
       exes = {
         "MQCreator" = {
           depends = [
             (hsPkgs."bindings-sipc" or (errorHandler.buildDepError "bindings-sipc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MQDestroyer" = {
           depends = [
             (hsPkgs."bindings-sipc" or (errorHandler.buildDepError "bindings-sipc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MQReader" = {
           depends = [
             (hsPkgs."bindings-sipc" or (errorHandler.buildDepError "bindings-sipc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MQSender" = {
           depends = [
             (hsPkgs."bindings-sipc" or (errorHandler.buildDepError "bindings-sipc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

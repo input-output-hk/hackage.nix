@@ -21,7 +21,7 @@
       synopsis = "A simple TUI using ghc-debug";
       description = "A simple TUI using ghc-debug";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-heap-view" = {
@@ -41,9 +41,9 @@
             (hsPkgs."ghc-debug-common" or (errorHandler.buildDepError "ghc-debug-common"))
             (hsPkgs."ghc-debug-convention" or (errorHandler.buildDepError "ghc-debug-convention"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Implementation of the SKI combinators as an interactive graph rewriting system";
       description = "This package serves as an example for how to use the graph-rewriting, graph-rewriting-layout, and graph-rewriting-gl packages to create a graph rewriting system with an interactive, graphical front-end. The sources are well documented and can used as a tutorial for implementing your own rewrite system. Start reading in Graph.hs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."IndentParser" or (errorHandler.buildDepError "IndentParser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ski" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."IndentParser" or (errorHandler.buildDepError "IndentParser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

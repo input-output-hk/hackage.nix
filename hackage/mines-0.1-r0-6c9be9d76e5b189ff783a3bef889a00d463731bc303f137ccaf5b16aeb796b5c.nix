@@ -21,7 +21,7 @@
       synopsis = "Minesweeper simulation using neural networks";
       description = "A simulation of AI controlled minesweepers\nusing neural networks and genetic algorithms.\nThe minesweepers learn to sweep mines themselves\nand their movements are recorded in an SVG file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mines" = {
@@ -30,9 +30,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

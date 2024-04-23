@@ -21,14 +21,14 @@
       synopsis = "Unicode alternatives for common functions and operators";
       description = "* /Important note:/ This package will soon be deprecated.\nUse <http://hackage.haskell.org/package/base-unicode-symbols>\nand\\/or\n<http://hackage.haskell.org/package/containers-unicode-symbols>\ninstead.\n\nThis package defines new symbols for a number of functions and\noperators in the base package and for the containers package.\n\nAll symbols are documented with their actual definition and\ninformation regarding their Unicode code point. They should be\ncompletely interchangeable with their definitions.\n\nThis package was inspired by unicode-prelude from P&#xE9;ter\nDivi&#xE1;nszky:\n<http://hackage.haskell.org/package/unicode-prelude>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

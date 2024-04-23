@@ -21,21 +21,21 @@
       synopsis = "Typeclasses augmented with a phantom type parameter";
       description = "Provides alternative versions of common typeclasses,\naugmented with a phantom type parameter that allows\nmultiple instances to be specified in the case where\na type has more than one candidate instance for the\noriginal class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-multi-instance" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."multi-instance" or (errorHandler.buildDepError "multi-instance"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

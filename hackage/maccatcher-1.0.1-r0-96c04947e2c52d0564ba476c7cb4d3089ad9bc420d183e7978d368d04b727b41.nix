@@ -21,7 +21,7 @@
       synopsis = "Obtain the host MAC address on *NIX and Windows.";
       description = "Obtain the host MAC address on *NIX and Windows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
-      exes = { "maccatcher" = { buildable = true; }; };
       };
-    }
+      exes = { "maccatcher" = { buildable = true; }; };
+    };
+  }

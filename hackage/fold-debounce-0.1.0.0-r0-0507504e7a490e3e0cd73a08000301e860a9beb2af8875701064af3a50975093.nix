@@ -21,7 +21,7 @@
       synopsis = "Fold multiple events that happen in a given period of time.";
       description = "Fold multiple events that happen in a given period of time. See \"Control.FoldDebounce\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."fold-debounce" or (errorHandler.buildDepError "fold-debounce"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

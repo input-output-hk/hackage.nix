@@ -21,13 +21,13 @@
       synopsis = "Cross platform library for the sendfile system call";
       description = "Cross platform library for the sendfile system call.\nThis library tries to call minimum system calls which\nare the bottleneck of web servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ (if system.isFreebsd
+        ] ++ (if system.isFreebsd
           then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
           else if system.isOsx
             then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
@@ -37,8 +37,8 @@
                 (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
                 (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
                 (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-                ]);
+              ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

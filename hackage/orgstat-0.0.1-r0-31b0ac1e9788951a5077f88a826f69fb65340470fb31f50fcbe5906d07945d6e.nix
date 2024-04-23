@@ -21,7 +21,7 @@
       synopsis = "Statistics visualizer for org-mode";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "orgstat" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
             (hsPkgs."orgstat" or (errorHandler.buildDepError "orgstat"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "orgstat-test" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

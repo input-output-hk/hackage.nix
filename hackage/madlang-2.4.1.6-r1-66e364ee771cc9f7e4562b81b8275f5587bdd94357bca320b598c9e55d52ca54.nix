@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.file-embed or (pkgs.buildPackages.file-embed or (errorHandler.setupDepError "file-embed")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -47,18 +47,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "madlang" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."madlang" or (errorHandler.buildDepError "madlang"))
-            ];
+          ];
           buildable = if flags.library then false else true;
-          };
         };
+      };
       tests = {
         "madlang-test" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "madlang-bench" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."madlang" or (errorHandler.buildDepError "madlang"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

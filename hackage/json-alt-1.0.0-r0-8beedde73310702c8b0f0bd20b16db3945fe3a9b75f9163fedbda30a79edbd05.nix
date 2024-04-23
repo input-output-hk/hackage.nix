@@ -21,14 +21,14 @@
       synopsis = "Union 'alternative' or Either that has untagged JSON encoding.";
       description = "Parsing JSON with Aeson often requires decoding fields\nthat have more than one Haskell type.\n\nSo we have:\n```\ndata a :|: b = AltLeft a\n| AltLeft b\nprintIt = print . (fromJSON :: ByteString -> Int :|: Bool)\nmain = do\nprintIt \"1\"    -- AltLeft 1\nprintIt \"true\" -- AltRight True\nprintIt \"null\" -- errors!\n```\nTo generate types for larger JSON documents,\nyou might use `json-autotype`.\n\nThis is separate package so that users\ndo not have to keep `json-autotype` as runtime\ndependency.\n\nSee <https://github.com/mgajda/json-autotype>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

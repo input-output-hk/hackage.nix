@@ -21,7 +21,7 @@
       synopsis = "Command line tool for running Haskell scripts with a shebang.";
       description = "Command line tool for running Haskell scripts with a shebang.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskellscript" = {
@@ -34,9 +34,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

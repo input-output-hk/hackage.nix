@@ -21,7 +21,7 @@
       synopsis = "A high level driver for the Cassandra datastore";
       description = "The objective is to completely isolate away the thrift layer, providing\na more idiomatic Haskell experience working with Cassandra.\n\nCertain parts of the API was inspired by pycassa (Python client) and\nhscassandra (on Hackage).\n\nPlease see the Github repository for more detailed documentation,\nrelease notes and examples.\n\nA brief explanation of modules:\n\n* /Database.Cassandra.Basic/: Contains a low level, simple\nimplementation of Cassandra interaction using the thrift API\nunderneath.\n\n* /Database.Cassandra.JSON/: A higher level API that operates on\nvalues with ToJSON and FromJSON isntances from the /aeson/\nlibrary. This module has in part been inspired by Bryan\nO\\'Sullivan\\'s /riak/ client for Haskell.\n\n* /Database.Cassandra.Pool/: Handles a /pool/ of connections to\nmultiple servers in a cluster, splitting the load among them.\n\n* /Database.Cassandra.Pack/: Handles column types that Cassandra\nrecognizes and adds support for Composite Columns.\n\n* /Database.Cassandra.Types/: A common set of types used everywhere.\n\nPotential TODOs include:\n\n* Support for counters and batch mutators\n\n* Support for database admin operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

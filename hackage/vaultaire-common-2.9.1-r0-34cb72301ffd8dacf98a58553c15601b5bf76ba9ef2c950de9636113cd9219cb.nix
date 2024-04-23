@@ -21,7 +21,7 @@
       synopsis = "Common types and instances for Vaultaire";
       description = "Defines a set of types, typeclasses and instances for\nVaultaire, intended for use with Marquise and other\nVaultaire related libraries and executables";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."locators" or (errorHandler.buildDepError "locators"))
           (hsPkgs."siphash" or (errorHandler.buildDepError "siphash"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wire-formats-test" = {
           depends = [
@@ -60,17 +60,17 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "instance-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

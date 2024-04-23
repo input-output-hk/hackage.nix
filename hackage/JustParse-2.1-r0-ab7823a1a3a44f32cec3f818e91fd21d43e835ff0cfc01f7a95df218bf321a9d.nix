@@ -21,11 +21,11 @@
       synopsis = "A simple and comprehensive Haskell parsing library";
       description = "A simple and comprehensive Haskell parsing library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

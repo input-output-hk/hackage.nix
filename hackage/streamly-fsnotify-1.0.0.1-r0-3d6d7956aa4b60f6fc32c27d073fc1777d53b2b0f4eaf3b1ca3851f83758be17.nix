@@ -21,7 +21,7 @@
       synopsis = "Folder watching as a Streamly stream.";
       description = "Provides Streamly streams for both single-level and\nrecursive folder watching. Also contains a principled and\ncompositional system for filtering file system events.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

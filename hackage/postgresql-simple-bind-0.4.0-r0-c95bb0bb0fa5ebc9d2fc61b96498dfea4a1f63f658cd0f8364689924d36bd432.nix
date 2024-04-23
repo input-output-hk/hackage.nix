@@ -21,7 +21,7 @@
       synopsis = "FFI-like bindings for PostgreSQL stored functions";
       description = "For tutorial see here: https:\\/\\/github.com\\/zohl\\/postgresql-simple-bind\\/blob\\/master\\/README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,11 +47,11 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."postgresql-simple-bind" or (errorHandler.buildDepError "postgresql-simple-bind"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "examples" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -61,9 +61,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."postgresql-simple-bind" or (errorHandler.buildDepError "postgresql-simple-bind"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

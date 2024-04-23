@@ -21,7 +21,7 @@
       synopsis = "Typechecking terms of the Edinburgh Logical Framework (LF).";
       description = "HELF = Haskell implementation of the Edinburgh Logical Framework\n\nHELF implements only a subset of the Twelf syntax and functionality.\nIt type-checks LF definitions, but does not do type reconstruction.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "helf" = {
@@ -32,13 +32,13 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

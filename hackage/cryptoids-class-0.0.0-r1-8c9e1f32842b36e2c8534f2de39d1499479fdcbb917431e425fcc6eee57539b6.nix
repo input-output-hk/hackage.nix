@@ -21,15 +21,15 @@
       synopsis = "Typeclass-based interface to cryptoids";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cryptoids-types" or (errorHandler.buildDepError "cryptoids-types"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

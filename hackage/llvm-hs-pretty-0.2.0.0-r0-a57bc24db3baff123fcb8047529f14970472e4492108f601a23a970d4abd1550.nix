@@ -21,7 +21,7 @@
       synopsis = "Pretty printer for LLVM IR.";
       description = "Pretty printer for LLVM IR.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."llvm-hs-pretty" or (errorHandler.buildDepError "llvm-hs-pretty"))
             (hsPkgs."llvm-hs" or (errorHandler.buildDepError "llvm-hs"))
             (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

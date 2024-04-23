@@ -21,7 +21,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "A new all Haskell \"tagged\" DFA regex engine, inspired by libtre";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.base4
@@ -34,7 +34,7 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ]
+          ]
           else [
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,8 +43,8 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

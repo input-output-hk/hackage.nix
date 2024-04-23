@@ -21,16 +21,16 @@
       synopsis = "Primitive memory-related operations";
       description = "This package provides various primitive memory-related operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = true;
-        };
+      };
       tests = {
         "test-qc" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

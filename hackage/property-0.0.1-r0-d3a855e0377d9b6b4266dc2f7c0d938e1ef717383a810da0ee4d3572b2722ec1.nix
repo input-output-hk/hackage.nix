@@ -21,11 +21,11 @@
       synopsis = "common properties";
       description = "Library of predicates for property testing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

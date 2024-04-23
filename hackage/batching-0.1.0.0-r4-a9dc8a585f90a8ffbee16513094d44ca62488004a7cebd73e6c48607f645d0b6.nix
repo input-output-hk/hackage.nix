@@ -21,7 +21,7 @@
       synopsis = "An Applicative Functor deferring actions to run in a batch later.";
       description = "This provides the type Batching, an Applicative which defers request-response\nexchanges of a fixed type, to be performed in a single batch.  This means you\ncan write code that appears to issue requests and immediately receive their\nresponses, but process the requests jointly all at once.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."short-vec" or (errorHandler.buildDepError "short-vec"))
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Batching-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

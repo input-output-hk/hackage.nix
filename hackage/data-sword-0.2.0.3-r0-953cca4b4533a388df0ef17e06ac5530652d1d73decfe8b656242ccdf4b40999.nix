@@ -21,7 +21,7 @@
       synopsis = "Shorter binary words";
       description = "This package provides Template Haskell utilities for declaring short binary\nword data types built on top of longer binary word data types. Signed and\nunsigned 2, 3, 4, 5, 6, 7, 24, and 48-bit types are predefined.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."data-bword" or (errorHandler.buildDepError "data-bword"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."data-sword" or (errorHandler.buildDepError "data-sword"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

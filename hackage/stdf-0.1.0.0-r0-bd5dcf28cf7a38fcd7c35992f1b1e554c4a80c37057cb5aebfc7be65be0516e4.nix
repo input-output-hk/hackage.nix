@@ -21,7 +21,7 @@
       synopsis = "Parse Structured Test Data Format (STDF)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "StdfToJson" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."stdf" or (errorHandler.buildDepError "stdf"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "WaferMap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."stdf" or (errorHandler.buildDepError "stdf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Natural number arithmetic";
       description = "This package implements a library of natural number arithmetic functions,\nincluding Montgomery multiplication and continued fractions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
           (hsPkgs."opentheory-prime" or (errorHandler.buildDepError "opentheory-prime"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arithmetic" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
             (hsPkgs."opentheory-prime" or (errorHandler.buildDepError "opentheory-prime"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "arithmetic-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
             (hsPkgs."opentheory-prime" or (errorHandler.buildDepError "opentheory-prime"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

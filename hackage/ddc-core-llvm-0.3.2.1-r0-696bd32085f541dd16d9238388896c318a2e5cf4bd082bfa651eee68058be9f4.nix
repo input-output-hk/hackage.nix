@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler LLVM code generator.";
       description = "Disciplined Disciple Compiler LLVM code generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
           (hsPkgs."ddc-core-simpl" or (errorHandler.buildDepError "ddc-core-simpl"))
           (hsPkgs."ddc-core-salt" or (errorHandler.buildDepError "ddc-core-salt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

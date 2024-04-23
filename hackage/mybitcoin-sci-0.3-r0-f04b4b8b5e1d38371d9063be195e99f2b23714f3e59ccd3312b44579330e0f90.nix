@@ -21,7 +21,7 @@
       synopsis = "Binding to mybitcoin.com's Shopping Cart Interface.";
       description = "See <http://bitcoin.org> and <http://mybitcoin.com> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

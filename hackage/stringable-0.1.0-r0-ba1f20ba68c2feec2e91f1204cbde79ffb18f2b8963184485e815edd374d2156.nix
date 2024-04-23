@@ -21,7 +21,7 @@
       synopsis = "A Stringable type class, in the spirit of Foldable and Traversable";
       description = "'Data.Stringable' provides a type class with a set of functions for\nconverting to and from the most often used string-linke types in\nHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

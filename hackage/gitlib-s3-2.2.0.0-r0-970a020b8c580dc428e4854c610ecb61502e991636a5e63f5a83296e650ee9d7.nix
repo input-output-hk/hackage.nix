@@ -21,7 +21,7 @@
       synopsis = "Gitlib repository backend for storing Git objects in Amazon S3";
       description = "Gitlib repository backend for storing Git objects in Amazon S3.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smoke" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

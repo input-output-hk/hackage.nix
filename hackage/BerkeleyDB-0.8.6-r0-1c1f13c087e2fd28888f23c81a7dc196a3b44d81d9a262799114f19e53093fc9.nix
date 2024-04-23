@@ -21,16 +21,16 @@
       synopsis = "Berkeley DB binding";
       description = "This package provides a Haskell binding for Berkeley DB, which is a fast, scalable,\nfully transactional database that runs on a local file system, and functions as a\ndictionary of arbitrary-sized binary blobs.  It is NOT an SQL-based database.  It\nis not free for commercial use.\n\nThis is a work in progress: The coverage of the Berkeley DB API is not yet complete. Tested with\nBerkeley DB versions 4.7 and 4.8, but should work with earlier versions.\n\nBerkeley DB home page:\n<http://www.oracle.com/database/berkeley-db/index.html>\n\nHaskell binding tutorial:\n<http://www.haskell.org/haskellwiki/BerkeleyDBXML>\n\nDARCS repository:\n<http://code.haskell.org/BerkeleyDB/>\n\nChanges: 0.8:   Support db4.7 and db4.8, removed C++ binding.\n0.8.5: Add db_sync.\n0.7.2: Fix on db4.7\n\nContributors: Michael Stone, Balázs Jávorszky";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."db" or (errorHandler.sysDepError "db")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

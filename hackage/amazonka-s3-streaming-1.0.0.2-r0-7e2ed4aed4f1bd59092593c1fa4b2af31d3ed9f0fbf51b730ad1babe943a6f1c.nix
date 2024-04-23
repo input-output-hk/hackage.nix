@@ -21,7 +21,7 @@
       synopsis = "Provides conduits to upload data to S3 using the Multipart API";
       description = "Provides a conduit based streaming interface and a concurrent interface to\nuploading data to S3 using the Multipart API. Also provides method to upload\nfiles or bytestrings of known size in parallel. Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "s3upload" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.s3upload-exe then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Better error messages when decoding JSON values.";
       description = "A small package which gives you the tools to build parsers to decode JSON\nvalues, and gives good error messages when parsing fails.\nSee also <http://harry.garrood.me/blog/aeson-better-errors/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

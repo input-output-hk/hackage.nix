@@ -21,7 +21,7 @@
       synopsis = "Utility functions for testing your attoparsec parsers with hspec";
       description = "This package provides some helper functions for testing attoparsec parsers with hspec.\n\nSee the documentation in @Test.Hspec.Attoparsec@ for examples, or this package's own test suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

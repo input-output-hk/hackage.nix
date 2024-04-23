@@ -21,7 +21,7 @@
       synopsis = "A useful type for collecting error messages.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-render" or (errorHandler.buildDepError "text-render"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

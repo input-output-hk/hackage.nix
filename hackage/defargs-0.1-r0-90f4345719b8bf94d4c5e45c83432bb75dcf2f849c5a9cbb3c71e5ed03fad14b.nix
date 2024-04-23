@@ -21,14 +21,14 @@
       synopsis = "default arguments in haskell";
       description = "Default arguments in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cluss" or (errorHandler.buildDepError "cluss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

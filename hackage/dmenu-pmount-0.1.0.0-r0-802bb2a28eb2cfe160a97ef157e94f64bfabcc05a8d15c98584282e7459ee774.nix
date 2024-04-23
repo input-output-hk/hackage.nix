@@ -21,7 +21,7 @@
       synopsis = "Mounting and unmounting linux devices as user with dmenu and pmount.";
       description = "See README.md file.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "dmenu-pmount" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."dmenu" or (errorHandler.buildDepError "dmenu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Redis support for Snap Framework";
       description = "This package provides a snaplet which wraps Redis\ninterface as implemented by Hedis library. Inline\ndocumentation contains usage examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

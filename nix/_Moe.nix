@@ -6,8 +6,8 @@
         nix = import ../hackage/Moe-0.1-r0-6bb315ab6aaada4b315aa02c77068e6a408c7ea94e8bb2b9cf398b068a9ad713.nix;
         revNum = 0;
         sha256 = "6bb315ab6aaada4b315aa02c77068e6a408c7ea94e8bb2b9cf398b068a9ad713";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "bioinformatics support library";
       description = "This is a collection of modules I separated from\nvarious bioinformatics tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

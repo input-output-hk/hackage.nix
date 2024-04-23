@@ -21,7 +21,7 @@
       synopsis = "Wrapper for Google Firestore/Datastore API";
       description = "This is an arguably convenient wrapper around gogols `Network.Google.FireStore`. This is likely not the idiomatic or best API for Google Firestore/Datastore/Firebase. I don't even understand the difference between all of those trademarks. Bug reports and suggestions are welcome. <https://github.com/valyagolev/firestore>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "firestore-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

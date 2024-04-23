@@ -21,14 +21,14 @@
       synopsis = "Mean shift algorithm";
       description = "Mean shift is a general, non-parametric feature-space analysis tool. It can be used\nfor clustering, segmentation, filtering, object tracking, and even optimization. This package aims to\nprovide a basic, easy to use version of the method.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

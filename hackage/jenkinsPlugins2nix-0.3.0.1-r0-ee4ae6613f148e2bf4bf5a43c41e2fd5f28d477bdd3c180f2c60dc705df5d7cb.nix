@@ -21,7 +21,7 @@
       synopsis = "Generate nix for Jenkins plugins.";
       description = "Generate nix for Jenkins plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jenkinsPlugins2nix" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jenkinsPlugins2nix-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."jenkinsPlugins2nix" or (errorHandler.buildDepError "jenkinsPlugins2nix"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

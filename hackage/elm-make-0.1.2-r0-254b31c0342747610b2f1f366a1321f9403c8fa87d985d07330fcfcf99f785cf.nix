@@ -21,7 +21,7 @@
       synopsis = "A build tool for Elm projects";
       description = "A nice way to build projects that is aware of both elm-compile and\nelm-package, so it can make the build process very smooth.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elm-make" = {
@@ -40,9 +40,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

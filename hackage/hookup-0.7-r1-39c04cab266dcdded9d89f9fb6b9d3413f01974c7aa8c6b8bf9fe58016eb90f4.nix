@@ -21,7 +21,7 @@
       synopsis = "Abstraction over creating network connections with SOCKS5 and TLS";
       description = "This package provides an abstraction for communicating with line-oriented\nnetwork services while abstracting over the use of SOCKS5 and TLS (via OpenSSL)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."HsOpenSSL-x509-system" or (errorHandler.buildDepError "HsOpenSSL-x509-system"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

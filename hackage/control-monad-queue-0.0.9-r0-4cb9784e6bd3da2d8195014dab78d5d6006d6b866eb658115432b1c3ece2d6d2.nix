@@ -21,11 +21,11 @@
       synopsis = "Resuable corecursive queues, via continuations.";
       description = "Corecursive Queues";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

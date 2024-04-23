@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-properties-array-old";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Some properties of the data related to rhythmicity.";
       description = "Are taken from the phonetic-languages-simplified-properties-array to provide the old functionality (for compatibility). If possible, use the phonetic-languages-simplified-properties-array instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
           (hsPkgs."phonetic-languages-basis" or (errorHandler.buildDepError "phonetic-languages-basis"))
           (hsPkgs."phonetic-languages-simplified-properties-array-common" or (errorHandler.buildDepError "phonetic-languages-simplified-properties-array-common"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

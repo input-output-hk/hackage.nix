@@ -21,7 +21,7 @@
       synopsis = "QUIC";
       description = "Library for QUIC: A UDP-Based Multiplexed and Secure Transport";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "server" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-session-manager" or (errorHandler.buildDepError "tls-session-manager"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,10 +78,10 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -98,19 +98,19 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

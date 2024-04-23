@@ -21,7 +21,7 @@
       synopsis = "Library for working with product types generically";
       description = "Library allow to work with arbitrary product types in generic\nmanner. They could be constructed, destucted, converted provided\nthey are product of identical types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
             (hsPkgs."fixed-vector-hetero" or (errorHandler.buildDepError "fixed-vector-hetero"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

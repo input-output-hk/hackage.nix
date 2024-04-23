@@ -21,7 +21,7 @@
       synopsis = "Comparison of trees and forests.";
       description = "Wikipedia on forestry: \"the science and craft of creating,\nmanaging, using, conserving, and repairing forests and\nassociated resources.\"\n\nThis is a modest starting point and provides just:\n\n* forest alignments\n* tree alignments\n\nBuild this library and executable with GHC-8.0.2\n\nTo enable @RNAforestry@, use @cabal new-build -frnaforestry@ or\n@cabal new-configure -w compiler-path -frnaforestry && cabal\nnew-build@. We suggest using @cabal@ with the nix-style local\nbuild options.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
           (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "RNAforestry" = {
-          depends = (pkgs.lib).optionals (flags.rnaforestry) [
+          depends = pkgs.lib.optionals (flags.rnaforestry) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -64,10 +64,10 @@
             (hsPkgs."ViennaRNA-extras" or (errorHandler.buildDepError "ViennaRNA-extras"))
             (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
             (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
-            ];
+          ];
           buildable = if flags.rnaforestry then true else false;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -77,19 +77,19 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."Forestry" or (errorHandler.buildDepError "Forestry"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."Forestry" or (errorHandler.buildDepError "Forestry"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

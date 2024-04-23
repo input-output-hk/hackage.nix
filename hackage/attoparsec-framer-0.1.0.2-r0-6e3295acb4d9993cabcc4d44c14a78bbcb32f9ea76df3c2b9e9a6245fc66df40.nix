@@ -21,7 +21,7 @@
       synopsis = "Use Attoparsec to parse framed protocol byte streams";
       description = "A library that simplifies the use of\n[Attoparsec](https://hackage.haskell.org/package/attoparsec) when processing\nframed protocol byte streams.\n\nAs well as reading the haddocks, please take a look at a\n[demo server](https://github.com/adetokunbo/attoparsec-framer/blob/main/toy/Server.hs)\nand [client](https://github.com/adetokunbo/attoparsec-framer/blob/main/toy/Client.hs)\nas working examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "toy-server" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."network-run" or (errorHandler.buildDepError "network-run"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "toy-client" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -60,10 +60,10 @@
             (hsPkgs."network-run" or (errorHandler.buildDepError "network-run"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unittests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

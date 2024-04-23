@@ -14,7 +14,7 @@
       identifier = {
         name = "persistent-instances-iproute";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "lanablack@amok.cc";
@@ -24,7 +24,7 @@
       synopsis = "Persistent instances for types in iproute";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

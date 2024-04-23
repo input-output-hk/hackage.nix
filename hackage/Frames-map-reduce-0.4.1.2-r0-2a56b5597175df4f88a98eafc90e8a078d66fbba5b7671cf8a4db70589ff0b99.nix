@@ -21,7 +21,7 @@
       synopsis = "Frames wrapper for map-reduce-folds and some extra folds helpers.";
       description = "Frames-map-reduce provides some helpers for using the map-reduce-folds library with vinyl records and Frames.\nThese include functions for filtering Frames, splitting records into key columns and data columns and\nrecombining key columns with other columns after reducing.\nThis package also provides some tools for building folds over records from folds over each column,\ne.g, summing multiple numerical columns into a multi-column result.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "AddRowsByLabel" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

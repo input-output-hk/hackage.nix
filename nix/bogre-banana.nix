@@ -6,8 +6,8 @@
         nix = import ../hackage/bogre-banana-0.0.1-r0-433e5d2a19d87ff71765de765637ee7393b80ef6b66355f22c7f37e7e586f6f2.nix;
         revNum = 0;
         sha256 = "433e5d2a19d87ff71765de765637ee7393b80ef6b66355f22c7f37e7e586f6f2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

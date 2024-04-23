@@ -21,15 +21,15 @@
       synopsis = "Defunctionalization helpers: booleans";
       description = "This package provides type and term definitions for boolean type families\nin \"Data.Type.Bool\" (in @base@) using @SBool@ type from @singleton-bool@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."defun-core" or (errorHandler.buildDepError "defun-core"))
           (hsPkgs."singleton-bool" or (errorHandler.buildDepError "singleton-bool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

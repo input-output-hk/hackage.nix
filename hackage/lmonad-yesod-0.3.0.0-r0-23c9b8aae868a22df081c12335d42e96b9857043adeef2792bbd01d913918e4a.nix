@@ -21,7 +21,7 @@
       synopsis = "LMonad for Yesod integrates LMonad's IFC with Yesod web applications.";
       description = "LMonad for Yesod integrates LMonad's IFC with Yesod web applications. You can define custom security policies by modifying the database model file. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

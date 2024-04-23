@@ -21,7 +21,7 @@
       synopsis = "A SDL2-based graphics library, batteries-included.";
       description = "This package provides the wheel for a graphical application or a game.\n\nBasic concepts and features:\n\n- Figure: convenient SDL texture, once created, it can be translated or rotated during rendering.\n- Component: a reusable widget with event handlers, its figures can also be cached.\n- Hot Config Replacement: view components can be constructed by an external yaml file with live preview.\n- built-in components: some common components are predefined. You can define a new component by yourself.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "button-counter" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "boids" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,10 +78,10 @@
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -93,12 +93,12 @@
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

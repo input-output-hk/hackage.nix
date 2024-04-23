@@ -21,15 +21,15 @@
       synopsis = "An efficient and easy-to-use tokenizer monad.";
       description = "This monad can be used for writing efficient and readable tokenizers in an imperative way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A twitter client for GTK+. Alpha version.";
       description = "THIS SOFTWARE IS STILL IN ALPHA STATE.\nA slick twitter client for GTK. Features syntax highlighting of tweets, URL linking/shortening and\n'timeline modifier'.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hawitter" = {
@@ -39,9 +39,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

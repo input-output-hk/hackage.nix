@@ -6,8 +6,8 @@
         nix = import ../hackage/dotnet-timespan-0.0.1.0-r0-e77831d08f90bc167a546365cb59fdcbdf38e090984c81da3ca2d817cfe21a17.nix;
         revNum = 0;
         sha256 = "e77831d08f90bc167a546365cb59fdcbdf38e090984c81da3ca2d817cfe21a17";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

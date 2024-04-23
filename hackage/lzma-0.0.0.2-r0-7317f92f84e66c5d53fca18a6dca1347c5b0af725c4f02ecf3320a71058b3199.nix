@@ -21,16 +21,16 @@
       synopsis = "LZMA/XZ compression and decompression";
       description = "This package provides a pure interface for compressing and\ndecompressing\n<https://en.wikipedia.org/wiki/LZMA LZMA (Lempel–Ziv–Markov chain algorithm)>\nstreams of data represented as lazy @ByteString@s. A\nmonadic incremental interface is provided as well. This package\nrelies on the <http://tukaani.org/xz/ liblzma C library>.\n\nThe following packages are based on this package and provide\nAPI support for popular streaming frameworks:\n\n* </package/lzma-streams lzma-streams> (for </package/io-streams io-streams>)\n\n* </package/pipes-lzma pipes-lzma> (for </package/pipes pipes>)\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."lzma-clib" or (errorHandler.buildDepError "lzma-clib"));
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."lzma" or (errorHandler.sysDepError "lzma"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."lzma-clib" or (errorHandler.buildDepError "lzma-clib"));
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."lzma" or (errorHandler.sysDepError "lzma"));
         buildable = true;
-        };
+      };
       tests = {
         "lzma-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,13 +21,13 @@
       synopsis = "";
       description = "A preprocessor to automate the debug instrumentation of a module";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "debug-pp" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

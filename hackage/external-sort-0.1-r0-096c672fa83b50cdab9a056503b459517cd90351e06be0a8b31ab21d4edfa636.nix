@@ -21,7 +21,7 @@
       synopsis = "Sort large arrays on your hard drive. Kind of like the unix util sort.";
       description = "Sort arrays too large to fit in ram, by using your hard drive.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."EdisonAPI" or (errorHandler.buildDepError "EdisonAPI"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

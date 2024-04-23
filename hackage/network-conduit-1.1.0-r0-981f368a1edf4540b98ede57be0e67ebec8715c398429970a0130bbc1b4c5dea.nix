@@ -21,14 +21,14 @@
       synopsis = "Stream socket data using conduits. (deprecated)";
       description = "Stream socket data using conduits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

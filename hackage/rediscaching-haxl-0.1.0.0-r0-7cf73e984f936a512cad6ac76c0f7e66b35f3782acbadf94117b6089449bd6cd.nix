@@ -21,7 +21,7 @@
       synopsis = "Combine redis caching and haxl.";
       description = "Combine redis caching and haxl. easy to use redis caching on haxl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

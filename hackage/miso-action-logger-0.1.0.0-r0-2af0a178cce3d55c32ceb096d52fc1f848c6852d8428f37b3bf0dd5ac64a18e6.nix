@@ -21,7 +21,7 @@
       synopsis = "Miso state transition logger";
       description = "State transition logger for Miso heavily inspired by Redux-Logger.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
           (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

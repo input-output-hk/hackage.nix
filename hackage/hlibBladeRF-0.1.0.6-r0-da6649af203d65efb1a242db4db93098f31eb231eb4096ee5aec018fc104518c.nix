@@ -21,27 +21,27 @@
       synopsis = "Haskell binding to libBladeRF SDR library";
       description = "IO Monadic binding for libbladeRF software defined radio.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libbladeRF" or (errorHandler.pkgConfDepError "libbladeRF"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

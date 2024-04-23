@@ -21,7 +21,7 @@
       synopsis = "Generation of PDF documents";
       description = "A PDF library allowing to generate multipage PDF documents with outlines, links ...";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."encoding" or (errorHandler.buildDepError "encoding"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

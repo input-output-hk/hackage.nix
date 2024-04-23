@@ -21,7 +21,7 @@
       synopsis = "Linear Programming using HiGHS and comfort-array";
       description = "Simple interface to linear programming functions provided by HiGHS\nusing the flexible Array shape framework from @comfort-array@.\n\nE.g. you can use @Shape.Tuple@ to convert safely\nbetween nested tuples and arrays with the same number of elements.\n\n> type X = Shape.Element\n> type PairShape = Shape.NestedTuple Shape.TupleIndex (X,X)\n>\n> case Shape.indexTupleFromShape (Shape.static :: PairShape) of\n>   (posIx,negIx) ->\n>     case fmap (mapSnd Array.toTuple) $ snd $\n>          LP.solve LP.choose [] [[1.*posIx, (-1).*negIx] ==. 314]\n>            (LP.Minimize,\n>             Array.fromTuple (23,42) :: Array PairShape Double)\n>       of\n>         Just (absol, (pos, neg)) ->\n>           printf \"absol %f,  pos %f, neg %f\\n\" absol pos neg\n>         _ -> fail \"HiGHS solver failed\"\n\nAlternatives: @coinor-clp@, @comfort-glpk@, @hmatrix-glpk@, @glpk-hs@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,12 +35,12 @@
           (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."highs" or (errorHandler.pkgConfDepError "highs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "highs-lp-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

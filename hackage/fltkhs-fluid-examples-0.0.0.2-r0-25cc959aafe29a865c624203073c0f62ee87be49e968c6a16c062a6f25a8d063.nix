@@ -21,7 +21,7 @@
       synopsis = "Fltkhs Fluid Examples";
       description = "Examples of using Fluid with FLTKHS";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "fltkhs-fluid-radio" = {
@@ -29,49 +29,49 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fltkhs-fluid-tabs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fltkhs-fluid-valuators" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fltkhs-fluid-inactive" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fltkhs-fluid-fast-slow" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fltkhs-fluid-tree" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

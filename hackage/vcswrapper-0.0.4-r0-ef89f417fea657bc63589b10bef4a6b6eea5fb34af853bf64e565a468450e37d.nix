@@ -21,7 +21,7 @@
       synopsis = "Wrapper for source code management systems";
       description = "Provides simple haskell functions to call external source code management systems.\nCurrently git and SVN are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vcswrapper" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

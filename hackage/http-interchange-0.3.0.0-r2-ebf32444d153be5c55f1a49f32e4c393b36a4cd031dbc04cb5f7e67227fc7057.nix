@@ -21,7 +21,7 @@
       synopsis = "Types and serialization for HTTP";
       description = "Types and serialization for HTTP. This includes things like request\nline, status line, and headers. There is also a collection type\nfor headers that supports fast, case-insensitive lookup.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytebuild" or (errorHandler.buildDepError "bytebuild"))
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

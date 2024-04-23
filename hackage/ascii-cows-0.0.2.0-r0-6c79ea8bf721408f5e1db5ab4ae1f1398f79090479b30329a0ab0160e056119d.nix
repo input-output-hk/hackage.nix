@@ -21,7 +21,7 @@
       synopsis = "A collection of ASCII cows. Moo.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."random-extras" or (errorHandler.buildDepError "random-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

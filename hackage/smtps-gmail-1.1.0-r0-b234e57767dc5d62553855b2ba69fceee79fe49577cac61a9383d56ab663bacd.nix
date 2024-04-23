@@ -21,7 +21,7 @@
       synopsis = "Gmail SMTP Client";
       description = "Send email from your Gmail account.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

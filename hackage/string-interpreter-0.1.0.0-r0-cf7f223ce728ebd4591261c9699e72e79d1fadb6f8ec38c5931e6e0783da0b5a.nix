@@ -21,11 +21,11 @@
       synopsis = "A library that has commonly used function for the phonetic-languages implementations";
       description = "Provides a way to use recersive interactive mode.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

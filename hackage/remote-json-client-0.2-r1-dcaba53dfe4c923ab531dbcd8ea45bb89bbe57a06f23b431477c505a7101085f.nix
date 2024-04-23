@@ -21,7 +21,7 @@
       synopsis = "Web client wrapper for remote-json";
       description = "Web client, using wreq, for the JSON RPC protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."natural-transformation" or (errorHandler.buildDepError "natural-transformation"))
           (hsPkgs."remote-json" or (errorHandler.buildDepError "remote-json"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

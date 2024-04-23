@@ -21,7 +21,7 @@
       synopsis = "ZeroMQ backend for network-transport";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bench-dp-latency" = {
           depends = [
@@ -50,30 +50,30 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            ];
+          ];
           buildable = if flags.benchmarks then true else false;
-          };
-        "bench-dp-throughput" = {
-          depends = (pkgs.lib).optionals (flags.benchmarks) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            (hsPkgs."network-transport-zeromq" or (errorHandler.buildDepError "network-transport-zeromq"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
-          buildable = if flags.benchmarks then true else false;
-          };
-        "bench-dp-channels" = {
-          depends = (pkgs.lib).optionals (flags.benchmarks) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            (hsPkgs."network-transport-zeromq" or (errorHandler.buildDepError "network-transport-zeromq"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
-          buildable = if flags.benchmarks then true else false;
-          };
         };
+        "bench-dp-throughput" = {
+          depends = pkgs.lib.optionals (flags.benchmarks) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-zeromq" or (errorHandler.buildDepError "network-transport-zeromq"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          ];
+          buildable = if flags.benchmarks then true else false;
+        };
+        "bench-dp-channels" = {
+          depends = pkgs.lib.optionals (flags.benchmarks) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-zeromq" or (errorHandler.buildDepError "network-transport-zeromq"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          ];
+          buildable = if flags.benchmarks then true else false;
+        };
+      };
       tests = {
         "test-zeromq" = {
           depends = [
@@ -82,18 +82,18 @@
             (hsPkgs."network-transport-zeromq" or (errorHandler.buildDepError "network-transport-zeromq"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."network-transport-tests" or (errorHandler.buildDepError "network-transport-tests"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-api" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-zeromq" or (errorHandler.buildDepError "network-transport-zeromq"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-ch-core" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,9 +106,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-ch-closure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -121,9 +121,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-ch-stat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -136,9 +136,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

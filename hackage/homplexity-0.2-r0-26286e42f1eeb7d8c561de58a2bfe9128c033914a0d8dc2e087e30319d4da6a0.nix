@@ -21,7 +21,7 @@
       synopsis = "Haskell code quality tool";
       description = "Homplexity aims to measure code complexity,\nwarning about fragments that might have higher defect probability\ndue to bad coding style on-the-large:\n* too large functions\n* too deeply nested conditions\n* too few comments";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "homplexity" = {
@@ -36,12 +36,12 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

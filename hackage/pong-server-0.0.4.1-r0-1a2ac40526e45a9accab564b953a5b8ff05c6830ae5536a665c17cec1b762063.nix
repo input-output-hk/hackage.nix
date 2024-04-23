@@ -21,7 +21,7 @@
       synopsis = "A simple embedded pingable server that runs in the background.";
       description = "A simple embedded pingable server that runs in the background. Details in the README on GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pong-server-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

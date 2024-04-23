@@ -21,7 +21,7 @@
       synopsis = "Core definitions for BattlePlace.io service";
       description = "Core definitions for BattlePlace.io service";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

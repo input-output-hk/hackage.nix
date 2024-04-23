@@ -21,7 +21,7 @@
       synopsis = "A crossplatform library to simulate keyboard input";
       description = "A crossplatform library to simulate keyboard input (so far it works only on Linux, but I'll add Windows and OS X soon).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         libs = [ (pkgs."Xtst" or (errorHandler.sysDepError "Xtst")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

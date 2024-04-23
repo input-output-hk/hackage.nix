@@ -21,11 +21,11 @@
       synopsis = "Extensible exceptions";
       description = "Extensible exceptions for old implementations (e.g. GHC < 6.10).\nThis package is being lazily implemented, i.e. not all the new\nexception types or all the exception functions are necessarily\nimplemented yet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

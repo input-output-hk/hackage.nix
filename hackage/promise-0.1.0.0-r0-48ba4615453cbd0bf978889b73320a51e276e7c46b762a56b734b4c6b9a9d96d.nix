@@ -21,14 +21,14 @@
       synopsis = "A monadic interface for async";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

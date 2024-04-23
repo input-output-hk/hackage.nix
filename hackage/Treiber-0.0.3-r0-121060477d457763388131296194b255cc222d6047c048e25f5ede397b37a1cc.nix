@@ -21,7 +21,7 @@
       synopsis = "Lock free Treiber stack";
       description = "An implementation of Treiber stacks, a lock free stack. Works with any monad that has atomically modificable references. Removed debug code accidentally left in in version 0.0.1 and added specializations of the TreiberStack data structure to the IO and STM monads (forgotten to export in 0.0.2).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."ref-mtl" or (errorHandler.buildDepError "ref-mtl"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

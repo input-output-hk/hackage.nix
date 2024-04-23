@@ -21,7 +21,7 @@
       synopsis = "Create and control scsynth processes";
       description = "This library allows to create and control scsynth processes.\n\nChangeLog: <https://github.com/kaoskorobase/hsc3-process/blob/master/ChangeLog.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

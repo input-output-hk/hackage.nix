@@ -16,7 +16,7 @@
       libpci-363 = false;
       libpci-364 = false;
       libpci-370 = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "bindings-libpci"; version = "0.4.0.0"; };
@@ -29,16 +29,16 @@
       synopsis = "Low level bindings to libpci";
       description = "Low level bindings to libpci:\n\n<https://github.com/pciutils/pciutils>\n\nThis package uses @bindings-DSL@\nand conforms to its naming convention.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."libpci" or (errorHandler.sysDepError "libpci"));
-        pkgconfig = (pkgs.lib).optionals (!system.isWindows) (((((((pkgs.lib).optional (flags.libpci-352) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci")) ++ (pkgs.lib).optional (flags.libpci-353) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ (pkgs.lib).optional (flags.libpci-355) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ (pkgs.lib).optional (flags.libpci-360) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ (pkgs.lib).optional (flags.libpci-363) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ (pkgs.lib).optional (flags.libpci-364) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ (pkgs.lib).optional (flags.libpci-370) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci")));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."libpci" or (errorHandler.sysDepError "libpci"));
+        pkgconfig = pkgs.lib.optionals (!system.isWindows) ((((((pkgs.lib.optional (flags.libpci-352) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci")) ++ pkgs.lib.optional (flags.libpci-353) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ pkgs.lib.optional (flags.libpci-355) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ pkgs.lib.optional (flags.libpci-360) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ pkgs.lib.optional (flags.libpci-363) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ pkgs.lib.optional (flags.libpci-364) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"))) ++ pkgs.lib.optional (flags.libpci-370) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

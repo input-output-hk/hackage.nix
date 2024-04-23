@@ -21,7 +21,7 @@
       synopsis = "A Transactional cache with user-defined persistence";
       description = "TCache is a transactional cache with configurable persitence. It allows conventional\nSTM transactions for objects that syncronize  with their user-defined storages.\nState in memory and into permanent storage is transactionally coherent.\n\nThe package implements serializable STM references, access by key and by record field value, triggers,\nfull text and field indexation, default serialization and a query language based on record fields\n\n0.10  version add memoization and a persistent and transactional collection/queue.\n\n0.10.0.8 subversion add cachedByKeySTM\n\nSee \"Data.TCache\" for details\nThis release fixes some bugs in the module IndexText";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."RefSerialize" or (errorHandler.buildDepError "RefSerialize"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

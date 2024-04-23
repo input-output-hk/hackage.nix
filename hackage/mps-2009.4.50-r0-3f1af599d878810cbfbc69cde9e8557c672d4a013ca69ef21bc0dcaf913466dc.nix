@@ -21,7 +21,7 @@
       synopsis = "message passing style helpers";
       description = "message passing style helpers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."template" or (errorHandler.buildDepError "template"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

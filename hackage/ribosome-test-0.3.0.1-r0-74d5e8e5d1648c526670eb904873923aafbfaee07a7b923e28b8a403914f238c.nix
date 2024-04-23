@@ -21,7 +21,7 @@
       synopsis = "test helpers for ribosome";
       description = "Please see the README on GitHub at <https://github.com/tek/ribosome-hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Shared functionality between GHC and the @template-haskell@\nlibrary";
       description = "This library contains various bits shared between the @ghc@ and\n@template-haskell@ libraries.\n\nThis package exists to ensure that @template-haskell@ has a\nminimal set of transitive dependencies, since it is intended to\nbe depended upon by user code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

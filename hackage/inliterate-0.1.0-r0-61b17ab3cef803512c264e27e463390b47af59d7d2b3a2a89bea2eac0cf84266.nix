@@ -21,7 +21,7 @@
       synopsis = "Interactive literate programming";
       description = "Evaluate markdown code blocks to show the results of running the code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,37 +35,37 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."lucid-extras" or (errorHandler.buildDepError "lucid-extras"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "inlitpp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inliterate" or (errorHandler.buildDepError "inliterate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-inliterate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inliterate" or (errorHandler.buildDepError "inliterate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-inliterate-pp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inliterate" or (errorHandler.buildDepError "inliterate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

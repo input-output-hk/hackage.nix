@@ -14,7 +14,7 @@
       identifier = {
         name = "cabal-pkg-config-version-hook";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "cabal-pkg-config-version-hook contributors";
       maintainer = "info@hercules-ci.com";
@@ -24,7 +24,7 @@
       synopsis = "Make Cabal aware of pkg-config package versions";
       description = "A setup hook for Cabal that determines the compile-time version of a pkg-config package and adds CPP macros and enables flags.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

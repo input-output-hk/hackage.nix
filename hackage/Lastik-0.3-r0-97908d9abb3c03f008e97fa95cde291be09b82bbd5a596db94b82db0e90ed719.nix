@@ -21,7 +21,7 @@
       synopsis = "A library for compiling programs in a variety of languages";
       description = "A library for compiling programs in a variety of languages including Java, Scala and C#.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -34,7 +34,7 @@
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -43,8 +43,8 @@
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple interface to the FP Complete IDE API.";
       description = "A server and library for communicating with the FP Complete IDE API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -72,9 +72,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-fay" or (errorHandler.buildDepError "yesod-fay"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fpco-api" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.jenkins-build then false else true;
-          };
         };
       };
-    }
+    };
+  }

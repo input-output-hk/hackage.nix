@@ -21,7 +21,7 @@
       synopsis = "Recursion Schemes for Monadic version.";
       description = "Yet another recursion schemes for monadic style, depends on recursion-schemes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,14 @@
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "monadic-recursion-schemes-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

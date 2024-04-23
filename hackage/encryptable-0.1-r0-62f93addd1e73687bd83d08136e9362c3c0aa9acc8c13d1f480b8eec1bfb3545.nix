@@ -21,7 +21,7 @@
       synopsis = "Typed encryption with persistent support";
       description = "You can find documentation at <http://hackage.haskell.org/package/encryptable/docs/Data-Encryptable.html hackage>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "encryptable-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

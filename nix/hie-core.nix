@@ -6,8 +6,8 @@
         nix = import ../hackage/hie-core-0.0.1-r0-15aa0ebce9f11760c7d8a19737d198db04b08b19344d5defeac32432fcb3e6a9.nix;
         revNum = 0;
         sha256 = "15aa0ebce9f11760c7d8a19737d198db04b08b19344d5defeac32432fcb3e6a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

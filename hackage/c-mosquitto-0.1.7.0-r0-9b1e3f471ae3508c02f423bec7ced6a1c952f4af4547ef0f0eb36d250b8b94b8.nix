@@ -21,7 +21,7 @@
       synopsis = "Simpe mosquito MQTT binding able to work with the Amazons IoT";
       description = "Simpe mosquito MQTT binding\nable to work with the Amazons IoT but it should work with other providers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,28 +30,28 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."mosquitto" or (errorHandler.sysDepError "mosquitto")) ];
         buildable = true;
-        };
+      };
       exes = {
         "c-mosquitto" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."c-mosquitto" or (errorHandler.buildDepError "c-mosquitto"))
             (hsPkgs."options" or (errorHandler.buildDepError "options"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "c-mosquitto-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."c-mosquitto" or (errorHandler.buildDepError "c-mosquitto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

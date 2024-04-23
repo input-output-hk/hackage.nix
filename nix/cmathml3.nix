@@ -6,8 +6,8 @@
         nix = import ../hackage/cmathml3-0.1-r0-f303bce17a129f2da9c63db54618bdf8c70d978b4b0c04f3a8ea5a5351052dc3.nix;
         revNum = 0;
         sha256 = "f303bce17a129f2da9c63db54618bdf8c70d978b4b0c04f3a8ea5a5351052dc3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

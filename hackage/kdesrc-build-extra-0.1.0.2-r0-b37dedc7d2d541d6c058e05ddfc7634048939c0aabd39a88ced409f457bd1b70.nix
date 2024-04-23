@@ -21,7 +21,7 @@
       synopsis = "Build profiles for kdesrc-build";
       description = "A tool that allows defining build profiles on top of the kdesrc-build system for building KDE packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kdesrc-build-extra" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

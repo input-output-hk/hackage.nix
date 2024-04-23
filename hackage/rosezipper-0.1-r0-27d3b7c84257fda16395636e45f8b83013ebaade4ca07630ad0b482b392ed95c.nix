@@ -21,16 +21,16 @@
       synopsis = "Generic zipper implementation for Data.Tree";
       description = "Generic zipper implementation for Data.Tree";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

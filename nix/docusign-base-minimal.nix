@@ -6,8 +6,8 @@
         nix = import ../hackage/docusign-base-minimal-0.0.1-r0-69364d9eaf124f7ff310aaae97e6b402255add31e4bcf66aa36f9a495dc6a7e6.nix;
         revNum = 0;
         sha256 = "69364d9eaf124f7ff310aaae97e6b402255add31e4bcf66aa36f9a495dc6a7e6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

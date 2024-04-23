@@ -21,7 +21,7 @@
       synopsis = "Generic HTTP types for Haskell (for both client and server code).";
       description = "Generic HTTP types for Haskell (for both client and server code).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."ascii" or (errorHandler.buildDepError "ascii"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

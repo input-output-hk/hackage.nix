@@ -21,7 +21,7 @@
       synopsis = "Auto-generate a command-line parser for your datatype";
       description = "This library auto-generates an @optparse-applicative@-compatible\n@Parser@ from any data type that derives the @Generic@ interface.\n\nSee the documentation in \"Options.Generic\" for an example of how to use\nthis library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.8") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.8") [
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatically discover and run Hspec tests";
       description = "Documentation is here: <https://github.com/sol/hspec-discover#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -30,10 +30,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-shouldbe" or (errorHandler.buildDepError "hspec-shouldbe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Verified downloads with retries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."rio-prettyprint" or (errorHandler.buildDepError "rio-prettyprint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."rio-prettyprint" or (errorHandler.buildDepError "rio-prettyprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

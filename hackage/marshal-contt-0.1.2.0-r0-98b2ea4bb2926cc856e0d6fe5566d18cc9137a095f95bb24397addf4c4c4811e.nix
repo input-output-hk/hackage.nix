@@ -21,7 +21,7 @@
       synopsis = "A ContT-based wrapper for Haskell-to-C marshalling functions.";
       description = "See <https://github.com/typedrat/marshal-contt/blob/master/README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

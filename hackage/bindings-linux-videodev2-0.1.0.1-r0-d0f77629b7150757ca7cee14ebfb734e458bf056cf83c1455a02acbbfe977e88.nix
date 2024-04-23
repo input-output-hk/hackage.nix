@@ -21,18 +21,18 @@
       synopsis = "bindings to Video For Linux Two (v4l2) kernel interfaces";
       description = "Bindings for Video For Linux Two (v4l2), wrapping:\n<file:///usr/include/linux/videodev2.h>\nUpstream documentation at:\n<http://linuxtv.org/downloads/v4l-dvb-apis/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."ioctl" or (errorHandler.buildDepError "ioctl"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

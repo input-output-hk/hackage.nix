@@ -21,7 +21,7 @@
       synopsis = "Tool for creating completely configured production Haskell projects.";
       description = "Tool for creating completely configured production Haskell projects.\nSee README.md for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,19 +39,19 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "summon" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "summoner-test" = {
           depends = [
@@ -61,12 +61,12 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

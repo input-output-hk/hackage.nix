@@ -21,7 +21,7 @@
       synopsis = "Measure allocations of a Haskell functions/values";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "weigh-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

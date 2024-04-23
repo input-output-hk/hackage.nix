@@ -21,7 +21,7 @@
       synopsis = "snowflake http server";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snowflake-server" = {
@@ -34,9 +34,9 @@
             (hsPkgs."snowflake-core" or (errorHandler.buildDepError "snowflake-core"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

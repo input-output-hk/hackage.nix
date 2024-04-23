@@ -21,7 +21,7 @@
       synopsis = "For creating, comparing, parsing and printing Universally Unique Identifiers";
       description = "This library is useful for creating, comparing, parsing and\nprinting Universally Unique Identifiers.\nSee <http://en.wikipedia.org/wiki/UUID> for the general idea.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."maccatcher" or (errorHandler.buildDepError "maccatcher"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "benchuuid" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -49,11 +49,11 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
+        };
         "testuuid" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -64,9 +64,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

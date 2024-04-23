@@ -21,16 +21,16 @@
       synopsis = "UniProt-KB format parser";
       description = "Specification implementation of https://web.expasy.org/docs/userman.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "uniprot-kb-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uniprot-kb" or (errorHandler.buildDepError "uniprot-kb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

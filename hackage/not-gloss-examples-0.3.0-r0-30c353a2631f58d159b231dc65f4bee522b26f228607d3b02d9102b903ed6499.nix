@@ -21,7 +21,7 @@
       synopsis = "examples for not-gloss";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "not-gloss-display" = {
@@ -29,25 +29,25 @@
             (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
             (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "not-gloss-animate" = {
           depends = [
             (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
             (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "not-gloss-simulate" = {
           depends = [
             (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
             (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "not-gloss-game" = {
           depends = [
             (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
@@ -56,9 +56,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

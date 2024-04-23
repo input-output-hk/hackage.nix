@@ -21,7 +21,7 @@
       synopsis = "Type structure analysis";
       description = "Provides facilities to match type structures.\nUseful for checking protocol compliance in client-server applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."th-instance-reification" or (errorHandler.buildDepError "th-instance-reification"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "type-structure-htf-test-suite" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."th-instance-reification" or (errorHandler.buildDepError "th-instance-reification"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

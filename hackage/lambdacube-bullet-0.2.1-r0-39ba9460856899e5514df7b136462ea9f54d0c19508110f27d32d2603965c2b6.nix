@@ -21,7 +21,7 @@
       synopsis = "Example for combining LambdaCube and Bullet";
       description = "Example for combining LambdaCube and Bullet";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bullet" or (errorHandler.buildDepError "bullet"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

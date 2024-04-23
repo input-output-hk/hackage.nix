@@ -21,7 +21,7 @@
       synopsis = "Haskell symbolic execution engine.";
       description = "A Haskell symbolic execution engine.\nFor details, please see: <https://github.com/BillHallahan/G2>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -60,16 +60,16 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))
-          ] ++ (pkgs.lib).optionals (flags.support-lh && (compiler.isGhc && (compiler.version).lt "9.2")) [
+        ] ++ pkgs.lib.optionals (flags.support-lh && (compiler.isGhc && compiler.version.lt "9.2")) [
           (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
           (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
-          ]) ++ (pkgs.lib).optionals (flags.support-lh && (compiler.isGhc && (compiler.version).lt "9")) [
+        ]) ++ pkgs.lib.optionals (flags.support-lh && (compiler.isGhc && compiler.version.lt "9")) [
           (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
           (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "G2" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "G2LH" = {
           depends = [
             (hsPkgs."g2" or (errorHandler.buildDepError "g2"))
@@ -92,11 +92,11 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
-          buildable = if flags.support-lh && (compiler.isGhc && (compiler.version).lt "9.2")
+          ];
+          buildable = if flags.support-lh && (compiler.isGhc && compiler.version.lt "9.2")
             then true
             else false;
-          };
+        };
         "Inference" = {
           depends = [
             (hsPkgs."g2" or (errorHandler.buildDepError "g2"))
@@ -107,11 +107,11 @@
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
-          buildable = if flags.support-lh && (compiler.isGhc && (compiler.version).lt "9.2")
+          ];
+          buildable = if flags.support-lh && (compiler.isGhc && compiler.version.lt "9.2")
             then true
             else false;
-          };
+        };
         "Nebula" = {
           depends = [
             (hsPkgs."g2" or (errorHandler.buildDepError "g2"))
@@ -121,10 +121,10 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -143,9 +143,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-lh" = {
           depends = [
             (hsPkgs."g2" or (errorHandler.buildDepError "g2"))
@@ -164,11 +164,11 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
-          buildable = if flags.support-lh && (compiler.isGhc && (compiler.version).lt "9.2")
+          ];
+          buildable = if flags.support-lh && (compiler.isGhc && compiler.version.lt "9.2")
             then true
             else false;
-          };
+        };
         "test-g2q" = {
           depends = [
             (hsPkgs."g2" or (errorHandler.buildDepError "g2"))
@@ -176,18 +176,18 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-nebula-plugin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

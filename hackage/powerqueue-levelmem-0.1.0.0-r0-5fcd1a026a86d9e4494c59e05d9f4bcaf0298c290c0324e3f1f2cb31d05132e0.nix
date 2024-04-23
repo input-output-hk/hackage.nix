@@ -21,7 +21,7 @@
       synopsis = "A high performance in memory and LevelDB backend for powerqueue";
       description = "A high performance in memory and LevelDB backend for powerqueue";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "powerqueue-levelmem-test" = {
           depends = [
@@ -51,15 +51,15 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-            ];
+          ];
           libs = [
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
             (pkgs."leveldb" or (errorHandler.sysDepError "leveldb"))
             (pkgs."snappy" or (errorHandler.sysDepError "snappy"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "powerqueue-levelmem-bench" = {
           depends = [
@@ -69,14 +69,14 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-            ];
+          ];
           libs = [
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
             (pkgs."leveldb" or (errorHandler.sysDepError "leveldb"))
             (pkgs."snappy" or (errorHandler.sysDepError "snappy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

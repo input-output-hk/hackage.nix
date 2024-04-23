@@ -21,7 +21,7 @@
       synopsis = "Yahoo Web Search Services";
       description = "Documentation of the Yahoo Web Search APIs is available\nfrom the following URL: http:\\/\\/developer.yahoo.com\\/search\\/web\\/.\n\nExample code is provided in the base of the project directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Monad transformer for attempt. (deprecated)";
       description = "This package uses the transformers library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attempt" or (errorHandler.buildDepError "attempt"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

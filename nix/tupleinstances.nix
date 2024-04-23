@@ -6,8 +6,8 @@
         nix = import ../hackage/tupleinstances-0.0.1-r0-9b6fc66a8579fcf7ea3aac282bb0d5132db3928e147c4ea312319494c8ab9165.nix;
         revNum = 0;
         sha256 = "9b6fc66a8579fcf7ea3aac282bb0d5132db3928e147c4ea312319494c8ab9165";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

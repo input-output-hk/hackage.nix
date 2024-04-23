@@ -21,7 +21,7 @@
       synopsis = "Render tasty output to XML for Jenkins";
       description = "A tasty ingredient to output test results in XML, using the Ant schema. This XML can be consumed by the Jenkins continuous integration framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

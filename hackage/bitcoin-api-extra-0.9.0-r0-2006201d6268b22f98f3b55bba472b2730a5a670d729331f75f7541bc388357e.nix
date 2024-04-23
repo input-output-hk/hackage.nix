@@ -21,7 +21,7 @@
       synopsis = "Higher level constructs on top of the bitcoin-api package";
       description = "Where `bitcoin-api` focusses solely on interacting with the Bitcoin Core client,\nthis library attempts to provide higher level constructs on top of that API.\nIt provides a collection of algorithms and useful interfaces for communicating\nwith Bitcoin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."bitcoin-block" or (errorHandler.buildDepError "bitcoin-block"))
           (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
           (hsPkgs."bitcoin-api" or (errorHandler.buildDepError "bitcoin-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."bitcoin-api" or (errorHandler.buildDepError "bitcoin-api"))
             (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
             (hsPkgs."bitcoin-api-extra" or (errorHandler.buildDepError "bitcoin-api-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A codec for beta code (http://en.wikipedia.org/wiki/Beta_Code).";
       description = "A codec for beta code (http://en.wikipedia.org/wiki/Beta_Code).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "betacode-specs" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

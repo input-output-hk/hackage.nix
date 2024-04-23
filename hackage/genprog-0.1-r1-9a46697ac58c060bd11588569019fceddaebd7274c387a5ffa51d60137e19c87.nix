@@ -21,7 +21,7 @@
       synopsis = "Genetic programming library";
       description = "This package provides a /genetic programming/ framework. Genetic\nprogramming is an evolutionary technique, inspired by biological\nevolution, to evolve programs for solving specific problems. A genetic\nprogram is represented by a value of an algebraic datatype and\nassociated with a custom-defined /fitness/ value indicating the quality\nof the solution. Starting from a randomly generated initial population\nof genetic programs, the genetic operators of /selection/, /crossover/,\nand /mutation/ are used to evolve programs of increasingly better\nquality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

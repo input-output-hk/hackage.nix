@@ -21,7 +21,7 @@
       synopsis = "OpenAL sound system for Keid engine.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."opusfile" or (errorHandler.buildDepError "opusfile"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

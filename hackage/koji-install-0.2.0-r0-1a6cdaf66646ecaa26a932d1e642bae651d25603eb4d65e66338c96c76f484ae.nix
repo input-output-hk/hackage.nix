@@ -21,7 +21,7 @@
       synopsis = "CLI tool for installing rpms directly from Fedora Koji";
       description = "koji-install can install the latest koji build of a package locally.\nBy default it only downloads newer binaries of the subpackages\nalready installed, but there are options to override that.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "koji-install" = {
@@ -36,21 +36,21 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."xdg-userdirs" or (errorHandler.buildDepError "xdg-userdirs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.koji-install.components.exes.koji-install or (pkgs.buildPackages.koji-install or (errorHandler.buildToolDepError "koji-install:koji-install")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

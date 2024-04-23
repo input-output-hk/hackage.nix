@@ -21,16 +21,16 @@
       synopsis = "Embed data into object files.";
       description = "Given a list of files and directories to include,\nbinembed generates assembly source to include the data\ninto an object file that can be linked to a library or\nexecutable, along with interface modules for higher\nlevel access from languages such as C, Haskell, ...\n\nSee the package 'binembed-example' for a concrete\nexample.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "binembed" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

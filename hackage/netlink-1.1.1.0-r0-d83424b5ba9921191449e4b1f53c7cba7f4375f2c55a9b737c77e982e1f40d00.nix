@@ -21,7 +21,7 @@
       synopsis = "Netlink communication for Haskell";
       description = "Library to comminicate with Linux kernel via Netlink";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,61 +32,61 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dump_nl80211" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "genlinfo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dump_rtnetlink" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Generate" = {
-          depends = (pkgs.lib).optionals (flags.generators) [
+          depends = pkgs.lib.optionals (flags.generators) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ];
+          ];
           buildable = if flags.generators then true else false;
-          };
+        };
         "GenerateGenl" = {
-          depends = (pkgs.lib).optionals (flags.generators) [
+          depends = pkgs.lib.optionals (flags.generators) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ];
+          ];
           buildable = if flags.generators then true else false;
-          };
+        };
         "GenerateNL80211" = {
-          depends = (pkgs.lib).optionals (flags.generators) [
+          depends = pkgs.lib.optionals (flags.generators) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ];
+          ];
           buildable = if flags.generators then true else false;
-          };
         };
       };
-    }
+    };
+  }

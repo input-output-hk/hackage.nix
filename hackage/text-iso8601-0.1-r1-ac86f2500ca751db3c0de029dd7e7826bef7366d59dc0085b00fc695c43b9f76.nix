@@ -21,7 +21,7 @@
       synopsis = "Converting time to and from ISO 8601 text.";
       description = "Converting time to and from IS0 8601 text.\nSpecifically the [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) profile.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "text-iso8601-tests" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "text-iso8601-bench" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."attoparsec-iso8601" or (errorHandler.buildDepError "attoparsec-iso8601"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

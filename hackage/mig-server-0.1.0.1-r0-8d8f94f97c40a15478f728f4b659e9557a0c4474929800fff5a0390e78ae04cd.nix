@@ -21,7 +21,7 @@
       synopsis = "Build lightweight and composable servers";
       description = "With library mig we can build lightweight and composable servers.\nThere are only couple of combinators to assemble servers from parts.\nIt supports generic handler functions as servant does. But strives to use more\nsimple model for API. It does not go to describing Server API at type level which\nleads to simpler error messages.\n\nThe main features are:\n\n* lightweight library\n\n* expressive DSL to compose servers\n\n* type-safe handlers\n\n* handlers are encoded with generic haskell functions\n\n* built on top of WAI and warp server libraries.\n\nExample of hello world server:\n\n> import Mig.Json.IO\n>\n> -- | We can render the server and run it on port 8085.\n> -- It uses wai and warp.\n> main :: IO ()\n> main = runServer 8085 server\n>\n> -- | Init simple hello world server whith two routes:\n> server :: Server IO\n> server =\n>   \"api/v1\" /.\n>       [ \"hello\" /. hello\n>       , \"bye\" /. bye\n>       ]\n>\n> -- | Handler takes no inputs and marked as Get HTTP-request that returns Text.\n> hello :: Get (Resp Text)\n> hello = pure $ ok \"Hello World\"\n>\n> -- | Handle with URL-param query and json body input as Post HTTP-request that returns Text.\n> bye :: Query \"name\" Text -> Body Text -> Post (Resp Text)\n> bye (Query name) (Body greeting) =\n>   pure $ ok $ \"Bye to \" <> name <> \" \" <> greeting\n\nPlease see:\n\n* quick start guide at <https://anton-k.github.io/mig/>\n\n* examples directory for more fun servers: at <https://github.com/anton-k/mig/tree/main/examples/mig-example-apps#readme>\n\n* reference for the main functions: <https://anton-k.github.io/mig/09-reference.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

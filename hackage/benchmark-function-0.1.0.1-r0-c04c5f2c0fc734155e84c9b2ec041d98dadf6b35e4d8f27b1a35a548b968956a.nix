@@ -21,7 +21,7 @@
       synopsis = "Test the time it takes to run a haskell function";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

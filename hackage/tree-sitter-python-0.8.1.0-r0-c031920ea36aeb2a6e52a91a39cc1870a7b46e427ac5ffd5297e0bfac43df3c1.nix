@@ -21,7 +21,7 @@
       synopsis = "Tree-sitter grammar/parser for Python";
       description = "This package provides a parser for Python suitable for use with the tree-sitter package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
           (hsPkgs."tree-sitter-python".components.sublibs.tree-sitter-python-internal or (errorHandler.buildDepError "tree-sitter-python:tree-sitter-python-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "tree-sitter-python-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-            ];
+          ];
           libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "benchmark" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
             (hsPkgs."tree-sitter-python" or (errorHandler.buildDepError "tree-sitter-python"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cloud Haskell: Erlang-style concurrency in Haskell ";
       description = "This is an implementation of Cloud Haskell, as described in\n/Towards Haskell in the Cloud/ by Jeff Epstein, Andrew Black,\nand Simon Peyton Jones\n(<http://research.microsoft.com/en-us/um/people/simonpj/papers/parallel/>),\nalthough some of the details are different. The precise message\npassing semantics are based on /A unified semantics for future Erlang/\nby\tHans Svensson, Lars-Åke Fredlund and Clara Benac Earle.\nYou will probably also want to install a Cloud Haskell backend such\nas distributed-process-simplelocalnet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."distributed-static" or (errorHandler.buildDepError "distributed-static"))
           (hsPkgs."rank1dynamic" or (errorHandler.buildDepError "rank1dynamic"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ] ++ pkgs.lib.optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       tests = {
         "TestCH" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestClosure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

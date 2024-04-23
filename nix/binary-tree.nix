@@ -6,8 +6,8 @@
         nix = import ../hackage/binary-tree-0.1.0.0-r0-ea4e5f636570eeaf27b5ba28a1adad252e5e4997063c7172c387c7574508815a.nix;
         revNum = 0;
         sha256 = "ea4e5f636570eeaf27b5ba28a1adad252e5e4997063c7172c387c7574508815a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

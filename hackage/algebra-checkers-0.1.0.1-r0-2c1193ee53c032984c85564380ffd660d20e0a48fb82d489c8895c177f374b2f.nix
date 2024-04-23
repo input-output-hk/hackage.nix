@@ -21,7 +21,7 @@
       synopsis = "Model and test API surfaces algebraically";
       description = "Please see the README on GitHub at <https://github.com/isovector/algebra-checkers#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-instance-reification" or (errorHandler.buildDepError "th-instance-reification"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

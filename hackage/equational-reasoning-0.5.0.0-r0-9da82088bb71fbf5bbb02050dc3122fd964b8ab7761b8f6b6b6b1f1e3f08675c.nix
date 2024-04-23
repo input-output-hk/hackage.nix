@@ -21,7 +21,7 @@
       synopsis = "Proof assistant for Haskell using DataKinds & PolyKinds";
       description = "A simple convenient library to write equational / preorder proof as in Agda.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."th-extras" or (errorHandler.buildDepError "th-extras"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

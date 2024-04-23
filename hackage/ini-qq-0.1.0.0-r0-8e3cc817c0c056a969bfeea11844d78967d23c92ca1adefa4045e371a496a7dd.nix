@@ -21,7 +21,7 @@
       synopsis = "Quasiquoter for INI";
       description = "This library provides quasiquoters for the ini package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ini" or (errorHandler.buildDepError "ini"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ini-qq-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."ini-qq" or (errorHandler.buildDepError "ini-qq"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

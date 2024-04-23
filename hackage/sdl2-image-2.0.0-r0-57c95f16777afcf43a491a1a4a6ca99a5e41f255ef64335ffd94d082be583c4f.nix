@@ -21,7 +21,7 @@
       synopsis = "Bindings to SDL2_image.";
       description = "Haskell bindings to SDL2_image.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,23 +31,23 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_image" or (errorHandler.pkgConfDepError "SDL2_image"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-image-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

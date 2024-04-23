@@ -21,18 +21,18 @@
       synopsis = "Binding to libSDL-ttf";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL2" or (errorHandler.buildDepError "SDL2"))
-          ];
+        ];
         libs = [
           (pkgs."SDL2" or (errorHandler.sysDepError "SDL2"))
           (pkgs."SDL2_ttf" or (errorHandler.sysDepError "SDL2_ttf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

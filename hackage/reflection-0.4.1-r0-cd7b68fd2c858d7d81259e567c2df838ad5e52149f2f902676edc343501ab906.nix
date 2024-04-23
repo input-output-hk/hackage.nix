@@ -21,14 +21,14 @@
       synopsis = "Functional Pearl: Implicit Configurations";
       description = "Implementation of the ideas presented in the paper \"Functional Pearl: Implicit Configurations\" by Oleg Kiselyov and Chung-chieh Shan.\nModified to avoid the use of scoped type variables, and to use a phantom type wrapper rather than dummy arguments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

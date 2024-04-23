@@ -21,14 +21,14 @@
       synopsis = "Type classes for types representing time";
       description = "This library defines a set of type classes for generic\ntime arithmetic.  It supports universal time types like @UTCTime@\nfrom the <http://hackage.haskell.org/package/time time library> as\nwell as physical time types like the ones from\n<http://hackage.haskell.org/package/clock clock>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

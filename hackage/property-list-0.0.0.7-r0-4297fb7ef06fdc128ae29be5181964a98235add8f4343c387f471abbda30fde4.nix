@@ -12,7 +12,7 @@
       new-data-object = true;
       new-template-haskell = true;
       haxml_1_13 = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "property-list"; version = "0.0.0.7"; };
@@ -25,7 +25,7 @@
       synopsis = "XML property list parser";
       description = "Parser, data type and formatter for Apple's XML property list 1.0 format.\nThe bytestring-0.9.1.5 update on hackage seems to have\ncratered the build for many packages, including the last\nseveral versions of this one, so this version will\nprobably not build properly on the hackage site.\nAs far as I know, though, that is the only reason\nit fails. This version includes a hack to try to make\nit build on the site, triggered by the HaXml_1_13 build flag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -39,20 +39,20 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."th-fold" or (errorHandler.buildDepError "th-fold"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ]) ++ [
+        ]) ++ [
           (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
-          ]) ++ (if flags.haxml_1_13
+        ]) ++ (if flags.haxml_1_13
           then [
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bytestring-class" or (errorHandler.buildDepError "bytestring-class"))
             (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ]
+          ]
           else [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

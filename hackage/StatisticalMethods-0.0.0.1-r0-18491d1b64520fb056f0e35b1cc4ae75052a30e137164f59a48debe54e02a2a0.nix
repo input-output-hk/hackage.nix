@@ -21,7 +21,7 @@
       synopsis = "Collection of useful statistical methods.";
       description = "High-level statistical methods.\n\n* Confusion matrix\n\n* Confusion matrix dependent statistics (sensitivity, specificity, F-measure, mcc)\n\n* EM algorithm for two-component Gaussian mixture.\n\n* GMM (Gaussian Mixture Models) with >=1 Gaussians fitted to the data.\n\n\n\nNote that some methods are for testing only (two-component\nGaussian mixture EM).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

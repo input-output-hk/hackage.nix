@@ -21,15 +21,15 @@
       synopsis = "Automatic re-connection support for PostgreSQL";
       description = "PostgreSQL single-connection pool with automatic re-connection support, built on top of postgresql-simple.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

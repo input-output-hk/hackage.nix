@@ -21,15 +21,15 @@
       synopsis = "A small library for parsing IRC messages";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

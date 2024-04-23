@@ -21,14 +21,14 @@
       synopsis = "Ranged sets for Haskell";
       description = "A ranged set is an ordered list of ranges.  This allows sets\nsuch as all reals x such that\n(0.25 < x <= 0.75 or 1.4 <= x < 2.3 or 4.5 < x).";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

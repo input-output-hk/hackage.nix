@@ -21,14 +21,14 @@
       synopsis = "Pattern synonyms for cmark";
       description = "Pattern synonyms for building and deconstructing cmark AST.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

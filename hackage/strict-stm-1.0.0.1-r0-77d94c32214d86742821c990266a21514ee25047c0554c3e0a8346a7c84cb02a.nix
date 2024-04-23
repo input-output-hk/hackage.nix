@@ -21,7 +21,7 @@
       synopsis = "Strict STM interface polymorphic over stm implementation.";
       description = "Strict STM interface provided on top of\n[io-classes](https://hackage.haskell.org/package/io-classes) and thus\ncompatible with [stm](https://hackage.haskell.org/package/stm)\n& [io-sim](https://hackage.haskell.org/package/io-sim).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."io-classes" or (errorHandler.buildDepError "io-classes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

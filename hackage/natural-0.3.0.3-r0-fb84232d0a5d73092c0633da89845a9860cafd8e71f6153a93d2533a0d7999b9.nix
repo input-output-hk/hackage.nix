@@ -21,16 +21,16 @@
       synopsis = "Natural number";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nNatural number";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0.1") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0.1") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

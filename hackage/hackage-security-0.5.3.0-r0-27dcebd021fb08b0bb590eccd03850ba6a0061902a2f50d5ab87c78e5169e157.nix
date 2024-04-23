@@ -21,7 +21,7 @@
       synopsis = "Hackage security library";
       description = "The hackage security library provides both server and\nclient utilities for securing the Hackage package server\n(<http://hackage.haskell.org/>).  It is based on The Update\nFramework (<http://theupdateframework.com/>), a set of\nrecommendations developed by security researchers at\nvarious universities in the US as well as developers on the\nTor project (<https://www.torproject.org/>).\n\nThe current implementation supports only index signing,\nthereby enabling untrusted mirrors. It does not yet provide\nfacilities for author package signing.\n\nThe library has two main entry points:\n\"Hackage.Security.Client\" is the main entry point for\nclients (the typical example being @cabal@), and\n\"Hackage.Security.Server\" is the main entry point for\nservers (the typical example being @hackage-server@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -43,31 +43,31 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.old-directory
+        ] ++ (if flags.old-directory
           then [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ])) ++ (if flags.base48
+          ])) ++ (if flags.base48
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ])) ++ (if flags.use-network-uri
+          ])) ++ (if flags.use-network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestSuite" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

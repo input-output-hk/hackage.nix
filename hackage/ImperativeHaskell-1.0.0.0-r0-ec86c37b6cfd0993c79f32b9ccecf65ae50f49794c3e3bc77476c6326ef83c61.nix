@@ -21,15 +21,15 @@
       synopsis = "A library for writing Imperative style haskell.";
       description = "A monad that uses GADTs and continuations\nto replicate what it is like to program\nin an imperative language like C or Java\nwith \"return\", \"for\", \"break\", \"continue\",\nand mutable references.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

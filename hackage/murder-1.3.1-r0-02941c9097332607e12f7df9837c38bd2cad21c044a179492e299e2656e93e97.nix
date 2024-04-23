@@ -21,7 +21,7 @@
       synopsis = "MUtually Recursive Definitions Explicitly Represented ";
       description = "The murder library is an EDSL for grammar fragments as first-class values. It provides combinators to define and extend grammars, and produce compilers out of them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

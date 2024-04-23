@@ -21,7 +21,7 @@
       synopsis = "Interact with a GADT API in your reflex-dom application.";
       description = "This package is designed to be used in full-stack Haskell applications where the API is defined as a GADT and the frontend is using reflex-dom.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readme" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

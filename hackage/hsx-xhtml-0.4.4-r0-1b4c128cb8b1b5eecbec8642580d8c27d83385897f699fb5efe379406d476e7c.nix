@@ -21,15 +21,15 @@
       synopsis = "XHTML utilities to use together with HSX.";
       description = "XHTML utilities to use together with HSX.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."hsx" or (errorHandler.buildDepError "hsx"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

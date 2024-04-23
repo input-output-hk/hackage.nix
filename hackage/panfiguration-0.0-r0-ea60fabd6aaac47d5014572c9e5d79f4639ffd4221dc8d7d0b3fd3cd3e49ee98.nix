@@ -21,7 +21,7 @@
       synopsis = "Merge environment variables and command line options generically";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."barbies-th" or (errorHandler.buildDepError "barbies-th"))
             (hsPkgs."panfiguration" or (errorHandler.buildDepError "panfiguration"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

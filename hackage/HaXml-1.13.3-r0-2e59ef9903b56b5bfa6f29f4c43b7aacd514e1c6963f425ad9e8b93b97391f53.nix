@@ -21,7 +21,7 @@
       synopsis = "Utilities for manipulating XML documents";
       description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Canonicalise" = {
           depends = [
@@ -39,45 +39,45 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Xtract" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Validate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MkOneOf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "DtdToHaskell" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

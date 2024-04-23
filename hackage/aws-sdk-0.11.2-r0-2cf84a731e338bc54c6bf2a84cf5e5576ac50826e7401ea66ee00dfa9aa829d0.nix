@@ -21,7 +21,7 @@
       synopsis = "AWS SDK for Haskell";
       description = "AWS (Amazon Web Services) sdk for Haskell.\n\nThis library closesly follows the official sdk.\nTo find more documentation, you can lookup functions in the official sdk docs for other languages:\n<http://docs.amazonwebservices.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/ec2/model/DescribeInstancesRequest.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

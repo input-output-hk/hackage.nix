@@ -21,7 +21,7 @@
       synopsis = "Helper functions and data types for producing News feeds.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-newsfeed>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

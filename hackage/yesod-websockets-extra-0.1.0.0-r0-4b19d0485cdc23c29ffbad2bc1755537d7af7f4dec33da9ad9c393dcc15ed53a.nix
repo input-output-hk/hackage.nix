@@ -21,7 +21,7 @@
       synopsis = "Extension to yesod-websockets";
       description = "Adding exceptions to ws handling";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

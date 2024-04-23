@@ -21,25 +21,25 @@
       synopsis = "Automated Mutation Testing for HUnit tests";
       description = "This package contains the test adapter for HUnit tests to use it with MuCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mucheck-hunit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

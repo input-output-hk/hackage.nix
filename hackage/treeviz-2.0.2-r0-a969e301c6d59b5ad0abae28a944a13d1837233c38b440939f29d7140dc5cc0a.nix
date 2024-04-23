@@ -21,7 +21,7 @@
       synopsis = "Visualization of computation decomposition trees.";
       description = "This Haskell package provides some tools for visualizing the decomposition\nof different divide and conquer algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "treeviz" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       tests = {
         "test-treeviz" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Paper soccer, an OpenGL game.";
       description = "Foo (abbreviation from football) is a playing machine of Paper Soccer, a\npencil and paper game for two players, described in WIKIPEDIA. Written\nin Haskell, contains also simply interface using HOpenGL library.\nProvides bunch of playing algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "foo" = {
@@ -31,9 +31,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

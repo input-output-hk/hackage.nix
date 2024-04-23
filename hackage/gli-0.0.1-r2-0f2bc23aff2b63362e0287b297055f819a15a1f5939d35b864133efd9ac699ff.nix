@@ -21,7 +21,7 @@
       synopsis = "Tiny cli to fetch PR info from gitlab";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,26 +40,26 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gli" or (errorHandler.buildDepError "gli"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gli-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gli" or (errorHandler.buildDepError "gli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

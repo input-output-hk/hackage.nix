@@ -21,7 +21,7 @@
       synopsis = "An MPD client library.";
       description = "A client library for MPD, the Music Player Daemon.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

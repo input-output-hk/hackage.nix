@@ -21,14 +21,14 @@
       synopsis = "useful `lens` functions reimplemented";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nuseful `lens` functions reimplemented";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

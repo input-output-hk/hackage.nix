@@ -32,22 +32,22 @@
         (hsPkgs.buildPackages.hxt or (pkgs.buildPackages.hxt or (errorHandler.setupDepError "hxt")))
         (hsPkgs.buildPackages.hxt-xpath or (pkgs.buildPackages.hxt-xpath or (errorHandler.setupDepError "hxt-xpath")))
         (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring or (errorHandler.setupDepError "bytestring")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monad-extras" or (errorHandler.buildDepError "monad-extras"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."cairo" or (errorHandler.pkgConfDepError "cairo"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

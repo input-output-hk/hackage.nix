@@ -21,7 +21,7 @@
       synopsis = "Parse Advent of Code ASCII art letters";
       description = "\"OCR\" letter recognition for <https://adventofcode.com Advent of Code>\npuzzles, compatible with all puzzles from 2015 to 2019.  Also comes with a\nhandy command line utility to parse the ASCII art directly from stdin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "advent-of-code-ocr" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "advent-of-code-ocr-test" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "advent-of-code-ocr-bench" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A mustache template parser library.";
       description = "Allows parsing and rendering template files with mustache markup. See the\nmustache <http://mustache.github.io/mustache.5.html language reference>.\n\nImplements the mustache spec version 1.1.3.\n\n/Note/: Versions including and beyond 0.4 are compatible with ghc 7.8 again.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-mustache" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "language-specifications" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,9 +91,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

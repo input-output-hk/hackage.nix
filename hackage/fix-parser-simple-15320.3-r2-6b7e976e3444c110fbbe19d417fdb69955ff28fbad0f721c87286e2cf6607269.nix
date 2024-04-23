@@ -21,15 +21,15 @@
       synopsis = "Simple fix-expression parser";
       description = "Simple fix-expression parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.use_mtl
+        ] ++ (if flags.use_mtl
           then [ (hsPkgs."mtl" or (errorHandler.buildDepError "mtl")) ]
           else [ (hsPkgs."mmtl" or (errorHandler.buildDepError "mmtl")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

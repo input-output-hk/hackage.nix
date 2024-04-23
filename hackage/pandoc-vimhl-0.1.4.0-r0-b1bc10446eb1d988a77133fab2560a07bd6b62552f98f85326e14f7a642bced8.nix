@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter for native Vim code highlighting";
       description = "Pandoc filter for native Vim code highlighting\nin HTML and PDF documents. Requires Vim and plugin\n<http://github.com/lyokha/vim-publish-helper vim-publish-helper>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "vimhl" = {
@@ -35,9 +35,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."cond" or (errorHandler.buildDepError "cond"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

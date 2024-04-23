@@ -21,7 +21,7 @@
       synopsis = "Bindings to Lilypond";
       description = "This package contains a terse Haskell representation of (a subset of) Lilypond\nexpressions and a pretty-printer for such expressions. They can be used to generate\nmusical notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

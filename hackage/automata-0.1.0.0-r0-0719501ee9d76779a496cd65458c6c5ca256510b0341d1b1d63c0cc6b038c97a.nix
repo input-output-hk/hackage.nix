@@ -21,7 +21,7 @@
       synopsis = "automata";
       description = "This package implements the following:\n\nDeterministic Finite State Automata (DFSA)\n\nNon-Deterministic Finite State Automata (NFSA)\n\nDeterministic Finite State Transducers (DFST)\n\nNon-Deterministic Finite State Transducers (NFST)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-leancheck" or (errorHandler.buildDepError "tasty-leancheck"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Sgrep - grep Fasta files for sequences matching a regular expression";
       description = "This is a simple utility to extract sequences from Fasta files. It\nexpects its first parameter to be a regular expression, and its second\nto be a Fasta-formatted file.  It will then output all sequences matching\nthe regexp to standard output.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sgrep" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bio" or (errorHandler.buildDepError "bio"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "DSL for generating API boilerplate and docs";
       description = "api-tools provides a compact DSL for describing an API.\nIt uses Template Haskell to generate the\ncorresponding data types and assorted tools for\nworking with it, including Aeson and QuickCheck\ninstances for converting between JSON and the\ngenerated types and writing unit tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -49,18 +49,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.time15
+        ] ++ (if flags.time15
           then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
           else [
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "migration-tool" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "perf-test" = {
           depends = [
             (hsPkgs."api-tools" or (errorHandler.buildDepError "api-tools"))
@@ -80,10 +80,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-api-tools" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

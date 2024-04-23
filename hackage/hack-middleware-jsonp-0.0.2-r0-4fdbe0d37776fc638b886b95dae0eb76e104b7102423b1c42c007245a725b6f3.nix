@@ -21,7 +21,7 @@
       synopsis = "Automatic wrapping of JSON responses to convert into JSONP.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring-class" or (errorHandler.buildDepError "bytestring-class"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

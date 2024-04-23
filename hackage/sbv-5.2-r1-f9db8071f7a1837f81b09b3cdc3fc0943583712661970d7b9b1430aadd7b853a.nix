@@ -21,7 +21,7 @@
       synopsis = "SMT Based Verification: Symbolic Haskell theorem prover using SMT solving.";
       description = "Express properties about Haskell programs and automatically prove them using SMT\n(Satisfiability Modulo Theories) solvers.\n\nFor details, please see: <http://leventerkok.github.com/sbv/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."crackNum" or (errorHandler.buildDepError "crackNum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SBVUnitTests" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "SBVBasicTests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

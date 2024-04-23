@@ -6,8 +6,8 @@
         nix = import ../hackage/refined-http-api-data-0.1.0.0-r0-30d6855b8ddaa8b9097657636c1b9394a576cfd0cffc3c03d99cffef9fce373d.nix;
         revNum = 0;
         sha256 = "30d6855b8ddaa8b9097657636c1b9394a576cfd0cffc3c03d99cffef9fce373d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

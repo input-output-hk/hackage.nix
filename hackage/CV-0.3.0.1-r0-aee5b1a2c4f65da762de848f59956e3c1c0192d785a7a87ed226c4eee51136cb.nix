@@ -21,7 +21,7 @@
       synopsis = "OpenCV based machine vision library";
       description = "This is a machine vision package that wraps some functionality\nof OpenCV library. This package has been developed for personal use and\nis not meant to be a complete wrapper, though it will most likely grow to\ncover most of functionaly exposed by OpenCV C interface.\nCurrently this package is quite dirty and requires much work on documentation\nand code clean-up, but is somewhat tested.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,7 +39,7 @@
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         libs = [
           (pkgs."opencv_calib3d" or (errorHandler.sysDepError "opencv_calib3d"))
           (pkgs."opencv_contrib" or (errorHandler.sysDepError "opencv_contrib"))
@@ -51,11 +51,11 @@
           (pkgs."opencv_ml" or (errorHandler.sysDepError "opencv_ml"))
           (pkgs."opencv_objdetect" or (errorHandler.sysDepError "opencv_objdetect"))
           (pkgs."opencv_video" or (errorHandler.sysDepError "opencv_video"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

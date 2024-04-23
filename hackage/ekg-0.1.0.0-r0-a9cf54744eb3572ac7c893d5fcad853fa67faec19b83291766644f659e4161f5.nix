@@ -21,7 +21,7 @@
       synopsis = "Remote monitoring of executables";
       description = "This library lets you remotely monitor a running process over HTTP.\nIt provides a simple way to integrate a monitoring server into any\napplication.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

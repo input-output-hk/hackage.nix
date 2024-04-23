@@ -21,7 +21,7 @@
       synopsis = "Utilities used by other packages.";
       description = "An ill-defined collection of simple unrelated utilities used by other packages from <http://functionalley.eu>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,16 +32,16 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ] ++ (pkgs.lib).optional (flags.havedeepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
+        ] ++ pkgs.lib.optional (flags.havedeepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
         buildable = true;
-        };
+      };
       exes = {
         "toolshed" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fedora Bodhi REST client library";
       description = "A REST client library for the Fedora Bodhi updates server.\nThe binding is currently fairly low-level returning JSON Objects.\nSo far it covers nearly all of the GET part of the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."http-query" or (errorHandler.buildDepError "http-query"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

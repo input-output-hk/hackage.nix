@@ -21,19 +21,19 @@
       synopsis = "Fast type-safe modular arithmetic";
       description = "<https://en.wikipedia.org/wiki/Modular_arithmetic Modular arithmetic>,\npromoting moduli to the type level, with an emphasis on performance.\nOriginally part of <https://hackage.haskell.org/package/arithmoi arithmoi> package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ] ++ (pkgs.lib).optional (flags.semirings) (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))) ++ (pkgs.lib).optionals (flags.vector) [
+        ] ++ pkgs.lib.optional (flags.semirings) (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))) ++ pkgs.lib.optionals (flags.vector) [
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mod-tests" = {
           depends = ([
@@ -42,26 +42,26 @@
             (hsPkgs."quickcheck-classes-base" or (errorHandler.buildDepError "quickcheck-classes-base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ] ++ (pkgs.lib).optionals (flags.semirings) [
+          ] ++ pkgs.lib.optionals (flags.semirings) [
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
-            ]) ++ (pkgs.lib).optionals (flags.vector) [
+          ]) ++ pkgs.lib.optionals (flags.vector) [
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "mod-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mod" or (errorHandler.buildDepError "mod"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

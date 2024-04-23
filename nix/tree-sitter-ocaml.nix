@@ -6,8 +6,8 @@
         nix = import ../hackage/tree-sitter-ocaml-0.1.0.1-r0-dbf33f11ba87c08b1aaced3ea07d3f7ffaa1bf91763973895d53cfa99619c898.nix;
         revNum = 0;
         sha256 = "dbf33f11ba87c08b1aaced3ea07d3f7ffaa1bf91763973895d53cfa99619c898";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

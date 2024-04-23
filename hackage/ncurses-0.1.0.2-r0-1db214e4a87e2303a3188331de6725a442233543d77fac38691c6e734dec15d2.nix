@@ -21,7 +21,7 @@
       synopsis = "Modernised bindings to GNU ncurses";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,15 +29,15 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [
           (pkgs."panel" or (errorHandler.sysDepError "panel"))
           (pkgs."ncursesw" or (errorHandler.sysDepError "ncursesw"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

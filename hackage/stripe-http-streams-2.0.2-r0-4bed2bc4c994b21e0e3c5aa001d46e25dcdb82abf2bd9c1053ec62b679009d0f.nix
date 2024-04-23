@@ -21,7 +21,7 @@
       synopsis = "Stripe API for Haskell - http-streams backend";
       description = "\n<<https://stripe.com/img/navigation/logo@2x.png>>\n\n[Access Stripe API using http-streams]\nThis package provides access to the Stripe API using `stripe-core` and `http-streams`. See also the `stripe` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."stripe-core" or (errorHandler.buildDepError "stripe-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

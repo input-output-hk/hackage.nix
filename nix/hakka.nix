@@ -6,8 +6,8 @@
         nix = import ../hackage/hakka-0.2.0-r0-5171cec0f00e8c7596987bdcdbda03859030b7030f5ef5437310c57d39551ad0.nix;
         revNum = 0;
         sha256 = "5171cec0f00e8c7596987bdcdbda03859030b7030f5ef5437310c57d39551ad0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

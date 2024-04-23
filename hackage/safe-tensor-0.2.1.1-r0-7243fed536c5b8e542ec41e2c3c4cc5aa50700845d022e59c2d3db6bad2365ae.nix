@@ -21,7 +21,7 @@
       synopsis = "Dependently typed tensor algebra";
       description = "For an introduction to the library, see \"Math.Tensor.Safe\". For more information, see the README on GitHub at <https://github.com/nilsalex/safe-tensor#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

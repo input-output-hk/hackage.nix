@@ -21,15 +21,15 @@
       synopsis = "Provides a typeclass for enumerating all values in types";
       description = "Enumerate any type, including functions of enumerable types!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."control-monad-omega" or (errorHandler.buildDepError "control-monad-omega"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

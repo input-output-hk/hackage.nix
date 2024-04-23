@@ -21,14 +21,14 @@
       synopsis = "Pagination for Yesod sites.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

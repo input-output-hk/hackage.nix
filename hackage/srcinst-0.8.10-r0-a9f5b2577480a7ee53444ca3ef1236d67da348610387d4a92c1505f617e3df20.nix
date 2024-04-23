@@ -21,7 +21,7 @@
       synopsis = "Build and install Debian packages completely from source";
       description = "srcinst is used to build and install Debian packages completely from source.\nAll dependencies and build-dependencies are also built recursively from source.\nNo binary .debs are required to install packages with this tool; however,\nit does generate binary .debs for your use.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "srcinst" = {
@@ -35,9 +35,9 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A type-safe interface to communicate with an SMT solver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-smtlib2-pipe" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."smtlib2-quickcheck" or (errorHandler.buildDepError "smtlib2-quickcheck"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."cabal-test-quickcheck" or (errorHandler.buildDepError "cabal-test-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

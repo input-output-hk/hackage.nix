@@ -21,15 +21,15 @@
       synopsis = "Monadic functions which provide Choice and Parallelism.";
       description = "This package defines Monadic functions which provide Choice and Parallelism - (&lt;||&rt;) and (&lt;&&&rt;)\n- that work on Monads that provide a (MonadBi m IO) instance.\nDepends on the @monadbi@ library for extracting the IO actions from m. Also provides a good example of how to use the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."monadbi" or (errorHandler.buildDepError "monadbi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cross platform file system watcher";
       description = "Trigger is a cross platform file system watcher for super fast build-and-restart workflows. When files change, it can be configured to:\n* run build tasks\n* restart your app in the background";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,19 +41,19 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."twitch" or (errorHandler.buildDepError "twitch"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "trigger" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."trigger" or (errorHandler.buildDepError "trigger"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "trigger-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."trigger" or (errorHandler.buildDepError "trigger"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

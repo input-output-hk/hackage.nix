@@ -21,7 +21,7 @@
       synopsis = "Falling sand game/cellular automata simulation using regular parallel arrays.";
       description = "Falling Turnip is an interactive particle simulation. Like others in the same genre (typically dubbed \"falling sand games\"), it has some degree of approximation for gravity, fluid flow and alchemical reactions. Unlike the others, it is based entirely on cellular automata and runs in parallel.\n\nA short demo video is available here:\n\nhttp://youtu.be/hlL9yi2hGx0\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "falling-turnip" = {
@@ -35,9 +35,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

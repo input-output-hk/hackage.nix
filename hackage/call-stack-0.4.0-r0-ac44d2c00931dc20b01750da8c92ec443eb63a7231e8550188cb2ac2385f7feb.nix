@@ -21,14 +21,14 @@
       synopsis = "Use GHC call-stacks in a backward compatible way";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -36,9 +36,9 @@
             (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."nanospec" or (errorHandler.buildDepError "nanospec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

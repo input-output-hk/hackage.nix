@@ -21,40 +21,40 @@
       synopsis = "Enable deeper level style of programming than the usual control provides";
       description = "This module enables deeper level style of programming than the usual control provides, especially for Applicative and Monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UnitTest_Applicative" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."deepcontrol" or (errorHandler.buildDepError "deepcontrol"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UnitTest_Monad" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."deepcontrol" or (errorHandler.buildDepError "deepcontrol"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

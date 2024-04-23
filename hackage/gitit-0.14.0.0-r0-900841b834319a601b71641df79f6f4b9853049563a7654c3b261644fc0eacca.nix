@@ -21,7 +21,7 @@
       synopsis = "Wiki using happstack, git or darcs, and pandoc.";
       description = "Gitit is a wiki backed by a git, darcs, or mercurial\nfilestore.  Pages and uploaded files can be modified either\ndirectly via the VCS's command-line tools or through\nthe wiki's web interface. Pandoc is used for markup\nprocessing, so pages may be written in\n(extended) markdown, reStructuredText, LaTeX, HTML,\nor literate Haskell, and exported in ten different\nformats, including LaTeX, ConTeXt, DocBook, RTF,\nOpenOffice ODT, and MediaWiki markup.\n\nNotable features include\n\n* plugins: dynamically loaded page\ntransformations written in Haskell (see\n\"Network.Gitit.Interface\")\n\n* conversion of TeX math to MathML for display in\nweb browsers\n\n* syntax highlighting of source code\nfiles and code snippets\n\n* Atom feeds (site-wide and per-page)\n\n* a library, \"Network.Gitit\", that makes it simple\nto include a gitit wiki in any happstack application\n\nFor usage information:  @gitit --help@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -78,12 +78,12 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
           (hsPkgs."doctemplates" or (errorHandler.buildDepError "doctemplates"))
-          ] ++ (pkgs.lib).optionals (flags.plugins) [
+        ] ++ pkgs.lib.optionals (flags.plugins) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gitit" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "expireGititCache" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -109,9 +109,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

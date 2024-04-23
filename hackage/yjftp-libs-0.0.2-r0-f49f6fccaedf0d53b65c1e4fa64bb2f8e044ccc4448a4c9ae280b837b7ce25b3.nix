@@ -21,7 +21,7 @@
       synopsis = "CUI FTP client like 'ftp', 'ncftp'";
       description = "It will be library for yjftp.\n\nExecutable 'yjftp-ni\" is sample. It may be removed.\n\nyjftp-ni is command line FTP client.\n\nIf no arguments, then it ask server address, user name and password.\n\nIf only argument server address are given, then it try login as anonymous user.\n\nIf argument server address and user name, then it ask password.\n\nAnd password can give by '-p [passwd]' from command line.\n\nYou can put or get immediately by doing following.\n\nyjftp-ni put filepath srvr.address/directorypath [user_name] [-p password]\n\nyjftp-ni get srvr.address/filepath [user_name] [-p password]";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."ftphs" or (errorHandler.buildDepError "ftphs"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "yjftp-ni" = { buildable = true; }; };
       };
-    }
+      exes = { "yjftp-ni" = { buildable = true; }; };
+    };
+  }

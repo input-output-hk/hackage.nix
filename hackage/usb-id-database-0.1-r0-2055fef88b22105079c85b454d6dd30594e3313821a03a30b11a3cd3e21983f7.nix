@@ -21,7 +21,7 @@
       synopsis = "A database of USB identifiers";
       description = "Functions to find the names associated with numerical vendor\nidentifiers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."download" or (errorHandler.buildDepError "download"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

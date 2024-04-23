@@ -21,7 +21,7 @@
       synopsis = "A library for testing with Hspec and the Snap Web Framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hspec-snap" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec-snap" or (errorHandler.buildDepError "hspec-snap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

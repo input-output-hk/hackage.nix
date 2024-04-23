@@ -21,7 +21,7 @@
       synopsis = "GitHub webhooks library";
       description = "This is a library to construct github webhooks servers.\n\nCurrently, this library supports following events:\n\n* push\n* status";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

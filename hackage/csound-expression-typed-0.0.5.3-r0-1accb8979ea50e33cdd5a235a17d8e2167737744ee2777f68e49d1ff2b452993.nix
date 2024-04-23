@@ -21,7 +21,7 @@
       synopsis = "typed core for the library csound-expression";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
           (hsPkgs."stable-maps" or (errorHandler.buildDepError "stable-maps"))
           (hsPkgs."csound-expression-dynamic" or (errorHandler.buildDepError "csound-expression-dynamic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

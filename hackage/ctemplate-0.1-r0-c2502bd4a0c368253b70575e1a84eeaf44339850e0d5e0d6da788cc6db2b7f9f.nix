@@ -21,15 +21,15 @@
       synopsis = "Binding to the Google ctemplate library";
       description = "CTemplate is the library that Google uses to render most of their sites\n(including the www.google.com search). It's a simple templating system, but\nincludes many, easy to use, escaping functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."ctemplate" or (errorHandler.sysDepError "ctemplate")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

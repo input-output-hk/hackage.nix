@@ -21,7 +21,7 @@
       synopsis = "Standard spec's for lens";
       description = "Standard spec's for lens (van Laarhoven encoding)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-hspec-optics-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

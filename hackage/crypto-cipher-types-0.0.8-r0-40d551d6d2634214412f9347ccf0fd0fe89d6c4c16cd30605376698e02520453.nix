@@ -21,7 +21,7 @@
       synopsis = "Generic cryptography cipher types";
       description = "Generic cryptography cipher types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

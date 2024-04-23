@@ -21,7 +21,7 @@
       synopsis = "Pipes for grouping by lines with carriage returns.";
       description = "`pipes-lens` contains utility functions for splitting lines that involve carriage returns aka lines ending in \\\\r\\\\n\n\nThese are utility functions that were omitted from pipes-bytestring and pipes-text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."pipes-group" or (errorHandler.buildDepError "pipes-group"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pipes-lines-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."pipes-group" or (errorHandler.buildDepError "pipes-group"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

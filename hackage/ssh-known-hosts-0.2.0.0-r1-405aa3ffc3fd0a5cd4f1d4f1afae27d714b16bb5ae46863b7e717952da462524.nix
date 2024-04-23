@@ -21,25 +21,25 @@
       synopsis = "Read and interpret the SSH known-hosts file";
       description = "Utility to read the contents of the SSH known_hosts file and create\nlocal in-memory data structures for each of the remote entities\nlisted.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readknownhosts" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ssh-known-hosts" or (errorHandler.buildDepError "ssh-known-hosts"))
-            ];
+          ];
           buildable = if !flags.sample_progs then false else true;
-          };
         };
+      };
       tests = {
         "test_parsing" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."ssh-known-hosts" or (errorHandler.buildDepError "ssh-known-hosts"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of MessagePack";
       description = "A Haskell implementation of MessagePack <http://msgpack.org/>\n\nThis is a fork of msgpack-haskell <https://github.com/msgpack/msgpack-haskell>,\nsince the original author is unreachable. This fork incorporates a number of\nbugfixes and is actively being developed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."msgpack-types" or (errorHandler.buildDepError "msgpack-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "msgpack-parser" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."msgpack-binary" or (errorHandler.buildDepError "msgpack-binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."msgpack-binary" or (errorHandler.buildDepError "msgpack-binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

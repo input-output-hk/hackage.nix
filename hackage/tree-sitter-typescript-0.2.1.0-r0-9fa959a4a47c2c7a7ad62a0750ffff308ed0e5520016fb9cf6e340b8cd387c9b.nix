@@ -21,7 +21,7 @@
       synopsis = "Tree-sitter grammar/parser for TypeScript";
       description = "This package provides a parser for TypeScript suitable for use with the tree-sitter package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."tree-sitter-typescript".components.sublibs.tree-sitter-typescript-internal or (errorHandler.buildDepError "tree-sitter-typescript:tree-sitter-typescript-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "tree-sitter-typescript-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

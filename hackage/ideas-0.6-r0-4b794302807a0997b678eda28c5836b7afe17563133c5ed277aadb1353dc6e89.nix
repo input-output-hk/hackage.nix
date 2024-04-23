@@ -21,7 +21,7 @@
       synopsis = "Feedback services for intelligent tutoring systems";
       description = "ideas provides feedback services to intelligent tutoring systems such as\nthe digital mathematical environment of the Freudenthal Institute, MathDox,\nand Activemath.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ideas" = {
@@ -38,9 +38,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

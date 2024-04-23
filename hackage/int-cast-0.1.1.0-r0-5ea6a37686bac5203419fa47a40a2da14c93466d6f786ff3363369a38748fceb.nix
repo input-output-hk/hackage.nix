@@ -21,12 +21,12 @@
       synopsis = "Checked conversions between integral types";
       description = "Provides statically or dynamically checked conversions between integral types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "int-cast-test" = {
           depends = [
@@ -36,9 +36,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

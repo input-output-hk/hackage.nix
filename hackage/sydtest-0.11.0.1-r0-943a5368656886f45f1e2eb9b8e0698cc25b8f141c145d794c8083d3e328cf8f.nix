@@ -21,7 +21,7 @@
       synopsis = "A modern testing framework for Haskell with good defaults and advanced testing features.";
       description = "A modern testing framework for Haskell with good defaults and advanced testing features. Sydtest aims to make the common easy and the hard possible. See https://github.com/NorfairKing/sydtest#readme for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,15 +49,15 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ]
+          ]
           else [
             (hsPkgs."safe-coloured-text-terminfo" or (errorHandler.buildDepError "safe-coloured-text-terminfo"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-output-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."safe-coloured-text" or (errorHandler.buildDepError "safe-coloured-text"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."safe-coloured-text-terminfo" or (errorHandler.buildDepError "safe-coloured-text-terminfo"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."safe-coloured-text-terminfo" or (errorHandler.buildDepError "safe-coloured-text-terminfo"));
           buildable = true;
-          };
+        };
         "sydtest-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -84,12 +84,12 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A basic implementation of a personal ticket management system";
       description = "A basic implementation of a personal ticket management system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ticket-manager" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ticket-management" or (errorHandler.buildDepError "ticket-management"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."ticket-management" or (errorHandler.buildDepError "ticket-management"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

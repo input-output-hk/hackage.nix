@@ -21,7 +21,7 @@
       synopsis = "Misc. time utilites";
       description = "A monad interface for obtain the current TimeSpec, along\nwith a few other utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

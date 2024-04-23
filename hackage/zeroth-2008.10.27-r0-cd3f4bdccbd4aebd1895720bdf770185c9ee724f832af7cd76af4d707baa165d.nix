@@ -21,7 +21,7 @@
       synopsis = "ZeroTH - remove unnecessary TH depdendencies.";
       description = "TemplateHaskell is fairly useful for generating new\nHaskell programs. This, however, incur a dependency on\nTH on subsequent uses where none theoretically should exist.\nZeroTH solves this by scanning a file for top-level TH\ndeclarations, evaluates them, and then puts the generated\ncode back.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zeroth" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

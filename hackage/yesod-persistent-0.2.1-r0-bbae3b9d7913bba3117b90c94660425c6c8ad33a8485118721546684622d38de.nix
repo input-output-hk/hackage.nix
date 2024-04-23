@@ -21,7 +21,7 @@
       synopsis = "Some helpers for using Persistent from Yesod.";
       description = "Some helpers for using Persistent from Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

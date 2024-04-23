@@ -21,7 +21,7 @@
       synopsis = "Wrapper daemon to manage an ssh tunnel";
       description = "This is a daemon that executes an ssh command to form a secure tunnel and then blocks on it. If the tunnel goes down, sshtun can attempt to reestablish it. It can also be set up to monitor a file on an http server to determine if the tunnel should be up or not, so you can switch it on or off remotely.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sshtun" = {
@@ -37,9 +37,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

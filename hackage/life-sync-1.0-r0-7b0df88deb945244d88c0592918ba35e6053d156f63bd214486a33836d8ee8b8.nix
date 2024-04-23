@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Synchronize personal configs across multiple machines";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "life" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."life-sync" or (errorHandler.buildDepError "life-sync"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "life-sync-test" = {
           depends = [
@@ -63,12 +63,12 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

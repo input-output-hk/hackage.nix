@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This package provides an @engine-io@ @ServerAPI@ that is compatible with\n<http://www.yesodweb.com/ Yesod>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

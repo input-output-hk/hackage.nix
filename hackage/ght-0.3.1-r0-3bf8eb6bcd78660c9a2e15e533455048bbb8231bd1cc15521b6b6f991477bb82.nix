@@ -21,7 +21,7 @@
       synopsis = "Trivial routines for inspecting git repositories";
       description = "This is a bunch of trivial routines for inspecting git\nrepositories. It is in no way useful beyond that.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ght" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."ui-command" or (errorHandler.buildDepError "ui-command"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

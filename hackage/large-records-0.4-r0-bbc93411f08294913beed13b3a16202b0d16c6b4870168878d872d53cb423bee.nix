@@ -21,7 +21,7 @@
       synopsis = "Efficient compilation for large records, linear in the size of the record";
       description = "For many reasons, the internal code generated for modules\nthat contain records is quadratic in the number of record\nfields. For large records (more than 30 fields, say), this\ncan become problematic, leading to large compilation times\nand high memory requirements for ghc. The large-records\nlibrary provides a way to define records that is guaranteed\nto result in ghc core that is /linear/ in the number of\nrecord fields.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."record-dot-preprocessor" or (errorHandler.buildDepError "record-dot-preprocessor"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-large-records" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Use the Hadoop RPC interface from Haskell.";
       description = "Use the Hadoop RPC interface from Haskell.\n\nCurrently we only support v7 of the RPC protocol (< CDH5).\n\nSupport for v9 (>= CDH5) is coming soon.\n\n/The API is still evolving and is highly likely to change in the future./";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-hadoop-rpc" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hadoop-rpc" or (errorHandler.buildDepError "hadoop-rpc"))
             (hsPkgs."protobuf" or (errorHandler.buildDepError "protobuf"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

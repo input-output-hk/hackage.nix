@@ -21,7 +21,7 @@
       synopsis = "Orbotix Sphero client library";
       description = "My nephew visited me at Christmas time.\nGuess what I wasted my time doing. :)\n\nSee examples directory for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."simple-bluetooth" or (errorHandler.buildDepError "simple-bluetooth"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

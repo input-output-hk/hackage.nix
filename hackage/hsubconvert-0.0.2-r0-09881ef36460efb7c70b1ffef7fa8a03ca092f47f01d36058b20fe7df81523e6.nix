@@ -21,7 +21,7 @@
       synopsis = "One-time, faithful conversion of Subversion repositories to Git";
       description = "One-time, faithful conversion of Subversion repositories to Git.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsubconvert" = {
@@ -45,9 +45,9 @@
             (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

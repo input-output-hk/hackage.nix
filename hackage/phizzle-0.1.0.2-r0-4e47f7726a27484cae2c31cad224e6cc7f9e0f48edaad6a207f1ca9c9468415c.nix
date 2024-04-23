@@ -21,7 +21,7 @@
       synopsis = "Library for checking if a given link is in a phishtank json file";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "phizzle-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."phizzle" or (errorHandler.buildDepError "phizzle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

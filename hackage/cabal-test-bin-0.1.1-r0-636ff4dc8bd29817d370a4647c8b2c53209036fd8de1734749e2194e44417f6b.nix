@@ -21,7 +21,7 @@
       synopsis = "A program for finding temporary build file during cabal-test.";
       description = "cabal-test-bin finds exe-file for\n> cabal install --enable-tests --run-tests\nand\n> cabal test\n\nWhen a project uses cabal-sandbox, cabal-test-bin checks both\n> <project root>/dist/dist-sandbox-<hash>/build/<exe-file>/<exe-file>\nand\n> <project root>/dist/build/<exe-file>/<exe-file>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-test-bin" = {
@@ -30,9 +30,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

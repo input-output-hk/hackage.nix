@@ -21,7 +21,7 @@
       synopsis = "Yesod-based server for interactive presentation slides";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,16 +57,16 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]
+          ]
           else [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "test-presentation" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-gi-cairo" or (errorHandler.buildDepError "diagrams-gi-cairo"))
             (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yeamer-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,10 +93,10 @@
             (hsPkgs."numbered-semigroups" or (errorHandler.buildDepError "numbered-semigroups"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-gi-cairo" or (errorHandler.buildDepError "diagrams-gi-cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -107,9 +107,9 @@
             (hsPkgs."yeamer" or (errorHandler.buildDepError "yeamer"))
             (hsPkgs."numbered-semigroups" or (errorHandler.buildDepError "numbered-semigroups"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

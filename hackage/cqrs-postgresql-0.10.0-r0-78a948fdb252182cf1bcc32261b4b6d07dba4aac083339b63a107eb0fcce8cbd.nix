@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL backend for the cqrs package.";
       description = "PostgreSQL backend for the cqrs package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."cqrs-postgresql" or (errorHandler.buildDepError "cqrs-postgresql"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

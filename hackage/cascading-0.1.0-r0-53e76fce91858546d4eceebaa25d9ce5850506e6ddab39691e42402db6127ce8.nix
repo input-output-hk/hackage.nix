@@ -21,7 +21,7 @@
       synopsis = "DSL for HTML CSS (Cascading Style Sheets)";
       description = "This library implements an HTML-specific domain-specific language\nfor cascading style sheets (CSS) in the spirit of blaze-html.  See\nthe documentation of the Data.CSS module for a tutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

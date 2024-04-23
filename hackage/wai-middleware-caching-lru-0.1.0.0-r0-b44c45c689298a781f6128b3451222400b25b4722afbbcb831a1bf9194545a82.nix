@@ -14,7 +14,7 @@
       identifier = {
         name = "wai-middleware-caching-lru";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Yann Esposito © 2015";
       maintainer = "yann.esposito@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai-middleware-caching" or (errorHandler.buildDepError "wai-middleware-caching"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-caching-lru-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wai-middleware-caching-lru" or (errorHandler.buildDepError "wai-middleware-caching-lru"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

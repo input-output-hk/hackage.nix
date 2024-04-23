@@ -21,7 +21,7 @@
       synopsis = "Attoparsec parsers for various Date/Time formats.";
       description = "Parsers for various Date/Time formats, implemented in AttoParsec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

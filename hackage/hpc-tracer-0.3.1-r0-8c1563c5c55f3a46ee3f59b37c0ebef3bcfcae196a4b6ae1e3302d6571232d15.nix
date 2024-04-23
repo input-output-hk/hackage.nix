@@ -21,7 +21,7 @@
       synopsis = "Tracer with AJAX interface";
       description = "An incomplete component of the Hpc toolkit which provides the\nability to step through coverage ticks as they happen, giving a\npoor mans debugger.  Requires the binary being traced to be build\nusing a specific version of ghc-6.7, so YMWV.\nThe plan is to port this to the new GHC API, giving both tracing\nand free variable examination via an Ajax interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpc-tracer" = {
@@ -36,9 +36,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

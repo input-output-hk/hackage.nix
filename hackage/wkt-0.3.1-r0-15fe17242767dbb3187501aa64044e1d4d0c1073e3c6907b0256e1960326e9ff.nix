@@ -21,7 +21,7 @@
       synopsis = "Parsec parsers and types for geographic data in well-known text (WKT) format.";
       description = "Parsec parsers and types for geographic metadata in the well-known\ntext (WKT) format <https://en.wikipedia.org/wiki/Well-known_text>.\nWKT can be used to specify spatial reference systems and primitive\ngeometry in spatial datasets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."wkt" or (errorHandler.buildDepError "wkt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

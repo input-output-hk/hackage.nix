@@ -21,7 +21,7 @@
       synopsis = "A haskell implementation of the Modbus protocol";
       description = "A haskell implementation of the Modbus protocol";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

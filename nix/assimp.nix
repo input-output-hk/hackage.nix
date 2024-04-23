@@ -6,8 +6,8 @@
         nix = import ../hackage/assimp-0.1-r0-b48acd8869c172ace163d8d06912104eafb7081959283bc424ff0651094e20a2.nix;
         revNum = 0;
         sha256 = "b48acd8869c172ace163d8d06912104eafb7081959283bc424ff0651094e20a2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

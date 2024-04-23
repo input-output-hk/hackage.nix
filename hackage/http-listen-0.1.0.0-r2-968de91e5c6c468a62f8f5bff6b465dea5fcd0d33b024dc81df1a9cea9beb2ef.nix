@@ -21,7 +21,7 @@
       synopsis = "Listen to HTTP requests and handle them in arbitrary ways.";
       description = "In HTTP connections, there is a client side which sends requests (such as GET\nand POST), and a server side which receives and parses them. Often, the\nserver side is a web server which responds to requests by sending some HTML\npages back. But sometimes it's just a listener.\n\nFor example, a Git server may offer web hooks. It could send a POST request\nwhenever a commit is made, or a new repository is created. You then set up a\nprogram that listens to these POSTs and reacts by reporting them to the\nproject's IRC channel or a mailing list.\n\nMost HTTP packages assume a typical web server which handles requests by\nreturning HTTP responses. This package tries to fill a gap by providing an\nAPI for simple listeners which don't necessarily serve web pages, and can do\nthings like reporting to IRC.\n\nSome features are missing and will be added soon:\n\n* Connection timeouts\n\n* Logging (currently errors are written to stdout, no other logging done)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

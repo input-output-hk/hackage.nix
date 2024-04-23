@@ -21,7 +21,7 @@
       synopsis = "Snaplet for the ses-html package";
       description = "Send HTML formatted emails using Amazon's SES REST API with blaze";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

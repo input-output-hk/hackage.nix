@@ -21,7 +21,7 @@
       synopsis = "BIP-0032: Hierarchical Deterministic Wallets for Bitcoin and other cryptocurrencies";
       description = "BIP-0032: Hierarchical Deterministic Wallets for Bitcoin and other cryptocurrencies\n\nThis library builds in GHC and GHCJS.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bitcoin-keys" or (errorHandler.buildDepError "bitcoin-keys"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bitcoin-hash" or (errorHandler.buildDepError "bitcoin-hash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Password generation/validation functions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

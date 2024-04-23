@@ -21,7 +21,7 @@
       synopsis = "Implementation of SuperCollider server specifications";
       description = "An interface-agnostic implementation of specs for\nSuperCollider server types and commands.\n- Server Command Reference\n- Synth Definition File Format\n\nNote this is an in-progress (incomplete) implementation. Currently only the\nserver commands needed for the \\\"vivid\\\" package are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vivid-sc-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vivid-osc" or (errorHandler.buildDepError "vivid-osc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

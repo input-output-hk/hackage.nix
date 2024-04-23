@@ -14,7 +14,7 @@
       identifier = {
         name = "hls-explicit-fixity-plugin";
         version = "2.5.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "julytreee@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Show fixity explicitly while hovering";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-explicit-fixity-plugin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hls-explicit-fixity-plugin" or (errorHandler.buildDepError "hls-explicit-fixity-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

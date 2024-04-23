@@ -21,7 +21,7 @@
       synopsis = "Executable specifications of composable cryptographic protocols.";
       description = "Yggdrasil is a framework for writing executable\nspecification of composable cryptographic protocols. It is\nmodelled after Ran Canetti's Universal Composability\nframework, although it departs from it in multiple places\nto simplify the interface, and provide strong typing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."yggdrasil" or (errorHandler.buildDepError "yggdrasil"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

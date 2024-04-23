@@ -21,7 +21,7 @@
       synopsis = "Backend for the persistent library using mongoDB.";
       description = "MongoDB backend for the persistent library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."pool-conduit" or (errorHandler.buildDepError "pool-conduit"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

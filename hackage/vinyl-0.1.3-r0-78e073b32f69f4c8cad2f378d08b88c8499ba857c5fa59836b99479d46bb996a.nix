@@ -21,7 +21,7 @@
       synopsis = "Extensible Records";
       description = "Extensible records for Haskell with lenses using modern GHC features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-builder-all" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Structured logging solution (PostgreSQL back end)";
       description = "PostgreSQL back end for the 'log' library suite.\nDepends on 'log-base'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."log-base" or (errorHandler.buildDepError "log-base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

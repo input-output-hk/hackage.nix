@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,19 +38,19 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pg-recorder" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pg-recorder" or (errorHandler.buildDepError "pg-recorder"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pg-recorder-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."hasql-pool" or (errorHandler.buildDepError "hasql-pool"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

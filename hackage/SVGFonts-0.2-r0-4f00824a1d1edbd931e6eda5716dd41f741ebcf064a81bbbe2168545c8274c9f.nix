@@ -21,7 +21,7 @@
       synopsis = "";
       description = "parse svg-font files and generate outlines of letters and sentences";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Fonts" = { buildable = true; }; };
       };
-    }
+      exes = { "Fonts" = { buildable = true; }; };
+    };
+  }

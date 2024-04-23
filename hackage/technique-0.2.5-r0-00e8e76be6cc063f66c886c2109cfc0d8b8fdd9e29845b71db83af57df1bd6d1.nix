@@ -21,7 +21,7 @@
       synopsis = "Procedures and Sequences";
       description = "A domain specific lanaguage for procedures.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "technique-internal" = {
@@ -43,10 +43,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "technique" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."technique".components.sublibs.technique-internal or (errorHandler.buildDepError "technique:technique-internal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "check" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

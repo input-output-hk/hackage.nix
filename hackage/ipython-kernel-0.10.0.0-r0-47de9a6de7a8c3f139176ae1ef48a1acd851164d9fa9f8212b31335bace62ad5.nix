@@ -21,7 +21,7 @@
       synopsis = "A library for creating kernels for IPython frontends";
       description = "ipython-kernel is a library for communicating with frontends for the interactive IPython framework. It is used extensively in IHaskell, the interactive Haskell environment.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-calc-example" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "fun-calc-example" = {
           depends = [
             (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
@@ -68,9 +68,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Type-safe, bytestring-based ASCII values.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

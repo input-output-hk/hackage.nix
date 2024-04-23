@@ -21,7 +21,7 @@
       synopsis = "A highly experimental Fastly API client.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fastly-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."fastly" or (errorHandler.buildDepError "fastly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -13,7 +13,7 @@
       safe-foreign-calls = false;
       vma-ndebug = false;
       vma-recording = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "VulkanMemoryAllocator"; version = "0.10.3.1"; };
@@ -26,7 +26,7 @@
       synopsis = "Bindings to the VulkanMemoryAllocator library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vulkan" or (errorHandler.buildDepError "vulkan"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

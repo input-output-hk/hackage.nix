@@ -21,7 +21,7 @@
       synopsis = "Simple SCGI Library";
       description = "This is a simple implementation of the SCGI protocol without support for the Network.CGI interface. It's still rough but currently powers www.vocabulink.com and jekor.com.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."MonadCatchIO-mtl" or (errorHandler.buildDepError "MonadCatchIO-mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

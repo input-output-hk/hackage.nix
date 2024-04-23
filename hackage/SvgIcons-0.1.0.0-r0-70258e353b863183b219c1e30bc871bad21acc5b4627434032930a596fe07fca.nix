@@ -21,7 +21,7 @@
       synopsis = "Svg Icons and more";
       description = "Svg icons made with the blaze-svg package.\nYou can use them in your Haskell project or use the rendering module\nto get standalone svg files or React (jsx) files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SvgIcons-exe" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "SvgIcons-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."SvgIcons" or (errorHandler.buildDepError "SvgIcons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

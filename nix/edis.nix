@@ -6,8 +6,8 @@
         nix = import ../hackage/edis-0.0.1.0-r0-3696be29461a25f743d2211fefadc4d207f45413ba125c8ae6233ed2bab4dd43.nix;
         revNum = 0;
         sha256 = "3696be29461a25f743d2211fefadc4d207f45413ba125c8ae6233ed2bab4dd43";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

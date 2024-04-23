@@ -17,7 +17,7 @@
       cbbe1 = false;
       example = false;
       tutorial = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "chalkboard"; version = "1.9.0.16"; };
@@ -30,7 +30,7 @@
       synopsis = "Combinators for building and processing 2D images. ";
       description = "ChalkBoard is a Haskell hosted Domain Specific Language (DSL) for image generation and processing.\nThe basic structure is a Chalk Board, a two-dimensional canvas of values, typically colors.\nChalkBoard provides the usual image processing functions (masking, overlaying, function mapping,\ncropping, warping, rotating) as well as a few more unusual ones.\nImages can be imported into ChalkBoard, as first-class color chalk boards.\nChalkBoard also provides combinators for drawing shapes on directly on boards.\nThe system is based loosely on Pan, but the principal image type, a Board, is abstract.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,32 +46,32 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chalkboard-server-1_9_0_16" = {
           buildable = if flags.server then true else false;
-          };
+        };
         "chalkboard-tests-test1" = {
           buildable = if flags.all || flags.test1 then true else false;
-          };
+        };
         "chalkboard-tests-chalkmark" = {
           buildable = if flags.all || flags.chalkmark then true else false;
-          };
+        };
         "chalkboard-tests-simple" = {
-          depends = (pkgs.lib).optional (!(flags.all || flags.simple)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          depends = pkgs.lib.optional (!(flags.all || flags.simple)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = if flags.all || flags.simple then true else false;
-          };
+        };
         "chalkboard-tests-cbbe1" = {
           buildable = if flags.all || flags.cbbe1 then true else false;
-          };
+        };
         "chalkboard-examples-example" = {
           buildable = if flags.all || flags.example then true else false;
-          };
+        };
         "chalkboard-tutorial-basic" = {
           buildable = if flags.all || flags.tutorial then true else false;
-          };
         };
       };
-    }
+    };
+  }

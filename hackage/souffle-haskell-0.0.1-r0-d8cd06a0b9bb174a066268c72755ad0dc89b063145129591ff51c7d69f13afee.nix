@@ -21,7 +21,7 @@
       synopsis = "Souffle Datalog bindings for Haskell";
       description = "Souffle Datalog bindings for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "souffle-haskell-test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."souffle-haskell" or (errorHandler.buildDepError "souffle-haskell"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
-            ];
+          ];
           libs = [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Interface to Google Suggest API";
       description = "Interface to Google Suggest API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A flexible mock framework for testing effectful code.";
       description = "HMock is a flexible mock framework for testing effectful\ncode in Haskell.  Tests can set up expectations about\nactions that can or should be performed and their results,\nand then verify those expectations when the test is\ncomplete.\n\nFor more information, see the module documentation for\n\"Test.HMock\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

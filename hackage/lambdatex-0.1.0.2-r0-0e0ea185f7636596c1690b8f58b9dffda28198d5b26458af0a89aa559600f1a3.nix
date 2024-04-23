@@ -21,7 +21,7 @@
       synopsis = "Type-Safe LaTeX EDSL";
       description = "ΛTeX, pronounced 'LambdaTeX' is a Haskell EDSL that adds type-safety to LaTeX.\nΛTeX-generated LaTeX code should compile without errors.\nTODO(kerckhove) big fancy example";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lambdatex-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."lambdatex" or (errorHandler.buildDepError "lambdatex"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

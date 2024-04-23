@@ -21,7 +21,7 @@
       synopsis = "Haskell interface for the simplenote API.";
       description = "Provides a simple Haskell API to the simplenote web\nservices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Drop-in(ish) background worker system for Yesod apps";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

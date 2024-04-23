@@ -21,7 +21,7 @@
       synopsis = "Static blog generator";
       description = "Static blog generator";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "muon" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

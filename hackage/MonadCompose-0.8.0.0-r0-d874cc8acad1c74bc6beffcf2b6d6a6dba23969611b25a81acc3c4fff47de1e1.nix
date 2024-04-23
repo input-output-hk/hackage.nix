@@ -21,7 +21,7 @@
       synopsis = "Methods for composing monads.";
       description = "Methods for composing monads.\n\nThe IO monad transformer solves the problem of combining two IO-performing monads, so that neither one needs to provide a MonadIO interface and both can be transformed separately.\n\nMost known monads have a distributive law. The Distributive module implements distributivity for monad transformers.\n\nA monad transformer can transform another monad, but if you have two monads both lacking a transformer, there is little you can do in general. However, you can compose them in a coproduct construction. The PlusMonad module implements a similar plan, but differs from coproducts in that it doesn't compress together contiguous uses of a monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

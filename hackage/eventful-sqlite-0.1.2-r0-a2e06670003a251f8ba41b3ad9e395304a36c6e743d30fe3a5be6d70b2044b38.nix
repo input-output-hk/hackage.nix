@@ -21,7 +21,7 @@
       synopsis = "SQLite implementations for eventful";
       description = "SQLite implementations for eventful";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."eventful-test-helpers" or (errorHandler.buildDepError "eventful-test-helpers"))
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "style" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,9 +68,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

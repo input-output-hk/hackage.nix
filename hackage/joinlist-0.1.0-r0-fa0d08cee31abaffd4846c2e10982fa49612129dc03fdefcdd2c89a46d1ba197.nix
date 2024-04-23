@@ -21,11 +21,11 @@
       synopsis = "Join list - symmetric list type ";
       description = "A JoinList - a list type with with cheap catenation.\n\nThe earliest attribution have found is to Richard Bird.\nAn implementation exists in york-lava.\n\nCameo appearances:\n\n*  GHC Team 'View patterns: lightweight views for Haskell'\n\n*  Mark Tullsen 'First Class Patterns'\n\n*  Meng Wang, Jeremy Gibbons, Kazutaka Matsuda, Zhenjiang Hu\n'Translucent Abstraction: Safe Views through Invertible\nProgramming'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compose music";
       description = "Compose music";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,11 +40,11 @@
           (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fcomp" = {
           depends = [
@@ -63,11 +63,11 @@
             (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

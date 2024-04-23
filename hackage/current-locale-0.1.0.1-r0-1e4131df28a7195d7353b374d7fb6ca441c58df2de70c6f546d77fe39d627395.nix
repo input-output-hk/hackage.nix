@@ -21,15 +21,15 @@
       synopsis = "Get the current system locale in System.Locale format";
       description = "Use the system 'date' command to find out the current\nsystem locale in System.Locale format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

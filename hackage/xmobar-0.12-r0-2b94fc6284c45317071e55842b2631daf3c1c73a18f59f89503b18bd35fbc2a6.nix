@@ -16,7 +16,7 @@
       with_iwlib = false;
       with_mpd = false;
       all_extensions = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "xmobar"; version = "0.12"; };
@@ -29,7 +29,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar\nfeatures, like dynamic color management, output templates,\nand extensibility through plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xmobar" = {
@@ -41,7 +41,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -50,16 +50,16 @@
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
-              ])) ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
+            ])) ++ pkgs.lib.optionals (flags.with_xft || flags.all_extensions) [
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"))
-            ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"));
-          libs = (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (errorHandler.sysDepError "iw"));
+          ]) ++ pkgs.lib.optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ pkgs.lib.optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ pkgs.lib.optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"));
+          libs = pkgs.lib.optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (errorHandler.sysDepError "iw"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

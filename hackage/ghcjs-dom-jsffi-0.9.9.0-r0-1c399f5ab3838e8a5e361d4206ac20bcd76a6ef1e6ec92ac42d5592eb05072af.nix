@@ -21,7 +21,7 @@
       synopsis = "DOM library using JSFFI and GHCJS";
       description = "Documentent Object Model (DOM) functions that work with\nGHCJS.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"));
         buildable = if compiler.isGhcjs && true || system.isJavaScript
           then true
           else false;
-        };
       };
-    }
+    };
+  }

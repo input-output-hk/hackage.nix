@@ -21,7 +21,7 @@
       synopsis = "An SMTP client EDSL";
       description = "An SMTP client EDSL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/alsa-seq-tests-0.1-r0-aba71fb184c582473512614a117e01794d31a9db8045bc3274a408d6f8d987be.nix;
         revNum = 0;
         sha256 = "aba71fb184c582473512614a117e01794d31a9db8045bc3274a408d6f8d987be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

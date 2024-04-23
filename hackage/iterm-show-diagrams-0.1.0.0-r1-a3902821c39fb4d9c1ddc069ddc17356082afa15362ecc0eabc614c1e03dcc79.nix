@@ -21,7 +21,7 @@
       synopsis = "Orphan Show instances for diagrams package that render inline in some terminals";
       description = "This package provides orphan Show instances for the QDiagram type from\nthe diagrams package. This allows showing images from the GHCi prompt, which\nis really handy for development and experimentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."iterm-show" or (errorHandler.buildDepError "iterm-show"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."diagrams-rasterific" or (errorHandler.buildDepError "diagrams-rasterific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

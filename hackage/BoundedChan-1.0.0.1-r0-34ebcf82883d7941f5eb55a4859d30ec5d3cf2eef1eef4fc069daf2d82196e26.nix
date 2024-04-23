@@ -21,14 +21,14 @@
       synopsis = "Implementation of bounded channels.";
       description = "This library introduces BoundedChan. BoundedChans differ from\nChans in that they are guaranteed to contain no more than a\ncertain number of elements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

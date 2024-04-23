@@ -21,20 +21,20 @@
       synopsis = "Haskell binding to MPFR library";
       description = "Haskell binding to MPFR library. This version is compatible\nonly with 2.4.* and will not work with previous releases\nof the MPFR library.\nSome simple examples of usage can be found in test/Demo.hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer" or (errorHandler.buildDepError "integer"))
-          ];
+        ];
         libs = [ (pkgs."mpfr" or (errorHandler.sysDepError "mpfr")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

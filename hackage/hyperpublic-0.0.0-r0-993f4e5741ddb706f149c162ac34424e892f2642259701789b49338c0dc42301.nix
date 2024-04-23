@@ -21,7 +21,7 @@
       synopsis = "A thin wrapper for the Hyperpublic API";
       description = "A thin wrapper for the Hyperpublic API, which uses \"Network.HTTP.Enumerator\"\nto fetch results and \"Data.Aeson\" to return them as JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."http-enumerator" or (errorHandler.buildDepError "http-enumerator"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

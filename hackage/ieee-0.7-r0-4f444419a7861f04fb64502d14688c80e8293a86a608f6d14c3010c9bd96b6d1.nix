@@ -21,12 +21,12 @@
       synopsis = "Utilities for dealing with IEEE floating point numbers";
       description = "Utilities for dealing with IEEE floating point numbers, ported\nfrom the Tango math library; approximate and exact equality\ncomparisons for general types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."m" or (errorHandler.sysDepError "m")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

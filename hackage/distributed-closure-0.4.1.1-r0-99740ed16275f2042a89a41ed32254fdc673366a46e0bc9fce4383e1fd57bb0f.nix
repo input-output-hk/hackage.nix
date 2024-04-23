@@ -21,7 +21,7 @@
       synopsis = "Serializable closures for distributed programming.";
       description = "See README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-client-server" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."distributed-closure" or (errorHandler.buildDepError "distributed-closure"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."distributed-closure" or (errorHandler.buildDepError "distributed-closure"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

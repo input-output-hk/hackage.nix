@@ -21,7 +21,7 @@
       synopsis = "Play Hangman Game";
       description = "Write a program doing\n\n1. pick a list of words randomly\n\n2. play hangman agaist each of word\n\n3. the judgement are:\n- successful rate\n- wrong guess rate\n- running time";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "playHangmanGame" = {
@@ -32,9 +32,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

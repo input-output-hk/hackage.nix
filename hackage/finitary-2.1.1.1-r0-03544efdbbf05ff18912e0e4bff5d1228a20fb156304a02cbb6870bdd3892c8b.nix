@@ -21,7 +21,7 @@
       synopsis = "A better, more type-safe Enum.";
       description = "Provides a type class witnessing that a type has\nfinitely-many inhabitants, as well as its cardinality.\nAlso provides an auto-deriving framework using GHC\nGenerics, together with a range of instances for existing\ntypes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,14 +30,14 @@
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
           (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (flags.bitvec) (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"))) ++ (pkgs.lib).optionals (flags.vector) [
+        ] ++ pkgs.lib.optional (flags.bitvec) (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"))) ++ pkgs.lib.optionals (flags.vector) [
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
           (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "String encoding conversion";
       description = "Provides an interface to the POSIX iconv library functions\nfor string encoding conversion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring_in_base
@@ -30,9 +30,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
-        libs = (pkgs.lib).optional (system.isOsx || system.isFreebsd) (pkgs."iconv" or (errorHandler.sysDepError "iconv"));
+          ];
+        libs = pkgs.lib.optional (system.isOsx || system.isFreebsd) (pkgs."iconv" or (errorHandler.sysDepError "iconv"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

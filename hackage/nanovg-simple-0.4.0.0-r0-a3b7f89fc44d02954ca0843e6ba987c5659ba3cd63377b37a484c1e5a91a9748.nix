@@ -21,7 +21,7 @@
       synopsis = "Simple interface to rendering with NanoVG";
       description = "Please see the README on GitHub at <https://github.com/CthulhuDen/nanovg-simple#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."nanovg" or (errorHandler.buildDepError "nanovg"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nanovg-simple" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."nanovg" or (errorHandler.buildDepError "nanovg"))
             (hsPkgs."nanovg-simple" or (errorHandler.buildDepError "nanovg-simple"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

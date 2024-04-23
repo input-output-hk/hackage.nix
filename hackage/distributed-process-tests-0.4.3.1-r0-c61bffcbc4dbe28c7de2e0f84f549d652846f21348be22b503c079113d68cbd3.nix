@@ -21,7 +21,7 @@
       synopsis = "Tests and test support tools for distributed-process.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.4.2") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.4.2") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       tests = {
         "TestCH" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestClosure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestStats" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestMx" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestTracing" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,9 +95,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

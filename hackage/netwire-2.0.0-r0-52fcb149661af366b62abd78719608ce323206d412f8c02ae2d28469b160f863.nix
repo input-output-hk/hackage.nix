@@ -21,7 +21,7 @@
       synopsis = "Generic automaton arrow transformer and useful tools";
       description = "This library implements a powerful generic automaton arrow\ntransformer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

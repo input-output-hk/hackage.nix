@@ -21,7 +21,7 @@
       synopsis = "A library for the analysis and creation of Graphviz DOT files";
       description = "A library for the analysis and creation of Graphviz DOT files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,28 +29,28 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ppdot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."language-dot" or (errorHandler.buildDepError "language-dot"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

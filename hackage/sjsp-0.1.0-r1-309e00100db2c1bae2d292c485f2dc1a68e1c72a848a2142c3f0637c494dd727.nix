@@ -21,7 +21,7 @@
       synopsis = "Simple JavaScript Profiler";
       description = "This is a JavaScript profiler, injecting profiling\ncodes into your JavaScript files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sjsp" = {
@@ -34,13 +34,13 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

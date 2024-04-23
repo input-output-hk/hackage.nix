@@ -21,7 +21,7 @@
       synopsis = "Extension of Poseidon library for Postgis (Spatial and Geographic objects for PostgreSQL)";
       description = "Extension of Poseidon library to manage Postgis objects from PostgreSQL extension.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."poseidon" or (errorHandler.buildDepError "poseidon"))
           (hsPkgs."geojson" or (errorHandler.buildDepError "geojson"))
           (hsPkgs."wkt-geom" or (errorHandler.buildDepError "wkt-geom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

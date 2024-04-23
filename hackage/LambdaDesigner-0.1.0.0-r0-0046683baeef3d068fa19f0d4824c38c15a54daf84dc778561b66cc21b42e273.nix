@@ -21,7 +21,7 @@
       synopsis = "A type-safe EDSL for TouchDesigner written in Haskell.";
       description = "TouchDesigner nodes written as functions in Haskell and sent to TouchDesigner as json.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

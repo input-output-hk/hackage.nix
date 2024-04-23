@@ -21,14 +21,14 @@
       synopsis = "Data and Typeable instances for the GHC API.";
       description = "Data and Typeable instances for the GHC API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

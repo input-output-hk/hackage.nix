@@ -21,7 +21,7 @@
       synopsis = "Generate Haskell code from a type";
       description = "Djinn uses an theorem prover for intuitionistic propositional logic\nto generate a Haskell expression when given a type.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "djinn" = {
@@ -32,9 +32,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

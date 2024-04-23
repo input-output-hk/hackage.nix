@@ -21,13 +21,13 @@
       synopsis = "low level bindings to CasADi";
       description = "See the readme on github for installation instructions. Version numbers correspond to the C++ library version numbers. This only works on Debian/Ubuntu at the moment (sorry).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           (pkgs."casadi_ipopt_interface" or (errorHandler.sysDepError "casadi_ipopt_interface"))
@@ -54,8 +54,8 @@
           (pkgs."casadi_nonlinear_programming" or (errorHandler.sysDepError "casadi_nonlinear_programming"))
           (pkgs."casadi" or (errorHandler.sysDepError "casadi"))
           (pkgs."dl" or (errorHandler.sysDepError "dl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

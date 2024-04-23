@@ -21,15 +21,15 @@
       synopsis = "MD5 implementations that should become part of a ByteString Crypto package.";
       description = "A rolled (concise yet inefficient) and unrolled (more efficient, much less concise)\nversion of MD5 purely in Haskell.  Only the unrolled is exported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

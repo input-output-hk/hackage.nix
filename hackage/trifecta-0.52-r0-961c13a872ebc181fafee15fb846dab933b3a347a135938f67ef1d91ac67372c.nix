@@ -21,7 +21,7 @@
       synopsis = "A modern parser combinator library with convenient diagnostics";
       description = "A modern unicode-aware parser combinator library with slicing and Clang-style colored diagnostics";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,8 +52,8 @@
           (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
           (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
           (hsPkgs."wl-pprint-terminfo" or (errorHandler.buildDepError "wl-pprint-terminfo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

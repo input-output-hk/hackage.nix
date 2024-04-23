@@ -21,7 +21,7 @@
       synopsis = "Simple chat";
       description = "Simple chat";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hach-client" = { buildable = true; };
         "hach-nclient" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."vty-ui" or (errorHandler.buildDepError "vty-ui"))
-            ];
+          ];
           buildable = true;
-          };
-        "hach-server" = { buildable = true; };
         };
+        "hach-server" = { buildable = true; };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library for writing PGI applications";
       description = "Provides an API to create and serve PGI applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."tnet" or (errorHandler.buildDepError "tnet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HsQML-based clone of Pipe Mania";
       description = "HsQML-based clone of Pipe Mania";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsqml-manic" = {
@@ -31,9 +31,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

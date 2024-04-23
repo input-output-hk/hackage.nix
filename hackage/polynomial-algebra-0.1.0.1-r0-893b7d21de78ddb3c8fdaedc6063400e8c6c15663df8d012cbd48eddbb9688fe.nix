@@ -21,7 +21,7 @@
       synopsis = "Multivariate polynomial rings";
       description = "Multivariate and univariate polynomial rings, with several different representations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."compact-word-vectors" or (errorHandler.buildDepError "compact-word-vectors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

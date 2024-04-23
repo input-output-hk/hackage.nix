@@ -21,7 +21,7 @@
       synopsis = "Find the clumpiness of labels in a tree";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "find-clumpiness" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

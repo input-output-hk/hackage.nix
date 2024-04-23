@@ -21,12 +21,12 @@
       synopsis = "";
       description = "dirt simple picosat bindings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."picosat" or (errorHandler.sysDepError "picosat")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

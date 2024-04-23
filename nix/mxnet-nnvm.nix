@@ -6,8 +6,8 @@
         nix = import ../hackage/mxnet-nnvm-0.1.0.0-r0-dfcfa98aefc27559ba7a65a562b56723463670fc3845b7965b2e6996a4c66383.nix;
         revNum = 0;
         sha256 = "dfcfa98aefc27559ba7a65a562b56723463670fc3845b7965b2e6996a4c66383";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Serialize to bytes";
       description = "Compatibility shim for `bytebuild`. This reexports modules\nunder then `Data.ByteArray` namespace.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
           (hsPkgs."bytebuild" or (errorHandler.buildDepError "bytebuild"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

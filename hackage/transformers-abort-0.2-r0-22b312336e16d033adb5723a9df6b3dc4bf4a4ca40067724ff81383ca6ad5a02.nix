@@ -21,7 +21,7 @@
       synopsis = "A better error monad transformer";
       description = "This package provides a better error monad transformer for\nthe @transformers@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

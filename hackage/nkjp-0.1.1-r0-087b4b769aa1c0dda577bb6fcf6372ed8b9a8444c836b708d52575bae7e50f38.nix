@@ -21,7 +21,7 @@
       synopsis = "Manipulating the National Corpus of Polish (NKJP)";
       description = "The library provides parsing and printing utilities for the\nNational Corpus of Polish (NKJP).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."data-named" or (errorHandler.buildDepError "data-named"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

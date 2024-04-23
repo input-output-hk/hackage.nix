@@ -21,7 +21,7 @@
       synopsis = "A multi-talented IRC bot";
       description = "Lambdabot is a Haskell development tool, written in Haskell.\nIt operates as a command line tool, embedded in an editor,\nembedded in GHCi, via internet relay chat and on the web.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "BotPP" = {
@@ -49,9 +49,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambdabot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hoogle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "djinn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -133,9 +133,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ft" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -161,9 +161,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "runplugs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -189,9 +189,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quickcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -217,9 +217,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "smallcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -245,9 +245,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

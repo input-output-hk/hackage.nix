@@ -21,7 +21,7 @@
       synopsis = "A simple wrapper & quasi quoter for fgl.";
       description = "Simple Wrapper for generating Graph provided by Data.Graph.Inductive.\nIt also contains PageRank calculator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

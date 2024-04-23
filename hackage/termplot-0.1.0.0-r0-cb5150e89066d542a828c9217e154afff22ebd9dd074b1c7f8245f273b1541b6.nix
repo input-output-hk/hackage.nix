@@ -21,7 +21,7 @@
       synopsis = "Plot time series in your terminal using commands stdout";
       description = "Use unicode characters to plot fancy time series in real-time in your terminal.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "termplot" = {
@@ -36,9 +36,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

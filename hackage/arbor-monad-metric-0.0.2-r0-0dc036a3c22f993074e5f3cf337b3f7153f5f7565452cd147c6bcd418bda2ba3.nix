@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/arbor/arbor-monad-metric#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "arbor-monad-metric-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

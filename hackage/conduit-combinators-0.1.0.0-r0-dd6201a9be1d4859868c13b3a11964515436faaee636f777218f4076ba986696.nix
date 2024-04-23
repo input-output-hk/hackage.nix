@@ -21,7 +21,7 @@
       synopsis = "Commonly used conduit functions, for both chunked and unchunked data";
       description = "Provides a replacement for Data.Conduit.List, as well as a convenient Conduit module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

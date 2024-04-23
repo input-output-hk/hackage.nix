@@ -21,13 +21,13 @@
       synopsis = "Convert newlines in text";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "linebreak" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

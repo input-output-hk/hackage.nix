@@ -21,16 +21,16 @@
       synopsis = "Happy is a parser generator for Haskell";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "happy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

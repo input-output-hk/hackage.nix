@@ -6,8 +6,8 @@
         nix = import ../hackage/scientist-0.0.0.0-r0-058c629a6805668f3a16c386dbc5dd90c1ce55ff2c7cf5672f0410bdb873d04c.nix;
         revNum = 0;
         sha256 = "058c629a6805668f3a16c386dbc5dd90c1ce55ff2c7cf5672f0410bdb873d04c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

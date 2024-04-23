@@ -21,11 +21,11 @@
       synopsis = "Either with a stricter Semigroup instance";
       description = "A version of `Either` whose `Semigroup` instance requires a `Semigroup` in the `Left` argument.\nUnlike most `Validation` packages, this package does not depend on the entire Kmettverse, preferring a small dependency tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

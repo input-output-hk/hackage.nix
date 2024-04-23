@@ -21,7 +21,7 @@
       synopsis = "Higher-order version of Freer.";
       description = "Heftia, a composition of hefty trees and co-Yoneda, is a higher-order\neffects version of Freer.\n\nThe paper\n\n* Casper Bach Poulsen and Cas van der Rest. 2023. Hefty Algebras: Modular\nElaboration of Higher-Order Algebraic Effects. Proc. ACM Program. Lang. 7,\nPOPL, Article 62 (January 2023), 31 pages. <https://doi.org/10.1145/3571255>\n\ninspires this library.\nHefty trees, proposed by the above paper, are extensions of free monads,\nallowing for a straightforward treatment of higher-order effects.\n\nThis library provides Heftia monads and Freer monads, encoded into data\ntypes in several ways to enable tuning in pursuit of high performance.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
           (hsPkgs."membership" or (errorHandler.buildDepError "membership"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

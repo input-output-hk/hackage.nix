@@ -21,7 +21,7 @@
       synopsis = "Automatic test suite discovery for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sydtest-discover" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sydtest-discover" or (errorHandler.buildDepError "sydtest-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

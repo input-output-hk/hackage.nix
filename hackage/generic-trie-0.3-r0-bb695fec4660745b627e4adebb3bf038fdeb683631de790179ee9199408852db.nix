@@ -21,15 +21,15 @@
       synopsis = "A map, where the keys may be complex structured data.";
       description = "This type implements maps where the keys are themselves\ncomplex structured data.  For example, the keys may be\nthe abstract syntax trees for a programming language.\nThe map is implemented as a trie, so common parts of the\nkeys will be shared in the representation.  The library\nprovides a generic implementation of the data structure,\nso values of types that have support for 'Generic' may\nbe automatically used as keys in the map.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

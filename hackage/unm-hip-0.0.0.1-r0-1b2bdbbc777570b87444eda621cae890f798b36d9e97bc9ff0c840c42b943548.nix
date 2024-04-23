@@ -21,7 +21,7 @@
       synopsis = "A Library for the manipulation of images";
       description = "The University of New Mexico's Haskell Image Processing library contains functionality for performing manipulations on binary, grayscale, color, and complex images. The library was designed for use in UNM's Digital Image Processing class but it can be used for a wide range of image processing purposes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

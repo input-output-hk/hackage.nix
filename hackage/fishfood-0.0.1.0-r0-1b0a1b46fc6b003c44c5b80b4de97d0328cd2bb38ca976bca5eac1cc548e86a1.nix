@@ -21,7 +21,7 @@
       synopsis = "Calculates file-size frequency-distribution.";
       description = "Counts the number of files in a set of bins, each of which holds only those files which fall within a specific size-interval.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fishfood" = {
@@ -34,9 +34,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

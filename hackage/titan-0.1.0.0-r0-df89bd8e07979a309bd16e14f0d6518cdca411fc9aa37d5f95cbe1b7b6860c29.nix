@@ -21,13 +21,13 @@
       synopsis = "Testing Infrastructure for Temporal AbstractioNs";
       description = "Testing Infrastructure for Temporal AbstractioNs";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "titan" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

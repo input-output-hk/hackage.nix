@@ -21,7 +21,7 @@
       synopsis = "Static file serving subsite for Yesod Web Framework.";
       description = "Static file serving subsite for Yesod Web Framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

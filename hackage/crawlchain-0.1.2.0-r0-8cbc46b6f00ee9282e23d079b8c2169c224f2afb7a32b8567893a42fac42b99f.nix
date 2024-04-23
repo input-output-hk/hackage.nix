@@ -21,7 +21,7 @@
       synopsis = "Simulation user crawl paths";
       description = "Library for simulating user crawl paths (trees) with selectors - takes an initial action and a chain of processing actions to crawl a tree (lazy, depth first) searching for a matching branch.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "html-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."crawlchain" or (errorHandler.buildDepError "crawlchain"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

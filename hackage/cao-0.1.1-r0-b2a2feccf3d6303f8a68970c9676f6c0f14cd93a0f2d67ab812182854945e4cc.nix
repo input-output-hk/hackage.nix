@@ -21,7 +21,7 @@
       synopsis = "CAO Compiler";
       description = "CAO Compiler";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cao" = {
@@ -39,13 +39,13 @@
             (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Perfectly streaming PNG image decoding";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,12 +38,12 @@
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "streaming-png-demo" = {
-          depends = (pkgs.lib).optionals (flags.build-demo) [
+          depends = pkgs.lib.optionals (flags.build-demo) [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
@@ -53,9 +53,9 @@
             (hsPkgs."streaming-png" or (errorHandler.buildDepError "streaming-png"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.build-demo then true else false;
-          };
         };
       };
-    }
+    };
+  }

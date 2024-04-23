@@ -21,7 +21,7 @@
       synopsis = "Create a unique hash value for a type.";
       description = "Produce a hash for a type that is unique for that type.\nThe hash takes both actual type names and type structure into account.\nThis is useful for checking the type of persisted values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ] ++ (if flags.base4
+        ] ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

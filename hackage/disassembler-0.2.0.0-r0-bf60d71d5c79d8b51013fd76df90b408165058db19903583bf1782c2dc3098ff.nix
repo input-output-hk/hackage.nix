@@ -21,7 +21,7 @@
       synopsis = "Disassembler for X86 & AMD64 machine code";
       description = "Disassembler for X86 & AMD64 machine code";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

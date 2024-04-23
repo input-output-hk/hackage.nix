@@ -14,7 +14,7 @@
       identifier = {
         name = "terraform-http-backend-pass";
         version = "0.1.0.1";
-        };
+      };
       license = "LicenseRef-AGPL";
       copyright = "2021 Akshay Mankar";
       maintainer = "itsakshaymankar@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "HTTP backend to store terraform state using pass and git";
       description = "Please see the README on GitHub at <https://github.com/akshaymankar/terraform-http-backend-pass#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "terraform-http-backend-pass" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."terraform-http-backend-pass" or (errorHandler.buildDepError "terraform-http-backend-pass"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

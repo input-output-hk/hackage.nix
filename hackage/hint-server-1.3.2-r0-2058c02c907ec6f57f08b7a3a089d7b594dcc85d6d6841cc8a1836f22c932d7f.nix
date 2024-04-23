@@ -21,7 +21,7 @@
       synopsis = "A server process that runs hint.";
       description = "This library provides a server process (implemented using eprocess) that can receive and run actions in the Interpreter monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
           (hsPkgs."eprocess" or (errorHandler.buildDepError "eprocess"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

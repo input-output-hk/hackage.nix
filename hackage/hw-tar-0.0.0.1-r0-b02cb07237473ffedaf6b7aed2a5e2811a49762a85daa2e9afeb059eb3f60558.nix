@@ -21,21 +21,21 @@
       synopsis = "Library for creating and extracting tar archives";
       description = "Library for creating and extracting tar archives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-tar" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hw-tar" or (errorHandler.buildDepError "hw-tar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-tar-test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."hw-tar" or (errorHandler.buildDepError "hw-tar"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

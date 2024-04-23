@@ -21,7 +21,7 @@
       synopsis = "Experimental helper functions for conduit.";
       description = "This package is meant as a testing ground for new concepts in conduit. The idea is to have a much lower barrier to entry for this library relative to conduit itself. This way, conduit itself will continue to have a best-practices, minimal, stable API, while people are free to try crazy new features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

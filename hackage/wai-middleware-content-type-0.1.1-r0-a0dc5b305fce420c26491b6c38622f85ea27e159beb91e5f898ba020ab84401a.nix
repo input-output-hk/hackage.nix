@@ -21,7 +21,7 @@
       synopsis = "Route to different middlewares based on the incoming Accept header.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
           (hsPkgs."wai-util" or (errorHandler.buildDepError "wai-util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -84,10 +84,10 @@
             (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
             (hsPkgs."wai-util" or (errorHandler.buildDepError "wai-util"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -123,9 +123,9 @@
             (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
             (hsPkgs."wai-util" or (errorHandler.buildDepError "wai-util"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

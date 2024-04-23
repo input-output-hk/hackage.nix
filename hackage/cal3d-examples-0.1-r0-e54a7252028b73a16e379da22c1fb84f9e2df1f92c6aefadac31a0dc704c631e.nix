@@ -21,7 +21,7 @@
       synopsis = "Examples for the Cal3d animation library.";
       description = "Cal3d animation examples for cal3d.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cally-dump" = {
@@ -31,9 +31,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."cal3d" or (errorHandler.buildDepError "cal3d"))
             (hsPkgs."cal3d-opengl" or (errorHandler.buildDepError "cal3d-opengl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cally-gl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -41,9 +41,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."cal3d" or (errorHandler.buildDepError "cal3d"))
             (hsPkgs."cal3d-opengl" or (errorHandler.buildDepError "cal3d-opengl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

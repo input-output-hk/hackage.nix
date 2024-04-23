@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with OpenGL's GLSL shading language and Nikita Volkov's \"Record\"s.";
       description = "Using Nikita Volkov's \"Record\" records\nto carry GLSL uniform parameters and vertex data enables\nlibrary code to reflect over the types of the data to\nfacilitate interaction between Haskell and GLSL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."record-gl" or (errorHandler.buildDepError "record-gl"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/Graph500-0.4.0-r0-ff65404c1a4bbb0a1a532e27a7d88630df4e336a11e5791ae53a28ef32b5b252.nix;
         revNum = 0;
         sha256 = "ff65404c1a4bbb0a1a532e27a7d88630df4e336a11e5791ae53a28ef32b5b252";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

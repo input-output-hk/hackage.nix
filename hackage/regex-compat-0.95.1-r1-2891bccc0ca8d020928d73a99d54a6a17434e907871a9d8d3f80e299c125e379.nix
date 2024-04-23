@@ -21,7 +21,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "One module layer over <//hackage.haskell.org/package/regex-posix regex-posix> to replace \"Text.Regex\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.newbase
@@ -30,20 +30,20 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
               (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
               (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-              ];
+            ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

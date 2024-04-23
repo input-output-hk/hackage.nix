@@ -6,8 +6,8 @@
         nix = import ../hackage/fresnel-fused-effects-0.0.0.0-r0-ff68b16363ab79a5d4378c13faf96114240f8add4eb666dfca496b514016c5f1.nix;
         revNum = 0;
         sha256 = "ff68b16363ab79a5d4378c13faf96114240f8add4eb666dfca496b514016c5f1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

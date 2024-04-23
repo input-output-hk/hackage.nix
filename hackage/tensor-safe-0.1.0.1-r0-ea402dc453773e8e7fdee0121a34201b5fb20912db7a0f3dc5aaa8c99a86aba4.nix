@@ -21,7 +21,7 @@
       synopsis = "Create valid deep neural network architectures";
       description = "TensorSafe provides a very simple API to create deep neural networks structures which are validated using Dependent Types. Given a list of Layers and an initial Shape, TensorSafe is able to check and corroborate the structure of the network. Also, it's possible to extract the definition and compile it to a target language like Python and JavaScript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tensor-safe" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

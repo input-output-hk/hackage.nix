@@ -21,7 +21,7 @@
       synopsis = "Template Haskell helpers for highjson specs";
       description = "Template Haskell helpers for highjson specs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "highjson-th-tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

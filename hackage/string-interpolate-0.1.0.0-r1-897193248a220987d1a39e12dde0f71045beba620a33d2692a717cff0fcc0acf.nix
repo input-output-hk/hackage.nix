@@ -21,7 +21,7 @@
       synopsis = "Haskell string/text/bytestring interpolation that just works";
       description = "Unicode-aware string interpolation that handles all textual types.\n\nSee the README at <https://gitlab.com/williamyaoh/string-interpolate.git#string-interpolate> for more info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "string-interpolate-test" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "string-interpolate-bench" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."interpolatedstring-perl6" or (errorHandler.buildDepError "interpolatedstring-perl6"))
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

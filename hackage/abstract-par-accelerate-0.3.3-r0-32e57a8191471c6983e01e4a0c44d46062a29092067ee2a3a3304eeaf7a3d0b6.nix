@@ -21,7 +21,7 @@
       synopsis = "Provides the class ParAccelerate, nothing more.";
       description = "Following the convention the @abstract-par@ package,\nthis package simply defines an interface, in the form of a\ntype class, and does not contain any implementation.\nImporting this module gives the user an API to\naccess @Accelerate@ computations from within\n@Par@ computations, with the added benefit that\nthe @Par@ can do integrated CPU/GPU scheduling.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,10 +29,10 @@
           (hsPkgs."abstract-par" or (errorHandler.buildDepError "abstract-par"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-          ]) ++ (pkgs.lib).optional (flags.io && flags.newaccelerate) (hsPkgs."accelerate-io" or (errorHandler.buildDepError "accelerate-io"));
+        ]) ++ pkgs.lib.optional (flags.io && flags.newaccelerate) (hsPkgs."accelerate-io" or (errorHandler.buildDepError "accelerate-io"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

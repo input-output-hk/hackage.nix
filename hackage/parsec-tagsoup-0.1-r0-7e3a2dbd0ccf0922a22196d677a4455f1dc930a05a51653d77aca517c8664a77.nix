@@ -21,15 +21,15 @@
       synopsis = "Parsec parsers for Tagsoup tag streams";
       description = "This package provides a Tag token parser, as well as Tag specific parsing combinators.   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

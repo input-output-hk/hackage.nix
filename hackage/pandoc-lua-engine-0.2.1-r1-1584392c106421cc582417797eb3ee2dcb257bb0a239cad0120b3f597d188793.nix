@@ -21,7 +21,7 @@
       synopsis = "Lua engine to power custom pandoc conversions";
       description = "This package provides a pandoc scripting engine based on\nLua.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-pandoc-lua-engine" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

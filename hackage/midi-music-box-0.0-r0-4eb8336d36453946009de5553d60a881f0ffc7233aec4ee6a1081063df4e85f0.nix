@@ -21,7 +21,7 @@
       synopsis = "Convert MIDI file to music box punch tape";
       description = "Convert MIDI file to music box punch tape for this kind of music box:\n<http://www.amazon.de/Spieluhr-Lochstreifen/dp/B001WNZOVO/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "midi-music-box" = {
@@ -35,9 +35,9 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

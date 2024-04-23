@@ -21,7 +21,7 @@
       synopsis = "A simple library for representing and minimising DFAs.";
       description = "hDFA provides a simple API for representing and minimizing\ndeterministic finite automata (DFAs) using an explicit representation\n(a list of transitions). It includes a port of Antti Valmari's\nefficient DFA minimization algorithm from C++ to C. (See A. Valmari,\n\"Fast brief practical DFA minimization\" Information Processing\nLetters 112(6) 2012.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

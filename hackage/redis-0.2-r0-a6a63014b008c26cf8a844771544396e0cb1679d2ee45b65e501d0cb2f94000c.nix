@@ -21,7 +21,7 @@
       synopsis = "A driver for Redis key-value database";
       description = "Redis is an advanced key-value store. It is similar to memcached\nbut the dataset is not volatile. Values can be strings, exactly\nlike in memcached, but also lists, sets, and ordered sets.\n\nThis library is a Haskell driver for Redis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

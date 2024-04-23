@@ -21,7 +21,7 @@
       synopsis = "SDL2 and reflex FRP";
       description = "A minimal host for sdl2 based reflex apps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reflex-sdl2-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reflex-sdl2" or (errorHandler.buildDepError "reflex-sdl2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

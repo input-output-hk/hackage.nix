@@ -21,7 +21,7 @@
       synopsis = "Template tsv into SQL";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tsvsql" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

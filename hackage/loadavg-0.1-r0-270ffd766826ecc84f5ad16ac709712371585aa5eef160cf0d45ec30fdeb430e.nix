@@ -21,11 +21,11 @@
       synopsis = "Load average parsing from /proc/loadavg and bindings to getloadavg (3)";
       description = "Load average parsing from @\\/proc\\/loadavg@ and bindings to @getloadavg (3)@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

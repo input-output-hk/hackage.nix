@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for Path";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."validity-path" or (errorHandler.buildDepError "validity-path"))
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-path-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

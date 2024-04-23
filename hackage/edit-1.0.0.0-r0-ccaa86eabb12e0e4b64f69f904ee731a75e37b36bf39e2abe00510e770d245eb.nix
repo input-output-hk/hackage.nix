@@ -21,19 +21,19 @@
       synopsis = "A monad for rewriting things.";
       description = "Edit is a monad for rewriting things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (!flags.no_arbitrary) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))) ++ (pkgs.lib).optional (!flags.no_comonad) (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))) ++ (pkgs.lib).optionals (flags.tutorial) [
+        ] ++ pkgs.lib.optional (!flags.no_arbitrary) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))) ++ pkgs.lib.optional (!flags.no_comonad) (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))) ++ pkgs.lib.optionals (flags.tutorial) [
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-edit" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

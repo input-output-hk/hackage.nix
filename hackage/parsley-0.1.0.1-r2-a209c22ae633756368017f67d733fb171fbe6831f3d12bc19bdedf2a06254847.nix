@@ -21,7 +21,7 @@
       synopsis = "A fast parser combinator library backed by Typed Template Haskell";
       description = "Parsley is a staged selective parser combinator library, which means\nit does not support monadic operations, and relies on Typed Template\nHaskell to generate very fast code. Currently there are no error messages\nbut there are plans for this in the works.\n\nBased on the work found in [/Staged Selective Parser Combinators/\n(Willis et al. 2020)](https://dl.acm.org/doi/10.1145/3409002)\n\nWhile this library adheres to the Haskell PVP, it additionally\nenforces an additional constraint: the version @M.I.m.p@ represents\na breaking change to the /user/ API @M@, a breaking change\nto the /internal/ API @I@ (which will not affect most users), an addition\nto either API @m@, and patches or performance improvements @p@.\nAs such, users should feel free to bound themselves on the next @M@\nversion of the library as opposed to the second @I@ version if they\ndo not make use of the \"Parsley.Internal\" package or any of its children.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,11 +38,11 @@
           (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

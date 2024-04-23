@@ -21,7 +21,7 @@
       synopsis = "Binary utilities for the machines library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

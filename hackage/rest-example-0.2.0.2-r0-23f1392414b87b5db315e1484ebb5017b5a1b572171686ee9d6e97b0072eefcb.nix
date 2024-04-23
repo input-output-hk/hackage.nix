@@ -21,7 +21,7 @@
       synopsis = "Example project for rest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,12 +43,12 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rest-example-happstack" = {
-          depends = (pkgs.lib).optionals (flags.happstack) [
+          depends = pkgs.lib.optionals (flags.happstack) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -56,11 +56,11 @@
             (hsPkgs."rest-example" or (errorHandler.buildDepError "rest-example"))
             (hsPkgs."rest-happstack" or (errorHandler.buildDepError "rest-happstack"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ];
+          ];
           buildable = if flags.happstack then true else false;
-          };
+        };
         "rest-example-wai" = {
-          depends = (pkgs.lib).optionals (flags.wai) [
+          depends = pkgs.lib.optionals (flags.wai) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."rest-core" or (errorHandler.buildDepError "rest-core"))
@@ -69,11 +69,11 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ];
+          ];
           buildable = if flags.wai then true else false;
-          };
+        };
         "rest-example-snap" = {
-          depends = (pkgs.lib).optionals (flags.snap) [
+          depends = pkgs.lib.optionals (flags.snap) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."rest-core" or (errorHandler.buildDepError "rest-core"))
@@ -82,20 +82,20 @@
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ];
+          ];
           buildable = if flags.snap then true else false;
-          };
+        };
         "rest-example-gen" = {
-          depends = (pkgs.lib).optionals (flags.gen) [
+          depends = pkgs.lib.optionals (flags.gen) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."rest-core" or (errorHandler.buildDepError "rest-core"))
             (hsPkgs."rest-example" or (errorHandler.buildDepError "rest-example"))
             (hsPkgs."rest-gen" or (errorHandler.buildDepError "rest-gen"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ];
+          ];
           buildable = if flags.gen then true else false;
-          };
         };
       };
-    }
+    };
+  }

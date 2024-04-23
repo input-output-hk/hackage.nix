@@ -21,7 +21,7 @@
       synopsis = "A generic comments interface for a Yesod application";
       description = "A generic comments interface for a Yesod application";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

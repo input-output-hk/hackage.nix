@@ -21,7 +21,7 @@
       synopsis = "Tools for creating graphical UIs, based on wxHaskell.";
       description = "This library provides interfaces for creating easily\ngraphical UIs especially for computer vision purposes,\nand for rendering information in graphical form.\nImplementations are provided for CV libraries.\nExample applications are included.\n(This is an early preview version)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."CV" or (errorHandler.buildDepError "CV"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cvexample" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."CV" or (errorHandler.buildDepError "CV"))
             (hsPkgs."graphicstools" or (errorHandler.buildDepError "graphicstools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

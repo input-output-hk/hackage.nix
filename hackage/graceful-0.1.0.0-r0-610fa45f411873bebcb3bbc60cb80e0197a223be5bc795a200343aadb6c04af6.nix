@@ -21,7 +21,7 @@
       synopsis = "Library to write graceful shutdown / upgrade service.";
       description = "Library to write graceful shutdown / upgrade service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "graceful-spec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

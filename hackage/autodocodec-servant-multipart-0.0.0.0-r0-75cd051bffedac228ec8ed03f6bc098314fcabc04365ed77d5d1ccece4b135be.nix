@@ -14,7 +14,7 @@
       identifier = {
         name = "autodocodec-servant-multipart";
         version = "0.0.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2022 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -24,7 +24,7 @@
       synopsis = "Autodocodec interpreters for Servant Multipart";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

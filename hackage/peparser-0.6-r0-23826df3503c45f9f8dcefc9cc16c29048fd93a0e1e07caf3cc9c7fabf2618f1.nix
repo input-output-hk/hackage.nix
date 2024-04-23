@@ -21,7 +21,7 @@
       synopsis = "A parser for PE object files.";
       description = "Extract the header information and sections from a file of the PE object format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Polysemy effects for HTTP clients";
       description = "See https://hackage.haskell.org/package/polysemy-http/docs/Polysemy-Http.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "polysemy-http-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pagure REST client library";
       description = "A library for querying Pagure gitforges via REST.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."http-query" or (errorHandler.buildDepError "http-query"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

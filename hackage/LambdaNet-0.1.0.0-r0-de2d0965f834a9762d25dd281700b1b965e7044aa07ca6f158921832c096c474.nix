@@ -21,7 +21,7 @@
       synopsis = "A configurable and extensible neural network library";
       description = "LambdaNet is an artificial neural network library that allows\nusers to compose their own networks from function primitives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

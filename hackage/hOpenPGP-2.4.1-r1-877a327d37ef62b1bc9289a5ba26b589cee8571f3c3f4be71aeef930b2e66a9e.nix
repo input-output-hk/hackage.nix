@@ -21,7 +21,7 @@
       synopsis = "native Haskell implementation of OpenPGP (RFC4880)";
       description = "native Haskell implementation of OpenPGP (RFC4880)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,12 +62,12 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -112,13 +112,13 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -160,12 +160,12 @@
             (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

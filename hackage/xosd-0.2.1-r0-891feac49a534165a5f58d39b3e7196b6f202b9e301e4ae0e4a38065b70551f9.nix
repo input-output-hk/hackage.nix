@@ -21,12 +21,12 @@
       synopsis = "A binding to the X on-screen display ";
       description = "A binding to the X on-screen display\n\nxosd is a library for displaying an on-screen display (like the one\non many TVs) on your X display.\n\nFor example, the following displays the string \\\"TEST\\\" in the center\nof the screen, in 34pt Helvetica, for 3 seconds.\n\n> runXOSD [ Timeout 3\n>         , VAlign VAlignMiddle\n>         , HAlign HAlignCenter\n>         , Font \"-adobe-helvetica-bold-r-*-*-34-*-*-*-*-*-*-*\"\n>         , Color \"LimeGreen\"\n>         , Display (String \"TEST\")]\n>                   (const $ return ())\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."xosd" or (errorHandler.sysDepError "xosd")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for building a prefork-style server quickly";
       description = "Prefork is a library for building a prefork-style server quickly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prefork-sample-simple" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."prefork" or (errorHandler.buildDepError "prefork"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
+        };
         "prefork-sample-various-workers" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."prefork" or (errorHandler.buildDepError "prefork"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
+        };
         "prefork-sample-warp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,10 +74,10 @@
             (hsPkgs."prefork" or (errorHandler.buildDepError "prefork"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
         };
+      };
       tests = {
         "test-prefork" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."cab" or (errorHandler.buildDepError "cab"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-prefork-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -103,9 +103,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

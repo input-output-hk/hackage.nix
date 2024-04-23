@@ -21,7 +21,7 @@
       synopsis = "Cryptographic numbers: functions and algorithms";
       description = "Cryptographic numbers: functions and algorithms";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && true && flags.integer-gmp) [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && true && flags.integer-gmp) [
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-crypto-numbers" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-crypto-numbers" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."crypto-numbers" or (errorHandler.buildDepError "crypto-numbers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

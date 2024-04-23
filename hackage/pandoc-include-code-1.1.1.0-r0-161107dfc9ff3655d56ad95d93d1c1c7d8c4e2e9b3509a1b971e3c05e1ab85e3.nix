@@ -21,7 +21,7 @@
       synopsis = "A Pandoc filter for including code from source files";
       description = "A Pandoc filter for including code from source files.\nIt lets you keep your examples and documentation compiled and in sync,\ninclude small snippets from larger source files, and use Markdown or LaTeX\ntogether with preformatted HTML-like sources, in Pandoc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,19 +32,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-include-code" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-include-code" or (errorHandler.buildDepError "pandoc-include-code"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "filter-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."pandoc-include-code" or (errorHandler.buildDepError "pandoc-include-code"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

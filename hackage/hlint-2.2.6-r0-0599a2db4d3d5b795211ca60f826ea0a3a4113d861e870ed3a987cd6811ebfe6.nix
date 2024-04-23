@@ -21,7 +21,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -49,24 +49,24 @@
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "8.8.0") && (compiler.isGhc && (compiler.version).lt "8.9.0")
+        ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "8.8.0") && (compiler.isGhc && compiler.version.lt "8.9.0")
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-            ]
+          ]
           else [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ])) ++ (pkgs.lib).optional (flags.gpl) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
+          ])) ++ pkgs.lib.optional (flags.gpl) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
         buildable = true;
-        };
+      };
       exes = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

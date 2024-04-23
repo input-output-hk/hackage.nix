@@ -21,7 +21,7 @@
       synopsis = "Simple interface to optparse-applicative";
       description = "Please see the README at <https://www.stackage.org/package/optparse-simple>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

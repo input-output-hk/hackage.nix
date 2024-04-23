@@ -21,7 +21,7 @@
       synopsis = "Extism Plugin Development Kit";
       description = "Haskell bindings to the Extism runtime";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,31 +32,31 @@
           (hsPkgs."extism-manifest" or (errorHandler.buildDepError "extism-manifest"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hello" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extism-pdk" or (errorHandler.buildDepError "extism-pdk"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "http_get" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extism-pdk" or (errorHandler.buildDepError "extism-pdk"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "count_vowels" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extism-pdk" or (errorHandler.buildDepError "extism-pdk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Networking-related facilities";
       description = "";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Microsoft Graph API";
       description = "Bindings to the Microsoft Graph API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

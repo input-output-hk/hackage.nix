@@ -21,7 +21,7 @@
       synopsis = "Sqlite3 bindings";
       description = "Bindings for Sqlite3";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."state" or (errorHandler.buildDepError "state"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs_sqlite3_test" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."state" or (errorHandler.buildDepError "state"))
-            ];
+          ];
           libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Protocol suite for the Salvia webserver, including functionality for URI, HTTP, Cookie and MIME.";
       description = "Protocol suite for the Salvia webserver, including functionality for URI, HTTP, Cookie and MIME.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

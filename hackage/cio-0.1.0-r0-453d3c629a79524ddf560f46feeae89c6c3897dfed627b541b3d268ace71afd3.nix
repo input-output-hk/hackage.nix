@@ -21,7 +21,7 @@
       synopsis = "A monad for concurrent IO on a thread pool";
       description = "Provides a monadic API for efficient concurrency based on a thread pool.\nThe implementation is based on a \"parallel-io\" library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Riemann client for Haskell";
       description = "Very simple event sending to a Riemann server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "property" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."riemann" or (errorHandler.buildDepError "riemann"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."riemann" or (errorHandler.buildDepError "riemann"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

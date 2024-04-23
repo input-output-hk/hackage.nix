@@ -21,7 +21,7 @@
       synopsis = "Extra instances for the typeclasses in the tuple-append package";
       description = "A package that defines typeclass instances for the typeclasses defined in the tuple-append package. It defines instances for data types defined in the bytestring, dlist, text and vector package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tuple-append" or (errorHandler.buildDepError "tuple-append"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compatibility modules with other external packages (ByteString, etc.)";
       description = "Compatibility modules with other external packages (ByteString, etc.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

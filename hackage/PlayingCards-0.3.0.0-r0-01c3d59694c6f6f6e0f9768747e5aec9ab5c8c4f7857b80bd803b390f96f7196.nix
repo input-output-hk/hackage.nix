@@ -21,7 +21,7 @@
       synopsis = "Playing cards api";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

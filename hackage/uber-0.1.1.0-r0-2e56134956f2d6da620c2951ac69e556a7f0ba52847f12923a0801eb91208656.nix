@@ -21,7 +21,7 @@
       synopsis = "Uber client for Haskell";
       description = "Bindings for Uber API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."webapi" or (errorHandler.buildDepError "webapi"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "uber-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uber" or (errorHandler.buildDepError "uber"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

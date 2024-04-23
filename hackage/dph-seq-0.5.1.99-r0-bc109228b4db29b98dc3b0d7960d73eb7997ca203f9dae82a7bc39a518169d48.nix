@@ -21,6 +21,6 @@
       synopsis = "(deprecated)";
       description = "This package used to export DPH array primitives, but they're in dph-prim-seq now.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

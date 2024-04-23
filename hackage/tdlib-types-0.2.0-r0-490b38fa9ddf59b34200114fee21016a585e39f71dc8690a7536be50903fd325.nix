@@ -21,7 +21,7 @@
       synopsis = "Types and Functions generated from tdlib api spec";
       description = "Please see the README on GitHub at <https://github.com/poscat0x04/tdlib-types#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
           (hsPkgs."tdlib-gen" or (errorHandler.buildDepError "tdlib-gen"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tdlib-types-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tdlib-gen" or (errorHandler.buildDepError "tdlib-gen"))
             (hsPkgs."tdlib-types" or (errorHandler.buildDepError "tdlib-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

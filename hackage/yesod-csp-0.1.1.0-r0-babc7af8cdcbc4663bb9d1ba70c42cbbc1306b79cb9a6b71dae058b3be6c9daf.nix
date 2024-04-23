@@ -21,7 +21,7 @@
       synopsis = "Add CSP headers to Yesod apps";
       description = "Add CSP headers to Yesod apps. This helps reduce exposure to XSS attacks and bad assets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

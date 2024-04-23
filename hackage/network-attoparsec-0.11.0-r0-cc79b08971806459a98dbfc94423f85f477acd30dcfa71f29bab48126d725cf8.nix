@@ -21,7 +21,7 @@
       synopsis = "Utility functions for running a parser against a socket";
       description = "Utility functions for running a parser against a socket, without the need of a bigger framework such as Pipes or Conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."network-attoparsec" or (errorHandler.buildDepError "network-attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

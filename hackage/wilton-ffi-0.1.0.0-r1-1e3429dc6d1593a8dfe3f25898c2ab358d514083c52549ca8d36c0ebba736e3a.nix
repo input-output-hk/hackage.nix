@@ -21,15 +21,15 @@
       synopsis = "Haskell modules support for Wilton JavaScript runtime";
       description = "Please see the README on Github at <https://github.com/wilton-iot/wilton-ffi#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

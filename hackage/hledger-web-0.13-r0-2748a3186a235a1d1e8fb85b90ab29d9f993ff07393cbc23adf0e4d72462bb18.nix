@@ -21,7 +21,7 @@
       synopsis = "A hledger add-on command providing a web interface.";
       description = "A hledger add-on command providing a web interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-web" = {
@@ -41,9 +41,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

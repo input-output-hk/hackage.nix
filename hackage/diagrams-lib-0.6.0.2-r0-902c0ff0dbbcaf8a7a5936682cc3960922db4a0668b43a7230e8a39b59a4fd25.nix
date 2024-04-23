@@ -21,7 +21,7 @@
       synopsis = "Embedded domain-specific language for declarative graphics";
       description = "Diagrams is a flexible, extensible EDSL for creating\ngraphics of many types.  Graphics can be created\nin arbitrary vector spaces and rendered with\nmultiple backends.  diagrams-lib provides a\nstandard library of primitives and operations for\ncreating diagrams.  To get started using it, see\n\"Diagrams.Prelude\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

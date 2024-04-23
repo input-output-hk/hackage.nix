@@ -6,8 +6,8 @@
         nix = import ../hackage/galois-fft-0.1.0-r0-6a1e1e255c236b521379435ba528bbb5bc2a159c3ebb7fb960090cd5cf950b20.nix;
         revNum = 0;
         sha256 = "6a1e1e255c236b521379435ba528bbb5bc2a159c3ebb7fb960090cd5cf950b20";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

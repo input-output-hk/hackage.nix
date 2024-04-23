@@ -21,7 +21,7 @@
       synopsis = "Remotely controlling Java Swing applications";
       description = "This is a library for remotely controlling\nJava Swing desktop applications that have been\ninstrumented with a special pianola agent.\nThe agent exposes the Swing component hierarchy\nover the network, and accepts requests for\ngenerating GUI events. The library handles the\ninteraction on the Haskell side.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."streams" or (errorHandler.buildDepError "streams"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-pianola" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."streams" or (errorHandler.buildDepError "streams"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."pianola" or (errorHandler.buildDepError "pianola"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

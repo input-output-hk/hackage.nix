@@ -21,7 +21,7 @@
       synopsis = "physics engine and other tools for 2D shapes";
       description = "Please see the README on Github at <https://github.com/ublubu/shapes#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shapes-bench" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "shapes-spec" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

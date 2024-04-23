@@ -6,8 +6,8 @@
         nix = import ../hackage/gnomevfs-0.11.0-r0-791931207accf77a1caaae3dd54e526d59c5f3b1b7a05ce12da93162409be596.nix;
         revNum = 0;
         sha256 = "791931207accf77a1caaae3dd54e526d59c5f3b1b7a05ce12da93162409be596";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Compute solutions for Magico puzzle";
       description = "Compute solutions for Magico puzzle:\n<http://www.spectra-verlag.de/oesterreich/SID=0/shopneu/lernspiel/lern7.php3>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "magico" = {
@@ -31,9 +31,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

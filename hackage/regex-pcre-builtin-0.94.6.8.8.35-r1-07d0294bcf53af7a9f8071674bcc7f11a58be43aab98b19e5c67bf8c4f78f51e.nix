@@ -21,19 +21,19 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The PCRE backend to accompany regex-base, with bundled code from www.pcre.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.newbase
+        ] ++ (if flags.newbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -41,12 +41,12 @@
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

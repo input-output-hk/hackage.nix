@@ -21,11 +21,11 @@
       synopsis = "Higher order logic";
       description = "This package implements a higher order logic kernel.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

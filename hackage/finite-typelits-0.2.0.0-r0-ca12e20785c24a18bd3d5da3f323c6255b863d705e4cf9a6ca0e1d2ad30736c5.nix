@@ -21,7 +21,7 @@
       synopsis = "A type inhabited by finitely many values, indexed by type-level naturals";
       description = "A type inhabited by finitely many values, indexed by type-level naturals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "finite-typelits-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

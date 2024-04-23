@@ -21,7 +21,7 @@
       synopsis = "Elm to Haskell translation";
       description = "Library and binary to translate Haskell code into Elm code";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskelm" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."Elm" or (errorHandler.buildDepError "Elm"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-haskelm" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."Elm" or (errorHandler.buildDepError "Elm"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

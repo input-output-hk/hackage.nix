@@ -21,17 +21,17 @@
       synopsis = "Linux kernel modules support";
       description = "Manipulate Linux kernel modules through the @libkmod@ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libkmod" or (errorHandler.pkgConfDepError "libkmod"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-examples";
         version = "0.4.2.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2020 Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A generalization of the uniqueness-periods-vector-examples functionality.";
       description = "Is intended to use more functionality of the Data.Vector, Data.Foldable, Data.Monoid and Data.SubG modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
           (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariantsG" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoemG" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propertiesTextG" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -100,9 +100,9 @@
             (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

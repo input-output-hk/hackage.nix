@@ -6,8 +6,8 @@
         nix = import ../hackage/lambdacube-edsl-0.2.0-r0-73b632ee74f82f62ea870af6e09dad7d7450991856058778efc7de4bd38a2abd.nix;
         revNum = 0;
         sha256 = "73b632ee74f82f62ea870af6e09dad7d7450991856058778efc7de4bd38a2abd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

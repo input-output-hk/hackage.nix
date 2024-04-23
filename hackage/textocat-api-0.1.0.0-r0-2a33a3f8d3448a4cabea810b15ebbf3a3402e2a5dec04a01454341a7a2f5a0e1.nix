@@ -21,7 +21,7 @@
       synopsis = "Unofficial Haskell SDK for Textocat API -- http://textocat.com";
       description = "Unofficial Haskell SDK for Textocat API -- http://textocat.com\n\nTextocat is \"catalyst of text analytics\". It focuses on Russian texts, mainly news";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-io-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

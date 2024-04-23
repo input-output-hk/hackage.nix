@@ -21,7 +21,7 @@
       synopsis = "Majority Judgment and Helios-C command line tool";
       description = "Work in progress command line interface for:\n\n* <https://hackage.haskell.org/package/hjugement hjugement>\n* <https://hackage.haskell.org/package/hjugemen-protocol hjugement-protocol>.\n\nRun with --help parameter to read the manual.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hjugement-cli" = {
@@ -58,9 +58,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Client API for Mattermost chat system";
       description = "Client API for Mattermost chat system";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mm-get-teams" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "mm-get-channels" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "mm-get-posts" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "mm-make-post" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -100,9 +100,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "mm-get-websocket-connection" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -113,9 +113,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "mm-show-raw-events" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,10 +126,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
         };
+      };
       tests = {
         "test-mm-api" = {
           depends = [
@@ -145,9 +145,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

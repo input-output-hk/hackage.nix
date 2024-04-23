@@ -21,7 +21,7 @@
       synopsis = "A simple and highly performant HTTP file server";
       description = "Notable features:\n\n* Based on streaming. Produces the response while the request is still coming. It doesn't waste resources on incorrect or malicious requests by dismissing them right away. It is very gentle with memory.\n\n* Has a configurable limit of simultaneous connections. All exceeding requests get rejected with a \"Service Unavailable\" status with code 503.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wobsurv" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

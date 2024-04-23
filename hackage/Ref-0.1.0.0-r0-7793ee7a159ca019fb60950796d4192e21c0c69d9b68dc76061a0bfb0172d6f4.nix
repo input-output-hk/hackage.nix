@@ -21,11 +21,11 @@
       synopsis = "Generic Mutable Ref Abstraction Layer           ";
       description = "Ref is a generic layer over mutable references, currently only IO and ST refs.\nFuture extensions may include a generic api for shared state concurrency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

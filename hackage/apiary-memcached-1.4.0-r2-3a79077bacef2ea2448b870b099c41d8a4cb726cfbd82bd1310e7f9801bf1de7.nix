@@ -21,7 +21,7 @@
       synopsis = "memcached client for apiary web framework.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."types-compat" or (errorHandler.buildDepError "types-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

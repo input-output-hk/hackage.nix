@@ -21,7 +21,7 @@
       synopsis = "Test utilities for polysemy-hasql";
       description = "See https://hackage.haskell.org/package/polysemy-hasql-test/docs/Polysemy-Hasql-Test.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."sqel" or (errorHandler.buildDepError "sqel"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-hasql-test-unit" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."sqel" or (errorHandler.buildDepError "sqel"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/lambdatwit-0.1.0.0-r0-9331a97caae4c02f8d51b57fb16083f47f20e0f3814b166b35679bab3bed30fc.nix;
         revNum = 0;
         sha256 = "9331a97caae4c02f8d51b57fb16083f47f20e0f3814b166b35679bab3bed30fc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

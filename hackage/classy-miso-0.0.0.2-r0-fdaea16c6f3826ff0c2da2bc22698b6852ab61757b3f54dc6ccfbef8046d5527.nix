@@ -21,7 +21,7 @@
       synopsis = "Typeclass based support for Miso, the Tasty Web Framework for Haskell.";
       description = "Please see the README on Github at <https://github.com/RobertFischer/Classy-Miso#README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,12 +35,12 @@
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
+        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "classy-miso-demo" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."classy-miso" or (errorHandler.buildDepError "classy-miso"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             (hsPkgs."rfc" or (errorHandler.buildDepError "rfc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ghcjs-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."classy-miso" or (errorHandler.buildDepError "classy-miso"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             (hsPkgs."rfc" or (errorHandler.buildDepError "rfc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

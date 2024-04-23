@@ -21,7 +21,7 @@
       synopsis = "I/O utilities and datasets for algebraic-graphs";
       description = "I/O utilities and datasets for algebraic-graphs. See README for details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."algebraic-graphs-io" or (errorHandler.buildDepError "algebraic-graphs-io"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Streaming Parquet reader";
       description = "Please see the README on GitHub at <https://github.com/yigitozkavci/parquet-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "parquet-hs-integration" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."parquet-hs" or (errorHandler.buildDepError "parquet-hs"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "parquet-hs-unit" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -77,9 +77,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parquet-hs" or (errorHandler.buildDepError "parquet-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

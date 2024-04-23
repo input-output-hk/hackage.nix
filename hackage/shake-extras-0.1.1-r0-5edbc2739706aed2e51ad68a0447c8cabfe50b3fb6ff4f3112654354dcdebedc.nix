@@ -21,7 +21,7 @@
       synopsis = "Extra utilities for shake build systems";
       description = "This package is designed to add supporting modules for the Shake\nbuild system, that shouldn't be included in the core package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "patricia tries modeled above VCache ";
       description = "VCache supports larger-than-memory values with caching, persistence,\nand structure sharing. Effective use of VCache requires useful data\nstructures be modeled above it. The trie is useful for modeling key\nvalue databases or abstract virtual filesystems, where keys have\nshared prefixes or elements with a common prefix are likely to be\nupdated together.\n\nCurrently, the implementation is specialized to a bytestring trie.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."vcache" or (errorHandler.buildDepError "vcache"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

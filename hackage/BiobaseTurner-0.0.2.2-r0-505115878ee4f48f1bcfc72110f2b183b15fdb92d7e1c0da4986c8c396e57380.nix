@@ -21,7 +21,7 @@
       synopsis = "(deprecated) RNA folding data structures.";
       description = "Data structures and parsers for the Turner 2004 set of RNA parameters.\n- http://rna.urmc.rochester.edu/NNDB/index.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."HsTools" or (errorHandler.buildDepError "HsTools"))
           (hsPkgs."ParsecTools" or (errorHandler.buildDepError "ParsecTools"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library to glue together playlists and http-client";
       description = "Simple library for resolving playlists using http-client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."playlists" or (errorHandler.buildDepError "playlists"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
-          depends = (pkgs.lib).optionals (!(!flags.build-examples)) [
+          depends = pkgs.lib.optionals (!!flags.build-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."playlists-http" or (errorHandler.buildDepError "playlists-http"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Inspection of rewriting steps";
       description = "A terminal UI for inspecting steps taken by a rewriting process.\nUseful for the optimization phase of a compiler,\nor even evaluators of small languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,19 +35,19 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "expr-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rewrite-inspector" or (errorHandler.buildDepError "rewrite-inspector"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

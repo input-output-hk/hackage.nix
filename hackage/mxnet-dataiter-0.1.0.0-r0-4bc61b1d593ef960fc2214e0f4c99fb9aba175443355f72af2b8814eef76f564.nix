@@ -21,7 +21,7 @@
       synopsis = "mxnet dataiters";
       description = "Providing the mxnet dataiters as Stream or Conduit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
           (hsPkgs."mxnet" or (errorHandler.buildDepError "mxnet"))
           (hsPkgs."mxnet-nn" or (errorHandler.buildDepError "mxnet-nn"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "streaming" = {
           depends = [
@@ -43,18 +43,18 @@
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."mxnet" or (errorHandler.buildDepError "mxnet"))
             (hsPkgs."mxnet-dataiter" or (errorHandler.buildDepError "mxnet-dataiter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "conduit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mxnet" or (errorHandler.buildDepError "mxnet"))
             (hsPkgs."mxnet-dataiter" or (errorHandler.buildDepError "mxnet-dataiter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "A known-parametric Functor typeclass";
       description = "As Oleg Grenrus [argued](http://oleg.fi/gists/posts/2019-07-31-fmap-coerce-coerce.html) in 2019,\n'Functor's should be parametric, and in particular should:\n\n  - Satisfy @fmap coerce@ = @coerce@\n  - Have a @∀ a b. Coercible a b ⇒ Coercible (f a) (f b)@ super-constraint\n\nUntil this change gets adopted in @base@, this package can be used for a variant of 'Functor'\nwhich satisfies these requirements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

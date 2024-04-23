@@ -21,7 +21,7 @@
       synopsis = "Obtain Treasury yield curve data";
       description = "Obtain Treasury yield curve data from Department of Treasury website";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -34,7 +34,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
@@ -42,8 +42,8 @@
             (hsPkgs."HTTP-Simple" or (errorHandler.buildDepError "HTTP-Simple"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

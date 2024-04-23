@@ -21,16 +21,16 @@
       synopsis = "Handle exceptions thrown in IO with fused-effects.";
       description = "Provides Resource and Catch effects capable of reacting to and catching GHC's dynamic exceptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,20 +40,20 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
             (hsPkgs."fused-effects-exceptions" or (errorHandler.buildDepError "fused-effects-exceptions"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

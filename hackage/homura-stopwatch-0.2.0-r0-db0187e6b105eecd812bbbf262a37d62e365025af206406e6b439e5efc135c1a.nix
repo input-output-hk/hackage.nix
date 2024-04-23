@@ -21,16 +21,16 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ncaq/homura-stopwatch#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "homura-stopwatch" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."homura-stopwatch" or (errorHandler.buildDepError "homura-stopwatch"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

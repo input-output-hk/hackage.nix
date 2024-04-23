@@ -21,7 +21,7 @@
       synopsis = "Wake up and perform an action at a certain time.";
       description = "Wake up and perform an action at a certain time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Servant combinators to facilitate writing GitHub webhooks.";
       description = "This package provides servant combinators that make writing safe GitHub\nwebhooks very simple.\n\nIt features automatic verification of the digital signatures provided by\nGitHub in the webhook HTTP requests as well as route dispatching based on\nrepository event type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "multikey" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."servant-github-webhook" or (errorHandler.buildDepError "servant-github-webhook"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "singlekey" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -65,9 +65,9 @@
             (hsPkgs."servant-github-webhook" or (errorHandler.buildDepError "servant-github-webhook"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dynamickey" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -78,9 +78,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

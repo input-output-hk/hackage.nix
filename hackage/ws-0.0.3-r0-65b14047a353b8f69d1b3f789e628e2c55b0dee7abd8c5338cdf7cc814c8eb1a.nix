@@ -21,7 +21,7 @@
       synopsis = "A simple CLI utility for interacting with a websocket";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ws" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read several dialects of Markdown and\n(subsets of) HTML, reStructuredText, LaTeX, DocBook, JATS,\nMediaWiki markup, DokuWiki markup, TWiki markup,\nTikiWiki markup, Jira markup, Creole 1.0, Haddock markup,\nOPML, Emacs Org-Mode, Emacs Muse, txt2tags, ipynb (Jupyter\nnotebooks), Vimwiki, Word Docx, ODT, EPUB, FictionBook2,\nroff man, Textile, BibTeX, BibLaTeX, CSL JSON,\n, and CSV, and it can write Markdown,\nreStructuredText, XHTML, HTML 5, LaTeX, ConTeXt, DocBook,\nJATS, OPML, TEI, OpenDocument, ODT, Word docx,\nPowerPoint pptx, RTF, MediaWiki, DokuWiki, XWiki,\nZimWiki, Textile, Jira, roff man, roff ms, plain text,\nEmacs Org-Mode, AsciiDoc, Haddock markup,\nEPUB (v2 and v3), ipynb, FictionBook2,\nInDesign ICML, Muse, CSL JSON, LaTeX beamer slides,\nand several kinds of HTML/JavaScript slide shows\n(S5, Slidy, Slideous, DZSlides, reveal.js).\n\nIn contrast to most existing tools for converting Markdown\nto HTML, pandoc has a modular design: it consists of a set of\nreaders, which parse text in a given format and produce a\nnative representation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -91,34 +91,34 @@
           (hsPkgs."unicode-collation" or (errorHandler.buildDepError "unicode-collation"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ (pkgs.lib).optionals (system.isWindows && system.isI386) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ pkgs.lib.optionals (system.isWindows && system.isI386) [
           (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
+        };
         "trypandoc" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ (pkgs.lib).optionals (flags.trypandoc) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ pkgs.lib.optionals (flags.trypandoc) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = if flags.trypandoc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -146,10 +146,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -162,9 +162,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple gtk2hs image viewer. Point it at an image and fire away.";
       description = "Simple gtk2hs image viewer. Point it at an image and fire away.\nThe only ‘fancy’ feature is the ability to work with Internet URLs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "himg" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

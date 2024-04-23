@@ -21,15 +21,15 @@
       synopsis = "Re-exported random generators from QuickCheck.";
       description = "Re-exported random generators from QuickCheck.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

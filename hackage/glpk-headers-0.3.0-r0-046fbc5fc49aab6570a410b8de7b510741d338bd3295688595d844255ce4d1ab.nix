@@ -21,15 +21,15 @@
       synopsis = "Low-level Haskell bindings to GLPK.";
       description = "Please see the README on GitHub at <https://github.com/prsteele/GlpkHs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "GlpkHs-test" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           libs = [ (pkgs."glpk" or (errorHandler.sysDepError "glpk")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

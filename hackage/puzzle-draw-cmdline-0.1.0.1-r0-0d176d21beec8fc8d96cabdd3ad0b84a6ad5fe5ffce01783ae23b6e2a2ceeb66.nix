@@ -21,7 +21,7 @@
       synopsis = "Creating graphics for pencil puzzles, command line tools.";
       description = "Companion executable to puzzle-draw. Separate to keep\nthe dependency on diagrams-cairo out of the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"));
+        ] ++ pkgs.lib.optional (flags.cairo) (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"));
         buildable = true;
-        };
+      };
       exes = {
         "drawpuzzle" = {
           depends = [
@@ -42,15 +42,15 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.cairo
+          ] ++ (if flags.cairo
             then [
               (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-              ]
+            ]
             else [
               (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

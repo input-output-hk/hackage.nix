@@ -21,15 +21,15 @@
       synopsis = "Combinators for creating bijections from some type to the natural numbers.";
       description = "Combinators for creating bijections from a subset of an arbitrary type to a range of 'Int's,\n, e.g. for using libraries that require 'Int' IDs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

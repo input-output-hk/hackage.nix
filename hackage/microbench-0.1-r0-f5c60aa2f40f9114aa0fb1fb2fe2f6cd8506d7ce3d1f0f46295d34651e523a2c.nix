@@ -21,14 +21,14 @@
       synopsis = "Microbenchmark Haskell code";
       description = "Microbenchmarking can be used to compare the speed of different\napproaches to the same operation.  Since most code is very fast, to\nget accurate timing information you must run the operation many times\nand then divide to get the time per operation.\n\nThis library manages the microbenchmarking process: it finds how many\niterations of a function are needed to get a good timing estimate per\niteration and prints out a human-readable \\\"Your code takes /n/ nanoseconds\nto run, and can run /n/ times per second\\\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

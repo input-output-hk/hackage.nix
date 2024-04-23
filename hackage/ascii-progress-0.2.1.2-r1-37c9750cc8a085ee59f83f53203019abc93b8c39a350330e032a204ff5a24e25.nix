@@ -21,7 +21,7 @@
       synopsis = "A simple progress bar for the console.";
       description = "A simple Haskell progress bar for the console. Heavily borrows from TJ\nHolowaychuk's Node.JS project\n<https://github.com/tj/node-progress progress>\n\n<https://github.com/yamadapc/haskell-ascii-progress github>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "download-example" = {
           depends = [
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
@@ -57,9 +57,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "multi-example" = {
           depends = [
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
@@ -67,10 +67,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Check if an HTML element is a link";
       description = "This package provides a function that checks whether a particular\ncombination of an HTML tag name and an attribute corresponds to an HTML\nelement that links to an external resource. For example, the combination\nof the tag @img@ and the attribute @src@ is an external link whereas\nthe combination @div@ and @style@ is not. This is particularly useful\nfor web scraping.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

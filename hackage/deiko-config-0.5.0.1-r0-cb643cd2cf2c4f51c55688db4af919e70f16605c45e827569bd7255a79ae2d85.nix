@@ -21,7 +21,7 @@
       synopsis = "Small and typesafe configuration library.";
       description = "Small and typesafe configuration library. The library provides good error messages and comes with a bottom-up typechecker in order to catch more configuration errors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

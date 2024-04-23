@@ -21,7 +21,7 @@
       synopsis = "API for Linux Kernel Wireguard device management";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -36,14 +36,14 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ] ++ (pkgs.lib).optionals (flags.aeson) [
+        ] ++ pkgs.lib.optionals (flags.aeson) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base64" or (errorHandler.buildDepError "base64"))
-          ]) ++ (pkgs.lib).optionals (flags.beam) [
+        ]) ++ pkgs.lib.optionals (flags.beam) [
           (hsPkgs."beam-core" or (errorHandler.buildDepError "beam-core"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

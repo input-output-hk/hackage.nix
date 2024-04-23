@@ -21,7 +21,7 @@
       synopsis = "A platform independent mechanism to render graphics using vnc.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Chitra" = {
@@ -31,9 +31,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

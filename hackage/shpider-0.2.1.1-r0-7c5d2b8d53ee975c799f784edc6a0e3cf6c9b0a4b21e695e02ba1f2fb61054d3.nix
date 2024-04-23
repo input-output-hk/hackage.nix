@@ -21,7 +21,7 @@
       synopsis = "Web automation library in Haskell.";
       description = "Shpider is a web automation library for Haskell.   It allows you to quickly\nwrite crawlers, and for simple cases ( like following links ) even without\nreading the page source.\n\nIt has useful features such as turning relative links from a page into\nabsolute links, options to authorize transactions only on a given domain,\nand the option to only download html documents.\n\nIt also provides a nice syntax for filling out forms.\n\nAn example:\n\n> runShpider $ do\n>      download \"http://apage.com\"\n>      theForm : _ <- getFormsByAction \"http://anotherpage.com\"\n>      sendForm $ fillOutForm theForm $ pairs $ do\n>            \"occupation\" =: \"unemployed Haskell programmer\"\n>            \"location\" =: \"mother's house\"\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

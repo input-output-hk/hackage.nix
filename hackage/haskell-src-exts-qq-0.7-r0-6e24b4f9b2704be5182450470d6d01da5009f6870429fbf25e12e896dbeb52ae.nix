@@ -21,7 +21,7 @@
       synopsis = "A quasiquoter for haskell-src-exts.";
       description = "Allows one to write programs that generate Haskell programs much\nmore concisely and legibly. This package supports:\n\n* term antiquotations,\n* antiquoting pattern variables in patterns,\n* antiquoting bound names,\n* antiquotations in types.\n\nSome types of splicing use custom syntax due to historical\nreasons. This may change in future releases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."haskell-src-exts-qq" or (errorHandler.buildDepError "haskell-src-exts-qq"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Read and write BED and GTF format genome annotations";
       description = "Read and write BED and GTF format genome annotations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gtf-to-bed" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bed-to-gtf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gtf-introns" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bed-subregion" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -122,9 +122,9 @@
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "genome-to-trx" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -140,10 +140,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       tests = {
         "test-gtf" = {
           depends = [
@@ -157,9 +157,9 @@
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-bed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -176,9 +176,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-subregions" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -199,9 +199,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

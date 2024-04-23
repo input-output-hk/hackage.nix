@@ -21,7 +21,7 @@
       synopsis = "Prometheus backend for eventuo11y";
       description = "Render [eventuo11y](https://hackage.haskell.org/package/eventuo11y) 'Observe.Event.Event's\nto Prometheus metrics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."eventuo11y" or (errorHandler.buildDepError "eventuo11y"))
           (hsPkgs."prometheus" or (errorHandler.buildDepError "prometheus"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

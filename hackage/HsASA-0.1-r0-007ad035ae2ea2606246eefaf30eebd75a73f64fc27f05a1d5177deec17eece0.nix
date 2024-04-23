@@ -21,15 +21,15 @@
       synopsis = "A haskell interface to Lester Ingber's adaptive simulating annealing code";
       description = "A haskell interface to Lester Ingber's adaptive simulating annealing code";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

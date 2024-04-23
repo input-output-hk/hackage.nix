@@ -21,7 +21,7 @@
       synopsis = "Simple web framework inspired by scotty.";
       description = "Simple web framework inspired by scotty.\n\n@\n&#123;-&#35; LANGUAGE QuasiQuotes &#35;-&#125;\n&#123;-&#35; LANGUAGE OverloadedStrings &#35;-&#125;\n\nimport Web.Apiary\nimport Network.Wai.Handler.Warp\nimport qualified Data.ByteString.Lazy.Char8 as L\n\nmain :: IO ()\nmain = run 3000 . runApiaryT def $ do\n&#32;&#32;[capture|/:String|] $ do\n&#32;&#32;&#32;&#32;stdMethod GET . action $ \\\\name -> do\n&#32;&#32;&#32;&#32;&#32;&#32;contentType \"text/html\"\n&#32;&#32;&#32;&#32;&#32;&#32;lbs . L.concat $ [&#34;&#60;h1&#62;Hello, &#34;, L.pack name, &#34;!&#60;/h1&#62;&#34;]\n@\n\n* Nestable route handling(ApiaryT Monad; capture, stdMethod and more.).\n\n* type safe path capture.\n\nfull example & tutorial: <https://github.com/philopon/apiary/blob/master/examples/main.lhs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ] ++ (pkgs.lib).optional (flags.monadlogger) (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"));
+        ] ++ pkgs.lib.optional (flags.monadlogger) (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

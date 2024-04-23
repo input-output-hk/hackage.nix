@@ -21,7 +21,7 @@
       synopsis = "Generic (SYB3) construction of wxHaskell widgets";
       description = "Using an algebraic data types structure and field names, this library constructs\nwidgets for wxHaskell. It can handle data types with single or multiple\nconstructors, as well as recursive data types.\n\nThe library is designed to integrate smoothly with wxHaskell. First, by making it\neasy to integrate WxGeneric-widgets into existing wxHaskell programs. Second, by\nletting a user extend WxGeneric using mostly wxHaskell function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

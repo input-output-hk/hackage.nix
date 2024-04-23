@@ -21,7 +21,7 @@
       synopsis = "Empirical algorithmic complexity";
       description = "Determine the complexity of functions by testing them on inputs of various sizes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."hstats" or (errorHandler.buildDepError "hstats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Unicode alternatives for common functions and operators";
       description = "This package defines new symbols for a number of functions and\noperators in the base package.\n\nAll symbols are documented with their actual definition and\ninformation regarding their Unicode code point. They should be\ncompletely interchangeable with their definitions.\n\nOriginal idea by P&#xE9;ter Divi&#xE1;nszky.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,25 +21,25 @@
       synopsis = "A small compatibility shim exposing the new types from transformers 0.3 and 0.4 to older Haskell platforms.";
       description = "This package includes backported versions of types that were added\nto transformers in transformers 0.3 and 0.4 for users who need strict\ntransformers 0.2 or 0.3 compatibility to run on old versions of the\nplatform, but also need those types.\n\nThose users should be able to just depend on @transformers >= 0.2@\nand @transformers-compat >= 0.3@.\n\nNote: missing methods are not supplied, but this at least permits the types to be used.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.three
+        ] ++ (if flags.three
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]
+          ]
           else if flags.two
             then [
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-              ]
+            ]
             else [
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-              ]);
+            ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

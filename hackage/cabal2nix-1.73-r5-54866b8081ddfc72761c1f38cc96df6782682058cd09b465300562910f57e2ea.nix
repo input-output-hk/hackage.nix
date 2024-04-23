@@ -21,7 +21,7 @@
       synopsis = "Convert Cabal files into Nix build instructions";
       description = "This package is no longer maintained on Hackage. Users of Nix can\ninstall the latest version by running:\n\n> nix-env -i cabal2nix";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "cabal2nix" = {
@@ -36,9 +36,9 @@
             (hsPkgs."hackage-db" or (errorHandler.buildDepError "hackage-db"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackage4nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,18 +53,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest-cabal2nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

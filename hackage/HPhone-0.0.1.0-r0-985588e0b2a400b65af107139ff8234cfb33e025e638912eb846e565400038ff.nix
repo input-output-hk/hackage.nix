@@ -21,7 +21,7 @@
       synopsis = "Phone number parser and validator";
       description = "Phone number parser and validator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."phone-metadata" or (errorHandler.buildDepError "phone-metadata"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."HPhone" or (errorHandler.buildDepError "HPhone"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

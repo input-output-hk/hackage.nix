@@ -21,7 +21,7 @@
       synopsis = "A universal pastebin tool, written in Haskell.";
       description = "A universal pastebin tool, written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haste" = {
@@ -30,9 +30,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

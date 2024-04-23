@@ -21,7 +21,7 @@
       synopsis = "A library to mock the current time.";
       description = "A library to mock the current time and relevant IO functions\nby using a type class.\nYou can get the great command of the current time in UTC,\ntime zones, and the speed of time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
             (hsPkgs."time-machine" or (errorHandler.buildDepError "time-machine"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

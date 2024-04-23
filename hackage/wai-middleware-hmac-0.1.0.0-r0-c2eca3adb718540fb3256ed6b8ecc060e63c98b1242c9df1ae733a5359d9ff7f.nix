@@ -21,7 +21,7 @@
       synopsis = "HMAC Authentication Middleware for WAI";
       description = "Wai HMAC Authentication Middleware implementation.\n\nThis middleware closely models the Amazon AWS Authentication scheme.\nBy default, this middleware will also default to using the HTTP\nAuthorization header.\n\nSee @wai-middleware-hmac-client@ for ready-to-use client module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -49,32 +49,32 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haddock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

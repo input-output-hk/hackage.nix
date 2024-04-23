@@ -21,7 +21,7 @@
       synopsis = "Extends hashtables so that entries added can be expired after a TTL";
       description = "This library extends fast mutable hashtables so that entries added can be expired after a given TTL (time to live). This TTL can be specified as a default property of the table or on a per entry basis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ttl-hashtables-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ttl-hashtables" or (errorHandler.buildDepError "ttl-hashtables"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

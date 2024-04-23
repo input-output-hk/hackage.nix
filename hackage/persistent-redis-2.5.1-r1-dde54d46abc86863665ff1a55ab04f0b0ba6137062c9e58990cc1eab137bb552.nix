@@ -21,7 +21,7 @@
       synopsis = "Backend for persistent library using Redis.";
       description = "Based on the Redis package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "basic" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."persistent-redis" or (errorHandler.buildDepError "persistent-redis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

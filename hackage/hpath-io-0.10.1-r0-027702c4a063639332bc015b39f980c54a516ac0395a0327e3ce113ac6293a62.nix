@@ -21,7 +21,7 @@
       synopsis = "High-level IO operations on files/directories";
       description = "High-level IO operations on files/directories, utilizing type-safe Paths";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -35,9 +35,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.11")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.11")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = if system.isWindows then false else true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A license compatibility helper";
       description = "A license compatibility helper.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "licensor" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."licensor" or (errorHandler.buildDepError "licensor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

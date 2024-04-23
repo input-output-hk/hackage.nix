@@ -21,7 +21,7 @@
       synopsis = "Programming language with non-linear pattern-matching against unfree data";
       description = "An interpreter for Egison, the programming langugage that realized non-linear pattern-matching against unfree data types.\nWith Egison, we can directly represent pattern-matching against a wide range of data types such as lists, multisets, sets, trees and graphs.\nWe can find Egison programs in @lib@ and @sample@ directories.\nThis package also include Emacs Lisp file @elisp/egison-mode.el@.\n\nThe following code is the program that determines poker-hands written in Egison.\nAll hands are expressed in a single pattern.\nIsn't it exciting?\nWe can run this code online at <http://www.egison.org/demonstrations/poker-hands.html>.\n\n<<http://www.egison.org/images/poker-hands.png>>\n\nThe pattern-matching of Egison is very powerful.\nPlease view and try more demonstrations.\n\n<http://www.egison.org/demonstrations/>\n\nEgison makes programming dramatically simple.\nPlease help us to make Egison popular.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "egison" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."strict-io" or (errorHandler.buildDepError "strict-io"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -77,10 +77,10 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/andrewthad/bytearray#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,19 +42,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."packed" or (errorHandler.buildDepError "packed"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

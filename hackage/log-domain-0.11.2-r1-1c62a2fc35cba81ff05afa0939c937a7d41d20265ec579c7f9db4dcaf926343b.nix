@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -42,21 +42,21 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."simple-reflect" or (errorHandler.buildDepError "simple-reflect"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Windows Azure ServiceBus API";
       description = "Haskell wrappers over Windows Azure ServiceBus API.         ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

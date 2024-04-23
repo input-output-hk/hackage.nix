@@ -21,7 +21,7 @@
       synopsis = "set group and user id before running server";
       description = "Please see the README on GitHub at <https://github.com/githubuser/warp-tls-uid#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "warp-tls-uid-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
             (hsPkgs."warp-tls-uid" or (errorHandler.buildDepError "warp-tls-uid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

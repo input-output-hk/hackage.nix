@@ -21,7 +21,7 @@
       synopsis = "I/O library for Windows";
       description = "I/O library for Windows with I/O completion port support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."winerror" or (errorHandler.buildDepError "winerror"))
-          ];
+        ];
         libs = [
           (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
           (pkgs."ws2_32" or (errorHandler.sysDepError "ws2_32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

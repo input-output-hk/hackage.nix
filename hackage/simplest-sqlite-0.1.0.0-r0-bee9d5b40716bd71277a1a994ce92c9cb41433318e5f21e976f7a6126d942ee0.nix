@@ -21,7 +21,7 @@
       synopsis = "Simplest SQLite3 binding";
       description = "see sample code in samples/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."exception-hierarchy" or (errorHandler.buildDepError "exception-hierarchy"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

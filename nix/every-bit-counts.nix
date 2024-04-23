@@ -6,8 +6,8 @@
         nix = import ../hackage/every-bit-counts-0.1-r0-13655a13beebe6572dcad83905163da6d75d53b49f7567d176b35555b4c4517d.nix;
         revNum = 0;
         sha256 = "13655a13beebe6572dcad83905163da6d75d53b49f7567d176b35555b4c4517d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

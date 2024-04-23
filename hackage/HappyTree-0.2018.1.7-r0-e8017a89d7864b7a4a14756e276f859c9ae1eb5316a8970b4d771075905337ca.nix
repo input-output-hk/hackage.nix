@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/MarisaKirisame/HappyTree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "HappyTree-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
             (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A slightly extended Kalman filter";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Nice formatting library";
       description = "Nice formatting library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

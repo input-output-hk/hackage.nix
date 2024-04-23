@@ -21,14 +21,14 @@
       synopsis = "Curated list of CDN imports for lucid.";
       description = "Repository of common CDN imports for lucid. Please open a pull request to add new libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

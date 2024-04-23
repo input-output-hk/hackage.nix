@@ -21,7 +21,7 @@
       synopsis = "David's Advanced Version Control System";
       description = "Darcs is a revision control system, along the lines of CVS or arch.\nThat means that it keeps track of various revisions and branches of\nyour project, allows for changes to propagate from one branch to another.\nDarcs is intended to be an _advanced_ revision control system.\nDarcs has two particularly distinctive features which differ from other,\ncentralized, revision control systems:\n\n* each copy of the source is a fully functional branch, and\n\n* underlying darcs is a consistent and powerful theory of patches.\n\nThe Darcs repository can be found at <http://darcs.net/>.\n\nThis is an unofficial package of Darcs, using Cabal; problems with it may well\nbe the fault of the packager and not the Darcs project.";
       buildType = "Configure";
-      };
+    };
     components = {
       exes = {
         "darcs" = {
@@ -32,7 +32,7 @@
             (hsPkgs."html" or (errorHandler.buildDepError "html"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
@@ -42,16 +42,16 @@
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           libs = if flags.no_curses
             then [ (pkgs."z" or (errorHandler.sysDepError "z")) ]
             else [
               (pkgs."z" or (errorHandler.sysDepError "z"))
               (pkgs."curses" or (errorHandler.sysDepError "curses"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

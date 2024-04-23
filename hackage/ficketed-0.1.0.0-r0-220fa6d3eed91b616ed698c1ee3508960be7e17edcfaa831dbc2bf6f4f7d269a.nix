@@ -21,7 +21,7 @@
       synopsis = "update statically hosted file in a push stule through socketed";
       description = "update statically hosted file in a push stule through socketed";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ficketed" = {
@@ -42,9 +42,9 @@
             (hsPkgs."socketed" or (errorHandler.buildDepError "socketed"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

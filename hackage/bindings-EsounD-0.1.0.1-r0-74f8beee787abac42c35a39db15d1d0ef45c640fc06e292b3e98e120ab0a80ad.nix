@@ -21,18 +21,18 @@
       synopsis = "Low level bindings to EsounD (ESD; Enlightened Sound Daemon)";
       description = "Bindings to EsounD: <http://www.tux.org/~ricdude/EsounD.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."bindings-audiofile" or (errorHandler.buildDepError "bindings-audiofile"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."esound" or (errorHandler.pkgConfDepError "esound"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

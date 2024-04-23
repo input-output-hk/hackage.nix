@@ -21,7 +21,7 @@
       synopsis = "Code highlighting for cmark";
       description = "Code highlighting for cmark";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

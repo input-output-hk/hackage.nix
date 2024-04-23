@@ -21,14 +21,14 @@
       synopsis = "Manipulating Haskell source code";
       description = "Facilities for manipulating Haskell source code:\nan abstract syntax, lexer, parser and pretty-printer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

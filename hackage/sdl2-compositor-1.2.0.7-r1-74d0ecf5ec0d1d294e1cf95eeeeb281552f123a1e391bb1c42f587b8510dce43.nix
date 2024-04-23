@@ -21,7 +21,7 @@
       synopsis = "image compositing with sdl2 - declarative style";
       description = "This package provides tools for simple image composition\nthrough the means of the SDL library, version 2.  You can\ncombine, translate, rotate, blend, modulate colors and\ndraw in a declarative way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,33 +35,33 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-comp-example" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
-        "sdl2-comp-res-independent" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
-            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
-            (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if flags.buildexamples then true else false;
-          };
         };
+        "sdl2-comp-res-independent" = {
+          depends = pkgs.lib.optionals (flags.buildexamples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
+            (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          ];
+          buildable = if flags.buildexamples then true else false;
+        };
+      };
       tests = {
         "unittests" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."sdl2-compositor" or (errorHandler.buildDepError "sdl2-compositor"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."lrucache" or (errorHandler.buildDepError "lrucache"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

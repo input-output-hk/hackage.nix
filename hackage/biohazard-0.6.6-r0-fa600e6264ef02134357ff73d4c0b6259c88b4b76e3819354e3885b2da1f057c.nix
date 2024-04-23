@@ -21,7 +21,7 @@
       synopsis = "bioinformatics support library";
       description = "This is a collection of modules I separated from\nvarious bioinformatics tools.  The hope is to make\nthem reusable and easier to maintain.  Also includes\nsome of these tools and a bunch that work on mitochondrial\nsequences.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "redeye-dar" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "redeye-div" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -80,9 +80,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "redeye-pileup" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -97,9 +97,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "redeye-single" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -114,9 +114,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gt-scan" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -131,9 +131,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "afroengineer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,9 +144,9 @@
             (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bam-fixpair" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -156,36 +156,36 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bam-meld" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."biohazard" or (errorHandler.buildDepError "biohazard"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bam-resample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."biohazard" or (errorHandler.buildDepError "biohazard"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bam-rewrap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."biohazard" or (errorHandler.buildDepError "biohazard"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bam-rmdup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -196,17 +196,17 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bam-trim" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."biohazard" or (errorHandler.buildDepError "biohazard"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fastq2bam" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -215,9 +215,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "jivebunny" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -234,18 +234,18 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mt-anno" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."biohazard" or (errorHandler.buildDepError "biohazard"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mt-ccheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -253,9 +253,9 @@
             (hsPkgs."biohazard" or (errorHandler.buildDepError "biohazard"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

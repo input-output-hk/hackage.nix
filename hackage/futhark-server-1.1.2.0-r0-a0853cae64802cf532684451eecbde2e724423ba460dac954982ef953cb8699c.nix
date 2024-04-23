@@ -21,7 +21,7 @@
       synopsis = "Client implementation of the Futhark server protocol.";
       description = "Provides an easy way to interact with a running Futhark\nserver-mode program from a Haskell program.  Provides\nboth direct support of the protocol, as well as\nconvenience functions for loading and extracting data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

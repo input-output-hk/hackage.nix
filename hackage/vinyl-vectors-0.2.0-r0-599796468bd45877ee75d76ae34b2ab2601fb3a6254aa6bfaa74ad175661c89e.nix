@@ -21,7 +21,7 @@
       synopsis = "Vectors for vinyl vectors";
       description = "This library provides vectors of vinyl records stored\nas a structure of arrays. This vectors types provided\nimplement the generic vector interface and can be\nused with any library that accepts a generic vector\ntype.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,21 +34,21 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sorting" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."vinyl-vectors" or (errorHandler.buildDepError "vinyl-vectors"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

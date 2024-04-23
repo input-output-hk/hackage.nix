@@ -21,12 +21,12 @@
       synopsis = "Simple higher order function for Maybe";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "maybe-justify-tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."maybe-justify" or (errorHandler.buildDepError "maybe-justify"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

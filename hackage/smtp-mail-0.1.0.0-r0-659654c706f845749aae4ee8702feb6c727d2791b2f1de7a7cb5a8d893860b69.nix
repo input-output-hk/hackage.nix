@@ -21,7 +21,7 @@
       synopsis = "Simple email sending via SMTP";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
           (hsPkgs."base64-string" or (errorHandler.buildDepError "base64-string"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

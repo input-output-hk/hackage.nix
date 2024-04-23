@@ -21,14 +21,14 @@
       synopsis = "Using linear temporal logic (LTL) to verify embedded software and hardware.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vcd" or (errorHandler.buildDepError "vcd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

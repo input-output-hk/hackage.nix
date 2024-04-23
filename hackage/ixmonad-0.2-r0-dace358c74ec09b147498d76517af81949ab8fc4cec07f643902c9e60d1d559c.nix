@@ -21,15 +21,15 @@
       synopsis = "Indexed monads library";
       description = "Provides the 'indexed monad' structure to Haskell with a number of indexed analogous of familiar monads (Reader, Writer, Maybe) and a wrapper over normal monads (Control.IxMonad.Monad). For more information see <http://dorchard.co.uk/ixmonad>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

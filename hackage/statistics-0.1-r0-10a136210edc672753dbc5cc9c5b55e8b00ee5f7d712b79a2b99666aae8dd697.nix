@@ -21,7 +21,7 @@
       synopsis = "A library of statistical types, data, and functions.";
       description = "A library of statistical types, data, and functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."erf" or (errorHandler.buildDepError "erf"))
           (hsPkgs."uvector" or (errorHandler.buildDepError "uvector"))
           (hsPkgs."uvector-algorithms" or (errorHandler.buildDepError "uvector-algorithms"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

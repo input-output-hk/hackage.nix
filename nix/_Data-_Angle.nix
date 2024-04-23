@@ -6,8 +6,8 @@
         nix = import ../hackage/Data-Angle-0.9-r0-051889e0f75c1cfe5c97a7f4ce64df66a9ef0f5d27d5f9112c82769d8260f0cc.nix;
         revNum = 0;
         sha256 = "051889e0f75c1cfe5c97a7f4ce64df66a9ef0f5d27d5f9112c82769d8260f0cc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

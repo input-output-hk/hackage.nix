@@ -6,8 +6,8 @@
         nix = import ../hackage/stack-tag-0.2.0-r0-ad4d5599e30cc93167fb59270ce5cf49da3a622782fa35f8b471adc51b168f3e.nix;
         revNum = 0;
         sha256 = "ad4d5599e30cc93167fb59270ce5cf49da3a622782fa35f8b471adc51b168f3e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

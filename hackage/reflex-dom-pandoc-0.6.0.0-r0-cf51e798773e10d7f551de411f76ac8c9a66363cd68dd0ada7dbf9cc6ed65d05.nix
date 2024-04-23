@@ -21,7 +21,7 @@
       synopsis = "Render Pandoc documents to HTML using reflex-dom";
       description = "Please see the README on GitHub at <https://github.com/srid/reflex-dom-pandoc>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

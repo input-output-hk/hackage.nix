@@ -21,7 +21,7 @@
       synopsis = "Robert Fischer's Common library, for all Robert Fischer's common needs.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,8 +64,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

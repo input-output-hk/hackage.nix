@@ -21,7 +21,7 @@
       synopsis = "a stupid cron";
       description = "run a script forever";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bla" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

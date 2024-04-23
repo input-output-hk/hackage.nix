@@ -21,7 +21,7 @@
       synopsis = "Client for the Compendium schema server";
       description = "Client for the <https://github.com/higherkindness/compendium Compendium> schema server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."language-protobuf" or (errorHandler.buildDepError "language-protobuf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

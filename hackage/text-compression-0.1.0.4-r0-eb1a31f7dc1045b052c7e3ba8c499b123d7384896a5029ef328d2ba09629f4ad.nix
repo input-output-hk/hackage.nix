@@ -21,7 +21,7 @@
       synopsis = "A text compression library.";
       description = "This package contains efficient implementations of the Burrows-Wheeler Transform (BWT) and Inverse BWT algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Show programming language printed values in a web UI";
       description = "Show programming language printed values in a web UI. Supports Haskell Show values only at the moment.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "webshow" = {
@@ -39,9 +39,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

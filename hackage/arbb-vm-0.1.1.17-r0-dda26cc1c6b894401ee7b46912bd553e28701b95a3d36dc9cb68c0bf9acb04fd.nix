@@ -21,7 +21,7 @@
       synopsis = "FFI binding to the Intel Array Building Blocks (ArBB) virtual machine.";
       description = "Bindings to the \"arbb_vmapi\". Low level interface to the ArBB functionality.\nRequires Intel ArBB version 1.0.0.030 (download ArBB at software.intel.com)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         libs = [ (pkgs."arbb_dev" or (errorHandler.sysDepError "arbb_dev")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,19 +21,19 @@
       synopsis = "low level bindings to casadi-core";
       description = "see http://hackage.haskell.org/package/casadi-bindings for instructions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."casadi-bindings-internal" or (errorHandler.buildDepError "casadi-bindings-internal"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         pkgconfig = [
           (pkgconfPkgs."casadi_core" or (errorHandler.pkgConfDepError "casadi_core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

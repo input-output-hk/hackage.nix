@@ -21,7 +21,7 @@
       synopsis = "A family tree library for the Haskell programming language.";
       description = "A family tree library for the Haskell programming language.\nUses \"Control.Lens\" for modification and \"Data.Binary\" for\nserialization.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."intervals" or (errorHandler.buildDepError "intervals"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

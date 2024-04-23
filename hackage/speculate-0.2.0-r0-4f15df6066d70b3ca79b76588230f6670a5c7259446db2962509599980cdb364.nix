@@ -21,7 +21,7 @@
       synopsis = "discovery of properties about Haskell functions";
       description = "Speculate automatically discovers laws about Haskell functions.\nGive Speculate a bunch of Haskell functions and it will discover laws like:\n\n* equations, such as 'id x == x';\n\n* inequalities, such as '0 <= x * x';\n\n* conditional equations, such as 'x <= 0  ==>  x + abs x == 0'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "expr" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "plus-abs" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

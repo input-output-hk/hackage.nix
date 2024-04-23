@@ -21,7 +21,7 @@
       synopsis = "Run Nero server applications with Warp";
       description = "Check the <https://github.com/plutonbrb/nero-warp#nero-warp README> for a\nmore detailed explanation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."nero" or (errorHandler.buildDepError "nero"))
           (hsPkgs."nero-wai" or (errorHandler.buildDepError "nero-wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

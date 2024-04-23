@@ -21,15 +21,15 @@
       synopsis = "/deprecated/, part of diagrams-contrib since 1.4";
       description = "set operations (union, intersection, difference and exclusion) on paths in Diagrams.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."cubicbezier" or (errorHandler.buildDepError "cubicbezier"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

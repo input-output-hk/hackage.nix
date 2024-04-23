@@ -21,15 +21,15 @@
       synopsis = "Efficient multidimensional arrays";
       description = "This library provides efficient multidimensional arrays.\n\nIn general all operations are (highly) unsafe, no\nbounds-checking or other sanity-checking is performed.\nOperations are aimed toward efficiency as much as possible.\nGoals of the library are to have arrays according to three\nideas: immutable/mutable arrays, strict/lazy arrays,\nzero-based/lower-bound arrays. Zero-based arrays save one\naddition on each access if the lower bound or the array is\nalways zero.\n\nWe have forked two repa modules: Shape and Index.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Streaming parser/renderer for the RSS standard.";
       description = "Cf README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quickcheck-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,17 +95,17 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-compat-batteries" or (errorHandler.buildDepError "base-compat-batteries"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if flags.enable-hlint-test then true else false;
-          };
         };
       };
-    }
+    };
+  }

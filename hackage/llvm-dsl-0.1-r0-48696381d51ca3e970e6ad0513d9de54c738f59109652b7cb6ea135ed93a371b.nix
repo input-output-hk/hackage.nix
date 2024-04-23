@@ -21,7 +21,7 @@
       synopsis = "Support for writing an EDSL with LLVM-JIT as target";
       description = "Support for writing an EDSL with LLVM-JIT as target.\n\n* \"LLVM.DSL.Expression\":\nCode snippets that represent arithmetics\nand support arithmetic operators.\n\n* \"LLVM.DSL.Parameter\":\nParameterize LLVM-generated code.\n\n* \"LLVM.DSL.Execution\":\nAssemble functions to modules and run them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
           (hsPkgs."prelude-compat" or (errorHandler.buildDepError "prelude-compat"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

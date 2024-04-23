@@ -21,7 +21,7 @@
       synopsis = "Conduit for decoding ByteStrings using Data.Binary.Get";
       description = "Simple conduit for decoding ByteStrings into values using Data.Binary.Get";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

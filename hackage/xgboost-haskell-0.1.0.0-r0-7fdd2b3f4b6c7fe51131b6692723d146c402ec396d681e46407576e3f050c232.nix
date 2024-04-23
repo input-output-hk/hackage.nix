@@ -21,34 +21,34 @@
       synopsis = "XGBoost library for Haskell.";
       description = "XGBoost library for Haskell via FFI binding, on top of foundation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xgboost-app" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
             (hsPkgs."xgboost-haskell" or (errorHandler.buildDepError "xgboost-haskell"))
-            ];
+          ];
           libs = [ (pkgs."xgboost" or (errorHandler.sysDepError "xgboost")) ];
           buildable = false;
-          };
+        };
         "xgb-agaricus" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
             (hsPkgs."xgboost-haskell" or (errorHandler.buildDepError "xgboost-haskell"))
-            ];
+          ];
           libs = [ (pkgs."xgboost" or (errorHandler.sysDepError "xgboost")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

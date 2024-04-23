@@ -6,8 +6,8 @@
         nix = import ../hackage/gi-ayatana-appindicator3-0.1.0-r0-c7bbc7436c78d040a2626235b8eb1e623c8affcb54d9411e1f60e5610c7b343f.nix;
         revNum = 0;
         sha256 = "c7bbc7436c78d040a2626235b8eb1e623c8affcb54d9411e1f60e5610c7b343f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

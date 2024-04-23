@@ -21,7 +21,7 @@
       synopsis = "Efficient conversion of values into Text";
       description = "@text-show@ offers a replacement for the @Show@ typeclass intended\nfor use with @Text@ instead of @String@s. This package was created\nin the spirit of\n@<http://hackage.haskell.org/package/bytestring-show bytestring-show>@.\n\nAt the moment, @text-show@ provides instances for most data\ntypes in the @<http://hackage.haskell.org/package/array array>@,\n@<http://hackage.haskell.org/package/base base>@,\n@<http://hackage.haskell.org/package/bytestring bytestring>@, and\n@<http://hackage.haskell.org/package/text text>@ packages.\nTherefore, much of the source code for @text-show@ consists of\nborrowed code from those packages in order to ensure that the\nbehaviors of @Show@ and @TextShow@ coincide.\n\nFor most uses, simply importing \"TextShow\"\nwill suffice:\n\n@\nmodule Main where\n\nimport TextShow\n\nmain :: IO ()\nmain = printT (Just \\\"Hello, World!\\\")\n@\n\nIf you desire it, there are also monomorphic versions of the @showb@\nfunction available in the submodules of \"TextShow\". See the\n<https://github.com/RyanGlScott/text-show/wiki/Naming-conventions naming conventions>\npage for more information.\n\nSupport for automatically deriving @TextShow@ instances can be found\nin the \"TextShow.TH\" and \"TextShow.Generic\" modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = ([
@@ -73,9 +73,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))) ++ (pkgs.lib).optional (!flags.developer) (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))) ++ pkgs.lib.optional (!flags.developer) (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

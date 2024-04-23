@@ -21,7 +21,7 @@
       synopsis = "Haskeline wrapper for GHCi-like REPL interfaces.";
       description = "Haskeline wrapper for GHCi-like REPL interfaces. Composable with normal mtl transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

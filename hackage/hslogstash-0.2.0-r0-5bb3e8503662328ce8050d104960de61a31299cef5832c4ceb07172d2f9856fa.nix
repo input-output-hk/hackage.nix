@@ -21,7 +21,7 @@
       synopsis = "A library to work with, or as, a logstash server";
       description = "This library contains a few modules that let you work with Logstash messages, read them from a Redis list, store them into Elasticsearch, and more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Abstractions for animation";
       description = "\"Active\" abstraction for animated things with finite start and end times.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "active-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

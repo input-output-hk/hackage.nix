@@ -6,8 +6,8 @@
         nix = import ../hackage/ersaconcat-0.0.1-r0-5f62399cfd3ad1250166ea7cbcc80bdcc35ee4cf84d95c54976dc65b2597055f.nix;
         revNum = 0;
         sha256 = "5f62399cfd3ad1250166ea7cbcc80bdcc35ee4cf84d95c54976dc65b2597055f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

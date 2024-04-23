@@ -21,7 +21,7 @@
       synopsis = "Haskell/Nix development build tools";
       description = "See https://hackage.haskell.org/package/hix/docs/Hix.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,19 +41,19 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hix" or (errorHandler.buildDepError "hix"))
             (hsPkgs."incipit-base" or (errorHandler.buildDepError "incipit-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hix-test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

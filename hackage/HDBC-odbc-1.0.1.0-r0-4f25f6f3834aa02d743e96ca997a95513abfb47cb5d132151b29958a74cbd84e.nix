@@ -21,7 +21,7 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Uniform type generic traversals.";
       description = "Uniplate is a boilerplate removal library, with similar goals to the\noriginal Scrap Your Boilerplate work. It requires few extensions to\nHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.ghc_6_10
@@ -30,18 +30,18 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else if flags.ghc_6_8
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-              ];
+            ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

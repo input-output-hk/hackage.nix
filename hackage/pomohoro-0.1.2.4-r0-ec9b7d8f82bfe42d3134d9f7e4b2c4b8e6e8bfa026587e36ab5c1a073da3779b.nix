@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pomohoro-exe" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pomohoro-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."pomohoro" or (errorHandler.buildDepError "pomohoro"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

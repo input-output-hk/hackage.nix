@@ -21,7 +21,7 @@
       synopsis = "Read and write standard mailbox files.";
       description = "Read and write standard mailbox (mboxrd) files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

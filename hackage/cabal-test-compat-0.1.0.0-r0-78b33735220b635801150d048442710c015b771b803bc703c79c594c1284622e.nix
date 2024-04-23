@@ -21,15 +21,15 @@
       synopsis = "Compatibility interface of cabal test-suite.";
       description = "This package provides compatibility interface module\nof cabal test-suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Literate-style Documentation Generator";
       description = "Hyakko is a Haskell port of Docco: the original\nquick-and-dirty, hundred-line-long,\nliterate-programming-style documentation generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hyakko" = {
@@ -37,9 +37,9 @@
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

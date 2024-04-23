@@ -6,8 +6,8 @@
         nix = import ../hackage/screenshot-to-clipboard-0.1.0.0-r0-5499b1b9de44d6287742c3a131f94f7920a56c4f902984dcdd3593e71f05d24a.nix;
         revNum = 0;
         sha256 = "5499b1b9de44d6287742c3a131f94f7920a56c4f902984dcdd3593e71f05d24a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

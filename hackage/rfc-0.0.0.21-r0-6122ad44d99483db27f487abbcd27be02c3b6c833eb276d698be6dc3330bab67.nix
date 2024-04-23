@@ -21,7 +21,7 @@
       synopsis = "Robert Fischer's Common library";
       description = "An enhanced Prelude and various utilities for Aeson, Servant, PSQL, and Redis that Robert Fischer uses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -51,12 +51,12 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."freer-simple" or (errorHandler.buildDepError "freer-simple"))
           (hsPkgs."natural-transformation" or (errorHandler.buildDepError "natural-transformation"))
-          ] ++ (pkgs.lib).optionals (flags.browser) [
+        ] ++ pkgs.lib.optionals (flags.browser) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ]) ++ (pkgs.lib).optionals (!flags.browser) [
+        ]) ++ pkgs.lib.optionals (!flags.browser) [
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
@@ -76,8 +76,8 @@
           (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

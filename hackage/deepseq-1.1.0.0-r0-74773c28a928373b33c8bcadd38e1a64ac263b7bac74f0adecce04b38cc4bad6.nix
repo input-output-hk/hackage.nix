@@ -21,15 +21,15 @@
       synopsis = "Fully evaluate data structures";
       description = "This package provides a \\\"deep\\\" version of seq, for fully evluating\ndata structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

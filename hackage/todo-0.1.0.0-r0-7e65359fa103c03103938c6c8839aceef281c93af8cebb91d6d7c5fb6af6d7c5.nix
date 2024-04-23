@@ -21,11 +21,11 @@
       synopsis = "Gives warnings when you leave a bottom in your code";
       description = "By wrapping standard functions with warnings we may\nshow where we leave our bottoms and traces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

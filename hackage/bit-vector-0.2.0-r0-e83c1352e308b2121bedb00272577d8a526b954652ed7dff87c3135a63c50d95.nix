@@ -21,15 +21,15 @@
       synopsis = "Simple bit vectors for Haskell";
       description = "Operations for using a vector of Booleans as a bit vector. Intended more for pedagogical purposes than for serious applications";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."bit-vector" or (errorHandler.buildDepError "bit-vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Nix backend for PureScript.  Transpile PureScript code to Nix.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
           (hsPkgs."purescript-cst" or (errorHandler.buildDepError "purescript-cst"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "purenix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."purenix" or (errorHandler.buildDepError "purenix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

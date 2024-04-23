@@ -21,15 +21,15 @@
       synopsis = "Type definitions for objects used by the GitHub v3 API";
       description = "This package includes (some) type definitions for objects\nwhich are consumed or produced by the GitHub v3 API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

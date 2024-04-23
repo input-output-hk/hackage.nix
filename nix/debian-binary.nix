@@ -6,8 +6,8 @@
         nix = import ../hackage/debian-binary-0.0.1-r0-19e7f7d630c7c07f60567705d736c5a4c8fd996b7a153d7ba751b24d735b6e3f.nix;
         revNum = 0;
         sha256 = "19e7f7d630c7c07f60567705d736c5a4c8fd996b7a153d7ba751b24d735b6e3f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

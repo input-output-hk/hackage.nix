@@ -6,8 +6,8 @@
         nix = import ../hackage/gelatin-fruity-0.1.0.0-r0-f8af6ab5a4b1d8f6093ac42c095d3ef8663abb2078fec61c28a36704312ee40b.nix;
         revNum = 0;
         sha256 = "f8af6ab5a4b1d8f6093ac42c095d3ef8663abb2078fec61c28a36704312ee40b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

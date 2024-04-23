@@ -21,19 +21,19 @@
       synopsis = "Portable POSIX-compatibility layer.";
       description = "This package provides portable implementations of parts\nof the unix package. This package re-exports the unix\npackage when available. When it isn't available,\nportable implementations are used.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]
+          ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

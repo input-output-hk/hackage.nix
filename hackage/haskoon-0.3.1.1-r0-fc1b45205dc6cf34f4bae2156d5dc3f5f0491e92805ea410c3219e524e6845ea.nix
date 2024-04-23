@@ -21,7 +21,7 @@
       synopsis = "Web Application Abstraction";
       description = "Web Astraction Layer with a binding to CGI providing a simple way to\nmap parameter and header values to data structures (inspired by HAppS)\nand a sitemap functionality to map URLs to functions that answer the request.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
           (hsPkgs."hsx" or (errorHandler.buildDepError "hsx"))
-          ] ++ [ (hsPkgs."fastcgi" or (errorHandler.buildDepError "fastcgi")) ];
+        ] ++ [ (hsPkgs."fastcgi" or (errorHandler.buildDepError "fastcgi")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

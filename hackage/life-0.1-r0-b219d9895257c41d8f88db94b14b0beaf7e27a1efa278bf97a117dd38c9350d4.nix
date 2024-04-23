@@ -21,7 +21,7 @@
       synopsis = "Conway's Life cellular automaton";
       description = "Conway's life as an OpenGL example. Special thanks to\nWill Donnelly for his pure-functional Brians Brain code\nthat got this started (cabal unpack brians-brain).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "life" = {
@@ -31,9 +31,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell on Rails - Files as Reactive Values";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

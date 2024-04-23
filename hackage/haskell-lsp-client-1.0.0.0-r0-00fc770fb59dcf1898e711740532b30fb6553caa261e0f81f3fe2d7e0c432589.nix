@@ -21,7 +21,7 @@
       synopsis = "A haskell package to build your own Language Server client.";
       description = "This package is intended for developers of text editors who want to make their text editor\ncompatible with the <https://github.com/Microsoft/language-server-protocol/blob/master/protocol.md Language Server Protocol>.\nI have developed this package with plans to integrate it in the <https://github.com/yi-editor/yi Yi Editor>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-client" = {
           depends = [
@@ -46,11 +46,11 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

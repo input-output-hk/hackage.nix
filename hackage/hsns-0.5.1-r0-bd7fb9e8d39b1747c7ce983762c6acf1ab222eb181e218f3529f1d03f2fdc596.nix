@@ -21,7 +21,7 @@
       synopsis = "the haskell network sniffer";
       description = "a network sniffer written in a purely fun language";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hsns" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Efficient hashing-based container types";
       description = "Efficient hashing-based container types.  The containers have been\noptimized for performance critical use, both in terms of large data\nquantities and high speed.\n\nThe declared cost of each operation is either worst-case or\namortized, but remains valid even if structures are shared.\n\n/Security/\n\nThis package currently provides no defenses against hash collision attacks\nsuch as HashDoS.\nUsers who need to store input from untrusted sources are advised to use\n@Data.Map@ or @Data.Set@ from the @containers@ package instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unordered-containers-tests" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6") (hsPkgs."nothunks" or (errorHandler.buildDepError "nothunks"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.6") (hsPkgs."nothunks" or (errorHandler.buildDepError "nothunks"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

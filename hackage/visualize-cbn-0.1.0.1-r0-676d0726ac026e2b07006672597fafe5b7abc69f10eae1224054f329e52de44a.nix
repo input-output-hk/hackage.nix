@@ -21,7 +21,7 @@
       synopsis = "Visualize CBN reduction";
       description = "CBN interpretation and visualization tool.\nExports in text format, coloured text (ANSI) or HTML/JavaScript.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "visualize-cbn" = {
@@ -36,9 +36,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

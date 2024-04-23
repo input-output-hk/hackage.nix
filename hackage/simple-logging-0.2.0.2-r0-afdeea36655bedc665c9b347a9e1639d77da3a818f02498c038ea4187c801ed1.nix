@@ -21,7 +21,7 @@
       synopsis = "Logging effect to plug into the simple-effects framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "logging-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

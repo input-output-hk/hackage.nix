@@ -6,8 +6,8 @@
         nix = import ../hackage/hOff-parser-0.1.0.0-r0-d1b6f898b292b39d85969dab71eb91613c97d11eff22a3e314ddcc4401b064a9.nix;
         revNum = 0;
         sha256 = "d1b6f898b292b39d85969dab71eb91613c97d11eff22a3e314ddcc4401b064a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

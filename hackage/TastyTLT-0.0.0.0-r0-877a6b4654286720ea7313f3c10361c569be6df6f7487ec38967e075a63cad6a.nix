@@ -21,7 +21,7 @@
       synopsis = "Run TLT tests from Tasty";
       description = "TLT is a quick-and-dirty unit test system without test specifications, motivated by easy examination of intermediate results of computations in monad transformers.  See the GitHub repository <https://github.com/jphmrst/TLT/> for documentation, or the Haddock page for additional examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TLT-exe" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "TLT-test-fail" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

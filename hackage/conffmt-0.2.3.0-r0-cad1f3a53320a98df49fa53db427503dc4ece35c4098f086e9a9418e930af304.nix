@@ -21,7 +21,7 @@
       synopsis = "A .conf file formatter";
       description = "\"conffmt\" is a @.conf@ file formatter that serves as an example of @language-conf@ ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "conffmt" = {
@@ -32,9 +32,9 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."language-conf" or (errorHandler.buildDepError "language-conf"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

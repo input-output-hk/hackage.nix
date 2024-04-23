@@ -21,11 +21,11 @@
       synopsis = "String manipulation utilities ";
       description = "String manipulation utilities (substring, replace, find, etc.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

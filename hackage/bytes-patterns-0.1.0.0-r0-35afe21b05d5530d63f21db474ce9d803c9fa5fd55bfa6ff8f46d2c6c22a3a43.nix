@@ -21,16 +21,16 @@
       synopsis = "Template haskell macro for casing on Bytes";
       description = "Provides template haskell macros for casing on Bytes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

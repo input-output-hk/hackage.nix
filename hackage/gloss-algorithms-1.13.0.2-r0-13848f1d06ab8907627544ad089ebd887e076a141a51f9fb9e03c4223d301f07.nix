@@ -21,7 +21,7 @@
       synopsis = "Data structures and algorithms for working with 2D graphics.";
       description = "Data structures and algorithms for working with 2D graphics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/data-function-tacit-0.1.0.0-r0-d1ed796c4213641f90328671f1471d6c16c10146435b13ff4c62c968fe0f4036.nix;
         revNum = 0;
         sha256 = "d1ed796c4213641f90328671f1471d6c16c10146435b13ff4c62c968fe0f4036";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

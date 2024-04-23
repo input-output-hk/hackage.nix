@@ -21,7 +21,7 @@
       synopsis = "Process KIF iOS test logs";
       description = "Converts KIF (Keep It Functional) iOS integration test logs into other formats, i.e., JUnit XML format ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kif-parser" = {
@@ -33,9 +33,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

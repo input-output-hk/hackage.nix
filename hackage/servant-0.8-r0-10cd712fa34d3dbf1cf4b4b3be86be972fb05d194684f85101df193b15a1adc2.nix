@@ -21,7 +21,7 @@
       synopsis = "A family of combinators for defining webservices APIs";
       description = "A family of combinators for defining webservices APIs and serving them\n\nYou can learn about the basics in the <http://haskell-servant.readthedocs.org/en/stable/tutorial/index.html tutorial>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

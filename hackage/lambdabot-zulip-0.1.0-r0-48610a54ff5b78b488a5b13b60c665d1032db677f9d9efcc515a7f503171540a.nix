@@ -21,7 +21,7 @@
       synopsis = "Lambdabot for Zulip Chat";
       description = "Integrates lambdabot with Zulip Chat.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."say" or (errorHandler.buildDepError "say"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lamdabot-zulip-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lambdabot-zulip" or (errorHandler.buildDepError "lambdabot-zulip"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

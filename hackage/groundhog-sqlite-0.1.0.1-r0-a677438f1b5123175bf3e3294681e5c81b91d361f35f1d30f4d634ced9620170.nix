@@ -21,7 +21,7 @@
       synopsis = "Sqlite3 backend for the groundhog library";
       description = "This package includes a thin sqlite3 wrapper based on the direct-sqlite package, as well as the entire C library, so there are no system dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."pool-conduit" or (errorHandler.buildDepError "pool-conduit"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        libs = (pkgs.lib).optional (flags.systemlib) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"));
+        ];
+        libs = pkgs.lib.optional (flags.systemlib) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

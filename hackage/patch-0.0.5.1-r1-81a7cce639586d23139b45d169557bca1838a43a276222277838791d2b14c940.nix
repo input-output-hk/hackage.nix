@@ -21,7 +21,7 @@
       synopsis = "Data structures for describing changes to other data structures.";
       description = "Data structures for describing changes to other data structures.\n\nIn this library, a patch is something which can be applied, analogous to a\nfunction, and which distinguishes returning the argument it was provided from\nreturning something else.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -34,18 +34,18 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))) ++ (if flags.split-these
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))) ++ (if flags.split-these
           then [
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-            ]
+          ]
           else [
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

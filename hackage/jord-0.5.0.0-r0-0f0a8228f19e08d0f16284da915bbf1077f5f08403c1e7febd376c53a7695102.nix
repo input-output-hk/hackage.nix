@@ -21,30 +21,30 @@
       synopsis = "Geographical Position Calculations";
       description = "Please see the README on GitHub at <https://github.com/ofmooseandmen/jord#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "jord-benchmarks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."jord" or (errorHandler.buildDepError "jord"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "jord-repl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."jord" or (errorHandler.buildDepError "jord"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jord-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."jord" or (errorHandler.buildDepError "jord"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Polysemy Effects for System Processes";
       description = "See <https://hackage.haskell.org/package/polysemy-process/docs/Polysemy-Process.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-process-unit" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

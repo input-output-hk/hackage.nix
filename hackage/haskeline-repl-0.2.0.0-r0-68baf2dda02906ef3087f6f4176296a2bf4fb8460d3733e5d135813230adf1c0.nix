@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A convenient Haskeline wrapper";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

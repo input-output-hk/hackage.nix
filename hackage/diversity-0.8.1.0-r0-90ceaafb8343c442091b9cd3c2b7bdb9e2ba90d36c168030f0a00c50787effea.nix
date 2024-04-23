@@ -21,7 +21,7 @@
       synopsis = "Quantify the diversity of a population";
       description = "Find the diversity of a collection of entities, mainly for use with fasta sequences.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "diversity" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

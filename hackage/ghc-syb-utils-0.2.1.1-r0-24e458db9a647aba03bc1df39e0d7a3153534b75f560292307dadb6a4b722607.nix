@@ -21,19 +21,19 @@
       synopsis = "Scrap Your Boilerplate utilities for the GHC API.";
       description = "Scrap Your Boilerplate utilities for the GHC API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.0"
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.0"
           then [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ]
           else [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-syb" or (errorHandler.buildDepError "ghc-syb"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

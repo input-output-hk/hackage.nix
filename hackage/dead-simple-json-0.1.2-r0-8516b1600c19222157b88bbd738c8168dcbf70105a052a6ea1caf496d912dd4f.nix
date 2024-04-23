@@ -21,7 +21,7 @@
       synopsis = "Dead simple JSON parser, with some Template Haskell sugar.";
       description = "This is dead simple JSON, consisting of a simple parser built with Parsec\nand some Template Haskell syntactic sugar (which you may or may not use,\nit works without).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

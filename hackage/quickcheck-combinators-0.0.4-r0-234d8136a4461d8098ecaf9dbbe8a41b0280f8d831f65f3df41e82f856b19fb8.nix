@@ -21,15 +21,15 @@
       synopsis = "Simple type-level combinators for augmenting\nQuickCheck instances.";
       description = "Simply wrap the type you want to generate (assuming it satisfies\nall the necessary constraints) to refine the terms generated:\n\n@\n&#123;-&#35; LANGUAGE DataKinds &#35;-&#125;\n&#13;\nimport Data.Set (Set)\nimport Test.QuickCheck\nimport Test.QuickCheck.Instances\nimport GHC.TypeLits\n&#13;\ninstance Arbitrary LinearEquation where\n&#32;&#32;arbitrary = do\n&#32;&#32;&#32;&#32;vars <- arbitrary :: Gen (AtLeast 3 Set String)\n&#32;&#32;&#32;&#32;&#45;&#45; ...\n@\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."unfoldable-restricted" or (errorHandler.buildDepError "unfoldable-restricted"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

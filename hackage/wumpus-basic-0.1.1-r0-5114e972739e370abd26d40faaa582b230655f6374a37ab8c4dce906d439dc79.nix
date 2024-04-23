@@ -21,7 +21,7 @@
       synopsis = "Common drawing utilities built on wumpus-core.";
       description = "\nVery preliminary release...\n\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."wumpus-core" or (errorHandler.buildDepError "wumpus-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

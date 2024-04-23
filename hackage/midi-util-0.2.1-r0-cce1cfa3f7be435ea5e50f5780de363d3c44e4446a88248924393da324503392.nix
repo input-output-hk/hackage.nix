@@ -21,7 +21,7 @@
       synopsis = "Utility functions for processing MIDI files";
       description = "Common high-level tasks when processing MIDI files.\n\n* Use tempos to translate between musical time (beats) and real time (seconds).\n\n* Use time signatures to reference positions using measures instead of just beats.\n\n* Find or change the names of MIDI tracks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."event-list" or (errorHandler.buildDepError "event-list"))
           (hsPkgs."non-negative" or (errorHandler.buildDepError "non-negative"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

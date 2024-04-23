@@ -21,11 +21,11 @@
       synopsis = "L-systems in Haskell";
       description = "L-systems in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

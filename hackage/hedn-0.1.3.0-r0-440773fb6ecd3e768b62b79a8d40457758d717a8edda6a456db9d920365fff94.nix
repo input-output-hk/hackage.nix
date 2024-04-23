@@ -21,7 +21,7 @@
       synopsis = "EDN parsing and encoding";
       description = "A EDN parsing and encoding library inspired by Data.Aeson.\n\nBased on specs published at <https://github.com/edn-format/edn>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-parser" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-encoder" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,9 +53,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

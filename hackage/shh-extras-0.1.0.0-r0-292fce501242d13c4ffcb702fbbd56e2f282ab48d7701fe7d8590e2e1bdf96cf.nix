@@ -21,7 +21,7 @@
       synopsis = "Utility functions for using shh";
       description = "Provides useful functions for setting up Shh as an\ninteractive shell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."shh" or (errorHandler.buildDepError "shh"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A library for implementing Quantum Algorithms";
       description = "A library useful for implementing Quantum Algorithms. It contains definitions of Quantum Gates, Qubits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "qchas-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."qchas" or (errorHandler.buildDepError "qchas"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

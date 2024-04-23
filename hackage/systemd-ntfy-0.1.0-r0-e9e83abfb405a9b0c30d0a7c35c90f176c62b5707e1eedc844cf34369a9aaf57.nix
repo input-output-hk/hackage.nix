@@ -21,7 +21,7 @@
       synopsis = "Send notifications for systemd units to ntfy.sh";
       description = "systemd-ntfy allows you to monitor a set of systemd services an send a\nnotification to ntfy.sh whenever their status changes. Run `systemd-ntfy --help`\nfor a full list of options.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "systemd-ntfy" = {
@@ -34,9 +34,9 @@
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

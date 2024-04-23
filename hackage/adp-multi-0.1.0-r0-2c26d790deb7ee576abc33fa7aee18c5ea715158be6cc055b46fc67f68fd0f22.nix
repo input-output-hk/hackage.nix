@@ -21,7 +21,7 @@
       synopsis = "ADP for multiple context-free languages";
       description = "adp-multi is an implementation of Algebraic Dynamic Programming\nfor multiple context-free languages.\nIt is a library based on the original Haskell implementation\nand can be considered an unoptimized prototype.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,22 +31,22 @@
           (hsPkgs."htrace" or (errorHandler.buildDepError "htrace"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monadiccp" or (errorHandler.buildDepError "monadiccp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "adp-multi-benchmarks" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
+        };
         "adp-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if !flags.buildtests then false else true;
-          };
         };
+      };
       tests = {
         "MainTestSuite" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

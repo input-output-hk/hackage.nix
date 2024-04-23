@@ -21,7 +21,7 @@
       synopsis = "gRPC for Mu, common modules for client and server";
       description = "Use @mu-grpc-server@ or @mu-grpc-client@ (the common parts).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."mu-protobuf" or (errorHandler.buildDepError "mu-protobuf"))
           (hsPkgs."mu-rpc" or (errorHandler.buildDepError "mu-rpc"))
           (hsPkgs."mu-schema" or (errorHandler.buildDepError "mu-schema"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

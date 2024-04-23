@@ -21,7 +21,7 @@
       synopsis = "A simple static web server";
       description = "Serve files from the current path";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "maid" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

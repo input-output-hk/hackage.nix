@@ -21,7 +21,7 @@
       synopsis = "Forms that configure themselves based on type";
       description = "Inspired by the RubyGem of the same name, this package allows you to\neasily build validating forms that infer defaults based on type.\n\nMost users will want to both render 'Html' and parse input, and so\nshould use the SimpleForm.Digestive.Combined and SimpleForm.Combined\nmodules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert Arch Linux package updates in RSS to pretty markdown";
       description = "Convert Arch Linux package updates in RSS to pretty markdown";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "archnews" = {
@@ -31,9 +31,9 @@
             (hsPkgs."download-curl" or (errorHandler.buildDepError "download-curl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

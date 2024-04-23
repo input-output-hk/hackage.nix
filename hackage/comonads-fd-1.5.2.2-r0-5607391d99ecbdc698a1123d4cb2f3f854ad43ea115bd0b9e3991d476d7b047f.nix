@@ -21,7 +21,7 @@
       synopsis = "Comonad transformers using functional dependencies";
       description = "Comonad transformers using functional dependencies";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

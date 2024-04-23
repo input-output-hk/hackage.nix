@@ -21,14 +21,14 @@
       synopsis = "A monad transformer supporting various styles of while loop";
       description = "A monad transformer allowing for pre-condition, post-condition and mid-condition while loops.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

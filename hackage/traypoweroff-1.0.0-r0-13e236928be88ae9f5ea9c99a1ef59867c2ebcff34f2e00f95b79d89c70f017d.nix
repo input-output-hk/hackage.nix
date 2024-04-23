@@ -21,7 +21,7 @@
       synopsis = "Tray Icon application to PowerOff / Reboot computer";
       description = "PowerOff Tray Icon";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "traypoweroff" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

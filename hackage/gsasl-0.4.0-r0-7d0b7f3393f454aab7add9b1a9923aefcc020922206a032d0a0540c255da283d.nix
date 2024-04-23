@@ -21,7 +21,7 @@
       synopsis = "Bindings for GNU libgsasl";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libgsasl" or (errorHandler.pkgConfDepError "libgsasl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

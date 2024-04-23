@@ -6,8 +6,8 @@
         nix = import ../hackage/unpacked-validation-0.1.0.0-r0-784bff32ef992c69787bc07b4efb1c3125a455ac5afbfac02ab3f0d8689cac07.nix;
         revNum = 0;
         sha256 = "784bff32ef992c69787bc07b4efb1c3125a455ac5afbfac02ab3f0d8689cac07";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

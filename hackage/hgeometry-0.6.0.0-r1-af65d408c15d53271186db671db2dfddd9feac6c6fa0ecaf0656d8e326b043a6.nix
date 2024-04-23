@@ -21,7 +21,7 @@
       synopsis = "Geometric Algorithms, Data structures, and Data types.";
       description = "HGeometry provides some basic geometry types, and geometric algorithms and\ndata structures for them. The main two focusses are: (1) Strong type safety,\nand (2) implementations of geometric algorithms and data structures with good\nasymptotic running time guarantees. Note that HGeometry is still highly experimental, don't be surprised to find bugs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,12 +50,12 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hgeometry-examples" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
@@ -70,18 +70,18 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bapc_examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,10 +111,10 @@
             (hsPkgs."data-clist" or (errorHandler.buildDepError "data-clist"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

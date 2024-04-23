@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Example1" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,9 +68,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -83,9 +83,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example4" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example5" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -113,9 +113,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example7" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example8" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,9 +144,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example11" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -159,9 +159,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example12" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -174,9 +174,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "Example13" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -189,9 +189,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart-fltkhs" or (errorHandler.buildDepError "Chart-fltkhs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

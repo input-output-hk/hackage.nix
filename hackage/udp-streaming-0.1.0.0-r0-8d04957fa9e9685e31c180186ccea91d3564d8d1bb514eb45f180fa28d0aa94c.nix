@@ -21,7 +21,7 @@
       synopsis = "Simple fire-and-forget udp Streaming components modelled after udp-conduit";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

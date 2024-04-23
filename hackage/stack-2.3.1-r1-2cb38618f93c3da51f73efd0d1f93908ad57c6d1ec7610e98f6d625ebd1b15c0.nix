@@ -14,7 +14,7 @@
       integration-tests = false;
       static = false;
       supported-build = false;
-      };
+    };
     package = {
       specVersion = "2.0";
       identifier = { name = "stack"; version = "2.3.1"; };
@@ -31,8 +31,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -120,12 +120,12 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-        build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
-        };
+      };
       exes = {
         "stack" = {
           depends = ([
@@ -214,17 +214,17 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optionals (!flags.disable-git-info) [
+            ])) ++ pkgs.lib.optionals (!flags.disable-git-info) [
             (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
-            ];
-          build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          ];
+          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
-          };
+        };
         "stack-integration-test" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
@@ -313,13 +313,13 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-          build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = if !flags.integration-tests then false else true;
-          };
         };
+      };
       tests = {
         "stack-test" = {
           depends = [
@@ -412,12 +412,12 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-          build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

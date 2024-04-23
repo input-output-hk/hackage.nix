@@ -21,7 +21,7 @@
       synopsis = "Bindings to SDL2_ttf.";
       description = "Haskell bindings to SDL2_ttf C++ library <http://www.libsdl.org/projects/SDL_ttf/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,24 +32,24 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_ttf" or (errorHandler.pkgConfDepError "SDL2_ttf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-ttf-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

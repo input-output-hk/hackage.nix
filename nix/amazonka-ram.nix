@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-ram-2.0-r0-e51e9fdfd45b42bd1ef382b6fd3a895a53d8ff01d3f857f78dcbe45585eba8c6.nix;
         revNum = 0;
         sha256 = "e51e9fdfd45b42bd1ef382b6fd3a895a53d8ff01d3f857f78dcbe45585eba8c6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

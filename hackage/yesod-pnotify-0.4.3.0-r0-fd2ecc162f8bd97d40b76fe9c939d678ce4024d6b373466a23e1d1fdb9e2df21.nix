@@ -21,7 +21,7 @@
       synopsis = "Yet another getMessage/setMessage using pnotify jquery plugins";
       description = "Yet another getMessage/setMessage using pnotify jquery plugins";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

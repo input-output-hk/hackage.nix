@@ -21,7 +21,7 @@
       synopsis = "Haskell 98 monads for free";
       description = "Haskell 98 monads for free";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

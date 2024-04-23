@@ -6,8 +6,8 @@
         nix = import ../hackage/hzaif-0.1.0.0-r0-6c203c38c1aed86b818c4d1fde6ed25e1a55191c4a00ce23c51e1d5a9a05240b.nix;
         revNum = 0;
         sha256 = "6c203c38c1aed86b818c4d1fde6ed25e1a55191c4a00ce23c51e1d5a9a05240b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

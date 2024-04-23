@@ -21,7 +21,7 @@
       synopsis = "Tasty integration with the existing HUnit package.";
       description = "Existing `tasty-hunit` package now declares its own testing primitives. This package provides an integration of the existing HUnit package with Tasty that inter-operates properly with other HUnit code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,10 +6,10 @@
         nix = import ../hackage/mpd-current-json-1.1.0.2-r0-a8e96a6321e6c70443ce8c7befa897c5403d7e8f750d207eb7da13c3ed1654e9.nix;
         revNum = 0;
         sha256 = "a8e96a6321e6c70443ce8c7befa897c5403d7e8f750d207eb7da13c3ed1654e9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "1.2.0.0" = {
     sha256 = "fac07e84afd75ea72b4d6bea12d15586daffa0841c42fbeb41f33e5e47e90046";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/mpd-current-json-1.2.0.0-r0-6d7f29bf5dd9f810ddc1be18f7ee473aa2cfdd228bd5c883abffdacec30e6e65.nix;
         revNum = 0;
         sha256 = "6d7f29bf5dd9f810ddc1be18f7ee473aa2cfdd228bd5c883abffdacec30e6e65";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

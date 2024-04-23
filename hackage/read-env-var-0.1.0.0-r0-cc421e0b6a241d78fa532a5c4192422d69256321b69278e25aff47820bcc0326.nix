@@ -21,21 +21,21 @@
       synopsis = "Functions for safely reading environment variables.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "read-env-var-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

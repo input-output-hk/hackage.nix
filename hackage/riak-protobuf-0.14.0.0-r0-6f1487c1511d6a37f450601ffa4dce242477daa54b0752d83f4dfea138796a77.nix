@@ -21,7 +21,7 @@
       synopsis = "Haskell types for the Riak protocol buffer API";
       description = "A set of Haskell types for interacting with the protocol buffer\nAPI of the Riak decentralized data store.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."protocol-buffers" or (errorHandler.buildDepError "protocol-buffers"))
           (hsPkgs."protocol-buffers-descriptor" or (errorHandler.buildDepError "protocol-buffers-descriptor"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

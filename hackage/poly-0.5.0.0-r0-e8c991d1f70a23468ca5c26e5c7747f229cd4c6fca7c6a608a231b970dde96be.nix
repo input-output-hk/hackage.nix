@@ -21,7 +21,7 @@
       synopsis = "Polynomials";
       description = "Polynomials backed by `Vector`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "poly-tests" = {
           depends = [
@@ -50,18 +50,18 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "poly-doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."poly" or (errorHandler.buildDepError "poly"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "poly-gauge" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."poly" or (errorHandler.buildDepError "poly"))
             (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

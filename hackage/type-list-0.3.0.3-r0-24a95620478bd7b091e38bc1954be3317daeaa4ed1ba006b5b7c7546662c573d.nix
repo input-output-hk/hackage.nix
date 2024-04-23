@@ -21,14 +21,14 @@
       synopsis = "Operations on type-level lists and tuples.";
       description = "Operations on type-level lists and tuples, together with their curried versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

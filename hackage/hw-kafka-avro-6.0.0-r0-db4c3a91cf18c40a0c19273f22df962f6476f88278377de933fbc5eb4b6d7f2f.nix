@@ -21,7 +21,7 @@
       synopsis = "Avro support for Kafka infrastructure";
       description = "Avro support for Kafka infrastructure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kafka-avro-example" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."hw-kafka-avro" or (errorHandler.buildDepError "hw-kafka-avro"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "kafka-avro-test" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-kafka-avro" or (errorHandler.buildDepError "hw-kafka-avro"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

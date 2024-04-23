@@ -21,24 +21,24 @@
       synopsis = "Simple Theorem Prover";
       description = "Simple Theorem Prover constructs a proof tree\nand searches for a target/conclusion given a\nlist of rewrite rules and axioms/theorems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mu-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."stp" or (errorHandler.buildDepError "stp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

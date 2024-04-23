@@ -21,7 +21,7 @@
       synopsis = "A cereal-based parser for the Modbus protocol";
       description = "A cereal-based parser for the Modbus protocol";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "GLTF loader for Keid engine.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."gltf-codec" or (errorHandler.buildDepError "gltf-codec"))
           (hsPkgs."keid-core" or (errorHandler.buildDepError "keid-core"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

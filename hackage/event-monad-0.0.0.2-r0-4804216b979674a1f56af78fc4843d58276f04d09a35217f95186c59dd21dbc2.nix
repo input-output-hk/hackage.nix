@@ -21,7 +21,7 @@
       synopsis = "Event-graph simulation monad transformer";
       description = "An interface for and simple implementation of an\nevent-graph simulation system as a monad transformer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."priority-queue" or (errorHandler.buildDepError "priority-queue"))
           (hsPkgs."stateref" or (errorHandler.buildDepError "stateref"))
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

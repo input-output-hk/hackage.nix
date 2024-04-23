@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.quipper-cabal or (pkgs.buildPackages.quipper-cabal or (errorHandler.setupDepError "quipper-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
           (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

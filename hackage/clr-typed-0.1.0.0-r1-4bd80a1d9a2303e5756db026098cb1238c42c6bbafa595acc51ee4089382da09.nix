@@ -21,7 +21,7 @@
       synopsis = "A strongly typed Haskell interface to the CLR type system";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."clr-marshal" or (errorHandler.buildDepError "clr-marshal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "clr-typed-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clr-typed" or (errorHandler.buildDepError "clr-typed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple web server for serving directories.";
       description = "The main drivers for this application were Windows (and Linux) support,\nsecurity, and to a lesser extent performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sws" = {
@@ -48,9 +48,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

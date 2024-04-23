@@ -21,7 +21,7 @@
       synopsis = "Use colonnade with reflex-dom";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

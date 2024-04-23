@@ -21,7 +21,7 @@
       synopsis = "A fast SOCKS5 proxy that help you get through firewalls";
       description = "Shadowsocks implemented in Haskell. Original python version: <https://github.com/clowwindy/shadowsocks>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sslocal" = {
@@ -40,9 +40,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ssserver" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,10 +60,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

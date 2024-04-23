@@ -21,7 +21,7 @@
       synopsis = "Client library for Stomp brokers.";
       description = "Stomp is a client library for communicating with message servers through the\nSTOMP protocol (http://stomp.github.com/stomp-specification-1.1.html)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

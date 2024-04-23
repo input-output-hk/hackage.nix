@@ -21,7 +21,7 @@
       synopsis = "Simple project template from stack";
       description = "A service for easy handling of multiple repositories with <https://hackage.haskell.org/package/gipeda gipeda>.\n\nSee @--help@ for usage. Example invocation for benchmarking the whole of the @Pipes@ library:\n\n@\n$ cat > feed-gipeda.yaml\nrepositories:\n- https:\\/\\/github.com\\/Gabriel439\\/Haskell-Pipes-Library\n^D\n$ feed-gipeda --config=.\\/feed-gipeda.yaml --deploy-to=.\\/website\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "feed-gipeda" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."logging" or (errorHandler.buildDepError "logging"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

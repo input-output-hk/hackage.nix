@@ -21,27 +21,27 @@
       synopsis = "piecewise linear and cubic Hermite interpolation";
       description = "Represent real functions by linear or cubic polynomial segments.\nThe package provides both data structures\nfor efficient lookup of interpolation intervals,\nand computation of basis functions.\n\nThere are two examples that can be built with\n\n> cabal install -fbuildExamples\n\n* @example/Plot.hs@:\nInterpolate a sinus curve using piecewise linear interpolation\nand piecewise Hermite cubic interpolation.\nFor the latter one we provide the derivatives of the sinus function\nat the interpolation nodes.\n\n* @example/Fit.hs@:\nDemonstrates how to use the basis functions\nfor fitting an interpolation function to a given function\nusing a linear least squares solver like @<\\>@ from @lapack@.\nWe use a distorted sinus as target.\n\nThe package needs only Haskell 98.\nMost of the package dependencies are only needed for the examples\nand are only installed if you enable to build them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "interpolation-plot" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."interpolation" or (errorHandler.buildDepError "interpolation"))
             (hsPkgs."gnuplot" or (errorHandler.buildDepError "gnuplot"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "interpolation-fit" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples && flags.lapack) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.lapack) [
             (hsPkgs."interpolation" or (errorHandler.buildDepError "interpolation"))
             (hsPkgs."lapack" or (errorHandler.buildDepError "lapack"))
             (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
@@ -50,12 +50,12 @@
             (hsPkgs."gnuplot" or (errorHandler.buildDepError "gnuplot"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples && flags.lapack
             then true
             else false;
-          };
         };
+      };
       tests = {
         "interpolation-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

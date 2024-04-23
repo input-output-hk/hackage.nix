@@ -21,7 +21,7 @@
       synopsis = "Automatically derive Elm functions to query servant webservices.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."elm-export" or (errorHandler.buildDepError "elm-export"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-elm-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-elm" or (errorHandler.buildDepError "servant-elm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

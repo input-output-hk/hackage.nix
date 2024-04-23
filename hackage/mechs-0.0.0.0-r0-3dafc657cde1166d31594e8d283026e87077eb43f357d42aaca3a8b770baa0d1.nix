@@ -21,14 +21,14 @@
       synopsis = "mecha are the most complex composite machines known to humanity, lets build them well!";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

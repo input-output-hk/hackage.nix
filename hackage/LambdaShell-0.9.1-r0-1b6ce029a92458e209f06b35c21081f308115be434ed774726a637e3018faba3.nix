@@ -21,7 +21,7 @@
       synopsis = "Simple shell for evaluating lambda expressions";
       description = "The lambda shell is a feature-rich shell environment and command-line tool for\nevaluating terms of the pure, untyped lambda calculus.  The Lambda\nShell builds on the shell creation framework Shellac, and showcases\nmost of Shellac's features.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdaShell" = {
@@ -33,10 +33,10 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."Shellac" or (errorHandler.buildDepError "Shellac"))
             (hsPkgs."Shellac-readline" or (errorHandler.buildDepError "Shellac-readline"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.8") (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.8") (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
           libs = [ (pkgs."readline" or (errorHandler.sysDepError "readline")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Primitive functions for updating many elements in mutable arrays at once";
       description = "An collection of functions for working with multiple elements in\nmutable arrays. It is hoped some or all of these functions will be\nincluded in the array package for GHC 7.2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

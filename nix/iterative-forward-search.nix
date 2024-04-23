@@ -6,8 +6,8 @@
         nix = import ../hackage/iterative-forward-search-0.1.0.0-r0-d3d09f38128d5b116babe398cf64e233063920167bee3d186a7ed38133ec5512.nix;
         revNum = 0;
         sha256 = "d3d09f38128d5b116babe398cf64e233063920167bee3d186a7ed38133ec5512";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

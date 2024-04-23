@@ -21,7 +21,7 @@
       synopsis = "Pure, mergeable, succinct Int sets.";
       description = "This library provides persistent, time and space efficient integer\nsets implemented as dense big-endian patricia trees with buddy\nsuffixes compaction. In randomized settings this structure expected\nto be as fast as Data.IntSet from containers, but if a sets is\nlikely to have long continuous intervals it should be much faster.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bits-extras" or (errorHandler.buildDepError "bits-extras"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -40,17 +40,17 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."intset" or (errorHandler.buildDepError "intset"))
-            ];
+          ];
           buildable = if !flags.testing then false else true;
-          };
+        };
         "fusion" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."intset" or (errorHandler.buildDepError "intset"))
-            ];
+          ];
           buildable = if !flags.testing then false else true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."intset" or (errorHandler.buildDepError "intset"))
-            ];
+          ];
           buildable = if !flags.testing then false else true;
-          };
         };
       };
-    }
+    };
+  }

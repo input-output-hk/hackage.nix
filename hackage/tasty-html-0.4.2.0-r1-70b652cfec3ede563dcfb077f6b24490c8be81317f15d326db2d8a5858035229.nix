@@ -21,7 +21,7 @@
       synopsis = "Render tasty output to HTML";
       description = "A tasty ingredient to output test results in HTML5.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-html-fail" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-html" or (errorHandler.buildDepError "tasty-html"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tasty-html-pass" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,9 +63,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-html" or (errorHandler.buildDepError "tasty-html"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "DEPRECATED in favor of eros-http";
       description = "DEPRECATED in favor of eros-http";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "erosc" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."eros" or (errorHandler.buildDepError "eros"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

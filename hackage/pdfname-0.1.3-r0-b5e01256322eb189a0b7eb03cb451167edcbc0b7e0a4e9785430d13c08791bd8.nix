@@ -21,7 +21,7 @@
       synopsis = "Name a PDF file using information from the pdfinfo command";
       description = "The @pdfname@ command-line program names a PDF file using the\nauthor, year of creation and title information extracted from the\n@pdfinfo@ program.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pdfname" = {
@@ -32,9 +32,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pdfinfo" or (errorHandler.buildDepError "pdfinfo"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

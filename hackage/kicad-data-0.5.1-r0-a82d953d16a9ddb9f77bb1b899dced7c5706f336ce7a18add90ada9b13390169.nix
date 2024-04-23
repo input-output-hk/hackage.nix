@@ -21,7 +21,7 @@
       synopsis = "Parser and writer for KiCad files.";
       description = "Parse and write <https://kicad.org/ KiCad> data\n(currently @.kicad_mod@ files only).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
           (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
           (hsPkgs."pretty-compact" or (errorHandler.buildDepError "pretty-compact"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "kicad-data-quickcheck" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."charsetdetect" or (errorHandler.buildDepError "charsetdetect"))
             (hsPkgs."encoding" or (errorHandler.buildDepError "encoding"))
             (hsPkgs."kicad-data" or (errorHandler.buildDepError "kicad-data"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

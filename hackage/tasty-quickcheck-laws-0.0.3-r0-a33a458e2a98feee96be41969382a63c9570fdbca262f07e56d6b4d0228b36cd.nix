@@ -21,7 +21,7 @@
       synopsis = "Pre-built tasty trees for checking lawful class properties using QuickCheck";
       description = "Please see the README on GitHub at <https://github.com/nbloomf/tasty-quickcheck-laws#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tasty-quickcheck-laws-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty-quickcheck-laws" or (errorHandler.buildDepError "tasty-quickcheck-laws"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty-quickcheck-laws-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-quickcheck-laws" or (errorHandler.buildDepError "tasty-quickcheck-laws"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A NonEmptyMap Implementation";
       description = "This package intends to allow general use of a NonEmptyMap\nwhich is very beneficial as sometimes you want the functionality\nthis provides.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

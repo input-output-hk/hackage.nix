@@ -21,7 +21,7 @@
       synopsis = "Git operations";
       description = "Provides low level git operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
           (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Hit" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -56,20 +56,20 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
+        };
         "Tests" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

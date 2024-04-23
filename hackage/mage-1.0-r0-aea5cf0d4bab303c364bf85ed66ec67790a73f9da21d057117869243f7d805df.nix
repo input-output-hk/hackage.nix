@@ -21,7 +21,7 @@
       synopsis = "Rogue-like";
       description = "A simple rogue-like; currently has a Curses interface\nand simple movement and dungeon creation capbilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mage" = {
@@ -32,9 +32,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

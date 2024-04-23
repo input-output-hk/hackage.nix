@@ -21,7 +21,7 @@
       synopsis = "Macromolecular Transmission Format implementation";
       description = "Haskell implementation of MMTF biological structure format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mmtf-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extensible objects";
       description = "Stateful effect transducer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."clean-unions" or (errorHandler.buildDepError "clean-unions"))
           (hsPkgs."elevator" or (errorHandler.buildDepError "elevator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

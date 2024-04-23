@@ -21,7 +21,7 @@
       synopsis = "sanitize untrusted HTML to prevent XSS attacks";
       description = "run untrusted HTML through Text.HTML.SanitizeXSS.sanitizeXSS to prevent XSS attacks. see README.md <http://github.com/yesodweb/haskell-xss-sanitize> for more details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,15 +32,15 @@
           (hsPkgs."css-text" or (errorHandler.buildDepError "css-text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,15 +53,15 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

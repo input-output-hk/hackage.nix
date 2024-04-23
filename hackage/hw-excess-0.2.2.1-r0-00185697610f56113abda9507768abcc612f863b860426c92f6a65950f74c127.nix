@@ -21,7 +21,7 @@
       synopsis = "Excess";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-excess-test" = {
           depends = [
@@ -46,13 +46,13 @@
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-excess" or (errorHandler.buildDepError "hw-excess"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-excess" or (errorHandler.buildDepError "hw-excess"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

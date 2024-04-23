@@ -21,7 +21,7 @@
       synopsis = "A utility for writing the date to dzen2.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "format-status" = {
@@ -32,9 +32,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."data-concurrent-queue" or (errorHandler.buildDepError "data-concurrent-queue"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

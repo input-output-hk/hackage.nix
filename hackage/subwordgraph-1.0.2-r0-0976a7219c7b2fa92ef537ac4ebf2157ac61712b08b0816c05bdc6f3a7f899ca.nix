@@ -21,25 +21,25 @@
       synopsis = "Subword graph implementation";
       description = "An implementation of a classic Subword Graph (aka DAWG) data structure for solving string related problems on a single word.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-subwordgraph" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."subwordgraph" or (errorHandler.buildDepError "subwordgraph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/profiterole-0.1-r0-da5d5bda38d1263b0af4f608ee8974f7fae4ddbedc6184df3cc86132c84cbfc1.nix;
         revNum = 0;
         sha256 = "da5d5bda38d1263b0af4f608ee8974f7fae4ddbedc6184df3cc86132c84cbfc1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

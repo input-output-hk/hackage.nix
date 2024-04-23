@@ -21,7 +21,7 @@
       synopsis = "Library (and cli) to execute a procedure on file change.";
       description = "A small, IO-heavy library that monitors files for changes and runs either a system shell command or a Haskell `IO ()` action.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "touched" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."touched" or (errorHandler.buildDepError "touched"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for HTTP programming.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

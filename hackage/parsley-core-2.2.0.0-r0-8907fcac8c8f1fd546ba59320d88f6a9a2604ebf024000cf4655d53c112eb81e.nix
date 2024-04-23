@@ -21,7 +21,7 @@
       synopsis = "A fast parser combinator library backed by Typed Template Haskell";
       description = "This package contains the internals of the @parsley@ package.\n\nWhile this library adheres to the Haskell PVP, it additionally\nenforces an additional constraint: the version @M.I.m.p@ represents\na breaking change to the /public/ API @M@, a breaking change\nto the /internal/ API @I@ (which will not affect parsley), an addition\nto either API @m@, and patches or performance improvements @p@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."rangeset" or (errorHandler.buildDepError "rangeset"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "primitives-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."th-test-utils" or (errorHandler.buildDepError "th-test-utils"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "common-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "regression-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

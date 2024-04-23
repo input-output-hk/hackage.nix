@@ -21,15 +21,15 @@
       synopsis = "A work in progress Multipath TCP path manager";
       description = "Multipath TCP (www.multipath-tcp.org) starting from version 0.95 provides a\nnetlink path manager module. This package implements the userspace part to allow\nuserspace daemons to control MPTCP behavior.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "daemon" = {
           depends = [
@@ -45,13 +45,13 @@
             (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"))
             (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
             (hsPkgs."c2hsc" or (errorHandler.buildDepError "c2hsc"))
-            ] ++ (pkgs.lib).optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
+          ] ++ pkgs.lib.optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "monitor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,13 +66,13 @@
             (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"))
             (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
             (hsPkgs."c2hsc" or (errorHandler.buildDepError "c2hsc"))
-            ] ++ (pkgs.lib).optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
+          ] ++ pkgs.lib.optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "short" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,14 +87,14 @@
             (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"))
             (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
             (hsPkgs."c2hsc" or (errorHandler.buildDepError "c2hsc"))
-            ] ++ (pkgs.lib).optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
+          ] ++ pkgs.lib.optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -106,13 +106,13 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

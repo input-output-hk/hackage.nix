@@ -21,7 +21,7 @@
       synopsis = "Hedgehog generators for loc";
       description = "This package contains Hedgehog generators types defined\nin the /loc/ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."loc" or (errorHandler.buildDepError "loc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

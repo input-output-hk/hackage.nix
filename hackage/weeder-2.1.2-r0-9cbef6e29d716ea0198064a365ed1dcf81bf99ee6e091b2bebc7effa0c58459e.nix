@@ -21,7 +21,7 @@
       synopsis = "Detect dead code";
       description = "Find declarations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "weeder" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."weeder" or (errorHandler.buildDepError "weeder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

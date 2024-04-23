@@ -21,7 +21,7 @@
       synopsis = "Extended Personal Media Network (XPMN) media server";
       description = "Pontarius Media Server will be a free and privacy-aware\nExtended Personal Media Network (XPMN) media server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pontarius-mediaserver-test" = {
@@ -32,9 +32,9 @@
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
             (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

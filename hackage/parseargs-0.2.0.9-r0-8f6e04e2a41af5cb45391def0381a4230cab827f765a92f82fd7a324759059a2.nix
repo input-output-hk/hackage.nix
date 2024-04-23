@@ -21,35 +21,35 @@
       synopsis = "Parse command-line arguments";
       description = "Full-featured command-line argument parsing library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parseargs-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-parseargs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.parseargs.components.exes.parseargs-example or (pkgs.buildPackages.parseargs-example or (errorHandler.buildToolDepError "parseargs:parseargs-example")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

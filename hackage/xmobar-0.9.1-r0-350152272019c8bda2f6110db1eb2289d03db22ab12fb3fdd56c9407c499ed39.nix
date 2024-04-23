@@ -13,7 +13,7 @@
       with_xft = true;
       with_utf8 = true;
       with_inotify = true;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "xmobar"; version = "0.9.1"; };
@@ -26,7 +26,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar features,\nlike dynamic color management, output templates, and extensibility\nthrough plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xmobar" = {
@@ -37,7 +37,7 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,15 +47,15 @@
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
-              ])) ++ (pkgs.lib).optionals (flags.with_xft) [
+            ])) ++ pkgs.lib.optionals (flags.with_xft) [
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"))
-            ]) ++ (pkgs.lib).optional (flags.with_utf8) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
+          ]) ++ pkgs.lib.optional (flags.with_utf8) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ pkgs.lib.optional (flags.with_inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

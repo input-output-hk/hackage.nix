@@ -21,7 +21,7 @@
       synopsis = "Persona (BrowserID) Identity Provider";
       description = "\npersona-idp is a simple Mozilla Persona (formerly BrowserID)\nidentity provider (IdP) intended to be run behind an HTTP\nserver providing TLS termination and user authentication.\n\nFor full documentation see\n<https://github.com/frasertweedale/hs-persona-idp>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "persona" = {
@@ -49,9 +49,9 @@
             (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
             (hsPkgs."jose" or (errorHandler.buildDepError "jose"))
             (hsPkgs."persona" or (errorHandler.buildDepError "persona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

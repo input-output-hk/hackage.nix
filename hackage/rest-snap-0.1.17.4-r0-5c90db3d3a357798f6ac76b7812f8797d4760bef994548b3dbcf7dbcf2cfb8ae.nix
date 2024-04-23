@@ -21,7 +21,7 @@
       synopsis = "Rest driver for Snap.";
       description = "Rest driver for Snap.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."rest-core" or (errorHandler.buildDepError "rest-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

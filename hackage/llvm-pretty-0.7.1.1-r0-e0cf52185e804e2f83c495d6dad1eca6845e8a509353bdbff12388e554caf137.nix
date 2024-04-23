@@ -21,7 +21,7 @@
       synopsis = "A pretty printing library inspired by the llvm binding.";
       description = "A pretty printing library that was inspired by the LLVM binding by Lennart\nAugustsson.  The library provides a monadic interface to a pretty printer,\nthat allows functions to be defined and called, generating the corresponding\nLLVM assembly when run.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "darcs project hosting and collaboration";
       description = "A web and SSH server for hosting darcs projects and collaborating with\nothers.\n\nSee darcsden --readme for installation instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "darcsden" = {
@@ -55,10 +55,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ];
+          ];
           buildable = true;
-          };
-        "darcsden-ssh" = { buildable = true; };
         };
+        "darcsden-ssh" = { buildable = true; };
       };
-    }
+    };
+  }

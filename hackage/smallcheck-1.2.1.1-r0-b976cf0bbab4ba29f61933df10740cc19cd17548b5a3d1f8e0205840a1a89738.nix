@@ -21,7 +21,7 @@
       synopsis = "A property-based testing library";
       description = "As of 2023, this library is largely obsolete: arbitrary test generators\nwith shrinking such as [falsify](https://hackage.haskell.org/package/falsify)\noffer much better user experience.\n\nSmallCheck is a testing library that allows to verify properties\nfor all test cases up to some depth. The test cases are generated\nautomatically by SmallCheck.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -29,14 +29,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.10") [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10") [
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

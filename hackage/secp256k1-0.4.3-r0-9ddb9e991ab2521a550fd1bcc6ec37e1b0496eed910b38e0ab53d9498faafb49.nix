@@ -21,7 +21,7 @@
       synopsis = "Bindings for secp256k1 library from Bitcoin Core";
       description = "Please see README.md";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "secp256k1-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

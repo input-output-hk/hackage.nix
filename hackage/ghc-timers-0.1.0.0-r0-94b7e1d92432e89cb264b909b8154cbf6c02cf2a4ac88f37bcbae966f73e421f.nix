@@ -21,11 +21,11 @@
       synopsis = "Provides bindings to functions starting and stopping the RTS timers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

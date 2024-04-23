@@ -21,16 +21,16 @@
       synopsis = "plain-text password and hashed password datatypes and functions";
       description = "A library providing types for working with plain-text and hashed passwords, generally for web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."scrypt" or (errorHandler.buildDepError "scrypt"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "password-doctest" = {
           depends = [
@@ -40,16 +40,16 @@
             (hsPkgs."password" or (errorHandler.buildDepError "password"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "password-tasty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."password" or (errorHandler.buildDepError "password"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "A tiny library for composing indexed traversals";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

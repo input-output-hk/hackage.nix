@@ -21,7 +21,7 @@
       synopsis = "Generators for Purely Functional Cursors";
       description = "Generators for Purely Functional Cursors for common data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
           (hsPkgs."genvalidity-text" or (errorHandler.buildDepError "genvalidity-text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cursor-test" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "cursor-bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."cursor" or (errorHandler.buildDepError "cursor"))
             (hsPkgs."cursor-gen" or (errorHandler.buildDepError "cursor-gen"))
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

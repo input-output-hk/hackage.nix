@@ -21,7 +21,7 @@
       synopsis = "Integrating HttpSpec with Haskoon";
       description = "Allows to send and receive Http requests using the\nHttpSpec specifications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."haskoon" or (errorHandler.buildDepError "haskoon"))
           (hsPkgs."bidispec" or (errorHandler.buildDepError "bidispec"))
           (hsPkgs."httpspec" or (errorHandler.buildDepError "httpspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Shows how to run a PostgreSQL database as a tmp proc";
       description = "An example of using tmp-proc to launch dockerized PostgreSQL in integration tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
             (hsPkgs."tmp-proc-postgres" or (errorHandler.buildDepError "tmp-proc-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

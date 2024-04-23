@@ -21,7 +21,7 @@
       synopsis = "Haskell representation and parser for ABC notation.";
       description = "This package contains a Haskell representation and parser for ABC notation.\n\nABC notation is a text-based music notation system designed to be comprehensible by both people and\ncomputers. For more information see <http://abcnotation.com>.\n\nBased on the 2.1 standard.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."prettify" or (errorHandler.buildDepError "prettify"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

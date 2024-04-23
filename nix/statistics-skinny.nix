@@ -6,8 +6,8 @@
         nix = import ../hackage/statistics-skinny-0.15.2.0-r0-64a6211963d1e477a5fe9cac6870b4d7fdb2dc7063b85e3d3eb6e683edf391a4.nix;
         revNum = 0;
         sha256 = "64a6211963d1e477a5fe9cac6870b4d7fdb2dc7063b85e3d3eb6e683edf391a4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

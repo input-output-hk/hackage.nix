@@ -21,7 +21,7 @@
       synopsis = "Tools for using reStructuredText (RST) in a yesod application";
       description = "A subset of pandoc functionality useful for RST processing in yesod applications";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

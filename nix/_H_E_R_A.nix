@@ -6,8 +6,8 @@
         nix = import ../hackage/HERA-0.2-r0-569bd10d6651da677a88ffc6f41118a636cf833e057dcdb4a4f2d6802598d64e.nix;
         revNum = 0;
         sha256 = "569bd10d6651da677a88ffc6f41118a636cf833e057dcdb4a4f2d6802598d64e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

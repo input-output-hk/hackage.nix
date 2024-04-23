@@ -6,8 +6,8 @@
         nix = import ../hackage/csv-sip-0.1.0-r0-bff4137528af6902b62d70ad3d555ad64b2177daa28052db805033011909c5c1.nix;
         revNum = 0;
         sha256 = "bff4137528af6902b62d70ad3d555ad64b2177daa28052db805033011909c5c1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

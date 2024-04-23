@@ -21,7 +21,7 @@
       synopsis = "Soccer simulation";
       description = "Soccer simulation with simple graphics and highly configurable AI";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Rasenschach" = {
@@ -42,9 +42,9 @@
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

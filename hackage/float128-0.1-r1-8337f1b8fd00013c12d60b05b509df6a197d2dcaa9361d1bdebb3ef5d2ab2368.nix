@@ -21,14 +21,14 @@
       synopsis = "FFI bindings for C _Float128";
       description = "This package provides a Float128 type, wrapping C's _Float128, which\nis typically a IEEE quadruple precision binary floating point type.\nIt does not provide a CFloat128 type usable for FFI without wrapping in Ptr,\nthis needs to be done by the compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

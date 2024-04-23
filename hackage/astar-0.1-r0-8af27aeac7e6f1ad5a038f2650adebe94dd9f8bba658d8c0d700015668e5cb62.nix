@@ -21,15 +21,15 @@
       synopsis = "General A* search algorithm.";
       description = "This is a data-structure independent implementation of A* search.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."PSQueue" or (errorHandler.buildDepError "PSQueue"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

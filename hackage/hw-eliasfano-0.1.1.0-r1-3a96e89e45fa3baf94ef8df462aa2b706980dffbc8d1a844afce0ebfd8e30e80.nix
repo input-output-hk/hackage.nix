@@ -21,7 +21,7 @@
       synopsis = "Elias-Fano";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-eliasfano" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-eliasfano" or (errorHandler.buildDepError "hw-eliasfano"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-eliasfano-test" = {
           depends = [
@@ -67,13 +67,13 @@
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-eliasfano" or (errorHandler.buildDepError "hw-eliasfano"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-eliasfano" or (errorHandler.buildDepError "hw-eliasfano"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

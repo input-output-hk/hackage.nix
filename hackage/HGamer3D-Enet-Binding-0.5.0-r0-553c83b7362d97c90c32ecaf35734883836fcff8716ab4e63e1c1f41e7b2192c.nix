@@ -21,22 +21,22 @@
       synopsis = "Enet Binding for HGamer3D";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. This package provides the Enet binding.\nHGamer3D-Enet-Binding is available on Windows and Linux.\nThis binding does not claim to have full coverage of Enet\nfunctionality, but only to support what is needed for the\nHGamer3D-Network package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
-          ];
+        ];
         libs = if system.isWindows
           then [
             (pkgs."hg3denet050" or (errorHandler.sysDepError "hg3denet050"))
-            ]
+          ]
           else [
             (pkgs."hg3denet050" or (errorHandler.sysDepError "hg3denet050"))
             (pkgs."enet" or (errorHandler.sysDepError "enet"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

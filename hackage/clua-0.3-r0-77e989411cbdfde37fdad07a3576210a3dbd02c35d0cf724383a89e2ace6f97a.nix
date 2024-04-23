@@ -21,7 +21,7 @@
       synopsis = "C to Lua data wrapper generator";
       description = "Gather enums and packed struct definitions from a C file\nand generate a Lua table that can be used in conjunction\nwith parse-bin.lua to convert between Lua tables and\nbinary data.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clua" = {
@@ -33,9 +33,9 @@
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

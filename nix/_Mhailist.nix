@@ -6,8 +6,8 @@
         nix = import ../hackage/Mhailist-0.0-r0-3f3a8054c9c9f5bde8a9dd520004b3eb02bd0dc97fd17cec680fdeba021b0d6f.nix;
         revNum = 0;
         sha256 = "3f3a8054c9c9f5bde8a9dd520004b3eb02bd0dc97fd17cec680fdeba021b0d6f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

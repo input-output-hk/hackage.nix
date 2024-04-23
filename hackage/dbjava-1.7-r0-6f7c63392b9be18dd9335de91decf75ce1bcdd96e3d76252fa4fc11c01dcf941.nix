@@ -21,7 +21,7 @@
       synopsis = "Decompiler Bytecode Java";
       description = "A serializer and deserializer of Jvm classfile format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dbjava" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cabal file wrapper library";
       description = "Cabal compatibility layer for reading and\nparsing .cabal files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

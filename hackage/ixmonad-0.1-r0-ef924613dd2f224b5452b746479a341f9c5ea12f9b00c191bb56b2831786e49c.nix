@@ -21,15 +21,15 @@
       synopsis = "Indexed monads library";
       description = "see http://dorchard.co.uk/ixmonad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

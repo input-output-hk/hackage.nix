@@ -21,7 +21,7 @@
       synopsis = "Composable Contravariant Comonadic Logging Library";
       description = "The default implementation of logging based on [co-log-core](http://hackage.haskell.org/package/co-log-core).\n\nThe ideas behind this package are described in the following blog post:\n\n* [co-log: Composable Contravariant Combinatorial Comonadic Configurable Convenient Logging](https://kowainik.github.io/posts/2018-09-25-co-log)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "play-colog" = {
           depends = [
@@ -50,52 +50,52 @@
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "concurrent-playground" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."co-log-core" or (errorHandler.buildDepError "co-log-core"))
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
+        };
         "tutorial-intro" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."co-log-core" or (errorHandler.buildDepError "co-log-core"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
+        };
         "tutorial-custom" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."co-log-core" or (errorHandler.buildDepError "co-log-core"))
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       tests = {
         "test-co-log" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
             (hsPkgs."co-log-core" or (errorHandler.buildDepError "co-log-core"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

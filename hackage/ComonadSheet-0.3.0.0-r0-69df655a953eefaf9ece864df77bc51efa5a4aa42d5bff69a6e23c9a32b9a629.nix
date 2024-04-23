@@ -21,7 +21,7 @@
       synopsis = "A library for expressing spreadsheet-like computations as the fixed-points of comonads.";
       description = "@ComonadSheet@ is a library for expressing spreadsheet-like computations with absolute and relative references, using fixed-points of n-dimensional comonads. For examples of use, see the <https://github.com/kwf/ComonadSheet GitHub page> for the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."IndexedList" or (errorHandler.buildDepError "IndexedList"))
           (hsPkgs."Tape" or (errorHandler.buildDepError "Tape"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

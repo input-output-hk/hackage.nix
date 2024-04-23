@@ -21,7 +21,7 @@
       synopsis = "hoauth2";
       description = "Haskell OAuth2 authentication.\n\nTested following services\n\n* google web oauth: <https://developers.google.com/accounts/docs/OAuth2WebServer>\n\n* weibo oauth2: <http://open.weibo.com/wiki/Oauth2>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring-show" or (errorHandler.buildDepError "bytestring-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

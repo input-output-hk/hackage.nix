@@ -21,7 +21,7 @@
       synopsis = "zifter-hlint";
       description = "zifter-hlint";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."zifter" or (errorHandler.buildDepError "zifter"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

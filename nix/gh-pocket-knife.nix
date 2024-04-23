@@ -6,8 +6,8 @@
         nix = import ../hackage/gh-pocket-knife-0.1.0.0-r0-690c5f4bf33af132e6b9359fd240bcecbb9785e581e5b5475b6449f1aa6729f7.nix;
         revNum = 0;
         sha256 = "690c5f4bf33af132e6b9359fd240bcecbb9785e581e5b5475b6449f1aa6729f7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

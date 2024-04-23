@@ -21,15 +21,15 @@
       synopsis = "Random shuffle implementation.";
       description = "Random shuffle implementation, on immutable lists.\nBased on `perfect shuffle' implementation by Oleg Kiselyov,\navailable on http://okmij.org/ftp/Haskell/perfect-shuffle.txt";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

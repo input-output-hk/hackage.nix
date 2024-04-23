@@ -21,7 +21,7 @@
       synopsis = "Implements the WebSocket protocol.";
       description = "Implements certain basics of the WebSocket protocol\nas defined at <http://is.gd/eSdLB>, allowing the\ncreation of simple WebSocket-capable servers. Works\nwith Handles and strict ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

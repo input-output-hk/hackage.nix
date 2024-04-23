@@ -21,15 +21,15 @@
       synopsis = "incremental folds";
       description = "`foldl-incremental` allows you to create incremental folds and scans such as moving averages or moving deviations.\n\nIt supplies `Incremental` which represents a state of an exponential moving average calculation, and `incrementalize`, which turns functions into suitable step functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."foldl-incremental" or (errorHandler.buildDepError "foldl-incremental"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."foldl-incremental" or (errorHandler.buildDepError "foldl-incremental"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

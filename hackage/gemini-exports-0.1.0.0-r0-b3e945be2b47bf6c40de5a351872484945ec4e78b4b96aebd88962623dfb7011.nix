@@ -21,7 +21,7 @@
       synopsis = "Generate CSV Exports of Your Gemini Trades, Transfers, & Earn Transactions";
       description = "@gemini-exports@ is a CLI program that queries the Gemini Exchange's API\nfor your Trade History, Transfer History, & Earn History and exports all\nfetched data to a CSV file.\n\nYou can install @gemini-exports@ with Stack: @stack install --resolver\nnightly gemii-exports@. Then run the following to print out your complete\nhistory:\n\n@\n$ gemini-exports -k \\<API_KEY\\> -s \\<API_SECRET\\>\ntime,base-asset,quote-asset,type,description,price,quantity,total,fee,fee-currency,trade-id\n2022-04-20 04:20:00,GUSD,USD,Buy,,1.0,9001.0,9001.0,0.0,USD,900142424242\n@\n\nSee @gemini-exports --help@ for additional options, configuration file\ndetails, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,18 +45,18 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gemini-exports" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gemini-exports" or (errorHandler.buildDepError "gemini-exports"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gemini-exports-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

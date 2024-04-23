@@ -21,7 +21,7 @@
       synopsis = "A first attempt at generalised local search within Haskell, for applications in combinatorial optimisation. ";
       description = "This library operates by representing metaheuristics as generators of solutions, or\nstreams of solutions, which are themselves the result of resolving the interactions of\nother streams of values. The library contains combinators for constructing and\nmanaging these structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."combinatorial-problems" or (errorHandler.buildDepError "combinatorial-problems"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

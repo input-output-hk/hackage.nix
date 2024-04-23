@@ -6,8 +6,8 @@
         nix = import ../hackage/DysFRP-0.1-r0-d14451a5cfb33579ca4c4cd9a2c7a60264510a520e99094c77ed0dc4eddae6d6.nix;
         revNum = 0;
         sha256 = "d14451a5cfb33579ca4c4cd9a2c7a60264510a520e99094c77ed0dc4eddae6d6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

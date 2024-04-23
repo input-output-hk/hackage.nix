@@ -6,8 +6,8 @@
         nix = import ../hackage/star-to-star-contra-1.0-r0-465aac9ac1ffd6e46991d3502be523bd12dd6f0c1ec0b4a56ed7578a3b269099.nix;
         revNum = 0;
         sha256 = "465aac9ac1ffd6e46991d3502be523bd12dd6f0c1ec0b4a56ed7578a3b269099";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

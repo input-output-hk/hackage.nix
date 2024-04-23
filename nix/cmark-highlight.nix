@@ -6,10 +6,10 @@
         nix = import ../hackage/cmark-highlight-0.1.0.0-r0-0144f6396c80a4ba66c9cc463a38de1bfb0c51361988e847f7b9a5a25860c98d.nix;
         revNum = 0;
         sha256 = "0144f6396c80a4ba66c9cc463a38de1bfb0c51361988e847f7b9a5a25860c98d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.2.0.0" = {
     sha256 = "de769cd703d3fcd5d69428477184fad57019db55a71b1315a9bbb54317f0812b";
     revisions = {
@@ -17,13 +17,13 @@
         nix = import ../hackage/cmark-highlight-0.2.0.0-r0-6704c69b0bb147145d6c5a6725243e9b9d99e77dcef86c3566ccbc32c03010cf.nix;
         revNum = 0;
         sha256 = "6704c69b0bb147145d6c5a6725243e9b9d99e77dcef86c3566ccbc32c03010cf";
-        };
+      };
       r1 = {
         nix = import ../hackage/cmark-highlight-0.2.0.0-r1-dc7e93cc25c38bc60b11b29ab721ffa6457e943aa1964a99177625e9d6c8bdfd.nix;
         revNum = 1;
         sha256 = "dc7e93cc25c38bc60b11b29ab721ffa6457e943aa1964a99177625e9d6c8bdfd";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

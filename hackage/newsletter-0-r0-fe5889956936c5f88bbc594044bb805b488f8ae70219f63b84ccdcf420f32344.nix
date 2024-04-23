@@ -21,7 +21,7 @@
       synopsis = "A basic newsletter implimentation, using various backends.";
       description = "This package impliments a webserver that manages mailing list subscripts and provides\ntools to send to said list. Mail sending services are provided by backends like\n<newsletter-mailgun https://hackage.haskell.org/package/newsletter-mailgun>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "newsletter-server" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."newsletter" or (errorHandler.buildDepError "newsletter"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

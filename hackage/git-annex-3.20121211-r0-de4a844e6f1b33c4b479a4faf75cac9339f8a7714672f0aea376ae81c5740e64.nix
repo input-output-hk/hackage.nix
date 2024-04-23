@@ -18,7 +18,7 @@
       pairing = true;
       xmpp = true;
       dns = true;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "git-annex"; version = "3.20121211"; };
@@ -31,7 +31,7 @@
       synopsis = "manage files with git, without checking their contents into git";
       description = "git-annex allows managing files with git, without checking the file\ncontents into git. While that may seem paradoxical, it is useful when\ndealing with files larger than git can currently easily handle, whether due\nto limitations in memory, time, or disk space.\n\nEven without file content tracking, being able to manage files with git,\nmove files around and delete files with versioned directory trees, and use\nbranches and distributed clones, are all very handy reasons to use git. And\nannexed files can co-exist in the same git repository with regularly\nversioned files, which is convenient for maintaining documents, Makefiles,\netc that are associated with annexed files but that benefit from full\nrevision control.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "git-annex" = {
@@ -66,12 +66,12 @@
             (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
-            ] ++ (pkgs.lib).optional (flags.s3) (hsPkgs."hS3" or (errorHandler.buildDepError "hS3"))) ++ (pkgs.lib).optionals (flags.webdav) [
+          ] ++ pkgs.lib.optional (flags.s3) (hsPkgs."hS3" or (errorHandler.buildDepError "hS3"))) ++ pkgs.lib.optionals (flags.webdav) [
             (hsPkgs."DAV" or (errorHandler.buildDepError "DAV"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ]) ++ (pkgs.lib).optional (flags.assistant && !system.isWindows && !system.isSolaris) (hsPkgs."stm" or (errorHandler.buildDepError "stm"))) ++ (pkgs.lib).optional (system.isLinux && flags.inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ (pkgs.lib).optional (system.isLinux && flags.dbus) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ (pkgs.lib).optionals (flags.webapp && flags.assistant) [
+          ]) ++ pkgs.lib.optional (flags.assistant && !system.isWindows && !system.isSolaris) (hsPkgs."stm" or (errorHandler.buildDepError "stm"))) ++ pkgs.lib.optional (system.isLinux && flags.inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ pkgs.lib.optional (system.isLinux && flags.dbus) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ pkgs.lib.optionals (flags.webapp && flags.assistant) [
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
@@ -89,17 +89,17 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ]) ++ (pkgs.lib).optionals (flags.pairing && flags.webapp) [
+          ]) ++ pkgs.lib.optionals (flags.pairing && flags.webapp) [
             (hsPkgs."network-multicast" or (errorHandler.buildDepError "network-multicast"))
             (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
-            ]) ++ (pkgs.lib).optionals (flags.xmpp && flags.assistant) [
+          ]) ++ pkgs.lib.optionals (flags.xmpp && flags.assistant) [
             (hsPkgs."network-protocol-xmpp" or (errorHandler.buildDepError "network-protocol-xmpp"))
             (hsPkgs."gnutls" or (errorHandler.buildDepError "gnutls"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ]) ++ (pkgs.lib).optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs."dns" or (errorHandler.buildDepError "dns"));
+          ]) ++ pkgs.lib.optional (flags.xmpp && flags.assistant && flags.dns) (hsPkgs."dns" or (errorHandler.buildDepError "dns"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -134,9 +134,9 @@
             (hsPkgs."bloomfilter" or (errorHandler.buildDepError "bloomfilter"))
             (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

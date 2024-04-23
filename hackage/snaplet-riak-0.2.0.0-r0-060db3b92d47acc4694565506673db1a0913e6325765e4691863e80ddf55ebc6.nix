@@ -21,7 +21,7 @@
       synopsis = "A Snaplet for the Riak database";
       description = "A Snaplet allowing easy use of the Riak database within\nthe Snap framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."riak" or (errorHandler.buildDepError "riak"))
           (hsPkgs."riak-protobuf" or (errorHandler.buildDepError "riak-protobuf"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

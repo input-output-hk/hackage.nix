@@ -21,23 +21,23 @@
       synopsis = "Sum and Product types and such";
       description = "This package provides scalable composite types with neat syntax.\nAdditionally it provides the strict data-structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
           depends = [
             (hsPkgs."compound-types" or (errorHandler.buildDepError "compound-types"))
             (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

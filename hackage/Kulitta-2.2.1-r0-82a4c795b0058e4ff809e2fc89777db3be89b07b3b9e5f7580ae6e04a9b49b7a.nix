@@ -21,7 +21,7 @@
       synopsis = "Library for automated composition and musical learning";
       description = "Kulitta is a framework for automated composition that can also\nbe configured to run as a standalone AI for generating music\nin a particular style.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."Euterpea" or (errorHandler.buildDepError "Euterpea"))
           (hsPkgs."UISF" or (errorHandler.buildDepError "UISF"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

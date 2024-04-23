@@ -21,7 +21,7 @@
       synopsis = "Simple cryptographic random related types";
       description = "Simple cryptographic random related types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "A comprehensive distance library";
       description = "A corpus of real world distance units and tools for working with them";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

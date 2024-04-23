@@ -21,7 +21,7 @@
       synopsis = "haskell cg (minus) (cairo rendering)";
       description = "cg (minus) library (cairo rendering)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."SG" or (errorHandler.buildDepError "SG"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

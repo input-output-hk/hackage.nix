@@ -21,7 +21,7 @@
       synopsis = "Useful route types for Ema";
       description = "Useful route types for Ema";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."unionmount" or (errorHandler.buildDepError "unionmount"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."url-slug" or (errorHandler.buildDepError "url-slug"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

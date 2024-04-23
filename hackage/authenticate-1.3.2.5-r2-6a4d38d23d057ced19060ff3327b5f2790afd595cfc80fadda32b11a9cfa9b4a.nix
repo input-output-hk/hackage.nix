@@ -21,7 +21,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "Focus is on third-party authentication methods, such as OpenID and BrowserID.\n\nNote: Facebook support is now provided by the fb package: <http://hackage.haskell.org/package/fb>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

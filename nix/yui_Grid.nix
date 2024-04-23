@@ -6,8 +6,8 @@
         nix = import ../hackage/yuiGrid-0.1-r0-f6c04b52fe800bb2b536ce8f3e838fca64d324bbf1e2fc5b96b95e1cdd2cad83.nix;
         revNum = 0;
         sha256 = "f6c04b52fe800bb2b536ce8f3e838fca64d324bbf1e2fc5b96b95e1cdd2cad83";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

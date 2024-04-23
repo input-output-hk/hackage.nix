@@ -21,7 +21,7 @@
       synopsis = "Replicated Data Types (RON-RDT)";
       description = "Replicated Object Notation (RON), data types (RDT), and RON-Schema\n\nExamples: https://github.com/ff-notes/ron/tree/master/examples";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."ron" or (errorHandler.buildDepError "ron"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert textual types through Text without needing O(n^2) instances.";
       description = "Convert textual types through Text without needing O(n^2) instances.\n\nSee the README for more information: <https://github.com/bergmark/through-text/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

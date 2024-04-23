@@ -21,7 +21,7 @@
       synopsis = "Sound synthesis with SuperCollider";
       description = "Sound synthesis with SuperCollider. Start with Vivid.SynthDef";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

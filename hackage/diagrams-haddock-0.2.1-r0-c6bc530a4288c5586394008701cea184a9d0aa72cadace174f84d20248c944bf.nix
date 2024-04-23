@@ -21,7 +21,7 @@
       synopsis = "Preprocessor for embedding diagrams in Haddock documentation";
       description = "diagrams-haddock is a tool for compiling embedded inline\ndiagrams code in Haddock documentation, for an\neasy way to spice up your documentation with\ndiagrams.  Just create some diagrams code using\nspecial markup, run diagrams-haddock, and ensure\nthe resulting image files are installed along\nwith your documentation.  For complete\ndocumentation and examples, see\n<https://github.com/diagrams/diagrams-haddock/blob/master/README.md>.\n\nFor a good example of a package making use of\ndiagrams-haddock, see the diagrams-contrib\npackage\n(<http://hackage.haskell.org/package/diagrams%2Dcontrib>).";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "diagrams-haddock" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "diagrams-haddock-tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."diagrams-haddock" or (errorHandler.buildDepError "diagrams-haddock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

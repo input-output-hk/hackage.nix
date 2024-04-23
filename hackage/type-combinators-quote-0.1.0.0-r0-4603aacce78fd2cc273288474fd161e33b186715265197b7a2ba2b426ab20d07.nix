@@ -21,7 +21,7 @@
       synopsis = "Quasiquoters for the 'type-combinators' package.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."type-combinators" or (errorHandler.buildDepError "type-combinators"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

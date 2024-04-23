@@ -21,7 +21,7 @@
       synopsis = "Datadog scribe for the Katip logging framework";
       description = "See README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

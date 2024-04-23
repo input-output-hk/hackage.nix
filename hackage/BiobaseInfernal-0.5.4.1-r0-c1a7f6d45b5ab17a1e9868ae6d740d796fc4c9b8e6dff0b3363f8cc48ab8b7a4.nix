@@ -21,7 +21,7 @@
       synopsis = "Infernal data structures and tools";
       description = "Provides import and export facilities for Infernal/Rfam data\nformats. We include Stockholm, CM, verbose Infernal results,\nand tabulated Infernal results. Some small tools are included.\n\nThe VerboseHit format is slightly extended to allow simple\nannotations. This extension should be backward-compatible with\nstandard-compliant parsers.\n\n\n\nChanges in 0.5.4.1\n\n* fix-up for VH export\n\n* half-baked CM type (not useful yet)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

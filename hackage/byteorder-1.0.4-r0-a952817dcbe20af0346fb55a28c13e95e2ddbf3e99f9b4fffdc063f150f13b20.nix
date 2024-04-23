@@ -21,11 +21,11 @@
       synopsis = "Exposes the native endianness or byte ordering of the system.";
       description = "This package is for working with the native byte-ordering of\nthe system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

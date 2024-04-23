@@ -21,7 +21,7 @@
       synopsis = "A simple static blog engine";
       description = "A simple static blog engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."gravatar" or (errorHandler.buildDepError "gravatar"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

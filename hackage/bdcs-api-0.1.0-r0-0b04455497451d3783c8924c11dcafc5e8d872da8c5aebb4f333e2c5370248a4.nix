@@ -21,7 +21,7 @@
       synopsis = "BDCS API Server";
       description = "This module provides an API server and library component that works with the BDCS\nproject.  It provides a web interface for clients to create, edit, and delete\nblueprints; to list the contents of the content store; to request composes from\nexisting blueprints; and to fetch the results of composes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -69,22 +69,22 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libgit2-glib-1.0" or (errorHandler.pkgConfDepError "libgit2-glib-1.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bdcs-api-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bdcs-api" or (errorHandler.buildDepError "bdcs-api"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Framework for type-safe, distributed web applications.";
       description = "Framework for quick development of tierless web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,7 +33,7 @@
           (hsPkgs."haste-lib" or (errorHandler.buildDepError "haste-lib"))
           (hsPkgs."haste-prim" or (errorHandler.buildDepError "haste-prim"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optionals (!flags.haste) [
+        ] ++ pkgs.lib.optionals (!flags.haste) [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
@@ -43,8 +43,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

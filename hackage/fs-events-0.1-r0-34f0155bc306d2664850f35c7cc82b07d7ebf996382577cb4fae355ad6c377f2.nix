@@ -21,14 +21,14 @@
       synopsis = "A haskell binding to the FSEvents API";
       description = "A haskell binding to the FSEvents API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         frameworks = [
           (pkgs."CoreServices" or (errorHandler.sysDepError "CoreServices"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

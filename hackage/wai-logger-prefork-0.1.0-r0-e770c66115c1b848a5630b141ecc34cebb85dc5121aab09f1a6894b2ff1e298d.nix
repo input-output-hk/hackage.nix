@@ -21,7 +21,7 @@
       synopsis = "A logging system for preforked WAI apps";
       description = "A logging system for preforked WAI apps";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
           (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

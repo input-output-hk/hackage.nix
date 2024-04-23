@@ -21,7 +21,7 @@
       synopsis = "A quick webapp generator for any file processing tool";
       description = "A quick-and-dirty api generator, inspired from the 'interact' function from\n'Prelude'.\n\n> interactWeb reverse\n\nThis creates a server listening on port 3000.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

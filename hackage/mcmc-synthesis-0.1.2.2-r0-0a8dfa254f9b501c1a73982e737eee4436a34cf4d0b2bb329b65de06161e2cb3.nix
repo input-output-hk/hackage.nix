@@ -21,14 +21,14 @@
       synopsis = "MCMC applied to probabilistic program synthesis";
       description = "A simple implementation of the ideas from \"Stochastic Superoptimization\" which uses a variant of Markov Chain Monte Carlo (MCMC) to synthesize programs based on a set of test cases.\n\"Stochastic Superoptimization\": <http://cs.stanford.edu/people/eschkufz/research/asplos291-schkufza.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

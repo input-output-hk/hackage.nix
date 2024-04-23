@@ -21,7 +21,7 @@
       synopsis = "A class for finite and recursively enumerable types.";
       description = "A class for finite and recursively enumerable types and some helper functions for enumerating them\n\n@\nclass Universe a where universe :: [a]\nclass Universe a => Finite a where universeF :: [a]; universeF = universe\n@\n\nThis also provides instances from @universe-instances-*\" packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."universe-instances-extended" or (errorHandler.buildDepError "universe-instances-extended"))
           (hsPkgs."universe-reverse-instances" or (errorHandler.buildDepError "universe-reverse-instances"))
           (hsPkgs."universe-dependent-sum" or (errorHandler.buildDepError "universe-dependent-sum"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

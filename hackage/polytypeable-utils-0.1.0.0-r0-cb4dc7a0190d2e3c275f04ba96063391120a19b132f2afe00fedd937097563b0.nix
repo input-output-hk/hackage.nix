@@ -21,15 +21,15 @@
       synopsis = "Utilities for polytypeable.";
       description = "Utilities for polytypeable (Typeable for polymorphic types).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."polytypeable" or (errorHandler.buildDepError "polytypeable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell Assembler";
       description = "An assembler framework written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc-binary" or (errorHandler.buildDepError "ghc-binary"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "has" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ghc-binary" or (errorHandler.buildDepError "ghc-binary"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

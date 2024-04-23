@@ -21,7 +21,7 @@
       synopsis = "Automatic inductive functional programmer by systematic search";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -38,11 +38,11 @@
           (hsPkgs."html" or (errorHandler.buildDepError "html"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ (pkgs.lib).optionals (flags.ghcapi && !system.isWindows) [
+        ] ++ pkgs.lib.optionals (flags.ghcapi && !system.isWindows) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ (pkgs.lib).optional (flags.ghc7) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
+        ]) ++ pkgs.lib.optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ pkgs.lib.optional (flags.ghc7) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

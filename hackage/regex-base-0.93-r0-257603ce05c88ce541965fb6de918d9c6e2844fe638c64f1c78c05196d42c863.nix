@@ -21,7 +21,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "Interface API for regex-posix,pcre,parsec,tdfa,dfa";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -31,12 +31,12 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

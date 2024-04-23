@@ -21,7 +21,7 @@
       synopsis = "Utilities related to freedesktop Trash standard.";
       description = "Contains utilities to unrm from trash, purge old files from trash and move files to trash.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fdo-trash" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

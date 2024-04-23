@@ -21,7 +21,7 @@
       synopsis = "High performance, regular, shape polymorphic parallel arrays.";
       description = "Repa provides high performance, regular, multi-dimensional, shape polymorphic\nparallel arrays. All numeric data is stored unboxed. Functions written with\nthe Repa combinators are automatically parallel provided you supply\n+RTS -Nwhatever on the command line when running the program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

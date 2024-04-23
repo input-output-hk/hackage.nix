@@ -6,8 +6,8 @@
         nix = import ../hackage/systemd-ntfy-0.1.0-r0-e9e83abfb405a9b0c30d0a7c35c90f176c62b5707e1eedc844cf34369a9aaf57.nix;
         revNum = 0;
         sha256 = "e9e83abfb405a9b0c30d0a7c35c90f176c62b5707e1eedc844cf34369a9aaf57";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

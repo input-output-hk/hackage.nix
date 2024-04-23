@@ -21,7 +21,7 @@
       synopsis = "Predicative tries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."composition-extra" or (errorHandler.buildDepError "composition-extra"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,19 +45,19 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."composition-extra" or (errorHandler.buildDepError "composition-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "simplevshort" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

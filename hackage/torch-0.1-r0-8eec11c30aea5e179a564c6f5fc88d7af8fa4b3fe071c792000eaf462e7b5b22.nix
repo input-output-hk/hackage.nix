@@ -21,7 +21,7 @@
       synopsis = "Simple unit test library (or framework)";
       description = "Unit test writing and running with writer monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

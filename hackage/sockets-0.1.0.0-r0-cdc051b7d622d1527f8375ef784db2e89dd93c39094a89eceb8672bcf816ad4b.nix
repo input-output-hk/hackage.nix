@@ -21,7 +21,7 @@
       synopsis = "High-level network sockets";
       description = "High-level abstraction for network sockets";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,22 +29,22 @@
           (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sockets-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "macro" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/fordo-0.1-r0-359c6dc71e922648c35d3bbe258c69dae1a1ca550be053aef1cba7c4cd788886.nix;
         revNum = 0;
         sha256 = "359c6dc71e922648c35d3bbe258c69dae1a1ca550be053aef1cba7c4cd788886";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

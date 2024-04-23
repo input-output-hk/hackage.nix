@@ -21,15 +21,15 @@
       synopsis = "Make instance constraints bidirectional";
       description = "This package contains class for bidirectional instances \nand TH methods for generating instances for it.\nSee /README.md/ for more information";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bidirectional-instances" or (errorHandler.buildDepError "bidirectional-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

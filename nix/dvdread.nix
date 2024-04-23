@@ -6,8 +6,8 @@
         nix = import ../hackage/dvdread-0.1-r0-9b6d9b383c1d74ab1562b191e3bbbd1b2a082e9717def3a4da980cd362977131.nix;
         revNum = 0;
         sha256 = "9b6d9b383c1d74ab1562b191e3bbbd1b2a082e9717def3a4da980cd362977131";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,14 +21,14 @@
       synopsis = "Generalizes List functions to MonadPlus etc. and replaces partials and group(By) with NonEmpty equivalents.";
       description = "Generalizes List functions to MonadPlus etc. and replaces partials and group(By) with NonEmpty equivalents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

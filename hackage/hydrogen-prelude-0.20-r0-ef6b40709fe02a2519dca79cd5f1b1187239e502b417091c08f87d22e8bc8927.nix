@@ -21,7 +21,7 @@
       synopsis = "Hydrogen Prelude";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -46,11 +46,11 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.6") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.6") [
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."binary" or (errorHandler.buildDepError "binary"));
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") (hsPkgs."binary" or (errorHandler.buildDepError "binary"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

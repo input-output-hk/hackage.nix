@@ -21,7 +21,7 @@
       synopsis = "Everything.";
       description = "Install some packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."AC-Colour" or (errorHandler.buildDepError "AC-Colour"))
           (hsPkgs."AC-EasyRaster-GTK" or (errorHandler.buildDepError "AC-EasyRaster-GTK"))
           (hsPkgs."AC-HalfInteger" or (errorHandler.buildDepError "AC-HalfInteger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

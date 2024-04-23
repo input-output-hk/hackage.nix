@@ -21,7 +21,7 @@
       synopsis = "A simple Hadoop streaming library";
       description = "A simple Hadoop streaming library based on <https://hackage.haskell.org/package/conduit conduit>,\nuseful for writing mapper and reducer logic in Haskell and running it on AWS Elastic MapReduce,\nAzure HDInsight, GCP Dataproc, and so forth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -41,12 +41,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hadoop-streaming" or (errorHandler.buildDepError "hadoop-streaming"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

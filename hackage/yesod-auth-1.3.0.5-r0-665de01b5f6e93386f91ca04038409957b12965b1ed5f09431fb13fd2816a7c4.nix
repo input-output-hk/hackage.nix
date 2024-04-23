@@ -21,7 +21,7 @@
       synopsis = "Authentication for Yesod.";
       description = "This package provides a pluggable mechanism for allowing users to authenticate with your site. It comes with a number of common plugins, such as OpenID, BrowserID (a.k.a., Mozilla Persona), and email. Other packages are available from Hackage as well. If you've written such an add-on, please notify me so that it can be added to this description.\n\n* <http://hackage.haskell.org/package/yesod-auth-account>: An account authentication plugin for Yesod\n\n* <http://hackage.haskell.org/package/yesod-auth-hashdb>: The HashDB module previously packaged in yesod-auth, now with stronger, but compatible, security.\n\n* <https://github.com/ollieh/yesod-auth-bcrypt/>: An alternative to the HashDB module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,8 +63,8 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

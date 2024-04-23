@@ -21,7 +21,7 @@
       synopsis = "A class for types that can be converted to a hash value";
       description = "This package defines a class, 'Hashable', for types that\ncan be converted to a hash value.  This class\nexists for the benefit of hashing-based data\nstructures.  The package provides instances for\nbasic types and a way to combine hash values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "9"
+        ] ++ (if compiler.isGhc && compiler.version.ge "9"
           then [
             (hsPkgs."ghc-bignum" or (errorHandler.buildDepError "ghc-bignum"))
-            ]
+          ]
           else if flags.integer-gmp
             then [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ]
+            ]
             else [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]);
+            ]);
         buildable = true;
-        };
+      };
       tests = {
         "hashable-tests" = {
           depends = [
@@ -57,17 +57,17 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "hashable-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

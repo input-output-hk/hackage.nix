@@ -21,14 +21,14 @@
       synopsis = "Type equality check";
       description = "This packages provides a type equality check whose implementation\nis basically the one from the HList library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

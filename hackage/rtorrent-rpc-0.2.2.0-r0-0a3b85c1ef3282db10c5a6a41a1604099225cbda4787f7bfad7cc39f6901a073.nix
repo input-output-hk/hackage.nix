@@ -21,7 +21,7 @@
       synopsis = "A library for communicating with RTorrent over its XML-RPC interface.";
       description = "A library for communicating with RTorrent over its XML-RPC interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/mmtl-0.1-r0-92106676de46126127d8ec4c01e6e87c3f80a9e363c048eddaa2f17ff99229c5.nix;
         revNum = 0;
         sha256 = "92106676de46126127d8ec4c01e6e87c3f80a9e363c048eddaa2f17ff99229c5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

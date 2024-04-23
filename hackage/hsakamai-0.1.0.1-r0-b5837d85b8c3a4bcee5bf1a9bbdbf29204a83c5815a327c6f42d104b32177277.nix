@@ -21,7 +21,7 @@
       synopsis = "Akamai API(Edgegrid and Netstorage)";
       description = "Please see the README on GitHub at <https://github.com/junjihashimoto/hsakamai#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "purge" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

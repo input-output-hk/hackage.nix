@@ -21,7 +21,7 @@
       synopsis = "The haskell application server stack + code generation";
       description = "The haskell application server stack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,29 +41,29 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if flags.base4
+        ] ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "happstack" = {
           depends = [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "happstack-tests" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

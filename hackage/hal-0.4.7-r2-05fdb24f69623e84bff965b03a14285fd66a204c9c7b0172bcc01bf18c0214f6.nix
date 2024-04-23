@@ -21,7 +21,7 @@
       synopsis = "A runtime environment for Haskell applications running on AWS Lambda.";
       description = "This library uniquely supports different types of AWS Lambda Handlers for your\nneeds/comfort with advanced Haskell. Instead of exposing a single function\nthat constructs a Lambda, this library exposes many.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hal-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

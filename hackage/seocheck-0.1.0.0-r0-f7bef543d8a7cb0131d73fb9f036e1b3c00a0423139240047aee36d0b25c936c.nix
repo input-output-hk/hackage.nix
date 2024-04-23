@@ -21,7 +21,7 @@
       synopsis = "Check for common SEO mistakes on CI";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,26 +47,26 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "seocheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."seocheck" or (errorHandler.buildDepError "seocheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "seocheck-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."seocheck" or (errorHandler.buildDepError "seocheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

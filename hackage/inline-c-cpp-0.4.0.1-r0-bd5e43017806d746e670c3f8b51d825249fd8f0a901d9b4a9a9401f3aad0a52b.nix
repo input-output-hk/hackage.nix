@@ -21,7 +21,7 @@
       synopsis = "Lets you embed C++ code into Haskell.";
       description = "Utilities to inline C++ code into Haskell using inline-c.  See\ntests for example on how to build.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple inter-process communication through IPCVars.";
       description = "IPCVars allows you to communicate values between forked processes (with\n'forkProcess').  There are several backends possible, with the first\navailable being simple files using POSIX file locking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."ipcvar" or (errorHandler.buildDepError "ipcvar"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A command-line client for hpaste.org";
       description = "HPasteIt is a command-line client for hpaste.org\n\nRun @hpasteit --help@ for usage information and @hpasteit COMMAND --help@ for\ndetailed usage information about a particular command.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpasteit" = {
@@ -36,9 +36,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

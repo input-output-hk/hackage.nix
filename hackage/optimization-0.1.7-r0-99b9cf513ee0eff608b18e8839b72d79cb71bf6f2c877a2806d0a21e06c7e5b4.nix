@@ -21,7 +21,7 @@
       synopsis = "Numerical optimization";
       description = "These are a set of implementations of various numerical optimization\nmethods in Haskell. Note that these implementations were originally\nwritten as part of a class project; while at one point they worked\nno attention has been given to numerical stability or the many other\npotential difficulties of implementing robust numerical\nmethods. That being said, they should serve to succinctly illustrate\na number of optimization techniques from the modern optimization\nliterature.\n\nA deep introduction to optimization can be found in Boyd and Vandenberghe's\n*Convex Optimization* which available freely online,\n(<http://web.stanford.edu/~boyd/cvxbook/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

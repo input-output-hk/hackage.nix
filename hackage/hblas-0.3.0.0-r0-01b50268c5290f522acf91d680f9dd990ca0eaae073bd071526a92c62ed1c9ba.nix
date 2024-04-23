@@ -21,7 +21,7 @@
       synopsis = "Human friendly BLAS and Lapack bindings for Haskell.";
       description = "User friendly, simple bindings to BLAS and Lapack. Easy to extend and use. ";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,20 +29,20 @@
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
-        libs = ((pkgs.lib).optionals (flags.openblas) [
+        ];
+        libs = (pkgs.lib.optionals (flags.openblas) [
           (pkgs."openblas" or (errorHandler.sysDepError "openblas"))
           (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-          ] ++ (pkgs.lib).optionals (system.isWindows && !flags.openblas) [
+        ] ++ pkgs.lib.optionals (system.isWindows && !flags.openblas) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ]) ++ (pkgs.lib).optionals (!system.isWindows && !system.isOsx && !flags.openblas) [
+        ]) ++ pkgs.lib.optionals (!system.isWindows && !system.isOsx && !flags.openblas) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx && !flags.openblas) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx && !flags.openblas) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
+      };
       tests = {
         "unit-testsuite" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hblas" or (errorHandler.buildDepError "hblas"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

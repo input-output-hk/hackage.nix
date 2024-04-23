@@ -21,7 +21,7 @@
       synopsis = "Parser and anlyses for Fortran standards 66, 77, 90.";
       description = "Provides lexing, parsing, and basic analyses of Fortran code covering standards: FORTRAN 66, FORTRAN 77, and Fortran 90. Includes data flow and basic block analysis, a renamer, and type analysis. For example usage, see the 'camfort' project, which uses fortran-src as its front end.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,13 +35,13 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fortran-src" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."fortran-src" or (errorHandler.buildDepError "fortran-src"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

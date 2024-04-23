@@ -21,15 +21,15 @@
       synopsis = "Reading and writing VCD files.";
       description = "Defined by the Verilog standard, VCD (value change dump) is a file format for\ncapturing digital and analog waveforms, typically from HDL simulation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
           (hsPkgs."improve" or (errorHandler.buildDepError "improve"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

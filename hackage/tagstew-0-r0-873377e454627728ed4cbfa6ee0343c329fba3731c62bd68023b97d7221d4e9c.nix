@@ -21,7 +21,7 @@
       synopsis = "Black magic tagsoup";
       description = "Fast alternative HTML decoder for tagsoup";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tagstew" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

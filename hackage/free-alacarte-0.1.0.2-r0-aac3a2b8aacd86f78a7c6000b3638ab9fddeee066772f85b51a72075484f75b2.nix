@@ -21,11 +21,11 @@
       synopsis = "Free monads based on intuitions from the Data types à la Carte.             ";
       description = "Free monads based on intuitions from the Data types à la Carte paper. Combine functors and make embedded DSLs in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

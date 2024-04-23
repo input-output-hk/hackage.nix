@@ -21,16 +21,16 @@
       synopsis = "see README.md";
       description = "Speed up Megaparsec parsing when parsing succeeds";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "faster-megaparsec-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."faster-megaparsec" or (errorHandler.buildDepError "faster-megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

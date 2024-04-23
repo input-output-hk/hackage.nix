@@ -21,7 +21,7 @@
       synopsis = "Write bots for your Slack account, and then go to sleep (because it's so easy and late at night)";
       description = "\nA library for writing <https://slack.com/> Slack chat bots.\n\nA mistake?";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

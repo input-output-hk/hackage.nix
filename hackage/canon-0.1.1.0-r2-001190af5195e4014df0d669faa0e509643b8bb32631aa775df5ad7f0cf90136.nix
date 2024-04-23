@@ -21,7 +21,7 @@
       synopsis = "Massive Number Arithmetic";
       description = "This library allows one to manipulate numbers of practically unlimited size by keeping them in factored \"canonical\" form, where possible.  This original concept has been expanded to support arbitrary integral hyperoperations.  For manipulating sums and differences, there is additional code to factor expressions of special forms.  Please refer to CanonManualTests.hs and the .odp presentation files for usage examples and background.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Scrap Your Boilerplate utilities for the GHC API.";
       description = "Scrap Your Boilerplate utilities for the GHC API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc-syb" or (errorHandler.buildDepError "ghc-syb"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

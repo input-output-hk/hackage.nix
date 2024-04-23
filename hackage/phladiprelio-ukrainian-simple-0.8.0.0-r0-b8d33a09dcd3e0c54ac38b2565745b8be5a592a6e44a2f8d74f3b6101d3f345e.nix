@@ -14,7 +14,7 @@
       identifier = {
         name = "phladiprelio-ukrainian-simple";
         version = "0.8.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A PhLADiPreLiO implementation for Ukrainian that uses hashes";
       description = "It is another project that is based on the similar ideas as [phonetic-languages-simplified-examples-array package](https://hackage.haskell.org/package/phonetic-languages-simplified-examples-array). For documentation for these ideas, see: [PhLADiPreLiO.Ukr.21.pdf](https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Ukr.21.pdf) [PhLADiPreLiO.Eng.21.pdf](https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Eng.21.pdf)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."halfsplit" or (errorHandler.buildDepError "halfsplit"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."rev-scientific" or (errorHandler.buildDepError "rev-scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "phladiprelioUkr" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."halfsplit" or (errorHandler.buildDepError "halfsplit"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."rev-scientific" or (errorHandler.buildDepError "rev-scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

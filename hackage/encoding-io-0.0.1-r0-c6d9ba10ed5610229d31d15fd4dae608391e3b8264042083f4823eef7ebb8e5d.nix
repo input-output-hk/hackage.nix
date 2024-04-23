@@ -21,7 +21,7 @@
       synopsis = "Encoding-aware file I/O.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."chunked-data" or (errorHandler.buildDepError "chunked-data"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

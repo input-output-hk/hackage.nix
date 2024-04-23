@@ -6,8 +6,8 @@
         nix = import ../hackage/quickcheck-enum-instances-0.1.0.0-r0-00fb0308b328b9941d54b32320de5409f5acf55a87ede04daedfee54cdea6ab0.nix;
         revNum = 0;
         sha256 = "00fb0308b328b9941d54b32320de5409f5acf55a87ede04daedfee54cdea6ab0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

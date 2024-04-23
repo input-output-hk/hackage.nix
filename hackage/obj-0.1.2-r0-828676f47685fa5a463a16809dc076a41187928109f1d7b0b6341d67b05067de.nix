@@ -21,7 +21,7 @@
       synopsis = "Reads and writes obj models.";
       description = "Reads and writes obj models.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."Codec-Image-DevIL" or (errorHandler.buildDepError "Codec-Image-DevIL"))
           (hsPkgs."InfixApplicative" or (errorHandler.buildDepError "InfixApplicative"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

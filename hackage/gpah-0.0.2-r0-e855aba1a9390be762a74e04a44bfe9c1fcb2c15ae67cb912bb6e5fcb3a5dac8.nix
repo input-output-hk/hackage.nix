@@ -21,7 +21,7 @@
       synopsis = "Generic Programming Use in Hackage";
       description = "Generic Programming Use in Hackage:";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gpah" = {
@@ -45,9 +45,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

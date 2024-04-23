@@ -21,7 +21,7 @@
       synopsis = "Read quotes from Yahoo Finance API";
       description = "Haskell wrapper for the stock APIs provided by Yahoo Finance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yahoo-finance-api-test" = {
           depends = [
@@ -53,17 +53,17 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yahoo-finance-api-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

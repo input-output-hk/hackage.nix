@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/lens-regex-pcre#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lens-regex-pcre-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

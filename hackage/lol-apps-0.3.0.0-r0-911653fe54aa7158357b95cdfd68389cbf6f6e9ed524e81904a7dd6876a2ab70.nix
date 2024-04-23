@@ -21,7 +21,7 @@
       synopsis = "Lattice-based cryptographic applications using <https://hackage.haskell.org/package/lol lol>.";
       description = "This library contains example cryptographic applications built using <https://hackage.haskell.org/package/lol Lol>, a general-purpose library for ring-based lattice cryptography.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

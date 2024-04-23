@@ -6,8 +6,8 @@
         nix = import ../hackage/ntp-control-0.1-r0-89aaf3596213ab42b23c48006b76b4537155ea03453c7da5d96c508f722dca9f.nix;
         revNum = 0;
         sha256 = "89aaf3596213ab42b23c48006b76b4537155ea03453c7da5d96c508f722dca9f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

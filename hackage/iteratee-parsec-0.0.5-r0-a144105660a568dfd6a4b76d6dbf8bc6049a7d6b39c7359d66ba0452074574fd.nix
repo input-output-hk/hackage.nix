@@ -21,7 +21,7 @@
       synopsis = "Package allowing parsec parser initeratee";
       description = "Package providing instances of Stream in\nIteratee monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

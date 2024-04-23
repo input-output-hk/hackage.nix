@@ -21,15 +21,15 @@
       synopsis = "Utility for drawing attribute grammar pictures with the diagrams package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

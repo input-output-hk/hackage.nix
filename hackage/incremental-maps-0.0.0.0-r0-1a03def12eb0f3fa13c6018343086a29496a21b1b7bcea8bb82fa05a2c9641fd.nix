@@ -21,7 +21,7 @@
       synopsis = "Package for doing incremental computations on maps";
       description = "This package is about incremental computing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."order-maintenance" or (errorHandler.buildDepError "order-maintenance"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "map-tests" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."incremental-maps" or (errorHandler.buildDepError "incremental-maps"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."incremental-maps" or (errorHandler.buildDepError "incremental-maps"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

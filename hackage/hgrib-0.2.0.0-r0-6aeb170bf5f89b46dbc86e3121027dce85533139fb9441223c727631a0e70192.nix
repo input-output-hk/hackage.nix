@@ -21,25 +21,25 @@
       synopsis = "Unofficial bindings for GRIB API";
       description = "Unofficial bindings to ECMWF's GRIB API library for reading WMO\nFM-92 GRIB edition 1 and edition 2 messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."grib_api" or (errorHandler.sysDepError "grib_api")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "get" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hgrib" or (errorHandler.buildDepError "hgrib"))
-            ];
+          ];
           buildable = if !flags.build_examples then false else true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hgrib" or (errorHandler.buildDepError "hgrib"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "NTRIP client.";
       description = "Networked Transport of RTCM via Internet Protocol client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ntrip-client" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."ntrip-client" or (errorHandler.buildDepError "ntrip-client"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

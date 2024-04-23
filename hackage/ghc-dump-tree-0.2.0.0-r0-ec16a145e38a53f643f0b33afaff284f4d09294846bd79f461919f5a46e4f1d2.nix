@@ -21,7 +21,7 @@
       synopsis = "Dump GHC's parsed, renamed, and type checked ASTs";
       description = "Useful for GHC devs or people who want to do something with\nGHC's AST but don't want to hook into the GHC API itself.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghc-dump-tree" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ghc-dump-tree" or (errorHandler.buildDepError "ghc-dump-tree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

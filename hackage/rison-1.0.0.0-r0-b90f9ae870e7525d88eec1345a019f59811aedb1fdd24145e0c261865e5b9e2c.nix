@@ -21,7 +21,7 @@
       synopsis = "Parses and renders RISON strings.";
       description = "Rison gets parsed into and serialized from Aeson Valueobjects. Please see README.md for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."rison" or (errorHandler.buildDepError "rison"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A yesod-auth plugin for LTI 1.3";
       description = "A plugin using <https://hackage.haskell.org/package/lti13>\nto implement IMS Global LTI 1.3 authentication for\nyesod-auth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."jose-jwt" or (errorHandler.buildDepError "jose-jwt"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-lti13-example" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-lti13" or (errorHandler.buildDepError "yesod-auth-lti13"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
       };
-    }
+    };
+  }

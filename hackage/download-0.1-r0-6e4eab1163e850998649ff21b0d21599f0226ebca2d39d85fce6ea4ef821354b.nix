@@ -21,15 +21,15 @@
       synopsis = "High-level file download based on URLs";
       description = "High-level File download based on URLs\n\nDownload content as bytestrings, strings or parsed\ntags, via ftp, http or file protocols.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

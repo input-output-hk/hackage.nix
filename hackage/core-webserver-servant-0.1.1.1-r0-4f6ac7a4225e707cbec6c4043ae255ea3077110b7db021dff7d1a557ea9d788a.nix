@@ -21,7 +21,7 @@
       synopsis = "Interoperability with Servant";
       description = "This is part of a library to help build command-line programs, both tools and\nlonger-running daemons.\n\nThis package in particular adds wrappers around the __servant__ library\ncommonly used for exposing web services APIs and allows your handlers to\nbe written in the Program monad from __core-program__.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

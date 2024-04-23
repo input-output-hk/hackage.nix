@@ -21,11 +21,11 @@
       synopsis = "Type level numbers, vectors, list. This lib needs to be extended.";
       description = "Type level programming library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

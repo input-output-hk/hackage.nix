@@ -21,7 +21,7 @@
       synopsis = "Bindings to VRPN.";
       description = "See \\<<https://github.com/vrpn/vrpn/wiki>\\> for information on VRPN.  This has been tested using VRPN 07.30 on Linux.\n\nIf the VRPN libraries are static and this package is used from Template Haskell, then the package needs to be configured with the QuatStatic flag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -30,13 +30,13 @@
             (pkgs."vrpn" or (errorHandler.sysDepError "vrpn"))
             (pkgs."quat" or (errorHandler.sysDepError "quat"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ]
+          ]
           else [
             (pkgs."vrpn" or (errorHandler.sysDepError "vrpn"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "test-vrpn" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -45,13 +45,13 @@
               (pkgs."vrpn" or (errorHandler.sysDepError "vrpn"))
               (pkgs."quat" or (errorHandler.sysDepError "quat"))
               (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-              ]
+            ]
             else [
               (pkgs."vrpn" or (errorHandler.sysDepError "vrpn"))
               (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

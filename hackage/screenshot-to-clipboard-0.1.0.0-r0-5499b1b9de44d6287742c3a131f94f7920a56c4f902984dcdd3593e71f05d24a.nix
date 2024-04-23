@@ -21,7 +21,7 @@
       synopsis = "Take screenshot and copy it to the system clipboard.";
       description = "This is a small program that shells out to imagemagick to take a screenshot,\nand then uses GTK to copy it to the system clipboard.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "screenshot-to-clipboard" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."screenshot-to-clipboard" or (errorHandler.buildDepError "screenshot-to-clipboard"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

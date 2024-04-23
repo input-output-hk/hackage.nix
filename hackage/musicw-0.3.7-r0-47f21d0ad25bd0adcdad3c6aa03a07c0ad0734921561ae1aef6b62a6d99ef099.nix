@@ -21,7 +21,7 @@
       synopsis = "Sound synthesis library, to be used with GHCJS and Web Audio API";
       description = "A library for sound synthesis, currently targeting GHCJS and the Web Audio API. Used by Inner Ear, Estuary, Punctual and possibly other projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

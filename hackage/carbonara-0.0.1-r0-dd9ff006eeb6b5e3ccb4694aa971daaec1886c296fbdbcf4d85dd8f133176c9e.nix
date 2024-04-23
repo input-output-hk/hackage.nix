@@ -21,7 +21,7 @@
       synopsis = "some spaghetti code ";
       description = "@carbonara@ is a set of handy tools for tuples, database";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

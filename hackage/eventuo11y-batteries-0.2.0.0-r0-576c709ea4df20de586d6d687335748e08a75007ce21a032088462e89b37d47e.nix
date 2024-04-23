@@ -21,7 +21,7 @@
       synopsis = "Grab bag of eventuo11y-enriched functionality";
       description = "Miscellaneous helpers for instrumenting with [eventuo11y](https://hackage.haskell.org/package/eventuo11y) and 3rd-party packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Avro content type for Servant";
       description = "This package lets Servant use Avro for encoding request data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."avro" or (errorHandler.buildDepError "avro"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

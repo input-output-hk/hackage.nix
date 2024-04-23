@@ -21,7 +21,7 @@
       synopsis = "Java class files";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nJava class files\nhttps://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."tickle" or (errorHandler.buildDepError "tickle"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."greplicate" or (errorHandler.buildDepError "greplicate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

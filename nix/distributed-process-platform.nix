@@ -6,8 +6,8 @@
         nix = import ../hackage/distributed-process-platform-0.1.0-r0-7de3b7aee08239ecb3f61fdec7fbed8e3a6d8ee43a0b673865ea43351a6c5463.nix;
         revNum = 0;
         sha256 = "7de3b7aee08239ecb3f61fdec7fbed8e3a6d8ee43a0b673865ea43351a6c5463";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "An extensible log effect using extensible-effects";
       description = "Any help (especially documentation) is very welcome,";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

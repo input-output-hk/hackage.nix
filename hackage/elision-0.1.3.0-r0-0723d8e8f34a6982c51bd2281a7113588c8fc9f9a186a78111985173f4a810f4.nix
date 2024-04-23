@@ -21,7 +21,7 @@
       synopsis = "Arrows with holes.";
       description = "A framework for describing holes in transformations\nand impure computations purely.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elision" or (errorHandler.buildDepError "elision"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

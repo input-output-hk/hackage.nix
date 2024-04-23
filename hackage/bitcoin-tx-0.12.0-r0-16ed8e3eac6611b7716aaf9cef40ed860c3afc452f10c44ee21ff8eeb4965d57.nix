@@ -21,7 +21,7 @@
       synopsis = "Utility functions for manipulating bitcoin transactions";
       description = "This library provides the same functionality as the bitcoin-tx command line\nutility, which was introduced in Bitcoin Core v0.10. These functions are\npure and require no communication with a bitcoin daemon.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
             (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
             (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

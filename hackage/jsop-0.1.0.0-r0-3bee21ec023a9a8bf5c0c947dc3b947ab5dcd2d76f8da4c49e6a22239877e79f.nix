@@ -21,7 +21,7 @@
       synopsis = "Cherry picking in JSON objects";
       description = "Simple single record picking out of nested JSON objects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
           (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

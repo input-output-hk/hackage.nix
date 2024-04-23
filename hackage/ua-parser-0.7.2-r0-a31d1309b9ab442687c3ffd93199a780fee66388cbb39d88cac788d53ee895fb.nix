@@ -21,7 +21,7 @@
       synopsis = "A library for parsing User-Agent strings, official Haskell port of ua-parser";
       description = "Please refer to the git/github README on the project for example usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

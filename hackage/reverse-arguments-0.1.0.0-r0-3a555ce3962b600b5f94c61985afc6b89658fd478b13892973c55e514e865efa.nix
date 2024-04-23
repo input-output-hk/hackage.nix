@@ -21,11 +21,11 @@
       synopsis = "Reverse the arguments of arbitrary functions.";
       description = "This module provides the 'reverseArgs' function which flips\nthe arguments of a function of arbitrary arity. The return\nvalue of the flipped function can not be fully polymorphic\nas this could imply it is a function.\n\nExample:\n\n> myFlip :: (a -> b -> c -> d -> [e]) -> d -> c -> b -> a -> [e]\n> myFlip = reverseArgs\n\nHowever, if you supply a proof (of the form @IsFun a ~ 'False@)\nthat a is not a function, you can also return a polymorphic type.\n\nExample:\n\n> myFlip :: IsFun e ~ 'False => (a -> b -> c -> d -> e) -> d -> c -> b -> a -> e\n> myFlip = reverseArgs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

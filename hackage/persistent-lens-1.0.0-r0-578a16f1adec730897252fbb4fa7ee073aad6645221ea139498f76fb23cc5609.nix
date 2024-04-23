@@ -21,15 +21,15 @@
       synopsis = "lens helpers for persistent.";
       description = "adds an isomorphism from entity to tuple and field lenses on entity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

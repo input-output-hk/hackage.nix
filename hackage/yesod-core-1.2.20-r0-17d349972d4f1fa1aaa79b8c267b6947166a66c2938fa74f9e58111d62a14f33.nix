@@ -21,7 +21,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://www.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and Persistent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -72,9 +72,9 @@
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -105,10 +105,10 @@
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "widgets" = {
           depends = [
@@ -120,9 +120,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

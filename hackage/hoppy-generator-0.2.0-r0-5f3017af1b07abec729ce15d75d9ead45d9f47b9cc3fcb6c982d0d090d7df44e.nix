@@ -21,7 +21,7 @@
       synopsis = "C++ FFI generator - Code generator";
       description = "Hoppy generates Haskell bindings to C++ libraries.\n\nThis package is the code generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

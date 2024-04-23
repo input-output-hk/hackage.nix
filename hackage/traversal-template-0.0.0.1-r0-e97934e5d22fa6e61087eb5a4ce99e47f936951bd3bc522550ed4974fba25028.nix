@@ -21,16 +21,16 @@
       synopsis = "See README for more info";
       description = "See README for more info";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."util" or (errorHandler.buildDepError "util"))
             (hsPkgs."traversal-template" or (errorHandler.buildDepError "traversal-template"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."util" or (errorHandler.buildDepError "util"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."traversal-template" or (errorHandler.buildDepError "traversal-template"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

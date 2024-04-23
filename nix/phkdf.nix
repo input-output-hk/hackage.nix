@@ -6,8 +6,8 @@
         nix = import ../hackage/phkdf-0.0.0.0-r0-4a5d453a6a29accec4bbd76a567178aaa54ded381faf88f9c9fe960de64c26fc.nix;
         revNum = 0;
         sha256 = "4a5d453a6a29accec4bbd76a567178aaa54ded381faf88f9c9fe960de64c26fc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

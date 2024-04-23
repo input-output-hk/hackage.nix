@@ -13,7 +13,7 @@
       bounds-checks = true;
       unsafe-checks = false;
       internal-checks = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "accelerate-cuda"; version = "0.12.1.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Accelerate backend for NVIDIA GPUs";
       description = "This library implements a backend for the Accelerate language instrumented for\nparallel execution on CUDA-capable NVIDIA GPUs.\n\nTo use this backend you need CUDA version 3.x or later installed, which you\ncan find at the NVIDIA Developer Zone.\n\n<http://developer.nvidia.com/cuda-downloads>\n";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,10 +52,10 @@
           (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

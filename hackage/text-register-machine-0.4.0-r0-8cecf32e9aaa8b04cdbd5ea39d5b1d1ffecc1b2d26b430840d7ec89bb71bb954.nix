@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of the 1# Text Register Machine";
       description = "An implementation of Lawrence S. Moss' @1\\#@ language and Text Register Machine (<http://www.indiana.edu/~iulg/trm/>). ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

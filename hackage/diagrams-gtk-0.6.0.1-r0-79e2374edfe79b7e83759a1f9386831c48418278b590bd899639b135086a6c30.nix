@@ -21,7 +21,7 @@
       synopsis = "Backend for rendering diagrams directly to GTK windows";
       description = "An optional add-on to the diagrams-cairo package\nwhich allows rendering diagrams directly to GTK windows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Sharing code for serialization between binary and cereal";
       description = "Sharing code for serialization between binary and cereal";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,22 +39,22 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests || compiler.isGhc && (compiler.version).ge "8")) [
+          depends = pkgs.lib.optionals (!(!flags.test-doctests || compiler.isGhc && compiler.version.ge "8")) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
-          buildable = if !flags.test-doctests || compiler.isGhc && (compiler.version).ge "8"
+          ];
+          buildable = if !flags.test-doctests || compiler.isGhc && compiler.version.ge "8"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

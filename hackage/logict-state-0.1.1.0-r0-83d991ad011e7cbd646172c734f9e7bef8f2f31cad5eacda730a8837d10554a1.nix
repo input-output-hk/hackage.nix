@@ -21,7 +21,7 @@
       synopsis = "Library for logic programming based on haskell package logict";
       description = "Logic programming built on top of part of logict library, in particular for dealing with backtrackable state";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

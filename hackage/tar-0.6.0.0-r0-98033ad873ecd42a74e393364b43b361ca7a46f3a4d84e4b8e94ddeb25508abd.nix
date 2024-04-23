@@ -21,14 +21,14 @@
       synopsis = "Reading, writing and manipulating \".tar\" archive files.";
       description = "This library is for working with \\\"@.tar@\\\" archive files. It\ncan read and write a range of common variations of archive\nformat including V7, POSIX USTAR and GNU formats.\n\nIt provides support for packing and unpacking portable\narchives. This makes it suitable for distribution but not\nbackup because details like file ownership and exact\npermissions are not preserved.\n\nIt also provides features for random access to archive\ncontent using an index.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."tar".components.sublibs.tar-internal or (errorHandler.buildDepError "tar:tar-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "tar-internal" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "9.0") (hsPkgs."bytestring-handle" or (errorHandler.buildDepError "bytestring-handle"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "9.0") (hsPkgs."bytestring-handle" or (errorHandler.buildDepError "bytestring-handle"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Language handling for Snap";
       description = "Language handling for Snap.\n\nSupport for determining the client's prefered language using\nthe Accept-Language header or using suffixes to the requested URI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

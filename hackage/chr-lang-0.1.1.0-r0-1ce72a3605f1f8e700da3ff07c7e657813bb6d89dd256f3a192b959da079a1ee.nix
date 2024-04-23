@@ -21,7 +21,7 @@
       synopsis = "AST + surface language around chr";
       description = "AST + surface language around chr, with executable for parsing and running the evaluator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."chr-pretty" or (errorHandler.buildDepError "chr-pretty"))
           (hsPkgs."chr-data" or (errorHandler.buildDepError "chr-data"))
           (hsPkgs."chr-core" or (errorHandler.buildDepError "chr-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chr-term" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."chr-data" or (errorHandler.buildDepError "chr-data"))
             (hsPkgs."chr-lang" or (errorHandler.buildDepError "chr-lang"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Type safe URLs for Snap";
       description = "Type safe URL generation and routing for Snap using web-routes.\n\nTo get started, run through the tutorial in Snap.Web.Routes.\n\nThis builds on <https://github.com/stepcut/snap-web-routes-demo work>\ndone by Jeremy Shaw. Thanks Jeremy!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

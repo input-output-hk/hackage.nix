@@ -21,15 +21,15 @@
       synopsis = "This package will derive class instance along the data type declaration tree.";
       description = "For a very complex composited data type, you just need to write one deriving declaration instead of writing deriving for each of them. Please see the example in Readme file. You need to use GHC 7.10 or higher GHC version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

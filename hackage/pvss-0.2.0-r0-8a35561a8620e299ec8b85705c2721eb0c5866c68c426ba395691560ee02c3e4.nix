@@ -21,7 +21,7 @@
       synopsis = "Public Verifiable Secret Sharing";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,14 +34,14 @@
           (hsPkgs."cryptonite-openssl" or (errorHandler.buildDepError "cryptonite-openssl"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ] ++ (pkgs.lib).optionals (flags.scrape-bds) [
+        ] ++ pkgs.lib.optionals (flags.scrape-bds) [
           (hsPkgs."mcl" or (errorHandler.buildDepError "mcl"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "8.0"
           then false
           else true;
-        };
+      };
       exes = {
         "pvss-exe" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."pvss" or (errorHandler.buildDepError "pvss"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pvss-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."pvss" or (errorHandler.buildDepError "pvss"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "CLI tools";
       description = "Usful CLI tools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Yam transaction";
       description = "transaction module for yam";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."yam-logger" or (errorHandler.buildDepError "yam-logger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

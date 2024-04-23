@@ -21,7 +21,7 @@
       synopsis = "A general free monad transformer optimized for streaming applications.";
       description = "Stream is an optimized variant of FreeT.\nIt can be used wherever FreeT is used, but is focused\non employment with functors like '((,) a)' which generate\neffectful sequences or \\\"producers\\\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

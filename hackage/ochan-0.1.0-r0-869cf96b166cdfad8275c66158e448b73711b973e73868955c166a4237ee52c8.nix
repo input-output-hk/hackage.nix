@@ -21,7 +21,7 @@
       synopsis = "Owned channels in the Ownership Monad";
       description = "Resource tracking channels that use the rules enforced in the Ownership Monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."oref" or (errorHandler.buildDepError "oref"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."oref" or (errorHandler.buildDepError "oref"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

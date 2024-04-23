@@ -6,8 +6,8 @@
         nix = import ../hackage/strict-ghc-plugin-0.1.1-r0-1cf54ca675ad28580b5cd174854dce39350ebf2e263530558dae2854a3bb7a22.nix;
         revNum = 0;
         sha256 = "1cf54ca675ad28580b5cd174854dce39350ebf2e263530558dae2854a3bb7a22";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

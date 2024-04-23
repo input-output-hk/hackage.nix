@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/andrewthad/primitive-containers>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-sort" or (errorHandler.buildDepError "primitive-sort"))
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "gauge" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

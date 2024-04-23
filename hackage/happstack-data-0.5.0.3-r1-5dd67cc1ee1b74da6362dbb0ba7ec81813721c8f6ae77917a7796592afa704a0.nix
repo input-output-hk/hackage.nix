@@ -21,7 +21,7 @@
       synopsis = "Happstack data manipulation libraries";
       description = "This package provides libraries for:\n\n* Deriving instances for your datatypes.\n\n* Producing default values of Haskell datatypes.\n\n* Normalizing values of Haskell datatypes.\n\n* Marshalling Haskell values to and from XML.\n\n* Marshalling Haskell values to and from HTML forms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -37,21 +37,21 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if flags.base4
+        ] ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ])) ++ [
           (hsPkgs."syb-with-class" or (errorHandler.buildDepError "syb-with-class"))
-          ]) ++ (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
+        ]) ++ pkgs.lib.optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
         buildable = true;
-        };
+      };
       exes = {
         "happstack-data-tests" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

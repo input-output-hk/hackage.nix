@@ -21,7 +21,7 @@
       synopsis = "Forkable monad transformers";
       description = "Provides two classes for modular handling of forking";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

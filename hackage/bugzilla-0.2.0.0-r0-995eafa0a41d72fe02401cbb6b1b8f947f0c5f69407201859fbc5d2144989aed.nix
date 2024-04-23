@@ -21,7 +21,7 @@
       synopsis = "A Haskell interface to the Bugzilla native REST API";
       description = "This package is designed to provide an easy-to-use, typesafe\ninterface to querying Bugzilla from Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bugzilla" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.builddemo then true else false;
-          };
         };
       };
-    }
+    };
+  }

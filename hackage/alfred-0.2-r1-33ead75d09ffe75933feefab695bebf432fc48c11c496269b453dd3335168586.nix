@@ -21,7 +21,7 @@
       synopsis = "utility library for Alfred version 2";
       description = "A utility library for writing workflows for Alfred version 2\n(<http://www.alfredapp.com>). Examples can be found at\n<https://github.com/pa-ba/alfred/tree/master/examples>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

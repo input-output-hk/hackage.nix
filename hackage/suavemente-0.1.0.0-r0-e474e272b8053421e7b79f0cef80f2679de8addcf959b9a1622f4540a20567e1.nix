@@ -21,7 +21,7 @@
       synopsis = "An applicative functor that seamlessly talks to HTML inputs.";
       description = "Please see the README on GitHub at <https://github.com/isovector/suavemente#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "suavemente-exe" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

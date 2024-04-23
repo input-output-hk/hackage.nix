@@ -21,7 +21,7 @@
       synopsis = "Connect to a socket created by ghc-debug-stub and analyse\nthe heap of the debuggee program.";
       description = "Connect to a socket created by ghc-debug-stub and analyse\nthe heap of the debuggee program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."ghc-debug-convention" or (errorHandler.buildDepError "ghc-debug-convention"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

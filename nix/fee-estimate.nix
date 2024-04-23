@@ -6,8 +6,8 @@
         nix = import ../hackage/fee-estimate-0.1.0.0-r0-8c3324b7b58cb0af7d5618f6efb11123a401bdbc9bf15378afcdc4185a7b8740.nix;
         revNum = 0;
         sha256 = "8c3324b7b58cb0af7d5618f6efb11123a401bdbc9bf15378afcdc4185a7b8740";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

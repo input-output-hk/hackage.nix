@@ -21,7 +21,7 @@
       synopsis = "Haskell eBay SDK";
       description = "eBay API wrapper in Haskell.\nSee the git repository for example usages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

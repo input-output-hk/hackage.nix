@@ -21,7 +21,7 @@
       synopsis = "Serialization of Elasticsearch requests and responses";
       description = "This library provides data types for communicating with elasticsearch. It\nalso includes serialization and deserialization functions for these data\ntypes. This library does not include machinery for transport. The user is\nresponsible for using an http client forming the complete requests\n(e.g. setting the Content-Type header).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."unpacked-maybe-text" or (errorHandler.buildDepError "unpacked-maybe-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."unpacked-maybe-text" or (errorHandler.buildDepError "unpacked-maybe-text"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

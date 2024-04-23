@@ -21,16 +21,16 @@
       synopsis = "Multiple Exceptions";
       description = "Exception type that supports reporting multiple exceptions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dlist-nonempty" or (errorHandler.buildDepError "dlist-nonempty"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."multi-except" or (errorHandler.buildDepError "multi-except"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

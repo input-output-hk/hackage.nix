@@ -6,8 +6,8 @@
         nix = import ../hackage/quenya-verb-0.0.1-r0-fbdb863d7d7fb1d623984bcf1f6df191b291efef45681a631b9ed185fbcbd3b6.nix;
         revNum = 0;
         sha256 = "fbdb863d7d7fb1d623984bcf1f6df191b291efef45681a631b9ed185fbcbd3b6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

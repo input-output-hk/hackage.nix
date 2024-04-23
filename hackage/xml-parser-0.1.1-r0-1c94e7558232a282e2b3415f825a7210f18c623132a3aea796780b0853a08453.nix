@@ -21,7 +21,7 @@
       synopsis = "XML parser with informative error-reporting and simple API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-parser" or (errorHandler.buildDepError "xml-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

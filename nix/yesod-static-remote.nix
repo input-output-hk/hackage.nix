@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-static-remote-0.0.0.0-r0-075df36680d31ffef635120b198aaf91dc9bd5d69f244a55cea3fc9f2a9dfbc1.nix;
         revNum = 0;
         sha256 = "075df36680d31ffef635120b198aaf91dc9bd5d69f244a55cea3fc9f2a9dfbc1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

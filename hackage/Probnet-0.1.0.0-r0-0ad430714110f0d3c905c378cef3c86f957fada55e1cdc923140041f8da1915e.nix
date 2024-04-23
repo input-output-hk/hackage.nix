@@ -21,11 +21,11 @@
       synopsis = "geometric extrapolation with error prediction for data sequences prediction";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Depth-typed functor-based trees, both top-down and bottom-up";
       description = "Depth-typed functor-based trees, both top-down and bottom-up";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ShowF" or (errorHandler.buildDepError "ShowF"))
           (hsPkgs."type-unary" or (errorHandler.buildDepError "type-unary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

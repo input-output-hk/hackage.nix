@@ -21,7 +21,7 @@
       synopsis = "UHC utilities";
       description = "General purpose utilities for UHC and related tools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."chr-parse" or (errorHandler.buildDepError "chr-parse"))
           (hsPkgs."chr-data" or (errorHandler.buildDepError "chr-data"))
           (hsPkgs."chr-core" or (errorHandler.buildDepError "chr-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

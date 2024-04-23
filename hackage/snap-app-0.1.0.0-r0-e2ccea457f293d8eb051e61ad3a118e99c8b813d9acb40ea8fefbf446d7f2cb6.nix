@@ -21,7 +21,7 @@
       synopsis = "Simple modules for writing apps with Snap, abstracted from hpaste.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

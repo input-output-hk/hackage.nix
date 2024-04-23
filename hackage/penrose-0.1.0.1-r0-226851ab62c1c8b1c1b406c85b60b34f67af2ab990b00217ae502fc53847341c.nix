@@ -21,7 +21,7 @@
       synopsis = "A system that automatically visualize mathematics";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "penrose" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

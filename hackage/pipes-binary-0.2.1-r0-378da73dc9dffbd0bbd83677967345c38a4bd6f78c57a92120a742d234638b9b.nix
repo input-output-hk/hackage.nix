@@ -21,7 +21,7 @@
       synopsis = "Encode and decode binary streams using the pipes and binary libraries.";
       description = "Encode and decode binary Pipes streams using the @binary@ library.\n\nSee the @NEWS@ file in the source distribution to learn about any\nimportant changes between version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

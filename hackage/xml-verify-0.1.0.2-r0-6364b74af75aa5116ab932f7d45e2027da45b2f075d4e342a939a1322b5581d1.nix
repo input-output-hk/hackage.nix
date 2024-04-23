@@ -21,7 +21,7 @@
       synopsis = "Verifying XML signatures";
       description = "A small library, that calls xmlsec, for verifying XML. It also contains a wrapper for use with HXT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,11 +32,11 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."xmlsec1" or (errorHandler.pkgConfDepError "xmlsec1"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

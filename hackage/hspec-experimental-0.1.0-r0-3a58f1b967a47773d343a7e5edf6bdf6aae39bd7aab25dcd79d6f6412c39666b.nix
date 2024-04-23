@@ -21,7 +21,7 @@
       synopsis = "An experimental DSL for testing on top of Hspec";
       description = "/Note:/ This is experimental!  If you are looking for a\nstable solution for testing Haskell code, try Hspec:\n<http://hspec.github.com/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec-experimental" or (errorHandler.buildDepError "hspec-experimental"))
             (hsPkgs."hspec-meta" or (errorHandler.buildDepError "hspec-meta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

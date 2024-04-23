@@ -21,29 +21,29 @@
       synopsis = "Programmers' time tracker";
       description = "Track time spent on projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "tempus" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tempus-fugit" or (errorHandler.buildDepError "tempus-fugit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tempus-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tempus-fugit" or (errorHandler.buildDepError "tempus-fugit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

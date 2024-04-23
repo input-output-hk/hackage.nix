@@ -21,7 +21,7 @@
       synopsis = "Terminal Emulator written in Haskell, SDL2 Backend";
       description = "See: https://github.com/bitc/hs-term-emulator#readme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-sdl-term-emulator" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-sdl-term-emulator" or (errorHandler.buildDepError "hs-sdl-term-emulator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Use Accessor to access state in transformers State monad";
       description = "Use Accessor to access state in transformers State monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

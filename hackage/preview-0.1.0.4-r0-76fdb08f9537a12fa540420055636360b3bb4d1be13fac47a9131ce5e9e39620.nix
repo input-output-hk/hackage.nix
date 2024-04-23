@@ -21,7 +21,7 @@
       synopsis = "The method of previewing data (instead of wholly show-ing it)";
       description = "The method of previewing data (instead of wholly show-ing it)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."strict-data" or (errorHandler.buildDepError "strict-data"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."util-plus" or (errorHandler.buildDepError "util-plus"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

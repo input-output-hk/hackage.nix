@@ -21,7 +21,7 @@
       synopsis = "Recover run-time type information from the GHC heap";
       description = "The main function in this package is 'classify', which looks\nat the GHC heap to recover type information about arbitrary\nvalues. This makes it possible for example to show any value\n(function 'anythingToString') without having any @Show@\ninstance in scope, though there are other use cases as well.\nFor example, you could use it to define an 'anythingToJSON'\nfunction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-recover-rtti" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Additional functions for regular: arbitrary,\ncoarbitrary, and binary get/put.";
       description = "Additional functions for the regular [1] generic programming library, such\nas arbitrary, coarbitrary, and binary get/put. These are not bundled with the\nlibrary because they introduce dependencies on additional packages.\n\n\\[1] <http://hackage.haskell.org/package/regular>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,10 +29,10 @@
           (hsPkgs."regular" or (errorHandler.buildDepError "regular"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

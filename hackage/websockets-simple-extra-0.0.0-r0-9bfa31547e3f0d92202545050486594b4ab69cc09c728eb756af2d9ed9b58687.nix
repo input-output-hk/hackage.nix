@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/athanclark/websockets-simple-extra#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."websockets-simple" or (errorHandler.buildDepError "websockets-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A general abstraction for manipulating elements of container data structures";
       description = "An API for construction of free-form strategies of access and manipulation of\nelements of arbitrary data structures.\nIt allows to implement efficient composite patterns, e.g.,\na simultaneous update and lookup of an element,\nand even more complex things.\n\nStrategies are meant to be interpreted by the host data structure libraries.\nThus they allow to implement all access and modification patterns of\na data structure with just a single function,\nwhich interprets strategies.\n\nThis library provides pure and monadic interfaces,\nso it supports both immutable and mutable data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

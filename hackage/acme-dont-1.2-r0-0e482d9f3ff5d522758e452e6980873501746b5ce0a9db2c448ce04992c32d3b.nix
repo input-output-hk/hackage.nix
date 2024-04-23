@@ -21,12 +21,12 @@
       synopsis = "A \"don't\" construct";
       description = "The Acme.Dont module provides a @don't@ command, which\nis the opposite of Haskell's built-in @do@.  It is used exactly\nlike the @do@ monadic construct except that, instead of executing\nthe block it controls, it... well... doesn't.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "acme-dont-tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."acme-dont" or (errorHandler.buildDepError "acme-dont"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

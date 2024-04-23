@@ -21,15 +21,15 @@
       synopsis = "Generic programming without too many type classes";
       description = "This library provides a representation build on top of\n`GHC.Generics`, which can be used to describe generic\noperations on a single function, instead of having\neach case defined in an instance of a type class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kind-apply" or (errorHandler.buildDepError "kind-apply"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/macbeth-lib-0.0.12-r0-0550f39ca6649e4548854d1618d2b7a31f0424de66d7e593464de859dac8a864.nix;
         revNum = 0;
         sha256 = "0550f39ca6649e4548854d1618d2b7a31f0424de66d7e593464de859dac8a864";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

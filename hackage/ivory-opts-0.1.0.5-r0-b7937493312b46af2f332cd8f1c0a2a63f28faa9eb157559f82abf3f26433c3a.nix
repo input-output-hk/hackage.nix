@@ -21,7 +21,7 @@
       synopsis = "Ivory compiler optimizations.";
       description = "Ivory compiler optimizations as well as compiler insertions.  Primarily used by backends.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

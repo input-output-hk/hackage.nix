@@ -21,7 +21,7 @@
       synopsis = "Testing framework for Morley.";
       description = "This package provides an eDSL for testing contracts written in Michelson, Morley or Lorentz. These tests can be run on an emulated environment or on a real network.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,9 +63,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cleveland-test" = {
           depends = [
@@ -86,12 +86,12 @@
             (hsPkgs."tasty-hunit-compat" or (errorHandler.buildDepError "tasty-hunit-compat"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

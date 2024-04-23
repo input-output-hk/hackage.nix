@@ -21,7 +21,7 @@
       synopsis = "Write, read, convert audio signals using libsox";
       description = "This is an FFI binding to @libsox@ of the Sox (Sound Exchanger) project\n<http://sox.sourceforge.net/>.\nIt lets write, read and convert audio signals\nin various formats, resolutions, and numbers of channels.\n\nThe package @sox@ has similar functionality\nbut calls the @sox@ shell command.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."sox" or (errorHandler.pkgConfDepError "sox"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

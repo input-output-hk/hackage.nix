@@ -12,7 +12,7 @@
       splitbase = true;
       optimizeadvanced = false;
       buildexamples = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "synthesizer-alsa"; version = "0.5"; };
@@ -25,7 +25,7 @@
       synopsis = "Control synthesizer effects via ALSA/MIDI";
       description = "This package allows to read MIDI events\nand to convert them to control signals\nthat can be used for audio effects.\nAs demonstration there is a keyboard controlled music synthesizer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,22 +44,22 @@
           (hsPkgs."event-list" or (errorHandler.buildDepError "event-list"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "realtimesynth" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "synthicate" = {
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

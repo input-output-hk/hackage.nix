@@ -21,37 +21,37 @@
       synopsis = "Tests for the ALSA audio signal library.";
       description = "Tests for the ALSA audio signal library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "duplex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "play" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "record" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "volume_meter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

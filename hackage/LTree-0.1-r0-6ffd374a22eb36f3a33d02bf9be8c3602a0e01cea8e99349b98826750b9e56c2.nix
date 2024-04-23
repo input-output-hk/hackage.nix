@@ -21,14 +21,14 @@
       synopsis = "Tree with only leaves carrying the data.";
       description = "This Haskell library provides an implementation of\na tree data type with content only in the leaves, and its\ncorresponding transformer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

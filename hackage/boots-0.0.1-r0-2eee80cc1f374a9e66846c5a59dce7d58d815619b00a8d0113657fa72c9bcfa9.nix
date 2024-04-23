@@ -21,7 +21,7 @@
       synopsis = "Boot application by plugins";
       description = "Boot application by using plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."salak-yaml" or (errorHandler.buildDepError "salak-yaml"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "boots-exe" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."salak-yaml" or (errorHandler.buildDepError "salak-yaml"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."salak-yaml" or (errorHandler.buildDepError "salak-yaml"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

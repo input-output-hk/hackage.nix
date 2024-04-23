@@ -21,11 +21,11 @@
       synopsis = "A simple library for representing and minimising DFAs.";
       description = "hDFA provides a simple API for representing and minimizing\ndeterministic finite automata (DFAs) using an explicit representation\n(a transition matrix). It includes a port of the Hopcroft\nminimization algorithm in JFlex to C.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Command line utilities for working with epub files";
       description = "A suite of command-line utilities for creating and manipulating epub book files. Included are: epubmeta, epubname, epubzip";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "epubmeta" = {
@@ -34,9 +34,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "epubname" = {
           depends = [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -47,9 +47,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "epubzip" = {
           depends = [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -60,10 +60,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "epubname-tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

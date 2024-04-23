@@ -21,7 +21,7 @@
       synopsis = "The (bundled) command-line interface for Cabal and Hackage.";
       description = "This is cabal-install with bundled dependencies. Easier to bootstrap.";
       buildType = "Configure";
-      };
+    };
     components = {
       exes = {
         "cabal" = {
@@ -38,10 +38,10 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           libs = [ (pkgs."z" or (errorHandler.sysDepError "z")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

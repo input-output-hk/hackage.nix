@@ -21,16 +21,16 @@
       synopsis = "A class for monads which can fail with an error.";
       description = "A class for monads which can fail with an error.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

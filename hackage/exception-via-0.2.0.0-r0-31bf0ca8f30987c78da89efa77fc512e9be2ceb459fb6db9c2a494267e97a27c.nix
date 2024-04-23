@@ -21,14 +21,14 @@
       synopsis = "DerivingVia for your hierarchical exceptions";
       description = "Please see the README on GitHub at <https://github.com/parsonsmatt/exception-via#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

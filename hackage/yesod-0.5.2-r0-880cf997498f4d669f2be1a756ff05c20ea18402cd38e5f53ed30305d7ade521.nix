@@ -21,7 +21,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://docs.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and web-routes-quasi.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,26 +55,26 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod" = {
           depends = [
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "runtests" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

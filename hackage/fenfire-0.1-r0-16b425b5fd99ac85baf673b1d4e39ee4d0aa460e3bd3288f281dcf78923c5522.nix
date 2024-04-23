@@ -21,7 +21,7 @@
       synopsis = "Graph-based notetaking system";
       description = "Fenfire is a graph-based notetaking system. (We're\nplanning to add a kitchen sink soon.) It is developed\non the channel #fenfire on the Freenode IRC network.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "fenfire" = {
@@ -34,10 +34,10 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."harp" or (errorHandler.buildDepError "harp"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           libs = [ (pkgs."raptor" or (errorHandler.sysDepError "raptor")) ];
           buildable = true;
-          };
+        };
         "functortest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."harp" or (errorHandler.buildDepError "harp"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vobtest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."harp" or (errorHandler.buildDepError "harp"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "darcs2rdf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."harp" or (errorHandler.buildDepError "harp"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

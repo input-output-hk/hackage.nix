@@ -21,7 +21,7 @@
       synopsis = "Generate animated 3d objects in COLLADA";
       description = "Generate a COLLADA file with textures, materials, animations, ...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."SVGPath" or (errorHandler.buildDepError "SVGPath"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Examples" = { buildable = true; }; };
       };
-    }
+      exes = { "Examples" = { buildable = true; }; };
+    };
+  }

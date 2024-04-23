@@ -21,7 +21,7 @@
       synopsis = "Generate servant client library for C#";
       description = "Generate servant client library for C#";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

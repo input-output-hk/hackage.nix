@@ -21,16 +21,16 @@
       synopsis = "Alex is a tool for generating lexical analysers in Haskell";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "alex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

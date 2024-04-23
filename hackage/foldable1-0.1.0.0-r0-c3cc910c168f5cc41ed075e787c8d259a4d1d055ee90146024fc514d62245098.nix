@@ -21,15 +21,15 @@
       synopsis = "Foldable types with at least 1 element";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

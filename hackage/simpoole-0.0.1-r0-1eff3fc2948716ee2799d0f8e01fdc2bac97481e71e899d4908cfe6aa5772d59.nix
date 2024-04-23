@@ -21,7 +21,7 @@
       synopsis = "Simple pool";
       description = "Provides a simple pool implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simpoole-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."simpoole" or (errorHandler.buildDepError "simpoole"))
             (hsPkgs."concurrency" or (errorHandler.buildDepError "concurrency"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

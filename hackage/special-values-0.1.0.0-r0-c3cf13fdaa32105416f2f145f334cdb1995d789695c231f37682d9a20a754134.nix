@@ -21,7 +21,7 @@
       synopsis = "Typeclass providing special values";
       description = "Special values are provided by a SpecialValues typeclass. Those can be used for example by QuickCheck, see quickcheck-special.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."nats" or (errorHandler.buildDepError "nats"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."nats" or (errorHandler.buildDepError "nats"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An opinionated Prelude replacement library";
       description = "This package provides a Prelude that emphasizes reduction of repetitive import boilerplate code for real world haskell programs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

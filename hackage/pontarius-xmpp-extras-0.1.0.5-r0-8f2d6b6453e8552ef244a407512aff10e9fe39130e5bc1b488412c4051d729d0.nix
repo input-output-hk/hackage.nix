@@ -21,7 +21,7 @@
       synopsis = "XEPs implementation on top of pontarius-xmpp";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-iotdeviceadvisor-2.0-r0-62c960b40a76d717fd6c670e487199f1128a6fe243d5fd27ea09e3b69b187ea9.nix;
         revNum = 0;
         sha256 = "62c960b40a76d717fd6c670e487199f1128a6fe243d5fd27ea09e3b69b187ea9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

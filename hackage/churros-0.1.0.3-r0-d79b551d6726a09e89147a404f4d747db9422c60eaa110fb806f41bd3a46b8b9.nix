@@ -21,7 +21,7 @@
       synopsis = "Channel/Arrow based streaming computation library.";
       description = "The Churro library takes an opinionated approach to streaming\nby focusing on IO processes and allowing different transport\noptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "churros-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

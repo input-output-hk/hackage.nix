@@ -21,16 +21,16 @@
       synopsis = "Dependency Injection library for Haskell";
       description = "Dependency Injection library for Haskell to allow powerful unit testing and mocking (compile-time type-checked)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."compose-ltr" or (errorHandler.buildDepError "compose-ltr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-di-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."compose-ltr" or (errorHandler.buildDepError "compose-ltr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

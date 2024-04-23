@@ -21,7 +21,7 @@
       synopsis = "Display efficiently the state of the local environment";
       description = "Meant to gather in a fast manner all the information you want from your local\nenvironment (like git status, python venv, terraform workspace, ...).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "envstatus" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."envstatus" or (errorHandler.buildDepError "envstatus"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "envstatus-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
             (hsPkgs."PyF" or (errorHandler.buildDepError "PyF"))
             (hsPkgs."envstatus" or (errorHandler.buildDepError "envstatus"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

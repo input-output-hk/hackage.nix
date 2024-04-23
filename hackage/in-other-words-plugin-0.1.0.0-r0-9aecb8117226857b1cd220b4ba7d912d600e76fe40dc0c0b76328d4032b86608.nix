@@ -21,7 +21,7 @@
       synopsis = "Disambiguate obvious uses of effects when using in-other-words.";
       description = "Please see the README on GitHub at <https://github.com/KingoftheHomeless/in-other-words-plugin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."in-other-words" or (errorHandler.buildDepError "in-other-words"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "in-other-words-plugin-test" = {
           depends = [
@@ -47,12 +47,12 @@
             (hsPkgs."in-other-words-plugin" or (errorHandler.buildDepError "in-other-words-plugin"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

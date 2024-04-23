@@ -21,7 +21,7 @@
       synopsis = "A 100-year language inspired by Kernel, JSON, Clojure, Arc and science.";
       description = "Octopus is a highly dynamic programming language with an astounding (I think)\npower-to-weight ratio (expressivity-to-complexity). With just a handful of\nsimple primitives, Octopus provides a complete programming environment. Its\nmain focus is on complete programmer control, not on performance or static\nanalysis. While the user can shoot themselves, the most natural methods will\nbe the most reasonable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."hexpr" or (errorHandler.buildDepError "hexpr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "octopus" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."hexpr" or (errorHandler.buildDepError "hexpr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library for Fedora distribution versions";
       description = "This library provides the Dist and Branch datatypes\nand various associated metadata functions for\nRed Hat distributions (Fedora, EPEL, RHEL) needed for\npackaging development and building.\nIt uses current release data from Fedora PDC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pdc" or (errorHandler.buildDepError "pdc"))
           (hsPkgs."cached-json-file" or (errorHandler.buildDepError "cached-json-file"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

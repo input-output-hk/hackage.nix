@@ -21,7 +21,7 @@
       synopsis = "Indexed functors, monads and comonads that require extensions to Haskell98";
       description = "Indexed functors, monads and comonads that require extensiosn to Haskell98";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

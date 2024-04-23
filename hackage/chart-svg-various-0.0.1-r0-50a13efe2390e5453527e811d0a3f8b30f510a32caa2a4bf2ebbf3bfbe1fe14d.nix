@@ -21,7 +21,7 @@
       synopsis = "See readme.md";
       description = "See readme.md for description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,19 +43,19 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chart-svg-various" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
             (hsPkgs."chart-svg-various" or (errorHandler.buildDepError "chart-svg-various"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
             (hsPkgs."chart-svg-various" or (errorHandler.buildDepError "chart-svg-various"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

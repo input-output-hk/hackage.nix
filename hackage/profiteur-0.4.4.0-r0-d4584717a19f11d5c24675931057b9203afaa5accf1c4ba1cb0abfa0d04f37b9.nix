@@ -21,7 +21,7 @@
       synopsis = "Treemap visualiser for GHC prof files";
       description = "Treemap visualiser for GHC prof files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "profiteur" = {
@@ -37,12 +37,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (flags.embed-data-files) [
+          ] ++ pkgs.lib.optionals (flags.embed-data-files) [
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

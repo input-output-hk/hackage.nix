@@ -21,7 +21,7 @@
       synopsis = "Total recursion schemes.";
       description = "Recursion schemes allow you to separate recursion from your\nbusiness logic – making your own operations simpler, more\nmodular, and less error-prone. This library also provides\ntools for combining your operations in ways that reduce the\nnumber of passes over your data and is designed to\nencourage total (i.e., successfully terminating) functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yaya-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."yaya" or (errorHandler.buildDepError "yaya"))
             (hsPkgs."yaya-hedgehog" or (errorHandler.buildDepError "yaya-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Class/instance management plugin for Haskell Language Server";
       description = "Class/instance management plugin for Haskell Language Server.\nFor usage, please see README of HLS on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,13 +40,13 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.8"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -61,11 +61,11 @@
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.8"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

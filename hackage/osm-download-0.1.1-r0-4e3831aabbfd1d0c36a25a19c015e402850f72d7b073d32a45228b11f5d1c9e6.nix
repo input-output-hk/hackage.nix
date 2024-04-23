@@ -21,7 +21,7 @@
       synopsis = "Download Open Street Map tiles";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."gps" or (errorHandler.buildDepError "gps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

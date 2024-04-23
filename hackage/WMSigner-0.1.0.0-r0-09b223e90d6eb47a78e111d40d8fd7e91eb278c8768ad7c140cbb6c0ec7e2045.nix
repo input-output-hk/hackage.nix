@@ -21,7 +21,7 @@
       synopsis = "WebMoney authentication module";
       description = "Pure haskell implementation WMSigner authentication module.\n\nSimple examples:\n\n> import Data.Digest.Webmoney\n>\n> signer = newSigner (exponent :: [Word8) (modulus :: [Word8])\n>\n> main = do\n>   putStrLn $ signUnsafe signer \"message\" -- static version\n>   sign signer \"message\" >>= putStrLn     -- randomized version";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-WMSigner" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library for parsing and manipulating EPUB files and OPF package data";
       description = "Library for parsing and manipulating EPUB files and OPF package data. An attempt has been made here to thoroughly implement the OPF Package Document specification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-epub-metadata" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

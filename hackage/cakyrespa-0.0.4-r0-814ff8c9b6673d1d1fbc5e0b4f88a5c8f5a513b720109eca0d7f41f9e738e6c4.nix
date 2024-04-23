@@ -21,7 +21,7 @@
       synopsis = "run turtle like LOGO with lojban";
       description = "run turtle like LOGO with lojban\n\nThis is alpha version.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cakyrespa" = {
@@ -30,9 +30,9 @@
             (hsPkgs."lojbanParser" or (errorHandler.buildDepError "lojbanParser"))
             (hsPkgs."gluturtle" or (errorHandler.buildDepError "gluturtle"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

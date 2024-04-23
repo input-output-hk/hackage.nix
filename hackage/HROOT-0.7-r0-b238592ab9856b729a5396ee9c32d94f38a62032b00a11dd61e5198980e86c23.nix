@@ -21,12 +21,12 @@
       synopsis = "Wrapper for ROOT";
       description = "Haskell FFI binding for ROOT  ";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

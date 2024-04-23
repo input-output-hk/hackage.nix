@@ -21,7 +21,7 @@
       synopsis = "Stripped dependencies of ethereum-analyzer.";
       description = "Stripped dependencies of ethereum-analyzer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."nibblestring" or (errorHandler.buildDepError "nibblestring"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

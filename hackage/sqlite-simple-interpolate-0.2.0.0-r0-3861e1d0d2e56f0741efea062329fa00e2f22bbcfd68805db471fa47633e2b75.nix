@@ -21,7 +21,7 @@
       synopsis = "Interpolated SQLite queries via quasiquotation";
       description = "Please see the readme at https://github.com/ruby0b/sqlite-simple-interpolate#readme.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."custom-interpolation" or (errorHandler.buildDepError "custom-interpolation"))
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sqlite-simple-interpolate-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."sqlite-simple-interpolate" or (errorHandler.buildDepError "sqlite-simple-interpolate"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

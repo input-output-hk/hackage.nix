@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the Godot game engine API";
       description = "This package contains Haskell bindings for GDNative and the Godot API. For details and examples, see README.md\nThis is intended to be used with Godot master 91e5782.\nVersioning scheme subject to change as I figure out a good way to maintain a link to the Godot versioning.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "generate" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

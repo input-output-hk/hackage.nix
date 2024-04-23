@@ -21,7 +21,7 @@
       synopsis = "An efficient strict text builder";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,27 +43,27 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "text-benchmark" = {
           depends = [
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "char-benchmark" = {
           depends = [
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

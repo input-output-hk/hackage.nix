@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the Kubernetes API (via swagger-codegen)";
       description = "This project contains haskell bindings to the v1 Kubernetes api generated via <https://github.com/swagger-api/swagger-codegen swagger-codegen>. The client and (mock) server generated use the <https://github.com/haskell-servant/servant servant> project, thanks to the work of <(https://github.com/algas Masahiro Yamauchi>!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "client" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."servant-mock" or (errorHandler.buildDepError "servant-mock"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

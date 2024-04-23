@@ -21,7 +21,7 @@
       synopsis = "Coverage tracking for Hedgehog Property-Based Testing via Tasty.";
       description = "Integrates with the Tasty testing suite and Hedgehog property-based testing and allows you to keep a tally of the inputs that meet certain criteria. Providing the summary on test completion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-hedgehog-coverage-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty-hedgehog-coverage" or (errorHandler.buildDepError "tasty-hedgehog-coverage"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

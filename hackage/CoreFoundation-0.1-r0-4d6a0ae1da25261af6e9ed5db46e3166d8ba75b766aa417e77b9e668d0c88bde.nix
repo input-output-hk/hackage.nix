@@ -21,7 +21,7 @@
       synopsis = "Bindings to Mac OSX's CoreFoundation framework";
       description = "Bindings to Mac OSX's CoreFoudnation framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,14 +37,14 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         frameworks = [
           (pkgs."CoreFoundation" or (errorHandler.sysDepError "CoreFoundation"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

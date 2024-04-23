@@ -6,8 +6,8 @@
         nix = import ../hackage/tahoe-great-black-swamp-testing-0.5.0.0-r0-63389bc45b612bb37ced0cecaa35d0a260f6c44fb3678f2dedb330d7b9b04d4f.nix;
         revNum = 0;
         sha256 = "63389bc45b612bb37ced0cecaa35d0a260f6c44fb3678f2dedb330d7b9b04d4f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

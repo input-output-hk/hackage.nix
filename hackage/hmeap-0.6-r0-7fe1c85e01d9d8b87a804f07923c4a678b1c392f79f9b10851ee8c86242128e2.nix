@@ -21,11 +21,11 @@
       synopsis = "Haskell Meapsoft Parser";
       description = "Parser for the anaylsis files produced by the Meapsoft\nfeature extractor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple and incomplete Excel file parser/writer";
       description = "This library can help you to get some data read and written in Office\nOpen XML xlsx format. Small subset of xlsx format is supported.\n\nFor examples look into \"Codec.Xlsx\".\n\nFormat is covered by ECMA-376 standard:\n<http://www.ecma-international.org/publications/standards/Ecma-376.htm>\n\n4th edition of the standard with the transitional schema is used for this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."binary-search" or (errorHandler.buildDepError "binary-search"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."binary-search" or (errorHandler.buildDepError "binary-search"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "data-test" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

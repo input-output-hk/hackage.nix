@@ -21,11 +21,11 @@
       synopsis = "Monads with an unsaveInterleaveIO-like operation.";
       description = "A type class for monads that have an \\\"unsafeInterleave\\\" operation.\nInstances are provided for IO and both strict and lazy ST.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

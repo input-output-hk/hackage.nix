@@ -21,7 +21,7 @@
       synopsis = "Simple network sockets usage patterns.";
       description = "This module exports functions that abstract simple network socket\nusage patterns.\n\nSee the @changelog.md@ file in the source distribution to learn about any\nimportant changes between versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."socks" or (errorHandler.buildDepError "socks"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

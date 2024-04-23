@@ -21,15 +21,15 @@
       synopsis = "Interfacing between hint and astview";
       description = "see README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

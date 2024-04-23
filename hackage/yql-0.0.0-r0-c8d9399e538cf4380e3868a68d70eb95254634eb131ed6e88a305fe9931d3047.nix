@@ -21,7 +21,7 @@
       synopsis = "A YQL engine to execute Open Data Tables";
       description = "A YQL engine that provides a Haskell backbone\nlibrary for the YQL specification, and a Javascript\nhost environment to execute Open Data Tables.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yql" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."opendatatable" or (errorHandler.buildDepError "opendatatable"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

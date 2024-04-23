@@ -21,7 +21,7 @@
       synopsis = "Generate classy lens field accessors for persistent models";
       description = "Generate classy lens field accessors for persistent models.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "persistent-template-classy-example" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."persistent-template-classy" or (errorHandler.buildDepError "persistent-template-classy"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

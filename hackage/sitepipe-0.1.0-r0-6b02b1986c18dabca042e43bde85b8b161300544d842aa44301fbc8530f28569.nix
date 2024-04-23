@@ -21,7 +21,7 @@
       synopsis = "A simple to understand static site generator";
       description = "A simple to understand static site generator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sitepipe-exe" = {
           depends = [
@@ -60,18 +60,18 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sitepipe-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sitepipe" or (errorHandler.buildDepError "sitepipe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

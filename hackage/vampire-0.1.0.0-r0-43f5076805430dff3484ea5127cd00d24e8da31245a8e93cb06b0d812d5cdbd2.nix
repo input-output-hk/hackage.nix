@@ -21,7 +21,7 @@
       synopsis = "Analyze and visualize expression trees.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vampire" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

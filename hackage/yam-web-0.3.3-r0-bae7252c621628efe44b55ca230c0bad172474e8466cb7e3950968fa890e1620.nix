@@ -21,7 +21,7 @@
       synopsis = "Yam Web";
       description = "base web module for yam";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."yam-config" or (errorHandler.buildDepError "yam-config"))
           (hsPkgs."yam-logger" or (errorHandler.buildDepError "yam-logger"))
           (hsPkgs."yam-transaction" or (errorHandler.buildDepError "yam-transaction"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yam-web" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."yam-logger" or (errorHandler.buildDepError "yam-logger"))
             (hsPkgs."yam-transaction" or (errorHandler.buildDepError "yam-transaction"))
             (hsPkgs."yam-web" or (errorHandler.buildDepError "yam-web"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

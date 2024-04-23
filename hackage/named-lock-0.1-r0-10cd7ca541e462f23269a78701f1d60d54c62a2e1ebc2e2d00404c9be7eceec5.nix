@@ -21,14 +21,14 @@
       synopsis = "A named lock that is created on demand.";
       description = "A named lock that is created on demand.\n\nThis is useful for situations where there is a potentially infinite\nnumber of resources (e.g., database queries) that should not be used\nconcurrently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

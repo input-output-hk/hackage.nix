@@ -21,7 +21,7 @@
       synopsis = "Cabal binary sandboxes.";
       description = "A simple package manager for cabal binary packages. Each\nbinary package is installed to a separate sandbox and can\nbe loaded into the users profile individually.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabin" = {
@@ -34,9 +34,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

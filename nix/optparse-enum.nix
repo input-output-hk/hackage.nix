@@ -6,8 +6,8 @@
         nix = import ../hackage/optparse-enum-1.0.0.0-r0-f3d0f604d339ede9aac6e68e9549f9fade81cb9096650fd354575b7b2f3e83e9.nix;
         revNum = 0;
         sha256 = "f3d0f604d339ede9aac6e68e9549f9fade81cb9096650fd354575b7b2f3e83e9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

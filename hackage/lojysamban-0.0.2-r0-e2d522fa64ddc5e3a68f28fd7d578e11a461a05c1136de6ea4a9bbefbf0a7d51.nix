@@ -21,16 +21,16 @@
       synopsis = "Prolog with lojban";
       description = "Prolog with lojban";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lojysamban" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lojbanParser" or (errorHandler.buildDepError "lojbanParser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

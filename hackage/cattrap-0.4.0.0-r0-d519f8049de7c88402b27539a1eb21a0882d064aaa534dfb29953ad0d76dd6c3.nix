@@ -21,7 +21,7 @@
       synopsis = "Lays out boxes according to the CSS Box Model.";
       description = "Computes where to place e.g. images, paragraphs, containers, tables, etc onscreen given desired amounts of whitespace.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."balkon" or (errorHandler.buildDepError "balkon"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."data-array-byte" or (errorHandler.buildDepError "data-array-byte"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cattrap" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cattrap-argonaut" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,9 +75,9 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."fontconfig-pure" or (errorHandler.buildDepError "fontconfig-pure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cattrap-stylist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,10 +92,10 @@
             (hsPkgs."xml-conduit-stylist" or (errorHandler.buildDepError "xml-conduit-stylist"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."fontconfig-pure" or (errorHandler.buildDepError "fontconfig-pure"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-cattrap" = {
           depends = [
@@ -108,9 +108,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."balkon" or (errorHandler.buildDepError "balkon"))
             (hsPkgs."harfbuzz-pure" or (errorHandler.buildDepError "harfbuzz-pure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

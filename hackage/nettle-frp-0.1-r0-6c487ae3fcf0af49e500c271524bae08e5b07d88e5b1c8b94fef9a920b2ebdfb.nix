@@ -21,7 +21,7 @@
       synopsis = "FRP for controlling networks of OpenFlow switches.";
       description = "This module provides an FRP-based framework for controlling OpenFlow switches.\nThe library is under active development and should still be considered experimental.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."network-data" or (errorHandler.buildDepError "network-data"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

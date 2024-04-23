@@ -21,7 +21,7 @@
       synopsis = "Levenshtein and restricted Damerau-Levenshtein edit distances";
       description = "Optimized edit distances for fuzzy matching, including Levenshtein and restricted Damerau-Levenshtein algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -30,27 +30,27 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "edit-distance-tests" = {
-          depends = (pkgs.lib).optionals (!(!flags.tests)) ([
+          depends = pkgs.lib.optionals (!!flags.tests) ([
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework-quickcheck" or (errorHandler.buildDepError "test-framework-quickcheck"))
-            ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]));
           buildable = if !flags.tests then false else true;
-          };
+        };
         "edit-distance-benchmark" = {
-          depends = (pkgs.lib).optionals (!(!flags.benchmark)) (if flags.splitbase
+          depends = pkgs.lib.optionals (!!flags.benchmark) (if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -60,14 +60,14 @@
               (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ]);
+            ]);
           buildable = if !flags.benchmark then false else true;
-          };
         };
       };
-    }
+    };
+  }

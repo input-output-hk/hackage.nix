@@ -21,7 +21,7 @@
       synopsis = "Use Template Haskell to embed file contents directly.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

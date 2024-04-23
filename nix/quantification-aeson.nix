@@ -6,8 +6,8 @@
         nix = import ../hackage/quantification-aeson-0.8-r0-2211b4da14f9787a18052af277c2e3ef96a2b349e18b33959672047c061d18e6.nix;
         revNum = 0;
         sha256 = "2211b4da14f9787a18052af277c2e3ef96a2b349e18b33959672047c061d18e6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

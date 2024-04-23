@@ -21,7 +21,7 @@
       synopsis = "Logstash backend for katip.";
       description = "Please see the README on GitHub at <https://github.com/mbg/logstash#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

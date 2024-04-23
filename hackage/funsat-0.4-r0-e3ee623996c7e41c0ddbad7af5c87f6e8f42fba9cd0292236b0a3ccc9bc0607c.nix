@@ -21,7 +21,7 @@
       synopsis = "A modern DPLL-style SAT solver";
       description = "Funsat is a native Haskell SAT solver that uses modern techniques for\nsolving SAT instances.  Current features include two-watched literals,\nconflict-directed learning, non-chronological backtracking, a VSIDS-like\ndynamic variable ordering, and restarts.  It is possible to use funsat\nboth as a library and as a standalone executable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
           (hsPkgs."bitset" or (errorHandler.buildDepError "bitset"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "funsat" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."bitset" or (errorHandler.buildDepError "bitset"))
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

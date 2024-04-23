@@ -21,7 +21,7 @@
       synopsis = "A web based environment for learning and tinkering with Haskell";
       description = "Barley is an environment for tinkering with Haskell.  It is a web\nserver with an embedded simple programming environment rendered as\nweb pages.  The environment allows you to easily edit Haskell code\nand quickly see the result of running it.\nBarley includes a tutorial aimed at people with some programming\nand web experience, but it assumes no exposure to Haskell or\nfunctional programming.  The tutorial takes the developer from\ngenerating a simple web page through a modest web application with\ndatabase backend storage.  Along the way it exposes the programmer\nto the basic idioms needed to do simple programming tasks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "barley" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

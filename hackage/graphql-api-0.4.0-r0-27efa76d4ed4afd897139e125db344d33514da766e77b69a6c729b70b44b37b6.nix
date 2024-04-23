@@ -21,7 +21,7 @@
       synopsis = "GraphQL API";
       description = "Implement [GraphQL](http://graphql.org/) servers in Haskell.\n\nProvides a Servant-like type-based API for defining GraphQL schemas and\nimplementing handlers for those schemas.\n\nSee [README.md](https://github.com/haskell-graphql/graphql-api#graphql-api) for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "input-object-example" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."graphql-api" or (errorHandler.buildDepError "graphql-api"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "union-example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -61,10 +61,10 @@
             (hsPkgs."graphql-api" or (errorHandler.buildDepError "graphql-api"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "graphql-api-doctests" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "graphql-api-tests" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -91,10 +91,10 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."graphql-api" or (errorHandler.buildDepError "graphql-api"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

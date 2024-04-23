@@ -21,16 +21,16 @@
       synopsis = "A Python str.format() like formatter";
       description = "Please see the http://hackage.haskell.org/package/vformat";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vformat-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

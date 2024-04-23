@@ -21,7 +21,7 @@
       synopsis = "Provides some basic WAI handlers and middleware.";
       description = "The goal here is to provide common features without many dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
             (hsPkgs."blaze-builder-enumerator" or (errorHandler.buildDepError "blaze-builder-enumerator"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

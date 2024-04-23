@@ -15,7 +15,7 @@
       ghc-prim = true;
       pure-hs = false;
       x87-long-double = true;
-      };
+    };
     package = {
       specVersion = "1.24";
       identifier = { name = "rounded-hw"; version = "0.1.0.0"; };
@@ -31,8 +31,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -43,9 +43,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.x87-long-double && (system.isI386 || system.isX86_64)) (hsPkgs."long-double" or (errorHandler.buildDepError "long-double"))) ++ (pkgs.lib).optional (flags.float128) (hsPkgs."float128" or (errorHandler.buildDepError "float128"));
+        ] ++ pkgs.lib.optional (flags.x87-long-double && (system.isI386 || system.isX86_64)) (hsPkgs."long-double" or (errorHandler.buildDepError "long-double"))) ++ pkgs.lib.optional (flags.float128) (hsPkgs."float128" or (errorHandler.buildDepError "float128"));
         buildable = true;
-        };
+      };
       tests = {
         "rounded-hw-doctests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rounded-hw-test" = {
           depends = ([
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -71,10 +71,10 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."rounded-hw" or (errorHandler.buildDepError "rounded-hw"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.x87-long-double && (system.isI386 || system.isX86_64 && !system.isWindows)) (hsPkgs."long-double" or (errorHandler.buildDepError "long-double"))) ++ (pkgs.lib).optional (flags.float128) (hsPkgs."float128" or (errorHandler.buildDepError "float128"));
+          ] ++ pkgs.lib.optional (flags.x87-long-double && (system.isI386 || system.isX86_64 && !system.isWindows)) (hsPkgs."long-double" or (errorHandler.buildDepError "long-double"))) ++ pkgs.lib.optional (flags.float128) (hsPkgs."float128" or (errorHandler.buildDepError "float128"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "rounded-hw-benchmark" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."rounded-hw" or (errorHandler.buildDepError "rounded-hw"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

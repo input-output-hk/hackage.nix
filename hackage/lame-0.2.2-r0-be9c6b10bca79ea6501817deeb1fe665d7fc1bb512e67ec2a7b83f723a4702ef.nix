@@ -21,7 +21,7 @@
       synopsis = "A high-level binding to the LAME encoder";
       description = "A high-level binding to the LAME encoder.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wave" or (errorHandler.buildDepError "wave"))
-          ];
+        ];
         libs = [ (pkgs."mp3lame" or (errorHandler.sysDepError "mp3lame")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,12 +47,12 @@
             (hsPkgs."lame" or (errorHandler.buildDepError "lame"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

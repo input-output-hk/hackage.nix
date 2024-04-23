@@ -21,7 +21,7 @@
       synopsis = "A Perl 6 Implementation";
       description = "A Perl 6 Implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pugs" = {
@@ -48,9 +48,9 @@
             (hsPkgs."pugs-DrIFT" or (errorHandler.buildDepError "pugs-DrIFT"))
             (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
             (hsPkgs."HsSyck" or (errorHandler.buildDepError "HsSyck"))
-            ] ++ (pkgs.lib).optional (flags.enablereadline) (hsPkgs."readline" or (errorHandler.buildDepError "readline"));
+          ] ++ pkgs.lib.optional (flags.enablereadline) (hsPkgs."readline" or (errorHandler.buildDepError "readline"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

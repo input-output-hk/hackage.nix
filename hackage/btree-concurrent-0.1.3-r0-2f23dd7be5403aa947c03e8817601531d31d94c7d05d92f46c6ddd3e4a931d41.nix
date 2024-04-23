@@ -21,7 +21,7 @@
       synopsis = "A backend agnostic, concurrent BTree";
       description = "A backend agnostic, concurrent BTree";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck-highlevel" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

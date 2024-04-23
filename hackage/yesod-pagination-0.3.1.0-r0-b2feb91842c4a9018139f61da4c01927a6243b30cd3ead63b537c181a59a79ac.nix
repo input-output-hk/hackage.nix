@@ -21,7 +21,7 @@
       synopsis = "Pagination in Yesod";
       description = "Easy pagination for Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-pagination" or (errorHandler.buildDepError "yesod-pagination"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

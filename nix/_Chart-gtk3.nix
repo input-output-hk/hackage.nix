@@ -6,8 +6,8 @@
         nix = import ../hackage/Chart-gtk3-1.9.3-r0-575a3e38547f58f242ce593acbaac453904a63ee50cb9e9a4bb6c19fee84d3dd.nix;
         revNum = 0;
         sha256 = "575a3e38547f58f242ce593acbaac453904a63ee50cb9e9a4bb6c19fee84d3dd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "This package is Zaif Exchange Api wrapper";
       description = "zaif is Bitcoin/Monacoin trading marketplace in Japan, And this package uses zaif exchange api.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,26 +30,26 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hzaif-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hzaif" or (errorHandler.buildDepError "hzaif"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hzaif-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hzaif" or (errorHandler.buildDepError "hzaif"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

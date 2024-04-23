@@ -21,14 +21,14 @@
       synopsis = "Temporary placeholder package.";
       description = "This package will soon contain much more functionality. This is a placeholder until the next release is ready.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

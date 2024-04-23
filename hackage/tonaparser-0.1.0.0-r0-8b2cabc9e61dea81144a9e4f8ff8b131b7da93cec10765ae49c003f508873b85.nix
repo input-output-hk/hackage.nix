@@ -21,7 +21,7 @@
       synopsis = "Scalable way to pass runtime configurations for tonatona";
       description = "Tonaparser provides a way to pass runtime configurations. This library is supposed to be used with @tonatona@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."envy" or (errorHandler.buildDepError "envy"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."say" or (errorHandler.buildDepError "say"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tonaparser-example" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-            ];
+          ];
           buildable = if flags.buildexample then true else false;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."envy" or (errorHandler.buildDepError "envy"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,9 +63,9 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

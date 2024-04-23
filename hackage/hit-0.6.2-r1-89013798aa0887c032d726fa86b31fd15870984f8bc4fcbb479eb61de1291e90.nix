@@ -21,7 +21,7 @@
       synopsis = "Git operations in haskell";
       description = "\nAn haskell implementation of git storage operations, allowing users\nto manipulate git repositories (read and write).\n\nThis implementation is fully interoperable with the main C implementation.\n\nThis is stricly only manipulating the git store (what's inside the .git directory),\nand doesn't do anything with the index or your working directory files.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,12 +41,12 @@
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."patience" or (errorHandler.buildDepError "patience"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Hit" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -60,10 +60,10 @@
             (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."patience" or (errorHandler.buildDepError "patience"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "test-unit" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-repository" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
             (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

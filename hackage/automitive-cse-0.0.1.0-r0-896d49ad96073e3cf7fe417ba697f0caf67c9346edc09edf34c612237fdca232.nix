@@ -21,7 +21,7 @@
       synopsis = "Automotive CSE emulation";
       description = "This package includes Cryptography Security Engine (CSE)\ncodec emulation for automotive things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "exTrue" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."automitive-cse" or (errorHandler.buildDepError "automitive-cse"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

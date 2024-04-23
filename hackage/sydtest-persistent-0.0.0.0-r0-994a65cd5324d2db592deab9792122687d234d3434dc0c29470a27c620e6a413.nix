@@ -21,7 +21,7 @@
       synopsis = "A persistent companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-persistent-sqlite-test" = {
           depends = [
@@ -44,12 +44,12 @@
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."sydtest-persistent" or (errorHandler.buildDepError "sydtest-persistent"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

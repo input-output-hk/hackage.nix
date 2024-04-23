@@ -21,14 +21,14 @@
       synopsis = "Typelevel balanced search trees via a singletonized Data.Map";
       description = "This package provides a typelevel balanced search tree based on an ancient version of Data.Map,\noriginating from the uulib package. I used this older version as it uses relatively \"simple\"\nHaskell, and thus is singletonized relatively straightforwardly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

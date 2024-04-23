@@ -21,7 +21,7 @@
       synopsis = "alias for cabal install from given git repo";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabalg" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

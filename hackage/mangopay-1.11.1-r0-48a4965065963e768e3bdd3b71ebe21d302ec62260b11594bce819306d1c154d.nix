@@ -21,7 +21,7 @@
       synopsis = "Bindings to the MangoPay API";
       description = "This package provides Haskell bindings to the\n<http://www.mangopay.com/ MangoPay> payment provider.\n\nSee also the @yesod-mangopay@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,9 +58,9 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mangopay-passphrase" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mangopay" or (errorHandler.buildDepError "mangopay"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mangopay-tests" = {
           depends = [
@@ -113,9 +113,9 @@
             (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

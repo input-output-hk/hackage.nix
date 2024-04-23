@@ -21,7 +21,7 @@
       synopsis = "Cabal to Description-of-a-Project (DOAP)";
       description = "A converter from Cabal build description files, to\nDescription-of-a-Project (DOAP) RDF files, giving visibility on\nthe semantic web to cabalized Haskell projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2doap" = {
@@ -32,9 +32,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."hsemail" or (errorHandler.buildDepError "hsemail"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

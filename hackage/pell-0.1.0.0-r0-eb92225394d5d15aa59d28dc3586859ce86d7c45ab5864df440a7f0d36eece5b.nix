@@ -21,16 +21,16 @@
       synopsis = "Package to solve the Generalized Pell Equation.";
       description = "Finds all solutions of the generalized Pell Equation.   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-pell" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."cabal-test-quickcheck" or (errorHandler.buildDepError "cabal-test-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

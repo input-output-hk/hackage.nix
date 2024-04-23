@@ -21,7 +21,7 @@
       synopsis = "A game engine for playing werewolf within a chat client";
       description = "This engine is based off of the party game Mafia, also known as Werewolf.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "werewolf" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."werewolf" or (errorHandler.buildDepError "werewolf"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "werewolf-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."werewolf" or (errorHandler.buildDepError "werewolf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

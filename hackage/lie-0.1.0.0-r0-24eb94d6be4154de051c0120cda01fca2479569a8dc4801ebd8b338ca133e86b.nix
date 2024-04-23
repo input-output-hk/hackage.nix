@@ -21,20 +21,20 @@
       synopsis = "Lie Algebras";
       description = "A library that implements Lie Algebras";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "Lie" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lie" or (errorHandler.buildDepError "lie"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

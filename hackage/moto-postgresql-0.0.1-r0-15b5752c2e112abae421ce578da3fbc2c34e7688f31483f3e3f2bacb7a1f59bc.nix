@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL-based migrations registry for moto.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."moto" or (errorHandler.buildDepError "moto"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

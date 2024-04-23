@@ -21,7 +21,7 @@
       synopsis = "Prelude based on protolude for GHC 8 and beyond.";
       description = "A Prelude relpacement for GHC 8 with a focus on building\napplications with Lenses, Machines, and Applicatives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,9 +63,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."zippers" or (errorHandler.buildDepError "zippers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-liblawless" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/freer-simple-random-0.1.0.0-r0-0c6ba8a578353666c72c7056b5dd3bd8d0ae554c259ad25de09bfe46af07f5cc.nix;
         revNum = 0;
         sha256 = "0c6ba8a578353666c72c7056b5dd3bd8d0ae554c259ad25de09bfe46af07f5cc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

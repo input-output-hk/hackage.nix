@@ -21,7 +21,7 @@
       synopsis = "generate static html pages from a WAI application";
       description = "helpers for generating static html pages in a WAI application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

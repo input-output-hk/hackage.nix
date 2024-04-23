@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shh" = {
           depends = [
@@ -56,18 +56,18 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."shh" or (errorHandler.buildDepError "shh"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "shh-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."shh" or (errorHandler.buildDepError "shh"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "shh-tests" = {
           depends = [
@@ -82,12 +82,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."shh" or (errorHandler.buildDepError "shh"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

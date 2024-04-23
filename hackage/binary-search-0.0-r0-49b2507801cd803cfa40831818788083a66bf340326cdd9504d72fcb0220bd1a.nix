@@ -21,11 +21,11 @@
       synopsis = "Binary and exponential searches";
       description = "These modules address the problem of finding the boundary\nof an upward-closed set of integers, using a combination\nof exponential and binary searches.  Variants are provided\nfor searching within bounded and unbounded intervals of\nboth 'Integer' and bounded integral types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

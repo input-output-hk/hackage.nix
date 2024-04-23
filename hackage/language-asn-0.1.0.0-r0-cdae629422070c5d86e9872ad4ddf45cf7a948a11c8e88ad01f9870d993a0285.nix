@@ -21,7 +21,7 @@
       synopsis = "ASN.1 encoding and decoding";
       description = "ASN.1 language implementation. ASN.1 is used tightly with SNMP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

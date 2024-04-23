@@ -21,15 +21,15 @@
       synopsis = "Hashable instances for SDP";
       description = "Hashable support for SDP structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sdp" or (errorHandler.buildDepError "sdp"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

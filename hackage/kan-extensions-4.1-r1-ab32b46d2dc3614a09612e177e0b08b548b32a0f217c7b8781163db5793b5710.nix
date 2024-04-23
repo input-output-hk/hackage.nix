@@ -21,7 +21,7 @@
       synopsis = "Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads";
       description = "Kan extensions, Kan lifts, various forms of the Yoneda lemma, and (co)density (co)monads";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

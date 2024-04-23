@@ -6,8 +6,8 @@
         nix = import ../hackage/processmemory-0.1.0.0-r0-028acc6afb87c6dd08aa1fd894a99393282a701e1bfe577a6e86590d258f6216.nix;
         revNum = 0;
         sha256 = "028acc6afb87c6dd08aa1fd894a99393282a701e1bfe577a6e86590d258f6216";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

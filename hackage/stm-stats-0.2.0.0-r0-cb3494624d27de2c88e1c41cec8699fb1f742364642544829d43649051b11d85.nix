@@ -21,7 +21,7 @@
       synopsis = "retry statistics for STM transactions";
       description = "This module provides functions that can replace calls to\n'atomically' and count how often the transaction was retried\nuntil it succeeded. It can emit warnings when transaction are\nretried more often than a given threshold, and provides global\nstatistics across all transaction.\n\nAs an additional feature, if the transaction was named,\ntransaction-related exceptions such as\n'BlockedIndefinitelyOnSTM' are replaced by variants that\nindicate which transaction caused the exception.\n\n/Changelog:/\n\n[0.2.0.0] (2011-10-10)\n\n[ ] Added 'warnInSTMFunction' to 'TrackSTMConf'.\n\n[ ] Bugfix with the global retry count warning.\n\n[0.1.0.0] (2011-10-09)\n\n[ ] Initial Release";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

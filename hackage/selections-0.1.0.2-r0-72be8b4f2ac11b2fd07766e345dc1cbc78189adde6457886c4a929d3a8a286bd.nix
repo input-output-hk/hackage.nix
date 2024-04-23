@@ -21,15 +21,15 @@
       synopsis = "Combinators for operating with selections over an underlying functor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

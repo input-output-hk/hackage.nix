@@ -21,7 +21,7 @@
       synopsis = "Simple dialog-based user interfaces";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
           (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
           (hsPkgs."open-browser" or (errorHandler.buildDepError "open-browser"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

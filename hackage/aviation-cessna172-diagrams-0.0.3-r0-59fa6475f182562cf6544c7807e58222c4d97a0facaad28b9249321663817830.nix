@@ -21,7 +21,7 @@
       synopsis = "Diagrams for the Cessna 172 aircraft in aviation.";
       description = "Diagrams for the Cessna 172 aircraft in aviation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."aviation-units" or (errorHandler.buildDepError "aviation-units"))
           (hsPkgs."aviation-weight-balance" or (errorHandler.buildDepError "aviation-weight-balance"))
           (hsPkgs."aviation-cessna172-weight-balance" or (errorHandler.buildDepError "aviation-cessna172-weight-balance"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generate Haskell code from a type. Library extracted from djinn package.";
       description = "Djinn uses an theorem prover for intuitionistic propositional logic\nto generate a Haskell expression when given a type.\nThis is a library extracted from Djinn sources.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

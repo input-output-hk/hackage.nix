@@ -21,7 +21,7 @@
       synopsis = "syntax highlighting library";
       description = "Skylighting is a syntax highlighting library with\nsupport for over one hundred languages.  It derives\nits tokenizers from XML syntax definitions used\nby KDE's KSyntaxHighlighting framework, so any\nsyntax supported by that framework can be added.\nAn optional command-line program is provided.\nSkylighting is intended to be the successor to\nhighlighting-kate.\nThis package provides generated syntax modules\nbased on the KDE XML definitions provided by the\n@skylighting-core@ package. As a result this\npackage is licensed under the GPL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."skylighting-core" or (errorHandler.buildDepError "skylighting-core"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "skylighting" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

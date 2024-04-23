@@ -21,14 +21,14 @@
       synopsis = "Frontend support for using http-client with conduit (deprecated)";
       description = "Intended for use by higher-level libraries, such as http-conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

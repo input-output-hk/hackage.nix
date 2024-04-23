@@ -21,11 +21,11 @@
       synopsis = "Functions that should have been in Debug.Trace";
       description = "Functions that should have been in Debug.Trace";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

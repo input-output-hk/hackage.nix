@@ -21,7 +21,7 @@
       synopsis = "Content addressable Haskell package management";
       description = "Replaced by <http://hackage.haskell.org/package/pantry>, and will not get any new releases";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -89,9 +89,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -165,9 +165,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

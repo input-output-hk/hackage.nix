@@ -21,7 +21,7 @@
       synopsis = "Safe embedded C programming.";
       description = "Using GHC type-system extensions, enforces safe low-level programming, while maintaining expressiveness.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

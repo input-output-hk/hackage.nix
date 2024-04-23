@@ -21,7 +21,7 @@
       synopsis = "A pandoc filter to express diagrams inline using the haskell EDSL _diagrams_";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "diagrams-pandoc" = {
@@ -35,9 +35,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

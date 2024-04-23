@@ -21,7 +21,7 @@
       synopsis = "IRC friendly REPL library.";
       description = "IRC friendly REPL library. Similar to mueval, but\nimplemented as a server using the GHC API, making it\nmuch faster than mueval.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

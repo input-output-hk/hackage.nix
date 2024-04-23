@@ -21,7 +21,7 @@
       synopsis = "Deterministic allocation and freeing of scarce resources.";
       description = "A full tutorial is available at <https://www.fpcomplete.com/user/snoyberg/library-documentation/resourcet>.\n\nThis package was originally included with the conduit package, but has existed as a separate package for quite a while. It is fully usable outside of conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

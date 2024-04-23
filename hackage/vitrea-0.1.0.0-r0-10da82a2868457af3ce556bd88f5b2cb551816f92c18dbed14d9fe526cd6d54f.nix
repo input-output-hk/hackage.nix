@@ -21,15 +21,15 @@
       synopsis = "Profunctor optics via the profunctor representation theorem.";
       description = "Pure profunctor lenses and optics via the profunctor representation theorem. All the optics on this library are particular cases of a single unified definition. All the combinators on this library are instantiations of the profunctor optic to a particular Tambara module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

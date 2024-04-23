@@ -21,7 +21,7 @@
       synopsis = "Gene Expression Programming evolutionary algorithm in Haskell";
       description = "Gene Expression Programming evolutionary algorithm implemented\nin Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "HSGEP_Regression" = { buildable = true; }; };
       };
-    }
+      exes = { "HSGEP_Regression" = { buildable = true; }; };
+    };
+  }

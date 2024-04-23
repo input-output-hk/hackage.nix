@@ -21,25 +21,25 @@
       synopsis = "See README for more info";
       description = "See README for more info";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hs-functors" or (errorHandler.buildDepError "hs-functors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-functors" or (errorHandler.buildDepError "hs-functors"))
             (hsPkgs."adjunction" or (errorHandler.buildDepError "adjunction"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hs-functors" or (errorHandler.buildDepError "hs-functors"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."adjunction" or (errorHandler.buildDepError "adjunction"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

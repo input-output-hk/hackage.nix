@@ -21,14 +21,14 @@
       synopsis = "error functions that show file location information";
       description = "Deprecated- now called file-location\nhttp://hackage.haskell.org/package/file-location";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

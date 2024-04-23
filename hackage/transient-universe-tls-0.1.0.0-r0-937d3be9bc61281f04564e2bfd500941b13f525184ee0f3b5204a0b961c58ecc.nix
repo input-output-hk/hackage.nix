@@ -21,7 +21,7 @@
       synopsis = "transient with secure communications";
       description = "Secure communications for transient";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

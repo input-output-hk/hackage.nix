@@ -21,7 +21,7 @@
       synopsis = "GUI library for source code management systems";
       description = "Provides library functions to expose some commonly needed scm tasks to the user.\nUses GTK+ and GTKBuilder to organize and display windows.\nUses vcswrapper to acces the scm functions.\nCurrently git and SVN are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."vcswrapper" or (errorHandler.buildDepError "vcswrapper"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vcsgui" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."vcswrapper" or (errorHandler.buildDepError "vcswrapper"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vcsgui-askpass" = {
           depends = [
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
@@ -63,9 +63,9 @@
             (hsPkgs."vcswrapper" or (errorHandler.buildDepError "vcswrapper"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

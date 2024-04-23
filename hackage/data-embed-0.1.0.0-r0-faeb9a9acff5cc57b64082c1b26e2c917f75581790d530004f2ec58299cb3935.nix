@@ -21,7 +21,7 @@
       synopsis = "Embed files and other binary blobs inside executables without Template Haskell.";
       description = "This package provides a Template Haskell-free alternative to <http://hackage.haskell.org/package/file-embed file-embed>. It provides a versioned, well defined binary format for embedded blobs, as well as library support and command line utilities for manipulating them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "embedtool" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

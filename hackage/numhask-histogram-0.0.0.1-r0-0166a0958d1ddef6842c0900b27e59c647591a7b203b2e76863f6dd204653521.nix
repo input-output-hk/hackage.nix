@@ -21,7 +21,7 @@
       synopsis = "See readme.md";
       description = "See readme.md for description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."numhask-range" or (errorHandler.buildDepError "numhask-range"))
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

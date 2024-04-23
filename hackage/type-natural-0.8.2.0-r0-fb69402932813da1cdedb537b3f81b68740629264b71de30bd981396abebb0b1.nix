@@ -21,7 +21,7 @@
       synopsis = "Type-level natural and proofs of their properties.";
       description = "Type-level natural numbers and proofs of their properties.\n\nVersion 0.6+ supports __GHC 8+ only__.\n\n__Use 0.5.* with ~ GHC 7.10.3__.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
           (hsPkgs."ghc-typelits-presburger" or (errorHandler.buildDepError "ghc-typelits-presburger"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "An imperative integer set written in Haskell.";
       description = "An imperative integer set written in Haskell.\n\nRead <https://deliquus.com/posts/2018-07-30-imperative-programming-in-haskell.html> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "intset-imperative-test-random" = {
           depends = [
@@ -41,17 +41,17 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "intset-imperative-test-fixed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."intset-imperative" or (errorHandler.buildDepError "intset-imperative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "intset-imperative-bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

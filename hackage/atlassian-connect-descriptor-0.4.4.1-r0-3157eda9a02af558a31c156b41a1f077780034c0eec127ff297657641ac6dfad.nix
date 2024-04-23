@@ -14,7 +14,7 @@
       identifier = {
         name = "atlassian-connect-descriptor";
         version = "0.4.4.1";
-        };
+      };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "rmassaioli@atlassian.com";
@@ -24,7 +24,7 @@
       synopsis = "Code that helps you create a valid Atlassian Connect Descriptor.";
       description = "Allows you to generate an Atlassian Connect Descriptor in a typesafe manner and easily convert it\nit into JSON using the fantastic Aeson library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
           (hsPkgs."cases" or (errorHandler.buildDepError "cases"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-descriptor" = {
           depends = [
@@ -55,12 +55,12 @@
             (hsPkgs."cases" or (errorHandler.buildDepError "cases"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

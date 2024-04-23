@@ -21,15 +21,15 @@
       synopsis = "Split a lazy bytestring at boundaries defined by an attoparsec parser";
       description = "Split a lazy bytestring into a lazy list of lazy bytestrings at\nboundaries defined by an attoparsec parser. The result of\na matching parse is included at the beginning of the\nlazy bytestring which begins at that point.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

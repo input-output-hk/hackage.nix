@@ -21,25 +21,25 @@
       synopsis = "Low-level bindings to libgit2";
       description = "Bindings to libgit2 v0.17.0.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smoke" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlibgit2" or (errorHandler.buildDepError "hlibgit2"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

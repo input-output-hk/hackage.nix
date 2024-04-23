@@ -21,7 +21,7 @@
       synopsis = "transform literate source code to Markdown";
       description = "This package provides a library as well as a command-line utility that\ntransforms literate source code to Markdown.  Please see the README on\nGitHub at <https://github.com/ExtremaIS/literatex-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ttc" or (errorHandler.buildDepError "ttc"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "literatex" = {
           depends = [
@@ -42,24 +42,24 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."literatex" or (errorHandler.buildDepError "literatex"))
             (hsPkgs."ttc" or (errorHandler.buildDepError "ttc"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-highlevel" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."literatex" or (errorHandler.buildDepError "literatex"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "example-lowlevel" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."literatex" or (errorHandler.buildDepError "literatex"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "literatex-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ttc" or (errorHandler.buildDepError "ttc"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

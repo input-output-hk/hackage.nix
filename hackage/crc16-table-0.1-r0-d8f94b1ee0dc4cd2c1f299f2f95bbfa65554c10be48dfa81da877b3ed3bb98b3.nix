@@ -21,14 +21,14 @@
       synopsis = "Compute CRC16 checksums using a lookup table.";
       description = "Compute a CRC16 checksum of some bytes using a lookup table.\n\nThis table matches the particular CRC flavor used by Crystalfontz LCDs.  If\nyou can extend this code to suit another application, or have any other improvements,\nplease send me suggestions or patches.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A combinator library on top of Text.JSON";
       description = "A combinator library on top of Text.JSON http://hackage.haskell.org/package/JSONb";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

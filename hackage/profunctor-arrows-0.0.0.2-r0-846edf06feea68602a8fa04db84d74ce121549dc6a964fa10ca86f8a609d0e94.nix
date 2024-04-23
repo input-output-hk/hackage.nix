@@ -21,15 +21,15 @@
       synopsis = "Profunctor arrows";
       description = "Free prearrows and arrows for profunctors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

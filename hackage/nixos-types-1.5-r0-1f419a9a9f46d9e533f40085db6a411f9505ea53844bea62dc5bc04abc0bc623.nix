@@ -21,6 +21,6 @@
       synopsis = "this package is obsolete; see cabal2nix instead";
       description = "This package is obsolete. It's functionality has been merged into <http://hackage.haskell.org/package/cabal2nix>.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

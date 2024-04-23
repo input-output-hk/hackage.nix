@@ -21,7 +21,7 @@
       synopsis = "Sandwich integration with Selenium WebDriver";
       description = "Please see the <https://codedownio.github.io/sandwich/docs/extensions/sandwich-webdriver documentation>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -56,10 +56,10 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-          ] ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."CoreGraphics" or (errorHandler.sysDepError "CoreGraphics"));
+        ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreGraphics" or (errorHandler.sysDepError "CoreGraphics"));
         buildable = true;
-        };
+      };
       exes = {
         "sandwich-webdriver-exe" = {
           depends = ([
@@ -95,11 +95,11 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-            ] ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-          frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."CoreGraphics" or (errorHandler.sysDepError "CoreGraphics"));
+          ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreGraphics" or (errorHandler.sysDepError "CoreGraphics"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "sandwich-webdriver-test" = {
           depends = ([
@@ -136,10 +136,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-            ] ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-          frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."CoreGraphics" or (errorHandler.sysDepError "CoreGraphics"));
+          ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreGraphics" or (errorHandler.sysDepError "CoreGraphics"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

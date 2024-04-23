@@ -21,11 +21,11 @@
       synopsis = "Functional Pearl: Implicit Configurations";
       description = "Implementation of the code in \"Functional Pearl: Implicit Configurations\" by Oleg Kiselyov and Chung-chieh Shan";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library for postmarkapp.com HTTP Api";
       description = "postmark";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."network-api-support" or (errorHandler.buildDepError "network-api-support"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "postmark-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postmark" or (errorHandler.buildDepError "postmark"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.demo then true else false;
-          };
         };
       };
-    }
+    };
+  }

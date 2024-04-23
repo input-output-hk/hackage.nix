@@ -21,15 +21,15 @@
       synopsis = "dimensional wrapper on atmos package";
       description = "1976 US Standard Atmosphere with dimensions from dimensional package.\n\nThis is a thin wrapper on top of the atmos package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."atmos" or (errorHandler.buildDepError "atmos"))
           (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

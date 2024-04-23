@@ -21,14 +21,14 @@
       synopsis = "Tuple functions for composite records.";
       description = "Tuple functions for composite records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

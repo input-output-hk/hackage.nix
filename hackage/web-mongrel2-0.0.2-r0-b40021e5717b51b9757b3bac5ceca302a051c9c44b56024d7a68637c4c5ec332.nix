@@ -21,7 +21,7 @@
       synopsis = "Bindings for the Mongrel2 web server.";
       description = "web-mongrel2 helps you write handlers for different frameworks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."zeromq-haskell" or (errorHandler.buildDepError "zeromq-haskell"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

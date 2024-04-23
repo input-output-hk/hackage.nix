@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the Apache Thrift RPC system";
       description = "Haskell bindings for the Apache Thrift RPC system. Requires the use of the thrift code generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,15 +39,15 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

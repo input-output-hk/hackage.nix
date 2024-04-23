@@ -21,7 +21,7 @@
       synopsis = "A python logging style log library";
       description = "@log4hs@ aims at providing a rich featured logging library for Haskell,\njust like @logging@ for Python and @log4j@ for Java.\n\n\nTo get started, see the sample example in @README.md@ and document in\nhackage.\n\n\nIt's still under development, so be carefull when using it in production\nenvironment.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
           (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "log4hs-test" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
             (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "log4hs-bench" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
             (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

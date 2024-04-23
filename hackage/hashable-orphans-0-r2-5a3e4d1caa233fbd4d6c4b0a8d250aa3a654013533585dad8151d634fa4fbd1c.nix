@@ -21,7 +21,7 @@
       synopsis = "Provides instances missing from Hashable.";
       description = "This package provides instances missing from <http://hackage.haskell.org/package/hashable hashable>, specificly ones for types from <http://hackage.haskell.org/package/time time> ('DiffTime', 'UTCTime') and <http://hackage.haskell.org/package/sorted-list sorted-list> at present.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."sorted-list" or (errorHandler.buildDepError "sorted-list"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

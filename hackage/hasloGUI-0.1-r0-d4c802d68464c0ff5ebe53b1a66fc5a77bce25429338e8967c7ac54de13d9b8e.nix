@@ -21,7 +21,7 @@
       synopsis = "Loan calculator Gtk GUI. Based on haslo (Haskell Loan) library.";
       description = "Example of usage of loan library named Haslo and of wtk-gtk wrapper over gtk.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "HasloGUI" = {
@@ -37,9 +37,9 @@
             (hsPkgs."haslo" or (errorHandler.buildDepError "haslo"))
             (hsPkgs."wtk" or (errorHandler.buildDepError "wtk"))
             (hsPkgs."wtk-gtk" or (errorHandler.buildDepError "wtk-gtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

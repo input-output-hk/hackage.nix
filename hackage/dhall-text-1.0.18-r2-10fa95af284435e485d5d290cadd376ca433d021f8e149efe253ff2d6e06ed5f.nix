@@ -21,7 +21,7 @@
       synopsis = "Template text using Dhall";
       description = "This package provides a @dhall-to-text@ executable that templates text using\nthe Dhall configuration language\n\nThis package is now superseded by the @dhall text@ command from the @dhall@\npackage";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dhall-to-text" = {
@@ -30,9 +30,9 @@
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

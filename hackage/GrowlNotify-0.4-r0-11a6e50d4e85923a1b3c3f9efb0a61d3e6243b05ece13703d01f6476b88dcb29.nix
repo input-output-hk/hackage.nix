@@ -21,7 +21,7 @@
       synopsis = "Notification utility for Growl.";
       description = "Notification utility for Growl.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "growlnotify" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

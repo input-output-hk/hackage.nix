@@ -14,7 +14,7 @@
       identifier = {
         name = "Shpadoinkle-developer-tools";
         version = "0.0.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fresheyeball@protonmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Chrome extension to aide in development";
       description = "A chrome extension to make developing Shpadoinkle applications easier";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "devtools" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

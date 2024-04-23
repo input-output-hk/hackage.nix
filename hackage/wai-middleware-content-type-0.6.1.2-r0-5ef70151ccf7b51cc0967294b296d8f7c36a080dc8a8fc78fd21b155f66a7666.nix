@@ -14,7 +14,7 @@
       identifier = {
         name = "wai-middleware-content-type";
         version = "0.6.1.2";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2018 Athan Clark";
       maintainer = "athan.clark@localcooking.com";
@@ -24,7 +24,7 @@
       synopsis = "Route to different middlewares based on the incoming Accept header.";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/wai-middleware-content-type#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-content-type-test" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."wai-middleware-content-type" or (errorHandler.buildDepError "wai-middleware-content-type"))
             (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

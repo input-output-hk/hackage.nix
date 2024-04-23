@@ -21,7 +21,7 @@
       synopsis = "Package to make APIs";
       description = "Please see the README on GitHub at <https://github.com/schnecki/api-maker#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "api-maker-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

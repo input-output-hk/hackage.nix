@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-panorama-2.0-r0-00ad7953198c260d5a76e9ebcc3a91a358f417c67394355ad9ed77050587806b.nix;
         revNum = 0;
         sha256 = "00ad7953198c260d5a76e9ebcc3a91a358f417c67394355ad9ed77050587806b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

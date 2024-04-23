@@ -21,7 +21,7 @@
       synopsis = "Write grammars, not parsers";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,12 +35,12 @@
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."non-empty-sequence" or (errorHandler.buildDepError "non-empty-sequence"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "newman" = {
-          depends = (pkgs.lib).optionals (!(!flags.executables)) [
+          depends = pkgs.lib.optionals (!!flags.executables) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
@@ -51,11 +51,11 @@
             (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."non-empty-sequence" or (errorHandler.buildDepError "non-empty-sequence"))
-            ];
+          ];
           buildable = if !flags.executables then false else true;
-          };
+        };
         "newmanPretty" = {
-          depends = (pkgs.lib).optionals (!(!flags.executables)) [
+          depends = pkgs.lib.optionals (!!flags.executables) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
@@ -66,9 +66,9 @@
             (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."non-empty-sequence" or (errorHandler.buildDepError "non-empty-sequence"))
-            ];
+          ];
           buildable = if !flags.executables then false else true;
-          };
         };
       };
-    }
+    };
+  }

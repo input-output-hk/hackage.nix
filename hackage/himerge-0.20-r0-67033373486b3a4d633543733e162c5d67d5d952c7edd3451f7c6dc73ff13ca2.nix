@@ -21,7 +21,7 @@
       synopsis = "Haskell Graphical User Interface for Emerge";
       description = "Himerge is a graphical user interface for emerge (Gentoo's Portage system)\nwritten in Haskell using gtk2hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "himerge" = {
@@ -36,9 +36,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."mozembed" or (errorHandler.buildDepError "mozembed"))
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

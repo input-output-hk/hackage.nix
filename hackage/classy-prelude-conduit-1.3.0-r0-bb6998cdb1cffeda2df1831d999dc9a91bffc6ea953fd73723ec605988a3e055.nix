@@ -21,7 +21,7 @@
       synopsis = "classy-prelude together with conduit functions";
       description = "classy-prelude together with conduit functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

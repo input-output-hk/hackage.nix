@@ -21,7 +21,7 @@
       synopsis = "Lighttpd configuration file tools.";
       description = "Lighttpd configuration file tools. Haddock docs are at\n<http://code.haskell.org/~morrow/code/haskell/web/lighttpd-conf/haddock/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."packedstring" or (errorHandler.buildDepError "packedstring"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

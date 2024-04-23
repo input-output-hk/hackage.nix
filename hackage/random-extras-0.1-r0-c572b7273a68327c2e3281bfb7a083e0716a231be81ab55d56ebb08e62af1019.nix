@@ -21,7 +21,7 @@
       synopsis = "Additional functions for random values.";
       description = "Additional functions for random values, based on MonadRandom. Inspired by random-shuffle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Monoid counterparts to some ubiquitous monad transformers";
       description = "Monoid transformers: State, Reader\n\nThere is no Writer transformer.\nIt's vice versa: The Writer monad transforms a monoid to a monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Data exchange between graphic applications";
       description = "Collada is the standard graphics format for data exchange between 3d tools. As well as the file format also its representation as an algebraic data type could be used to make libraries more composable. Please propose changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."tuple-gen" or (errorHandler.buildDepError "tuple-gen"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Haskell 98 monad products";
       description = "Haskell 98 monad products";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

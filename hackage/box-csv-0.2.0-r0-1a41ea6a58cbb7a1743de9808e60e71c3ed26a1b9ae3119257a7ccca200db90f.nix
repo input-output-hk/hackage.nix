@@ -21,7 +21,7 @@
       synopsis = "CSV parsing in a box.";
       description = "CSV parsing using attoparsec and the box library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."box" or (errorHandler.buildDepError "box"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

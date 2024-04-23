@@ -21,7 +21,7 @@
       synopsis = "Various extra monoid-related definitions and utilities";
       description = "Various extra monoid-related definitions and utilities,\nsuch as monoid actions, monoid coproducts, \\\"deletable\\\"\nmonoids, \\\"split\\\" monoids, and \\\"cut\\\" monoids.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

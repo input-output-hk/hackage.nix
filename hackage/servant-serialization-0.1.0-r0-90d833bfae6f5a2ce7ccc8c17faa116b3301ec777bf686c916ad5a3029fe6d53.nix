@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Servant content types and instances for common serialization formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-serialization" or (errorHandler.buildDepError "servant-serialization"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

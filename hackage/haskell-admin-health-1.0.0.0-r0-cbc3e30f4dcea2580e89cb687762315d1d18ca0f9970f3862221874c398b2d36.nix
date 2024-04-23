@@ -21,7 +21,7 @@
       synopsis = "Application Health Component for Haskell Admin";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/haskell-admin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."haskell-admin-core" or (errorHandler.buildDepError "haskell-admin-core"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-admin-health-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/bricks-rendering-0.0.0.4-r0-2c7ea6f84a8cfec0e7aed65d61cf6a4ed85fc40e7a3547c825bc650411d5af92.nix;
         revNum = 0;
         sha256 = "2c7ea6f84a8cfec0e7aed65d61cf6a4ed85fc40e7a3547c825bc650411d5af92";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

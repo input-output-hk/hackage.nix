@@ -21,7 +21,7 @@
       synopsis = "Ascii DAG(Directed acyclic graph) for visualization of dataflow";
       description = "Please see the README on GitHub at <https://github.com/junjihashimoto/stacked-dag#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stacked-dag" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."stacked-dag" or (errorHandler.buildDepError "stacked-dag"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."stacked-dag" or (errorHandler.buildDepError "stacked-dag"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

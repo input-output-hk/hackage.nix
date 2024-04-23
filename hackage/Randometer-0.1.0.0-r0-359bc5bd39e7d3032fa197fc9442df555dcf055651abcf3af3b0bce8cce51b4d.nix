@@ -21,16 +21,16 @@
       synopsis = "Randomness intuition trainer";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "randometer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

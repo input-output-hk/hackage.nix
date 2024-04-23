@@ -21,7 +21,7 @@
       synopsis = "AI of Pylos game with GLUT interface.";
       description = "Pylos is 2 persons turn strategy board game described here: <http://www.boardgamegeek.com/game/1419>.\nhpylos is functional example of AI of pylos with 3D graphic.\nYou can play vs. one of few algorithms that can be customized.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpylos" = {
@@ -32,9 +32,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."EEConfig" or (errorHandler.buildDepError "EEConfig"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

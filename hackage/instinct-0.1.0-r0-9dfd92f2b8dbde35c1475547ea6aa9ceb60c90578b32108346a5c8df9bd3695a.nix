@@ -21,7 +21,7 @@
       synopsis = "Fast artifical neural networks";
       description = "Instinct is a library for fast artifical neural networks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mersenne-random" or (errorHandler.buildDepError "mersenne-random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

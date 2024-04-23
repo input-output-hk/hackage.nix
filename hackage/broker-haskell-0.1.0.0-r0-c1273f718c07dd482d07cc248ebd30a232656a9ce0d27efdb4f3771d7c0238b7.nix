@@ -21,16 +21,16 @@
       synopsis = "Haskell bindings to Broker, Bro's messaging library.";
       description = "Provides Language.Broker, a set of Haskell FFI wrappers around\nthe C-interface to Broker (libbroker), the external messaging\ninterface to Bro, a network security tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."broker" or (errorHandler.sysDepError "broker")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."broker-haskell" or (errorHandler.buildDepError "broker-haskell"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

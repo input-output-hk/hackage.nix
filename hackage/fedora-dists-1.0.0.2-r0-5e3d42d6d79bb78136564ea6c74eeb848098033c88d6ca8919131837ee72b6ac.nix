@@ -21,11 +21,11 @@
       synopsis = "Library for Fedora distribution versions";
       description = "This library provides the Dist datatype and various associated\nmetadata functions for Red Hat distributions (Fedora, EPEL, etc)\nneeded for packaging development and building.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

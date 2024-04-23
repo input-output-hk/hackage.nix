@@ -21,15 +21,15 @@
       synopsis = "Library for reducing the boilerplate involved with sum types";
       description = "Library for reducing the boilerplate involved in creating and manipulating sum types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."sum-type-boilerplate" or (errorHandler.buildDepError "sum-type-boilerplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

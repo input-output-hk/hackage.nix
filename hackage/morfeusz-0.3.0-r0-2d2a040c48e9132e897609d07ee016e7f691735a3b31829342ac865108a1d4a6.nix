@@ -21,7 +21,7 @@
       synopsis = "Bindings to the morphological analyser Morfeusz";
       description = "The library provides bindings to the morphological analyser Morfeusz\n<http://sgjp.pl/morfeusz/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [ (pkgs."morfeusz" or (errorHandler.sysDepError "morfeusz")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

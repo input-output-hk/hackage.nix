@@ -21,7 +21,7 @@
       synopsis = "Fast implementation of the Bech32 encoding format.";
       description = "Please see the README on GitHub at <https://github.com/cardanosolutions/ogmios/tree/master/server/modules/fast-bech32>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -43,13 +43,13 @@
             (hsPkgs."fast-bech32" or (errorHandler.buildDepError "fast-bech32"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "encoding" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."fast-bech32" or (errorHandler.buildDepError "fast-bech32"))
             (hsPkgs."random-bytestring" or (errorHandler.buildDepError "random-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

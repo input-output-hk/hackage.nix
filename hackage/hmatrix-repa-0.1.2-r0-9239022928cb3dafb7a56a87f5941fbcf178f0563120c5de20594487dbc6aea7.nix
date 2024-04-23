@@ -21,7 +21,7 @@
       synopsis = "Adaptors for interoperability between hmatrix and repa";
       description = "Adaptors for interoperability between hmatrix and repa";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

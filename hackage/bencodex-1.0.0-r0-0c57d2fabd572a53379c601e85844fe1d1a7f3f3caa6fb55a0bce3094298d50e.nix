@@ -21,7 +21,7 @@
       synopsis = "Bencodex reader/writer for Haskell";
       description = "Please see the README on GitHub at <https://github.com/dahlia/bencodex-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
@@ -60,9 +60,9 @@
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

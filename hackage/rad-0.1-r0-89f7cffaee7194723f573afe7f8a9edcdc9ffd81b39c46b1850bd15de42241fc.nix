@@ -21,7 +21,7 @@
       synopsis = "Reverse Automatic Differentiation.";
       description = "Reverse-Mode Automatic Differentiation via overloading.\nExistential type \\\"branding\\\" is used to prevent sensitivity confusion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

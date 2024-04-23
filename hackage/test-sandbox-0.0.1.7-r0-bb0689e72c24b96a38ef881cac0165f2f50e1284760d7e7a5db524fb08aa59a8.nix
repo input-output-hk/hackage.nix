@@ -21,7 +21,7 @@
       synopsis = "Sandbox for system tests";
       description = "Allows starting and stopping previously registered programs in a sandboxed environment.\n\nThis package provides functions to easily communicate with the aforementioned processes\nvia TCP or standard input/output.\n\nUsage examples can be found on the github page:\n<http://gree.github.io/haskell-test-sandbox/>\n\nExtensive documentation is available in the source code itself.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

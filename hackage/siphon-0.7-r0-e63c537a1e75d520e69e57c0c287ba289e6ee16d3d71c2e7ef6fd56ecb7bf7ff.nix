@@ -21,7 +21,7 @@
       synopsis = "Encode and decode CSV files";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "siphon-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "HUnit support for rematch";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

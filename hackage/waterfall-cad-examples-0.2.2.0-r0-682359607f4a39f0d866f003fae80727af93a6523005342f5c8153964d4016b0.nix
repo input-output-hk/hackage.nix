@@ -21,7 +21,7 @@
       synopsis = "Examples for Waterfall CAD, a Declarative CAD/Solid Modeling Library";
       description = "Please see the README on GitHub at <https://github.com/joe-warren/opencascade-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."waterfall-cad" or (errorHandler.buildDepError "waterfall-cad"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "waterfall-cad-examples" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."waterfall-cad" or (errorHandler.buildDepError "waterfall-cad"))
             (hsPkgs."waterfall-cad-examples" or (errorHandler.buildDepError "waterfall-cad-examples"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

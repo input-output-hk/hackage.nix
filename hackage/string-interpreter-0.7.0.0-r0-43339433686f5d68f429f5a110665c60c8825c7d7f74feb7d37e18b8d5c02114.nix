@@ -21,7 +21,7 @@
       synopsis = "Is used in the phonetic languages approach (e. g. in the recursive mode).";
       description = "A library that has commonly used functions for the phonetic-languages implementations that deals with String data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
           (hsPkgs."phonetic-languages-permutations-array" or (errorHandler.buildDepError "phonetic-languages-permutations-array"))
           (hsPkgs."phonetic-languages-basis" or (errorHandler.buildDepError "phonetic-languages-basis"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

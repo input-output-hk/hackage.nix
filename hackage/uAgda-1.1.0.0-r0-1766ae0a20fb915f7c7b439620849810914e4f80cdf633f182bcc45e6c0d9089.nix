@@ -21,7 +21,7 @@
       synopsis = "A simplistic dependently-typed language with parametricity.";
       description = "uAgda implements an experimental dependently-typed language\n(and proof assistant by the Curry-Howard isomorphism). The\ngoal of the project is twofold:\n\n1. Experiment with a minimalistic language that is strong enough to\nprogram and reason in.\n\n2. Give a simple implementation of its type-checker (ours is ~200 lines).\n\nSee the share/tutorial directory for how to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uAgda" = {
@@ -34,9 +34,9 @@
             (hsPkgs."BNFC-meta" or (errorHandler.buildDepError "BNFC-meta"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

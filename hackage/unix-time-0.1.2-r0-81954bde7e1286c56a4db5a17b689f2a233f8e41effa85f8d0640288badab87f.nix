@@ -21,16 +21,16 @@
       synopsis = "Unix time parser/formatter and utilities";
       description = "Fast parser\\/formatter\\/utilities for Unix time";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th-prime" or (errorHandler.buildDepError "test-framework-th-prime"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Support for precise error locations in source files (Template Haskell version)";
       description = "This module provides a Template Haskell based mechanism to\ntag failures with the location of the failure call. The\nlocation message includes the file name, line and column\nnumbers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

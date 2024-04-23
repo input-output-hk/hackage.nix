@@ -21,7 +21,7 @@
       synopsis = "AVAYA DMCC API bindings and WebSockets server for AVAYA";
       description = "Partial implementation of CSTA Phase III XML Protocol (ECMA-323) with AVAYA (DMCC 6.3) extensions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-hamlet" or (errorHandler.buildDepError "xml-hamlet"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dmcc-ws" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

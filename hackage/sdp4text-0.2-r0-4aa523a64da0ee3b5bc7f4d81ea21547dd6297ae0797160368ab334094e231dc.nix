@@ -21,7 +21,7 @@
       synopsis = "SDP wrapper for Text.";
       description = "This package implements SDP classes for Text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."sdp" or (errorHandler.buildDepError "sdp"))
           (hsPkgs."sdp-io" or (errorHandler.buildDepError "sdp-io"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-bytestring-strict" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-bytestring-lazy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

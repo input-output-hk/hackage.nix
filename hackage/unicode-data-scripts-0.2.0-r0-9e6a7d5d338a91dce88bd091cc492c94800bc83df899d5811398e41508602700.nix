@@ -21,15 +21,15 @@
       synopsis = "Unicode characters scripts";
       description = "@unicode-data-scripts@ provides Haskell APIs to access the Unicode\ncharacter <https://www.unicode.org/reports/tr24/ scripts> from the\n<https://www.unicode.org/ucd/ Unicode character database> (UCD).\n\nThe Haskell data structures are generated programmatically from the UCD files.\nThe latest Unicode version supported by this library is\n@<https://www.unicode.org/versions/Unicode15.0.0/ 15.0.0>@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unicode-data" or (errorHandler.buildDepError "unicode-data"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -37,13 +37,13 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."unicode-data" or (errorHandler.buildDepError "unicode-data"))
             (hsPkgs."unicode-data-scripts" or (errorHandler.buildDepError "unicode-data-scripts"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."unicode-data" or (errorHandler.buildDepError "unicode-data"))
             (hsPkgs."unicode-data-scripts" or (errorHandler.buildDepError "unicode-data-scripts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

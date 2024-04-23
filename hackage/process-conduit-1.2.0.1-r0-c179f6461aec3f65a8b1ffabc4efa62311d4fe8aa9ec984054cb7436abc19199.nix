@@ -21,7 +21,7 @@
       synopsis = "Conduits for processes (deprecated)";
       description = "This package is deprecated. Please use Data.Conduit.Process from conduit-extra instead. The original code is maintained in Data.Conduit.ProcessOld for those wishing to use the older API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "process-conduit-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."process-conduit" or (errorHandler.buildDepError "process-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Template Haskell code to generate instances of classes in dependent-sum package";
       description = "Template Haskell code to generate instances of classes in dependent-sum package, such as 'GEq' and 'GCompare'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-extras" or (errorHandler.buildDepError "th-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

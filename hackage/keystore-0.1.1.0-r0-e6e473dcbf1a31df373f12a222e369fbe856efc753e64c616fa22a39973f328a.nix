@@ -21,7 +21,7 @@
       synopsis = "Managing stores of secret things";
       description = "Provides a program, an IO-based API and its underlying functional API for\nmanaging a multi-level JSON-encoded store of encrypted and hashed symmetric\nand public keypairs and associated utilities for encrypting and signing\nfiles.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,17 +58,17 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."keystore" or (errorHandler.buildDepError "keystore"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."keystore" or (errorHandler.buildDepError "keystore"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

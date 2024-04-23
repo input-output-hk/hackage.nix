@@ -21,7 +21,7 @@
       synopsis = "OAuth 2.0 authentication plugins";
       description = "Library to authenticate with OAuth 2.0 for Yesod web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,14 +41,14 @@
           (hsPkgs."hoauth2" or (errorHandler.buildDepError "hoauth2"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "NetSpider data model and utility for RPL networks";
       description = "NetSpider data model and utility for RPL networks. See \"NetSpider.RPL\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -55,20 +55,20 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server-test-suite" = {
-          depends = (pkgs.lib).optionals (flags.server-test) [
+          depends = pkgs.lib.optionals (flags.server-test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."net-spider-rpl" or (errorHandler.buildDepError "net-spider-rpl"))
             (hsPkgs."net-spider" or (errorHandler.buildDepError "net-spider"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec-need-env" or (errorHandler.buildDepError "hspec-need-env"))
-            ];
+          ];
           buildable = if flags.server-test then true else false;
-          };
         };
       };
-    }
+    };
+  }

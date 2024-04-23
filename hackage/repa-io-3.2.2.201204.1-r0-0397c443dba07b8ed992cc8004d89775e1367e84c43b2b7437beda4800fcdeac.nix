@@ -21,7 +21,7 @@
       synopsis = "Read and write Repa arrays in various formats.";
       description = "Legacy version for Haskell Platform 2012.04. You will get better\nperformance if you upgrade to the most recent version of GHC.\nRead and write Repa arrays in various formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

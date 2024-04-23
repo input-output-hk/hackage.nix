@@ -21,7 +21,7 @@
       synopsis = "Carte: A commandline pastebin server.";
       description = "Carte allows you to host a commandline pastebin server. Just push files using netcat.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "carte" = {
@@ -36,9 +36,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

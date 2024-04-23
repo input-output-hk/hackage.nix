@@ -21,7 +21,7 @@
       synopsis = "Defining and manipulating css easing strings.";
       description = "A package to define css easing strings. These can be used in Julius,\nJSON, etc. templates to limit the easings to valid ones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

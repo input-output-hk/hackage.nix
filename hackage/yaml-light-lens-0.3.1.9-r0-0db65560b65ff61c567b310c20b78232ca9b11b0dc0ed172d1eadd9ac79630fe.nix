@@ -21,7 +21,7 @@
       synopsis = "Lens interface to yaml-light.";
       description = "Lenses for working with YAML documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."yaml-light" or (errorHandler.buildDepError "yaml-light"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10.1") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10.1") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

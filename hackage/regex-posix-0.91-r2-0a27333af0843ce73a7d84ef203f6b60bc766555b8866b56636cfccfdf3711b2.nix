@@ -21,14 +21,14 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The posix regex backend for regex-base";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

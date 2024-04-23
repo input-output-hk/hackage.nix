@@ -13,7 +13,7 @@
       eventlog = false;
       development = false;
       no-executable = false;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "ats-pkg"; version = "2.11.0.8"; };
@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cli-setup or (pkgs.buildPackages.cli-setup or (errorHandler.setupDepError "cli-setup")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -66,15 +66,15 @@
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "atspkg" = {
-          depends = (pkgs.lib).optionals (!flags.no-executable) [
+          depends = pkgs.lib.optionals (!flags.no-executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ats-pkg" or (errorHandler.buildDepError "ats-pkg"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
@@ -86,9 +86,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = if flags.no-executable then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/rational-list-1.0.0.0-r0-a066fca42dae02e77acdd165c9368b97205f14691f7794a6dac5e79016eca436.nix;
         revNum = 0;
         sha256 = "a066fca42dae02e77acdd165c9368b97205f14691f7794a6dac5e79016eca436";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

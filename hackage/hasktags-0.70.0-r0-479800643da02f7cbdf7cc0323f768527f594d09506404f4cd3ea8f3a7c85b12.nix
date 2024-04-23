@@ -21,7 +21,7 @@
       synopsis = "Produces ctags \"tags\" and etags \"TAGS\" files for Haskell programs";
       description = "Produces ctags \"tags\" and etags \"TAGS\" files for Haskell programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasktags" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hasktags" or (errorHandler.buildDepError "hasktags"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

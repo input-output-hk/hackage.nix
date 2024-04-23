@@ -21,7 +21,7 @@
       synopsis = "Packed Vector";
       description = "Packed Vector. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
           (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-packed-vector-test" = {
           depends = [
@@ -47,12 +47,12 @@
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-packed-vector" or (errorHandler.buildDepError "hw-packed-vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An xhtml templating system";
       description = "An xhtml templating system";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

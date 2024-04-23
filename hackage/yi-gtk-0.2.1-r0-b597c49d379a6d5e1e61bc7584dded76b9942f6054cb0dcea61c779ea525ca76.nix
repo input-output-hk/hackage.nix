@@ -21,7 +21,7 @@
       synopsis = "GTK backend for Yi";
       description = "Core functions for the GTK backend of Yi.\nNote that you will need the yi package to use this.\n\nNote that this is *not* for versions of Yi 0.3 or higher!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

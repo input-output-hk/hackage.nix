@@ -21,7 +21,7 @@
       synopsis = "Get Google OAuth2 token for CLI tools";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."google-oauth2-for-cli" or (errorHandler.buildDepError "google-oauth2-for-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

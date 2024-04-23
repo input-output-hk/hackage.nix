@@ -21,7 +21,7 @@
       synopsis = "a rDisp quasiquote to show plots from Rlang-QQ in IHaskell ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."xformat" or (errorHandler.buildDepError "xformat"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

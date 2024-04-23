@@ -21,7 +21,7 @@
       synopsis = "Extism bindings";
       description = "Bindings to Extism, the universal plugin system";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,28 +31,28 @@
           (hsPkgs."extism-manifest" or (errorHandler.buildDepError "extism-manifest"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         libs = [ (pkgs."extism" or (errorHandler.sysDepError "extism")) ];
         buildable = true;
-        };
+      };
       tests = {
         "extism-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extism" or (errorHandler.buildDepError "extism"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "extism-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extism" or (errorHandler.buildDepError "extism"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

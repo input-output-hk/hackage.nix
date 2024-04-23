@@ -21,7 +21,7 @@
       synopsis = "Convert stack.yaml to cabal.project + cabal.project.freeze";
       description = "This is a small tool to create a cabal.project and cabal.project.freeze file\nfor an existing Haskell application that has its build plan defined for\nthe stack build tool.\nThe user can use the following script to conveniently invoke stackage-to-hackage,\nhpack, and cabal to minimise the freeze file: [stack2cabal](https://gitlab.com/tseenshe/stackage-to-hackage/blob/master/stack2cabal).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stackage-to-hackage" = {
@@ -40,9 +40,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

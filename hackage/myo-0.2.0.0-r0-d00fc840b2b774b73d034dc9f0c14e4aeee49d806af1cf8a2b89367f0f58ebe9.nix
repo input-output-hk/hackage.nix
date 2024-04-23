@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to the Myo armband";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,7 +35,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optionals (flags.foreign-api) [
+        ] ++ pkgs.lib.optionals (flags.foreign-api) [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
@@ -48,10 +48,10 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ];
-        libs = (pkgs.lib).optional (flags.foreign-api) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
+        ];
+        libs = pkgs.lib.optional (flags.foreign-api) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
         buildable = true;
-        };
+      };
       exes = {
         "myo-ws-example" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "myo-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."myo" or (errorHandler.buildDepError "myo"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

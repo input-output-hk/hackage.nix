@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Job Module for Yam";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yam-app" or (errorHandler.buildDepError "yam-app"))
           (hsPkgs."cron" or (errorHandler.buildDepError "cron"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

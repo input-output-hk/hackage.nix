@@ -21,7 +21,7 @@
       synopsis = "Keyed functors and containers";
       description = "Keyed functors and containers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."comonads-fd" or (errorHandler.buildDepError "comonads-fd"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

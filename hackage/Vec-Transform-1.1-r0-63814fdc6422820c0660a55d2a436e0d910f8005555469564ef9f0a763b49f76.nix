@@ -21,6 +21,6 @@
       synopsis = "This package is obsolete";
       description = "This package is now obsolete since all functions have moved to the Vec package, see <http://hackage.haskell.org/package/Vec>.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

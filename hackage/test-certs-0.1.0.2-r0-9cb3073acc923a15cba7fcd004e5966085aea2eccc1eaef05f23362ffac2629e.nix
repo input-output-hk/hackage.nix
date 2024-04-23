@@ -21,7 +21,7 @@
       synopsis = "create temporary SSL certificates in tests";
       description = "Its functions generate the certificates as files in a temporary directory.\n\n* Note: this package depends on [HsOpenSSL](https://hackage.haskell.org/package/HsOpenSSL).\n* It expects the openssl system libraries to be available on your system, this\n  is usually the case on most modern linux distributions.\n\nSee the [README](https://github.com/adetokunbo/test-certs#readme) for a usage example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-certs" or (errorHandler.buildDepError "test-certs"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

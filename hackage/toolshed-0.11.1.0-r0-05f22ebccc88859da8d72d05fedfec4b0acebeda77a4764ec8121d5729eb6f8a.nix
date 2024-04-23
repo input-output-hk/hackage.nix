@@ -21,13 +21,13 @@
       synopsis = "Utilities used by other packages.";
       description = "An ill-defined collection of simple unrelated utilities used by other packages from <http://functionalley.eu>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (flags.havedeepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
+        ] ++ pkgs.lib.optional (flags.havedeepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Grammar and typeclass for first order theories";
       description = "Grammar and typeclass for first order theories";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Proper" or (errorHandler.buildDepError "Proper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

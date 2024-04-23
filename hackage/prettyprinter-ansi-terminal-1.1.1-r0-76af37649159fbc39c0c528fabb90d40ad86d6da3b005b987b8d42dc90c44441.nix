@@ -21,7 +21,7 @@
       synopsis = "ANSI terminal backend for the »prettyprinter« package.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,19 +29,19 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.10"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

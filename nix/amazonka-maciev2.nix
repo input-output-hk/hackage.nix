@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-maciev2-2.0-r0-a23c9ab83db0959830368ce2c84421f39640079428d927ca325a14176fd6a5b9.nix;
         revNum = 0;
         sha256 = "a23c9ab83db0959830368ce2c84421f39640079428d927ca325a14176fd6a5b9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

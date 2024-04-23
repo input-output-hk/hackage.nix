@@ -6,8 +6,8 @@
         nix = import ../hackage/PeanoWitnesses-0.1.0.0-r0-d32ce724d62cadaa1a2f9eeb87e5f6c087802b2b43847c35bbb21c0822f906e4.nix;
         revNum = 0;
         sha256 = "d32ce724d62cadaa1a2f9eeb87e5f6c087802b2b43847c35bbb21c0822f906e4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

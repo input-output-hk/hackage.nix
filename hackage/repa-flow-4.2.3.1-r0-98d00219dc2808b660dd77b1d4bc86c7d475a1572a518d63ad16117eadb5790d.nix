@@ -21,7 +21,7 @@
       synopsis = "Data-parallel data flows.";
       description = "Data-parallel data flows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."repa-scalar" or (errorHandler.buildDepError "repa-scalar"))
           (hsPkgs."repa-convert" or (errorHandler.buildDepError "repa-convert"))
           (hsPkgs."repa-array" or (errorHandler.buildDepError "repa-array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

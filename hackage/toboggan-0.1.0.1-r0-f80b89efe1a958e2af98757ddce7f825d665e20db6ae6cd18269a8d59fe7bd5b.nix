@@ -21,7 +21,7 @@
       synopsis = "Twitter bot generator";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "toboggan" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."toboggan" or (errorHandler.buildDepError "toboggan"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Dhall/YAML configurable concurrent integration test executor.";
       description = "`dhrun` starts a list of (Unix) processes, monitors the standard streams for patterns that should be expected or avoided, kills the processes when criteria are met and exits accordingly. It is configured using either [Dhall](https://dhall-lang.org/) or [YAML](https://yaml.org/). See the [README.md](https://github.com/freuk/dhrun) file for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "dhrun-lib" = {
@@ -42,10 +42,10 @@
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "dhrun" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."editor-open" or (errorHandler.buildDepError "editor-open"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."dhrun".components.sublibs.dhrun-lib or (errorHandler.buildDepError "dhrun:dhrun-lib"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Determine time complexity of a given function";
       description = "Benchmark a given function for variable input sizes\nand find out its time complexity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
           (hsPkgs."regression-simple" or (errorHandler.buildDepError "regression-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-bench-fit-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."tasty-bench-fit" or (errorHandler.buildDepError "tasty-bench-fit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

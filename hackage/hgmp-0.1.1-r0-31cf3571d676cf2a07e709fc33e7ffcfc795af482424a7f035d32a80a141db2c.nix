@@ -21,28 +21,28 @@
       synopsis = "Haskell interface to GMP";
       description = "Types and instances, and marshalling between Integer and\nRational and the corresponding GMP types, along with raw\nforeign imports of GMP functions.  Allows FFI to GMP code\n(whether in GMP itself or in third-party code that uses\nGMP).\n\nSupports only GHC with integer-gmp, this might change if\nthere's any demand.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Main" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hgmp" or (errorHandler.buildDepError "hgmp"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

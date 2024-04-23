@@ -21,7 +21,7 @@
       synopsis = "An account authentication plugin for Yesod";
       description = "An auth plugin for accounts. Each account consists of a username,\nemail, and password.  The plugin provides new account, email verification,\nand password reset pages that can be customized to enhance the user experience.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-account" or (errorHandler.buildDepError "yesod-auth-account"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

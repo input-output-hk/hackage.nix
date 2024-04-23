@@ -6,8 +6,8 @@
         nix = import ../hackage/hsgnutls-0.2.3.2-r0-adfb8b3e0a1a60c5dace96b44d7b4d523dcda47b1b46cad807bf4a46a6ec8e5c.nix;
         revNum = 0;
         sha256 = "adfb8b3e0a1a60c5dace96b44d7b4d523dcda47b1b46cad807bf4a46a6ec8e5c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

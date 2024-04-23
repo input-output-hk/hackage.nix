@@ -21,7 +21,7 @@
       synopsis = "Newtype wrappers over IntSet and IntMap";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/int-like#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "int-like-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."int-like" or (errorHandler.buildDepError "int-like"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for stratux";
       description = "A library for stratux <http://stratux.me/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stratux-types" or (errorHandler.buildDepError "stratux-types"))
           (hsPkgs."stratux-http" or (errorHandler.buildDepError "stratux-http"))
           (hsPkgs."stratux-websockets" or (errorHandler.buildDepError "stratux-websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

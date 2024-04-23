@@ -21,14 +21,14 @@
       synopsis = "Permutations of effectful computations";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ReplicateEffects" or (errorHandler.buildDepError "ReplicateEffects"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

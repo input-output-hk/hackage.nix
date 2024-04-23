@@ -21,7 +21,7 @@
       synopsis = "A class of monads which can log messages.";
       description = "This package uses template-haskell for determining source code locations of messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

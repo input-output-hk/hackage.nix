@@ -21,7 +21,7 @@
       synopsis = "safe nettle binding";
       description = "safe binding for the nettle (<http://www.lysator.liu.se/~nisse/nettle/nettle.html>) library.\nTested with 3.1.1, might work with 3.0, does NOT WORK with 2.x.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
-          ];
-        libs = (pkgs.lib).optional (!flags.usepkgconfig) (pkgs."nettle" or (errorHandler.sysDepError "nettle"));
-        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."nettle" or (errorHandler.pkgConfDepError "nettle"));
+        ];
+        libs = pkgs.lib.optional (!flags.usepkgconfig) (pkgs."nettle" or (errorHandler.sysDepError "nettle"));
+        pkgconfig = pkgs.lib.optional (flags.usepkgconfig) (pkgconfPkgs."nettle" or (errorHandler.pkgConfDepError "nettle"));
         buildable = true;
-        };
+      };
       tests = {
         "test-ciphers" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-tests" or (errorHandler.buildDepError "crypto-cipher-tests"))
             (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-hashes" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-hmac" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-umac" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."nettle" or (errorHandler.buildDepError "nettle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

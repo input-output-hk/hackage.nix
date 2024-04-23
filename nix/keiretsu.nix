@@ -6,8 +6,8 @@
         nix = import ../hackage/keiretsu-0.4.4-r0-435a69e2371cadbb51c47029cc7fadb2eedad5078c7b7bc1a4fb5e77dac20c1c.nix;
         revNum = 0;
         sha256 = "435a69e2371cadbb51c47029cc7fadb2eedad5078c7b7bc1a4fb5e77dac20c1c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

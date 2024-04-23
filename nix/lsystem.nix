@@ -6,8 +6,8 @@
         nix = import ../hackage/lsystem-1.2-r0-f5904317bd25436f797acf2bdff8928732fc430ccb435694490011db59ca3d12.nix;
         revNum = 0;
         sha256 = "f5904317bd25436f797acf2bdff8928732fc430ccb435694490011db59ca3d12";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

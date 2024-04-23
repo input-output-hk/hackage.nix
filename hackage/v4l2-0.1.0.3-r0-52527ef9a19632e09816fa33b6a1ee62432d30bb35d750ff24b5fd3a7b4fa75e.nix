@@ -21,7 +21,7 @@
       synopsis = "interface to Video For Linux Two (V4L2)";
       description = "Higher-level interface to V4L2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,11 +32,11 @@
           (hsPkgs."bindings-linux-videodev2" or (errorHandler.buildDepError "bindings-linux-videodev2"))
           (hsPkgs."bindings-posix" or (errorHandler.buildDepError "bindings-posix"))
           (hsPkgs."ioctl" or (errorHandler.buildDepError "ioctl"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

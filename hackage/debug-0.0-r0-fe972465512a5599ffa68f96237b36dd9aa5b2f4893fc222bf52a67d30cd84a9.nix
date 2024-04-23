@@ -21,7 +21,7 @@
       synopsis = "Simple trace-based debugger";
       description = "An easy to use debugger for viewing function calls and intermediate variables.\nTo use, annotate the function under test, run the code, and view the generated web page.\nFull usage instructions are at \"Debug\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "debug-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."debug" or (errorHandler.buildDepError "debug"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

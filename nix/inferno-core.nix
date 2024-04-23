@@ -6,8 +6,8 @@
         nix = import ../hackage/inferno-core-0.1.0.0-r0-a7d32443ad3f5f8b3d9af0f636b4bb54ac351087606dfd6d4ab844a0389a38fd.nix;
         revNum = 0;
         sha256 = "a7d32443ad3f5f8b3d9af0f636b4bb54ac351087606dfd6d4ab844a0389a38fd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

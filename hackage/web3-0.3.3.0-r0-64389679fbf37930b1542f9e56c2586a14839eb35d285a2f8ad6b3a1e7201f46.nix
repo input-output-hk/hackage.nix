@@ -21,7 +21,7 @@
       synopsis = "Ethereum API for Haskell";
       description = "Web3 is a Haskell client library for Ethereum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "web3-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web3" or (errorHandler.buildDepError "web3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

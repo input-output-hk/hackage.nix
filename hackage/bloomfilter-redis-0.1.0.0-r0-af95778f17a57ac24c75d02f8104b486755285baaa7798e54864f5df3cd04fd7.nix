@@ -21,7 +21,7 @@
       synopsis = "Distributed bloom filters on Redis (using the Hedis client).";
       description = "Distributed bloom filters on Redis (using the Hedis client).\n\nThe hash family algorithm is partly inspired by\nBrian O\\'Sullivan\\'s bloomfilter package at <https://hackage.haskell.org/package/bloomfilter>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-bloomfilter-redis" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-bloomfilter-redis" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."bloomfilter-redis" or (errorHandler.buildDepError "bloomfilter-redis"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

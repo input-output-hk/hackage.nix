@@ -21,7 +21,7 @@
       synopsis = "Use Libravatar, the decentralized avatar delivery service";
       description = "This package is a Haskell library for\n<http://libravatar.org Libravatar>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

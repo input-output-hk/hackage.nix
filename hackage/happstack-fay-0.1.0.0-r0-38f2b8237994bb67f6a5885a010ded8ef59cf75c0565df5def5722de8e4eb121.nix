@@ -21,7 +21,7 @@
       synopsis = "Support for using Fay with Happstack";
       description = "Fay is strict subset of Happstack which can be compiled\nto Javascript. This library provides some utilities for client-server\ncommunication, client-side HTML generation, and more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fay-jquery" or (errorHandler.buildDepError "fay-jquery"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

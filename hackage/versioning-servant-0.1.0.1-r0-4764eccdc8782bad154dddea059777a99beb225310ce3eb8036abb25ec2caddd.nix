@@ -21,7 +21,7 @@
       synopsis = "Servant combinators for the versioning library.";
       description = "This package provides Servant combinators to be used with\nthe 'versioning' library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."versioning" or (errorHandler.buildDepError "versioning"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."versioning-servant" or (errorHandler.buildDepError "versioning-servant"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

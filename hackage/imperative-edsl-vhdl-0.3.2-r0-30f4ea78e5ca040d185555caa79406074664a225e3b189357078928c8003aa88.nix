@@ -21,7 +21,7 @@
       synopsis = "Deep embedding of VHDL programs with code generation.";
       description = "Deep embedding of VHDL programs with code generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."operational-alacarte" or (errorHandler.buildDepError "operational-alacarte"))
           (hsPkgs."language-vhdl" or (errorHandler.buildDepError "language-vhdl"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Run several effects at once, taken from the polysemy-zoo.";
       description = "Run several effects at once, taken from the polysemy-zoo.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

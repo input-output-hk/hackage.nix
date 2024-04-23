@@ -21,7 +21,7 @@
       synopsis = "A simple to understand static site generator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.2") (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2") (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

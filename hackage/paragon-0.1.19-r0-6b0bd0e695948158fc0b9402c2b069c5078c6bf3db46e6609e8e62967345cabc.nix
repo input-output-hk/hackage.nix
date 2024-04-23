@@ -21,7 +21,7 @@
       synopsis = "Paragon";
       description = "Paragon suite";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if flags.base4
+        ] ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parac" = {
           depends = [
@@ -61,17 +61,17 @@
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ] ++ (if flags.base4
+          ] ++ (if flags.base4
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

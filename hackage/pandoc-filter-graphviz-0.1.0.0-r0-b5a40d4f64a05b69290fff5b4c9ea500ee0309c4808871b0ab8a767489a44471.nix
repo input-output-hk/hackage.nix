@@ -21,7 +21,7 @@
       synopsis = "A Pandoc filter to use graphviz";
       description = "Interpret '~~~ graphviz' bloc as a call to graphviz software and substritude text with produced picture.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc-filter-graphviz" = {
@@ -38,9 +38,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

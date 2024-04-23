@@ -21,15 +21,15 @@
       synopsis = "A memoization library";
       description = "This library provides a type class 'Memoizable' for memoizing\nfunctions, along with instances for a variety of argument types.\nIt includes a Template Haskell function for deriving\n'Memoizable' instances for arbitrary algebraic datatypes.\n\nThe library constructs pure memo caches without the use of\n'unsafePerformIO'.  This technique relies on implementation\nassumptions that, while not guaranteed by the semantics of\nHaskell, appear to be true.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

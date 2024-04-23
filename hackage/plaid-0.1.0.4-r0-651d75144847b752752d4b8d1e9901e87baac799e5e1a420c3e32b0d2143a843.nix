@@ -21,7 +21,7 @@
       synopsis = "Plaid.com api integration library";
       description = "@Plaid@ is a library for interacting with https://plaid.com\n\nPlaid.com connects the users to their bank accounts via the app and this library provides programmatic\naccess to all these features.\n\nPlease take a look at examples folder to easily get started.\n\nHaskell examples in the plaid [documentation] (https://plaid.com/docs) come from this library.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "plaid" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

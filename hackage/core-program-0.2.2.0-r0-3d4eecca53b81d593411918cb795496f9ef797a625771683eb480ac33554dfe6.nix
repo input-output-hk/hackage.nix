@@ -21,7 +21,7 @@
       synopsis = "Opinionated Haskell Interoperability";
       description = "A library to help build command-line programs, both tools and\nlonger-running daemons.\n\nA description of this package, a list of features, and some background\nto its design is contained in the\n<https://github.com/oprdyn/unbeliever/blob/master/README.markdown README>\non GitHub.\n\nSee \"Core.Program.Execute\" to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

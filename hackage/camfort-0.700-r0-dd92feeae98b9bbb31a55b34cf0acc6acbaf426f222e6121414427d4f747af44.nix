@@ -21,7 +21,7 @@
       synopsis = "CamFort - Cambridge Fortran infrastructure";
       description = "CamFort is a tool for the analysis, transformation, and extension of Fortran code base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,13 +44,13 @@
           (hsPkgs."language-fortran" or (errorHandler.buildDepError "language-fortran"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "camfort" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."language-fortran" or (errorHandler.buildDepError "language-fortran"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

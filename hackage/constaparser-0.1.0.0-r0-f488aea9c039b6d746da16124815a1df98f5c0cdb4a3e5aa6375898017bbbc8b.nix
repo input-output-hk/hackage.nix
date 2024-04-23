@@ -21,7 +21,7 @@
       synopsis = "Parse ByteStrings of a constant length. ";
       description = "Parse constant-length ByteStrings, which allows\nfor some performance optimisations.\nYou can also convert from a 'Constaparser' to a\n'Parser' from Attoparsec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -15,7 +15,7 @@
       freestanding = false;
       ci = false;
       execonly = false;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "idris"; version = "1.1.1"; };
@@ -34,8 +34,8 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = (([
@@ -82,17 +82,17 @@
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."mintty" or (errorHandler.buildDepError "mintty"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-            ]
+          ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.ffi) (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"))) ++ (pkgs.lib).optional (flags.gmp) (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"));
-        libs = (pkgs.lib).optional (flags.gmp) (pkgs."gmp" or (errorHandler.sysDepError "gmp"));
+          ])) ++ pkgs.lib.optional (flags.ffi) (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"))) ++ pkgs.lib.optional (flags.gmp) (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"));
+        libs = pkgs.lib.optional (flags.gmp) (pkgs."gmp" or (errorHandler.sysDepError "gmp"));
         buildable = true;
-        };
+      };
       exes = {
         "idris" = {
           depends = [
@@ -102,9 +102,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "idris-codegen-c" = {
           depends = [
             (hsPkgs."idris" or (errorHandler.buildDepError "idris"))
@@ -112,9 +112,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "idris-codegen-javascript" = {
           depends = [
             (hsPkgs."idris" or (errorHandler.buildDepError "idris"))
@@ -122,9 +122,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "idris-codegen-node" = {
           depends = [
             (hsPkgs."idris" or (errorHandler.buildDepError "idris"))
@@ -132,10 +132,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "regression-and-feature-tests" = {
           depends = [
@@ -154,9 +154,9 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

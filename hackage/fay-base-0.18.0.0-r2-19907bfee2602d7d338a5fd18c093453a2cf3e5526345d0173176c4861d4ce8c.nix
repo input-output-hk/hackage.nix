@@ -21,14 +21,14 @@
       synopsis = "The base package for Fay.";
       description = "The base package for Fay.\nThis package exports Prelude and FFI which you probably want to use with Fay.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fay" or (errorHandler.buildDepError "fay"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

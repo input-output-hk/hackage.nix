@@ -21,7 +21,7 @@
       synopsis = "A Windows Installer (MSI) generator framework";
       description = "Bamse is a framework for building Windows Installers for\nyour Windows applications, giving you a comprehensive set\nof features to put together Windows Installers using Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
-      exes = { "bamse" = { buildable = true; }; };
       };
-    }
+      exes = { "bamse" = { buildable = true; }; };
+    };
+  }

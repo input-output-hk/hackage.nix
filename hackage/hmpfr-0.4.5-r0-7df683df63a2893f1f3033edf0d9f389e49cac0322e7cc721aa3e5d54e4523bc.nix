@@ -21,12 +21,12 @@
       synopsis = "Haskell binding to the MPFR library";
       description = "Haskell binding to the MPFR library.\n.\nThe library includes both a pure and a mutable interface.\nThe mutable interface should have a lot less overhead\nthan the pure one.\n.\nSome simple examples of usage can be found in demo/Demo.hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."mpfr" or (errorHandler.sysDepError "mpfr")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

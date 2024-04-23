@@ -21,16 +21,16 @@
       synopsis = "Library and utility interfacing to longurl.org";
       description = "The library provides a Haskell binding to the longurl.org API.\nThe utility finds all URLs in its input that longurl says it can expand,\nand then tries to expand each of them in-place.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hlongurl" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read markdown and (subsets of) HTML,\nreStructuredText, LaTeX, DocBook, MediaWiki markup, Haddock\nmarkup, OPML, and Textile, and it can write markdown,\nreStructuredText, HTML, LaTeX, ConTeXt, Docbook, OPML,\nOpenDocument, ODT, Word docx, RTF, MediaWiki, Textile,\ngroff man pages, plain text, Emacs Org-Mode, AsciiDoc,\nEPUB (v2 and v3), FictionBook2, and several kinds of\nHTML/javascript slide shows (S5, Slidy, Slideous, DZSlides,\nreveal.js).\n\nPandoc extends standard markdown syntax with footnotes,\nembedded LaTeX, definition lists, tables, and other\nfeatures. A compatibility mode is provided for those\nwho need a drop-in replacement for Markdown.pl.\n\nIn contrast to existing tools for converting markdown\nto HTML, which use regex substitutions, pandoc has\na modular design: it consists of a set of readers,\nwhich parse text in a given format and produce a native\nrepresentation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,16 +61,16 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
-          ] ++ (pkgs.lib).optionals (flags.http-conduit) [
+        ] ++ pkgs.lib.optionals (flags.http-conduit) [
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "make-pandoc-man-pages" = {
           depends = [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -100,10 +100,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -125,10 +125,10 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -136,9 +136,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

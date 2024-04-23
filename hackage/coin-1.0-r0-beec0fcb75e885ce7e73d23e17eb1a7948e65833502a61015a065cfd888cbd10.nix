@@ -21,7 +21,7 @@
       synopsis = "Simple account manager";
       description = "Simple account manager";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "coin" = {
@@ -50,9 +50,9 @@
             (hsPkgs."lens-simple" or (errorHandler.buildDepError "lens-simple"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

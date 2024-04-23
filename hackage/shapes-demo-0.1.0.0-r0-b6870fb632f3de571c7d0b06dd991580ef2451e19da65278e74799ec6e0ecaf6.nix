@@ -21,7 +21,7 @@
       synopsis = "demos for the 'shapes' package";
       description = "Please see the README on Github at <https://github.com/ublubu/shapes#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "shapes-demo" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

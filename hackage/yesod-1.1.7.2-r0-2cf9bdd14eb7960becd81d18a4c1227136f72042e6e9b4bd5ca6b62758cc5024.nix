@@ -21,7 +21,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "A RESTful web framework with strong compile-time guarantees of correctness. It also affords space efficient code, highly concurrent loads, and portability to many deployment backends (via the wai package), from CGI to stand-alone serving.\n\nYesod also focuses on developer productivity. Yesod integrates well with tools for all your basic web development (wai, persistent, and shakespeare/hamlet)\n\nThe Yesod documentation site <http://www.yesodweb.com/> has much more information, including on the supporting packages mentioned above.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,31 +43,31 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-ghc-wrapper" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yesod-ld-wrapper" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yesod-ar-wrapper" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yesod" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."project-template" or (errorHandler.buildDepError "project-template"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

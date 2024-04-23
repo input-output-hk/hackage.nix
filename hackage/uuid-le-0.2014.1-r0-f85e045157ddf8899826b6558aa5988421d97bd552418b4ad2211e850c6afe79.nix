@@ -21,15 +21,15 @@
       synopsis = "Universally Unique Identifiers with little-endian-ish encoding tools";
       description = "This library extends @uuid@ with tools to encode and decode Universally\nUnique Identifiers in the little-endian-ish encoding, which was popularized\nby Microsoft.\n\nSome systems, for instance UEFI, chose to use this odd format instead of\nthe simple encoding specified in RFC 4122.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

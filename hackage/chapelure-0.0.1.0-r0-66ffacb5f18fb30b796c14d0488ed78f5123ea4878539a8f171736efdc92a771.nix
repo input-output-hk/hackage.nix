@@ -21,7 +21,7 @@
       synopsis = "A diagnostics library for Haskell";
       description = "Chapelure is a diagnostics library for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."hsluv-haskell" or (errorHandler.buildDepError "hsluv-haskell"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chapelure-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

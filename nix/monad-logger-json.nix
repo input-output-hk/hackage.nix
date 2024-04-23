@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-logger-json-0.1.0.0-r0-2c5b2668afdcb9c9abbb853b672d4743977f50a56c5c0dfc710b995bac5a0636.nix;
         revNum = 0;
         sha256 = "2c5b2668afdcb9c9abbb853b672d4743977f50a56c5c0dfc710b995bac5a0636";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Distributed, stateful, homogeneous microservice framework.";
       description = "Legion is a framework for writing distributed,\nhomogeneous, stateful microservices in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,8 +52,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

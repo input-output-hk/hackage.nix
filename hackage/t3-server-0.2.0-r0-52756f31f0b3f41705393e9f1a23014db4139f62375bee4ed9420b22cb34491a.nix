@@ -21,7 +21,7 @@
       synopsis = "tic-tac-toe server";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."t3-game" or (errorHandler.buildDepError "t3-game"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

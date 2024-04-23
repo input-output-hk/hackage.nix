@@ -21,22 +21,22 @@
       synopsis = "Bitcoin hash primitives";
       description = "Bitcoin hash primitives.\n\nThis library builds in GHC and GHCJS.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

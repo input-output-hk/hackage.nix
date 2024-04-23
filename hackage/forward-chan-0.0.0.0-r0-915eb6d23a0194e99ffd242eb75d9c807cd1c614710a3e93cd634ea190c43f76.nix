@@ -21,7 +21,7 @@
       synopsis = "Concurrent channels with a forwarding primitive";
       description = "An implementation of the forward primitive, useful for proof terms from the sequent caluclus formulation of linear logic\n\nSee <http://github.com/mmirman/forward-chan> and <http://www.cs.cmu.edu/~fp/papers/tldi12.pdf> for more information on this primitive.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

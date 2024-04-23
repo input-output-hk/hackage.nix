@@ -21,15 +21,15 @@
       synopsis = "Z3 bonds with pure interface";
       description = "Z3 bonds with universally-quantified pure interface, like `ST`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."z3" or (errorHandler.buildDepError "z3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

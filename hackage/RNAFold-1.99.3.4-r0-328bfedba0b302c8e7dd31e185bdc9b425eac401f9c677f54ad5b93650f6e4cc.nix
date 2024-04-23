@@ -21,7 +21,7 @@
       synopsis = "RNA secondary structure prediction";
       description = "RNAfold v2 using the ADPfusion library. The RNAfold algorithm\nis used to determine how fast we can be compared to a highly\noptimized C program.\n\nPlease use GHC 7.6 or newer.\n\nNOTE I'd like to rename this package to RNAfold, like the C\nimplementation. Do not install \"globally\", especially if you\nnormally use RNAfold from the ViennaRNA package, for obvious\nreasons.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."BiobaseVienna" or (errorHandler.buildDepError "BiobaseVienna"))
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "RNAFold" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."BiobaseVienna" or (errorHandler.buildDepError "BiobaseVienna"))
             (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
             (hsPkgs."RNAFold" or (errorHandler.buildDepError "RNAFold"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RNAEval" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."BiobaseVienna" or (errorHandler.buildDepError "BiobaseVienna"))
             (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
             (hsPkgs."RNAFold" or (errorHandler.buildDepError "RNAFold"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

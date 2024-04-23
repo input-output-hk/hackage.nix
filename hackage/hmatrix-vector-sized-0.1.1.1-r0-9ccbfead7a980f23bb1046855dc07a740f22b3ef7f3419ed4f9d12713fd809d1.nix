@@ -21,7 +21,7 @@
       synopsis = "Conversions between hmatrix and vector-sized types";
       description = "Conversions between statically sized types in hmatrix and vector-sized.\n\nSee README on Github <https://github.com/mstksg/hmatrix-vector-sized#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hmatrix-vector-sized-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hmatrix-vector-sized" or (errorHandler.buildDepError "hmatrix-vector-sized"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

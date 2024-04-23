@@ -21,7 +21,7 @@
       synopsis = "An optimising compiler for a functional, array-oriented language.";
       description = "Futhark is a small programming language designed to be compiled to\nefficient parallel code. It is a statically typed, data-parallel,\nand purely functional array language in the ML family, and comes\nwith a heavily optimising ahead-of-time compiler that presently\ngenerates GPU code via CUDA and OpenCL, although the language itself\nis hardware-agnostic.\n\nFor more information, see the website at https://futhark-lang.org\n\nFor introductionary information about hacking on the\nFuthark compiler, see\n<https://futhark.readthedocs.io/en/latest/hacking.html the hacking guide>.\nRegarding the internal design of the compiler, the following modules make\ngood starting points:\n\n* \"Futhark\" contains a basic architectural overview of the compiler.\n* \"Futhark.IR.Syntax\" explains the\nbasic design of the intermediate representation (IR).\n* \"Futhark.Construct\" explains how to write code that\nmanipulates and creates AST fragments.\n\n<<docs/assets/ohyes.png You too can go fast once you rewrite your program in Futhark.>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -80,22 +80,22 @@
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "futhark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."futhark" or (errorHandler.buildDepError "futhark"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -108,9 +108,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

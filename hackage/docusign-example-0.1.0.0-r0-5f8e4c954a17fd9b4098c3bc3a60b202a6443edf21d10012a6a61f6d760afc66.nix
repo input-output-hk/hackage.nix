@@ -21,7 +21,7 @@
       synopsis = "DocuSign examples";
       description = "This package provides a basic demonstration of how to use the Haskell docusign-client package";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "docusign-example" = {
@@ -35,9 +35,9 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

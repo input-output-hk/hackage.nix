@@ -21,7 +21,7 @@
       synopsis = "coverage driven random testing framework";
       description = "Kudzu is a coverage driven random testing framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,23 +30,23 @@
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
           (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kudzu" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."kudzu" or (errorHandler.buildDepError "kudzu"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "kudzu-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

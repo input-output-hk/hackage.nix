@@ -21,7 +21,7 @@
       synopsis = "OpenGL fractal renderer";
       description = "An OpenGL fractal browser with multicore support and the capability to output high quality png images.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hfractal" = {
@@ -36,9 +36,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

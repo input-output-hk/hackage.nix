@@ -21,7 +21,7 @@
       synopsis = "Helpers for quering .cabal files or hackageDB's 00-index.tar";
       description = "This package was written to assist you at finding a set of packages,\nwhich satisfy your needs.  At the moment it doesn't have a standalone executable,\nbut you can do the queries from your Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "hack-handler-happstack";
         version = "2009.4.51.1";
-        };
+      };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Hyena Kibro handler";
       description = "Hyena Kibro handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

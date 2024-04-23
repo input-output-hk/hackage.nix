@@ -21,7 +21,7 @@
       synopsis = "Test monadic programs using state machine based models";
       description = "See README at <https://github.com/advancedtelematic/quickcheck-state-machine#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,14 +39,14 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck-state-machine-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

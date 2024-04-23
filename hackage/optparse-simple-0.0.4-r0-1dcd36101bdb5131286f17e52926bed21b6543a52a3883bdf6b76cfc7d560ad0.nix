@@ -21,7 +21,7 @@
       synopsis = "Simple interface to optparse-applicative";
       description = "Simple interface to optparse-applicative";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vinyl-plus" or (errorHandler.buildDepError "vinyl-plus"))
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
           (hsPkgs."operational-extra" or (errorHandler.buildDepError "operational-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

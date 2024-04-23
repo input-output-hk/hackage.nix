@@ -21,7 +21,7 @@
       synopsis = "Utilities for Bluetile";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bluetiledock" = {
@@ -32,17 +32,17 @@
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bluetilemockwin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bluetilegreet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

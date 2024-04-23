@@ -21,7 +21,7 @@
       synopsis = "Wiki using HAppS, git, and pandoc.";
       description = "Gitit is a wiki program. HAppS is used for the web\nserver and session state. Pages and uploaded files\nare stored in a git repository and may be modified\neither by using git's command-line tools or through\nthe wiki's web interface. Pandoc's extended version\nof markdown is used as a markup language. Gitit can\nbe configured to display TeX math (using jsMath)\nand highlighted source code. Ajax is used in a\nfew places, but all the basic functionality is\navailable even in browsers that do not support\njavascript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -48,9 +48,9 @@
             (hsPkgs."HAppS-Data" or (errorHandler.buildDepError "HAppS-Data"))
             (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

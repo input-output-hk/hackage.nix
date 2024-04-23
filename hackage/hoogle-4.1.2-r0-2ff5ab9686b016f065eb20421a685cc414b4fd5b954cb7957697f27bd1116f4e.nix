@@ -21,7 +21,7 @@
       synopsis = "Haskell API Search";
       description = "Hoogle is a Haskell API search engine, which allows you to\nsearch many standard Haskell libraries by either function name,\nor by approximate type signature.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hoogle" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

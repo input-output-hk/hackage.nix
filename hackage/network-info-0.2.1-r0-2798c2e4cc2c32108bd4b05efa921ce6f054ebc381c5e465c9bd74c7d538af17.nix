@@ -21,15 +21,15 @@
       synopsis = "Access the local computer's basic network configuration";
       description = "This library provides simple read-only access to the\nlocal computer's networking configuration. It is\ncurrently capable of getting a list of all the network\ninterfaces and their respective IPv4, IPv6 and MAC\naddresses.\n\nnetwork-info has been tested and is known to work on\nUbuntu, FreeBSD, NetBSD, Mac OS and Windows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."iphlpapi" or (errorHandler.sysDepError "iphlpapi")) ++ (pkgs.lib).optionals (system.isSolaris) [
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."iphlpapi" or (errorHandler.sysDepError "iphlpapi")) ++ pkgs.lib.optionals (system.isSolaris) [
           (pkgs."socket" or (errorHandler.sysDepError "socket"))
           (pkgs."nsl" or (errorHandler.sysDepError "nsl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

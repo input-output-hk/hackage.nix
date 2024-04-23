@@ -21,14 +21,14 @@
       synopsis = "A variant data type, useful for modeling dynamically-typed programming languages";
       description = "Implements a 'variant' data type that can hold the\nusual suspects: scalars (integers, floats, strings),\nlists, association lists, booleans, null, and first-class\nfunctions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

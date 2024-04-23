@@ -21,7 +21,7 @@
       synopsis = "An alternate implementation of push-pull FRP.";
       description = "An alternate implementation of push-pull FRP. This is based on the Reactive package (http://haskell.org/haskellwiki/reactive) (and the sources have been made available in accordance with the GPL [license] of that package).\n\nKnown problems with this version:\n\n* UI library is currently on Windows only, but there are plans....";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,16 +42,16 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
           (hsPkgs."concurrent-extra" or (errorHandler.buildDepError "concurrent-extra"))
-          ];
+        ];
         libs = [
           (pkgs."gdi32" or (errorHandler.sysDepError "gdi32"))
           (pkgs."comdlg32" or (errorHandler.sysDepError "comdlg32"))
           (pkgs."winspool" or (errorHandler.sysDepError "winspool"))
           (pkgs."comctl32" or (errorHandler.sysDepError "comctl32"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "6.9"
           then false
           else true;
-        };
       };
-    }
+    };
+  }

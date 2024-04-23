@@ -21,7 +21,7 @@
       synopsis = "Haskell utilities for building embedded Elm programs.";
       description = "This package provides utilities for serving Elm programs\ndirectly from your Haskell binary. It uses TemplateHaskell\nto compile your Elm program at build time, and construct a\nWAI Middleware which intercepts requests appropriate to\nthe Elm program, and passing other requests to a\ndownstream WAI Application. It is useful for bundling the\nbrowser side of a web application with its backing web\nservices implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

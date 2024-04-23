@@ -21,7 +21,7 @@
       synopsis = "TCP instantiation of Network.Transport";
       description = "TCP instantiation of Network.Transport";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestTCP" = {
           depends = [
@@ -43,11 +43,11 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestQC" = {
-          depends = (pkgs.lib).optionals (flags.use-mock-network) [
+          depends = pkgs.lib.optionals (flags.use-mock-network) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
@@ -64,9 +64,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."lockfree-queue" or (errorHandler.buildDepError "lockfree-queue"))
-            ];
+          ];
           buildable = if flags.use-mock-network then true else false;
-          };
         };
       };
-    }
+    };
+  }

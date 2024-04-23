@@ -21,7 +21,7 @@
       synopsis = "Java .class files assembler/disassembler";
       description = "This package declares data types for Java .class files format and functions\nto assemble/disassemble Java bytecode. See dump-class.hs, rebuild-class.hs,\nTestGen.hs for examples of usage.\n\nAs of version 0.4.0, all generator functions can work with any\ninstance of GeneratorMonad class, not only MonadState GState.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."LibZip" or (errorHandler.buildDepError "LibZip"))
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

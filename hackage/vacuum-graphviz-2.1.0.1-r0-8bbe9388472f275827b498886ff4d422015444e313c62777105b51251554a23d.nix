@@ -21,7 +21,7 @@
       synopsis = "A library for transforming vacuum graphs into GraphViz output";
       description = "A library for transforming @vacuum@ graphs into GraphViz output";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."vacuum" or (errorHandler.buildDepError "vacuum"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Helper to enter cmdargs command lines using a web browser";
       description = "Used in conjunction with a cmdargs enabled program to enter flags using a web browser,\nvia the cmdargs helper programs mechanism.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cmdargs-browser" = {
@@ -37,9 +37,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-handler-launch" or (errorHandler.buildDepError "wai-handler-launch"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

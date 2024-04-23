@@ -21,7 +21,7 @@
       synopsis = "An Haskell library to drive the french Minitel through a serial port";
       description = "HaMinitel allows you to drive a french Minitel through a serial port in Haskell. It has been started as a mean to discover Haskell and functional programming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

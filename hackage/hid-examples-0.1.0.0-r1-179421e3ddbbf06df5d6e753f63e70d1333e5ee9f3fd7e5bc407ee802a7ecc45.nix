@@ -21,41 +21,41 @@
       synopsis = "Examples to accompany the book \"Haskell in Depth\"";
       description = "This package provides source code examples which accompany the book\n\"Haskell in Depth\" by Vitaly Bragilevsky (Manning Publications 2019).\nYou may want to get this package via @cabal get hid-examples@\nand explore its content.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "locator" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "vocab1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vocab2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vocab3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "showexpr" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stockquotes" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

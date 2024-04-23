@@ -21,7 +21,7 @@
       synopsis = "Quantitative Library";
       description = "Please see the README on GitHub at <https://github.com/ghais/hq#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,12 +51,12 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
-        libs = (((pkgs.lib).optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl")) ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ (pkgs.lib).optional (system.isWindows) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ (pkgs.lib).optional (flags.onlygsl) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
-        pkgconfig = (pkgs.lib).optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"));
+        ];
+        libs = ((pkgs.lib.optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl")) ++ pkgs.lib.optional (system.isFreebsd) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ pkgs.lib.optional (system.isWindows) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ pkgs.lib.optional (flags.onlygsl) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        pkgconfig = pkgs.lib.optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"));
         buildable = true;
-        };
+      };
       tests = {
         "bachelier-test" = {
           depends = [
@@ -64,18 +64,18 @@
             (hsPkgs."hq" or (errorHandler.buildDepError "hq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "normalimpliedvol-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hq" or (errorHandler.buildDepError "hq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

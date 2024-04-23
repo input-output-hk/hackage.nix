@@ -21,7 +21,7 @@
       synopsis = "Simple CLI RPN calculator";
       description = "Simple CLI RPN calculator.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clac" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."plailude" or (errorHandler.buildDepError "plailude"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

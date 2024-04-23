@@ -21,7 +21,7 @@
       synopsis = "QuickCheck tests with portray-diff";
       description = "This provides equality assertion functions for QuickCheck that pretty-print\nstructural diffs of the values in question, rather than dumping the entire\nalues as part of the counterexamples.  This is useful when comparing very\nlarge values, since it can otherwise be difficult to tell what changed\nbetween expected and actual values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."portray-pretty" or (errorHandler.buildDepError "portray-pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

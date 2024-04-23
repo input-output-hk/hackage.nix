@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-session-clientsession-0.1-r0-e5778e6a7bc67d2e91f44d9efe8de24cfb4181d3c5445195d0cc7167fbc6ad24.nix;
         revNum = 0;
         sha256 = "e5778e6a7bc67d2e91f44d9efe8de24cfb4181d3c5445195d0cc7167fbc6ad24";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "Graphviz code generation with Haskell";
       description = "There are multiple ways to describe this package:\n* \"A Turing-complete encoding system for graphviz\"\n* \"A graph visualization code generation EDSL\"\n* \"An easy way to draw graphs\"\nIf any combinators are still missing, feel free to shoot the maintainer an email!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haphviz-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

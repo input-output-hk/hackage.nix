@@ -21,7 +21,7 @@
       synopsis = "Code used by Patch-Shack that seemed sensible to open for reusability";
       description = "Parse darcs output";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."xml-parsec" or (errorHandler.buildDepError "xml-parsec"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

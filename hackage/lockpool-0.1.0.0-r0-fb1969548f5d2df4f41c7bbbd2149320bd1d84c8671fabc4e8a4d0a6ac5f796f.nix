@@ -21,15 +21,15 @@
       synopsis = "set a maximum on the number of concurrent actions ";
       description = "with a 'LockPool', you can specify the\nmaximum number of threads that are running\nconcurrently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

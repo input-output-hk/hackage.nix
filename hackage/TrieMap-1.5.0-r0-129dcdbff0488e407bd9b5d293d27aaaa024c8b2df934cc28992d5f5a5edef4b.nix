@@ -21,7 +21,7 @@
       synopsis = "Automatic type inference of generalized tries with Template Haskell.";
       description = "Provides a efficient and compact implementation of generalized tries, and Template Haskell tools to generate\nthe necessary translation code.  This is meant as a drop-in replacement for Data.Map.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

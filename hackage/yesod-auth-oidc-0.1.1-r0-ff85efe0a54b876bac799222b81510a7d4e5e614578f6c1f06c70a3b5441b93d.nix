@@ -21,7 +21,7 @@
       synopsis = "A yesod-auth plugin for multi-tenant SSO via OpenID Connect";
       description = "A yesod-auth plugin for multi-tenant SSO via OpenID Connect, using\nAuthorization Code flow (AKA server flow).\nPlease see the README.md file for more documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-auth-oidc-test" = {
           depends = [
@@ -89,10 +89,10 @@
             (hsPkgs."lens-regex-pcre" or (errorHandler.buildDepError "lens-regex-pcre"))
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -138,12 +138,12 @@
             (hsPkgs."lens-regex-pcre" or (errorHandler.buildDepError "lens-regex-pcre"))
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

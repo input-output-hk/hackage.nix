@@ -21,24 +21,24 @@
       synopsis = "A library for writing AGI scripts for Asterisk";
       description = "Asterisk is an open-source Voice over IP server (VoIP).\nAsterisk provides an Asterisk Gateway Interface (AGI), which\ncan be used to write external programs that interact with\nAsterisk. It is typically used for creating Interactive Voice\nResponse (IVR) systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "cabal/stack to nix translation tools";
       description = "A set of tools to aid in trating stack and cabal projects into nix expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           (hsPkgs."hpack" or (errorHandler.buildDepError "hpack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-to-nix" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hashes-to-nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "plan-to-nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,9 +95,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackage-to-nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -113,9 +113,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lts-to-nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -130,9 +130,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stack-to-nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -157,9 +157,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "truncate-index" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -168,9 +168,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Some low-level POSIX glue code, that is not in 'unix'";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -37,8 +37,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = if system.isWindows then false else true;
-        };
       };
-    }
+    };
+  }

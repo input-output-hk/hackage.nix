@@ -21,7 +21,7 @@
       synopsis = "Gelatin's support for rendering TTF outlines, using FontyFruity.";
       description = "Gelatin's support for rendering TTF outlines, using FontyFruity.\nUsing FontyFruity gelatin can render smooth font geometry without\nfreetype.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."FontyFruity" or (errorHandler.buildDepError "FontyFruity"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Fixed-size wrapper for StorableArrays, with its own\nStorable instance";
       description = "Uses type-level numeric literals to wrap @StorableArray@\nin a type that statically fixes its size. This allows the\nwrapper to have its own @Storable@ instance, which allows\neasy integration with fixed-size native arrays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

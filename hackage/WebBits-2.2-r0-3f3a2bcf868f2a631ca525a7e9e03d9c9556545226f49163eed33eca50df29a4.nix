@@ -21,7 +21,7 @@
       synopsis = "JavaScript analysis tools";
       description = "WebBits is a collection of libraries for working with JavaScript, contains a parser, a pretty-printer and a lexical environment analyser. The original author of the package is the PLT group of Brown University (http:\\/\\/www.cs.brown.edu\\/research\\/plt\\/). Changes since version 2.1: the syntax of the try-catch-finally statement has been changed in accordance to the ECMAScript specification -- now it only has at most one catch clause. The original test-suite needs updating to support the current test system: patches are welcome.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

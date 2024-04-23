@@ -21,7 +21,7 @@
       synopsis = "A framework for generating singleton types";
       description = "This library generates singleton types, promoted functions, and singleton\nfunctions using Template Haskell. It is useful for programmers who wish\nto use dependently typed programming techniques. The library was originally\npresented in /Dependently Typed Programming with Singletons/, published\nat the Haskell Symposium, 2012.\n(<http://www.cis.upenn.edu/~eir/papers/2012/singletons/paper.pdf>)\nVersion 1.0 and onwards works a lot harder to promote functions. See the\npaper published at Haskell Symposium, 2014:\n<http://www.cis.upenn.edu/~eir/papers/2014/promotion/promotion.pdf>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "singletons-test-suite" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for compiler construction";
       description = "A small utility library accompanying the course on\nCompiler Construction (INFOMCCO) at Utrecht Univerity.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uu-cco-pp-aterm" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."uu-cco" or (errorHandler.buildDepError "uu-cco"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

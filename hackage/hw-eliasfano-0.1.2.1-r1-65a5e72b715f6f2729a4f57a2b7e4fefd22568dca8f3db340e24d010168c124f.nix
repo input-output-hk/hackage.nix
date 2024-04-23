@@ -21,7 +21,7 @@
       synopsis = "Elias-Fano";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."temporary-resourcet" or (errorHandler.buildDepError "temporary-resourcet"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-eliasfano" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."temporary-resourcet" or (errorHandler.buildDepError "temporary-resourcet"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-eliasfano-test" = {
           depends = [
@@ -76,25 +76,25 @@
             (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."hw-eliasfano" or (errorHandler.buildDepError "hw-eliasfano"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -112,9 +112,9 @@
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

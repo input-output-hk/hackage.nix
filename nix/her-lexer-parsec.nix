@@ -6,8 +6,8 @@
         nix = import ../hackage/her-lexer-parsec-0.0.0-r0-c348c622d2d0a9125adf81f3747233d8d6aee7439d9d53d848e80e88cb29cb02.nix;
         revNum = 0;
         sha256 = "c348c622d2d0a9125adf81f3747233d8d6aee7439d9d53d848e80e88cb29cb02";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -16,7 +16,7 @@
       threaded = true;
       llvm = false;
       optimized = true;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "structures"; version = "0.2"; };
@@ -29,7 +29,7 @@
       synopsis = "\"Advanced\" Data Structures";
       description = "This package is a playground for working with several types of advanced data structures including\nwavelet trees and cache oblivious lookahead arrays.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,12 +50,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!!flags.test-properties) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."structures" or (errorHandler.buildDepError "structures"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
@@ -63,29 +63,29 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = if !flags.test-properties then false else true;
-          };
+        };
         "hunit" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!!flags.test-hunit) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."structures" or (errorHandler.buildDepError "structures"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = if !flags.test-hunit then false else true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -95,10 +95,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
         };
+      };
       benchmarks = {
         "maps" = {
           depends = [
@@ -110,9 +110,9 @@
             (hsPkgs."structures" or (errorHandler.buildDepError "structures"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "lookups" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -124,9 +124,9 @@
             (hsPkgs."structures" or (errorHandler.buildDepError "structures"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "inserts" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -138,9 +138,9 @@
             (hsPkgs."structures" or (errorHandler.buildDepError "structures"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

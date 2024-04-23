@@ -21,7 +21,7 @@
       synopsis = "Process mpileup output to identify significant differences";
       description = "Post-processing output from `samtools mpileup` to extract various information,\nincluding statistics (per-position or global), consensus sequence (in various\nformats), and textual visualizations.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "varan" = {
@@ -33,26 +33,26 @@
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vextr" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sparks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

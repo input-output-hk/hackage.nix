@@ -21,7 +21,7 @@
       synopsis = "Third cake the Makefile EDSL";
       description = "Cake3 is a EDSL for building Makefiles, written in Haskell. With cake3,\ndeveloper can write their build logic in Haskell, obtain clean and safe Makefile\nand distribute it among the non-Haskell-aware users. Currenly, GNU Make is\nthe only backend supported.\n\n/Example program/\n\n> module Cakefile where\n>\n> import Development.Cake3\n> import Cakefile_P\n>\n> cs = map file [\"main.c\", \"second.c\"]\n>\n> main = writeMake (file \"Makefile\") $ do\n>   selfUpdate\n>   d <- rule $ do\n>     shell [cmd|gcc -M $cs -MF @(file \"depend.mk\")|]\n>   os <- forM cs $ \\c -> do\n>     rule $ do\n>       shell [cmd| gcc -c $(extvar \"CFLAGS\") -o @(c.=\"o\") $c |]\n>   elf <- rule $ do\n>     shell [cmd| gcc -o @(file \"main.elf\") $os |]\n>   rule $ do\n>     phony \"clean\"\n>     unsafeShell [cmd|rm $elf $os $d|]\n>   rule $ do\n>     phony \"all\"\n>     depend elf\n>   includeMakefile d\n\n/Basic workflow/\n\n* Install the cake3\n\n* Create Cakefile.hs in the project root\n\n* Build the application using cake3 script provided\n\n* Execute the application to obtain the Makefile\n\nSee the README on the GitHub <https://github.com/grwlf/cake3> for more\ninformation. Distribution contains several example projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cake3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "urembed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."monadloc" or (errorHandler.buildDepError "monadloc"))
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

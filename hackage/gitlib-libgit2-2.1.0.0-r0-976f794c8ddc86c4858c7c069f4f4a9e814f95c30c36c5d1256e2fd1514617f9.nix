@@ -21,7 +21,7 @@
       synopsis = "Libgit2 backend for gitlib";
       description = "Libgit2 (<http://libgit2.github.com>) backend for @gitlib@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smoke" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

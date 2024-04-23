@@ -21,7 +21,7 @@
       synopsis = "Analyzes Haskell source files and dumps info in parsable format";
       description = "A tool to assist developers of IDEs and other code analyzing\nprograms.  Processes Haskell source files and outputs\ninformation about types in an efficient machine-readable\nformat.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "typalyze" = {
@@ -30,9 +30,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

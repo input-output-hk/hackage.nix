@@ -21,7 +21,7 @@
       synopsis = "Split a big audio file into pieces at positions of silence";
       description = "Split a big audio file into pieces at positions of silence";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "split-record" = {
@@ -33,9 +33,9 @@
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

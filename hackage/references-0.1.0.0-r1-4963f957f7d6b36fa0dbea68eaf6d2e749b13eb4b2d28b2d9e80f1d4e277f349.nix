@@ -21,7 +21,7 @@
       synopsis = "Generalization of lenses, folds and traversals for haskell";
       description = "Similar to lenses, references provide access to part of a structure or a different\nview on the structure. References are considered to be a generalization of those,\nbut the come with a different representation. The main purpose of references is to\nhave accessors that can cooperate with monads, especially IO.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

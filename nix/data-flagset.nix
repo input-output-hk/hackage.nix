@@ -6,8 +6,8 @@
         nix = import ../hackage/data-flagset-1.0.0.0-r0-d2148b55d2a1e1608e31424132dc0251056eec473805adbcdfd75b8d05398a39.nix;
         revNum = 0;
         sha256 = "d2148b55d2a1e1608e31424132dc0251056eec473805adbcdfd75b8d05398a39";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

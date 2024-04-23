@@ -21,36 +21,36 @@
       synopsis = "Extra hedgehog functionality";
       description = "Extra hedgehog functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-hedgehog-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hw-hedgehog" or (errorHandler.buildDepError "hw-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."hw-hedgehog" or (errorHandler.buildDepError "hw-hedgehog"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

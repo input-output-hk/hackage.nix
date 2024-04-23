@@ -21,7 +21,7 @@
       synopsis = "An automated proof system for Haskell programs";
       description = "Zeno is an automated proof system for Haskell program\nproperties; developed at Imperial College London by\nWilliam Sonnex, Sophia Drossopoulou and Susan Eisenbach.\nIt aims to solve the general problem of equality between\ntwo Haskell terms, for any input value.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zeno" = {
@@ -38,9 +38,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

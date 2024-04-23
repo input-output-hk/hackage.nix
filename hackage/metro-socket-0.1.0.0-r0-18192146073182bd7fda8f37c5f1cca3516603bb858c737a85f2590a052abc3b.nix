@@ -21,7 +21,7 @@
       synopsis = "Socket transport for metro";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro/tree/master/metro-socket#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A compact file system watcher for Mac OS X";
       description = "Spy can be used to watch for file changes and to either report the modified files or run a command if files change. It can be used to trigger compilation, to run tests or start a deployment.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "spy" = {
@@ -34,10 +34,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spy-testsuite" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

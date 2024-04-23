@@ -21,7 +21,7 @@
       synopsis = "More useful and humain delaying functions";
       description = "Functions to provide delays, timeouts, and callbacks where the target time is calculated either from a period as an offset from the initialization time, or at a specific 'UTCTime'.\n\nMost standard Haskell types are supported for periods, based on the second as the base unit quantity. For more complicated period calculations, 'Dimensional's 'Time' type is supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

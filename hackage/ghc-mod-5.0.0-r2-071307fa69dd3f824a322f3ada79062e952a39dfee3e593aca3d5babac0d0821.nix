@@ -21,7 +21,7 @@
       synopsis = "Happy Haskell Programming";
       description = "The ghc-mod command is a backend command to enrich\nHaskell programming on editors including\nEmacs, Vim, and Sublime.\nThe ghc-mod command is based on ghc-mod library\nwhich is a wrapper of GHC API.\nThis package includes the ghc-mod command,\nthe ghc-mod library, and Emacs front-end\n(for historical reasons).\nFor more information, please see its home page.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,14 +48,14 @@
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."djinn-ghc" or (errorHandler.buildDepError "djinn-ghc"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.8"
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
           then [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ]
           else [
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "ghc-mod" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghc-modi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,18 +77,18 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,14 +115,14 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."djinn-ghc" or (errorHandler.buildDepError "djinn-ghc"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.8"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
             then [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ]
             else [
               (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"));
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

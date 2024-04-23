@@ -21,14 +21,14 @@
       synopsis = "A transparent nested Map structure";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

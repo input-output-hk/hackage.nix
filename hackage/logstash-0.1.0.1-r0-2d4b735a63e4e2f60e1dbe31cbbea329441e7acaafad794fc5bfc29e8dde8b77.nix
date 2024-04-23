@@ -21,7 +21,7 @@
       synopsis = "Logstash client library for Haskell";
       description = "Please see the README on GitHub at <https://github.com/mbg/logstash#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Yi editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

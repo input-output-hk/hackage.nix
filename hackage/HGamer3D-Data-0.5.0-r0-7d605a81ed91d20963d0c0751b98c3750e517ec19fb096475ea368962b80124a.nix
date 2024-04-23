@@ -21,7 +21,7 @@
       synopsis = "Toolset for the Haskell Game Programmer - Data Definitions";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. HGamer3D is available on Windows and Linux. This\npackage provides common data definitions and utility functions for HGamer3D.\nAlso in this package, the Entity Component System is placed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

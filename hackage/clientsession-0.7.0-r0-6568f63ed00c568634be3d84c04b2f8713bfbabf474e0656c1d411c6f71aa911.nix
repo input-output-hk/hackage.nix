@@ -21,7 +21,7 @@
       synopsis = "Store session data in a cookie.";
       description = "Achieves security through AES encryption and MD5 hashing.\nUses base64 encoding to avoid any issues with characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."cryptocipher" or (errorHandler.buildDepError "cryptocipher"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

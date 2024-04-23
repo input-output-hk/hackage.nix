@@ -21,7 +21,7 @@
       synopsis = "plaimi's prelude";
       description = "The prelude used internally at plaimi.\nIt does not make a whole lot of sense to use this unless\nyou are hacking on a plaimi project. Arguably, it\ndoesn't even make a little sense.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

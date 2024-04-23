@@ -21,23 +21,23 @@
       synopsis = "Colourise Haskell code.";
       description = "hscolour is a small Haskell script to colourise Haskell code. It currently\nhas four output formats:\nANSI terminal codes, HTML 3.2 with <font> tags, HTML 4.01 with CSS, and LaTeX.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HsColour" = {
           depends = [
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

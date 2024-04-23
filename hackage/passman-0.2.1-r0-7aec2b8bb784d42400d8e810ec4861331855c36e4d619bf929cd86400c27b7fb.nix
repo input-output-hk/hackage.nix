@@ -21,7 +21,7 @@
       synopsis = "a simple password manager";
       description = "Please see the README on GitHub at <https://github.com/jlamothe/passman#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "passman" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."passman" or (errorHandler.buildDepError "passman"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "passman-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."passman" or (errorHandler.buildDepError "passman"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

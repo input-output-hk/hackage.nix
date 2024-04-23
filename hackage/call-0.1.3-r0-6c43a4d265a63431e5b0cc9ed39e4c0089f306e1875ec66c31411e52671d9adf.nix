@@ -12,7 +12,7 @@
       buildhelloworld = false;
       glforwardcompat = true;
       glcoreprofile = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "call"; version = "0.1.3"; };
@@ -25,7 +25,7 @@
       synopsis = "The call game engine";
       description = "Call is a minimalistic game engine that supports 2D/3D graphics and sounds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,18 +61,18 @@
           (hsPkgs."WAVE" or (errorHandler.buildDepError "WAVE"))
           (hsPkgs."minioperational" or (errorHandler.buildDepError "minioperational"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hello-world" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."call" or (errorHandler.buildDepError "call"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = if flags.buildhelloworld then true else false;
-          };
         };
       };
-    }
+    };
+  }

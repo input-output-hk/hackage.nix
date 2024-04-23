@@ -6,8 +6,8 @@
         nix = import ../hackage/hdigest-1.0-r0-95ac4ade4ec8e21e8f178f721434a2d04ac64e8f93ddb0bd3da85f435984098f.nix;
         revNum = 0;
         sha256 = "95ac4ade4ec8e21e8f178f721434a2d04ac64e8f93ddb0bd3da85f435984098f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

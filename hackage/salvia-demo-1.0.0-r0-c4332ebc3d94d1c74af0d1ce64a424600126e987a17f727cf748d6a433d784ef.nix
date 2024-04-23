@@ -21,7 +21,7 @@
       synopsis = "Demo Salvia servers.";
       description = "This package contains six simple example programs that show how to use the\nSalvia web application framework. The first demo, /salvia-demo/, contains a\nbigger example showing off some of the more advanced features and handler\nrunning on the default Salvia server implementation. The second demo,\n/salvia-cgi/ show how to switch the Salvia back-end and run a Salvia handler\nin CGI mode. The third example, /salvia-serve/, is a simple file server that\nuses the /c10k-server/ back-end and the /send-file/ package to server static\nfiles and directories. The other demos illustrate how to use some simple\naspects of the web framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."salvia-extras" or (errorHandler.buildDepError "salvia-extras"))
           (hsPkgs."salvia-sessions" or (errorHandler.buildDepError "salvia-sessions"))
           (hsPkgs."salvia-websocket" or (errorHandler.buildDepError "salvia-websocket"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "salvia-demo" = { buildable = true; };
         "salvia-serve" = { buildable = true; };
@@ -49,6 +49,6 @@
         "salvia-helloworld" = { buildable = true; };
         "salvia-query" = { buildable = true; };
         "salvia-directories" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

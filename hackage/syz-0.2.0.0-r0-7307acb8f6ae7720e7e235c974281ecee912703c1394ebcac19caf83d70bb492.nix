@@ -21,16 +21,16 @@
       synopsis = "Scrap Your Zippers";
       description = "This package contains the generic zipper system described\nin the Scrap Your Zippers paper\n(see <http://www.cs.indiana.edu/~adamsmd/papers/scrap_your_zippers/>).\nIt defines the @Zipper@ type permitting zipper traversals\nover arbitrary instances of @Data@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

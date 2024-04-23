@@ -21,21 +21,21 @@
       synopsis = "Haskell translation of http://search.cpan.org/~sburke/Text-Unidecode-1.30/lib/Text/Unidecode.pm";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "unidecode-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unidecode" or (errorHandler.buildDepError "unidecode"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

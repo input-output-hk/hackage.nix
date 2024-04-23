@@ -21,7 +21,7 @@
       synopsis = "ghc toolchain installer";
       description = "A rewrite of the shell script ghcup, for providing\na more stable user experience and exposing an API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -81,20 +81,20 @@
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optionals (flags.internal-downloader) [
+        ] ++ pkgs.lib.optionals (flags.internal-downloader) [
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-io-streams" or (errorHandler.buildDepError "http-io-streams"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
-          ]) ++ (if flags.tar
+        ]) ++ (if flags.tar
           then [
             (hsPkgs."tar-bytestring" or (errorHandler.buildDepError "tar-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "ghcup" = {
           depends = ([
@@ -121,13 +121,13 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ] ++ (pkgs.lib).optionals (flags.tui) [
+          ] ++ pkgs.lib.optionals (flags.tui) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ]) ++ (pkgs.lib).optional (!flags.tar) (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"));
+          ]) ++ pkgs.lib.optional (!flags.tar) (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"));
           buildable = true;
-          };
+        };
         "ghcup-gen" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -155,16 +155,16 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (if flags.tar
+          ] ++ (if flags.tar
             then [
               (hsPkgs."tar-bytestring" or (errorHandler.buildDepError "tar-bytestring"))
-              ]
+            ]
             else [
               (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "ghcup-test" = {
           depends = [
@@ -181,9 +181,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

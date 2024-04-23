@@ -21,7 +21,7 @@
       synopsis = "Pure-Haskell utilities for dealing with XML with the enumerator package.";
       description = "Provides the ability to parse and render XML in a streaming manner using the enumerator package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."blaze-builder-enumerator" or (errorHandler.buildDepError "blaze-builder-enumerator"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

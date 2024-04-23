@@ -21,7 +21,7 @@
       synopsis = "A library for rendering LaTeX formulae as SVG using an actual LaTeX";
       description = "This library provides the basic infrastructure necessary to convert LaTeX\nformulae into SVG images, using a real LaTeX installation. This is useful in\nparticular for showing formulae on websites, where using alternatives like\nMathJax is not an option (e.g, when you want to use various LaTeX packages that\nMathJax doesn't support).\n\nThis library requires @latex@, @dvisvgm@ to be present in the system.\n\nThe companion library to this, @latex-svg-pandoc@, provides useful tools to\nintegrate this library with pandoc, when generating HTML documents.\n\nThis is a fork of https://github.com/liamoc/latex-formulae";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

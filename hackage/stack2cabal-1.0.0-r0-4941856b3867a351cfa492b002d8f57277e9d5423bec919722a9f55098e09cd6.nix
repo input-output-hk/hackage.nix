@@ -21,7 +21,7 @@
       synopsis = "Convert stack projects to cabal.project + cabal.project.freeze";
       description = "Convert stack.yaml / package.yaml to cabal.project / cabal.project.freeze / *.cabal.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack2cabal" = {
@@ -34,9 +34,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hpack" or (errorHandler.buildDepError "hpack"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "CI Assistant for Haskell projects";
       description = "CI Assistant for Haskell projects.  Implements package caching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,19 +60,19 @@
           (hsPkgs."topograph" or (errorHandler.buildDepError "topograph"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-cache" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."cabal-cache" or (errorHandler.buildDepError "cabal-cache"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cabal-cache-test" = {
           depends = [
@@ -94,12 +94,12 @@
             (hsPkgs."relation" or (errorHandler.buildDepError "relation"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."cabal-cache" or (errorHandler.buildDepError "cabal-cache"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

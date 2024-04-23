@@ -21,7 +21,7 @@
       synopsis = "A library for BDD-style testing with the Snap Web Framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."HandsomeSoup" or (errorHandler.buildDepError "HandsomeSoup"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-snap-testing" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."HandsomeSoup" or (errorHandler.buildDepError "HandsomeSoup"))
             (hsPkgs."snap-testing" or (errorHandler.buildDepError "snap-testing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

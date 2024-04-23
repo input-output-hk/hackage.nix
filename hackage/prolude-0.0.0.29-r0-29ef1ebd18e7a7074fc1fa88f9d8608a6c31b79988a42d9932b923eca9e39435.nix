@@ -21,7 +21,7 @@
       synopsis = "ACI Learning's custom prelude";
       description = "Prolude is ACI Learning's custom prelude.\n<https://www.acilearning.com>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

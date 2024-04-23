@@ -21,7 +21,7 @@
       synopsis = "Multiline strings, interpolation and templating.";
       description = "This package adds quasiquoter for multiline\nstrings, interpolation and simple templating.\nIt can handle repetition templates which makes it\nHandy for outputting larger structures, such as\nlatex tables or gnuplot files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

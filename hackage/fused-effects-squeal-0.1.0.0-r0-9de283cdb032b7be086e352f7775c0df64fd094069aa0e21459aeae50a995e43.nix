@@ -21,7 +21,7 @@
       synopsis = "A fused-effects adapter for squeal-postgresql.";
       description = "A fused-effects adapter for squeal-postgresql. It allows you to conjure `MonadPQ` instances and manage connection pools in a `fused-effects` stack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unliftio-pool" or (errorHandler.buildDepError "unliftio-pool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

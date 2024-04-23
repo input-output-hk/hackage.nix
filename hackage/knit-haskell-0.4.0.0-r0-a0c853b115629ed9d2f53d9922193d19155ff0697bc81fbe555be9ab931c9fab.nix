@@ -21,7 +21,7 @@
       synopsis = "a minimal Rmarkdown sort-of-thing for haskell, by way of Pandoc";
       description = "knit-haskell is a beginning attempt at bringing some of the benefits of\nRmarkdown to Haskell.\nIt includes an effects stack\n(using <https://github.com/isovector/polysemy#readme polysemy> rather than mtl)\nwhich includes logging, randomness\n(via <http://hackage.haskell.org/package/random-fu random-fu>),\na simplified interface to Pandoc and various writer-like effects to\nintersperse document building with regular code.\nVarious helper functions are provided to simplify common operations,\nmaking it especially straightforward to build\nan HTML document from bits of markdown,\nlatex and <http://hackage.haskell.org/package/lucid Lucid>\nor <http://hackage.haskell.org/package/blaze-html Blaze> html.\nSupport is also included for including\n<http://hackage.haskell.org/package/hvega hvega> visualizations.\nMore information is available in the <https://github.com/adamConnerSax/knit-haskell/blob/master/Readme.md readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
           (hsPkgs."svg-builder" or (errorHandler.buildDepError "svg-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "SimpleExample" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ErrorExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MultiDocExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -97,9 +97,9 @@
             (hsPkgs."knit-haskell" or (errorHandler.buildDepError "knit-haskell"))
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MtlExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,9 +111,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RandomExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
             (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

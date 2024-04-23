@@ -21,7 +21,7 @@
       synopsis = "Gemini client";
       description = "Line-based command-oriented interactive client for the gemini protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "diohsc" = {
@@ -59,9 +59,9 @@
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.magic) (hsPkgs."magic" or (errorHandler.buildDepError "magic"))) ++ (pkgs.lib).optional (!system.isWindows || flags.libiconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (flags.magic) (hsPkgs."magic" or (errorHandler.buildDepError "magic"))) ++ pkgs.lib.optional (!system.isWindows || flags.libiconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

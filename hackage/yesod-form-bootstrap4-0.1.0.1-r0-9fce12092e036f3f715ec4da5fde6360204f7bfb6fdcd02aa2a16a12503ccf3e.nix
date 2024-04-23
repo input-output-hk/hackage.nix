@@ -21,15 +21,15 @@
       synopsis = "renderBootstrap4";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."classy-prelude-yesod" or (errorHandler.buildDepError "classy-prelude-yesod"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

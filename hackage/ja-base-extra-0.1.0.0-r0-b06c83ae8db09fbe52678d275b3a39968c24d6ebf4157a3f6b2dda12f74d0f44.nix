@@ -21,11 +21,11 @@
       synopsis = "Extra functions I require in base";
       description = "This package encompasses a collection of general functions that only depend on\nthe base library, which I have acumulated through writing Haskell code and\njudged general and useful enough to extract.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

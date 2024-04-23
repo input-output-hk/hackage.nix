@@ -21,7 +21,7 @@
       synopsis = "Type-safe, multi-backend data serialization.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/persistent>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

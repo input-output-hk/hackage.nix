@@ -21,7 +21,7 @@
       synopsis = "Miscellaneous Haskell utilities for data structures and data manipulation.";
       description = "This Haskell library contains miscellaneous data structures and data manipulation functions for general uses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tostring" or (errorHandler.buildDepError "tostring"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

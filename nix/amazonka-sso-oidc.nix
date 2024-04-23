@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-sso-oidc-2.0-r0-cd74ffd667751bde082434adcec0213e5bea8312d88b725c97bbff8846800cd2.nix;
         revNum = 0;
         sha256 = "cd74ffd667751bde082434adcec0213e5bea8312d88b725c97bbff8846800cd2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

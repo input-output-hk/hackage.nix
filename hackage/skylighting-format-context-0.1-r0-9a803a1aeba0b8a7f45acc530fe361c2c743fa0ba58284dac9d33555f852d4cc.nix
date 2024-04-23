@@ -21,7 +21,7 @@
       synopsis = "ConTeXt formatter for skylighting syntax highlighting\nlibrary";
       description = "This module allows tokens produced by skylighting-core\nto be rendered as ConTeXt commands.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."skylighting-core" or (errorHandler.buildDepError "skylighting-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

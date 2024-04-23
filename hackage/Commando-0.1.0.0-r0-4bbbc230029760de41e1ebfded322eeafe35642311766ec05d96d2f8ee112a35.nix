@@ -21,7 +21,7 @@
       synopsis = "Watch some files; Rerun a command";
       description = "Watch some files; Rerun a command";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "commando" = {
@@ -33,9 +33,9 @@
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

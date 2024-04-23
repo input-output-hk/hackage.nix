@@ -21,7 +21,7 @@
       synopsis = "Convert a pcap into an enumerator.";
       description = "pcap enumerator package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

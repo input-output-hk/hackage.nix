@@ -21,7 +21,7 @@
       synopsis = "conduit wrappers for WAI";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-conduit>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

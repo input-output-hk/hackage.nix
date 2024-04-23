@@ -21,7 +21,7 @@
       synopsis = "ANSI formatter for skylighting syntax highlighting library";
       description = "This module allows tokens produced by skylighting-core\nto be rendered as ANSI colored text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

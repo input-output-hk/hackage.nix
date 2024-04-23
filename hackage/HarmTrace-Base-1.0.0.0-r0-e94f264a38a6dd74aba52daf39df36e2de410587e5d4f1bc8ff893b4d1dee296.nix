@@ -21,7 +21,7 @@
       synopsis = "Parsing and unambiguously representing musical chords.";
       description = "HarmTrace: Harmony Analysis and Retrieval of Music\nwith Type-level Representations of Abstract\nChords Entities\n\nWe present HarmTrace-Base, a libary for parsing and\nunambiguously representing musical chords.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

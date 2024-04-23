@@ -21,11 +21,11 @@
       synopsis = "A library with less dependencies that can be used for multiple @Ord a => a -> b@ transformations.";
       description = "A library that can be used as a @case ... of@ constuction analogue for the multiple @Ord a => a -> b@ transformations and data representation. Uses \"GHC.Arr\" internally. If you use the module in GHCi, then, please, run the interpreter with the flag -fobject-code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

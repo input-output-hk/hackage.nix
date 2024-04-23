@@ -21,7 +21,7 @@
       synopsis = "Create Excel files with Haskell";
       description = "Easily create Excel files with Haskell. See README at <https://github.com/green-lambda/HExcel>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [
           (pkgs."z" or (errorHandler.sysDepError "z"))
           (pkgs."xlsxwriter" or (errorHandler.sysDepError "xlsxwriter"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

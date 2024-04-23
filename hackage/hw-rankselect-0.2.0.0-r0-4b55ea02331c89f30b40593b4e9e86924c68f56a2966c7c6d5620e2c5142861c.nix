@@ -21,7 +21,7 @@
       synopsis = "Conduits for tokenizing streams.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
           (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-rankselect-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-rankselect-test" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

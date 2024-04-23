@@ -21,7 +21,7 @@
       synopsis = "Create proper Pipes from System.Process";
       description = "This package provides functions to build proper Pipes from Unix shell commands like /tr/, /ls/ or /echo/ in a concise way.\n\nBuild with /cabal configure --enable-tests/ to build the little hspec test.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

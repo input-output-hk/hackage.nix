@@ -21,7 +21,7 @@
       synopsis = "A simple Reactive library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

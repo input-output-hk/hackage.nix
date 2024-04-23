@@ -14,7 +14,7 @@
       wmme = false;
       wdmks = false;
       bundle = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "bindings-portaudio"; version = "0.2"; };
@@ -27,23 +27,23 @@
       synopsis = "Low-level bindings to portaudio library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        libs = (pkgs.lib).optionals (system.isWindows && flags.bundle) ([
+        ];
+        libs = pkgs.lib.optionals (system.isWindows && flags.bundle) ([
           (pkgs."winmm" or (errorHandler.sysDepError "winmm"))
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
-          ] ++ (pkgs.lib).optional (flags.wdmks) (pkgs."Setupapi" or (errorHandler.sysDepError "Setupapi")));
-        pkgconfig = (pkgs.lib).optional (system.isLinux || system.isFreebsd || system.isOsx || !flags.bundle) (pkgconfPkgs."portaudio-2.0" or (errorHandler.pkgConfDepError "portaudio-2.0"));
+        ] ++ pkgs.lib.optional (flags.wdmks) (pkgs."Setupapi" or (errorHandler.sysDepError "Setupapi")));
+        pkgconfig = pkgs.lib.optional (system.isLinux || system.isFreebsd || system.isOsx || !flags.bundle) (pkgconfPkgs."portaudio-2.0" or (errorHandler.pkgConfDepError "portaudio-2.0"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

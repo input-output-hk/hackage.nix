@@ -21,7 +21,7 @@
       synopsis = "Utilities for TDD with test-framework, HUnit, and QuickCheck";
       description = "This library provides utility functions for TDD in the manner of \"MissingH\".\n\nThis package contains a test suite that is an excellent example of using\nthis library and may be cargo culted to save time starting TDD on a new\nproject.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tdd-util-tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

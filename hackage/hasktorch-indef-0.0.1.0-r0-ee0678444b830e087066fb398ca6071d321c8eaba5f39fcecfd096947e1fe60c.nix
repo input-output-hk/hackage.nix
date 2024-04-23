@@ -21,7 +21,7 @@
       synopsis = "Core Hasktorch abstractions wrapping FFI bindings";
       description = "The hasktorch-indef package constitutes the main user API for hasktorch. It uses backpack signatures to generically glue low-level FFI bindings to a high-level interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,22 +42,22 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (flags.cuda) [
+        ] ++ pkgs.lib.optionals (flags.cuda) [
           (hsPkgs."hasktorch-types-thc" or (errorHandler.buildDepError "hasktorch-types-thc"))
           (hsPkgs."cuda" or (errorHandler.buildDepError "cuda"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "hasktorch-indef-floating" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-indef" or (errorHandler.buildDepError "hasktorch-indef"))
             (hsPkgs."hasktorch-signatures-partial" or (errorHandler.buildDepError "hasktorch-signatures-partial"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec-double-th" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

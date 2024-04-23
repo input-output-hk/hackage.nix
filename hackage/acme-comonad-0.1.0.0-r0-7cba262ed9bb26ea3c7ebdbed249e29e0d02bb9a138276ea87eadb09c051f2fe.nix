@@ -21,14 +21,14 @@
       synopsis = "A more efficient dualization";
       description = "\"Control.Comonad\" is a double-dual module name. This package fixes that, in the interest of good coding style.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

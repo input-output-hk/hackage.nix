@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL backed Wai session store";
       description = "Provides a PostgreSQL backed session store for the Network.Wai.Session interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-session-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postgresql-session" or (errorHandler.buildDepError "postgresql-session"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

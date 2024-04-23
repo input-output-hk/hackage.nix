@@ -21,7 +21,7 @@
       synopsis = "Cryptographic random number generator.";
       description = "Convenient wrapper for the source of random bytes\nprovided by the @entropy@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

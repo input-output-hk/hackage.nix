@@ -21,7 +21,7 @@
       synopsis = "Quasi-Quoters for exec process";
       description = "Quasi-Quoters for exec process";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A desktop bar similar to xmobar, but with more GUI";
       description = "Taffybar is a gtk+3 (through gtk2hs) based desktop information bar, intended\nprimarily for use with XMonad, though it can also function alongside other EWMH\ncompliant window managers. It is similar in spirit to xmobar, but it differs in\nthat it gives up some simplicity for a reasonable helping of eye candy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -83,15 +83,15 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."xml-helpers" or (errorHandler.buildDepError "xml-helpers"))
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "taffybar" = {
           depends = [
@@ -99,12 +99,12 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."taffybar" or (errorHandler.buildDepError "taffybar"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

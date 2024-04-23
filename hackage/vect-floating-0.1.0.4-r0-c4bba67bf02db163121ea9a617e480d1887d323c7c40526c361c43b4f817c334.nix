@@ -21,14 +21,14 @@
       synopsis = "A low-dimensional linear algebra library, operating on the Floating typeclass";
       description = "A low-dimensional (2, 3, 4 and Quaternions) linear algebra library,\nwith lots of useful functions. Forked from vect library at <http://hackage.haskell.org/package/vect>\nby Balazs Komuves in order to use Floating typeclass instead of Float, Double.\nAccelerate instances are available at <http://hackage.haskell.org/package/vect-floating-accelerate>.\nMany thanks to Balazs Komuves.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

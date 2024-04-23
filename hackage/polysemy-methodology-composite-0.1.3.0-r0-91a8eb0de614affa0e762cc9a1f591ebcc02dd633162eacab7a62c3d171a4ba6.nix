@@ -14,7 +14,7 @@
       identifier = {
         name = "polysemy-methodology-composite";
         version = "0.1.3.0";
-        };
+      };
       license = "MIT";
       copyright = "dan.firth@homotopic.tech";
       maintainer = "dan.firth@homotopic.tech";
@@ -24,7 +24,7 @@
       synopsis = "Functions for using polysemy-methodology with composite.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."polysemy-methodology" or (errorHandler.buildDepError "polysemy-methodology"))
           (hsPkgs."polysemy-vinyl" or (errorHandler.buildDepError "polysemy-vinyl"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "OpenGL for dummies";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."WaveFront" or (errorHandler.buildDepError "WaveFront"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

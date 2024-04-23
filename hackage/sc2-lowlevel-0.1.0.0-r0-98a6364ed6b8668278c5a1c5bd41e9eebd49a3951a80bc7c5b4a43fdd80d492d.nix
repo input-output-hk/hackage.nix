@@ -21,7 +21,7 @@
       synopsis = "Low-level Starcraft II API";
       description = "This package is a wrapper around the sc2-proto library, handling things such as launching the process and sending and receiving messages over a websocket.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."sc2-support" or (errorHandler.buildDepError "sc2-support"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

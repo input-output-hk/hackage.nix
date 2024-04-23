@@ -21,7 +21,7 @@
       synopsis = "Patch byte-representable data in a bytestream";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bytepatch" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -99,12 +99,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

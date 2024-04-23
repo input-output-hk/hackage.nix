@@ -21,7 +21,7 @@
       synopsis = "Another postgresql-simple transaction monad";
       description = "Another postgresql-simple transaction monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pg-transact-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."pg-transact" or (errorHandler.buildDepError "pg-transact"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

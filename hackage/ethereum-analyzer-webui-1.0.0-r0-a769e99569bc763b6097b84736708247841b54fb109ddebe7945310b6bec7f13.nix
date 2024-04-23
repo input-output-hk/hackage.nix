@@ -21,7 +21,7 @@
       synopsis = "A web frontend for ethereum-analyzer";
       description = "A web frontend for ethereum-analyzer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -65,9 +65,9 @@
           (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ethereum-analyzer-webui" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."ethereum-analyzer-webui" or (errorHandler.buildDepError "ethereum-analyzer-webui"))
             (hsPkgs."hflags" or (errorHandler.buildDepError "hflags"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

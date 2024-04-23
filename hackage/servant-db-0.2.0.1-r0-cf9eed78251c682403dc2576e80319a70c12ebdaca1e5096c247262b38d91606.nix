@@ -21,14 +21,14 @@
       synopsis = "Servant types for defining API with relational DBs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parse process information for Linux";
       description = "This library parse process information under /proc on Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."xformat" or (errorHandler.buildDepError "xformat"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A tool for looking through PDF file using Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

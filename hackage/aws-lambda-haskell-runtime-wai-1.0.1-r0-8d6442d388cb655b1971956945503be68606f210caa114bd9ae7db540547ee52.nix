@@ -14,7 +14,7 @@
       identifier = {
         name = "aws-lambda-haskell-runtime-wai";
         version = "1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Eir Försäkring";
       maintainer = "dnikolovv@hotmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Run wai applications on AWS Lambda";
       description = "Please see the README on GitHub at <https://github.com/eir-forsakring/aws-lambda-haskell-runtime-wai#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aws-lambda-haskell-runtime-wai-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

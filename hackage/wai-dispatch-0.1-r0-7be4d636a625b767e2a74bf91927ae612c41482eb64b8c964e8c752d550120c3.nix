@@ -21,7 +21,7 @@
       synopsis = "Nice wrapper around yesod-routes for use with WAI";
       description = "Provides a simple wrapper for taking Route data mapping to WAI\n'Application's and a default 'Application' and producing a single\n'Application'.\n\nYou may find the route-generator package useful for generating route\ndata to use with this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod-routes" or (errorHandler.buildDepError "yesod-routes"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

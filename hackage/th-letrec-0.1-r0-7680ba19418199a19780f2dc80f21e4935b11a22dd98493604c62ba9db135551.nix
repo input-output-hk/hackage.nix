@@ -21,7 +21,7 @@
       synopsis = "Implicit (recursive) let insertion";
       description = "Implicit (recursive) let insertion.\n\nThe package provides @letrecE@ combinator which allows dynamic and implicit\nlet-expression generation. It is specially handy for Typed Template Haskell,\nas generating dynamic structures is impossible with (static) splices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

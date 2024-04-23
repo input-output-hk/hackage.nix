@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to the Twitter API";
       description = "The hs-twitter API binding lets you access twitter.com's\nresources and methods from Haskell.\n\nImplements the full API, see <http://apiwiki.twitter.com/REST+API+Documentation>\n\nFor more info on use, please visit <http://haskell.forkIO.com/twitter> ,\nthe @CHANGES@ file in the distribution contains change info for the package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

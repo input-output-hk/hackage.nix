@@ -21,21 +21,21 @@
       synopsis = "Run IO actions lazily while respecting their order";
       description = "Run IO actions lazily while respecting their order.\nRunning a value of the LazyIO monad in the IO monad is like starting a thread\nwhich is however driven by its output.\nThat is, the LazyIO action is only executed as far as necessary\nin order to provide the required data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "test" = { buildable = if !flags.buildtests then false else true; };
-        };
       };
-    }
+    };
+  }

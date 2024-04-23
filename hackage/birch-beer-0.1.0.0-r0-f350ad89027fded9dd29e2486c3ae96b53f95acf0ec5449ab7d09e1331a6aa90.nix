@@ -21,7 +21,7 @@
       synopsis = "Plot a colorful tree.";
       description = "Generate a tree for displaying a hierarchy of groups with colors, scaling, and more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,9 +61,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."typed-spreadsheet" or (errorHandler.buildDepError "typed-spreadsheet"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "birch-beer" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

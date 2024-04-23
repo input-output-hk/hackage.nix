@@ -6,8 +6,8 @@
         nix = import ../hackage/hist-pl-lmf-0.1.0-r0-8c4b6f4cdaeee09c4ad390bc0b91929d007ca239a0fe2efff23f83bef4c1989e.nix;
         revNum = 0;
         sha256 = "8c4b6f4cdaeee09c4ad390bc0b91929d007ca239a0fe2efff23f83bef4c1989e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

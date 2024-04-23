@@ -21,11 +21,11 @@
       synopsis = "Short-circuit values and expressions.";
       description = "Classes and functions for short-circuit values and expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

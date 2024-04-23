@@ -21,7 +21,7 @@
       synopsis = "A typed, template generated Html DSL, and helpers.";
       description = "Shpadoinkle Html is a typed template-generated Html DSL building on types provided by Shpadoinkle Core. This exports a large namespace of terms covering most of the Html specifications. Some Elm-API-style helpers are present, but as outlaw type classes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,14 +40,14 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

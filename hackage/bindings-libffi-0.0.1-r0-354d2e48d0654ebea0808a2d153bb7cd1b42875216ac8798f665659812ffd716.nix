@@ -21,14 +21,14 @@
       synopsis = "Check bindings-common package for directions.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-common" or (errorHandler.buildDepError "bindings-common"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

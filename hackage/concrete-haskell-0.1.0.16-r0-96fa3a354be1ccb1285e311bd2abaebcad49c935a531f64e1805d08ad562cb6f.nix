@@ -21,7 +21,7 @@
       synopsis = "Library for the Concrete data format.";
       description = "Concrete is a Thrift-based data specification designed for Natural Language Processing (NLP) applications.  This library provides a Haskell interface to code generated from the latest release of Concrete (the concrete-haskell-autogen package). It also has an ingest utility for converting various formats (JSON, CSV, XML, etc) to Concrete Communication objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,9 +63,9 @@
           (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
           (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "apply_annotators" = {
           depends = [
@@ -108,9 +108,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "build_graphs" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -152,9 +152,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fetch_service" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -196,9 +196,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ingest_communications" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -240,9 +240,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inspect_communications" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -284,9 +284,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "store_service" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -328,10 +328,10 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ingesters" = {
           depends = [
@@ -374,9 +374,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "serialization" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -418,9 +418,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zip-conduit" or (errorHandler.buildDepError "zip-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

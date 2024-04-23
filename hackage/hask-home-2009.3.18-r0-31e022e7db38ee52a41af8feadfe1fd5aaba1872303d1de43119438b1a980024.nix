@@ -21,7 +21,7 @@
       synopsis = "Generate homepages for cabal packages";
       description = "This program generates simple homepages for cabalized\nHaskell packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hask-home" = {
@@ -36,16 +36,16 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hsemail" or (errorHandler.buildDepError "hsemail"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hask-home-upload" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

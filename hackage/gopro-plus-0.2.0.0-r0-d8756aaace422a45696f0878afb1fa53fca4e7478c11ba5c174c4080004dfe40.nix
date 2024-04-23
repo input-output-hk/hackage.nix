@@ -21,7 +21,7 @@
       synopsis = "GoPro Plus Client API.";
       description = "Please see the README on GitHub at <https://github.com/dustin/gopro-plus#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gopro-plus-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "The MonadUnliftIO typeclass for unlifting monads to IO";
       description = "Please see the README.md file for details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

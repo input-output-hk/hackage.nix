@@ -21,7 +21,7 @@
       synopsis = "Tools for reflecting on Java classes.";
       description = "Tools for reflecting on Java classes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."java-bridge" or (errorHandler.buildDepError "java-bridge"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hx" or (errorHandler.buildDepError "hx"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

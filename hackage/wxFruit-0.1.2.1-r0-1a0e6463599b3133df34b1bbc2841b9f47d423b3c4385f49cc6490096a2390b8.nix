@@ -21,7 +21,7 @@
       synopsis = "An implementation of Fruit using wxHaskell.";
       description = "This is an updated version of the original wxFruit.\n\nwxFruit isn't maintained by original authors, and Haskell.org. There\nare a few forked versions of wxFruit now. One extension is shelarcy's\nYaPan\n(<http://sourceforge.net/project/showfiles.php?group_id=168626&package_id=199138>).\nIt added Menu and OpenGL support. And another one is Remi Turk's Juicy\nFruit\n(<http://www.cs.uu.nl/wiki/pub/Afp0607/DomainSpecificLanguages/fruit.pdf>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -31,15 +31,15 @@
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "paddle" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

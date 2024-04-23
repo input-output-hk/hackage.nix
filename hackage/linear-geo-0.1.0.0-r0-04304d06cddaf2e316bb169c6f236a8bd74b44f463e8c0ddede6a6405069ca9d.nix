@@ -21,7 +21,7 @@
       synopsis = "Geographic coordinates, built on the linear package.";
       description = "Geographic coordinates, built on the linear package.\n\nThis package provides types and functions for dealing with coordinates in\ngeodetic, ECEF, and ENU coordinate systems. A particular emphasis is placed\non numerical stability, especially for complex conversions like converting\nbetween geodetic and ECEF coordinates. However, not every part of every\nfunction has machine checked for numerical stability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "props" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."linear-geo" or (errorHandler.buildDepError "linear-geo"))
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

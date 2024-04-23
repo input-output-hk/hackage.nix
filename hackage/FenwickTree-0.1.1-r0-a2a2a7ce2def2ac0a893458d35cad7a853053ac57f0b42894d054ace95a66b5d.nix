@@ -21,7 +21,7 @@
       synopsis = "Data structure for fast query and update of cumulative sums";
       description = "Fenwick trees are a O(log N) data structure for updating cumulative sums.\nThis implementation comes with an operation to find a least element for\nwhich real-valued cumulative sum reaches certain value, and allows for\nstorage of arbitrary information in the nodes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test_FenwickTree" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

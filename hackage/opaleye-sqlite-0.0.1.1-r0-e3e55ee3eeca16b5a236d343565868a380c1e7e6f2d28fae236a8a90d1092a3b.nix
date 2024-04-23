@@ -21,7 +21,7 @@
       synopsis = "An SQL-generating DSL targeting SQLite";
       description = "An SQL-generating DSL targeting SQLite.  Allows\nSQLite queries to be written within Haskell in a\ntypesafe and composable fashion.\nThis package is old and unmaintained. It may work, or\nit may not. If you are interested in reviving it\nplease file an issue on the GitHub repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."opaleye-sqlite" or (errorHandler.buildDepError "opaleye-sqlite"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tutorial" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,9 +68,9 @@
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."opaleye-sqlite" or (errorHandler.buildDepError "opaleye-sqlite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

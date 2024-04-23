@@ -21,7 +21,7 @@
       synopsis = "native Haskell implementation of OpenPGP (RFC4880)";
       description = "native Haskell implementation of OpenPGP (RFC4880)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,9 +60,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

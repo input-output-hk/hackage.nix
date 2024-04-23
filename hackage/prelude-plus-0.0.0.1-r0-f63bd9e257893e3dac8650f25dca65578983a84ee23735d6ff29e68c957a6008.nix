@@ -21,15 +21,15 @@
       synopsis = "Prelude for rest of us";
       description = "> import Prelude ()\n> import Prelude.Plus\n> -- then some useful modules and couple of generic functions\n> -- are available in your code";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = if flags.test then false else true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

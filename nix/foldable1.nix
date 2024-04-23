@@ -6,8 +6,8 @@
         nix = import ../hackage/foldable1-0.1.0.0-r0-c3cc910c168f5cc41ed075e787c8d259a4d1d055ee90146024fc514d62245098.nix;
         revNum = 0;
         sha256 = "c3cc910c168f5cc41ed075e787c8d259a4d1d055ee90146024fc514d62245098";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

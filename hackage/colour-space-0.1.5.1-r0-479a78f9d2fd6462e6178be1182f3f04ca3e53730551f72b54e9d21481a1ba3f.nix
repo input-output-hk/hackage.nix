@@ -21,7 +21,7 @@
       synopsis = "Instances of the manifold-classes for colour types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

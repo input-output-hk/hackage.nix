@@ -6,8 +6,8 @@
         nix = import ../hackage/botpp-0.1-r0-e13efe9d704637b5c58318722679b228a9ef96e4d1595872ea44a16b1cb7d3ef.nix;
         revNum = 0;
         sha256 = "e13efe9d704637b5c58318722679b228a9ef96e4d1595872ea44a16b1cb7d3ef";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

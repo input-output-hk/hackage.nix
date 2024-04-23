@@ -21,14 +21,14 @@
       synopsis = "Generate simple combinators given their type";
       description = "Based on De-typechecker: converting from a type to a term\nby <oleg at pobox.com>\nhttp://www.haskell.org/pipermail/haskell/2005-March/015423.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

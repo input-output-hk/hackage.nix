@@ -21,7 +21,7 @@
       synopsis = "GHC .prof files viewer";
       description = "Please see the README on GitHub at <https://github.com/portnov/ghcprofview-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghcprofview" = {
@@ -36,9 +36,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

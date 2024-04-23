@@ -6,8 +6,8 @@
         nix = import ../hackage/fastedit-0.1.0.0-r0-f95f59ab33739a5fa256f675aed92a1f7a1d937d75a41f6df349591d4d206568.nix;
         revNum = 0;
         sha256 = "f95f59ab33739a5fa256f675aed92a1f7a1d937d75a41f6df349591d4d206568";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

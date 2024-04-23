@@ -21,7 +21,7 @@
       synopsis = "A few network topic model implementations for bayes-stack";
       description = "Implementations of a few network topic models build upon bayes-stack.\nThe package includes Latent Dirichlet Allocation\n(LDA), the shared taste model, and the citation\ninfluence model.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bayes-stack-lda" = {
@@ -44,9 +44,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bayes-stack-st" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bayes-stack-ci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -90,9 +90,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bayes-stack-dump-lda" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,9 +112,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bayes-stack-dump-st" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -134,9 +134,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bayes-stack-dump-ci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -156,9 +156,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Python language tools";
       description = "`hpython` provides an abstract syntax tree for Python 3.5, along with a parser,\nprinter, and syntax checker. It also contains optics for working with the AST,\nand a DSL for writing Python programs directly in Haskell.\n\nFor a high-level overview of the library, see the @Language.Python@ module.\n\nFor code examples, see the [examples directory on GitHub](https://github.com/qfpl/hpython/tree/master/example).\n\nFor general information about the project, see the [project readme](https://github.com/qfpl/hpython/blob/master/README.md).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
           (hsPkgs."parsers-megaparsec" or (errorHandler.buildDepError "parsers-megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hpython" or (errorHandler.buildDepError "hpython"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hpython-tests" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

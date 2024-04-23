@@ -21,7 +21,7 @@
       synopsis = "Adaptation of the crypto-rng library for the effectful ecosystem.";
       description = "Adaptation of the @<https://hackage.haskell.org/package/crypto-rng crypto-rng>@ library for the @<https://hackage.haskell.org/package/effectful effectful>@ ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."crypto-rng" or (errorHandler.buildDepError "crypto-rng"))
           (hsPkgs."effectful-core" or (errorHandler.buildDepError "effectful-core"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."crypto-rng-effectful" or (errorHandler.buildDepError "crypto-rng-effectful"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

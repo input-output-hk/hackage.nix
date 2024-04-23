@@ -6,8 +6,8 @@
         nix = import ../hackage/aws-ec2-knownhosts-0.1.0.0-r0-a1b3ed0440511c40032ab88cf076ebb0a5aeb18e9b9273e67511e34414ab8d93.nix;
         revNum = 0;
         sha256 = "a1b3ed0440511c40032ab88cf076ebb0a5aeb18e9b9273e67511e34414ab8d93";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

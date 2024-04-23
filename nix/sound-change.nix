@@ -6,8 +6,8 @@
         nix = import ../hackage/sound-change-0.1.0.0-r0-7b127f6b48f2bdc369a5b825f889e0c8f67e583895de99f24278e99868cc9ef2.nix;
         revNum = 0;
         sha256 = "7b127f6b48f2bdc369a5b825f889e0c8f67e583895de99f24278e99868cc9ef2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

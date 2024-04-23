@@ -21,7 +21,7 @@
       synopsis = "Strict tuples";
       description = "Strict tuples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."strict-tuple" or (errorHandler.buildDepError "strict-tuple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

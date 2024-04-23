@@ -21,7 +21,7 @@
       synopsis = "Concurrent iteratees using STM";
       description = "Enumerators and iteratees which read from/write to STM\nchannels.  This allows for processes with dedicated IO\nthreads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

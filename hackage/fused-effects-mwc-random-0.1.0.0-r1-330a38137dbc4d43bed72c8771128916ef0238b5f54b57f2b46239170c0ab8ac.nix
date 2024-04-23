@@ -21,7 +21,7 @@
       synopsis = "High-quality random number generation as an effect.";
       description = "This package wraps the mwc-random package and provides a convenient interface to invoke its functions from an effect stack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."fused-effects-mwc-random" or (errorHandler.buildDepError "fused-effects-mwc-random"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."fused-effects-random" or (errorHandler.buildDepError "fused-effects-random"))
             (hsPkgs."fused-effects-mwc-random" or (errorHandler.buildDepError "fused-effects-mwc-random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

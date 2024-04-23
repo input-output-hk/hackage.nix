@@ -21,7 +21,7 @@
       synopsis = "a Haskell Webserver Interface (V2)";
       description = "Hack2: a Haskell Webserver Interface (V2)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Template Haskell Library";
       description = "Template Haskell Library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

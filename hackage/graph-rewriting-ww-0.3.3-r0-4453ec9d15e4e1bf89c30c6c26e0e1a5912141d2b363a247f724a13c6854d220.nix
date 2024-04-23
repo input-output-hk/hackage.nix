@@ -21,7 +21,7 @@
       synopsis = "Evaluator of the lambda-calculus in an interactive graph rewriting system with explicit sharing";
       description = "Evaluate a given λ-term (letrecs may be used) interactively. It uses duplicators to explicitly render fully-lazy sharing according to Wadsworth's approach. The reduction rules are split into two groups, safe rules and unsafe rules, which implement the procedure for unsharing the MFE under one duplicator.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ww" = {
@@ -35,9 +35,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."IndentParser" or (errorHandler.buildDepError "IndentParser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

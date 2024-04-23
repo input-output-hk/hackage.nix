@@ -21,7 +21,7 @@
       synopsis = "Custom git command for formatting code.";
       description = "git-fmt provides a wrapper around omnifmt, an automatic code formatter.\nIt adds the ability to operate on specific tracked files in the repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "git-fmt" = {
@@ -42,9 +42,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Log messages to a posix system log via logging-effect";
       description = "A 'Handler' for logging-effect that prints log messages to a posix system log";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

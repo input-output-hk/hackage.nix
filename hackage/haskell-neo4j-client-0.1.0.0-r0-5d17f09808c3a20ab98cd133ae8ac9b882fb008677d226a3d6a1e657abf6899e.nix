@@ -21,7 +21,7 @@
       synopsis = "A Haskell neo4j client";
       description = "Library to interact with Neo4j databases. For now, its API covers basic operations for nodes, relationships, labels\nand indexes and provides calls to use these in batch mode.\n\nCypher is not yet supported, but it hopefully will be very soon.\n\nAll code has been tested with Neo4j version 2.0.3";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-haskell-neo4j-rest-client" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

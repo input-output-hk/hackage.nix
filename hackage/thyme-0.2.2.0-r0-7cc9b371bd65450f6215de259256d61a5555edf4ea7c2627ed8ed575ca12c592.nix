@@ -13,7 +13,7 @@
       instance-num = true;
       show-internal = false;
       werror = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "thyme"; version = "0.2.2.0"; };
@@ -26,7 +26,7 @@
       synopsis = "A faster time library";
       description = "Thyme is a rewrite of the fine @time@ library, with a particular focus\non performance for applications that make heavy use of timestamps.\n\nSee \"Data.Thyme\" for a full description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sanity" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

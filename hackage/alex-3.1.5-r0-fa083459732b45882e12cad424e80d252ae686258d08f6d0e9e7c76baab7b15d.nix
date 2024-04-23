@@ -21,32 +21,32 @@
       synopsis = "Alex is a tool for generating lexical analysers in Haskell";
       description = "Alex is a tool for generating lexical analysers in Haskell.\nIt takes a description of tokens based on regular\nexpressions and generates a Haskell module containing code\nfor scanning text efficiently. It is similar to the tool\nlex or flex for C/C++.\n\nChanges in 3.1.5:\n\n* Generate less warning-laden code, and suppress other warnings.\n* Bug fixes.\n\nChanges in 3.1.4:\n\n* Add Applicative/Functor instances for GHC 7.10\n\nChanges in 3.1.3:\n\n* Fix for clang (XCode 5)\n\nChanges in 3.1.2:\n\n* Add missing file to extra-source-files\n\nChanges in 3.1.1:\n\n* Bug fixes (#24, #30, #31, #32)\n\nChanges in 3.1.0:\n\n* necessary changes to work with GHC 7.8.1";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "alex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

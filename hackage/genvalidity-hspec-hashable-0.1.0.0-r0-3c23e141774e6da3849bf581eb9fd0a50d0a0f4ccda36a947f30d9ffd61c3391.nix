@@ -14,7 +14,7 @@
       identifier = {
         name = "genvalidity-hspec-hashable";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2017 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Standard spec's for Hashable instances";
       description = "Standard spec's for Hashable instances";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-hspec-hashable-doctests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."genvalidity-hspec-hashable" or (errorHandler.buildDepError "genvalidity-hspec-hashable"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "genvalidity-hspec-hashable-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

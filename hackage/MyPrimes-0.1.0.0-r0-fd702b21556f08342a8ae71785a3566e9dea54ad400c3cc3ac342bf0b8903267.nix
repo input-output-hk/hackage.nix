@@ -21,33 +21,33 @@
       synopsis = "Generate all primes";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "PrimesList" = {
           depends = [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."MyPrimes" or (errorHandler.buildDepError "MyPrimes"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-foo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

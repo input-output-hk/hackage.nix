@@ -21,11 +21,11 @@
       synopsis = "An efficient data type for sets of flags";
       description = "This package provides a data type for representing a set of\nenum flags with an API similar to that of Data.Set from\nthe containers package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

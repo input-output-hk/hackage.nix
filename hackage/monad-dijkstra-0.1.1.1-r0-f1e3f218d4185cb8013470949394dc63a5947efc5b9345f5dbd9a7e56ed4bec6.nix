@@ -21,7 +21,7 @@
       synopsis = "Monad transformer for weighted graph searches using Dijkstra's or A* algorithm";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-monad-dijkstra" = {
           depends = [
@@ -40,16 +40,16 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."monad-dijkstra" or (errorHandler.buildDepError "monad-dijkstra"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
+        };
         "style-monad-dijkstra" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/to-haskell-0.3.0-r0-8aba6806513249eb43c9c48cdb2300784cce07830f6c4727053b2027d0c1e872.nix;
         revNum = 0;
         sha256 = "8aba6806513249eb43c9c48cdb2300784cce07830f6c4727053b2027d0c1e872";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Auto generate hie-bios cradles";
       description = "Auto generate a stack or cabal multi component cradles";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."implicit-hie" or (errorHandler.buildDepError "implicit-hie"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "implicit-hie-cradle-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."implicit-hie-cradle" or (errorHandler.buildDepError "implicit-hie-cradle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

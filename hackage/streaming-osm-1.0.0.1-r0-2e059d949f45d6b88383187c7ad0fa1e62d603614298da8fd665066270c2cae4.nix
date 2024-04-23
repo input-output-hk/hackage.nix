@@ -21,7 +21,7 @@
       synopsis = "A hand-written streaming byte parser for OpenStreetMap Protobuf data.";
       description = "A hand-written streaming byte parser for OpenStreetMap Protobuf data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "streaming-osm-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."streaming-osm" or (errorHandler.buildDepError "streaming-osm"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

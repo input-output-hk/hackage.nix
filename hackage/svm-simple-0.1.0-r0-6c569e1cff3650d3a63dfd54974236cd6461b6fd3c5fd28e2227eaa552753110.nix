@@ -21,7 +21,7 @@
       synopsis = "Medium level, simplified, bindings to libsvm";
       description = "Simplified bindings to libsvm <http://www.csie.ntu.edu.tw/~cjlin/libsvm/>.\nThe aim of this package is to make as easy to use bindings for libsvm as\npossible. (But we are not yet there)\nChanges in version 0.0.1\n\n* Initial version\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

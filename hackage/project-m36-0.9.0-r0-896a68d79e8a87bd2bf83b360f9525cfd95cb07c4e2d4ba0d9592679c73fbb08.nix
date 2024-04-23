@@ -21,7 +21,7 @@
       synopsis = "Relational Algebra Engine";
       description = "A relational algebra engine which can be used to persist and query Haskell data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -81,16 +81,16 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
-          ] ++ (pkgs.lib).optional (flags.haskell-scripting) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8" && flags.haskell-scripting) [
+        ] ++ pkgs.lib.optional (flags.haskell-scripting) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8" && flags.haskell-scripting) [
           (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6") (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))) ++ (if system.isWindows
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.6") (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (!flags.stack) (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"));
+          ])) ++ pkgs.lib.optional (!flags.stack) (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"));
         buildable = true;
-        };
+      };
       exes = {
         "tutd" = {
           depends = [
@@ -133,9 +133,9 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ] ++ (pkgs.lib).optional (flags.haskell-scripting) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
+          ] ++ pkgs.lib.optional (flags.haskell-scripting) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
           buildable = true;
-          };
+        };
         "project-m36-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -166,9 +166,9 @@
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-            ] ++ (pkgs.lib).optional (flags.haskell-scripting) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
+          ] ++ pkgs.lib.optional (flags.haskell-scripting) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
           buildable = true;
-          };
+        };
         "bigrel" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -210,9 +210,9 @@
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-SimpleClient" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -251,9 +251,9 @@
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-OutOfTheTarpit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -297,9 +297,9 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-Blog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -346,9 +346,9 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-Hair" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -392,9 +392,9 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-CustomTupleable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -438,9 +438,9 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-DerivingCustomTupleable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -448,11 +448,11 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "8.6"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "8.6"
             then true
             else false;
-          };
+        };
         "project-m36-websocket-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -484,9 +484,9 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "handles" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -529,10 +529,10 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tutoriald" = {
           depends = [
@@ -580,9 +580,9 @@
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tutoriald-atomfunctionscript" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -628,9 +628,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tutoriald-databasecontextfunctionscript" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -676,9 +676,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-relation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -724,9 +724,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-static-optimizer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -772,9 +772,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-transactiongraph-persist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -820,9 +820,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-relation-import-csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -868,9 +868,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tutoriald-import-tutoriald" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -916,9 +916,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-relation-export-csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -964,9 +964,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-transactiongraph-merge" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1012,9 +1012,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-prettyprinter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1060,9 +1060,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1108,9 +1108,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-scripts" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1156,9 +1156,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-websocket-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1204,9 +1204,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-isomorphic-schemas" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1252,9 +1252,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-atomable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1300,9 +1300,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-multiprocess-access" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1348,9 +1348,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-transactiongraph-automerge" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1396,9 +1396,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tupleable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1444,9 +1444,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-client-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1492,9 +1492,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-dataframe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1540,10 +1540,10 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "basic-benchmark" = {
           depends = [
@@ -1557,9 +1557,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -1605,9 +1605,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

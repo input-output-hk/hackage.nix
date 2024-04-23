@@ -21,7 +21,7 @@
       synopsis = "A simple database migrator for PostgreSQL";
       description = "Morph is a tool to migrate your PostgreSQL databases\nsafely which supports rollbacks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "morph" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."morph" or (errorHandler.buildDepError "morph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

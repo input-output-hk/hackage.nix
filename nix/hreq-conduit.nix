@@ -6,8 +6,8 @@
         nix = import ../hackage/hreq-conduit-0.1.0.0-r0-7331b9ab040e90f0703abcb35add7e8bdfeb5d72e49a6a3489fccc2d3ec7d8ff.nix;
         revNum = 0;
         sha256 = "7331b9ab040e90f0703abcb35add7e8bdfeb5d72e49a6a3489fccc2d3ec7d8ff";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

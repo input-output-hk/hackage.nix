@@ -6,8 +6,8 @@
         nix = import ../hackage/microlens-each-0.1.0.0-r0-bdf7c51ce494520798450ecfa2fb064e5ae425824e88ed41f89fd5d6f401c9df.nix;
         revNum = 0;
         sha256 = "bdf7c51ce494520798450ecfa2fb064e5ae425824e88ed41f89fd5d6f401c9df";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

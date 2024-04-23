@@ -21,7 +21,7 @@
       synopsis = "TheThingsNetwork client";
       description = "Connect to TTN MQTT API, receive and decode messages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."cayene-lpp" or (errorHandler.buildDepError "cayene-lpp"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ttnc" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."ttn-client" or (errorHandler.buildDepError "ttn-client"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

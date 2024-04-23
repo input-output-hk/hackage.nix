@@ -14,7 +14,7 @@
       identifier = {
         name = "hack2-handler-mongrel2-http";
         version = "2011.6.25";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Hack2 Mongrel2 HTTP handler";
       description = "Hack2 Mongrel2 HTTP handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

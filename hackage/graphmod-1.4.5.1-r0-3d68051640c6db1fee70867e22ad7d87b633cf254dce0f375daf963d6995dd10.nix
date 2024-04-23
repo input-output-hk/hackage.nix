@@ -21,7 +21,7 @@
       synopsis = "Present the module dependencies of a program as a \"dot\" graph.";
       description = "This package contains a program that computes \"dot\" graphs\nfrom the dependencies of a number of Haskell modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "graphmod" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."graphmod" or (errorHandler.buildDepError "graphmod"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

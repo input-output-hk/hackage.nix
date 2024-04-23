@@ -21,7 +21,7 @@
       synopsis = "Examples for LambdaCube";
       description = "Examples for LambdaCube";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdacube-basic" = {
@@ -32,9 +32,9 @@
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambdacube-cameratrack" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -42,9 +42,9 @@
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

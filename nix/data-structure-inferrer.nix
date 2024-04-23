@@ -6,8 +6,8 @@
         nix = import ../hackage/data-structure-inferrer-1.0-r0-83dbc3ced61cdc28863902f185388103f2ec58c526f9ff6e9096ae33088ad2a7.nix;
         revNum = 0;
         sha256 = "83dbc3ced61cdc28863902f185388103f2ec58c526f9ff6e9096ae33088ad2a7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

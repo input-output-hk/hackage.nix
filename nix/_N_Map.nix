@@ -6,8 +6,8 @@
         nix = import ../hackage/NMap-0.12-r0-a153aab16da937788e239f5bd377a4b589880354900ce542272916b16e95bc54.nix;
         revNum = 0;
         sha256 = "a153aab16da937788e239f5bd377a4b589880354900ce542272916b16e95bc54";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

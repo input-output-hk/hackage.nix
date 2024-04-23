@@ -21,7 +21,7 @@
       synopsis = "SIMD library";
       description = "Please see the README on Github at <https://github.com/haskell-works/hw-simd#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -34,15 +34,15 @@
           (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0.1")) [
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0.1")) [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-simd-test" = {
           depends = [
@@ -63,13 +63,13 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-simd" or (errorHandler.buildDepError "hw-simd"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = ([
@@ -88,9 +88,9 @@
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-simd" or (errorHandler.buildDepError "hw-simd"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

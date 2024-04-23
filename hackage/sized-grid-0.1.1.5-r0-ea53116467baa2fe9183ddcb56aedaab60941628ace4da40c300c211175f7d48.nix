@@ -21,7 +21,7 @@
       synopsis = "Multidimensional grids with sized specified at compile time";
       description = "`size-grid` allows you to make finite sized grids and have their size and shape confirmed at compile time\n\nConsult the readme for a short tutorial and explanation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
             (hsPkgs."sized-grid" or (errorHandler.buildDepError "sized-grid"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

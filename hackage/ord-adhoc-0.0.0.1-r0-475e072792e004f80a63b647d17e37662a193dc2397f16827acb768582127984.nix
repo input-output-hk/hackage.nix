@@ -21,14 +21,14 @@
       synopsis = "Creating Ord instances instantly";
       description = "A little extension to Ord";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

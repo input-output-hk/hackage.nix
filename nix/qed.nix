@@ -6,8 +6,8 @@
         nix = import ../hackage/qed-0.0-r0-d5d0056dabaf75771774959091766e5d9e6e93f30345f57f0984b4eea220aa92.nix;
         revNum = 0;
         sha256 = "d5d0056dabaf75771774959091766e5d9e6e93f30345f57f0984b4eea220aa92";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

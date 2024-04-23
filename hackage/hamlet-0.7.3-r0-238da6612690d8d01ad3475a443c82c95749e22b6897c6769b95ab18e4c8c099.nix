@@ -21,7 +21,7 @@
       synopsis = "Haml-like template files that are compile-time checked";
       description = "Hamlet gives you a type-safe tool for generating HTML code. It works via Quasi-Quoting, and generating extremely efficient output code. The syntax is white-space sensitive, and it helps you avoid cross-site scripting issues and 404 errors. Please see the documentation at <http://docs.yesodweb.com/book/hamlet/> for more details.\n\nHere is a quick overview of hamlet html. Due to haddock escaping issues, we can't properly show variable insertion, but we are still going to show some conditionals. Please see http://docs.yesodweb.com/book/templates for a thorough description\n\n> !!!\n> <html\n>     <head\n>         <title>Hamlet Demo\n>     <body\n>         <h1>Information on John Doe\n>         <h2\n>             $if isMarried person\n>                 Married\n>             $else\n>                 Not married";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,19 +36,19 @@
           (hsPkgs."json-types" or (errorHandler.buildDepError "json-types"))
           (hsPkgs."json-enumerator" or (errorHandler.buildDepError "json-enumerator"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

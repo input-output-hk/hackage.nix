@@ -21,7 +21,7 @@
       synopsis = "A plugin for Yesod to provide email-only authentication.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

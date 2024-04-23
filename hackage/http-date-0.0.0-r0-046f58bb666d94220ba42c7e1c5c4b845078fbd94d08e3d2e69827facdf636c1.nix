@@ -21,7 +21,7 @@
       synopsis = "HTTP Date parser/formatter";
       description = "Fast parser and formatter for HTTP Date";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

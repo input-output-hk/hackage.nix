@@ -21,7 +21,7 @@
       synopsis = "Composable algebraic editors";
       description = "This package provides a type class 'Editable' and combinators to\neasily put together form-like editors for algebraic datatypes.\n\nNOTE: This library contains examples, but they are not built by default.\nTo build and install the example, use the @buildExamples@ flag like this\n\n@cabal install threepenny-editors -fbuildExamples@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
           (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "crud" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
             (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
-            ] ++ (pkgs.lib).optionals (flags.buildexamples) [
+          ] ++ pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."threepenny-editors" or (errorHandler.buildDepError "threepenny-editors"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "parser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,12 +60,12 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
             (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
-            ] ++ (pkgs.lib).optionals (flags.buildexamples) [
+          ] ++ pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."threepenny-editors" or (errorHandler.buildDepError "threepenny-editors"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "person" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,9 +75,9 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
             (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
-            ] ++ (pkgs.lib).optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (errorHandler.buildDepError "threepenny-editors"));
+          ] ++ pkgs.lib.optional (flags.buildexamples) (hsPkgs."threepenny-editors" or (errorHandler.buildDepError "threepenny-editors"));
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

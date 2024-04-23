@@ -21,7 +21,7 @@
       synopsis = "Polysemy effects for databases";
       description = "See https://hackage.haskell.org/package/polysemy-db/docs/Polysemy-Db.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."sqel" or (errorHandler.buildDepError "sqel"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

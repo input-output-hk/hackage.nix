@@ -21,7 +21,7 @@
       synopsis = "Encode and decode ASN.1";
       description = "Add a better description later";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "asn1-records-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

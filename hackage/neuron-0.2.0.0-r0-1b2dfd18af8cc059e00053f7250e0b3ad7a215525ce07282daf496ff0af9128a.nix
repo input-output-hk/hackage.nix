@@ -21,7 +21,7 @@
       synopsis = "Haskell meets Zettelkasten, for your plain-text delight.";
       description = "neuron is a system for managing your plain-text Zettelkasten notes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
           (hsPkgs."which" or (errorHandler.buildDepError "which"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "neuron" = {
           depends = [
@@ -90,10 +90,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rib" or (errorHandler.buildDepError "rib"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "neuron-test" = {
           depends = [
@@ -128,9 +128,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

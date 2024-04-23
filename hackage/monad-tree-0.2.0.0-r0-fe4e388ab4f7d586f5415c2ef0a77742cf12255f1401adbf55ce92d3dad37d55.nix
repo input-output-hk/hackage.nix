@@ -21,15 +21,15 @@
       synopsis = "Tree data structure for nondeterministic computations.";
       description = "This package provides monad instances for a rose tree-like data structure that can be used for\nnondeterministic computations.\nThis is similar to the list monad but allows for computations\nto remain agnostic about the specific search procedure used.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

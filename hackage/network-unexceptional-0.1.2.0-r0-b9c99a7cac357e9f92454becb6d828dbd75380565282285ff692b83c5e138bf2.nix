@@ -21,7 +21,7 @@
       synopsis = "Network functions that do not throw exceptions";
       description = "Functions compatible with the Socket type from the network library that\ndo not convert POSIX error codes to thrown exceptions. This library\ncan throw exceptions, but they only happen in the case of misuse, not\nas the result of anything a network peer does.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-addr" or (errorHandler.buildDepError "primitive-addr"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

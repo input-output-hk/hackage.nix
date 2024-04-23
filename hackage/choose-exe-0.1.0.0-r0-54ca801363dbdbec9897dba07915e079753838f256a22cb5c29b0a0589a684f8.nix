@@ -21,7 +21,7 @@
       synopsis = "Command-line program to choose random element from a stream.";
       description = "A command-line program that reads lines from stdin and outputs some fixed number of them, selected uniformly at random.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."choose" or (errorHandler.buildDepError "choose"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "choose" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."choose" or (errorHandler.buildDepError "choose"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

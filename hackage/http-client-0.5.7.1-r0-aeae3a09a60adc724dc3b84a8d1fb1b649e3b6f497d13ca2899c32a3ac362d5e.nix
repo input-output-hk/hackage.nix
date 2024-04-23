@@ -21,7 +21,7 @@
       synopsis = "An HTTP client engine";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/http-client>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,19 +45,19 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optionals (system.isWindows) [
+          ])) ++ pkgs.lib.optionals (system.isWindows) [
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec-nonet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -104,9 +104,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

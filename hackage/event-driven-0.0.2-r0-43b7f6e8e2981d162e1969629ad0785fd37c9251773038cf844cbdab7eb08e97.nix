@@ -21,15 +21,15 @@
       synopsis = "library for event driven programming";
       description = "library for event driven programming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."yjtools" or (errorHandler.buildDepError "yjtools"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

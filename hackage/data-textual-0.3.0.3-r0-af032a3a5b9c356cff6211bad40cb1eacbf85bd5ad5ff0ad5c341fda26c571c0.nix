@@ -21,7 +21,7 @@
       synopsis = "Human-friendly textual representations.";
       description = "This package provides an interface for converting between data and its\n(human-friendly) textual representation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text-latin1" or (errorHandler.buildDepError "text-latin1"))
           (hsPkgs."text-printer" or (errorHandler.buildDepError "text-printer"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."type-hint" or (errorHandler.buildDepError "type-hint"))
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
             (hsPkgs."data-textual" or (errorHandler.buildDepError "data-textual"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

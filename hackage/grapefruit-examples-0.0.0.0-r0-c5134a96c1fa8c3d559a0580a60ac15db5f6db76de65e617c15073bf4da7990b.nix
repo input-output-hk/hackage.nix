@@ -21,7 +21,7 @@
       synopsis = "Examples using the Grapefruit library";
       description = "Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on\nuser interfaces. FRP makes it possible to implement reactive and interactive systems\nin a declarative style. To learn more about FRP, have a look at\n<http://haskell.org/haskellwiki/Functional_Reactive_Programming>.\n\nThis package contains a collection of examples using Grapefruit.\n\nFor running an example, you can start GHCi and enter the following:\n\n@\nimport Graphics.UI.Grapefruit.Circuit\nimport Graphics.UI.Grapefruit./UIBackend/\nimport Examples.Grapefruit./Example/\nrun /UIBackend/ mainCircuit\n@\n\nReplace @/Example/@ with the name of the example to run and @/UIBackend/@ with the\nname of the UI backend you want to use. At the moment, the only examples are @Simple@\nand @Switching@ and the only UI backend is @GTK@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."grapefruit-frp" or (errorHandler.buildDepError "grapefruit-frp"))
           (hsPkgs."grapefruit-records" or (errorHandler.buildDepError "grapefruit-records"))
           (hsPkgs."grapefruit-ui" or (errorHandler.buildDepError "grapefruit-ui"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

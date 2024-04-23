@@ -21,15 +21,15 @@
       synopsis = "Bayesian modeling algorithms accelerated for particular model structures";
       description = "General-purpose sampling approaches like Gibbs sampling are very useful for models that have not been studied extensively. But for some cases, specialized algorithms are available because of the model's commonality (/e.g./, linear regression) or niche popularity (/e.g./, Latent Dirichlet Allocation). This package is an effort to collect such algorithms in one place.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

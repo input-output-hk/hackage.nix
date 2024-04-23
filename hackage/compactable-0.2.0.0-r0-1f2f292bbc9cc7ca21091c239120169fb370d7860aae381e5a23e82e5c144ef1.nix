@@ -21,7 +21,7 @@
       synopsis = "A typeclass for structures which can be catMaybed, filtered, and partitioned.";
       description = "This provides polymorphic implementations for filter, compact (catMaybes), and separate. It allows for higher performance implementations to be used in place of defaults for all data structures, and endeavors to centerally document those implementations. Compactable aims to be as general and unconstrained as possible, providing instances for non-Functors like Set, as well as some Contravariants (though not published here). Compactable fully subsumes Data.Witherable, offers more laws, and is more general.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "props" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

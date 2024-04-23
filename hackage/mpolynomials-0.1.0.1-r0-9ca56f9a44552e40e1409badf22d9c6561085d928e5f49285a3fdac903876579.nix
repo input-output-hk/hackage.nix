@@ -21,7 +21,7 @@
       synopsis = "Simple multivariate polynomials.";
       description = "Manipulation of multivariate polynomials on a ring.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

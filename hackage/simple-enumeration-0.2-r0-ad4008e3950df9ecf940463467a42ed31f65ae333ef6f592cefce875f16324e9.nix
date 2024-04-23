@@ -21,23 +21,23 @@
       synopsis = "Finite or countably infinite sequences of values.";
       description = "Finite or countably infinite sequences of values,\nsupporting efficient indexing and random sampling.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

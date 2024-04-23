@@ -6,8 +6,8 @@
         nix = import ../hackage/servant-streamly-0.1.0.0-r0-2b303241b8e911472a160ac083b0c318a3a6fd9153afdddf42f92d1ec2152ad6.nix;
         revNum = 0;
         sha256 = "2b303241b8e911472a160ac083b0c318a3a6fd9153afdddf42f92d1ec2152ad6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Use graph-theory to analyse your code";
       description = "Statically analyse Haskell source code using graph-theoretic\ntechniques.\n\nTo use SourceGraph, call it as either:\n\n> SourceGraph path/to/Foo.cabal\n\nOr, if your project doesn't use Cabal, then there is limited support\nfor using an overall module from your program\\/library:\n\n> SourceGraph path/to/Foo.hs\n\nNote that the Cabal method is preferred, as it is better able to\ndetermine the project name and exported modules (when passing a\nHaskell file to SourceGraph, it uses that module's name as the overall\nname of project and assumes that it is the only exported module; as\nsuch, it works better for programs than libraries).\n\nWhichever way your run SourceGraph, it then creates a @SourceGraph@\nsubdirectory in the same directory as the file that was passed to it,\nand within that subdirectory creates the analysis report in\n@Foo.html@.\n\nSourceGraph is still experimental in terms of its ability to parse and\nproperly understand Haskell source code and in the types of analyses\nit performs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "SourceGraph" = {
@@ -38,9 +38,9 @@
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

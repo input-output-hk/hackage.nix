@@ -24,7 +24,7 @@
       warn-as-error = false;
       force-char8-encoding = false;
       libiconv = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "darcs"; version = "2.8.4"; };
@@ -37,10 +37,10 @@
       synopsis = "a distributed, interactive, smart revision control system";
       description = "Darcs is a free, open source revision control\nsystem. It is:\n\n* Distributed: Every user has access to the full\ncommand set, removing boundaries between server and\nclient or committer and non-committers.\n\n* Interactive: Darcs is easy to learn and efficient to\nuse because it asks you questions in response to\nsimple commands, giving you choices in your work\nflow. You can choose to record one change in a file,\nwhile ignoring another. As you update from upstream,\nyou can review each patch name, even the full \"diff\"\nfor interesting patches.\n\n* Smart: Originally developed by physicist David\nRoundy, darcs is based on a unique algebra of\npatches.\n\nThis smartness lets you respond to changing demands\nin ways that would otherwise not be possible. Learn\nmore about spontaneous branches with darcs.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optionals (!(!flags.library)) ((((((([
+        depends = pkgs.lib.optionals (!!flags.library) ((((((([
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -60,26 +60,26 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ]
+          ]
           else [
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ])) ++ [
+          ])) ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.0") (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.http) [
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0") (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optionals (flags.http) [
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
-        libs = (pkgs.lib).optionals (!(!flags.library)) ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")));
-        build-tools = (pkgs.lib).optional (!(!flags.library)) (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")));
+        ]) ++ pkgs.lib.optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ pkgs.lib.optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
+        libs = pkgs.lib.optionals (!!flags.library) (pkgs.lib.optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")));
+        build-tools = pkgs.lib.optional (!!flags.library) (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")));
         buildable = if !flags.library
           then false
           else if !flags.curl && !flags.http then false else true;
-        };
+      };
       exes = {
         "darcs" = {
           depends = (((((([
@@ -102,30 +102,30 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-              ]
+            ]
             else [
               (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-              ])) ++ [
+            ])) ++ [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.0") (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.http) [
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0") (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optionals (flags.http) [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ]) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
-          libs = (pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl"));
+          ]) ++ pkgs.lib.optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ pkgs.lib.optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          libs = pkgs.lib.optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl"));
           build-tools = [
             (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-            ];
+          ];
           buildable = (if !flags.executable
             then false
             else true) && (if !flags.curl && !flags.http then false else true);
-          };
+        };
         "darcs-test" = {
-          depends = (pkgs.lib).optionals (!(!flags.test)) ((((((([
+          depends = pkgs.lib.optionals (!!flags.test) ((((((([
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -153,26 +153,26 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-              ]
+            ]
             else [
               (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-              ])) ++ [
+            ])) ++ [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.0") (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ (pkgs.lib).optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))) ++ (pkgs.lib).optionals (flags.http) [
+          ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.0") (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ pkgs.lib.optional (flags.mmap && !system.isWindows) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))) ++ pkgs.lib.optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))) ++ pkgs.lib.optionals (flags.http) [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ]);
-          libs = (pkgs.lib).optionals (!(!flags.test)) ((pkgs.lib).optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")));
+          ]);
+          libs = pkgs.lib.optionals (!!flags.test) (pkgs.lib.optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")));
           build-tools = [
             (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Testing framework.";
       description = "This is Karya's test framework, extracted to be usable standalone.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-karya-generate" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

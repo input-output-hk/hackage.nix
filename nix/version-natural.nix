@@ -6,8 +6,8 @@
         nix = import ../hackage/version-natural-0.1.0.0-r0-4e0330fa6566d6d644203cbd4d76e9619596ae67453ce733e36f80367f098616.nix;
         revNum = 0;
         sha256 = "4e0330fa6566d6d644203cbd4d76e9619596ae67453ce733e36f80367f098616";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

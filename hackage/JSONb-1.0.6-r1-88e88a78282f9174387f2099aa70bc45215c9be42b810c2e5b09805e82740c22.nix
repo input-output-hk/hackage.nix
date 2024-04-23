@@ -21,7 +21,7 @@
       synopsis = "JSON parser that uses byte strings.";
       description = "This parser consumes lazy ByteStrings to produce JSON in a simple, efficient\nformat backed with strict ByteStrings, Rationals and ByteString tries. See\nthe schema generation tools and the command line JSON schema generator (in\nthe examples subdir) for an example of how to use the parsing tools.\n\nHave you considered @aeson@ (<http://hackage.haskell.org/package/aeson>), a\nnewer, extensively benchmarked JSON parsing library?";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring-nums" or (errorHandler.buildDepError "bytestring-nums"))
           (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "json-schema" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."bytestring-nums" or (errorHandler.buildDepError "bytestring-nums"))
             (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

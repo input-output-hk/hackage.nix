@@ -21,15 +21,15 @@
       synopsis = "library for querying from JSON";
       description = "library(HXT-like) for querying from JSON";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."hjson" or (errorHandler.buildDepError "hjson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

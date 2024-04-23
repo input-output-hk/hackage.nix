@@ -21,7 +21,7 @@
       synopsis = "Tracing support for Mu";
       description = "Generate distributed traces for Mu services";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mu-rpc" or (errorHandler.buildDepError "mu-rpc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tracing-control" or (errorHandler.buildDepError "tracing-control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Unicode Collation Algorithm";
       description = "This library provides a pure Haskell implementation of\nthe Unicode Collation Algorithm described at\n<http://www.unicode.org/reports/tr10/>.  It is not\nas fully-featured or as performant as @text-icu@, but\nit avoids a dependency on a large C library.\nLocale-specific tailorings are also provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "unicode-collate" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -60,18 +60,18 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = if flags.doctests then true else false;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Attempt to pretty-print any input";
       description = "The friendly executable copies standard input\nto standard output, attempting to pretty-print the\ninput without actually requiring that the input\nis well-formed in any way.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "friendly" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

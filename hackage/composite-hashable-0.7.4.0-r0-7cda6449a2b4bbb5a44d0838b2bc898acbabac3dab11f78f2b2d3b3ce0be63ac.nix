@@ -21,15 +21,15 @@
       synopsis = "Orphan hashable instances.";
       description = "Hashable instance for (:->) and Record.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

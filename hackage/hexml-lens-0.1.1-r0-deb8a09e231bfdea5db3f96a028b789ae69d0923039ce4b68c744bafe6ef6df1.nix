@@ -21,7 +21,7 @@
       synopsis = "Lenses for the hexml package";
       description = "Lenses for the hexml package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "courses" = {
           depends = [
@@ -43,19 +43,19 @@
             (hsPkgs."hexml-lens" or (errorHandler.buildDepError "hexml-lens"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."hexml-lens" or (errorHandler.buildDepError "hexml-lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

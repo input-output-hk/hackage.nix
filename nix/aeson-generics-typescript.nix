@@ -6,8 +6,8 @@
         nix = import ../hackage/aeson-generics-typescript-0.0.0.1-r0-f4a48944a2190626dcdba9857c79836b1cdd75b409ecb15684ad8aaa2534637f.nix;
         revNum = 0;
         sha256 = "f4a48944a2190626dcdba9857c79836b1cdd75b409ecb15684ad8aaa2534637f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

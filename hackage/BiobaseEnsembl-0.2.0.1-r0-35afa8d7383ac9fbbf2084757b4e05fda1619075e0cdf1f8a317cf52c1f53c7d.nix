@@ -21,7 +21,7 @@
       synopsis = "Ensembl related datastructures and functions";
       description = "This library contains high through put sequencing and Ensembl-related functionality:\n- Datastructures to query Ensembl REST interface\n\n- Parser for GFF3\n\n- Datastructure for GFF3";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

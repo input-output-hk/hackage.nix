@@ -21,6 +21,6 @@
       synopsis = "Preview of a new build system.";
       description = "Preview of a new build system.";
       buildType = "Custom";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -35,54 +35,54 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."simple-affine-space" or (errorHandler.buildDepError "simple-affine-space"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "memory-leak" = {
           depends = [
             (hsPkgs."Rattus" or (errorHandler.buildDepError "Rattus"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "time-leak" = {
           depends = [
             (hsPkgs."Rattus" or (errorHandler.buildDepError "Rattus"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ill-typed" = {
           depends = [
             (hsPkgs."Rattus" or (errorHandler.buildDepError "Rattus"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "newly-typed" = {
           depends = [
             (hsPkgs."Rattus" or (errorHandler.buildDepError "Rattus"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "well-typed" = {
           depends = [
             (hsPkgs."Rattus" or (errorHandler.buildDepError "Rattus"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewrite" = {
           depends = [
             (hsPkgs."Rattus" or (errorHandler.buildDepError "Rattus"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

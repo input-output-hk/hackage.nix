@@ -21,7 +21,7 @@
       synopsis = "Message passing concurrency as extensible-effect";
       description = "Please see the README on GitHub at <https://github.com/sheyll/extensible-effects-concurrent#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,27 +44,27 @@
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "extensible-effects-concurrent-example-1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible-effects-concurrent" or (errorHandler.buildDepError "extensible-effects-concurrent"))
             (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "extensible-effects-concurrent-example-2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible-effects-concurrent" or (errorHandler.buildDepError "extensible-effects-concurrent"))
             (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "extensible-effects-concurrent-test" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

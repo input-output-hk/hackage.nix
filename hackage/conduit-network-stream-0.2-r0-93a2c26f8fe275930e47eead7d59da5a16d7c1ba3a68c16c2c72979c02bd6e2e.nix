@@ -21,7 +21,7 @@
       synopsis = "A base layer for network protocols using Conduits";
       description = "A base layer for network protocols using Conduits";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

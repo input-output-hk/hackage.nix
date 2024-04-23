@@ -21,7 +21,7 @@
       synopsis = "Bindings to ZeroMQ 4.x";
       description = "The 0MQ lightweight messaging kernel is a library which extends\nthe standard socket interfaces with features traditionally provided\nby specialised messaging middleware products.\n\n0MQ sockets provide an abstraction of asynchronous message queues,\nmultiple messaging patterns, message filtering (subscriptions),\nseamless access to multiple transport protocols and more.\n\nThis library provides the Haskell language binding to 0MQ >= 4.x";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,11 +34,11 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."zmq" or (errorHandler.sysDepError "zmq")) ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libzmq" or (errorHandler.pkgConfDepError "libzmq"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."zmq" or (errorHandler.sysDepError "zmq")) ++ pkgs.lib.optional (system.isFreebsd) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."libzmq" or (errorHandler.pkgConfDepError "libzmq"));
         buildable = true;
-        };
+      };
       tests = {
         "zeromq-haskell-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

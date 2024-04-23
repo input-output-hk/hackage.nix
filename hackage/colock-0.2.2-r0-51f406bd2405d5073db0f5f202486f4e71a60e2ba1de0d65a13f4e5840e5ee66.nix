@@ -21,14 +21,14 @@
       synopsis = "thread-friendly file locks that don't block the entire program";
       description = "This module provides file locks that (unlike their counterparts in System.Posix.IO)\nleave other threads running while one waits for the lock.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Datatype-generic rewriting with preconditions";
       description = "This package provides rewriting functionality for datatypes. Most forms of\ndatatypes are supported, including parametrized and mutually-recursive.\n\nThis library has been described in the paper:\n\n*  Thomas van Noort, Alexey Rodriguez Yakushev, Stefan Holdermans,\nJohan Jeuring, Bastiaan Heeren, Jose Pedro Magalhaes.\n/A Lightweight Approach to Datatype-Generic Rewriting./\nJournal of Functional Programming, Special Issue on Generic Programming,\n2010.\n\nMore information about this library can be found at\n<http://www.cs.uu.nl/wiki/GenericProgramming/GuardedRewriting>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

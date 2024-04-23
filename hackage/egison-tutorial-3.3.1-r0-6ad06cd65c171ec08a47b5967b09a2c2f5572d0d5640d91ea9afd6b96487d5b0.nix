@@ -21,7 +21,7 @@
       synopsis = "A tutorial program for the programming language Egison";
       description = "A tutorial program for the programming language Egison.\nEgison is the programming langugage that realized non-linear pattern-matching with unfree data types.\nWith Egison, you can represent pattern-matching with unfree data types intuitively, especially for collection data, such as lists, multisets, sets.\nPlease learn Egison with this tutorial program!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "egison-tutorial" = {
@@ -42,9 +42,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."strict-io" or (errorHandler.buildDepError "strict-io"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

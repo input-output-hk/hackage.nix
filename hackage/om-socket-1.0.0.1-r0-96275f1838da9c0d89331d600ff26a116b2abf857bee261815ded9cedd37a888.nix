@@ -21,7 +21,7 @@
       synopsis = "Socket utilities.";
       description = "Binary ingress server, egress client, and\nbidirectional binarry client/server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."streaming-binary" or (errorHandler.buildDepError "streaming-binary"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

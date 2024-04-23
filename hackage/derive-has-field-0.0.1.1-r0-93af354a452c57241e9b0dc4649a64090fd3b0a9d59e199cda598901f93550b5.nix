@@ -21,16 +21,16 @@
       synopsis = "Derive HasField instances with Template Haskell";
       description = "A Template Haskell function to derive HasField instances to utilize OverloadedRecordDot more effectively.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "derive-has-field-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

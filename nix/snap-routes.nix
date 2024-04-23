@@ -6,8 +6,8 @@
         nix = import ../hackage/snap-routes-0.0.1-r0-005d4eb75c09bc6ef55a45654524f5bcf898e7b0222bc87aa4b0f52956147db1.nix;
         revNum = 0;
         sha256 = "005d4eb75c09bc6ef55a45654524f5bcf898e7b0222bc87aa4b0f52956147db1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

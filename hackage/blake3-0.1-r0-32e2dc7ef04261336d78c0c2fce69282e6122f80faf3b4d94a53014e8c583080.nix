@@ -21,15 +21,15 @@
       synopsis = "BLAKE3 hashing algorithm";
       description = "Bindings to the official BLAKE3 implementation in C";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."blake3" or (errorHandler.buildDepError "blake3"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

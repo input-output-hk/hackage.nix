@@ -21,13 +21,13 @@
       synopsis = "Instances for the ToString class.";
       description = "This library provides the following instances\nfor the ToString class:\n\n* ByteString\n\n* Doc\n\n* Text\n\nNote that the instances can be enabled or disabled\nbased on cabal flags.\n\nThe idea is that eventually all packages providing string-like\ntypes will provide instances for ToString themselves.\nIn the mean time this package is here to provide them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
           (hsPkgs."to-string-class" or (errorHandler.buildDepError "to-string-class"))
-          ] ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.doc) (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))) ++ (pkgs.lib).optional (flags.text) (hsPkgs."text" or (errorHandler.buildDepError "text"));
+        ] ++ pkgs.lib.optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ pkgs.lib.optional (flags.doc) (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))) ++ pkgs.lib.optional (flags.text) (hsPkgs."text" or (errorHandler.buildDepError "text"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

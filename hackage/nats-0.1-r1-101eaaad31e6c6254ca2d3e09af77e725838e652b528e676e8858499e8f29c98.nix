@@ -21,11 +21,11 @@
       synopsis = "Haskell 98 natural numbers";
       description = "Haskell 98 natural numbers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

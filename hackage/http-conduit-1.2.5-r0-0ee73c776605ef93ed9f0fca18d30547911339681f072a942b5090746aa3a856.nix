@@ -21,7 +21,7 @@
       synopsis = "HTTP client package with conduit interface and HTTPS support.";
       description = "This package uses attoparsec for parsing the actual contents of the HTTP connection. It also provides higher-level functions which allow you to avoid direct usage of conduits. See <http://www.yesodweb.com/book/http-conduit> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,16 +54,16 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ] ++ (if flags.network-bytestring
+        ] ++ (if flags.network-bytestring
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -102,9 +102,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

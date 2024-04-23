@@ -21,7 +21,7 @@
       synopsis = "A lightweight X11 window manager.";
       description = "A lightweight X11 window manager.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "xmonad" = {
@@ -31,9 +31,9 @@
             (hsPkgs."X11-extras" or (errorHandler.buildDepError "X11-extras"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

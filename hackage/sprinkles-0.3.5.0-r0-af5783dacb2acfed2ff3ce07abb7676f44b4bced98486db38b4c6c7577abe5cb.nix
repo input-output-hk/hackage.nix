@@ -21,7 +21,7 @@
       synopsis = "JSON API to HTML website wrapper";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -77,9 +77,9 @@
           (hsPkgs."wai-handler-fastcgi" or (errorHandler.buildDepError "wai-handler-fastcgi"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sprinkles" = {
           depends = [
@@ -89,10 +89,10 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sprinkles-test" = {
           depends = [
@@ -110,9 +110,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

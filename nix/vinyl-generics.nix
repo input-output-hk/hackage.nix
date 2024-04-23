@@ -6,8 +6,8 @@
         nix = import ../hackage/vinyl-generics-0.1.0.0-r0-2b4080514291dbe0be4ab01788d3c32731a4e7d8bd6a083c273a088a6bfd9ad6.nix;
         revNum = 0;
         sha256 = "2b4080514291dbe0be4ab01788d3c32731a4e7d8bd6a083c273a088a6bfd9ad6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

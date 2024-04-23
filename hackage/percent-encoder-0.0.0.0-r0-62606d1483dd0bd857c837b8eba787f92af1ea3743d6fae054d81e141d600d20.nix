@@ -21,16 +21,16 @@
       synopsis = "Percent encode/decode ByteStrings";
       description = "a fast percent encoder/decoder for bytestrings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quick" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."percent-encoder" or (errorHandler.buildDepError "percent-encoder"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."percent-encoder" or (errorHandler.buildDepError "percent-encoder"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

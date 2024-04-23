@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-io-adapter-0.1.0.0-r0-54b74abb735faf7ab2001befe47ab25ca9cec0e74c856cb44fea44ef326ad517.nix;
         revNum = 0;
         sha256 = "54b74abb735faf7ab2001befe47ab25ca9cec0e74c856cb44fea44ef326ad517";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

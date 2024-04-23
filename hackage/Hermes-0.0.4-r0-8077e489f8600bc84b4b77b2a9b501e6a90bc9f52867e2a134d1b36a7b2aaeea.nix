@@ -21,7 +21,7 @@
       synopsis = "Message-based middleware layer";
       description = "A middleware providing best-effort unicast, remote procedure calls,\nprobabilistic (and slow!) broadcast and automatic membership\nmanagement, meant for small to medium networks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

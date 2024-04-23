@@ -21,7 +21,7 @@
       synopsis = "Windowing and Event Functionality for HGamer3D";
       description = "HGamer3D is a game engine for developing 3D games in the programming\nlanguage Haskell. This package provides the Windowing and Event\nfunctionality, based on the package HGamer3D-SDL2-Binding.\nHGamer3D-WinEvent is available on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-SDL2-Binding" or (errorHandler.buildDepError "HGamer3D-SDL2-Binding"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

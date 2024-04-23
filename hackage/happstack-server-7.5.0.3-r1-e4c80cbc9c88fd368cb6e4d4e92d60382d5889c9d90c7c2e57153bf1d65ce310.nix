@@ -21,7 +21,7 @@
       synopsis = "Web related tools and services.";
       description = "Happstack Server provides an HTTP server and a rich set of functions for routing requests, handling query parameters, generating responses, working with cookies, serving files, and more. For in-depth documentation see the Happstack Crash Course <http://happstack.com/docs/crashcourse/index.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -56,18 +56,18 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        buildable = if compiler.isGhc && (compiler.version).lt "7.0"
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        buildable = if compiler.isGhc && compiler.version.lt "7.0"
           then false
           else true;
-        };
+      };
       tests = {
         "happstack-server-tests" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

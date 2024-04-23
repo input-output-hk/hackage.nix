@@ -21,7 +21,7 @@
       synopsis = "Customizable Gen for ADT using Generics";
       description = "Customizable Gen for ADT using Generics with the abilites to do type-based and field-based overrides of Gen.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "fast and simple operational monad";
       description = "This package provides tiny implementation of operational monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."elevator" or (errorHandler.buildDepError "elevator"))
           (hsPkgs."clean-unions" or (errorHandler.buildDepError "clean-unions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

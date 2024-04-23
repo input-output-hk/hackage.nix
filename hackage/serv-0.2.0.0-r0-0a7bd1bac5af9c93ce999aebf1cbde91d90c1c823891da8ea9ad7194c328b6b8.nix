@@ -21,7 +21,7 @@
       synopsis = "Dependently typed API framework";
       description = "Types and kinds for describing APIs.\n\nThis package defines the kind 'Serv.Api.Api' which classifies types which\nstatically describe an API. Define your 'Serv.Api.Api'-kinded types and then\nwrite/derive compliant servers, clients, and documentation all statically\nguaranteed to match.\n\nImport \"Serv.Api.Prelude\" for the smoothest experience defining these types.\n\nSee the README for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."http-kinder" or (errorHandler.buildDepError "http-kinder"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A memcached client library.";
       description = "A client library for a memcached cluster. It is aimed at full binary protocol\nsupport, ease of use and speed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,19 +35,19 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "full" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."memcache" or (errorHandler.buildDepError "memcache"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "parser" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."memcache" or (errorHandler.buildDepError "memcache"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

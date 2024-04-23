@@ -13,7 +13,7 @@
       aws = false;
       httpbin = false;
       developer = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "wreq"; version = "0.4.1.0"; };
@@ -26,7 +26,7 @@
       synopsis = "An easy-to-use HTTP client library.";
       description = "\nA web client library that is designed for ease of use.\n\nTutorial: <http://www.serpentine.com/wreq/tutorial.html>\n\nFeatures include:\n\n* Simple but powerful `lens`-based API\n\n* A solid test suite, and built on reliable libraries like\nhttp-client and lens\n\n* Session handling includes connection keep-alive and pooling, and\ncookie persistence\n\n* Automatic response body decompression\n\n* Powerful multipart form and file upload handling\n\n* Support for JSON requests and responses, including navigation of\nschema-less responses\n\n* Basic and OAuth2 bearer authentication\n\n* Early TLS support via the tls package";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,12 +55,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "httpbin" = {
-          depends = (pkgs.lib).optionals (!(!flags.httpbin)) [
+          depends = pkgs.lib.optionals (!!flags.httpbin) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,10 +75,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = if !flags.httpbin then false else true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -110,18 +110,18 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ] ++ (pkgs.lib).optional (flags.aws) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (flags.aws) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
+        };
         "doctest" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!!flags.doctest) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if !flags.doctest then false else true;
-          };
         };
       };
-    }
+    };
+  }

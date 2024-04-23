@@ -21,7 +21,7 @@
       synopsis = "Building and managing tools for Fedora Haskell";
       description = "Tools for building and managing Fedora Haskell packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fhbuild" = {
@@ -31,16 +31,16 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fhbz" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fhpkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

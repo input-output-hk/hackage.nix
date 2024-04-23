@@ -21,7 +21,7 @@
       synopsis = "Extra javascript functions when using GHCJS";
       description = "Extra javascript functions when using GHCJS. Please look at README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,20 +30,20 @@
           (hsPkgs."newtype-generics" or (errorHandler.buildDepError "newtype-generics"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
+        ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
         buildable = true;
-        };
+      };
       exes = {
         "javascript-extras-test" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."javascript-extras" or (errorHandler.buildDepError "javascript-extras"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
+          ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
-            ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
+          ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

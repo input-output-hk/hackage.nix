@@ -21,7 +21,7 @@
       synopsis = "Specify valid redis globs";
       description = "Supplies functions that parse and use redis glob patterns\nI.e, glob-matching works as it does in redis commands like\n[KEYS](https://redis.io/commands/keys/)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ascii-superset" or (errorHandler.buildDepError "ascii-superset"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,17 +43,17 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ascii-char" or (errorHandler.buildDepError "ascii-char"))
             (hsPkgs."ascii-superset" or (errorHandler.buildDepError "ascii-superset"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."redis-glob" or (errorHandler.buildDepError "redis-glob"))
-            ];
+          ];
           buildable = if flags.use-doc-tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Open the user's $EDITOR for text input.";
       description = "You know when you run @git commit@, and an editor pops open so you can enter a\ncommit message? This is a Haskell library that does that.\n\nThis library isn't very portable. It relies on the @$EDITOR@ environment\nvariable. The concept only exists on *nix systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "editor-open-test_yaml_file" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."editor-open" or (errorHandler.buildDepError "editor-open"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "editor-open-test_yaml_file_conduit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."editor-open" or (errorHandler.buildDepError "editor-open"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

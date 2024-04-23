@@ -21,7 +21,7 @@
       synopsis = "Download Open Street Map tiles";
       description = "Download and locally cache open street map tiles based on HTTP\ncache control headers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

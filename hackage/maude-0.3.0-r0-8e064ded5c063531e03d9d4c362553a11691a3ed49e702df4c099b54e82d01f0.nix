@@ -21,7 +21,7 @@
       synopsis = "An interface to the Maude rewriting system.";
       description = "This package provides a simple interface for doing Maude\nrewrites from within Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Concrete data type for handling extensible exceptions as failures. (deprecated)";
       description = "Please use the exceptions package instead";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

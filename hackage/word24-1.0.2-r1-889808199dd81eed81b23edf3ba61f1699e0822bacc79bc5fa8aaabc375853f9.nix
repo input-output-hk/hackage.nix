@@ -21,23 +21,23 @@
       synopsis = "24-bit word and int types for GHC";
       description = "24-bit Word and Int data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "testWord24" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.buildtests) [
+          ] ++ pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

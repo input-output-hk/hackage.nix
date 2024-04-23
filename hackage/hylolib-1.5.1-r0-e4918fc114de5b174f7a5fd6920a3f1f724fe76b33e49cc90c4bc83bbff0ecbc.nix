@@ -21,7 +21,7 @@
       synopsis = "Tools for hybrid logics related programs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

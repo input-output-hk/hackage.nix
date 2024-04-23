@@ -21,7 +21,7 @@
       synopsis = "Chess library";
       description = "Library implementing chess rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,17 +44,17 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hchesslib" or (errorHandler.buildDepError "hchesslib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."hchesslib" or (errorHandler.buildDepError "hchesslib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

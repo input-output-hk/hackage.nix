@@ -21,7 +21,7 @@
       synopsis = "Support for using JMacro with Happstack";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."jmacro" or (errorHandler.buildDepError "jmacro"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

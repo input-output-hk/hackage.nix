@@ -21,15 +21,15 @@
       synopsis = "Bindings to the primecount library";
       description = "Please see the README on Github at <https://github.com/pgujjula/primecount-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."primecount" or (errorHandler.sysDepError "primecount"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "primecount-tests" = {
           depends = [
@@ -38,19 +38,19 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "primecount-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."primecount" or (errorHandler.buildDepError "primecount"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

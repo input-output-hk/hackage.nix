@@ -21,7 +21,7 @@
       synopsis = "Cairo backend for diagrams drawing EDSL";
       description = "A full-featured backend for rendering\ndiagrams using the cairo rendering engine.\n\n* \"Diagrams.Backend.Cairo.CmdLine\" - if you're\njust getting started with diagrams, begin here.\n\n* \"Diagrams.Backend.Cairo\" - look at this next.\nThe general API for the cairo backend.\n\n* \"Diagrams.Backend.Cairo.Internal\" - the\nimplementation guts of the cairo backend.\nUsers should normally not need to import this\nmodule.\n\n* \"Diagrams.Backend.Cairo.Text\" - cairo-specific\ntext support, including automatic bounding\nboxes.\n\n* \"Diagrams.Backend.Cairo.List\" - render diagrams\nto two-dimensional lists of colors (/i.e./\npixels).\n\n* \"Diagrams.Backend.Cairo.Ptr\" - render diagrams\nto buffers in memory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -48,8 +48,8 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

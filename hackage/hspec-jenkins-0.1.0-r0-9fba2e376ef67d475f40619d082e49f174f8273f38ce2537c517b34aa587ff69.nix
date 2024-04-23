@@ -21,15 +21,15 @@
       synopsis = "Jenkins-friendly XML formatter for Hspec";
       description = "Jenkins-friendly XML formatter for Hspec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

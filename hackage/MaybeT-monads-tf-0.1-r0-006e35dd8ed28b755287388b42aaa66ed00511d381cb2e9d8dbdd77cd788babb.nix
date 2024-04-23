@@ -21,15 +21,15 @@
       synopsis = "MaybeT monad transformer compatible with monads-tf instead of mtl";
       description = "Support for computations with failures. This is a fork of the MaybeT\npackage by Eric Kidd, but compatible with the type-family based monad\nclasses of the monads-tf package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

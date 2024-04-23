@@ -21,7 +21,7 @@
       synopsis = "Tabular list widgets for brick.";
       description = "This package contains two tabular list widgets for brick.\n\n* Grid tabular list\n* Mixed tabular list\n\n== To get started\n\n* Read \"Brick.Widgets.TabularList.Grid\" and \"Brick.Widgets.TabularList.Mixed\".\n* Run demo programs in demos/ directory. To learn more quickly, modify and run demo programs.\n\n== Lens support\n\nIf you want to use lens, you should use `OverloadedLabels` extension with generic-lens or optics-core.\nIf you import any tabular list widget, \"Data.Generics.Labels\" from generic-lens comes for free.\n\nYou can use generic-lens with lens, microlens, or any other lens package with van Laarhoven lens interface.\n\nFor zoom, you have to use van Laarhoven lens because brick supports zoom through microlens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mixed-tabular-list" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "mixed-tabular-list-vi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -57,9 +57,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "grid-tabular-list" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "grid-tabular-list-vi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "A compatibility layer for GHC's 'wherefrom' function";
       description = "A compatibility layer for GHC's 'wherefrom' function,\nwhich exposes info provenance information.\nEach major version of this library exports \na different version of this interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."wherefrom-compat" or (errorHandler.buildDepError "wherefrom-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

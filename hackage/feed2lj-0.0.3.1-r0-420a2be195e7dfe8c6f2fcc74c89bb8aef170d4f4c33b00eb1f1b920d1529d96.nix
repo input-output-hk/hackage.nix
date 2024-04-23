@@ -21,7 +21,7 @@
       synopsis = "(unsupported)";
       description = "(unsupported)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "feed2lj" = {
@@ -37,15 +37,15 @@
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
             (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ] ++ (if flags.nano-md5
+          ] ++ (if flags.nano-md5
             then [
               (hsPkgs."nano-md5" or (errorHandler.buildDepError "nano-md5"))
-              ]
+            ]
             else [
               (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

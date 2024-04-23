@@ -21,7 +21,7 @@
       synopsis = "Render overloaded expressions to their textual representation.";
       description = "This library allows you to render overloaded expressions to their\ntextual representation. For example:\n\n@\n*Repr> let rd = 1.5 + 2 + (3 + (-4) * (5 - pi / sqrt 6)) :: Repr Double\n*Repr> show rd\n\\\"fromRational (3 % 2) + 2 + (3 + negate 4 * (5 - pi / sqrt 6))\\\"\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."string-combinators" or (errorHandler.buildDepError "string-combinators"))
           (hsPkgs."dstring" or (errorHandler.buildDepError "dstring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

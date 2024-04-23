@@ -21,7 +21,7 @@
       synopsis = "Garbage-collected thread local storage";
       description = "Please see the README on GitHub at <https://github.com/iand675/thread-utils-context#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."thread-utils-finalizers" or (errorHandler.buildDepError "thread-utils-finalizers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "thread-utils-context-test" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."thread-utils-context" or (errorHandler.buildDepError "thread-utils-context"))
             (hsPkgs."thread-utils-finalizers" or (errorHandler.buildDepError "thread-utils-finalizers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "thread-utils-context-benchmarks" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."thread-utils-context" or (errorHandler.buildDepError "thread-utils-context"))
             (hsPkgs."thread-utils-finalizers" or (errorHandler.buildDepError "thread-utils-finalizers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

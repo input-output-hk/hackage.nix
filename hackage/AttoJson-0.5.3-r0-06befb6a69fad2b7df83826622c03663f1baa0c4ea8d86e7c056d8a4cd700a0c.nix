@@ -21,7 +21,7 @@
       synopsis = "Simple lightweight JSON parser, generator & manipulator based on ByteString";
       description = "Simple Lightweight JSON parser & generator based on ByteString.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

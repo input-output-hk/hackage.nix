@@ -6,8 +6,8 @@
         nix = import ../hackage/garfield-0.0.0.0-r0-5b1916f22718a5ae99ed4c06ae2ef81b54f1e33d21d0ad1d41368f16882066d9.nix;
         revNum = 0;
         sha256 = "5b1916f22718a5ae99ed4c06ae2ef81b54f1e33d21d0ad1d41368f16882066d9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

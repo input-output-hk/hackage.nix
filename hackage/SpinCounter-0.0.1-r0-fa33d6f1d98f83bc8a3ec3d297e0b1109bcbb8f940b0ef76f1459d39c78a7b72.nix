@@ -21,7 +21,7 @@
       synopsis = "Lock free Spin Counter";
       description = "A simple lock-free spin counter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."ref-mtl" or (errorHandler.buildDepError "ref-mtl"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

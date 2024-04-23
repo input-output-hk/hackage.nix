@@ -21,7 +21,7 @@
       synopsis = "Expiring containers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timestamp" or (errorHandler.buildDepError "timestamp"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."timestamp" or (errorHandler.buildDepError "timestamp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for low-level packet sockets (AF_PACKET)";
       description = "Haskell bindings for low-level packet sockets (AF_PACKET)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network-interfacerequest" or (errorHandler.buildDepError "network-interfacerequest"))
           (hsPkgs."foreign-storable-asymmetric" or (errorHandler.buildDepError "foreign-storable-asymmetric"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

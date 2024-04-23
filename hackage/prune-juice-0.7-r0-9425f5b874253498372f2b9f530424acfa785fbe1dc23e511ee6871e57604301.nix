@@ -21,7 +21,7 @@
       synopsis = "Prune unused Haskell dependencies";
       description = "Prune unused Haskell dependencies - see README at <https://github.com/dfithian/prune-juice#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-ansi" or (errorHandler.buildDepError "text-ansi"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prune-juice" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."prune-juice" or (errorHandler.buildDepError "prune-juice"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."file-path-th" or (errorHandler.buildDepError "file-path-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."prune-juice" or (errorHandler.buildDepError "prune-juice"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

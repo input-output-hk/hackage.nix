@@ -21,7 +21,7 @@
       synopsis = "List http/html files";
       description = "Tool for listing files (recursively) in an http directory";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "findhttp" = {
@@ -35,9 +35,9 @@
             (hsPkgs."http-directory" or (errorHandler.buildDepError "http-directory"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

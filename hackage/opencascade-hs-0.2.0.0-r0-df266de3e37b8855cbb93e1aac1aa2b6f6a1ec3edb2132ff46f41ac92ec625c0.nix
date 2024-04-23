@@ -21,13 +21,13 @@
       synopsis = "Thin Wrapper for the OpenCASCADE CAD Kernel";
       description = "Please see the README on GitHub at <https://github.com/joe-warren/opencascade-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           (pkgs."TKGeomBase" or (errorHandler.sysDepError "TKGeomBase"))
@@ -48,8 +48,8 @@
           (pkgs."TKV3d" or (errorHandler.sysDepError "TKV3d"))
           (pkgs."TKMesh" or (errorHandler.sysDepError "TKMesh"))
           (pkgs."TKService" or (errorHandler.sysDepError "TKService"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

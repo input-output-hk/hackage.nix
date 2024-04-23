@@ -6,8 +6,8 @@
         nix = import ../hackage/orizentic-0.1.0.0-r0-d983a31190cac9127bfbbadba22cb7632802c5f702fe387b685303bffcbd0432.nix;
         revNum = 0;
         sha256 = "d983a31190cac9127bfbbadba22cb7632802c5f702fe387b685303bffcbd0432";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

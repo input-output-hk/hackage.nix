@@ -21,16 +21,16 @@
       synopsis = "List shuffling and sampling";
       description = "List shuffling and sampling with optimal asymptotic time and space complexity using the imperative Fisher–Yates algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."list-shuffle" or (errorHandler.buildDepError "list-shuffle"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."list-shuffle" or (errorHandler.buildDepError "list-shuffle"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

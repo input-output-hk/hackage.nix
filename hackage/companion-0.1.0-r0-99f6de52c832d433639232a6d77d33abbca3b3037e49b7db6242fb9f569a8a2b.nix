@@ -21,14 +21,14 @@
       synopsis = "A Haskell library to provide companion threads.";
       description = "Please see the README on GitHub at <https://github.com/commercialhaskell/companion#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

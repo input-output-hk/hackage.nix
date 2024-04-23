@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of Engine.IO";
       description = "This library provides a Haskell implementation of\n<https://github.com/Automattic/engine.io Engine.IO>, a library for real-time\nclient-server communication on the web. Engine.IO works with old browsers via\nXHR long-polling, and seamlessy upgrades to web sockets. This implementation\nsupports the majority of the Engine.IO protocol, including text and binary\npackets and the upgrading protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

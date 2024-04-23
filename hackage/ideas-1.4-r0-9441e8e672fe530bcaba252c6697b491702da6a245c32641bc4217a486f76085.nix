@@ -21,7 +21,7 @@
       synopsis = "Feedback services for intelligent tutoring systems";
       description = "Ideas (Interactive Domain-specific Exercise Assistants) is a joint research\nproject between the Open University of the Netherlands and Utrecht\nUniversity. The project's goal is to use software and compiler technology to\nbuild state-of-the-art components for intelligent tutoring systems (ITS) and\nlearning environments. The 'ideas' software package provides a generic\nframework for constructing the expert knowledge module (also known as a\ndomain reasoner) for an ITS or learning environment. Domain knowledge is\noffered as a set of feedback services that are used by external tools such\nas the digital mathematical environment (DME), MathDox, and the Math-Bridge\nsystem. We have developed several domain reasoners based on this framework,\nincluding reasoners for mathematics, linear algebra, logic, learning Haskell\n(the Ask-Elle programming tutor) and evaluating Haskell expressions, and for\npracticing communication skills (the serious game Communicate!).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -44,18 +44,18 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ] ++ (pkgs.lib).optionals (flags.logging) [
+        ] ++ pkgs.lib.optionals (flags.logging) [
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
-          ]) ++ (if flags.network-uri
+        ]) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

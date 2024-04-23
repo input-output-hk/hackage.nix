@@ -21,7 +21,7 @@
       synopsis = "A web server for the development of WAI compliant web applications.";
       description = "A development server for WAI applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-devel" = {
           depends = [
@@ -91,10 +91,10 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -102,9 +102,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."wai-devel" or (errorHandler.buildDepError "wai-devel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Control.Arrow.Transformer.Cont";
       description = "A library providing Control.Arrow.Transformer.Cont";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

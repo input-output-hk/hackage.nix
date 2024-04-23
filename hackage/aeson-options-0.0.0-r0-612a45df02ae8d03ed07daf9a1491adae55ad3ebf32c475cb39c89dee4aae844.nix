@@ -21,14 +21,14 @@
       synopsis = "Options to derive FromJSON/ToJSON instances";
       description = "Options to derive FromJSON/ToJSON instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

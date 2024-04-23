@@ -21,7 +21,7 @@
       synopsis = "HTTP over TLS support for Warp via the TLS package";
       description = "SSLv1 and SSLv2 are obsoleted by IETF.\nWe should use TLS 1.2 (or TLS 1.1 or TLS 1.0 if necessary).\nHTTP/2 can be negotiated by ALPN.\nAPI docs and the README are available at\n<http://www.stackage.org/package/warp-tls>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."tls-session-manager" or (errorHandler.buildDepError "tls-session-manager"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."recv" or (errorHandler.buildDepError "recv"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "collect posts of site that is wrote in config yaml using feed or scraping";
       description = "Please see the README on GitHub at <https://github.com/matsubara0507/scrapbook#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."scrapbook-core" or (errorHandler.buildDepError "scrapbook-core"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scrapbook" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."scrapbook" or (errorHandler.buildDepError "scrapbook"))
             (hsPkgs."scrapbook-core" or (errorHandler.buildDepError "scrapbook-core"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "scrapbook-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

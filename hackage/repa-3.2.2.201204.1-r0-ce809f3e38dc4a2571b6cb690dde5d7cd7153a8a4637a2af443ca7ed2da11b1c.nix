@@ -21,7 +21,7 @@
       synopsis = "High performance, regular, shape polymorphic parallel arrays.";
       description = "Legacy version for Haskell Platform 2012.04. You will get better performance\nif you upgrade to the most recent version of GHC.\nRepa provides high performance, regular, multi-dimensional, shape polymorphic\nparallel arrays. All numeric data is stored unboxed. Functions written with\nthe Repa combinators are automatically parallel provided you supply\n+RTS -Nwhatever on the command line when running the program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

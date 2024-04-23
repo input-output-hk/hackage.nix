@@ -21,7 +21,7 @@
       synopsis = "Extra helper functions for bidirectional specifications";
       description = "Provides generic helper functions for defining bidirectionally executable\nspecifications (a.k.a. parsers / generators).  The functions and types\nfrom this module extend the core functionality provided by the bidispec\npackage.c";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

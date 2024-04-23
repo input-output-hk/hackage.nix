@@ -21,15 +21,15 @@
       synopsis = "Extends explicit-iomodes with ByteString operations";
       description = "Extends @explicit-iomodes@ with @ByteString@ operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."explicit-iomodes" or (errorHandler.buildDepError "explicit-iomodes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

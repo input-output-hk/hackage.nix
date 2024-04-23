@@ -21,7 +21,7 @@
       synopsis = "Musical pitch representation.";
       description = "This package provides various representations of musical pitch.\n\nThis library is part of the Music Suite, see\n<http://music-suite.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
           (hsPkgs."positive" or (errorHandler.buildDepError "positive"))
           (hsPkgs."type-unary" or (errorHandler.buildDepError "type-unary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

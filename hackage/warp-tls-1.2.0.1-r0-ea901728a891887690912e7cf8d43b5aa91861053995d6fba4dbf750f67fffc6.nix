@@ -21,7 +21,7 @@
       synopsis = "SSL support for Warp via the TLS package";
       description = "SSL support for Warp via the TLS package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-paypal-rest-0.1.0-r0-b2de452204f0a1df95465fbf3d5e76294b8bc9c6c51403a6d6d99cf2439351bf.nix;
         revNum = 0;
         sha256 = "b2de452204f0a1df95465fbf3d5e76294b8bc9c6c51403a6d6d99cf2439351bf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

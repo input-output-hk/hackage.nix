@@ -21,16 +21,16 @@
       synopsis = "Refreshed parsec-style library for compatiblity with Scala parsley";
       description = "This is a monadic parser combinator designed to be easy to use,\nespecially for beginners, and have API parity with the\n@[parsley](https://github.com/j-mie6/parsley)@ library. It supports\ndesign patterns introduced in /Design Patterns for Parser Combinators/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."selective" or (errorHandler.buildDepError "selective"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gigaparsec-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

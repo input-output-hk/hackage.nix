@@ -21,7 +21,7 @@
       synopsis = "Spoon's utilities.  Simple testing and nice looking error reporting.";
       description = "Spoon's utilities.  Simple testing and nice looking error reporting.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "test" = { buildable = true; }; };
       };
-    }
+      exes = { "test" = { buildable = true; }; };
+    };
+  }

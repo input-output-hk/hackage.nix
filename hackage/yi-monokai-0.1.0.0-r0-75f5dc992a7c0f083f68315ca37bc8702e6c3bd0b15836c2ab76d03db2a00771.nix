@@ -21,14 +21,14 @@
       synopsis = "Monokai colour scheme for the Yi text editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

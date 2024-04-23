@@ -21,7 +21,7 @@
       synopsis = "Type safe web server";
       description = "WAI integration for trasa";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."trasa" or (errorHandler.buildDepError "trasa"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

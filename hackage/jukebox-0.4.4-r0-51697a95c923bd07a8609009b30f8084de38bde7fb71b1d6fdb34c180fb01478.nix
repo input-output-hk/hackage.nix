@@ -21,7 +21,7 @@
       synopsis = "A first-order reasoning toolbox";
       description = "Jukebox is a suite of tools for transforming problems in first-order logic.\nIt reads problems in TPTP (FOF and TFF) format.\n\nCurrently it can translate typed problems to untyped (by efficiently\nencoding types) and clausify problems (both typed and untyped).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,23 +37,23 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
           (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jukebox" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."jukebox" or (errorHandler.buildDepError "jukebox"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

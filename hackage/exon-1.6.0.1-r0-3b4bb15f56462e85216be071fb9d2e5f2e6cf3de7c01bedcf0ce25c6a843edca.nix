@@ -21,7 +21,7 @@
       synopsis = "Customizable quasiquote interpolation";
       description = "See https://hackage.haskell.org/package/exon/docs/Exon.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."incipit-base" or (errorHandler.buildDepError "incipit-base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "exon-test" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "exon-bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."exon" or (errorHandler.buildDepError "exon"))
             (hsPkgs."incipit-base" or (errorHandler.buildDepError "incipit-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

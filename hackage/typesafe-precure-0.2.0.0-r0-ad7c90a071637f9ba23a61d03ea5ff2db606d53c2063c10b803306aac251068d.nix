@@ -21,7 +21,7 @@
       synopsis = "Type-safe transformations and purifications of PreCures (Japanese Battle Heroine)";
       description = "See README.md for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typesafe-precure-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typesafe-precure" or (errorHandler.buildDepError "typesafe-precure"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

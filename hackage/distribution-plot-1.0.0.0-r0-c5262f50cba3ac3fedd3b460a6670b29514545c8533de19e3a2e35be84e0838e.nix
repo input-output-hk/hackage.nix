@@ -21,7 +21,7 @@
       synopsis = "Easily plot distributions from the distribution package..";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."distribution" or (errorHandler.buildDepError "distribution"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

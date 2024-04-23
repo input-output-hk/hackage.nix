@@ -21,7 +21,7 @@
       synopsis = "Snaplet for Sedna Bindings. Essentailly a rip of snaplet-hdbc.";
       description = "Snaplet for Sedna native XML database bindings.\nhttp://www.sedna.org/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."sednaDBXML" or (errorHandler.buildDepError "sednaDBXML"))
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

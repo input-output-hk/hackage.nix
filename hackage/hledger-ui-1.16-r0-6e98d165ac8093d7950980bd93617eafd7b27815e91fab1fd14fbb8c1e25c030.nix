@@ -21,7 +21,7 @@
       synopsis = "Terminal user interface for the hledger accounting tool";
       description = "This is hledger's terminal interface.\nIt is simpler and more convenient for browsing data than the command-line interface,\nbut lighter and faster than hledger-web.\n\nhledger is a cross-platform program for tracking money, time, or\nany other commodity, using double-entry accounting and a simple,\neditable file format. It is inspired by and largely compatible\nwith ledger(1).  hledger provides command-line, terminal and web\ninterfaces, and aims to be a reliable, practical tool for daily\nuse.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-ui" = {
@@ -50,13 +50,13 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

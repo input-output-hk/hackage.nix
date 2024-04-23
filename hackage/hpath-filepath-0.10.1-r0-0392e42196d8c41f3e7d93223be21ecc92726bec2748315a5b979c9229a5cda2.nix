@@ -21,7 +21,7 @@
       synopsis = "ByteString based filepath manipulation";
       description = "ByteString based filepath manipulation, similar to 'filepath' package. This is POSIX only.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
         buildable = if system.isWindows then false else true;
-        };
       };
-    }
+    };
+  }

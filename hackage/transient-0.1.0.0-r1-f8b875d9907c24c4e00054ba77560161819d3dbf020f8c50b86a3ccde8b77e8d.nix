@@ -21,7 +21,7 @@
       synopsis = "A monad for extensible effects and primitives for unrestricted composability of applications";
       description = "see <http://github.com/agocorona/transient>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "transient" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "move" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

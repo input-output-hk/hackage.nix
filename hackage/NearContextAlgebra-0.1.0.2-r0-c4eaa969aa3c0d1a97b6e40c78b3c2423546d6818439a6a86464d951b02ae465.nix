@@ -21,7 +21,7 @@
       synopsis = "Context Algebra of near";
       description = "Model of the concept \"near\" influenced by several contexts";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "NearContextAlgebra" = {
@@ -32,9 +32,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
             (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

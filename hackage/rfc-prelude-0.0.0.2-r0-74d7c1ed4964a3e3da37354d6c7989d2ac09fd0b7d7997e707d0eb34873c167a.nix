@@ -21,7 +21,7 @@
       synopsis = "The Prelude from the Robert Fischer Commons.";
       description = "A Prelude deriving from @Classy-Prelude@ which provides additional useful bits of  functionality and convenient names.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

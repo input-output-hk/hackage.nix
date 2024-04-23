@@ -21,7 +21,7 @@
       synopsis = "Simulation experiments for the Aivika library";
       description = "This package allows defining simulation experiments based on the aivika [1]\nand aivika-transformers [2] packages. Such experiments define in declarative\nmanner what should be simulated and in which view the simulation results should\nbe generated. It can directly return charts, tables and so on. Additionally, it\ncan save the results in SQL databases.\n\nThe library is extensible and you can add new views for the results.\n\n\\[1] <http://hackage.haskell.org/package/aivika>\n\n\\[2] <http://hackage.haskell.org/package/aivika-transformers>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (errorHandler.buildDepError "aivika-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

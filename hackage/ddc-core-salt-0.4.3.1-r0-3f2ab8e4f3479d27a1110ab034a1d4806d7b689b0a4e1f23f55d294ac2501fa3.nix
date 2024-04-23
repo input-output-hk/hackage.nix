@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler C code generator.";
       description = "Disciplined Disciple Compiler C code generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

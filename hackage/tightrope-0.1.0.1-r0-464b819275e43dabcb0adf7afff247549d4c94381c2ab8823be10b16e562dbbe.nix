@@ -21,7 +21,7 @@
       synopsis = "Nice API for a Slackbot";
       description = "Making bots for Slack is hard! But wait: now it's easy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "ElasticSearch client library for Haskell";
       description = "ElasticSearch made awesome for Haskell hackers";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -69,11 +69,11 @@
             (hsPkgs."quickcheck-properties" or (errorHandler.buildDepError "quickcheck-properties"))
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bloodhound" or (errorHandler.buildDepError "bloodhound"))
@@ -81,11 +81,11 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-prop" or (errorHandler.buildDepError "doctest-prop"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "7.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "7.8"
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

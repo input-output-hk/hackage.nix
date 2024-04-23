@@ -6,8 +6,8 @@
         nix = import ../hackage/explicit-determinant-0.1.0.0-r0-b83ea7239ed4a5ee431318e3de101483f3fb77abadc4a762f3ca8c886feb199c.nix;
         revNum = 0;
         sha256 = "b83ea7239ed4a5ee431318e3de101483f3fb77abadc4a762f3ca8c886feb199c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

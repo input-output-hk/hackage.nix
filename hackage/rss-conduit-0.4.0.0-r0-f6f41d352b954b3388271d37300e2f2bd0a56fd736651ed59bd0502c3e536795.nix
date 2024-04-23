@@ -21,7 +21,7 @@
       synopsis = "Streaming parser/renderer for the RSS standard.";
       description = "Cf README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "hs-opentelemetry-instrumentation-auto";
         version = "0.1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "aaronallen8455@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Plugin for instrumenting an application";
       description = "A GHC plugin that auto-instruments an application for emitting open telementry tracing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "auto-instrument-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

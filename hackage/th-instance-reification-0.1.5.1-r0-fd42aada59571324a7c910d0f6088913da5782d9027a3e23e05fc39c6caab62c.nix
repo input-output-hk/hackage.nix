@@ -21,7 +21,7 @@
       synopsis = "Fixed versions of instances reification functions";
       description = "Provides fixed versions of 'reifyInstances' and 'isInstance' as per\nthe following ghc issue:\n<https://ghc.haskell.org/trac/ghc/ticket/7066>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "th-instance-reification-htf-test-suite" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-instance-reification" or (errorHandler.buildDepError "th-instance-reification"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

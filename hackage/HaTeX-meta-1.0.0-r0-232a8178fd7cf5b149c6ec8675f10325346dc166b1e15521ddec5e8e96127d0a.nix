@@ -21,7 +21,7 @@
       synopsis = "HaTeX monad modules builder.";
       description = "This packages belongs to the HaTeX project.\nIt builds the @.Monad@ modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "metahatex" = {
@@ -35,9 +35,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

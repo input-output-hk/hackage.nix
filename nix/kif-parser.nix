@@ -6,8 +6,8 @@
         nix = import ../hackage/kif-parser-0.0.3-r0-bcfa8beb8635da44fa3dc169c1da7c9dd44dc9087555b57013a21c5809105b44.nix;
         revNum = 0;
         sha256 = "bcfa8beb8635da44fa3dc169c1da7c9dd44dc9087555b57013a21c5809105b44";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

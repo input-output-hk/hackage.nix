@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler test driver and buildbot.";
       description = "Disciplined Disciple Compiler test driver and buildbot.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ddc-war" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

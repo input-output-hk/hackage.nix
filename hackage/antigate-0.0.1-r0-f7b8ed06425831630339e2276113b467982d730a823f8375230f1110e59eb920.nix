@@ -21,7 +21,7 @@
       synopsis = "Interface for antigate.com captcha recognition service.";
       description = "Interface for antigate.com captcha recognition service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

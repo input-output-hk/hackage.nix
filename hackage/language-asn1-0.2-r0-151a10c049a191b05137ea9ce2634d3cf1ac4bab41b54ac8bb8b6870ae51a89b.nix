@@ -21,7 +21,7 @@
       synopsis = "Parsing of ASN1 definitions";
       description = "Language C is a haskell library for the analysis and generation of C code.\nIt features a complete, well tested parser and pretty printer for all of C99 and a large\nset of GNU extensions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.splitbase
@@ -29,11 +29,11 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

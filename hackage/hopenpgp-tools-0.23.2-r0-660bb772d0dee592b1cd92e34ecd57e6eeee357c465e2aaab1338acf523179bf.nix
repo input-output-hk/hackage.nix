@@ -21,7 +21,7 @@
       synopsis = "hOpenPGP-based command-line tools";
       description = "command-line tools for performing some OpenPGP-related operations";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hot" = {
@@ -45,13 +45,13 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hokey" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hkt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -117,13 +117,13 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hop" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -152,13 +152,13 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

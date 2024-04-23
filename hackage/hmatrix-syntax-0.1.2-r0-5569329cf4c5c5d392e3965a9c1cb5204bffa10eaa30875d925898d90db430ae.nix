@@ -21,7 +21,7 @@
       synopsis = "MATLAB-like syntax for hmatrix vectors and matrices";
       description = "This package uses QuasiQuotes to provide a nice syntax for hmatrix\nvectors and matrices. To get started, see \"Data.Packed.Syntax\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

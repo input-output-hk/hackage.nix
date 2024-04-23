@@ -21,7 +21,7 @@
       synopsis = "Family of families: featherweight defunctionalization";
       description = "Promote regular type families to first-class,\nwithout polluting the type namespace.\n.\nSee README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fcf-family-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
             (hsPkgs."fcf-family" or (errorHandler.buildDepError "fcf-family"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

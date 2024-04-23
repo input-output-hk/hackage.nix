@@ -6,8 +6,8 @@
         nix = import ../hackage/classy-effects-0.1.0.0-r0-9d219a1602967b1cdde3f33b47c891a36a981e9217f5ac51d8faa13992e46e1b.nix;
         revNum = 0;
         sha256 = "9d219a1602967b1cdde3f33b47c891a36a981e9217f5ac51d8faa13992e46e1b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

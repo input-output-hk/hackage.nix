@@ -21,7 +21,7 @@
       synopsis = "Replaces/Enhances \"Text.Regex\"";
       description = "One module compat layer over <//hackage.haskell.org/package/regex-posix regex-posix> to replace \"Text.Regex\".\n\nSee also <https://wiki.haskell.org/Regular_expressions> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

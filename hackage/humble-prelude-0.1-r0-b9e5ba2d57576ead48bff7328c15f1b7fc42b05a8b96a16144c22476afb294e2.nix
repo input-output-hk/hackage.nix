@@ -21,7 +21,7 @@
       synopsis = "Redefinition-free prelude alternative";
       description = "See README.md.........................";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Concrete monad transformers";
       description = "Haskell 98 part of a monad transformer library, inspired by the paper\n\\\"Functional Programming with Overloading and Higher-Order Polymorphism\\\",\nby Mark P Jones, in /Advanced School of Functional Programming/, 1995\n(<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>).\n\nThis part contains the monad transformer class, the concrete monad\ntransformers, operations and liftings.  It can be used on its own\nin Haskell 98 code, or with the monad classes in the @monads-fd@ or\n@monads-tf@ packages, which automatically lift operations introduced\nby monad transformers through other transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.applicativeinbase
@@ -29,8 +29,8 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

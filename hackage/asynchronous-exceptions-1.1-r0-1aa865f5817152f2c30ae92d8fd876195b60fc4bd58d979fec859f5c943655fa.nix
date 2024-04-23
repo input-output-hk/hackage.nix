@@ -21,11 +21,11 @@
       synopsis = "Distinguish between synchronous and asynchronous exceptions";
       description = "Distinguish between synchronous and asynchronous exceptions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

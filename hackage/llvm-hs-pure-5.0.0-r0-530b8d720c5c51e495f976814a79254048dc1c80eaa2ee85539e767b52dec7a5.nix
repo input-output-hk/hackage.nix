@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell LLVM functionality (no FFI).";
       description = "llvm-hs-pure is a set of pure Haskell types and functions for interacting with LLVM <http://llvm.org/>.\nIt includes an ADT to represent LLVM IR (<http://llvm.org/docs/LangRef.html>). The llvm-hs package\nbuilds on this one with FFI bindings to LLVM, but llvm-hs-pure does not require LLVM to be available.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (if flags.semigroups
+        ] ++ (if flags.semigroups
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,14 +51,14 @@
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (if flags.semigroups
+          ] ++ (if flags.semigroups
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

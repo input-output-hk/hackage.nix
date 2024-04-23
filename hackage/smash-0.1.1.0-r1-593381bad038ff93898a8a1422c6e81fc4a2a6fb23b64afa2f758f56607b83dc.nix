@@ -21,7 +21,7 @@
       synopsis = "Combinators for Maybe types";
       description = "This package provides the calculus for pointed types, including the pointed\nproduct, Can, the pointed coproduct, Wedge, and the smash product.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,14 +30,14 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

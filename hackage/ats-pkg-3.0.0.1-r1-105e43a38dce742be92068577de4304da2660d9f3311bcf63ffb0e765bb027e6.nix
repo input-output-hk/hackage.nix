@@ -21,7 +21,7 @@
       synopsis = "A build tool for ATS";
       description = "A collection of scripts to simplify building ATS projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
           (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "quaalude" = {
           depends = [
@@ -72,13 +72,13 @@
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "atspkg" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."cli-setup" or (errorHandler.buildDepError "cli-setup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

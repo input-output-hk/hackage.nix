@@ -21,14 +21,14 @@
       synopsis = "Zip lists with Traversables";
       description = "A `Traversable`'s elements can be visited one at a time, and updated\nin-place. That means we can visit them at the same time as we walk along a\nlist, and use the values in the list to update the values in the\n`Traversable`. This library does just that.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."infinite-list" or (errorHandler.buildDepError "infinite-list"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

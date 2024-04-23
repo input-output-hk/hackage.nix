@@ -21,14 +21,14 @@
       synopsis = "A program and library to derive instances for data types";
       description = "Data.Derive is a library and a tool for deriving instances for Haskell programs.\nIt is designed to work with custom derivations, SYB and Template Haskell mechanisms.\nThe tool requires GHC, but the generated code is portable to all compilers.\nWe see this tool as a competitor to DrIFT.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -37,10 +37,10 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
-      exes = { "derive" = { buildable = true; }; };
       };
-    }
+      exes = { "derive" = { buildable = true; }; };
+    };
+  }

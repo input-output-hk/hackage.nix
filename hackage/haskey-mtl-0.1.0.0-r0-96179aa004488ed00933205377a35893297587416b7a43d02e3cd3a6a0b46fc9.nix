@@ -21,7 +21,7 @@
       synopsis = "A monad transformer supporting Haskey transactions.";
       description = "This library provides a monad transformer supporting Haskey transactions,\nwith default lifted instances for all mtl monad transformers.\n\nFor more information on how to use this package, visit\n<https://github.com/haskell-haskey/haskey-mtl>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."haskey-btree" or (errorHandler.buildDepError "haskey-btree"))
           (hsPkgs."haskey" or (errorHandler.buildDepError "haskey"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskey-mtl-example" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

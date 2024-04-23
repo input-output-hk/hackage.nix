@@ -21,7 +21,7 @@
       synopsis = "A reliable command-line client for gist.github.com";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gist" = {
@@ -32,9 +32,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

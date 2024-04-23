@@ -21,7 +21,7 @@
       synopsis = "A binding for the \"xml-query\" and \"xml-conduit\" libraries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

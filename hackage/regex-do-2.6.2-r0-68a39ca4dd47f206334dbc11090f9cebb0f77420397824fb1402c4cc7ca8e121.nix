@@ -21,7 +21,7 @@
       synopsis = "PCRE wrapper";
       description = "format, search, replace (String | ByteString) with PCRE regex. Utf8-safe";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."regex-do" or (errorHandler.buildDepError "regex-do"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

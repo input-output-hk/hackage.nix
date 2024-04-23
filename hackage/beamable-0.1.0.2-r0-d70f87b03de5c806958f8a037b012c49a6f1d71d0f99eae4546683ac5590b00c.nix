@@ -21,7 +21,7 @@
       synopsis = "Generic serializer/deserializer with compact representation";
       description = "Yet another binary serialization library.  Beamable\nprovides efficient and fast serialization, often requiring less\nspace than alternative serializers.\nIncremental de-serialization is supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."murmur-hash" or (errorHandler.buildDepError "murmur-hash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "beamable-tests" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
             (hsPkgs."murmur-hash" or (errorHandler.buildDepError "murmur-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "beamable-bench" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
             (hsPkgs."murmur-hash" or (errorHandler.buildDepError "murmur-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

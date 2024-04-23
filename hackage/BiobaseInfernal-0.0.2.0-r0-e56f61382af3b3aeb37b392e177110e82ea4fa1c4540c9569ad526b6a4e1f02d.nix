@@ -21,7 +21,7 @@
       synopsis = "Infernal CM manipulation";
       description = "This library provides functions to load Infernal covariance\nmodels. Models can be converted from score mode into\nprobability mode. They, too, can be switched into local mode.\nIn additon, Stockholm files can be loaded.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."Biobase" or (errorHandler.buildDepError "Biobase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

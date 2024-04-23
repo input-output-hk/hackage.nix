@@ -21,7 +21,7 @@
       synopsis = "Automatic disambiguation for extensible effects";
       description = "Please see the README on GitHub at <https://github.com/re-xyr/cleff/tree/master/cleff-plugin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-tcplugins-extra" or (errorHandler.buildDepError "ghc-tcplugins-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cleff-plugin-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-tcplugins-extra" or (errorHandler.buildDepError "ghc-tcplugins-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

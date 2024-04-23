@@ -21,7 +21,7 @@
       synopsis = "A simple programming and debugging environment.";
       description = "A simple weakly typed, dynamic, interpreted programming langauge and terminal IDE.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         buildable = true;
-        };
+      };
       exes = {
         "spade" = {
           depends = [
@@ -90,10 +90,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "spade-test" = {
           depends = [
@@ -130,9 +130,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

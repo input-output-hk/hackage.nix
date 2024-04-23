@@ -21,7 +21,7 @@
       synopsis = "Closed intervals of totally ordered types";
       description = "see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."filtrable" or (errorHandler.buildDepError "filtrable"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "interval-doctest" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."doctest-exitcode-stdio" or (errorHandler.buildDepError "doctest-exitcode-stdio"))
             (hsPkgs."doctest-lib" or (errorHandler.buildDepError "doctest-lib"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

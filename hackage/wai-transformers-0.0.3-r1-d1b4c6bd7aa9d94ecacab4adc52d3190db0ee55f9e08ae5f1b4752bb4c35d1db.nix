@@ -21,15 +21,15 @@
       synopsis = "Simple parameterization of Wai's Application type";
       description = "Please see the <http://athanclark.github.io/posts/2015-10-24-wai-transformers-tut.html tutorial> for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

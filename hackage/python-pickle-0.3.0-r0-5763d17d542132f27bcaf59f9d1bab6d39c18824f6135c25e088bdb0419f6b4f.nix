@@ -21,7 +21,7 @@
       synopsis = "Serialization/deserialization using Python Pickle format.";
       description = "This package implements serialization and deserialization of Python objects\nusing the Pickle format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pickle" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."python-pickle" or (errorHandler.buildDepError "python-pickle"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pickled-values" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

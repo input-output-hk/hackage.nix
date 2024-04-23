@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the libcdio disc-reading library.";
       description = "The C library \"libcdio\" provides unified functions for reading data from\nCDs and disc images across an impressive range of operating sysems.  This\npackage provides Haskell bindings for those functions, in both a format\nfamiliar to anyone who has used the original library, and a format more\nnative to the Haskell ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,13 +32,13 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."cdio" or (errorHandler.sysDepError "cdio")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pack-cdtext" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."hscdio" or (errorHandler.buildDepError "hscdio"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = if !flags.tools then false else true;
-          };
         };
+      };
       tests = {
         "property" = {
           depends = [
@@ -58,11 +58,11 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-classes" or (errorHandler.buildDepError "hedgehog-classes"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.6.1"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.6.1"
             then false
             else true;
-          };
+        };
         "unit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "upstream" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,9 +82,9 @@
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

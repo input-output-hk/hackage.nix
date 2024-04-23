@@ -21,7 +21,7 @@
       synopsis = "Match / replace substrings with a parser combinators.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "substring-parser-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
             (hsPkgs."substring-parser" or (errorHandler.buildDepError "substring-parser"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

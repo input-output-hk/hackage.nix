@@ -21,7 +21,7 @@
       synopsis = "Declare Persistent entities using SQL SELECT query syntax";
       description = "This package exports functions which could help to\ndeclare Persistent entities using SQL SELECT query syntax.\nSee Test.hs, TestSQL.hs for example usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

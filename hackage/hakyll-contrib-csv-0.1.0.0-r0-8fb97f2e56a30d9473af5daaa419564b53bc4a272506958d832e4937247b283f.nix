@@ -21,7 +21,7 @@
       synopsis = "Generate Html tables from Csv files";
       description = "A Hakyll extension for incorporating Csv data into your static site.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hakyll-contrib-csv-spec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."hakyll-contrib-csv" or (errorHandler.buildDepError "hakyll-contrib-csv"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

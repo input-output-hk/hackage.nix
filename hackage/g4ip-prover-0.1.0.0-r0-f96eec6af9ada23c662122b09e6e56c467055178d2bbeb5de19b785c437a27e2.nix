@@ -21,16 +21,16 @@
       synopsis = "Theorem prover for intuitionistic propositional logic using G4ip";
       description = "Implementation of a theorem prover for intuitionistic propositional logic using G4ip";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "g4ip-prover" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Provides privilege separated versions of the concurrency primitives.";
       description = "Any @MVar@ or other concurrency primitive can be read by or written to any\nfunction which recieves it as a value. This package provides read-only and\nwrite-only versions of @Chan@, @MVar@, @TChan@, @TMVar@, and @TVar@.\nFunctions which use these versions receive permission to read, write, or\nboth based on their type signatures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

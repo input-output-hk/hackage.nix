@@ -6,8 +6,8 @@
         nix = import ../hackage/wybor-0.1.0-r0-a5d8d549d1c7a6f79485d981c90b2a3451db8039f697225d0c5cd201afbc518b.nix;
         revNum = 0;
         sha256 = "a5d8d549d1c7a6f79485d981c90b2a3451db8039f697225d0c5cd201afbc518b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

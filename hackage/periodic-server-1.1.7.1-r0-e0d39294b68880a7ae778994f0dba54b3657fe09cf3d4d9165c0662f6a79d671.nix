@@ -21,7 +21,7 @@
       synopsis = "Periodic task system haskell server";
       description = "Periodic task system haskell server and command peridoicd. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "periodicd" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."metro-transport-xor" or (errorHandler.buildDepError "metro-transport-xor"))
             (hsPkgs."metro-transport-tls" or (errorHandler.buildDepError "metro-transport-tls"))
             (hsPkgs."metro-transport-websockets" or (errorHandler.buildDepError "metro-transport-websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

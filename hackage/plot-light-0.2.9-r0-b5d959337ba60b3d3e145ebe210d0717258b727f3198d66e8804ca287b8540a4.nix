@@ -21,7 +21,7 @@
       synopsis = "A lightweight plotting library, exporting to SVG";
       description = "This library provides drawing and plotting datastructures and functions; it is aimed in particular at scientific visualization, but it also exposes its plotting primitives and a general purpose 2D geometry library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scatter" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "timeseries" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "heatmap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,10 +79,10 @@
             (hsPkgs."palette" or (errorHandler.buildDepError "palette"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."plot-light" or (errorHandler.buildDepError "plot-light"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

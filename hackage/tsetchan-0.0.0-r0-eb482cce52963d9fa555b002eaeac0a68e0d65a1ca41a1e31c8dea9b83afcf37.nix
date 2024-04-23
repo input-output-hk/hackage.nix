@@ -21,16 +21,16 @@
       synopsis = "Hides duplicating channels when broadcasting";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tsetchan-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."tsetchan" or (errorHandler.buildDepError "tsetchan"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

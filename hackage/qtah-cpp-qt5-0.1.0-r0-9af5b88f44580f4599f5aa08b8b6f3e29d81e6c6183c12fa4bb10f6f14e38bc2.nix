@@ -21,14 +21,14 @@
       synopsis = "Qt bindings for Haskell - C++ library";
       description = "Qtah is a set of Qt bindings for Haskell.  This package contains the C++ side\nof the bindings.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."qtah-generator" or (errorHandler.buildDepError "qtah-generator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

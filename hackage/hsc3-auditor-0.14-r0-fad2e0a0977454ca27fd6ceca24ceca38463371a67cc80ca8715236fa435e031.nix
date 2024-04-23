@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider Auditor";
       description = "A simple-minded auditioner for music structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hmt" or (errorHandler.buildDepError "hmt"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/bindings-friso-0.1.0.0-r0-80e63b2aeebb50dd5ea14fc94d828844076426cf8639fa31333b1a4edb5324f6.nix;
         revNum = 0;
         sha256 = "80e63b2aeebb50dd5ea14fc94d828844076426cf8639fa31333b1a4edb5324f6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

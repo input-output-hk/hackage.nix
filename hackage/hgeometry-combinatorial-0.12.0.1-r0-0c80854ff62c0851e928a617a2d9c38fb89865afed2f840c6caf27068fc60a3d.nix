@@ -21,7 +21,7 @@
       synopsis = "Data structures, and Data types.";
       description = "The Non-geometric data types and algorithms used in HGeometry.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,18 +58,18 @@
           (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         libs = [ (pkgs."m" or (errorHandler.sysDepError "m")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,12 +93,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Symmetry operations generater of Hall Symbols";
       description = "Please see the README on GitHub at <https://github.com/narumij/hall-symbols#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hall-symbols-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."matrix-as-xyz" or (errorHandler.buildDepError "matrix-as-xyz"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

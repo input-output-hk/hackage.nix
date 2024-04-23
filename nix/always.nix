@@ -6,8 +6,8 @@
         nix = import ../hackage/always-0.1-r0-7d410851dd71fc824051a33a887b46019fe1585034e0ef4f2ac07dbf8d9fa41e.nix;
         revNum = 0;
         sha256 = "7d410851dd71fc824051a33a887b46019fe1585034e0ef4f2ac07dbf8d9fa41e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

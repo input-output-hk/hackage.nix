@@ -6,8 +6,8 @@
         nix = import ../hackage/sdp4text-0.2-r0-4aa523a64da0ee3b5bc7f4d81ea21547dd6297ae0797160368ab334094e231dc.nix;
         revNum = 0;
         sha256 = "4aa523a64da0ee3b5bc7f4d81ea21547dd6297ae0797160368ab334094e231dc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

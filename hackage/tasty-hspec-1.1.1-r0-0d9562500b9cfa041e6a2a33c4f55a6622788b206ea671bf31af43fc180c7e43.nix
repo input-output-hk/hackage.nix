@@ -21,7 +21,7 @@
       synopsis = "Hspec support for the Tasty test framework.";
       description = "Hspec support for the Tasty test framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
           (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

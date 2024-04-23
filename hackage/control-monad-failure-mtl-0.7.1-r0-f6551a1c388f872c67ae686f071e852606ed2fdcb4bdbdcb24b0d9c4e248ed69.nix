@@ -21,15 +21,15 @@
       synopsis = "A class for monads which can fail with an error for mtl 1 (deprecated)";
       description = "A class for monads which can fail with an error. Please note: this package is only applicable for the now-deprecated mtl 1. Since mtl 2 is compatible with the transformers package, users of mtl 2 should simply use the control-monad-failure package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

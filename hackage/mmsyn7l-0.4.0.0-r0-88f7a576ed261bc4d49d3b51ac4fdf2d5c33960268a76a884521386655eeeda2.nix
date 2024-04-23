@@ -21,7 +21,7 @@
       synopsis = "Modifies the amplitudes of the Ukrainian sounds representations created by mmsyn7ukr package.";
       description = "A program and a library to modify the amplitudes of the Ukrainian sounds representations created by mmsyn7ukr package or somehow otherwise.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn7l" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

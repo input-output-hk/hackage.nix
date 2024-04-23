@@ -21,7 +21,7 @@
       synopsis = "Bindings to liboath";
       description = "See README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,13 +30,13 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         libs = [ (pkgs."oath" or (errorHandler.sysDepError "oath")) ];
         pkgconfig = [
           (pkgconfPkgs."liboath" or (errorHandler.pkgConfDepError "liboath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "oathtool-hs" = {
           depends = [
@@ -44,18 +44,18 @@
             (hsPkgs."liboath-hs" or (errorHandler.buildDepError "liboath-hs"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "liboath-hs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."liboath-hs" or (errorHandler.buildDepError "liboath-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Testing library for Hasktorch's FFI bindings";
       description = "This includes basic tests which generalize over both Hasktorch's CPU and GPU FFI bindings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HTTP over SSL/TLS support for Warp via the TLS package";
       description = "HTTP over SSL/TLS support for Warp via the TLS package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

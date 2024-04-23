@@ -21,23 +21,23 @@
       synopsis = "a minimal, extensible and precise calculator";
       description = "Hascal is a minimal calculator with infix-operations\nsupporting addition, subtraction, division, multiplication\nand exponentiation. Brackets are not supported yet.\nFuthermore, it's easy to add custom operators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."numbers" or (errorHandler.buildDepError "numbers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hascal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."numbers" or (errorHandler.buildDepError "numbers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

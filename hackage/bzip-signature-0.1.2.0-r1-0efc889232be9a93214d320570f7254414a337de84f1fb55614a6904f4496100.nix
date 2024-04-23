@@ -21,7 +21,7 @@
       synopsis = "Backpack signature for BZip compression";
       description = "Backpack signature for BZip bindings or implementations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

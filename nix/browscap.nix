@@ -6,8 +6,8 @@
         nix = import ../hackage/browscap-0-r0-9d6f2ae077319289ebe5462da71f17145de7b9d92128a2768b07f4b9286591a6.nix;
         revNum = 0;
         sha256 = "9d6f2ae077319289ebe5462da71f17145de7b9d92128a2768b07f4b9286591a6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

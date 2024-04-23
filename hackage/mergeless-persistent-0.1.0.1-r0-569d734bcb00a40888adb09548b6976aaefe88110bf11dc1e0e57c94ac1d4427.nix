@@ -21,7 +21,7 @@
       synopsis = "Support for using mergeless from persistent-based databases";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mergeless" or (errorHandler.buildDepError "mergeless"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mergeless-persistent-test" = {
           depends = [
@@ -55,12 +55,12 @@
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

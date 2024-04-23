@@ -21,15 +21,15 @@
       synopsis = "Read and write MIDI files.";
       description = "Minimalist library to read and write MIDI files, with\ndependencies only on ByteString and Data.Binary.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

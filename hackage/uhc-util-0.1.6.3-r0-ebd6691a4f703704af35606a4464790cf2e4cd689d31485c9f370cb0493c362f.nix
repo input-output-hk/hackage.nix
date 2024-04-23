@@ -21,7 +21,7 @@
       synopsis = "UHC utilities";
       description = "General purpose utilities for UHC and related tools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

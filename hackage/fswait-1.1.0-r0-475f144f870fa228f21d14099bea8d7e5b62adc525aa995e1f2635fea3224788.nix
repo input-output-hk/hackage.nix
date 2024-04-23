@@ -21,7 +21,7 @@
       synopsis = "Wait and observe events on the filesystem for a path, with a timeout";
       description = "@fswait@ is a utility for blocking on the observation of a\nfilesystem event for a path with a timeout.\n\nThe primary use-case for this is in system startup scripts that\ndepend on the existence of some file or directory that will be\ncreated by another system service or job.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fswait" = {
@@ -36,9 +36,9 @@
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

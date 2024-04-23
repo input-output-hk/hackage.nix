@@ -21,16 +21,16 @@
       synopsis = "A Formatter for hspec that provides Github Actions Annotations";
       description = "Please see the README on GitHub at <https://github.com/MercuryTechnologies/hspec-formatter-github#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec-api" or (errorHandler.buildDepError "hspec-api"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec-api" or (errorHandler.buildDepError "hspec-api"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-formatter-github" or (errorHandler.buildDepError "hspec-formatter-github"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

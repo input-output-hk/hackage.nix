@@ -21,7 +21,7 @@
       synopsis = "REST service for creating temporary PostgreSQL databases";
       description = "REST service for conveniently creating temporary PostgreSQL databases\nfor use in tests.\n\nSee <https://github.com/BardurArantsson/pg-harness/blob/master/README.md README.md> for\ndetailed usage and setup instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pg-harness" = {
@@ -35,9 +35,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

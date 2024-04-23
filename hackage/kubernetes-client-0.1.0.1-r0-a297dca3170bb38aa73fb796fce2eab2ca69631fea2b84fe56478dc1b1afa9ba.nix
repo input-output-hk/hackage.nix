@@ -21,7 +21,7 @@
       synopsis = "Client library for Kubernetes";
       description = "Client library for interacting with a Kubernetes cluster.\n\nThis package contains hand-written code while kubernetes-client-core contains code auto-generated from the OpenAPI spec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -100,9 +100,9 @@
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

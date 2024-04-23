@@ -21,15 +21,15 @@
       synopsis = "pcap interface";
       description = "FFI Wrapper around libpcap";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

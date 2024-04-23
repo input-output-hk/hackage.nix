@@ -21,7 +21,7 @@
       synopsis = "boxes";
       description = "A profunctor effect";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

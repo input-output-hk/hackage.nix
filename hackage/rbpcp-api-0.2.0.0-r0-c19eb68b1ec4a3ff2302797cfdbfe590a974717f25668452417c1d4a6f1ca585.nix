@@ -21,7 +21,7 @@
       synopsis = "RESTful Bitcoin Payment Channel Protocol Servant API description";
       description = "RESTful Bitcoin Payment Channel Protocol (RBPCP) allows a client to send Bitcoin payments to a server, by establishing a Bitcoin payment channel with the server in a standardized manner.\nThis library provides Servant API endpoints for RBPCP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

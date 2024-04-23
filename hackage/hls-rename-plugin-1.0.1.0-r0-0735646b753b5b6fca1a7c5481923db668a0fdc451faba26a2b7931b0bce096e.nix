@@ -21,7 +21,7 @@
       synopsis = "Rename plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,11 +42,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.3"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,11 +57,11 @@
             (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
             (hsPkgs."hls-rename-plugin" or (errorHandler.buildDepError "hls-rename-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.3"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

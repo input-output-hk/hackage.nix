@@ -21,15 +21,15 @@
       synopsis = "Thrift library package";
       description = "The Thrift Haskell package that shipped with Thrift v.0.2.0, released under the Apache 2.0 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

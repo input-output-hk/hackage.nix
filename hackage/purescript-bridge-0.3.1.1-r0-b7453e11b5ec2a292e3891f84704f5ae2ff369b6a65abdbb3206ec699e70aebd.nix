@@ -21,7 +21,7 @@
       synopsis = "Generate PureScript data types from Haskell data types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

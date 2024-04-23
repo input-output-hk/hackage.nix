@@ -21,7 +21,7 @@
       synopsis = "Extract an ELF's metadata and sections into files";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "extractelf" = {
@@ -33,9 +33,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

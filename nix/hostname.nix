@@ -6,8 +6,8 @@
         nix = import ../hackage/hostname-1.0-r0-8203b6ecd14ca1ef12f73a471b0a6a4be3ad4568d8b84f2bc4bc9e0abb8c4153.nix;
         revNum = 0;
         sha256 = "8203b6ecd14ca1ef12f73a471b0a6a4be3ad4568d8b84f2bc4bc9e0abb8c4153";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

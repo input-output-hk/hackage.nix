@@ -21,11 +21,11 @@
       synopsis = "Lambda Calculi Abstract Syntax Trees";
       description = "AST's for various Lambda Calculi. Adding more as I need them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

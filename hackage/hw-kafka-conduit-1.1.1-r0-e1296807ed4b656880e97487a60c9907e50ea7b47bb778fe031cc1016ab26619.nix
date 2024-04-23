@@ -21,7 +21,7 @@
       synopsis = "Conduit bindings for kafka-client";
       description = "Conduit bindings for hw-kafka-client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kafka-conduit-example" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."hw-kafka-conduit" or (errorHandler.buildDepError "hw-kafka-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "kafka-client-conduit-test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

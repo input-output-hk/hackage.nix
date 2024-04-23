@@ -21,7 +21,7 @@
       synopsis = "Simple clipboard manager to be integrated with rofi";
       description = "Simple clipboard manager to be integrated with rofi - Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "greenclip" = {
@@ -41,15 +41,15 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."wordexp" or (errorHandler.buildDepError "wordexp"))
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."x11" or (errorHandler.pkgConfDepError "x11"))
             (pkgconfPkgs."xcb" or (errorHandler.pkgConfDepError "xcb"))
             (pkgconfPkgs."xau" or (errorHandler.pkgConfDepError "xau"))
             (pkgconfPkgs."xdmcp" or (errorHandler.pkgConfDepError "xdmcp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

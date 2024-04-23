@@ -21,7 +21,7 @@
       synopsis = "Tiny cli to fetch PR info from gitlab";
       description = "A cli tool to fetch PR(pull request/merge request) related informations from gitlab. When someone runs this tool from inside a gitlab repository, it will list out open merge requests informations containing url, title, description, author, assignee, whether it has a WIP tag or not, status, branch name and both created_at, updated_at fields";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,26 +40,26 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gli" or (errorHandler.buildDepError "gli"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gli-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gli" or (errorHandler.buildDepError "gli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

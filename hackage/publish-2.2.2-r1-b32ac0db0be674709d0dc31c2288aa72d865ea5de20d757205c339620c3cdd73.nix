@@ -21,7 +21,7 @@
       synopsis = "Publishing tools for papers, books, and presentations";
       description = "Tools for rendering markdown-centric documents into PDFs. There are two\nprograms.\n\n[/render/]for generating PDFs from Markdown and LaTeX input; and\n\n[/format/]for word-wrapping and nicely formatting Markdown files.\n\nA description of this package, a list of features, and some background\nto its design is contained in the\n<https://github.com/aesiniath/publish/blob/main/README.md README>\non GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "format" = {
@@ -43,9 +43,9 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "render" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,10 +65,10 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "check" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

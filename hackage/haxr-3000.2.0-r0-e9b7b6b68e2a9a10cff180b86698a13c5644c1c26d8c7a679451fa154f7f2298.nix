@@ -21,7 +21,7 @@
       synopsis = "XML-RPC client and server library.";
       description = "HaXR is a library for writing XML-RPC\nclient and server applications in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

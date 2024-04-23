@@ -21,15 +21,15 @@
       synopsis = "Data types for returning results distinguishable by types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."poly-control" or (errorHandler.buildDepError "poly-control"))
           (hsPkgs."prologue" or (errorHandler.buildDepError "prologue"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

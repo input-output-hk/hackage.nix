@@ -6,8 +6,8 @@
         nix = import ../hackage/snaplet-lss-0.1.0.0-r0-5a2a84f8baee40252ddcd9a1973eda7eb804c3f78b09da05b028636c49259d8d.nix;
         revNum = 0;
         sha256 = "5a2a84f8baee40252ddcd9a1973eda7eb804c3f78b09da05b028636c49259d8d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

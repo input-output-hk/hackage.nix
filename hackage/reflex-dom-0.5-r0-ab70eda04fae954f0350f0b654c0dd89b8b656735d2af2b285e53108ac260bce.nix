@@ -15,7 +15,7 @@
       expose-all-unfoldings = false;
       build-examples = false;
       android = false;
-      };
+    };
     package = {
       specVersion = "1.24";
       identifier = { name = "reflex-dom"; version = "0.5"; };
@@ -28,7 +28,7 @@
       synopsis = "Functional Reactive Web Apps with Reflex";
       description = "Reflex-DOM is a Functional Reactive web framework based on the Reflex FRP engine.\n\nFor hackage documentation, please see: <https://hackage.haskell.org/package/reflex-dom-core>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -37,30 +37,30 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optionals (flags.android) [
+        ] ++ pkgs.lib.optionals (flags.android) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."android-activity" or (errorHandler.buildDepError "android-activity"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
-          ]) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if flags.use-warp && (system.isLinux || system.isOsx)
+        ]) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if flags.use-warp && (system.isLinux || system.isOsx)
           then [
             (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
             (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
-            ]
+          ]
           else if system.isOsx || system.isIos
             then [
               (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
               (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
               (hsPkgs."jsaddle-wkwebview" or (errorHandler.buildDepError "jsaddle-wkwebview"))
-              ]
+            ]
             else if flags.webkit2gtk
               then [
                 (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk"))
-                ]
-              else (pkgs.lib).optional (!flags.android) (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk")));
-        build-tools = (pkgs.lib).optional (flags.android) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+              ]
+              else pkgs.lib.optional (!flags.android) (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk")));
+        build-tools = pkgs.lib.optional (flags.android) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
-        };
+      };
       exes = {
         "sortableList" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,9 +93,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
-          };
+        };
         "krausest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,9 +112,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Send mime-mail messages via Amazon SES";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

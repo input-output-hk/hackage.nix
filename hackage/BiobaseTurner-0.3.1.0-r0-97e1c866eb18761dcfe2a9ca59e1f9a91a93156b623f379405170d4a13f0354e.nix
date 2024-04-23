@@ -21,7 +21,7 @@
       synopsis = "Import Turner RNA parameters";
       description = "A data structure for Mathews / Turner RNA and DNA energy\nparameters. This library currently only provides an importer,\nnot export functions. There are two reasons: (i) We currently\nhave no use-case where we need more than import facilities (ii)\nThe file structure is geared towards humans, not machines. If\nyou need to be able to export, send a mail.\n\nNOTE This is rather fragile as some files use different index\nenumerations, which we handle rather... simplistically.\n\nIn principle, all parameters should be symmetric regarding the\nstem direction. However, there is one asymmetry case in\ndnastack.dh. We do not fix this problem as we do not change the\nsource files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

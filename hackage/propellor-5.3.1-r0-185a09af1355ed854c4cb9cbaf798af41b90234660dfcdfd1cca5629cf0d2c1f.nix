@@ -21,7 +21,7 @@
       synopsis = "property-based host configuration management in haskell";
       description = "Propellor ensures that the system it's run in satisfies a list of\nproperties, taking action as necessary when a property is not yet met.\n\nIt is configured using haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "propellor" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propellor-config" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

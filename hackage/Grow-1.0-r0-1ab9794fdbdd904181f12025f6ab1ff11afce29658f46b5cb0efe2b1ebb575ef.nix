@@ -21,7 +21,7 @@
       synopsis = "A declarative make-like interpreter.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."definitive-parser" or (errorHandler.buildDepError "definitive-parser"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

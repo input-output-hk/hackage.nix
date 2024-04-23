@@ -21,14 +21,14 @@
       synopsis = "Solving simple games";
       description = "The solve package implements a basic Haskell library for solving and\nanalyzing simple games (e.g., Fox & Hounds).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/jsmw-0.1-r0-92e71cc978e267509ba3e49e7003e2fff2e1a8c1d477812a7cb553862df0e123.nix;
         revNum = 0;
         sha256 = "92e71cc978e267509ba3e49e7003e2fff2e1a8c1d477812a7cb553862df0e123";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

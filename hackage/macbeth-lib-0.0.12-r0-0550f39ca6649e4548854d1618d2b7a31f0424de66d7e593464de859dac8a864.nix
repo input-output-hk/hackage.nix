@@ -21,7 +21,7 @@
       synopsis = "Macbeth - A beautiful and minimalistic FICS client";
       description = "A FICS client written with OSX in mind.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."FindBin" or (errorHandler.buildDepError "FindBin"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Macbeth" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."macbeth-lib" or (errorHandler.buildDepError "macbeth-lib"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "macbeth-lib-test" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

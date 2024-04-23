@@ -21,7 +21,7 @@
       synopsis = "Typeclasses for dealing with various chunked data representations";
       description = "Originally present in classy-prelude.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

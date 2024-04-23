@@ -21,7 +21,7 @@
       synopsis = "A haskell wrapper for PokeAPI.co (www.pokeapi.co)";
       description = "This is a haskell wrapper for the RESTful api www.pokeapi.co.\nIt defines most of the types and functions in the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

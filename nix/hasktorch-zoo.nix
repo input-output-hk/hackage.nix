@@ -6,8 +6,8 @@
         nix = import ../hackage/hasktorch-zoo-0.0.1.0-r0-dbbb794aea8ce862284019f7d45361388964d939d9eab844775068cfbaa63055.nix;
         revNum = 0;
         sha256 = "dbbb794aea8ce862284019f7d45361388964d939d9eab844775068cfbaa63055";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

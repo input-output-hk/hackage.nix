@@ -21,7 +21,7 @@
       synopsis = "Implementation of Java Debug Interface";
       description = "Implementation of Java Debug Interface";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."jdi" or (errorHandler.buildDepError "jdi"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

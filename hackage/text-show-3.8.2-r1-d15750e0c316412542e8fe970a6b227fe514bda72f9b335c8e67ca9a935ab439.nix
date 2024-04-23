@@ -12,7 +12,7 @@
       base-4-9 = true;
       template-haskell-2-11 = true;
       new-functor-classes = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "text-show"; version = "3.8.2"; };
@@ -25,7 +25,7 @@
       synopsis = "Efficient conversion of values into Text";
       description = "@text-show@ offers a replacement for the @Show@ typeclass intended\nfor use with @Text@ instead of @String@s. This package was created\nin the spirit of\n@<http://hackage.haskell.org/package/bytestring-show bytestring-show>@.\n\nAt the moment, @text-show@ provides instances for most data\ntypes in the @<http://hackage.haskell.org/package/array array>@,\n@<http://hackage.haskell.org/package/base base>@,\n@<http://hackage.haskell.org/package/bytestring bytestring>@, and\n@<http://hackage.haskell.org/package/text text>@ packages.\nTherefore, much of the source code for @text-show@ consists of\nborrowed code from those packages in order to ensure that the\nbehaviors of @Show@ and @TextShow@ coincide.\n\nFor most uses, simply importing \"TextShow\"\nwill suffice:\n\n@\nmodule Main where\n\nimport TextShow\n\nmain :: IO ()\nmain = printT (Just \\\"Hello, World!\\\")\n@\n\nSee also the\n<https://github.com/RyanGlScott/text-show/wiki/Naming-conventions naming conventions>\npage.\n\nSupport for automatically deriving @TextShow@ instances can be found\nin the \"TextShow.TH\" and \"TextShow.Generic\" modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -46,25 +46,25 @@
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (if flags.template-haskell-2-11
+        ]) ++ (if flags.template-haskell-2-11
           then [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-            ]
+          ]
           else [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ])) ++ (if flags.new-functor-classes
+          ])) ++ (if flags.new-functor-classes
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = ([
@@ -86,17 +86,15 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ] ++ [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ [
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]) ++ [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -106,9 +104,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

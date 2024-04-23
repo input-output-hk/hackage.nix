@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-chime-sdk-media-pipelines-2.0-r0-11339ac9cf7b930425f8e8b463de7568a4cb561e3b5668bbeac243906db66711.nix;
         revNum = 0;
         sha256 = "11339ac9cf7b930425f8e8b463de7568a4cb561e3b5668bbeac243906db66711";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "ForSyDe's Haskell-embedded Domain Specific Language.";
       description = "The ForSyDe (Formal System Design) methodology has been developed with the objective to move system design to a higher level of abstraction and to bridge the abstraction gap by transformational design refinement.\nThis library provides ForSyDe's implementation as a Haskell-embedded Domain Specific Language (DSL). For more information, please see ForSyDe's website: <http://www.ict.kth.se/forsyde/>.\nThis will be most probably the last update on this package. It will be splitted to ForSyDe-shallow and ForSyDe-deep in the next release.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

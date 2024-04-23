@@ -21,7 +21,7 @@
       synopsis = "A type-safe interface to communicate with an SMT solver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

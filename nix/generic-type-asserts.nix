@@ -6,8 +6,8 @@
         nix = import ../hackage/generic-type-asserts-0.3.0-r0-02835db89f8a77bfcc5a06b7f0fb3274e7c249a1f71f15e07bd4857353fb9559.nix;
         revNum = 0;
         sha256 = "02835db89f8a77bfcc5a06b7f0fb3274e7c249a1f71f15e07bd4857353fb9559";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

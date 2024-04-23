@@ -21,7 +21,7 @@
       synopsis = "An EDSL for diagrams based based on linear constraints";
       description = "A library to describe diagrams. The defining\nfeature of the package is the ability to use linear constraints to\nspecify layout, which are resolved using z3 (latest z3 must be installed).\nBackends are provided either of the following packages lp-diagrams-svg (svg) or marxup (tikz).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."labeled-tree" or (errorHandler.buildDepError "labeled-tree"))
           (hsPkgs."parsek" or (errorHandler.buildDepError "parsek"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ (pkgs.lib).optional (flags.graphviz) (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"));
+        ] ++ pkgs.lib.optional (flags.graphviz) (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

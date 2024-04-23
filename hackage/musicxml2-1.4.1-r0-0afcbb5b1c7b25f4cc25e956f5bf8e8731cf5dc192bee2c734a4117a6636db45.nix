@@ -21,7 +21,7 @@
       synopsis = "A representation of the MusicXML format.";
       description = "A representation of the MusicXML format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "";
       description = "uses combinators to describe subnets";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

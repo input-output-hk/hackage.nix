@@ -21,7 +21,7 @@
       synopsis = "Tool for semi-automatic updating of nixpkgs repository";
       description = "nixpkgs-update provides tools for updating of nixpkgs packages in a semi-automatic way. Mainly, it is used to run the GitHub bot @r-ryantm, but the underlying update mechanisms should be generally useful and in a later version should be exposed as a command-line tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,9 +66,9 @@
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nixpkgs-update" = {
           depends = [
@@ -114,10 +114,10 @@
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -166,9 +166,9 @@
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

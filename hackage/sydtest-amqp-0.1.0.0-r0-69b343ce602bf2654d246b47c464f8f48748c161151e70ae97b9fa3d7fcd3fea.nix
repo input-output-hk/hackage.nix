@@ -21,7 +21,7 @@
       synopsis = "An amqp companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."sydtest-typed-process" or (errorHandler.buildDepError "sydtest-typed-process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-amqp-test" = {
           depends = [
@@ -51,12 +51,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."sydtest-amqp" or (errorHandler.buildDepError "sydtest-amqp"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = if flags.sydtest_integration_tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

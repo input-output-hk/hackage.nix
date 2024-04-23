@@ -21,7 +21,7 @@
       synopsis = "Support for Posix ACL";
       description = "Support for POSIX.1e /Access Control Lists/ (ACL), defined in\nsection 23 of the draft standard <http://users.suse.com/~agruen/acl/posix/Posix_1003.1e-990310.pdf IEEE Std 1003.1e>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         libs = [ (pkgs."acl" or (errorHandler.sysDepError "acl")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

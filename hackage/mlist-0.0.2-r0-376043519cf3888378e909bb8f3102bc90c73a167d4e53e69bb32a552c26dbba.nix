@@ -21,14 +21,14 @@
       synopsis = "Monadic List alternative to lazy I/O";
       description = "\nGit repository is at: <http://github.com/Peaker/mlist>\n\n&#169; 2009 by Eyal Lotem; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

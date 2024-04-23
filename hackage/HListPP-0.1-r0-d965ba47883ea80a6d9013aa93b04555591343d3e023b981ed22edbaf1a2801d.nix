@@ -21,7 +21,7 @@
       synopsis = "A preprocessor for HList labelable labels";
       description = "A preprocessor that replaces @`longDescriptiveName@ with\n\n> hLens' (Label :: Label \"longDescriptiveName\")\n\nUse with ghc flags @-F -pgmF HListPP@, which can\nbe added per-file with a pragma:\n\n> ❴-# OPTIONS_GHC -F -pgmF HListPP #-❵ -- change braces to ascii (haddock doesn't allow literal comments in files)\n\nNote that @`labels@ is expanded to something that\ntakes up about 26 more columns. To avoid issues with\nlayout, put a newline after keywords that introduce\nlayout, at least if there are @`labels@ in the same row.\nIn other words:\n\n> `character.`position.`x %= \\ x -> let\n>      msg = \"a really long message about x>0\"\n>      pos = x - 5\n>    in if pos < 0\n>          then error msg\n>          else pos\n\nInstead of\n\n> `character.`position.`x %= \\ x -> let msg = \"a really long message about x>0\"\n>                                       pos = x - 5\n>                            in if pos < 0\n>                                then error msg\n>                                else pos\n\nA blank library is included in this package to make\nit possible to depend on HListPP";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -30,9 +30,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."applicative-quoters" or (errorHandler.buildDepError "applicative-quoters"))
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

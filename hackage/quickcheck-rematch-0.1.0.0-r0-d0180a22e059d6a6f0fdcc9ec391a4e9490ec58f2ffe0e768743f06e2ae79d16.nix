@@ -21,16 +21,16 @@
       synopsis = "QuickCheck support for rematch";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

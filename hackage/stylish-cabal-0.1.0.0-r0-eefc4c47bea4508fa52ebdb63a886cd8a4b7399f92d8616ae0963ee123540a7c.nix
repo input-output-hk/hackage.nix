@@ -21,7 +21,7 @@
       synopsis = "Format Cabal files";
       description = "A tool for nicely formatting your Cabal file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stylish-cabal" = {
           depends = [
@@ -40,18 +40,18 @@
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."stylish-cabal" or (errorHandler.buildDepError "stylish-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "strictness" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,11 +64,11 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations-pretty-diff" or (errorHandler.buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."stylish-cabal" or (errorHandler.buildDepError "stylish-cabal"))
-            ];
-          buildable = if !(flags.test-strictness && (compiler.isGhc && (compiler.version).ge "8.2"))
+          ];
+          buildable = if !(flags.test-strictness && (compiler.isGhc && compiler.version.ge "8.2"))
             then false
             else true;
-          };
+        };
         "roundtrip" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-expectations-pretty-diff" or (errorHandler.buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."stylish-cabal" or (errorHandler.buildDepError "stylish-cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "roundtrip-hackage" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if !flags.test-hackage then false else true;
-          };
         };
       };
-    }
+    };
+  }

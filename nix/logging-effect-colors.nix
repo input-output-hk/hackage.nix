@@ -6,8 +6,8 @@
         nix = import ../hackage/logging-effect-colors-0.1.0.0-r0-2621e8b3139dad99ebfc84d33c48e180d117ad39d56c3776e2524bd04b6c90d9.nix;
         revNum = 0;
         sha256 = "2621e8b3139dad99ebfc84d33c48e180d117ad39d56c3776e2524bd04b6c90d9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

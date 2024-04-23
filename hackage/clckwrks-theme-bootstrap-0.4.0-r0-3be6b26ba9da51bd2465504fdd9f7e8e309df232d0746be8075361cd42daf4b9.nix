@@ -21,7 +21,7 @@
       synopsis = "simple bootstrap based template for clckwrks";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,11 +35,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsx2hs.components.exes.hsx2hs or (pkgs.buildPackages.hsx2hs or (errorHandler.buildToolDepError "hsx2hs:hsx2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

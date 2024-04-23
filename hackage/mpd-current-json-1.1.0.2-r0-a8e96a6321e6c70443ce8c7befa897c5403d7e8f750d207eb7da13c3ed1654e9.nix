@@ -21,7 +21,7 @@
       synopsis = "Print current MPD song and status as JSON";
       description = "Print currently playing MPD's song metadata and status as JSON";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mpd-current-json" = {
@@ -32,9 +32,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "preprocessor translating arrow notation into Haskell 98";
       description = "A preprocessor that reads Haskell with arrow notation\nand outputs Haskell 98.  Note that GHC 6.2 or later has\nbuilt-in support for arrow notation, so if you're only\nusing GHC, you don't need this preprocessor: just rename\nyour arrow module as an ordinary Haskell source file and\nadd a @LANGUAGE Arrows@ pragma at the top.  GHC also\ngives better error messages for arrow code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "arrowp" = {
@@ -30,9 +30,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Print text to terminal with colors and effects";
       description = "rainbow helps you print Text chunks to a terminal with colors and effects\nsuch as bold, underlining, etc. You pair each Text with a description\nof how it should appear. Rainbow works with both 8-color and 256-color\nterminals.\n\nrainbow uses the terminfo package which, in turn, needs the full C\nlibrary for ncurses installed, including the development\nheaders. Before installing terminfo, you may need to install the\nncurses headers (for instance, on Debian systems, install the\nlibncurses5-dev package.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Interface to Satisfiability Modulo Theories solvers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,19 +39,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."smt" or (errorHandler.buildDepError "smt"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."smt" or (errorHandler.buildDepError "smt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

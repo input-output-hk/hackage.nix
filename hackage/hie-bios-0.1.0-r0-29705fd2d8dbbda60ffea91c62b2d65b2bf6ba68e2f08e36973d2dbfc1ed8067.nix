@@ -21,7 +21,7 @@
       synopsis = "Set up a GHC API session";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hie-bios" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."hie-bios" or (errorHandler.buildDepError "hie-bios"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

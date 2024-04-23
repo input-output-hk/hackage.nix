@@ -21,16 +21,16 @@
       synopsis = "A small library for parsing IRC messages.";
       description = "A set of combinators and types for parsing IRC messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Main" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."irc" or (errorHandler.buildDepError "irc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

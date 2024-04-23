@@ -21,7 +21,7 @@
       synopsis = "Near-future Sci-Fi roguelike and tactical squad game";
       description = "Allure of the Stars is a near-future Sci-Fi roguelike\nand tactical squad game. Binaries and the game manual\nare available at the homepage, where you can also\ntry the game out in the browser:\n<http://allureofthestars.com/play>\n(It runs fastest on Chrome. Keyboard commands and savefiles\nare supported only on recent enough versions of browsers.\nMouse should work everywhere.)\n\nNot a single picture in this game. You have to imagine everything\nyourself, like with a book (a grown-up book, without pictures).\nOnce you learn to imagine things, though, you can keep exploring\nand mastering the world and making up stories for a long time.\n\nThe game is written in Haskell using the LambdaHack roguelike\ngame engine <http://hackage.haskell.org/package/LambdaHack>.\nPlease see the changelog file for recent improvements\nand the issue tracker for short-term plans. Long term goals\nare high replayability and auto-balancing through procedural\ncontent generation and persistent content modification\nbased on player behaviour. Contributions are welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Allure" = {
@@ -36,10 +36,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Amazon Elastic MapReduce SDK.";
       description = "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it\neasy to process large amounts of data efficiently. Amazon EMR uses\nHadoop processing combined with several AWS products to do such tasks\nas web indexing, data mining, log file analysis, machine learning,\nscientific simulation, and data warehousing.\n\n/See:/ <http://docs.aws.amazon.com/ElasticMapReduce/latest/API/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

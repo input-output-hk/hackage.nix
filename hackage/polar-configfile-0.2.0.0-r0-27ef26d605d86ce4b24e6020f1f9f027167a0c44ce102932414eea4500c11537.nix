@@ -21,7 +21,7 @@
       synopsis = "Fork of ConfigFile for Polar Game Engine";
       description = "A fork of ConfigFile updated and reworked to export a more consistent API for the Polar Game Engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."testpack" or (errorHandler.buildDepError "testpack"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

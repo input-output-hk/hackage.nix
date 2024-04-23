@@ -21,7 +21,7 @@
       synopsis = "A dependently typed functional programming language and proof assistant";
       description = "Agda is a dependently typed functional programming language: It has\ninductive families, which are similar to Haskell's GADTs, but they\ncan be indexed by values and not just types. It also has\nparameterised modules, mixfix operators, Unicode characters, and an\ninteractive Emacs interface (the type checker can assist in the\ndevelopment of your code).\n\nAgda is also a proof assistant: It is an interactive system for\nwriting and checking proofs. Agda is based on intuitionistic type\ntheory, a foundational system for constructive mathematics developed\nby the Swedish logician Per Martin-L&#xf6;f. It has many\nsimilarities with other proof assistants based on dependent types,\nsuch as Coq, Epigram and NuPRL.\n\nThis package includes both a command-line program (agda) and an\nEmacs mode. If you want to use the Emacs mode you can set it up by\nrunning @agda-mode setup@ (see the README).\n\nNote that the Agda library does not follow the package versioning\npolicy, because it is not intended to be used by third-party\npackages.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -52,38 +52,38 @@
           (hsPkgs."equivalence" or (errorHandler.buildDepError "equivalence"))
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.epic) (hsPkgs."epic" or (errorHandler.buildDepError "epic"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if compiler.isGhc && (compiler.version).lt "7.6"
+        ] ++ pkgs.lib.optional (flags.epic) (hsPkgs."epic" or (errorHandler.buildDepError "epic"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if compiler.isGhc && compiler.version.lt "7.6"
           then [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]
+          ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]);
+          ]);
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "agda" = {
           depends = [
             (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "agda-mode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

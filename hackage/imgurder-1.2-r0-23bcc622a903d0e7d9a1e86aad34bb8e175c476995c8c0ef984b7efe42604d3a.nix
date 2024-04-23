@@ -21,7 +21,7 @@
       synopsis = "Uploader for Imgur";
       description = "A simple uploader for the Imgur api.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imgurder" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

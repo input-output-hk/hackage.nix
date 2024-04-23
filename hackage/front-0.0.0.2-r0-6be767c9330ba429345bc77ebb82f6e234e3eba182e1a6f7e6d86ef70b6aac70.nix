@@ -21,7 +21,7 @@
       synopsis = "A reactive frontend web framework";
       description = "A reactive frontend web framework. See haskell-front.org for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."fay-dom" or (errorHandler.buildDepError "fay-dom"))
           (hsPkgs."fay-websockets" or (errorHandler.buildDepError "fay-websockets"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "todo-servant-example" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
@@ -81,11 +81,11 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."front" or (errorHandler.buildDepError "front"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "todo-yesod-example" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."front" or (errorHandler.buildDepError "front"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
@@ -99,9 +99,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."stm-lifted" or (errorHandler.buildDepError "stm-lifted"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

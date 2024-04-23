@@ -21,7 +21,7 @@
       synopsis = "HDBC instance of relational-query and typed query interface for HDBC";
       description = "This package contains the HDBC instance of relational-query and\nthe typed query interface for HDBC.\nGenerating Database table definitions and functions for\nrelational-query by reading table and index definitions\nfrom Database system catalogs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."relational-schemas" or (errorHandler.buildDepError "relational-schemas"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-session" or (errorHandler.buildDepError "HDBC-session"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "convertible-iso" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
             (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

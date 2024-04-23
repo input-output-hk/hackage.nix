@@ -21,14 +21,14 @@
       synopsis = "Develop applications without restarts";
       description = "Please see the README on Github at <https://github.com/rkaippully/starter#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

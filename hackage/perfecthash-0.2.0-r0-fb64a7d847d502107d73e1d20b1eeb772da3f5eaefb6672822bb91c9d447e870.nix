@@ -21,7 +21,7 @@
       synopsis = "A perfect hashing library for mapping bytestrings to values.";
       description = "A perfect hashing library for mapping bytestrings to values.\nInsertion is not supported (by design): Only fromList\nand lookup operations are supported.\nCI at https://travis-ci.org/mwotton/PerfectHash";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cmph-test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."perfecthash" or (errorHandler.buildDepError "perfecthash"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-foo" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."perfecthash" or (errorHandler.buildDepError "perfecthash"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

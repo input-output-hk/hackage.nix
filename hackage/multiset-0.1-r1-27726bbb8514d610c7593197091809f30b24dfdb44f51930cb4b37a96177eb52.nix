@@ -21,14 +21,14 @@
       synopsis = "The Data.MultiSet container type";
       description = "A variation of Data.Set. Multisets, sometimes also called bags, can contain multiple copies of the same key.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/util-plus-0.1.0.0-r0-40cc042bfc158c8b4103664c73de78293c757c5e0ab7f4889ea5ac0181f9a887.nix;
         revNum = 0;
         sha256 = "40cc042bfc158c8b4103664c73de78293c757c5e0ab7f4889ea5ac0181f9a887";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

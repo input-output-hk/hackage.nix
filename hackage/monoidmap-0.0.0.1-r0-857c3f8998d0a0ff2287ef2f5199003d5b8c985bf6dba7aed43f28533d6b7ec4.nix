@@ -21,7 +21,7 @@
       synopsis = "Monoidal map type";
       description = "Monoidal map type with support for semigroup and monoid subclasses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
           (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
           (hsPkgs."monoidmap".components.sublibs.internal or (errorHandler.buildDepError "monoidmap:internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "examples" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
             (hsPkgs."nonempty-containers" or (errorHandler.buildDepError "nonempty-containers"))
             (hsPkgs."monoidmap" or (errorHandler.buildDepError "monoidmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,10 +53,10 @@
             (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
             (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
             (hsPkgs."nothunks" or (errorHandler.buildDepError "nothunks"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -74,13 +74,13 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."monoidmap".components.sublibs.examples or (errorHandler.buildDepError "monoidmap:examples"))
             (hsPkgs."monoidmap" or (errorHandler.buildDepError "monoidmap"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."monoidmap".components.sublibs.examples or (errorHandler.buildDepError "monoidmap:examples"))
             (hsPkgs."monoidmap" or (errorHandler.buildDepError "monoidmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

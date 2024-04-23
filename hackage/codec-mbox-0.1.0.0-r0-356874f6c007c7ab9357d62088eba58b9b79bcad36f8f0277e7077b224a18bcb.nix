@@ -21,15 +21,15 @@
       synopsis = "A library to read and write mailboxes in mbox format";
       description = "The library provides functions to read, write, and\nmanipulate mbox's. This library focuses on three points:\nrobustness, efficency, and scalability. It's using lazy\nbytestrings and can handle very big mailboxes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

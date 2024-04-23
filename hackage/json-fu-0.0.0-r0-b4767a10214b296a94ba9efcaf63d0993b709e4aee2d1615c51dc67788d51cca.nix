@@ -21,7 +21,7 @@
       synopsis = "Generic JSON serialization / deserialization";
       description = "A generic JSON serializer that converts fields to `snake_case`\nand optionally strips the constructor name from fields, so\nthat the generated JSON is compatible with most web services.\n\nHave a look at <https://github.com/sol/json-fu#readme> for\nexamples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

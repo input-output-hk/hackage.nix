@@ -21,31 +21,31 @@
       synopsis = "Examples for using Hogre.";
       description = "Examples for using Hogre, Haskell bindings to OGRE\n(Object-Oriented Graphics Rendering Engine)\n(<http://www.ogre3d.org/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "example_01" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hogre" or (errorHandler.buildDepError "hogre"))
-            ];
+          ];
           libs = [
             (pkgs."OgreMain" or (errorHandler.sysDepError "OgreMain"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example_02" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hogre" or (errorHandler.buildDepError "hogre"))
-            ];
+          ];
           libs = [
             (pkgs."OgreMain" or (errorHandler.sysDepError "OgreMain"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

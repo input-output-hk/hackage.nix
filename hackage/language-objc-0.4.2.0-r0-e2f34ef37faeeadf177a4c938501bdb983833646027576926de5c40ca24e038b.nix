@@ -21,7 +21,7 @@
       synopsis = "Analysis and generation of Objcective C code";
       description = "Language-ObjC is a haskell library for the analysis and\ngeneration of Objective C code.\nIt features a complete, well tested parser and pretty printer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -33,19 +33,19 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ (if flags.separatesyb
+        ] ++ (if flags.separatesyb
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (flags.usebytestrings) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"));
+          ])) ++ pkgs.lib.optional (flags.usebytestrings) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"));
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

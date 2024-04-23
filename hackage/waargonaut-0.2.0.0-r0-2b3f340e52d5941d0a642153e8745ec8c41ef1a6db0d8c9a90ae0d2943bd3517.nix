@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
           (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."waargonaut" or (errorHandler.buildDepError "waargonaut"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "waarg-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."waargonaut" or (errorHandler.buildDepError "waargonaut"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

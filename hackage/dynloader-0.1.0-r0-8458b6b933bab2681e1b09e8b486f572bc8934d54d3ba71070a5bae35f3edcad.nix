@@ -21,16 +21,16 @@
       synopsis = "Dynamically runtime loading packages";
       description = "This is a simple library for dynamically loading other packages at runtime. Please see the README on GitHub at <https://github.com/taqenoqo/dynloader#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dynloader-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

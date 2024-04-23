@@ -21,7 +21,7 @@
       synopsis = "Lift computations from the bottom of a transformer stack";
       description = "This package provides a straightforward port of @monadLib@'s BaseM\ntypeclass to @transformers@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-          ] ++ (pkgs.lib).optional (flags.orphaninstances) (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"));
+        ] ++ pkgs.lib.optional (flags.orphaninstances) (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

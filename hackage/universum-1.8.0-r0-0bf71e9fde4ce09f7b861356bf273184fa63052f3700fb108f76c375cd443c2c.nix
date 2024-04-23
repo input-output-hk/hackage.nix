@@ -21,7 +21,7 @@
       synopsis = "Custom prelude used in Serokell";
       description = "See README.md file for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "universum-test" = {
           depends = [
@@ -54,22 +54,22 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "universum-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = (if system.isWindows
             then false
-            else true) && (if compiler.isGhc && (compiler.version).ge "9.0.0"
+            else true) && (if compiler.isGhc && compiler.version.ge "9.0.0"
             then false
             else true);
-          };
         };
+      };
       benchmarks = {
         "universum-benchmark" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "SMT Based Verification: Symbolic Haskell theorem prover using SMT solving.";
       description = "Express properties about Haskell programs and automatically prove them using SMT\n(Satisfiability Modulo Theories) solvers.\n\nFor details, please see: <http://leventerkok.github.com/sbv/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,12 +42,12 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."crackNum" or (errorHandler.buildDepError "crackNum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SBVUnitTests" = {
-          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.10.1") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -56,15 +56,15 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "7.10.1"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "7.10.1"
             then true
             else false;
-          };
         };
+      };
       tests = {
         "SBVBasicTests" = {
-          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.10.1") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.10.1") [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -72,11 +72,11 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "7.10.1"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "7.10.1"
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

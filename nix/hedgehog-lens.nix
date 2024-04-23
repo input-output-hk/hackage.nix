@@ -6,8 +6,8 @@
         nix = import ../hackage/hedgehog-lens-0.1.0.0-r0-7feee6a848c9210e2f0cc2ba49152b775fa9066ceab1465c454d64efe95d776a.nix;
         revNum = 0;
         sha256 = "7feee6a848c9210e2f0cc2ba49152b775fa9066ceab1465c454d64efe95d776a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

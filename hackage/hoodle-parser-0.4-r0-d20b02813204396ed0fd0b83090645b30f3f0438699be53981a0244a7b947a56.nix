@@ -21,7 +21,7 @@
       synopsis = "Hoodle file parser";
       description = "Text parser for hoodle xml file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xournal-types" or (errorHandler.buildDepError "xournal-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

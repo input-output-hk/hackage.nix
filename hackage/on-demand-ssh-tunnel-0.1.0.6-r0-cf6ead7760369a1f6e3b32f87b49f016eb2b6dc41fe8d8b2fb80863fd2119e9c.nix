@@ -21,7 +21,7 @@
       synopsis = "Program that sends traffic through SSH tunnels on-demand";
       description = "Program that sends traffic through SSH tunnels on-demand";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "on-demand-ssh-tunnel" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
             (hsPkgs."on-demand-ssh-tunnel" or (errorHandler.buildDepError "on-demand-ssh-tunnel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

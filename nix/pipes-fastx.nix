@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-fastx-0.3.0.0-r0-d0b7b5edf05811cc9b9852dd9921c6215f8798fc6ee9841cf9d884bb59a01610.nix;
         revNum = 0;
         sha256 = "d0b7b5edf05811cc9b9852dd9921c6215f8798fc6ee9841cf9d884bb59a01610";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

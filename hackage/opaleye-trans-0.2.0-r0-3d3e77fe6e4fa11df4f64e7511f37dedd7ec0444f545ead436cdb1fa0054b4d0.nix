@@ -21,7 +21,7 @@
       synopsis = "A monad transformer for Opaleye";
       description = "A monad transformer for Opaleye";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."opaleye" or (errorHandler.buildDepError "opaleye"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."product-profunctors" or (errorHandler.buildDepError "product-profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "opaleye-rosetree" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."product-profunctors" or (errorHandler.buildDepError "product-profunctors"))
             (hsPkgs."opaleye-trans" or (errorHandler.buildDepError "opaleye-trans"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "opaleye-rosetree2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."product-profunctors" or (errorHandler.buildDepError "product-profunctors"))
             (hsPkgs."opaleye-trans" or (errorHandler.buildDepError "opaleye-trans"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

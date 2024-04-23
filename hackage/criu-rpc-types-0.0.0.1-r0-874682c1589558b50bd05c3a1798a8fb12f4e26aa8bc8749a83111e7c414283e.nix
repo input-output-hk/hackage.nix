@@ -24,16 +24,16 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.proto-lens-protoc or (pkgs.buildPackages.proto-lens-protoc or (errorHandler.setupDepError "proto-lens-protoc")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."proto-lens-protoc" or (errorHandler.buildDepError "proto-lens-protoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

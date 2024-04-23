@@ -21,7 +21,7 @@
       synopsis = "Recursively retrieve maven dependencies";
       description = "A haskell project that retrieves maven package dependencies recursively given a starting set of packages. The primary output format is a list of nix sets describing the maven packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haven" = {
@@ -34,9 +34,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

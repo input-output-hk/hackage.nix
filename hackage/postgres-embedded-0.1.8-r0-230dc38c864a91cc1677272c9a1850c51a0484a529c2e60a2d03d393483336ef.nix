@@ -21,7 +21,7 @@
       synopsis = "Library for easily running embedded PostgreSQL server for tests.";
       description = "Library for easily running embedded PostgreSQL server for tests.\nIt downloads, runs, checks and stops PostgreSQL Database instance for you.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgres-embedded-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."postgres-embedded" or (errorHandler.buildDepError "postgres-embedded"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

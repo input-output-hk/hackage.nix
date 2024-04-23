@@ -6,8 +6,8 @@
         nix = import ../hackage/affinely-extended-0.1.0.0-r0-ab46612e8e4dda4755ed0bce9e3de952381172653e0c972716bd6404fbffd146.nix;
         revNum = 0;
         sha256 = "ab46612e8e4dda4755ed0bce9e3de952381172653e0c972716bd6404fbffd146";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A haskell implementation of Katydid";
       description = "A haskell implementation of Katydid\n\nThis includes:\n\n- Relapse, a validation Language\n- Parsers for JSON, XML and an abstraction for trees\n\nYou should only need the following modules:\n\n- The Relapse module is used for validation.\n- The Json and XML modules are used to create Json and XML trees that can be validated.\n\nIf you want to implement your own parser then you can look at the Parsers module\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,19 +38,19 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."ilist" or (errorHandler.buildDepError "ilist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "katydid-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."katydid" or (errorHandler.buildDepError "katydid"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "katydid-test" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
             (hsPkgs."ilist" or (errorHandler.buildDepError "ilist"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion-benchmarks" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

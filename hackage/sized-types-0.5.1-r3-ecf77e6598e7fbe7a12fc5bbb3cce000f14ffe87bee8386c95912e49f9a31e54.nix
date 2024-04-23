@@ -21,7 +21,7 @@
       synopsis = "Sized types in Haskell using the GHC Nat kind.";
       description = "Providing matrixes, sparse matrixes, and signed and unsigned bit vectors, using GHC Nat kind.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,28 +30,28 @@
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sized-types-example1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."sized-types" or (errorHandler.buildDepError "sized-types"))
-            ];
+          ];
           buildable = if flags.all then true else false;
-          };
         };
+      };
       tests = {
         "sized-types-test1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."sized-types" or (errorHandler.buildDepError "sized-types"))
-            ];
+          ];
           buildable = if flags.all then true else false;
-          };
         };
       };
-    }
+    };
+  }

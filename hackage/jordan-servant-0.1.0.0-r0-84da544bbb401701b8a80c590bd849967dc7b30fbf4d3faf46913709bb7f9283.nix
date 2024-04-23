@@ -21,7 +21,7 @@
       synopsis = "Servant Combinators for Jordan";
       description = "Jordan Servant provides servant combinators for Jordan types, allowing you\nto use Jordan to build web APIs.\n\nIt has sister packages which provide server or client functionality.\nThis package just provides the types, as well as a mechanism to serialize or parse JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "jordan-servant-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."jordan-servant" or (errorHandler.buildDepError "jordan-servant"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

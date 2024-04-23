@@ -21,16 +21,16 @@
       synopsis = "Simplest SQLite3 binding";
       description = "yet";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

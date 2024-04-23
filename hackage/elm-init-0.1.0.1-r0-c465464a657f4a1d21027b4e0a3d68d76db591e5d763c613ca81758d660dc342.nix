@@ -21,7 +21,7 @@
       synopsis = "Set up basic structure for an elm project";
       description = "Initialize a new empty elm project with some basic scaffolding according to 'https://github.com/evancz/elm-architecture-tutorial'.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elm-init" = {
@@ -32,9 +32,9 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

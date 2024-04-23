@@ -21,11 +21,11 @@
       synopsis = "customizable pretty printer library for tables";
       description = "customizable pretty printer library for tables, e.g. using boxing characters";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

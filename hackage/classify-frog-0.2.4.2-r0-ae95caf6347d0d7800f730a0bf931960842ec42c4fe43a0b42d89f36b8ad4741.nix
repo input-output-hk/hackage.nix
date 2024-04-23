@@ -21,7 +21,7 @@
       synopsis = "Classify sounds produced by Xenopus laevis";
       description = "This program is part of the Xenocall project.\nResearchers observed that the amount and duration of calls\nof the African clawed frog (Xenopus laevis) change\nwhen exposed to hormonal effective substances.\nThe Xenocall project checks whether this effect\ncan be used as an endpoint in animal tests\ninstead of dissecting animals after the experiments.\n\nAn experiment for one substance\nmay produce about 100 hours of audio recordings.\nIt is a very tedious and error-prone work\nto examine this amount of data visually or by listening.\nThe purpose of this program is to examine the recordings automatically\nand generate tables with basic statistical parameters.\n\nRead the full report at\n<http://code.henning-thielemann.de/classify-frog-doc/report.pdf>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "classify-frog" = {
@@ -61,23 +61,23 @@
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.llvm) [
+          ] ++ pkgs.lib.optionals (flags.llvm) [
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spectral-distribution" = {
-          depends = (pkgs.lib).optionals (flags.buildsketch) [
+          depends = pkgs.lib.optionals (flags.buildsketch) [
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildsketch then true else false;
-          };
         };
       };
-    }
+    };
+  }

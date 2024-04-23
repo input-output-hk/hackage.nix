@@ -21,7 +21,7 @@
       synopsis = "Sengrid API";
       description = "A Haskell SendGrid API client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

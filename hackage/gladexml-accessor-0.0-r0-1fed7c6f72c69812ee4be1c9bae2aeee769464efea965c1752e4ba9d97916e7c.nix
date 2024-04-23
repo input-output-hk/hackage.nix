@@ -21,7 +21,7 @@
       synopsis = "Automagically declares getters for widget handles in specified interface file.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

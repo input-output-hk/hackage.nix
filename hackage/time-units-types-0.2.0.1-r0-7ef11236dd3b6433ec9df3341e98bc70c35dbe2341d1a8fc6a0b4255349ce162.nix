@@ -21,14 +21,14 @@
       synopsis = "Type-level representations of time durations.";
       description = "Please see the README on GitHub at <https://github.com/mbg/time-units-types#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/vcatt-0.1-r0-cbf386bd2965e66c3fa81a3bf0527b92a21789fbfdeb4c23563206894c4c30f9.nix;
         revNum = 0;
         sha256 = "cbf386bd2965e66c3fa81a3bf0527b92a21789fbfdeb4c23563206894c4c30f9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

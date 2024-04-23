@@ -21,7 +21,7 @@
       synopsis = "Unified streaming data-dependency framework for web apps";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/sparrow#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,8 +63,8 @@
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."websockets-simple" or (errorHandler.buildDepError "websockets-simple"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

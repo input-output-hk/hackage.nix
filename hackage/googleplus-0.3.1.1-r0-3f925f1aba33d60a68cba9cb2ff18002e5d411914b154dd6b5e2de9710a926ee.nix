@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Google+ API v1";
       description = "Will implement the Google+ REST API. Google+ is a social network made by\nGoogle. Found out more at <http://plus.google.com>.\nImplements the full API as of Oct 15, 2011. Only features read-only API\naccess beacuse that is all that Google has published thus far. Both API and\nOAuth authentication is supported, but note that if you intend to use OAuth,\nthis library does not currently provide the means to procure and renew OAuth\ntokens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

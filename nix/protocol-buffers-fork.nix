@@ -6,8 +6,8 @@
         nix = import ../hackage/protocol-buffers-fork-2.0.16-r0-66564dfcda52bdcb3af43d698aeb5afb9a88471dd37e65419947bb23bfde0cb9.nix;
         revNum = 0;
         sha256 = "66564dfcda52bdcb3af43d698aeb5afb9a88471dd37e65419947bb23bfde0cb9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

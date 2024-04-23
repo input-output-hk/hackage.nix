@@ -21,15 +21,15 @@
       synopsis = "Multiline strings, interpolation and templating.";
       description = "This package adds quasiquoter for multiline\nstrings, interpolation and simple templating.\nHandy for text generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Interface for versioning file stores.";
       description = "The filestore library provides an abstract interface for a versioning\nfile store, and modules that instantiate this interface.  Currently\nGit, Darcs, and Mercurial modules are provided, and other VCSs\nor databases could be added.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-filestore" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filestore" or (errorHandler.buildDepError "filestore"))
-            ];
+          ];
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

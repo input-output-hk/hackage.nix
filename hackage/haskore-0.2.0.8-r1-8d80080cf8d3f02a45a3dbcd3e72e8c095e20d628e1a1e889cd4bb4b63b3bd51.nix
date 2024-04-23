@@ -21,7 +21,7 @@
       synopsis = "The Haskore Computer Music System";
       description = "Compose music using programming features.\nOutput in MIDI, CSound, SuperCollider or as an audio signal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,39 +35,39 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "flipsong" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."haskore" or (errorHandler.buildDepError "haskore"))
             (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "autotrack" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."haskore" or (errorHandler.buildDepError "haskore"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
+      };
       tests = {
         "test-haskore" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Differential solving with lazy splines";
       description = "Differential solving with lazy splines. Source code to accompany the draft paper at <http://gbaz.github.io/slides/ode-draft-2009.pdf>. See the source of Numeric.LazySplines.Examples for usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

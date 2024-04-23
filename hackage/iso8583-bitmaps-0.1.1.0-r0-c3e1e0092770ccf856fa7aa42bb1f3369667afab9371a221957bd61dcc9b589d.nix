@@ -21,7 +21,7 @@
       synopsis = "Parse and merge ISO 8583-style bitmaps";
       description = "This package provides utility methods for writing\nGet and Put methods (in terms of Data.Binary) for parsing and\nmerging ISO 8583-style bitmaps, and also parsing and merging\nmost commonly used field formats (LLVAR/LLLVAR, ASCII numbers\nand so on).\nMoreover, this package provides TH quasiquoter for declarative\nspecification of ISO 8583-based message formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

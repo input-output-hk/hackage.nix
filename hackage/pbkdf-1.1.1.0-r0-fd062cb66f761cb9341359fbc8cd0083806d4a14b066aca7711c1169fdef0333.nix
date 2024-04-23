@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the PBKDF functions from RFC-2898.";
       description = "The Password Based Key Derivation Functions described in RFC-2898 with a test suite to verify that it works with the test vectors published in RFC6070.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rfc-6070" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."pbkdf" or (errorHandler.buildDepError "pbkdf"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

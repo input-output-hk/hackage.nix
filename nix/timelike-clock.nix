@@ -6,8 +6,8 @@
         nix = import ../hackage/timelike-clock-0.1.0-r0-25efa93a3e74d39e71a6339714541c48f6a853e01b634ddb64eba8e8c3298be4.nix;
         revNum = 0;
         sha256 = "25efa93a3e74d39e71a6339714541c48f6a853e01b634ddb64eba8e8c3298be4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

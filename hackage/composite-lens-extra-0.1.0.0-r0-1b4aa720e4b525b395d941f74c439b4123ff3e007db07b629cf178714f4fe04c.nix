@@ -21,7 +21,7 @@
       synopsis = "Extra lens functions for composite.";
       description = "Extra lens functions for composite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

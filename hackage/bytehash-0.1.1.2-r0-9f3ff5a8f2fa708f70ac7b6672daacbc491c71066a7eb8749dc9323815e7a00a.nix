@@ -21,7 +21,7 @@
       synopsis = "Universal hashing of bytes";
       description = "Taken together, universal hash functions and a good source of entropy\nprovide a foundation for hash maps guarantee O(1) lookups even if an\nadversary chooses the keys. This library implements such a hash map.\nThe implementation of lookup is tuned for performance. The functions\nfor building hash maps are not since they are intended to be called\ninfrequently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

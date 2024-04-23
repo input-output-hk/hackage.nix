@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
-          ] ++ (if flags.semigroups
+        ] ++ (if flags.semigroups
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         build-tools = [
           (hsPkgs.buildPackages.llvm-config.components.exes.llvm-config or (pkgs.buildPackages.llvm-config or (errorHandler.buildToolDepError "llvm-config:llvm-config")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -67,14 +67,14 @@
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ] ++ (if flags.semigroups
+          ] ++ (if flags.semigroups
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

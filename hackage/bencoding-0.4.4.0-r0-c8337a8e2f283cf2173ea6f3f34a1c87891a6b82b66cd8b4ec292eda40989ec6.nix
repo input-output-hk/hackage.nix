@@ -21,7 +21,7 @@
       synopsis = "A library for encoding and decoding of BEncode data.";
       description = "A library for fast and easy encoding and decoding of BEncode data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-comparison" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
             (hsPkgs."bencode" or (errorHandler.buildDepError "bencode"))
             (hsPkgs."AttoBencode" or (errorHandler.buildDepError "AttoBencode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lambdabot is a development tool and advanced IRC bot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nIt operates as a command line tool, embedded in an editor,\nembedded in GHCi, via internet relay chat and on the web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = false;
-        };
+      };
       exes = {
         "lambdabot" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."data-memocombinators" or (errorHandler.buildDepError "data-memocombinators"))
             (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

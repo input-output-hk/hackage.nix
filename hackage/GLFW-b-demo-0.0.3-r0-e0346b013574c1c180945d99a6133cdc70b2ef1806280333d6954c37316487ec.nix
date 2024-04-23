@@ -21,7 +21,7 @@
       synopsis = "GLFW-b test\\/example\\/demo";
       description = "GLFW-b test\\/example\\/demo.\n\nRun 'GLFW-b-demo' and use a joystick or cursor keys to rotate an\nRGB cube. /Please help me think of more interesting stuff to do/\n/in here./";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "GLFW-b-demo" = {
@@ -29,9 +29,9 @@
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

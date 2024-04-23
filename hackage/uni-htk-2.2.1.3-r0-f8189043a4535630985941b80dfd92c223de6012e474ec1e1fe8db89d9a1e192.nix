@@ -21,7 +21,7 @@
       synopsis = "Graphical User Interface for Haskell Programs";
       description = "GUI toolkit based on Tcl\\/Tk";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."uni-events" or (errorHandler.buildDepError "uni-events"))
           (hsPkgs."uni-posixutil" or (errorHandler.buildDepError "uni-posixutil"))
           (hsPkgs."uni-reactor" or (errorHandler.buildDepError "uni-reactor"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,21 +21,21 @@
       synopsis = "Composable terminal colors";
       description = "Composable terminal colors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "termcolor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termcolor" or (errorHandler.buildDepError "termcolor"))
             (hsPkgs."cli" or (errorHandler.buildDepError "cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

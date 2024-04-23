@@ -21,7 +21,7 @@
       synopsis = "sort by pinyin";
       description = "Sort Simplified Chinese by pinyin";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."here" or (errorHandler.buildDepError "here"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

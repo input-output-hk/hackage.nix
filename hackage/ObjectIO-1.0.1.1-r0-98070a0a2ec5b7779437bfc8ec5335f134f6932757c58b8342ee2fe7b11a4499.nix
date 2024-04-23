@@ -21,7 +21,7 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         libs = [
@@ -34,8 +34,8 @@
           (pkgs."winmm" or (errorHandler.sysDepError "winmm"))
           (pkgs."winspool" or (errorHandler.sysDepError "winspool"))
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

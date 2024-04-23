@@ -21,7 +21,7 @@
       synopsis = "Windows backend for Vty";
       description = "This package provides Windows terminal support for Vty.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

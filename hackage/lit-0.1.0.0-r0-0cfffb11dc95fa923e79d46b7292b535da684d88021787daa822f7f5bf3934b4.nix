@@ -21,7 +21,7 @@
       synopsis = "A simple tool for literate programming";
       description = "lit has a minimal syntax for implementing literate\nprogramming. It generates both HTML and the native\nsource code, from its local config file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lit" = {
@@ -37,9 +37,9 @@
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Debugging by observing in place";
       description = "Hood debugger, based on the idea of observing functions and structures as they are evaluated.\nAdded Functor and Applicative instances to work with GHC 7.10.1 and beyond.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

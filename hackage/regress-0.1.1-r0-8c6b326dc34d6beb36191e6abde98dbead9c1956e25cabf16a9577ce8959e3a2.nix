@@ -21,15 +21,15 @@
       synopsis = "Linear and logistic regression through automatic differentiation";
       description = "Linear and logistic regression through automatic differentiation\n\nSee \"Numeric.Regression.Linear\" and \"Numeric.Regression.Logistic\" for\ndocs and examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ad" or (errorHandler.buildDepError "ad"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

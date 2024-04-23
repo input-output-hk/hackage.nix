@@ -21,14 +21,14 @@
       synopsis = "Control.Arrow.Transformer.Cont";
       description = "Control.Arrow.Transformer.Cont";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

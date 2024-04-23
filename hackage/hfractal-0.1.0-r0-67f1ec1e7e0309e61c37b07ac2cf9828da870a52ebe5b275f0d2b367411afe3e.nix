@@ -21,7 +21,7 @@
       synopsis = "OpenGL fractal renderer";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hfractal" = {
@@ -33,9 +33,9 @@
             (hsPkgs."gd" or (errorHandler.buildDepError "gd"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

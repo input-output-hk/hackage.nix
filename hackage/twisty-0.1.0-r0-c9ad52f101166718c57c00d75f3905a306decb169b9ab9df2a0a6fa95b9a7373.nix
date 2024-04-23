@@ -21,7 +21,7 @@
       synopsis = "Simulator of twisty puzzles à la Rubik's Cube";
       description = "Library with tools for simulating Rubik's Cube and similar puzzles.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."data-memocombinators" or (errorHandler.buildDepError "data-memocombinators"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

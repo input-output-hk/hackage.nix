@@ -21,7 +21,7 @@
       synopsis = "Preprocesses a file, adding blobs from files as string literals.";
       description = "hsb2hs is a preprocessor that allows you to include the contents of\nfiles as string literals in your Haskell programs and libraries.\nIt is an alternative to file-embed for those who do not want to rely\non Template Haskell.  See @README.markdown@ for instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsb2hs" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."preprocessor-tools" or (errorHandler.buildDepError "preprocessor-tools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

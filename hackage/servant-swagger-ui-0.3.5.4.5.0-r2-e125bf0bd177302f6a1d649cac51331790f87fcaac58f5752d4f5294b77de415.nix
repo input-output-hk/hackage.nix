@@ -21,7 +21,7 @@
       synopsis = "Servant swagger ui";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nhttps://github.com/swagger-api/swagger-ui";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

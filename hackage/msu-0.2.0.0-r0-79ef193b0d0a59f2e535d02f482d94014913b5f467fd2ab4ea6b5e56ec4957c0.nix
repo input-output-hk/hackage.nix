@@ -21,7 +21,7 @@
       synopsis = "Monitor Setup Utility";
       description = "Convenient wrapper over xrandr for setting up monitors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "msu" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."msu" or (errorHandler.buildDepError "msu"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."msu" or (errorHandler.buildDepError "msu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

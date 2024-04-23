@@ -21,7 +21,7 @@
       synopsis = "Ngram models for compressing and classifying text.";
       description = "A library and collection of commands for training, evaluating, and applying n-gram-based sequence models.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."cereal-text" or (errorHandler.buildDepError "cereal-text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ngramClassifier" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

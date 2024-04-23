@@ -6,13 +6,13 @@
         nix = import ../hackage/deriving-openapi3-0.1.0.0-r0-63513057f662e9dfdf8f9c76ec36a6a13fb11c9d04ddaef5f051a605f9b44006.nix;
         revNum = 0;
         sha256 = "63513057f662e9dfdf8f9c76ec36a6a13fb11c9d04ddaef5f051a605f9b44006";
-        };
+      };
       r1 = {
         nix = import ../hackage/deriving-openapi3-0.1.0.0-r1-3f6bd4e57c4252b17333ca51b964e57ba123f0a3d1c8c4359a5b82e1baefef34.nix;
         revNum = 1;
         sha256 = "3f6bd4e57c4252b17333ca51b964e57ba123f0a3d1c8c4359a5b82e1baefef34";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

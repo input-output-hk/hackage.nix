@@ -21,15 +21,15 @@
       synopsis = "Simple network sockets usage patterns.";
       description = "Simple network sockets usage patterns.\n\nSee the @NEWS@ file in the source distribution to learn about any\nimportant changes between version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "network-simple-example-echo-tcp" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "network-simple-example-chat-tcp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

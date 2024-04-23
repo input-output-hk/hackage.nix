@@ -21,14 +21,14 @@
       synopsis = "A simple unassuming parser for bytestring";
       description = "Really trivial parser to get and drop bytes from a bytestring";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

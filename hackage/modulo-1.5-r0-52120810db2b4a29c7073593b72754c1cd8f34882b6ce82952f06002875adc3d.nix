@@ -21,7 +21,7 @@
       synopsis = "Modular C code generator";
       description = "Modulo is a tool that generates modular, standard C interfaces based on a high-level\ndescription language. The idea is to specify functionality in the module language\nand implement it in any language that supports C-style calling conventions.\nThis package include generators for C and Common Lisp (JavaScript and Haskell on the way).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
           (hsPkgs."atto-lisp" or (errorHandler.buildDepError "atto-lisp"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "modulo" = { buildable = true; }; };
       };
-    }
+      exes = { "modulo" = { buildable = true; }; };
+    };
+  }

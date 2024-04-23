@@ -21,20 +21,20 @@
       synopsis = "Progressbar API";
       description = "This package implements a progress bar\napi built on the io-reactive package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."io-reactive" or (errorHandler.buildDepError "io-reactive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Mathematically sound sound synthesis";
       description = "Please see the README on GitHub at <https://github.com/Lazersmoke/boopadoop#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "perfprof" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "boopadoop-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

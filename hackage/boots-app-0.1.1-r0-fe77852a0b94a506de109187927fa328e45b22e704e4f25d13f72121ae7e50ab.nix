@@ -21,7 +21,7 @@
       synopsis = "Startup factories using IoC monad";
       description = "Provide basic factories base on boots.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

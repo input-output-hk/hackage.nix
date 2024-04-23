@@ -21,7 +21,7 @@
       synopsis = "wxHaskell core";
       description = "wxHaskell is a portable and native GUI library for Haskell.  It is built on top of wxWidgets – a comprehensive C++ library that is portable across all major GUI platforms; including GTK, Windows, X11, and MacOS X.";
       buildType = "Make";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -31,13 +31,13 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

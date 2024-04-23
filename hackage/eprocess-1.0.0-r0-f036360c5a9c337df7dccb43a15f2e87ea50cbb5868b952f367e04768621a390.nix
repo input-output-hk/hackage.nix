@@ -21,7 +21,7 @@
       synopsis = "*Very* basic erlang-like process support for Haskel";
       description = "This library provides a *very* basic support for processes with message queues.  It was built using channels and MVars.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."MonadCatchIO-mtl" or (errorHandler.buildDepError "MonadCatchIO-mtl"))
           (hsPkgs."MonadCatchIO-mtl" or (errorHandler.buildDepError "MonadCatchIO-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

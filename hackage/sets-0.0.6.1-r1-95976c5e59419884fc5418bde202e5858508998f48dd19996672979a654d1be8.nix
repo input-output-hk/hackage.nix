@@ -21,7 +21,7 @@
       synopsis = "Ducktyped set interface for Haskell containers.";
       description = "Please see the README on Github at <https://github.com/athanclark/sets#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sets-test" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "sets-bench" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Client library for Tracker metadata database, indexer and search tool";
       description = "Client library for Tracker metadata database, indexer and search tool";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Declarative command line parser using type-driven pattern matching.";
       description = "Declarative command line parser using type-driven pattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."read-bounded" or (errorHandler.buildDepError "read-bounded"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "a Haskell Webserver Interface";
       description = "Hack: a Haskell Webserver Interface\n\n2012.02.06 added FlexibleInstances to fix an error under ghc >=7.2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

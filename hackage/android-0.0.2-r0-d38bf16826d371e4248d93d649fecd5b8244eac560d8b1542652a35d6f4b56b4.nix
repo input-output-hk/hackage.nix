@@ -21,14 +21,14 @@
       synopsis = "Android methods exposed to Haskell";
       description = "Haskell bindings to the Android ecosystem";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

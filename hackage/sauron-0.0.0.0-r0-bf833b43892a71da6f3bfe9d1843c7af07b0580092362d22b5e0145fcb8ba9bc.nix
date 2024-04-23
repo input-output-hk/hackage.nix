@@ -21,7 +21,7 @@
       synopsis = "The eye that watches everything you did on Twitter";
       description = "The eye that watches everything you did on Twitter.\nSee [README.md](https://github.com/chshersh/sauron#sauron) for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,19 +37,19 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sauron" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."sauron" or (errorHandler.buildDepError "sauron"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sauron-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

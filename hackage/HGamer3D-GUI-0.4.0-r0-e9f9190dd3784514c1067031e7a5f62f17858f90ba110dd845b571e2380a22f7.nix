@@ -21,7 +21,7 @@
       synopsis = "GUI Functionality for HGamer3D";
       description = "HGamer3D is a game engine for developing 3D games in the programming\nlanguage Haskell. This package provides the GUI functionality,\nbased on the package HGamer3D-CEGUI-Binding. HGamer3D-GUI\nis available on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-CEGUI-Binding" or (errorHandler.buildDepError "HGamer3D-CEGUI-Binding"))
           (hsPkgs."HGamer3D-WinEvent" or (errorHandler.buildDepError "HGamer3D-WinEvent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

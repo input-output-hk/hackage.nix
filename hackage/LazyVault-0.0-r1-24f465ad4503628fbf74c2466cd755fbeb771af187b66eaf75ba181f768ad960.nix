@@ -21,7 +21,7 @@
       synopsis = "A simple sandboxing tool for Haskell packages.";
       description = "LazyVault is a sandboxing tool to install libraries and executables with a sandboxed environment. At the moment it's only supported under Unix or Gnu Systems. This package has only been tested under Gnu/Linux however. This program creates cabal sandboxes which you can use globally. For a detailed explaination on how this works refer to the README file found on the github page.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "LazyVault" = {
@@ -30,9 +30,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

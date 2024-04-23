@@ -21,7 +21,7 @@
       synopsis = "Protocol buffer compiler for the proto-lens library.";
       description = "Turn protocol buffer files (.proto) into Haskell files (.hs) which\ncan be used with the proto-lens package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "proto-lens-protoc" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
             (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

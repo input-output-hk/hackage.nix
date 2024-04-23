@@ -21,7 +21,7 @@
       synopsis = "Export from MyAnimeList";
       description = "Export anime or manga lists from MyAnimeList in XML format.  Uses the web\ninterface, because the malappinfo API exports in a slightly different format\nwhich causes problems on importing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."tagstream-conduit" or (errorHandler.buildDepError "tagstream-conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "myanimelist-export" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

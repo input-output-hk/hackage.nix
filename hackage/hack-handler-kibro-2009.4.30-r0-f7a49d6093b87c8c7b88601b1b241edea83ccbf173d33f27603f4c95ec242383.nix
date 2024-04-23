@@ -21,7 +21,7 @@
       synopsis = "Hack Kibro handler";
       description = "Hack Kibro handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."kibro" or (errorHandler.buildDepError "kibro"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

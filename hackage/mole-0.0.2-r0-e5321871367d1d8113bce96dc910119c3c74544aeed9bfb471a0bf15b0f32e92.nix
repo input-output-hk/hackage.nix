@@ -21,7 +21,7 @@
       synopsis = "A glorified string replacement tool";
       description = "A glorified string replacement tool. For a very specific purpose. That\npurpose being to compile and optimize a static website (or a single-page\napplication). Mole inspects source, builds a complete dependency tree,\nminifies and compresses the files, adds fingerprints and writes the result\nto a directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mole" = {
@@ -51,10 +51,10 @@
             (hsPkgs."kraken" or (errorHandler.buildDepError "kraken"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."css-syntax" or (errorHandler.buildDepError "css-syntax"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

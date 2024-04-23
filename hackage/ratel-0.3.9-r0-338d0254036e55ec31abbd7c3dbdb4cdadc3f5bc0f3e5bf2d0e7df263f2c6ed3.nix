@@ -21,7 +21,7 @@
       synopsis = "Notify Honeybadger about exceptions.";
       description = "Ratel notifies Honeybadger about exceptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ratel-test-suite" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."ratel" or (errorHandler.buildDepError "ratel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

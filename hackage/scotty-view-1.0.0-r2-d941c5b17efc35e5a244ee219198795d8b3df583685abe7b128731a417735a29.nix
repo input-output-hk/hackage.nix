@@ -21,7 +21,7 @@
       synopsis = "";
       description = "An extension for Scotty allowing its user to build an HTML\npage easily. This library can also read an HTML page from a\nfile and modify it.\nGithub repository: https:\\/\\/github.com\\/PhilemonBouzy\\/scotty-view";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "web" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."scotty-view" or (errorHandler.buildDepError "scotty-view"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

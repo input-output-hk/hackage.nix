@@ -21,7 +21,7 @@
       synopsis = "Tunneling program over websocket protocol";
       description = "For more information regarding wstunnel, please refer to README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wstunnel" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."wstunnel" or (errorHandler.buildDepError "wstunnel"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wstunnel-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

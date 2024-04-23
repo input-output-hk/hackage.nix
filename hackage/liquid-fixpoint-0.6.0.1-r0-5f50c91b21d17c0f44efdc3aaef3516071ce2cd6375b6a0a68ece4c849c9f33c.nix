@@ -21,7 +21,7 @@
       synopsis = "Predicate Abstraction-based Horn-Clause/Implication Constraint Solver";
       description = "This package is a Haskell wrapper to the SMTLIB-based\nHorn-Clause/Logical Implication constraint solver used\nfor Liquid Types.\n\nThe package includes:\n\n1. Types for Expressions, Predicates, Constraints, Solutions\n\n2. Code for solving constraints\n\nRequirements\n\nIn addition to the .cabal dependencies you require\n\n- A Z3 (<http://z3.codeplex.com>) or CVC4 (<http://cvc4.cs.nyu.edu>) binary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -59,18 +59,18 @@
           (hsPkgs."fgl-visualize" or (errorHandler.buildDepError "fgl-visualize"))
           (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."located-base" or (errorHandler.buildDepError "located-base"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."ascii-progress" or (errorHandler.buildDepError "ascii-progress"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") (hsPkgs."located-base" or (errorHandler.buildDepError "located-base"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."ascii-progress" or (errorHandler.buildDepError "ascii-progress"));
         buildable = true;
-        };
+      };
       exes = {
         "fixpoint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "testparser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -94,7 +94,7 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.devel
+          ] ++ (if flags.devel
             then [
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -129,12 +129,12 @@
               (hsPkgs."fgl-visualize" or (errorHandler.buildDepError "fgl-visualize"))
               (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."located-base" or (errorHandler.buildDepError "located-base"))
+            ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") (hsPkgs."located-base" or (errorHandler.buildDepError "located-base"))
             else [
               (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

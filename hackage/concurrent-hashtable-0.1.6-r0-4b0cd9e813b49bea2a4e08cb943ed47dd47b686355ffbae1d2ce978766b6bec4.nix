@@ -21,7 +21,7 @@
       synopsis = "Thread-safe hash tables for multi-cores!";
       description = "Please see the README on GitHub at <https://github.com/pwrobinson/concurrent-hashtable#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "concurrent-hashtable-test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "mainbench" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

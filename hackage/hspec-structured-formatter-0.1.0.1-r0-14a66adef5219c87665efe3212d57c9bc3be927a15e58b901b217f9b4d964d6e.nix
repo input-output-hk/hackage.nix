@@ -14,7 +14,7 @@
       identifier = {
         name = "hspec-structured-formatter";
         version = "0.1.0.1";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "flbulgarelli@yahoo.com.ar";
@@ -24,14 +24,14 @@
       synopsis = "";
       description = "Structured formatted for hspec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

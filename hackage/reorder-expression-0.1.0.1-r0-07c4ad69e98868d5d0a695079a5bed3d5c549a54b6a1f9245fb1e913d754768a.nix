@@ -21,12 +21,12 @@
       synopsis = "Reorder expressions in a syntax tree according to operator fixities.";
       description = "A library for reordering expressions in a syntax tree generically according to operator associativity and precedence.\nThis is useful for languages with custom operators which require reordering expressions after collecting their fixities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "reorder-expression-test" = {
           depends = [
@@ -35,12 +35,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."optics" or (errorHandler.buildDepError "optics"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

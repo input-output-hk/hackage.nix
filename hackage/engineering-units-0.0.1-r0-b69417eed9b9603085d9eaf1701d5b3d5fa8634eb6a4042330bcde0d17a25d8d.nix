@@ -21,11 +21,11 @@
       synopsis = "A numeric type for managing and automating engineering units.";
       description = "A numeric type for managing and automating engineering units.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

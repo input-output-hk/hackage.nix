@@ -21,7 +21,7 @@
       synopsis = "Text-based PCRE API for regex-base";
       description = "The PCRE/Text backend to accompany regex-base;\nneeds regex-pcre and regex-tdfa-text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
           (hsPkgs."regex-tdfa-text" or (errorHandler.buildDepError "regex-tdfa-text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "LogicGrowsOnTrees-processes";
         version = "1.0.0.2";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Gregory Crosswhite <gcrosswhite@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "an adapter for LogicGrowsOnTrees that uses multiple processes for parallelism";
       description = "This package provides a adapter for the LogicGrowsOnTrees package that uses\nmultiple processes for parallelism; see the module documentation for more\ndetails.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "count-all-nqueens-solutions" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "count-all-trivial-tree-leaves" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees-processes" or (errorHandler.buildDepError "LogicGrowsOnTrees-processes"))
@@ -62,10 +62,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -80,10 +80,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

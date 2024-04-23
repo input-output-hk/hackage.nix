@@ -21,7 +21,7 @@
       synopsis = "Library, interpreter, and CLI for Descript programming language.";
       description = "Please see the README at <https://bitbucket.org/jakobeha/descript-lang/src/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "descript-cli" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "descript-lang-test" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

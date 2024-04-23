@@ -6,8 +6,8 @@
         nix = import ../hackage/autopack-0.0.0.0-r0-f3b45edca97afdebe31510568bffad0304b6975d5d91182c50313bb22fccbf0a.nix;
         revNum = 0;
         sha256 = "f3b45edca97afdebe31510568bffad0304b6975d5d91182c50313bb22fccbf0a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

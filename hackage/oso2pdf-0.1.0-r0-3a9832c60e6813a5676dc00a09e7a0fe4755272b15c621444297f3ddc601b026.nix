@@ -21,16 +21,16 @@
       synopsis = "Better conversion of Oxford Scholarship Online material to PDF";
       description = "Please see README.md when I write it";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc-oso2tex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "oso2pdf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -41,9 +41,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/ag-pictgen-1.0.0.0-r0-ce2aaf22367ea343131aaf33ad3091920b8eee36784109f79fb755a57710b048.nix;
         revNum = 0;
         sha256 = "ce2aaf22367ea343131aaf33ad3091920b8eee36784109f79fb755a57710b048";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

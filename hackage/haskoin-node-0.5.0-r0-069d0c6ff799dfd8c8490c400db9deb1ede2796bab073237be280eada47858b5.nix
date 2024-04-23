@@ -21,7 +21,7 @@
       synopsis = "Haskoin Node P2P library for Bitcoin and Bitcoin Cash";
       description = "Bitcoin and Bitcoin Cash peer-to-peer protocol library featuring headers-first synchronisation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unique" or (errorHandler.buildDepError "unique"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskoin-node-test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."rocksdb-query" or (errorHandler.buildDepError "rocksdb-query"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

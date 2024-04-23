@@ -21,7 +21,7 @@
       synopsis = "Purely FunctionaL User Interface";
       description = "This package contains a set of composable purely functional widgets\nand a mainloop adapter to adapt the widgets to run in IO. It is\nHaskGame based.\n\nHaskGame does not yet wrap SDL properly, so it uses SDL directly as\nwell.\n\nProject wiki page: <http://haskell.org/haskellwiki/LUI>\n\n&#169; 2009 by Eyal Lotem; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
           (hsPkgs."haskgame" or (errorHandler.buildDepError "haskgame"))
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extra non-essential utilities for building legion applications.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "legion-extra-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."legion-extra" or (errorHandler.buildDepError "legion-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

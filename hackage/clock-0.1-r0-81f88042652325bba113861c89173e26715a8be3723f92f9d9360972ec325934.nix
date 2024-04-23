@@ -21,11 +21,11 @@
       synopsis = "bindings to time.h: clock_gettime and clock_getres";
       description = "bindings to time.h: clock_gettime and clock_getres";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lock free Treiber stack";
       description = "An implementation of Treiber stacks, a lock free stack. Works with any monad that has atomically modificable references.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."ref-mtl" or (errorHandler.buildDepError "ref-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

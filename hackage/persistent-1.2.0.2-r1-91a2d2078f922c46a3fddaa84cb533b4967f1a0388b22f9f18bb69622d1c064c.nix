@@ -21,7 +21,7 @@
       synopsis = "Type-safe, multi-backend data serialization.";
       description = "Type-safe, data serialization. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

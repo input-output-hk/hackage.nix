@@ -21,11 +21,11 @@
       synopsis = "Error handling for foreign calls to the Windows API.";
       description = "A small library useful for error handling when making\nforeign calls to the Windows API. Error codes set by\nWindows are converted to Haskell exceptions and can be\nthrown and caught with the usual exception handling\nfunctions in Control.Exception.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        depends = pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = if system.isWindows then true else false;
-        };
       };
-    }
+    };
+  }

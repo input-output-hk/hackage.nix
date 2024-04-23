@@ -21,7 +21,7 @@
       synopsis = "Memory efficient JSON parser";
       description = "Memory efficient JSON parser. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-json-standard-cursor" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-json-standard-cursor" or (errorHandler.buildDepError "hw-json-standard-cursor"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-json-standard-cursor-test" = {
           depends = [
@@ -76,13 +76,13 @@
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-json-standard-cursor" or (errorHandler.buildDepError "hw-json-standard-cursor"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."hw-json-standard-cursor" or (errorHandler.buildDepError "hw-json-standard-cursor"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

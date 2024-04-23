@@ -21,7 +21,7 @@
       synopsis = "Test Framework for Server's status";
       description = "Hspec-Server is test framework for checking server's status.\nIt is inspired by the Ruby library ServerSpec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec-contrib" or (errorHandler.buildDepError "hspec-contrib"))
             (hsPkgs."hspec-server" or (errorHandler.buildDepError "hspec-server"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

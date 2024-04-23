@@ -21,7 +21,7 @@
       synopsis = "RFC7807 style response messages";
       description = "[RFC7807 — Problem Details for HTTP APIs](https://tools.ietf.org/html/rfc7807)\nstyle response messages.\n\nSee [GitHub README](https://github.com/trskop/http-rfc7807#readme) for more\ninformation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "command-wrapper-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

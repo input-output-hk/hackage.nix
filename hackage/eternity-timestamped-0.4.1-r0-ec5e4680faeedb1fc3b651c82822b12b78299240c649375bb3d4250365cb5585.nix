@@ -21,7 +21,7 @@
       synopsis = "Automatic timestamping for Eternity";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timestamp" or (errorHandler.buildDepError "timestamp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

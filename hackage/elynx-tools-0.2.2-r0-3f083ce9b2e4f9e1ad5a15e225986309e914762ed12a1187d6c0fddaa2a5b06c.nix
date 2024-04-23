@@ -21,7 +21,7 @@
       synopsis = "Tools for ELynx";
       description = "Please see the README on GitHub at <https://github.com/dschrempf/elynx>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

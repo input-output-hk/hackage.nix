@@ -21,7 +21,7 @@
       synopsis = "Pretty-printing of codebases";
       description = "Pretty-printing of codebases for the purposes of code\nreview on paper or publication of a whole codebase\nin a document form.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wembley" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A 'FailT' monad transformer that plays well with 'MonadFail'";
       description = "Fail gracefully when stuck in a 'MonadFail'\n\nλ> runFailT (fail \"Failure!?\" >> pure \"Success!!\")\nLeft \"Failure!?\"\nλ> runFailT (fail \"Failure!?\" <|> pure \"Success!!\")\nRight \"Success!!\"\nλ> runFailT (pure [\"Success!!\"] <> fail \"Failure!?\" <> pure [\"At\", \"Last!\"])\nRight [\"Success!!\",\"At\",\"Last!\"]\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."FailT" or (errorHandler.buildDepError "FailT"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,9 +50,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

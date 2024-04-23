@@ -21,7 +21,7 @@
       synopsis = "Template Haskell construction utilities";
       description = "A collection of templates for the typical patterns appearing\nin construction of Template Haskell AST.\nE.g., typical instance declaration templates,\nlambda expressions for accessing members of data-types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."template-haskell-compat-v0208" or (errorHandler.buildDepError "template-haskell-compat-v0208"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

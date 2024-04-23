@@ -21,7 +21,7 @@
       synopsis = "Open up a pager, like 'less' or 'more'";
       description = "This opens up the user's $PAGER. On Linux, this is usually called @less@. On\nthe various BSDs, this is usually @more@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-pager-test-pager" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."pager" or (errorHandler.buildDepError "pager"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

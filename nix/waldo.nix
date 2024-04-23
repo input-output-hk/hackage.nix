@@ -6,8 +6,8 @@
         nix = import ../hackage/waldo-0-r0-050b090c3b2278ea68832cee275b449d1de6747f2ec04b6ffb664a56e6592836.nix;
         revNum = 0;
         sha256 = "050b090c3b2278ea68832cee275b449d1de6747f2ec04b6ffb664a56e6592836";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

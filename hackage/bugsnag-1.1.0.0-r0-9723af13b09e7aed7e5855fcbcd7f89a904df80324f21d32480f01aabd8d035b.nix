@@ -21,7 +21,7 @@
       synopsis = "Bugsnag error reporter for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,25 +41,25 @@
           (hsPkgs."ua-parser" or (errorHandler.buildDepError "ua-parser"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-cli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bugsnag" or (errorHandler.buildDepError "bugsnag"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "example-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bugsnag" or (errorHandler.buildDepError "bugsnag"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."bugsnag" or (errorHandler.buildDepError "bugsnag"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

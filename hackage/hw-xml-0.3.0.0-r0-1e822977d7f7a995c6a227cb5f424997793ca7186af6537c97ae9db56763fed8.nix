@@ -21,7 +21,7 @@
       synopsis = "Conduits for tokenizing streams.";
       description = "Conduits for tokenizing streams. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-xml-example" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-xml" or (errorHandler.buildDepError "hw-xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-xml-test" = {
           depends = [
@@ -83,13 +83,13 @@
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-xml" or (errorHandler.buildDepError "hw-xml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-xml" or (errorHandler.buildDepError "hw-xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

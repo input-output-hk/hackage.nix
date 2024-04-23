@@ -21,7 +21,7 @@
       synopsis = "A semantic parser for lojban";
       description = "A semantic parser for the engineered human language Lojban\n(www.lojban.org). It translates lojban text to a predicate logic.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tersmu" = {
@@ -33,11 +33,11 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tersmuBot" = {
-          depends = (pkgs.lib).optionals (flags.ircbot) [
+          depends = pkgs.lib.optionals (flags.ircbot) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
@@ -45,9 +45,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = if flags.ircbot then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Graph500 benchmark-related definitions and data set generator.";
       description = "Graph generator library and standalone graph generator. The\ngenerator allows you to generate your data once and then use it\nfor benchmarking and debugging. Graph generation algorithm follows\nGraph500 specification <http://www.graph500.org/specifications#sec-3_3>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "graph500gen" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Graph500" or (errorHandler.buildDepError "Graph500"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

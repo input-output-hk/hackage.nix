@@ -21,7 +21,7 @@
       synopsis = "Pipes integration for ZeroMQ messaging";
       description = "<https://hackage.haskell.org/package/pipes Pipes> integration for\n<http://zeromq.org/ ZeroMQ> using the\n<https://hackage.haskell.org/package/zeromq4-haskell zeromq4-haskell bindings>.\n\nThis package is very basic.  I am new to the @Pipes@ family of APIs\nand would be overjoyed to receive feedback.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "proxy" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,9 +55,9 @@
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "serverPipeline" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hdph-0.0.1-r0-5279dc134962b3a11f747534b5dea426eb09ab823b505a5f433b6f220c173b5c.nix;
         revNum = 0;
         sha256 = "5279dc134962b3a11f747534b5dea426eb09ab823b505a5f433b6f220c173b5c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "Combinatorial species lite";
       description = "A simple library for combinatorial species. If you\nwant something more substantial, then you will most likely\nbe happier with the species package by Brent Yorgey:\n<http://hackage.haskell.org/package/species>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

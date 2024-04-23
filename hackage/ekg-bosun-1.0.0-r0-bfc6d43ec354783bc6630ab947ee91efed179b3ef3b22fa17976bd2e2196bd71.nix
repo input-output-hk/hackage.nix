@@ -21,7 +21,7 @@
       synopsis = "Send ekg metrics to a Bosun instance";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

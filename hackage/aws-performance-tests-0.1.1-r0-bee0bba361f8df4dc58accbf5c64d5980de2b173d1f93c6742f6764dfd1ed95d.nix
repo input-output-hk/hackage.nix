@@ -21,7 +21,7 @@
       synopsis = "Performance Tests for the Haskell bindings for Amazon Web Services (AWS)";
       description = "Performance Tests for the Haskell bindings for\n<http://hackage.haskell.org/package/aws Amazon Web Services (AWS)>.\n\nAt the current stage this package only has tests for the DynamoDb\nbindings.\n\n/IMPORTANT NOTE/\n\nBy using the dynamo-performace application from this package with your AWS API\ncredentials costs will incure to your AWS account. Depending on the provisioned\ntest table read and write throughput these costs can be in the order of several\ndollars per hour.\n\nAlso be aware that there is an option to keep the table after the tests are finished\n(for example for usage with successive test runs). If you use that option you have to\nmake sure that you delete the table yourself when you don't need it any more.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dynamodb-performance" = {
           depends = [
@@ -59,14 +59,14 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (flags.with-chart) [
+          ] ++ pkgs.lib.optionals (flags.with-chart) [
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

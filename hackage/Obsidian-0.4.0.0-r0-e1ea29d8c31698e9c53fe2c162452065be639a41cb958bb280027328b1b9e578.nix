@@ -21,7 +21,7 @@
       synopsis = "Embedded language for GPU Programming ";
       description = "Obsidian is an embedded language for general purpose programming targeting\nGPU's.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."mainland-pretty" or (errorHandler.buildDepError "mainland-pretty"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."cuda" or (errorHandler.buildDepError "cuda"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-kinesis-video-signaling-2.0-r0-6ee492d376169c7e28d06b32321f073016cafca25394569356624cc162deea1f.nix;
         revNum = 0;
         sha256 = "6ee492d376169c7e28d06b32321f073016cafca25394569356624cc162deea1f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

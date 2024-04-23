@@ -21,7 +21,7 @@
       synopsis = "Interactively browse a Nix store paths dependencies";
       description = "A terminal curses application to browse a Nix store paths dependencies";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nix-tree" = {
@@ -46,10 +46,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "nix-tree-tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."dot" or (errorHandler.buildDepError "dot"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

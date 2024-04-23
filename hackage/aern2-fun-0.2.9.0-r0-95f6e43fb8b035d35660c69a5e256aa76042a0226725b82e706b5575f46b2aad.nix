@@ -21,7 +21,7 @@
       synopsis = "Generic operations for real functions";
       description = "Please see the README on GitHub at <https://github.com/michalkonecny/aern2/#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

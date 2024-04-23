@@ -21,7 +21,7 @@
       synopsis = "Pointless Lenses library";
       description = "Pointless Lenses is library of bidirectional lenses (<http://www.cis.upenn.edu/~bcpierce/papers/newlenses-popl.pdf>) defined in the point-free style of programming.\nGeneric bidirectional lenses can be defined over inductive types by relying in a set of lifted lens combinators from the standard point-free combinators.\nRecursive lenses can be defined by combining the lenses for the recursion patterns of catamorphisms and anamorphism.\nMore refined lens behavior can be achieved a more operation-based variant of delta-lenses (<>).\nThe library also provides QuickCheck procedures to test the well-behavedness of user-defined lens transformations.\nMore details can be found in the accompanying papers <http://alfa.di.uminho.pt/~hpacheco/publications/mpc10.pdf> and <http://alfa.di.uminho.pt/~hpacheco/publications/hdlenses.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

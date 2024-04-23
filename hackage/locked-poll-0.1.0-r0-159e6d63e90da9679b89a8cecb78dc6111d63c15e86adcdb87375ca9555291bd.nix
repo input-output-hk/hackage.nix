@@ -21,16 +21,16 @@
       synopsis = "Very simple poll lock";
       description = "Fire and forget actions, lock with timeout resources ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "locked-poll" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."locked-poll" or (errorHandler.buildDepError "locked-poll"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A generic exploring interpreter for exploratory programming";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

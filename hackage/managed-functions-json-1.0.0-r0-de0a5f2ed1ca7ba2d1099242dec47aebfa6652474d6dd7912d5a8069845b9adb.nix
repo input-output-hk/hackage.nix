@@ -21,15 +21,15 @@
       synopsis = "JSON Support for the Managed Functions Framework";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/managed-functions#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."managed-functions" or (errorHandler.buildDepError "managed-functions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

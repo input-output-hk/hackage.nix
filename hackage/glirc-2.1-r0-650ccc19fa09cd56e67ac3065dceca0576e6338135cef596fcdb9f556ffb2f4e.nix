@@ -21,7 +21,7 @@
       synopsis = "Console IRC client";
       description = "Console IRC client";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "glirc2" = {
@@ -55,9 +55,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

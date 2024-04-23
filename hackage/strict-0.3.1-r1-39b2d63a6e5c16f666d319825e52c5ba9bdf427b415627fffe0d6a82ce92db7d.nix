@@ -21,16 +21,16 @@
       synopsis = "Strict data types and String IO.";
       description = "This package provides strict versions of some standard Haskell data\ntypes (pairs, Maybe and Either). It also contains strict IO\noperations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

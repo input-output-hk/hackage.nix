@@ -21,7 +21,7 @@
       synopsis = "NextStep style plist parser and printer";
       description = "Parser and pretty printer for NextStep style\n(old style) plist (property list) files as\nthey are used for the project configuration files\nof Apple's Xcode.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

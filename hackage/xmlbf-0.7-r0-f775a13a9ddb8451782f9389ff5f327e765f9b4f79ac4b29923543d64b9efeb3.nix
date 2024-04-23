@@ -21,7 +21,7 @@
       synopsis = "XML back and forth! Parser, renderer, ToXml, FromXml, fixpoints.";
       description = "XML back and forth! Parser, renderer, ToXml, FromXml, fixpoints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

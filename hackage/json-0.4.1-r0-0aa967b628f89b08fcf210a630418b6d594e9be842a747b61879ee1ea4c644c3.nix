@@ -14,7 +14,7 @@
       pretty = true;
       generic = true;
       mapdict = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "json"; version = "0.4.1"; };
@@ -27,7 +27,7 @@
       synopsis = "Support for serialising Haskell to and from JSON";
       description = "JSON (JavaScript Object Notation) is a lightweight data-interchange\nformat. It is easy for humans to read and write. It is easy for\nmachines to parse and generate.  It is based on a subset of the\nJavaScript Programming Language, Standard ECMA-262 3rd Edition -\nDecember 1999.\n\nThis library provides a parser and pretty printer for converting\nbetween Haskell values and JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
@@ -37,12 +37,12 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (pkgs.lib).optionals (flags.generic) [
+          ] ++ pkgs.lib.optionals (flags.generic) [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]) ++ (pkgs.lib).optional (flags.parsec) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))) ++ (pkgs.lib).optional (flags.pretty) (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          ]) ++ pkgs.lib.optional (flags.parsec) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))) ++ pkgs.lib.optional (flags.pretty) (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

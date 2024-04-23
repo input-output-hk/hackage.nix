@@ -21,7 +21,7 @@
       synopsis = "VFR waypoints, as published in the AIP (ERSA)";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nVFR waypoints, as published in the AIP (ERSA)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
           (hsPkgs."geodetic-types" or (errorHandler.buildDepError "geodetic-types"))
           (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vfr-waypoints" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vfr-waypoints" or (errorHandler.buildDepError "vfr-waypoints"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hspec-test-sandbox-0.1.0-r0-ab9dc45940dea8649c54c1448843a61a7b266f9aad6ba783505577037cff03fb.nix;
         revNum = 0;
         sha256 = "ab9dc45940dea8649c54c1448843a61a7b266f9aad6ba783505577037cff03fb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

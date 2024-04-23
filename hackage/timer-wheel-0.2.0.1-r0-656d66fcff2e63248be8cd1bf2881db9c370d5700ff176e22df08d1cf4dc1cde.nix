@@ -21,7 +21,7 @@
       synopsis = "A timer wheel";
       description = "This library provides a timer wheel data structure for\n\n* /O(1)/ registering @IO@ actions to fire after a given amount of time\n* /O(1)/ canceling registered actions\n\nIt is similar to @TimerManager@ from \"GHC.Event\", but can scale much better\nunder concurrent access patterns.\n\nAn unreleased version of this library has a @backpack@-based signature for\nselecting from a variety of different data structures used internally.\nHowever, until @backpack@ has broader support on Hackage, and in Haddocks,\netc, I decided to just hard-code something decent (a priority search queue).\nThis makes the @O(1)@ claims above a bit of a lie, as these rely on using a\nlinked list data structure internally.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.4")) (hsPkgs."clock" or (errorHandler.buildDepError "clock"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4")) (hsPkgs."clock" or (errorHandler.buildDepError "clock"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."timer-wheel" or (errorHandler.buildDepError "timer-wheel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

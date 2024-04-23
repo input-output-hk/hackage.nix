@@ -21,11 +21,11 @@
       synopsis = "A binding for the OpenGL graphics system";
       description = "A Haskell binding for the OpenGL graphics system (GL, version\n2.1) and its accompanying utility library (GLU, version 1.3).\nOpenGL is the industry's most widely used and supported 2D and 3D\ngraphics application programming interface (API), incorporating\na broad set of rendering, texture mapping, special effects, and\nother powerful visualization functions.  For more information\nabout OpenGL, please see: <http://www.opengl.org/>.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

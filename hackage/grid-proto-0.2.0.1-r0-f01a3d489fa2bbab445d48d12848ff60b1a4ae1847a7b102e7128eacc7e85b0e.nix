@@ -21,7 +21,7 @@
       synopsis = "Game engine for Prototyping on a Grid";
       description = "Exposes a heavily constrained and simple API around SDL2 with builtin font and sound effects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,52 +36,52 @@
           (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arrows-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."grid-proto" or (errorHandler.buildDepError "grid-proto"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "board-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."grid-proto" or (errorHandler.buildDepError "grid-proto"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "controller-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."grid-proto" or (errorHandler.buildDepError "grid-proto"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sound-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."grid-proto" or (errorHandler.buildDepError "grid-proto"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "text-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."grid-proto" or (errorHandler.buildDepError "grid-proto"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "viewport-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."grid-proto" or (errorHandler.buildDepError "grid-proto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

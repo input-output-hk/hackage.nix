@@ -6,8 +6,8 @@
         nix = import ../hackage/metamorphic-0.1.2.3-r0-fbf279831dfcc9eed9f98a0dec3c2fd8f95a5e52977c339e3471058d83a81c27.nix;
         revNum = 0;
         sha256 = "fbf279831dfcc9eed9f98a0dec3c2fd8f95a5e52977c339e3471058d83a81c27";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

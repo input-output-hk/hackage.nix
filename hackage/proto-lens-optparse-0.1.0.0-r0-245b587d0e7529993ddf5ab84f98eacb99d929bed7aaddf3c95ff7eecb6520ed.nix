@@ -21,7 +21,7 @@
       synopsis = "Adapting proto-lens to optparse-applicative ReadMs.";
       description = "A package adapting proto-lens to optparse-applicative ReadMs.\nThis gives an easy way to define options and arguments for\ntext-format protobuf types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "bytestring-builder-varword";
         version = "0.1.0.0";
-        };
+      };
       license = "LGPL-3.0-only";
       copyright = "2018 Concert Audio Technologies Ltd";
       maintainer = "paul@concertdaw.co.uk";
@@ -24,15 +24,15 @@
       synopsis = "Variable-length integer encoding";
       description = "A collection of functions for producing 'Data.ByteString.Builder.Builder's\nthat encode integer types into compact, variable-length representations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bytestring-builder-varword-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

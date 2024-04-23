@@ -21,16 +21,16 @@
       synopsis = "Generic App type for rio.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rio-app-example" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."rio-app" or (errorHandler.buildDepError "rio-app"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

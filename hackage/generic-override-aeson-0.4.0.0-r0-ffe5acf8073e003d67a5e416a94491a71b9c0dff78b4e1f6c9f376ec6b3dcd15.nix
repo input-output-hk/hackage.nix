@@ -21,16 +21,16 @@
       synopsis = "Provides orphan instances necessary for integrating generic-override and aeson";
       description = "Please see the README on GitHub at <https://github.com/estatico/generic-override#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generic-override" or (errorHandler.buildDepError "generic-override"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "generic-override-aeson-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."generic-override-aeson" or (errorHandler.buildDepError "generic-override-aeson"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

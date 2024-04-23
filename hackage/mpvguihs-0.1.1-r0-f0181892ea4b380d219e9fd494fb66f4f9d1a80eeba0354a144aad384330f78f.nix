@@ -21,7 +21,7 @@
       synopsis = "A minimalist mpv GUI written in I/O heavy Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mpvguihs" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

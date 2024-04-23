@@ -21,7 +21,7 @@
       synopsis = "A Happstack Authentication Suite";
       description = "An easy way to to implement user authentication for\nHappstack web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."happstack-data" or (errorHandler.buildDepError "happstack-data"))
           (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

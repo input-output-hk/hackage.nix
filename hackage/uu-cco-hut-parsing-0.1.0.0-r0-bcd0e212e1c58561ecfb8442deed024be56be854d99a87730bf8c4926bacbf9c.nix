@@ -21,15 +21,15 @@
       synopsis = "Utilities for compiler construction";
       description = "A small utility library accompanying the course on\nCompiler Construction (INFOMCCO) at Utrecht Univerity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
           (hsPkgs."uu-cco" or (errorHandler.buildDepError "uu-cco"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

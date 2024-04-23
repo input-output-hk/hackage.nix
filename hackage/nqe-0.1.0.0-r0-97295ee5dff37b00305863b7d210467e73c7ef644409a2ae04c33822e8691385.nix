@@ -21,7 +21,7 @@
       synopsis = "Concurrency library in the style of Erlang/OTP";
       description = "Follow the example of Erlang developing a minimalistic actor library with a\ndistinct Haskell flavour. It does not implement Erlang/OTP-style processes\nexactly, but it is merely inspired by their philosophy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "nqe-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

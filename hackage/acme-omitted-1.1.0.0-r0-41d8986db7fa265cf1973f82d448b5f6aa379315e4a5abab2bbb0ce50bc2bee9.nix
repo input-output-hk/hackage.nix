@@ -21,21 +21,21 @@
       synopsis = "Purely functional omitted content for Haskell";
       description = "Standard Haskell lacks the ability to express the notion of \\\"omitted content\\\",\nmaking it impossible to distinguish the truly \\\"undefined\\\" and the\nmerely \\\"omitted\\\".\n\nacme-omitted implements a universal definition of \\\"omitted\\\" and provides\nmeans of observing whether a definition has been omitted or if it is truly\nundefined.\n\nThe library is standards-compliant, type-safe, and user-friendly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

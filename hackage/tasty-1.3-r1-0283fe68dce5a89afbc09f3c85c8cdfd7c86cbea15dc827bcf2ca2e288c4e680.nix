@@ -21,7 +21,7 @@
       synopsis = "Modern and extensible testing framework";
       description = "Tasty is a modern testing framework for Haskell.\nIt lets you combine your unit tests, golden\ntests, QuickCheck/SmallCheck properties, and any\nother types of tests into a single test suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -35,15 +35,15 @@
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if flags.clock
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if flags.clock
           then [ (hsPkgs."clock" or (errorHandler.buildDepError "clock")) ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ])) ++ (pkgs.lib).optionals (!system.isWindows && !(compiler.isGhcjs && true)) [
+          ])) ++ pkgs.lib.optionals (!system.isWindows && !(compiler.isGhcjs && true)) [
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."wcwidth" or (errorHandler.buildDepError "wcwidth"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

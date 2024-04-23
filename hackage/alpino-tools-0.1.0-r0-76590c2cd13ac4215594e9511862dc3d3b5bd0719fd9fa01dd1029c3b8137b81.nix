@@ -21,7 +21,7 @@
       synopsis = "Alpino data manipulation tools";
       description = "Tools for manipulating data for the Alpino parser for Dutch.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,15 +37,15 @@
           (hsPkgs."hexpat-pickle" or (errorHandler.buildDepError "hexpat-pickle"))
           (hsPkgs."rosezipper" or (errorHandler.buildDepError "rosezipper"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "at_model_rescore_data" = { buildable = true; };
         "at_model_filter_data" = { buildable = true; };
         "at_model_oracle" = { buildable = true; };
         "at_model_random_sample" = { buildable = true; };
         "at_model_statistics_data" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

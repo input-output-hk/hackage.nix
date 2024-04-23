@@ -21,7 +21,7 @@
       synopsis = "Rasa extension for rendering to terminal with vty";
       description = "Rasa extension for rendering to terminal with vty";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."rasa-ext-logger" or (errorHandler.buildDepError "rasa-ext-logger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

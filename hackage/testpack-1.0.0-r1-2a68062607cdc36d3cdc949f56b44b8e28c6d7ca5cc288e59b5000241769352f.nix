@@ -21,7 +21,7 @@
       synopsis = "Test Utililty Pack for HUnit and QuickCheck";
       description = "Haskell Test Utility Pack for HUnit and QuickCheck\ntestpack provides utilities for both HUnit and QuickCheck.  These include\ntools for running QuickCheck properties as HUnit test cases, allowing you to\ncombine both approaches in a single program.  It also includes tools for more\nhelpful displays of running progress in both HUnit and QuickCheck, additional\ngenerators for other types for QuickCheck, and shortcuts for quickly defining new\ntest cases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,14 +30,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compressed containers and reducers";
       description = "Compressed containers and reducers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
           (hsPkgs."reducers" or (errorHandler.buildDepError "reducers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

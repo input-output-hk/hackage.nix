@@ -21,7 +21,7 @@
       synopsis = "Abstract interface for text builders/printers.";
       description = "This package provides an interface for injecting text into monoids such as\nbuilders and printers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."text-latin1" or (errorHandler.buildDepError "text-latin1"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text-printer" or (errorHandler.buildDepError "text-printer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

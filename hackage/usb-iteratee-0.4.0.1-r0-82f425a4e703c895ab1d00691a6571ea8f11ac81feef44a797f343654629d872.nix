@@ -21,7 +21,7 @@
       synopsis = "Iteratee enumerators for the usb package";
       description = "This packages provides @iteratee@ enumerators for the @usb@ package.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."usb" or (errorHandler.buildDepError "usb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

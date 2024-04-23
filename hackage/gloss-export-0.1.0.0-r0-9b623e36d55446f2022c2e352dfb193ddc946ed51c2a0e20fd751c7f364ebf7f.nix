@@ -21,7 +21,7 @@
       synopsis = "Export Gloss pictures to png, bmp, tga, tiff, gif and juicy-pixels-image";
       description = "Please see the README on GitLab at <https://gitlab.com/timo-a/gloss-export#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,27 +32,27 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gloss-export-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."gloss-export" or (errorHandler.buildDepError "gloss-export"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gloss-export-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gloss-export" or (errorHandler.buildDepError "gloss-export"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Efficient, polymorphic Map Algebra.";
       description = "Efficient, polymorphic Map Algebra.\n\nThis library is an implementation of /Map Algebra/ as described in the book /GIS and Cartographic Modeling/ by Dana Tomlin. The fundamental type, the `Raster`, is typesafe. Rasters of different size and projection are considered different types, and so cannot be combined mistakenly in any way.\n\nAlso featured are op fusion (i.e. \"lazy Rasters\"), extremely fast Focal Operations, and typesafe NoData handling. Please see the main module for a more detailed introduction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
           (hsPkgs."massiv-io" or (errorHandler.buildDepError "massiv-io"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mapalgebra-test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "mapalgebra-bench" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
             (hsPkgs."massiv-io" or (errorHandler.buildDepError "massiv-io"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

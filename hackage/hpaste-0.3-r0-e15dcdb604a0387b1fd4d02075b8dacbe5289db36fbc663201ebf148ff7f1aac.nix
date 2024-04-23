@@ -21,7 +21,7 @@
       synopsis = "An online pastebin, written in Haskell.";
       description = "Haskell pastebin, using HAppS";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hpaste" = {
@@ -34,9 +34,9 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

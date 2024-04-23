@@ -21,11 +21,11 @@
       synopsis = "Utilities for working with ArrowApply instances more naturally";
       description = "This package provides useful utilities for making use of the opportunities the ArrowApply class provides, such as the ability to work with Arrows as Monads, and use liftM-like functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

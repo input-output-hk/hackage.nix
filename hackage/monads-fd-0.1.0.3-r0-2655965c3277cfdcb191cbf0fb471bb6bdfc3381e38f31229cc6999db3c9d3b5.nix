@@ -21,15 +21,15 @@
       synopsis = "Monad classes, using functional dependencies";
       description = "Now that @mtl@ has been upgraded to depend on @transformers@,\nthis package is a backwards compatibility stub re-exporting the\n@mtl@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

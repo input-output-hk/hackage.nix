@@ -21,7 +21,7 @@
       synopsis = "An offline renderer supporting ray tracing and photon mapping";
       description = "This is an offline renderer written purely in Haskell, supporting ray tracing and photon mapping with an irradiance cache";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "crocodile" = {
@@ -36,9 +36,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

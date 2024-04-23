@@ -35,8 +35,8 @@
         (hsPkgs.buildPackages.IfElse or (pkgs.buildPackages.IfElse or (errorHandler.setupDepError "IfElse")))
         (hsPkgs.buildPackages.data-default or (pkgs.buildPackages.data-default or (errorHandler.setupDepError "data-default")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "git-repair" = {
@@ -61,19 +61,19 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [ (hsPkgs."setenv" or (errorHandler.buildDepError "setenv")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

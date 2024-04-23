@@ -6,8 +6,8 @@
         nix = import ../hackage/record-operations-0.0.1-r0-2e52859a9c6958b876ea22c075f744e4e3ba4789f3bb5afc920968e8ed1cb471.nix;
         revNum = 0;
         sha256 = "2e52859a9c6958b876ea22c075f744e4e3ba4789f3bb5afc920968e8ed1cb471";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

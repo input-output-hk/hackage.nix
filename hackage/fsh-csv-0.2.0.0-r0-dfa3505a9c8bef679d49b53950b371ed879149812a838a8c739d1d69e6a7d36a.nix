@@ -21,14 +21,14 @@
       synopsis = "csv parser for fsh";
       description = "This is a csv parser for fsh. To use this parser, use the -p flag and pass 'csv' as argument";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "The project management tool for hackers";
       description = "Master Plan is a tool that parses files that describes\nprojects using a simple and powerful syntax in which\nproject structures are encoded using a special algebra\nwith combinators for specifying the different kinds\nof dependencies. It also supports estimations of cost and\nrisk, as well as some metadata. The tool is then able\nto compute the priority of execution that minimizes costs,\nand also output a nice visual representation of the structure.\nBecase the plan description is plan text, it's portable\nand fits well within source control.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "master-plan" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."master-plan" or (errorHandler.buildDepError "master-plan"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Use OS processes as stream transformation functions";
       description = "Run operating system processes as stream source, sink or transformation\nfunctions. Use them seamlessly in a streaming data pipeline in the same way\nas any other Haskell functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "Test.System.Process" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Benchmark.System.Process" = {
           depends = ([
@@ -55,13 +55,13 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (if flags.use-gauge
+          ] ++ pkgs.lib.optional (flags.fusion-plugin && !(compiler.isGhc && compiler.version.lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"))) ++ (if flags.use-gauge
             then [ (hsPkgs."gauge" or (errorHandler.buildDepError "gauge")) ]
             else [
               (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

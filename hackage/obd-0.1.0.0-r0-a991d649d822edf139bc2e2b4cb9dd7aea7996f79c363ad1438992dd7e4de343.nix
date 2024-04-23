@@ -21,7 +21,7 @@
       synopsis = "Communicate to OBD interfaces over ELM327";
       description = "Haskell library to communicate with OBD-II over ELM327,\nwith terminal and simulator included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "obd-terminal" = {
           depends = [
@@ -50,18 +50,18 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "obd-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."obd" or (errorHandler.buildDepError "obd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

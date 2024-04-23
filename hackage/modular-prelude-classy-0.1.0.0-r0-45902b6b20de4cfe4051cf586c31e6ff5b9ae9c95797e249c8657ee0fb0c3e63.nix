@@ -21,15 +21,15 @@
       synopsis = "Reifying ClassyPrelude a la ModularPrelude";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
           (hsPkgs."modular-prelude" or (errorHandler.buildDepError "modular-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

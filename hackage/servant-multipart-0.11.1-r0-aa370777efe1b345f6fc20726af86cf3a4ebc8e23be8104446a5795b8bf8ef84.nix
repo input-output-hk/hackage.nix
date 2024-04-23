@@ -21,7 +21,7 @@
       synopsis = "multipart/form-data (e.g file upload) support for servant";
       description = "This package adds support for file upload to the servant ecosystem. It draws\non ideas and code from several people who participated in the (in)famous\n[ticket #133](https://github.com/haskell-servant/servant/issues/133) on\nservant's issue tracker.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "upload" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

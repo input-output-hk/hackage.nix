@@ -21,14 +21,14 @@
       synopsis = "Native wcwidth.";
       description = "Bindings for your system's native wcwidth and a command line tool to examine\nthe widths assigned by it. The command line tool can compile a width table\nto Haskell code that assigns widths to the Char type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "wcwidth-tools" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.cli then true else false;
-          };
         };
       };
-    }
+    };
+  }

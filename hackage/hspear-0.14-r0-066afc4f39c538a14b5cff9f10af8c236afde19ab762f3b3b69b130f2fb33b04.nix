@@ -21,7 +21,7 @@
       synopsis = "Haskell Spear Parser";
       description = "Parser for the analysis files produced by the\nSpear frequency partial tracker.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "MTL classes without the functional dependency";
       description = "Classes MonadState and MonadReader without the functional\ndependency from the monad to the contained type.  This allows\nmore flexibility to extract bits and pieces of state based on\ntype, but increases ambiguities that need to be resolved with\nextra type signatures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mtl-unleashed-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."mtl-unleashed" or (errorHandler.buildDepError "mtl-unleashed"))
             (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

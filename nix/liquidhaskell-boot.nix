@@ -6,10 +6,10 @@
         nix = import ../hackage/liquidhaskell-boot-0.9.2.5.0-r0-cc7d589ea4217dc7a647f3a9c15e58d220a9991a9407316a999c9a173a952b69.nix;
         revNum = 0;
         sha256 = "cc7d589ea4217dc7a647f3a9c15e58d220a9991a9407316a999c9a173a952b69";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.9.2.8.0" = {
     sha256 = "6109a1b1b87a5f5c3ddd17b68150359acd355dff79fb44e77da99388a99d3960";
     revisions = {
@@ -17,10 +17,10 @@
         nix = import ../hackage/liquidhaskell-boot-0.9.2.8.0-r0-b50ea67b051e0914cf7279942a8168cfdc6c9bf9eb4699a6ca6367142ad710ab.nix;
         revNum = 0;
         sha256 = "b50ea67b051e0914cf7279942a8168cfdc6c9bf9eb4699a6ca6367142ad710ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.9.4.7.0" = {
     sha256 = "c40d0890e40a9159498c4878989e52cde1396acbd37513279807b769495de60b";
     revisions = {
@@ -28,10 +28,10 @@
         nix = import ../hackage/liquidhaskell-boot-0.9.4.7.0-r0-0de0c907e361d491454efc7e824ce72fb066ec8cc6b435766fc5beb9139ef22e.nix;
         revNum = 0;
         sha256 = "0de0c907e361d491454efc7e824ce72fb066ec8cc6b435766fc5beb9139ef22e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.9.6.3" = {
     sha256 = "b38cdb88a923dc1e770b207c172cfcf94d6f2d8bb178a2c6fc88db666d415701";
     revisions = {
@@ -39,10 +39,10 @@
         nix = import ../hackage/liquidhaskell-boot-0.9.6.3-r0-b700bb736bad616851b504b19e36597ca4e46fdc0f950f9a6130329989453aea.nix;
         revNum = 0;
         sha256 = "b700bb736bad616851b504b19e36597ca4e46fdc0f950f9a6130329989453aea";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.9.8.1" = {
     sha256 = "dc6e2191885be30b36f4c556e1b3e2c27629c6b09b807eb50d0550c17d0d9501";
     revisions = {
@@ -50,8 +50,8 @@
         nix = import ../hackage/liquidhaskell-boot-0.9.8.1-r0-5b00e110d7217558e9dd6aad93c452bae4fd766df45919ef97e5758298eacce0.nix;
         revNum = 0;
         sha256 = "5b00e110d7217558e9dd6aad93c452bae4fd766df45919ef97e5758298eacce0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

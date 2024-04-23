@@ -21,7 +21,7 @@
       synopsis = "Second-order, generic, constrained, linear conditional random fields";
       description = "The library provides implementation of the second-order, linear\nconditional random fields (CRFs) with position-wise constraints\nimposed over label values.  It also provides a generic framework for\ndefining custom feature data types and feature generation\nfunctions (see \"Data.CRF.Chain2.Generic\") together with\nsome concrete model examples (e.g. \"Data.CRF.Chain2.Pair\").";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."sgd" or (errorHandler.buildDepError "sgd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

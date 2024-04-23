@@ -21,7 +21,7 @@
       synopsis = "A monad transformer version of the ST monad";
       description = "A monad transformer version of the ST monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

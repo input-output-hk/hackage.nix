@@ -6,8 +6,8 @@
         nix = import ../hackage/pure-priority-queue-tests-0.12-r0-4ac453c65e6eefa38188ca805aff492e298f8e30cb130732b44e5c2c6f84ae02.nix;
         revNum = 0;
         sha256 = "4ac453c65e6eefa38188ca805aff492e298f8e30cb130732b44e5c2c6f84ae02";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

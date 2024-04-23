@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell key/value store implementation";
       description = "A simple bytestring key/value store implemented\nin terms of hash table over a file.\nIt cannot yet grow/shrink the hash table as\nneeded, nor does it free old unused (key,value)\npair storage.\nMostly useful for applications that need not\nworry about the size of their persistent store.\nReduces dependency hell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

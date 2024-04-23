@@ -21,7 +21,7 @@
       synopsis = "The core of an IDE";
       description = "A library for building Haskell IDE's on top of the GHC API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -94,34 +94,34 @@
           (hsPkgs."hie-bios" or (errorHandler.buildDepError "hie-bios"))
           (hsPkgs."implicit-hie-cradle" or (errorHandler.buildDepError "implicit-hie-cradle"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if compiler.isGhc && (compiler.version).lt "8.10.5"
+          ])) ++ (if compiler.isGhc && compiler.version.lt "8.10.5"
           then [
             (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-            ]
-          else if compiler.isGhc && (compiler.version).eq "8.10.5"
+          ]
+          else if compiler.isGhc && compiler.version.eq "8.10.5"
             then [
               (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-              ]
-            else if compiler.isGhc && (compiler.version).eq "8.10.6"
+            ]
+            else if compiler.isGhc && compiler.version.eq "8.10.6"
               then [
                 (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                ]
-              else if compiler.isGhc && (compiler.version).eq "8.10.7"
+              ]
+              else if compiler.isGhc && compiler.version.eq "8.10.7"
                 then [
                   (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                  ]
-                else (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
+                ]
+                else pkgs.lib.optional (compiler.isGhc && compiler.version.eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
         buildable = true;
-        };
+      };
       exes = {
         "ghcide-test-preprocessor" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "ghcide" = {
           depends = [
             (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
@@ -146,9 +146,9 @@
             (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghcide-bench" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -168,13 +168,13 @@
             (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ghcide-tests" = {
           depends = [
@@ -215,18 +215,18 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.6") [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.6") [
             (hsPkgs."record-dot-preprocessor" or (errorHandler.buildDepError "record-dot-preprocessor"))
             (hsPkgs."record-hasfield" or (errorHandler.buildDepError "record-hasfield"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
             (hsPkgs.buildPackages.implicit-hie.components.exes.gen-hie or (pkgs.buildPackages.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchHist" = {
           depends = [
@@ -240,14 +240,14 @@
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide-bench or (pkgs.buildPackages.ghcide-bench or (errorHandler.buildToolDepError "ghcide:ghcide-bench")))
             (hsPkgs.buildPackages.hp2pretty.components.exes.hp2pretty or (pkgs.buildPackages.hp2pretty or (errorHandler.buildToolDepError "hp2pretty:hp2pretty")))
             (hsPkgs.buildPackages.implicit-hie.components.exes.gen-hie or (pkgs.buildPackages.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

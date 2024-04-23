@@ -21,15 +21,15 @@
       synopsis = "arabic to roman numeral conversions";
       description = "This is a Haskell thing that turns numbers into Roman numerals";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "libroman-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."libroman" or (errorHandler.buildDepError "libroman"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

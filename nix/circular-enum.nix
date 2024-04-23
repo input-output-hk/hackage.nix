@@ -6,8 +6,8 @@
         nix = import ../hackage/circular-enum-0.1.0.0-r0-7cb8666ec295e8555d13c58e445f83cb45e726bd052b1ee2d6e2325bcd3cd05d.nix;
         revNum = 0;
         sha256 = "7cb8666ec295e8555d13c58e445f83cb45e726bd052b1ee2d6e2325bcd3cd05d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "Limit operations for converging sequences";
       description = "Limit operations for converging sequences.  This is\nfairly simple right now.\n\nChanges in 0.1.0.1: Nothing except to enable -XSafe under\nGHC 7.2.1";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

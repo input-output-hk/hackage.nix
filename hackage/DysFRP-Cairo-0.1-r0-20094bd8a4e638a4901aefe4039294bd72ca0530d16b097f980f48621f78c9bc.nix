@@ -21,7 +21,7 @@
       synopsis = "dysFunctional Reactive Programming on Cairo";
       description = "Simple Cairo bindings for DysFRP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."DysFRP" or (errorHandler.buildDepError "DysFRP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

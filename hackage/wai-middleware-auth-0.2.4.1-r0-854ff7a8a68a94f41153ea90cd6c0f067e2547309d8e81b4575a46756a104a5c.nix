@@ -21,7 +21,7 @@
       synopsis = "Authentication middleware that secures WAI application";
       description = "Please see the README and Haddocks at <https://www.stackage.org/package/wai-middleware-auth>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-auth" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-auth" or (errorHandler.buildDepError "wai-middleware-auth"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-auth" or (errorHandler.buildDepError "wai-middleware-auth"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

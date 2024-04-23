@@ -21,11 +21,11 @@
       synopsis = "A simple type class for success/failure computations.";
       description = "A simple type class for success/failure computations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

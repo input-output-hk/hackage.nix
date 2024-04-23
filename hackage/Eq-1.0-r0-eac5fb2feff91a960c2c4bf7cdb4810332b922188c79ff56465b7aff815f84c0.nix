@@ -13,7 +13,7 @@
       testproject = false;
       staticlinking = false;
       optimize = true;
-      };
+    };
     package = {
       specVersion = "1.4";
       identifier = { name = "Eq"; version = "1.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Render math formula in ASCII, and perform some simplifications";
       description = "Haskell formula manipulation program";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "eq" = {
@@ -38,9 +38,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

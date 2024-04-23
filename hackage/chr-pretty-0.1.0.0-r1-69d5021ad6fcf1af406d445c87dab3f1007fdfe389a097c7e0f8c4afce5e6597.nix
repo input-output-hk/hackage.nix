@@ -21,14 +21,14 @@
       synopsis = "Pretty printing for chr library";
       description = "Pretty printing for chr library, a simplified implementation for the pretty printing API from uulib";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

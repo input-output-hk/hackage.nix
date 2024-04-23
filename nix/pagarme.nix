@@ -6,8 +6,8 @@
         nix = import ../hackage/pagarme-0.1.0.0-r0-c8090dbc4891dbaafb78b9db08623650c9affed6a2a43b428f388746cd85f0b7.nix;
         revNum = 0;
         sha256 = "c8090dbc4891dbaafb78b9db08623650c9affed6a2a43b428f388746cd85f0b7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

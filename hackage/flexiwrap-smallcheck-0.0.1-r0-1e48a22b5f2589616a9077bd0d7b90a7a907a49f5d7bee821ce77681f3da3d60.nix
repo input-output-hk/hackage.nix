@@ -21,7 +21,7 @@
       synopsis = "SmallCheck (Serial) instances for flexiwrap";
       description = "SmallCheck (Serial) instances for flexiwrap";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."flexiwrap" or (errorHandler.buildDepError "flexiwrap"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.6.1") (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.6.1") (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

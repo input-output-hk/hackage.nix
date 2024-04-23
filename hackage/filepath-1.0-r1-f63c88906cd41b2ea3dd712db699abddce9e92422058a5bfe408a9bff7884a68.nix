@@ -21,11 +21,11 @@
       synopsis = "Library for manipulating FilePath's in a cross platform way.";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

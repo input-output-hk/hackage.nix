@@ -21,7 +21,7 @@
       synopsis = "A blog engine on Hack";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,8 +50,8 @@
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."hack-contrib" or (errorHandler.buildDepError "hack-contrib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

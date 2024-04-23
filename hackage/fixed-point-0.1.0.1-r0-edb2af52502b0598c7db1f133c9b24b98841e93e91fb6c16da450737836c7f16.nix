@@ -21,11 +21,11 @@
       synopsis = "Binary fixed-point arithmetic";
       description = "This package defines a type for binary\nfixed-precision arithmetic. Its interface is\nintended to be almost the same as the one\nprovided by Data.Fixed. The main differences are\nthat this is binary fixed-point and it's\npolymorphic in the underlying representation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

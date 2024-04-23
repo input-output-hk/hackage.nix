@@ -21,7 +21,7 @@
       synopsis = "A simple and intuitive library for automated testing.";
       description = "Chell is a simple and intuitive library for automated testing.\nIt natively supports assertion-based testing, and can use companion libraries\nsuch as @chell-quickcheck@ to support more complex testing strategies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.color-output) (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"));
+        ] ++ pkgs.lib.optional (flags.color-output) (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

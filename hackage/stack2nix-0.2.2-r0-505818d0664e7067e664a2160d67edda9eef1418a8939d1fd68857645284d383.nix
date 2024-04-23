@@ -21,7 +21,7 @@
       synopsis = "Convert stack.yaml files into Nix build instructions.";
       description = "Convert stack.yaml files into Nix build instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stack2nix" = {
           depends = [
@@ -57,19 +57,19 @@
             (hsPkgs."stack2nix" or (errorHandler.buildDepError "stack2nix"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stack2nix" or (errorHandler.buildDepError "stack2nix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

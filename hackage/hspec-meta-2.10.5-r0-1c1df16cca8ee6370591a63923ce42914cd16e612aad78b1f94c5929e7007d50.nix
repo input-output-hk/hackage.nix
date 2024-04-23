@@ -21,7 +21,7 @@
       synopsis = "A version of Hspec which is used to test Hspec itself";
       description = "A stable version of Hspec which is used to test the\nin-development version of Hspec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -39,12 +39,12 @@
           (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.2.1") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.2.1") [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.4.1") (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.4.1") (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
         buildable = true;
-        };
+      };
       exes = {
         "hspec-meta-discover" = {
           depends = [
@@ -62,12 +62,12 @@
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.2.1") [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.2.1") [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

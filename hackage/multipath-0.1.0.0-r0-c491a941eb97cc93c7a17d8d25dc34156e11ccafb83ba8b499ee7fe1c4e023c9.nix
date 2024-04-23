@@ -21,15 +21,15 @@
       synopsis = "Parser and builder for unix-path-like objects.";
       description = "Parser and builder for unix-path-like objects used in multiformats (https://github.com/multiformats)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

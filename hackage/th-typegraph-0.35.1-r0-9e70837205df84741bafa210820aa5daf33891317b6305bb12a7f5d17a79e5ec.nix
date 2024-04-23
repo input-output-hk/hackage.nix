@@ -21,7 +21,7 @@
       synopsis = "Graph of the subtype relation";
       description = "Build a graph whose nodes are Types and whose edges represent\nthe subtype relation: Char is a subtype of Maybe Char, Int is\na subtype of (Int, Double), and so on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "th-typegraph-tests" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
             (hsPkgs."th-reify-many" or (errorHandler.buildDepError "th-reify-many"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

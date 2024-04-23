@@ -21,7 +21,7 @@
       synopsis = "Drawings for printed text documents";
       description = "Drawings for printed text documents";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."polynomials-bernstein" or (errorHandler.buildDepError "polynomials-bernstein"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

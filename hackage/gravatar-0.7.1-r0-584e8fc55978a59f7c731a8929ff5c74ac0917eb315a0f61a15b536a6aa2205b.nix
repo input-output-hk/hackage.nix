@@ -21,7 +21,7 @@
       synopsis = "Generate Gravatar image URLs";
       description = "Generate Gravatar image URLs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."gravatar" or (errorHandler.buildDepError "gravatar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

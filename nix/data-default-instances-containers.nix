@@ -6,8 +6,8 @@
         nix = import ../hackage/data-default-instances-containers-0.0.1-r0-6e1f4b28028a3bc455aaf4b5a9104b71ea72cff78b1b8041863df7afd1a8deb3.nix;
         revNum = 0;
         sha256 = "6e1f4b28028a3bc455aaf4b5a9104b71ea72cff78b1b8041863df7afd1a8deb3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

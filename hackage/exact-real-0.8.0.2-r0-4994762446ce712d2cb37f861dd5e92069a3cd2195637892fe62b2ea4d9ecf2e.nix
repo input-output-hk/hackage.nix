@@ -21,15 +21,15 @@
       synopsis = "Exact real arithmetic";
       description = "A type to represent exact real number using a fast binary Cauchy sequence";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,28 +43,28 @@
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."exact-real" or (errorHandler.buildDepError "exact-real"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."exact-real" or (errorHandler.buildDepError "exact-real"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

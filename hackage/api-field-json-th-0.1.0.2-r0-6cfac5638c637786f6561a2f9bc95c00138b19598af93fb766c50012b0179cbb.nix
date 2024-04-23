@@ -21,7 +21,7 @@
       synopsis = "option of aeson's deriveJSON ";
       description = "Utils for using aeson's deriveJSON with lens's makeFields";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "api-field-json-th-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

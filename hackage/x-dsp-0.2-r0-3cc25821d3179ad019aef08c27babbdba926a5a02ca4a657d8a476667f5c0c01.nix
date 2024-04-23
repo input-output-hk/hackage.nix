@@ -21,7 +21,7 @@
       synopsis = "A embedded DSL for manipulating DSP languages in Haskell";
       description = "Provides a tagless-final language family for manipulating\naudio programming languages (e.g. Csound, Supercollider).\nA CSound backend is provided, however the language is\ncompletely open so others can be added by users.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

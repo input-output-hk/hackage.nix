@@ -21,7 +21,7 @@
       synopsis = "ESCRIPT: a human friendly language for programming Bitcoin scripts";
       description = "Please see the README on Github at https://github.com/RKlompUU/SCRIPTWriter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
           (hsPkgs."bitcoin-hs" or (errorHandler.buildDepError "bitcoin-hs"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SCRIPTWriter-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."SCRIPTWriter" or (errorHandler.buildDepError "SCRIPTWriter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

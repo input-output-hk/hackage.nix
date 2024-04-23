@@ -21,15 +21,15 @@
       synopsis = "Recursive Arbitrary instances without headaches";
       description = "Write and derive Arbitrary instances for recursive data without worrying about termination.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "safe-gen-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."safe-gen" or (errorHandler.buildDepError "safe-gen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

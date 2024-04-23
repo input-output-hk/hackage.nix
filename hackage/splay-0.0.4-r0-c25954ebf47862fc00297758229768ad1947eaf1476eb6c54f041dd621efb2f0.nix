@@ -21,11 +21,11 @@
       synopsis = "Generic splay-based sequence representation";
       description = "/WARNING/: This package is /unstable/, do not use\nexcept for testing.\n\nA general sequence representation with arbitary\nannotations, for use as a base for implementations\nof various collection types.\n\nSome parts of the documentation are based on those\nin the @containers@ and @fingertree@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

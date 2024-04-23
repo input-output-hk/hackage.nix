@@ -21,7 +21,7 @@
       synopsis = "types and parser for email messages (including MIME)";
       description = "The purebred email library.  RFC 5322, MIME, etc.\n\nThings that are currently implemented:\n\n- RFC 5322 message parsing and serialisation\n- MIME multipart parsing (RFC 2046) and serialisation\n- MIME message header extensions for non-ASCII text (RFC 2047)\n- MIME parameter value and encoded word extensions (RFC 2231)\n- Content-Disposition header field (RFC 2183)\n- Message encapsulation (forward/bounce)\n\nThings that are not yet implemented / need improvement:\n\n- Improve handling of dates\n- Probably lots of other things";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "purebred-email-parse" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."purebred-email" or (errorHandler.buildDepError "purebred-email"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

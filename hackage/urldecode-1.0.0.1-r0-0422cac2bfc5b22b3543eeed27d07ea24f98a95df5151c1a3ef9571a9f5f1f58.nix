@@ -21,16 +21,16 @@
       synopsis = "Decode percent-encoded strings.";
       description = "Pass a list of percent-encoded strings to the executable as\narguments and it will print the decoded versions, separated\nby newlines.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "urldecode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

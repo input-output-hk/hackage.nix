@@ -21,7 +21,7 @@
       synopsis = "Csound combinator library";
       description = "Csound code generator. See root module \"CsoundExpr\"\nfor introduction guides. Score module is no longer\navailable inside 'csound-expression' package, consider\nusing 'temporal-media' or 'temporal-music-notation'\npackages. See source directory for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
           (hsPkgs."temporal-media" or (errorHandler.buildDepError "temporal-media"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

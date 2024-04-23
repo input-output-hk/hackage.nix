@@ -6,8 +6,8 @@
         nix = import ../hackage/abacate-0.0.0.0-r0-22b03ecc407580f77ada5de15b64f6507c7e25365040cc7c335a23b44ed3442a.nix;
         revNum = 0;
         sha256 = "22b03ecc407580f77ada5de15b64f6507c7e25365040cc7c335a23b44ed3442a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

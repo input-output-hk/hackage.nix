@@ -21,7 +21,7 @@
       synopsis = "a distributed MapReduce framework";
       description = "This package contains a library and tools for the\ncreation of distributed MapReduce applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,12 +41,12 @@
           (hsPkgs."Holumbus-Storage" or (errorHandler.buildDepError "Holumbus-Storage"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Master" = { buildable = true; };
         "MasterDaemon" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

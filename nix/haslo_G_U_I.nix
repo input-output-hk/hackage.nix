@@ -6,8 +6,8 @@
         nix = import ../hackage/hasloGUI-0.1-r0-d4c802d68464c0ff5ebe53b1a66fc5a77bce25429338e8967c7ac54de13d9b8e.nix;
         revNum = 0;
         sha256 = "d4c802d68464c0ff5ebe53b1a66fc5a77bce25429338e8967c7ac54de13d9b8e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

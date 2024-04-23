@@ -21,14 +21,14 @@
       synopsis = "A simple interface to shadow passwords (aka, shadow.h)";
       description = "Provides the ability to read a user entry from the shadow password database";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

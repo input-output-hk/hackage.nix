@@ -21,7 +21,7 @@
       synopsis = "Manage the application of templates to custom yaml";
       description = "Please see the README on GitHub at <https://github.com/danielrolls/specup>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."stache" or (errorHandler.buildDepError "stache"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "specup" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."specup" or (errorHandler.buildDepError "specup"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "specup-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."specup" or (errorHandler.buildDepError "specup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

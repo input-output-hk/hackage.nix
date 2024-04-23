@@ -21,7 +21,7 @@
       synopsis = "Protect and control API access with cerberus";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."wai-middleware-caching-lru" or (errorHandler.buildDepError "wai-middleware-caching-lru"))
           (hsPkgs."wai-middleware-caching-redis" or (errorHandler.buildDepError "wai-middleware-caching-redis"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cerberus" = {
           depends = [
@@ -56,18 +56,18 @@
             (hsPkgs."cerberus" or (errorHandler.buildDepError "cerberus"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cerberus-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cerberus" or (errorHandler.buildDepError "cerberus"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

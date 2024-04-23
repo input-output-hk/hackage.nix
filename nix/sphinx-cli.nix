@@ -6,8 +6,8 @@
         nix = import ../hackage/sphinx-cli-0.1-r0-2ffb8350f6877803912f8253536bb7ecc2fca974171c3cdbfc042d8b09ab1f74.nix;
         revNum = 0;
         sha256 = "2ffb8350f6877803912f8253536bb7ecc2fca974171c3cdbfc042d8b09ab1f74";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

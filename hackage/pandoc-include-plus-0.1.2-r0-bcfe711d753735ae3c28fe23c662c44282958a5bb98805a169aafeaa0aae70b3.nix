@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter to include files, with image path and heading level adjustment.";
       description = "For more information and a tutorial on how to use this package,\nplease see the README at <https://github.com/mhwombat/pandoc-include-plus#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-include-plus" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-include-plus" or (errorHandler.buildDepError "pandoc-include-plus"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

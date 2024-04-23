@@ -21,7 +21,7 @@
       synopsis = "AVR Crosspack actions for shake build systems.";
       description = "AVR Crosspack actions for shake build systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

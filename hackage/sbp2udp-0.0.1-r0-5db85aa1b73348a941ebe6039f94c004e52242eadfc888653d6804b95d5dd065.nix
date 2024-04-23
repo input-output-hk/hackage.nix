@@ -21,7 +21,7 @@
       synopsis = "SBP to UDP";
       description = "SBP to UDP";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sbp2udp" = {
@@ -39,9 +39,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."sbp" or (errorHandler.buildDepError "sbp"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

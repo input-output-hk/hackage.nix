@@ -21,7 +21,7 @@
       synopsis = "Type-safe AMQP workers";
       description = "Please see the README on GitHub at <https://github.com/seanhess/amqp-worker#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

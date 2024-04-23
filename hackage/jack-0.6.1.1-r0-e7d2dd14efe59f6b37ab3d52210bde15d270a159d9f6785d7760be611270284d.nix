@@ -21,7 +21,7 @@
       synopsis = "Bindings for the JACK Audio Connection Kit";
       description = "Very basic bindings for the JACK Audio Connection Kit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,28 +33,28 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."jack" or (errorHandler.pkgConfDepError "jack"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "amplify" = {
           libs = [ (pkgs."jack" or (errorHandler.sysDepError "jack")) ];
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "impulse-train" = {
           libs = [ (pkgs."jack" or (errorHandler.sysDepError "jack")) ];
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "midimon" = {
           libs = [ (pkgs."jack" or (errorHandler.sysDepError "jack")) ];
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

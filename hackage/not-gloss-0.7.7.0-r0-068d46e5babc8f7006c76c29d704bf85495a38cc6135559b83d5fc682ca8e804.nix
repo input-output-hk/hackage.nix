@@ -21,7 +21,7 @@
       synopsis = "Painless 3D graphics, no affiliation with gloss";
       description = "This package intends to make it relatively easy to do simple 3d graphics using high-level primitives.\nIt is inspired by gloss and attempts to emulate it.\nThis is an early release and the api will certainly change.\nNote that transparency can be controlled by the alpha value: \"makeColor r g b alpha\" but that you must draw objects from back to front for transparency to properly work (just put clear things last).\nAlso, transparent ellipsoids and cylinders have ugly artifacts, sorry.\nLook at the complimentary package not-gloss-examples to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

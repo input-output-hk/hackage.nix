@@ -21,7 +21,7 @@
       synopsis = "Stream socket data using conduits.";
       description = "Stream socket data using conduits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,25 +31,25 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ] ++ (if flags.network-bytestring
+        ] ++ (if flags.network-bytestring
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."directory" or (errorHandler.buildDepError "directory"));
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."directory" or (errorHandler.buildDepError "directory"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

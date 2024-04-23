@@ -21,11 +21,11 @@
       synopsis = "Various additional operations on lists";
       description = "A small library to deal with a little bit more complex operations on lists than Data.List module";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

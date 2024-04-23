@@ -21,7 +21,7 @@
       synopsis = "Another bloated standard library";
       description = "Another bloated standard library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

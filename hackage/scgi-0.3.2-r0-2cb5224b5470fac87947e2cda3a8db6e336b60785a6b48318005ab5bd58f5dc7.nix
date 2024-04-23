@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for writing SCGI programs.";
       description = "This library lets you write SCGI programs. This package reuses the\ncgi package API, making it very easy to port CGI programs to SCGI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

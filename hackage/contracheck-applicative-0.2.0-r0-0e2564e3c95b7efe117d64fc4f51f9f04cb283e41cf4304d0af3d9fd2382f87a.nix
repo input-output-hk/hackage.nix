@@ -21,7 +21,7 @@
       synopsis = "Validation types/typeclass based on the contravariance.";
       description = "This package provides types and a typeclass that allow for effectful validation and easy composition. For documentation see the [README](https://gitlab.com/Birkmann/validation-check/-/blob/master/README.md). If there are any issues, contact me at 99fabianb@sis.gl or add an issue on [gitlab](https://gitlab.com/Birkmann/validation-check).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

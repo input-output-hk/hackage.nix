@@ -21,15 +21,15 @@
       synopsis = "Incremental multiple pass parser library.";
       description = "A combinator library for incremental multiple pass parsers.\nMostly inspired by the Text.ParserCombinators.ReadP module in the Base package\nand the conduit package. It has similar capabilities to ReadP as well as\nmore detailed error reporting and the capacity for multiple passes (such as\nlexing and parsing)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

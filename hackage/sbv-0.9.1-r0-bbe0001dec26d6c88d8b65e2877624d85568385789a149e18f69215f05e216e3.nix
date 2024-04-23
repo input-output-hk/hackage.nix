@@ -21,7 +21,7 @@
       synopsis = "Symbolic Bit Vectors: Prove bit-precise program properties using SMT solvers.";
       description = "Adds support for symbolic bit vectors, allowing formal models of bit-precise\nprograms to be created. Supports symbolic arrays and polynomials over GF(2^n).\nAims to provide seamless integration with SMT solvers to produce formal\nproperty proofs of theoremhood and satisfiability, with counter-examples.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "SBVUnitTests" = { buildable = true; }; };
       };
-    }
+      exes = { "SBVUnitTests" = { buildable = true; }; };
+    };
+  }

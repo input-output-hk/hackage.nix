@@ -6,8 +6,8 @@
         nix = import ../hackage/hasktorch-ffi-th-0.0.1.0-r0-dfc18adfd84be0b57ac5ab55b85cb5ee7beda61f517f0243044960a3182c944e.nix;
         revNum = 0;
         sha256 = "dfc18adfd84be0b57ac5ab55b85cb5ee7beda61f517f0243044960a3182c944e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

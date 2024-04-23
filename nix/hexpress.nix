@@ -6,8 +6,8 @@
         nix = import ../hackage/hexpress-0.1.0.0-r0-8e4747d78fde0180adeffadb17c9b7ee041e4544d75a9e3b8c22222c8ab10cf1.nix;
         revNum = 0;
         sha256 = "8e4747d78fde0180adeffadb17c9b7ee041e4544d75a9e3b8c22222c8ab10cf1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

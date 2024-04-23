@@ -21,7 +21,7 @@
       synopsis = "Testing tools for chiasma";
       description = "See https://hackage.haskell.org/package/chiasma-test/docs/Chiasma-Test.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chiasma-test-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "integration" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

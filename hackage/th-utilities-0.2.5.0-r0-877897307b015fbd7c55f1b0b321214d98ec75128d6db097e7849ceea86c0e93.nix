@@ -21,7 +21,7 @@
       synopsis = "Collection of useful functions for use with Template Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
             (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

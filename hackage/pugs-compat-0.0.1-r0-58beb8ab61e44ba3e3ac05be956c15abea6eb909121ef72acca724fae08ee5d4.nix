@@ -21,12 +21,12 @@
       synopsis = "Portable Haskell/POSIX layer for Pugs";
       description = "Portable Haskell/POSIX layer for Pugs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
@@ -42,7 +42,7 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
@@ -59,8 +59,8 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

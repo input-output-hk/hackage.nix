@@ -21,16 +21,16 @@
       synopsis = "date time";
       description = "date time functions to pico precision";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."regex-do" or (errorHandler.buildDepError "regex-do"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."regex-do" or (errorHandler.buildDepError "regex-do"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

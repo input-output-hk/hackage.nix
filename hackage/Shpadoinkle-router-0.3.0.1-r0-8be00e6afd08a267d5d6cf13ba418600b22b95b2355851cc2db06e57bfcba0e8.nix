@@ -21,7 +21,7 @@
       synopsis = "A single page application rounter for Shpadoinkle based on Servant.";
       description = "Surjective single page application routing with Servant. Surjectivity\nin this context means routes can be backward compatible, allowing URLs\nto evolve. Since routes are specified as Servant combinators, serving\nthese routes from the backend is trivial. For an example of leveraging\nthe client-server isomorphism via Servant specification,\ncheck the servant-crud example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,10 +41,10 @@
           (hsPkgs."servant-rawm" or (errorHandler.buildDepError "servant-rawm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."servant-client-js" or (errorHandler.buildDepError "servant-client-js"))
-            ]
+          ]
           else [
             (hsPkgs."Shpadoinkle-backend-static" or (errorHandler.buildDepError "Shpadoinkle-backend-static"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
@@ -56,8 +56,8 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

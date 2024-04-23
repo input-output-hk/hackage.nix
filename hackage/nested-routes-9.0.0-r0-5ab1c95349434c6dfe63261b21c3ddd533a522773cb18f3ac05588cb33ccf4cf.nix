@@ -21,7 +21,7 @@
       synopsis = "Declarative, compositional Wai responses";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/pred-trie#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."wai-middleware-content-type" or (errorHandler.buildDepError "wai-middleware-content-type"))
           (hsPkgs."wai-middleware-verbs" or (errorHandler.buildDepError "wai-middleware-verbs"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."wai-middleware-content-type" or (errorHandler.buildDepError "wai-middleware-content-type"))
             (hsPkgs."wai-middleware-verbs" or (errorHandler.buildDepError "wai-middleware-verbs"))
             (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

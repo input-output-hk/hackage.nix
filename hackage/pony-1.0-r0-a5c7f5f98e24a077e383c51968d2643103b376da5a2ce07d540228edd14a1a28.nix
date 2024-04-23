@@ -21,13 +21,13 @@
       synopsis = "Can I have a pony?";
       description = "You can have a pony!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "can-i-have-a-pony" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

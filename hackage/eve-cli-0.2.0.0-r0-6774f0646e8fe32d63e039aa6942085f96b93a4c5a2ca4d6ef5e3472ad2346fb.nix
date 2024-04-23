@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/ChrisPenner/eve-cli#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "eve-cli-exe" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "eve-cli-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

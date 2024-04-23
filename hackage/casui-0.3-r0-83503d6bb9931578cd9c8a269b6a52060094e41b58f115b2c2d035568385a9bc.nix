@@ -21,7 +21,7 @@
       synopsis = "Equation Manipulator";
       description = "Interactive user interface for computer algebra systems";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "casui" = {
@@ -32,9 +32,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

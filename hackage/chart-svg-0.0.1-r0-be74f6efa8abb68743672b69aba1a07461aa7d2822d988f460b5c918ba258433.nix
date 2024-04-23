@@ -21,7 +21,7 @@
       synopsis = "See readme.md";
       description = "See readme.md for description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "venn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

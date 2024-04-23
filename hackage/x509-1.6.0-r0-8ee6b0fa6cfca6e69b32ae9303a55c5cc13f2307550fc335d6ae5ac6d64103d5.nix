@@ -21,7 +21,7 @@
       synopsis = "X509 reader and writer";
       description = "X509 reader and writer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
           (hsPkgs."asn1-parse" or (errorHandler.buildDepError "asn1-parse"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-x509" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Template Haskell function for Has records.";
       description = "Template Haskell function for definining Has records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."has" or (errorHandler.buildDepError "has"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

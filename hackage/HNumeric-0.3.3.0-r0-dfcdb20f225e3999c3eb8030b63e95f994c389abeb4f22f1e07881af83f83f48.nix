@@ -21,16 +21,16 @@
       synopsis = "Haskell Numeric Library with pure functionality, R & MATLAB Syntax.";
       description = "Please see the README on GitHub at <https://github.com/Axect/HNumeric#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "HNumeric-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

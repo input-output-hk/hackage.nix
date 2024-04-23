@@ -21,7 +21,7 @@
       synopsis = "Command-line tool for twitter";
       description = "a Command Line Interface Tweeter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tweet" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "tweeths-bench" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."tweet-hs" or (errorHandler.buildDepError "tweet-hs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

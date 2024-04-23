@@ -21,7 +21,7 @@
       synopsis = "An SMTP client library";
       description = "An SMTP client library,\nwhich allows you to send email via\nan SMTP server.\n\nFor further details, please see the README on GitHub at\n<https://github.com/phlummox/assumpta#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec-tests" = {
           depends = [
@@ -49,20 +49,20 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."quickcheck-io" or (errorHandler.buildDepError "quickcheck-io"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "compile-examples" = {
-          depends = (pkgs.lib).optionals (!(!flags.stack-based-tests)) [
+          depends = pkgs.lib.optionals (!!flags.stack-based-tests) [
             (hsPkgs."assumpta" or (errorHandler.buildDepError "assumpta"))
             (hsPkgs."assumpta-core" or (errorHandler.buildDepError "assumpta-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.stack-based-tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

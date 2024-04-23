@@ -21,7 +21,7 @@
       synopsis = "Low-level, streaming YAML interface.";
       description = "README and API documentation are available at <https://www.stackage.org/package/libyaml>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."directory" or (errorHandler.buildDepError "directory"));
-        libs = (pkgs.lib).optional (!(!flags.system-libyaml)) (pkgs."yaml" or (errorHandler.sysDepError "yaml"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."directory" or (errorHandler.buildDepError "directory"));
+        libs = pkgs.lib.optional (!!flags.system-libyaml) (pkgs."yaml" or (errorHandler.sysDepError "yaml"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

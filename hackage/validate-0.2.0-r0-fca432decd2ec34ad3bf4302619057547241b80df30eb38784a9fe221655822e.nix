@@ -21,6 +21,6 @@
       synopsis = "None";
       description = "None";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

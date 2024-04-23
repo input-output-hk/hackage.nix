@@ -21,7 +21,7 @@
       synopsis = "Villefort is a task manager and time tracker";
       description = "Villefort is a browser based time tracker built around a sqlite3 database.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Villefort" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Villefort-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

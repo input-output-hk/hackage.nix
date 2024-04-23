@@ -21,7 +21,7 @@
       synopsis = "DSV (de)serialization";
       description = "The library generates parsers and printers for\ngiven data types, in the form of command-line\narguments or DSVs – so that they can be used to\nquickly get CLIs via a shared library, while\nbeing suitable for scripting and as user\ninterfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-coalpit" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

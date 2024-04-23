@@ -21,14 +21,14 @@
       synopsis = "Html document layout library.";
       description = "The library helps to format html documents using popular BluePrint CSS framework <http://www.blueprintcss.org/>. Currently, Blaze and HSX html generators are supported (note 'blaze' and 'hsx' flags). See repository for complex examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (flags.blaze) (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))) ++ (pkgs.lib).optional (flags.hsx) (hsPkgs."hsx" or (errorHandler.buildDepError "hsx"));
+        ] ++ pkgs.lib.optional (flags.blaze) (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))) ++ pkgs.lib.optional (flags.hsx) (hsPkgs."hsx" or (errorHandler.buildDepError "hsx"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

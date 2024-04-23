@@ -21,7 +21,7 @@
       synopsis = "Write tests in Lua, integrate into tasty.";
       description = "Allow users to define tasty tests from Lua.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-tasty-lua" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

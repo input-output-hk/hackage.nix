@@ -21,15 +21,15 @@
       synopsis = "Weaken applicative functor on products";
       description = "Weaken applicative functor which allows only product\nconstruction. Product constructions and deconstructions\nare always isomorphic.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-data-compat" or (errorHandler.buildDepError "th-data-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

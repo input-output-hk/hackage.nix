@@ -21,14 +21,14 @@
       synopsis = "Handle JSON that may or may not be a list, or exist";
       description = "According to the standard promoted by Schema.org, the following are all\nlegally the same object:\n\\{ field: [data1, data2] }\n\\{ field: data }\n\\{ }\nThis library provides an intermediary data type and supporting functions to\nhelp aeson parse and output JSON conforming to this frustrating standard.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

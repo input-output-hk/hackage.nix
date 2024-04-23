@@ -21,7 +21,7 @@
       synopsis = "List USB devices";
       description = "A small utility that lists USB devices connected to your system.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ls-usb" = {
@@ -33,9 +33,9 @@
             (hsPkgs."unicode-symbols" or (errorHandler.buildDepError "unicode-symbols"))
             (hsPkgs."usb" or (errorHandler.buildDepError "usb"))
             (hsPkgs."usb-id-database" or (errorHandler.buildDepError "usb-id-database"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

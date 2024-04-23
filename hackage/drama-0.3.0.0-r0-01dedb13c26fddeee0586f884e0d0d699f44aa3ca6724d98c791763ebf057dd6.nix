@@ -21,7 +21,7 @@
       synopsis = "Actor library for Haskell";
       description = "Actor library for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,31 +29,31 @@
           (hsPkgs."ki" or (errorHandler.buildDepError "ki"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-shared-resource" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."drama" or (errorHandler.buildDepError "drama"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-use" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."drama" or (errorHandler.buildDepError "drama"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-workers" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."drama" or (errorHandler.buildDepError "drama"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

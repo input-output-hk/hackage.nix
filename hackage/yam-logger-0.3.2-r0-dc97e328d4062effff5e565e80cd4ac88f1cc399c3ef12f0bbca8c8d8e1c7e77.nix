@@ -21,7 +21,7 @@
       synopsis = "Yam Logger";
       description = "logger module for yam";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."yam-config" or (errorHandler.buildDepError "yam-config"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

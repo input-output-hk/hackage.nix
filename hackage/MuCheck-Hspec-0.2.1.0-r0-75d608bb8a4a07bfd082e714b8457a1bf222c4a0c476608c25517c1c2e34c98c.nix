@@ -21,7 +21,7 @@
       synopsis = "Automated Mutation Testing for Hspec tests";
       description = "This package contains the test adapter for Hspec tests to use it with MuCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mucheck-hspec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

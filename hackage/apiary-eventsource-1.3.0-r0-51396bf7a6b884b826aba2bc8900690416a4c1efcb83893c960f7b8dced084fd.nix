@@ -21,7 +21,7 @@
       synopsis = "eventsource support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/eventsource.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."apiary" or (errorHandler.buildDepError "apiary"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small compile-to-JS language with extensible records and type-safe blocks";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."pattern-arrows" or (errorHandler.buildDepError "pattern-arrows"))
           (hsPkgs."monad-unify" or (errorHandler.buildDepError "monad-unify"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "psc" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "psci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "docgen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,10 +85,10 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

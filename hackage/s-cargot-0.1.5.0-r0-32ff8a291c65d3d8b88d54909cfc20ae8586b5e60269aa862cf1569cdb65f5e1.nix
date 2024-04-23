@@ -21,7 +21,7 @@
       synopsis = "A flexible, extensible s-expression library.";
       description = "S-Cargot is a library for working with s-expressions in\na modular and extensible way, opting for genericity and\nflexibility instead of speed. Instead of understanding\none particular form of s-expression, the S-Cargot library\nexposes tools for parsing or emitting different kinds of\ns-expressions, including features not normally included\nin an s-expression library like reader macros or tight\ncontrol over indentation in pretty-printing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."s-cargot" or (errorHandler.buildDepError "s-cargot"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.build-example then false else true;
-          };
         };
+      };
       tests = {
         "s-cargot-qc" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "s-cargot-printparse" = {
           depends = [
             (hsPkgs."s-cargot" or (errorHandler.buildDepError "s-cargot"))
@@ -62,9 +62,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

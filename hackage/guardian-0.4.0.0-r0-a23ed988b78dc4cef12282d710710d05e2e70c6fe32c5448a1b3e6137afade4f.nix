@@ -21,7 +21,7 @@
       synopsis = "The border guardian for your package dependencies";
       description = "Guardian secures your Haskell monorepo package dependency boundary. Please read [README.md](https://github.com/deepflowinc/guardian#readme) for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,19 +54,19 @@
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "guardian" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."guardian" or (errorHandler.buildDepError "guardian"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "guardian-test" = {
           depends = [
@@ -83,12 +83,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

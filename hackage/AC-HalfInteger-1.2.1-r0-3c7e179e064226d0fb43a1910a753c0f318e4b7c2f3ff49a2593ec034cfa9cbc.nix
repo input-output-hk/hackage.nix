@@ -21,11 +21,11 @@
       synopsis = "Efficient half-integer type.";
       description = "This Haskell library is a simple implementation of\n/half-integers/. That is, it provides a type that can\nrepresent both normal integers and integers plus a half.\nChanges:\n* Fixed documentation glitches.\n* Added Integral contexts to some functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

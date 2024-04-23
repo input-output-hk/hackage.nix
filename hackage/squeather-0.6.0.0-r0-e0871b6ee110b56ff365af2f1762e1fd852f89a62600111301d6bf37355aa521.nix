@@ -21,16 +21,16 @@
       synopsis = "Use databases with the version 3 series of the SQLite C library";
       description = "Please see the README on GitHub at <https://github.com/massysett/squeather#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "squeather-tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

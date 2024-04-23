@@ -21,7 +21,7 @@
       synopsis = "A musical instrument synthesizer or a tool for Ukrainian language listening";
       description = "A program can be used as a musical instrument synthesizer or for Ukrainian speech synthesis especially for poets and writers. Uses arrays and .ul RAW sound file formats and SoX inside. Since the 0.2.0.0 version it supports reading from the file and multiline input.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
           (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
           (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn6ukra" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
             (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
             (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

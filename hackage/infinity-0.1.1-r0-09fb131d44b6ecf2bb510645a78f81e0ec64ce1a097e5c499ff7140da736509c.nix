@@ -21,7 +21,7 @@
       synopsis = "a tiny IRC bot";
       description = "a tiny IRC bot, extendable through\nplugins written in haskell";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "infinity" = {
@@ -31,9 +31,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Utilities to convert a parser into a pipe.";
       description = "Utilities to convert a parser into a pipe.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

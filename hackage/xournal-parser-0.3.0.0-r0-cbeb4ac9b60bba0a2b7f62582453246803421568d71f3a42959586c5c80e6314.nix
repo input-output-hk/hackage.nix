@@ -21,7 +21,7 @@
       synopsis = "Xournal file parser";
       description = "Text parser for xournal xml file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."iteratee-compress" or (errorHandler.buildDepError "iteratee-compress"))
           (hsPkgs."xournal-types" or (errorHandler.buildDepError "xournal-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

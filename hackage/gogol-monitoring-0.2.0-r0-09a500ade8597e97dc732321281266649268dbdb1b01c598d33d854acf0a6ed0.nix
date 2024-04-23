@@ -21,14 +21,14 @@
       synopsis = "Google Stackdriver Monitoring SDK.";
       description = "Manages your Stackdriver Monitoring data and configurations. Most\nprojects must be associated with a Stackdriver account, with a few\nexceptions as noted on the individual method pages.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v3@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

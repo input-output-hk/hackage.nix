@@ -21,15 +21,15 @@
       synopsis = "Failure Monad Transformer";
       description = "Failure Monad Transformer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."mmtl" or (errorHandler.buildDepError "mmtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

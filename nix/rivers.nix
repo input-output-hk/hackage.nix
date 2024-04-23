@@ -6,8 +6,8 @@
         nix = import ../hackage/rivers-0.1.0-r0-6682371d704f83f12b7f0598ba136cf9fcb95938a6109aa5dc0219834b417fc1.nix;
         revNum = 0;
         sha256 = "6682371d704f83f12b7f0598ba136cf9fcb95938a6109aa5dc0219834b417fc1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

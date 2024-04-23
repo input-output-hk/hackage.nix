@@ -21,11 +21,11 @@
       synopsis = "An applicative for parsing unordered things, heterogenous sorting";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Fast functions on integers.";
       description = "Fast functions for number theory and combinatorics with a high level of safety guaranteed by [ATS](http://www.ats-lang.org/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."gmpint" or (errorHandler.buildDepError "gmpint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -39,16 +39,16 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "8.4"
+          ] ++ (if compiler.isGhc && compiler.version.ge "8.4"
             then [
               (hsPkgs."combinat-compat" or (errorHandler.buildDepError "combinat-compat"))
-              ]
+            ]
             else [
               (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
@@ -56,15 +56,15 @@
             (hsPkgs."fast-arithmetic" or (errorHandler.buildDepError "fast-arithmetic"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "8.4"
+          ] ++ (if compiler.isGhc && compiler.version.ge "8.4"
             then [
               (hsPkgs."combinat-compat" or (errorHandler.buildDepError "combinat-compat"))
-              ]
+            ]
             else [
               (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

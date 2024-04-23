@@ -21,7 +21,7 @@
       synopsis = "A lisp processor, An inline-lisp, in Haskell";
       description = "A lisp dialect";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "maru" = {
           depends = [
@@ -76,10 +76,10 @@
             (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zuramaru" or (errorHandler.buildDepError "zuramaru"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "integrate-test" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unit-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -137,9 +137,9 @@
             (hsPkgs."throwable-exceptions" or (errorHandler.buildDepError "throwable-exceptions"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bindings to SDL2_gfx.";
       description = "Haskell bindings to SDL2_gfx.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,24 +35,24 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_gfx" or (errorHandler.pkgConfDepError "SDL2_gfx"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-gfx-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-gfx" or (errorHandler.buildDepError "sdl2-gfx"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

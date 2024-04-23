@@ -21,7 +21,7 @@
       synopsis = "Prevent serialization backwards compatibility problems using golden tests";
       description = "Tests the serialization backwards compatibility of data types by storing\nserialized representations in .test files to be checked into your project's\nversion control.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

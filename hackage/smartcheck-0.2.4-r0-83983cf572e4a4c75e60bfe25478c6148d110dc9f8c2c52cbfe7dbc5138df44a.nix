@@ -21,7 +21,7 @@
       synopsis = "A smarter QuickCheck.";
       description = "See the README.md: fast, small shrinking and generalization of failing test-cases from QuickCheck.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.regression-flag
@@ -34,7 +34,7 @@
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -43,9 +43,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "sc-qc" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

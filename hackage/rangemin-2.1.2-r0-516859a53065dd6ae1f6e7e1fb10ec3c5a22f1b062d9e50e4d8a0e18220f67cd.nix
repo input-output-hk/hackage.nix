@@ -21,7 +21,7 @@
       synopsis = "Linear range-min algorithms.";
       description = "Rapidly (in linear time) preprocesses a vector so that the minimum element of any given subrange can be looked up in constant time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

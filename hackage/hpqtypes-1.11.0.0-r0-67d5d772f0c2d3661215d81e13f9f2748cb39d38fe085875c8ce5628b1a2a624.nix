@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to libpqtypes";
       description = "Efficient and easy-to-use bindings to (slightly modified)\n@libpqtypes@, a @libpq@ extension that adds support\nfor a binary transport format and composite types.\n\nSource code of libpqtypes is bundled along with the bindings.\n\nExamples can be found in the\n<https://github.com/scrive/hpqtypes/tree/master/examples examples>\ndirectory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,15 +43,15 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libpq" or (errorHandler.pkgConfDepError "libpq"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hpqtypes-tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Data structures and helper functions for calculating alignments";
       description = "Data structures and helper functions for calculating alignments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parse and render XML DTDs";
       description = "This library provides means to parse XML Document Type Declaration (DTD) documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."dtd-types" or (errorHandler.buildDepError "dtd-types"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

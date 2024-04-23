@@ -21,7 +21,7 @@
       synopsis = "Library for managing calendars and resource availability.     ";
       description = "This is a library for handling calendars and resource availability based on the \"top-nodes algorithm\" and set operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

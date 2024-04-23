@@ -6,8 +6,8 @@
         nix = import ../hackage/quickbooks-0.5.0.1-r0-27499f25fad5d89c32a939311a02aea6606824df952364b2a26f41c2841aa5a5.nix;
         revNum = 0;
         sha256 = "27499f25fad5d89c32a939311a02aea6606824df952364b2a26f41c2841aa5a5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

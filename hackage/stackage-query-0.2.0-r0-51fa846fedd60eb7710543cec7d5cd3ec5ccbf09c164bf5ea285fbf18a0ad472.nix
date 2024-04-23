@@ -21,7 +21,7 @@
       synopsis = "Tool for querying Stackage";
       description = "A commandline tool to query metadata of Stackage packages";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stackage" = {
@@ -48,9 +48,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

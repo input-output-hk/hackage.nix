@@ -21,12 +21,12 @@
       synopsis = "Generation of PDF documents";
       description = "A PDF library with support for several pages, page transitions, outlines, annotations, compression, colors, shapes, patterns, jpegs, fonts, typesetting ... Have a look at the \"Graphics.PDF.Documentation\" module to see how to use it. Or, download the package and look at the test.hs file in the Test folder. That file is giving an example of each feature.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -36,15 +36,15 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

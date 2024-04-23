@@ -21,7 +21,7 @@
       synopsis = "Connector for Amazon Products API";
       description = "Allows users to directly access Amazon Products API,\nwithout having to work with the underlying REST and\nauthentication layers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "repl" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."amazon-products" or (errorHandler.buildDepError "amazon-products"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

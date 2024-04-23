@@ -21,7 +21,7 @@
       synopsis = "reflex-dom-th transpiles HTML templates to haskell code for @reflex-dom@";
       description = "Reflex-DOM is a very powerful web framework for functional reactive programming (FRP).\nWeb pages itself are written in HTML.\n\n@reflex-dom-th@ combines the power of these two techniques by transpiling HTML templates to Haskell for the @reflex-dom@ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-reflex-dom-th" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

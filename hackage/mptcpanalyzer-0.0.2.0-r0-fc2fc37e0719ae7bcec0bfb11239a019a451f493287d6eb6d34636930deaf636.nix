@@ -21,7 +21,7 @@
       synopsis = "A Multipath TCP analyzer";
       description = "__mptcpanalyzer__ is a multipath TCP (www.multipath-tcp.org) protocol analyzer.\nMultipath TCP is an extension of the Transmission Control Protocol that allows applications to send\none single stream of data over multiple TCP connections.\n\nThis software can automatically plot MPTCP characteristics such as Data Sequence Numbers, Data Acknowledgements etc.\nIt can also map one packet capture to another to give more detailed statistics such\nas One-Way delays and reinjection qualifications.\n\n* list the MPTCP connections in the pcap\n* display chosen statistics on a specific MPTCP connection (list of subflows, number of reinjections, etc)\n* convert packet capture files (\\*.pcap) to \\*.csv files\n* plot data sequence numbers, dataacks for all subflows\n* can map packets between the client and server pcaps to plot one-way delays";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -72,9 +72,9 @@
           (hsPkgs."haskell-debug-adapter" or (errorHandler.buildDepError "haskell-debug-adapter"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
+        ] ++ pkgs.lib.optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
         buildable = true;
-        };
+      };
       exes = {
         "mptcpanalyzer" = {
           depends = [
@@ -125,10 +125,10 @@
             (hsPkgs."haskell-debug-adapter" or (errorHandler.buildDepError "haskell-debug-adapter"))
             (hsPkgs."mptcpanalyzer" or (errorHandler.buildDepError "mptcpanalyzer"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
+          ] ++ pkgs.lib.optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-log" or (errorHandler.buildDepError "polysemy-log"))
             (hsPkgs."polysemy-log-co" or (errorHandler.buildDepError "polysemy-log-co"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

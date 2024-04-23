@@ -21,7 +21,7 @@
       synopsis = "Crit-bit maps and sets";
       description = "This package implements crit-bit trees, a key-value container type\nfor storing keys that can be treated as bitstrings (e.g.\n'ByteString' and 'Text').\n\nCompared to the data structures from the containers and\nunordered-containers packages, you will find that sometimes the\nfunctions implemented in this package are faster, sometimes\nslower.\n\nIn many cases, a 'CritBit' tree provides performance close to that\nof a 'HashMap', while providing ordered storage and traversal\nlike a 'Map'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Mandelbrot Set explorer using GTK";
       description = "A Mandelbrot Set explorer.  Multiple render threads\nuse higher precision maths at higher zoom levels.\nSuggested usage:\n\n@gmndl +RTS -N -qa -RTS --width=640 --height=480@\n\nLeft-click to zoom in, right-click to zoom out.  The\nstatus bar shows where you are, and the entry field\ntakes a space-separated list of fractions strictly\nbetween 0 and 1, try for example:\n\n@1\\/2 2\\/3 1\\/4 3\\/5@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gmndl" = {
@@ -35,9 +35,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."priority-queue" or (errorHandler.buildDepError "priority-queue"))
             (hsPkgs."qd" or (errorHandler.buildDepError "qd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

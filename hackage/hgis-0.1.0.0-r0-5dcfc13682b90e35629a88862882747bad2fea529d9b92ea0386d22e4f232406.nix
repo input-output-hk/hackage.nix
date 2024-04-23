@@ -21,7 +21,7 @@
       synopsis = "Package and command-line for GIS with Haskell";
       description = "Package containting functions to make graphs, read\nshapefiles, and compute areas/perimeters of\ngeographic features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,30 +38,30 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."cairo" or (errorHandler.pkgConfDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hgis" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hgis" or (errorHandler.buildDepError "hgis"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hgis-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hgis" or (errorHandler.buildDepError "hgis"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

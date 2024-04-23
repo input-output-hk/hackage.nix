@@ -21,7 +21,7 @@
       synopsis = "postgresql-tx interfacing for use with postgresql-simple.";
       description = "Please see the README on GitHub at <https://github.com/simspace/postgresql-tx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."postgresql-tx" or (errorHandler.buildDepError "postgresql-tx"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

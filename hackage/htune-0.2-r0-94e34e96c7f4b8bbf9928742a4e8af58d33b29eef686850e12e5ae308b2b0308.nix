@@ -21,7 +21,7 @@
       synopsis = "harmonic analyser and tuner for musical instruments";
       description = "A real-time, graphical analyser of frequency spectrums.\nReads audio data from ALSA and draws a spectrogram with\ntuning information for multiple frequency peaks. Draws\nusing gloss/opengl. Use mouse for panning & zooming.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htune" = {
@@ -31,9 +31,9 @@
             (hsPkgs."fft" or (errorHandler.buildDepError "fft"))
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

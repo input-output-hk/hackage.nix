@@ -21,7 +21,7 @@
       synopsis = "An optparse-applicative parser for postgresql-simple's connection options";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
           (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-simple-opts-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

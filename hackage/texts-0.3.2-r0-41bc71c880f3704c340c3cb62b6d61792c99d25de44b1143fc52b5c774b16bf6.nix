@@ -21,7 +21,7 @@
       synopsis = "User-facing operations for dealing with texts";
       description = "Common operations for different kinds of texts, including English-specific operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,11 +30,11 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."lists" or (errorHandler.buildDepError "lists"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

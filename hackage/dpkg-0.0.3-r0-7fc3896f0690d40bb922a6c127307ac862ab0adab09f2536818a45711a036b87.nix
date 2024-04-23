@@ -21,7 +21,7 @@
       synopsis = "libdpkg bindings";
       description = "Haskell bindings to the libdpkg API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libdpkg" or (errorHandler.pkgConfDepError "libdpkg"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,13 +42,13 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."dpkg" or (errorHandler.buildDepError "dpkg"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           libs = [ (pkgs."dpkg" or (errorHandler.sysDepError "dpkg")) ];
           pkgconfig = [
             (pkgconfPkgs."libdpkg" or (errorHandler.pkgConfDepError "libdpkg"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

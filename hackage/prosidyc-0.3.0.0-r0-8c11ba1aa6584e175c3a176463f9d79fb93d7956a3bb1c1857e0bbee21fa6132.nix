@@ -21,7 +21,7 @@
       synopsis = "A DSL for processing Prosidy documents.";
       description = "A small, Haskell EDSL which builds a specification and compiler for\nProsidy dialects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

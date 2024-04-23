@@ -21,7 +21,7 @@
       synopsis = "A parser for SQL.";
       description = "A parser for SQL. Parses most SQL:2011\nqueries, non-query DML, DDL, access control and\ntransaction management syntax. Please see the\nhomepage for more information\n<http://jakewheat.github.io/simple-sql-parser/latest>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SimpleSqlParserTool" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if flags.parserexe then true else false;
-          };
+        };
         "Fixity" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,10 +52,10 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = if flags.parserexe then true else false;
-          };
         };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

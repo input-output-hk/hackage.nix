@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-timestream-query-2.0-r0-cf855596bd682d69d9a077ad9476768aded9e6dcf8444acfb6357ec2941c096c.nix;
         revNum = 0;
         sha256 = "cf855596bd682d69d9a077ad9476768aded9e6dcf8444acfb6357ec2941c096c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

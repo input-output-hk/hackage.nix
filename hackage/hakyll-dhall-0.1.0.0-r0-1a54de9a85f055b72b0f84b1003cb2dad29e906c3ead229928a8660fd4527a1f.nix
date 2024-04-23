@@ -21,7 +21,7 @@
       synopsis = "Dhall compiler for Hakyll";
       description = "Please see the README on GitHub at <https://github.com/mstksg/hakyll-dhall#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-dhall-test-app" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
             (hsPkgs."hakyll-dhall" or (errorHandler.buildDepError "hakyll-dhall"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

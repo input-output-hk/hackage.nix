@@ -21,7 +21,7 @@
       synopsis = "File/folder watching for OS X";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
         frameworks = [ (pkgs."Cocoa" or (errorHandler.sysDepError "Cocoa")) ];
         buildable = if system.isOsx then true else false;
-        };
       };
-    }
+    };
+  }

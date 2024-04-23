@@ -21,7 +21,7 @@
       synopsis = "Tries from representations of polynomial functors";
       description = "Tries from representations of polynomial functors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

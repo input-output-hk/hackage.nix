@@ -21,7 +21,7 @@
       synopsis = "Length-indexed random access lists: optics utilities.";
       description = "This package provides [optics](https://hackage.haskell.org/package/optics) and instances\nfor data types in [ral](https://hackage.haskell.org/package/ral) package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."ral" or (errorHandler.buildDepError "ral"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

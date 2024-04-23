@@ -21,11 +21,11 @@
       synopsis = "DEPRECATED Functionality merged into the conduit package itself";
       description = "See docs and README at <http://www.stackage.org/package/conduit-combinators>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "support for CMS/Blogging in clckwrks";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,11 +55,11 @@
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-happstack" or (errorHandler.buildDepError "web-routes-happstack"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

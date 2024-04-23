@@ -21,16 +21,16 @@
       synopsis = "Use Roman Numerals as a Numeric Datatype (sort of)";
       description = "See Readme.md, Data.Roman.Tutorial, and Haddocks on Hackage";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "libroman-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."libroman" or (errorHandler.buildDepError "libroman"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

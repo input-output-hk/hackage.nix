@@ -21,7 +21,7 @@
       synopsis = "Bolt driver for Neo4j";
       description = "A Bolt driver to access Neo4j databases using\nthe Bolt Protocol, Version 1. <http://boltprotocol.org/v1/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

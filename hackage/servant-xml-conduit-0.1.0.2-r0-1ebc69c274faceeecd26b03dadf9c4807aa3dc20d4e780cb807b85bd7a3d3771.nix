@@ -21,7 +21,7 @@
       synopsis = "Servant XML content-type with support for xml-conduit";
       description = "This is similar in spirit to `servant-xml` but uses `xml-conduit` instead of `xmlbf`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Low level bindings for Groonga.";
       description = "Bindings to Groonga  <http://groonga.org/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,13 +30,13 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."groonga" or (errorHandler.sysDepError "groonga"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."groonga" or (errorHandler.pkgConfDepError "groonga"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."groonga" or (errorHandler.sysDepError "groonga"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."groonga" or (errorHandler.pkgConfDepError "groonga"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

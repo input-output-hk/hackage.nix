@@ -21,7 +21,7 @@
       synopsis = "Read PDF form fields";
       description = "Simple function to extract PDF form field values from a PDF file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pdfreader" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."data-pdf-fieldreader" or (errorHandler.buildDepError "data-pdf-fieldreader"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

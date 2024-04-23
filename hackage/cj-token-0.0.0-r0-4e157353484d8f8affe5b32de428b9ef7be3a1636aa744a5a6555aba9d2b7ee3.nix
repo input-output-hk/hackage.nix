@@ -21,7 +21,7 @@
       synopsis = "A new Haskeleton package.";
       description = "cj-token is a new Haskeleton package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cj-token" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cj-token" or (errorHandler.buildDepError "cj-token"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cj-token-test-suite" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."cj-token" or (errorHandler.buildDepError "cj-token"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

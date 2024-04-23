@@ -21,14 +21,14 @@
       synopsis = "control JackMiniMix";
       description = "This is a module to control JackMiniMix, a GPL mixer for the Jack Audio Connection Kit using OpenSoundControl (OSC).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Gloss picture data types and rendering functions.";
       description = "Gloss picture data types and rendering functions. These functions\ndon't do any window management. If you want gloss to setup your window as\nwell then use the plain @gloss@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

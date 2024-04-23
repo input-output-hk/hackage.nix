@@ -21,14 +21,14 @@
       synopsis = "Read, set, and list extended attributes";
       description = "This package is obsolete. Use <http://hackage.haskell.org/package/linux-xattr> instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

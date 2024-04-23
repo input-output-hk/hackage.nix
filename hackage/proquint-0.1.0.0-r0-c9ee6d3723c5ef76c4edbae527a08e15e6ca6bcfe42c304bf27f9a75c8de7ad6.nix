@@ -21,15 +21,15 @@
       synopsis = "Proquints: Identifiers that are Readable, Spellable, and Pronounceable";
       description = "Implementation of proquints: Identifiers that are Readable, Spellable, and Pronounceable.\n\nFollows the specification at https://arxiv.org/html/0901.4016";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "proquint-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

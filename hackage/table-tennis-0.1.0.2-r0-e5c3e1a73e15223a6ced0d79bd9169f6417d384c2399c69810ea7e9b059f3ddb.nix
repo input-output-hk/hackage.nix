@@ -21,11 +21,11 @@
       synopsis = "A table tennis game tracking engine";
       description = "A table tennis game tracking engine. This is purely a\nfacility for managing a game.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

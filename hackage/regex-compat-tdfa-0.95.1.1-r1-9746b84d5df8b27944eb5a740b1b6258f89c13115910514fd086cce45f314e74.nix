@@ -21,31 +21,31 @@
       synopsis = "Unicode Support version of Text.Regex, using regex-tdfa";
       description = "One module layer over regex-tdfa to replace Text.Regex.\n\nregex-compat can't use Unicode characters correctly because\nof using regex-posix. This is not good for Unicode users.\n\nI modified regex-compat to use regex-tdfa for solving today's\nproblem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.newbase
+        ] ++ (if flags.newbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
               (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
               (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-              ]);
+            ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

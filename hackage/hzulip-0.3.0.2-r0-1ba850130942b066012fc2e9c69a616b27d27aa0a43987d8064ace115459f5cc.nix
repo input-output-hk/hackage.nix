@@ -21,7 +21,7 @@
       synopsis = "A haskell wrapper for the Zulip API.";
       description = "This a Zulip API wrapper for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hzulip-spec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

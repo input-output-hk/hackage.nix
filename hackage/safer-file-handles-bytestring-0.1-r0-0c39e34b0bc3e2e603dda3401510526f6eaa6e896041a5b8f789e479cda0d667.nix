@@ -21,7 +21,7 @@
       synopsis = "Extends safer-file-handles with ByteString operations";
       description = "Extends @safer-file-handles@ with @ByteString@ operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."explicit-iomodes-bytestring" or (errorHandler.buildDepError "explicit-iomodes-bytestring"))
           (hsPkgs."safer-file-handles" or (errorHandler.buildDepError "safer-file-handles"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Library for converting between line/column and byte offset.";
       description = "Translates visual line/column info (as from editor or\nwarning message) to byte offset. Assumes UTF-8 encoding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "offset_test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."text-offset" or (errorHandler.buildDepError "text-offset"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

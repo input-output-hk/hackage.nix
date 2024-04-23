@@ -21,7 +21,7 @@
       synopsis = "Copilot interface to a C model-checker.";
       description = "Depends on CBMC <http://www.cprover.org/cbmc/>.  Generates a driver to prove the Atom and SBV backends generate equivalent code.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."copilot-sbv" or (errorHandler.buildDepError "copilot-sbv"))
           (hsPkgs."copilot-c99" or (errorHandler.buildDepError "copilot-c99"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

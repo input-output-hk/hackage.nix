@@ -21,33 +21,33 @@
       synopsis = "Fast, packed, strict storable arrays with a list interface like ByteString";
       description = "Fast, packed, strict storable arrays\nwith a list interface,\na chunky lazy list interface with variable chunk size\nand an interface for write access via the @ST@ monad.\nThis is much like @bytestring@ and @binary@ but can be used for every 'Foreign.Storable.Storable' type.\nSee also packages\n<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/vector>,\n<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/uvector>\nwith a similar intention.\n\nWe do not provide advanced fusion optimization,\nsince especially for lazy vectors\nthis would either be incorrect or not applicable.\nFor fusion see @storablevector-stream@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."non-negative" or (errorHandler.buildDepError "non-negative"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = if !flags.buildtests then false else true;
-          };
+        };
         "speedtest" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if !flags.buildtests then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "ghci-dap is a GHCi having DAP interface.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4.0") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4.0") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"));
         buildable = true;
-        };
+      };
       exes = {
         "ghci-dap" = {
           depends = ([
@@ -68,11 +68,11 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4.0") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"))) ++ (if system.isWindows
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4.0") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

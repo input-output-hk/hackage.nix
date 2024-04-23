@@ -21,7 +21,7 @@
       synopsis = "Linear programming over exponent pairs";
       description = "Package implements an algorithm to minimize rational objective function over the set of exponent pairs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."exp-pairs" or (errorHandler.buildDepError "exp-pairs"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

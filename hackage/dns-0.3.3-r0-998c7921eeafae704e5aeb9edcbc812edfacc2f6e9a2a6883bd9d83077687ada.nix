@@ -21,10 +21,10 @@
       synopsis = "DNS library in Haskell";
       description = "DNS library for clients and servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhc && (compiler.version).ge "7"
+        depends = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
@@ -39,7 +39,7 @@
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
             (hsPkgs."network-enumerator" or (errorHandler.buildDepError "network-enumerator"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
@@ -55,8 +55,8 @@
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
             (hsPkgs."network-enumerator" or (errorHandler.buildDepError "network-enumerator"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

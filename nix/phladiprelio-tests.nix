@@ -6,8 +6,8 @@
         nix = import ../hackage/phladiprelio-tests-0.1.0.0-r0-d53ef689bc112a359d47f15a3dd01949dfe420b831ebfe7153486e780582aaae.nix;
         revNum = 0;
         sha256 = "d53ef689bc112a359d47f15a3dd01949dfe420b831ebfe7153486e780582aaae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

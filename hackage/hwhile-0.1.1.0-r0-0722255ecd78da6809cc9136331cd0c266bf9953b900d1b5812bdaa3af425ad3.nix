@@ -21,7 +21,7 @@
       synopsis = "An implementation of Neil D. Jones' While language";
       description = "An implementation of Neil D. Jones' While language. Developed in collaboration\nwith Dr. Bernhard Reus (University of Sussex, UK) for use in the Limits of\nComputing module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
           (hsPkgs."repline" or (errorHandler.buildDepError "repline"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hwhile" = {
           depends = [
@@ -44,14 +44,14 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hwhile" or (errorHandler.buildDepError "hwhile"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hwhile-testsuite" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hwhile" or (errorHandler.buildDepError "hwhile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

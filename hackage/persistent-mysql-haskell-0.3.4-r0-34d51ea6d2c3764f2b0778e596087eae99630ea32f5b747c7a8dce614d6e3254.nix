@@ -21,7 +21,7 @@
       synopsis = "A pure haskell backend for the persistent library using MySQL database server.";
       description = "This package contains a backend for persistent using the\nMySQL database server.  Internally it uses the @mysql-haskell@\npackage in order to access the database. See README.md for more.\n\nThis package supports only MySQL 5.1 and above.  However, it\nhas been tested only on MySQL 5.5.\nOnly the InnoDB storage engine is officially supported.\n\nKnown problems:\n\n* This package does not support statements inside other\nstatements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "persistent-mysql-haskell-example" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
             (hsPkgs."persistent-mysql-haskell" or (errorHandler.buildDepError "persistent-mysql-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

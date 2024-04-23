@@ -21,7 +21,7 @@
       synopsis = "Rasa Ext adding cursor(s)";
       description = "Rasa Ext adding cursor(s)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

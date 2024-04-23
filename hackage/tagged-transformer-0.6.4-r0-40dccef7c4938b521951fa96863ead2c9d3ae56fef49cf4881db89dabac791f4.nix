@@ -21,7 +21,7 @@
       synopsis = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       description = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

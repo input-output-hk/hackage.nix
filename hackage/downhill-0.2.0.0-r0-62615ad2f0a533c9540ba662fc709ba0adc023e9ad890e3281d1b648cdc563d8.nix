@@ -21,7 +21,7 @@
       synopsis = "Reverse mode automatic differentiation";
       description = "Simple and well typed implementation of reverse mode automatic differentiation.\nSee home page <https://andriusstank.github.io/downhill/> for more detailed\ndescription.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "downhill-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

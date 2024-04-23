@@ -21,7 +21,7 @@
       synopsis = "Client library for PagerDuty Integration and REST APIs.";
       description = "PagerDuty is an alerting system for IT professionals. PagerDuty connects\nwith a variety of systems (including monitoring tools and ticketing\nsystems) and dispatches alerts via automated phone call, SMS and email.\nThis library implements the full PagerDuty Integration and REST APIs which\nare documented here:\n\n* Integration API - <http://developer.pagerduty.com/documentation/integration>\n\n* REST API - <http://developer.pagerduty.com/documentation/rest>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!\n\n/Note:/ An alternative source for Haddock documentation can be found <http://brendanhay.nz/pagerduty here>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

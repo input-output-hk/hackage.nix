@@ -21,7 +21,7 @@
       synopsis = "Library that contains generators, properties and tests for Massiv Array Library.";
       description = "This library is designed for users of massiv library that need random generators for writing custom property tests and reusing some of the predefined ones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."scheduler" or (errorHandler.buildDepError "scheduler"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests-O0" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."scheduler" or (errorHandler.buildDepError "scheduler"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

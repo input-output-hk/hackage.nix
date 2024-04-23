@@ -21,16 +21,16 @@
       synopsis = "Haskell Foreign Accelerate Interface";
       description = "The haskell interface for foreign accelerate framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ];
-        libs = (pkgs.lib).optional (flags.enable-cuda) (pkgs."cudart" or (errorHandler.sysDepError "cudart"));
+        ];
+        libs = pkgs.lib.optional (flags.enable-cuda) (pkgs."cudart" or (errorHandler.sysDepError "cudart"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."FAI" or (errorHandler.buildDepError "FAI"))
             (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/tasty-groundhog-converters-0.1.0-r0-92feb330ab15911f86b45141982217260ffc5ad5c83fbf5a57a8884066e5d88d.nix;
         revNum = 0;
         sha256 = "92feb330ab15911f86b45141982217260ffc5ad5c83fbf5a57a8884066e5d88d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

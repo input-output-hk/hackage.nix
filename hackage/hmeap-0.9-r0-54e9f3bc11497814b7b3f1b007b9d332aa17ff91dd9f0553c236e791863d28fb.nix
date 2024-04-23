@@ -21,7 +21,7 @@
       synopsis = "Haskell Meapsoft Parser";
       description = "Parser for the anaylsis files produced by the\nMeapsoft feature extractor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
           (hsPkgs."delimited-text" or (errorHandler.buildDepError "delimited-text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hmeap-browse" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."delimited-text" or (errorHandler.buildDepError "delimited-text"))
             (hsPkgs."hmeap" or (errorHandler.buildDepError "hmeap"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hmeap-parser" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -56,9 +56,9 @@
             (hsPkgs."delimited-text" or (errorHandler.buildDepError "delimited-text"))
             (hsPkgs."hmeap" or (errorHandler.buildDepError "hmeap"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hmeap-play" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -70,9 +70,9 @@
             (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
             (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hmeap-plot" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -84,9 +84,9 @@
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."hmeap" or (errorHandler.buildDepError "hmeap"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hmeap-stat" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -97,9 +97,9 @@
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."hmeap" or (errorHandler.buildDepError "hmeap"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

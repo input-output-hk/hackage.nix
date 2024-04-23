@@ -21,7 +21,7 @@
       synopsis = "P2P network nodes with pipes";
       description = "Toy library to facilitate the creation of custom P2P networks using `pipes`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-simple-sockaddr" or (errorHandler.buildDepError "network-simple-sockaddr"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

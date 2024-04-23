@@ -21,7 +21,7 @@
       synopsis = "A Friendly Markup language without syntax.";
       description = "Fmark (Friendly Markup) is a very simple markup language without\nsyntax and simple but sophisticated document styling, capable of\nproducing PDF and XML files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fmark" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

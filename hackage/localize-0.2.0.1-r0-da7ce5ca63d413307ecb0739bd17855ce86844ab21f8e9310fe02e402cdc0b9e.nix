@@ -21,7 +21,7 @@
       synopsis = "GNU Gettext-based messages localization library";
       description = "More or less fully functional translation framework,\nbased on @haskell-gettext@ and @text-format-heavy@\npackages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

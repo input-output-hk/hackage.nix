@@ -21,7 +21,7 @@
       synopsis = "Synthesis Format Conversion Tool / Library";
       description = "Library and tool for reading, manipulating and transforming synthesis specifications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "syfco" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

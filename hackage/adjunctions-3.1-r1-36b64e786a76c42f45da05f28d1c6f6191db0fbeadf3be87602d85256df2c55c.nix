@@ -21,7 +21,7 @@
       synopsis = "Adjunctions";
       description = "Adjunctions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

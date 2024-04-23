@@ -21,7 +21,7 @@
       synopsis = "Embedded BASIC";
       description = "A simplified version of the original BASIC embedded in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."llvm" or (errorHandler.buildDepError "llvm"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

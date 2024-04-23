@@ -21,7 +21,7 @@
       synopsis = "Split a big audio file into pieces at positions of silence";
       description = "Split a big audio file into pieces at positions of silence.\nYou can use this to split a recording of multiple songs into single songs.\n\n> $ split-record recording.wav \"part%03d.wav\"\n\nYou can also calculate split positions only. They are computed lazily.\nThey can be loaded into Audacity for further fine tuning\nand to perform the actual split.\nFor generating only labels, run:\n\n> $ split-record recording.wav > labels.txt";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "split-record" = {
@@ -34,9 +34,9 @@
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

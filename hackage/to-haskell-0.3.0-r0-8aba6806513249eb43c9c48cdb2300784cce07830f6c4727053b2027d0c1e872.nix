@@ -21,7 +21,7 @@
       synopsis = "A type class and some utilities for generating Haskell code.";
       description = "A type class and some utilities for generating Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

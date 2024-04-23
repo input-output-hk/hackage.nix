@@ -21,7 +21,7 @@
       synopsis = "Write shell scripts with Conduit";
       description = "Write shell scripts with Conduit. See \"Data.Conduit.Shell\" for documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

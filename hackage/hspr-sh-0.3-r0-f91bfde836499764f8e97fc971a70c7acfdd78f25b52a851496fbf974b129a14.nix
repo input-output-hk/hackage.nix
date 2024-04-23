@@ -21,14 +21,14 @@
       synopsis = "Session handler for HSP";
       description = "A simple session handler for the HSP package, needed\nby the HSPR tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

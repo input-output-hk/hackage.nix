@@ -12,7 +12,7 @@
       interactivetests = false;
       threaded = true;
       withgtk2hsbuildtools = false;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "bustle"; version = "0.5.3"; };
@@ -25,7 +25,7 @@
       synopsis = "Draw sequence diagrams of D-Bus traffic";
       description = "Draw sequence diagrams of D-Bus traffic";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "bustle" = {
@@ -49,12 +49,12 @@
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (flags.withgtk2hsbuildtools) (hsPkgs."gtk2hs-buildtools" or (errorHandler.buildDepError "gtk2hs-buildtools"));
+          ] ++ pkgs.lib.optional (flags.withgtk2hsbuildtools) (hsPkgs."gtk2hs-buildtools" or (errorHandler.buildDepError "gtk2hs-buildtools"));
           pkgconfig = [
             (pkgconfPkgs."glib-2.0" or (errorHandler.pkgConfDepError "glib-2.0"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-monitor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,12 +73,12 @@
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."glib-2.0" or (errorHandler.pkgConfDepError "glib-2.0"))
-            ];
+          ];
           buildable = if flags.interactivetests then true else false;
-          };
+        };
         "dump-messages" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,10 +88,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.interactivetests then true else false;
-          };
         };
+      };
       tests = {
         "test-pcap-crash" = {
           depends = [
@@ -102,16 +102,16 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-regions" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-renderer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,9 +129,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "http, attoparsec, pipes and conduit utilities for the streaming libraries";
       description = "Experimental http-client, aeson, attoparsec and pipes utilities for use with\nthe <http://hackage.haskell.org/package/streaming streaming> and\n<http://hackage.haskell.org/package/streaming-bytestring streaming bytestring> libraries.\nThey generally closely follow similarly named modules in the pipes\n\\'ecosystem\\', using similar function names, where possible.\n\nThus, for example, using the http client module, we might number the lines\nof a remote document thus:\n\n> import Streaming\n> import Streaming.Prelude (with, each)\n> import qualified Streaming.Prelude as S\n> import Data.ByteString.Streaming.HTTP\n> import qualified Data.ByteString.Streaming.Char8 as Q\n>\n> main =  runResourceT $ do\n>    let output = numbers <|> Q.lines (simpleHTTP \"http://lpaste.net/raw/146542\")\n>    Q.putStrLn $ Q.unlines output\n>\n> numbers :: Monad m => Stream (Q.ByteString m) m ()\n> numbers = with (each [1..]) $ \\n -> Q.pack (each (show n ++ \".  \"))\n> -- [\"1. \", \"2. \" ..]\n\nThe memory requirements of this @Prelude@-ish program will not be\naffected by the fact that, say, the third \\'line\\' is 10 terabytes long.\n\nThis package of course heaps together a number of dependencies, as it\nseemed best not to spam hackage with numerous packages. If it seems\nreasonable to detach some of it, please raise an issue on the github page.\n\nQuestions about usage can be raised as issues, or addressed to the\n<https://groups.google.com/forum/#!forum/haskell-pipes pipes list>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."json-stream" or (errorHandler.buildDepError "json-stream"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

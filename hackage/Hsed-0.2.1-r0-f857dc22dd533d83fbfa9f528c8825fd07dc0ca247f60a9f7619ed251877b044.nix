@@ -21,7 +21,7 @@
       synopsis = "Stream Editor in Haskell";
       description = "A version of sed editor in Haskell based on POSIX \"The Open Group Base\nSpecifications Issue 7\" IEEE Std 1003.1-2008.\n\nFor the library usage check Hsed.Sed module and for the program usage\ntake a look in the attached README file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Hsed" = { buildable = true; }; };
       };
-    }
+      exes = { "Hsed" = { buildable = true; }; };
+    };
+  }

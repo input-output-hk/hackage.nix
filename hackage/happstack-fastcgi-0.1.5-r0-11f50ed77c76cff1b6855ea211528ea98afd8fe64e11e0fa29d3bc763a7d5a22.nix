@@ -21,7 +21,7 @@
       synopsis = "Happstack extension for use with FastCGI.";
       description = "This library lets you write FastCGI programs with Happstack. This package\nreuses the SimpleHTTP API, making it very easy to port stand-alone HTTP\nprograms to FastCGI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

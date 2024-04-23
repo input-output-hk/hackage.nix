@@ -21,7 +21,7 @@
       synopsis = "Real-time line plotter for protobuf-like data";
       description = "Plot-ho-matic provides real-time plotting of time-series data with a simple interface ('addHistoryChannel').\nThere is also a more general interface to plot arbitrary data ('addChannel').\n\nSee the example on <http://www.github.com/ghorn/Plot-ho-matic> to help get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."generic-accessors" or (errorHandler.buildDepError "generic-accessors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Plot-ho-matic" or (errorHandler.buildDepError "Plot-ho-matic"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

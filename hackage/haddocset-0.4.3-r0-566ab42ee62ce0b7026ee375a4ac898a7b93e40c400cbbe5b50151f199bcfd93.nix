@@ -21,7 +21,7 @@
       synopsis = "Generate docset of Dash by Haddock haskell documentation tool";
       description = "please read README.md <https://github.com/philopon/haddocset/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haddocset" = {
@@ -43,15 +43,15 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.8"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
             then [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-              ]
+            ]
             else [
               (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-              ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+            ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

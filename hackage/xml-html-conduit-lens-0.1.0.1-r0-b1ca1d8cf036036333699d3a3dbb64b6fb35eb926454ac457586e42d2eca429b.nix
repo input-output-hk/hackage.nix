@@ -21,7 +21,7 @@
       synopsis = "Optics for xml-conduit and html-conduit";
       description = "Optics for xml-conduit and html-conduit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."html-conduit" or (errorHandler.buildDepError "html-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-html-conduit-lens" or (errorHandler.buildDepError "xml-html-conduit-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A transcendental HTML parser gently wrapping the HXT library";
       description = "Parse without thinking ...\n\nyuuko \"//body\" \"<html><body>hi</body></html>\"\n\n> [\"hi\"]";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

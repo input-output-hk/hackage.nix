@@ -21,7 +21,7 @@
       synopsis = "A modular interpreter for executing SIMPLE funcons ";
       description = "The PLanCompS (<http://plancomps.org>) project has developed a component-based approach to formal semantics.\nA reusable component of language definition corresponds to a fundamental\nprogramming construct: a `funcon', which has a fixed operational interpretation.\nThis package provides an interpreter for the funcons of SIMPLE <https://plancomps.github.io/CBS-beta/Languages-beta/SIMPLE/> extending the interpreter for the reusable funcons of /funcons-tools/ <https://hackage.haskell.org/package/funcons-tools>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "runfct-SIMPLE" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."funcons-tools" or (errorHandler.buildDepError "funcons-tools"))
             (hsPkgs."funcons-values" or (errorHandler.buildDepError "funcons-values"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

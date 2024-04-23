@@ -21,16 +21,16 @@
       synopsis = "A client for Quill databases";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Tables" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cookbook" or (errorHandler.buildDepError "cookbook"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

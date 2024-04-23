@@ -21,7 +21,7 @@
       synopsis = "An IDL Compiler for MessagePack";
       description = "An IDL Compiler for MessagePack <http://msgpack.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
           (hsPkgs."peggy" or (errorHandler.buildDepError "peggy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mpidl" = {
           depends = [
@@ -47,19 +47,19 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."peggy" or (errorHandler.buildDepError "peggy"))
             (hsPkgs."msgpack-idl" or (errorHandler.buildDepError "msgpack-idl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mpidl-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."msgpack-idl" or (errorHandler.buildDepError "msgpack-idl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "numerical spaces";
       description = "Spaces and the numerical elements that inhabit them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

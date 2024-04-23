@@ -21,7 +21,7 @@
       synopsis = "Data type representing a piecewise-constant function over time";
       description = "Provides data types and related function to make handling\ntimelines easier.  Please see the README on GitHub at\n<https://github.com/bellroy/timeline>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -54,12 +54,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timeline" or (errorHandler.buildDepError "timeline"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

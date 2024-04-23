@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         (hsPkgs.buildPackages.cabal-toolkit or (pkgs.buildPackages.cabal-toolkit or (errorHandler.setupDepError "cabal-toolkit")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -38,19 +38,19 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."pomaps" or (errorHandler.buildDepError "pomaps"))
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "firstfollow-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."datafix" or (errorHandler.buildDepError "datafix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -71,19 +71,19 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."datafix" or (errorHandler.buildDepError "datafix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

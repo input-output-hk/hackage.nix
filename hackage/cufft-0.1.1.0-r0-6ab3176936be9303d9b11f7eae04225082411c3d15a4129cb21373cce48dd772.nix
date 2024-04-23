@@ -21,17 +21,17 @@
       synopsis = "Haskell bindings for the CUFFT library";
       description = "The CUFFT library is part of the CUDA developer toolkit.\n\n<http://developer.nvidia.com/cuda-downloads>\n\nIt contains a highly optimised, FFTW compatible, Fast-Fourier Transform\nimplementation that can execute on NVIDIA GPUs.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cuda" or (errorHandler.buildDepError "cuda"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

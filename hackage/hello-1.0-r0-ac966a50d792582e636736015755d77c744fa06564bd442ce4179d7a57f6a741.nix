@@ -21,13 +21,13 @@
       synopsis = "Hello World, an example package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hello" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

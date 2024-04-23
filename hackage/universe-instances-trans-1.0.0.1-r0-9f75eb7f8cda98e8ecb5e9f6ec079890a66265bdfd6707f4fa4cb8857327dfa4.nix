@@ -21,7 +21,7 @@
       synopsis = "Universe instances for types from the transformers and mtl packages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
           (hsPkgs."universe-instances-base" or (errorHandler.buildDepError "universe-instances-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

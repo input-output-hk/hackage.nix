@@ -21,7 +21,7 @@
       synopsis = "dimensional-tf wrapper on atmos package";
       description = "1976 US Standard Atmosphere with dimensions from dimensional-tf package.\n\nThis is a thin wrapper on top of the atmos package.\n\nI recommend using the atmos-dimensional package instead of this until atmos-dimensional-tf is more stable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."atmos" or (errorHandler.buildDepError "atmos"))
           (hsPkgs."dimensional-tf" or (errorHandler.buildDepError "dimensional-tf"))
           (hsPkgs."numtype-tf" or (errorHandler.buildDepError "numtype-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

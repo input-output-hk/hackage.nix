@@ -21,7 +21,7 @@
       synopsis = "Tail files in Unix, using hinotify. ";
       description = "Tail files in Unix, using hinotify. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."streaming-eversion" or (errorHandler.buildDepError "streaming-eversion"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."process-streaming" or (errorHandler.buildDepError "process-streaming"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

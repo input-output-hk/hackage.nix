@@ -21,7 +21,7 @@
       synopsis = "gRPC servers for Mu definitions";
       description = "With @mu-grpc-server@ you can easily build gRPC servers for mu-haskell!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "grpc-example-server" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

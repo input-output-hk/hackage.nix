@@ -21,7 +21,7 @@
       synopsis = "Abstraction for HTML-embedded content";
       description = "Please see the README on Github at <https://github.com/githubuser/markup#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."urlpath" or (errorHandler.buildDepError "urlpath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

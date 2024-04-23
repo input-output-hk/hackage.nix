@@ -21,11 +21,11 @@
       synopsis = "IO without any non-error, synchronous exceptions";
       description = "When you've caught all the exceptions that can be handled safely,\nthis is what you're left with.\n\nIt is intended that you use qualified imports with this library.\n\n> import UnexceptionalIO (UIO)\n> import qualified UnexceptionalIO as UIO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

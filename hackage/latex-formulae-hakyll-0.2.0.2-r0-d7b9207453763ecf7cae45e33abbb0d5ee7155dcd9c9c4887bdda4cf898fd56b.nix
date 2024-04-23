@@ -21,7 +21,7 @@
       synopsis = "Use actual LaTeX to render formulae inside Hakyll pages";
       description = "This library provides functions to render all math formulae inside Pandoc-processed Hakyll pages using\nreal LaTeX.\n\nIt also provides a simple LRU cache to avoid recompiling the same formulae repeatedly during a @watch@\nsession.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."lrucache" or (errorHandler.buildDepError "lrucache"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

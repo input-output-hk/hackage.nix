@@ -21,7 +21,7 @@
       synopsis = "A Transactional cache with user-defined persistence";
       description = "TCache is a transactional cache with configurable persitence. It allows conventional\nSTM transactions for objects that syncronize  with\ntheir user defined storages. Default persistence in files is provided for testing purposes\nState in memory and into permanent storage is transactionally coherent.\n\nSee \"Data.TCache\" for details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."RefSerialize" or (errorHandler.buildDepError "RefSerialize"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

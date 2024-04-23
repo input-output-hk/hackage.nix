@@ -21,7 +21,7 @@
       synopsis = "An execution and testing framework for the Linden Scripting Language (LSL)";
       description = "Provides a framework for executing Linden Scripting Language scripts offline,\ni.e. outside a Second Life&#xAE; simulator.  The product is the LslPlus executable,\nwhich works in cooperation with the LSL Plus Eclipse plugin (the executable is not\nmuch use standalone).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "LslPlus" = {
@@ -43,9 +43,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Happstack backend for jmacro-rpc";
       description = "Provides functions for serving jmacro-rpc json rpcs from Happstack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."jmacro-rpc" or (errorHandler.buildDepError "jmacro-rpc"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

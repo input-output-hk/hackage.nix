@@ -21,11 +21,11 @@
       synopsis = "Some extension to the Foldable and Monoid classes.";
       description = "Introduces a new class InsertLeft — the class of types of values that can be inserted from the left to the Foldable structure that is a data that is also the Monoid instance. Also contains some functions to find out both minimum and maximum elements of the finite Foldable structures. Is a fork of the <https://hackage.haskell.org/package/subG>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

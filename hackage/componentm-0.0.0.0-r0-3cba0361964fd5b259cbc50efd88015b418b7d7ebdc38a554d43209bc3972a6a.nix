@@ -21,7 +21,7 @@
       synopsis = "Monad for allocation and cleanup of application resources";
       description = "This library allows you to allocate resources with\nclean up strategies when initializing your application.\nIt then provides a Monadic interface to compose multiple\nresources without having to deal with cleanup operations\nexplicitely.\n\nCheck Control.Monad.Component.Tutorial for an example and\nmore information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."teardown" or (errorHandler.buildDepError "teardown"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "componentm-tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."teardown" or (errorHandler.buildDepError "teardown"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

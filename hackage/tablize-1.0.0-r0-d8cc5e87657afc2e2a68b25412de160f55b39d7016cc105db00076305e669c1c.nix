@@ -21,7 +21,7 @@
       synopsis = "Pretty-printing of CSV files";
       description = "Command-line utility to pretty-print CSV files with custom\nvisual decoration and column alignments.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tablize" = {
@@ -32,9 +32,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tabl" or (errorHandler.buildDepError "tabl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Comparative benchmark suite for darcs.";
       description = "A simple tool to compare performance of different Darcs 2.x\ninstances.  The program can download a set of test repositories,\nor you can provide your own. Run the program without parameters to\nget help.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "darcs-benchmark" = {
@@ -41,9 +41,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

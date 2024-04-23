@@ -21,24 +21,24 @@
       synopsis = "Layout text as grid or table.";
       description = "`table-layout` is a library for text-based table layout, it provides several\nfunctions and types which help in this task from the ground up, although\nusing them is not necessary. It provides the following layout features:\n\n* Fixed-size and arbitrarily sized columns and limiting versions of those\n\n* Positional alignment of content in a column\n\n* Alignment of content within a column at a character occurence\n\n* Cut marks show that content has been trimmed\n\n* Fancy tables with optional headers and user styles\n\n* Justified text layout over multiple rows\n\n/Note:/ This package is currently under development and may not be suited for\nproductive use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "table-layout-test-styles" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "table-layout-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

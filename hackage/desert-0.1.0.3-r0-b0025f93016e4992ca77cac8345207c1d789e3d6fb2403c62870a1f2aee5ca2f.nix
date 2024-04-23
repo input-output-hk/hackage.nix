@@ -21,7 +21,7 @@
       synopsis = "a simple build tool for OCaml projects";
       description = "Check out <https://github.com/zjhmale/desert#readme the readme> for documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,27 +33,27 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "desert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."desert" or (errorHandler.buildDepError "desert"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "desert-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."desert" or (errorHandler.buildDepError "desert"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

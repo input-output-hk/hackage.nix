@@ -21,7 +21,7 @@
       synopsis = "A breakout clone written in netwire and gloss";
       description = "A breakout clone written in netwire and gloss.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "spanout" = {
@@ -34,9 +34,9 @@
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."netwire" or (errorHandler.buildDepError "netwire"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

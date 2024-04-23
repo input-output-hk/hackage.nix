@@ -21,7 +21,7 @@
       synopsis = "Combinator-based type-safe formatting (like printf() or FORMAT)";
       description = "Combinator-based type-safe formatting (like printf() or FORMAT), modelled from the HoleyMonoids package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

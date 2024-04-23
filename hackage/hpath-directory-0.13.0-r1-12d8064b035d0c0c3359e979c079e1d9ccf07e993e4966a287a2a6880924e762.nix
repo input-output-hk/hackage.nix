@@ -21,7 +21,7 @@
       synopsis = "Alternative to 'directory' package with ByteString based filepaths";
       description = "This provides a safer alternative to the 'directory'\npackage. FilePaths are ByteString based, so this\npackage only works on POSIX systems.\nFor a more high-level version of this with\nproper Path type, use 'hpath-io', which makes\nuse of this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -37,9 +37,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = if system.isWindows then false else true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

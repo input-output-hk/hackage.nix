@@ -21,16 +21,16 @@
       synopsis = "RNG within an IORef for convenient concurrent use";
       description = "rng-utils aims to make it easy to generate an RNG and safely use it concurrently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,19 +40,19 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."rng-utils" or (errorHandler.buildDepError "rng-utils"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rng-utils" or (errorHandler.buildDepError "rng-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

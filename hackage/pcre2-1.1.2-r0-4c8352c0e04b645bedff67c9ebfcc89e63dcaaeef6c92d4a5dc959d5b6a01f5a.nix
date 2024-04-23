@@ -21,7 +21,7 @@
       synopsis = "Regular expressions via the PCRE2 C library (included)";
       description = "Please see the README on GitHub at <https://github.com/sjshuck/hs-pcre2>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pcre2-test" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "pcre2-benchmarks" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

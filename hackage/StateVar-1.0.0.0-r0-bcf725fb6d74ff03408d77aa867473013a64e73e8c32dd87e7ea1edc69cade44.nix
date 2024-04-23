@@ -21,11 +21,11 @@
       synopsis = "State variables";
       description = "This package contains state variables, which are references in the IO monad,\nlike IORefs or parts of the OpenGL state.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

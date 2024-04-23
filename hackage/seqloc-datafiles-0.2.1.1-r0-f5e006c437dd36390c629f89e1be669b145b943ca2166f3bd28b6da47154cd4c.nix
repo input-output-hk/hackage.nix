@@ -21,7 +21,7 @@
       synopsis = "Read and write BED and GTF format genome annotations";
       description = "Read and write BED and GTF format genome annotations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."seqloc" or (errorHandler.buildDepError "seqloc"))
           (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gtf-to-bed" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-gtf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "test-bed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "gtf-introns" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -94,9 +94,9 @@
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

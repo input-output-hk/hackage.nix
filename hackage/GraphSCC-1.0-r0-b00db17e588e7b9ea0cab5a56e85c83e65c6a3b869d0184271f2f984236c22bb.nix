@@ -21,15 +21,15 @@
       synopsis = "Tarjan's algorithm for computing the strongly connected components of a graph.";
       description = "Tarjan's algorithm for computing the strongly connected components of a graph.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

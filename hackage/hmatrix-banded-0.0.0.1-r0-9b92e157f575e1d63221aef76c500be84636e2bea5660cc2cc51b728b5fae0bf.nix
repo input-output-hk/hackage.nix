@@ -21,16 +21,16 @@
       synopsis = "HMatrix interface to LAPACK functions for banded matrices";
       description = "HMatrix interface to LAPACK functions for banded matrices";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         libs = [ (pkgs."lapack" or (errorHandler.sysDepError "lapack")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

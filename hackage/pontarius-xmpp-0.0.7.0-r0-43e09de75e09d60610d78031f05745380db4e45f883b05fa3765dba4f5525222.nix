@@ -21,7 +21,7 @@
       synopsis = "A prototyped and incomplete implementation of RFC 6120:\nXMPP: Core";
       description = "A work in progress of an implementation of RFC 6120: XMPP:\nCore, as well as RFC 6122: XMPP: Address Format and other\ndepending standards. A new version of Pontarius XMPP is\nreleased every three weeks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,8 +52,8 @@
           (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
           (hsPkgs."ranges" or (errorHandler.buildDepError "ranges"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

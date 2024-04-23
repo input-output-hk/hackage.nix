@@ -21,20 +21,20 @@
       synopsis = "Styled console text output using ANSI escape sequences.";
       description = "Styled console text output using ANSI escape sequences.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."colorful-monoids" or (errorHandler.buildDepError "colorful-monoids"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

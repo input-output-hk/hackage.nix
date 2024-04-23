@@ -21,7 +21,7 @@
       synopsis = "Hex-string type for Haskell Web3 library.";
       description = "Client library for Third Generation of Web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."scale" or (errorHandler.buildDepError "scale"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convenience wrappers around common data structures and encodings";
       description = "Wrappers around common data structures and encodings.\n\nThis is part of a library intended to ease interoperability and assist in\nbuilding command-line programs, both tools and longer-running daemons.\nA list of features and some background to the library's design is contained\nin the\n<https://github.com/aesiniath/unbeliever/blob/master/README.markdown README>\non GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

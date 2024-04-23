@@ -21,7 +21,7 @@
       synopsis = "A Haskell client for Grakn";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "accept" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

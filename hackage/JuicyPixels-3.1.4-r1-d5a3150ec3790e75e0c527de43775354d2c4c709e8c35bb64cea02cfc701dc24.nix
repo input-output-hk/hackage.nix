@@ -21,7 +21,7 @@
       synopsis = "Picture loading/serialization (in png, jpeg, bitmap, gif, tiff and radiance)";
       description = "<<docimages/juicy.png>>\n\nThis library can load and store images in PNG,Bitmap, Jpeg, Radiance, Tiff and Gif images.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (flags.mmap) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"));
+        ] ++ pkgs.lib.optional (flags.mmap) (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

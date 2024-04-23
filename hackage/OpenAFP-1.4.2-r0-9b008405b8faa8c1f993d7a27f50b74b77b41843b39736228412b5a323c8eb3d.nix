@@ -21,7 +21,7 @@
       synopsis = "IBM AFP document format parser and generator";
       description = "IBM AFP document format parser and generator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

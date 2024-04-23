@@ -21,7 +21,7 @@
       synopsis = "Parse and format HTTP/1.1 Date and Time strings";
       description = "This package provides functionalities to parse and format\nvarious Date and Time formats allowed in HTTP\\/1.1 (RFC 2616).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-time-http" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

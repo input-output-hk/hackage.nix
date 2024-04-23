@@ -21,7 +21,7 @@
       synopsis = "Qt bindings for Haskell";
       description = "Qtah is a set of Qt bindings for Haskell.  This package contains the Haskell\nside of the bindings, and is what Qt programs should use directly.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,10 +31,10 @@
           (hsPkgs."hoppy-runtime" or (errorHandler.buildDepError "hoppy-runtime"))
           (hsPkgs."qtah-cpp-qt5" or (errorHandler.buildDepError "qtah-cpp-qt5"))
           (hsPkgs."qtah-generator" or (errorHandler.buildDepError "qtah-generator"))
-          ];
+        ];
         libs = [ (pkgs."qtah" or (errorHandler.sysDepError "qtah")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-qtah" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."hoppy-runtime" or (errorHandler.buildDepError "hoppy-runtime"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."qtah-qt5" or (errorHandler.buildDepError "qtah-qt5"))
-            ];
+          ];
           libs = [ (pkgs."qtah" or (errorHandler.sysDepError "qtah")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

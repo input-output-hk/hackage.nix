@@ -21,7 +21,7 @@
       synopsis = "Integration of domain with aeson";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."th-lego" or (errorHandler.buildDepError "th-lego"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "demo" = {
           depends = [
             (hsPkgs."domain" or (errorHandler.buildDepError "domain"))
             (hsPkgs."domain-aeson" or (errorHandler.buildDepError "domain-aeson"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

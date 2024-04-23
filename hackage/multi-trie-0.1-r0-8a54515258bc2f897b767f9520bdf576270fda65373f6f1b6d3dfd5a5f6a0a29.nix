@@ -21,16 +21,16 @@
       synopsis = "Trie of sets, as a model for compound names having multiple values";
       description = "A multi-trie is a trie (i.e. a tree whose child nodes have distinct labels)\nwith each node containing a list of values.\nThis data structure represents a structured many-valued naming: names are\ncompound and form a monoid under concatenation; each name can have multiple\nvalues.\nSome operations could be defined for multi-tries in a rather natural way,\nincluding 'map', 'union', 'intersection', 'cartesian' product.\nMoreover, a multi-trie can contain not only ordinary values but also\nfunctions that makes it possible to apply a multi-trie of functions to a\nmulti-trie of argument values. This makes 'MultiTrie' an instance of\n'Functor', 'Applicative' and 'Monad'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Spec" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."multi-trie" or (errorHandler.buildDepError "multi-trie"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

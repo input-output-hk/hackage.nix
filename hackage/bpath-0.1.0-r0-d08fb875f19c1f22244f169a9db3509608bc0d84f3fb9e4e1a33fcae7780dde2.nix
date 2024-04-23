@@ -21,7 +21,7 @@
       synopsis = "A minimal typed unix path library";
       description = "A minimal typed unix path library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bpath-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bpath" or (errorHandler.buildDepError "bpath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

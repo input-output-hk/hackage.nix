@@ -21,16 +21,16 @@
       synopsis = "A port of the package 'resourcet' for extensible effects.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."resource-effect" or (errorHandler.buildDepError "resource-effect"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       build-hackage-server = true;
       build-hackage-mirror = true;
       build-hackage-build = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "hackage-server"; version = "0.4"; };
@@ -27,7 +27,7 @@
       synopsis = "The Hackage web server";
       description = "The new implementation of the Hackage web server, based on the\nHappstack architecture. This is the implementation used to power\nhttp://hackage.haskell.org/\n\nIt is designed to be easy to run your own instance.\nIt also includes a doc builder client and a mirroring client.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackage-server" = {
@@ -75,17 +75,17 @@
             (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
             (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-            ] ++ (pkgs.lib).optionals (!flags.minimal) [
+          ] ++ pkgs.lib.optionals (!flags.minimal) [
             (hsPkgs."snowball" or (errorHandler.buildDepError "snowball"))
             (hsPkgs."tokenize" or (errorHandler.buildDepError "tokenize"))
-            ];
-          libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt" or (errorHandler.sysDepError "crypt"));
+          ];
+          libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt" or (errorHandler.sysDepError "crypt"));
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = if !flags.build-hackage-server then false else true;
-          };
+        };
         "hackage-mirror" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = if !flags.build-hackage-mirror then false else true;
-          };
+        };
         "hackage-build" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -140,9 +140,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-            ];
+          ];
           buildable = if !flags.build-hackage-build then false else true;
-          };
+        };
         "hackage-import" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -171,10 +171,10 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.build-hackage-mirror then false else true;
-          };
         };
+      };
       tests = {
         "HighLevelTest" = {
           depends = [
@@ -190,9 +190,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

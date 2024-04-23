@@ -21,7 +21,7 @@
       synopsis = "Bulletproofs are short zero-knowledge proofs without a trusted setup.";
       description = "Bulletproofs are short zero-knowledge arguments of knowledge that do not require a trusted setup.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bulletproofs-example" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "bulletproofs-test" = {
           depends = [
@@ -81,10 +81,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bulletproofs-benchmarks" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,24 +21,24 @@
       synopsis = "Do signal handling and orphan reaping for Unix PID1 init processes";
       description = "Please see README.md or view Haddocks at <https://www.stackage.org/package/pid1>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pid1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pid1" or (errorHandler.buildDepError "pid1"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/named-lock-0.1-r0-10cd7ca541e462f23269a78701f1d60d54c62a2e1ebc2e2d00404c9be7eceec5.nix;
         revNum = 0;
         sha256 = "10cd7ca541e462f23269a78701f1d60d54c62a2e1ebc2e2d00404c9be7eceec5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

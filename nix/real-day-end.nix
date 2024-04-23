@@ -6,8 +6,8 @@
         nix = import ../hackage/real-day-end-0.0.1-r0-0befb5ec7d204323ee01efccc1ec701a5ba929ff96c864769fc58cd9ca66d337.nix;
         revNum = 0;
         sha256 = "0befb5ec7d204323ee01efccc1ec701a5ba929ff96c864769fc58cd9ca66d337";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

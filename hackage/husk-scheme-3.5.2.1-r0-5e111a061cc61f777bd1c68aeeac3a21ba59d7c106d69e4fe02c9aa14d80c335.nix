@@ -21,7 +21,7 @@
       synopsis = "R5RS Scheme interpreter, compiler, and library.";
       description = "A dialect of R5RS Scheme written in Haskell. Provides advanced\nfeatures including continuations, hygienic macros, a Haskell FFI,\nand the full numeric tower.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "huski" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

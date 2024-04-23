@@ -6,8 +6,8 @@
         nix = import ../hackage/sc2-lowlevel-0.1.0.0-r0-98a6364ed6b8668278c5a1c5bd41e9eebd49a3951a80bc7c5b4a43fdd80d492d.nix;
         revNum = 0;
         sha256 = "98a6364ed6b8668278c5a1c5bd41e9eebd49a3951a80bc7c5b4a43fdd80d492d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

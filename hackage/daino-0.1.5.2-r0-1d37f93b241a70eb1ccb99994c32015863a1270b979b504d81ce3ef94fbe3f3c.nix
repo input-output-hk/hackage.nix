@@ -21,7 +21,7 @@
       synopsis = "daino is a static site generator (SSG) using shake and pandoc";
       description = "A static site generator using Pandoc and other available packages on Hackage (e.g. shake, twitch, scotty), influenced by Chris Penner's [slick](https://github.com/ChrisPenner/slick#readme). It uses text files (in Markdown codes) to manage data and relies on   version management with git. Page appearances are directed with YAML headers. For each page a PDF file is produced to allow regular print output. Index pages for navigation between pages are automatically created.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."uniform-webserver" or (errorHandler.buildDepError "uniform-webserver"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "daino" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."uniform-webserver" or (errorHandler.buildDepError "uniform-webserver"))
             (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/telegram-0.1.0.0-r0-35840bba215448093e249665d92051875ecf221d2af23593bfe4f6466bf6cf2f.nix;
         revNum = 0;
         sha256 = "35840bba215448093e249665d92051875ecf221d2af23593bfe4f6466bf6cf2f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

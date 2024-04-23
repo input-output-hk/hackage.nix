@@ -21,7 +21,7 @@
       synopsis = "CAES Language for Synchronous Hardware - Prelude library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

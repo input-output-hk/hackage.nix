@@ -21,7 +21,7 @@
       synopsis = "Bindings to the LLVM compiler toolkit";
       description = "Bindings to the LLVM compiler toolkit";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring-in-base
@@ -30,8 +30,8 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

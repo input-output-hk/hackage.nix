@@ -21,7 +21,7 @@
       synopsis = "Syntax instance for pretty, the pretty printing library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."semi-iso" or (errorHandler.buildDepError "semi-iso"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

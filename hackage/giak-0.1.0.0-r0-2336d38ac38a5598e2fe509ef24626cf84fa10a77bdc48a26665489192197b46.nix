@@ -21,7 +21,7 @@
       synopsis = "Fuzzy finder for cabal executables";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "giak" = {
@@ -43,9 +43,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."wybor" or (errorHandler.buildDepError "wybor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

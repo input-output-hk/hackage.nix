@@ -21,7 +21,7 @@
       synopsis = "Multi-process orchestration for development and integration testing";
       description = "Keiretsu is an orchestration manager primarily designed for local development\nand integration testing.\n\nIt allows you to specify dependencies that should be running/available before\nthe start of the local application, triggers setup/teardown hooks, and applies\na consistent environment to all child processes ensuring deterministic and\nrepeatable configuration.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "keiretsu" = {
@@ -43,9 +43,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

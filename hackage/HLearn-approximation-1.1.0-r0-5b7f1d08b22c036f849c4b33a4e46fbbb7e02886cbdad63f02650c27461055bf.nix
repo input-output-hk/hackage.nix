@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Approximation algorithms for NP-hard problems";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
           (hsPkgs."heap" or (errorHandler.buildDepError "heap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

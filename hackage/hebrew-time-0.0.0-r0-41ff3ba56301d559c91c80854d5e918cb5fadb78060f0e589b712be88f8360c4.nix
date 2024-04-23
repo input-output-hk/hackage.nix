@@ -21,7 +21,7 @@
       synopsis = "Hebrew dates and prayer times.";
       description = "Conversion to and from Hebrew dates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."bytestring-class" or (errorHandler.buildDepError "bytestring-class"))
           (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Type-level natural and proofs of their properties.";
       description = "Type-level natural numbers and proofs of their properties.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

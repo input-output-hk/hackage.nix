@@ -6,8 +6,8 @@
         nix = import ../hackage/paymill-0.0.0-r0-32424525f10dc026eb76dbd6abbc0ee71f44f04438b81fd4ec7508c543219708.nix;
         revNum = 0;
         sha256 = "32424525f10dc026eb76dbd6abbc0ee71f44f04438b81fd4ec7508c543219708";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

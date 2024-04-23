@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-m2-2.0-r0-f4607f8ffe2deb5fdbda470f3ac158f9a4e535f1b6d43d76239fc3e1b364929e.nix;
         revNum = 0;
         sha256 = "f4607f8ffe2deb5fdbda470f3ac158f9a4e535f1b6d43d76239fc3e1b364929e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,14 +21,14 @@
       synopsis = "A wrapping library for waitfree computation.";
       description = "A combinator library for asynchronous waitfree computation among forkIO threads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

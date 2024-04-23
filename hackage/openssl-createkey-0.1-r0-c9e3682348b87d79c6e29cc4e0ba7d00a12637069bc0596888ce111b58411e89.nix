@@ -21,7 +21,7 @@
       synopsis = "Create OpenSSL keypairs.";
       description = "Create OpenSSL keypairs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

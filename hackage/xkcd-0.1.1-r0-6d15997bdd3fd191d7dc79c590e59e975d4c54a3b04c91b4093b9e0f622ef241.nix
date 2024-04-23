@@ -21,7 +21,7 @@
       synopsis = "Downloads the most recent xkcd comic.";
       description = "Downloads the most recent xkcd comic into a folder on a disk.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xkcd" = {
@@ -33,9 +33,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

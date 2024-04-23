@@ -21,7 +21,7 @@
       synopsis = "Behavior-Driven Development for Haskell";
       description = "Behavior-Driven Development for Haskell\n\nHspec is roughly based on the Ruby library RSpec. However,\nHspec is just a framework for running HUnit and QuickCheck\ntests. Compared to other options, it provides a much nicer\nsyntax that makes tests very easy to read.\n\nThe Hspec Manual is at <http://hspec.github.com/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,19 +36,19 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-io" or (errorHandler.buildDepError "quickcheck-io"))
           (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hspec-discover" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -67,48 +67,48 @@
             (hsPkgs."hspec-meta" or (errorHandler.buildDepError "hspec-meta"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec-discover-spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec-meta" or (errorHandler.buildDepError "hspec-meta"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec-discover-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "hspec-discover-integration-test-empty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

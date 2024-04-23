@@ -6,8 +6,8 @@
         nix = import ../hackage/ord-adhoc-0.0.0.1-r0-475e072792e004f80a63b647d17e37662a193dc2397f16827acb768582127984.nix;
         revNum = 0;
         sha256 = "475e072792e004f80a63b647d17e37662a193dc2397f16827acb768582127984";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

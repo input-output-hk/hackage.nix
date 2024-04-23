@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/joshuaclayton/token-search#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "token-search" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."token-search" or (errorHandler.buildDepError "token-search"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "token-search-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."token-search" or (errorHandler.buildDepError "token-search"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A category polymorphic `Functor` typeclass";
       description = "A category polymorphic `Functor` typeclass.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "kindly-functors-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."kindly-functors" or (errorHandler.buildDepError "kindly-functors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

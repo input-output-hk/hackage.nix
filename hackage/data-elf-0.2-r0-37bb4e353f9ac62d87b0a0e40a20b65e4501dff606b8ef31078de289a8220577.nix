@@ -21,7 +21,7 @@
       synopsis = "Executable and Linkable Format (ELF) data structures.";
       description = "This package provides Executable and Linkable Format (ELF) data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-sword" or (errorHandler.buildDepError "data-sword"))
           (hsPkgs."data-flags" or (errorHandler.buildDepError "data-flags"))
           (hsPkgs."data-serializer" or (errorHandler.buildDepError "data-serializer"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Amazon Identity and Access Management SDK.";
       description = "AWS Identity and Access Management (IAM) enables you to securely\ncontrol access to AWS services and resources for your users. Using IAM,\nyou can create and manage AWS users and groups and use permissions to\nallow and deny their access to AWS resources.\n\n/See:/ <http://docs.aws.amazon.com/IAM/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

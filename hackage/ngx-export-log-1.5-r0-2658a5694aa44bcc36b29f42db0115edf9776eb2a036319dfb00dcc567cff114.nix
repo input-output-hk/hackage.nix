@@ -21,7 +21,7 @@
       synopsis = "Native Nginx logging from configuration files and Haskell handlers";
       description = "Native Nginx logging from configuration files and Haskell handlers.\n\nThis is a part of <https://github.com/lyokha/nginx-log-plugin>. Custom\nlibraries are required to be linked against C module /ngx_log_plugin/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."ngx-export" or (errorHandler.buildDepError "ngx-export"))
           (hsPkgs."ngx-export-tools" or (errorHandler.buildDepError "ngx-export-tools"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,33 +21,33 @@
       synopsis = "Burst detection algorithms";
       description = "Library implements burst detection algorithms that follows\n\nZhang, X. (2006). Fast Algorithms for Burst Detection. Thesis. New York University.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."burst-detection" or (errorHandler.buildDepError "burst-detection"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "c-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."burst-detection" or (errorHandler.buildDepError "burst-detection"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

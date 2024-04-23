@@ -21,11 +21,11 @@
       synopsis = "Torsor Typeclass";
       description = "Torsor Typeclass.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Physics on generalized coordinate systems using Hamiltonian Mechanics and AD";
       description = "See README.md (or read online at <https://github.com/mstksg/hamilton#readme>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."hmatrix-gsl" or (errorHandler.buildDepError "hmatrix-gsl"))
           (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hamilton-examples" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

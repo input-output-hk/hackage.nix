@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-kafka-0.2.0.0-r0-cb9c9ae2d54dcc2bb031cae5cca930af6b6dfb5b484af89831d4ea5cc688c2f0.nix;
         revNum = 0;
         sha256 = "cb9c9ae2d54dcc2bb031cae5cca930af6b6dfb5b484af89831d4ea5cc688c2f0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

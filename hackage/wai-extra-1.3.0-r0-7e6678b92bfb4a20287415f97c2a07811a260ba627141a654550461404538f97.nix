@@ -21,7 +21,7 @@
       synopsis = "Provides some basic WAI handlers and middleware.";
       description = "The goal here is to provide common features without many dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

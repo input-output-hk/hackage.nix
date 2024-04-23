@@ -21,7 +21,7 @@
       synopsis = "A simple tetris clone";
       description = "A tetris clone written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Monaris" = {
@@ -33,9 +33,9 @@
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."free-game" or (errorHandler.buildDepError "free-game"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

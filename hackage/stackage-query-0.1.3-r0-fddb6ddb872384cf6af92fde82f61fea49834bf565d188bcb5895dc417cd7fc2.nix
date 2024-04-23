@@ -21,7 +21,7 @@
       synopsis = "Stackage package query";
       description = "Tool to query package metadata in Stackage";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stackage" = {
@@ -43,9 +43,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

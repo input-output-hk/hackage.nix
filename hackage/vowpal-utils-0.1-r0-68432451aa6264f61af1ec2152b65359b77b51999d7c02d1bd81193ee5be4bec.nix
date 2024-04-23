@@ -21,11 +21,11 @@
       synopsis = "Vowpal Wabbit utilities ";
       description = "Vowpal Wabbit hash and utils         ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "External reference with reactivity support";
       description = "The package provides you with `IORef` that has attached reflex `Event`. Each time\nthe variable changes the event fires. It is very useful for communication with\nexternal event sources or using it as environment level state.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

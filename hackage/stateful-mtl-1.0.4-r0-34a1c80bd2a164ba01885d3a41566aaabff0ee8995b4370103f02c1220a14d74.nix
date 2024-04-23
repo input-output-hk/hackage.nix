@@ -21,7 +21,7 @@
       synopsis = "Stateful monad transformers with pure evaluation semantics.";
       description = "Stateful monad transformers with pure evaluation semantics, useful for monadically pulling out implementation details of array manipulation and operations in the ST monad.  Includes typeclasses suitable for guaranteeing single-threaded monad behavior, avoiding previously encountered problems with ST monad transformers.  This package remains in a state of flux, so please notify the author about features you like or dislike.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/githubuser/timemap#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "timemap-test" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timemap" or (errorHandler.buildDepError "timemap"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "timemap-bench1" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timemap" or (errorHandler.buildDepError "timemap"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "timemap-bench2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,9 +88,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timemap" or (errorHandler.buildDepError "timemap"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

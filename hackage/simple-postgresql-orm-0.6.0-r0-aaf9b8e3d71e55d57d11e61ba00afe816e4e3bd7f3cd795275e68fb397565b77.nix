@@ -21,7 +21,7 @@
       synopsis = "Connector package for integrating postgresql-orm with the Simple web framework";
       description = "Connector package for integrating postgresql-orm with the Simple web framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."postgresql-orm" or (errorHandler.buildDepError "postgresql-orm"))
           (hsPkgs."simple" or (errorHandler.buildDepError "simple"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

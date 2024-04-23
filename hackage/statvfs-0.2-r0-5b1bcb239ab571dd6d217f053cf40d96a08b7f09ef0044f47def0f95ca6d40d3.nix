@@ -21,11 +21,11 @@
       synopsis = "Get unix filesystem statistics with statfs, statvfs";
       description = "C FFI wrapper for POSIX statvfs and fstatvfs calls.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

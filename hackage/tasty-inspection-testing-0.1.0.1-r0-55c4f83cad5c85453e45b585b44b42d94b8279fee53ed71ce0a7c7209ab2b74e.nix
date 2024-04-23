@@ -21,7 +21,7 @@
       synopsis = "Inspection testing support for tasty";
       description = "Integrate @inspection-testing@ into @tasty@ test suites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

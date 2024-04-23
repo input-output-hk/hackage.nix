@@ -6,8 +6,8 @@
         nix = import ../hackage/ficketed-0.1.0.0-r0-220fa6d3eed91b616ed698c1ee3508960be7e17edcfaa831dbc2bf6f4f7d269a.nix;
         revNum = 0;
         sha256 = "220fa6d3eed91b616ed698c1ee3508960be7e17edcfaa831dbc2bf6f4f7d269a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

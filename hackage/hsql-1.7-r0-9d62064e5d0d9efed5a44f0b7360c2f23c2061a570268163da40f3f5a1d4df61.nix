@@ -21,11 +21,11 @@
       synopsis = "";
       description = "Simple library for database access from Haskell.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

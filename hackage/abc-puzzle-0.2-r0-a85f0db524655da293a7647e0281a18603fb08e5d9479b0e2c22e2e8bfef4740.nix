@@ -21,7 +21,7 @@
       synopsis = "Generate instances of the ABC Logic Puzzle.";
       description = "This program generate instances of the ABC Logic Puzzle\n(<http://en.wikipedia.org/wiki/Buchstabensalat_%28logic_puzzle%29>).\nThe implementation uses the MiniSat SAT solver (<http://minisat.se/>)\nto guide the search for a valid puzzle. Each generated puzzle has one\nunique solution.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "abc-puzzle" = {
@@ -32,9 +32,9 @@
             (hsPkgs."Safe" or (errorHandler.buildDepError "Safe"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

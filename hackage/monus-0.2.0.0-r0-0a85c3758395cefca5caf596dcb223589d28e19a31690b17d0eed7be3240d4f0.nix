@@ -21,15 +21,15 @@
       synopsis = "a 'Monus' is a commutative monoid that allows a notion of substraction.";
       description = "A 'Monus' is a commutative monoid that allows a notion of substraction,\nwith the following laws:\n\nx <> (y - x) = y <> (x - y)\n\n(x - y) - z = x - (y <> z)\n\nx - x = mempty\n\nmempty - x = mempty";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

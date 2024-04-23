@@ -21,14 +21,14 @@
       synopsis = "Type-safe modular arithmetic";
       description = "Please the documentation on GitHub at <https://github.com/pgujjula/modular>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

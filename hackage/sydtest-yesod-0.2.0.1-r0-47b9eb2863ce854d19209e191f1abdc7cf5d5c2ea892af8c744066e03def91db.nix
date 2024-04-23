@@ -21,7 +21,7 @@
       synopsis = "A yesod companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-yesod-blog-example-test" = {
           depends = [
@@ -65,12 +65,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sydtest-yesod-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,12 +84,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

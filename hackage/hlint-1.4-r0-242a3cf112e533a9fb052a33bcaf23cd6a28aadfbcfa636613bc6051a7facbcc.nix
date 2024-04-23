@@ -21,7 +21,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hlint" = {
@@ -35,9 +35,9 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

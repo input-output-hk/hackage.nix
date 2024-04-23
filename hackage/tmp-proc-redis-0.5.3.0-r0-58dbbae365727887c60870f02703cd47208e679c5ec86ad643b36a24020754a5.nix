@@ -21,7 +21,7 @@
       synopsis = "Launch Redis in docker using tmp-proc";
       description = "Demos how to use tmp-proc to run Redis in docker in a unittest.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
             (hsPkgs."tmp-proc-redis" or (errorHandler.buildDepError "tmp-proc-redis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,10 +21,10 @@
       synopsis = "Anything that associates";
       description = "In mathematics, a semigroup is an algebraic structure consisting of a set together with an associative binary operation. A semigroup generalizes a monoid in that there might not exist an identity element. It also (originally) generalized a group (a monoid with all inverses) to a type where every element did not have to have an inverse, thus the name semigroup.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")) ++ (if flags.base2
+        depends = pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")) ++ (if flags.base2
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -34,8 +34,8 @@
             (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

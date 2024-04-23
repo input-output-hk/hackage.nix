@@ -21,7 +21,7 @@
       synopsis = "Allows instances for Category, Arrow and ArrowChoice for Pipes.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-extras" or (errorHandler.buildDepError "pipes-extras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pipes-category-exe" = {
           depends = [
@@ -40,18 +40,18 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-category" or (errorHandler.buildDepError "pipes-category"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pipes-category-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-category" or (errorHandler.buildDepError "pipes-category"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

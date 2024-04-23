@@ -21,7 +21,7 @@
       synopsis = "A scrabble library capturing the core game logic of scrabble.";
       description = "A scrabble library which enforces legal transitions between moves. Intended to facilitate the development of a playable game.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

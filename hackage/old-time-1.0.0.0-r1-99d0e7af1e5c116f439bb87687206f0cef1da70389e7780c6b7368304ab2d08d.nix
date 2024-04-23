@@ -21,14 +21,14 @@
       synopsis = "Time library.";
       description = "This package provides the old time library.\nFor new code, the new time library is recommended.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

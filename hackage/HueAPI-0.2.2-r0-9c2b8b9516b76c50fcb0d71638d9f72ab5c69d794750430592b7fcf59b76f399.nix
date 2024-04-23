@@ -21,7 +21,7 @@
       synopsis = "API for controlling Philips Hue lights";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

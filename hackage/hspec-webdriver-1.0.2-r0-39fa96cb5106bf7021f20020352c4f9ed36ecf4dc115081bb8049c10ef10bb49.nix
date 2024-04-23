@@ -21,7 +21,7 @@
       synopsis = "Write end2end web application tests using webdriver and hspec";
       description = "For end to end testing of web applications from Haskell, the\n<https://hackage.haskell.org/package/webdriver webdriver> package is a great tool but just\ncontains the code to communicate with the browser.  This package integrates webdriver\nwith <http://hspec.github.io hspec>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Fast non-backtracking incremental combinator parsing for bytestrings";
       description = "Parser combinator library designed to be fast. It doesn't\nsupport backtracking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."scanner" or (errorHandler.buildDepError "scanner"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."scanner" or (errorHandler.buildDepError "scanner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

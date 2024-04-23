@@ -21,6 +21,6 @@
       synopsis = "libyaml clibs";
       description = "libyaml C source code for yaml bindings";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

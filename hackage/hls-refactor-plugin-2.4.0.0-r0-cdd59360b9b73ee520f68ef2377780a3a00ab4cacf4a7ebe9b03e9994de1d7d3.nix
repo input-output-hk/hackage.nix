@@ -21,7 +21,7 @@
       synopsis = "Exactprint refactorings for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,11 +52,11 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.8"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -88,11 +88,11 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.8"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

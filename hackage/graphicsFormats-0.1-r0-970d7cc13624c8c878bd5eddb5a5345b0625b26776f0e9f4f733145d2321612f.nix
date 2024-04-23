@@ -21,7 +21,7 @@
       synopsis = "Classes for renderable objects.";
       description = "Classes for renderable objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

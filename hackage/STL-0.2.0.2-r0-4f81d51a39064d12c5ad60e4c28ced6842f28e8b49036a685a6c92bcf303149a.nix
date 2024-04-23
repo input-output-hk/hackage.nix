@@ -21,7 +21,7 @@
       synopsis = "STL 3D geometry format parsing and pretty-printing";
       description = "STL is a simple file format for representing 3D\nobjects as the triangles which form their\nsurface.  It is common in 3D printing workflows.\nThis library provides parsing and serialization\nto and from both text and binary STL formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

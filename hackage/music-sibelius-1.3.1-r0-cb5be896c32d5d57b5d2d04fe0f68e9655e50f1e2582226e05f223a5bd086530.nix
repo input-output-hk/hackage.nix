@@ -21,7 +21,7 @@
       synopsis = "To be written.";
       description = "Import music from Sibelius.\nThis library is part of the Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."music-score" or (errorHandler.buildDepError "music-score"))
           (hsPkgs."music-preludes" or (errorHandler.buildDepError "music-preludes"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

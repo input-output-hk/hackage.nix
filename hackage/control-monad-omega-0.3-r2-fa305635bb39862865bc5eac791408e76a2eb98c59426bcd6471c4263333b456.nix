@@ -21,11 +21,11 @@
       synopsis = "A breadth-first list monad.";
       description = "A monad for enumerating sets: like the list\nmonad but breadth-first.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

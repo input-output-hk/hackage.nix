@@ -21,7 +21,7 @@
       synopsis = "The Timber Compiler.";
       description = "This is a compiler for a strict and pure functional\nlanguage";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "timberc" = {
@@ -35,12 +35,12 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

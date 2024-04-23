@@ -21,7 +21,7 @@
       synopsis = "Spelling suggestion tool with library and command-line interfaces.";
       description = "\"thimk\" (an old joke) is a command-line spelling word\nsuggestion tool. You give it a possibly-misspelled word,\nand it spits out one or more properly-spelled words in order\nof likelihood of similarity.\n\nThis functionality is also exported as a library via\nText.SpellingSuggest (suggest)\n\nThere is an optional precompiled SQlite database of phonetic\ncodes for the entire dictionary, created with\n\"thimk-makedb\".  This greatly speeds lookup, permitting\nreasonable performance on enormous dictionaries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
           (hsPkgs."phonetic-code" or (errorHandler.buildDepError "phonetic-code"))
           (hsPkgs."sqlite" or (errorHandler.buildDepError "sqlite"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "thimk" = {
           depends = [
@@ -40,18 +40,18 @@
             (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
             (hsPkgs."phonetic-code" or (errorHandler.buildDepError "phonetic-code"))
             (hsPkgs."sqlite" or (errorHandler.buildDepError "sqlite"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "thimk-makedb" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
             (hsPkgs."phonetic-code" or (errorHandler.buildDepError "phonetic-code"))
             (hsPkgs."sqlite" or (errorHandler.buildDepError "sqlite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

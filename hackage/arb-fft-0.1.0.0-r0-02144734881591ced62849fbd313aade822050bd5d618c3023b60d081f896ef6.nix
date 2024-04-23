@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell arbitrary length FFT library";
       description = "This library provides a pure Haskell complex-to-complex Fast Fourier\nTransform implementation for arbitrary length input vectors, using a\nmixed-radix decimation-in-time algorithm with specialised\nstraight-line code for a range of base transform sizes, Rader's\nalgorithm for prime length base transforms, and an empirical\noptimisation scheme to select a good problem decomposition.\n\nThis package is probably primarily of pedagogical interest (FFTW is\nabout five times faster for most input sizes).  There is a long\nseries of blog articles describing the development of the package,\nindexed at <http://www.skybluetrades.net/haskell-fft-index.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "profile-256" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "basic-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

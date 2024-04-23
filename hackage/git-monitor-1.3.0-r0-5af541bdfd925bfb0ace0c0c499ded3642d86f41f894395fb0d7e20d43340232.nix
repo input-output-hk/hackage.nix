@@ -21,7 +21,7 @@
       synopsis = "Passively snapshots working tree changes efficiently.";
       description = "Passively snapshots working tree changes efficiently.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "git-monitor" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

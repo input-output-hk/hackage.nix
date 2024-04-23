@@ -21,15 +21,15 @@
       synopsis = "Runtime for fficxx-generated library";
       description = "Runtime for fficxx-generated library.\nfficxx is an automatic haskell Foreign Function Interface (FFI) generator to C++.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

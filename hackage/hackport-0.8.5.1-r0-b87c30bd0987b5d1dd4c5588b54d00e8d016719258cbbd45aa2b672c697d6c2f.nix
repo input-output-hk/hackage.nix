@@ -15,7 +15,7 @@
       pedantic = false;
       profile = false;
       threads = true;
-      };
+    };
     package = {
       specVersion = "3.0";
       identifier = { name = "hackport"; version = "0.8.5.1"; };
@@ -28,7 +28,7 @@
       synopsis = "Hackage and Portage integration tool";
       description = "A command line tool to manage an overlay of Gentoo ebuilds\nthat are generated from a hackage repo of Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "hackport-external-libs-Cabal-syntax" = {
@@ -48,9 +48,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-external-libs-Cabal" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal-syntax or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal-syntax"))
@@ -69,9 +69,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-external-libs-hackage-security" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal-syntax or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal-syntax"))
@@ -96,9 +96,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-external-libs-cabal-install-solver" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal"))
@@ -112,9 +112,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-external-libs-cabal-install" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal"))
@@ -153,9 +153,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-internal" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal-syntax or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal-syntax"))
@@ -189,10 +189,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hackport" = {
           depends = [
@@ -208,10 +208,10 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-resolve-category" = {
           depends = [
@@ -237,9 +237,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = if !flags.gentoo-tests then false else true;
-          };
+        };
         "test-print-deps" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -261,9 +261,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "test-normalize-deps" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -285,9 +285,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -299,21 +299,21 @@
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = if !flags.doctests || !flags.cabal-v1
             then false
             else true;
-          };
+        };
         "doctests-v2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest.components.exes.doctest or (pkgs.buildPackages.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
-            ];
+          ];
           buildable = if !flags.doctests || flags.cabal-v1 then false else true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal-syntax or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal-syntax"))
@@ -339,12 +339,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

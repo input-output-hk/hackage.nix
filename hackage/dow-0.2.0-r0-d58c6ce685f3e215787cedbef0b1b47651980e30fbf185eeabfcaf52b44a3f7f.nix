@@ -21,7 +21,7 @@
       synopsis = "Dungeons of Wor";
       description = "Dungeons of Wor is a homage to the classic arcade game, Wizard of\nWor.  It uses the artwork and levels from the Astrocade version, but\nthe gameplay mechanics differ from the original in several ways.\n\nThis game is also an experiment in functional reactive programming,\nso it might be a useful resource to anyone interested in this topic.\nIt was coded using the simple version of Elerea, which provides\ndiscrete streams as first-class values.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dow" = {
@@ -33,9 +33,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

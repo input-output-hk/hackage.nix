@@ -21,7 +21,7 @@
       synopsis = "A simple static web server";
       description = "Serve files from the current path";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "maid" = {
@@ -31,9 +31,9 @@
             (hsPkgs."loli" or (errorHandler.buildDepError "loli"))
             (hsPkgs."hack-handler-simpleserver" or (errorHandler.buildDepError "hack-handler-simpleserver"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "create haskell import graph for graphviz";
       description = "create haskell import graph for graphviz\nhow to:\n\n> cabal build\n> haskell-import-graph\n\nor\n\n> haskell-import-graph dist/build/foo/foo-tmp/bar.hi\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-import-graph" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-import-graph" or (errorHandler.buildDepError "haskell-import-graph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

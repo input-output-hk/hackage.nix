@@ -6,8 +6,8 @@
         nix = import ../hackage/convexHullNd-0.1.0.0-r0-d60aa422ad89b6da13602e7a59a72479a875404b3a47ef3e154d08f63c27d1cb.nix;
         revNum = 0;
         sha256 = "d60aa422ad89b6da13602e7a59a72479a875404b3a47ef3e154d08f63c27d1cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

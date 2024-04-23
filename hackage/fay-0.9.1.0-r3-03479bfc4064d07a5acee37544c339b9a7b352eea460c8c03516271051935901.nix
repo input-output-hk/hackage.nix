@@ -21,7 +21,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which can be compiled (type-checked)\nwith GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,\nan FFI, tail-recursion optimization (experimental). It implements no type\nsystem, for type-checking you should use GHC.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> $ cabal unpack fay\n> $ cd fay-*\n> $ cabal install -fdevel\n> $ dist/build/fay-docs/fay-docs\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n\n* Infix constructor applications and infix operator constructors.\n\n* Warn when NoImplicitPrelude isn't specified.\n\n* Added fay --version.\n\n* Html wrapper enhancements.\n\n* Initial pass-through to collect record information. This means records can now be used before they're defined.\n\n* Expose more prelude functions.\n\n* Fixed doctype typo in HTML wrappers.\n\n* Basic interactive shell\n\nSee full history at: <https://github.com/chrisdone/fay/commits>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,7 +44,7 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
-          ] ++ (pkgs.lib).optionals (flags.devel) [
+        ] ++ pkgs.lib.optionals (flags.devel) [
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
@@ -54,9 +54,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fay" = {
           depends = [
@@ -80,11 +80,11 @@
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."options" or (errorHandler.buildDepError "options"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fay-tests" = {
-          depends = (pkgs.lib).optionals (flags.devel) [
+          depends = pkgs.lib.optionals (flags.devel) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
@@ -107,11 +107,11 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = if !flags.devel then false else true;
-          };
+        };
         "fay-docs" = {
-          depends = (pkgs.lib).optionals (flags.devel) [
+          depends = pkgs.lib.optionals (flags.devel) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
@@ -135,9 +135,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."language-ecmascript" or (errorHandler.buildDepError "language-ecmascript"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
-            ];
+          ];
           buildable = if !flags.devel then false else true;
-          };
         };
       };
-    }
+    };
+  }

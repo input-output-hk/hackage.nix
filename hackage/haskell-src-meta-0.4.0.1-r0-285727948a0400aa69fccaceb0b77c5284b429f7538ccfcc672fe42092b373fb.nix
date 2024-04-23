@@ -21,7 +21,7 @@
       synopsis = "Parse source to template-haskell abstract syntax.";
       description = "The translation from haskell-src-exts abstract syntax\nto template-haskell abstract syntax isn't 100% complete yet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

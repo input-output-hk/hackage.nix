@@ -21,13 +21,13 @@
       synopsis = "Facilities for accessing the version control revision of the current directory.";
       description = "Facilities for accessing the version control revision of the current directory.\nUseful e.g. to make your program output its revision using Template Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

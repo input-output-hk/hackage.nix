@@ -21,7 +21,7 @@
       synopsis = "Generate RelaxNG-constrained XML documents for QuickCheck";
       description = "Generate RelaxNG-constrained XML documents for QuickCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."quickcheck-regex" or (errorHandler.buildDepError "quickcheck-regex"))
           (hsPkgs."hxt-relaxng" or (errorHandler.buildDepError "hxt-relaxng"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

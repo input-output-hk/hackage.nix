@@ -21,11 +21,11 @@
       synopsis = "Constructors and related functions for natural numbers";
       description = "Provides a natural number type with a safe constructor and related operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

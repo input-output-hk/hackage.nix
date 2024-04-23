@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/serokell/xrefcheck#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,9 +62,9 @@
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xrefcheck" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
             (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "links-tests" = {
           depends = [
@@ -87,12 +87,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "xrefcheck-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -116,12 +116,12 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

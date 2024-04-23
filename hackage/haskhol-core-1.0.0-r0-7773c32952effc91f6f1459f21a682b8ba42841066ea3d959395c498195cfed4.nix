@@ -21,7 +21,7 @@
       synopsis = "The core logical system of HaskHOL, an EDSL for HOL theorem\nproving.";
       description = "More details can be found at the following page:\n<haskhol.org>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

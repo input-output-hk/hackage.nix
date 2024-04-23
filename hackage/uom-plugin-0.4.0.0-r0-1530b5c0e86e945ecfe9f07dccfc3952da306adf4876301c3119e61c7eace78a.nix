@@ -21,7 +21,7 @@
       synopsis = "Units of measure as a GHC type-checker plugin";
       description = "The @uom-plugin@ library adds support for units of\nmeasure as a GHC type-checker plugin. See\n\"Data.UnitsOfMeasure.Tutorial\" for an introduction to the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."ghc-tcplugin-api" or (errorHandler.buildDepError "ghc-tcplugin-api"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."units-parser" or (errorHandler.buildDepError "units-parser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -47,27 +47,27 @@
             (hsPkgs."ghc-tcplugin-api" or (errorHandler.buildDepError "ghc-tcplugin-api"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."units-parser" or (errorHandler.buildDepError "units-parser"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.4"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.4"
             then false
             else true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "units" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."uom-plugin" or (errorHandler.buildDepError "uom-plugin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

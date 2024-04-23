@@ -21,7 +21,7 @@
       synopsis = "Continuation-based user interaction monad";
       description = "This library implements a monad transformer for suspendable\ncomputations, similar and related to free comonads.  It allows to\nwrite continuation-based web frameworks, command line applications\nand similar interfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

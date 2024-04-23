@@ -21,16 +21,16 @@
       synopsis = "Integer, Natural, and Positive";
       description = "The base package contains two unbounded integral types:\nInteger (-∞, ∞) and Natural (0, ∞). This package expands that\nintegral repertoire with the addition of Positive (1, ∞).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-integer-types" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

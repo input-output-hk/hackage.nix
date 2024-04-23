@@ -21,7 +21,7 @@
       synopsis = "Cloud Haskell Extras";
       description = "Supporting library, providing common types and utilities used by the\nvarious libraries built on top of distributed-process";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,14 +38,14 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if flags.old-locale
+        ] ++ (if flags.old-locale
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "InternalQueueTests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "PrimitivesTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimerTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -104,9 +104,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "LoggerTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -135,9 +135,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

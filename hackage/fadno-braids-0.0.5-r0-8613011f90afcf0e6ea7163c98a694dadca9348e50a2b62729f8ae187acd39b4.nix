@@ -21,7 +21,7 @@
       synopsis = "Braid representations in Haskell";
       description = "Braids represented as Haskell types with support for generation and transformations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

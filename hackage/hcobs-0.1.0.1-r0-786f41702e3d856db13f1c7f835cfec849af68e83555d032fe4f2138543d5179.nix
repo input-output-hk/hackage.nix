@@ -21,7 +21,7 @@
       synopsis = "An implementation of the Consistent Overhead Byte Stuffing algorithm";
       description = "An implementation of the Consistent Overhead Byte Stuffing algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hcobs-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hcobs-weigh" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,10 +55,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "mainbench" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

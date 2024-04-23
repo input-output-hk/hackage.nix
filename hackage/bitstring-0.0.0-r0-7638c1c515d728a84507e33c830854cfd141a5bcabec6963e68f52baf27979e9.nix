@@ -21,15 +21,15 @@
       synopsis = "Lazy bit strings";
       description = "Lazy bit strings, built on the top of bytestrings.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (pkgs.lib).optional (flags.withquickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+        ]) ++ pkgs.lib.optional (flags.withquickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

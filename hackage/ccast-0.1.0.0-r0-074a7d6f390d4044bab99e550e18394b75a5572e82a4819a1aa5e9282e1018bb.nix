@@ -21,14 +21,14 @@
       synopsis = "typesafe c-style casts; useful for FFI";
       description = "Type-safe C-style casts between numeric types, especially\nthose in Foreign.C.Types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

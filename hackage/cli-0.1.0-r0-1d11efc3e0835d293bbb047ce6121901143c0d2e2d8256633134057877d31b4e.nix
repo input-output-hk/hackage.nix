@@ -21,7 +21,7 @@
       synopsis = "Command Line Interface";
       description = "All you need for interacting with users at the Console level\n\n* Display routines, formatting, progress bars\n\n* Options parsing\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cli" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."cli" or (errorHandler.buildDepError "cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

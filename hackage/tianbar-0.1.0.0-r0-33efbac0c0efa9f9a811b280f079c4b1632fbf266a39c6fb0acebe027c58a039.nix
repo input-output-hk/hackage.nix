@@ -21,7 +21,7 @@
       synopsis = "A desktop bar based on WebKit";
       description = "A desktop bar using WebKit for rendering as much as possible.\nBased on Taffybar.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tianbar" = {
@@ -35,12 +35,12 @@
             (hsPkgs."webkit" or (errorHandler.buildDepError "webkit"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."gtk+-2.0" or (errorHandler.pkgConfDepError "gtk+-2.0"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

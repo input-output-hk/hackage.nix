@@ -21,7 +21,7 @@
       synopsis = "heavy-logger compatibility with amazonka-core logging";
       description = "This package is a simple adapter for use of @amazonka@ package with @heavy-logger@.\n\n@Amazonka@ has it's own interface for logging. This package provides implementation of that interface by @heavy-logger@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."heavy-logger" or (errorHandler.buildDepError "heavy-logger"))
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

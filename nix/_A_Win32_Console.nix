@@ -6,8 +6,8 @@
         nix = import ../hackage/AWin32Console-1.1-r0-1ab3ce14d8d06120258b144bd94e3d4629264bef10d0aa5689d7b5b1ebc1c9be.nix;
         revNum = 0;
         sha256 = "1ab3ce14d8d06120258b144bd94e3d4629264bef10d0aa5689d7b5b1ebc1c9be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

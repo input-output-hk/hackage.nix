@@ -21,7 +21,7 @@
       synopsis = "Hascat Installation helper";
       description = "This program installs  Hascat into a given folder";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hascat-setup" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

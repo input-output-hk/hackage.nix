@@ -21,7 +21,7 @@
       synopsis = "ADP for multiple context-free languages";
       description = "adp-multi is an implementation of Algebraic Dynamic Programming\nfor multiple context-free languages.\nIt is a library based on the original Haskell implementation\nand can be considered an unoptimized prototype.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."htrace" or (errorHandler.buildDepError "htrace"))
           (hsPkgs."monadiccp" or (errorHandler.buildDepError "monadiccp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "adp-multi-benchmarks" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = if !flags.buildtests then false else true;
-          };
+        };
         "adp-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,10 +64,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = if !flags.buildtests then false else true;
-          };
         };
+      };
       tests = {
         "MainTestSuite" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

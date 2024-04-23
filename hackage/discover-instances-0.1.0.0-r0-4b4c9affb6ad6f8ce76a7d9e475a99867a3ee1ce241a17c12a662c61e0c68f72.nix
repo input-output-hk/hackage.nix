@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/parsonsmatt/discover-instances#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."some-dict-of" or (errorHandler.buildDepError "some-dict-of"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "discover-instances-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."some-dict-of" or (errorHandler.buildDepError "some-dict-of"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

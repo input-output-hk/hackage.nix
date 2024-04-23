@@ -21,15 +21,15 @@
       synopsis = "An alternative to monads";
       description = "Please see the README on GitHub at <https://github.com/Atry/do-notation-dsl#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

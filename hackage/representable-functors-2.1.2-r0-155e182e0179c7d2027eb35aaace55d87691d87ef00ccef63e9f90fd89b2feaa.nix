@@ -21,7 +21,7 @@
       synopsis = "Representable functors";
       description = "Representable functors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."comonads-fd" or (errorHandler.buildDepError "comonads-fd"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

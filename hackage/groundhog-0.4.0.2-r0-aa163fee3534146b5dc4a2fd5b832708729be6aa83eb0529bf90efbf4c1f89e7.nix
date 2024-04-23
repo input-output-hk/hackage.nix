@@ -21,7 +21,7 @@
       synopsis = "Type-safe datatype-database mapping library.";
       description = "This library maps your datatypes to a relational model, in a way similar to what ORM libraries do in OOP. The schema can be configured flexibly which makes integration with existing databases easy. Groundhog supports schema migrations, composite keys, advanced expressions in queries, and much more. See examples folder on GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

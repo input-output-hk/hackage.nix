@@ -21,13 +21,13 @@
       synopsis = "A wrapper for the Bullet physics engine.";
       description = "A wrapper for the Bullet physics engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
-          ];
+        ];
         libs = if system.isLinux
           then [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]
           else [
@@ -36,12 +36,12 @@
             (pkgs."BulletCollision" or (errorHandler.sysDepError "BulletCollision"))
             (pkgs."LinearMath" or (errorHandler.sysDepError "LinearMath"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ];
-        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."bullet" or (errorHandler.pkgConfDepError "bullet"));
+          ];
+        pkgconfig = pkgs.lib.optional (system.isLinux) (pkgconfPkgs."bullet" or (errorHandler.pkgConfDepError "bullet"));
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

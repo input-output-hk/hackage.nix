@@ -6,8 +6,8 @@
         nix = import ../hackage/atomic-modify-general-0.1.0.0-r0-d50a8c09e089017571fadda9b234127dd99d52bbd7aebcd1a89bdb4db6b3f2af.nix;
         revNum = 0;
         sha256 = "d50a8c09e089017571fadda9b234127dd99d52bbd7aebcd1a89bdb4db6b3f2af";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

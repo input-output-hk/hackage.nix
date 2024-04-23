@@ -21,15 +21,15 @@
       synopsis = "Binary processing extensions to Attoparsec.";
       description = "This package adds a collection of helper functions to make\nthe task dealing with binary data of varying endianness from within an\nAttoparsec parser easier.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

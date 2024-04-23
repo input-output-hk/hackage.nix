@@ -6,8 +6,8 @@
         nix = import ../hackage/snaplet-ghcjs-0.1.0.0-r0-d09bdb35c18ab366f2cc0dff7061aa7d955961e370e000549ad2d96d35bdc4d5.nix;
         revNum = 0;
         sha256 = "d09bdb35c18ab366f2cc0dff7061aa7d955961e370e000549ad2d96d35bdc4d5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/rfc-redis-0.0.0.1-r0-37f8175e5468b110ac3a68a70af0075e11cf629351d3f7bd9a46d22dc2f751e8.nix;
         revNum = 0;
         sha256 = "37f8175e5468b110ac3a68a70af0075e11cf629351d3f7bd9a46d22dc2f751e8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,14 +21,14 @@
       synopsis = "Binding to libSDL_mixer";
       description = "SDL_mixer is a sample multi-channel audio mixer library.\nIt supports any number of simultaneously playing channels\nof 16 bit stereo audio, plus a single channel of music,\nmixed by the popular MikMod MOD, Timidity MIDI, Ogg Vorbis,\nand SMPEG MP3 libraries.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

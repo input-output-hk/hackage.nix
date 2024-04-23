@@ -21,7 +21,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Handles deployment of web apps, providing a reverse proxy to achieve zero downtime deployments. For more information, please see the README on Github: <https://github.com/snoyberg/keter#readme>\n\nRelease history:\n\n[1.0.1] Permit use of wildcard subdomains and exceptions to wildcards. Convert internal strings to use Data.Text in more places. (Although internationalized domain names are not supported unless entered in punycode in configuration files.)\n\n[1.0.0] Significant overhaul. We now support monitoring of much more arbitrary jobs (e.g., background tasks), have a proper plugin system (PostgreSQL is no longer a required component), and have a much better system for tracking hostname mapping changes.\n\n[0.4.0] Switch to fsnotify to get cross-platform support. No longer using raw proxies, but instead WAI proxies.\n\n[0.3.7] Sending a HUP signal reloads the list of deployed apps. This is useful for circumstances where inotify does not work correctly, such as on file systems which do not support it.\n\n[0.3.5] You can now create Keter bundles without any applications. These can contain static hosts and redirects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -69,9 +69,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "keter" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."keter" or (errorHandler.buildDepError "keter"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hello" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -94,9 +94,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

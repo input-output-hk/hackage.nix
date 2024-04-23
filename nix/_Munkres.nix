@@ -6,8 +6,8 @@
         nix = import ../hackage/Munkres-0.1-r0-6029c7c164f9bf32322c950bd7228a8453df4aec82af526c04599d02106cde1a.nix;
         revNum = 0;
         sha256 = "6029c7c164f9bf32322c950bd7228a8453df4aec82af526c04599d02106cde1a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

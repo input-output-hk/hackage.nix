@@ -21,7 +21,7 @@
       synopsis = "A Haskell ftp server with configurable backend.";
       description = "https://github.com/yihuang/haskell-ftp";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
           (hsPkgs."process-conduit" or (errorHandler.buildDepError "process-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-ftp-server" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."process-conduit" or (errorHandler.buildDepError "process-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

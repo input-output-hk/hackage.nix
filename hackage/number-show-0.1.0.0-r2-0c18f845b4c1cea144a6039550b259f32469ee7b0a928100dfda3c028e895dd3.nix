@@ -21,15 +21,15 @@
       synopsis = "Flexible and accurate (for a given precision) numerical->string conversion";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

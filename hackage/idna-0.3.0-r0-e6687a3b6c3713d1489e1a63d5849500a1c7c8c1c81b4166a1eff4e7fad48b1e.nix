@@ -21,7 +21,7 @@
       synopsis = "Implements IDNA (RFC 3490).";
       description = "Implements IDNA - Internationalized Domain Names in Applications (RFC 3490).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stringprep" or (errorHandler.buildDepError "stringprep"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."punycode" or (errorHandler.buildDepError "punycode"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

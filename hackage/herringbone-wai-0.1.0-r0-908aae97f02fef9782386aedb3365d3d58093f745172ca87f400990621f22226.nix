@@ -21,7 +21,7 @@
       synopsis = "Wai adapter for the Herringbone web asset preprocessor.";
       description = "Wai adapter for the Herringbone web asset preprocessor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

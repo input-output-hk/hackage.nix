@@ -21,7 +21,7 @@
       synopsis = "Tries with Bytes as keys.";
       description = "Tries with 'Bytes' (equiv. 'ByteArray') as keys. This implementation is\noptimized for performing queries rather than updating the structure\nrepeatedly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."unpacked-maybe" or (errorHandler.buildDepError "unpacked-maybe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."unpacked-maybe" or (errorHandler.buildDepError "unpacked-maybe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

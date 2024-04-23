@@ -21,7 +21,7 @@
       synopsis = "Small script for inferring types";
       description = "A script to infer and insert type declarations\nin Haskell source, callable from your editor.\nBindings exist to emacs and vim.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "typeof" = {
@@ -29,10 +29,10 @@
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

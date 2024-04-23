@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL backend for Seakale";
       description = "This package provides a way to run code written with Seakale with a PostgreSQL database.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

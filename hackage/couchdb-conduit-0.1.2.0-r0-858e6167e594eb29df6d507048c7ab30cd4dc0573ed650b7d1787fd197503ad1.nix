@@ -21,7 +21,7 @@
       synopsis = "Couch DB client library using http-conduit and aeson";
       description = "This package is a thin wrapper around http-conduit to access a Couch DB Database,\nusing the aeson package to parse and encode JSON data. http-conduit, aeson, and\nattoparsec fit togther so well that this package is mostly just a direct combination\nof these packages.  The single additional feature in this package is an attoparsec parser\nfor views, which allows constant memory processing of view returns.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

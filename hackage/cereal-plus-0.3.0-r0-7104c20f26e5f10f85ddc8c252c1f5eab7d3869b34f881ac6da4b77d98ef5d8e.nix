@@ -21,7 +21,7 @@
       synopsis = "Extended serialization library on top of \"cereal\".";
       description = "Provides non-orphan instances for an extended range of types.\nProvides transformer types and support for mutable data.\nReapproaches the naming conventions of \"cereal\" library.\nFor a streaming frontend over this library see \"pipes-cereal-plus\":\n<http://hackage.haskell.org/package/pipes-cereal-plus>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

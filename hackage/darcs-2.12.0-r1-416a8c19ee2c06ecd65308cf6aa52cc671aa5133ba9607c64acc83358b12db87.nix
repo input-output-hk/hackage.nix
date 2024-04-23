@@ -22,7 +22,7 @@
       libiconv = false;
       use-time-1point5 = true;
       network-uri = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "darcs"; version = "2.12.0"; };
@@ -42,8 +42,8 @@
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (errorHandler.setupDepError "template-haskell")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -81,41 +81,41 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ])) ++ [
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ]) ++ (if flags.use-time-1point5
+        ]) ++ (if flags.use-time-1point5
           then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ])) ++ (pkgs.lib).optionals (flags.http) ([
+          ])) ++ pkgs.lib.optionals (flags.http) ([
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]))) ++ (pkgs.lib).optional (!flags.curl && !flags.http) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
-        libs = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (!flags.pkgconfig) (pkgs."curl" or (errorHandler.sysDepError "curl")));
-        pkgconfig = (pkgs.lib).optionals (flags.curl) ((pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."libcurl" or (errorHandler.pkgConfDepError "libcurl")));
+          ]))) ++ pkgs.lib.optional (!flags.curl && !flags.http) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+        libs = pkgs.lib.optionals (flags.curl) (pkgs.lib.optional (!flags.pkgconfig) (pkgs."curl" or (errorHandler.sysDepError "curl")));
+        pkgconfig = pkgs.lib.optionals (flags.curl) (pkgs.lib.optional (flags.pkgconfig) (pkgconfPkgs."libcurl" or (errorHandler.pkgConfDepError "libcurl")));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "darcs" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.executable then false else true;
-          };
         };
+      };
       tests = {
         "darcs-test" = {
           depends = ([
@@ -137,11 +137,11 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ [
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ [
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

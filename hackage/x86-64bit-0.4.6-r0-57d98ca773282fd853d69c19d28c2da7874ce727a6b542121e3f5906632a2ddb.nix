@@ -21,7 +21,7 @@
       synopsis = "Runtime code generation for x86 64 bit machine code";
       description = "The primary goal of x86-64bit is to provide a lightweight assembler for machine generated 64 bit x86 assembly instructions. See README.md for further details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."tardis" or (errorHandler.buildDepError "tardis"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         buildable = true;
-        };
+      };
       tests = {
         "test-x86-64bit" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

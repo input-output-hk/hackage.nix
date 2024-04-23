@@ -21,7 +21,7 @@
       synopsis = "Declarative request parsing";
       description = "WAI Request Spec is a declarative validation layer for HTTP\nrequests. It aims to make error-handling for malformed requests as\neasy as taking the happy path.\n\nA brief summary of the core features:\n\n* Can specify headers and query params as input sources\n\n* Support for parsing ints, floats, text, bytes (with encodings), and bools\n\n* A parser combinator interface for chaining together request requirements\n\n* Support for alternatives via `(<|>)`, each tried in turn until one succeeds\n\n* Support for optional parameters\n\n* Convenient and informative default error messages that let service\nconsumers know what went wrong\n\nIt is built on WAI, so it is compatible with several Haskell\nweb frameworks. All you need is the ability to access the Request\nobject, and WAI Request Spec takes care of the rest!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

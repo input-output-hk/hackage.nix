@@ -21,12 +21,12 @@
       synopsis = "Exhaustivity Checking Library";
       description = "A library for exhaustivity and redundancy checking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."coverage" or (errorHandler.buildDepError "coverage"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

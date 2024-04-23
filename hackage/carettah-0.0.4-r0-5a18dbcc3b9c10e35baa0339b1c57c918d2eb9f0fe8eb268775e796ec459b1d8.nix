@@ -21,7 +21,7 @@
       synopsis = "A presentation tool writtten with Haskell.";
       description = "A presentation tool writtten with Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "carettah" = {
@@ -35,9 +35,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
             (hsPkgs."hcwiid" or (errorHandler.buildDepError "hcwiid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Test interactive Haskell examples";
       description = "DocTest checks examples in source code comments.\nIt is modeled after doctest for Python\n(<http://docs.python.org/library/doctest.html>).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "doctest" = {
@@ -33,9 +33,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

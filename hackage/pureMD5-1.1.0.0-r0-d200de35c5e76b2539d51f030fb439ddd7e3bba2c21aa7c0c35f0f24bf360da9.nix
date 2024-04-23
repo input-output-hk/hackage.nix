@@ -21,7 +21,7 @@
       synopsis = "MD5 implementations that should become part of a ByteString Crypto package.";
       description = "An unrolled implementation of MD5 purely in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

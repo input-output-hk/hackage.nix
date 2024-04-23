@@ -21,7 +21,7 @@
       synopsis = "Multiaddr library";
       description = "Multiaddr is self-describing way to represent addresses that support any standard network protocol. Multiaddr has a binary packed format, and nice string representation. It is possible to encapsulate addresses within each other.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."hs-multihash" or (errorHandler.buildDepError "hs-multihash"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-multiaddr-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

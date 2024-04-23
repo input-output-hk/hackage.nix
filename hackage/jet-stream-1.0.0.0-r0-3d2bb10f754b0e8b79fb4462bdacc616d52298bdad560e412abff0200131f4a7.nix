@@ -21,7 +21,7 @@
       synopsis = "Yet another streaming library.";
       description = "This is a streaming library focused on simplicity at the cost of some\nexpressivity.\n\nBasic operations like `drop` and `take` are supported.\n\nThe `Functor`, `Applicative` and `Monad` instances of the stream type\nresemble those of pure lists. There are also `Monoid`, `Alternative` and\n`MonadPlus` instances for stream concatenation.\n\nProvides resource-managing operations like `withFile` that are easily\nintegrated into streams.\n\nFor expressive and composable terminal operations, streams can be consumed\nwith folds from the \"foldl\" library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."conceit" or (errorHandler.buildDepError "conceit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."jet-stream" or (errorHandler.buildDepError "jet-stream"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

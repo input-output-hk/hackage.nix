@@ -21,7 +21,7 @@
       synopsis = "A library for stateful property-based testing";
       description = "Please see the README on GitHub at <https://github.com/input-output-hk/quickcheck-dynamic#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

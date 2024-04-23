@@ -21,7 +21,7 @@
       synopsis = "support redirects for CMS/Blogging in clckwrks";
       description = "This allows you to create custom url redirects as well as internal rewrites";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-happstack" or (errorHandler.buildDepError "web-routes-happstack"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-server" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."clckwrks-plugin-redirect" or (errorHandler.buildDepError "clckwrks-plugin-redirect"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
-            ];
+          ];
           buildable = if flags.test-server then true else false;
-          };
         };
       };
-    }
+    };
+  }

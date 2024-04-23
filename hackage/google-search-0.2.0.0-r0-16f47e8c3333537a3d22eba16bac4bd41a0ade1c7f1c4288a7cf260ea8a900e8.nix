@@ -21,7 +21,7 @@
       synopsis = "EDSL for Google and GMail search expressions";
       description = "Construct well-typed search expressions for use in various Google services.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if flags.old-time
+        ] ++ (if flags.old-time
           then [
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

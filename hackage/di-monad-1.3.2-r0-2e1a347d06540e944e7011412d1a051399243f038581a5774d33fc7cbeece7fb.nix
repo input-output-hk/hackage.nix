@@ -21,7 +21,7 @@
       synopsis = "mtl flavoured typeful hierarchical structured logging for di-core.";
       description = "mtl flavoured typeful hierarchical structured logging for di-core.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

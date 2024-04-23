@@ -21,7 +21,7 @@
       synopsis = "Extras to interface Gloss and Accelerate";
       description = "Please see the README on GitHub at <https://github.com/tmcdonell/gloss-accelerate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."gloss-rendering" or (errorHandler.buildDepError "gloss-rendering"))
           (hsPkgs."linear-accelerate" or (errorHandler.buildDepError "linear-accelerate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

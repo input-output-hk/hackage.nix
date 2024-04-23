@@ -6,8 +6,8 @@
         nix = import ../hackage/involutive-semigroups-0.1.0.0-r0-e77fb58ad0856bba76944c134d683e7d205038aba6b7a30d1df8a9ebbdde1adc.nix;
         revNum = 0;
         sha256 = "e77fb58ad0856bba76944c134d683e7d205038aba6b7a30d1df8a9ebbdde1adc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

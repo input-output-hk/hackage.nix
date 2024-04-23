@@ -21,7 +21,7 @@
       synopsis = "Utilities to write Emacs dynamic modules";
       description = "This package provides a full set of bindings to emacs-module.h that\nallows to develop Emacs modules in Haskell. Bindings are based on\nEmacs 25 version of the interface and thus should work in all\nsubsequent versions of Emacs.\nFor pointers on how to write minimal Emacs module, please refer\nto https://github.com/sergv/emacs-module/blob/master/test/src/Emacs/TestsInit.hs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,11 +39,11 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.1") (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.1") (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

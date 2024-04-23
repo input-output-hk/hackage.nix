@@ -21,15 +21,15 @@
       synopsis = "Print Data instances as a nested tree";
       description = "Provides functionality similar to that of the `Show` class: Taking some\narbitrary value and returning a String.\n\n* Output is not intended to be valid haskell.\n\n* Requires a `Data.Data.Data` instance instead of a `Text.Show` one.\n\n* Output, if large, is often easier to parse than `show` output\ndue to the formatting as a nested tree.\n\n* The user can adapt the behaviour at runtime using custom layouting\nexpressed via syb-style extension.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

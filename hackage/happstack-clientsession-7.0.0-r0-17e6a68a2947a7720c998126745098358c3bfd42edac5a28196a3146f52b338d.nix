@@ -21,7 +21,7 @@
       synopsis = "client-side session data";
       description = "uses the clientsession library to store session data in an HTTP cookie";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

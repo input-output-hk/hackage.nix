@@ -21,7 +21,7 @@
       synopsis = "A CLI library for stackage commands";
       description = "A CLI library for stackage commands";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,26 +39,26 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stackage-cli" or (errorHandler.buildDepError "stackage-cli"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stk" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stackage-cli" or (errorHandler.buildDepError "stackage-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

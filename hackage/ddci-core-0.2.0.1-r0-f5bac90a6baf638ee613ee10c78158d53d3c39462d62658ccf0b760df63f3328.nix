@@ -21,7 +21,7 @@
       synopsis = "Disciple Core language interactive interpreter.";
       description = "DDCi-core is a user-facing interpreter that can type-check,\ntransform and evaluate expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ddci-core" = {
@@ -34,9 +34,9 @@
             (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
             (hsPkgs."ddc-core-eval" or (errorHandler.buildDepError "ddc-core-eval"))
             (hsPkgs."ddc-core-simpl" or (errorHandler.buildDepError "ddc-core-simpl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

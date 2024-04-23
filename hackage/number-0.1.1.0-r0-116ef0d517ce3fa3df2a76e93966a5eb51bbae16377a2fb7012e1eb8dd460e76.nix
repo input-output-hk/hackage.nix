@@ -21,11 +21,11 @@
       synopsis = "A library for real numbers";
       description = "Data.Number is an attempt to give an almost complete\nrepresentation and arithmetics to real numbers without\nprecision loss using continued fractions and Gosper’s algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,24 +21,24 @@
       synopsis = "Reactive Banana integration with SDL2";
       description = "Provides bindings and convenience functions for using Reactive Banana with SDL2.\nPlease see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reactive-banana-sdl2-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reactive-banana-sdl2" or (errorHandler.buildDepError "reactive-banana-sdl2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

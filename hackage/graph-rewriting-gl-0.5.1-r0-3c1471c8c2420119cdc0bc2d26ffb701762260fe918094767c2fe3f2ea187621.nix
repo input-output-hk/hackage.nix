@@ -21,7 +21,7 @@
       synopsis = "OpenGL interface for interactive hypergraph rewriting";
       description = "Once a graph rewriting system has been specified using the graph-rewriting library this package can be\nused to create an application that allows to experiment with this system by interactively applying the\nrewrite rules manually on the graph.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."AC-Vector" or (errorHandler.buildDepError "AC-Vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

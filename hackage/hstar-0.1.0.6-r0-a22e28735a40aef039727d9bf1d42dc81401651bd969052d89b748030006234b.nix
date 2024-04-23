@@ -21,7 +21,7 @@
       synopsis = "Haskell version of tar CLI utility";
       description = "Haskell implementation of the tar utility, backed by [libarchive](http://libarchive.org/).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hstar" = {
@@ -40,12 +40,12 @@
             (hsPkgs."lzo" or (errorHandler.buildDepError "lzo"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."dir-traverse" or (errorHandler.buildDepError "dir-traverse"))
-            ] ++ (pkgs.lib).optional (flags.with-snappy) (hsPkgs."snappy-lazy" or (errorHandler.buildDepError "snappy-lazy"))) ++ (pkgs.lib).optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"));
+          ] ++ pkgs.lib.optional (flags.with-snappy) (hsPkgs."snappy-lazy" or (errorHandler.buildDepError "snappy-lazy"))) ++ pkgs.lib.optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

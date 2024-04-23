@@ -21,7 +21,7 @@
       synopsis = "Fetch exchange rates from OpenExchangeRates.org";
       description = "This package wraps up the process of fetching exchange rates from\nOpenExchangeRates.org.  You will need an AppID.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

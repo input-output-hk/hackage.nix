@@ -6,8 +6,8 @@
         nix = import ../hackage/Liquorice-0.0.1-r0-f9d4efa09d9d6f091155d4a712271d3c45e46960c1d5b222a1e9eeb8ae504561.nix;
         revNum = 0;
         sha256 = "f9d4efa09d9d6f091155d4a712271d3c45e46960c1d5b222a1e9eeb8ae504561";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

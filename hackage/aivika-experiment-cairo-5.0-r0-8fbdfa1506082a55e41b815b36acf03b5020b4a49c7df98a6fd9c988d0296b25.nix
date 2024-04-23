@@ -21,7 +21,7 @@
       synopsis = "Cairo-based charting backend for the Aivika simulation library";
       description = "This is one of the charting backends for the aivika-experiment-chart [1] package.\nIt allows rendering charts using the Chart-cairo [2] package.\n\n\\[1] <http://hackage.haskell.org/package/aivika-experiment-chart>\n\n\\[2] <http://hackage.haskell.org/package/Chart-cairo>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
           (hsPkgs."aivika-experiment" or (errorHandler.buildDepError "aivika-experiment"))
           (hsPkgs."aivika-experiment-chart" or (errorHandler.buildDepError "aivika-experiment-chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

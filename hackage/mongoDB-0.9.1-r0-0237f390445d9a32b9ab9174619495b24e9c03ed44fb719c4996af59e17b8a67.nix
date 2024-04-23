@@ -21,7 +21,7 @@
       synopsis = "A driver for MongoDB";
       description = "This module lets you connect to MongoDB (www.mongodb.org) and do inserts, queries, updates, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

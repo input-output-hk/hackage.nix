@@ -6,8 +6,8 @@
         nix = import ../hackage/ess-0.1.0.0-r0-b150e52b1df8ffadd31873ae5fbfa1b5833f5d0e4e936de7957fcb1f964313f4.nix;
         revNum = 0;
         sha256 = "b150e52b1df8ffadd31873ae5fbfa1b5833f5d0e4e936de7957fcb1f964313f4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

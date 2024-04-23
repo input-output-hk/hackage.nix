@@ -21,7 +21,7 @@
       synopsis = "Website maintenance for Arch Linux packages";
       description = "Website maintenance for Arch Linux packages\n\nTo get info about a package:\n\n> info \"xmonad\"\n\nTo find packages matching a string:\n\n> search \"xmonad\"\n\nTo find packages owned by a maintainer:\n\n> maintainer \"arch-haskell\"\n\nGenerate an html page of interesting facts about\npackages in AUR and Hackage.\n\n> report [\"xmonad\"]\n\nSee also the cabal2arch tool <http://hackage.haskell.org/package/cabal2arch>\nfor conversion between Hackage and AUR.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
           (hsPkgs."archlinux" or (errorHandler.buildDepError "archlinux"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arch-report" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
             (hsPkgs."archlinux" or (errorHandler.buildDepError "archlinux"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "distro-map" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
             (hsPkgs."archlinux" or (errorHandler.buildDepError "archlinux"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "get-arch-url" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -104,9 +104,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
             (hsPkgs."archlinux" or (errorHandler.buildDepError "archlinux"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "arch-haskell-packages" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -121,13 +121,13 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
             (hsPkgs."archlinux" or (errorHandler.buildDepError "archlinux"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "update-aur-log" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

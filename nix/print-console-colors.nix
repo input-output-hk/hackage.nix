@@ -6,8 +6,8 @@
         nix = import ../hackage/print-console-colors-0.1.0.0-r0-8e5cbdc4394d6f5bd9188bdcc112f4a866c3b89d8d559ba872df0e96511d4469.nix;
         revNum = 0;
         sha256 = "8e5cbdc4394d6f5bd9188bdcc112f4a866c3b89d8d559ba872df0e96511d4469";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

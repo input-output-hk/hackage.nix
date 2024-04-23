@@ -21,15 +21,15 @@
       synopsis = "Client library for pg-harness-server";
       description = "Client library for <https://hackage.haskell.org/package/pg-harness-server pg-harness-server>\nfor conveniently creating temporary PostgreSQL databases for use in tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

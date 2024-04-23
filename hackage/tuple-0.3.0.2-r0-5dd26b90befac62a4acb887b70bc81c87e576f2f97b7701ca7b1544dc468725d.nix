@@ -21,14 +21,14 @@
       synopsis = "Various functions on tuples";
       description = "Various useful functions on tuples, overloaded on tuple size.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OneTuple" or (errorHandler.buildDepError "OneTuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

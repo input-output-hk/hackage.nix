@@ -21,7 +21,7 @@
       synopsis = "Extra instances for Quiver";
       description = "Various extra instances for Quiver that aren't yet in the main library.\n\nCurrently this provides instances for the 'MonadThrow', 'MonadCatch'\nand 'MonadMask' classes from the\n<http://hackage.haskell.org/package/exceptions exceptions> library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Streaming interface to system processes. ";
       description = "Concurrent, streaming access to the input and outputs of system processes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
           (hsPkgs."pipes-transduce" or (errorHandler.buildDepError "pipes-transduce"))
           (hsPkgs."conceit" or (errorHandler.buildDepError "conceit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."process-streaming" or (errorHandler.buildDepError "process-streaming"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -113,9 +113,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."process-streaming" or (errorHandler.buildDepError "process-streaming"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

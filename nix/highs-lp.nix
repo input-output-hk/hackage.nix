@@ -6,8 +6,8 @@
         nix = import ../hackage/highs-lp-0.0-r0-5fe380cf45b4678274274a55578aaaebfc38fc93d74a3941b4aececbdd46b583.nix;
         revNum = 0;
         sha256 = "5fe380cf45b4678274274a55578aaaebfc38fc93d74a3941b4aececbdd46b583";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

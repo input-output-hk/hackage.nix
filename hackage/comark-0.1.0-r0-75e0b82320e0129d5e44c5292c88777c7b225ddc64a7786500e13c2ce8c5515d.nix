@@ -21,7 +21,7 @@
       synopsis = "Commonmark processing in pure haskell.";
       description = "See <https://github.com/zudov/haskell-comark#readme README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."comark-syntax" or (errorHandler.buildDepError "comark-syntax"))
           (hsPkgs."comark-parser" or (errorHandler.buildDepError "comark-parser"))
           (hsPkgs."comark-html" or (errorHandler.buildDepError "comark-html"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "comark-hs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."comark" or (errorHandler.buildDepError "comark"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for client/server HTTP with TLS support";
       description = "A simple HTTP client/server package with minimal dependencies\nto other packages. Most of the code is derived from\nthe older HTTP package. FastCGI interface is included as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -35,22 +35,22 @@
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (if flags.network-bsd
+          ])) ++ (if flags.network-bsd
           then [
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ])) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

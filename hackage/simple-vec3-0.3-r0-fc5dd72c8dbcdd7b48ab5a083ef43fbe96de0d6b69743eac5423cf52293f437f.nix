@@ -21,7 +21,7 @@
       synopsis = "Three-dimensional vectors of doubles with basic operations";
       description = "Simple three-dimensional vectors of doubles with basic vector and matrix operations, supporting \"Data.Vector.Unboxed\" and \"Data.Vector.Storable\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-vec3-test" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "simple-vec3-benchmark" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."simple-vec3" or (errorHandler.buildDepError "simple-vec3"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

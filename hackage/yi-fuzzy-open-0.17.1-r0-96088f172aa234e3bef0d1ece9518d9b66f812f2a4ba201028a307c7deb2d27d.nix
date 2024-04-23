@@ -21,7 +21,7 @@
       synopsis = "Fuzzy open plugin for yi";
       description = "This plugin tries to do what ctrl-p does for vim and helm does for emacs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

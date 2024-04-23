@@ -6,8 +6,8 @@
         nix = import ../hackage/ghcjs-xhr-0.1.0.0-r0-680cd31042475eadd11de4ebebf3f22d6d21022d8f58dc6a814d86468e534b17.nix;
         revNum = 0;
         sha256 = "680cd31042475eadd11de4ebebf3f22d6d21022d8f58dc6a814d86468e534b17";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

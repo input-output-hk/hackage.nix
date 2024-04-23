@@ -21,7 +21,7 @@
       synopsis = "An Io interpreter in Haskell.";
       description = "Ganymede is an Io interpreter, originally based on Martin \"\\\"vague\\\"\" Sandin's\nAmalthea, which is an Io interpreter written in OCaml. There are some\ndifferences since Amalthea is based on the description of Io found in Raphael\nFinkel's 1996 book  \"Advanced Programming Language Design\" (APLD), whereas\nGanymede is more faithful to Raph Levien's original 1989 paper.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ganymede" = {
@@ -33,9 +33,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

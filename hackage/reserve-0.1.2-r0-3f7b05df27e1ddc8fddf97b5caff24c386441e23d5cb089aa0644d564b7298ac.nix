@@ -21,7 +21,7 @@
       synopsis = "Reserve reloads web applications";
       description = "Universal and robust reloading for Haskell web applications";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "reserve" = {
@@ -35,10 +35,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

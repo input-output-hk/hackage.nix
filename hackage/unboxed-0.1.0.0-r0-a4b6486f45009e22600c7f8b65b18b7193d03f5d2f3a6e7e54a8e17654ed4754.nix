@@ -21,14 +21,14 @@
       synopsis = "All the standard sum types but strict and unboxed as possible";
       description = "experimental package for unlifted / unboxed sum types. Expect dicoveries of new ways to make GHC cry.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

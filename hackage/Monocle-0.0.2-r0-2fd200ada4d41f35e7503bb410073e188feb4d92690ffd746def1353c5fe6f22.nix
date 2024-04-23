@@ -21,7 +21,7 @@
       synopsis = "Symbolic computations in strict monoidal categories with LaTeX output.";
       description = "Symbolic computations in strict monoidal categories with LaTeX output.\nSee monocle-test.hs.\nOne of goals of this project is to develop the tool for automatic\ndrawing of diagrams of morphisms and proofs in form suitable for LaTeX (e.g. for XY-pic).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

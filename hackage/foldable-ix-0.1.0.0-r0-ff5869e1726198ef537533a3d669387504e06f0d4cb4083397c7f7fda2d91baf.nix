@@ -21,11 +21,11 @@
       synopsis = "Functions to find out the indices of the elements in the Foldable structures";
       description = "Uses folds to pass through the structure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

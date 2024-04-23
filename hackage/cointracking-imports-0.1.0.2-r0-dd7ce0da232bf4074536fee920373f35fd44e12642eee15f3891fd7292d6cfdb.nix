@@ -21,7 +21,7 @@
       synopsis = "Generate CSV & XLSX files for importing into CoinTracking.";
       description = "@cointracking-imports@ is a library for generating CSV & XLSX files to use\nwith <https://cointracking.info CoinTracking>'s Import feature. You\nconstruct a list of @CTImportData@, then feed those to our CSV/XLSX\ngenerating functions.\n\nE.g., if you generate a list of your BNB staking rewards, you can use this\nlibrary build a CSV file to import those rewards into CoinTracking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cointracking-imports-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

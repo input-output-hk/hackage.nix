@@ -21,7 +21,7 @@
       synopsis = "Generics JSON (de)serialization using generics-sop";
       description = "This library contains generic serialization and deserialization functions\nimplemented using the @<https://hackage.haskell.org/package/generics-sop generics-sop>@\npackage for use with @<http://hackage.haskell.org/package/aeson aeson>@.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

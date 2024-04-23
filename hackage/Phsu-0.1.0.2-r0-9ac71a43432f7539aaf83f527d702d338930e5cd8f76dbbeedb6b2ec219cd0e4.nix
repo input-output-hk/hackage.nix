@@ -21,7 +21,7 @@
       synopsis = "Personal Happstack Server Utils";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Phsu" = {
@@ -52,9 +52,9 @@
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
             (hsPkgs."friendly-time" or (errorHandler.buildDepError "friendly-time"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

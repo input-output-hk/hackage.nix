@@ -21,7 +21,7 @@
       synopsis = "Permutations, patterns, and statistics";
       description = "Definitions for permutations with an emphasis on permutation\npatterns and permutation statistics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

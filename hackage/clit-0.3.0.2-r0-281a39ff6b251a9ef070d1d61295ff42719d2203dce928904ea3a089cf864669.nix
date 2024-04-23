@@ -21,7 +21,7 @@
       synopsis = "Post tweets from stdin";
       description = "a Command Line Interface Tweeter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tweet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clit" or (errorHandler.buildDepError "clit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

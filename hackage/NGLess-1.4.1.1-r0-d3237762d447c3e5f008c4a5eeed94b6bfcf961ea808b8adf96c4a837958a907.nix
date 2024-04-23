@@ -21,7 +21,7 @@
       synopsis = "NGLess implements ngless, a DSL for processing sequencing data";
       description = "NGLess implements a domain-specific language for processing next generation data, particularly metagenomics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -87,18 +87,18 @@
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."atomic-write" or (errorHandler.buildDepError "atomic-write"))
-            ]
+          ]
           else [
             (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
             (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
             (hsPkgs."safeio" or (errorHandler.buildDepError "safeio"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "ngless" = {
           depends = [
@@ -165,19 +165,19 @@
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."atomic-write" or (errorHandler.buildDepError "atomic-write"))
-              ]
+            ]
             else [
               (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
               (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
               (hsPkgs."safeio" or (errorHandler.buildDepError "safeio"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "nglesstest" = {
           depends = [
@@ -249,19 +249,19 @@
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."atomic-write" or (errorHandler.buildDepError "atomic-write"))
-              ]
+            ]
             else [
               (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
               (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
               (hsPkgs."safeio" or (errorHandler.buildDepError "safeio"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "nglessbench" = {
           depends = [
@@ -330,18 +330,18 @@
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."atomic-write" or (errorHandler.buildDepError "atomic-write"))
-              ]
+            ]
             else [
               (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
               (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
               (hsPkgs."safeio" or (errorHandler.buildDepError "safeio"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A small websocket backend provider.";
       description = "socketson is technically a small websocket server with a predefined protocol with the intention to be run a backend.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "socketson-sample" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."socketson" or (errorHandler.buildDepError "socketson"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "socketson-sample-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

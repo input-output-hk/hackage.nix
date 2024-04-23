@@ -21,7 +21,7 @@
       synopsis = "The yesod helper executable.";
       description = "See README.md for more information";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yesod" = {
@@ -63,9 +63,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

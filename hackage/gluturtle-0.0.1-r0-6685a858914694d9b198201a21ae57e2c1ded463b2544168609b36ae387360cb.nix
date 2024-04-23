@@ -21,7 +21,7 @@
       synopsis = "turtle like LOGO with glut";
       description = "turtle like LOGO with glut\n\nNow alpha alpha alpha alpha version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."yjsvg" or (errorHandler.buildDepError "yjsvg"))
           (hsPkgs."Imlib" or (errorHandler.buildDepError "Imlib"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "testTurtle" = { buildable = true; };
         "randomTurtle" = {
           depends = [
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

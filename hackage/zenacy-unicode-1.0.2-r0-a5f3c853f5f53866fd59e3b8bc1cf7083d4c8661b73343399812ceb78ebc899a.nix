@@ -21,7 +21,7 @@
       synopsis = "Unicode utilities for Haskell";
       description = "Zenacy Unicode includes tools for checking byte order marks (BOM) and\ncleaning data to remove invalid bytes.  These tools can help ensure that\ndata pulled from the web can be parsed and converted to text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zenacy-unicode-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zenacy-unicode" or (errorHandler.buildDepError "zenacy-unicode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

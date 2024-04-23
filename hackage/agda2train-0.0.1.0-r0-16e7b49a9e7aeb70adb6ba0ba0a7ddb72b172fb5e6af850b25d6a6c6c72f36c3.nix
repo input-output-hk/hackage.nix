@@ -21,7 +21,7 @@
       synopsis = "Agda backend to generate training data for machine learning purposes.";
       description = "-";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "agda2train" = {
@@ -40,9 +40,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

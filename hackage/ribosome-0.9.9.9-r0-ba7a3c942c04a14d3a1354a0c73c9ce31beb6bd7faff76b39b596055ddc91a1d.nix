@@ -21,7 +21,7 @@
       synopsis = "Neovim plugin framework for Polysemy";
       description = "See https://hackage.haskell.org/package/ribosome/docs/Ribosome.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ribosome-unit" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
             (hsPkgs."ribosome-host-test" or (errorHandler.buildDepError "ribosome-host-test"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

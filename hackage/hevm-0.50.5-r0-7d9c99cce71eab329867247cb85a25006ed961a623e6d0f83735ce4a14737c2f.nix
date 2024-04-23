@@ -21,7 +21,7 @@
       synopsis = "Ethereum virtual machine evaluator";
       description = "Hevm implements the Ethereum virtual machine semantics.\n.\nIt can be used as a library, and it also comes with an executable\nthat can run unit test suites, optionally with a visual TTY debugger.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -77,17 +77,17 @@
           (hsPkgs."spool" or (errorHandler.buildDepError "spool"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."spawn" or (errorHandler.buildDepError "spawn"))
-          ] ++ (pkgs.lib).optionals (!system.isWindows) [
+        ] ++ pkgs.lib.optionals (!system.isWindows) [
           (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         libs = [
           (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
           (pkgs."ff" or (errorHandler.sysDepError "ff"))
           (pkgs."gmp" or (errorHandler.sysDepError "gmp"))
-          ] ++ (pkgs.lib).optional (system.isLinux || system.isWindows) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
+        ] ++ pkgs.lib.optional (system.isLinux || system.isWindows) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
         buildable = true;
-        };
+      };
       sublibs = {
         "test-utils" = {
           depends = [
@@ -127,13 +127,13 @@
             (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       exes = {
         "hevm" = {
           depends = [
@@ -169,13 +169,13 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."spawn" or (errorHandler.buildDepError "spawn"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-            ];
+          ];
           libs = if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -216,14 +216,14 @@
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ] ++ (if system.isOsx
+          ] ++ (if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
           buildable = if system.isWindows then false else true;
-          };
+        };
         "rpc-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -263,14 +263,14 @@
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ] ++ (if system.isOsx
+          ] ++ (if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
           buildable = if system.isWindows then false else true;
-          };
+        };
         "ethereum-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -310,15 +310,15 @@
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ] ++ (if system.isOsx
+          ] ++ (if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -334,12 +334,12 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           libs = if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

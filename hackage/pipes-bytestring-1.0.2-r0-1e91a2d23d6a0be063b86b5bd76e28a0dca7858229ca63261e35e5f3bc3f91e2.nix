@@ -21,7 +21,7 @@
       synopsis = "ByteString support for pipes";
       description = "This library provides @pipes@ utilities for @ByteString@s";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

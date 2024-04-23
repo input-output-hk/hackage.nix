@@ -21,7 +21,7 @@
       synopsis = "Functor combinators with tries & zippers";
       description = "Simple functor combinators, their derivatives, and their use for tries\nMaybe split out derivatives and/or tries later.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."lub" or (errorHandler.buildDepError "lub"))
           (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
           (hsPkgs."type-unary" or (errorHandler.buildDepError "type-unary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

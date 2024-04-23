@@ -21,14 +21,14 @@
       synopsis = "A package exposing a helper function for generating smart constructors.";
       description = "A package exposing a helper function for generating smart constructors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

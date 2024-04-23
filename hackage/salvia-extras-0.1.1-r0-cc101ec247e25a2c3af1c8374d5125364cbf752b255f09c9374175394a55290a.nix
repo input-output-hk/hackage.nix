@@ -21,7 +21,7 @@
       synopsis = "Collection of non-fundamental request handler for the Salvia web server.";
       description = "Collection of non-fundamental request handler for the Salvia web server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."clevercss" or (errorHandler.buildDepError "clevercss"))
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
           (hsPkgs."salvia" or (errorHandler.buildDepError "salvia"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Monadic bidirectional programming";
       description = "Applicative and monadic interface for bidirectional programming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hashcons" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."profunctor-monad" or (errorHandler.buildDepError "profunctor-monad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

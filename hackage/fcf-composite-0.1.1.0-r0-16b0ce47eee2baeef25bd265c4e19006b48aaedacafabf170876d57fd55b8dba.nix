@@ -21,7 +21,7 @@
       synopsis = "Type-level computation for composite using first-class-families.";
       description = "Type-level computation for composite using first-class-families.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."fcf-containers" or (errorHandler.buildDepError "fcf-containers"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fcf-composite-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

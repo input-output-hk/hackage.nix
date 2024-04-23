@@ -22,7 +22,7 @@
       concurrentoutput = true;
       benchmark = false;
       dbus = true;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "git-annex"; version = "6.20180913"; };
@@ -50,8 +50,8 @@
         (hsPkgs.buildPackages.utf8-string or (pkgs.buildPackages.utf8-string or (errorHandler.setupDepError "utf8-string")))
         (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers or (errorHandler.setupDepError "transformers")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "git-annex" = {
@@ -120,35 +120,35 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
               (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optional (flags.s3) (hsPkgs."aws" or (errorHandler.buildDepError "aws"))) ++ (pkgs.lib).optional (flags.webdav) (hsPkgs."DAV" or (errorHandler.buildDepError "DAV"))) ++ (pkgs.lib).optionals (flags.assistant && !system.isSolaris && !system.isHurd) ([
+            ])) ++ pkgs.lib.optional (flags.s3) (hsPkgs."aws" or (errorHandler.buildDepError "aws"))) ++ pkgs.lib.optional (flags.webdav) (hsPkgs."DAV" or (errorHandler.buildDepError "DAV"))) ++ pkgs.lib.optionals (flags.assistant && !system.isSolaris && !system.isHurd) ([
             (hsPkgs."mountpoints" or (errorHandler.buildDepError "mountpoints"))
-            ] ++ (if system.isLinux || flags.android
+          ] ++ (if system.isLinux || flags.android
             then [
               (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-              ]
+            ]
             else if system.isOsx
               then [
                 (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"))
-                ]
-              else (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))))) ++ (pkgs.lib).optionals (flags.dbus) ((pkgs.lib).optionals (system.isLinux) [
+              ]
+              else pkgs.lib.optional (system.isWindows) (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))))) ++ pkgs.lib.optionals (flags.dbus) (pkgs.lib.optionals (system.isLinux) [
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."fdo-notify" or (errorHandler.buildDepError "fdo-notify"))
-            ])) ++ (if flags.android
+          ])) ++ (if flags.android
             then [
               (hsPkgs."data-endian" or (errorHandler.buildDepError "data-endian"))
-              ]
+            ]
             else [
               (hsPkgs."disk-free-space" or (errorHandler.buildDepError "disk-free-space"))
-              ])) ++ (pkgs.lib).optionals (flags.webapp) [
+            ])) ++ pkgs.lib.optionals (flags.webapp) [
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
@@ -162,15 +162,15 @@
             (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-            ]) ++ (pkgs.lib).optionals (flags.pairing) [
+          ]) ++ pkgs.lib.optionals (flags.pairing) [
             (hsPkgs."network-multicast" or (errorHandler.buildDepError "network-multicast"))
             (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
-            ]) ++ (pkgs.lib).optional (flags.torrentparser) (hsPkgs."torrent" or (errorHandler.buildDepError "torrent"))) ++ (pkgs.lib).optionals (flags.magicmime) ((pkgs.lib).optional (!system.isWindows) (hsPkgs."magic" or (errorHandler.buildDepError "magic")))) ++ (pkgs.lib).optional (flags.concurrentoutput) (hsPkgs."concurrent-output" or (errorHandler.buildDepError "concurrent-output"))) ++ (pkgs.lib).optionals (flags.benchmark) [
+          ]) ++ pkgs.lib.optional (flags.torrentparser) (hsPkgs."torrent" or (errorHandler.buildDepError "torrent"))) ++ pkgs.lib.optionals (flags.magicmime) (pkgs.lib.optional (!system.isWindows) (hsPkgs."magic" or (errorHandler.buildDepError "magic")))) ++ pkgs.lib.optional (flags.concurrentoutput) (hsPkgs."concurrent-output" or (errorHandler.buildDepError "concurrent-output"))) ++ pkgs.lib.optionals (flags.benchmark) [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

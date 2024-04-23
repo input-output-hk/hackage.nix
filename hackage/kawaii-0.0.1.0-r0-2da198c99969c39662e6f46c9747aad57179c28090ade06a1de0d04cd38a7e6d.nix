@@ -21,7 +21,7 @@
       synopsis = "Utilities for serving static sites and blogs with Wai/Warp";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-static-extra-spec" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."hakyll-serve" or (errorHandler.buildDepError "hakyll-serve"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

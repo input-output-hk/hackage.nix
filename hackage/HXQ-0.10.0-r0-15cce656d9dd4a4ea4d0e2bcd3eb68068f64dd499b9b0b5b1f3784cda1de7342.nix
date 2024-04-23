@@ -21,7 +21,7 @@
       synopsis = "A Compiler from XQuery to Haskell";
       description = "HXQ is a fast and space-efficient compiler from XQuery (the standard\nquery language for XML) to embedded Haskell code. The translation is\nbased on Haskell templates. It also provides an interpreter for\nevaluating XQueries from input and an optional database connectivity\nusing HDBC with MySQL/ODBC or sqlite3.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,17 +30,17 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."readline" or (errorHandler.buildDepError "readline"))) ++ (if flags.mysql
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."readline" or (errorHandler.buildDepError "readline"))) ++ (if flags.mysql
           then [
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
             (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc"))
-            ]
-          else (pkgs.lib).optionals (flags.sqlite) [
+          ]
+          else pkgs.lib.optionals (flags.sqlite) [
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
             (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "xquery" = {
           depends = ([
@@ -49,17 +49,17 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."readline" or (errorHandler.buildDepError "readline"))) ++ (if flags.mysql
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."readline" or (errorHandler.buildDepError "readline"))) ++ (if flags.mysql
             then [
               (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
               (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc"))
-              ]
-            else (pkgs.lib).optionals (flags.sqlite) [
+            ]
+            else pkgs.lib.optionals (flags.sqlite) [
               (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
               (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

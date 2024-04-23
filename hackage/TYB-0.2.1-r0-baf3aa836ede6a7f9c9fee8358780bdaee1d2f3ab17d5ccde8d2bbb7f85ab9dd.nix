@@ -21,7 +21,7 @@
       synopsis = "Template Your Boilerplate - a Template Haskell version of SYB";
       description = "TYB is a generic-programming system that uses Template\nHaskell to generate boiler-plate traversals at compile\ntime.  This results in significantly improved\nperformance.  The paper documenting it is available at:\n<http://cs.pdx.edu/~adamsmic/projects/tyb/TYB.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

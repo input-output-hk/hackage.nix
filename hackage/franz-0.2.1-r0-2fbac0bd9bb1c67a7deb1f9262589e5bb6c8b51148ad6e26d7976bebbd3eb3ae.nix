@@ -21,7 +21,7 @@
       synopsis = "Append-only database";
       description = "Please see the README on GitHub at <https://github.com/fumieval/franz#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "franz" = {
           depends = [
@@ -53,17 +53,17 @@
             (hsPkgs."franz" or (errorHandler.buildDepError "franz"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "franzd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."franz" or (errorHandler.buildDepError "franz"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

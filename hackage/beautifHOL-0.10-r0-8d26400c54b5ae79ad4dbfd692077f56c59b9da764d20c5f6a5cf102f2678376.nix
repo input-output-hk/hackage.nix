@@ -21,7 +21,7 @@
       synopsis = "A pretty-printer for higher-order logic";
       description = "This is a pretty-printer for higher-order logic (HOL).  It reads in a formula\nand outputs it to standard out.  A paper describes its design and motivation\nat the project website.  The approach expands upon Leslie Lamport's paper, \\\"How\nto Write a Long Formula,\\\" available at\n<http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html#lamport-howtowrite>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "beautifHOL" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

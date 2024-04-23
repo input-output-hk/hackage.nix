@@ -21,7 +21,7 @@
       synopsis = "A sequence labeler based on Collins's sequence perceptron.";
       description = "A sequence labeler based on Collins's sequence perceptron.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sequor" = {
@@ -34,9 +34,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

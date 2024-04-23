@@ -21,7 +21,7 @@
       synopsis = "Example for cqrs package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cqrs-example" = {
@@ -35,9 +35,9 @@
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

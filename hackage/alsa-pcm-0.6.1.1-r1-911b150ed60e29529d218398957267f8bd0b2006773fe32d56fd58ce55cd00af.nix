@@ -21,7 +21,7 @@
       synopsis = "Binding to the ALSA Library API (PCM audio).";
       description = "This package provides access to ALSA realtime audio signal input and output.\nFor MIDI support see alsa-seq.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,60 +32,60 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."alsa" or (errorHandler.pkgConfDepError "alsa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "alsa-minisynth" = {
-          depends = (pkgs.lib).optionals (flags.buildsynthesizer) [
+          depends = pkgs.lib.optionals (flags.buildsynthesizer) [
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildsynthesizer then true else false;
-          };
+        };
         "alsa-sine" = {
-          depends = (pkgs.lib).optionals (flags.buildsynthesizer) [
+          depends = pkgs.lib.optionals (flags.buildsynthesizer) [
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildsynthesizer then true else false;
-          };
+        };
         "alsa-duplex" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-play" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-record" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-volume-meter" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

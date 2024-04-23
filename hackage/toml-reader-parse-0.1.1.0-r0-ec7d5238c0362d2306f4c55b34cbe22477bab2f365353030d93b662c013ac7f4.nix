@@ -21,7 +21,7 @@
       synopsis = "Alternative parser for TOML values produced by the toml-reader package.";
       description = "Package defines a set of parser combinators that allows analyzing arbitrary TOML structures.\nIncludes formatted errors that keep track of where in the original TOML file a value\ncame from.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "toml-reader-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."toml-reader" or (errorHandler.buildDepError "toml-reader"))
             (hsPkgs."toml-reader-parse" or (errorHandler.buildDepError "toml-reader-parse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

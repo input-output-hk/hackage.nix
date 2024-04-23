@@ -21,7 +21,7 @@
       synopsis = "Type generated application configuration ";
       description = "`cfg` is a library that provides Generic machinery for generating configuration accessors, \nand parsers from Haskell types. This package is intended to be used to build out additional \n\"sources\" for configuration access, the environment source is provided in this package as a default.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cfg-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

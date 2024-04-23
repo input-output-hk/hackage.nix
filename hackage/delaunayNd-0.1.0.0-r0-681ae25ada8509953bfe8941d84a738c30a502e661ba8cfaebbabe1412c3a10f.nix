@@ -21,7 +21,7 @@
       synopsis = "Delaunay tessellation";
       description = "This library performs the Delaunay tessellation in arbitrary dimension.\n\nIt uses the C library 'qhull'.\n\nFor examples, look at the README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."insert-ordered-containers" or (errorHandler.buildDepError "insert-ordered-containers"))
           (hsPkgs."Unique" or (errorHandler.buildDepError "Unique"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

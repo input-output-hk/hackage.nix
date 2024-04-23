@@ -6,8 +6,8 @@
         nix = import ../hackage/cleff-plugin-0.1.0.0-r0-b8643536e5733d60cdc916fe60dc6dc7b407ae06d5b033a5c887f5f8322043ce.nix;
         revNum = 0;
         sha256 = "b8643536e5733d60cdc916fe60dc6dc7b407ae06d5b033a5c887f5f8322043ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

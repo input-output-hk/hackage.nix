@@ -6,8 +6,8 @@
         nix = import ../hackage/husk-scheme-libs-0.0.1-r0-462cd1e71a47c977918fd10bde6c66d7860b813bae5c4ffa55819ca583d056a0.nix;
         revNum = 0;
         sha256 = "462cd1e71a47c977918fd10bde6c66d7860b813bae5c4ffa55819ca583d056a0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

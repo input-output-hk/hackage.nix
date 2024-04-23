@@ -21,7 +21,7 @@
       synopsis = "Build time library that autodetects exposed modules";
       description = "Build time library used with a custom Setup.hs that autodetects exposed modules in the source directories of each build artifact.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

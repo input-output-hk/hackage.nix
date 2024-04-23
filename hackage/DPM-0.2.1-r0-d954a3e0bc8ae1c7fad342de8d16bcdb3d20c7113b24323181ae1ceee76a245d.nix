@@ -21,7 +21,7 @@
       synopsis = "Darcs Patch Manager";
       description = "The Darcs Patch Manager (/DPM/ for short) is a tool that simplifies working\nwith the revision control system darcs (<http://darcs.net>). It is most\neffective when used in an environment where developers do not push their\npatches directly to the main repository but where patches undergo a\nreviewing process before they are actually applied. See the documentation\nof the module \"DPM.Tutorial\" for a short tutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -46,9 +46,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
+        };
         "dpm" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
@@ -70,9 +70,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell Open Sound Control Utilities";
       description = "hosc-utils";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hosc-utils-benchmark" = {
@@ -31,10 +31,10 @@
             (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hosc-utils-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

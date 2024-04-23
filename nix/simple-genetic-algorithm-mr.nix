@@ -6,8 +6,8 @@
         nix = import ../hackage/simple-genetic-algorithm-mr-0.4.0.0-r0-c877cbf919d02a500117b5a950b57a3f481592373086360b816df44b15407966.nix;
         revNum = 0;
         sha256 = "c877cbf919d02a500117b5a950b57a3f481592373086360b816df44b15407966";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

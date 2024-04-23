@@ -14,7 +14,7 @@
       identifier = {
         name = "mono-traversable-instances";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -24,7 +24,7 @@
       synopsis = "Extra typeclass instances for mono-traversable";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

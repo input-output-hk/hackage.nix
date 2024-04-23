@@ -21,7 +21,7 @@
       synopsis = "Experimental web browser";
       description = "Experimental web browser based on WebKit-Gtk+";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "spike" = {
@@ -36,12 +36,12 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."libsoup-gnome-2.4" or (errorHandler.pkgConfDepError "libsoup-gnome-2.4"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

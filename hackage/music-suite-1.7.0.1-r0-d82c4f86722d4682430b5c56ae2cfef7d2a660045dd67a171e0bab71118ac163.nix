@@ -21,7 +21,7 @@
       synopsis = "A set of libraries for composition, analysis and manipulation of music.";
       description = "This is a meta-library that imports the Music Suite(see <http://music-suite.github.io/>).\n\nIt allows users to install all (stable) libraries in the suite as follows:\n\n> cabal install music-suite\n\nIf you wish to install an exerimental package, simply use @cabal install@ on the specific package instead.\n\n<<https://raw.githubusercontent.com/hanshoglund/music-docs/master/music-suite-deps.png>>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."music-articulation" or (errorHandler.buildDepError "music-articulation"))
           (hsPkgs."music-parts" or (errorHandler.buildDepError "music-parts"))
           (hsPkgs."music-preludes" or (errorHandler.buildDepError "music-preludes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

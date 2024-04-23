@@ -21,7 +21,7 @@
       synopsis = "Compile git revision info into Haskell projects";
       description = "Please see the README and documentation at <https://www.stackage.org/package/githash>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "githash-spec" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hout-0.1.0.0-r0-fbe6ff3093ca6597fe90344e6679b376ab107d3e856f5645d9713ecd639be17e.nix;
         revNum = 0;
         sha256 = "fbe6ff3093ca6597fe90344e6679b376ab107d3e856f5645d9713ecd639be17e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

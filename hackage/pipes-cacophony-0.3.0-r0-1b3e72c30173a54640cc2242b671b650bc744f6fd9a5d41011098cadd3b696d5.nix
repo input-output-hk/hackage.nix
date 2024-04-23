@@ -21,7 +21,7 @@
       synopsis = "Pipes for Noise-secured network connections.";
       description = "A set of pipes to secure network connections with the\n<https://github.com/trevp/noise/blob/master/noise.md Noise> protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,30 +29,30 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "loopback" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-cacophony" or (errorHandler.buildDepError "pipes-cacophony"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
-        };
-      tests = {
-        "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
-          buildable = if !flags.hlint then false else true;
-          };
         };
       };
-    }
+      tests = {
+        "hlint" = {
+          depends = pkgs.lib.optionals (!!flags.hlint) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
+          ];
+          buildable = if !flags.hlint then false else true;
+        };
+      };
+    };
+  }

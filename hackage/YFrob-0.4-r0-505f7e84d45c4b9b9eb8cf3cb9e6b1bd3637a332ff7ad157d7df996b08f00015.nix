@@ -21,7 +21,7 @@
       synopsis = "Yampa-based library for programming robots";
       description = "Yampa-based, domain-specific language embedded in Haskell for programming\nrobots. At present, only simulated robots. However, the infrastructure is\nseparated into generic and robot-specific parts, and set up so as to make\nit possible to write robot code that depends only on specific features, as\nopposed to specific platforms or versions of those platforms. Thus, it is\nin principle possible to write quite generic robot code. (Once upon a time,\nthe Pioneer platform, a real robot, was supported.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
           (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

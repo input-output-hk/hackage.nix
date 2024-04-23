@@ -21,7 +21,7 @@
       synopsis = "Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification";
       description = "Uses protocol-buffers package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."protocol-buffers" or (errorHandler.buildDepError "protocol-buffers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

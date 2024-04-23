@@ -21,7 +21,7 @@
       synopsis = "";
       description = "The OpenTelemetry Haskell Client https://opentelemetry.io";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."ghc-trace-events" or (errorHandler.buildDepError "ghc-trace-events"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,19 +21,19 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The posix regex backend for regex-base";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

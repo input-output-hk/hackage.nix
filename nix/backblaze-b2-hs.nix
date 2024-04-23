@@ -6,8 +6,8 @@
         nix = import ../hackage/backblaze-b2-hs-0.1.0.0-r0-b371ed18a42af18e2f3bf6fbf339faab2018165c636327a6ae2dce3829299474.nix;
         revNum = 0;
         sha256 = "b371ed18a42af18e2f3bf6fbf339faab2018165c636327a6ae2dce3829299474";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

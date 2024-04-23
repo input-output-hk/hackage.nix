@@ -6,8 +6,8 @@
         nix = import ../hackage/simfin-1.0.0-r0-74cf5910be43522d7ab91212fd4cb6b1fadc86947e830b42225b142bc0d4bff4.nix;
         revNum = 0;
         sha256 = "74cf5910be43522d7ab91212fd4cb6b1fadc86947e830b42225b142bc0d4bff4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

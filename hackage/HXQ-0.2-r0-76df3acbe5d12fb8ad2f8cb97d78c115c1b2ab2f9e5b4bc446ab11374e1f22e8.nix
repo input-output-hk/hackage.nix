@@ -21,7 +21,7 @@
       synopsis = "A Compiler from XQuery to Haskell";
       description = "A Compiler from XQuery to Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xquery" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

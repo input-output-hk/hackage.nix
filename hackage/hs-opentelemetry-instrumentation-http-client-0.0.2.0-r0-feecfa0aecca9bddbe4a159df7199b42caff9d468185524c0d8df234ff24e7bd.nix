@@ -14,7 +14,7 @@
       identifier = {
         name = "hs-opentelemetry-instrumentation-http-client";
         version = "0.0.2.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2021 Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -24,7 +24,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry/tree/main/instrumentation/http-client#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-opentelemetry-instrumentation-http-client-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

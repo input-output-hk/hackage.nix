@@ -6,8 +6,8 @@
         nix = import ../hackage/tempgres-client-1.0.0-r0-a43ea58a966c40a0c116df18a0b4418ca73bbf9b740981b4ad111745d0698b6a.nix;
         revNum = 0;
         sha256 = "a43ea58a966c40a0c116df18a0b4418ca73bbf9b740981b4ad111745d0698b6a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

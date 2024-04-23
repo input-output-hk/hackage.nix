@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Fractal renderer";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Fractaler" = {
@@ -33,9 +33,9 @@
             (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."FTGL" or (errorHandler.buildDepError "FTGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

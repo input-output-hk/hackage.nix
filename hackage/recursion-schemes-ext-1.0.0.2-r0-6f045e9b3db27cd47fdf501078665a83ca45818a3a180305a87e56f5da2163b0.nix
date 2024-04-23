@@ -21,7 +21,7 @@
       synopsis = "Amateur addenda to recursion-schemes";
       description = "This package provides some exotic recursion schemes as well monadic versions of some morphisms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "recursion-schemes-test" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "recursion-schemes-bench" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A CLI frontend for ethereum-analyzer.";
       description = "A CLI frontend for ethereum-analyzer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,9 +64,9 @@
           (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ea-dump-contract" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Git like program in haskell";
       description = "\nSmall haskell executable usable example using the git library\n\nLibrary component is available at 'git'\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Hit" = {
@@ -33,9 +33,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."git" or (errorHandler.buildDepError "git"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

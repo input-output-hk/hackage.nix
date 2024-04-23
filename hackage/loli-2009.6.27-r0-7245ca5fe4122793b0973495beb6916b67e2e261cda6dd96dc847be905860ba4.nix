@@ -21,7 +21,7 @@
       synopsis = "A minimum web dev DSL in Haskell";
       description = "A simple and easy to use library for fast web prototyping in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template" or (errorHandler.buildDepError "template"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

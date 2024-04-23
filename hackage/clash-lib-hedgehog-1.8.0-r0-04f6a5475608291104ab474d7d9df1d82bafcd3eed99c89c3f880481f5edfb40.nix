@@ -21,7 +21,7 @@
       synopsis = "Hedgehog Generators for clash-lib";
       description = "Hedgehog Generators for clash-lib";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."clash-lib" or (errorHandler.buildDepError "clash-lib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

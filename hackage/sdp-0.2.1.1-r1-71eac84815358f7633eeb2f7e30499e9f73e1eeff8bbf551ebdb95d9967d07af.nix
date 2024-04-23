@@ -21,7 +21,7 @@
       synopsis = "Simple Data Processing";
       description = "SDP provides generalized interface for simple data operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."fmr" or (errorHandler.buildDepError "fmr"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,18 +21,18 @@
       synopsis = "Compatibile module for time-format locale";
       description = "This package contains wrapped name module for time-format locale between old-locale and time-1.5.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.old-locale
+        ] ++ (if flags.old-locale
           then [
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

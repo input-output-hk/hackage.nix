@@ -21,7 +21,7 @@
       synopsis = "Instances for wide-word";
       description = "This package provides extra instances for @wide-word@, that are currently\nunsuitable for either @wide-word@ itself or the typeclass's own package,\nbecause it would introduce too many dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

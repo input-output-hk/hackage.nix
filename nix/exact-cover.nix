@@ -6,8 +6,8 @@
         nix = import ../hackage/exact-cover-0.1.0.0-r0-c4f4943612433ee9117c853e310b9dd951ec5f03973b931621541f08642c9719.nix;
         revNum = 0;
         sha256 = "c4f4943612433ee9117c853e310b9dd951ec5f03973b931621541f08642c9719";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

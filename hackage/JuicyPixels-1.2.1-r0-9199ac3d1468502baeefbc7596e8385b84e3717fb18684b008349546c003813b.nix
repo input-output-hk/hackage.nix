@@ -21,7 +21,7 @@
       synopsis = "Picture loading/serialization (in png, jpeg and bitmap)";
       description = "This library can load and store images in various image formats,\nfor now mainly in PNG/Bitmap and Jpeg";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

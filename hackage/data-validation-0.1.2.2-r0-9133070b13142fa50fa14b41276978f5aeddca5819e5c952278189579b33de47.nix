@@ -21,26 +21,26 @@
       synopsis = "A library for creating type safe validations.";
       description = "A library for creating type safe validations using typeclasses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "examples" = {
-          depends = (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          depends = pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-validation" or (errorHandler.buildDepError "data-validation"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-data-validation" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."data-validation" or (errorHandler.buildDepError "data-validation"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

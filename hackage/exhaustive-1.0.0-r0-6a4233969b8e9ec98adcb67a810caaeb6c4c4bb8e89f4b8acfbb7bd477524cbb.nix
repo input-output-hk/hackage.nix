@@ -21,15 +21,15 @@
       synopsis = "Compile time checks that a computation considers producing data through all possible constructors";
       description = "For a brief tutorial to @exhaustive@, check out the documentation for \"Control.Exhaustive\", which contains a small example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

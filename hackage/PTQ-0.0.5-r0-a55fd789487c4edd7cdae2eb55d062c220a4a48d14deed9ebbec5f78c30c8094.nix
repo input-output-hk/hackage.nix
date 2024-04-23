@@ -21,7 +21,7 @@
       synopsis = "An implementation of Montague's PTQ.";
       description = "An implementation of Montague's PTQ (Proper Treatment of Quantification). It translates simple plain English sentences into formulas of intentional logic.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ptq" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (pkgs.lib).optional (flags.utf8terminal) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
+          ] ++ pkgs.lib.optional (flags.utf8terminal) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
           buildable = true;
-          };
+        };
         "ptq.cgi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -41,9 +41,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ] ++ (pkgs.lib).optional (flags.utf8cgi) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
+          ] ++ pkgs.lib.optional (flags.utf8cgi) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

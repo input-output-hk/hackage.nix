@@ -21,7 +21,7 @@
       synopsis = "Mailtrap API library.";
       description = "Mailtrap API library. For more information,\nvisit [the repository](https://gitlab.com/daniel-casanueva/haskell/mailtrap).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

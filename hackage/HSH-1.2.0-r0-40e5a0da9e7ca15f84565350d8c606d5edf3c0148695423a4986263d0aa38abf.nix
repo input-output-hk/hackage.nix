@@ -21,7 +21,7 @@
       synopsis = "Library to mix shell scripting with Haskell programs";
       description = "HSH is designed to let you mix and match shell expressions with\nHaskell programs. With HSH, it is possible to easily run shell\ncommands, capture their output or provide their input, and pipe them\nto/from other shell commands and arbitrary Haskell functions at will.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."FilePath" or (errorHandler.buildDepError "FilePath"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."FilePath" or (errorHandler.buildDepError "FilePath"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

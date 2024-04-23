@@ -21,7 +21,7 @@
       synopsis = "Perform refactorings specified by the refact library.";
       description = "Perform refactorings specified by the refact library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "refactor" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary-rc" or (errorHandler.buildDepError "temporary-rc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -81,11 +81,11 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."temporary-rc" or (errorHandler.buildDepError "temporary-rc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.10"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

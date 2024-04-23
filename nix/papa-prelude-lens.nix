@@ -6,8 +6,8 @@
         nix = import ../hackage/papa-prelude-lens-0.0.1-r0-047fcb61163d5a9905a27660be6adfd9aae50f9f66488c5014f7d8cb2aff3068.nix;
         revNum = 0;
         sha256 = "047fcb61163d5a9905a27660be6adfd9aae50f9f66488c5014f7d8cb2aff3068";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

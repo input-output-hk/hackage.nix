@@ -21,11 +21,11 @@
       synopsis = "Typeclass for metric spaces";
       description = "Typeclass for metric spaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

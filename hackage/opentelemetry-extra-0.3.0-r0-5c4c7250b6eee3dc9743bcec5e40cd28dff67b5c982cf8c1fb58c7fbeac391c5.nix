@@ -21,7 +21,7 @@
       synopsis = "";
       description = "The OpenTelemetry Haskell Client https://opentelemetry.io";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "eventlog-to-zipkin" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "eventlog-to-chrome" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,10 +72,10 @@
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

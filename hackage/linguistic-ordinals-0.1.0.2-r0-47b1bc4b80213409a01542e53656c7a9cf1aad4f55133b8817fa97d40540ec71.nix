@@ -21,14 +21,14 @@
       synopsis = "Express Integral types as linguistic ordinals (1st, 2nd, 3rd, etc)";
       description = "A simple library which provides suffixes for integral values, thereby effectively rendering them ordinal (from a linguistic standpoint).\nSee also <http://en.wikipedia.org/wiki/Ordinal_number_(linguistics) the Wikipedia summary of linguistic ordinals>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

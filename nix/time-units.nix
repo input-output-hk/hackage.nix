@@ -6,8 +6,8 @@
         nix = import ../hackage/time-units-1.0.0-r0-27cf54091c4a0ca73d504fc11d5c31ab4041d17404fe3499945e2055697746c1.nix;
         revNum = 0;
         sha256 = "27cf54091c4a0ca73d504fc11d5c31ab4041d17404fe3499945e2055697746c1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

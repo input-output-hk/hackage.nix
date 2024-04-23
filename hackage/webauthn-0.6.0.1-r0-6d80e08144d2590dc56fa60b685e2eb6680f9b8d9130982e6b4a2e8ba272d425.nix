@@ -21,7 +21,7 @@
       synopsis = "Relying party (server) implementation of the WebAuthn 2 specification";
       description = "== About\nThis library implements the [Relying Party conformance class](https://www.w3.org/TR/webauthn-2/#sctn-conforming-relying-parties)\nof the [Web Authentication Level 2](https://www.w3.org/TR/webauthn-2/) specification.\nThis allows web applications to create strong, attested, scoped, public key-based\ncredentials for the purpose of strongly authenticating users.\n\n== Getting started\nThe \"Crypto.WebAuthn\" module and its documentation is the best place to get\nstarted with the library.\nThe example server: [Main.hs](https://github.com/tweag/webauthn/blob/master/server/src/Main.hs)\nshows how this module may be used to implement a relying party.\n\n== Stability\nWhile the general design of the library won't change, it's still in an alpha\nstate, so smaller breaking changes should be expected for now. We will\nhowever follow the [PVP](https://pvp.haskell.org/) and properly label changes\nwith the appropriate version increase.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."webauthn" or (errorHandler.buildDepError "webauthn"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

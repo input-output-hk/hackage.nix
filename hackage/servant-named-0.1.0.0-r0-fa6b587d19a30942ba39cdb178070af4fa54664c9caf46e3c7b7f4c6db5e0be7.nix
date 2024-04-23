@@ -21,15 +21,15 @@
       synopsis = "Add named endpoints to servant";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-named-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

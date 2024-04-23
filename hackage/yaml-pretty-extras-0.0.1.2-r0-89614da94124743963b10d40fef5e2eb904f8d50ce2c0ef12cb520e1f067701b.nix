@@ -21,7 +21,7 @@
       synopsis = "Extra functionality for pretty printing Yaml documents.";
       description = "Extra functionality for pretty printing Yaml documents. Allows precise field ordering.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yaml-pretty-extras-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."yaml-pretty-extras" or (errorHandler.buildDepError "yaml-pretty-extras"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

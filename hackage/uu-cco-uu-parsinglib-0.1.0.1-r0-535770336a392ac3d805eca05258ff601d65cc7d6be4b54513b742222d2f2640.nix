@@ -21,7 +21,7 @@
       synopsis = "Utilities for compiler construction: Feedback wrapper around parser in uu-parsinglib";
       description = "A small utility library accompanying the course on\nCompiler Construction (INFOMCCO) at Utrecht Univerity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
           (hsPkgs."uu-cco" or (errorHandler.buildDepError "uu-cco"))
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

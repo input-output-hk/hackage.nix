@@ -21,16 +21,16 @@
       synopsis = "Mocking framework for polysemy effects";
       description = "Please see the README on GitHub at <https://github.com/akshaymankar/polysemy-mocks#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,12 +38,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-mocks" or (errorHandler.buildDepError "polysemy-mocks"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

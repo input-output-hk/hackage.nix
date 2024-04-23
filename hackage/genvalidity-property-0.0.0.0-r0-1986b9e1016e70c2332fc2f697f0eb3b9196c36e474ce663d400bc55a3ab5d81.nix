@@ -21,7 +21,7 @@
       synopsis = "Standard properties for functions on `Validity` types";
       description = "Standard properties for functions on `Validity` types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-property-doctests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."genvalidity-property" or (errorHandler.buildDepError "genvalidity-property"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

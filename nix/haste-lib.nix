@@ -6,8 +6,8 @@
         nix = import ../hackage/haste-lib-0.6.0.0-r0-ca8b099d7803ef19687b7f81a1960cb4370f7a454eb1c6b4b1e04cc847aeaa50.nix;
         revNum = 0;
         sha256 = "ca8b099d7803ef19687b7f81a1960cb4370f7a454eb1c6b4b1e04cc847aeaa50";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

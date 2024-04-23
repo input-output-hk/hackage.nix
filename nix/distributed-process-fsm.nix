@@ -6,8 +6,8 @@
         nix = import ../hackage/distributed-process-fsm-0.0.1-r0-0fb7b1a23087fc28b1a06ead8b5b812557b8e24fc66f4deee1c60103db7aefed.nix;
         revNum = 0;
         sha256 = "0fb7b1a23087fc28b1a06ead8b5b812557b8e24fc66f4deee1c60103db7aefed";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,17 +21,17 @@
       synopsis = "Maybe gives you a cute girl";
       description = "A package which exists solely to try and give\nthe user a cute girl. Executable and library are both\navailable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "CuteGirl" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

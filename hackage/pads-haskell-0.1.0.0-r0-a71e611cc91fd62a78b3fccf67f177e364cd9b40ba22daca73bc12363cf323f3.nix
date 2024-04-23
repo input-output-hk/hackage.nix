@@ -21,7 +21,7 @@
       synopsis = "PADS data description language for Haskell.";
       description = "Please see the README on Github at <https://github.com/padsproj/pads-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "extended" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -96,9 +96,9 @@
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gen" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -120,9 +120,9 @@
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

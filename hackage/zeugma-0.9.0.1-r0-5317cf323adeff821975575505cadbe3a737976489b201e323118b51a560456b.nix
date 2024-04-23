@@ -21,7 +21,7 @@
       synopsis = "Polysemy effects for testing";
       description = "See https://hackage.haskell.org/package/zeugma/docs/Zeugma.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
           (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

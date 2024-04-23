@@ -21,7 +21,7 @@
       synopsis = "Trivial routines for inspecting git repositories";
       description = "This is a bunch of trivial routines for inspecting git repositories.\nIt is in no way useful beyond that.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."iteratee-compress" or (errorHandler.buildDepError "iteratee-compress"))
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "ght" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."ui-command" or (errorHandler.buildDepError "ui-command"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

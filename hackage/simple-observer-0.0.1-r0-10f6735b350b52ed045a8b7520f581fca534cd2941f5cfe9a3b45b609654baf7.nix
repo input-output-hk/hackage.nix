@@ -21,11 +21,11 @@
       synopsis = "The Observer pattern";
       description = "This is a simple Haskell implementation of the Observer pattern,\nspecified as a typeclass with one example instance (demonstrating\nsynchronous notifications).\nIt is based on Observable.hs by Bastiaan Heeren, originally from\n<http://www.cs.uu.nl/wiki/bin/view/Afp0607/ExerciseWXHaskell>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

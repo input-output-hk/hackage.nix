@@ -21,7 +21,7 @@
       synopsis = "A pure-Haskell SSH server library.";
       description = "This a library for implementing your own servers that handle SSH\nrequests and authorization, etc. Similar to Python's Twisted Conch\nlibrary. It's used eg by darcsden to provide basic SSH access.\nThis package receives only basic maintenance; if you'd like to\ntake it over, please contact the current maintainer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."SimpleAES" or (errorHandler.buildDepError "SimpleAES"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

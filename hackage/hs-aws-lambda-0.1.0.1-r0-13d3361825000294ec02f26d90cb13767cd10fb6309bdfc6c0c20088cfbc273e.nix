@@ -21,7 +21,7 @@
       synopsis = "A modern and easy-to-use wrapper for Docker-based Lambda implementations";
       description = "Please see the README on GitHub at <https://github.com/RobertFischer/aws-lambda-runtime-api#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aws-lambda-runtime-api-test" = {
           depends = [
             (hsPkgs."aws-lambda-runtime-api" or (errorHandler.buildDepError "aws-lambda-runtime-api"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

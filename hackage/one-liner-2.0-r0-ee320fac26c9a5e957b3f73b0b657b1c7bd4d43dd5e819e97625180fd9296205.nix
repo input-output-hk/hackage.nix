@@ -21,7 +21,7 @@
       synopsis = "Constraint-based generics";
       description = "Write short and concise generic instances of type classes.\none-liner is particularly useful for writing default\nimplementations of type class methods.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unittests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."one-liner" or (errorHandler.buildDepError "one-liner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

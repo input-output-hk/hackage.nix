@@ -21,7 +21,7 @@
       synopsis = "A MyAnimeList.net client.";
       description = "Contains most of the typical commands for listing/updating\nyour anime/manga list on MyAnimeList.net.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mal" = {
@@ -36,9 +36,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

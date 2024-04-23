@@ -21,7 +21,7 @@
       synopsis = "A container-/cgroup-aware substitute for the GHC RTS `-N` flag";
       description = "This library provides a container-/cgroup-aware substitute for the GHC RTS\n`-N` flag. See the README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

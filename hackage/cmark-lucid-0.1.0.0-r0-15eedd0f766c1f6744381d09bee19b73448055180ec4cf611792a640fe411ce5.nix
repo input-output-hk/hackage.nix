@@ -21,15 +21,15 @@
       synopsis = "Use cmark with Lucid";
       description = "Use cmark with Lucid";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

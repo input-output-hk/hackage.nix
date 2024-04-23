@@ -6,8 +6,8 @@
         nix = import ../hackage/log-effectful-1.0.0.0-r0-126f328c9325c10998289378191dc69e55b5ffdc37a7845f2d0ee57f6f13392e.nix;
         revNum = 0;
         sha256 = "126f328c9325c10998289378191dc69e55b5ffdc37a7845f2d0ee57f6f13392e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

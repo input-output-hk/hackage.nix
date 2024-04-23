@@ -21,11 +21,11 @@
       synopsis = "Mosquitto client library bindings";
       description = "Low-level bindings to the Mosquitto client library. libmosquitto — MQTT version 3.1 client library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

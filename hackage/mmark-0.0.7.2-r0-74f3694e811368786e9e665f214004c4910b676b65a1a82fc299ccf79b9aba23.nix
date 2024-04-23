@@ -21,7 +21,7 @@
       synopsis = "Strict markdown processor for writers";
       description = "Strict markdown processor for writers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."mmark" or (errorHandler.buildDepError "mmark"))
             (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-speed" = {
           depends = [
@@ -73,18 +73,18 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."mmark" or (errorHandler.buildDepError "mmark"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-memory" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mmark" or (errorHandler.buildDepError "mmark"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

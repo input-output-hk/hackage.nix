@@ -21,19 +21,19 @@
       synopsis = "Interchange with the Audacity sound signal editor";
       description = "This package provides functions\nfor interchange with the Audacity sound signal editor.\nCurrently we support import and export of label tracks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sox-concat" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."audacity" or (errorHandler.buildDepError "audacity"))
             (hsPkgs."soxlib" or (errorHandler.buildDepError "soxlib"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
@@ -41,9 +41,9 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

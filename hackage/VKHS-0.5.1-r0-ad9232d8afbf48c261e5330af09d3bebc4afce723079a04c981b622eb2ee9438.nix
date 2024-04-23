@@ -21,7 +21,7 @@
       synopsis = "Provides access to Vkontakte social network via public API";
       description = "Provides access to Vkontakte API methods. Library requires no interaction\nwith the user during Implicit-flow authentication.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,28 +48,28 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         libs = [ (pkgs."curl" or (errorHandler.sysDepError "curl")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vknews" = {
           libs = [ (pkgs."curl" or (errorHandler.sysDepError "curl")) ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vkq" = {
           libs = [ (pkgs."curl" or (errorHandler.sysDepError "curl")) ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A monadic framework for abstract interpretation.";
       description = "An implementation of Galois Transformers, a monadic framework for abstract interpretation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,14 +31,14 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "maam" = {
           depends = [ (hsPkgs."maam" or (errorHandler.buildDepError "maam")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

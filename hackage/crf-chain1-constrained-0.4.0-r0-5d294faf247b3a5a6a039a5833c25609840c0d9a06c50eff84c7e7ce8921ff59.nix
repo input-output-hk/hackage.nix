@@ -21,7 +21,7 @@
       synopsis = "First-order, constrained, linear-chain conditional random fields";
       description = "The library provides efficient implementation of the first-order,\nlinear-chain conditional random fields (CRFs) with position-wise\nconstraints imposed over label values.\n\nIt is strongly related to the simpler\n<http://hackage.haskell.org/package/crf-chain1>\nlibrary where constraints are not taken into account and all features\nwhich are not included in the CRF model are considered to have\nprobability of 0.  Here, on the other hand, such features do not\ninfluence the overall probability of the (sentence, labels) pair\n- they are assigned the default potential of 0.\n\nEfficient algorithm for determining marginal probabilities of individual\nlabels is provided.\nThe tagging is performed with respect to marginal probabilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."pedestrian-dag" or (errorHandler.buildDepError "pedestrian-dag"))
           (hsPkgs."data-memocombinators" or (errorHandler.buildDepError "data-memocombinators"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

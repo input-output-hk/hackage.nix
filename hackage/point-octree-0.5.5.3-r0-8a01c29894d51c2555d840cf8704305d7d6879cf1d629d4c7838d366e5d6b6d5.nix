@@ -21,16 +21,16 @@
       synopsis = "Point octree, with bounding boxes";
       description = "Based on Michal J. Gajda's octree package, but with bounding boxes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."AC-Vector" or (errorHandler.buildDepError "AC-Vector"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test_Octree" = {
           depends = [
@@ -38,18 +38,18 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."AC-Vector" or (errorHandler.buildDepError "AC-Vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AC-Vector" or (errorHandler.buildDepError "AC-Vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme-BB" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

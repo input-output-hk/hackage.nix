@@ -21,7 +21,7 @@
       synopsis = "Hedgehog will eat your typeclass bugs";
       description = "This library provides Hedgehog properties to ensure\nthat typeclass instances adhere to the set of laws\nthat they are supposed to. There are other libraries\nthat do similar things, such as `genvalidity-hspec` and `checkers`.\nThis library differs from other solutions by not introducing any\nnew typeclasses that the user needs to learn, and otherwise minimal\nAPI overhead.\n\nThis library is directly inspired by `quickcheck-classes`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,9 +31,9 @@
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wl-pprint-annotated" or (errorHandler.buildDepError "wl-pprint-annotated"))
-          ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.semirings) (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"));
+        ] ++ pkgs.lib.optional (flags.aeson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ pkgs.lib.optional (flags.semirings) (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-classes" or (errorHandler.buildDepError "hedgehog-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

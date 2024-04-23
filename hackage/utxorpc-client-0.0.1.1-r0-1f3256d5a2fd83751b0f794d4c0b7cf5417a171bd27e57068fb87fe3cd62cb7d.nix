@@ -21,7 +21,7 @@
       synopsis = "An SDK for clients of the UTxO RPC specification.";
       description = "An SDK to reduce boilerplate, improve ease-of-use, and support logging for `utxorpc`.\nTo get started, see the documentation for `Utxorpc.Client` below.\nConsult the README for help with dependency configurations.\nWARNING: This package is currently pre-release. Any version < 0.1.0.0 is subject to breaking\nchanges without change in major version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."utxorpc" or (errorHandler.buildDepError "utxorpc"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "client-example" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."utxorpc-client" or (errorHandler.buildDepError "utxorpc-client"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "client-quick-start" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,10 +69,10 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."utxorpc" or (errorHandler.buildDepError "utxorpc"))
             (hsPkgs."utxorpc-client" or (errorHandler.buildDepError "utxorpc-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "logged_test_client" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
             (hsPkgs."utxorpc" or (errorHandler.buildDepError "utxorpc"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

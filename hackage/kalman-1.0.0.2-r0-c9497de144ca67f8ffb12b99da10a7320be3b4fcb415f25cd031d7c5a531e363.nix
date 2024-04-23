@@ -21,7 +21,7 @@
       synopsis = "Kalman and particle filters and smoothers";
       description = "Linear, extended and unscented Kalman filters are provided, along\nwith their corresponding smoothers. Furthermore, a particle filter\nand smoother is provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."random-fu-multivariate" or (errorHandler.buildDepError "random-fu-multivariate"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "kalman-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
             (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A small and ugly library that emulates the output of the puppet facter program.";
       description = "This is a reimplementation of the facter module used by Puppet, as a library. It is supposed to be used in conjunction with the language-puppet library in order to compute catalogs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

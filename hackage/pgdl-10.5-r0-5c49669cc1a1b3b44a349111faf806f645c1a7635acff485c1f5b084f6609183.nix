@@ -21,7 +21,7 @@
       synopsis = "browse directory listing webpages and download files from them.";
       description = "pgdl is a program for viewing and accessing directory listing webpage in terminal.\n\nBrowsing files on directory listings like <https://www.kernel.org/pub/> is often annoying and hard to find the sutff we want.\n\npgdl provids a simple interface for browsing and downloading the files in web-engine-generated directory listings.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pgdl" = {
@@ -51,9 +51,9 @@
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

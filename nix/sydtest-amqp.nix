@@ -6,8 +6,8 @@
         nix = import ../hackage/sydtest-amqp-0.1.0.0-r0-69b343ce602bf2654d246b47c464f8f48748c161151e70ae97b9fa3d7fcd3fea.nix;
         revNum = 0;
         sha256 = "69b343ce602bf2654d246b47c464f8f48748c161151e70ae97b9fa3d7fcd3fea";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

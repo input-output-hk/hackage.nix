@@ -21,7 +21,7 @@
       synopsis = "Double-ended priority queues";
       description = "Double-ended priority queues, for efficient retrieval of minimum and maximum elements in ordered collections of items.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

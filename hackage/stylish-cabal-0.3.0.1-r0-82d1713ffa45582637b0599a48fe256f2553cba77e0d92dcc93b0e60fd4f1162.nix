@@ -21,7 +21,7 @@
       synopsis = "Format Cabal files";
       description = "A tool for nicely formatting your Cabal file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       sublibs = {
         "test-utils" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."stylish-cabal" or (errorHandler.buildDepError "stylish-cabal"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "stylish-cabal" = {
           depends = [
@@ -64,10 +64,10 @@
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."stylish-cabal" or (errorHandler.buildDepError "stylish-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "strictness" = {
           depends = [
@@ -82,20 +82,20 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations-pretty-diff" or (errorHandler.buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."stylish-cabal" or (errorHandler.buildDepError "stylish-cabal"))
-            ];
-          buildable = if !(flags.test-strictness && (compiler.isGhc && (compiler.version).ge "8.2"))
+          ];
+          buildable = if !(flags.test-strictness && (compiler.isGhc && compiler.version.ge "8.2"))
             then false
             else true;
-          };
+        };
         "roundtrip" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stylish-cabal".components.sublibs.test-utils or (errorHandler.buildDepError "stylish-cabal:test-utils"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "roundtrip-hackage" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -109,9 +109,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if !flags.test-hackage then false else true;
-          };
         };
       };
-    }
+    };
+  }

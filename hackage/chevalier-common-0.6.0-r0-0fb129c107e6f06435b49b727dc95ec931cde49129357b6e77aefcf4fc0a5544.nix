@@ -21,7 +21,7 @@
       synopsis = "Query interface for Chevalier";
       description = "Provides common types and a ZeroMQ query interface for Chevalier.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,11 +36,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
           (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell UPnP Media Server";
       description = "A simple UPnP Media Server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hums" = {
@@ -43,9 +43,9 @@
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

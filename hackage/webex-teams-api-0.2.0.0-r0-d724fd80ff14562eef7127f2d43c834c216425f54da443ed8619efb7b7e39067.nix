@@ -21,7 +21,7 @@
       synopsis = "A Haskell bindings for Webex Teams API";
       description = "Please see the README on Github at <https://github.com/nshimaza/webex-teams-api#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "webex-teams-api-exe" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."webex-teams-api" or (errorHandler.buildDepError "webex-teams-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "webex-teams-api-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."webex-teams-api" or (errorHandler.buildDepError "webex-teams-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

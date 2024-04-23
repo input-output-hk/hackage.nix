@@ -21,11 +21,11 @@
       synopsis = "Generalized booleans and truthy values.";
       description = "Generalized booleans and truthy values. See also: Boolean";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

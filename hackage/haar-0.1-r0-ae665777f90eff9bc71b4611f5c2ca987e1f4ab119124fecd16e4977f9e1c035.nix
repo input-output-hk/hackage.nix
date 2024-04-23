@@ -21,15 +21,15 @@
       synopsis = "Haar wavelet transforms";
       description = "A Haar wavelet transform represents a sequence using\nsquare waves as basis vectors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haar-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."haar" or (errorHandler.buildDepError "haar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

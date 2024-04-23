@@ -6,8 +6,8 @@
         nix = import ../hackage/injections-0.1.0.0-r0-d38781149b7a7c24a4622e0190c4641d67b65b9bd41bad01bb7309d4c2c8c61d.nix;
         revNum = 0;
         sha256 = "d38781149b7a7c24a4622e0190c4641d67b65b9bd41bad01bb7309d4c2c8c61d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

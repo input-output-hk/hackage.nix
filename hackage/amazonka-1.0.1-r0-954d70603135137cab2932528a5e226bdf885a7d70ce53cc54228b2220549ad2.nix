@@ -21,7 +21,7 @@
       synopsis = "Comprehensive Amazon Web Services SDK";
       description = "This client library contains request and response logic to communicate\nwith Amazon Web Service compatible APIs using the types supplied by the\nvarious @amazonka-*@ service libraries. See the <http://hackage.haskell.org/packages/#cat:AWS AWS>\ncategory on Hackage for supported services.\n\nTo get started, import the desired @amazonka-*@ library (such as\n<http://hackage.haskell.org/package/amazonka-ml/docs/Network-AWS-MachineLearning.html Network.AWS.MachineLearning>)\nand one of the following:\n\n* \"Control.Monad.Trans.AWS\": The 'AWST' transformer and generalised operations.\n\n* \"Network.AWS\": The 'AWS' monad and 'MonadAWS' type class for automatically\nlifting operations when embedded as a layer in a transformer stack.\n\nBoth 'Control.Monad.Trans.AWS.AWST' and 'Network.AWS.AWS' provide functions\nthat are built upon a 'MonadFree' 'Command' DSL defined in\n\"Network.AWS.Free\". This allows writing a custom interpreter (say, for\nmocking purposes) and defining your own AWS logic if desired.\n\nGHC 7.8.4 and higher is officially supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

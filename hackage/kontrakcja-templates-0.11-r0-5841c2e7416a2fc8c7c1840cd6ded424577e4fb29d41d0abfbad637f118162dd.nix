@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with many HStringTemplate templates from files.";
       description = "This library adds support for working with multiple templates in a single\nfile, and .json files containing a mapping from template names to multiple\ntemplate versions (e.g. for translations).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."html" or (errorHandler.buildDepError "html"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

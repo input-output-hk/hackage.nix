@@ -6,8 +6,8 @@
         nix = import ../hackage/closure-0.1.0.0-r0-0d909388f6bbde8f814f223c4e00419347d81f99675186f14df166ed744e31d1.nix;
         revNum = 0;
         sha256 = "0d909388f6bbde8f814f223c4e00419347d81f99675186f14df166ed744e31d1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

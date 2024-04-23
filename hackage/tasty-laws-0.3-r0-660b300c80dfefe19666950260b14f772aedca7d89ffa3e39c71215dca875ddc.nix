@@ -21,7 +21,7 @@
       synopsis = "Test common laws";
       description = "Preassembled 'tasty' 'TestTree's for property testing 'Monoid', 'Functor',\n'Applicative' and 'Monad' laws.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,9 +31,9 @@
           (hsPkgs."smallcheck-series" or (errorHandler.buildDepError "smallcheck-series"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."smallcheck-laws" or (errorHandler.buildDepError "smallcheck-laws"))
             (hsPkgs."tasty-laws" or (errorHandler.buildDepError "tasty-laws"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

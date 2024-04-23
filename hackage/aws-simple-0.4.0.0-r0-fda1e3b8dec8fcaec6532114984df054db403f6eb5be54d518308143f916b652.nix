@@ -21,7 +21,7 @@
       synopsis = "Dead simple bindings to commonly used AWS Services";
       description = "Simple bindings to commonly used AWS services";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."amazonka-sqs" or (errorHandler.buildDepError "amazonka-sqs"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell lifted array combinators. (deprecated version)";
       description = "Using this package can cause the vectorised program to have worse\nasymptotic complexity than the original.\nUse dph-lifted-vseg instead.\nThis package provides the following:\nnested arrays and the primitive operators that work on them (PA functions);\nthe lifted array combinators that the vectoriser introduces (PP functions);\nthe user facing library functions that work on [::] style arrays (P functions).\nDeprecated implementation that performs deep copying replicate.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

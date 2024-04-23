@@ -21,11 +21,11 @@
       synopsis = "Implementations of several rating systems: Elo, Glicko, etc";
       description = "This package contains implementations of several rating systems for\nestimating the skill of players of multi-player games..";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

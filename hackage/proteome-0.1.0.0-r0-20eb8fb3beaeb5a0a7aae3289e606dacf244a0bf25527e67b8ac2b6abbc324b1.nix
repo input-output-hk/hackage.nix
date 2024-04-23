@@ -21,16 +21,16 @@
       synopsis = "neovim project manager";
       description = "neovim plugin for managing project-specific configuration and performing runtime tasks on projects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "proteome" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nvim-hs" or (errorHandler.buildDepError "nvim-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

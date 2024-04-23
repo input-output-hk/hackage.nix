@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for HDBC. You will also need one\nor more back-end specific packages.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

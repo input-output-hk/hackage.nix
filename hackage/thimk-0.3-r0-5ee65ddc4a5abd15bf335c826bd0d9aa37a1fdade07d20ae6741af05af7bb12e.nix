@@ -21,7 +21,7 @@
       synopsis = "Command-line spelling word suggestion tool";
       description = "\"thimk\" (an old joke) is a command-line spelling word\nsuggestion tool.  You give it a possibly-misspelled word,\nand it spits out one or more properly-spelled words in order\nof likelihood of similarity.\n\nThe latest change to the implementation is an addition\nof an optional precompiled SQlite database of phonetic\ncodes for the entire dictionary, created with\n\"thimk-makedb\".  This greatly speeds lookup, permitting\nreasonable performance on enormous dictionaries.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "thimk" = {
@@ -31,17 +31,17 @@
             (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
             (hsPkgs."phonetic-code" or (errorHandler.buildDepError "phonetic-code"))
             (hsPkgs."sqlite" or (errorHandler.buildDepError "sqlite"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "thimk-makedb" = {
           depends = [
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
             (hsPkgs."sqlite" or (errorHandler.buildDepError "sqlite"))
             (hsPkgs."phonetic-code" or (errorHandler.buildDepError "phonetic-code"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

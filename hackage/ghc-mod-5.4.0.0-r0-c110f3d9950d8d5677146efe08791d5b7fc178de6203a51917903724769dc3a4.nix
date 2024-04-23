@@ -21,7 +21,7 @@
       synopsis = "Happy Haskell Programming";
       description = "ghc-mod is a backend program to enrich Haskell programming in editors. It\nstrives to offer most of the features one has come to expect from modern IDEs\nin any editor.\nghc-mod provides a library for other haskell programs to use as well as a\nstandalone program for easy editor integration. All of the fundamental\nfunctionality of the frontend program can be accessed through the library\nhowever many implementation details are hidden and if you want to\nsignificantly extend ghc-mod you should submit these changes upstream instead\nof implementing them on top of the library.\nFor more information, please see its home page.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -55,12 +55,12 @@
           (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.5") [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.5") [
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghc-mod" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
             (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghc-modi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,26 +86,26 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
-          buildable = if compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")
+          ];
+          buildable = if compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")
             then false
             else true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Baisc, Erlang-like message passing supporting sockets.";
       description = "This package provides Erlang-like mailboxes for message passing.\nIt also supports wrapping communication via e.g. sockets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-migrationhub-config-2.0-r0-342fb714f3051a9569d2984197709bfbc3d24534492433d843aa194a412241ed.nix;
         revNum = 0;
         sha256 = "342fb714f3051a9569d2984197709bfbc3d24534492433d843aa194a412241ed";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

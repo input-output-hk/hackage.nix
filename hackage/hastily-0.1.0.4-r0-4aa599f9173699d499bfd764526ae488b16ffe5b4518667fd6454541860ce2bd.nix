@@ -21,7 +21,7 @@
       synopsis = "A program to download subtitle files.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hastily" = {
           depends = [
@@ -53,18 +53,18 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hastily" or (errorHandler.buildDepError "hastily"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hastily-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hastily" or (errorHandler.buildDepError "hastily"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

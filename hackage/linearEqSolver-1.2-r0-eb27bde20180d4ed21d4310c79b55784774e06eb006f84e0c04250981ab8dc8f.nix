@@ -21,14 +21,14 @@
       synopsis = "Use SMT solvers to solve linear systems over integers and rationals";
       description = "Solve linear systems of equations over integers and rationals, using an SMT solver.\n\nCurrently, the following SMT solvers are supported:\n\n* Z3 from Microsoft (<http://z3.codeplex.com/>).\n\n* CVC4 from New York University and the University of Iowa (<http://cvc4.cs.nyu.edu>)\nlinearEqSolver is hosted at GitHub: <http://github.com/LeventErkok/linearEqSolver>. Comments,\nbug reports, and patches are always welcome.\n\n\nRelease notes can be seen at: <http://github.com/LeventErkok/linearEqSolver/blob/master/RELEASENOTES>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

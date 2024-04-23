@@ -21,7 +21,7 @@
       synopsis = "Pipes for pulse-simple audio";
       description = "Pipes for pulse-simple audio.\n\nUse this library to produce or consume audio buffer.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."pulse-simple" or (errorHandler.buildDepError "pulse-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

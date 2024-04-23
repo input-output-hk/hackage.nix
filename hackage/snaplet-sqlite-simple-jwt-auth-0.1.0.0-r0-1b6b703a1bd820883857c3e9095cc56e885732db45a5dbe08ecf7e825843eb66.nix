@@ -14,7 +14,7 @@
       identifier = {
         name = "snaplet-sqlite-simple-jwt-auth";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2016 Janne Hellsten";
       maintainer = "jjhellst@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Snaplet for JWT authentication with snaplet-sqlite-simple";
       description = "JWT authentication snaplet for snaplet-sqlite-simple.\n\nVery much a work-in-progress, use at your own risk.\n\nMain documentation: <docs/Snap-Snaplet-SqliteSimple-JwtAuth Snap.Snaplet.SqliteSimple.JwtAuth>\n\nFor more info, browse to <http://github.com/nurpax/snaplet-sqlite-simple-jwt-auth> for examples & more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

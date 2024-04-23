@@ -21,7 +21,7 @@
       synopsis = "Compression command-line tool";
       description = "sak is a command-line tool that detects and handles various compression formats";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sak" = {
@@ -36,12 +36,12 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

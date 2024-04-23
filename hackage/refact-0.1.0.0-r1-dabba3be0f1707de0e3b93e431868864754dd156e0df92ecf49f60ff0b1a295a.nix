@@ -21,11 +21,11 @@
       synopsis = "Specify refactorings to perform with apply-refact";
       description = "This library provides a datatype which can be interpreted by apply-refact. It exists\nas a seperate library so that applications can specify refactorings without depending on GHC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

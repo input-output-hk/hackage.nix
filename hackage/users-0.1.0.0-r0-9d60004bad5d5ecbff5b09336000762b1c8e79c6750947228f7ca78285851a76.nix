@@ -21,7 +21,7 @@
       synopsis = "A library simplifying user management for web applications";
       description = "Scrap the boilerplate for managing user accounts in web applications\n\nFeatures:\n\n* Easy to understand API\n\n* CRUD for Users\n\n* Session Management\n\n* Password reset functionality\n\n* Activation functionality\n\nCurrent Backends:\n\n* <http://hackage.haskell.org/package/users-postgresql-simple PostgreSQL-Simple Backend>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

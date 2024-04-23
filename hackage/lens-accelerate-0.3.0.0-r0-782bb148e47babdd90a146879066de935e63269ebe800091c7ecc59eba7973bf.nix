@@ -21,15 +21,15 @@
       synopsis = "Instances to mix lens with Accelerate";
       description = "Please see the README on GitHub at <https://github.com/tmcdonell/lens-accelerate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

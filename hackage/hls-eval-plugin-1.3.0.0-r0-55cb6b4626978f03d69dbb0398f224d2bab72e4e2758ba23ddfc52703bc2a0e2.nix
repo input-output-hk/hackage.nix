@@ -21,7 +21,7 @@
       synopsis = "Eval plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,11 +56,11 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.3"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,11 +76,11 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.3"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

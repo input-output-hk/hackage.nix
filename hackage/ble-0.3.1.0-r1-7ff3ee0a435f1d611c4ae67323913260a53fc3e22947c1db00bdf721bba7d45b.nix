@@ -21,7 +21,7 @@
       synopsis = "Bluetooth Low Energy (BLE) peripherals";
       description = "This package provides a Haskell API for writing Bluetooth Low Energy peripherals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."microlens-ghc" or (errorHandler.buildDepError "microlens-ghc"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "auth" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "counter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hrs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,10 +102,10 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -128,9 +128,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "1976 US Standard Atmosphere Model";
       description = "1976 US Standard Atmosphere Model.\n\nAdapted by Greg Horn from original programs by Ralph L. Carmichael,\nPublic Domain Aeronautical Software.\n\nThe original code can be found at <http://www.pdas.com/atmos.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

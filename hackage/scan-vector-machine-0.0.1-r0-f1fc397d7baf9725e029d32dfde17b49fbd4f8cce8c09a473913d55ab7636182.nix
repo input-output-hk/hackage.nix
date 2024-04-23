@@ -21,6 +21,6 @@
       synopsis = "An implementation of the Scan Vector Machine instruction set in Haskell";
       description = "An implementation of the Scan Vector Machine instruction set in Haskell";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

@@ -21,7 +21,7 @@
       synopsis = "Higher-level types for working with hlibgit2";
       description = "Higher-level types for working with hlibgit2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smoke" = {
           depends = [
@@ -55,25 +55,25 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unittests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

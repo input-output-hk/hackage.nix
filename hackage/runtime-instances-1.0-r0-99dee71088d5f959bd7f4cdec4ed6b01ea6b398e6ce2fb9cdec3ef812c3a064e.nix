@@ -21,7 +21,7 @@
       synopsis = "Look up class instances at runtime.";
       description = "This package allows clients to build a database of class instances,\nqueryable at runtime. Accordingly, this allows runtime class instance\nlookup. Template Haskell utility functions are provided for creating\nthe instance database from the set of instances in scope at a given\npoint in your program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."type-reflection" or (errorHandler.buildDepError "type-reflection"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."type-reflection" or (errorHandler.buildDepError "type-reflection"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

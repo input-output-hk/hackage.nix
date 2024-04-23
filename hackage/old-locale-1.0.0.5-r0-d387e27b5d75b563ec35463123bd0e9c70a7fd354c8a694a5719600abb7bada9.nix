@@ -21,11 +21,11 @@
       synopsis = "locale library";
       description = "This package provides the ability to adapt to\nlocale conventions such as date and time formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

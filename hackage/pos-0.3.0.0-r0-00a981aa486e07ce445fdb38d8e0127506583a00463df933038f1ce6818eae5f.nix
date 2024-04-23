@@ -21,15 +21,15 @@
       synopsis = "positive numbers";
       description = "A library for representing positive integers. . Useful for handling nonempty containers and fixed containers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pos-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."pos" or (errorHandler.buildDepError "pos"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

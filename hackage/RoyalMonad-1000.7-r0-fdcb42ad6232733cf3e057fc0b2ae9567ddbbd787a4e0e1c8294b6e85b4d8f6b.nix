@@ -21,11 +21,11 @@
       synopsis = "All hail the Royal Monad!";
       description = "All hail the Royal Monad!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

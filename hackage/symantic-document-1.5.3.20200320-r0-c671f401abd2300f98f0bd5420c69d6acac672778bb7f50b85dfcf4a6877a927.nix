@@ -21,7 +21,7 @@
       synopsis = "Symantics combinators for generating documents.";
       description = "Only generating plain text documents is supported for now,\nthose can however include ANSI escape sequences to use a 16 colors pallet.\n.\nAlternative: <ansi-wl-pprint https://hackage.haskell.org/package/ansi-wl-pprint>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "symantic-document-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

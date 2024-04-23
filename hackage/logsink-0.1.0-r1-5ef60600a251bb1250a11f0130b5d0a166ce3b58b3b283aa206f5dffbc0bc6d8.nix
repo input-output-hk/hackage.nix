@@ -21,7 +21,7 @@
       synopsis = "A logging framework for Haskell";
       description = "A logging framework for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."logging-facade" or (errorHandler.buildDepError "logging-facade"))
           (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."logsink" or (errorHandler.buildDepError "logsink"))
             (hsPkgs."logging-facade" or (errorHandler.buildDepError "logging-facade"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

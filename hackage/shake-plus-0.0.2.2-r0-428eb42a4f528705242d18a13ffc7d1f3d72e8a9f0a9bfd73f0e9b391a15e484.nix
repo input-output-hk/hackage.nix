@@ -21,7 +21,7 @@
       synopsis = "Re-export of Shake using well-typed paths and ReaderT.";
       description = "Re-export of Shake using well-typed paths and ReaderT. This is an early release so some things may be missing or broken but so far the conveniences have been worth it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."within" or (errorHandler.buildDepError "within"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

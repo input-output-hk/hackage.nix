@@ -6,8 +6,8 @@
         nix = import ../hackage/memis-0.1.1-r0-30856d54fdbafaac4549ed82761743240638808f37cb4ee2dfceba232b338c53.nix;
         revNum = 0;
         sha256 = "30856d54fdbafaac4549ed82761743240638808f37cb4ee2dfceba232b338c53";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

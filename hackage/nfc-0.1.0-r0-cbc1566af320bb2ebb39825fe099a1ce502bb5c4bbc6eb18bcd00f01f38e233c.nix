@@ -21,19 +21,19 @@
       synopsis = "libnfc bindings";
       description = "nfc is a set of bindings to libnfc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."nfc" or (errorHandler.sysDepError "nfc")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "print-mifare-uid-forever" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."nfc" or (errorHandler.buildDepError "nfc"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

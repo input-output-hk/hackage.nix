@@ -21,14 +21,14 @@
       synopsis = "realtime resource handling with manual concurrency";
       description = "Similar to async package, lazy resource loading helper for GUI applications";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

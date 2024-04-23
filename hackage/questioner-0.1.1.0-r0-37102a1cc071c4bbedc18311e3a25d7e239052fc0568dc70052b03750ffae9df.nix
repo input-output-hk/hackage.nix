@@ -21,7 +21,7 @@
       synopsis = "A package for prompting values from the command-line.";
       description = "This is still being developed";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,38 +29,38 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "questioner-list-prompt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."questioner" or (errorHandler.buildDepError "questioner"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "questioner-checkbox-prompt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."questioner" or (errorHandler.buildDepError "questioner"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "questioner-spinner" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."questioner" or (errorHandler.buildDepError "questioner"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "questioner-progressbar" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."questioner" or (errorHandler.buildDepError "questioner"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

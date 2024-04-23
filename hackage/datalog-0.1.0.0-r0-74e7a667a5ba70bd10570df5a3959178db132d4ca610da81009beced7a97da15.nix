@@ -21,7 +21,7 @@
       synopsis = "An implementation of datalog in Haskell";
       description = "This is an implementation of datalog in pure Haskell.\nIt is implemented as a library and can be used from within\nany Haskell application.  As a consequence, it supports both\nstandard Datalog operations and arbitrary predicates written\nin Haskell.\n\nOne day it will have a command-line program as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "NQueensTest" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "AncestorTest" = {
           depends = [
             (hsPkgs."datalog" or (errorHandler.buildDepError "datalog"))
@@ -59,9 +59,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "WorksForTest" = {
           depends = [
             (hsPkgs."datalog" or (errorHandler.buildDepError "datalog"))
@@ -72,9 +72,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

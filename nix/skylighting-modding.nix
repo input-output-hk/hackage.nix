@@ -6,8 +6,8 @@
         nix = import ../hackage/skylighting-modding-1.0.0.0-r0-318b2282995768b4fc6825b51d8af5e88ae14490f15eacce30bcc97b02464270.nix;
         revNum = 0;
         sha256 = "318b2282995768b4fc6825b51d8af5e88ae14490f15eacce30bcc97b02464270";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Length-indexed random access lists: lens utilities.";
       description = "This package provides [lenses](https://hackage.haskell.org/package/lens) and instances\nfor data types in [ral](https://hackage.haskell.org/package/ral) package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."ral" or (errorHandler.buildDepError "ral"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

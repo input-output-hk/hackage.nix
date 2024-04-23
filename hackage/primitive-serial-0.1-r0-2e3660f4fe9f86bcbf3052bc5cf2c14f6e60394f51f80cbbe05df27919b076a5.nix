@@ -21,15 +21,15 @@
       synopsis = "Serialisation of primitive types";
       description = "Representation of basic numeric types as ByteStrings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

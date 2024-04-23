@@ -21,7 +21,7 @@
       synopsis = "Authentication for Yesod.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."control-monad-attempt" or (errorHandler.buildDepError "control-monad-attempt"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

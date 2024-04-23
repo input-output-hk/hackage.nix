@@ -6,8 +6,8 @@
         nix = import ../hackage/astview-utils-0.1-r0-d7eb745c328cdb4d91b084e93401dd7ab7cd2d56b18b802ecd6cd1bed898b0c6.nix;
         revNum = 0;
         sha256 = "d7eb745c328cdb4d91b084e93401dd7ab7cd2d56b18b802ecd6cd1bed898b0c6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

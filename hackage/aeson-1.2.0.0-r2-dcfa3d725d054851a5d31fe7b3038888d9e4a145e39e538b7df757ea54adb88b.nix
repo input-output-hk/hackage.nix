@@ -13,7 +13,7 @@
       fast = false;
       bytestring-builder = false;
       cffi = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "aeson"; version = "1.2.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Fast JSON parsing and encoding";
       description = "A JSON parsing and encoding library optimized for ease of use\nand high performance.\n\nTo get started, see the documentation for the @Data.Aeson@ module\nbelow.\n\nParsing performance on a late 2013 MacBook Pro (2.6GHz Core i7),\nrunning 64-bit GHC 7.10.1, for mostly-English tweets from Twitter's\nJSON search API:\n\n* 6.4 KB payloads, English: 7570 msg\\/sec (47.6 MB\\/sec)\n\n* 14.6 KB payloads, Japanese: 3261 msg\\/sec (46.6 MB\\/sec)\n\nEncoding performance on the same machine and data:\n\n* 6.4 KB payloads, English: 22738 msg\\/sec (142.9 MB\\/sec)\n\n* 14.6 KB payloads, Japanese: 15911 msg\\/sec (227.4 MB\\/sec)\n\n(A note on naming: in Greek mythology, Aeson was the father of Jason.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -47,21 +47,21 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.bytestring-builder
+        ] ++ (if flags.bytestring-builder
           then [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
-            ]
+          ]
           else [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ])) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+          ])) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"));
+        ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = ((([
@@ -94,20 +94,20 @@
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ] ++ (if flags.bytestring-builder
+          ] ++ (if flags.bytestring-builder
             then [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
-              ]
+            ]
             else [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ])) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+            ])) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.8") (hsPkgs."hashable-time" or (errorHandler.buildDepError "hashable-time"));
+          ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.8") (hsPkgs."hashable-time" or (errorHandler.buildDepError "hashable-time"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

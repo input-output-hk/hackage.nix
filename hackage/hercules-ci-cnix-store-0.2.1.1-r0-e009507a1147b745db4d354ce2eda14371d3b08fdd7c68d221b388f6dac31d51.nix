@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for Nix's libstore";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
           (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,12 +61,12 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

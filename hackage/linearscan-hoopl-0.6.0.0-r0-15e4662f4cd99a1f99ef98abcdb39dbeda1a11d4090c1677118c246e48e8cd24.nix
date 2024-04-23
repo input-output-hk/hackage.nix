@@ -21,7 +21,7 @@
       synopsis = "Makes it easy to use the linearscan register allocator with Hoopl";
       description = "This module provides a convenience wrapper and a type class, 'NodeAlloc',\nwhich makes it much easier to use the @linearscan@ library to allocate\nregisters for Hoople intermediate representations.\n\nAdditionally, it provides a DSL for construction of assembly language DSLs\nthat compile into Hoople program graphs.  See the tests for a concrete\nexample.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."fuzzcheck" or (errorHandler.buildDepError "fuzzcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

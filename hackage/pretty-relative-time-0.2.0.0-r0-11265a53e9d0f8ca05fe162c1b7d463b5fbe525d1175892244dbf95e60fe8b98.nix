@@ -21,7 +21,7 @@
       synopsis = "Pretty relative time";
       description = "Please see the README on Github at <https://github.com/NorfairKing/pretty-relative-time#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pretty-relative-time-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
             (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

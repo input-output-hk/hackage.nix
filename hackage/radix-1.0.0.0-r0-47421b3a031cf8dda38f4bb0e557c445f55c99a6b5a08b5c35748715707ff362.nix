@@ -21,16 +21,16 @@
       synopsis = "Command-line tool for emitting numbers in various bases.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "radix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

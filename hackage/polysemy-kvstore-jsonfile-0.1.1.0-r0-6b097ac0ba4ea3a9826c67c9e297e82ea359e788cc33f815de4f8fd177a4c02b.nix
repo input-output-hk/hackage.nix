@@ -21,7 +21,7 @@
       synopsis = "Run a KVStore as a single json file in polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-kvstore" or (errorHandler.buildDepError "polysemy-kvstore"))
           (hsPkgs."unliftio-path" or (errorHandler.buildDepError "unliftio-path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

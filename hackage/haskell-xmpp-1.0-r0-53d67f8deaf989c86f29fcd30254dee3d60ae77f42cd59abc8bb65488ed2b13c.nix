@@ -21,7 +21,7 @@
       synopsis = "Haskell XMPP (eXtensible Message Passing Protocol, a.k.a. Jabber) library";
       description = "Haskell XMPP (eXtensible Message Passing Protocol, a.k.a. Jabber) library\n\nUnlike package network-protocol-xmpp, which uses libxml-sax, this library uses HaXml and supports MUC.\nHowever, MUC support of the moment is worse than that in package XMPP.\n\nThis library make extensive use of STM and threads to simplify writing message-handling code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,14 +37,14 @@
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-xmpp-test" = {
-          depends = (pkgs.lib).optional (flags.examples) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          depends = pkgs.lib.optional (flags.examples) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

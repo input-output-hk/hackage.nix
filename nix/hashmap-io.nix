@@ -6,8 +6,8 @@
         nix = import ../hackage/hashmap-io-0.1.0.0-r0-da5142ba7362d64a3ab99174286683f7c2c6437129904397d34a9769d5757aa9.nix;
         revNum = 0;
         sha256 = "da5142ba7362d64a3ab99174286683f7c2c6437129904397d34a9769d5757aa9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

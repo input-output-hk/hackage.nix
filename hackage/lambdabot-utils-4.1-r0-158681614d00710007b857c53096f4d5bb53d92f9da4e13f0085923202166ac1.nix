@@ -21,7 +21,7 @@
       synopsis = "Utility libraries for the advanced IRC bot, Lambdabot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nOur own custom libraries for various plugin functions.\n\nAltTime.hs: alternate version of the time library\n\nMiniHTTP.hs: a mini http server\n\nProcess.hs: a wrapper over System.Process\n\nRegex.hsc: a fast packed string regex library\n\nSerial.hs:: a serialisation API\n\nUtil.hs: miscellaneous string, and other, functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

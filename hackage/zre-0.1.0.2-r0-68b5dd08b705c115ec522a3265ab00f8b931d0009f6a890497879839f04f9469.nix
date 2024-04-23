@@ -21,7 +21,7 @@
       synopsis = "ZRE protocol implementation";
       description = "Peer-to-peer local area networking with reliable group messaging\nand automatic peer discovery.\nZRE protocol implementation according to https://rfc.zeromq.org/spec:36/ZRE/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zre" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."repline" or (errorHandler.buildDepError "repline"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mzre" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,9 +75,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zreworker" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zgossip_server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zrematch" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,9 +111,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zretime" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -121,9 +121,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zrecat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -131,10 +131,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."zre" or (errorHandler.buildDepError "zre"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "zre-test" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

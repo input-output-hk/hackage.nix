@@ -21,12 +21,12 @@
       synopsis = "Memory efficient sets with continuous ranges of elements. List based implementation.";
       description = "Memory efficient sets with continuous ranges of elements. List based implementation. Interface mimics \"Data.Set\" interface where possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."range-set-list" or (errorHandler.buildDepError "range-set-list"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

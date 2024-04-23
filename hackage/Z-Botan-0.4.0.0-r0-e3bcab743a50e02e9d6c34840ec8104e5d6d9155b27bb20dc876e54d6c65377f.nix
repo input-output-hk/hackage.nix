@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -40,20 +40,20 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
           (hsPkgs."Z-IO" or (errorHandler.buildDepError "Z-IO"))
-          ];
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ];
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."Ws2_32" or (errorHandler.sysDepError "Ws2_32"))
           (pkgs."crypt32" or (errorHandler.sysDepError "crypt32"))
-          ] ++ (if system.isOsx
+        ] ++ (if system.isOsx
           then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
           else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."CoreServices" or (errorHandler.sysDepError "CoreServices"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreServices" or (errorHandler.sysDepError "CoreServices"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-Botan-Test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."Z-Botan" or (errorHandler.buildDepError "Z-Botan"))
             (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
             (hsPkgs."Z-IO" or (errorHandler.buildDepError "Z-IO"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

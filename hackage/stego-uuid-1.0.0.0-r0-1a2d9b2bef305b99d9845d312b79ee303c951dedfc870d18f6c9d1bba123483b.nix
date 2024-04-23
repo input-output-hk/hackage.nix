@@ -21,7 +21,7 @@
       synopsis = "Generator and verifier for steganographic numbers";
       description = "`stego-uuid` allows one to mark 128-bit UUIDs. If created from a random 64-bit number, the\nwhole 128-bit UUID will look random to everyone, except those who know the secret detection key.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-stego-uuid" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."stego-uuid" or (errorHandler.buildDepError "stego-uuid"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

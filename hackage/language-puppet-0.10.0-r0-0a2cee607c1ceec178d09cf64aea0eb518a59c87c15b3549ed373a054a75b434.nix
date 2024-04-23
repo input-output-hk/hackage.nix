@@ -21,7 +21,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulationg of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optional (flags.hruby) (hsPkgs."hruby" or (errorHandler.buildDepError "hruby"));
+        ] ++ pkgs.lib.optional (flags.hruby) (hsPkgs."hruby" or (errorHandler.buildDepError "hruby"));
         buildable = true;
-        };
+      };
       exes = {
         "puppetresources" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pdbquery" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -96,10 +96,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-lexer" = {
           depends = [
@@ -111,9 +111,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-expr" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -122,9 +122,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

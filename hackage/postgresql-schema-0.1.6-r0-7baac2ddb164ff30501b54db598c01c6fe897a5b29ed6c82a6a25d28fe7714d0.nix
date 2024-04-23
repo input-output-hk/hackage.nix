@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL Schema Management";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "schema-add" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "schema-apply" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,9 +55,9 @@
             (hsPkgs."postgresql-schema" or (errorHandler.buildDepError "postgresql-schema"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

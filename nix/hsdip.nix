@@ -6,8 +6,8 @@
         nix = import ../hackage/hsdip-0.1-r0-7fc022bed7d7ff1f1bab000b0fd703a54f276945e7bbd2112df7dad40052ed6e.nix;
         revNum = 0;
         sha256 = "7fc022bed7d7ff1f1bab000b0fd703a54f276945e7bbd2112df7dad40052ed6e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Simple parsing/pretty printing for Nix expressions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."error-list" or (errorHandler.buildDepError "error-list"))
           (hsPkgs."text-render" or (errorHandler.buildDepError "text-render"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

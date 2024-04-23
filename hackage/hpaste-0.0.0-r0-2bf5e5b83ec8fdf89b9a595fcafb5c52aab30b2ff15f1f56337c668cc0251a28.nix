@@ -21,7 +21,7 @@
       synopsis = "Haskell paste web site.";
       description = "Haskell paste web site.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpaste" = {
@@ -60,9 +60,9 @@
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

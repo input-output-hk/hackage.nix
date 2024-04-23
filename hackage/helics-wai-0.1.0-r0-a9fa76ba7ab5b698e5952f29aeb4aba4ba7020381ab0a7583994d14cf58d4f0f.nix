@@ -21,7 +21,7 @@
       synopsis = "New Relic® agent SDK wrapper for wai.";
       description = "New Relic® agent SDK wrapper for wai.\n\nPlease read example: <https://github.com/philopon/helics/blob/master/helics-wai/example.hs>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."helics" or (errorHandler.buildDepError "helics"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "helics-wai-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."helics-wai" or (errorHandler.buildDepError "helics-wai"))
@@ -45,9 +45,9 @@
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

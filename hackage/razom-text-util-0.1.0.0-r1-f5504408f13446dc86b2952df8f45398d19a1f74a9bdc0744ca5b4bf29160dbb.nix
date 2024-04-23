@@ -21,7 +21,7 @@
       synopsis = "Common text/parsing tools for Razom language packages.";
       description = "This is a library of utilities for writing code that\nhandles semantic information documents (text files). It is\nmainly intended for collecting common tools used by the\nRazom information language libraries, but can be used by\nany text related package which needs these tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
           (hsPkgs."smaoin" or (errorHandler.buildDepError "smaoin"))
           (hsPkgs."text-position" or (errorHandler.buildDepError "text-position"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."razom-text-util" or (errorHandler.buildDepError "razom-text-util"))
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
             (hsPkgs."smaoin" or (errorHandler.buildDepError "smaoin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

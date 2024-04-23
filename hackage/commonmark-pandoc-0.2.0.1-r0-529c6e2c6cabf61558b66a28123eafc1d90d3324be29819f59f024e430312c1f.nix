@@ -21,7 +21,7 @@
       synopsis = "Bridge between commonmark and pandoc AST.";
       description = "This library provides typeclasses for rendering\ncommonmark to Pandoc types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

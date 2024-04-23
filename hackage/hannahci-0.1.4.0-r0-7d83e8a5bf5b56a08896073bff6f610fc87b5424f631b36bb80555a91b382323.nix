@@ -21,7 +21,7 @@
       synopsis = "Simple Continuous Integration/Deployment System";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hannahci" = {
@@ -42,9 +42,9 @@
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,25 +21,25 @@
       synopsis = "Blaze integration of the htmx library";
       description = "Blaze integration of the htmx library including WS and SSE extensions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "main" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-htmx" or (errorHandler.buildDepError "blaze-htmx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

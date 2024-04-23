@@ -21,20 +21,20 @@
       synopsis = "Haskell FFI bindings for fluidsynth software synthesizer";
       description = "Haskell FFI bindings for fluidsynth software synthesizer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."fluidsynth" or (errorHandler.pkgConfDepError "fluidsynth"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

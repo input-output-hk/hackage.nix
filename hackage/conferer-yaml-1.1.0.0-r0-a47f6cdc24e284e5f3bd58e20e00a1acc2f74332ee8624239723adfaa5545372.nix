@@ -21,7 +21,7 @@
       synopsis = "Configuration for reading yaml files";
       description = "Library to abstract the parsing of many haskell config values from different config sources";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."conferer" or (errorHandler.buildDepError "conferer"))
           (hsPkgs."conferer-aeson" or (errorHandler.buildDepError "conferer-aeson"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."conferer-yaml" or (errorHandler.buildDepError "conferer-yaml"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

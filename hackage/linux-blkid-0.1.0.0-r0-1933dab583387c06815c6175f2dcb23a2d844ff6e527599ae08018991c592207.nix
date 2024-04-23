@@ -21,17 +21,17 @@
       synopsis = "Linux libblkid";
       description = "Bindings to the Linux libblkid library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."blkid" or (errorHandler.pkgConfDepError "blkid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

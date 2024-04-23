@@ -21,7 +21,7 @@
       synopsis = "Conduit bindings for Snappy (see snappy package)";
       description = "Conduit bindings for Snappy (see snappy package)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."snappy" or (errorHandler.buildDepError "snappy"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

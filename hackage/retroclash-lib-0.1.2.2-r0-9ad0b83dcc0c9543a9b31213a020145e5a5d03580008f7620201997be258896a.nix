@@ -21,7 +21,7 @@
       synopsis = "Code shared across the code samples in the book \"Retrocomputing with Clash\"";
       description = "Clash components useful when implementing, or interfacing with,\nretro-computers:\n\n* UART\n\n* Multi-digit seven-segment display driver\n\n* Keypad matrix scanner\n\n* PS/2 keyboard driver\n\n* VGA signal generator\n\n* Video coordinate transformers\n\n* A framework for monadic CPU descriptions\n\n* Address maps\n\n* Various small utilities\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

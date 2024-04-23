@@ -21,7 +21,7 @@
       synopsis = "Stack of error, reader, writer, state, and prompt monad transformers";
       description = "Please see the README on GitHub at <https://github.com/nbloomf/script-monad#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,18 +40,18 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "script-monad-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."script-monad" or (errorHandler.buildDepError "script-monad"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "script-monad-test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."tasty-quickcheck-laws" or (errorHandler.buildDepError "tasty-quickcheck-laws"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

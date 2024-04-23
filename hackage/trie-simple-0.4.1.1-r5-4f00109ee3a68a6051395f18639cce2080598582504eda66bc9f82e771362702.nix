@@ -21,7 +21,7 @@
       synopsis = "Simple Map-based Trie";
       description = "A trie data structure @TMap c v@, to hold a mapping from list of characters (@[c]@) to\nsomething. In other words, a data structure isomorphic to @Map [c] v@.\nIt is more efficient to query compared to @Map@. Also, it supports extra\noperation like prefix matching.\nThis package contains @TSet@ too, which is isomorphic to @Set@ of lists of\ncharacters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "trie-simple-test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."trie-simple" or (errorHandler.buildDepError "trie-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "trie-benchmark" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."trie-simple" or (errorHandler.buildDepError "trie-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

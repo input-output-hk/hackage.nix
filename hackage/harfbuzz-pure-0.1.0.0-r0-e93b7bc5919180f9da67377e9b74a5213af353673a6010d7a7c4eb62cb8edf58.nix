@@ -21,7 +21,7 @@
       synopsis = "Pure-functional Harfbuzz language bindings";
       description = "HarfBuzz is a text shaping library. Using the HarfBuzz library allows programs to convert a sequence of Unicode input into properly formatted and positioned glyph output—for any writing system and language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-light" or (errorHandler.buildDepError "utf8-light"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."harfbuzz" or (errorHandler.pkgConfDepError "harfbuzz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shape-text" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."harfbuzz-pure" or (errorHandler.buildDepError "harfbuzz-pure"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

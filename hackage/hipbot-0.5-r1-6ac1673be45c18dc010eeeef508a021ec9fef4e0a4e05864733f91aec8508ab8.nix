@@ -21,7 +21,7 @@
       synopsis = "A library for building HipChat Bots";
       description = "A library for building HipChat Bots";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."webcrank" or (errorHandler.buildDepError "webcrank"))
           (hsPkgs."webcrank-wai" or (errorHandler.buildDepError "webcrank-wai"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Language to express rules for Nomic";
       description = "A DSL to express rules in a Nomic game. See package Nomyx for a full game implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."imprevu" or (errorHandler.buildDepError "imprevu"))
           (hsPkgs."shortcut" or (errorHandler.buildDepError "shortcut"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

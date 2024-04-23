@@ -21,7 +21,7 @@
       synopsis = "Utilities and types to work with the Ripple federation protocol";
       description = "To resolve federation names, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."unexceptionalio" or (errorHandler.buildDepError "unexceptionalio"))
           (hsPkgs."base58address" or (errorHandler.buildDepError "base58address"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

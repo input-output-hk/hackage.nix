@@ -21,7 +21,7 @@
       synopsis = "Implementation of the rules of Love Letter";
       description = "Implementation of the rules of Love Letter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haverer" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."haverer" or (errorHandler.buildDepError "haverer"))
             (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Writer monad which uses semiring constraint";
       description = "Writer monad which uses semiring constraint";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."semiring-num" or (errorHandler.buildDepError "semiring-num"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,6 +21,6 @@
       synopsis = "\"Regex for Windows\" C library";
       description = "This CABAL package provides the <http://gnuwin32.sourceforge.net/packages/regex.htm Regex for Windows> C library for convenience on operating systems lacking a <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/regex.h.html POSIX.2 regex> implementation.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

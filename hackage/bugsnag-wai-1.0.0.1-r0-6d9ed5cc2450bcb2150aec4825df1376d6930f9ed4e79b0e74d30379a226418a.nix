@@ -21,7 +21,7 @@
       synopsis = "WAI integration for Bugsnag error reporting for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-warp" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."bugsnag-wai" or (errorHandler.buildDepError "bugsnag-wai"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."bugsnag-wai" or (errorHandler.buildDepError "bugsnag-wai"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

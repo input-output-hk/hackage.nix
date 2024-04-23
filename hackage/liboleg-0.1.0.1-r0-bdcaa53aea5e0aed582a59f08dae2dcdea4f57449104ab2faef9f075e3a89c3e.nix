@@ -21,15 +21,15 @@
       synopsis = "A collection of Oleg Kiselyov's Haskell modules";
       description = "A collection of Oleg Kiselyov's Haskell modules (released with his permission)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

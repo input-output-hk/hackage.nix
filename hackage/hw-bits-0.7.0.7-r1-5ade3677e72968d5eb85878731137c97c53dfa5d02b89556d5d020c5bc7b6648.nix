@@ -21,7 +21,7 @@
       synopsis = "Bit manipulation";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
           (hsPkgs."hw-string-parse" or (errorHandler.buildDepError "hw-string-parse"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-bits-test" = {
           depends = [
@@ -46,13 +46,13 @@
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

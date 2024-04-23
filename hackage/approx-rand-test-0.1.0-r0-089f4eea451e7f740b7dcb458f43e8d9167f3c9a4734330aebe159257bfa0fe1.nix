@@ -21,7 +21,7 @@
       synopsis = "Approximate randomization test";
       description = "Utility to perform approximate randomization tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "approx_rand_test" = {
           depends = [
@@ -47,15 +47,15 @@
             (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
             (hsPkgs."monad-mersenne-random" or (errorHandler.buildDepError "monad-mersenne-random"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ] ++ (pkgs.lib).optionals (flags.withcairo) [
+          ] ++ pkgs.lib.optionals (flags.withcairo) [
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "approx_rand_test_paired" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,16 +68,16 @@
             (hsPkgs."monad-mersenne-random" or (errorHandler.buildDepError "monad-mersenne-random"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ] ++ (pkgs.lib).optionals (flags.withcairo) [
+          ] ++ pkgs.lib.optionals (flags.withcairo) [
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

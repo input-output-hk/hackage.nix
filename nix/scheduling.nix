@@ -6,8 +6,8 @@
         nix = import ../hackage/scheduling-0.1.0.0-r0-bc36465103cc40090f4ce9eb34250adc009431aed31f5622817c0ca1d6d9ed31.nix;
         revNum = 0;
         sha256 = "bc36465103cc40090f4ce9eb34250adc009431aed31f5622817c0ca1d6d9ed31";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A dependency manager for Xcode (Objective-C) projects";
       description = "A dependency manager for Xcode (Objective-C) projects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kit" = {
@@ -45,9 +45,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

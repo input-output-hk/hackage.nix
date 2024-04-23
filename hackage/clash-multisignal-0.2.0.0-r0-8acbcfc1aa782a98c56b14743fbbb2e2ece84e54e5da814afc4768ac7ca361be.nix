@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Clash/Fpga library for working with multiple elements arriving at same clock as stream.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

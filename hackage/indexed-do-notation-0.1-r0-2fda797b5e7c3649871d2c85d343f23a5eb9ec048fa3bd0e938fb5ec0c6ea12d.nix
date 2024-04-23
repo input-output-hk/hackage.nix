@@ -21,7 +21,7 @@
       synopsis = "Do notation for indexed monads";
       description = "A quasiquoter of indexed do notation. The only thing you have to do is to enclose an ordinary do notation in [ido|...|].";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."indexed" or (errorHandler.buildDepError "indexed"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Monadic representation of transactions.";
       description = "Monadic representation of transactions. Alike `List`, but can be declared with `do` notations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "transaction-test" = {
           depends = [
@@ -38,18 +38,18 @@
             (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."transaction" or (errorHandler.buildDepError "transaction"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."transaction" or (errorHandler.buildDepError "transaction"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

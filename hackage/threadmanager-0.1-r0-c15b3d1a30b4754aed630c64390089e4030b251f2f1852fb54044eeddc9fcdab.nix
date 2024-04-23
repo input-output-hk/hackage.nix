@@ -21,14 +21,14 @@
       synopsis = "Simple thread management";
       description = "A simple thread management API inspired by the one in chapter 24\nof /Real World Haskell/.\n\nSee <http://book.realworldhaskell.org/read/concurrent-and-multicore-programming.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

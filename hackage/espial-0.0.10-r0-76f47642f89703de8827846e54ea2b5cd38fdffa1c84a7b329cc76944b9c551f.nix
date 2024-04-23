@@ -21,7 +21,7 @@
       synopsis = "Espial is an open-source, web-based bookmarking server.";
       description = "\nEspial is an open-source, web-based bookmarking server.\n- Yesod + PureScript + sqlite3\n- multi-user (w/ privacy scopes)\n- tags, stars, editing, deleting";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -81,9 +81,9 @@
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-newsfeed" or (errorHandler.buildDepError "yesod-newsfeed"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "espial" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-newsfeed" or (errorHandler.buildDepError "yesod-newsfeed"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "migration" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -208,10 +208,10 @@
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-newsfeed" or (errorHandler.buildDepError "yesod-newsfeed"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -274,9 +274,9 @@
             (hsPkgs."yesod-newsfeed" or (errorHandler.buildDepError "yesod-newsfeed"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

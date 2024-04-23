@@ -6,8 +6,8 @@
         nix = import ../hackage/funflow-nix-0.1.0.0-r0-5dcb6f3172e11125a05dabd6f8b7aa4d8357af9d2139e7d2dbb70c2cd8072d8d.nix;
         revNum = 0;
         sha256 = "5dcb6f3172e11125a05dabd6f8b7aa4d8357af9d2139e7d2dbb70c2cd8072d8d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

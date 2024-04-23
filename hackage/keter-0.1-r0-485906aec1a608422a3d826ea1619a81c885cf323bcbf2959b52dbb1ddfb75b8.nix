@@ -21,7 +21,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Handles deployment of web apps, using Nginx as a reverse proxy to achieve zero downtime deployments. For more information, please see the README on Github: <https://github.com/snoyberg/keter#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,17 +46,17 @@
           (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "keter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."keter" or (errorHandler.buildDepError "keter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

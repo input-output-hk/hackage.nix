@@ -21,7 +21,7 @@
       synopsis = "Software management tool";
       description = "A tool to manage upgrading of ports on a FreeBSD machine";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "up" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."ports-tools" or (errorHandler.buildDepError "ports-tools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

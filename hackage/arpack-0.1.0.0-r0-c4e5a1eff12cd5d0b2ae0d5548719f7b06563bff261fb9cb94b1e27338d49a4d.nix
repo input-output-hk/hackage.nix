@@ -21,7 +21,7 @@
       synopsis = "Solve large scale eigenvalue problems";
       description = "Bindings to ARPACK, a Fortran package implementing the implicitly restarted\nArnoldi (Lanczos) method for solving large scale eigenvalue problems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,12 +36,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."arpack" or (errorHandler.pkgConfDepError "arpack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

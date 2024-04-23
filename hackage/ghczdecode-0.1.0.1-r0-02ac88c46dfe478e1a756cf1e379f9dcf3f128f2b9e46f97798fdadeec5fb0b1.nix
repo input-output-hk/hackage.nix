@@ -21,16 +21,16 @@
       synopsis = "Decode Z-encoded strings from GHC";
       description = "Use ghczdecode <string> to decode it";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghczdecode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."zenc" or (errorHandler.buildDepError "zenc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

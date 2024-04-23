@@ -21,7 +21,7 @@
       synopsis = "Skyline rectangle packing";
       description = "Skyline rectangle packing for font atlases and the like using @stb_rect_pack.h@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,12 +33,12 @@
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "atlas-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."atlas" or (errorHandler.buildDepError "atlas"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

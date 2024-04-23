@@ -6,8 +6,8 @@
         nix = import ../hackage/hasql-explain-tests-0.1.0.0-r0-9ec3366fc243ecfb619171422c93bb99e638937d73b7710426f1ef4aace9dae0.nix;
         revNum = 0;
         sha256 = "9ec3366fc243ecfb619171422c93bb99e638937d73b7710426f1ef4aace9dae0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

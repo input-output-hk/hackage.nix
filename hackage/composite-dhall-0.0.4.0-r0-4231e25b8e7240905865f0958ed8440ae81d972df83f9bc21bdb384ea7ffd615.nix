@@ -21,7 +21,7 @@
       synopsis = "Dhall instances for composite records.";
       description = "Dhall instances for composite records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
           (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "composite-dhall-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

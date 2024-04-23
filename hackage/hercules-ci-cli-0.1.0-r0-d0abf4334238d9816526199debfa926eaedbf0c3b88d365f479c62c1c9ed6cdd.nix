@@ -21,7 +21,7 @@
       synopsis = "The hci command for working with Hercules CI";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,18 +66,18 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hercules-ci-cli" or (errorHandler.buildDepError "hercules-ci-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hercules-ci-cli-test" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

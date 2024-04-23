@@ -21,14 +21,14 @@
       synopsis = "A Logic Programming Library for Test-Data Generation";
       description = "SparseCheck is a library for logic programming in Haskell that\nallows convenient description of test-data generators.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

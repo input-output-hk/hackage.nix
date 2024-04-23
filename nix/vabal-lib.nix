@@ -6,8 +6,8 @@
         nix = import ../hackage/vabal-lib-2.0.0-r0-1bfabb8cdac506262f636743f211b45a3710d9f3ecb06421927d75543be07137.nix;
         revNum = 0;
         sha256 = "1bfabb8cdac506262f636743f211b45a3710d9f3ecb06421927d75543be07137";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,14 +21,14 @@
       synopsis = "Delimited continuations and dynamically scoped variables";
       description = "An implementation of multi-prompt delimited continuations based\non the paper, /A Monadic Framework for Delimited Continuations/,\nby R. Kent Dybvig, Simon Peyton Jones and Amr Sabry\n(<http://www.cs.indiana.edu/~sabry/papers/monadicDC.pdf>).\nIt also includes a corresponding implementation of dynamically\nscoped variables, as implemented in the paper,\n/Delimited Dynamic Binding/, by Oleg Kiselyov, Chung-chieh Shan\nand Amr Sabry\n(<http://okmij.org/ftp/papers/DDBinding.pdf>),\nadapted from the original haskell code,\n(<http://okmij.org/ftp/packages/DBplusDC.tar.gz>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

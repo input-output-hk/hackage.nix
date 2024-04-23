@@ -6,8 +6,8 @@
         nix = import ../hackage/metro-transport-xor-0.1.0.0-r0-fe0970bbae8127d9b40e579a5e8b796ef2d6e91accdc614e543b34acf2a987c6.nix;
         revNum = 0;
         sha256 = "fe0970bbae8127d9b40e579a5e8b796ef2d6e91accdc614e543b34acf2a987c6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

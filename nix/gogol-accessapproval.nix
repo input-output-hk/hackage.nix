@@ -6,8 +6,8 @@
         nix = import ../hackage/gogol-accessapproval-0.5.0-r0-f5ab357d8101f3097c9bf0792f11694c16d9935fab01047e9884d87421cbf468.nix;
         revNum = 0;
         sha256 = "f5ab357d8101f3097c9bf0792f11694c16d9935fab01047e9884d87421cbf468";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

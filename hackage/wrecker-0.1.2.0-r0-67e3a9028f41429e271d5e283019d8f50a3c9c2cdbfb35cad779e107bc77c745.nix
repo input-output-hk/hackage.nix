@@ -21,7 +21,7 @@
       synopsis = "An HTTP Performance Benchmarker";
       description = "'wrecker' is a library and executable for creating HTTP benchmarks. It is designed for\nbenchmarking a series of dependent requests.\n'wrecker' includes a wrapped version of the `wreq` Session API\n, mainly through 'Network.Wreq.Wrecker'.\nSee the documentation of 'Wrecker' for more info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -72,9 +72,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wreck" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -116,9 +116,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -138,10 +138,10 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wrecker-test" = {
           depends = [
@@ -164,9 +164,9 @@
             (hsPkgs."immortal" or (errorHandler.buildDepError "immortal"))
             (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
             (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

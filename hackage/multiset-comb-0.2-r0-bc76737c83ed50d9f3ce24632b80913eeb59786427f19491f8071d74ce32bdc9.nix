@@ -21,11 +21,11 @@
       synopsis = "Combinatorial algorithms over multisets";
       description = "Various combinatorial algorithms over multisets,\nincluding generating all permutations,\npartitions, size-2 partitions, size-k subsets,\nand Sawada's algorithm for generating all\nnecklaces with elements from a multiset.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

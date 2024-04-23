@@ -21,7 +21,7 @@
       synopsis = "generate API docs for your servant webservice";
       description = "Library for generating API docs from a servant API definition.\n\nRunnable example <https://github.com/haskell-servant/servant-docs/blob/master/example/greet.hs here>.\n\n<https://github.com/haskell-servant/servant/blob/master/servant-docs/CHANGELOG.md CHANGELOG>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."control-monad-omega" or (errorHandler.buildDepError "control-monad-omega"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "greet-docs" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

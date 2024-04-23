@@ -21,7 +21,7 @@
       synopsis = "QuasiQuotation library for programmatic generation of Javascript code.";
       description = "Javascript syntax, functional syntax, hygienic names, compile-time guarantees of syntactic correctness, limited typechecking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,16 +36,16 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jmacro" = {
           depends = [
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

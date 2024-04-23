@@ -21,7 +21,7 @@
       synopsis = "Hayoo CLI";
       description = "Simple console client for hayoo.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hayoo" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

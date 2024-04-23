@@ -14,7 +14,7 @@
       show-internal = false;
       werror = false;
       utf8-string = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "thyme"; version = "0.2.1.0"; };
@@ -27,7 +27,7 @@
       synopsis = "A faster time library";
       description = "A faster time library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,16 +41,16 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ] ++ (if flags.utf8-string
+        ] ++ (if flags.utf8-string
           then [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ]
+          ]
           else [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "sanity" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ] ++ (pkgs.lib).optional (flags.utf8-string) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
+          ] ++ pkgs.lib.optional (flags.utf8-string) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

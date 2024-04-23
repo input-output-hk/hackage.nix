@@ -21,11 +21,11 @@
       synopsis = "Type-checked pointer diffs";
       description = "Type-checked pointer diffs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

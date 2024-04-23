@@ -21,7 +21,7 @@
       synopsis = "Command line tool for <https://smith.st/ Smith>.";
       description = "This is a command line tool for interacting with <https://smith.st Smith>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "smith" = {
@@ -44,9 +44,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-bifunctors" or (errorHandler.buildDepError "transformers-bifunctors"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

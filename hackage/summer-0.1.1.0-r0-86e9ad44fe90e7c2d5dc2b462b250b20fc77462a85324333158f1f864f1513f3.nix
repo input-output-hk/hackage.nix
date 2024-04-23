@@ -21,23 +21,23 @@
       synopsis = "An implementation of extensible products and sums";
       description = "An implementation of extensible products and sums.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-summer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."summer" or (errorHandler.buildDepError "summer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

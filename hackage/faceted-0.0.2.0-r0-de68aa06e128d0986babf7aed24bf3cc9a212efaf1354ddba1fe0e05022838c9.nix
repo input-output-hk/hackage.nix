@@ -21,14 +21,14 @@
       synopsis = "Faceted computation for dynamic information flow security";
       description = "This library provides faceted values and computations for\nenforcing secure information flow.\n\nA faceted value represents many value simultaneously, depending\non who is observing, and prevents any observer from viewing\nconfidential information that they do not have privileges\nto access.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

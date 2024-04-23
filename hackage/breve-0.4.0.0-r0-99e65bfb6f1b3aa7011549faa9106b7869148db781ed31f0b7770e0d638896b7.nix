@@ -21,7 +21,7 @@
       synopsis = "a url shortener";
       description = "Breve is a web application that provides a simple interface to\nshortening long urls creating links smaller and easier to remember.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "breve" = {
@@ -47,9 +47,9 @@
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Web gui for Nomyx";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,8 +56,8 @@
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-happstack" or (errorHandler.buildDepError "web-routes-happstack"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

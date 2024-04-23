@@ -21,7 +21,7 @@
       synopsis = "A Snaplet for CSS minification";
       description = "A Snaplet for minifying and caching CSS files.\n\nNest this Snaplet inside your own, and place your CSS files in\n@snaplets/css-min@.\n\nThe minifier just parses and renders the contents of the files with\n@css-text@, so the minification is not complete. It will remove most\nwhitespace, though.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

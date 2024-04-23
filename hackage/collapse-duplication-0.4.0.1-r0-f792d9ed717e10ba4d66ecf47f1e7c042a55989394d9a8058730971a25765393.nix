@@ -21,7 +21,7 @@
       synopsis = "Collapse the duplication output into clones and return their frequencies.";
       description = "Process the output of heatitup in order to collapse sequences into clones by similar ITD mutations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "collapse-duplication" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

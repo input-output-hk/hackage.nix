@@ -21,13 +21,13 @@
       synopsis = "A preprocessor that helps with writing Haskell bindings to C code";
       description = "The hsc2hs program can be used to automate some parts of the\nprocess of writing Haskell bindings to C code.\tIt reads an\nalmost-Haskell source file with embedded special constructs, and\noutputs a real Haskell file with these constructs processed, based\non information taken from some C headers.  The extra constructs\nprovide Haskell counterparts of C types, values of C constants,\nincluding sizes of C types, and access to fields of C structs.\n\nFor more details, see\nhttp://www.haskell.org/ghc/docs/latest/html/users_guide/hsc2hs.html";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hsc2hs" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

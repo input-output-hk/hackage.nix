@@ -21,7 +21,7 @@
       synopsis = "A Haskell library to make self-extracting executables";
       description = "A Haskell library to make self-extracting executables.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

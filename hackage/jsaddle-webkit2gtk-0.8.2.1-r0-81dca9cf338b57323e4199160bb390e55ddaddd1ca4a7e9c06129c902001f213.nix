@@ -21,12 +21,12 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -40,8 +40,8 @@
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."webkit2gtk3-javascriptcore" or (errorHandler.buildDepError "webkit2gtk3-javascriptcore"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

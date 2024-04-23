@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of GListModel interface from gi-gio";
       description = "Please see the README at: https://git.coop/akshay/gi-gio-hs-list-model#gi-gio-hs-list-model ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."gi-gio" or (errorHandler.buildDepError "gi-gio"))
           (hsPkgs."gi-gobject" or (errorHandler.buildDepError "gi-gobject"))
           (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/codedownio/myers-diff#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,9 +31,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.uni_myers) (hsPkgs."array" or (errorHandler.buildDepError "array"))) ++ (pkgs.lib).optional (flags.diff) (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"));
+        ] ++ pkgs.lib.optional (flags.uni_myers) (hsPkgs."array" or (errorHandler.buildDepError "array"))) ++ pkgs.lib.optional (flags.diff) (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"));
         buildable = true;
-        };
+      };
       tests = {
         "myers-diff-test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "micro" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "myers-diff-criterion-small-deletes" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -91,9 +91,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "myers-diff-criterion-small-inserts" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -109,9 +109,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "myers-diff-weigh" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -128,9 +128,9 @@
             (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

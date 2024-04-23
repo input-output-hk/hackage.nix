@@ -21,15 +21,15 @@
       synopsis = "get information on processes in Linux";
       description = "procstat is a clean interface to the Linux /proc\nfilesystem; specifically, the /proc/[0-9]+/stat files.\nIt essentially parses the process data found in those\nfiles into a more semantic data structure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

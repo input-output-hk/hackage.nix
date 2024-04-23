@@ -15,7 +15,7 @@
       eventlog = false;
       testing = true;
       hint = true;
-      };
+    };
     package = {
       specVersion = "1.20";
       identifier = { name = "yi"; version = "0.12.3"; };
@@ -28,7 +28,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written in Haskell and extensible in Haskell. The goal of the Yi project is\nto provide a flexible, powerful, and correct editor for haskell hacking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -67,28 +67,28 @@
           (hsPkgs."oo-prototypes" or (errorHandler.buildDepError "oo-prototypes"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ] ++ (pkgs.lib).optional (flags.hint) (hsPkgs."hint" or (errorHandler.buildDepError "hint"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (pkgs.lib).optionals (flags.testing) [
+        ] ++ pkgs.lib.optional (flags.hint) (hsPkgs."hint" or (errorHandler.buildDepError "hint"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (flags.testing) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ]) ++ (pkgs.lib).optionals (flags.pango) [
+        ]) ++ pkgs.lib.optionals (flags.pango) [
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."pango" or (errorHandler.buildDepError "pango"))
-          ]) ++ (pkgs.lib).optionals (flags.vty) [
+        ]) ++ pkgs.lib.optionals (flags.vty) [
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
             (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

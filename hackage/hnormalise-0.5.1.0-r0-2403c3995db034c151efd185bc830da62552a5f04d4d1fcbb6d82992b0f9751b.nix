@@ -21,7 +21,7 @@
       synopsis = "Log message normalisation tool producing structured JSON messages";
       description = "Log message normalisation tool producing structured JSON messages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
           (hsPkgs."zeromq4-conduit" or (errorHandler.buildDepError "zeromq4-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hnormalise" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hnormalise-0mq" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,10 +112,10 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."zeromq4-conduit" or (errorHandler.buildDepError "zeromq4-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hnormalise-test" = {
           depends = [
@@ -132,10 +132,10 @@
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hnormalise-bench" = {
           depends = [
@@ -146,9 +146,9 @@
             (hsPkgs."hnormalise" or (errorHandler.buildDepError "hnormalise"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

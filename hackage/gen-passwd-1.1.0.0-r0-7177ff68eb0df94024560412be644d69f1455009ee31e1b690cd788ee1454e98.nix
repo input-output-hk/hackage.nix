@@ -21,7 +21,7 @@
       synopsis = "Create wordlist-based passwords easily";
       description = "See README at <https://github.com/anfelor/gen-passwd#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gen-passwd" = {
@@ -31,9 +31,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

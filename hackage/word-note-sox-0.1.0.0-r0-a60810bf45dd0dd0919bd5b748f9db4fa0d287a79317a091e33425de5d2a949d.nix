@@ -21,7 +21,7 @@
       synopsis = "SoX for algorithmic composition with groups of notes liken to words";
       description = "A basic SoX functionality for the new project related to music and algorithmic composition. Is rewritten from algorithmic-composition-basic functionality and some other ones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."end-of-exe" or (errorHandler.buildDepError "end-of-exe"))
           (hsPkgs."monoid-insertleft" or (errorHandler.buildDepError "monoid-insertleft"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

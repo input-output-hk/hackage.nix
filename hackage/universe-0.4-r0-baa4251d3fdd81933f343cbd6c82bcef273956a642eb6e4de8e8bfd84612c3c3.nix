@@ -21,7 +21,7 @@
       synopsis = "Classes for types where we know all the values";
       description = "A small package, in the spirit of data-default, which allows the munging of finite and recursively enumerable types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

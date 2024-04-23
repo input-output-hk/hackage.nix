@@ -21,15 +21,15 @@
       synopsis = "Low level bindings to posix.";
       description = "Low level bindings to Posix standard library, part\nof the @bindings-*@ project. See:\n\n<http://bitbucket.org/mauricio/bindings-dsl>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

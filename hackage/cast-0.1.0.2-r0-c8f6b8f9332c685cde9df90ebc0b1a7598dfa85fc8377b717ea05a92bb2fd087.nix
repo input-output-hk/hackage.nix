@@ -21,11 +21,11 @@
       synopsis = "Abstact cast pattern ";
       description = "Generalized pattern that allow cast one type for another.\nLook at README for example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

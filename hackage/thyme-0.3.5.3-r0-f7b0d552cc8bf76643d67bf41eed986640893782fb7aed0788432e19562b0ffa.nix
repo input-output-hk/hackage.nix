@@ -14,7 +14,7 @@
       lens = false;
       show-internal = false;
       werror = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "thyme"; version = "0.3.5.3"; };
@@ -27,7 +27,7 @@
       synopsis = "A faster time library";
       description = "Thyme is a rewrite of the fine @time@ library, with a particular focus\non performance for applications that make heavy use of timestamps.\n\nSee \"Data.Thyme\" for a full description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -46,14 +46,14 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if flags.lens
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if flags.lens
           then [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]
           else [
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-            ]);
-        build-tools = (pkgs.lib).optional (system.isOsx) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+          ]);
+        build-tools = pkgs.lib.optional (system.isOsx) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
-        };
+      };
       tests = {
         "sanity" = {
           depends = [
@@ -66,14 +66,14 @@
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ] ++ (if flags.lens
+          ] ++ (if flags.lens
             then [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]
             else [
               (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "rewrite" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
@@ -85,17 +85,17 @@
             (hsPkgs."system-posix-redirect" or (errorHandler.buildDepError "system-posix-redirect"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (flags.hlint) [
+          depends = pkgs.lib.optionals (flags.hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if flags.hlint then true else false;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -109,13 +109,13 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ] ++ (if flags.lens
+          ] ++ (if flags.lens
             then [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]
             else [
               (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

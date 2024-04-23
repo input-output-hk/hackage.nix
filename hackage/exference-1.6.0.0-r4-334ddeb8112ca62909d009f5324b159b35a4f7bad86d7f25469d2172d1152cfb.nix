@@ -13,7 +13,7 @@
       linknodes = false;
       buildsearchtree = false;
       exference-dev = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "exference"; version = "1.6.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Tool to search/generate (haskell) expressions with a given type";
       description = "Type inference takes an expression and tells you its type. This process\ncan be inversed: We recursively create random expression trees while checking\nthat they -so far- match a given input type. At each step we do the backwards\nstep of the inference algorithm step. If you are lucky, this search\nyields one or more expressions.\n\nDjinn is a similar tool that guarantees to always terminate. But the\ncost of that property is that Djinn does not properly handle polymorphic\nqueries - and those are the interesting ones, really :)\n\nExference supports type classes, handles undeclared types well\n(Foo -> Foo yields id for unknown Foo), does _not_ check kinds,\ncan pattern-match on newtypes, supports RankNTypes.\n\nExference reads an environment of function types, data types, type classes\nand instances. The user can add to this environment, but keep in mind that\neach addition enlarges the search space.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,12 +55,12 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "exference" = {
-          depends = (pkgs.lib).optionals (flags.build-executables) [
+          depends = pkgs.lib.optionals (flags.build-executables) [
             (hsPkgs."exference" or (errorHandler.buildDepError "exference"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -73,9 +73,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
-            ];
+          ];
           buildable = if flags.build-executables then true else false;
-          };
         };
       };
-    }
+    };
+  }

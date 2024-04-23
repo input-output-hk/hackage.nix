@@ -21,20 +21,20 @@
       synopsis = "Generic deriving of Read/Show with no record labels.";
       description = "Please see the README on GitHub at <https://github.com/jacobstanley/quiet#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "quiet-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quiet" or (errorHandler.buildDepError "quiet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

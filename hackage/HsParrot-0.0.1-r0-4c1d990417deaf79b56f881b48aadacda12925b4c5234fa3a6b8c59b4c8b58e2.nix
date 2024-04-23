@@ -21,7 +21,7 @@
       synopsis = "Haskell integration with Parrot virtual machine";
       description = "Haskell integration with Parrot virtual machine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."HsSyck" or (errorHandler.buildDepError "HsSyck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

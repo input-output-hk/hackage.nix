@@ -21,7 +21,7 @@
       synopsis = "Rasterific backend for diagrams.";
       description = "A full-featured backend for rendering\ndiagrams using the Rasterific rendering engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

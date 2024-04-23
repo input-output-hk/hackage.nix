@@ -21,7 +21,7 @@
       synopsis = "Generate lanuage learning flashcards from video.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
           (hsPkgs."unliftio-path" or (errorHandler.buildDepError "unliftio-path"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flashblast" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."unliftio-path" or (errorHandler.buildDepError "unliftio-path"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

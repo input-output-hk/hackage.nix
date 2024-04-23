@@ -21,7 +21,7 @@
       synopsis = "A fast, SMP parallel random data generator";
       description = "A fast, SMP parallel random data generator\n\nTo generate 10G of high quality pseudorandom\ndata, using 4 processors to fill the file:\n\n$ randomgen \"data\" 10 +RTS -N4\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "randomgen" = {
@@ -30,10 +30,10 @@
             (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

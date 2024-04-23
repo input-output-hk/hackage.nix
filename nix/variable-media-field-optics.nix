@@ -6,8 +6,8 @@
         nix = import ../hackage/variable-media-field-optics-0.1.0.0-r0-5ade3eea5fc99559447d5ab8ec95a81a7d6b084d6a084282ffdc71dfc1a392e5.nix;
         revNum = 0;
         sha256 = "5ade3eea5fc99559447d5ab8ec95a81a7d6b084d6a084282ffdc71dfc1a392e5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

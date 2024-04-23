@@ -21,10 +21,10 @@
       synopsis = "DNS library in Haskell";
       description = "A thread-safe DNS library for both clients and servers written\nin pure Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhc && (compiler.version).ge "7"
+        depends = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -39,7 +39,7 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -55,9 +55,9 @@
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       tests = {
         "network" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,16 +85,16 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

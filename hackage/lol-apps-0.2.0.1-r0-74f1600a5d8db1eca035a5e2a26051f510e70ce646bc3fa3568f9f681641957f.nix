@@ -21,7 +21,7 @@
       synopsis = "Lattice-based cryptographic applications using <https://hackage.haskell.org/package/lol lol>.";
       description = "This library contains example cryptographic applications built using\n<https://hackage.haskell.org/package/lol lol>,\na general-purpose library for ring-based lattice cryptography.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."protocol-buffers-descriptor" or (errorHandler.buildDepError "protocol-buffers-descriptor"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "homomprf" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "khprf" = {
           depends = [
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
@@ -69,9 +69,9 @@
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "symmshe" = {
           depends = [
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
@@ -81,10 +81,10 @@
             (hsPkgs."lol-cpp" or (errorHandler.buildDepError "lol-cpp"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-apps" = {
           depends = [
@@ -107,10 +107,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-apps" = {
           depends = [
@@ -132,9 +132,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

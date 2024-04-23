@@ -21,15 +21,15 @@
       synopsis = "Automatically derivable Has instances.";
       description = "Please see the README on GitHub at <https://github.com/dnikolovv/it-has#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "it-has-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
             (hsPkgs."it-has" or (errorHandler.buildDepError "it-has"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "MIME implementation for String's.";
       description = "Implementation of the MIME RFCs 2045-2049.\nRather rough around the edges at the moment.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
           (hsPkgs."base64-string" or (errorHandler.buildDepError "base64-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

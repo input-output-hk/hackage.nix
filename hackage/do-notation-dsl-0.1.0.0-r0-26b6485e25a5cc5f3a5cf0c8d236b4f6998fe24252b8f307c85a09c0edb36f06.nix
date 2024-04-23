@@ -21,12 +21,12 @@
       synopsis = "An alternative to monads";
       description = "Please see the README on GitHub at <https://github.com/Atry/dsl#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -36,9 +36,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

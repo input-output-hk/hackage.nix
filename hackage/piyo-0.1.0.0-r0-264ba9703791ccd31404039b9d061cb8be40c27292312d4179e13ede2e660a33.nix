@@ -21,7 +21,7 @@
       synopsis = "Haskell game engine like fantasy console.";
       description = "Please see the README on GitHub at <https://github.com/opyapeus/piyo#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
           (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "piyo-exe" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "piyo-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

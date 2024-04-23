@@ -21,7 +21,7 @@
       synopsis = "";
       description = "OpenGL Arcade Game";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "topkata" = {
@@ -34,9 +34,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."OpenAL" or (errorHandler.buildDepError "OpenAL"))
             (hsPkgs."ALUT" or (errorHandler.buildDepError "ALUT"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pdflaby" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,9 +47,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."OpenAL" or (errorHandler.buildDepError "OpenAL"))
             (hsPkgs."ALUT" or (errorHandler.buildDepError "ALUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Navigating and editing JSON data";
       description = "A library that enables navigation in aeson Values and their editing.\n\nThe zipper API is described in the @Data.Aeson.Zipper@ module.\n\n(A note on naming: Tiphys was the steersman and navigator on Jason's Argo.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."tiphys" or (errorHandler.buildDepError "tiphys"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

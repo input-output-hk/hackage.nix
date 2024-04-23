@@ -21,7 +21,7 @@
       synopsis = "Examples using the Repa array library.";
       description = "Examples using the Repa array library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "repa-laplace" = {
@@ -30,18 +30,18 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "repa-mmult" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "repa-fft" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -49,9 +49,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

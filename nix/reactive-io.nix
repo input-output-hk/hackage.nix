@@ -6,8 +6,8 @@
         nix = import ../hackage/reactive-io-0.1-r0-5bec26ed2c90a06720e59f7096588e0d047ce238906820edbd458a2b416234e4.nix;
         revNum = 0;
         sha256 = "5bec26ed2c90a06720e59f7096588e0d047ce238906820edbd458a2b416234e4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

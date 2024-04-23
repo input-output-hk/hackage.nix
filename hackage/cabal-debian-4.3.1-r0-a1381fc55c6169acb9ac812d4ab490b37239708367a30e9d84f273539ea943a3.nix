@@ -21,7 +21,7 @@
       synopsis = "Create a debianization for a cabal package";
       description = "This package provides two methods for generating the debianization\n(i.e. the contents of the 'debian' subdirectory) for a cabal package.\nAn executable named cabal-debian, and a library API to handle more\ncomplex packaging issues.  For documentation of the executable run\n@cabal-debian --help@, for documentation of the library API follow\nthe link to the @Debian.Debianize@ module below.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-debian" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-debian-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,9 +106,9 @@
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "QuickCheck driver for Ivory.";
       description = "Warning!  This module is experimental and its implementation may change dramatically.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

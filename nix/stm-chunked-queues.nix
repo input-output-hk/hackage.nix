@@ -6,8 +6,8 @@
         nix = import ../hackage/stm-chunked-queues-0.1.0.0-r0-e7bae2bb15677773c066de71002379c0089acd92fcd0e98cc1a8579c34d03b52.nix;
         revNum = 0;
         sha256 = "e7bae2bb15677773c066de71002379c0089acd92fcd0e98cc1a8579c34d03b52";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

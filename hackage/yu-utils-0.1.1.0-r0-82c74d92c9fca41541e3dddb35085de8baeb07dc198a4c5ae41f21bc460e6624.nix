@@ -21,7 +21,7 @@
       synopsis = "Utils for Yu";
       description = "Utils for Yu";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,7 +35,7 @@
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
           (hsPkgs."signal" or (errorHandler.buildDepError "signal"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ] ++ (pkgs.lib).optionals (!flags.client) [
+        ] ++ pkgs.lib.optionals (!flags.client) [
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
@@ -56,8 +56,8 @@
           (hsPkgs."xml-hamlet" or (errorHandler.buildDepError "xml-hamlet"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

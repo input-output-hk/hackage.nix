@@ -21,7 +21,7 @@
       synopsis = "A Procmail Replacement as Haskell EDSL ";
       description = "A program for filtering/sorting email. Monadic EDSL for sorting, supports multiple mail storage formats.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hackmail" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

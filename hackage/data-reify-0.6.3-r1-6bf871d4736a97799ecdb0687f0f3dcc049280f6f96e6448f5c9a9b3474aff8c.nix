@@ -21,7 +21,7 @@
       synopsis = "Reify a recursive data structure into an explicit graph.";
       description = "'data-reify' provided the ability to turn recursive structures into explicit graphs.\nMany (implicitly or explicitly) recursive data structure can be given this ability, via\na type class instance. This gives an alternative to using 'Ref' for observable sharing.\n\nObservable sharing in general is unsafe, so we use the IO monad to bound this effect,\nbut can be used safely even with 'unsafePerformIO' if some simple conditions are met.\nTypically this package will be used to tie the knot with DSL's that depend of\nobservable sharing, like Lava.\n\nProviding an instance for 'MuRef' is the mechanism for allowing a structure to be\nreified into a graph, and several examples of this are provided.\n\n&#169; 2009 Andy Gill; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,60 +29,60 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "data-reify-test1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "data-reify-test2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "data-reify-test3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "data-reify-test4" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "data-reify-test5" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "data-reify-test6" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
+        };
         "data-reify-test7" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -90,12 +90,12 @@
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

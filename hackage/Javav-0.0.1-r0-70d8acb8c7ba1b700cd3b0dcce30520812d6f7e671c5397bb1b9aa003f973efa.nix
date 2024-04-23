@@ -21,13 +21,13 @@
       synopsis = "A utility to print the target version of Java class files.";
       description = "A utility to print the target version of Java class files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "javav" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

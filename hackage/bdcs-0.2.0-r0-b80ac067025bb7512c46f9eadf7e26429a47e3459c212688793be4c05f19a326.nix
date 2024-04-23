@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -74,12 +74,12 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."ostree-1" or (errorHandler.pkgConfDepError "ostree-1"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bdcs" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bdcs-import" = {
           depends = [
             (hsPkgs."bdcs" or (errorHandler.buildDepError "bdcs"))
@@ -104,9 +104,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bdcs-inspect" = {
           depends = [
             (hsPkgs."bdcs" or (errorHandler.buildDepError "bdcs"))
@@ -117,9 +117,9 @@
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inspect-groups" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -134,9 +134,9 @@
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inspect-ls" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -151,9 +151,9 @@
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inspect-nevras" = {
           depends = [
             (hsPkgs."bdcs" or (errorHandler.buildDepError "bdcs"))
@@ -164,9 +164,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bdcs-export" = {
           depends = [
             (hsPkgs."bdcs" or (errorHandler.buildDepError "bdcs"))
@@ -177,27 +177,27 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bdcs-tmpfiles" = {
           depends = [
             (hsPkgs."bdcs" or (errorHandler.buildDepError "bdcs"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bdcs-depsolve" = {
           depends = [
             (hsPkgs."bdcs" or (errorHandler.buildDepError "bdcs"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-bdcs" = {
           depends = [
@@ -228,9 +228,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

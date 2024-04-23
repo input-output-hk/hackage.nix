@@ -21,7 +21,7 @@
       synopsis = "Client support for servant-queryparam-core.";
       description = "Client support for [servant-queryparam-core](https://hackage.haskell.org/package/servant-queryparam-core).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."servant-queryparam-core" or (errorHandler.buildDepError "servant-queryparam-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

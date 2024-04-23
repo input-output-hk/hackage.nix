@@ -21,7 +21,7 @@
       synopsis = "Predicates, Refinement types and Dsl";
       description = "Please see the README on GitHub at <https://github.com/gbwey/predicate-typed#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "predicate-typed-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -121,9 +121,9 @@
             (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tree-view" or (errorHandler.buildDepError "tree-view"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

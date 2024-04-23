@@ -21,7 +21,7 @@
       synopsis = "High level GlTF loader";
       description = "Please see the README on Github at <https://github.com/sgillespie/haskell-gltf-loader#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gltf-loader" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gltf-loader-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

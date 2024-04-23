@@ -21,16 +21,16 @@
       synopsis = "no";
       description = "hpg is a free ISC licensed password generator.\nIt can create passwords based on the following\ncharacters:\n* upper case letters\n* lower case letters\n* special characters\n* numbers\nThe password length is limited to 2^16 due to\nperformance issues.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ] ++ (pkgs.lib).optional (system.isOpenbsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (system.isOpenbsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

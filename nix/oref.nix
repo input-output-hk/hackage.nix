@@ -6,8 +6,8 @@
         nix = import ../hackage/oref-0.0.3-r0-5f5bda7514712af037d652d39886cbdc50cfba1e5e3f9bff9c0815dbf4cdd4e3.nix;
         revNum = 0;
         sha256 = "5f5bda7514712af037d652d39886cbdc50cfba1e5e3f9bff9c0815dbf4cdd4e3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

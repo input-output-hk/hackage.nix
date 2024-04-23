@@ -21,7 +21,7 @@
       synopsis = "Conduit-based input/output capability for multilinear package.";
       description = "Conduit-based input & output capability for multilinear package <https://hackage.haskell.org/package/multilinear>. Supports various file formats: binary, CSV, JSON. More information available on GitHub: <https://github.com/ArturB/multilinear-io#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "binary" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."multilinear-io" or (errorHandler.buildDepError "multilinear-io"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."multilinear-io" or (errorHandler.buildDepError "multilinear-io"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,10 +71,10 @@
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."multilinear-io" or (errorHandler.buildDepError "multilinear-io"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "multilinear-io-bench" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."multilinear-io" or (errorHandler.buildDepError "multilinear-io"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

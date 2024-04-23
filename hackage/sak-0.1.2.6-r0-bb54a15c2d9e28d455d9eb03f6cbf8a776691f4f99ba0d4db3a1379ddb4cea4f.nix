@@ -21,7 +21,7 @@
       synopsis = "Compression command-line tool";
       description = "sak is a command-line tool that detects and handles various compression formats";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sak" = {
@@ -39,12 +39,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
             (hsPkgs."lzo" or (errorHandler.buildDepError "lzo"))
-            ] ++ (pkgs.lib).optional (flags.with-snappy) (hsPkgs."snappy-lazy" or (errorHandler.buildDepError "snappy-lazy"))) ++ (pkgs.lib).optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"));
+          ] ++ pkgs.lib.optional (flags.with-snappy) (hsPkgs."snappy-lazy" or (errorHandler.buildDepError "snappy-lazy"))) ++ pkgs.lib.optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

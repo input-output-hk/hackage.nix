@@ -21,7 +21,7 @@
       synopsis = "read/write png file";
       description = "It's just alpha version now.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

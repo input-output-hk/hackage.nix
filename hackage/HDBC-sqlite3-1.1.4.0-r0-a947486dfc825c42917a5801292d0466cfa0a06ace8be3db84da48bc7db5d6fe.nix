@@ -21,20 +21,20 @@
       synopsis = "Sqlite v3 driver for HDBC";
       description = "This is the Sqlite v3 driver for HDBC, the generic\ndatabase access system for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

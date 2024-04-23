@@ -21,7 +21,7 @@
       synopsis = "Fast XML generation library";
       description = "Library for high-performance XML generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xmlgen-tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "xmlgen-bench" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."xmlgen" or (errorHandler.buildDepError "xmlgen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

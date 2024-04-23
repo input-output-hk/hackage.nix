@@ -21,7 +21,7 @@
       synopsis = "High-level shader compiler for Polar Game Engine";
       description = "A high-level generic shader compiler library built for the Polar Game Engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-polar-shader" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."polar-shader" or (errorHandler.buildDepError "polar-shader"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

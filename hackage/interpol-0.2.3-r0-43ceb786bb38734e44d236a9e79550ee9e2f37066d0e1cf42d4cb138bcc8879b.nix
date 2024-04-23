@@ -21,12 +21,12 @@
       synopsis = "GHC preprocessor and library to enable variable interpolation in strings";
       description = "This preprocessor enables variable interpolation in strings.\nAlternatively, the library may be used.\n\nSee the README.md file for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "interpol" = {
           depends = [
@@ -34,10 +34,10 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

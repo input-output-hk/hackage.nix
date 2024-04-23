@@ -21,7 +21,7 @@
       synopsis = "A simple static web server";
       description = "Serve files from the current path";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "maid" = {
@@ -35,9 +35,9 @@
             (hsPkgs."hack-handler-hyena" or (errorHandler.buildDepError "hack-handler-hyena"))
             (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

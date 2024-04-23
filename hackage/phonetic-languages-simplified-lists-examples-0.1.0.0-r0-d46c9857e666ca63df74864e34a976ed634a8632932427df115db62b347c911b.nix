@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-lists-examples";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2020 Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Simplified and somewhat optimized version of the phonetic-languages-examples.";
       description = "Is intended to use more functionality of lists and subG package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
           (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariantsG2" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
             (hsPkgs."phonetic-languages-permutations" or (errorHandler.buildDepError "phonetic-languages-permutations"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoemG2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."phonetic-languages-constraints" or (errorHandler.buildDepError "phonetic-languages-constraints"))
             (hsPkgs."phonetic-languages-permutations" or (errorHandler.buildDepError "phonetic-languages-permutations"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propertiesTextG2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,9 +93,9 @@
             (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
             (hsPkgs."phonetic-languages-permutations" or (errorHandler.buildDepError "phonetic-languages-permutations"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

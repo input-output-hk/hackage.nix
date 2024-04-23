@@ -21,7 +21,7 @@
       synopsis = "MySQL driver for HSQL.";
       description = "MySQL driver for HSQL. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         libs = [
           (pkgs."mysqlclient" or (errorHandler.sysDepError "mysqlclient"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hspec-formatter-github-0.1.0.0-r0-0f425706145c5d9fccee39662a38abe68fd61567b39f8dae655a3f598b53b0d3.nix;
         revNum = 0;
         sha256 = "0f425706145c5d9fccee39662a38abe68fd61567b39f8dae655a3f598b53b0d3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

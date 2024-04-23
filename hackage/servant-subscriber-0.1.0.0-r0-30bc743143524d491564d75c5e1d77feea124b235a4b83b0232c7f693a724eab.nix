@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see Readme.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,19 +52,19 @@
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "psGenerator" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant-subscriber" or (errorHandler.buildDepError "servant-subscriber"))
             (hsPkgs."purescript-bridge" or (errorHandler.buildDepError "purescript-bridge"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "servant-subscriber-test" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

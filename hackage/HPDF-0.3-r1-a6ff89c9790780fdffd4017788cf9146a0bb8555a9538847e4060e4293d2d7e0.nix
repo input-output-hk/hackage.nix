@@ -21,7 +21,7 @@
       synopsis = "PDF API for Haskell";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

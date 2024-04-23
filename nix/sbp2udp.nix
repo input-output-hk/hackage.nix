@@ -6,8 +6,8 @@
         nix = import ../hackage/sbp2udp-0.0.1-r0-5db85aa1b73348a941ebe6039f94c004e52242eadfc888653d6804b95d5dd065.nix;
         revNum = 0;
         sha256 = "5db85aa1b73348a941ebe6039f94c004e52242eadfc888653d6804b95d5dd065";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

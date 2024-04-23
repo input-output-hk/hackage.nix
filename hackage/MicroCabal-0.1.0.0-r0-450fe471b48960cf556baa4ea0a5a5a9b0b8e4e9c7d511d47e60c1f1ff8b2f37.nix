@@ -21,7 +21,7 @@
       synopsis = "A Cabal replacement";
       description = "A portable subset of the Cabal functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mcabal" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

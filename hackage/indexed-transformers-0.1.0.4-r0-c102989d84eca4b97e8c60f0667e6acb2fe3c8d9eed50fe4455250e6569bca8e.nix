@@ -21,7 +21,7 @@
       synopsis = "Atkey indexed monad transformers";
       description = "Please see the README on GitHub at <https://github.com/morphismtech/indexed-transformers#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

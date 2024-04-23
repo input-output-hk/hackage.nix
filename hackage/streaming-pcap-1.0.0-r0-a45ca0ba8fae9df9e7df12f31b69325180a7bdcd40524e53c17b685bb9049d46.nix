@@ -21,7 +21,7 @@
       synopsis = "Stream packets via libpcap.";
       description = "Stream packets via libpcap.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "streaming-pcap-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."streaming-pcap" or (errorHandler.buildDepError "streaming-pcap"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

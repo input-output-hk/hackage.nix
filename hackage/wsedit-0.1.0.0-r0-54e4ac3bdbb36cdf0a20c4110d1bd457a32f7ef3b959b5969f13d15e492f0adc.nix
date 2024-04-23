@@ -21,7 +21,7 @@
       synopsis = "A small tool to list, add and remove webseeds from a torrent file";
       description = "This package provides a program to modify BEP-19 webseeds (GetRight style) of\na torrent file.\n\nCurrently it allows to:\n\n* list all webseeds (@--list-webseeds@)\n\n* append a webseed (@--add-webseed \\<url\\>@)\n\n* remove a webseed (@--remove-webseed \\<n\\>@)\n\n* remove all webseeds (@--remove-all-webseeds@)\n\nAlso see:\n\n@wsedit --help@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wsedit" = {
@@ -33,9 +33,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

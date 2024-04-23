@@ -21,7 +21,7 @@
       synopsis = "GHC core plugin supporting the derive-storable package.";
       description = "The package helps derive-storable package in forcing compile time evaluation of\nsizes, alignments and offsets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
           (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ids-concrete" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ids-handwritten" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ids-newtype" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ids-parametrised-spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,9 +82,9 @@
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ids-typesynonym" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,10 +95,10 @@
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "plugin-benchmark" = {
           depends = [
@@ -107,9 +107,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

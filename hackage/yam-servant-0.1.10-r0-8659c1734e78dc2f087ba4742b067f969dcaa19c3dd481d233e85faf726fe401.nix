@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Web Module for Yam";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

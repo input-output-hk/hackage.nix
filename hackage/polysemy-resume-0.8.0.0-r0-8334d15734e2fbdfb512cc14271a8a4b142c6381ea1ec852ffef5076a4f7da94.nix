@@ -21,7 +21,7 @@
       synopsis = "Polysemy error tracking";
       description = "See https://hackage.haskell.org/package/polysemy-resume/docs/Polysemy-Resume.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."incipit-core" or (errorHandler.buildDepError "incipit-core"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-resume-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

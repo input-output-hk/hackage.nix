@@ -21,7 +21,7 @@
       synopsis = "Call JVM methods from Haskell.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,15 +35,15 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.linear-types
+        ] ++ (if flags.linear-types
           then [
             (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"))
-            ]
+          ]
           else [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -53,11 +53,11 @@
             (hsPkgs."jni" or (errorHandler.buildDepError "jni"))
             (hsPkgs."jvm" or (errorHandler.buildDepError "jvm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "micro-benchmarks" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."jvm" or (errorHandler.buildDepError "jvm"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

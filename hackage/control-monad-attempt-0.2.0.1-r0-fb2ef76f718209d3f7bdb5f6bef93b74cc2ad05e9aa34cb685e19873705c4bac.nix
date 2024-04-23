@@ -21,17 +21,17 @@
       synopsis = "Monad transformer for attempt.";
       description = "This package uses the transformers library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."attempt" or (errorHandler.buildDepError "attempt"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

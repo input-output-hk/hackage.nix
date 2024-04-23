@@ -21,12 +21,12 @@
       synopsis = "Gray encoding schemes";
       description = "Please see the README on GitHub at <https://github.com/mhwombat/gray-extended#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "gray-extended-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."gray-extended" or (errorHandler.buildDepError "gray-extended"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

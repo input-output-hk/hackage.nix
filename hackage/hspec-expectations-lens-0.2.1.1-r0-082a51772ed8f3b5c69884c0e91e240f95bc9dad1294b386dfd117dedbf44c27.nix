@@ -21,7 +21,7 @@
       synopsis = "Hspec expectations for the lens stuff";
       description = "Package adds hspec expectations (@\\`shouldX\\`@ things)\nthat work nicely with the \"lens\" library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec-expectations-lens" or (errorHandler.buildDepError "hspec-expectations-lens"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

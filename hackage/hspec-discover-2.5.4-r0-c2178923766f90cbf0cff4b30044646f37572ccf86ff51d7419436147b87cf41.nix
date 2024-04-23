@@ -21,16 +21,16 @@
       synopsis = "Automatically discover and run Hspec tests";
       description = "Automatically discover and run Hspec tests\n\n<http://hspec.github.io/hspec-discover.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hspec-discover" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."hspec-meta" or (errorHandler.buildDepError "hspec-meta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

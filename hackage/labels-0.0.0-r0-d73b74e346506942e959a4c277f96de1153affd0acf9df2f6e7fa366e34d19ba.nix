@@ -21,7 +21,7 @@
       synopsis = "Declare and access tuple fields with labels";
       description = "Declare and access tuple fields with labels.\nAn approach to anonymous records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

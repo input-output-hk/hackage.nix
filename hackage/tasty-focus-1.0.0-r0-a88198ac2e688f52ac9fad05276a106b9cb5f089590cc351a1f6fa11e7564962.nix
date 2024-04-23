@@ -21,16 +21,16 @@
       synopsis = "Simple focus mechanism for tasty";
       description = "Simple focus mechanism for tasty, similar to hspec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-focus-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty-focus" or (errorHandler.buildDepError "tasty-focus"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

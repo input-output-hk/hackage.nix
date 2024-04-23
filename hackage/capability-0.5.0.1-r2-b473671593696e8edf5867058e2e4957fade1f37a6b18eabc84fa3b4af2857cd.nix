@@ -21,7 +21,7 @@
       synopsis = "Extensional capabilities and deriving combinators";
       description = "Standard capability type classes for extensional effects and combinators\nto derive capability instances with little boilerplate.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ] ++ (pkgs.lib).optional (flags.hspec-jenkins) (hsPkgs."hspec-jenkins" or (errorHandler.buildDepError "hspec-jenkins"));
+          ] ++ pkgs.lib.optional (flags.hspec-jenkins) (hsPkgs."hspec-jenkins" or (errorHandler.buildDepError "hspec-jenkins"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

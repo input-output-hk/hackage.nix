@@ -21,7 +21,7 @@
       synopsis = "Client for Coinbase Pro";
       description = "Client for Coinbase Pro REST and Websocket APIs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-request" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-stream" = {
           depends = [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
@@ -122,9 +122,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

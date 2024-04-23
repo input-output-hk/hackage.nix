@@ -12,7 +12,7 @@
       network-bytestring = false;
       allow-sendfilefd = true;
       warp-debug = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "warp"; version = "3.1.8"; };
@@ -25,7 +25,7 @@
       synopsis = "A fast, light-weight web server for WAI applications.";
       description = "HTTP\\/1.0, HTTP\\/1.1 and HTTP\\/2 are supported.\nFor HTTP\\/2,  Warp supports direct and ALPN (in TLS)\nbut not upgrade.\nAPI docs and the README are available at\n<http://www.stackage.org/package/warp>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -50,32 +50,32 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (if flags.network-bytestring
+        ] ++ (if flags.network-bytestring
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,13 +111,13 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ] ++ (pkgs.lib).optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
+          ] ++ pkgs.lib.optionals ((system.isLinux || system.isFreebsd || system.isOsx) && flags.allow-sendfilefd) [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "parser" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

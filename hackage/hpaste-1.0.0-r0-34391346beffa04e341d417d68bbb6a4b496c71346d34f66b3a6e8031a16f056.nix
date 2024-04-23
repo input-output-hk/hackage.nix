@@ -21,7 +21,7 @@
       synopsis = "Haskell paste web site.";
       description = "Haskell paste web site. Includes: syntax highlighting for\nvarious languages, HLint suggestions for Haskell, annotations,\nrevisions, diffs between revisions, announcement to IRC channels,\nbrowsing of author's pastes, spam reporting/deletion,\nSpamAssassin-based spam protection, secret/private pastes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpaste" = {
@@ -60,9 +60,9 @@
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

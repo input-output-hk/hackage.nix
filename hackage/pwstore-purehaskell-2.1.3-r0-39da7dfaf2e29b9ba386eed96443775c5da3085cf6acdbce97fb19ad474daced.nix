@@ -21,7 +21,7 @@
       synopsis = "Secure password storage, in pure Haskell.";
       description = "To store passwords securely, they should be salted,\nthen hashed with a slow hash function. This library\nuses PBKDF1-SHA256, and handles all the details.\nIt is implemented in pure Haskell, with no C\ndependencies. For a faster implementation, the\npwstore-fast package has the exact same API but is\nabout 25 times faster due to its use of the cryptohash\npackage, which is partly implemented in C. This pure\nHaskell version is visibly slower, but still quite usable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

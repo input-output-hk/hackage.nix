@@ -21,7 +21,7 @@
       synopsis = "An SQL-generating DSL targeting PostgreSQL";
       description = "An SQL-generating DSL targeting PostgreSQL.  Allows\nPostgres queries to be written within Haskell in a\ntypesafe and composable fashion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."product-profunctors" or (errorHandler.buildDepError "product-profunctors"))
             (hsPkgs."opaleye" or (errorHandler.buildDepError "opaleye"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tutorial" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."product-profunctors" or (errorHandler.buildDepError "product-profunctors"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."opaleye" or (errorHandler.buildDepError "opaleye"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

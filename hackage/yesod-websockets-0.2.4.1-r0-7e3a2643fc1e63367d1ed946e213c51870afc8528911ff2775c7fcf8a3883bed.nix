@@ -21,7 +21,7 @@
       synopsis = "WebSockets support for Yesod";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-websockets>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

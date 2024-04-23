@@ -21,7 +21,7 @@
       synopsis = "A simple SMTP client library";
       description = "A simple SMTP client library for applications that want to send emails.\n\nv1.1.0: IPv6 supported properly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

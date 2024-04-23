@@ -21,7 +21,7 @@
       synopsis = "TH splices to augment log messages with file info";
       description = "TH splices to augment log messages with file info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "log-file" = {
           depends = [
@@ -39,18 +39,18 @@
             (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-file" or (errorHandler.buildDepError "logging-effect-extra-file"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "log-file-and-severity" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
             (hsPkgs."logging-effect-extra-file" or (errorHandler.buildDepError "logging-effect-extra-file"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

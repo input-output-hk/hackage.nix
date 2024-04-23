@@ -21,7 +21,7 @@
       synopsis = "Backend for the persistent library using postgresql.";
       description = "Based on the HDBC-postgresql package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
           (hsPkgs."neither" or (errorHandler.buildDepError "neither"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

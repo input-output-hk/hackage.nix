@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/NorfairKing/mergeful#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
           (hsPkgs."genvalidity-time" or (errorHandler.buildDepError "genvalidity-time"))
           (hsPkgs."mergeful" or (errorHandler.buildDepError "mergeful"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mergeful-test" = {
           depends = [
@@ -55,13 +55,13 @@
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "mergeful-bench" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
             (hsPkgs."genvalidity-mergeful" or (errorHandler.buildDepError "genvalidity-mergeful"))
             (hsPkgs."mergeful" or (errorHandler.buildDepError "mergeful"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

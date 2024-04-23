@@ -21,14 +21,14 @@
       synopsis = "First class pattern matching";
       description = "First class pattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

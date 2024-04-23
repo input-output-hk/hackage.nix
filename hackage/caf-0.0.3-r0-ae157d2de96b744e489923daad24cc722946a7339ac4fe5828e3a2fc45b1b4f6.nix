@@ -21,11 +21,11 @@
       synopsis = "A library of Concurrency Abstractions using Futures.";
       description = "This library contains implementations of several kinds of futures and concurrency abstractions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

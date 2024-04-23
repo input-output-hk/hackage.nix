@@ -6,8 +6,8 @@
         nix = import ../hackage/spritz-0.1.0.0-r0-322255eb53427259e1e21da240a53a728263167e1ba199938d06a3f5dec5e95f.nix;
         revNum = 0;
         sha256 = "322255eb53427259e1e21da240a53a728263167e1ba199938d06a3f5dec5e95f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

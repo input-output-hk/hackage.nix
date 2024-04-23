@@ -21,7 +21,7 @@
       synopsis = "A reliable at-least-once periodic job scheduler backed by redis.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
             (hsPkgs."periodic" or (errorHandler.buildDepError "periodic"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "periodic-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

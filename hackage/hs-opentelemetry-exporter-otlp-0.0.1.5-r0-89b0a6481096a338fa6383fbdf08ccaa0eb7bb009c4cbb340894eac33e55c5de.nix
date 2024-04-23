@@ -14,7 +14,7 @@
       identifier = {
         name = "hs-opentelemetry-exporter-otlp";
         version = "0.0.1.5";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2021 Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -24,7 +24,7 @@
       synopsis = "OpenTelemetry exporter supporting the standard OTLP protocol";
       description = "Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry/tree/main/exporters/otlp#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-opentelemetry-exporter-otlp-test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

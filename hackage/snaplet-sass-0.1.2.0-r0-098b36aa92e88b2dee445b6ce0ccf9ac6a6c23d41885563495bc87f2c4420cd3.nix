@@ -21,7 +21,7 @@
       synopsis = "Sass integration for Snap with request- and pre-compilation.";
       description = "Sass integration for Snap with request based compilation during development and precompilation in production.\nFor more information, please see <https://github.com/lukerandall/snaplet-sass>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

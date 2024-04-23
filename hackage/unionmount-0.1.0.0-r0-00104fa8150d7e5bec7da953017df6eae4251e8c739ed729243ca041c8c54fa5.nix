@@ -21,7 +21,7 @@
       synopsis = "Union mount filesystem paths into Haskell datastructures";
       description = "Union mount filesystem paths into Haskell datastructures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

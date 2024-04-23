@@ -21,7 +21,7 @@
       synopsis = "Takes a Haskell source-code file and outputs its modules.";
       description = "Uses @haskell-src-exts@ to parse module imports and follows links\n. to local modules in order to build a list of module dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "file-modules" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

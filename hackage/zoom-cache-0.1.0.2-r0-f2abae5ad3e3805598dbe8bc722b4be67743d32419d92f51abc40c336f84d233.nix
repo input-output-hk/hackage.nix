@@ -21,7 +21,7 @@
       synopsis = "A streamable, seekable, zoomable cache file format";
       description = "This library provides a monadic writing and iteratee reading\ninterface for zoom-cache files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -36,9 +36,9 @@
             (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."ui-command" or (errorHandler.buildDepError "ui-command"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

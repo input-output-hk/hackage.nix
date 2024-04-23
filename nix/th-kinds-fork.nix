@@ -6,8 +6,8 @@
         nix = import ../hackage/th-kinds-fork-0.2-r0-707cbb46473636d566c0865a31da0d76ad0a3da56f248e7664c1ebf560f189f3.nix;
         revNum = 0;
         sha256 = "707cbb46473636d566c0865a31da0d76ad0a3da56f248e7664c1ebf560f189f3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "io-streams support for the cereal binary serialization library";
       description = "io-streams support for the cereal binary serialization library\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."cereal-conduit" or (errorHandler.buildDepError "cereal-conduit"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

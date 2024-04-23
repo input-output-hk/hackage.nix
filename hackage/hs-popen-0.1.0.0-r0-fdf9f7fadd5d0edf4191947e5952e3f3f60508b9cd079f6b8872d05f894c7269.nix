@@ -21,20 +21,20 @@
       synopsis = "Bindings to C pipe functions.";
       description = "Please see README.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "ls-example-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-popen" or (errorHandler.buildDepError "hs-popen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

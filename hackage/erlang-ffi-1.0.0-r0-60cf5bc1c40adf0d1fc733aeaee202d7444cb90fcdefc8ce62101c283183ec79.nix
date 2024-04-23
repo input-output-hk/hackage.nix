@@ -21,7 +21,7 @@
       synopsis = "Send messages to an Erlang node using Haskell";
       description = "Please see the README on GitHub at <https://github.com/Szetty/erlang-ffi#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "erlang-ffi-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

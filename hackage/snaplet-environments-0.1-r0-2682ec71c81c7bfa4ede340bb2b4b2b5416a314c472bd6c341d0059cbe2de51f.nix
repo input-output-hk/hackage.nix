@@ -21,7 +21,7 @@
       synopsis = "Provides ability to easly read configuration based on given app environment given at command line, envs are defined in app configuration file";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

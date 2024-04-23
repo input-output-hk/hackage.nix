@@ -21,11 +21,11 @@
       synopsis = "Control.Concurrent.Chan split into sending and receiving halves.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lens instances for the stricter CPS WriterT and RWST";
       description = "Control.Lens Strict, Wrapped, Magnify and Zoomed instances for the stricter WriterT and RWST from writer-cps-transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."writer-cps-mtl" or (errorHandler.buildDepError "writer-cps-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

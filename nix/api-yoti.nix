@@ -6,8 +6,8 @@
         nix = import ../hackage/api-yoti-0.1.0.0-r0-7e2ada3444da9cc682d3c56331c2e39f77e20a445407c4fede4aa8ed18ac6f11.nix;
         revNum = 0;
         sha256 = "7e2ada3444da9cc682d3c56331c2e39f77e20a445407c4fede4aa8ed18ac6f11";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

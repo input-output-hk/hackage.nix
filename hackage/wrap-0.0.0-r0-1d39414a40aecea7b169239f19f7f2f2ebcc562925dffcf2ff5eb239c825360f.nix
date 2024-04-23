@@ -21,11 +21,11 @@
       synopsis = "Wrap a function's return value with another function";
       description = "Wrap a function's return value with another function";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

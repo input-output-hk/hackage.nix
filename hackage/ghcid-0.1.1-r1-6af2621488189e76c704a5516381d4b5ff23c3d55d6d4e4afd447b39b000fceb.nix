@@ -21,7 +21,7 @@
       synopsis = "GHCi based bare bones IDE";
       description = "Either \"GHCi as a daemon\" or \"GHC + a bit of an IDE\". A very simple Haskell development tool which shows you the errors in your project and updates them whenever you save. Run @ghcid --height=10 --command=ghci@, where @--height@ is the height of the console you will use, and @--command@ is the command to start GHCi on your project.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghcid" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

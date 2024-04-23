@@ -14,7 +14,7 @@
       identifier = {
         name = "postgresql-simple-interpolate";
         version = "0.1.1.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "©2019 Elliot Cameron";
       maintainer = "eacameron@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Interpolated SQL queries via quasiquotation";
       description = "Interpolated SQL queries via quasiquotation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

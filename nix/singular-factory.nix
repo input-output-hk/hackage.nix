@@ -6,8 +6,8 @@
         nix = import ../hackage/singular-factory-0.1-r0-df710def9a3bb48693d37d3cbc61abe5bca8552f33b687944e63231e1aac18f2.nix;
         revNum = 0;
         sha256 = "df710def9a3bb48693d37d3cbc61abe5bca8552f33b687944e63231e1aac18f2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

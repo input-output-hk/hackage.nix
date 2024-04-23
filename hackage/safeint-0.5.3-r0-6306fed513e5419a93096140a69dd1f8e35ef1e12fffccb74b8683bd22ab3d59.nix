@@ -21,15 +21,15 @@
       synopsis = "overflow-checked Int type";
       description = "Defines a variant of Haskell's Int type that is overflow-checked. If\nan overflow or arithmetic error occurs, a run-time exception is thrown.\n\nCurrently still in an experimental stage. Everything can change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestSafeInt" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."safeint" or (errorHandler.buildDepError "safeint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

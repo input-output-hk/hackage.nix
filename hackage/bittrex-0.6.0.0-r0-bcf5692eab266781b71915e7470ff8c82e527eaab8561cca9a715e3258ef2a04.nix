@@ -21,7 +21,7 @@
       synopsis = "Bindings for the Bittrex API";
       description = "Haskell bindings to the Bittrex exchange";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."flow" or (errorHandler.buildDepError "flow"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

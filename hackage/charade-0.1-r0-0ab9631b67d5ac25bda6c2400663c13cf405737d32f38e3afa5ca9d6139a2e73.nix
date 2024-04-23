@@ -21,16 +21,16 @@
       synopsis = "Rapid prototyping websites with Snap and Heist";
       description = "Charade is a tool for rapid website prototyping using Heist and Snap.\nCharade-generated sites can easily be dropped into Snap applications\nand work out of the box with no modification.\n\nThe main thing provided by this package is the charade executable that\nserves your prototype sites.  The library provided contains a Heist splice\nthat you use to make all evidence of charade disappear in your production\napp.\n\nFor more information, see the @README@: <https://github.com/soostone/charade/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."heist" or (errorHandler.buildDepError "heist"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "charade" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

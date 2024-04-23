@@ -21,7 +21,7 @@
       synopsis = "A static site generator with blogging/comments support";
       description = "Haggis is a static site generator with support for blogging.\nHaggis has very few restrictions on how you manage your content,\nand supports any markup format that pandoc does.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haggis" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haggis" or (errorHandler.buildDepError "haggis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

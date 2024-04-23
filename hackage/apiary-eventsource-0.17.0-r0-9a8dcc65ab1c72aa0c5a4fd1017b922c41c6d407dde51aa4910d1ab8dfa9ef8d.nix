@@ -21,22 +21,22 @@
       synopsis = "eventsource support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/eventsource.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."apiary" or (errorHandler.buildDepError "apiary"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ] ++ (if flags.wai2apiary
+        ] ++ (if flags.wai2apiary
           then [
             (hsPkgs."wai-eventsource" or (errorHandler.buildDepError "wai-eventsource"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ]
+          ]
           else [
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

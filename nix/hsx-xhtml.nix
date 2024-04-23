@@ -6,8 +6,8 @@
         nix = import ../hackage/hsx-xhtml-0.4.4-r0-1b4c128cb8b1b5eecbec8642580d8c27d83385897f699fb5efe379406d476e7c.nix;
         revNum = 0;
         sha256 = "1b4c128cb8b1b5eecbec8642580d8c27d83385897f699fb5efe379406d476e7c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Fast unicode character sets based on complemented PATRICIA tries";
       description = "Fast unicode character sets based on complemented PATRICIA tries";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

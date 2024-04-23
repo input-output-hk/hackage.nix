@@ -21,7 +21,7 @@
       synopsis = "Converts between the Friday and JuicyPixels image types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."friday" or (errorHandler.buildDepError "friday"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."friday-juicypixels" or (errorHandler.buildDepError "friday-juicypixels"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

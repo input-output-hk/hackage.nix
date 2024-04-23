@@ -21,7 +21,7 @@
       synopsis = "Monadic Getters and Folds";
       description = "This package contains combinators and types for working with\nmonadic getters and folds as split off from the original\nlens package.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
         };
       };
-    }
+    };
+  }

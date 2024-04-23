@@ -6,8 +6,8 @@
         nix = import ../hackage/firebase-database-0.0.1-r0-2089089a265239200ca520d374539e87d7cc56c7cf43426f326ec7ef446bf2f7.nix;
         revNum = 0;
         sha256 = "2089089a265239200ca520d374539e87d7cc56c7cf43426f326ec7ef446bf2f7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

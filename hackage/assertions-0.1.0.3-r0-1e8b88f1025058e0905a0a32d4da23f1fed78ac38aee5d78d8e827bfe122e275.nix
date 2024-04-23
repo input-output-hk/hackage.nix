@@ -21,16 +21,16 @@
       synopsis = "A simple testing framework.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "assert-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."assertions" or (errorHandler.buildDepError "assertions"))
             (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

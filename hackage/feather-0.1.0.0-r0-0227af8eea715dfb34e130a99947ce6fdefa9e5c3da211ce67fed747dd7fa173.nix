@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A minimalistic and performant events dispatcher.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "feather-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."feather" or (errorHandler.buildDepError "feather"))
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

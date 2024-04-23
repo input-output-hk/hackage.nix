@@ -21,16 +21,16 @@
       synopsis = "nonempty structure";
       description = "nonempty structure, parameterised by another structure";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "laws" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-classes" or (errorHandler.buildDepError "hedgehog-classes"))
             (hsPkgs."nonempty-lift" or (errorHandler.buildDepError "nonempty-lift"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

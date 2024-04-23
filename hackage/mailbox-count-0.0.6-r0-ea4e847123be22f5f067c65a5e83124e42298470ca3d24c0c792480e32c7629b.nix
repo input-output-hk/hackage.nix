@@ -21,7 +21,7 @@
       synopsis = "Count mailboxes in a SQL database.";
       description = "/Usage/:\n\n@\nmailbox-count [OPTIONS]\n@\n\nMailbox-count produces a simple count of mailboxes that exist\nper-domain in some SQL database. The default queries are compatible\nwith the schema used by PostfixAdmin <http://postfixadmin.sourceforge.net/>,\nbut it is possible to supply your own queries via the @--summary-query@\nand @--detail-query@ options.\n\nThe summary report lists each domain, along with the number of\nmailboxes owned by that domain. The order is determined by the summary\nquery, which lists the domains alphabetically by default.\n\nThe default detail report shows the same, but also contains a list of\neach individual mailbox (again in alphabetical order) belonging to the\ndomains.\n\n/Input/:\n\nNone.\n\n/Output/:\n\nEither a summary, or detailed report (with @--detail@) of the\nnumber of mailboxes per-domain contained in the database.\n\n/Options/:\n\n* \\--database\n\n    The name of the database (or file, if SQLite) to which we should\n    connect.\n\n    Default: The name of the current user (Postgres only).\n\n* \\--detail\n\n    Produce a detailed report listing all mailboxes by domain.\n\n* \\--detail-query\n\n    SQL query used to produce the detail report. This should return the\n    set of all (domain, username) pairs. See the default value for an\n    example.\n\n    Default: \\\"SELECT domain,username FROM mailbox ORDER BY domain;\\\"\n\n* \\--host\n\n    Hostname where the database is located (Postgres-only).\n\n    Default: None, a UNIX domain socket connection is attempted\n    (Postgres only)\n\n* \\--password\n\n    Password used to connect to the database (Postgres-only).\n\n    Default: None (assumes passwordless authentication)\n\n* \\--port\n\n    Port number used to connect to the database (Postgres-only).\n\n    Default: None, a UNIX domain socket connection is attempted\n    (Postgres only)\n\n* \\--summary-query\n\n    SQL query used to produce the summary report. This should return\n    (domain, user count) pairs. See the default value for an\n    example.\n\n    Default: \\\"SELECT domain,COUNT(username) FROM mailbox GROUP BY domain\n    ORDER BY domain;\\\"\n\n* \\--username\n\n    Username used to connect to the database (Postgres-only).\n\n    Default: The current user\n\n/Examples/:\n\nThe default summary report:\n\n@\n$ mailbox-count --database=postfixadmin.sqlite3\nSummary (number of mailboxes per domain)\n\\----------------------------------------\nexample.com:     3\nexample.invalid: 1\nexample.net:     2\nexample.org:     1\n@\n\nThe more detailed report:\n\n@\n$ mailbox-count --detail --database=postfixadmin.sqlite3\nDetail (list of all mailboxes by domain)\n\\----------------------------------------\nexample.com (3):\n&#x20; user1\n&#x20; user3\n&#x20; user5\n\nexample.invalid (1):\n&#x20; user7\n\nexample.net (2):\n&#x20; user2\n&#x20; user4\n\nexample.org (1):\n&#x20; user6\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mailbox-count" = {
@@ -38,10 +38,10 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -56,17 +56,17 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lenses for riak-protobuf";
       description = "A set of Haskell lenses for interacting with the protocol buffer\nAPI of the Riak decentralized data store.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."riak-protobuf" or (errorHandler.buildDepError "riak-protobuf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "generate" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."riak-protobuf" or (errorHandler.buildDepError "riak-protobuf"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A binding to the Xfixes X11 extension library";
       description = "A Haskell binding to the Xfixes X11 extention graphics library.\n\nThe binding is a direct translation of the C binding; for\ndocumentation of these calls, refer to man xfixes(3)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-          ];
+        ];
         libs = [ (pkgs."Xfixes" or (errorHandler.sysDepError "Xfixes")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

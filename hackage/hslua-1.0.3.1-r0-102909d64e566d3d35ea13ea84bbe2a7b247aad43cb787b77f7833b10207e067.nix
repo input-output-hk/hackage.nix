@@ -15,7 +15,7 @@
       allow-unsafe-gc = true;
       export-dynamic = true;
       pkg-config = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "hslua"; version = "1.0.3.1"; };
@@ -28,7 +28,7 @@
       synopsis = "Bindings to Lua, an embeddable scripting language";
       description = "HsLua provides bindings, wrappers, types, and helper\nfunctions to bridge Haskell and <https://www.lua.org/ Lua>.\n\nThis package contains a full Lua interpreter version 5.3.5.\nIf you want to link it with a system-wide Lua installation,\nuse the @system-lua@ flag.\n\n<https://github.com/hslua/hslua-examples Example programs>\nare available in a separate repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,11 +39,11 @@
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
-        libs = (pkgs.lib).optionals (flags.system-lua || flags.pkg-config) ((pkgs.lib).optional (!flags.pkg-config) (pkgs."lua" or (errorHandler.sysDepError "lua")));
-        pkgconfig = (pkgs.lib).optionals (flags.system-lua || flags.pkg-config) ((pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."lua5.3" or (errorHandler.pkgConfDepError "lua5.3")));
+        ];
+        libs = pkgs.lib.optionals (flags.system-lua || flags.pkg-config) (pkgs.lib.optional (!flags.pkg-config) (pkgs."lua" or (errorHandler.sysDepError "lua")));
+        pkgconfig = pkgs.lib.optionals (flags.system-lua || flags.pkg-config) (pkgs.lib.optional (flags.pkg-config) (pkgconfPkgs."lua5.3" or (errorHandler.pkgConfDepError "lua5.3")));
         buildable = true;
-        };
+      };
       tests = {
         "test-hslua" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-hslua" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

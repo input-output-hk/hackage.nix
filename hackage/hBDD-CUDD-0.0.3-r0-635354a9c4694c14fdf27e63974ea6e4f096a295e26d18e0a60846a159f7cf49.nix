@@ -21,7 +21,7 @@
       synopsis = "An FFI binding to the CUDD library";
       description = "hBDD provides a high-level API to some Boolean Decision Diagram\nlibraries; this is the CUDD part of it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hBDD" or (errorHandler.buildDepError "hBDD"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
-        libs = (pkgs.lib).optional (system.isOsx) (pkgs."cudd" or (errorHandler.sysDepError "cudd")) ++ (pkgs.lib).optionals (system.isLinux) [
+        ];
+        libs = pkgs.lib.optional (system.isOsx) (pkgs."cudd" or (errorHandler.sysDepError "cudd")) ++ pkgs.lib.optionals (system.isLinux) [
           (pkgs."cudd" or (errorHandler.sysDepError "cudd"))
           (pkgs."mtr" or (errorHandler.sysDepError "mtr"))
           (pkgs."st" or (errorHandler.sysDepError "st"))
           (pkgs."util" or (errorHandler.sysDepError "util"))
           (pkgs."epd" or (errorHandler.sysDepError "epd"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Socket effect for polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

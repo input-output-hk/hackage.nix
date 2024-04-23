@@ -6,8 +6,8 @@
         nix = import ../hackage/Parallel-Arrows-BaseSpec-0.1.1.0-r0-e482795c0ed2fbb0d4df06e2b67dd38b3f5acd60e857fa462ac156b96ec48f37.nix;
         revNum = 0;
         sha256 = "e482795c0ed2fbb0d4df06e2b67dd38b3f5acd60e857fa462ac156b96ec48f37";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

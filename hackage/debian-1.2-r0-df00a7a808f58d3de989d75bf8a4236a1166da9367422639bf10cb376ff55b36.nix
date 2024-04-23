@@ -21,7 +21,7 @@
       synopsis = "A set of modules for working with debian control files and packages";
       description = "Modules for parsing debian control files, resolving\ndepedencies, comparing version numbers, and other useful stuff.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

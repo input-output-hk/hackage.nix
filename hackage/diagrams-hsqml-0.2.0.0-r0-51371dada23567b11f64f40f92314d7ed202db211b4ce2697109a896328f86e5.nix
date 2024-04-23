@@ -21,7 +21,7 @@
       synopsis = "HsQML (Qt5) backend for Diagrams";
       description = "`diagrams-hsqml` is a `diagrams` backend painting on a QtQuick Canvas.\n\nTo use the package, you only need the main module \"Diagrams.Backend.HsQML\"\n\nExample usage and QML scripts provided in \"Diagrams.Backend.HsQML.Tutorial\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

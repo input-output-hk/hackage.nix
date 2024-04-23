@@ -21,15 +21,15 @@
       synopsis = "A driver for the Factual API";
       description = "This is a driver for the Factual API. It provides a typesafe way to\ngenerate queries, an easy way to setup OAuth authentication and a\nsimple way to send queries to the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hoauth" or (errorHandler.buildDepError "hoauth"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Forward-compatible MonadFail class";
       description = "This package contains the \"Control.Monad.Fail\" module providing the\n<https://prime.haskell.org/wiki/Libraries/Proposals/MonadFail MonadFail>\nclass that became available in\n<https://hackage.haskell.org/package/base-4.9.0.0 base-4.9.0.0>\nfor older @base@ package versions.\n\nThis package turns into an empty package when used with GHC versions\nwhich already provide the \"Control.Monad.Fail\" module to make way for\nGHC's own \"Control.Monad.Fail\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        depends = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

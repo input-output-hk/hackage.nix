@@ -21,13 +21,13 @@
       synopsis = "LZMA/XZ compression and decompression (static)";
       description = "This package provides a pure interface for compressing and\ndecompressing\n<https://en.wikipedia.org/wiki/LZMA LZMA (Lempel–Ziv–Markov chain algorithm)>\nstreams of data represented as lazy @ByteString@s. A\nmonadic incremental interface is provided as well. This package\nrelies on the <http://tukaani.org/xz/ liblzma C library>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optionals (!system.isLinux) ((pkgs.lib).optional (!system.isFreebsd) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable")))));
+        ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optional (!system.isFreebsd) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable")))));
         buildable = if system.isWindows
           then true
           else if system.isOsx
@@ -35,7 +35,7 @@
             else if system.isLinux
               then true
               else if system.isFreebsd then true else false;
-        };
+      };
       tests = {
         "lzma-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hyperion-0.1.0.0-r0-4c99ca22024ce6254982c44cdfd702b616deb81d398652e5ffdd7fbad1edc1a7.nix;
         revNum = 0;
         sha256 = "4c99ca22024ce6254982c44cdfd702b616deb81d398652e5ffdd7fbad1edc1a7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

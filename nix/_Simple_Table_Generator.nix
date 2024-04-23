@@ -6,8 +6,8 @@
         nix = import ../hackage/SimpleTableGenerator-0.2.0.0-r0-466e8c2507ebf4bbc1869986930f972ed4f4ba2d658861e92d869213a43bd41f.nix;
         revNum = 0;
         sha256 = "466e8c2507ebf4bbc1869986930f972ed4f4ba2d658861e92d869213a43bd41f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

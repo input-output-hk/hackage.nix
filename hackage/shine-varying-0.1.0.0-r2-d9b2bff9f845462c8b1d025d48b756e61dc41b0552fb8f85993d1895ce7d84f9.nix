@@ -21,7 +21,7 @@
       synopsis = "FRP interface for shine using the varying package";
       description = "This package exports a function that lets you control shine's\nfunctionality through a `Var` that maps from inputs to a `Picture`\nplus a bunch of utility `Var`s, like the current time and the\nkeypresses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."shine" or (errorHandler.buildDepError "shine"))
           (hsPkgs."varying" or (errorHandler.buildDepError "varying"))
           (hsPkgs."keycode" or (errorHandler.buildDepError "keycode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-shine-varying-misc" = {
           depends = [
@@ -42,18 +42,18 @@
             (hsPkgs."shine-varying" or (errorHandler.buildDepError "shine-varying"))
             (hsPkgs."varying" or (errorHandler.buildDepError "varying"))
             (hsPkgs."keycode" or (errorHandler.buildDepError "keycode"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-shine-varying-resize" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."shine" or (errorHandler.buildDepError "shine"))
             (hsPkgs."shine-varying" or (errorHandler.buildDepError "shine-varying"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

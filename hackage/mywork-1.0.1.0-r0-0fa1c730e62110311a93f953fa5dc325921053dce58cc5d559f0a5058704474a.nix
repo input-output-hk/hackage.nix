@@ -21,7 +21,7 @@
       synopsis = "Tool to keep track of what you have been working on and where.";
       description = "The mywork tool is a TUI tool that maintains a list of projects, the various\nlocations for those projects, and notes associated with each location.  This\nis designed to help keep track of what you have been working on, the\nrelationships of the various locations for a project, and to maintain context\nfor that work (assisting a future resumption of work) via the notes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mywork" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."mywork" or (errorHandler.buildDepError "mywork"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

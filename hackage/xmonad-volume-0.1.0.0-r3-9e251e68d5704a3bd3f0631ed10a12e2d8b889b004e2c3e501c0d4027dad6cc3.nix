@@ -21,7 +21,7 @@
       synopsis = "XMonad volume controls";
       description = "XMonad volume controls using ALSA";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

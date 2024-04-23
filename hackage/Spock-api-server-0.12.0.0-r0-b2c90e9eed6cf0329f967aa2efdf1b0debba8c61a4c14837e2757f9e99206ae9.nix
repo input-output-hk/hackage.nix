@@ -21,7 +21,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "Server wiring for Spock-api APIs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."Spock-api" or (errorHandler.buildDepError "Spock-api"))
           (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Making fmt available with rio";
       description = "Please see the README on GitHub at <https://github.com/cdornan/enum-text-rio#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo-enum-text-rio" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

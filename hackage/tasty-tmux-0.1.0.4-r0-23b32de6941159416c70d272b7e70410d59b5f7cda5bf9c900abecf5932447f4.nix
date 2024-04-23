@@ -21,7 +21,7 @@
       synopsis = "Terminal user acceptance testing (UAT) via tmux";
       description = "Library for user acceptance testing (UAT) using tmux as the\nvehicle for running programs and interacting with them.\n\nSee \"Test.Tasty.Tmux\" for usage examples and API documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

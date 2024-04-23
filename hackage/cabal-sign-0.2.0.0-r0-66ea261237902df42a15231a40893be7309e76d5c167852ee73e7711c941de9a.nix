@@ -21,7 +21,7 @@
       synopsis = "Sign and verify Cabal packages.";
       description = "Sign and verify Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-sign" = {
@@ -36,9 +36,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

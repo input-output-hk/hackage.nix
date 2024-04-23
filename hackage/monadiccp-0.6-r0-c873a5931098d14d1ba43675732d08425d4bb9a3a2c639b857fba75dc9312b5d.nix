@@ -21,7 +21,7 @@
       synopsis = "Constraint Programming";
       description = "Monadic Constraint Programming framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,15 +30,15 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
-        libs = (pkgs.lib).optionals (flags.runtimegecode) [
+        ];
+        libs = pkgs.lib.optionals (flags.runtimegecode) [
           (pkgs."gecodesupport" or (errorHandler.sysDepError "gecodesupport"))
           (pkgs."gecodeset" or (errorHandler.sysDepError "gecodeset"))
           (pkgs."gecodeint" or (errorHandler.sysDepError "gecodeint"))
           (pkgs."gecodekernel" or (errorHandler.sysDepError "gecodekernel"))
           (pkgs."gecodesearch" or (errorHandler.sysDepError "gecodesearch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

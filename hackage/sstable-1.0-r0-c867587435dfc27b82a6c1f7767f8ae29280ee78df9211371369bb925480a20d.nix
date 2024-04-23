@@ -21,7 +21,7 @@
       synopsis = "SSTables in Haskell";
       description = "\nThis library implements SSTables as described in the Bigtable\npaper: <http://labs.google.com/papers/bigtable.html>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,24 +33,24 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sstable" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "testSSTable" = {
-          depends = (pkgs.lib).optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

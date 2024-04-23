@@ -21,7 +21,7 @@
       synopsis = "A search and indexing engine.";
       description = "The Hunt-Searchengine library provides a toolkit to\ncreate fast and flexible searchengines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Hunt-Tests" = {
           depends = [
@@ -73,11 +73,11 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."data-r-tree" or (errorHandler.buildDepError "data-r-tree"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Hunt-Strictness" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-strict)) [
+          depends = pkgs.lib.optionals (!!flags.test-strict) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
@@ -97,9 +97,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = if !flags.test-strict then false else true;
-          };
         };
       };
-    }
+    };
+  }

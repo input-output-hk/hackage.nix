@@ -21,7 +21,7 @@
       synopsis = "Soft real-time simulation module for the Aivika library";
       description = "This package allows running soft real-time simulations based on the aivika-transformers [1] library.\n\n\\[1] <http://hackage.haskell.org/package/aivika-transformers>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (errorHandler.buildDepError "aivika-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

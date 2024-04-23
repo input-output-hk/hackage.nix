@@ -21,7 +21,7 @@
       synopsis = "Audio file reading/writing";
       description = "encode and decode soundfiles using Iteratees.\nAudio files may be read or written, with classes and\ndata structures to facilitate conversion between different\nformats.  Currently only wave format is supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word24" or (errorHandler.buildDepError "word24"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

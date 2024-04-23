@@ -21,7 +21,7 @@
       synopsis = "Morphosyntactic tagging tool based on constrained CRFs";
       description = "A morphosyntactic tagging tool based on constrained conditional\nrandom fields.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,16 +34,16 @@
           (hsPkgs."crf-chain1-constrained" or (errorHandler.buildDepError "crf-chain1-constrained"))
           (hsPkgs."monad-ox" or (errorHandler.buildDepError "monad-ox"))
           (hsPkgs."sgd" or (errorHandler.buildDepError "sgd"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "concraft-guess" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

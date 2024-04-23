@@ -21,11 +21,11 @@
       synopsis = "Pure heterogeneous maps.";
       description = "Pure heterogeneous maps.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

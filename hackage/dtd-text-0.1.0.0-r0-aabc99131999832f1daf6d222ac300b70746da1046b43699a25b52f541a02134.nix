@@ -21,7 +21,7 @@
       synopsis = "Parse and render XML DTDs";
       description = "This library provides an attoparse-text parser and blaze-builder for\nXML Document Type Declaration (DTD) documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."attoparsec-text" or (errorHandler.buildDepError "attoparsec-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

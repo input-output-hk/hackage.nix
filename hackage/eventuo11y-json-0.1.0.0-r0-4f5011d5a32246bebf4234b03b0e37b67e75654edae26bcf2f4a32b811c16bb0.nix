@@ -21,7 +21,7 @@
       synopsis = "aeson-based rendering for eventuo11y";
       description = "Render [eventuo11y](https://hackage.haskell.org/package/eventuo11y) 'Observe.Event.Event's\nto JSON.\n\nSee \"Observe.Event.Dynamic\" for 'Observe.Event.Event' selectors that don't require\ngenerating domain-specific types and renderers.\n\nSee \"Observe.Event.Render.JSON\" for renderer types.\n\nSee \"Observe.Event.Render.JSON.DSL.Compile\" to compile the \"Observe.Event.DSL\" DSL\nin a way that generates \"Observe.Event.Render.JSON\" renderers.\n\nSee \"Observe.Event.Render.JSON.Handle\" for rendering 'Observe.Event.Event's as\nJSON to a 'System.IO.Handle', and in particular to 'System.IO.stderr'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

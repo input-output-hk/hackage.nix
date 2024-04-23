@@ -21,7 +21,7 @@
       synopsis = "Interface to Google Safe Browsing API";
       description = "This package implements support for Google Safe Browsing API, that provides\nalmost real-time information about malware & other malicious sites on the Web";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

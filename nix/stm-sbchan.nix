@@ -6,8 +6,8 @@
         nix = import ../hackage/stm-sbchan-0.1-r0-bc5c68618e62712b382fa1e5ef33eeaf4d64752b0dc7ab98e5985ea754c74c6a.nix;
         revNum = 0;
         sha256 = "bc5c68618e62712b382fa1e5ef33eeaf4d64752b0dc7ab98e5985ea754c74c6a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

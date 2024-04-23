@@ -21,11 +21,11 @@
       synopsis = "Strict data types";
       description = "This package provides strict versions of some standard Haskell data\ntypes (pairs, Maybe and Either at the moment).";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Preprocess+parse haskell code";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

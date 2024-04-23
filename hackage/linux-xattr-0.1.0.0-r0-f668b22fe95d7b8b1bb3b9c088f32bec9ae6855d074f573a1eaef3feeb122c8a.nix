@@ -21,14 +21,14 @@
       synopsis = "Read, set and list extended attributes";
       description = "XAttr provides bindings to the glibc functions for reading and\nmanipulating extended attributes (@setxattr@, @getxattr@,\n@listxattr@, ...).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

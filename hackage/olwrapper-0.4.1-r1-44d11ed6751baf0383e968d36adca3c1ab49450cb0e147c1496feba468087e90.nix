@@ -21,7 +21,7 @@
       synopsis = "An OpenLayers JavaScript Wrapper and Webframework with snaplet-fay";
       description = "Haskell OpenLayers Wrapper\n\n* the project has development status\n\n* the library is also the tutorial\n\n* for a full documentation please read my diploma thesis (german)\n\n* http://permalink.obvsg.at/AC12315460\n\n* http://www.edelapps.com/olwrapper/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."snaplet-fay" or (errorHandler.buildDepError "snaplet-fay"))
           (hsPkgs."snap-loader-static" or (errorHandler.buildDepError "snap-loader-static"))
           (hsPkgs."snap-loader-dynamic" or (errorHandler.buildDepError "snap-loader-dynamic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "olwrapper" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."snaplet-fay" or (errorHandler.buildDepError "snaplet-fay"))
             (hsPkgs."snap-loader-static" or (errorHandler.buildDepError "snap-loader-static"))
-            ] ++ (pkgs.lib).optional (flags.development) (hsPkgs."snap-loader-dynamic" or (errorHandler.buildDepError "snap-loader-dynamic"));
+          ] ++ pkgs.lib.optional (flags.development) (hsPkgs."snap-loader-dynamic" or (errorHandler.buildDepError "snap-loader-dynamic"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

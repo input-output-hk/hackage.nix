@@ -21,7 +21,7 @@
       synopsis = "Haskell interface to the Fedora Packages webapp API.";
       description = "Provides access to the (<https://apps.fedoraproject.org/packages/ Fedora Packages>) API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hunit" = {
           depends = [
@@ -50,16 +50,16 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

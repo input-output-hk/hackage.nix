@@ -21,7 +21,7 @@
       synopsis = "A declarative abstraction over PostgreSQL Cursor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."hasql-cursor-transaction" or (errorHandler.buildDepError "hasql-cursor-transaction"))
           (hsPkgs."hasql-transaction" or (errorHandler.buildDepError "hasql-transaction"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

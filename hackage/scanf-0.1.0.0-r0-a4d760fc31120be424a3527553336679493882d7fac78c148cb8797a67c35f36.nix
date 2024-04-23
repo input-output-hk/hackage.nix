@@ -21,23 +21,23 @@
       synopsis = "Easy and type-safe format strings for parsing and printing";
       description = "A lightweight library for one-off parsing and printing.\n\nSee README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example-test" = {
           depends = [
             (hsPkgs."scanf" or (errorHandler.buildDepError "scanf"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

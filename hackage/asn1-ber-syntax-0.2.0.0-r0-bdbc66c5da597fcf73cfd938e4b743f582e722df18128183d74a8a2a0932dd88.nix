@@ -21,7 +21,7 @@
       synopsis = "ASN.1 BER Encode and Decode";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."bytebuild" or (errorHandler.buildDepError "bytebuild"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "asn1-ber-syntax-golden" = {
           depends = [
             (hsPkgs."asn1-ber-syntax" or (errorHandler.buildDepError "asn1-ber-syntax"))
@@ -64,9 +64,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-properties" = {
           depends = [
             (hsPkgs."asn1-ber-syntax" or (errorHandler.buildDepError "asn1-ber-syntax"))
@@ -77,9 +77,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

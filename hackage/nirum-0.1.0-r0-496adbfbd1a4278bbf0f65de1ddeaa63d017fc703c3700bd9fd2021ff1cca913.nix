@@ -21,7 +21,7 @@
       synopsis = "Distributed object framework built on top of\nREST HTTP and JSON";
       description = "Distributed object framework for microservices,\nbuilt on top of RESTful HTTP and JSON";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,25 +34,25 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."semver" or (errorHandler.buildDepError "semver"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nirum" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nirum" or (errorHandler.buildDepError "nirum"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "nirum-static" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nirum" or (errorHandler.buildDepError "nirum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -71,16 +71,16 @@
             (hsPkgs."semver" or (errorHandler.buildDepError "semver"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

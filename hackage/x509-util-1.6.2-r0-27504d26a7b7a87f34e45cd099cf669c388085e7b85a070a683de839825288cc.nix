@@ -21,7 +21,7 @@
       synopsis = "Utility for X509 certificate and chain";
       description = "utility to parse, show, validate, sign and produce X509 certificates and chain.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "x509-util" = {
@@ -38,9 +38,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

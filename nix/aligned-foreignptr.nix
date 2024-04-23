@@ -6,8 +6,8 @@
         nix = import ../hackage/aligned-foreignptr-0.1-r0-a0f45889116048796ecbb4fe428f1449c754c4f7352389277f53ab39a557d3d9.nix;
         revNum = 0;
         sha256 = "a0f45889116048796ecbb4fe428f1449c754c4f7352389277f53ab39a557d3d9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

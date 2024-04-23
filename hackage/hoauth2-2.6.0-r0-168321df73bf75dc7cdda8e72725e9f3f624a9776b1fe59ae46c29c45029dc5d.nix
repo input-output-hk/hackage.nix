@@ -21,7 +21,7 @@
       synopsis = "Haskell OAuth2 authentication client";
       description = "Haskell OAuth2 authentication client.\n\nTutorial <https://github.com/freizl/hoauth2/tree/main/hoauth2-tutorial/>\n\nDemo application <https://github.com/freizl/hoauth2-demo/tree/main/hoauth2-demo/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."uri-bytestring-aeson" or (errorHandler.buildDepError "uri-bytestring-aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

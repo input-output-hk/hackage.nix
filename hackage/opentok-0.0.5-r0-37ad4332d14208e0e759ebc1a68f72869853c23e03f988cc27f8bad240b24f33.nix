@@ -21,7 +21,7 @@
       synopsis = "An OpenTok SDK for Haskell";
       description = "\nSession creation, token generation, and archive management for the OpenTok platform.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
+        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

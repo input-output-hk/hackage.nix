@@ -21,7 +21,7 @@
       synopsis = "Curses-style terminal interface for the hledger accounting system";
       description = "A simple curses-style terminal user interface for the hledger accounting system.\nIt can be a more convenient way to browse your accounts than the CLI.\nThis package currently does not support Microsoft Windows, except in WSL.\n\nhledger is a robust, cross-platform set of tools for tracking money,\ntime, or any other commodity, using double-entry accounting and a\nsimple, editable file format, with command-line, terminal and web\ninterfaces. It is a Haskell rewrite of Ledger, and one of the leading\nimplementations of Plain Text Accounting. Read more at:\n<https://hledger.org>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-ui" = {
@@ -53,9 +53,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

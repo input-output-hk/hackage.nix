@@ -6,8 +6,8 @@
         nix = import ../hackage/posix-error-codes-0.1.0.0-r0-384a5650047a62cd8206053355cf8b66c2da130f3ed8a4977c476af7b98abf40.nix;
         revNum = 0;
         sha256 = "384a5650047a62cd8206053355cf8b66c2da130f3ed8a4977c476af7b98abf40";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

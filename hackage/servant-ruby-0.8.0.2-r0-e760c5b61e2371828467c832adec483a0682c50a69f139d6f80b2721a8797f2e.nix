@@ -21,7 +21,7 @@
       synopsis = "Generate a Ruby client from a Servant API with Net::HTTP.";
       description = "Generate a Ruby client from a Servant API with Net::HTTP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doc-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

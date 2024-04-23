@@ -21,7 +21,7 @@
       synopsis = "Toolset for the Haskell Game Programmer - Audio Functionality";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. This package provides the Audio functionality,\nbased on the package HGamer3D-SFML-Binding. HGamer3D-Audio\nis available on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-SFML-Binding" or (errorHandler.buildDepError "HGamer3D-SFML-Binding"))
           (hsPkgs."HGamer3D-Common" or (errorHandler.buildDepError "HGamer3D-Common"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."presburger" or (errorHandler.buildDepError "presburger"))
           (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-arith" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-typelits-presburger" or (errorHandler.buildDepError "ghc-typelits-presburger"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

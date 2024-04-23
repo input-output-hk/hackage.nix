@@ -21,7 +21,7 @@
       synopsis = "Update all your git repositories with just one command.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "update-repos" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "update-repos-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."update-repos" or (errorHandler.buildDepError "update-repos"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

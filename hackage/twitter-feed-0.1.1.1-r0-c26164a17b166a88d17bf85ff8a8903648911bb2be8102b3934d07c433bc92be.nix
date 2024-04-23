@@ -21,7 +21,7 @@
       synopsis = "Client for fetching Twitter timeline via Oauth";
       description = "Fetches a user timeline from Twitter, and optionally linkifies the results using the Twitter entity API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "twitter-library" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

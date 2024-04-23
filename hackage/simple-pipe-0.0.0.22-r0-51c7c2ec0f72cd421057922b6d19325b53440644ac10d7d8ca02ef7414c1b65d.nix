@@ -21,7 +21,7 @@
       synopsis = "simple pipeline library like conduit";
       description = "\nexamples/upperFile.hs\n\n* read file (sample.txt)\n\n* take 3 lines\n\n* to upper all lines\n\n* write to stdout\n\nextensions\n\n\n* PackageImports\n\n> import Data.Pipe\n> import Data.Char\n> import System.IO\n> import \"monads-tf\" Control.Monad.Trans\n>\n> main :: IO ()\n> main = do\n> \t_ <- runPipe $ readFileP \"sample.txt\"\n>\t\t=$= takeP 3\n>\t\t=$= convert (map toUpper)\n>\t\t=$= writeString\n> \treturn ()\n>\n> readFileP :: FilePath -> Pipe () String IO ()\n> readFileP fp = bracket (openFile fp ReadMode) hClose hRead\n>\n> hRead :: Handle -> Pipe () String IO ()\n> hRead h = do\n> \teof <- lift $ hIsEOF h\n> \tif eof then return () else do\n> \t\tl <- lift $ hGetLine h\n> \t\tyield l\n> \t\thRead h\n>\n> writeString :: Pipe String () IO ()\n> writeString = do\n> \tms <- await\n> \tcase ms of\n> \t\tJust s -> lift (putStrLn s) >> writeString\n> \t\t_ -> return ()\n>\n> takeP :: Monad m => Int -> Pipe a a m ()\n> takeP 0 = return ()\n> takeP n = do\n>\tmx <- await\n>\tcase mx of\n>\t\tJust x -> yield x >> takeP (n - 1)\n>\t\t_ -> return ()\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

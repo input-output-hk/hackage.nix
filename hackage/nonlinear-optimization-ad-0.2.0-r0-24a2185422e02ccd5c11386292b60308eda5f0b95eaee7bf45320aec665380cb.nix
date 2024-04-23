@@ -21,7 +21,7 @@
       synopsis = "Wrapper of nonlinear-optimization package for using with AD package";
       description = "Wrapper of nonlinear-optimization package for using with AD package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

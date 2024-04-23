@@ -21,14 +21,14 @@
       synopsis = "Monad classes, using type families";
       description = "Monad classes using type families, with instances for various\nmonad transformers, inspired by the paper /Functional Programming\nwith Overloading and Higher-Order Polymorphism/, by Mark P\nJones, in /Advanced School of Functional Programming/, 1995\n(<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>).\n\nThis package is almost a compatible replacement for the @mtl-tf@ package.\nClient packages will need to depend on this one and on @transformers@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

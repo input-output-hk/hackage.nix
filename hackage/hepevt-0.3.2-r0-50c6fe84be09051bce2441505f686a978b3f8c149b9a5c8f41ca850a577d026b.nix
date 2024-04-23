@@ -21,14 +21,14 @@
       synopsis = "HEPEVT parser and writer";
       description = "This package implements a parser and writer for the ASCII HEPEVT event log file format";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell2010" or (errorHandler.buildDepError "haskell2010"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

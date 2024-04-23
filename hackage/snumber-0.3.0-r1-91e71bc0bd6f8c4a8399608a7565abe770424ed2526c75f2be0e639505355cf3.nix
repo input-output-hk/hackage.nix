@@ -21,15 +21,15 @@
       synopsis = "Integer singletons with flexible representation";
       description = "This provides singletons-style witnesses for type-level integers, and some\nlimited arithmetic operations on them.  Instead of working with (invisible,\nimplicitly-passed) 'KnownNat' instances, you can work with (visible,\nexplicitly-mentioned) 'SNumber' values, and can freely convert between the\ntwo forms.\n\nThis primarily exists in support of\n<https://hackage.haskell.org/package/dependent-literals-plugin dependent-literals-plugin>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."numeric-kinds" or (errorHandler.buildDepError "numeric-kinds"))
           (hsPkgs."type-compare" or (errorHandler.buildDepError "type-compare"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

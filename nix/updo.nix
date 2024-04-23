@@ -6,8 +6,8 @@
         nix = import ../hackage/updo-1.0.0-r0-ec39c91aced2fc262a08b082b7f2a3bd4fae6745169b1417a1575ad11262f1f3.nix;
         revNum = 0;
         sha256 = "ec39c91aced2fc262a08b082b7f2a3bd4fae6745169b1417a1575ad11262f1f3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

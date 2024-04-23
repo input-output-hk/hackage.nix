@@ -21,7 +21,7 @@
       synopsis = "Make better services.";
       description = "Implements common patterns used in building services that run smoothly and efficiently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

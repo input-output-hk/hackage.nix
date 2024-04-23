@@ -21,16 +21,16 @@
       synopsis = "siphash: a fast short input PRF";
       description = "Haskell implementation of siphash. [http://131002.net/siphash/siphash.pdf]";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-siphash" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

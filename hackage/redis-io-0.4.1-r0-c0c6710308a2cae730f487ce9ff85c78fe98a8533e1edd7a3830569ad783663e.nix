@@ -21,7 +21,7 @@
       synopsis = "Yet another redis client.";
       description = "Yet another redis client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "redis-io-tests" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "redis-io-bench" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."redis-resp" or (errorHandler.buildDepError "redis-resp"))
             (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

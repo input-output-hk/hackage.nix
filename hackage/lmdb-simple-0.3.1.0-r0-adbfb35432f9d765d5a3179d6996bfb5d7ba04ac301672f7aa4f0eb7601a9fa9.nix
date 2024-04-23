@@ -21,7 +21,7 @@
       synopsis = "Simple API for LMDB";
       description = "This package provides a simple API for using the\nLightning Memory-mapped Database (LMDB).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,36 +29,36 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lmdb" or (errorHandler.buildDepError "lmdb"))
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lmdb-simple" or (errorHandler.buildDepError "lmdb-simple"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."lmdb-simple" or (errorHandler.buildDepError "lmdb-simple"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."lmdb-simple" or (errorHandler.buildDepError "lmdb-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

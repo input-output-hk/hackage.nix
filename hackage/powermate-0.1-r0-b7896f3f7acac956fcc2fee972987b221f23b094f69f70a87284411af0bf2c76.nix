@@ -21,7 +21,7 @@
       synopsis = "PowerMate bindings";
       description = "PowerMate bindings for Haskell,\nMPD bindings (barely) for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

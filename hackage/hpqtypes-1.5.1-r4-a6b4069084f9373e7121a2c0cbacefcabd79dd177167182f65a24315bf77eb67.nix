@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -47,13 +47,13 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
-          ];
+        ];
         libs = [ (pkgs."pq" or (errorHandler.sysDepError "pq")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
-            ];
+          ];
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

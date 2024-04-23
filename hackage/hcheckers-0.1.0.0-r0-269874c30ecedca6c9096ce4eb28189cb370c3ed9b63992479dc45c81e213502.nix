@@ -21,7 +21,7 @@
       synopsis = "Implementation of checkers (\"draughts\") board game - server application";
       description = "Please see the README on GitHub at <https://github.com/githubuser/hcheckers#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hcheckersd" = {
@@ -68,9 +68,9 @@
             (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

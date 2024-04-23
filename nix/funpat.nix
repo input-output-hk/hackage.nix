@@ -6,8 +6,8 @@
         nix = import ../hackage/funpat-0.1-r0-2100d64fd4f74d83a4436fa4e3a6b62b1affc0bf7728ad47d14e720c0de2446c.nix;
         revNum = 0;
         sha256 = "2100d64fd4f74d83a4436fa4e3a6b62b1affc0bf7728ad47d14e720c0de2446c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

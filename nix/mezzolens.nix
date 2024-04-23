@@ -6,8 +6,8 @@
         nix = import ../hackage/mezzolens-0.0.0-r0-da3a9df86229e3667c22e1c85a639a3aeb4034bb188831287531f9cd033bcb17.nix;
         revNum = 0;
         sha256 = "da3a9df86229e3667c22e1c85a639a3aeb4034bb188831287531f9cd033bcb17";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Conway's Game of Life";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "game-of-life" = {
@@ -31,19 +31,19 @@
             (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

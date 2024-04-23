@@ -21,15 +21,15 @@
       synopsis = "MonadPlus for StateT";
       description = "Implements MonadPlus with left catch (MonadOr) for StateT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Main" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."state-plus" or (errorHandler.buildDepError "state-plus"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

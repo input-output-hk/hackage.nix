@@ -21,7 +21,7 @@
       synopsis = "Bindings to Roku's External Control API";
       description = "Bindings to Roku's External Control API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."xml-extractors" or (errorHandler.buildDepError "xml-extractors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

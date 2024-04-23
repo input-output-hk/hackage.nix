@@ -21,7 +21,7 @@
       synopsis = "Custom xmonad, which builds with stack or cabal.";
       description = "Custom xmonad example, plus several bits of functionality for managing media within XMonad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xmonad" = {
           depends = [
@@ -43,17 +43,17 @@
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
             (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "getkb" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xmonad-vanessa" or (errorHandler.buildDepError "xmonad-vanessa"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "xmonad-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."xmonad-vanessa" or (errorHandler.buildDepError "xmonad-vanessa"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-chime-sdk-identity-2.0-r0-6225dfe73442ca0591a33dff9ea44328b98aa61ede8ff7316684d627cf970d82.nix;
         revNum = 0;
         sha256 = "6225dfe73442ca0591a33dff9ea44328b98aa61ede8ff7316684d627cf970d82";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

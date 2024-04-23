@@ -21,17 +21,17 @@
       synopsis = "Haskell code prettifier";
       description = "A Haskell code prettifier. For more information, see:\n\n<https://github.com/jaspervdj/stylish-haskell/blob/master/README.markdown>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stylish-haskell" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "stylish-haskell-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

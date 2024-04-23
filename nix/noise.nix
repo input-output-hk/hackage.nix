@@ -6,8 +6,8 @@
         nix = import ../hackage/noise-0.0.1-r0-7a788ced140b5dc3c96b2974344adf5fb604cc7fe5eb742d58be69ff5e413d2b.nix;
         revNum = 0;
         sha256 = "7a788ced140b5dc3c96b2974344adf5fb604cc7fe5eb742d58be69ff5e413d2b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

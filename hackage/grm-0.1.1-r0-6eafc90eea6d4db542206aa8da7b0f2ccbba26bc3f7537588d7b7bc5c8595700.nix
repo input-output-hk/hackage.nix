@@ -21,7 +21,7 @@
       synopsis = "grm grammar converter";
       description = "Grm takes a grammar specification and generates Haskell bindings.  Given a grammar the tool produces an abstract syntax implementation, a Happy parser generator file, and a pretty-printer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "grm" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

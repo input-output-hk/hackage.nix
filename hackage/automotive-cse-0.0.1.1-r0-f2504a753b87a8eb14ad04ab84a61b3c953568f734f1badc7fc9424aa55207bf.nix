@@ -21,7 +21,7 @@
       synopsis = "Automotive CSE emulation";
       description = "This package includes Cryptography Security Engine (CSE)\ncodec emulation for automotive things.\nPorting logics from <https://github.com/naohaq/CSE_KeyGen/tree/master/Erlang>.\nReference documents:\n<http://cache.freescale.com/files/32bit/doc/app_note/AN4234.pdf>\n<http://cache.freescale.com/files/microcontrollers/doc/app_note/AN5178.pdf>\n<http://www.st.com/web/en/resource/technical/document/application_note/DM00075575.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "exTrue" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."automotive-cse" or (errorHandler.buildDepError "automotive-cse"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

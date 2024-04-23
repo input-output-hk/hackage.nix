@@ -14,7 +14,7 @@
       identifier = {
         name = "bidirectionalization-combined";
         version = "0.1.0.1";
-        };
+      };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "kztk@kb.ecei.tohoku.ac.jp";
@@ -24,7 +24,7 @@
       synopsis = "Prototype Implementation of Combining Syntactic and Semantic Bidirectionalization (ICFP'10)";
       description = "This is a prototype implementation of the idea presented\nin Combining Syntactic and Semantic Bidirectionalization\nby Janis Voigtlaender, Zhenjiang Hu, Kazutaka Matsuda\nand Meng Wang.\n\nThis package builds two executables to experiment with the system,\na command line program \"b18-combined\" and a CGI based web interface\n\"b18n-combined-cgi\". The latter is also available online at\n<http://www.kb.ecei.tohoku.ac.jp/~kztk/b18n-combined/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "b18n-combined" = {
@@ -35,9 +35,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "b18n-combined-cgi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,9 +53,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

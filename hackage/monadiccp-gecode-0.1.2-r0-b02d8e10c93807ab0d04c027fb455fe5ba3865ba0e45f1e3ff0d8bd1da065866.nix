@@ -21,7 +21,7 @@
       synopsis = "Constraint Programming";
       description = "Gecode extension for the Monadic Constraint Programming Framework (code generator and runtime solver backend)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,16 +30,16 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monadiccp" or (errorHandler.buildDepError "monadiccp"))
-          ];
+        ];
         libs = [
           (pkgs."gecodesupport" or (errorHandler.sysDepError "gecodesupport"))
           (pkgs."gecodeset" or (errorHandler.sysDepError "gecodeset"))
           (pkgs."gecodeint" or (errorHandler.sysDepError "gecodeint"))
           (pkgs."gecodekernel" or (errorHandler.sysDepError "gecodekernel"))
           (pkgs."gecodesearch" or (errorHandler.sysDepError "gecodesearch"))
-          ];
+        ];
         frameworks = [ (pkgs."gecode" or (errorHandler.sysDepError "gecode")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

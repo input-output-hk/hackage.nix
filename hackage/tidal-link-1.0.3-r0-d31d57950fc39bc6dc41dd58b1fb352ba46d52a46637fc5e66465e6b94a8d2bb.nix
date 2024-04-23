@@ -21,29 +21,29 @@
       synopsis = "Ableton Link integration for Tidal";
       description = "Ableton Link integration for Tidal, to let Tidal sync with external clocks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."iphlpapi" or (errorHandler.sysDepError "iphlpapi"))
           (pkgs."winmm" or (errorHandler.sysDepError "winmm"))
           (pkgs."ws2_32" or (errorHandler.sysDepError "ws2_32"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4")) (if system.isOsx
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4")) (if system.isOsx
           then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
           else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "linktest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tidal-link" or (errorHandler.buildDepError "tidal-link"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

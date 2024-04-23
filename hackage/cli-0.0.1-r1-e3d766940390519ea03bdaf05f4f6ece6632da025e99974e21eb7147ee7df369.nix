@@ -21,23 +21,23 @@
       synopsis = "Simple Command Line Interface Library";
       description = "This package provides a simple Command Line Library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Example" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cli" or (errorHandler.buildDepError "cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

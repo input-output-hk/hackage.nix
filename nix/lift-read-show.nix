@@ -6,8 +6,8 @@
         nix = import ../hackage/lift-read-show-0.1.0.0-r0-95136527c9c003ee8fc1753b727835885dfea24cc263aa400319bb59b16fd1bd.nix;
         revNum = 0;
         sha256 = "95136527c9c003ee8fc1753b727835885dfea24cc263aa400319bb59b16fd1bd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

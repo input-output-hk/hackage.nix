@@ -21,7 +21,7 @@
       synopsis = "Functions for National Australia Bank transactions";
       description = "Parsing, Processing and other functions for National Australia Bank transactions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."sv" or (errorHandler.buildDepError "sv"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

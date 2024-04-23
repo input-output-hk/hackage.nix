@@ -21,7 +21,7 @@
       synopsis = "A calculator repl.";
       description = "A calculator repl that processes mathematical expressions.\nDoes basic arithmetic, and provides pre-defined basic mathematical functions.\nProvides binding functionality for variables, and single variable functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "calculator" = {
@@ -31,10 +31,10 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "model-test-arithmetic" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

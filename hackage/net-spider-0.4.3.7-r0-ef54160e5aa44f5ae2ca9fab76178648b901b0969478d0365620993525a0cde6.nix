@@ -21,7 +21,7 @@
       synopsis = "A graph database middleware to maintain a time-varying graph.";
       description = "A graph database middleware to maintain a time-varying graph. See the [project README](https://github.com/debug-ito/net-spider) for detail.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -57,14 +57,14 @@
             (hsPkgs."greskell" or (errorHandler.buildDepError "greskell"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server-test-suite" = {
-          depends = (pkgs.lib).optionals (flags.server-test) [
+          depends = pkgs.lib.optionals (flags.server-test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."net-spider" or (errorHandler.buildDepError "net-spider"))
@@ -79,20 +79,20 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."hspec-need-env" or (errorHandler.buildDepError "hspec-need-env"))
-            ];
+          ];
           buildable = if flags.server-test then true else false;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

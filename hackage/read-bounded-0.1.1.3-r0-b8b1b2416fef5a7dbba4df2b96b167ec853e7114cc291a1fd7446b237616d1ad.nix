@@ -21,11 +21,11 @@
       synopsis = "Class for reading bounded values";
       description = "Class for reading bounded values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

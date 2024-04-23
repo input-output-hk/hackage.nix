@@ -21,7 +21,7 @@
       synopsis = "Yet Another High Performance and Extendable Neural Network in Haskell";
       description = "Provides execution backend of neural network on top of blas-hs.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."neural-network-base" or (errorHandler.buildDepError "neural-network-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "s1" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."blas-hs" or (errorHandler.buildDepError "blas-hs"))
             (hsPkgs."neural-network-base" or (errorHandler.buildDepError "neural-network-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A support vector machine written in Haskell";
       description = "svm is a library which implements least squares support\nvector regression.  It includes several common kernel\nfunctions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

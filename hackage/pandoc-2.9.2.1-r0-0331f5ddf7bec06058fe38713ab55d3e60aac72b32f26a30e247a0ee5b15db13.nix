@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read several dialects of Markdown and\n(subsets of) HTML, reStructuredText, LaTeX, DocBook, JATS,\nMediaWiki markup, DokuWiki markup, TWiki markup,\nTikiWiki markup, Jira markup, Creole 1.0, Haddock markup,\nOPML, Emacs Org-Mode, Emacs Muse, txt2tags, ipynb (Jupyter\nnotebooks), Vimwiki, Word Docx, ODT, EPUB, FictionBook2,\nroff man, Textile, and CSV, and it can write Markdown,\nreStructuredText, XHTML, HTML 5, LaTeX, ConTeXt, DocBook,\nJATS, OPML, TEI, OpenDocument, ODT, Word docx,\nPowerPoint pptx, RTF, MediaWiki, DokuWiki, XWiki,\nZimWiki, Textile, Jira, roff man, roff ms, plain text,\nEmacs Org-Mode, AsciiDoc, Haddock markup,\nEPUB (v2 and v3), ipynb, FictionBook2,\nInDesign ICML, Muse, LaTeX beamer slides,\nand several kinds of HTML/JavaScript slide shows\n(S5, Slidy, Slideous, DZSlides, reveal.js).\n\nIn contrast to most existing tools for converting Markdown\nto HTML, pandoc has a modular design: it consists of a set of\nreaders, which parse text in a given format and produce a\nnative representation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -85,23 +85,23 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
           (hsPkgs."emojis" or (errorHandler.buildDepError "emojis"))
-          ] ++ (pkgs.lib).optionals (system.isWindows && system.isI386) [
+        ] ++ pkgs.lib.optionals (system.isWindows && system.isI386) [
           (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"));
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "trypandoc" = {
-          depends = (pkgs.lib).optionals (flags.trypandoc) [
+          depends = pkgs.lib.optionals (flags.trypandoc) [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -110,10 +110,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = if flags.trypandoc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -144,10 +144,10 @@
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."doctemplates" or (errorHandler.buildDepError "doctemplates"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "weigh-pandoc" = {
           depends = [
@@ -157,9 +157,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "benchmark-pandoc" = {
           depends = [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -171,9 +171,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

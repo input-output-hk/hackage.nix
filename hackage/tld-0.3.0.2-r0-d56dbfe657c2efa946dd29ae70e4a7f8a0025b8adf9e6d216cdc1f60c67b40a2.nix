@@ -21,7 +21,7 @@
       synopsis = "This project separates subdomains, domains, and top-level-domains from URLs. ";
       description = "This project separates subdomains, domains, and top-level-domains from URLs. At compile-time, it parses a list of top-level-domains from `data/tld.dat`. This list comes from `http://mxr.mozilla.org/mozilla/source/netwerk/dns/src/effective_tld_names.dat?raw=1`. This package most likely isn't perfect, especially when handling unicode characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "parser-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tld" or (errorHandler.buildDepError "tld"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

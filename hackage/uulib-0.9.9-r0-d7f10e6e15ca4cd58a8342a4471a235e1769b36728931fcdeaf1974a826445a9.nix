@@ -21,18 +21,18 @@
       synopsis = "Haskell Utrecht Tools Library";
       description = "Fast Parser Combinators and Pretty Printing Combinators";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ] ++ (if flags.have_ghc_prim
+        ] ++ (if flags.have_ghc_prim
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

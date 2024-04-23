@@ -21,7 +21,7 @@
       synopsis = "Uniform random generators";
       description = "Random generators with a uniform distribution conditioned\nto a given size.\nSee also @<http://hackage.haskell.org/package/testing-feat testing-feat>@,\nwhich is currently a faster method with similar results.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,23 +37,23 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-tree" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."boltzmann-samplers" or (errorHandler.buildDepError "boltzmann-samplers"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
+      };
       benchmarks = {
         "bench-binarytree" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
@@ -61,9 +61,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."testing-feat" or (errorHandler.buildDepError "testing-feat"))
             (hsPkgs."boltzmann-samplers" or (errorHandler.buildDepError "boltzmann-samplers"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

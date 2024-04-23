@@ -21,16 +21,16 @@
       synopsis = "ParDual class for Parallel <-> Sequential";
       description = "Defines a ParDual class for a Parallel <-> Sequential relationship";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."validators" or (errorHandler.buildDepError "validators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "par-dual-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."refined" or (errorHandler.buildDepError "refined"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."validators" or (errorHandler.buildDepError "validators"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

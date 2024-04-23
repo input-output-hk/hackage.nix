@@ -21,7 +21,7 @@
       synopsis = "Network multiplayer 2D shooting game";
       description = "Network multiplayer 2D shooting game inspired from \"dual\"\nfor Andriod.\nStart the server with `dual <port>`\nand the client with `dual <server ip> <server port>`";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dual" = {
@@ -32,9 +32,9 @@
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

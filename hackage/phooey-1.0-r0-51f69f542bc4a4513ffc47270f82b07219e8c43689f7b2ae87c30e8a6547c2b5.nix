@@ -21,7 +21,7 @@
       synopsis = "Functional user interfaces";
       description = "Phooey is a library for functional UIs, providing three different\nfunctional interfaces: Monad, Applicative, and Arrow.  See the\ncorrespondingly named modules in the list below.  The other modules are\nexposed for extensibility.\n\nTry out the examples in @src\\/Examples\\/@.\n\nSee also\n\n* The project wiki page <http://haskell.org/haskellwiki/phooey>\n\n* Use of Phooey for composable interfaces in the TV library:\n<http://haskell.org/haskellwiki/GuiTV>\n\n* The implementation of data-driven computation (used in Phooey) from\nthe TypeCompose library: <http://haskell.org/haskellwiki/TypeCompose>\n\nThis page and the module documentation pages have links to colorized\nsource code and to wiki pages where you can read and contribute /user\ncomments/.  Enjoy!\n\n&#169; 2006 by Conal Elliott; BSD3 license.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

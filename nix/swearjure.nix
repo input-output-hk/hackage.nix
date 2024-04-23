@@ -6,8 +6,8 @@
         nix = import ../hackage/swearjure-1.0.0-r0-4445e43d0ecc47a879f293d2383b43475be21e5f5f1adc7ed380b519c5ce1dd5.nix;
         revNum = 0;
         sha256 = "4445e43d0ecc47a879f293d2383b43475be21e5f5f1adc7ed380b519c5ce1dd5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

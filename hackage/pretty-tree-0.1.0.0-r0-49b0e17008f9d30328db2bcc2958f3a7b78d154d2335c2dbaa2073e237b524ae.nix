@@ -21,15 +21,15 @@
       synopsis = "Pretty-print trees";
       description = "Alternative pretty-printing functions for Data.Tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

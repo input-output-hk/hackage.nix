@@ -21,14 +21,14 @@
       synopsis = "Parse and display time according to RFC3339 (deprecated)";
       description = "\nParse and display time according to RFC3339:\n<http://www.ietf.org/rfc/rfc3339.txt>\n\nThis package defines a type class to parse and read RFC 3339 from different\ndata types.\nRight now there is only support for reading and showing String\n\nFor more information and usage examples please read the documentation of\nthe module here: <http://hackage.haskell.org/packages/archive/rfc3339/1.0.4/doc/html/Data-Time-RFC3339.html>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

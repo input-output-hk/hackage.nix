@@ -21,7 +21,7 @@
       synopsis = "GLL parser with simple combinator interface ";
       description = "The package fungll-combinators provides generalised top-down parsing combinators according to the\nFUNGLL parsing algorithm [Van Binsbergen et al. 2018].\n\nPlease email any questions, comments and suggestions to the\nmaintainer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."gll" or (errorHandler.buildDepError "gll"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

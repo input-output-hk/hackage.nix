@@ -21,7 +21,7 @@
       synopsis = "Gtk-based GUIs for Tangible Values";
       description = "GtkTV is a very small library that extends the TV (tangible value)\nframework with graphical user interfaces, using gtk2hs.\n\n&#169; 2009, 2010 by Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."TV" or (errorHandler.buildDepError "TV"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."gtkglext" or (errorHandler.buildDepError "gtkglext"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

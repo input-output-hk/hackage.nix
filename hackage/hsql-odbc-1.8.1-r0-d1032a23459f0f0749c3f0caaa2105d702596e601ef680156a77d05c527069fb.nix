@@ -21,16 +21,16 @@
       synopsis = "A Haskell Interface to ODBC. ";
       description = "ODBC driver for HSQL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         libs = [ (pkgs."odbc" or (errorHandler.sysDepError "odbc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

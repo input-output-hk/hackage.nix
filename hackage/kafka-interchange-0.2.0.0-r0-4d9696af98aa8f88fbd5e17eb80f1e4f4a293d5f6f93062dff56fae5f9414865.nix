@@ -21,7 +21,7 @@
       synopsis = "Serialization for kafka wire protocol";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
           (hsPkgs."zigzag" or (errorHandler.buildDepError "zigzag"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

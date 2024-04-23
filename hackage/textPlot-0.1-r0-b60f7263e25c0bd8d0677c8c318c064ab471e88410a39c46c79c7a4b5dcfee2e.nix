@@ -21,11 +21,11 @@
       synopsis = "Graphs functions as lines of text";
       description = "Graphs standard, parametric, and polar functions and plots them into text files or prints them. One creates a standard, polar, or parametric plot with boundaries, dimensions and possible functions. One may add functions to any plot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "For manipulating GPS coordinates and trails.";
       description = "Useful for manipulating GPS coordinages (in various forms), building paths, and performing basic computations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gps-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."gps" or (errorHandler.buildDepError "gps"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

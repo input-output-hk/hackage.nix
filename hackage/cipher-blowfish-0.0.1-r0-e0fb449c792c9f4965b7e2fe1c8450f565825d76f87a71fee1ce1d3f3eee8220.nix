@@ -21,7 +21,7 @@
       synopsis = "Blowfish cipher";
       description = "Blowfish cipher primitives";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cipher-blowfish" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-cipher-blowfish" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."crypto-cipher-benchmarks" or (errorHandler.buildDepError "crypto-cipher-benchmarks"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

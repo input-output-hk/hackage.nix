@@ -21,7 +21,7 @@
       synopsis = "A command-line manager for delicious kitchen recipes";
       description = "HeRM's: a Haskell-based Recipe Manager for delicious kitchen recipes";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "herms" = {
@@ -38,9 +38,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

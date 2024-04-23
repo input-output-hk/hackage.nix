@@ -6,8 +6,8 @@
         nix = import ../hackage/delay-0-r0-7fab2998bbf13bb09a2c0d9719e63417aa61b8a70706f2bc3de4478821485331.nix;
         revNum = 0;
         sha256 = "7fab2998bbf13bb09a2c0d9719e63417aa61b8a70706f2bc3de4478821485331";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

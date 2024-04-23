@@ -21,7 +21,7 @@
       synopsis = "Zipkin V1 backend for OpenTracing";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

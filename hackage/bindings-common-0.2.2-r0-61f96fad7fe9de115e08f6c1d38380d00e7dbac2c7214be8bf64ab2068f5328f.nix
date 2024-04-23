@@ -21,11 +21,11 @@
       synopsis = "Low-level library bindings, base package.";
       description = "Facilities to wrap foreign C libraries. Used as basis in\n@bindings-*@ packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

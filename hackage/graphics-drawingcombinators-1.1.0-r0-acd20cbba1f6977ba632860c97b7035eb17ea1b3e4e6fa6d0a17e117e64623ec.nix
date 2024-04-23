@@ -21,7 +21,7 @@
       synopsis = "A functional interface to 2D drawing in OpenGL";
       description = "This module is a functional wrapper around OpenGL, so you don't\nhave to go into the deep, dark world of imperative stateful\nprogramming just to draw stuff.  It supports 2D only (for now),\nwith support drawing geometry, images, and text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."stb-image" or (errorHandler.buildDepError "stb-image"))
           (hsPkgs."bitmap-opengl" or (errorHandler.buildDepError "bitmap-opengl"))
           (hsPkgs."FTGL" or (errorHandler.buildDepError "FTGL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

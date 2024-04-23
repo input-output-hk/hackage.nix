@@ -21,7 +21,7 @@
       synopsis = "Utilities for condensed matter physics tight binding calculations.";
       description = "TBit provides tools for parameterizing and computing condensed matter physics quantities based on tight-binding models. It provides utitilies for computing Chern numbers and Berry curvatures of electronic band structure, generating gnuplot-readable dispersion plots, and calculating assorted quantities such as orbital magnetization and Nernst conductivity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

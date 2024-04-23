@@ -21,7 +21,7 @@
       synopsis = "Runtime generation of Arbitrary values";
       description = "Runtime generation of Arbitrary values";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."ifcxt" or (errorHandler.buildDepError "ifcxt"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

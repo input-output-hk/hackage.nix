@@ -21,7 +21,7 @@
       synopsis = "Read and Display Seitz Symbol";
       description = "Please see the README on GitHub at <https://github.com/narumij/seitz-symbol#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."matrix-as-xyz" or (errorHandler.buildDepError "matrix-as-xyz"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."symmetry-operations-symbols" or (errorHandler.buildDepError "symmetry-operations-symbols"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "seitz-symbol-doctest" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."matrix-as-xyz" or (errorHandler.buildDepError "matrix-as-xyz"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."symmetry-operations-symbols" or (errorHandler.buildDepError "symmetry-operations-symbols"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "seitz-symbol-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,9 +54,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."seitz-symbol" or (errorHandler.buildDepError "seitz-symbol"))
             (hsPkgs."symmetry-operations-symbols" or (errorHandler.buildDepError "symmetry-operations-symbols"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

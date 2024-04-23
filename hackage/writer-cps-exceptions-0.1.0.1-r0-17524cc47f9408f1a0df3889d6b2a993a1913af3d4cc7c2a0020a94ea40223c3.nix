@@ -21,7 +21,7 @@
       synopsis = "Control.Monad.Catch instances for the stricter CPS WriterT and RWST";
       description = "Control.Monad.Catch instances for the stricter WriterT and RWST from writer-cps-transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."writer-cps-transformers" or (errorHandler.buildDepError "writer-cps-transformers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

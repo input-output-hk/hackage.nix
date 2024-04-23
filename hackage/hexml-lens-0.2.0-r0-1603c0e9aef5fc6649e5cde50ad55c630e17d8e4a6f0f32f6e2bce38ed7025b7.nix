@@ -21,7 +21,7 @@
       synopsis = "Lenses for the hexml package";
       description = "Lenses for the hexml package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,22 +31,22 @@
           (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "courses" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
             (hsPkgs."hexml-lens" or (errorHandler.buildDepError "hexml-lens"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."hexml-lens" or (errorHandler.buildDepError "hexml-lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

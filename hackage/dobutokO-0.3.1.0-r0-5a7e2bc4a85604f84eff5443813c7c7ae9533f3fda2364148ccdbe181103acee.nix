@@ -21,11 +21,11 @@
       synopsis = "The library is intended to print updated messages on the terminal screen.";
       description = "Some functions to print updated messages on the same line on the terminal screen and a set of pure functions to specify interesting variants to control such functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

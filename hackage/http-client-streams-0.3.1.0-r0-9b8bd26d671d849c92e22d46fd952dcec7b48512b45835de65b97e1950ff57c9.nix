@@ -21,7 +21,7 @@
       synopsis = "http-client for io-streams supporting openssl";
       description = "\nThin io-streams wrapper for http-client w/ openssl support.\nTo use the tls package (instead of openssl) compile with the TLS flag\n\n@ cabal configure -ftls @\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,15 +31,15 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if flags.tls
+        ] ++ (if flags.tls
           then [
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-            ]
+          ]
           else [
             (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -12,7 +12,7 @@
       base-4-9 = true;
       template-haskell-2-11 = true;
       new-functor-classes = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "text-show-instances"; version = "3.8.4"; };
@@ -25,7 +25,7 @@
       synopsis = "Additional instances for text-show";
       description = "@text-show-instances@ is a supplemental library to @text-show@\nthat provides additional @Show@ instances for data types in\ncommon Haskell libraries and GHC dependencies that are not\nencompassed by @text-show@. Currently, @text-show-instances@\ncovers these libraries:\n\n* @<http://hackage.haskell.org/package/bifunctors           bifunctors>@\n\n* @<http://hackage.haskell.org/package/binary               binary>@\n\n* @<http://hackage.haskell.org/package/containers           containers>@\n\n* @<http://hackage.haskell.org/package/directory            directory>@\n\n* @<http://hackage.haskell.org/package/ghc-boot-th          ghc-boot-th>@\n\n* @<http://hackage.haskell.org/package/haskeline            haskeline>@\n\n* @<http://hackage.haskell.org/package/hpc                  hpc>@\n\n* @<http://hackage.haskell.org/package/old-locale           old-locale>@\n\n* @<http://hackage.haskell.org/package/old-time             old-time>@\n\n* @<http://hackage.haskell.org/package/pretty               pretty>@\n\n* @<http://hackage.haskell.org/package/random               random>@\n\n* @<http://hackage.haskell.org/package/tagged               tagged>@\n\n* @<http://hackage.haskell.org/package/template-haskell     template-haskell>@\n\n* @<http://hackage.haskell.org/package/terminfo             terminfo>@\n\n* @<https://hackage.haskell.org/package/text-short          text-short>@\n\n* @<http://hackage.haskell.org/package/time                 time>@\n\n* @<http://hackage.haskell.org/package/transformers         transformers>@\n\n* @<http://hackage.haskell.org/package/unix                 unix>@\n\n* @<http://hackage.haskell.org/package/unordered-containers unordered-containers>@\n\n* @<http://hackage.haskell.org/package/vector               vector>@\n\n* @<http://hackage.haskell.org/package/Win32                Win32>@\n\n* @<http://hackage.haskell.org/package/xhtml                xhtml>@\n\nOne can use these instances by importing\n\"TextShow.Instances\". Alternatively, there are monomorphic\nversions of the @showb@ function available in the other submodules\nof \"TextShow\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -49,30 +49,30 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (if flags.template-haskell-2-11
+        ]) ++ (if flags.template-haskell-2-11
           then [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-            ]
+          ]
           else [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ])) ++ (if flags.new-functor-classes
+          ])) ++ (if flags.new-functor-classes
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = ((([
@@ -101,33 +101,33 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (if flags.template-haskell-2-11
+          ]) ++ (if flags.template-haskell-2-11
             then [
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-              ]
+            ]
             else [
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-              ])) ++ (if flags.new-functor-classes
+            ])) ++ (if flags.new-functor-classes
             then [
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
               (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-              ]
+            ]
             else [
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ]);
+            ]);
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

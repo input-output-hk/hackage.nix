@@ -6,8 +6,8 @@
         nix = import ../hackage/hois-0.1.0.0-r0-c824b5a4d806f885af439de65fdc5b869da64907a99d1a8036a74ce507b16a89.nix;
         revNum = 0;
         sha256 = "c824b5a4d806f885af439de65fdc5b869da64907a99d1a8036a74ce507b16a89";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

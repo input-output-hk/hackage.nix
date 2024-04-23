@@ -21,7 +21,7 @@
       synopsis = "A database of USB identifiers";
       description = "Functions to find the names associated with numerical vendor and\nproduct identifiers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."download" or (errorHandler.buildDepError "download"))
           (hsPkgs."parsimony" or (errorHandler.buildDepError "parsimony"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = { buildable = if flags.example then true else false; };
-        };
       };
-    }
+    };
+  }

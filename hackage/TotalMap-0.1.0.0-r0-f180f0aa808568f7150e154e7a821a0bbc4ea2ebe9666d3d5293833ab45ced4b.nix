@@ -21,7 +21,7 @@
       synopsis = "A total map datatype";
       description = "Provides a datatype representing a total map using an enum type as keys";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "readme" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
             (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

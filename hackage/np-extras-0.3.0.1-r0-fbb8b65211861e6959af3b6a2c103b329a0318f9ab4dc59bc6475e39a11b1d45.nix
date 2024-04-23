@@ -21,7 +21,7 @@
       synopsis = "NumericPrelude extras";
       description = "Various extras to extend the NumericPrelude, including\nmultivariate polynomials and factored rationals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

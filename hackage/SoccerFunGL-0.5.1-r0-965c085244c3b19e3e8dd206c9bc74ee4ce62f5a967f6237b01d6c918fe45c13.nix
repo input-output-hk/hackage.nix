@@ -21,7 +21,7 @@
       synopsis = "OpenGL UI for the SoccerFun framework";
       description = "This provides an 2D user interface for the SoccerFun framework implemented in OpenGL/GLUT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,12 +33,12 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."SoccerFun" or (errorHandler.buildDepError "SoccerFun"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sfPlayTape" = { buildable = true; };
         "sfRunMatch" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

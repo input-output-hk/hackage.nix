@@ -21,7 +21,7 @@
       synopsis = "Flexible CRUD subsite usable with Yesod and Persistent.";
       description = "Flexible CRUD subsite usable with Yesod and Persistent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."esqueleto" or (errorHandler.buildDepError "esqueleto"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

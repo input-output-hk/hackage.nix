@@ -21,73 +21,73 @@
       synopsis = "GHCJS DOM Hello World, an example package";
       description = "This is an implementation of the classic \"Hello World\" program using GHCJS DOM,\nas an example of how to create a minimal GHCJS DOM application.\nPlease submit any suggestions and improvements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghcjs-dom-hello" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIos
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIos
             then [
               (hsPkgs."jsaddle-wkwebview" or (errorHandler.buildDepError "jsaddle-wkwebview"))
-              ]
+            ]
             else if flags.webkit2gtk
               then [
                 (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk"))
-                ]
+              ]
               else [
                 (hsPkgs."jsaddle-webkitgtk" or (errorHandler.buildDepError "jsaddle-webkitgtk"))
-                ]);
+              ]);
           buildable = true;
-          };
+        };
         "ghcjs-dom-hello-warp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.warp || compiler.isGhcjs && true || system.isIos
             then false
             else true;
-          };
+        };
         "ghcjs-dom-hello-webkitgtk" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (if flags.webkit2gtk
+          ] ++ (if flags.webkit2gtk
             then [
               (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk"))
-              ]
+            ]
             else [
               (hsPkgs."jsaddle-webkitgtk" or (errorHandler.buildDepError "jsaddle-webkitgtk"))
-              ]);
+            ]);
           buildable = if !flags.webkitgtk || compiler.isGhcjs && true || system.isIos
             then false
             else true;
-          };
+        };
         "ghcjs-dom-hello-wkwebview" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."jsaddle-wkwebview" or (errorHandler.buildDepError "jsaddle-wkwebview"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !system.isOsx || compiler.isGhcjs && true
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

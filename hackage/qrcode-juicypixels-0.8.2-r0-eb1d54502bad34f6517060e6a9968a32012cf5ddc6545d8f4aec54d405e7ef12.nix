@@ -21,7 +21,7 @@
       synopsis = "Converts a qrcode-core image to JuicyPixels";
       description = "Please see the README on GitHub at <https://github.com/alexkazik/qrcode/qrcode-juicypixels#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."qrcode-core" or (errorHandler.buildDepError "qrcode-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library and programs for creating hardlinked incremental archives or backups";
       description = "Uses rsync, etc to before backups similar to the old timemachine script and the newer 'Time Machine' OS X tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."progress" or (errorHandler.buildDepError "progress"))
           (hsPkgs."Extra" or (errorHandler.buildDepError "Extra"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "archive" = { buildable = true; }; };
       };
-    }
+      exes = { "archive" = { buildable = true; }; };
+    };
+  }

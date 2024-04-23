@@ -21,7 +21,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -67,9 +67,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liquid" = {
           depends = [
@@ -83,18 +83,18 @@
             (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
             (hsPkgs."located-base" or (errorHandler.buildDepError "located-base"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "target" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -112,9 +112,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "liquidhaskell-parser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,7 +126,7 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (if flags.devel
+          ] ++ (if flags.devel
             then [
               (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
               (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
@@ -146,12 +146,12 @@
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-              ]
+            ]
             else [
               (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

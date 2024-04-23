@@ -6,8 +6,8 @@
         nix = import ../hackage/metaheuristics-0.0.8-r0-a2833240b938b45b245e1ab3895e8f803007d897ccd733b2cdf99ce1f1680f04.nix;
         revNum = 0;
         sha256 = "a2833240b938b45b245e1ab3895e8f803007d897ccd733b2cdf99ce1f1680f04";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

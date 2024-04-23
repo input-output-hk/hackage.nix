@@ -21,7 +21,7 @@
       synopsis = "Create etags for Haskell projects based on Stack snapshots";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stack-tag" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."stack-tag" or (errorHandler.buildDepError "stack-tag"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

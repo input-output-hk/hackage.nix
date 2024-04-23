@@ -21,7 +21,7 @@
       synopsis = "The BLAKE SHA-3 candidate hashes, in Haskell";
       description = "\nThis provides an implementation of the BLAKE SHA-3 candidate\nhash algorithms in Haskell, including BLAKE-256, BLAKE-512,\nBLAKE-224, and BLAKE-384.\n\nBased on the BLAKE proposal,\nhere: http:\\/\\/131002.net\\/blake\\/blake.pdf\n\nContributions and optimizations are welcome!\n\nThis package installs both a library and an executable.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blakesum" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "backpropagation neuronal network";
       description = "- fully-connected multylayer perceptron\n- uses bias neurons\n- creation of randomly initialized networks of arbitrary size\n- easy (de-)serialization";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Read and write IDX data that is used in e.g. the MNIST database.";
       description = "This package provides functionality to read and write data in the IDX\nbinary format. This format is relevant for machine learning applications,\nlike the MNIST handwritten digit database.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mnist-idx" or (errorHandler.buildDepError "mnist-idx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

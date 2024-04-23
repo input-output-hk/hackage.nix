@@ -21,7 +21,7 @@
       synopsis = "Lifted versions of System functions.";
       description = "Lifted versions of functions provided in System.Directory,\nSystem.Environment and others.\nUser can derive instances for EitherT, ErrorT, MaybeT, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "main" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

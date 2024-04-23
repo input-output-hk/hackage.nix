@@ -6,8 +6,8 @@
         nix = import ../hackage/DysFRP-Cairo-0.1-r0-20094bd8a4e638a4901aefe4039294bd72ca0530d16b097f980f48621f78c9bc.nix;
         revNum = 0;
         sha256 = "20094bd8a4e638a4901aefe4039294bd72ca0530d16b097f980f48621f78c9bc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

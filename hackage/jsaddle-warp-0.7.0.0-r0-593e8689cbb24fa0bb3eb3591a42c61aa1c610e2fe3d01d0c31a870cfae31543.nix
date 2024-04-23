@@ -21,12 +21,12 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScipt helper.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
@@ -39,14 +39,14 @@
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-tool" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
@@ -59,9 +59,9 @@
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Linux NetworkNameSpace Builder";
       description = "Linux NetworkNameSpace Builder";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "network-builder" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."network-builder" or (errorHandler.buildDepError "network-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."hspec-server" or (errorHandler.buildDepError "hspec-server"))
             (hsPkgs."cabal-test-bin" or (errorHandler.buildDepError "cabal-test-bin"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

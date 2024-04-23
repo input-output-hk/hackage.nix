@@ -21,7 +21,7 @@
       synopsis = "Create a debianization for a cabal package";
       description = "A program which creates a debian subdirectory containing the required\nfiles to build a deb.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-debian" = {
@@ -42,9 +42,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
+          ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

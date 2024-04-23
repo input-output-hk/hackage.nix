@@ -21,7 +21,7 @@
       synopsis = "Format tabular data as grid or table.";
       description = "`table-layout` is a library for text-based table layout and cell formatting\nwith the following features:\n\n* Set a policy for each column to determine the width.\n\n* Position content in a column at a certain position.\n\n* Align content in a column at a character occurence.\n\n* Highlight trimmed content with cut marks.\n\n* Draw fancy tables with optional headers and user styles.\n\n* Automatically justify text and create multi-line table cells.\n\nThe module `Text.Layout.Table` contains everything that is required.\nHowever, all of the intermediate functionality is also exposed which makes\nit easy to create something completely new. A small tutorial is provided in\nthe `README.md` file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "table-layout-test-styles" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "table-layout-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

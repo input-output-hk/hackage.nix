@@ -21,7 +21,7 @@
       synopsis = "A library for writing IRC bots";
       description = "A simple library for an IRC bot";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       exes = {
         "ircbot-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ircbot" or (errorHandler.buildDepError "ircbot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

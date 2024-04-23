@@ -21,14 +21,14 @@
       synopsis = "IHaskell display instances for basic types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

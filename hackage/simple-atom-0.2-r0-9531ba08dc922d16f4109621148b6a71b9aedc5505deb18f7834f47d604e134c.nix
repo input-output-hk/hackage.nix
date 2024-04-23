@@ -21,15 +21,15 @@
       synopsis = "Atom (or symbol) datatype for fast comparision and sorting.";
       description = "This module provides an abstract datatype for atoms, such that:\n\n* Each atom string is only in memory once\n\n* @O(n)@ creation time\n\n* @O(1)@ equality-comparison\n\n* @O(1)@ (in practice) ord-comparison\n\n* @Ord@-comparison results are independent on evaluation order\n\nThis module is thread-safe.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optional (flags.debug) (hsPkgs."murmur-hash" or (errorHandler.buildDepError "murmur-hash"));
+        ] ++ pkgs.lib.optional (flags.debug) (hsPkgs."murmur-hash" or (errorHandler.buildDepError "murmur-hash"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

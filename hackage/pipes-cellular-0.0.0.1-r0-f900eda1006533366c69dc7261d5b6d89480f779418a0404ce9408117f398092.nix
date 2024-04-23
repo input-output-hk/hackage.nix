@@ -21,7 +21,7 @@
       synopsis = "Pipes-based combinators for cellular data processing";
       description = "This library provides a number of miscellaneous utilities\nfor pipes-based processing of cellular data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."data-cell" or (errorHandler.buildDepError "data-cell"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

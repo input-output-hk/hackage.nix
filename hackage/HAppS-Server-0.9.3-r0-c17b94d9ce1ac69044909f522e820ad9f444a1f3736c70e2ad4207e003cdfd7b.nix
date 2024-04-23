@@ -21,7 +21,7 @@
       synopsis = "Web related tools and services.";
       description = "Web framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -46,15 +46,15 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.base4) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (flags.base4) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "The Haskell-Scriptable Editor";
       description = "Yi is a text editor written and extensible in Haskell. The goal of Yi is\nto provide a flexible, powerful, and correct editor core which is dynamically\nscriptable in Haskell.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "yi" = {
@@ -42,18 +42,18 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ] ++ (pkgs.lib).optional (flags.dynamic) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))) ++ (pkgs.lib).optionals (flags.cocoa) [
+          ] ++ pkgs.lib.optional (flags.dynamic) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ pkgs.lib.optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ pkgs.lib.optional (flags.gtk) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))) ++ pkgs.lib.optionals (flags.cocoa) [
             (hsPkgs."HOC" or (errorHandler.buildDepError "HOC"))
             (hsPkgs."HOC-AppKit" or (errorHandler.buildDepError "HOC-AppKit"))
             (hsPkgs."HOC-Foundation" or (errorHandler.buildDepError "HOC-Foundation"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = if !(flags.vty || flags.gtk || flags.cocoa)
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

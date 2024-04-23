@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler top-level driver.";
       description = "This defines the top-level commands supported by the compiler,\nsuch as @-make@ and @-compile@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."ddc-core-tetra" or (errorHandler.buildDepError "ddc-core-tetra"))
           (hsPkgs."ddc-source-tetra" or (errorHandler.buildDepError "ddc-source-tetra"))
           (hsPkgs."ddc-build" or (errorHandler.buildDepError "ddc-build"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

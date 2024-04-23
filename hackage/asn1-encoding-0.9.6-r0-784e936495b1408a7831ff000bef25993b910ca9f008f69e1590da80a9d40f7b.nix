@@ -21,7 +21,7 @@
       synopsis = "ASN1 data reader and writer in RAW, BER and DER forms";
       description = "ASN1 data reader and writer in raw form with supports for high level forms of ASN1 (BER, and DER).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests-asn1-encoding" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
             (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Example programs using the Yesod Web Framework.";
       description = "These are the same examples and tutorials found on the documentation site.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "blog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ajax" = { buildable = true; };
         "file-echo" = { buildable = true; };
         "pretty-yaml" = {
@@ -38,9 +38,9 @@
             (hsPkgs."data-object-yaml" or (errorHandler.buildDepError "data-object-yaml"))
             (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "i18n" = { buildable = true; };
         "session" = { buildable = true; };
         "widgets" = { buildable = true; };
@@ -50,26 +50,26 @@
           depends = [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "persistent-synopsis" = {
           depends = [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hamlet-synopsis" = {
           depends = [
             (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "chat" = {
           depends = [ (hsPkgs."stm" or (errorHandler.buildDepError "stm")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

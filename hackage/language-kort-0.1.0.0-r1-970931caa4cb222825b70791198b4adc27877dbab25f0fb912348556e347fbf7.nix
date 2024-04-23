@@ -21,7 +21,7 @@
       synopsis = "Parser and serializer for the Kort information language.";
       description = "This package provides a library containing all the\nnecessary tools for working with Kort files, allowing\nprograms to load and save semantic data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text-position" or (errorHandler.buildDepError "text-position"))
           (hsPkgs."vocabulary-kadma" or (errorHandler.buildDepError "vocabulary-kadma"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."smaoin" or (errorHandler.buildDepError "smaoin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vocabulary-kadma" or (errorHandler.buildDepError "vocabulary-kadma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "O(log n) persistent on-line lowest common ancestor calculation without preprocessing with optional monoidal annotations";
       description = "O(log n) persistent on-line lowest common ancestor calculation without preprocessing with optional monoidal annotations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

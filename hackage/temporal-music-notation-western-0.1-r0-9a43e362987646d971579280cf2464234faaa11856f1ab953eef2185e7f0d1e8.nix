@@ -14,7 +14,7 @@
       identifier = {
         name = "temporal-music-notation-western";
         version = "0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Anton Kholomiov";
@@ -24,15 +24,15 @@
       synopsis = "music notation";
       description = "Localization of 'temporal-music-notation' library for\nWestern music tradition.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."temporal-music-notation" or (errorHandler.buildDepError "temporal-music-notation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

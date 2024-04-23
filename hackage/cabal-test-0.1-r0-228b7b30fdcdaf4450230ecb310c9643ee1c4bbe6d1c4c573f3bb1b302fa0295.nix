@@ -21,7 +21,7 @@
       synopsis = "Automated test tool for cabal projects.";
       description = "Cabal-test is a tool for testing cabal projects. It uses the GHC-api to load the code so any\ncode currently buildable by GHCi should be testable by cabal-test.\nYou can choose how many tests to run and how many to run concurrently.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "cabal-test" = {
@@ -32,9 +32,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."pqc" or (errorHandler.buildDepError "pqc"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

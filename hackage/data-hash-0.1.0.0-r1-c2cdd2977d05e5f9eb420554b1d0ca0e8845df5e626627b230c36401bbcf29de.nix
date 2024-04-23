@@ -21,14 +21,14 @@
       synopsis = "Combinators for building fast hashing functions.";
       description = "Combinators for building fast hashing functions. Includes\nhashing functions for all basic Haskell98 types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

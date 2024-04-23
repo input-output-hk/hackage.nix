@@ -21,16 +21,16 @@
       synopsis = "Fast rate limiting using the token bucket algorithm (BSD)";
       description = "Fast rate limiting using the token bucket algorithm. BSD-licensed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "token-limiter-extended-tests" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."token-limiter" or (errorHandler.buildDepError "token-limiter"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "token-limiter-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."token-limiter" or (errorHandler.buildDepError "token-limiter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

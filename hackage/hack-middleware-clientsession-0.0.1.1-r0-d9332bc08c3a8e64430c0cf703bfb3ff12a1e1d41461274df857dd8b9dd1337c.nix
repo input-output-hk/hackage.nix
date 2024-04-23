@@ -14,7 +14,7 @@
       identifier = {
         name = "hack-middleware-clientsession";
         version = "0.0.1.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Michael Snoyman <michael@snoyman.com>";
@@ -24,7 +24,7 @@
       synopsis = "Middleware for easily keeping session data in client cookies. (deprecated)";
       description = "Uses the clientsession package for automatic encryption,\nhashing, expiring and renewing of sessions stored in\ncookies on the client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."predicates" or (errorHandler.buildDepError "predicates"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple command-line utility to convert PDF into text";
       description = "Simple command-line utility to convert PDF into text";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pdf2line" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pdfdump" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -45,9 +45,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

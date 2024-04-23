@@ -21,7 +21,7 @@
       synopsis = "Haskell Web Application Kit";
       description = "A library and framework to create Web Applications with Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."json-b" or (errorHandler.buildDepError "json-b"))
           (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

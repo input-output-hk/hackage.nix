@@ -21,15 +21,15 @@
       synopsis = "Binary instances for vector types (deprecated)";
       description = "DEPRECATED.  Use vector-binary-instances >= 0.2 instead.\n\nThe library provides binary instances for boxed and unboxed vector types.\nThe code is based on the vector-binary-instances package but restricts\ninstances to monomorphic vector types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

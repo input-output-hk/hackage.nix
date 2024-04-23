@@ -21,37 +21,37 @@
       synopsis = "A partial binary associative operator";
       description = "A partial semigroup is like a semigroup, but\nthe operator is partial. We represent this in Haskell\nas a total function @(<>?) :: a -> a -> Maybe a@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."partial-semigroup" or (errorHandler.buildDepError "partial-semigroup"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "properties" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."partial-semigroup" or (errorHandler.buildDepError "partial-semigroup"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "generics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."partial-semigroup" or (errorHandler.buildDepError "partial-semigroup"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

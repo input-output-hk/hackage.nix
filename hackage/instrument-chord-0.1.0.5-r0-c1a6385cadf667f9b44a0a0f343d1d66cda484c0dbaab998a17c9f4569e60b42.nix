@@ -21,15 +21,15 @@
       synopsis = "Render Instrument Chords";
       description = "Library to generate musical instrument manipluations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."music-diatonic" or (errorHandler.buildDepError "music-diatonic"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

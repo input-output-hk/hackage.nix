@@ -21,16 +21,16 @@
       synopsis = "Format .cabal files";
       description = "Format @.cabal@ files preserving the original field ordering, and comments.\n\nTuned for Oleg's preference, but has some knobs still.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "version-interval" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-fmt-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,10 +43,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."cabal-fmt".components.sublibs.version-interval or (errorHandler.buildDepError "cabal-fmt:version-interval"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "cabal-fmt" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "version-interval-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."cabal-fmt".components.sublibs.version-interval or (errorHandler.buildDepError "cabal-fmt:version-interval"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

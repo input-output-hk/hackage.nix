@@ -21,7 +21,7 @@
       synopsis = "Template Haskell utilities for HaskellDB.";
       description = "Utility functions that make defining tables, fields, and queries in\nHaskellDB simpler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

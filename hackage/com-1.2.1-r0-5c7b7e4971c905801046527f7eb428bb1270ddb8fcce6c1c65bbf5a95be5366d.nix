@@ -21,22 +21,22 @@
       synopsis = "Haskell COM support library";
       description = "COM + Automation libraries for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if system.isWindows
           then [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
           (pkgs."user32" or (errorHandler.sysDepError "user32"))
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
           (pkgs."oleaut32" or (errorHandler.sysDepError "oleaut32"))
           (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

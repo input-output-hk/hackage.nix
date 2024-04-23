@@ -21,11 +21,11 @@
       synopsis = "A general library for representation and manipulation of versions.";
       description = "Basic versioning library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

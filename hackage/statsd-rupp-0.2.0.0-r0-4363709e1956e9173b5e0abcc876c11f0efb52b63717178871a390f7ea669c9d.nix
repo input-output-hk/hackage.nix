@@ -21,7 +21,7 @@
       synopsis = "Simple StatsD Client";
       description = "Please see the README on GitHub at <https://github.com/jprupp/statsd-rupp#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "statsd-rupp-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."statsd-rupp" or (errorHandler.buildDepError "statsd-rupp"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

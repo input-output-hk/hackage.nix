@@ -21,7 +21,7 @@
       synopsis = "Kitchen sink for querying JSON";
       description = "The library complements json-syntax by making available several\ncommon access patterns. The utilities provided by this library\nonly query JSON. They do not update it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."scientific-notation" or (errorHandler.buildDepError "scientific-notation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

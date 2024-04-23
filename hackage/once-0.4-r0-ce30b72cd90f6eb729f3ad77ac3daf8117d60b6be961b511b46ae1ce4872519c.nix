@@ -21,7 +21,7 @@
       synopsis = "memoization for IO actions and functions";
       description = "Package provides single polymorphic function 'once', that allows you\nto memoize IO actions and functions, evaluating them at most once.\n\n>>> let mkStamp = (putStrLn \"stamping\" >> writeFile \"/tmp/stamp\" \"\") :: IO ()\n>>> -- onceStamp :: IO ()\n>>> onceStamp <- once mkStamp\n>>> -- onceStamp actually evaluates mkStamp it wraps first time.\n>>> onceStamp\nstamping\n>>> -- but second time result `()' is memoized, no action is performed.\n>>> onceStamp\n>>> -- we can memoize functions too\n>>> foo <- once $ \\x -> print \"foo\" >> print (x :: Int)\n>>> -- action will be performed once for every distinct argument\n>>> foo 10\nfoo\n10\n>>> foo 10\n10\n>>> foo 4\nfoo\n4";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."once" or (errorHandler.buildDepError "once"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

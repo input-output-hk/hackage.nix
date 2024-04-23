@@ -21,7 +21,7 @@
       synopsis = "Abusing monadic syntax JSON objects generation.";
       description = "Generation of big, complex JSON objects with 'Text.JSON' is painful.\nAnd autoderivation is not always possible.\nCheck documentation of 'Text.JSON.Gen' for more info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

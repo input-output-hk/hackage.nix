@@ -21,7 +21,7 @@
       synopsis = "Meta package for Yesod";
       description = "Instead of allowing version ranges of dependencies, this package requires specific versions to avoid dependency hell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -134,8 +134,8 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
           (hsPkgs."zlib-conduit" or (errorHandler.buildDepError "zlib-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

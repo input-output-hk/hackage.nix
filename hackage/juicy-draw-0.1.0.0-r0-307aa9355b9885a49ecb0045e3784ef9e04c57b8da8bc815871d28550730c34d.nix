@@ -21,25 +21,25 @@
       synopsis = "Functions for drawing and filling lines, rectangles and polygons directly onto a mutable image";
       description = "This package provides 2D primitives for drawing/fill simple 2D shapes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "juicy-draw-demo" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."juicy-draw" or (errorHandler.buildDepError "juicy-draw"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

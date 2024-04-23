@@ -21,7 +21,7 @@
       synopsis = "Append only key-list database";
       description = "Please see the README on GitHub at <https://github.com/fumieval/liszt#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liszt" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lisztd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,9 +95,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

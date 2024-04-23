@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-base";
         version = "0.2.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,15 +24,15 @@
       synopsis = "A simplified version of the phonetic-languages functionality common for some different realizations.";
       description = "A simplified version of the phonetic-languages functionality. Tries to use only necessary functionality and reduce the other ones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
           (hsPkgs."phonetic-languages-permutations-array" or (errorHandler.buildDepError "phonetic-languages-permutations-array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

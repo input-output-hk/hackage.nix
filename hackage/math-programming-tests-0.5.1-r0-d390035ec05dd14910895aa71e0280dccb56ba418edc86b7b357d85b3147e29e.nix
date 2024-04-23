@@ -21,7 +21,7 @@
       synopsis = "Utility functions for testing implementations of the math-programming library.";
       description = "Please see the <https://github.com/prsteele/math-programming/blob/main/README.md README on GitHub>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

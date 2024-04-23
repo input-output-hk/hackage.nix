@@ -21,7 +21,7 @@
       synopsis = "Monadic streaming XML parser";
       description = "Fast monadic streaming XML parser.\nIt feels and looks like any other parser combinators library.\nTo make it more performant it uses continuations under the hood.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xeno-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."sax" or (errorHandler.buildDepError "sax"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

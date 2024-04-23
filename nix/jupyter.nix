@@ -6,8 +6,8 @@
         nix = import ../hackage/jupyter-0.9.0-r0-7ccede0e916dd228f8ccd0e63129b57dd967e25c2ec59f3010efb408ced637e0.nix;
         revNum = 0;
         sha256 = "7ccede0e916dd228f8ccd0e63129b57dd967e25c2ec59f3010efb408ced637e0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

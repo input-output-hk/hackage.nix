@@ -21,7 +21,7 @@
       synopsis = "The XSLT modules for HXT.";
       description = "The Haskell XML Toolbox XSLT library. Since version 8.4 this library is packed in a separate package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

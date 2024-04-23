@@ -21,7 +21,7 @@
       synopsis = "Gloss interactive demo for roc-cluster package";
       description = "Demo for displaying operation of ROC online clustering.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "roc-cluster-demo" = {
@@ -31,9 +31,9 @@
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."roc-cluster" or (errorHandler.buildDepError "roc-cluster"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

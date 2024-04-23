@@ -21,7 +21,7 @@
       synopsis = "Generate Haskell wrappers for Futhark libraries";
       description = "Please see the README on GitLab at <https://gitlab.com/Gusten_Isfeldt/futhask#futhask>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "futhask" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."futhask" or (errorHandler.buildDepError "futhask"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

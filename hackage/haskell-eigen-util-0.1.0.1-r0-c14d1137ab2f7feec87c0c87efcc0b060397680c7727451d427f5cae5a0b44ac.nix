@@ -21,24 +21,24 @@
       synopsis = "Some utility functions for haskell-eigen library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."eigen" or (errorHandler.buildDepError "eigen"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-eigen-util-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-eigen-util" or (errorHandler.buildDepError "haskell-eigen-util"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

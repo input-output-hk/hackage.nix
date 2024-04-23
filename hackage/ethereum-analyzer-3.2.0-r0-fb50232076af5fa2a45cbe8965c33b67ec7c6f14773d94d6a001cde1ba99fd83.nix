@@ -21,7 +21,7 @@
       synopsis = "A Ethereum contract analyzer.";
       description = "A Ethereum contract analyzer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/word-note-sox-0.1.0.0-r0-a60810bf45dd0dd0919bd5b748f9db4fa0d287a79317a091e33425de5d2a949d.nix;
         revNum = 0;
         sha256 = "a60810bf45dd0dd0919bd5b748f9db4fa0d287a79317a091e33425de5d2a949d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

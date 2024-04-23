@@ -21,16 +21,16 @@
       synopsis = "Constraint solving framework employed by the Helium Compiler.";
       description = "At its most general, Top is a framework for constructing abstract interpretations\nwhich focuses on giving good feedback on why an abstract interpretation does not give\nany useful information. In a mathematical notation this is usually made explicit by\nreturning the top element of a (complete) lattice. This is also one of the reasons\nfor the name of the project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "topsolver" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

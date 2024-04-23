@@ -21,7 +21,7 @@
       synopsis = "A Functional Implementation of the Garsia-Wachs Algorithm";
       description = "The Garsia-Wachs algorithm builds a binary tree with minimum\nweighted path length from weighted leaf nodes given in symmetric order.\nThis can be used to build optimum search tables, to balance a\n'ropes' data structure in an optimal way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.old-base
@@ -29,8 +29,8 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

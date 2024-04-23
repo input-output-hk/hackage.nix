@@ -21,15 +21,15 @@
       synopsis = "RoseTree type and show functions for lab assignment of University of Twente.        ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."twentefp-number" or (errorHandler.buildDepError "twentefp-number"))
           (hsPkgs."twentefp-eventloop-graphics" or (errorHandler.buildDepError "twentefp-eventloop-graphics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

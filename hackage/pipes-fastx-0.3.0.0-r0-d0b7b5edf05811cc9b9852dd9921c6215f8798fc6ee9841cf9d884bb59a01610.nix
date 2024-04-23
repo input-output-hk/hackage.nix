@@ -21,7 +21,7 @@
       synopsis = "Streaming parsers for Fasta and Fastq";
       description = "Streaming parsers for Fasta and Fastq";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       description = "Provides newtype wrappers for phantom types to avoid unsafely passing dummy arguments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

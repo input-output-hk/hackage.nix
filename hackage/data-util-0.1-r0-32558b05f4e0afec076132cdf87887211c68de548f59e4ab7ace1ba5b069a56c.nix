@@ -21,11 +21,11 @@
       synopsis = "utilities for handle data";
       description = "utilities for handle data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

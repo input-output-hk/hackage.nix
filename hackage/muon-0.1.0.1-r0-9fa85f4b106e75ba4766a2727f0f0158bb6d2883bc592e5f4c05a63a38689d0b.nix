@@ -21,7 +21,7 @@
       synopsis = "Static blog generator";
       description = "Program which takes blog posts and pages written in Markdown and\ncompiles them into a tree of HTML pages which can then be served\nby any web server.\n\nMuon is similar in function to Hakyll <http://jaspervdj.be/hakyll/>\nby has far fewer features (and dependencies) and is generally not\nready for use in production as of yet.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "muon" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

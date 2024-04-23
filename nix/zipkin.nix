@@ -6,8 +6,8 @@
         nix = import ../hackage/zipkin-0.1.0.0-r0-bee21284431fa066fe47672cb43285233ce684d0e780e9293fba89b3d00e9043.nix;
         revNum = 0;
         sha256 = "bee21284431fa066fe47672cb43285233ce684d0e780e9293fba89b3d00e9043";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

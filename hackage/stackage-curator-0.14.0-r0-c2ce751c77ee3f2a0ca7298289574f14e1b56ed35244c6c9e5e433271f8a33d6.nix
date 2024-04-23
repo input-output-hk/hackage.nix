@@ -21,7 +21,7 @@
       synopsis = "Tools for curating Stackage bundles";
       description = "Please see <http://www.stackage.org/package/stackage-curator> for a description and documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -82,16 +82,16 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (if flags.monad_unlift_0_2
+        ] ++ (if flags.monad_unlift_0_2
           then [
             (hsPkgs."monad-unlift" or (errorHandler.buildDepError "monad-unlift"))
             (hsPkgs."monad-unlift-ref" or (errorHandler.buildDepError "monad-unlift-ref"))
-            ]
+          ]
           else [
             (hsPkgs."monad-unlift" or (errorHandler.buildDepError "monad-unlift"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "stackage-curator" = {
           depends = [
@@ -104,9 +104,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stackage-build-plan" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,10 +115,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -134,9 +134,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

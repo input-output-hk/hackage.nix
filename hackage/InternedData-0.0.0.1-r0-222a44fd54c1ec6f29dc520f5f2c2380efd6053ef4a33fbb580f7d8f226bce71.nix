@@ -21,7 +21,7 @@
       synopsis = "Data interning (with compact regions where possible)";
       description = "Interned (UTF8) @ByteString@s where the interned structure is\nheld in a compact region, if possible.\n\n- @Data.ByteString.Intern@ does *not* use compact regions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."bimaps" or (errorHandler.buildDepError "bimaps"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.2.0") (hsPkgs."compact" or (errorHandler.buildDepError "compact"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2.0") (hsPkgs."compact" or (errorHandler.buildDepError "compact"));
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."InternedData" or (errorHandler.buildDepError "InternedData"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "BenchmarkBuilder" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."InternedData" or (errorHandler.buildDepError "InternedData"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

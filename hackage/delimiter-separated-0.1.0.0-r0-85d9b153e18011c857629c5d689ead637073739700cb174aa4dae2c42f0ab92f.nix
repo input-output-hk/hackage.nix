@@ -21,15 +21,15 @@
       synopsis = "Library for dealing with tab and/or comma (or other) separated files";
       description = "Delimeter separated file handling";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."uhc-util" or (errorHandler.buildDepError "uhc-util"))
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

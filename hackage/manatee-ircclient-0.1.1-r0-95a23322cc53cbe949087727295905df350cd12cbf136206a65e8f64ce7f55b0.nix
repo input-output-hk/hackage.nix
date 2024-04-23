@@ -21,7 +21,7 @@
       synopsis = "IRC client extension for Manatee.";
       description = "manatee-ircclient is IRC client extension for Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nDefault configuration template at Config\\/IrcClient.hs, copy to directory `HOME/.manatee/config/`.\n\nNote, you need re-install package to start the configuration file take effect the next time,\n\nVideo (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>\n\nScreenshots at : <http://goo.gl/MkVw>\n\nManual at : <http://haskell.org/haskellwiki/Manatee>\n\nIRC channel: irc.freenode.net 6667 <##manatee>\n\nMailing-List: manatee-user\\@googlegroups.com manatee-develop\\@googlegroups.com\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,12 +54,12 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."MorseCode" or (errorHandler.buildDepError "MorseCode"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "manatee-irc-daemon" = { buildable = true; };
         "manatee-ircclient" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

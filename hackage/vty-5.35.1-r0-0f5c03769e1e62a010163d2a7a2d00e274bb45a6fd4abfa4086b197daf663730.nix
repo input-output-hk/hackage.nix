@@ -21,7 +21,7 @@
       synopsis = "A simple terminal UI library";
       description = "vty is terminal GUI library in the niche of ncurses. It is intended to\nbe easy to use, have no confusing corner cases, and good support for\ncommon terminal types.\n\nSee the @vty-examples@ package as well as the program\n@test/interactive_terminal_test.hs@ included in the @vty@ package for\nexamples on how to use the library.\n\nImport the \"Graphics.Vty\" convenience module to get access to the core\nparts of the library.\n\n&#169; 2006-2007 Stefan O'Rear; BSD3 license.\n\n&#169; Corey O'Connor; BSD3 license.\n\n&#169; Jonathan Daugherty; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,12 +48,12 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vty-build-width-table" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
+        };
         "vty-mode-demo" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -72,9 +72,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "vty-demo" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -83,10 +83,10 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "verify-using-mock-terminal" = {
           depends = [
@@ -104,9 +104,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-terminal" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -123,9 +123,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-display-attributes" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -141,9 +141,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-empty-image-props" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -159,9 +159,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-eval-terminfo-caps" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -179,9 +179,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-image-ops" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -197,9 +197,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-image-trans" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -215,9 +215,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-inline" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -233,9 +233,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-parse-terminfo-caps" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -252,9 +252,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-simple-span-generation" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -270,9 +270,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-crop-span-generation" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -288,9 +288,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-layers-span-generation" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -306,9 +306,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-color-mapping" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -324,9 +324,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-utf8-width" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -342,9 +342,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-using-mock-input" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -368,9 +368,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "verify-config" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
@@ -396,9 +396,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A set of parsers for graph languages and conversions to\ngraph libaries.";
       description = "A package allowing parsing of graph files into graph\nlibrary datatypes. With aim the cope with large networks\nand provide translations between graph libraries. Like a\npandoc but for graphs. This is my first library so any\nfeedback and help is appreicated. For example use please\nsee the homepage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."algebraic-graphs" or (errorHandler.buildDepError "algebraic-graphs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pangraph-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

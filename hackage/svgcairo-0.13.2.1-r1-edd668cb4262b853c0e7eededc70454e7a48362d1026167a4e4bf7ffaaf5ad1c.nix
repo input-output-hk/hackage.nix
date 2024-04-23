@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.gtk2hs-buildtools or (pkgs.buildPackages.gtk2hs-buildtools or (errorHandler.setupDepError "gtk2hs-buildtools")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -35,11 +35,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."librsvg-2.0" or (errorHandler.pkgConfDepError "librsvg-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

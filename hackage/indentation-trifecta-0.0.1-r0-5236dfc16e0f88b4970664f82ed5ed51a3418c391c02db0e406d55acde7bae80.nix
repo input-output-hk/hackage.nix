@@ -21,7 +21,7 @@
       synopsis = "Indentation sensitive parsing combinators for Trifecta";
       description = "Indentation sensitive parsing combinators for Trifecta.\n\nSee\n\n__Michael D. Adams and Ömer S. Ağacan__.\nIndentation-sensitive parsing for Parsec.\nIn /Proceedings of the 2014 ACM SIGPLAN Symposium on Haskell/,\nHaskell ’14, pages 121–132.\nACM, New York, NY, USA, September 2014. ISBN 978-1-4503-3041-1.\n<http://dx.doi.org/10.1145/2633357.2633369 doi:10.1145/2633357.2633369>.\n\nThis package provides indentation combinators for\nTrifecta.  For Parsec, install\nindentation-parsec.  For backward compatability\nor to install both, install indentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."indentation-core" or (errorHandler.buildDepError "indentation-core"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-indentation" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."indentation-trifecta" or (errorHandler.buildDepError "indentation-trifecta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

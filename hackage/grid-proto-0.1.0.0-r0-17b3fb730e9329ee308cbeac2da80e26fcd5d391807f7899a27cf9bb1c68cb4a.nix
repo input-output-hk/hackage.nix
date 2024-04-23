@@ -21,7 +21,7 @@
       synopsis = "Grid-based prototyping framework";
       description = "Grid-based prototyping framework. Useful for games.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arrows-example" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "board-example" = {
           depends = [
             (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
@@ -77,9 +77,9 @@
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "controller-example" = {
           depends = [
             (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
@@ -96,9 +96,9 @@
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "text-example" = {
           depends = [
             (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
@@ -115,9 +115,9 @@
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

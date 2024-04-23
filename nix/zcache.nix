@@ -6,8 +6,8 @@
         nix = import ../hackage/zcache-0.0.0-r0-84185badd9dbddca831028b3def6e9f7c0599f7f4c9c4a5b0d6c9af8fdf26451.nix;
         revNum = 0;
         sha256 = "84185badd9dbddca831028b3def6e9f7c0599f7f4c9c4a5b0d6c9af8fdf26451";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

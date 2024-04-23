@@ -21,7 +21,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "Yesod is a framework designed to foster creation of RESTful web application that have strong compile-time guarantees of correctness. It also affords space efficient code and portability to many deployment backends, from CGI to stand-alone serving.\n\nThe Yesod documentation site <http://www.yesodweb.com/> has much more information, tutorials and information on some of the supporting packages, like Hamlet and Persistent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -61,16 +61,16 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-          ] ++ (pkgs.lib).optional (flags.test) (hsPkgs."wai-test" or (errorHandler.buildDepError "wai-test"))) ++ (if flags.blaze_html_0_5
+        ] ++ pkgs.lib.optional (flags.test) (hsPkgs."wai-test" or (errorHandler.buildDepError "wai-test"))) ++ (if flags.blaze_html_0_5
           then [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ]
+          ]
           else [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

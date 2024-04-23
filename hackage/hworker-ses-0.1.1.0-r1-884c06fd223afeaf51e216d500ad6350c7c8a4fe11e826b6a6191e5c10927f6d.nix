@@ -21,7 +21,7 @@
       synopsis = "Library for sending email with Amazon's SES and hworker";
       description = "See README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."amazonka-ses" or (errorHandler.buildDepError "amazonka-ses"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

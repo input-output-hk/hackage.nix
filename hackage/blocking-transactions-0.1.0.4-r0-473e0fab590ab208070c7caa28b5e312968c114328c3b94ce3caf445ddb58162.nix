@@ -21,16 +21,16 @@
       synopsis = "Composable, blocking transactions.";
       description = "A variable type (BVar), monad (BTM), and arrow\n(BTA), which provide fast, atomic, composable, blocking\ninter-thread communication.  Blocking transactions are\nstrictly less expressive than software transactional\nmemory, but may be more efficient under very high\ncontention.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "_RandomAccounts" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Template Toolkit implementation for Haskell";
       description = "Template Toolkit is a template processing system originally written in Perl by Andy Wardley.\nThis haskell implementation includes such features as:\nscalar, array, hash variables, variable interpolation,\nconditional directives,\nloops and loop controls,\nexternal templates and internal blocks processing,\nlots of virtual methods and filters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

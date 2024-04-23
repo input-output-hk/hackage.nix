@@ -21,15 +21,15 @@
       synopsis = "Optics for the `smash` library";
       description = "Prisms, Traversals, and combinators for the `smash` library. This\nlibrary is equivalent to the <https://hackage.haskell.org/package/smash-lens smash-lens> library, but uses <https://hackage.haskell.org/package/optics-core optics-core> instead of `lens`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."smash" or (errorHandler.buildDepError "smash"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

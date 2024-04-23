@@ -21,7 +21,7 @@
       synopsis = "Interprets and debug the cap language.";
       description = "An interpreter and debugger for the cap language.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cap" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

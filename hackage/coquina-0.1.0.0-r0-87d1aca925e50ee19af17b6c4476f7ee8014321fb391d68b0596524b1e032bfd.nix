@@ -21,7 +21,7 @@
       synopsis = "Yet another shell monad.";
       description = "A simple monad for shelling out from Haskell programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readme" = {
           depends = [
@@ -50,13 +50,13 @@
             (hsPkgs."coquina" or (errorHandler.buildDepError "coquina"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."which" or (errorHandler.buildDepError "which"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "digestive-foundation-lucid";
         version = "0.0.0.1";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2014 Athan Clark";
       maintainer = "Athan Clark <athan.clark@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Speed up form designing using digestive functors and foundation";
       description = "Generate foundation forms out of digestive views";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."lucid-foundation" or (errorHandler.buildDepError "lucid-foundation"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

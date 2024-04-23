@@ -21,14 +21,14 @@
       synopsis = "Finite totally-ordered sets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

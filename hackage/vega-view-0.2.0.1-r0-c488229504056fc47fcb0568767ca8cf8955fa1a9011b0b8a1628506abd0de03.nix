@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/DougBurke/vega-view#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "vegaview" = {
@@ -36,9 +36,9 @@
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

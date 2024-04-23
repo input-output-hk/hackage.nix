@@ -21,7 +21,7 @@
       synopsis = "Miscellaneous OpenGL utilities.";
       description = "Helpers for working with shaders, buffer objects, and\ntextures in OpenGL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,11 +35,11 @@
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/cachix/cachix#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -65,9 +65,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cachix" = {
           depends = [
@@ -112,10 +112,10 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cachix-test" = {
           depends = [
@@ -161,9 +161,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

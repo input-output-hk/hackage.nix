@@ -21,7 +21,7 @@
       synopsis = "Are you ready to get freaky?";
       description = "This library provides a way to train a model that predicts\nthe \"randomness\" of an input ByteString.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."freq" or (errorHandler.buildDepError "freq"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."freq" or (errorHandler.buildDepError "freq"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

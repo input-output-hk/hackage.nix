@@ -21,25 +21,25 @@
       synopsis = "TAR (tape archive format) library.";
       description = "This is a library for reading and writing TAR archives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ] ++ (if flags.bytestring-in-base
+        ] ++ (if flags.bytestring-in-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ])) ++ (if flags.split-base
+          ])) ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-servicecatalog-appregistry-2.0-r0-fe69f55eb10b4b2affc4249bbb198fc8d2a485e5d0c71f48d061ee3f69fbb2a7.nix;
         revNum = 0;
         sha256 = "fe69f55eb10b4b2affc4249bbb198fc8d2a485e5d0c71f48d061ee3f69fbb2a7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

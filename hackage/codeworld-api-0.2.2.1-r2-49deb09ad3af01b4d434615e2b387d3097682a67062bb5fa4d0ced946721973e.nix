@@ -21,7 +21,7 @@
       synopsis = "Graphics library for CodeWorld";
       description = "This module provides the drawing code for CodeWorld.  It is heavily inspired by\nGloss, but modified for consistency and pedagogical reasons.\n\nIt comes with two backends. When compiled with GHCJS, it uses the JavaScript FFI to\nrun on <http://code.world/>.  When compiled with GHC, it uses the blank-canvas\npackage to provide a webpage consisting of just a panel locally. This way, the same\nprogram that runs on the CodeWorld server can also be run locally.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,7 +34,7 @@
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."cereal-text" or (errorHandler.buildDepError "cereal-text"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
@@ -42,12 +42,12 @@
             (hsPkgs."codeworld-prediction" or (errorHandler.buildDepError "codeworld-prediction"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]
+          ]
           else [
             (hsPkgs."blank-canvas" or (errorHandler.buildDepError "blank-canvas"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

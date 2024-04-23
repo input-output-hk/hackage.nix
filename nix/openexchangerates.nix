@@ -6,8 +6,8 @@
         nix = import ../hackage/openexchangerates-0.1.0.0-r0-575dd638393ed379e755ae3284168f7cf8ac2b6eba90bdb038cfdc7a435f6ea7.nix;
         revNum = 0;
         sha256 = "575dd638393ed379e755ae3284168f7cf8ac2b6eba90bdb038cfdc7a435f6ea7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

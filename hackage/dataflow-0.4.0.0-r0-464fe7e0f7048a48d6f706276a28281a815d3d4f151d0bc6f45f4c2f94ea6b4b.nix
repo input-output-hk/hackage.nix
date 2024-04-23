@@ -21,14 +21,14 @@
       synopsis = "Generate Graphviz documents from a Haskell representation.";
       description = "Outputs .dot files that can be processed by the dot\ncommand. Currently it only supports the DFD output format\n(http://en.wikipedia.org/wiki/Data_flow_diagram). Support\nfor a Graphviz-like input format (instead of using the\ndata structures in Haskell) is planned.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

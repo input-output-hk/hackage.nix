@@ -6,8 +6,8 @@
         nix = import ../hackage/scrapbook-core-0.5.0-r0-c01003ddd87558752a696c093d31aa98a4ec52aa56db3fd48772da541643f68f.nix;
         revNum = 0;
         sha256 = "c01003ddd87558752a696c093d31aa98a4ec52aa56db3fd48772da541643f68f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "multipart/form-data (e.g file upload) support for servant";
       description = "This package contains servant API types that support multiform upload, used by\nservant-multipart and servant-multipart-client for backend/client implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

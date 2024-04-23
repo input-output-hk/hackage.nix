@@ -21,7 +21,7 @@
       synopsis = "The Elm language module.";
       description = "Elm aims to make client-side web-development more pleasant.\nIt is a statically/strongly typed, functional reactive\nlanguage to HTML, CSS, and JS. This package provides a\nlibrary for Elm compilation in Haskell and a compiler\nexecutable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "elm" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

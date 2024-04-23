@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with many HStringTemplate templates from files";
       description = "This library adds support for working with multiple templates in a single file,\nand .csv files containing mapping from template names to multiple template versions\n(e.g. for translations)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."html" or (errorHandler.buildDepError "html"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-text-string-templates" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

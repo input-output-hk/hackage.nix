@@ -21,7 +21,7 @@
       synopsis = "Neptune Client";
       description = "\nClient library for calling the Neptune API based on http-client.\n\nNeptune Backend API API version: 2.8\n\nOpenAPI version: 3.0.1\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,13 +62,13 @@
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-          ] ++ (if flags.usekatip
+        ] ++ (if flags.usekatip
           then [ (hsPkgs."katip" or (errorHandler.buildDepError "katip")) ]
           else [
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "example-app" = {
           depends = [
@@ -76,10 +76,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."neptune-backend" or (errorHandler.buildDepError "neptune-backend"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

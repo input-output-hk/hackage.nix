@@ -21,23 +21,23 @@
       synopsis = "The Haskell library and examples for the kids programming robot paprika";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."huckleberry" or (errorHandler.buildDepError "huckleberry"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "paprika-console-ctrl-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."paprika" or (errorHandler.buildDepError "paprika"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "paprika-wai-ctrl-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "paprika-wai-cutter-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

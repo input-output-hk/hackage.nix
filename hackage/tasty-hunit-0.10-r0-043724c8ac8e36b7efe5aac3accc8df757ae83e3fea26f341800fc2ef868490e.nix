@@ -21,15 +21,15 @@
       synopsis = "HUnit support for the Tasty test framework.";
       description = "HUnit support for the Tasty test framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Function generation for `hedgehog`";
       description = "Generating shrinkable, showable functions with `hedgehog`. See\n`Hedgehog.Function` for example usages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,20 +29,20 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-fn" or (errorHandler.buildDepError "hedgehog-fn"))
-            ];
-          buildable = if flags.build-examples && (compiler.isGhc && (compiler.version).ge "8.0")
+          ];
+          buildable = if flags.build-examples && (compiler.isGhc && compiler.version.ge "8.0")
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Please ignore this package.";
       description = "This package is no longer maintained, and does not work with recent tidal versions. MIDI is now generally done via superdirt. Please ignore this package, thanks!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

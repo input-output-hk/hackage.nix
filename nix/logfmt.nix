@@ -6,8 +6,8 @@
         nix = import ../hackage/logfmt-0.0.1-r0-40b3fbd771f76233a307562b9f0b7afef7f0c24d40ae3abf6524a220328fe8ca.nix;
         revNum = 0;
         sha256 = "40b3fbd771f76233a307562b9f0b7afef7f0c24d40ae3abf6524a220328fe8ca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

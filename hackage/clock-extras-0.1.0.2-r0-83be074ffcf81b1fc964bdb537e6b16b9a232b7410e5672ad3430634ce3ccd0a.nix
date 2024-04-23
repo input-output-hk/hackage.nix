@@ -21,24 +21,24 @@
       synopsis = "A couple functions that probably should be in the 'clock' package";
       description = "A couple functions that probably should be in the 'clock' package, such as 'elapsedTime' and 'diffSeconds'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "clock-extras-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clock-extras" or (errorHandler.buildDepError "clock-extras"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Common subexpression elimination for the fixploint types.   ";
       description = "Common subexpression elimination for the fixploint types.   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-generalized-examples-array";
         version = "0.11.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Helps to create texts with the given phonetic properties (e. g. poetic).";
       description = "Is rewritten from the modules of the @phonetic-languages-simplified-examples-array@ package. Can be used not only for Ukrainian, but also for other languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."string-interpreter" or (errorHandler.buildDepError "string-interpreter"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

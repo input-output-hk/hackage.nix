@@ -6,8 +6,8 @@
         nix = import ../hackage/semantic-0.0.0-r0-2f2a00c798a6c26d46acd0b2ff174a5b2b0b9d28ee1142a8453d47d37d07de66.nix;
         revNum = 0;
         sha256 = "2f2a00c798a6c26d46acd0b2ff174a5b2b0b9d28ee1142a8453d47d37d07de66";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

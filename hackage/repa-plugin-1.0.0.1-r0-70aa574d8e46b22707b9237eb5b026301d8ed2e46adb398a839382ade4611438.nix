@@ -21,7 +21,7 @@
       synopsis = "Data Flow Fusion GHC Plugin.";
       description = "This GHC plugin implements Data Flow Fusion as described in the paper:\nData Flow Fusion with Series Expressions in Haskell, Haskell Symposium 2013.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
           (hsPkgs."ddc-core-flow" or (errorHandler.buildDepError "ddc-core-flow"))
           (hsPkgs."ddc-core-simpl" or (errorHandler.buildDepError "ddc-core-simpl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

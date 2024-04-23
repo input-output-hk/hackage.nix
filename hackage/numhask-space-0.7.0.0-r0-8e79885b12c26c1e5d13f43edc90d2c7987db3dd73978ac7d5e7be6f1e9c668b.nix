@@ -21,7 +21,7 @@
       synopsis = "Numerical spaces.";
       description = "@numhask-space@ provides support for spaces where [space](https://en.wikipedia.org/wiki/Space_(mathematics\\)) is defined as a set of numbers with a lower and upper bound.\n\n== Usage\n\n>>> {-# LANGUAGE NegativeLiterals #-}\n>>> {-# LANGUAGE RebindableSyntax #-}\n>>> import NumHask.Prelude\n>>> import NumHask.Space\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

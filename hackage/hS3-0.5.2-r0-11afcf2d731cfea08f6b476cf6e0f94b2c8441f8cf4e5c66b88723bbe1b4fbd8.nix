@@ -21,7 +21,7 @@
       synopsis = "Interface to Amazon's Simple Storage Service (S3)";
       description = "This is the Haskell S3 library.  It provides an\ninterface to Amazon's Simple Storage Service (S3), allowing Haskell\ndevelopers to reliably store and retrieve arbitrary amounts of\ndata from anywhere on the Internet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "hs3" = { buildable = true; }; };
       };
-    }
+      exes = { "hs3" = { buildable = true; }; };
+    };
+  }

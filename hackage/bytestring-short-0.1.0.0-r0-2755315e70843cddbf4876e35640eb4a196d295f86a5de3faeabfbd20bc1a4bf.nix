@@ -21,7 +21,7 @@
       synopsis = "Backport copy of ShortByteString";
       description = "Backport copy of ShortByteString";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.use-backport
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       tests = {
         "prop-compiled" = {
           depends = if flags.use-backport
@@ -44,10 +44,10 @@
               (hsPkgs."bytestring-short" or (errorHandler.buildDepError "bytestring-short"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "The Tahoe-LAFS' Content-Hash-Key (CHK) cryptographic protocol.";
       description = "Reversibly encrypt plaintext, encode ciphertext to shares, and serialize\nshares to bytes such that confidentiality, integrity, and authenticity are\nassured.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tahoe-chk-encrypt" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tahoe-chk" or (errorHandler.buildDepError "tahoe-chk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tahoe-chk-tests" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/linkcheck-0.1.0.0-r0-4b74a193ee39f1b39f2c51ab4e95025af736679182bb6a78c7bf79916779946a.nix;
         revNum = 0;
         sha256 = "4b74a193ee39f1b39f2c51ab4e95025af736679182bb6a78c7bf79916779946a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

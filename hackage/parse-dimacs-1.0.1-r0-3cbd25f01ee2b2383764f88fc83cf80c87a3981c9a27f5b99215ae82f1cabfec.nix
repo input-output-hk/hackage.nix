@@ -21,14 +21,14 @@
       synopsis = "DIMACS CNF parser library";
       description = "A DIMACS CNF parser library, implemented with Parsec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

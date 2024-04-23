@@ -21,7 +21,7 @@
       synopsis = "Convert a tree of files into fixed-output derivations";
       description = "@nix-freeze-tree@ walks a directory tree and generates a tree of Nix\nexpressions that recreate the tree from fixed-output derivations,\none derivation per file in the source tree. See @README.md@ to get\nstarted.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "nix-freeze-tree-internal" = {
@@ -41,19 +41,19 @@
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "nix-freeze-tree" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nix-freeze-tree".components.sublibs.nix-freeze-tree-internal or (errorHandler.buildDepError "nix-freeze-tree:nix-freeze-tree-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "nix-freeze-tree-tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

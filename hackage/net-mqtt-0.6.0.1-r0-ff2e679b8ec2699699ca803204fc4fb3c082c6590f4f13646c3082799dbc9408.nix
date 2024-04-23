@@ -21,7 +21,7 @@
       synopsis = "An MQTT Protocol Implementation.";
       description = "Please see the README on GitHub at <https://github.com/dustin/mqtt-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mqtt-example" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mqtt-watch" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -90,10 +90,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mqtt-test" = {
           depends = [
@@ -119,9 +119,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

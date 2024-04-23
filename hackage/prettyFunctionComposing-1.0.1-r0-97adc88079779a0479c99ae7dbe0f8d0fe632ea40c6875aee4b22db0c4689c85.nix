@@ -21,11 +21,11 @@
       synopsis = "prettier function composition by (°)";
       description = "Yes, I am afraid it is completely trivial and syntactic.\nHowever, the use of '.' is quite overloaded, so that e.g.\ncharacter search becomes a problem. Pretty looking &\ngenerally available at the keyboard, '°' solves this.\nPossibly the most simple Hackage package ever. :-P";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

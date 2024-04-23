@@ -21,11 +21,11 @@
       synopsis = "The flexibility of Haskell and the safety of PHP";
       description = "At last, a module that combines the dynamic flexibility of Haskell with the strong design principles of PHP!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generate XML sitemaps.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-sitemap>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

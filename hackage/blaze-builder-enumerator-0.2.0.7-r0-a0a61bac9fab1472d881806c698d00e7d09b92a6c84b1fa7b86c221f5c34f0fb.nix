@@ -21,7 +21,7 @@
       synopsis = "Enumeratees for the incremental conversion of builders to\nbytestrings.";
       description = "This package integrates the builders from the blaze-builder package with\nthe enumerator package. It provides infrastructure and enumeratees for\nincrementally executing builders and pass the filled chunks to a bytestring\niteratee.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

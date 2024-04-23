@@ -21,11 +21,11 @@
       synopsis = "Fake monadic records library";
       description = "The generalized syntax of abstract monadic records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

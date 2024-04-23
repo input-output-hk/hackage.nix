@@ -21,7 +21,7 @@
       synopsis = "Utility functions for OpenGL and GLUT";
       description = "This is a collection of miscellaneous utility functions for OpenGL and GLUT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

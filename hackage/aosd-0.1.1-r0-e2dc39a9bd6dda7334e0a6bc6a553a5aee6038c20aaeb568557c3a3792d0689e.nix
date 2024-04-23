@@ -21,7 +21,7 @@
       synopsis = "Bindings to libaosd, a library for Cairo-based on-screen displays";
       description = "<http://www.atheme.org/project/libaosd>\n\n@An advanced on screen display (OSD) library, which uses Cairo to create high quality rendered graphics to be overlaid on top of the screen.@\n\nDistro packages providing /libaosd/:\n\n* /Debian/: @libaosd2@\n\nExample:\n\n@\n&#123;-\\# LANGUAGE OverloadedStrings \\#-&#125;\nimport \"Graphics.Aosd.Pango\"\n\nmarkup = pSized 50 (pUnlines [pItalic \\\"AOSD\\\",\\\"Example\\\"])\n\nmain = aosdFlash\n\\           defaultOpts\n\\           (textRenderer markup) &#123; alignment = Just AlignCenter, colour = orange &#125;\n\\           (symDurations 3000 3000)\n@\n\nTested with /libaosd/ version 0.2.7.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,15 +32,15 @@
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."pango" or (errorHandler.buildDepError "pango"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libaosd" or (errorHandler.pkgConfDepError "libaosd"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-aosd" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."pango" or (errorHandler.buildDepError "pango"))
             (hsPkgs."language-haskell-extract" or (errorHandler.buildDepError "language-haskell-extract"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

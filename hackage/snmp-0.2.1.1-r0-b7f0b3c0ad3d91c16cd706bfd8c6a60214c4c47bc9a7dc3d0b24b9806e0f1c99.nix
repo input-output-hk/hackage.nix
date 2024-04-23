@@ -21,7 +21,7 @@
       synopsis = "API for write snmp client.";
       description = "API for write snmp client.        ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

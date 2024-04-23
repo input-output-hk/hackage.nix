@@ -6,8 +6,8 @@
         nix = import ../hackage/mmsyn2-hashable-0.1.0.0-r0-a69040966af091b631de80edccf3e30c35bef32c3134521af55df6a683f1450e.nix;
         revNum = 0;
         sha256 = "a69040966af091b631de80edccf3e30c35bef32c3134521af55df6a683f1450e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "Hashing-based container types";
       description = "Please see the README on GitHub at <https://github.com/tmcdonell/containers-accelerate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hashable-accelerate" or (errorHandler.buildDepError "hashable-accelerate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "containers-accelerate-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

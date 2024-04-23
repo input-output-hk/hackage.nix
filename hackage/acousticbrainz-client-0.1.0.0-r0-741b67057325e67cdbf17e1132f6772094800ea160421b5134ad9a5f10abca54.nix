@@ -21,7 +21,7 @@
       synopsis = "AcousticBrainz API client";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."streaming-utils" or (errorHandler.buildDepError "streaming-utils"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "golden-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/primitive-simd-0.1.0.0-r0-bb31775a16b4aa5fc53bc43bd14df0eda27d5796101c81dcb40ed4fc119c619b.nix;
         revNum = 0;
         sha256 = "bb31775a16b4aa5fc53bc43bd14df0eda27d5796101c81dcb40ed4fc119c619b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

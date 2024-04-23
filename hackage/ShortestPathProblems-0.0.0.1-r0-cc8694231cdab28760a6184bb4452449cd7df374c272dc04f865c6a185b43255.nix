@@ -21,7 +21,7 @@
       synopsis = "grammars for TSP and SHP";
       description = "Grammars and default implementations for the shortest\nHamiltonian path and Travelling Salesman problems.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."ADPfusionSet" or (errorHandler.buildDepError "ADPfusionSet"))
           (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ShortestPathProblems" or (errorHandler.buildDepError "ShortestPathProblems"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Polysemy effect for time";
       description = "See https://hackage.haskell.org/package/polysemy-time/docs/Polysemy-Time.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-time-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

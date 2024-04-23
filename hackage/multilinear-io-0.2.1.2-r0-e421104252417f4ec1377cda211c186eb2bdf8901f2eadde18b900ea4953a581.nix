@@ -21,7 +21,7 @@
       synopsis = "Input/output capability for multilinear package.";
       description = "Input & output capability for multilinear package <https://hackage.haskell.org/package/multilinear>. Supports various file formats: binary, CSV, JSON. More information available on GitHub: <https://github.com/ArturB/multilinear-io#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "multilinear-io-test" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."multilinear-io" or (errorHandler.buildDepError "multilinear-io"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "multilinear-io-bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."multilinear-io" or (errorHandler.buildDepError "multilinear-io"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

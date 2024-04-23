@@ -21,7 +21,7 @@
       synopsis = "snowtify send your result of `stack build` (`stack test`) to notify-daemon :dog2:";
       description = "snowtify send your result of `stack build` (`stack test`) to notify-daemon :dog2:";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snowtify" = {
@@ -32,9 +32,9 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

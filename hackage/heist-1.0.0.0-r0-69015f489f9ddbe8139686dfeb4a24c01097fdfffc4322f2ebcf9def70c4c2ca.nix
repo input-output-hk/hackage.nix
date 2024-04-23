@@ -21,7 +21,7 @@
       synopsis = "An Haskell template system supporting both HTML5 and XML.";
       description = "Heist is a powerful template system that supports both HTML5 and XML.\nSome of Heist's features are:\n\n* Designer-friendly HTML5 (or XML) syntax\n\n* Templates can be reloaded to make changes visible without recompiling\nyour Haskell code\n\n* Enforces near-perfect separation of business logic and view\n\n* Powerful abstraction primitives allowing you to eliminate repetition\n\n* Easy creation of domain-specific markup languages\n\n* Built-in support for including JSON and Markdown content in templates\n\n* Simple mechanism for designer-specified template caching\n\n* Optional merging of multiple \\<head\\> tags defined anywhere in the\ndocument";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "benchmark" = {
           depends = [
@@ -87,10 +87,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

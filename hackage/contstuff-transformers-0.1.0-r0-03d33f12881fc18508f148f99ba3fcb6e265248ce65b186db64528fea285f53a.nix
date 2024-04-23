@@ -21,15 +21,15 @@
       synopsis = "ContStuff instances for transformers and vice-versa";
       description = "This package provides contstuff transformer class instances for the\nmonad transformers from the transformers package as well as\ntransformers class instances for the monad transformers from\ncontstuff.  This makes using both transformer libraries in a single\nproject much more convenient as you get along with a single set of\nlifting functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."contstuff" or (errorHandler.buildDepError "contstuff"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

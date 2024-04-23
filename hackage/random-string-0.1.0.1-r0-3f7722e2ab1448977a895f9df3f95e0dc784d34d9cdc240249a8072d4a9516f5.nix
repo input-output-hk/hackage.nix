@@ -21,7 +21,7 @@
       synopsis = "Generate a random base 16, 58, or 64 string";
       description = "Uses the fastest strong random available for a random\nstring of the given base and length (in bytes of entropy).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."base58-bytestring" or (errorHandler.buildDepError "base58-bytestring"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

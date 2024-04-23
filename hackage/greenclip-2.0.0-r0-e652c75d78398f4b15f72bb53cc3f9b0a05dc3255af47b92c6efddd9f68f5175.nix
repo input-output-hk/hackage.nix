@@ -21,7 +21,7 @@
       synopsis = "Simple clipboard manager to be integrated with rofi";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "greenclip" = {
@@ -35,9 +35,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

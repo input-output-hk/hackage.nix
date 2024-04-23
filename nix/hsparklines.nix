@@ -6,8 +6,8 @@
         nix = import ../hackage/hsparklines-0.1.0-r0-9b7028b0c3337b729c19338461531a082de8c6ef0bf31cf2114be8607b10cb11.nix;
         revNum = 0;
         sha256 = "9b7028b0c3337b729c19338461531a082de8c6ef0bf31cf2114be8607b10cb11";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

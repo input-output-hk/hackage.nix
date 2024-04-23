@@ -21,7 +21,7 @@
       synopsis = "Abstract representation of musical articulation.";
       description = "Abstract representation of musical articulation (staccato, legato etc).\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."average" or (errorHandler.buildDepError "average"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

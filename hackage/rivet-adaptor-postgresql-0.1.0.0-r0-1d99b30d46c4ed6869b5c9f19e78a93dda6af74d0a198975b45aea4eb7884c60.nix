@@ -21,7 +21,7 @@
       synopsis = "Rivet migration library postgresql backend";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."rivet-core" or (errorHandler.buildDepError "rivet-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

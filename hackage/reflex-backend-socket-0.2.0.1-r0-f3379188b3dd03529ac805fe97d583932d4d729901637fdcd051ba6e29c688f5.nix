@@ -21,7 +21,7 @@
       synopsis = "Reflex bindings for TCP sockets";
       description = "<<https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png>>\n\nreflex-backend-socket provides functions to handle sockets using\nReflex @Event@s. Sending\\/receiving\\/waiting\\/accepting are all\nperformed on background threads.\n\nThe most important function in this library is\n@Reflex.Backend.Socket.socket@, which wraps a @Socket@ to process\n@Event t ByteString@s.\n\nThat @Socket@ can come from:\n\n1. @Reflex.Backend.Socket.Accept.accept@, if you're making a server;\n2. @Reflex.Backend.Socket.Connect.connect@, if you're making a client; or\n3. Your favourite networking library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-server" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-backend-socket" or (errorHandler.buildDepError "reflex-backend-socket"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-backend-socket" or (errorHandler.buildDepError "reflex-backend-socket"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-others" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-backend-socket" or (errorHandler.buildDepError "reflex-backend-socket"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

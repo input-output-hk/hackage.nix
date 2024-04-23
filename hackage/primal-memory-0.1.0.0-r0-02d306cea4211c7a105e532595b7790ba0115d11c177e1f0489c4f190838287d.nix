@@ -21,7 +21,7 @@
       synopsis = "Unified interface for memory managemenet.";
       description = "Please see the README on GitHub at <https://github.com/lehins/primal#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primal" or (errorHandler.buildDepError "primal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "convert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,9 +54,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

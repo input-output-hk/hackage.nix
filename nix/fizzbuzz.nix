@@ -6,8 +6,8 @@
         nix = import ../hackage/fizzbuzz-0.1.0.0-r0-806fe4fc595effd25ef29d5ca1bf6d77c44a915d4da88df25ed37310e85a38f5.nix;
         revNum = 0;
         sha256 = "806fe4fc595effd25ef29d5ca1bf6d77c44a915d4da88df25ed37310e85a38f5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

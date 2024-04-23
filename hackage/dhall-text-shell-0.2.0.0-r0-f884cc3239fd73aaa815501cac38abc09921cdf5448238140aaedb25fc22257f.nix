@@ -21,7 +21,7 @@
       synopsis = "Render dhall text with shell commands as function arguments";
       description = "`dhall text` and `dhall to-directory-tree` require the expression (or file\nleaves) to be `Text`.  But what if it was able to also render expressions\nof type `(Text -> Text) -> Text` (or `(Text -> Text) -> directory tree`),\nand be given a shell argument as the `Text -> Text` ?\n\nThis is essentially a very minimal \"FFI\" for dhall, since it doesn't require\nextending anything in the language.  It just requires you to parameterize your\nprogram on that ffi function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dhall-text-shell" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."dhall-text-shell" or (errorHandler.buildDepError "dhall-text-shell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

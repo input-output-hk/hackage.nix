@@ -21,7 +21,7 @@
       synopsis = "Requesting and introspecting Tables within an Airtable project.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "airtable-api-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."airtable-api" or (errorHandler.buildDepError "airtable-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

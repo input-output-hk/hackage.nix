@@ -21,7 +21,7 @@
       synopsis = "Core data types and functionality for Gogol libraries.";
       description = "Core data types, functionality and serialisation primitives for\nGogol related Google Services SDKs.\n\nThe external interface of this library is stable with respect to the\ndownstream Gogol libraries, only, and as such is not suitable\nfor use in non-Gogol projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,23 +45,23 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"))) ++ (if flags.old-locale
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"))) ++ (if flags.old-locale
           then [
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

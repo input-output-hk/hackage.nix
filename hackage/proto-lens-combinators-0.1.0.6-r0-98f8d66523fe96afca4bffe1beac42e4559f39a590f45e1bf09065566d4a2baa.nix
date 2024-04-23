@@ -21,7 +21,7 @@
       synopsis = "Utilities functions to proto-lens.";
       description = "Useful things for working with protos.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "combinators_test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."proto-lens-protoc" or (errorHandler.buildDepError "proto-lens-protoc"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

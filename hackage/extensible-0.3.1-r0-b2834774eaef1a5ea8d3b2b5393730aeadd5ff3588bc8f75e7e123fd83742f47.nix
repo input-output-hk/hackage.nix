@@ -21,7 +21,7 @@
       synopsis = "Extensible, efficient, lens-friendly data types";
       description = "Combinators and types for extensible product and sum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A sub-project (exercise) for a functional programming course";
       description = "A sub-project (exercise) for a functional programming course";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

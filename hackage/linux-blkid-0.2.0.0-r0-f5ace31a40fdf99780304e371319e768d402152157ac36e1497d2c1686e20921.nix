@@ -21,7 +21,7 @@
       synopsis = "Linux libblkid";
       description = "Bindings to the Linux libblkid library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."blkid" or (errorHandler.pkgConfDepError "blkid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

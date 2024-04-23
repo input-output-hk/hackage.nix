@@ -21,7 +21,7 @@
       synopsis = "Csv parsing functionality for composite.";
       description = "Csv parsing functionality for composite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

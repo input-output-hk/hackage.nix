@@ -21,7 +21,7 @@
       synopsis = "Wrap WAI applications to run on AWS Lambda";
       description = "This library provides a function 'Network.Wai.Handler.Hal.run' to\nlift a @wai@ 'Network.Wai.Application' into a function that can be\npassed to @hal@'s 'AWS.Lambda.Runtime.mRuntime'. This allows you to\nrun applications written in mature web frameworks (e.g., @servant@)\non AWS Lambda, as proxy integrations of API Gateway Rest APIs.\n\nMore details, including deployment advice, are available in the\nrepository's @README.md@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-handler-hal-tests" = {
           depends = [
@@ -60,12 +60,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai-handler-hal" or (errorHandler.buildDepError "wai-handler-hal"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

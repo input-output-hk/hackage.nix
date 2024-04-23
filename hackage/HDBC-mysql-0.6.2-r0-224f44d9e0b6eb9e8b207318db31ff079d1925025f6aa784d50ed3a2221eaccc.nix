@@ -21,7 +21,7 @@
       synopsis = "MySQL driver for HDBC";
       description = "This package provides a MySQL driver for HDBC.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

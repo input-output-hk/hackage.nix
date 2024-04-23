@@ -21,7 +21,7 @@
       synopsis = "Rational arithmetic in an irrational world.";
       description = "A library of number-theory functions, for; factorials, square-roots, Pi and primes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "factory" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."factory" or (errorHandler.buildDepError "factory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

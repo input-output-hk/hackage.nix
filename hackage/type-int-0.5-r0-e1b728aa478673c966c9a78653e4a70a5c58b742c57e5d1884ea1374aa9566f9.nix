@@ -21,14 +21,14 @@
       synopsis = "Type Level 2s- and 16s- Complement Integers";
       description = "Type level 2s- and 16s- complement Integers (positive and negative),\nBooleans, Ord and Eq.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

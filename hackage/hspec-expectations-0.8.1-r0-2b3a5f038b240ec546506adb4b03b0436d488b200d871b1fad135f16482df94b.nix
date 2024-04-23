@@ -21,16 +21,16 @@
       synopsis = "Catchy combinators for HUnit";
       description = "Catchy combinators for HUnit: <https://github.com/hspec/hspec-expectations#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
             (hsPkgs."nanospec" or (errorHandler.buildDepError "nanospec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

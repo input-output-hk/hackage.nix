@@ -21,7 +21,7 @@
       synopsis = "jQuery for Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

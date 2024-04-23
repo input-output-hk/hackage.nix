@@ -21,7 +21,7 @@
       synopsis = "Simple SMTP Client";
       description = "A very simple SMTP Client library for sending emails.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

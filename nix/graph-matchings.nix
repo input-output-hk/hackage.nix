@@ -6,8 +6,8 @@
         nix = import ../hackage/graph-matchings-0.1.0.0-r0-47a6ee328fc4f0b54db4cf19a317b9826583f2228b6d92ba83119fb922ad3a61.nix;
         revNum = 0;
         sha256 = "47a6ee328fc4f0b54db4cf19a317b9826583f2228b6d92ba83119fb922ad3a61";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

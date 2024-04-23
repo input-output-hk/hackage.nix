@@ -21,7 +21,7 @@
       synopsis = "Total, Texty, Transformer-Prelude";
       description = "Total, Text, Transformer-Prelude";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."writer-cps-mtl" or (errorHandler.buildDepError "writer-cps-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

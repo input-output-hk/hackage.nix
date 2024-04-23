@@ -6,8 +6,8 @@
         nix = import ../hackage/merkle-patricia-db-0.1.0-r0-1551162709ab7a24f2e970690ef738ec7d1f2a43c3462c58cefca07ab8c4e5e1.nix;
         revNum = 0;
         sha256 = "1551162709ab7a24f2e970690ef738ec7d1f2a43c3462c58cefca07ab8c4e5e1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

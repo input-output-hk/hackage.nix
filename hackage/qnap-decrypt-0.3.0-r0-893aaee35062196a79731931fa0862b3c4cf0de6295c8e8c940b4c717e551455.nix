@@ -21,7 +21,7 @@
       synopsis = "Decrypt files encrypted by QNAP's Hybrid Backup Sync";
       description = "Please see the README on Github at <https://github.com/alexkazik/qnap-decrypt#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "qnap-decrypt" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "qnap-decrypt-test" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

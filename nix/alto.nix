@@ -6,13 +6,13 @@
         nix = import ../hackage/alto-0-r0-b648d04a62375011c909ebac50c747008d8a0d65bf8c13acf2a9c55905799cb8.nix;
         revNum = 0;
         sha256 = "b648d04a62375011c909ebac50c747008d8a0d65bf8c13acf2a9c55905799cb8";
-        };
+      };
       r1 = {
         nix = import ../hackage/alto-0-r1-228a32393b7742f0a3e1de80d5075a307365d02d36b454345f119cfe4bf1ac6f.nix;
         revNum = 1;
         sha256 = "228a32393b7742f0a3e1de80d5075a307365d02d36b454345f119cfe4bf1ac6f";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

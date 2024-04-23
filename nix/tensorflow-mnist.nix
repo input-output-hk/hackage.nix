@@ -6,8 +6,8 @@
         nix = import ../hackage/tensorflow-mnist-0.1.0.0-r0-ef588f831073a7eb43767d87b8d058b991952f9851e0f73b8784db5a1a508770.nix;
         revNum = 0;
         sha256 = "ef588f831073a7eb43767d87b8d058b991952f9851e0f73b8784db5a1a508770";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

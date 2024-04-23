@@ -21,21 +21,21 @@
       synopsis = "First and Last generalized to return up to n values";
       description = "This library provides data types @<Data-Monoid-First.html#t:First-39- First' n>@ and @<Data-Monoid-Last.html#t:Last-39- Last' n>@ generalizing @First@ and @Last@ from @<https://hackage.haskell.org/package/base/docs/Data-Monoid.html Data.Monoid>@ to return up to @n@ values.\n\n>>> getFirst' (foldMap pure [1,2,3,4] :: First' 2 Int)\n[1,2]\n\n>>> getLast' (foldMap pure [1,2,3,4] :: Last' 2 Int)\n[3,4]\n\nIt also provides API-compatible type synonyms @<Data-Monoid-First.html#t:First First>@ and @<Data-Monoid-Last.html#t:Last Last>@ as well as functions @<Data-Monoid-First.html#v:getFirst getFirst>@ and @<Data-Monoid-Last.html#v:getLast getLast>@, allowing you to use it as a drop-in replacement.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "Golden" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."first-and-last" or (errorHandler.buildDepError "first-and-last"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

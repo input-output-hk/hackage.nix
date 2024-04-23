@@ -21,24 +21,24 @@
       synopsis = "Run hlint in test suite";
       description = "Allows you to write small  hlint test runner; so you will not forget to run hlint before pushing to master.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hlint-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."hlint-test" or (errorHandler.buildDepError "hlint-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "STM Stores for apecs";
       description = "Apecs stores that live in the STM monad. These support easy concurrency without race conditions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
           (hsPkgs."apecs" or (errorHandler.buildDepError "apecs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

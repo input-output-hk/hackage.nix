@@ -21,11 +21,11 @@
       synopsis = "Haskus utility modules";
       description = "Haskus types utility modules";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

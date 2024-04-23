@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL Abstract Syntax Tree Assember";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pasta-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

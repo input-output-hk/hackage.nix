@@ -21,7 +21,7 @@
       synopsis = "cached hashmaps";
       description = "An polysemy interface for cached hashmaps and an interpreter implemented using <https://hackage.haskell.org/package/cache cache>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cache-polysemy-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

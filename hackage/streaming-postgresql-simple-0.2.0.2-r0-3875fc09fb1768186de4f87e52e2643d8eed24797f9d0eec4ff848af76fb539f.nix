@@ -14,7 +14,7 @@
       identifier = {
         name = "streaming-postgresql-simple";
         version = "0.2.0.2";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ollie@ocharles.org.uk";
@@ -24,7 +24,7 @@
       synopsis = "Stream postgresql-query results using the streaming library";
       description = "This package provides incremental streaming functions for the @postgresql-simple@ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

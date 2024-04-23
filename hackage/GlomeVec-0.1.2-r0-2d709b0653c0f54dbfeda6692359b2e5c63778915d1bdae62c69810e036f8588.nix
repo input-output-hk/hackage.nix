@@ -21,14 +21,14 @@
       synopsis = "Simple 3D vector library";
       description = "A simple library for dealing with 3D vectors, suitable for graphics projects.  A small texture library with Perlin noise is included as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

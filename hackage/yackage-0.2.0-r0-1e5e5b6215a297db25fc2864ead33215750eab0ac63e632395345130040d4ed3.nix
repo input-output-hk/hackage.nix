@@ -21,11 +21,11 @@
       synopsis = "Personal Hackage replacement for testing new packages.";
       description = "This package installs a yackage executable that runs a simplistic hackage-like server. It allows you to upload packages produced via cabal sdist and install them via cabal. The trick is to add the yackage repository to your cabal config file, with a line such as:\n\nremote-repo: yackage:http://localhost:3500/";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yackage" = {
-          depends = (pkgs.lib).optionals (flags.yackage) [
+          depends = pkgs.lib.optionals (flags.yackage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
@@ -44,18 +44,18 @@
             (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = if flags.yackage then true else false;
-          };
+        };
         "yackage-upload" = {
-          depends = (pkgs.lib).optionals (flags.upload) [
+          depends = pkgs.lib.optionals (flags.upload) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http-enumerator" or (errorHandler.buildDepError "http-enumerator"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.upload then true else false;
-          };
         };
       };
-    }
+    };
+  }

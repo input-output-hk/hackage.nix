@@ -21,7 +21,7 @@
       synopsis = "REdis Serialization Protocol (RESP) implementation.";
       description = "REdis Serialization Protocol (RESP) implementation as specified\nin <http://redis.io/topics/protocol>.\n\nMost Redis commands are declared as a GADT which\nenables different interpretations such as\n<http://hackage.haskell.org/package/redis-io redis-io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

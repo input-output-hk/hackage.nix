@@ -6,8 +6,8 @@
         nix = import ../hackage/toktok-0.5-r0-d928d8eb512c5fbec6aad72bbba9beb6d592d18f0db99fbd88710e30634db6cb.nix;
         revNum = 0;
         sha256 = "d928d8eb512c5fbec6aad72bbba9beb6d592d18f0db99fbd88710e30634db6cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

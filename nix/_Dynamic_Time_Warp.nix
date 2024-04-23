@@ -6,8 +6,8 @@
         nix = import ../hackage/DynamicTimeWarp-0.1.0.0-r0-c7852059538b42b5f142ef5ac06991e7be1fe83e8842eef3b75d7c4853eb369b.nix;
         revNum = 0;
         sha256 = "c7852059538b42b5f142ef5ac06991e7be1fe83e8842eef3b75d7c4853eb369b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A module music mixer and player";
       description = "Hemkay (An M.K. Player Whose Name Starts with an H) is a simple\nmusic module player that performs all the mixing in Haskell.  It\nsupports the popular ProTracker format and some of its variations\nwith different numbers of channels.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hemkay" = {
@@ -32,9 +32,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."portaudio" or (errorHandler.buildDepError "portaudio"))
             (hsPkgs."hemkay-core" or (errorHandler.buildDepError "hemkay-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

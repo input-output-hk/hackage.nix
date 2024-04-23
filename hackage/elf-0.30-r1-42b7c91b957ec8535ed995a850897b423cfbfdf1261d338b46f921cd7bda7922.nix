@@ -21,16 +21,16 @@
       synopsis = "An Elf parser";
       description = "Parser for ELF object format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."elf" or (errorHandler.buildDepError "elf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

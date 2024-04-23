@@ -21,7 +21,7 @@
       synopsis = "http-client TLS backend using Rustls";
       description = "Make HTTPS connections using [http-client](https://hackage.haskell.org/package/http-client)\nand [Rustls](https://github.com/rustls/rustls).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."port-utils" or (errorHandler.buildDepError "port-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

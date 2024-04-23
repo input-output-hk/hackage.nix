@@ -21,12 +21,12 @@
       synopsis = "Convert between camel case and separated words style.";
       description = "Functions to transform Haskell source files and\nhaddock(or HsColour)-produced HTML files from camel case\nto separated words or Haskell source from separated words\nto camel case.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "restyle" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

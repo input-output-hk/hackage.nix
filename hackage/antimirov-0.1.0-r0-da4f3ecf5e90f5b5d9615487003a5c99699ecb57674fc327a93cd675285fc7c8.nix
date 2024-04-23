@@ -21,25 +21,25 @@
       synopsis = "Define the language containment (=subtyping) relation on regulare expressions.";
       description = "This is a generalization of regex-\"matching\". We use Antimirovs algorithm.\nTests are provided, too.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

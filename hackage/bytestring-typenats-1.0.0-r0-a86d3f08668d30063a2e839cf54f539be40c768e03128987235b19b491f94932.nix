@@ -21,7 +21,7 @@
       synopsis = "Bytestrings with typenat lengths";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -29,13 +29,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ] ++ (pkgs.lib).optional (flags.usecereal) (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))) ++ (pkgs.lib).optional (flags.usebinary) (hsPkgs."binary" or (errorHandler.buildDepError "binary"))) ++ (pkgs.lib).optionals (flags.usearbitrary) [
+        ] ++ pkgs.lib.optional (flags.usecereal) (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))) ++ pkgs.lib.optional (flags.usebinary) (hsPkgs."binary" or (errorHandler.buildDepError "binary"))) ++ pkgs.lib.optionals (flags.usearbitrary) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."blake2" or (errorHandler.buildDepError "blake2"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-all" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."bytestring-typenats" or (errorHandler.buildDepError "bytestring-typenats"))
-            ] ++ (pkgs.lib).optional (flags.usearbitrary) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+          ] ++ pkgs.lib.optional (flags.usearbitrary) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-all" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."bytestring-typenats" or (errorHandler.buildDepError "bytestring-typenats"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (flags.usearbitrary) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+          ] ++ pkgs.lib.optional (flags.usearbitrary) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

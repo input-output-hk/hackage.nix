@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/simspace/hipsql#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hipsql-server" or (errorHandler.buildDepError "hipsql-server"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."postgresql-tx" or (errorHandler.buildDepError "postgresql-tx"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

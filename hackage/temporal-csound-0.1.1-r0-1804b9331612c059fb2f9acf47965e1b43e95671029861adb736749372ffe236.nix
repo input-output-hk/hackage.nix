@@ -21,7 +21,7 @@
       synopsis = "brings together temporal-music-notation and csound-expression packages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."temporal-music-notation" or (errorHandler.buildDepError "temporal-music-notation"))
           (hsPkgs."csound-expression" or (errorHandler.buildDepError "csound-expression"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

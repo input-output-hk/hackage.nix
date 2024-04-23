@@ -21,7 +21,7 @@
       synopsis = "Yet Another Pong Clone using SDL.";
       description = "Yet Another Pong Clone using SDL.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "YACPong" = {
@@ -36,9 +36,9 @@
             (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

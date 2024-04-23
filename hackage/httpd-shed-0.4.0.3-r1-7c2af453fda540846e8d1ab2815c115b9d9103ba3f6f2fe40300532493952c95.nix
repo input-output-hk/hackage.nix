@@ -21,23 +21,23 @@
       synopsis = "A simple web-server with an interact style API";
       description = "This web server promotes a Request to IO Response function\ninto a local web server. The user can decide how to interpret\nthe requests, and the library is intended for implementing Ajax APIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "httpd-shed-test" = {
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

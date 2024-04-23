@@ -6,8 +6,8 @@
         nix = import ../hackage/hoodie-0.1.0.0-r0-ec05209ce477fd0abf47d88dd41c7e599a8def6325b44073ce6d07d6956fa64e.nix;
         revNum = 0;
         sha256 = "ec05209ce477fd0abf47d88dd41c7e599a8def6325b44073ce6d07d6956fa64e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

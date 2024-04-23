@@ -21,7 +21,7 @@
       synopsis = "Lucid frontend for the digestive-functors library";
       description = "Ludic frontend for the digestive-functors library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

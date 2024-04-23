@@ -21,7 +21,7 @@
       synopsis = "HTTP server library";
       description = "A simple but practical HTTP server library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."c10k" or (errorHandler.buildDepError "c10k"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

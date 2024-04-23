@@ -21,7 +21,7 @@
       synopsis = "Configure grafana dashboards from Dhall expression";
       description = "grafdhall takes Grafana dashboards in Dhall format, and submits them to a grafana service.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "grafdhall" = {
@@ -36,9 +36,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Higher-order function combinators";
       description = "Replacement for `composition` or `composition-extra`, exporting everything in one module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

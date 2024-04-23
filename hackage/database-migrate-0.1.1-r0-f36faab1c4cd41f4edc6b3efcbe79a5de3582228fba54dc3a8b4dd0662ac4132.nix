@@ -21,7 +21,7 @@
       synopsis = "Database versioning and migration (experimental)";
       description = "A database versioning and migration library.\n\n/Note/: This library is under heavy development, currently\nthe PostgreSQL implementation is functional, but\nexpected to change. It is intended that a type safe\nmigration api, command line tools and MySql support be added\nbefore this library will be considered stable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

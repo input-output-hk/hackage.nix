@@ -21,7 +21,7 @@
       synopsis = "A library for generating 2D Charts and Plots";
       description = "A library for generating 2D Charts and Plots, with backends provided by\nCairo (<http://hackage.haskell.org/package/Chart-cairo>)\nand\nDiagrams (<http://hackage.haskell.org/package/Chart-diagrams>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

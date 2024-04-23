@@ -21,7 +21,7 @@
       synopsis = "Turn your Elm project into buildable Nix project";
       description = "Please see the README on Github at <https://github.com/domenkozar/elm2nix#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "elm2nix" = {
           depends = [
@@ -53,18 +53,18 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."here" or (errorHandler.buildDepError "here"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "elm2nix-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm2nix" or (errorHandler.buildDepError "elm2nix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

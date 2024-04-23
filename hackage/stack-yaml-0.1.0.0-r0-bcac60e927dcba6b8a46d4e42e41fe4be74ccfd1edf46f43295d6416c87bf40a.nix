@@ -21,7 +21,7 @@
       synopsis = "Parse a stack.yaml file";
       description = "stack-yaml parses a \"stack.yaml\" file, as used by stack,\nand returns a simple data structure containing\nits configuration data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hup-doctest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."stack-yaml" or (errorHandler.buildDepError "stack-yaml"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

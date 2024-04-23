@@ -21,7 +21,7 @@
       synopsis = "An HDBC connector for Presto";
       description = "Uses Presto's REST API to provide an HDBC interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."http-streams" or (errorHandler.buildDepError "http-streams"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

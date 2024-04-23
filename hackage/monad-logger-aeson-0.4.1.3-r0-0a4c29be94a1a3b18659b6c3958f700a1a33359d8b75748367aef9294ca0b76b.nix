@@ -21,7 +21,7 @@
       synopsis = "JSON logging using monad-logger interface";
       description = "@monad-logger-aeson@ provides structured JSON logging using @monad-logger@'s\ninterface.\n\nSpecifically, it is intended to be a (largely) drop-in replacement for\n@monad-logger@'s \"Control.Monad.Logger.CallStack\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readme-example" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."monad-logger-aeson" or (errorHandler.buildDepError "monad-logger-aeson"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "monad-logger-aeson-test-suite" = {
           depends = [
@@ -62,12 +62,12 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."monad-logger-aeson" or (errorHandler.buildDepError "monad-logger-aeson"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

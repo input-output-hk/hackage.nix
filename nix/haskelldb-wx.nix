@@ -6,8 +6,8 @@
         nix = import ../hackage/haskelldb-wx-1.0.0-r0-5cb6c6ed4097fe69a35514e879767e4d9406b11324641cb0b209f61ca510ca72.nix;
         revNum = 0;
         sha256 = "5cb6c6ed4097fe69a35514e879767e4d9406b11324641cb0b209f61ca510ca72";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

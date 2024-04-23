@@ -21,7 +21,7 @@
       synopsis = "Wikipedia EPUB E-Book construction from Firefox history.";
       description = "\nWikipedia EPUB E-Book construction from Firefox History.\nIt dumps history and select only wikipedia articles, fetch\nthem and strip thier content before put into EPUB book\nfor E-Book readers.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,13 +43,13 @@
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wiki4e-mkepub-firefox" = { buildable = true; };
         "wiki4e-mkepub-subtree" = { buildable = true; };
         "wiki4e-mkepub-cache" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

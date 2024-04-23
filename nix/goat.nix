@@ -6,8 +6,8 @@
         nix = import ../hackage/goat-1.0.0-r0-5ed53a6b6887fc1c7335b3de27d6c119251bf9ed0aa551d718d4df3eaa9e5078.nix;
         revNum = 0;
         sha256 = "5ed53a6b6887fc1c7335b3de27d6c119251bf9ed0aa551d718d4df3eaa9e5078";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

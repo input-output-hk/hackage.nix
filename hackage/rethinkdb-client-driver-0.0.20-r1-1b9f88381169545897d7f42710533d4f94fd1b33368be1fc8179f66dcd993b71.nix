@@ -21,7 +21,7 @@
       synopsis = "Client driver for RethinkDB";
       description = "This is an alternative client driver for RethinkDB. It is not complete\nyet, but the basic structure is in place and the driver can make\nsimple queries.\n\nIts main focus is on type safety, which it achieves quite well. It also\nuses the new JSON protocol which should give it a speed boost (and make\nthe driver compatible with GHC 7.8).\n\nNote that the driver is neither thread-safe nor reentrant. If you have\na multi-threaded application, I recommend using 'resource-pool'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

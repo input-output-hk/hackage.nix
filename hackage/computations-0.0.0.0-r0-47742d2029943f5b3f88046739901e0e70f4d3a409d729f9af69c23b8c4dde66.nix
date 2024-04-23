@@ -21,11 +21,11 @@
       synopsis = "Advanced notions of computation";
       description = "This package provides a framework for computations with certain\nconsistency constraints. Based on this framework, it implements\nresourceful computations, which are an alternative to the @IO@\nmondad. In the case of resourceful computations, the consistency\nconstraint is a single-use policy, also known as linearity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "the Computer Algebra SHell";
       description = "A Computer Algebra Shell for Haskell. CASH connects via SCSCP and OpenMATH to Computer Algebra systems with SCSCP (such as GAP). CASH also exposes an OpenMath and SCSCP marshalling library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

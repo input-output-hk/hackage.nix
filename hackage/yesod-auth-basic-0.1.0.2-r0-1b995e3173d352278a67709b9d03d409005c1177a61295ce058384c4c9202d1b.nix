@@ -21,7 +21,7 @@
       synopsis = "Yesod Middleware for HTTP Basic Authentication";
       description = "An efficient Yesod middleware middleware for HTTP Basic\nAuthentication.\n\nUtilizes Yesod request-local caching mechanisms to store valid auth\ncredentials found in the Authorization header.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,16 +45,16 @@
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

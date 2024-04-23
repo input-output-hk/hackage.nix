@@ -21,7 +21,7 @@
       synopsis = "A tool to build a novel";
       description = "celtchar is a tool to build a novel. It is part\nof the Ogma project and mostly relies on the\nogmarkup language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "celtchar" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."celtchar" or (errorHandler.buildDepError "celtchar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "celtchar-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."celtchar" or (errorHandler.buildDepError "celtchar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

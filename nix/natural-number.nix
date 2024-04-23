@@ -6,8 +6,8 @@
         nix = import ../hackage/natural-number-1.0-r0-98596cf914680ee33e2a75676fb0f23444535168af1a97e364984800ced5a7b3.nix;
         revNum = 0;
         sha256 = "98596cf914680ee33e2a75676fb0f23444535168af1a97e364984800ced5a7b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

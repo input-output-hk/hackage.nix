@@ -21,24 +21,24 @@
       synopsis = "";
       description = "Yet another 2D GJK collision dection algorithm with Linear";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gjk2d-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."gjk2d" or (errorHandler.buildDepError "gjk2d"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatic generation of Isabelle/HOL correctness proofs for security protocols.";
       description = "scyther-proof is a security protocol verification tool based on a similar\nalgorithm as the Scyther tool developed by Cas Cremers\n(http://people.inf.ethz.ch/cremersc/scyther/index.html). The theory underlying scyther-proof\nis described in the paper \"Strong Invariants for the Efficient Construction\nof Machine-Checked Protocol Security Proofs\" by Meier, Cremers, and Basin.\nParts of the infrastructure underlying scyther-proof are reused in other\nprojects by the same author. Therefore, most of its modules are exported in\nthe corresponding scyther-proof library. However, this library is not yet thought for\ngeneral use. Please contact the author, if you would like to build upon/extend scyther-proof.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scyther-proof" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

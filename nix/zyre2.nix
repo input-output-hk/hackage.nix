@@ -6,8 +6,8 @@
         nix = import ../hackage/zyre2-0.1.1.0-r0-12aaab97e10a4ac140ae3edb3dd2027af317b54b2e8f9c888164c7e304568a6f.nix;
         revNum = 0;
         sha256 = "12aaab97e10a4ac140ae3edb3dd2027af317b54b2e8f9c888164c7e304568a6f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

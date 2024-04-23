@@ -21,7 +21,7 @@
       synopsis = "Extra utilities for hpqtypes library";
       description = "The following extras for hpqtypes library:\n\n* DSL for easy, modular construction of SQL queries.\n\n* System for automatic validation and migration\nof a database schema.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."log-base" or (errorHandler.buildDepError "log-base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hpqtypes-extras-tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

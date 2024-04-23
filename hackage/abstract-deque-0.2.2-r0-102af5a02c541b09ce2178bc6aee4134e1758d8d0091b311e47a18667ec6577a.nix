@@ -21,7 +21,7 @@
       synopsis = "Abstract, parameterized interface to mutable Deques.";
       description = "An abstract interface to highly-parameterizable queues/deques.\n\nBackground: There exists a feature space for queues that extends between:\n\n* simple, single-ended, non-concurrent, bounded queues\n\n* double-ended, threadsafe, growable queues\n\n... with important points inbetween (such as\nthe queues used for work-stealing).\n\nThis package includes an interface for Deques that allows the\nprogrammer to use a single API for all of the above, while using the\ntype-system to select an efficient implementation given the\nrequirements (using type families).\n\nThis package also includes a simple reference implementation based\non 'IORef' and \"Data.Sequence\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-          ] ++ (pkgs.lib).optional (flags.usecas && (compiler.isGhc && (compiler.version).ge "7.4") && !system.isWindows) (hsPkgs."IORefCAS" or (errorHandler.buildDepError "IORefCAS"));
+        ] ++ pkgs.lib.optional (flags.usecas && (compiler.isGhc && compiler.version.ge "7.4") && !system.isWindows) (hsPkgs."IORefCAS" or (errorHandler.buildDepError "IORefCAS"));
         buildable = true;
-        };
+      };
       tests = {
         "test-abstract-deque" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

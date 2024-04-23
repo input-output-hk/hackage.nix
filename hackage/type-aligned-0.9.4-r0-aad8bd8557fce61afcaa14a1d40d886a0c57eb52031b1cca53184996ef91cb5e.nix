@@ -21,11 +21,11 @@
       synopsis = "Various type-aligned sequence data structures.";
       description = "Various data structures for type aligned sequences: heterogeneous sequences where the types enforce the element order.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

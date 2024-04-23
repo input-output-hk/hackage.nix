@@ -21,7 +21,7 @@
       synopsis = "A PostgreSQL Database Migrator";
       description = "Please see the README on GitHub at <https://github.com/jfischoff/trek#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,19 +45,19 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "trek" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."trek-app" or (errorHandler.buildDepError "trek-app"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -79,12 +79,12 @@
             (hsPkgs."trek-db" or (errorHandler.buildDepError "trek-db"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."postgres-options" or (errorHandler.buildDepError "postgres-options"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

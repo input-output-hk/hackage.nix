@@ -21,7 +21,7 @@
       synopsis = "Leksah tool kit";
       description = "UI Framework used by leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,10 +36,10 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ] ++ (if flags.gtk3
+        ] ++ (if flags.gtk3
           then [ (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3")) ]
           else [ (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

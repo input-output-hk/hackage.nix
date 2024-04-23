@@ -6,8 +6,8 @@
         nix = import ../hackage/safe-lazy-io-0.1-r0-ff354a1e043f891ed1b7dab1522153ce6874706d24b1170191d8fd83a86a096a.nix;
         revNum = 0;
         sha256 = "ff354a1e043f891ed1b7dab1522153ce6874706d24b1170191d8fd83a86a096a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

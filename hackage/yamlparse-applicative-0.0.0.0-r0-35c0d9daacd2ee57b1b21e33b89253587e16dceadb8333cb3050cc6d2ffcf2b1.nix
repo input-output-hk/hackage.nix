@@ -21,7 +21,7 @@
       synopsis = "";
       description = "See https://github.com/NorfairKing/yamlparse-applicative";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."validity-text" or (errorHandler.buildDepError "validity-text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yamlparse-applicative-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yamlparse-applicative" or (errorHandler.buildDepError "yamlparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Type-level numeric types and classes";
       description = "This provides numeric types meant for use at the type level with -XDataKinds,\nalong with type families that act like type-level typeclasses providing\nvarious operations.\n\nCurrently, this primarily exists in support of\n<https://hackage.haskell.org/package/snumber snumber> and\n<https://hackage.haskell.org/package/dependent-literals-plugin dependent-literals-plugin>,\nand the only type-level numeric type in the current version is @Integer@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."type-compare" or (errorHandler.buildDepError "type-compare"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

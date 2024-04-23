@@ -21,7 +21,7 @@
       synopsis = "GenI graphical user interface";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,18 +42,18 @@
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "geni-gui" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GenI" or (errorHandler.buildDepError "GenI"))
             (hsPkgs."geni-gui" or (errorHandler.buildDepError "geni-gui"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

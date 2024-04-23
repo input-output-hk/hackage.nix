@@ -21,15 +21,15 @@
       synopsis = "Variable-length integer decoding for Attoparsec";
       description = "A collection of 'Data.Attoparsec.Parser's that decode integer types from\ncompact, variable-length representations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "attoparsec-varword-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."bytestring-builder-varword" or (errorHandler.buildDepError "bytestring-builder-varword"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

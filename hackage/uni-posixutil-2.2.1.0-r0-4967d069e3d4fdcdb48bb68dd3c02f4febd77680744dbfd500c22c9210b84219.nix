@@ -21,7 +21,7 @@
       synopsis = "Posix utilities for the uniform workbench";
       description = "posix utilities";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."uni-util" or (errorHandler.buildDepError "uni-util"))
           (hsPkgs."uni-events" or (errorHandler.buildDepError "uni-events"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

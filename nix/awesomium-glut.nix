@@ -6,8 +6,8 @@
         nix = import ../hackage/awesomium-glut-0.1.0.0-r0-cc9f13bb5b5a47947db1d3113594eba75a931af21436a812bae5a8d1f07b513a.nix;
         revNum = 0;
         sha256 = "cc9f13bb5b5a47947db1d3113594eba75a931af21436a812bae5a8d1f07b513a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

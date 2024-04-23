@@ -21,11 +21,11 @@
       synopsis = "Hypergeometric functions";
       description = "Haskell implementation of hypergeometric functions and associated statistical and special functions, viz. erf, normal cdf, incomplete beta, F-distribution cdf, \\(\\chi^2\\)-distribution cdf, t-distrubtion cdf.\nAlso includes Lanczos' approximation of the gamma function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

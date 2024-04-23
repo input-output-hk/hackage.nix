@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HDBC ODBC driver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "DBDirect-hdbc-odbc" = { buildable = true; }; };
       };
-    }
+      exes = { "DBDirect-hdbc-odbc" = { buildable = true; }; };
+    };
+  }

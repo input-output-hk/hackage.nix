@@ -6,8 +6,8 @@
         nix = import ../hackage/islink-0.1.0.0-r0-402bf635d93cb59fa33d8d311adc6a2fdbacc4aa5299d7df2496b096e2141a7f.nix;
         revNum = 0;
         sha256 = "402bf635d93cb59fa33d8d311adc6a2fdbacc4aa5299d7df2496b096e2141a7f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

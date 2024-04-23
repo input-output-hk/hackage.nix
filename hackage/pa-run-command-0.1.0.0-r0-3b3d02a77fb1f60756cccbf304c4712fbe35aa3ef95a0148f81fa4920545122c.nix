@@ -21,7 +21,7 @@
       synopsis = "Helper functions for spawning subprocesses";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

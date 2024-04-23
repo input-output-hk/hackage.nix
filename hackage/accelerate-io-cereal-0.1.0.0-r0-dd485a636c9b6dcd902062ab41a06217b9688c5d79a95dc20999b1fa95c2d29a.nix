@@ -21,7 +21,7 @@
       synopsis = "Binary serialisation of Accelerate arrays using cereal";
       description = "This package provides efficient binary serialisation of Accelerate arrays\nvia the cereal libary.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."accelerate-io-bytestring" or (errorHandler.buildDepError "accelerate-io-bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

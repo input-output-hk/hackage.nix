@@ -21,16 +21,16 @@
       synopsis = "This has a bunch of code for specifying and managing ranges in your code.";
       description = "range is built to allow you to use ranges in your code quickly and\nefficiently. There are many occasions where you will want to check if\ncertain values are within a range and this library will make it\ntrivial for you to do so. It also attempts to do so in the most\nefficient way possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-range" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."range" or (errorHandler.buildDepError "range"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

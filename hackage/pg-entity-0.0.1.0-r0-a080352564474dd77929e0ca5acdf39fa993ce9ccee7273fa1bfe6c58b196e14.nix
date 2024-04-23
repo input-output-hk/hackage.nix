@@ -21,7 +21,7 @@
       synopsis = "A pleasant PostgreSQL layer";
       description = "A PostgreSQL layer to safely expand your SQL queries with a lightweight eDSL.\nRead the tutorial at https://tchoutri.github.io/pg-entity/Tutorial";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "entity-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

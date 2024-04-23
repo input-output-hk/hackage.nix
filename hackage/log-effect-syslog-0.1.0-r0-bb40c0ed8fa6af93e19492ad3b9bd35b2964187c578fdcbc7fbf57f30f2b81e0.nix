@@ -21,7 +21,7 @@
       synopsis = "Syslog functions for log-effect";
       description = "Utility functions for combining log-effect and syslog";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."log-effect" or (errorHandler.buildDepError "log-effect"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

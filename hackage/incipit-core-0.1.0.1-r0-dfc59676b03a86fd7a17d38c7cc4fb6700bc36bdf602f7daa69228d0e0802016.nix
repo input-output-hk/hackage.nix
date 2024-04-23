@@ -21,15 +21,15 @@
       synopsis = "A Prelude for Polysemy";
       description = "See <https://hackage.haskell.org/package/incipit/docs/Prelude.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."incipit-base" or (errorHandler.buildDepError "incipit-base"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

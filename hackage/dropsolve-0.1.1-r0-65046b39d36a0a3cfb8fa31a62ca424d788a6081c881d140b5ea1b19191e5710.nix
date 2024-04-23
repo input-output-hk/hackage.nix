@@ -21,7 +21,7 @@
       synopsis = "A command line tool for resolving dropbox conflicts.";
       description = "A command line tool for resolving dropbox conflicts.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dropsolve" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

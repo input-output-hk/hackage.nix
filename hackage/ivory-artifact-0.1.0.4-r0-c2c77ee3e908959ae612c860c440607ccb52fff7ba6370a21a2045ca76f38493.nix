@@ -21,7 +21,7 @@
       synopsis = "Manage additional data files during Ivory compilation.";
       description = "Mostly used by other Ivory libraries and backends and typically shouldn't have to be used directly by the user.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

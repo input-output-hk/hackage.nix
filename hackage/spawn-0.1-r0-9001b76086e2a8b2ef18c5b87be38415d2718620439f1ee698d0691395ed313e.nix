@@ -21,11 +21,11 @@
       synopsis = "Tiny library for joinable computations / threads with results.";
       description = "Spawn a concurrent 'IO' computation and later demand its result.  Tiny API\nand implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

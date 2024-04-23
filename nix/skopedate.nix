@@ -6,8 +6,8 @@
         nix = import ../hackage/skopedate-0.1-r0-a6be786b1dae93a6a4f406bd4c23d8fd93482e5bfdd043125b8254c8a85ac501.nix;
         revNum = 0;
         sha256 = "a6be786b1dae93a6a4f406bd4c23d8fd93482e5bfdd043125b8254c8a85ac501";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

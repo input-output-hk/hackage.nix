@@ -21,14 +21,14 @@
       synopsis = "Unsafe Haskell SuperCollider";
       description = "@hsc3-unsafe@ provides \"Sound.SC3.UGen.Unsafe\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "acid-state snaplet for Snap Framework";
       description = "This snaplet that makes it easy to use acid-state in a Snap\napplication.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

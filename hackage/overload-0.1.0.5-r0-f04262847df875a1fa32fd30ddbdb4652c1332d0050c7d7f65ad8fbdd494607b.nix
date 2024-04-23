@@ -21,7 +21,7 @@
       synopsis = "Finite overloading";
       description = "Provides a mechanism for finite overloading";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."simple-effects" or (errorHandler.buildDepError "simple-effects"))
           (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

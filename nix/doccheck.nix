@@ -6,8 +6,8 @@
         nix = import ../hackage/doccheck-0.1.0.0-r0-8e2aaa971b1be69a584b765aa46b1a3d091383b80e43826916e576ce7915dc03.nix;
         revNum = 0;
         sha256 = "8e2aaa971b1be69a584b765aa46b1a3d091383b80e43826916e576ce7915dc03";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

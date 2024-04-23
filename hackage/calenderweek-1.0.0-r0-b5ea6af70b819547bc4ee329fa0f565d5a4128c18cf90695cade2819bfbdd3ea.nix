@@ -21,7 +21,7 @@
       synopsis = "Commandline tool to get week of the year";
       description = "Prints week of year for given date. Installs 'kw' binary that returns week of today or of provided date (YYYY-MM-DD)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kw" = {
@@ -31,9 +31,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

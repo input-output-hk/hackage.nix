@@ -21,14 +21,14 @@
       synopsis = "Google Compute Engine Instance Group Manager SDK.";
       description = "The Google Compute Engine Instance Group Manager API provides groups of\nhomogenous Compute Engine Instances.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v1beta2@\nof the API.\n\nLabels:\n\n* Limited Availability";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

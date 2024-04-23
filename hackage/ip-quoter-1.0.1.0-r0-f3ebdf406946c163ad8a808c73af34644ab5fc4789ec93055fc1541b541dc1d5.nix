@@ -21,7 +21,7 @@
       synopsis = "Quasiquoter for IP addresses";
       description = "A quasiquoter for IP address literals – That is, IPv4 decimal-dotted or IPv6\ncolon-separated notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."ip-quoter" or (errorHandler.buildDepError "ip-quoter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

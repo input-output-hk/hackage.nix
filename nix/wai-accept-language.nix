@@ -6,10 +6,10 @@
         nix = import ../hackage/wai-accept-language-0.1.0.0-r0-c5ca7a100c6e67f73ff0cf95cea68059eef004fc3aeb1c9b8183c328ddf77af1.nix;
         revNum = 0;
         sha256 = "c5ca7a100c6e67f73ff0cf95cea68059eef004fc3aeb1c9b8183c328ddf77af1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.1.0.1" = {
     sha256 = "d0d3f3e9c45edfa0c6f05e7d58091806825a1e02261d70cb448dc146480a4a31";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/wai-accept-language-0.1.0.1-r0-fa38413dfd263134b18577172e4449b5cafbc054d7e307e080cc24a1976c7b0b.nix;
         revNum = 0;
         sha256 = "fa38413dfd263134b18577172e4449b5cafbc054d7e307e080cc24a1976c7b0b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

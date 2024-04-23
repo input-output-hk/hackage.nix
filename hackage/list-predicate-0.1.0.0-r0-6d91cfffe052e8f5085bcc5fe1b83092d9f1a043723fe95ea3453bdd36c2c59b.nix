@@ -21,12 +21,12 @@
       synopsis = "Predicates on lists";
       description = "Please see the README on GitHub at <https://github.com/pgujjula/list-predicate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."list-predicate" or (errorHandler.buildDepError "list-predicate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Prelude";
       description = "See https://hackage.haskell.org/package/prelate/docs/Prelate.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."polysemy-resume" or (errorHandler.buildDepError "polysemy-resume"))
           (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

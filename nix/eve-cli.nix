@@ -6,8 +6,8 @@
         nix = import ../hackage/eve-cli-0.2.0.0-r0-6774f0646e8fe32d63e039aa6942085f96b93a4c5a2ca4d6ef5e3472ad2346fb.nix;
         revNum = 0;
         sha256 = "6774f0646e8fe32d63e039aa6942085f96b93a4c5a2ca4d6ef5e3472ad2346fb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

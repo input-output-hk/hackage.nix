@@ -21,15 +21,15 @@
       synopsis = "API for collection data structures.";
       description = "This package provides classes for a consistent API to data\nstructures. The behaviour of the interface is specified by QuickCheck properties.\nIt is intended as an evolution of the API of the data structures in the @containers@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

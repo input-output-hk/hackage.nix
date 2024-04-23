@@ -6,8 +6,8 @@
         nix = import ../hackage/gelatin-freetype2-0.1.0.0-r0-7afe73b67b2846f6e3ad479cd195bf9c5a86fdc7dd58c4265614be1daa88faac.nix;
         revNum = 0;
         sha256 = "7afe73b67b2846f6e3ad479cd195bf9c5a86fdc7dd58c4265614be1daa88faac";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

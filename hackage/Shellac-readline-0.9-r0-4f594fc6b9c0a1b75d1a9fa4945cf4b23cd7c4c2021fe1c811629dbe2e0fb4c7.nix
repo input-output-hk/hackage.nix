@@ -21,7 +21,7 @@
       synopsis = "Readline backend module for Shellac";
       description = "This package provides a Shellac backend based on the GNU readline\nlibrary.  This backend features all the line editing capabilities\nprovided by readline, as well as command completion and command\nhistory features.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
           (hsPkgs."Shellac" or (errorHandler.buildDepError "Shellac"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

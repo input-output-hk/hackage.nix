@@ -21,11 +21,11 @@
       synopsis = "Anonymous coproduct type";
       description = "Anonymous coproduct type (generalization of Either to\nchoices among other than 2 cases)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

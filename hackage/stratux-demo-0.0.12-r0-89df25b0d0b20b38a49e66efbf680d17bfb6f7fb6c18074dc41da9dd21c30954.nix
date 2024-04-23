@@ -21,7 +21,7 @@
       synopsis = "A demonstration of the stratux library.";
       description = "A demonstration of the stratux library <http://stratux.me/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stratux-demo" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stratux-demo" or (errorHandler.buildDepError "stratux-demo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

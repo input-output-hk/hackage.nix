@@ -21,7 +21,7 @@
       synopsis = "Turtle graphics.";
       description = "Have you ever heard of [Turtle Graphics](https://en.wikipedia.org/wiki/Turtle_graphics)?\n\nIf not, then think of a @turtle@ as a cursor you can program to draw!\n\nTurtle graphics are a fantastic introduction to the world of\nprogramming and to the syntax of a new programming language.\n\n![parallelcircles gif](https://hackage.haskell.org/package/worldturtle-0.1.1.0/docs/docs/images/parallel_circles_animated_300.gif)\n\nThis module is a framework built on top\nof [gloss](https://hackage.haskell.org/package/gloss) to render turtles\nprogrammed in Haskell as animations. This is primarily aimed as a\nteaching tool to beginners - but also, it's cool to draw things!\n\nSee The API ref, \"Graphics.WorldTurtle\", for features!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple command line interface for creating and updating feeds like RSS";
       description = "This program generates RSS 2.0 (http://www.rssboard.org/rss-2-0-1-rv-6)\nfeeds based on command line arguments.  Use it to easily create and update\nfeeds from shell scripts, build scripts, cron jobs, CGIs, or other programs\ninstead of using an RSS or Atom library.\n\neg: feed-cli new-item -t\"entry of the day\" -d\"This is a description...\" -u/tmp/feed.xml  -lhttp://www.syntaxpolice.org";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "feed-cli" = {
@@ -33,9 +33,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

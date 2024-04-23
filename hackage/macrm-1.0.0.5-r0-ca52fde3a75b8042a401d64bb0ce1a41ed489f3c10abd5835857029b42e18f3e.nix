@@ -21,7 +21,7 @@
       synopsis = "Alternative rm command for macOS that remove files/dirs to the system trash";
       description = "Please see the README on GitHub at <https://github.com/satosystems/macrm#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "macrm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."macrm" or (errorHandler.buildDepError "macrm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "leksah" = {
@@ -44,9 +44,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."gtksourceview2" or (errorHandler.buildDepError "gtksourceview2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

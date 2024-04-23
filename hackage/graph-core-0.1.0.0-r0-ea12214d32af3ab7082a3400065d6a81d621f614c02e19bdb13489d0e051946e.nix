@@ -21,7 +21,7 @@
       synopsis = "Fast, memory efficient and persistent graph implementation";
       description = "A small package providing a powerful and easy to use Haskell graph implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "graph-core-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

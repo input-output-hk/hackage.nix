@@ -21,7 +21,7 @@
       synopsis = "Di adapters for Polysemy.Log";
       description = "See https://hackage.haskell.org/package/polysemy-log-di/docs/Polysemy-Log-Di.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."polysemy-log" or (errorHandler.buildDepError "polysemy-log"))
           (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-log-di-unit" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

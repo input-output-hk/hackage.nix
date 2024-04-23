@@ -21,7 +21,7 @@
       synopsis = "Validate and (optionally) redo ELynx analyses";
       description = "Please see the README on GitHub at <https://github.com/dschrempf/elynx>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elynx" = {
@@ -33,9 +33,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."slynx" or (errorHandler.buildDepError "slynx"))
             (hsPkgs."tlynx" or (errorHandler.buildDepError "tlynx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

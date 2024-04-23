@@ -21,7 +21,7 @@
       synopsis = "A 2-D shooting game";
       description = "A 2-D shooting game";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Eternal10Seconds" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."SDL-mixer" or (errorHandler.buildDepError "SDL-mixer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

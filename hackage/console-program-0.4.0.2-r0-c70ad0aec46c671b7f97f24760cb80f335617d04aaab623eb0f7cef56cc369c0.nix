@@ -21,7 +21,7 @@
       synopsis = "Interpret the command line and settings in a config file as commands and options";
       description = "This library provides a framework to build command line programs.\n\n\nThe constructed program can have several \\\"commands\\\" that provide different modes of operation.\nOptions can be declared to allow fine-tuning of the behaviour of the program.\nThese options are read from the command line when running the program\nand from a simple configuration file.\n\n\nAdditionally, there is an interactive mode that reads and executes commands from standard input.\n\n\nExamples of using this library may be found in the Examples directory in the package tarball.\n\n\nIt provides functionality similar to the cmdargs package. Main differences:\n\n- console-program does not use unsafePerformIO, and tries to give a more haskellish, referentially transparent interface;\n\n- it allows a full tree of commands, instead of a list, so a command can have subcommands;\n\n- it parses a configuration file, in addition to the command line arguments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."parsec-extra" or (errorHandler.buildDepError "parsec-extra"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

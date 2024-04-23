@@ -6,8 +6,8 @@
         nix = import ../hackage/numhask-test-0.1.0.0-r0-e19c55a5bd9ad2b128dde532d7b6f5e1aeb8addd2193228209eb2e4aca64a5f9.nix;
         revNum = 0;
         sha256 = "e19c55a5bd9ad2b128dde532d7b6f5e1aeb8addd2193228209eb2e4aca64a5f9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

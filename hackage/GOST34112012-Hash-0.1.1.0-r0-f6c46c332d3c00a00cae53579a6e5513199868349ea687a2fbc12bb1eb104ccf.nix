@@ -21,15 +21,15 @@
       synopsis = "Bindings to the GOST R 34.11-2012 hashing implementation";
       description = "Binds https://github.com/adegtyarev/streebog , a C\nimplementation of the GOST R 34.11-2012 hash function.\nSee @c_src/streebog/README.md@ and @test/Main.hs@ to get started.\nRequires a processor that supports MSSE4.1!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

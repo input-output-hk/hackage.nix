@@ -21,7 +21,7 @@
       synopsis = "Component-based program synthesis using SBV";
       description = "Given a library of available componen functions, synthesize a program implementing a specification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
           (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smoketest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."sbv-program" or (errorHandler.buildDepError "sbv-program"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

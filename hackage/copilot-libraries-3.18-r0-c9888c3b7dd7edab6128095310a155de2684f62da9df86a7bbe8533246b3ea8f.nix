@@ -21,7 +21,7 @@
       synopsis = "Libraries for the Copilot language.";
       description = "Libraries for the Copilot language.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language (DSL) in\nHaskell that compiles into embedded C.  Copilot contains an interpreter,\nmultiple back-end compilers, and other verification tools.\n\nA tutorial, examples, and other information are available at\n<https://copilot-language.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."copilot-language" or (errorHandler.buildDepError "copilot-language"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."copilot-language" or (errorHandler.buildDepError "copilot-language"))
             (hsPkgs."copilot-libraries" or (errorHandler.buildDepError "copilot-libraries"))
             (hsPkgs."copilot-theorem" or (errorHandler.buildDepError "copilot-theorem"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A small scheme interpreter";
       description = "This is a moderately complete small scheme interpreter.\nIt implements most of R6RS, with the exception of call/cc.\nIt is however starting to have a set of delimited\ncontinuations, reset/shift et al. It has a macro system,\nalthough not R6RS hygienic macros. It is also not\nnecessarily fully tail-recursive; so it's not\nindustrial-strength. For playing with or learning scheme,\nit should be pretty good.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskeem" = {
@@ -38,9 +38,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

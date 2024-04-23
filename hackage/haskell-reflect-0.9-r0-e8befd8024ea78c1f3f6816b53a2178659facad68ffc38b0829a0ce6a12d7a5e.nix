@@ -21,7 +21,7 @@
       synopsis = "Reflect Haskell types.";
       description = "Reflect Haskell types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."MonadCatchIO-mtl" or (errorHandler.buildDepError "MonadCatchIO-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

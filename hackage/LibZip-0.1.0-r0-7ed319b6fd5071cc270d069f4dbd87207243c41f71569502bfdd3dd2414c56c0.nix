@@ -21,7 +21,7 @@
       synopsis = "Bindings to libzip, a library for manipulating zip archives.";
       description = "libzip is a C library for reading, creating, and modifying zip archives.\nThis package allows to use it from Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libzip" or (errorHandler.pkgConfDepError "libzip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

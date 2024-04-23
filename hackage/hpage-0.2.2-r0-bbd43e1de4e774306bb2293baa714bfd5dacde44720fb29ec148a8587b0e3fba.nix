@@ -21,7 +21,7 @@
       synopsis = "A scrapbook for Haskell developers";
       description = "hPage is targeted at those haskell developers which also like to work with dynamic GUIs and wish to have something like Smalltalk's Workbook or jPage for Java. Using hPage developers can write haskell expressions, evaluate and test them, load, unload and (of course) reload modules and then, re-evaluate the same expressions (ghci anyone?). Developed over wxWidgets, hPage is multi-platform by nature and works in every scenario where ghc and wxWidgets work.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hpage" = {
@@ -54,9 +54,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

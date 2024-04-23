@@ -21,7 +21,7 @@
       synopsis = "Korea Holidays";
       description = "Please see the README on GitHub at <https://github.com/kkweon/korea-holidays#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "korea-holidays-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

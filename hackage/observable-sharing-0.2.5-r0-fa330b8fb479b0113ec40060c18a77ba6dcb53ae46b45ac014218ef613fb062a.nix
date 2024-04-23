@@ -21,14 +21,14 @@
       synopsis = "Simple observable sharing";
       description = "Simple observable sharing inspired by the paper \"Observable Sharing\nfor Functional Circuit Description\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

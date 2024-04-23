@@ -21,7 +21,7 @@
       synopsis = "Utility library for use in generated API client libraries.";
       description = "Utility library for use in generated API client libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

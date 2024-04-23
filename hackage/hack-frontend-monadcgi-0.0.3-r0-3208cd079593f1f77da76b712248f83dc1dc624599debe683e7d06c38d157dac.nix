@@ -21,7 +21,7 @@
       synopsis = "Allows programs written against MonadCGI to run with any hack handler.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

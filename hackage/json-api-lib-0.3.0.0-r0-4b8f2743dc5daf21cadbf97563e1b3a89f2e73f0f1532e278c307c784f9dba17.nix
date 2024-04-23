@@ -21,7 +21,7 @@
       synopsis = "Utilities for generating JSON-API payloads";
       description = "Provides utilities for deriving JSON payloads conformant to the json-api\nspecification";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "json-api-lib-test" = {
           depends = [
@@ -54,12 +54,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

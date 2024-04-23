@@ -21,7 +21,7 @@
       synopsis = "Client library for NTP control messaging";
       description = "Support for monitoring NTP server performance, including quering NTP system variables and system status.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-query" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

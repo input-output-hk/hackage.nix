@@ -21,11 +21,11 @@
       synopsis = "Helper methods to define `Read1`, `Read2`, `Show1`, `Show2` instances";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

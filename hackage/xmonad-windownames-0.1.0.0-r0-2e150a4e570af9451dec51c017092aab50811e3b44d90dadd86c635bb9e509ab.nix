@@ -21,7 +21,7 @@
       synopsis = "A library to automatically put named windows into the DynamicLog.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compiler and editor for the esolang rail.";
       description = "A compiler and a graphical editor for the esoteric programming language rail.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "RailCompiler" = {
@@ -31,9 +31,9 @@
             (hsPkgs."llvm-general" or (errorHandler.buildDepError "llvm-general"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RailEditor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -44,10 +44,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testcases" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

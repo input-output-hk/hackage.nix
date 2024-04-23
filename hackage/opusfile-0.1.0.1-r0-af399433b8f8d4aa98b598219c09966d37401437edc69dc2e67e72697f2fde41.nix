@@ -21,16 +21,16 @@
       synopsis = "FFI bindings for libopusfile";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."opusfile" or (errorHandler.sysDepError "opusfile")) ];
         buildable = true;
-        };
+      };
       exes = {
         "example-openal" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."opusfile" or (errorHandler.buildDepError "opusfile"))
-            ];
+          ];
           buildable = if !flags.executables then false else true;
-          };
         };
       };
-    }
+    };
+  }

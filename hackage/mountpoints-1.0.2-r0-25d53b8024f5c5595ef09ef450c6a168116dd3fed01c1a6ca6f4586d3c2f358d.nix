@@ -21,14 +21,14 @@
       synopsis = "list mount points";
       description = "Lists currently mounted filesystems.\n\nWorks on: Linux, BSD, Mac OS X, Android";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for encoding and decoding of BEncode data.";
       description = "A library for encoding and decoding of BEncode data.\n\n[/Release notes/]\n\n* /0.1.0.0:/ Initial version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,19 +31,19 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-comparison" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
             (hsPkgs."bencode" or (errorHandler.buildDepError "bencode"))
             (hsPkgs."AttoBencode" or (errorHandler.buildDepError "AttoBencode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

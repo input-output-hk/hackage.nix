@@ -21,7 +21,7 @@
       synopsis = "Minimalist R5RS Scheme interpreter";
       description = "Haschoo is a minimalist R5RS interpreter written in Haskell for a university\ncourse.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haschoo" = {
@@ -33,9 +33,9 @@
             (hsPkgs."numbers" or (errorHandler.buildDepError "numbers"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

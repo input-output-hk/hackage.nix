@@ -21,7 +21,7 @@
       synopsis = "Import modules for metaprogramming";
       description = "This package provides an executable for importing modules in a directory and splicing those in. Please see the README on GitHub at <https://github.com/parsonsmatt/glob-imports#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."some-dict-of" or (errorHandler.buildDepError "some-dict-of"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "glob-imports" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."some-dict-of" or (errorHandler.buildDepError "some-dict-of"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "glob-imports-test" = {
           depends = [
@@ -72,12 +72,12 @@
             (hsPkgs."some-dict-of" or (errorHandler.buildDepError "some-dict-of"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

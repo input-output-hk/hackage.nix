@@ -21,7 +21,7 @@
       synopsis = "WebSockets support for Yesod";
       description = "WebSockets support for Yesod";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

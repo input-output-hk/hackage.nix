@@ -21,10 +21,10 @@
       synopsis = "A server interface to GHC.";
       description = "A server interface to GHC.\nSupported major GHC versions: 7.4, 7.6, 7.8";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.3")) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.4") [
+        depends = pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.3")) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.4") [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
@@ -39,18 +39,18 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghc-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-server" or (errorHandler.buildDepError "ghc-server"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Haskell binding to the FANN library";
       description = "hfann is a Haskell binding to the Fast Artificial Neural\nNetwork (FANN) library <http://leenissen.dk/fann/>. It\nprovides functions to easily create, train, test and use\nArtificial Neural Networks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."doublefann" or (errorHandler.sysDepError "doublefann"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HFANNTest" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           libs = [
             (pkgs."doublefann" or (errorHandler.sysDepError "doublefann"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

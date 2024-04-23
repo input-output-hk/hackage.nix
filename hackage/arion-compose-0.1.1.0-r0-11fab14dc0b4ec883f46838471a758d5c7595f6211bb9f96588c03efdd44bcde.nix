@@ -21,7 +21,7 @@
       synopsis = "Run docker-compose with help from Nix/NixOS";
       description = "Arion is a tool for building and running applications that consist of multiple docker containers using NixOS modules. It has special support for docker images that are built with Nix, for a smooth development experience and improved performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arion" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."arion-compose" or (errorHandler.buildDepError "arion-compose"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "arion-unit-tests" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."arion-compose" or (errorHandler.buildDepError "arion-compose"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

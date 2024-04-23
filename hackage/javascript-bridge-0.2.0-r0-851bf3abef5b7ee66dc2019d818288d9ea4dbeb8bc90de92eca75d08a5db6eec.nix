@@ -21,7 +21,7 @@
       synopsis = "Remote Monad for JavaScript on the browser";
       description = "Bridge from Haskell to JavaScript on the browser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,28 +36,28 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "javascript-bridge-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."javascript-bridge" or (errorHandler.buildDepError "javascript-bridge"))
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "javascript-bridge-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."javascript-bridge" or (errorHandler.buildDepError "javascript-bridge"))
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "javascript-bridge-test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

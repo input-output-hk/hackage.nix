@@ -21,15 +21,15 @@
       synopsis = "Line charts in terminal";
       description = "Line charts in terminal ╭┈╯. Haskell port of kroitor/asciichart.\n\n@\nimport Data.Text.Chart (plot)\n\nmain :: IO ()\nmain = plot [1..20]\n@\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

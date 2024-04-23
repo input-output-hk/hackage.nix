@@ -21,15 +21,15 @@
       synopsis = "A monad for commanders";
       description = "A monad for commanders.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "commander-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."commandert" or (errorHandler.buildDepError "commandert"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/enchant-0.1.0.0-r0-5246e28ac41175b67d9dba507fdb6860ba491c7cd6b770b7015267107a31fffb.nix;
         revNum = 0;
         sha256 = "5246e28ac41175b67d9dba507fdb6860ba491c7cd6b770b7015267107a31fffb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

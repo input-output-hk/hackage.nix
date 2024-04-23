@@ -21,15 +21,15 @@
       synopsis = "Connection-set algebra (CSA) library";
       description = "Library for algebraic connection-set expressions, built on M. Djurfeldt's idea of connection-set algebra [1].\n\n1: Mikael Djurfeldt. The Connection-set Algebra: a formalism for the representation of connectivity structure in neuronal network models, implementations in Python and C++, and their use in simulators, BMC Neuroscience, 2011. https://doi.org/10.1186/1471-2202-12-S1-P80";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "csa-test-suite" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

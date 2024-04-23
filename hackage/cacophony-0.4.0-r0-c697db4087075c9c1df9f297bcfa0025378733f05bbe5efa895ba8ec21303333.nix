@@ -21,7 +21,7 @@
       synopsis = "A library implementing the Noise protocol.";
       description = "This library implements the <https://github.com/trevp/noise/blob/master/noise.md Noise>\nprotocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -44,26 +44,26 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
+          depends = pkgs.lib.optionals (!!flags.hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.hlint then false else true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!!flags.doctest) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = if !flags.doctest then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

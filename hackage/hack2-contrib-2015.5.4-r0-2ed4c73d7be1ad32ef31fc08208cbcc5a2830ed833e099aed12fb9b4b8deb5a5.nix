@@ -21,7 +21,7 @@
       synopsis = "Hack2 contrib";
       description = "Common middlewares and utilities for Hack2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,14 +35,14 @@
           (hsPkgs."air" or (errorHandler.buildDepError "air"))
           (hsPkgs."hack2" or (errorHandler.buildDepError "hack2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/netrium-0.6.0-r0-cfe371ce2093e683be9fa124dd97efbc3fd11a62693cf751bcd73b6b8cbdbf97.nix;
         revNum = 0;
         sha256 = "cfe371ce2093e683be9fa124dd97efbc3fd11a62693cf751bcd73b6b8cbdbf97";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

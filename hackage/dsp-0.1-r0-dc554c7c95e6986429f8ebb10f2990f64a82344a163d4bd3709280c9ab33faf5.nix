@@ -21,11 +21,11 @@
       synopsis = "Haskell Digital Signal Processing";
       description = "Digital Signal Processing, Fourier Transform, Linear Algebra, Interpolation";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

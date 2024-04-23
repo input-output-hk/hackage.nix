@@ -21,7 +21,7 @@
       synopsis = "Make a cabalized package";
       description = "Create a cabalized haskell project";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "make-package" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."time-lens" or (errorHandler.buildDepError "time-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

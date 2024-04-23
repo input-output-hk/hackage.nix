@@ -21,11 +21,11 @@
       synopsis = "Dental data types";
       description = "Some data types useful for describing the hard pointy things inside your mouth";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

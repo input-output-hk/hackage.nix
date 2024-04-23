@@ -21,7 +21,7 @@
       synopsis = "Snaplet for Facebook's Haxl";
       description = "A Snaplet for the integration of Haxl DataSources with Snap.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Verify FLAC files ripped form CD using AccurateRip™";
       description = "/flAccurateRip/ is a command line tool to verify the accuracy of FLAC files\nripped from CD, using the information contained in the AccurateRip™ database\nabout other rips of the same CD.\n\nUsage: suppose you ripped a CD into @track01.flac@, @track02.flac@, ...,\n@trackNN.flac@. Open a shell in the directory containing the FLAC files, and\nrun:\n\n>$ flaccuraterip track01.flac track02.flac ... trackNN.flac\n\nIf a pressing of this CD is present in the AccurateRip™ database,\n@flaccuraterip@ will output the ripping accuracy for each track. If the CD was\nripped without setting the drive offset, you should use the flag\n@--with-sample-offset=N@, where N is the offset indicated in\n<http://accuraterip.com/driveoffsets.htm> for your drive.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flaccuraterip" = {
@@ -32,9 +32,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Unagi chan based websocket client";
       description = "Use Control.Concurrent.Chan.Unagi as an interface to a websocket server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ws-chans-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."ws-chans" or (errorHandler.buildDepError "ws-chans"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

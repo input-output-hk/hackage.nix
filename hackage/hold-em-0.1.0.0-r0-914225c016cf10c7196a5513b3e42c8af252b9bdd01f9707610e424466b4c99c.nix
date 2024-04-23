@@ -21,15 +21,15 @@
       synopsis = "An engine for Texas hold'em Poker";
       description = "This package contains a collection of essential data types and functions.\n\nPlease note, that the @deal@ function imposes a range of 2-9 players.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

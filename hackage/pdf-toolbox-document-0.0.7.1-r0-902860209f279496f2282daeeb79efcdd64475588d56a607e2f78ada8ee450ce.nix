@@ -21,7 +21,7 @@
       synopsis = "A collection of tools for processing PDF files.";
       description = "Mid level tools for processing PDF files.\n\nLevel of abstraction: document, catalog, page";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."pdf-toolbox-core" or (errorHandler.buildDepError "pdf-toolbox-core"))
           (hsPkgs."pdf-toolbox-content" or (errorHandler.buildDepError "pdf-toolbox-content"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

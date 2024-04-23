@@ -21,7 +21,7 @@
       synopsis = "Zip archive interface for the Conduit Virtual File System.";
       description = "This package provides the ability to work with zip archives as a part of a conduit. It does this by treating the zip file as a virtual file system and acting on it that way. The zip archive access does not require any IO, and so can be used in pure conduits. If you would like to have the zip file read from disk and then persisted at the beginning and end of your conduit run, you can do that but it does require constructing the Zip VFS within a MonadResource.\nFor more information, please see the README on GitHub at <https://github.com/RobertFischer/vfs-conduit#README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "conduit-vfs-zip-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

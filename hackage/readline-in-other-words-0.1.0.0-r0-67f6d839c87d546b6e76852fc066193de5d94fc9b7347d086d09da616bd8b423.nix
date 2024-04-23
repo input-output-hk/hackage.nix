@@ -21,7 +21,7 @@
       synopsis = "Readline effect for in-other-words.";
       description = "This library provides effects for in-other-words offering the functionality of\nhaskeline. Please see the README on GitHub at\n<https://github.com/lehmacdj/readline-in-other-words#readme> for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."in-other-words-plugin" or (errorHandler.buildDepError "in-other-words-plugin"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "echo-repl" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."readline-in-other-words" or (errorHandler.buildDepError "readline-in-other-words"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

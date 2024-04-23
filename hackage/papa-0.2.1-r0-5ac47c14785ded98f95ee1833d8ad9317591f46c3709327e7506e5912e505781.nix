@@ -21,7 +21,7 @@
       synopsis = "Reasonable default import";
       description = "Reasonable default import";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."papa-semigroupoids-implement" or (errorHandler.buildDepError "papa-semigroupoids-implement"))
           (hsPkgs."papa-export" or (errorHandler.buildDepError "papa-export"))
           (hsPkgs."papa-implement" or (errorHandler.buildDepError "papa-implement"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

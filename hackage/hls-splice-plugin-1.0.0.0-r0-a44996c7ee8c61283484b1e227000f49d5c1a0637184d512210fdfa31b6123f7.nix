@@ -21,7 +21,7 @@
       synopsis = "HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes";
       description = "HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-open-0.1.0.0-r0-4d1d091104cdc78df3a4d563b4660a6d40c30f37ccd1e43ab465afb91352588e.nix;
         revNum = 0;
         sha256 = "4d1d091104cdc78df3a4d563b4660a6d40c30f37ccd1e43ab465afb91352588e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

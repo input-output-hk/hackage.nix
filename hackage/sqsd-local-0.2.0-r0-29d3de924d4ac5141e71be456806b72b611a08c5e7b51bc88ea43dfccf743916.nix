@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "A local version of sqsd, the daemon that runs in Elastic Beanstalk's Worker Environments.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sqsd-local" = {
@@ -39,18 +39,18 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sqsd-local-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sqsd-local" or (errorHandler.buildDepError "sqsd-local"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

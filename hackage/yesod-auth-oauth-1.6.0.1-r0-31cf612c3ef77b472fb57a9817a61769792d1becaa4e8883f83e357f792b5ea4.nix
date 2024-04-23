@@ -21,7 +21,7 @@
       synopsis = "OAuth Authentication for Yesod.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-auth-oauth>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

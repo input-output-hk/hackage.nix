@@ -21,7 +21,7 @@
       synopsis = "Lightweight Haskell Web Server Framework ";
       description = "Lightweight Haskell Web Server Framework with modular support\nfor serving static files, directories indices, default error\nresponses, connection counting and logging, HEAD and PUT\nrequests, keep-alives, custom banner printing, default\nhandler environments for parsing request and printing\nresponses, dispatching based on request methods, URI, paths\nand filename extension, URI rewriting and redirection,\nvirtual hosting, cookie, session and user management and\nmore...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

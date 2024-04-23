@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-apprunner-2.0-r0-a3e03b374da6bb747fe92f02904bfcf0a1451e49d1bff39653cd342531b5a75c.nix;
         revNum = 0;
         sha256 = "a3e03b374da6bb747fe92f02904bfcf0a1451e49d1bff39653cd342531b5a75c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

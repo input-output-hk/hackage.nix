@@ -21,16 +21,16 @@
       synopsis = "Validity instances for case-insensitive";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "validity-case-insensitive-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
             (hsPkgs."validity-case-insensitive" or (errorHandler.buildDepError "validity-case-insensitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

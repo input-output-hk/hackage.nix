@@ -21,16 +21,16 @@
       synopsis = "Preprocessor for typesetting Haskell sources with LaTeX";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "lhs2TeX" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

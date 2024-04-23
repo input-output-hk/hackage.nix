@@ -21,7 +21,7 @@
       synopsis = "A network analysis toolkit for haskell";
       description = "A network analysis toolkit for haskell, based on the Network.Pcap library. Currently not very useful, but getting there.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "etherbunny" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           libs = [ (pkgs."pcap" or (errorHandler.sysDepError "pcap")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

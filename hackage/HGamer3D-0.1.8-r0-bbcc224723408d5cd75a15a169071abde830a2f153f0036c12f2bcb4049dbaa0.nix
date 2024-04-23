@@ -21,7 +21,7 @@
       synopsis = "Library to enable 3D game development for Haskell";
       description = "Library, to enable 3D game development for Haskell,\nbased on bindings to 3D Graphics, Audio and GUI libraries.\nThis is the module, which includes all other needed modules and provides\nan higher level API for primary\nuse.\nPlatform: Windows only\nLicense: Apache License, Version 2.0\nInstall: see http://www.althainz.de/HGamer3D/Download-and-Installation.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-Ogre-Binding" or (errorHandler.buildDepError "HGamer3D-Ogre-Binding"))
           (hsPkgs."HGamer3D-SFML-Binding" or (errorHandler.buildDepError "HGamer3D-SFML-Binding"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++.dll" or (errorHandler.sysDepError "stdc++.dll"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

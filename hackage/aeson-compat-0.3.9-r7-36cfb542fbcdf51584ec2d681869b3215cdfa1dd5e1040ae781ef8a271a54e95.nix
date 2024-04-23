@@ -21,7 +21,7 @@
       synopsis = "Compatibility layer for aeson";
       description = "Compatibility layer for @aeson@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -41,12 +41,12 @@
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-compat-test" = {
           depends = ([
@@ -72,12 +72,12 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.10")) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.10")) [
             (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

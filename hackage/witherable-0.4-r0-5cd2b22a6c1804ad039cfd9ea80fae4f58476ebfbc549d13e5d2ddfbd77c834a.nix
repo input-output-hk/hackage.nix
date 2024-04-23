@@ -21,7 +21,7 @@
       synopsis = "filterable traversable";
       description = "A stronger variant of `traverse` which can remove elements and generalised mapMaybe, catMaybes, filter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
           (hsPkgs."indexed-traversable-instances" or (errorHandler.buildDepError "indexed-traversable-instances"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.9") (hsPkgs."void" or (errorHandler.buildDepError "void"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9") (hsPkgs."void" or (errorHandler.buildDepError "void"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

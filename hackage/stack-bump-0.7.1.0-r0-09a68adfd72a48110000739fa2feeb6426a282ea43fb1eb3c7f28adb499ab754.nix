@@ -21,7 +21,7 @@
       synopsis = "Dead simple version bumping for hpack packages";
       description = "Runs tests and build with stack, then bumps the package with a tagged commit. ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-bump" = {
@@ -39,10 +39,10 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

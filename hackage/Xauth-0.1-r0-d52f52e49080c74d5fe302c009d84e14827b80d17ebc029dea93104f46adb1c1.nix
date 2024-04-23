@@ -21,14 +21,14 @@
       synopsis = "A binding to the X11 authentication library";
       description = "A Haskell binding to the X11 authentication library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         pkgconfig = [
           (pkgconfPkgs."xau" or (errorHandler.pkgConfDepError "xau"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

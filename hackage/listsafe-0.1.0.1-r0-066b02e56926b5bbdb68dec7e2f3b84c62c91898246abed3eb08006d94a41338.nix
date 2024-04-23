@@ -21,14 +21,14 @@
       synopsis = "Safe wrappers for partial list functions, supporting MonadThrow.";
       description = "Data.List includes a handful of partial functions that throw\nuncatchable exceptions when given empty lists. This package\nprovides safe alternatives for such functions based on\nMonadThrow which can provide a variety of failure\ncases: Nothing, IOException, Left, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

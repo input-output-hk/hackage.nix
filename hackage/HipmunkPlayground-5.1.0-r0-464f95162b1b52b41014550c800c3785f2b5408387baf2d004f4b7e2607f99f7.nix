@@ -21,7 +21,7 @@
       synopsis = "A playground for testing Hipmunk.";
       description = "This is a simple OpenGL program that allows you to see\nsome of Hipmunk's functions in action.\n\nNew in version 5.1.0:\n\n* Updated to Hipmunk 5.1.0.\n\nLicensed under the MIT license (like Hipmunk itself).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "HipmunkPlayground" = {
@@ -32,15 +32,15 @@
               (hsPkgs."Hipmunk" or (errorHandler.buildDepError "Hipmunk"))
               (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
               (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."Hipmunk" or (errorHandler.buildDepError "Hipmunk"))
               (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
               (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

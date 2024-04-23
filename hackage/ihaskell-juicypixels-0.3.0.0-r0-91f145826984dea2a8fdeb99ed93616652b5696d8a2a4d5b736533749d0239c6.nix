@@ -21,7 +21,7 @@
       synopsis = "IHaskell - IHaskellDisplay instances of the image types of the JuicyPixels package.";
       description = "IHaskellDisplay instances of the image types of the JuicyPixels package. They are displayed as .JPG images.\nDynamicImages and Images of types PixelRGBA16, PixelRGBA8, PixelRGB16, PixelRGB8,\nPixelYA16, PixelYA8, Pixel16, Pixel8, PixelCMYK16, PixelCMYK8, PixelF, Pixel32\nare supported.\nThe module IHaskell.Juicypixels re-exports the modules IHaskell.Display and Codec.Picture.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "OAuth authentication, e.g. Twitter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."blaze-builder-conduit" or (errorHandler.buildDepError "blaze-builder-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

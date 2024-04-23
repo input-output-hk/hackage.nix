@@ -6,8 +6,8 @@
         nix = import ../hackage/tccli-0.0.1-r0-00cbe1902d82931396ac579a4827702afae46be39e0979acc4edeefba644e277.nix;
         revNum = 0;
         sha256 = "00cbe1902d82931396ac579a4827702afae46be39e0979acc4edeefba644e277";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

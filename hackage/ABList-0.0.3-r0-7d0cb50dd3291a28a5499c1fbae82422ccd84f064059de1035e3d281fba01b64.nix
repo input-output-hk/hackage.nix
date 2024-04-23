@@ -21,16 +21,16 @@
       synopsis = "An alternating list of two types";
       description = "An alternating list of two types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "the-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

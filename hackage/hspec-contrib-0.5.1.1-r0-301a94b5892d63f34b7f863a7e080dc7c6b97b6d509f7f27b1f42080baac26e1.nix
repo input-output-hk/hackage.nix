@@ -21,16 +21,16 @@
       synopsis = "Contributed functionality for Hspec";
       description = "Contributed functionality for Hspec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -40,12 +40,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-contrib" or (errorHandler.buildDepError "hspec-contrib"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

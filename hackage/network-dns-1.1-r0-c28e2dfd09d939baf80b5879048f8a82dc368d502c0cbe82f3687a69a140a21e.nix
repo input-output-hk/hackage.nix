@@ -21,7 +21,7 @@
       synopsis = "Domain Name System data structures";
       description = "This package provides Domain Name System data structures and\n(de)serialization routines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."data-textual" or (errorHandler.buildDepError "data-textual"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-network-dns-examples-resolver" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."data-serializer" or (errorHandler.buildDepError "data-serializer"))
             (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
             (hsPkgs."network-dns" or (errorHandler.buildDepError "network-dns"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."posix-socket" or (errorHandler.buildDepError "posix-socket"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."posix-socket" or (errorHandler.buildDepError "posix-socket"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

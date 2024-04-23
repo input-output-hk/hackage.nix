@@ -21,7 +21,7 @@
       synopsis = "HUnit convenience functions for use with test-sandbox";
       description = "This package provides wrappers around the Test.HUnit unit-test functions,\nallowing them to be used easily in the Test.Sandbox monad provided by the test-sandbox package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."test-sandbox" or (errorHandler.buildDepError "test-sandbox"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

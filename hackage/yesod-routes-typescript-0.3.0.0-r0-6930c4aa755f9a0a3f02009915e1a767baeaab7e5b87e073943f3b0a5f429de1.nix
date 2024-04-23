@@ -21,7 +21,7 @@
       synopsis = "generate TypeScript routes for Yesod";
       description = "parse the Yesod routes data structure and generate routes that can be used in typescript";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-routes" or (errorHandler.buildDepError "yesod-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/random-hypergeometric-0.1.0.0-r0-5ecff178b9b238ef7a9857df90ac913b81a65b94c6b1d1a0bbf0d93da72c7713.nix;
         revNum = 0;
         sha256 = "5ecff178b9b238ef7a9857df90ac913b81a65b94c6b1d1a0bbf0d93da72c7713";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

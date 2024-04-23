@@ -21,7 +21,7 @@
       synopsis = "Library for drawing the Rubik's Cube.";
       description = "Includes a facets model of the Rubik's Cube and a 'diagrams'-based renderer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

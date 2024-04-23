@@ -21,7 +21,7 @@
       synopsis = "Japanese Romaji <-> Japanese Kana conversion library";
       description = "Romkan is a library to convert from Japanese Romaji to Japanese Kana and vice versa.\n\nHomepage is at <https://github.com/karlvoigtland/romkan-hs>.\n\nThis is a port of python-romkan: <http://www.soimort.org/python-romkan>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-romkan" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

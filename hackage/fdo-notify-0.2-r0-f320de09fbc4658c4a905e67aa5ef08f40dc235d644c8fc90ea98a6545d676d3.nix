@@ -21,15 +21,15 @@
       synopsis = "Desktop Notifications client";
       description = "A library for issuing notifications using FreeDesktop.org's Desktop\nNotifications protcol. This protocol is supported by services such\nas Ubuntu's NotifyOSD.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dbus-client" or (errorHandler.buildDepError "dbus-client"))
           (hsPkgs."dbus-core" or (errorHandler.buildDepError "dbus-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

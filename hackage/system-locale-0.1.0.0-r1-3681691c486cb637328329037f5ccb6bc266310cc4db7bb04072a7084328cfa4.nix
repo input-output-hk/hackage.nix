@@ -21,7 +21,7 @@
       synopsis = "Get system locales";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "system-locale-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."system-locale" or (errorHandler.buildDepError "system-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       safe = false;
       trustworthy = true;
       j = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "lens"; version = "4.15.2"; };
@@ -39,8 +39,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -74,19 +74,19 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"));
         buildable = true;
-        };
+      };
       tests = {
         "templates" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-templates)) [
+          depends = pkgs.lib.optionals (!!flags.test-templates) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = if !flags.test-templates then false else true;
-          };
+        };
         "properties" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!!flags.test-properties) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -94,11 +94,11 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.test-properties then false else true;
-          };
+        };
         "hunit" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!!flags.test-hunit) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -107,11 +107,11 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = if !flags.test-hunit then false else true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -128,17 +128,17 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
         };
+      };
       benchmarks = {
         "plated" = {
           depends = [
@@ -149,9 +149,9 @@
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (flags.benchmark-uniplate) (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"));
+          ] ++ pkgs.lib.optional (flags.benchmark-uniplate) (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"));
           buildable = true;
-          };
+        };
         "alongside" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -160,9 +160,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "folds" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -172,9 +172,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "traversals" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -185,9 +185,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unsafe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -197,9 +197,9 @@
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

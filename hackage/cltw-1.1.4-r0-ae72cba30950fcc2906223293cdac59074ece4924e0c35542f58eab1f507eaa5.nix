@@ -21,7 +21,7 @@
       synopsis = "Command line Twitter utility";
       description = "A tool for performing some Twitter API functions\nfrom the command line.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cltw" = {
@@ -31,9 +31,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

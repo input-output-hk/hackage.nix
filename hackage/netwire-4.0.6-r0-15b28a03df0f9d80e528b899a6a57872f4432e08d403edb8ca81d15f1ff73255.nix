@@ -21,7 +21,7 @@
       synopsis = "Flexible wire arrows for FRP";
       description = "Efficient and flexible wire arrows for functional reactive programming\nand other forms of locally stateful programming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

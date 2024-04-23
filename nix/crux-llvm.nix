@@ -6,8 +6,8 @@
         nix = import ../hackage/crux-llvm-0.8-r0-5dc5c819eb8dbd61a5a8bc3b754191374d85d86d40a0407e63f58a1b74545429.nix;
         revNum = 0;
         sha256 = "5dc5c819eb8dbd61a5a8bc3b754191374d85d86d40a0407e63f58a1b74545429";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

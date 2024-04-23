@@ -6,8 +6,8 @@
         nix = import ../hackage/fvars-1.0.0.0-r0-5c1728de3cacfaabd557ad44225d3312cface39838737d6e206e70cd6a948c9f.nix;
         revNum = 0;
         sha256 = "5c1728de3cacfaabd557ad44225d3312cface39838737d6e206e70cd6a948c9f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

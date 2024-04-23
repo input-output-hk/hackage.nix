@@ -21,7 +21,7 @@
       synopsis = "Formalising the rules of Konnakol, an Indian percussional art form.";
       description = "Formalising the rules of Konnakol, an Indian percussional art form. Compositions can be validated, custom compositions can be generated as well as visualized. Compositions can also be generated in mini notation, which can they be used by Tidal Cycles to facilitate equivalent audio generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,14 +33,14 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."tidal" or (errorHandler.buildDepError "tidal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "konnakol-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

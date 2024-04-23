@@ -21,7 +21,7 @@
       synopsis = "Search Hoogle and navigate Hackage from the command line.";
       description = "Please see the README on GitHub at <https://github.com/lazamar/haskell-docs-cli#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hdc" = {
           depends = [
@@ -86,10 +86,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskell-docs-cli-test" = {
           depends = [
@@ -121,9 +121,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

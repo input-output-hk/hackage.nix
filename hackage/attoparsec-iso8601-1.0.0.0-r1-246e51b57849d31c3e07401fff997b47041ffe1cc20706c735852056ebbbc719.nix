@@ -21,7 +21,7 @@
       synopsis = "Parsing of ISO 8601 dates, originally from aeson.";
       description = "Parsing of ISO 8601 dates, originally from aeson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A concurrent bittorrent client";
       description = "HaskellTorrent provides a BitTorrent client, based on the CML library\nfor concurrency. This is an early preview release which is capable of\ndownloading files from various torrent trackers, but have not yet\ndemonstrated to be correct in all aspects.\nIt is expected that the package currently contains numerous and even\ngrave bugs. Patches to fix any problem are welcome!";
       buildType = "Configure";
-      };
+    };
     components = {
       exes = {
         "HaskellTorrent" = {
@@ -48,9 +48,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

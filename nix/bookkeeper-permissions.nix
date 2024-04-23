@@ -6,8 +6,8 @@
         nix = import ../hackage/bookkeeper-permissions-0.1.0.0-r0-b04408df991be6483a312e5694037e0257dcbf6d0aeeb33d42b0fd9011ce854a.nix;
         revNum = 0;
         sha256 = "b04408df991be6483a312e5694037e0257dcbf6d0aeeb33d42b0fd9011ce854a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

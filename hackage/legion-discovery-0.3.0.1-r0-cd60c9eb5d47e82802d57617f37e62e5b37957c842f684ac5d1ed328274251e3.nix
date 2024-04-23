@@ -21,7 +21,7 @@
       synopsis = "A discovery service based on Legion.";
       description = "A simple service discovery service based on Legion,\nthat natively supports the idea of interface\nversions, and the idea that clients may only be\ninterested in finding certain (compatible) versions\nof the services they are looking for.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,26 +50,26 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "legion-discovery" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."legion-discovery" or (errorHandler.buildDepError "legion-discovery"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "legion-discovery-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."legion-discovery" or (errorHandler.buildDepError "legion-discovery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

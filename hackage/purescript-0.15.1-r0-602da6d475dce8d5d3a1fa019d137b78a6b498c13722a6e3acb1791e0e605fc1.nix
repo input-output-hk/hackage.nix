@@ -21,7 +21,7 @@
       synopsis = "PureScript Programming Language Compiler";
       description = "A small strongly, statically typed programming language with expressive types, inspired by Haskell and compiling to JavaScript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -86,12 +86,12 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "purs" = {
           depends = [
@@ -163,13 +163,13 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
-            ] ++ (pkgs.lib).optional (!flags.release) (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"));
+          ] ++ pkgs.lib.optional (!flags.release) (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"));
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -241,14 +241,14 @@
             (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
             (hsPkgs.buildPackages.purescript.components.exes.purs or (pkgs.buildPackages.purs or (errorHandler.buildToolDepError "purescript:purs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

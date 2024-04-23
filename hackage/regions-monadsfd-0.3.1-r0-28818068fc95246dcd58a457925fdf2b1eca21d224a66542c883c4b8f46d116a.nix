@@ -21,7 +21,7 @@
       synopsis = "Monads-fd instances for the RegionT monad transformer";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."regions" or (errorHandler.buildDepError "regions"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

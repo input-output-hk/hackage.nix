@@ -21,14 +21,14 @@
       synopsis = "An abstraction over interspersing monadic actions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

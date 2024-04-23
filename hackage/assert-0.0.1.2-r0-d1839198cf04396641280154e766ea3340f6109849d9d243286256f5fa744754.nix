@@ -21,12 +21,12 @@
       synopsis = "Helpers for Control.Exception.assert";
       description = "GHC supports compile-time toggling of run-time assertions via the\n@-fignore-asserts@ flag, which only effects a behavioural change in\n'Control.Exception.assert'. Furthermore the reported location only gives\nthe use site of the aforementioned, making it difficult to abstract over\nand hence cumbersome to use.\n\nThis package aims to make assertions more convenient, and also provides\na rule to rewrite assertions to 'id' when @-fignore-asserts@ is used.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "rewrite" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."system-posix-redirect" or (errorHandler.buildDepError "system-posix-redirect"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

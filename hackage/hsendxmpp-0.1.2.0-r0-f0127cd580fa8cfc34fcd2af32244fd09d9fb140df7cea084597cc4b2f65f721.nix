@@ -21,7 +21,7 @@
       synopsis = "sendxmpp clone, sending XMPP messages via CLI";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsendxmpp" = {
@@ -31,9 +31,9 @@
             (hsPkgs."pontarius-xmpp-extras" or (errorHandler.buildDepError "pontarius-xmpp-extras"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."string-class" or (errorHandler.buildDepError "string-class"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

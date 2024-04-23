@@ -21,7 +21,7 @@
       synopsis = "TokTok C code style checker";
       description = "TokTok C code style checker";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,24 +30,24 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "check-c" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tokstyle" or (errorHandler.buildDepError "tokstyle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "check-cimple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tokstyle" or (errorHandler.buildDepError "tokstyle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

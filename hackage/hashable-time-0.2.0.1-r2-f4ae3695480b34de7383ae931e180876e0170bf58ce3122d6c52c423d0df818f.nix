@@ -21,19 +21,19 @@
       synopsis = "Hashable instances for Data.Time";
       description = "Hashable instances for types in Data.Time";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (if flags.old-locale
+        ] ++ (if flags.old-locale
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

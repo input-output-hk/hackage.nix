@@ -21,7 +21,7 @@
       synopsis = "Multilabel classification model which learns sequentially (online).";
       description = "Progressive is a multilabel classification model which learns\nsequentially (online). The set of labels need not be known in advance:\nthe learner keeps a constantly updated set of top N most frequent\nlabels seen so far and predicts labels from this set.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "progressive" = {
@@ -35,9 +35,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

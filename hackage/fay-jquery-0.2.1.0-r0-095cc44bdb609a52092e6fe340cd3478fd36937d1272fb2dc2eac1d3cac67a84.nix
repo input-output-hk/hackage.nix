@@ -21,13 +21,13 @@
       synopsis = "jQuery binding.";
       description = "jQuery binding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

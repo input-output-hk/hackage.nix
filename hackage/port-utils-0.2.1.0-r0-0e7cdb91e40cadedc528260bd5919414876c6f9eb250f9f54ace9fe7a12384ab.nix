@@ -21,15 +21,15 @@
       synopsis = "Utilities for creating and waiting on ports";
       description = "Utilities for creating and waiting on ports. . @openFreePort@ will create a socket bound to a random port (like @warp@'s @openFreePort@). . @wait@ will attempt to connect to given host and port repeatedly until successful. .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."port-utils" or (errorHandler.buildDepError "port-utils"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

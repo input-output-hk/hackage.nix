@@ -21,7 +21,7 @@
       synopsis = "A library for manipulating the historical dictionary of Polish";
       description = "The library provides a binary representation of the historical\ndictionary of Polish and language markup format (LMF) parsing\nutilities which allow to translate the original LMF representation\nof the dictionary to the binary form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,12 +36,12 @@
           (hsPkgs."dawg" or (errorHandler.buildDepError "dawg"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "polh-binarize" = { buildable = true; };
         "polh-show" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

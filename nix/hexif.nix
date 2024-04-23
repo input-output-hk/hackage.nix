@@ -6,8 +6,8 @@
         nix = import ../hackage/hexif-0.2.0.0-r0-908bd488b0e3b162bcefcea4a4000c43be8b7563e46353c27704579e70492212.nix;
         revNum = 0;
         sha256 = "908bd488b0e3b162bcefcea4a4000c43be8b7563e46353c27704579e70492212";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

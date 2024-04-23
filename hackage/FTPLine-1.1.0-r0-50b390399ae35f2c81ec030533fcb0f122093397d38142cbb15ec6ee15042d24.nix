@@ -21,7 +21,7 @@
       synopsis = "A command-line FTP client.";
       description = "A command-line FTP client. Type @help@ for a list of commands. Online documentation at the homepage.\n\nChanges from last version:\n\n* State becomes a record (was a tuple).\n\n* File content changes from @String@ to @ByteString@.\n\n* Added modes (local and remote).\n\n* Changed lazy state to strict state,\nand it has been instantiated at haskeline's @MonadException@ class.\n\n* The way FTP results are shown has varied.\n\n* Memory usage has been reduced considerably.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "FTPLine" = {
@@ -35,9 +35,9 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

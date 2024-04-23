@@ -21,7 +21,7 @@
       synopsis = "JSON RPC 2.0 on the server side.";
       description = "An implemation of the server side of JSON RPC 2.0.\nSee <http://www.jsonrpc.org/specification>. This\nlibrary uses 'ByteString' for input and output,\nleaving the choice of transport up to the user.\nSee the 'Network.JsonRpc.Server' module for an example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,20 +33,20 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
-          depends = (pkgs.lib).optionals (flags.demo) [
+          depends = pkgs.lib.optionals (flags.demo) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."json-rpc-server" or (errorHandler.buildDepError "json-rpc-server"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-            ];
+          ];
           buildable = if flags.demo then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

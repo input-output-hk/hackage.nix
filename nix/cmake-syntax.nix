@@ -6,8 +6,8 @@
         nix = import ../hackage/cmake-syntax-0.1.0.0-r0-0ef22232943c35e30c6391b5bbbf6569132ea3d26aeb39815654791f00a5a6c0.nix;
         revNum = 0;
         sha256 = "0ef22232943c35e30c6391b5bbbf6569132ea3d26aeb39815654791f00a5a6c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/Control-Monad-MultiPass-0.1.0.0-r0-2085d56f5f6b2b70d0247fbd1c6fa405650721d7e338796ee61f7dc59a87064b.nix;
         revNum = 0;
         sha256 = "2085d56f5f6b2b70d0247fbd1c6fa405650721d7e338796ee61f7dc59a87064b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

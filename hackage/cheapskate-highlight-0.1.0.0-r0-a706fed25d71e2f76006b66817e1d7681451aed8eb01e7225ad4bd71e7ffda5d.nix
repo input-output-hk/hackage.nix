@@ -21,7 +21,7 @@
       synopsis = "Code highlighting for cheapskate";
       description = "Code highlighting for cheapskate";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cheapskate" or (errorHandler.buildDepError "cheapskate"))
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

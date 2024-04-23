@@ -21,7 +21,7 @@
       synopsis = "Infrastructure for writing patches which act on other types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

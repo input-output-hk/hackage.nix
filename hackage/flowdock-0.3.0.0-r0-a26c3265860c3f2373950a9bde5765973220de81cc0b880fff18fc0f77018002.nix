@@ -21,7 +21,7 @@
       synopsis = "Flowdock client library for Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
           (hsPkgs."pipes-aeson" or (errorHandler.buildDepError "pipes-aeson"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

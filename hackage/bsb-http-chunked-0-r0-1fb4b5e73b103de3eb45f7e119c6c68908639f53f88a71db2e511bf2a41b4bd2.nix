@@ -21,23 +21,23 @@
       synopsis = "Chunked HTTP transfer encoding for bytestring builders";
       description = "This library is a new home for the\nBlaze.ByteString.Builder.HTTP module from the blaze-builder\npackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "7.8"
+        ] ++ (if compiler.isGhc && compiler.version.lt "7.8"
           then [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
-            ]
+          ]
           else [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

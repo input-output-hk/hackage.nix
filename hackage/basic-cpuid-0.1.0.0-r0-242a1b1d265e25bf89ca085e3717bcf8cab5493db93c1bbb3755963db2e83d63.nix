@@ -21,11 +21,11 @@
       synopsis = "A small package to access the cpuid instruction directly.";
       description = "Similar to the cpuid package this package allows one to\ncall the CPUID instruction from plain Haskell. In contrast\nto the cpuid package it is very minimalistic and provides\nno additional helper functions. On the other side it is\npossible to build this package on every platform. If the\nplatform does not support the CPUID instruction, calling\nit from Haskell will just throw an exception.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

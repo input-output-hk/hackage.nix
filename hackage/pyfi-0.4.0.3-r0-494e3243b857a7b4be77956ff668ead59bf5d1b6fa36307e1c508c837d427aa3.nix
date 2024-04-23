@@ -21,7 +21,7 @@
       synopsis = "Call python inline from haskell";
       description = "PYthon Function Interface: Wrap python functions with haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."python" or (errorHandler.pkgConfDepError "python"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

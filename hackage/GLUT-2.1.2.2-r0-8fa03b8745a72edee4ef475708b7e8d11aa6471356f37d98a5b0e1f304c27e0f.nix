@@ -21,20 +21,20 @@
       synopsis = "A binding for the OpenGL Utility Toolkit";
       description = "A Haskell binding for the OpenGL Utility Toolkit, a window\nsystem independent toolkit for writing OpenGL programs. For more\ninformation about the C library on which this binding is based,\nplease see: <http://www.opengl.org/resources/libraries/glut/>.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         libs = [ (pkgs."glut" or (errorHandler.sysDepError "glut")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

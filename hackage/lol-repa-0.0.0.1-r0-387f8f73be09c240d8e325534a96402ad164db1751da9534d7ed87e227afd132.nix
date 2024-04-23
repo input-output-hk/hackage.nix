@@ -21,7 +21,7 @@
       synopsis = "A repa backend for <https://hackage.haskell.org/package/lol Λ ∘ λ>.";
       description = "Λ ∘ λ (Lol) is a general-purpose library for ring-based lattice cryptography.\nThis package provides a pure Haskell implementation of Lol's Tensor interface\nusing the repa library for parallel arrays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,19 +50,19 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lol-repa" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lol-repa" or (errorHandler.buildDepError "lol-repa"))
             (hsPkgs."lol-tests" or (errorHandler.buildDepError "lol-tests"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-lol-repa" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."lol" or (errorHandler.buildDepError "lol"))
             (hsPkgs."lol-benches" or (errorHandler.buildDepError "lol-benches"))
             (hsPkgs."lol-repa" or (errorHandler.buildDepError "lol-repa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

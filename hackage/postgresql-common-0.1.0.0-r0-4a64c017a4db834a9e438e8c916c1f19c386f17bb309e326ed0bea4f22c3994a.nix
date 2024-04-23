@@ -21,7 +21,7 @@
       synopsis = "Library for sharing common PostgreSQL types across Haskell PostgreSQL libraries.";
       description = "Please see the README on GitHub at <https://github.com/iand675/postgresql-common#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-common-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."postgresql-common" or (errorHandler.buildDepError "postgresql-common"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Native Haskell implementation of the interface from the erf package";
       description = "Native Haskell implementation of the interface from the erf package.\nI have had problems getting the erf package to work on Windows systems,\nso I'm throwing this one out there.  It incorporates code translated\nfrom GSL's C source, and so is licensed under the GPL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

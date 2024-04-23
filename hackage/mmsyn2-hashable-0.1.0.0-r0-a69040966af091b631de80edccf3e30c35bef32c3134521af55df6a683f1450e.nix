@@ -21,7 +21,7 @@
       synopsis = "A library that can be used for multiple Hashable a => a -> b transformations.";
       description = "A library that can be used as a @case ... of@ construction replacement for various cases. Forked from the mmsyn2-array-0.2.2.0.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

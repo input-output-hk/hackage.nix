@@ -21,7 +21,7 @@
       synopsis = "Parallel distributed simulation library";
       description = "This package extends the Aivika library with facilities for running parallel distributed simulations.\nIt uses an optimistic strategy known as the Time Warp method.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (errorHandler.buildDepError "aivika-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

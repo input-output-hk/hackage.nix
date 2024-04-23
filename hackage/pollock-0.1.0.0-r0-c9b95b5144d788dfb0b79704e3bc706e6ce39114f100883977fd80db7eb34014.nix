@@ -21,7 +21,7 @@
       synopsis = "Functionality to help examine Haddock information of a module.";
       description = "Pollock is functionality to examine various bits of information about documentation as exposed from a Haskell module. This is designed to be used as part of a GHC plugin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

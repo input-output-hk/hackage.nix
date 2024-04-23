@@ -21,33 +21,33 @@
       synopsis = "Haskell bindings to binaryen";
       description = "Haskell bindings to [binaryen](https://github.com/WebAssembly/binaryen). Provides complete bindings to the C API, which can be useful for building WebAssembly toolchains in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binaryen".components.sublibs.libbinaryen or (errorHandler.buildDepError "binaryen:libbinaryen"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "libbinaryen" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           libs = [
             (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ] ++ (pkgs.lib).optional (flags.system-binaryen) (pkgs."binaryen" or (errorHandler.sysDepError "binaryen"));
+          ] ++ pkgs.lib.optional (flags.system-binaryen) (pkgs."binaryen" or (errorHandler.sysDepError "binaryen"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binaryen" or (errorHandler.buildDepError "binaryen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

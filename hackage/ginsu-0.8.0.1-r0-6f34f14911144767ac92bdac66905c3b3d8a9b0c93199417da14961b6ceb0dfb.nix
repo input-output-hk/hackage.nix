@@ -21,7 +21,7 @@
       synopsis = "Ginsu Gale Client";
       description = "Ginsu is a client for the gale chat system. It is designed to be powerful and above all stable, as well as having a quick learning curve.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ginsu" = {
@@ -43,13 +43,13 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           libs = [
             (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
             (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

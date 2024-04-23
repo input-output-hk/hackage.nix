@@ -21,7 +21,7 @@
       synopsis = "Hash digests for files and directories";
       description = "This library can produce a hash for filesystem content, which can be\neither a file or a directory.\n\nThe name of the file or directory is not included in the hash digest.\nThe digest of a directory is based on the names and contents of the\nfiles contained therein.\nNo other filesystem metadata (timestamps, permissions, etc.) is\nincluded in the digest.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasherize" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unfork" or (errorHandler.buildDepError "unfork"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

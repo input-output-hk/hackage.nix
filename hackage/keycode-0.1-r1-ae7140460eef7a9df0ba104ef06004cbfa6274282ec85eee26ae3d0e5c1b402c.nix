@@ -21,14 +21,14 @@
       synopsis = "Maps web browser keycodes to their corresponding keyboard keys";
       description = "Keyboard events in web browsers are often represented as keycodes,\nwhich (1) are difficult to remember, and (2) sometimes vary from\nbrowser to browser. \"Web.KeyCode\" allows one to look up a key\npress's keycode and get a plain English description of the key\nthat was pressed, to reduce confusion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

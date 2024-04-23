@@ -21,7 +21,7 @@
       synopsis = "Http server for Agda (prototype)";
       description = "@agda-server@ serves agda files as XML files.\n\nUsage: Run @agda-server@ (see --help for command line options). Then open a browser\nwith @localhost:8001//X.xml@ (or similar).\n\nSupported features: Type checking (whole module), links between modules (but not between library modules), basic support for holes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "agda-server" = {
@@ -40,9 +40,9 @@
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

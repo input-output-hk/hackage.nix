@@ -21,16 +21,16 @@
       synopsis = "GHC primitives";
       description = "This package contains the primitive types and operations supplied by GHC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."rts" or (errorHandler.buildDepError "rts")) ];
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."user32" or (errorHandler.sysDepError "user32"))
           (pkgs."mingw32" or (errorHandler.sysDepError "mingw32"))
           (pkgs."mingwex" or (errorHandler.sysDepError "mingwex"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

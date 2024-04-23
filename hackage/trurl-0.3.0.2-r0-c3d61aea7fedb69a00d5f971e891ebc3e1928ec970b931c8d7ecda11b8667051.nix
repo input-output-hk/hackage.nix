@@ -21,7 +21,7 @@
       synopsis = "Haskell template code generator";
       description = "Trurl is a haskell project and code generating utility. Use it for scaffolding your projects and entities.\nQuick start:\n\ncabal update\n\ncabal install trurl\n\ntrurl create MyProject scotty-mysql\n\nTrurl allows creating your own templates for projects as well as for files. Just put them to ~/.trurl/repo.\nFor more details read here http://github.com/dbushenko/trurl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,18 +38,18 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "trurl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."trurl" or (errorHandler.buildDepError "trurl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."trurl" or (errorHandler.buildDepError "trurl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

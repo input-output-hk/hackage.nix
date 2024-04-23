@@ -21,7 +21,7 @@
       synopsis = "Haskell code for learning physics";
       description = "A library of functions for vector calculus,\ncalculation of electric field, electric flux,\nmagnetic field, and other quantities in mechanics\nand electromagnetic theory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
           (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

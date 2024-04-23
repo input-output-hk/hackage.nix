@@ -21,7 +21,7 @@
       synopsis = "Secure HTTP proxy for authenticating users via OAuth2";
       description = "Sproxy is secure by default. No requests makes it to the backend\nserver if they haven't been explicitly whitelisted.  Sproxy is\nindependent. Any web application written in any language can\nuse it.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sproxy2" = {
@@ -56,9 +56,9 @@
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

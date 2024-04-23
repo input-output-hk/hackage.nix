@@ -21,7 +21,7 @@
       synopsis = "Simple String-based process commands";
       description = "Thin wrappers over the System.Process (readProcess,\nreadProcessWithExitCode, and rawSystem). The idea is just\nto provide some simple common idioms for easy calling out\nto commands from programs.  For proper shell-scripting\nplease use turtle, shelly, command, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

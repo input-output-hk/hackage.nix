@@ -15,7 +15,7 @@
       unsafe-checks = false;
       internal-checks = false;
       nofib = false;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "accelerate"; version = "1.3.0.0"; };
@@ -32,8 +32,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = (([
@@ -65,36 +65,36 @@
           (hsPkgs."unique" or (errorHandler.buildDepError "unique"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (flags.nofib) [
+        ] ++ pkgs.lib.optionals (flags.nofib) [
           (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
           (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ]) ++ (pkgs.lib).optionals (flags.ekg) [
+        ]) ++ pkgs.lib.optionals (flags.ekg) [
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."ekg" or (errorHandler.buildDepError "ekg"))
           (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ]) ++ (if system.isWindows
+        ]) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "nofib-interpreter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-            ];
+          ];
           buildable = if !flags.nofib then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "markdown parser with papillon";
       description = "Now. Implemented only following features.\n\nParagraph, header, code, list\n\nNot yet implemented following features.\n\nnewline, bold, quote, link, horizontal line";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."papillon" or (errorHandler.buildDepError "papillon"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

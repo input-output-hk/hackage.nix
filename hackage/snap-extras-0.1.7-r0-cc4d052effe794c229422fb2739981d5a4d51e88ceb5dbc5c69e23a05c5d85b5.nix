@@ -21,7 +21,7 @@
       synopsis = "A collection of useful helpers and utilities for Snap web applications.";
       description = "This package contains a collection of helper functions\nthat come in handy in most practical, real-world\napplications. Check individual modules to understand\nwhat's here. You can simply import Snap.Extras and use\nthe initializer in there to get them all at once.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
           (hsPkgs."digestive-functors-blaze" or (errorHandler.buildDepError "digestive-functors-blaze"))
           (hsPkgs."digestive-functors-snap" or (errorHandler.buildDepError "digestive-functors-snap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

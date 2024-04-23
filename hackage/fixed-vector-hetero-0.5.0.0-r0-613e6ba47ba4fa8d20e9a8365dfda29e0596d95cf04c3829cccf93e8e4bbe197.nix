@@ -21,7 +21,7 @@
       synopsis = "Generic heterogeneous vectors";
       description = "Generic heterogeneous vectors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

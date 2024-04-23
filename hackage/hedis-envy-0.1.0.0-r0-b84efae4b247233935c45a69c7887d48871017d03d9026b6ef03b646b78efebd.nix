@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Provides FromEnv instance for ConnectInfo of hedis";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."envy" or (errorHandler.buildDepError "envy"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

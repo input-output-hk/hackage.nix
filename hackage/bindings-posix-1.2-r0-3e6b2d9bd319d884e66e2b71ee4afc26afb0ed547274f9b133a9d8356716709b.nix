@@ -21,14 +21,14 @@
       synopsis = "Low level bindings to posix.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-common" or (errorHandler.buildDepError "bindings-common"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

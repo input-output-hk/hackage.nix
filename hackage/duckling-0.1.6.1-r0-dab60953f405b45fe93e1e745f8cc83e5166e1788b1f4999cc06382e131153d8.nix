@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for parsing text into structured data.";
       description = "Duckling is a library for parsing text into structured data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "duckling-regen-exe" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "duckling-example-exe" = {
           depends = [
             (hsPkgs."duckling" or (errorHandler.buildDepError "duckling"))
@@ -73,9 +73,9 @@
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "custom-dimension-example" = {
           depends = [
             (hsPkgs."duckling" or (errorHandler.buildDepError "duckling"))
@@ -87,9 +87,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "duckling-request-sample" = {
           depends = [
             (hsPkgs."duckling" or (errorHandler.buildDepError "duckling"))
@@ -103,9 +103,9 @@
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "duckling-expensive" = {
           depends = [
             (hsPkgs."duckling" or (errorHandler.buildDepError "duckling"))
@@ -119,10 +119,10 @@
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "duckling-test" = {
           depends = [
@@ -134,9 +134,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

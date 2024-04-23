@@ -21,7 +21,7 @@
       synopsis = "Sandwich integration with Selenium WebDriver";
       description = "Please see the documentation at <https://codedownio.github.io/sandwich/docs/extensions/sandwich-webdriver>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sandwich-webdriver-exe" = {
           depends = [
@@ -100,10 +100,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sandwich-webdriver-test" = {
           depends = [
@@ -142,9 +142,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

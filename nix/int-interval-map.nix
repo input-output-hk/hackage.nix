@@ -6,8 +6,8 @@
         nix = import ../hackage/int-interval-map-0.0.1.0-r0-8f47f239837290f33c02d1934b5da182060d4312145f1a6eef0cbdbc20e05962.nix;
         revNum = 0;
         sha256 = "8f47f239837290f33c02d1934b5da182060d4312145f1a6eef0cbdbc20e05962";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

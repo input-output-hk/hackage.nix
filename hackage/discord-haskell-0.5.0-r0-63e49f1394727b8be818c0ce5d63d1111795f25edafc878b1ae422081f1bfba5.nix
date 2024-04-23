@@ -21,7 +21,7 @@
       synopsis = "Discord bot library for Haskell";
       description = "Functions and data types to write discord bots.\nSee docs: <https://discordapp.com/developers/docs/reference>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

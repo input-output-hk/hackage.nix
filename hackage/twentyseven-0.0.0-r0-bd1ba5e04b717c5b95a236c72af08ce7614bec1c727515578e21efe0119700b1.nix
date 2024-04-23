@@ -21,7 +21,7 @@
       synopsis = "Rubik's cube solver";
       description = "Solve 3×3×3 Rubik's cubes in the fewest possible moves. Or, if you can't\nwait, get /close enough/ with the two-phase solver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."ref-fd" or (errorHandler.buildDepError "ref-fd"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "twentyseven" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."twentyseven" or (errorHandler.buildDepError "twentyseven"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-twentyseven" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."twentyseven" or (errorHandler.buildDepError "twentyseven"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

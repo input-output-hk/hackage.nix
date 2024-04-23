@@ -21,7 +21,7 @@
       synopsis = "Taming Selective Strictness";
       description = "This package provides access to the functionality of\n<http://hackage.haskell.org/package/free-theorems-seq> through a web interface.\n\nAn online version of the interface is running at <http://www-ps.iai.uni-bonn.de/cgi-bin/polyseq.cgi>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "free-theorems-seq-webui.cgi" = {
@@ -34,14 +34,14 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

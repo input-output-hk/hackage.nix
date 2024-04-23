@@ -6,8 +6,8 @@
         nix = import ../hackage/hips-0.1-r0-f316e4e08d5d4a9cdd21d1faa836024efe1acce1a8da68cc67bd133c75071a81.nix;
         revNum = 0;
         sha256 = "f316e4e08d5d4a9cdd21d1faa836024efe1acce1a8da68cc67bd133c75071a81";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

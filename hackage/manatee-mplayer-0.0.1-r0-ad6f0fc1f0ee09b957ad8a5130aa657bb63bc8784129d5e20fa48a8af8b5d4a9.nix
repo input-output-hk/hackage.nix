@@ -21,7 +21,7 @@
       synopsis = "Mplayer client extension for Manatee.";
       description = "manatee-mplayer is mplayer client extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,12 +44,12 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "manatee-mplayer-daemon" = { buildable = true; };
         "manatee-mplayer" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

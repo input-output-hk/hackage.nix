@@ -21,7 +21,7 @@
       synopsis = "A simple static site generator library.";
       description = "A simple static site generator library, mainly aimed at\ncreating blogs and brochure sites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

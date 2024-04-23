@@ -21,7 +21,7 @@
       synopsis = "A basic implementation of the XDG Base Directory specification.";
       description = "On Unix platforms, this should be a very straightforward\nimplementation of the XDG Base Directory spec. On Windows,\nit will attempt to do the right thing with regards to\nchoosing appropriate directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

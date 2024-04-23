@@ -21,7 +21,7 @@
       synopsis = "Code generation tool for Quartz code from a SVG.";
       description = "svg2q will generate a Objective C Class from a SVG file which shows the SVG. The Class offers methods to set attributes of those SVG elements that have ids.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "svg2q" = {
@@ -33,9 +33,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

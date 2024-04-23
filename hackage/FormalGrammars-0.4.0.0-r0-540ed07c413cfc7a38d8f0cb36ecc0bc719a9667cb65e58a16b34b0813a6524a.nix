@@ -21,7 +21,7 @@
       synopsis = "(Context-free) grammars in formal language theory";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nContext-free grammars in formal language theory are sets of production rules,\nnon-terminal and terminal symbols. This library provides basic data types and\nfunctions to manipulate such grammars.\n\nGrammars can be defined in a small domain-specific language that is very close to\ntypical CFG notation. The DSL parser can easily be extended. Grammar products, for\nexample, are implemented as a single additional sub-parser.\n\nThis library also provides the machinery that transforms an Inside grammar into the\ncorresponding Outside grammar.\n\nStarting with version 0.2.1 it is possible to write multiple context-free grammars\nwithin this framework.\n\nIn addition, TemplateHaskell and QuasiQuoting functionality allow embedding thusly\ndefined grammars in Haskell programs. ADPfusion then turns such a grammar into an\nefficient dynamic program. It is also possible to generate Haskell modules that\ncontain the resulting grammar, signature and algebra product.\n\nAlternatives are ansi- or LaTeX-based pretty-printing for users that want to\nimplement their CFG in another language than Haskell.\n\nFormal background can be found in a number of papers which are given in the README.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

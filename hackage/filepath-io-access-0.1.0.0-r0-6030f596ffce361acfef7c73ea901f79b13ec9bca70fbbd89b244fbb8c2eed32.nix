@@ -21,15 +21,15 @@
       synopsis = "IO Access for filepath";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."base-io-access" or (errorHandler.buildDepError "base-io-access"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

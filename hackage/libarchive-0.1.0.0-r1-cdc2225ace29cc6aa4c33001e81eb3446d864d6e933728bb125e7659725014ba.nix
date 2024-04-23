@@ -21,18 +21,18 @@
       synopsis = "Haskell bindings for libarchive";
       description = "Partial Haskell bindings for [libarchive](https://www.libarchive.org/). Provides the ability to unpack tar archives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libarchive" or (errorHandler.pkgConfDepError "libarchive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

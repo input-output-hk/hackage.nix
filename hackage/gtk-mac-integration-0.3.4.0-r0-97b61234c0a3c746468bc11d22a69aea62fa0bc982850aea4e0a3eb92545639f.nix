@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.gtk2hs-buildtools or (pkgs.buildPackages.gtk2hs-buildtools or (errorHandler.setupDepError "gtk2hs-buildtools")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -36,11 +36,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk-mac-integration-gtk2" or (errorHandler.pkgConfDepError "gtk-mac-integration-gtk2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

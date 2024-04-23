@@ -21,7 +21,7 @@
       synopsis = "sendxmpp clone, sending XMPP messages via CLI";
       description = "It aims to be a drop-in replacement regarding the CLI flags. It is user-friendlier, handles errors better and, unlike sendxmpp, it supports modern authentication and encryption schemes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsendxmpp" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."string-class" or (errorHandler.buildDepError "string-class"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

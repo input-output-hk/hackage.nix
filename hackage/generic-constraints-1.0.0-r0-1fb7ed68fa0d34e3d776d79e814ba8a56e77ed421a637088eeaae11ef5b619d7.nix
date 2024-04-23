@@ -21,21 +21,21 @@
       synopsis = "Constraints via Generic";
       description = "Write short and concise contexts based on generics";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "unittests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."generic-constraints" or (errorHandler.buildDepError "generic-constraints"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "EDSL to specify Nagios configuration files.";
       description = "EDSL to specify Nagios configuration files. Encode nagios configuration using Haskell types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "nagios-config-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nagios-config" or (errorHandler.buildDepError "nagios-config"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

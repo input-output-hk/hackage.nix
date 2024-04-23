@@ -21,7 +21,7 @@
       synopsis = "Continuous deployment server for use with GitHub";
       description = "Mudbath is continuous deployment server which integrates with GitHub. It\nlistens for deployment events and when it receives one, executes a shell\nscript. It reports progress back to GitHub in the form of deployment\nstatus updates.\nMudbath can also send notifications to Slack if the proper keys are\nprovided. Other notification sinks can be easily added if needed.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mudbath" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "SimpleXMQ message broker";
       description = "This package includes <./docs/Simplex-Messaging-Server.html server>,\n<./docs/Simplex-Messaging-Client.html client> and\n<./docs/Simplex-Messaging-Agent.html agent> for SMP protocols:\n\n* <https://github.com/simplex-chat/simplexmq/blob/master/protocol/simplex-messaging.md SMP protocol>\n* <https://github.com/simplex-chat/simplexmq/blob/master/protocol/agent-protocol.md SMP agent protocol>\n\nSee <https://github.com/simplex-chat/simplex-chat terminal chat prototype> built with SimpleXMQ broker.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -67,9 +67,9 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "smp-agent" = {
           depends = [
@@ -116,9 +116,9 @@
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "smp-server" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -167,10 +167,10 @@
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "smp-server-test" = {
           depends = [
@@ -221,9 +221,9 @@
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

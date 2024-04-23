@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/githubuser/trek-lens#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."trek" or (errorHandler.buildDepError "trek"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "trek-lens-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."trek" or (errorHandler.buildDepError "trek"))
             (hsPkgs."trek-lens" or (errorHandler.buildDepError "trek-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

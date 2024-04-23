@@ -6,8 +6,8 @@
         nix = import ../hackage/LPFP-core-1.1.1-r0-a3aaa2bac03e50fd2c9837ed45df037c1dfd94c5fe66ebab479932c27cf82606.nix;
         revNum = 0;
         sha256 = "a3aaa2bac03e50fd2c9837ed45df037c1dfd94c5fe66ebab479932c27cf82606";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

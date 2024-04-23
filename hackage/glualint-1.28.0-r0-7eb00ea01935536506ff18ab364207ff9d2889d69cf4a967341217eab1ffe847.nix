@@ -21,7 +21,7 @@
       synopsis = "Attempts to fix your syntax erroring Lua files.";
       description = "Linter for Lua, specifically the variant used in Garry's mod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
           (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "glualint" = {
           depends = [
@@ -51,12 +51,12 @@
             (hsPkgs."glualint" or (errorHandler.buildDepError "glualint"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."signal" or (errorHandler.buildDepError "signal"))
-            ];
-          buildable = if !(compiler.isGhc && (compiler.version).ge "8.0.0")
+          ];
+          buildable = if !(compiler.isGhc && compiler.version.ge "8.0.0")
             then false
             else true;
-          };
         };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."glualint" or (errorHandler.buildDepError "glualint"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "linttest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."glualint" or (errorHandler.buildDepError "glualint"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

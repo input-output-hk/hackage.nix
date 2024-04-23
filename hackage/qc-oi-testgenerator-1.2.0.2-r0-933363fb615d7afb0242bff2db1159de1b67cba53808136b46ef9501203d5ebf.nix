@@ -21,7 +21,7 @@
       synopsis = "Compile time generation of operation invariance tests for QuickCheck";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A package with basic parsing utilities for several Bioinformatic data formats.";
       description = "Contains utilities to parse and write Eigenstrat, Fasta, FreqSum, VCF and other file formats used in population genetics analyses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

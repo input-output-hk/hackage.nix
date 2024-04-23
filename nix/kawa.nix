@@ -6,8 +6,8 @@
         nix = import ../hackage/kawa-0.1.0.0-r0-8a0536245b138243f63b349845b0295879983b0ba2f9e8ac29fe96d0a09c7f15.nix;
         revNum = 0;
         sha256 = "8a0536245b138243f63b349845b0295879983b0ba2f9e8ac29fe96d0a09c7f15";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

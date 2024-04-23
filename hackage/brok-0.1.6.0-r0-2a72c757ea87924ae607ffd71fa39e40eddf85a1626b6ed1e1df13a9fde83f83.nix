@@ -21,7 +21,7 @@
       synopsis = "Finds broken links in text files";
       description = "Please see the README on GitHub at <https://github.com/smallhadroncollider/brok#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brok" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."brok" or (errorHandler.buildDepError "brok"))
             (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "brok-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

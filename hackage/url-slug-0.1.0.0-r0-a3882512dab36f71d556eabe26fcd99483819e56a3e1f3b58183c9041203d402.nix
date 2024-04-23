@@ -21,7 +21,7 @@
       synopsis = "Encoding and decoding of URL slugs";
       description = "Encoding and decoding of URL slugs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

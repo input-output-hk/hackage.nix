@@ -21,7 +21,7 @@
       synopsis = "Builds a static website from templates and data in YAML or\nCSV files.";
       description = "`yst` is a tool for generating a static website\nby filling string templates with data taken from\nYAML text files (or, alternatively, CSV files or\nfrom a Sqlite3 database).\nThis approach combines the speed, security, and\nease of deployment of a static website with the\nflexibility and maintainability of a dynamic site\nthat separates presentation and data.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yst" = {
@@ -44,9 +44,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
             (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

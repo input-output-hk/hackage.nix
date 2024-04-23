@@ -21,7 +21,7 @@
       synopsis = "(ab)Use Google Translate as a speech synthesiser";
       description = "(ab)Use Google Translate as a speech synthesiser.\nDownloads mp3s from Google Translate with whatever\nyou wanted synthesised, and plays them with mpg123.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsay" = {
@@ -31,9 +31,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

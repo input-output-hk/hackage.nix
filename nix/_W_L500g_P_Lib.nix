@@ -6,8 +6,8 @@
         nix = import ../hackage/WL500gPLib-0.3.1-r0-852511265979ec06fa6ef9bf9857dd223865048bad9d5da620423d8cdd7188a9.nix;
         revNum = 0;
         sha256 = "852511265979ec06fa6ef9bf9857dd223865048bad9d5da620423d8cdd7188a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

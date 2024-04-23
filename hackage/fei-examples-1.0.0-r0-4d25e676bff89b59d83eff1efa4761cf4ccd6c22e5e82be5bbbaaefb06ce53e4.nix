@@ -21,7 +21,7 @@
       synopsis = "fei examples";
       description = "Various fei examples";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lenet" = {
@@ -34,9 +34,9 @@
             (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
             (hsPkgs."fei-modelzoo" or (errorHandler.buildDepError "fei-modelzoo"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cifar10" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."fei-modelzoo" or (errorHandler.buildDepError "fei-modelzoo"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "custom-op" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
             (hsPkgs."fei-modelzoo" or (errorHandler.buildDepError "fei-modelzoo"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "faster-rcnn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -83,9 +83,9 @@
             (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
             (hsPkgs."fei-cocoapi" or (errorHandler.buildDepError "fei-cocoapi"))
             (hsPkgs."fei-datasets" or (errorHandler.buildDepError "fei-datasets"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mask-rcnn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -104,9 +104,9 @@
             (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
             (hsPkgs."fei-cocoapi" or (errorHandler.buildDepError "fei-cocoapi"))
             (hsPkgs."fei-datasets" or (errorHandler.buildDepError "fei-datasets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

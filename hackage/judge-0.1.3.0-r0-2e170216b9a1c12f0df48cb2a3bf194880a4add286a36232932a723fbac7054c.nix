@@ -21,7 +21,7 @@
       synopsis = "Tableau-based theorem prover for justification logic.";
       description = "An implementation of a decision procedure for classical\npropositional logic and justification logic.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."texmath" or (errorHandler.buildDepError "texmath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "judge" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

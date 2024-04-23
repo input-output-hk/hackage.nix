@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-middleware-gunzip-0.0.2-r0-03ad25dd0faf55e20087e7d8456e60188d1b8fe5d6572b73f31cbab8157f57bb.nix;
         revNum = 0;
         sha256 = "03ad25dd0faf55e20087e7d8456e60188d1b8fe5d6572b73f31cbab8157f57bb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

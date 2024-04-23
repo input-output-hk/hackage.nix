@@ -21,7 +21,7 @@
       synopsis = "LaTeX code writer.";
       description = "HaTeX consists in a set of combinators which allow you to build LaTeX code,\nfollowing the LaTeX syntax in a type-safe manner.\n\nThis allows you to build programs which generates LaTeX code automatically\nfor any purpose you can figure out.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Adds XMLGenerator instance for RouteT monad";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

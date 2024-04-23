@@ -14,7 +14,7 @@
       identifier = {
         name = "welford-online-mean-variance";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2022 Manuel Schneckenreither";
       maintainer = "manuel.schnecki@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Online computation of mean and variance using the Welford algorithm.";
       description = "Please see the README on GitHub at <https://github.com/githubuser/welford-online-mean-variance#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "welford-online-mean-variance-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."welford-online-mean-variance" or (errorHandler.buildDepError "welford-online-mean-variance"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

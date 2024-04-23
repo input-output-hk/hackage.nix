@@ -21,7 +21,7 @@
       synopsis = "Math in Haskell.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,37 +41,37 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "noether" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."noether" or (errorHandler.buildDepError "noether"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "noether-test-suite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."noether" or (errorHandler.buildDepError "noether"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "noether-benchmarks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."noether" or (errorHandler.buildDepError "noether"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

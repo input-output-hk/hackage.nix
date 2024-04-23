@@ -19,7 +19,7 @@
       useplatformxcbkhr = false;
       useplatformxlibkhr = false;
       useplatformxlibxrandrext = false;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "vulkan-api"; version = "1.1.0.0"; };
@@ -32,15 +32,15 @@
       synopsis = "Low-level low-overhead vulkan api bindings";
       description = "Haskell bindings for vulkan api as described in vk.xml.\n\nYou can find some simple examples at <https://github.com/achirkin/vulkan/tree/master/vulkan-examples vulkan-examples> page\nor a more complete triangle rendering program at <https://github.com/achirkin/vulkan/tree/master/vulkan-triangles vulkan-triangles> page.\n\nFor further information, please refer to <https://github.com/achirkin/vulkan#readme README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         libs = [ (pkgs."vulkan" or (errorHandler.sysDepError "vulkan")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Concurrent bouded blocking queues optimized for flushing. Both IO and STM implementations.";
       description = "Please see the README on GitHub at <https://github.com/fpco/flush-queue#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."flush-queue" or (errorHandler.buildDepError "flush-queue"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."flush-queue" or (errorHandler.buildDepError "flush-queue"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

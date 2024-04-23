@@ -21,7 +21,7 @@
       synopsis = "Various trie implementations in Haskell";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/tries#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tries-test" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tries" or (errorHandler.buildDepError "tries"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "tries-bench-lookup" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
             (hsPkgs."tries" or (errorHandler.buildDepError "tries"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

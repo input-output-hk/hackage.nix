@@ -21,7 +21,7 @@
       synopsis = "Fast Brute-force search using parallelism";
       description = "Longshot enables to search for preimages from a given hash value\nusing a brute-force method based on parallelism.\n\n* Support various search lengths, character sets and hashers\n* Strict mode: searches only for a given exact length\n* Deep mode: searches everything less than or equal to a given length.\n* Use @CPUs@ as much as possible. Get the most out of them!\n* Use, however, @memory@ as little as possible.\n\nPlease see the documentation at https://github.com/thyeem/longshot\nfor usage example.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "longshot" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "longshot-test" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

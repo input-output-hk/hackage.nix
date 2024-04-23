@@ -6,8 +6,8 @@
         nix = import ../hackage/cayene-lpp-0.1.0.0-r0-d93cc434b3da672a1f47f397234047610fc96fdd5b0b80ed34f7a386b3e3557a.nix;
         revNum = 0;
         sha256 = "d93cc434b3da672a1f47f397234047610fc96fdd5b0b80ed34f7a386b3e3557a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

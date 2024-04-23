@@ -21,7 +21,7 @@
       synopsis = "The xml parser for aws-sdk package";
       description = "This package provides the unordered xml parser for aws-sdk package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."aws-sdk-text-converter" or (errorHandler.buildDepError "aws-sdk-text-converter"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."aws-sdk-xml-unordered" or (errorHandler.buildDepError "aws-sdk-xml-unordered"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

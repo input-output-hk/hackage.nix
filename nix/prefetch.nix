@@ -6,8 +6,8 @@
         nix = import ../hackage/prefetch-0.1.0.0-r0-41962bb18ac74d0fa97c496789e7bd86dfef5d30ef971df6541b9cce656141a8.nix;
         revNum = 0;
         sha256 = "41962bb18ac74d0fa97c496789e7bd86dfef5d30ef971df6541b9cce656141a8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

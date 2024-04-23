@@ -21,7 +21,7 @@
       synopsis = "Functions for mapping vinyl records in polysemy.";
       description = "Extra functions for using vinyl records in polysemy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."polysemy-extra" or (errorHandler.buildDepError "polysemy-extra"))
           (hsPkgs."polysemy-several" or (errorHandler.buildDepError "polysemy-several"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A single-entity stateful Map in STM, similar to tmapchan";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/tmapmvar#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tmapmvar-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tmapmvar" or (errorHandler.buildDepError "tmapmvar"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

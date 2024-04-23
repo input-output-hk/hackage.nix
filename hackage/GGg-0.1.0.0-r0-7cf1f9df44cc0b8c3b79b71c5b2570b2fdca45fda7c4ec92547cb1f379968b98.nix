@@ -21,16 +21,16 @@
       synopsis = "GGg cipher";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "GGg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

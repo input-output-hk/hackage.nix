@@ -21,7 +21,7 @@
       synopsis = "Connect Reactive and FieldTrip";
       description = "This library supports functionally programming reactive, animated, 3D\ngraphics.  It connects ''Reactive'' (a functional reactive programming\nlibrary) and ''FieldTrip'' (a functional 3D library).\n\nProject wiki page: <http://haskell.org/haskellwiki/reactive-fieldtrip>\n\n&#169; 2008 by Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."reactive-glut" or (errorHandler.buildDepError "reactive-glut"))
           (hsPkgs."FieldTrip" or (errorHandler.buildDepError "FieldTrip"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

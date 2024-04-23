@@ -21,7 +21,7 @@
       synopsis = "Adds convenient Amazon ElasticSearch Service authentication to Bloodhound.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

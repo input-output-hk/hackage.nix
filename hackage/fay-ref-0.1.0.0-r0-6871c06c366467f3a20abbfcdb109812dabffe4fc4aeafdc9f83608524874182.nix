@@ -21,13 +21,13 @@
       synopsis = "Like IORef but for Fay.";
       description = "Like IORef but for Fay.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

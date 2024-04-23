@@ -21,44 +21,44 @@
       synopsis = "Tests for the ALSA sequencer library.";
       description = "Tests for the ALSA sequencer library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "test1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test4" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test5" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."alsa" or (errorHandler.buildDepError "alsa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

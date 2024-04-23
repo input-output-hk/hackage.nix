@@ -21,7 +21,7 @@
       synopsis = "Quipper is an embedded, scalable functional programming language for quantum computing.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

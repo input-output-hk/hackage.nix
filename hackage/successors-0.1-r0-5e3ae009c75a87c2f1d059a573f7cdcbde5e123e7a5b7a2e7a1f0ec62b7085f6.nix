@@ -21,11 +21,11 @@
       synopsis = "An applicative functor to manage successors";
       description = "This pacakge provides the\n'Control.Applicative.Successors.Succs' functor. It models\na node in a graph together with its successors. The\n@Applicative@ (and @Monad@) instances are designed so that\nthe successors of the resulting value take exactly one\nstep, either in the left or the right argument to @<*>@\n(or @>>=@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

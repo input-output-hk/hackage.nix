@@ -21,12 +21,12 @@
       synopsis = "Smash together text to make modules.";
       description = "Thin, low-tech wrapper for smashing together raw text to make Haskell modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "module-munging-test-suite" = {
           depends = [
@@ -34,12 +34,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."module-munging" or (errorHandler.buildDepError "module-munging"))
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

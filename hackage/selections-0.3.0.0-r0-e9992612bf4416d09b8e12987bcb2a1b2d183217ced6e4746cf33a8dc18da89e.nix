@@ -21,11 +21,11 @@
       synopsis = "Combinators for operating with selections over an underlying functor";
       description = "See the [README on github](https://github.com/ChrisPenner/selections#readme) for tutorials!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

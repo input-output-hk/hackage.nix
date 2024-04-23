@@ -21,7 +21,7 @@
       synopsis = "Simple project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."charset" or (errorHandler.buildDepError "charset"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec-test" = {
           depends = [
@@ -39,17 +39,17 @@
             (hsPkgs."operate-do" or (errorHandler.buildDepError "operate-do"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doc-test" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctest)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctest) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
-            ];
+          ];
           buildable = if !flags.test-doctest then false else true;
-          };
         };
       };
-    }
+    };
+  }

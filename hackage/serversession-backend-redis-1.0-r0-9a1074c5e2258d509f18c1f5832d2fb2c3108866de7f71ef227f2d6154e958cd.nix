@@ -21,7 +21,7 @@
       synopsis = "Storage backend for serversession using Redis.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-backend-redis>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
             (hsPkgs."serversession-backend-redis" or (errorHandler.buildDepError "serversession-backend-redis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

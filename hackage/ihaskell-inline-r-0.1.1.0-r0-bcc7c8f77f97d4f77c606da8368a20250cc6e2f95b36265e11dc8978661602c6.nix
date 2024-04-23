@@ -21,7 +21,7 @@
       synopsis = "Embed R quasiquotes and plots in IHaskell notebooks.";
       description = "Embed R quasiquotes and plots in IHaskell notebooks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,25 +21,25 @@
       synopsis = "Constant-time queries for the median of a stream of numeric\ndata.";
       description = "Uses the two-heap approach to support O(lg n) insertions\nand O(1) queries for the median.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."heap" or (errorHandler.buildDepError "heap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "median-stream-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."median-stream" or (errorHandler.buildDepError "median-stream"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "median-stream-bench-optimized" = {
           depends = [
@@ -47,18 +47,18 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."median-stream" or (errorHandler.buildDepError "median-stream"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "median-stream-bench-non-optimized" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."median-stream" or (errorHandler.buildDepError "median-stream"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

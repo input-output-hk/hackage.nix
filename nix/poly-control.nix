@@ -6,8 +6,8 @@
         nix = import ../hackage/poly-control-1.0.0-r0-4ff31a052afaa8fda6cdf84d705abf9acb784fd21de63fb55d715e551c7f2106.nix;
         revNum = 0;
         sha256 = "4ff31a052afaa8fda6cdf84d705abf9acb784fd21de63fb55d715e551c7f2106";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

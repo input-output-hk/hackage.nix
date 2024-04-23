@@ -21,7 +21,7 @@
       synopsis = "ISO 3166 country codes and i18n names.";
       description = "ISO 3166 country codes and i18n names.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,19 +29,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "country-codes-generate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = if !flags.generate then false else true;
-          };
         };
+      };
       tests = {
         "country-codes-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."country-codes" or (errorHandler.buildDepError "country-codes"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Signal processing";
       description = "Purely functional interface to signal processing based on hmatrix\nprovides data types for manipulating EEG data,\nincluding reading from BDF";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,10 +34,10 @@
           (hsPkgs."ghc-binary" or (errorHandler.buildDepError "ghc-binary"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."hmatrix-gsl-stats" or (errorHandler.buildDepError "hmatrix-gsl-stats"))
-          ];
-        libs = (pkgs.lib).optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        ];
+        libs = pkgs.lib.optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

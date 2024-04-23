@@ -21,7 +21,7 @@
       synopsis = "ForSyDe's Haskell-embedded Domain Specific Language.";
       description = "The ForSyDe (Formal System Design) methodology has been developed with the objective to move system design to a higher level of abstraction and to bridge the abstraction gap by transformational design refinement.\n\n__THIS PACKAGE IS DEPRECATED!__ The package has been split and continued as <http://hackage.haskell.org/package/forsyde-shallow @forsyde-shallow@> and <http://hackage.haskell.org/package/forsyde-deep @forsyde-deep@>.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

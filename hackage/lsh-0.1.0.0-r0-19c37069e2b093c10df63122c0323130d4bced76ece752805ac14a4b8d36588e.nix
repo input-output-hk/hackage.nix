@@ -21,7 +21,7 @@
       synopsis = "A simple ls clone with modern, colored formatting";
       description = "Please see the README on GitHub at <https://github.com/Floataqq/lsh#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lsh-exe" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."lsh" or (errorHandler.buildDepError "lsh"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lsh-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."lsh" or (errorHandler.buildDepError "lsh"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

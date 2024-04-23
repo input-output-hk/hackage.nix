@@ -21,14 +21,14 @@
       synopsis = "Google Genomics SDK.";
       description = "Stores, processes, explores and shares genomic data. This API implements\nthe Global Alliance for Genomics and Health (GA4GH) v0.5.1 API as well\nas several extensions.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v1@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

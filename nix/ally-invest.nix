@@ -6,8 +6,8 @@
         nix = import ../hackage/ally-invest-0.1.0.0-r0-9bbd86f7ae0f642f24fecaccea542e4c171759d7c9451c40e22bd011bc32d04a.nix;
         revNum = 0;
         sha256 = "9bbd86f7ae0f642f24fecaccea542e4c171759d7c9451c40e22bd011bc32d04a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

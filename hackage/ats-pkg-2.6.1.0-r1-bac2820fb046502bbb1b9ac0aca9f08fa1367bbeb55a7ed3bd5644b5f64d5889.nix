@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cli-setup or (pkgs.buildPackages.cli-setup or (errorHandler.setupDepError "cli-setup")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -58,12 +58,12 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."ats-setup" or (errorHandler.buildDepError "ats-setup"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "atspkg" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = if flags.no-executable then false else true;
-          };
         };
       };
-    }
+    };
+  }

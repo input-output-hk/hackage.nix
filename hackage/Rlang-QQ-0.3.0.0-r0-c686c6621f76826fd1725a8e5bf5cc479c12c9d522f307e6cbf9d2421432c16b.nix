@@ -21,7 +21,7 @@
       synopsis = "quasiquoter for inline-R code";
       description = "This quasiquoter calls R (<http://www.r-project.org/>) from ghc.\nVariables from the haskell-side are passed in, and\nvariables created (or modified) are returned as the value\nof the quasiquote.\n\nThe R package knitr is used, which allows recording plots. But\nfor this to work, you need to install it first, for example with:\n\n> R --no-save <<< 'install.packages(\"knitr\")'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,17 +50,17 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optional (flags.repa) (hsPkgs."repa" or (errorHandler.buildDepError "repa"));
+        ] ++ pkgs.lib.optional (flags.repa) (hsPkgs."repa" or (errorHandler.buildDepError "repa"));
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."Rlang-QQ" or (errorHandler.buildDepError "Rlang-QQ"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

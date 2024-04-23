@@ -21,16 +21,16 @@
       synopsis = "Use htmx in your lucid templates";
       description = "Please see the README on GitHub at <https://github.com/monadicsystems/lucid-htmx/tree/main/lucid2#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lucid2" or (errorHandler.buildDepError "lucid2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lucid2-htmx-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."lucid2" or (errorHandler.buildDepError "lucid2"))
             (hsPkgs."lucid2-htmx" or (errorHandler.buildDepError "lucid2-htmx"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

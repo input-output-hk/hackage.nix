@@ -21,7 +21,7 @@
       synopsis = "Servant Stream support for conduit.";
       description = "Servant Stream support for conduit.\n\nProvides 'ToSourceIO' and 'FromSourceIO' instances for 'ConduitT'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Lenses for network-uri";
       description = "Please see the README on GitHub at <https://github.com/githubuser/network-uri-lenses#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

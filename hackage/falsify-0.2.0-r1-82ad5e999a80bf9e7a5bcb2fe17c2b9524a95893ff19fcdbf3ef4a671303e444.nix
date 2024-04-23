@@ -21,7 +21,7 @@
       synopsis = "Property-based testing with internal integrated shrinking";
       description = "This library provides property based testing with support\nfor internal integrated shrinking: integrated in the sense\nof Hedgehog, meaning that there is no need to write a\nseparate shrinker and generator; and internal in the sense\nof Hypothesis, meaning that this works well even across\nmonadic bind. However, the actual techniques that power\n@falsify@ are quite different from both of these two\nlibraries.\n\nMost users will probably want to use the integration with\n@<https://hackage.haskell.org/package/tasty tasty>@,\nand use \"Test.Tasty.Falsify\" as their main entrypoint\ninto the library. The \"Test.Falsify.Interactive\" module\ncan be used to experiment with the library in @ghci@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-falsify" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."falsify" or (errorHandler.buildDepError "falsify"))
             (hsPkgs."selective" or (errorHandler.buildDepError "selective"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

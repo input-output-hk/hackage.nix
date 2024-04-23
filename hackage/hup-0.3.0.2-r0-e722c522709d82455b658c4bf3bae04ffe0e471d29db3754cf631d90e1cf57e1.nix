@@ -13,7 +13,7 @@
       patchhelpmessage = false;
       extraghcwarnings = true;
       buildstackbasedtests = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "hup"; version = "0.3.0.2"; };
@@ -26,7 +26,7 @@
       synopsis = "Upload packages or documentation to a hackage server";
       description = "Upload packages or documentation to a hackage server\n\nSee the README for details\n(at <https://github.com/phlummox/hup#readme>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hup" = {
           depends = [
@@ -56,12 +56,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hup" or (errorHandler.buildDepError "hup"))
-            ] ++ [
-            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ] ++ [ (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hup-spec" = {
           depends = ([
@@ -80,22 +78,22 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4.4") (hsPkgs."simple-templates" or (errorHandler.buildDepError "simple-templates"))) ++ (pkgs.lib).optionals (flags.enablewebtests) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4.4") (hsPkgs."simple-templates" or (errorHandler.buildDepError "simple-templates"))) ++ pkgs.lib.optionals (flags.enablewebtests) [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hup-doctest" = {
-          depends = (pkgs.lib).optionals (!(!flags.buildstackbasedtests)) [
+          depends = pkgs.lib.optionals (!!flags.buildstackbasedtests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hup" or (errorHandler.buildDepError "hup"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = if !flags.buildstackbasedtests then false else true;
-          };
         };
       };
-    }
+    };
+  }

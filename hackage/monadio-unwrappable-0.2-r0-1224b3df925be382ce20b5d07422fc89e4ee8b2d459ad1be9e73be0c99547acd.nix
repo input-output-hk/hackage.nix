@@ -21,15 +21,15 @@
       synopsis = "Reversibly allow monad transformer stacks to run in IO";
       description = "Provides MonadIOUnwrappable instances for monad transformer stacks that can be run in the IO monad, with the result converted back to the monadic type. This package also includes some utilities built using MonadIOUnwrappable, such as a bracket implementation that works with MonadIO even on stacks containing one or more ErrorT transformers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/lawless-concurrent-machines-0.3.1-r0-0dc9e5d0e7a8f69fe03585c99078dd96c62b19943707ba0ede9f3f7d2f15f2ba.nix;
         revNum = 0;
         sha256 = "0dc9e5d0e7a8f69fe03585c99078dd96c62b19943707ba0ede9f3f7d2f15f2ba";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

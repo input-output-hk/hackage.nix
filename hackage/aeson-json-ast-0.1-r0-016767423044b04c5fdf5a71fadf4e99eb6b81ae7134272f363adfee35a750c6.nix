@@ -21,15 +21,15 @@
       synopsis = "Integration layer for \"json-ast\" and \"aeson\"";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."json-ast" or (errorHandler.buildDepError "json-ast"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

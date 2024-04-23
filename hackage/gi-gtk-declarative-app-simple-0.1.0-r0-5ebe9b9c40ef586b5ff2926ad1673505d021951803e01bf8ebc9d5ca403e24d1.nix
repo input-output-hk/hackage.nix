@@ -14,7 +14,7 @@
       identifier = {
         name = "gi-gtk-declarative-app-simple";
         version = "0.1.0";
-        };
+      };
       license = "MPL-2.0";
       copyright = "Oskar Wickström";
       maintainer = "oskar.wickstrom@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Declarative GTK+ programming in Haskell in the style of\n[Pux](https://github.com/alexmingoia/purescript-pux).";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

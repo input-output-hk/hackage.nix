@@ -21,7 +21,7 @@
       synopsis = "zifter-git";
       description = "zifter-git";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."zifter" or (errorHandler.buildDepError "zifter"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A verification tool for C programs.";
       description = "\nThis tool (and corresponding C library) are intended for verifying C\nprograms using verification specifications embedded in the input\nsource files (i.e. it allows for writing Crucible specifications\nby using C as the specification language).\n\nThis tool provides:\n\n* a Haskell library with the core functionality,\n\n* a @crux-llvm@ executable used to run the verification when given one\nor more C or C++ source files\n\n* a set of supplemental C source files, include files, and LLVM\nruntime library bitcode files to use for building the input C\nfiles into verifiable LLVM BC files.\n\n* a @crux-llvm-svcomp@ executable that is designed to run verification\nof challenge inputs for the SV-COMP competition, generating\nresults tailored to the format that SV-COMP expects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parameterized-utils" or (errorHandler.buildDepError "parameterized-utils"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "crux-llvm" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."what4" or (errorHandler.buildDepError "what4"))
             (hsPkgs."crux-llvm" or (errorHandler.buildDepError "crux-llvm"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "crux-llvm-for-ide" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."crux-llvm" or (errorHandler.buildDepError "crux-llvm"))
             (hsPkgs."lumberjack" or (errorHandler.buildDepError "lumberjack"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "crux-llvm-svcomp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,10 +115,10 @@
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "crux-llvm-test" = {
           depends = [
@@ -143,9 +143,9 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

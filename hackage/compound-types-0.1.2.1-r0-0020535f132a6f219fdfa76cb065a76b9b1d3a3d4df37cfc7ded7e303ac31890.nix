@@ -21,23 +21,23 @@
       synopsis = "Sum and Product types and such";
       description = "This library provides first-class multi-arity product- and sum-types and\nneat type-level utilities for their composition.\nThe solution is quite simple and doesn’t require the advanced proficiency\nin the language to be applied in practice.\n\nFor a comprehensive introduction please see\n<http://nikita-volkov.github.io/first-class-sums-and-products/ this blog post>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "demo" = {
           depends = [
             (hsPkgs."compound-types" or (errorHandler.buildDepError "compound-types"))
             (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

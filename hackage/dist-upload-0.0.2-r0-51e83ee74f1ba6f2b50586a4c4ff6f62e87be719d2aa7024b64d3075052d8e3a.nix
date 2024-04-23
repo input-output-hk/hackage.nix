@@ -21,7 +21,7 @@
       synopsis = "Generate/Upload cabal package to Hackage.";
       description = "Generate/Upload cabal package to Hackage.\n\nBest put your hackage username/password in file `HOME/.cabal/config`, then \"dist-upload\" can upload package fully automatic. :)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "dist-upload" = { buildable = true; }; };
       };
-    }
+      exes = { "dist-upload" = { buildable = true; }; };
+    };
+  }

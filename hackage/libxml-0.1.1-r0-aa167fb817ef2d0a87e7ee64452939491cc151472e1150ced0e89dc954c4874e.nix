@@ -21,19 +21,19 @@
       synopsis = "Binding to libxml2";
       description = "Minimal binding to libxml2. Additional functions will be added when needed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         libs = [ (pkgs."xml2" or (errorHandler.sysDepError "xml2")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

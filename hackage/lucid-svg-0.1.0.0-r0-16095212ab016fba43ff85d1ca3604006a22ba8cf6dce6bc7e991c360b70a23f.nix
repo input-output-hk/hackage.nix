@@ -21,7 +21,7 @@
       synopsis = "DSL for SVG using lucid for HTML";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

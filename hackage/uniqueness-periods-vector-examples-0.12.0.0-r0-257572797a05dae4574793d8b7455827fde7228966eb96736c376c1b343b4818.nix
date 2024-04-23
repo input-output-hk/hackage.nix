@@ -14,7 +14,7 @@
       identifier = {
         name = "uniqueness-periods-vector-examples";
         version = "0.12.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Usage examples for the uniqueness-periods-vector series of packages";
       description = "Usage examples for the uniqueness-periods-vector series of packages. Several executables are planned to demonstrate the libraries work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."uniqueness-periods-vector-common" or (errorHandler.buildDepError "uniqueness-periods-vector-common"))
           (hsPkgs."uniqueness-periods-vector-properties" or (errorHandler.buildDepError "uniqueness-periods-vector-properties"))
           (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariants" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."phonetic-languages-ukrainian" or (errorHandler.buildDepError "phonetic-languages-ukrainian"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."uniqueness-periods-vector-filters" or (errorHandler.buildDepError "uniqueness-periods-vector-filters"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."phonetic-languages-ukrainian" or (errorHandler.buildDepError "phonetic-languages-ukrainian"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."uniqueness-periods-vector-filters" or (errorHandler.buildDepError "uniqueness-periods-vector-filters"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "processText" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."uniqueness-periods-vector-stats" or (errorHandler.buildDepError "uniqueness-periods-vector-stats"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

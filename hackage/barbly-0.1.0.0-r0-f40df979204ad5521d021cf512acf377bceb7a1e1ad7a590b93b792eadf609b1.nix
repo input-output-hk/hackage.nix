@@ -21,7 +21,7 @@
       synopsis = "Create status bar menus for macOS from executables";
       description = "Allows you to place the stdout of a process in the macOS status bar.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "barbly" = {
@@ -35,12 +35,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           frameworks = [
             (pkgs."AppKit" or (errorHandler.sysDepError "AppKit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

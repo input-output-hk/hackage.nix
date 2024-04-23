@@ -21,7 +21,7 @@
       synopsis = "Common types and URIs for the BronyRadioGermany API bindings.";
       description = "Common types and URIs for the BronyRadioGermany API bindings. Please have a look at bronyradiogermany-conduit or bronyradiogermany-streaming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

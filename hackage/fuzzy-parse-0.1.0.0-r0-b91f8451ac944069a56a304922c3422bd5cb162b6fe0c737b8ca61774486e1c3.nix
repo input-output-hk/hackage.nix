@@ -21,7 +21,7 @@
       synopsis = "Tools for processing unstructured text data";
       description = "The lightweight and easy to use functions for text tokenizing and parsing.  It aimed for\nparsing mostly unstructured data, but the structured formats may be parsed as well.\nIt may be used in different sutiations, for DSL, tex markups or even for parsing simple\ngrammars easier and sometimes faster than in case of usage mainstream parsing combinators\nor parser generators.\nSee the README.md, examples and modules documentation for more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fuzzy-parse-test" = {
           depends = [
@@ -43,12 +43,12 @@
             (hsPkgs."fuzzy-parse" or (errorHandler.buildDepError "fuzzy-parse"))
             (hsPkgs."interpolatedstring-perl6" or (errorHandler.buildDepError "interpolatedstring-perl6"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

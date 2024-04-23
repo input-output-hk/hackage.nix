@@ -21,18 +21,18 @@
       synopsis = "Munkres' assignment algorithm (hungarian method)";
       description = "The Munkres algorithm solves the weighted minimum matching\nproblem in a complete bipartite graph, in O(n^3) time.\nThis problem is often called the 'assignment problem'.\nSee eg. <http://en.wikipedia.org/wiki/Hungarian_algorithm>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (pkgs.lib).optional (flags.debug) (hsPkgs."random" or (errorHandler.buildDepError "random"));
+          ]) ++ pkgs.lib.optional (flags.debug) (hsPkgs."random" or (errorHandler.buildDepError "random"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Create animated GIFs, overlaid with optional text, from movies.";
       description = "GIF creation utility.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gifcurry_gui" = {
@@ -30,17 +30,17 @@
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gifcurry_cli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

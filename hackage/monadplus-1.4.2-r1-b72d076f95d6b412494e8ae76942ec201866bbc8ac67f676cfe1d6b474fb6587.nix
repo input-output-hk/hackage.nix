@@ -21,11 +21,11 @@
       synopsis = "Haskell98 partial maps and filters over MonadPlus. ";
       description = "Filtering and folding over arbitrary `MonadPlus` instances.\nThis package generalizes many common stream operations such as\n`filter`, `catMaybes` etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

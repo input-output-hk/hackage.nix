@@ -21,14 +21,14 @@
       synopsis = "Graph indexed monads.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."indexed" or (errorHandler.buildDepError "indexed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

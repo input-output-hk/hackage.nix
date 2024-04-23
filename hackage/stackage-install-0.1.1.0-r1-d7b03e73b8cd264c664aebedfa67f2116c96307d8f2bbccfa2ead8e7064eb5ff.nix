@@ -21,7 +21,7 @@
       synopsis = "Secure download of packages for cabal-install";
       description = "For more information, see <https://www.stackage.org/package/stackage-install>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage-install" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stackage-install" or (errorHandler.buildDepError "stackage-install"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

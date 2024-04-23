@@ -6,8 +6,8 @@
         nix = import ../hackage/armada-0.1-r0-e6ffa11eb6f44d137a5ea8f9b02765fd35e1161c8da2557b38eda7bf7022353f.nix;
         revNum = 0;
         sha256 = "e6ffa11eb6f44d137a5ea8f9b02765fd35e1161c8da2557b38eda7bf7022353f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

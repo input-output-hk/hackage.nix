@@ -21,7 +21,7 @@
       synopsis = "Forward build system, with caching and speculation";
       description = "A forward build system like Fabrciate but with speculation and remote caching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rattle-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
             (hsPkgs."rattle" or (errorHandler.buildDepError "rattle"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A client for Haskell programs to query a GraphQL API";
       description = "A client for Haskell programs to query a GraphQL API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "graphql-codegen" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "graphql-client-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A basic library for rate-limiting IO actions.";
       description = "In many cases, it is useful, necessary, or simply nice to limit how\nfrequently you perform some action. For example, you may want to limit\nhow often your program makes a request of some web site. This library\nis intended as a general-purpose mechanism for rate-limiting IO actions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

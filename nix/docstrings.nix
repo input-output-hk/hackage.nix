@@ -6,8 +6,8 @@
         nix = import ../hackage/docstrings-0.1.0.0-r0-4ba9c2623c6f547a5618c1780070ffcbd2116d9d26fbb5fc6ada17f334e96a00.nix;
         revNum = 0;
         sha256 = "4ba9c2623c6f547a5618c1780070ffcbd2116d9d26fbb5fc6ada17f334e96a00";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

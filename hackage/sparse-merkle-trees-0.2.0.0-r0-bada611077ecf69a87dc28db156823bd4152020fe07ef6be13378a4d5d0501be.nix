@@ -21,7 +21,7 @@
       synopsis = "Sparse Merkle trees with proofs of inclusion and exclusion";
       description = "Please see the README on GitHub at <https://github.com/tochicool/sparse-merkle-trees#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sparse-merkle-trees-test" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "sparse-merkle-trees-bench" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."sparse-merkle-trees" or (errorHandler.buildDepError "sparse-merkle-trees"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Super simple InfluxDB package in Classy-MTL style";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."async-io-either" or (errorHandler.buildDepError "async-io-either"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

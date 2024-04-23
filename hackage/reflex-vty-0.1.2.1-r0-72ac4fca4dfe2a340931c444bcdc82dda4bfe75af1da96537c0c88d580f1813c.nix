@@ -21,7 +21,7 @@
       synopsis = "Reflex FRP host and widgets for vty applications";
       description = "Host and widget library for Reflex-based FRP applications\n\n<<https://i.imgur.com/FULQNtu.gif>>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

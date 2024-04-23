@@ -6,8 +6,8 @@
         nix = import ../hackage/happstack-fay-ajax-0.2.0-r0-45501e0d6bf548ad6eeca5b95186aa4ca4d8220564bcf35dd8b676dd8acdd80b.nix;
         revNum = 0;
         sha256 = "45501e0d6bf548ad6eeca5b95186aa4ca4d8220564bcf35dd8b676dd8acdd80b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

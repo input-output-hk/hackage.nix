@@ -21,7 +21,7 @@
       synopsis = "Command-line tool for maintaining the Semantique database.";
       description = "Command-line tool for maintaining the Semantique database. See <http://semantik.tv/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "semantique" = {
@@ -37,9 +37,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."classify" or (errorHandler.buildDepError "classify"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

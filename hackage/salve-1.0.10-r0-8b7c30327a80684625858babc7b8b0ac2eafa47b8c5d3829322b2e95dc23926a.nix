@@ -21,21 +21,21 @@
       synopsis = "Semantic version numbers and constraints.";
       description = "Salve provides semantic version (SemVer) numbers and constraints (ranges).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."salve" or (errorHandler.buildDepError "salve"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

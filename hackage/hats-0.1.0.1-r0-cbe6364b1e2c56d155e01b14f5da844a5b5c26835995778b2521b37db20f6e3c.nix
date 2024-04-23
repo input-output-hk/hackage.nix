@@ -21,7 +21,7 @@
       synopsis = "Haskell client for the NATS messaging system";
       description = "A Haskell client for the NATS messaging system. To get started,\nsee the documentation for the \"Network.Nats\" module. Or see the\nexample programs in the example directory.\n\nA general introduction to NATS can be found at <https://nats.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,18 +41,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hats-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hats" or (errorHandler.buildDepError "hats"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hats-test" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hats-bench" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."hats" or (errorHandler.buildDepError "hats"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

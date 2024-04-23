@@ -21,7 +21,7 @@
       synopsis = "Form handling support for Yesod Web Framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-routes-quasi" or (errorHandler.buildDepError "web-routes-quasi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

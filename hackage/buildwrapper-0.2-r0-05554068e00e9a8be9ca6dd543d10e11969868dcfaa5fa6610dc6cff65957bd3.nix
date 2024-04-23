@@ -21,7 +21,7 @@
       synopsis = "A library and an executable that provide an easy API for a Haskell IDE";
       description = "Buildwrapper is an alternative to scion.\nIt provides services to configure, build and give information on source files to help IDEs manage Haskell projects.\nYou can use buildwrapper to build project and retrieve errors, get outline for each module source, get the type of something inside a source file, get lexer tokens, etc.\nBuildwrapper is used in the EclipseFP project (Eclipse plugins for Haskell development)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."aeson-native" or (errorHandler.buildDepError "aeson-native"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "buildwrapper" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson-native" or (errorHandler.buildDepError "aeson-native"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "buildwrapper-test" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

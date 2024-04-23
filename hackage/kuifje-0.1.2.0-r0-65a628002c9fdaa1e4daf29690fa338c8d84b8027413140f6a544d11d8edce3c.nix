@@ -21,7 +21,7 @@
       synopsis = "A Quantitative Information Flow aware programming language.";
       description = "A prototype for a Quantitative Information Flow aware programming language.\nBased on the paper: \"Quantitative Information Flow with Monads in Haskell\" by Jeremy Gibbons, Annabelle McIver, Carroll Morgan, and Tom Schrijvers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

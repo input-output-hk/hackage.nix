@@ -21,7 +21,7 @@
       synopsis = "Template Haskell support for ASCII";
       description = "This package defines Template Haskell support for ASCII, including quasi-quoters for expressing ASCII strings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ascii-superset" or (errorHandler.buildDepError "ascii-superset"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

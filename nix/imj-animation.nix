@@ -6,8 +6,8 @@
         nix = import ../hackage/imj-animation-0.1.0.2-r0-cf05912ce587deed53e2f70372a27212d1d9df3f0fb46242adc7e7fe1840db74.nix;
         revNum = 0;
         sha256 = "cf05912ce587deed53e2f70372a27212d1d9df3f0fb46242adc7e7fe1840db74";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

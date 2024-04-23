@@ -21,15 +21,15 @@
       synopsis = "Permissions for bookkeeper records";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bookkeeper" or (errorHandler.buildDepError "bookkeeper"))
           (hsPkgs."type-level-sets" or (errorHandler.buildDepError "type-level-sets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

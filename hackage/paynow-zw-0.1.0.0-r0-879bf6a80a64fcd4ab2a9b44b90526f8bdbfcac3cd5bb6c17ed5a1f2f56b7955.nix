@@ -21,7 +21,7 @@
       synopsis = "A Haskell wrapper for the Paynow payment gateway";
       description = "Please see the README on GitHub at <https://github.com/trevorsibanda/paynow-zw#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "paynow-zw-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."paynow-zw" or (errorHandler.buildDepError "paynow-zw"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

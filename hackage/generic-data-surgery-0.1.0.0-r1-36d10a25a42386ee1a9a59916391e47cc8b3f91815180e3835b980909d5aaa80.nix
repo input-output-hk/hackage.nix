@@ -21,16 +21,16 @@
       synopsis = "Surgery for generic data types";
       description = "Transform data types before passing them to generic functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."generic-data" or (errorHandler.buildDepError "generic-data"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "surgery-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."generic-data" or (errorHandler.buildDepError "generic-data"))
             (hsPkgs."generic-data-surgery" or (errorHandler.buildDepError "generic-data-surgery"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lens-surgery-test" = {
           depends = [
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
@@ -49,9 +49,9 @@
             (hsPkgs."generic-data-surgery" or (errorHandler.buildDepError "generic-data-surgery"))
             (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

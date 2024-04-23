@@ -21,7 +21,7 @@
       synopsis = "Generate art from context-free grammars";
       description = "\nCreate art via context free grammar production rules.\nIncludes an SVG backend.\n\n== Context free grammar primer\n\nContext free grammars consist of a set of terminal symbols, a set of\nnon-terminal symbols, and production rules that map non-terminals to\nother symbols.\n\nWith a context-free grammar, we can generate strings of terminals that\nconform to the specified language.\n\nOur language will describe graphics.\n\n== Example\n\n> import Art.ContextFree\n> import Data.List.NonEmpty\n>\n> -- let's define a Production rule\n> a = Circle 1\n>\n> -- this will produce an IO Svg from the blaze-svg package\n> -- to turn it into a string we can use one of the `blaze-svg` renderers\n> graphic1 = interpret $ Circle 1\n>\n> -- let's create a non-terminal, at every layer,\n> -- this will have an 85% chance of rendering another circle\n> circles = NonTerminal $ (85, [Move (2, 0)], Circle 1 :| [circles]) :| []";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

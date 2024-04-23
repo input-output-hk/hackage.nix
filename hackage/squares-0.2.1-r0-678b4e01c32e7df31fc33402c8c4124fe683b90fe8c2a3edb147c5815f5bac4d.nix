@@ -21,7 +21,7 @@
       synopsis = "The double category of Hask functors and profunctors";
       description = "A library for working with natural transformations of type\n\n@forall a b. p a b -> q (f a) (g b)@\n\nSee the \"Data.Square\" module for an introduction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

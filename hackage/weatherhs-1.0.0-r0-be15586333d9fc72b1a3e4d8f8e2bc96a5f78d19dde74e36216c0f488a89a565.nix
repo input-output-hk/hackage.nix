@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.hgettext or (pkgs.buildPackages.hgettext or (errorHandler.setupDepError "hgettext")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "weatherhs" = {
@@ -44,12 +44,12 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-            ] ++ (pkgs.lib).optionals (flags.encryption) [
+          ] ++ pkgs.lib.optionals (flags.encryption) [
             (hsPkgs."h-gpgme" or (errorHandler.buildDepError "h-gpgme"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]) ++ (pkgs.lib).optional (!flags.nojson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ (pkgs.lib).optional (!flags.noxml) (hsPkgs."xml" or (errorHandler.buildDepError "xml"));
+          ]) ++ pkgs.lib.optional (!flags.nojson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ pkgs.lib.optional (!flags.noxml) (hsPkgs."xml" or (errorHandler.buildDepError "xml"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

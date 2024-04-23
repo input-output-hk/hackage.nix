@@ -21,7 +21,7 @@
       synopsis = "Utility for binning phylogenetic trees in Newick format.";
       description = "Classifies (bins) input Newick trees by topology, creating output files that\ncharacterize the size and contents of each bin (including\ngenerating GraphViz-based visual representations of the tree topologies).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phybin" = {
@@ -41,9 +41,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

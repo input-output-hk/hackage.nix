@@ -6,8 +6,8 @@
         nix = import ../hackage/gw-0.1-r0-03c5f18f33ea21bfa4dc4650ed67534b1a32476d4bce94493dc414da428bacfe.nix;
         revNum = 0;
         sha256 = "03c5f18f33ea21bfa4dc4650ed67534b1a32476d4bce94493dc414da428bacfe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

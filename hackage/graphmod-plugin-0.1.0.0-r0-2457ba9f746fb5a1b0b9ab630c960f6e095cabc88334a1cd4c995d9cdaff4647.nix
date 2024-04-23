@@ -21,7 +21,7 @@
       synopsis = "A reimplementation of graphmod as a source plugin";
       description = "A reimplementation of graphmod as a source plugin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "graphmod-plugin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."graphmod-plugin" or (errorHandler.buildDepError "graphmod-plugin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

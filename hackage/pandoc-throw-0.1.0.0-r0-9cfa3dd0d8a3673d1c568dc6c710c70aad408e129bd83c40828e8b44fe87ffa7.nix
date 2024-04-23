@@ -21,15 +21,15 @@
       synopsis = "MonadThrow behaviour for Pandoc.";
       description = "Adds MonadThrow runners for PandocPure and PandocIO.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

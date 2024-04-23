@@ -21,7 +21,7 @@
       synopsis = "Creates a header for a haskell source file.";
       description = "The headergen application can generate\nsource file headers with default values\nconfigured for a specific project. It\nfeatures a full templating engine under the\nhood and can be highly customized.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "headergen" = {
@@ -34,9 +34,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

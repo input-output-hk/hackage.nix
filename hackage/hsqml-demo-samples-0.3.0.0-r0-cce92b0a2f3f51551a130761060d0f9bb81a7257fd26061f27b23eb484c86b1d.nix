@@ -21,7 +21,7 @@
       synopsis = "HsQML sample programs";
       description = "HsQML sample programs";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsqml-factorial1" = {
@@ -29,17 +29,17 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hsqml-factorial2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

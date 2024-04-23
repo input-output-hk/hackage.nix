@@ -21,7 +21,7 @@
       synopsis = "Hlint integration plugin with Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,27 +52,27 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-          ] ++ (if flags.hlint33
+        ] ++ (if flags.hlint33
           then [
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "9.0.1") && (compiler.isGhc && (compiler.version).lt "9.1.0")
+          ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "9.0.1") && (compiler.isGhc && compiler.version.lt "9.1.0")
             then [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ]
             else [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-lib" or (errorHandler.buildDepError "ghc-lib"))
               (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-              ])
+            ])
           else [
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "8.10.1") && (compiler.isGhc && (compiler.version).lt "8.11.0")
+          ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "8.10.1") && (compiler.isGhc && compiler.version.lt "8.11.0")
             then [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ]
             else [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-lib" or (errorHandler.buildDepError "ghc-lib"))
               (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-              ]));
+            ]));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A minimalist static blog generator";
       description = "Hablo is a fediverse-oriented static blog generator for articles written\nin Markdown. It tries to generate as little HTML as needed and uses\nJavascript to implement dynamic features in the browser.\nThose features include the handling of comments and a cached navigation\nto minimize the queries to the server. Hablo also generate cards for all\npages, including articles for prettier shares on social-networks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hablo" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

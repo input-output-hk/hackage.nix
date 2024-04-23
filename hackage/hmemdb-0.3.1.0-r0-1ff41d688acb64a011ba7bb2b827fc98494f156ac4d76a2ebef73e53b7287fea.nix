@@ -21,7 +21,7 @@
       synopsis = "In-memory relational database";
       description = "Library that provides a sort of relational database in memory (which could be saved to the disk, however). Very untested.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."monad-stm" or (errorHandler.buildDepError "monad-stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

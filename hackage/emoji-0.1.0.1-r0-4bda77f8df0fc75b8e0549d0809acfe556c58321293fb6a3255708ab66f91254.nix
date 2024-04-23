@@ -21,7 +21,7 @@
       synopsis = "emoji utility";
       description = "emoji utility";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "emoji-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."emoji" or (errorHandler.buildDepError "emoji"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

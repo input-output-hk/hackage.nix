@@ -6,8 +6,8 @@
         nix = import ../hackage/idna2008-0.0.1.0-r0-0e4177b0869d955d55119b947e5ec847e2bf2e3804dcd04fcb840e45237f0f97.nix;
         revNum = 0;
         sha256 = "0e4177b0869d955d55119b947e5ec847e2bf2e3804dcd04fcb840e45237f0f97";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

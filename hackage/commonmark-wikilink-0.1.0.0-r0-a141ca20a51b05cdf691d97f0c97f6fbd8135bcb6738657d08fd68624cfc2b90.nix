@@ -21,7 +21,7 @@
       synopsis = "Obsidian-friendly commonmark wikilink parser";
       description = "Obsidian-friendly commonmark wikilink parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."url-slug" or (errorHandler.buildDepError "url-slug"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

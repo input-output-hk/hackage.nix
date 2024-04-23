@@ -21,7 +21,7 @@
       synopsis = "Fast and concise extensible effects";
       description = "Please see the README on GitHub at <https://github.com/re-xyr/cleff#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cleff-example" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cleff-test" = {
           depends = [
             (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
@@ -75,9 +75,9 @@
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

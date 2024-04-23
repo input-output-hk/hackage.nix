@@ -6,8 +6,8 @@
         nix = import ../hackage/fcd-1.0.0.0-r0-e04a9d046128b936f70e9914dec6422d3a359acf60e339cfdea9bda2e002c0c2.nix;
         revNum = 0;
         sha256 = "e04a9d046128b936f70e9914dec6422d3a359acf60e339cfdea9bda2e002c0c2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

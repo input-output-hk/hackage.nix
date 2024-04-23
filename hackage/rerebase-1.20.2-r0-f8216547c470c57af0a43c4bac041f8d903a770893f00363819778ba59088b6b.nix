@@ -21,13 +21,13 @@
       synopsis = "Reexports from \"base\" with a bunch of other standard libraries";
       description = "A rich drop-in replacement for \\\"base\\\".\nFor details and docs please visit \n<https://github.com/nikita-volkov/rerebase the project's GitHub page>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

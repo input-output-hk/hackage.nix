@@ -21,14 +21,14 @@
       synopsis = "Haskell functionality for quickly assembling simple compilers.";
       description = "Haskell monad and combinators for quickly assembling simple compilation algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

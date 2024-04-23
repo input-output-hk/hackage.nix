@@ -21,7 +21,7 @@
       synopsis = "Thread-safe logging, with additional interleaving fuzz-testing.";
       description = "This is a thread-safe logging framework.  It logs to memory, with various\noptions for serializing log messages out to a file or handle.  A verbosity\nlevel controls the quantity of log messages.\nFor debugging, this logging framework can do double-duty by controlling the\ninterleaving of threads which are producing log messages, for the purpose of\nfuzz-testing concurrent interleavings.  This is accomplished by blocking the\nthreads at the point of each logging message, and controlling the order in\nwhich threads (sequentially) unblock.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

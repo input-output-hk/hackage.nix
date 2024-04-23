@@ -21,7 +21,7 @@
       synopsis = "The Elm language Yesod compatibility module.";
       description = "This module provides a simple function to embed Elm code\nas a Yesod widget.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

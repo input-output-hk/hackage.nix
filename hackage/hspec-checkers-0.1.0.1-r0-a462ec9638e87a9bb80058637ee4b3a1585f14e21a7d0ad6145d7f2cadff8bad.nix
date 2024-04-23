@@ -21,25 +21,25 @@
       synopsis = "Allows to use checkers properties from hspec";
       description = "Allows to use <http://hackage.haskell.org/package/checkers checkers>\nproperties from <http://hackage.haskell.org/package/hspec hspec>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

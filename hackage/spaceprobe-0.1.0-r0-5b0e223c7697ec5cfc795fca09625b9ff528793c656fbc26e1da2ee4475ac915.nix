@@ -21,7 +21,7 @@
       synopsis = "Optimization over arbitrary search spaces ";
       description = "A parameter optimization library, designed for optimizing over\narbitrary search spaces. It is particularly well suited for discontinuous\nand/or high-dimensional search spaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."erf" or (errorHandler.buildDepError "erf"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,19 +44,19 @@
             (hsPkgs."erf" or (errorHandler.buildDepError "erf"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."spaceprobe" or (errorHandler.buildDepError "spaceprobe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

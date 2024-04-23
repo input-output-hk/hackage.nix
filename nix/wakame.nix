@@ -6,8 +6,8 @@
         nix = import ../hackage/wakame-0.1.0.0-r0-fb959329fd07df9815c8586c754f14e73e1a337de4d342017abd044f30f82b05.nix;
         revNum = 0;
         sha256 = "fb959329fd07df9815c8586c754f14e73e1a337de4d342017abd044f30f82b05";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

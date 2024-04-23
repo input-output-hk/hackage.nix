@@ -21,15 +21,15 @@
       synopsis = "Backtracking mutable references in the ST and IO monads";
       description = "Backtracking mutable references in the ST and IO monads";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
-          ] ++ (pkgs.lib).optional (flags.safe-st) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (flags.old-applicative) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (flags.safe-st) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (flags.old-applicative) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

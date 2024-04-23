@@ -21,16 +21,16 @@
       synopsis = "A collection of user agents";
       description = "A collection of user agents, easily select a random one.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "random-user-agent" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."useragents" or (errorHandler.buildDepError "useragents"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

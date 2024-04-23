@@ -21,7 +21,7 @@
       synopsis = "Accelerated version of ghc --make";
       description = "The @ghc-make@ program can be used as a drop-in replacement for @ghc@. This program\ntargets two use cases:\n\n* If a flag such as @-j4@ is passed, the modules will be compiled in parallel.\nIf the available parallelism is greater than a factor of 3, the build will probably run faster.\n\n* If there is no work to do (i.e. the compiled files are up-to-date), the build will run faster,\nsometimes significantly so.\n\nSee the readme for full details: <https://github.com/ndmitchell/ghc-make#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-make" = {
@@ -30,9 +30,9 @@
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

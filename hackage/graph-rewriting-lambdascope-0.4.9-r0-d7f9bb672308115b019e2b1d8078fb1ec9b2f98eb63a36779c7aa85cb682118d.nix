@@ -21,7 +21,7 @@
       synopsis = "Implementation of Lambdascope as an interactive graph-rewriting system";
       description = "Lambdascope is an optimal implementation of the λβ-calculus described in the paper \"Lambdascope - Another optimal implementation of the lambda-calculus\" by Vincent van Oostrom, Kees-Jan van de Looij, and Marijn Zwitserlood. Call \"lambdascope\" with one of the files from the \"examples\" directory as an argument. For usage of the GUI see \"GraphRewriting.GL.UI\".";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdascope" = {
@@ -35,9 +35,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."IndentParser" or (errorHandler.buildDepError "IndentParser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

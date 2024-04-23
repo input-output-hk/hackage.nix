@@ -21,7 +21,7 @@
       synopsis = "LSP server for Agda";
       description = "Please see the README on GitHub at <https://github.com/banacorn/agda-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "als" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "als-test" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Instances for using ltree with postgresql-simple";
       description = "Please see the README on GitHub at <https://github.com/simspace/postgresql-ltree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."postgresql-ltree" or (errorHandler.buildDepError "postgresql-ltree"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-simple-ltree-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

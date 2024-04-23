@@ -21,7 +21,7 @@
       synopsis = "Space efficient set of Word8 and some pre-canned sets useful for parsing HTTP";
       description = "Please see the README on GitHub at <https://github.com/nshimaza/bitset-word8#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bitset-word8-test" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bitset-word8-bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

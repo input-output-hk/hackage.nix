@@ -21,17 +21,17 @@
       synopsis = "Stream data from archives using the streamly library.";
       description = "Please see the README on GitHub at <https://github.com/shlok/streamly-archive#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-          ];
+        ];
         libs = [ (pkgs."archive" or (errorHandler.sysDepError "archive")) ];
         buildable = true;
-        };
+      };
       tests = {
         "streamly-archive-test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           libs = [ (pkgs."archive" or (errorHandler.sysDepError "archive")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

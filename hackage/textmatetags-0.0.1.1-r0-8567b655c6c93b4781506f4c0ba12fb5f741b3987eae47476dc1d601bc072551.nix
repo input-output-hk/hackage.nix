@@ -21,7 +21,7 @@
       synopsis = "A simple Haskell program to provide tags for Haskell code completion in TextMate";
       description = "A simple Haskell program to provide tags for Haskell code completion in TextMate";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "textmatetags" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

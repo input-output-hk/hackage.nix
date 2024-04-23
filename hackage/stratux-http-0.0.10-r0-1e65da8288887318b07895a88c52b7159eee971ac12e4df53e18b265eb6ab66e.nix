@@ -21,7 +21,7 @@
       synopsis = "A library for using HTTP with stratux";
       description = "A library for using HTTP with stratux <http://stratux.me/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

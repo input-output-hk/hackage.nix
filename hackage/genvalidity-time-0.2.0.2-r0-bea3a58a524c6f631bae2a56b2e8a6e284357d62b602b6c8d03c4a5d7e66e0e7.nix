@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for time";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-time-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."genvalidity-time" or (errorHandler.buildDepError "genvalidity-time"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

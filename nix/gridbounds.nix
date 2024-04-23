@@ -6,8 +6,8 @@
         nix = import ../hackage/gridbounds-0.0.0.1-r0-556fcc6f045198194328e64570042b932b5696f280008ec0126866b2e0149b8c.nix;
         revNum = 0;
         sha256 = "556fcc6f045198194328e64570042b932b5696f280008ec0126866b2e0149b8c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

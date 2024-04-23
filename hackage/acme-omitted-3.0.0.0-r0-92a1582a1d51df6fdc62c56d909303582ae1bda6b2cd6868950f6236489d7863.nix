@@ -21,20 +21,20 @@
       synopsis = "A name for omitted definitions";
       description = "acme-omitted provides a way of indicating that a definition\nhas been \\\"omitted\\\" (though not inherently undefinable), an\nalternative to \\\"Prelude.undefined\\\", and the means to observe\nthe difference.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

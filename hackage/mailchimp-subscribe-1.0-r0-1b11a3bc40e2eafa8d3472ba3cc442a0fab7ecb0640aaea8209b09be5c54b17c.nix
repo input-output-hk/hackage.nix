@@ -21,7 +21,7 @@
       synopsis = "MailChimp subscription request handler";
       description = "<http://mailchimp.com/ MailChimp> subscription request handler, built with <https://github.com/scotty-web/scotty/ Scotty>.  Intended to support custom signup forms.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mailchimp-subscribe" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

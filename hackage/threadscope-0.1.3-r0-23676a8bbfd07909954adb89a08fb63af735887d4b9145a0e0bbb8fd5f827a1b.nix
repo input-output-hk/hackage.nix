@@ -21,7 +21,7 @@
       synopsis = "A graphical thread profiler.";
       description = "A graphical viewer for GHC eventlog traces.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "threadscope" = {
@@ -36,9 +36,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc-events" or (errorHandler.buildDepError "ghc-events"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

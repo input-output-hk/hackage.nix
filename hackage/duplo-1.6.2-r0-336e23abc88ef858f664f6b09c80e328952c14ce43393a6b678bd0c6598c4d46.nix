@@ -21,7 +21,7 @@
       synopsis = "Frontend development build tool";
       description = "Intuitive, simple building blocks for building composable, completely self-managed web applications";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "duplo" = {
@@ -57,9 +57,9 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
             (hsPkgs."alex" or (errorHandler.buildDepError "alex"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

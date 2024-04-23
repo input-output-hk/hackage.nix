@@ -21,7 +21,7 @@
       synopsis = "File system data structure and monad transformer.";
       description = "FileSystem allows you to create a virtual file system. This package defines:\n\n* A data structure of a file system, with directories and files.\n\n* A monad transformer which adds a file system environment, where\nyou can do standard system operations, like write and read files\nor create directories.\n\n* An IO interface for create these virtual file systems from\nexisting real directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

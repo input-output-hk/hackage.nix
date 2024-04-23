@@ -21,7 +21,7 @@
       synopsis = "Jack, zonal, and Schur polynomials";
       description = "This library can evaluate Jack polynomials, zonal polynomials and Schur polynomials. It is also able to compute them in symbolic form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
           (hsPkgs."mpolynomials" or (errorHandler.buildDepError "mpolynomials"))
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

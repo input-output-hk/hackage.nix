@@ -21,7 +21,7 @@
       synopsis = "Translate .agda files into .lagda.tex files.";
       description = "Simple command line tool to convert plain Agda\nor Haskell files into literate files.  Line comments\nare interpreted as text, the rest as code blocks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "agda2lagda" = {
@@ -30,22 +30,22 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.goldplate.components.exes.goldplate or (pkgs.buildPackages.goldplate or (errorHandler.buildToolDepError "goldplate:goldplate")))
             (hsPkgs.buildPackages.agda2lagda.components.exes.agda2lagda or (pkgs.buildPackages.agda2lagda or (errorHandler.buildToolDepError "agda2lagda:agda2lagda")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

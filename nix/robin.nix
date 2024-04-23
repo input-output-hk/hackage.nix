@@ -6,8 +6,8 @@
         nix = import ../hackage/robin-0.1.0.0-r0-88b881a41e5e2ae7b37c63aa774580fec266faa85b2b8e11d042791a740cb934.nix;
         revNum = 0;
         sha256 = "88b881a41e5e2ae7b37c63aa774580fec266faa85b2b8e11d042791a740cb934";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

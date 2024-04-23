@@ -21,7 +21,7 @@
       synopsis = "OpenCV based machine vision library";
       description = "This is a machine vision package that wraps some functionality\nof OpenCV library. This package has been developed for personal use and\nis not meant to be a complete wrapper. It also includes some things not\nin OpenCV.\n\nCurrently this package is quite dirty and requires much work on documentation\nand code clean-up, but is somewhat tested.\n\n(The scarce) Documentation is available at\n<http://aleator.github.com/CV/>\n\nChangelog.\n0.3.5.4 - Bug fixes and preliminary compatability with opencv 2.4\n\n0.3.5 - Many new wrappers, clean ups and other fixes.\n\n0.3.4 - Pixelwise operations, bug fixes and additional documentation\n\n0.3.3.0 - Improvements, including compatablity with opencv 2.3.1 and removal of\ndependency with deprecated JYU.Utils\n\nChangelog.\n0.3.2.0 - Improvements, including fancier pixel-wise manipulations\n\nChangelog.\n0.3.0.2 - Workaround for compiling with OS X 10.6 & fixed errors about M_PI\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,7 +43,7 @@
           (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
           (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         libs = [
           (pkgs."opencv_calib3d" or (errorHandler.sysDepError "opencv_calib3d"))
           (pkgs."opencv_contrib" or (errorHandler.sysDepError "opencv_contrib"))
@@ -57,11 +57,11 @@
           (pkgs."opencv_ml" or (errorHandler.sysDepError "opencv_ml"))
           (pkgs."opencv_objdetect" or (errorHandler.sysDepError "opencv_objdetect"))
           (pkgs."opencv_video" or (errorHandler.sysDepError "opencv_video"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

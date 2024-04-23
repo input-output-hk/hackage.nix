@@ -21,7 +21,7 @@
       synopsis = "Core library for hoodle";
       description = "Hoodle is a pen notetaking program written in haskell.\nhoodle-core is the core library written in haskell and\nusing gtk2hs";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,8 +62,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."poppler" or (errorHandler.buildDepError "poppler"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

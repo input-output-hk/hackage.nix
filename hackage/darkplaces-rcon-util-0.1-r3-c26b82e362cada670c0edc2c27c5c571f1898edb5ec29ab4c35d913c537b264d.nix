@@ -21,7 +21,7 @@
       synopsis = "Darplaces rcon utility";
       description = "This is implementation of rcon shell for darkplaces engine.\n\nFeatures :\n\n* Simple and easy CLI interface\n\n* Supports both ipv4 and ipv6 protocols\n\n* Bookmarks and default options\n\n* Saves command history to file\n\n* Internal commands and smart autocomplete for them\n\n* Suspend support with Ctrl+z\n\nFor more info visit <https://github.com/bacher09/darkplaces-rcon/blob/master/darkplaces-rcon-util/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."darkplaces-rcon" or (errorHandler.buildDepError "darkplaces-rcon"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "drcon" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."darkplaces-rcon-util" or (errorHandler.buildDepError "darkplaces-rcon-util"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rcon-util-tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

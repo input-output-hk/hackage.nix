@@ -21,7 +21,7 @@
       synopsis = "A simple web server for local usage.";
       description = "Please see the README on GitHub at <https://github.com/thma/srv#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "srv" = {
@@ -37,9 +37,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

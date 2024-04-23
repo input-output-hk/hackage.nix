@@ -21,7 +21,7 @@
       synopsis = "Cookie support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/cookie.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

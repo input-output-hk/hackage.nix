@@ -21,7 +21,7 @@
       synopsis = "Access data at OpenWeatherMap";
       description = "Client library and command-line utility to access\nOpenWeatherMap https://openweathermap.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,21 +34,21 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "openweathermap" = {
-          depends = (pkgs.lib).optionals (flags.cmd) [
+          depends = pkgs.lib.optionals (flags.cmd) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."openweathermap" or (errorHandler.buildDepError "openweathermap"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = if flags.cmd then true else false;
-          };
         };
       };
-    }
+    };
+  }

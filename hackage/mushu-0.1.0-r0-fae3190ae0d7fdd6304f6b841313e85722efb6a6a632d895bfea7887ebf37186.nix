@@ -21,7 +21,7 @@
       synopsis = "Mushu is a minimalist MPD client with a TUI and an incremental fuzzy finder for your music library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mushu" = {
@@ -57,10 +57,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mushu-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

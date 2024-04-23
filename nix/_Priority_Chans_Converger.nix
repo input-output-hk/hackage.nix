@@ -6,8 +6,8 @@
         nix = import ../hackage/PriorityChansConverger-0.1-r0-7c92cfe2444ba1bc7b571295bbccdad1d07144c9ae72f87189db18a558395a3a.nix;
         revNum = 0;
         sha256 = "7c92cfe2444ba1bc7b571295bbccdad1d07144c9ae72f87189db18a558395a3a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

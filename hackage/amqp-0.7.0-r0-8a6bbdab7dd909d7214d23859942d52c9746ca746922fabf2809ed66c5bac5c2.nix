@@ -21,7 +21,7 @@
       synopsis = "Client library for AMQP servers (currently only RabbitMQ)";
       description = "Client library for AMQP servers (currently only RabbitMQ)\n\nChangelog: <https://github.com/hreinhardt/amqp/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "amqp-builder" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

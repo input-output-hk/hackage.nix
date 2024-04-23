@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.quipper-cabal or (pkgs.buildPackages.quipper-cabal or (errorHandler.setupDepError "quipper-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -37,27 +37,27 @@
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-ascii" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-binary" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-cliffordt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-depth" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,54 +76,54 @@
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-eps" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-exact" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-gatecount" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-pdf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-preview" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-simulate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -134,9 +134,9 @@
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-standard" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,9 +144,9 @@
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-strict" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -154,27 +154,27 @@
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-trimcontrols" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-unbox" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-qclparser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -182,9 +182,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
             (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

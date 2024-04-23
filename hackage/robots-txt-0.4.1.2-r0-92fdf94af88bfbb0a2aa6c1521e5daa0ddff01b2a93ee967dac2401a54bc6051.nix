@@ -21,7 +21,7 @@
       synopsis = "Parser for robots.txt";
       description = "This is an attoparsec parser for robots.txt files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."heredoc" or (errorHandler.buildDepError "heredoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

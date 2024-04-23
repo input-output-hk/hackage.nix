@@ -21,7 +21,7 @@
       synopsis = "Compute number of possible arrangements in the battleship game";
       description = "Compute number of possible arrangements in the battleship game\nwith different methods.\n\n<https://en.wikipedia.org/wiki/Battleship_(game)>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,28 +42,28 @@
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."prelude-compat" or (errorHandler.buildDepError "prelude-compat"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "battleship-combinatorics" = {
           depends = [
             (hsPkgs."battleship-combinatorics" or (errorHandler.buildDepError "battleship-combinatorics"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "battleship-combinatorics-test" = {
           depends = [
             (hsPkgs."battleship-combinatorics" or (errorHandler.buildDepError "battleship-combinatorics"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

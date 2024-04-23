@@ -21,14 +21,14 @@
       synopsis = "A library for (left, right) zero monoids and backtracking with cut";
       description = "A library for (left, right) zero monoids, that is, monoids with (left, right) absorbing elements. Includes free constructions of those and a list monad transformer with Prolog's cut operator, which is related to the theory of right zero monoids.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

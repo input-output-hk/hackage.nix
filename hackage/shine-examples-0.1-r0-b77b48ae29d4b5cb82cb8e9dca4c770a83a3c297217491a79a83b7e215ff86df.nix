@@ -21,7 +21,7 @@
       synopsis = "Examples for the shine package";
       description = "This package contains some examples of use of the shine package,\nfrom animations to a simple game.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "animated-shapes" = {
@@ -29,17 +29,17 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shine" or (errorHandler.buildDepError "shine"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
-          };
+        };
         "simple-interaction" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shine" or (errorHandler.buildDepError "shine"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
-          };
+        };
         "spaceinvaders" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."keycode" or (errorHandler.buildDepError "keycode"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
-          };
+        };
         "mountaincar" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."keycode" or (errorHandler.buildDepError "keycode"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) then false else true;
-          };
         };
       };
-    }
+    };
+  }

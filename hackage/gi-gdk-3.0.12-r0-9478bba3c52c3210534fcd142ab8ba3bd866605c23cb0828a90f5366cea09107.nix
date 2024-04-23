@@ -12,7 +12,7 @@
       overloaded-methods = true;
       overloaded-properties = true;
       overloaded-signals = true;
-      };
+    };
     package = {
       specVersion = "1.24";
       identifier = { name = "gi-gdk"; version = "3.0.12"; };
@@ -29,8 +29,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.haskell-gi or (pkgs.buildPackages.haskell-gi or (errorHandler.setupDepError "haskell-gi")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -47,11 +47,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gdk-3.0" or (errorHandler.pkgConfDepError "gdk-3.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

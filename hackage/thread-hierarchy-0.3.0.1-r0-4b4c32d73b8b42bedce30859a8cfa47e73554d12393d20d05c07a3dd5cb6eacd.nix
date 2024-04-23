@@ -21,16 +21,16 @@
       synopsis = "Simple Haskel thread management in hierarchical manner";
       description = "Please see the README on GitHub at <https://github.com/nshimaza/thread-hierarchy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "thread-hierarchy-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."thread-hierarchy" or (errorHandler.buildDepError "thread-hierarchy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

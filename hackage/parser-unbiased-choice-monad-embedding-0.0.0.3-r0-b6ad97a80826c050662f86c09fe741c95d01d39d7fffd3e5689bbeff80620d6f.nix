@@ -14,7 +14,7 @@
       identifier = {
         name = "parser-unbiased-choice-monad-embedding";
         version = "0.0.0.3";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Askar Safin <safinaskar@mail.ru>";
@@ -24,7 +24,7 @@
       synopsis = "Parsing library with unbiased choice and support for embedding arbitrary monad";
       description = "Parsing library with unbiased choice and support for embedding arbitrary monad.\n\nYou may use applicative or arrow style. Supports left recursion, location tracking, parsing and semantic error messages, heuristic ambiguity checking. Based on Earley.\n\nSee announcement https://mail.haskell.org/pipermail/haskell-cafe/2021-July/134205.html for more info.\n\nYou don't need to be registered on SourceHut to create bug report.\n\nIf you think that this software is not needed or existing software already subsumes its functionality, please, tell me that, I will not be offended.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
           (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
             (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

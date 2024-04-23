@@ -21,15 +21,15 @@
       synopsis = "Tools for working with regular grids (graphs, lattices).";
       description = "Please see the README on GitHub at <https://github.com/mhwombat/grid#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "som-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."grid" or (errorHandler.buildDepError "grid"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

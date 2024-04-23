@@ -21,7 +21,7 @@
       synopsis = "A hledger add-on command to generate pie charts.";
       description = "This generates simple pie chart images showing relative account balances.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-chart" = {
@@ -32,9 +32,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

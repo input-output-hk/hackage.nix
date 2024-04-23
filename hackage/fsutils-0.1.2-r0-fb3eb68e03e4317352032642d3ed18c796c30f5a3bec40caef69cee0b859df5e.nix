@@ -21,15 +21,15 @@
       synopsis = "File system utilities for Haskell that are missing from built in libraries.";
       description = "A collection of file system utilities such as recursive walks and file listings\nthat I couldn't find nice solutions for elsewhere.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

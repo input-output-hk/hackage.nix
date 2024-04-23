@@ -21,7 +21,7 @@
       synopsis = "Standard properties for functions on `Validity` types for the sydtest framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-sydtest-test" = {
           depends = [
@@ -42,12 +42,12 @@
             (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
             (hsPkgs."genvalidity-sydtest" or (errorHandler.buildDepError "genvalidity-sydtest"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

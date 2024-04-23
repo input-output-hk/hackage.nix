@@ -21,7 +21,7 @@
       synopsis = "Turn any English text into nonsensical babyspeaks.";
       description = "Please see the README on GitHub at <https://github.com/deadshot465/owoify-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
           (hsPkgs."regex-with-pcre" or (errorHandler.buildDepError "regex-with-pcre"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "owoify-hs-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
             (hsPkgs."regex-with-pcre" or (errorHandler.buildDepError "regex-with-pcre"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

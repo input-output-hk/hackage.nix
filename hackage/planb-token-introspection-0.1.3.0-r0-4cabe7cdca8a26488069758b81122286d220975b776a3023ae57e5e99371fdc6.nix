@@ -21,7 +21,7 @@
       synopsis = "Token Introspection for PlanB";
       description = "This package provides token introspection functionality\nfor the PlanB token provider.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "access-token-provider-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."th-format" or (errorHandler.buildDepError "th-format"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

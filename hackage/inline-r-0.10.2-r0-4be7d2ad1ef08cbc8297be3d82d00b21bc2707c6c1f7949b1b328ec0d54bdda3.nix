@@ -21,7 +21,7 @@
       synopsis = "Seamlessly call R from Haskell and vice versa. No FFI required.";
       description = "For up to date Haddock documentation, please see\n<http://www.stackage.org/package/inline-r>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,16 +45,16 @@
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."R" or (errorHandler.sysDepError "R"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libR" or (errorHandler.pkgConfDepError "libR"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."R" or (errorHandler.sysDepError "R"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."libR" or (errorHandler.pkgConfDepError "libR"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "test-qq" = {
           depends = [
             (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
@@ -89,9 +89,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-shootout" = {
           depends = [
             (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
@@ -102,10 +102,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench-qq" = {
           depends = [
@@ -115,9 +115,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-hexp" = {
           depends = [
             (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
@@ -126,9 +126,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

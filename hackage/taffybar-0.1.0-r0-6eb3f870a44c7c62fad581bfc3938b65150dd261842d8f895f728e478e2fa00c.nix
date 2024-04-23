@@ -21,7 +21,7 @@
       synopsis = "A desktop bar similar to xmobar, but with more GUI";
       description = "A somewhat fancier desktop bar than xmobar.  This bar is based on\ngtk2hs and provides several widgets (including a few graphical ones).\nIt also sports an optional snazzy system tray.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,24 +43,24 @@
           (hsPkgs."gtk-traymanager" or (errorHandler.buildDepError "gtk-traymanager"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-2.0" or (errorHandler.pkgConfDepError "gtk+-2.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "taffybar" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."gtk+-2.0" or (errorHandler.pkgConfDepError "gtk+-2.0"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

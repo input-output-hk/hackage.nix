@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of OAuth 1.0a protocol.";
       description = "This library implements all PLAINTEXT, HMAC-SHA1 and RSA-SHA1\nsignatures as defined in the specification 1.0. Currently it\nsupports only /consumer/ related functions, but there are plans to\nadd support /service providers/ as well.\nMore on OAuth protocol info at: <http://oauth.net/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

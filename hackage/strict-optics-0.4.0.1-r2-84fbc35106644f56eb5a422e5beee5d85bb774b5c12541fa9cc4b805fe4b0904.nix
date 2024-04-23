@@ -21,15 +21,15 @@
       synopsis = "Optics for types in strict package";
       description = "Optics for types in strict package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

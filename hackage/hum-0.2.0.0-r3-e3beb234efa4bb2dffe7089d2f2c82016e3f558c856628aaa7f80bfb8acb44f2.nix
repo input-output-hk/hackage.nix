@@ -21,7 +21,7 @@
       synopsis = "A TUI MPD client, inspired by ncmpcpp";
       description = "A TUI MPD client, inspired by ncmpcpp.\nBuilt using brick and libmpd.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hum" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
             (hsPkgs."hum" or (errorHandler.buildDepError "hum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hum-test" = {
           depends = [
@@ -99,9 +99,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

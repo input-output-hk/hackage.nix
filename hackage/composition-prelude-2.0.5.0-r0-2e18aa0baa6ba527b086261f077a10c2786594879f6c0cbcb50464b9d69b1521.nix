@@ -21,11 +21,11 @@
       synopsis = "Higher-order function combinators";
       description = "Replacement for [composition](hackage.haskell.org/package/composition) or [composition-extra](hackage.haskell.org/package/composition-extra), exporting everything in one module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

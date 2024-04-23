@@ -21,7 +21,7 @@
       synopsis = "Tests defined by Search Using Golden Answer References";
       description = "\nA tasty testing framework that builds individual test configurations\nfrom a set of input files and expected results (golden) files along\nwith associated files, where multiple expected results and\nassociated files for each input file can be parameterized by\nfilename.\n\nAdditionally a tasty ingredient is supplied that can be used to show\nthe search process and resulting test configurations without\nactually running the tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-sugar".components.sublibs.tasty-sugar-internal or (errorHandler.buildDepError "tasty-sugar:tasty-sugar-internal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "tasty-sugar-internal" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-sugar" = {
           depends = [
@@ -73,18 +73,18 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-sugar" or (errorHandler.buildDepError "tasty-sugar"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-passthru-ascii" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-sugar" or (errorHandler.buildDepError "tasty-sugar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-params" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-sugar" or (errorHandler.buildDepError "tasty-sugar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-internals" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-sugar".components.sublibs.tasty-sugar-internal or (errorHandler.buildDepError "tasty-sugar:tasty-sugar-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Listen for Stripe webhook events with Scotty";
       description = "This package provides support for writing\na Stripe webhook server using Scotty.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."stripe-concepts" or (errorHandler.buildDepError "stripe-concepts"))
           (hsPkgs."stripe-signature" or (errorHandler.buildDepError "stripe-signature"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

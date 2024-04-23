@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read markdown and (subsets of) HTML,\nreStructuredText, LaTeX, DocBook, MediaWiki markup,\nand Textile, and it can write markdown, reStructuredText,\nHTML, LaTeX, ConTeXt, Docbook, OpenDocument, ODT,\nWord docx, RTF, MediaWiki, Textile, groff man pages,\nplain text, Emacs Org-Mode, AsciiDoc, EPUB (v2 and v3),\nFictionBook2, and S5, Slidy and Slideous HTML slide shows.\n\nPandoc extends standard markdown syntax with footnotes,\nembedded LaTeX, definition lists, tables, and other\nfeatures. A compatibility mode is provided for those\nwho need a drop-in replacement for Markdown.pl.\n\nIn contrast to existing tools for converting markdown\nto HTML, which use regex substitutions, pandoc has\na modular design: it consists of a set of readers,\nwhich parse text in a given format and produce a native\nrepresentation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,16 +53,16 @@
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ] ++ (if flags.blaze_html_0_5
+        ] ++ (if flags.blaze_html_0_5
           then [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ]
+          ]
           else [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."citeproc-hs" or (errorHandler.buildDepError "citeproc-hs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "make-pandoc-man-pages" = {
           depends = [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -88,10 +88,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -113,10 +113,10 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -125,9 +125,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/mpris-0.1.0.0-r0-ef0d3c3478c9b74dd0877be008e8f4d5a60d2669630fab47ef82be74502245f6.nix;
         revNum = 0;
         sha256 = "ef0d3c3478c9b74dd0877be008e8f4d5a60d2669630fab47ef82be74502245f6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

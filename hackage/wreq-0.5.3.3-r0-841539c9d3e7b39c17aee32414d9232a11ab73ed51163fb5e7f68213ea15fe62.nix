@@ -13,7 +13,7 @@
       aws = false;
       httpbin = false;
       developer = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "wreq"; version = "0.5.3.3"; };
@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -60,12 +60,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "httpbin" = {
-          depends = (pkgs.lib).optionals (!(!flags.httpbin)) [
+          depends = pkgs.lib.optionals (!!flags.httpbin) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -80,10 +80,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = if !flags.httpbin then false else true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -116,18 +116,18 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ] ++ (pkgs.lib).optional (flags.aws) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (flags.aws) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!!flags.doctest) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if !flags.doctest then false else true;
-          };
         };
       };
-    }
+    };
+  }

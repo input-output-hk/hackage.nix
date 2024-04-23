@@ -21,7 +21,7 @@
       synopsis = "Common types for sampling.";
       description = "Common types for implementing Markov Chain Monte Carlo (MCMC) algorithms.\n\nAn instance of an MCMC problem can be characterized by the following:\n\n* A /target distribution/ over some parameter space\n\n* A /parameter space/ for a Markov chain to wander over\n\n* A /transition operator/ to drive the Markov chain\n\n/mcmc-types/ provides the suitably-general 'Target', 'Chain', and\n'Transition' types for representing these things respectively.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mwc-probability" or (errorHandler.buildDepError "mwc-probability"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

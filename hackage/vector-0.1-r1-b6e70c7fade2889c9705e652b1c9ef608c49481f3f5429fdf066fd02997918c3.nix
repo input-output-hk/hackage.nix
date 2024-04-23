@@ -21,7 +21,7 @@
       synopsis = "Efficient Arrays";
       description = "\nAn efficient implementation of Int-indexed arrays with a powerful\nloop fusion framework.\n\nThis code is highly experimental and for the most part untested. Use\nat your own risk!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parse raster and SVG files for diagrams";
       description = "Parse raster and SVG images for the diagrams DSL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

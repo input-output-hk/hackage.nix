@@ -21,7 +21,7 @@
       synopsis = "Map of maps using Enum types as keys";
       description = "This package provides 'maps of maps' using Enum types as\nkeys.  The code is based upon Data.IntMap in\ncontainers 5.0.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-enummapmap-lazy" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapmap-intmap-lazy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapmap-strict" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,9 +75,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapmap-intmap-strict" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,9 +88,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapset" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -103,9 +103,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapset-intset" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,9 +115,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-both-lazy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-both-strict" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -141,10 +141,10 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "enummapmap-vs-intmap-bench" = {
           depends = [
@@ -154,9 +154,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

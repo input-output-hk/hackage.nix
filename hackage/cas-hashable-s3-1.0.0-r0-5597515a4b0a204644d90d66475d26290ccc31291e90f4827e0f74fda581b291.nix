@@ -21,7 +21,7 @@
       synopsis = "ContentHashable instances for S3 objects";
       description = "Provides ContentHashable instances for S3 objects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

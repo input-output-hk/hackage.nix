@@ -21,14 +21,14 @@
       synopsis = "Libary for calculating distances between two coordinates in WSG84";
       description = "Algorithm used embraces the earth as a perfect sphere ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

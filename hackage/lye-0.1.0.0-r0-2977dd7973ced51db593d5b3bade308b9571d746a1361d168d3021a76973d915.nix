@@ -21,7 +21,7 @@
       synopsis = "A Lilypond-compiling music box";
       description = "Lye is a simple package for turning Lilypond snippets\ninto music.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lye" = {
@@ -34,9 +34,9 @@
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

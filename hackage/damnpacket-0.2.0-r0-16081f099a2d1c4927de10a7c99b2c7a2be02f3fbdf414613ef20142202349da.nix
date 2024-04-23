@@ -21,7 +21,7 @@
       synopsis = "Parsing dAmn packets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "render" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."damnpacket" or (errorHandler.buildDepError "damnpacket"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "parse" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."damnpacket" or (errorHandler.buildDepError "damnpacket"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

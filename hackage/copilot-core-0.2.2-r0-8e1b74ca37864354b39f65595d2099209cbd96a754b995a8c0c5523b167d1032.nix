@@ -21,7 +21,7 @@
       synopsis = "An intermediate representation for Copilot.";
       description = "Intermediate representation for Copilot.\nStrictly follows Haskell 2010 except for universal\nand existential quantification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pretty-ncols" or (errorHandler.buildDepError "pretty-ncols"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

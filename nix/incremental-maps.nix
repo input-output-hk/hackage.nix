@@ -6,8 +6,8 @@
         nix = import ../hackage/incremental-maps-0.0.0.0-r0-1a03def12eb0f3fa13c6018343086a29496a21b1b7bcea8bb82fa05a2c9641fd.nix;
         revNum = 0;
         sha256 = "1a03def12eb0f3fa13c6018343086a29496a21b1b7bcea8bb82fa05a2c9641fd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

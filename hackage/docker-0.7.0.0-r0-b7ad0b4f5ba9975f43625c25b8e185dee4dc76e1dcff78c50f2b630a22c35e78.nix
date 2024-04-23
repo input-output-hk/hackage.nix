@@ -21,7 +21,7 @@
       synopsis = "An API client for docker written in Haskell";
       description = "See API documentation below.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,9 +61,9 @@
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "docker-hs-tests" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

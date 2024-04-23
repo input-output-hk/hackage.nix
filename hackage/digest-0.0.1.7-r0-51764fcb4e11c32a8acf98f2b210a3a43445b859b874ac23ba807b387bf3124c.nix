@@ -21,15 +21,15 @@
       synopsis = "Various hashes for bytestrings; CRC32 and Adler32 for now.";
       description = "This package provides efficient hash implementations for\nstrict and lazy bytestrings. For now, CRC32 and Adler32 are supported;\nthey are implemented as FFI bindings to efficient code from zlib.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (!(flags.pkg-config && !system.isWindows && !system.isFreebsd)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
-        pkgconfig = (pkgs.lib).optional (flags.pkg-config && !system.isWindows && !system.isFreebsd) (pkgconfPkgs."zlib" or (errorHandler.pkgConfDepError "zlib"));
+        ] ++ pkgs.lib.optional (!(flags.pkg-config && !system.isWindows && !system.isFreebsd)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
+        pkgconfig = pkgs.lib.optional (flags.pkg-config && !system.isWindows && !system.isFreebsd) (pkgconfPkgs."zlib" or (errorHandler.pkgConfDepError "zlib"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

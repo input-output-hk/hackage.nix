@@ -21,7 +21,7 @@
       synopsis = "Examine values for unexpected thunks";
       description = "Long lived application data typically should not contain\nany thunks. This library can be used to examine values for\nunexpected thunks, which can then be used in assertions.\nThis can be invaluable in avoiding memory leaks, or tracking\ndown existing ones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ghc-heap" or (errorHandler.buildDepError "ghc-heap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "nothunks-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

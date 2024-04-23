@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -60,56 +60,56 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-html-qq" or (errorHandler.buildDepError "xml-html-qq"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
           (pkgconfPkgs."libpcre2-8" or (errorHandler.pkgConfDepError "libpcre2-8"))
           (pkgconfPkgs."vte-2.91" or (errorHandler.pkgConfDepError "vte-2.91"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "termonad" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termonad" or (errorHandler.buildDepError "termonad"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "termonad-readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
             (hsPkgs."termonad" or (errorHandler.buildDepError "termonad"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "termonad-example-colour-extension" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termonad" or (errorHandler.buildDepError "termonad"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "termonad-example-colour-extension-gruvbox" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termonad" or (errorHandler.buildDepError "termonad"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "termonad-example-colour-extension-solarized" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termonad" or (errorHandler.buildDepError "termonad"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -117,9 +117,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "termonad-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -132,9 +132,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple, distributed, anonymous data sharing network.";
       description = "Hellnet is a project to create simple, distributed, anonymous data sharing network.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,38 +45,38 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
           (hsPkgs."uri" or (errorHandler.buildDepError "uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hell-insert" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "hell-get" = {
           depends = [
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hell-meta" = { buildable = true; };
         "hell-nodes" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "hell-fsck" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "hell-serve" = {
           depends = [
             (hsPkgs."Lucu" or (errorHandler.buildDepError "Lucu"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

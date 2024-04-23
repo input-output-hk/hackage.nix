@@ -21,16 +21,16 @@
       synopsis = "Efficient implementation of lazy monolithic arrays (lazy in indexes).";
       description = "This package built on standard array package adds support for lazy monolithic arrays. Such arrays are lazy not only in their values, but in their indexes as well. Read the paper \\\"Efficient Graph Algorithms Using Lazy Monolithic Arrays\\\" (<http://citeseer.ist.psu.edu/95126.html>) for further details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

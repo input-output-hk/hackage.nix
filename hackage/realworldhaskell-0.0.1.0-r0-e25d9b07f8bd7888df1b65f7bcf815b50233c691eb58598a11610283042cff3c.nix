@@ -21,11 +21,11 @@
       synopsis = "The Real World Haskell Book";
       description = "Living version of the legendary book by The Three Immortals";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

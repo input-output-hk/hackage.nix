@@ -21,7 +21,7 @@
       synopsis = "Derive a postgres client to database API specified by servant-db";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-db" or (errorHandler.buildDepError "servant-db"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-db-postgresql-example01" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."servant-db-postgresql" or (errorHandler.buildDepError "servant-db-postgresql"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "servant-db-postgresql-test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

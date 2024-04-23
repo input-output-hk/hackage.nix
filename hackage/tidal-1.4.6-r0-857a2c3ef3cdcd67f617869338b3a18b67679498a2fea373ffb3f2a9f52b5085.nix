@@ -21,7 +21,7 @@
       synopsis = "Pattern language for improvised music";
       description = "Tidal is a domain specific language for live coding pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.4.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,27 +52,27 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."tidal" or (errorHandler.buildDepError "tidal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-speed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."tidal" or (errorHandler.buildDepError "tidal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-memory" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
             (hsPkgs."tidal" or (errorHandler.buildDepError "tidal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

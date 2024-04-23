@@ -21,7 +21,7 @@
       synopsis = "Quickcheck instances for various data structures.";
       description = "Adds arbitrary instances for OpenGL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

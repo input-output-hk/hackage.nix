@@ -21,7 +21,7 @@
       synopsis = "A parser for JVM bytecode files";
       description = "A parser for JVM bytecode (.class and .jar) files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

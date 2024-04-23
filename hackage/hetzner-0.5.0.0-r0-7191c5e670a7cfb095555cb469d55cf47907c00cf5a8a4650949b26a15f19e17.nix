@@ -21,7 +21,7 @@
       synopsis = "Hetzner Cloud and DNS library.";
       description = "Hetzner Cloud and DNS library. Check the readme and documentation for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hetzner-docs" = {
           depends = [
@@ -50,18 +50,18 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."hetzner" or (errorHandler.buildDepError "hetzner"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hetzner-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hetzner" or (errorHandler.buildDepError "hetzner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

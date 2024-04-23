@@ -21,7 +21,7 @@
       synopsis = "The Reflective Lambda Machine";
       description = "The Reflective Lambda Machine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

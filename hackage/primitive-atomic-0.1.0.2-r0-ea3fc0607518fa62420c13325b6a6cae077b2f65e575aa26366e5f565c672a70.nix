@@ -21,16 +21,16 @@
       synopsis = "Wrappers for primops around atomic operations";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."primitive-atomic" or (errorHandler.buildDepError "primitive-atomic"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

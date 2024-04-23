@@ -21,16 +21,16 @@
       synopsis = "Apache specific MD5 digest algorighm.";
       description = "Haskell implementation of Apache HTTP server specific MD5 digest algorithm\nthat uses OpenSSL @MD5()@ function.\n\nREADME and ChangeLog can be found in source code package and on GitHub:\n\n* <https://github.com/trskop/apache-md5/blob/master/README.md>\n\n* <https://github.com/trskop/apache-md5/blob/master/ChangeLog.md>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (flags.deepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
+        ] ++ pkgs.lib.optional (flags.deepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
         libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
         buildable = true;
-        };
+      };
       tests = {
         "apache-md5-unit-tests" = {
           depends = [
@@ -43,11 +43,11 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "apache-md5-benchmark" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

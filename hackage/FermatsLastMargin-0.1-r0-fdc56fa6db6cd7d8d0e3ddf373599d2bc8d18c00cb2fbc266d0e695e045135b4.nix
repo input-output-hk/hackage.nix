@@ -21,7 +21,7 @@
       synopsis = "Annotate ps and pdf documents";
       description = "Distributed annotation for PostScript and PDF documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flm" = {
@@ -39,9 +39,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."HAppS-IxSet" or (errorHandler.buildDepError "HAppS-IxSet"))
             (hsPkgs."HAppS-Util" or (errorHandler.buildDepError "HAppS-Util"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

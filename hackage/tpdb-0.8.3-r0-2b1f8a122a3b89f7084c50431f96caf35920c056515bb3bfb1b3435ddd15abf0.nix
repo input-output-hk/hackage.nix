@@ -21,7 +21,7 @@
       synopsis = "Data Type for Rewriting Systems";
       description = "The package defines data types and parsers for rewriting systems\nand termination proofs,\nas used in the Termination Competitions.\nFor syntax and semantics specification,\nsee <http://www.termination-portal.org/wiki/TPDB>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "XML" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TRS" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TRS_02" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SRS" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Speed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

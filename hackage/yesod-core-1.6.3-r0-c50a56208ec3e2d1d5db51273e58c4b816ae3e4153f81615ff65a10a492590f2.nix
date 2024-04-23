@@ -21,7 +21,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-core>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -68,9 +68,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-routes" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,10 +112,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "widgets" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

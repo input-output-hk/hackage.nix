@@ -14,7 +14,7 @@
       https = true;
       make-pandoc-man-pages = false;
       network-uri = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "scholdoc"; version = "0.1.3"; };
@@ -27,7 +27,7 @@
       synopsis = "Converts ScholarlyMarkdown documents to HTML5/LaTeX/Docx format";
       description = "Scholdoc is a command-line utility that converts\nScholarlyMarkdown documents into the HTML5, LaTeX, and Docx\n(OOML) formats. It is intended to facilitate academic writing\nin a cross-platform, semantic-aware, plaintext format that can\nbe quickly used in modern publishing pipelines.\n\nScholdoc is implemented as (rather crude) fork of @pandoc@,\nand the command-line executable mostly retains the same user\ninterface (including the custom template and filter system).\nIt essentially understands a new input format\n@markdown_scholarly@ (implemented in the markdown reader a\nsuperset of @markdown_pandoc@ features), and limits itself to\nHTML5, LaTeX, and Docx output.\n\nUnfortunately, currently Scholdoc occupies the @Pandoc@\nnamespace. This is done to avoid problems when merging in\nfixes and changes from the core Pandoc project, and to\npotentially allow enhancements from Scholdoc to be contributed\nback to Pandoc. It is thus not recommended to use the library\ndirectly, as Scholdoc is not backwards-compatible with Pandoc,\nto avoid confusion.\n\nFor descriptions of the original @pandoc@ package, please\nvisit <http://hackage.haskell.org/package/pandoc>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -68,20 +68,20 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optionals (flags.https) [
+          ])) ++ pkgs.lib.optionals (flags.https) [
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scholdoc" = {
           depends = [
@@ -97,17 +97,17 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "tryscholdoc" = {
-          depends = (pkgs.lib).optionals (flags.tryscholdoc) [
+          depends = pkgs.lib.optionals (flags.tryscholdoc) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."scholdoc" or (errorHandler.buildDepError "scholdoc"))
@@ -116,10 +116,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = if flags.tryscholdoc then true else false;
-          };
         };
+      };
       tests = {
         "test-scholdoc" = {
           depends = [
@@ -139,19 +139,19 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-scholdoc" = {
           depends = [
             (hsPkgs."scholdoc" or (errorHandler.buildDepError "scholdoc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -17,7 +17,7 @@
       with_expensive_assertions = false;
       release = true;
       supportnodejs = true;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "LambdaHack"; version = "0.9.5.0"; };
@@ -30,7 +30,7 @@
       synopsis = "A game engine library for tactical squad ASCII roguelike dungeon crawlers";
       description = "LambdaHack is a Haskell game engine library for ASCII roguelike\ngames of arbitrary theme, size and complexity, with optional\ntactical squad combat. It's packaged together with a sample\ndungeon crawler in fantasy setting that can be tried out\nin the browser at <http://lambdahack.github.io>.\n(It runs fastest on Chrome. Keyboard commands and savefiles\nare supported only on recent enough versions of browsers.\nMouse should work everywhere.)\n\nPlease see the changelog file for recent improvements\nand the issue tracker for short-term plans. Long term goals\ninclude multiplayer tactical squad combat, in-game content\ncreation, auto-balancing and persistent content modification\nbased on player behaviour. Contributions are welcome.\n\nGames known to use the LambdaHack library:\n\n* Allure of the Stars, a near-future Sci-Fi game,\n<http://hackage.haskell.org/package/Allure>\n\n* Space Privateers, an adventure game set in far future,\n<http://hackage.haskell.org/package/SpacePrivateers>\n\nNote: All modules in this library are kept visible,\nto let games override and reuse them.\nOTOH, to reflect that some modules are implementation details\nrelative to others, the source code adheres to the following\nconvention. If a module has the same name as a directory,\nthe module is the exclusive interface to the directory.\nNo references to the modules in the directory are allowed\nexcept from the interface module. This policy is only binding\nwhen developing the library --- library users are free\nto access any modules, since the library authors are in\nno position to guess their particular needs.\n\nThis is a workaround .cabal file, flattened to eliminated\ninternal libraries until generating haddocks for them\nis fixed. The original .cabal file is stored in the github repo.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -63,24 +63,24 @@
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."ghc-compact" or (errorHandler.buildDepError "ghc-compact"))
-          ] ++ (if compiler.isGhcjs && true || flags.jsaddle
+        ] ++ (if compiler.isGhcjs && true || flags.jsaddle
           then [
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
-            ]
+          ]
           else if flags.vty
             then [ (hsPkgs."vty" or (errorHandler.buildDepError "vty")) ]
             else if flags.curses
               then [
                 (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
-                ]
+              ]
               else if flags.gtk
                 then [ (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3")) ]
                 else [
                   (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
                   (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
-                  ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
+                ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"));
         buildable = true;
-        };
+      };
       exes = {
         "LambdaHack" = {
           depends = [
@@ -89,10 +89,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

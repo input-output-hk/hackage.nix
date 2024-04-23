@@ -21,7 +21,7 @@
       synopsis = "Generates testcases from program-snippets";
       description = "Generates testcases from program-snippets in any language, with varables, that are substituted and a directed graph structure of the snippets and \"test hints\"       ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

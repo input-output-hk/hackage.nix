@@ -21,7 +21,7 @@
       synopsis = "Typeful, Modular, Relational, algebraic query engine";
       description = "This package contiains typeful relation structure and\nrelational-algebraic query building DSL which can\ntranslate into SQL query.\nSupported query features are below:\n- Type safe query building\n- Restriction, Join, Aggregation\n- Modularized relations\n- Typed placeholders";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."sql-words" or (errorHandler.buildDepError "sql-words"))
           (hsPkgs."names-th" or (errorHandler.buildDepError "names-th"))
           (hsPkgs."persistable-record" or (errorHandler.buildDepError "persistable-record"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sqls" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sqlsArrow" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

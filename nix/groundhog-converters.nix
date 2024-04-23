@@ -6,8 +6,8 @@
         nix = import ../hackage/groundhog-converters-0.1.0-r0-ab264e12810e445527172042ab8410b876c840029b01f1f62b91aa4f787a9229.nix;
         revNum = 0;
         sha256 = "ab264e12810e445527172042ab8410b876c840029b01f1f62b91aa4f787a9229";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

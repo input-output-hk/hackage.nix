@@ -21,7 +21,7 @@
       synopsis = "Exact real arithmetic using Centred Dyadic Approximations";
       description = "Please see https://github.com/michalkonecny/cdar/tree/mBound#readme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
@@ -40,17 +40,17 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
             (hsPkgs."cdar-mBound" or (errorHandler.buildDepError "cdar-mBound"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "logistic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cdar-mBound" or (errorHandler.buildDepError "cdar-mBound"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."cdar-mBound" or (errorHandler.buildDepError "cdar-mBound"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."cdar-mBound" or (errorHandler.buildDepError "cdar-mBound"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

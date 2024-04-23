@@ -21,7 +21,7 @@
       synopsis = "Audio signal processing coded in Haskell";
       description = "Use native Haskell Audio Signal Processing for Music rendering with Haskore\nContains several example songs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."non-negative" or (errorHandler.buildDepError "non-negative"))
           (hsPkgs."event-list" or (errorHandler.buildDepError "event-list"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "rendersong" = {
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

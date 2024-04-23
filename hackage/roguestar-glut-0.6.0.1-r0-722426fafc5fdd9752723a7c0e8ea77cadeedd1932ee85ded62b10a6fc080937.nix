@@ -21,7 +21,7 @@
       synopsis = "Sci-fi roguelike game.  GLUT front-end.";
       description = "Requires roguestar and roguestar-engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "roguestar-glut" = {
@@ -30,9 +30,9 @@
             (hsPkgs."roguestar-gl" or (errorHandler.buildDepError "roguestar-gl"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."rsagl" or (errorHandler.buildDepError "rsagl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

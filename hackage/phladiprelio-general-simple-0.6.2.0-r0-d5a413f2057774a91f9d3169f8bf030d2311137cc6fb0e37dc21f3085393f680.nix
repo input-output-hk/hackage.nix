@@ -14,7 +14,7 @@
       identifier = {
         name = "phladiprelio-general-simple";
         version = "0.6.2.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A generalized functionality of PhLADiPreLiO for different languages that uses hash algorithms.";
       description = "The basic ideas of PhLADiPreLiO (Phonetic Languages Approach to Discovering Preferred Line Options) are described in the work: [PhLADiPreLiO.Ukr.21.pdf](https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Ukr.21.pdf) [PhLADiPreLiO.Eng.21.pdf](https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Eng.21.pdf). This is the generalization and it uses somewhat different approach with the same basic ideas.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."halfsplit" or (errorHandler.buildDepError "halfsplit"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."rev-scientific" or (errorHandler.buildDepError "rev-scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Integration between Halide and JuicyPixels";
       description = "This package provides instances of [Language.Halide.IsHalideBuffer](https://hackage.haskell.org/package/halide-haskell/docs/Language-Halide.html#t:IsHalideBuffer)\nfor image types from the [JuicyPixels](https://hackage.haskell.org/package/JuicyPixels) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."halide-haskell" or (errorHandler.buildDepError "halide-haskell"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "halide-JuicyPixels-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."halide-JuicyPixels" or (errorHandler.buildDepError "halide-JuicyPixels"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

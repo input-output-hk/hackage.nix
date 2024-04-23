@@ -6,8 +6,8 @@
         nix = import ../hackage/in-other-words-plugin-0.1.0.0-r0-9aecb8117226857b1cd220b4ba7d912d600e76fe40dc0c0b76328d4032b86608.nix;
         revNum = 0;
         sha256 = "9aecb8117226857b1cd220b4ba7d912d600e76fe40dc0c0b76328d4032b86608";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

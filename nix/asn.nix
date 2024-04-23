@@ -6,8 +6,8 @@
         nix = import ../hackage/asn-0.1.0.0-r0-60bf0aaf2b78396db2f6211478bca75be924162e61db3cc000daa7fece15d1b3.nix;
         revNum = 0;
         sha256 = "60bf0aaf2b78396db2f6211478bca75be924162e61db3cc000daa7fece15d1b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

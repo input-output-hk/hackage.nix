@@ -21,7 +21,7 @@
       synopsis = "Automatic tasty test case discovery using TH";
       description = "Generate tasty TestTrees automatically with TemplateHaskell. See the README for example usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-th-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

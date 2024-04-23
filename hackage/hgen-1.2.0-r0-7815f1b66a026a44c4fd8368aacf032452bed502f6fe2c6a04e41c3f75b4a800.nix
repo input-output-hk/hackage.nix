@@ -21,7 +21,7 @@
       synopsis = "Random generation of modal and hybrid logic formulas";
       description = "Random generation of modal and hybrid logic formulas";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hgen" = {
@@ -38,9 +38,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

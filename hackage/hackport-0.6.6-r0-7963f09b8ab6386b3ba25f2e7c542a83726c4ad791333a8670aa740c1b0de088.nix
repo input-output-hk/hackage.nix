@@ -21,7 +21,7 @@
       synopsis = "Hackage and Portage integration tool";
       description = "A command line tool to manage an overlay of Gentoo ebuilds\nthat are generated from a hackage repo of Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackport" = {
@@ -62,10 +62,10 @@
             (hsPkgs."lukko" or (errorHandler.buildDepError "lukko"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-resolve-category" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "test-print-deps" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -111,9 +111,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "test-normalize-deps" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -134,18 +134,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -169,12 +169,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Upload packages to Marmalade";
       description = "Upload Emacs packages to the <http://marmalade-repo.org/ Marmalade> ELPA\narchive.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "marmalade-upload" = {
@@ -40,9 +40,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-multipart" or (errorHandler.buildDepError "http-client-multipart"))
             (hsPkgs."keyring" or (errorHandler.buildDepError "keyring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

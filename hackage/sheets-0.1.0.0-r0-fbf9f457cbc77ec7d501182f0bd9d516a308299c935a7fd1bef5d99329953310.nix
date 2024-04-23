@@ -21,7 +21,7 @@
       synopsis = "Spreadsheet type for composite.";
       description = "Spreadsheet type for composite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."composite-cassava" or (errorHandler.buildDepError "composite-cassava"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

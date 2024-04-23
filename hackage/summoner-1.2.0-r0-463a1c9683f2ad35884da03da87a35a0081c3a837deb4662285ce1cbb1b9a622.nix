@@ -21,7 +21,7 @@
       synopsis = "Tool for scaffolding completely configured production Haskell projects.";
       description = "Tool for scaffolding completely configured production Haskell projects.\nSee [README.md](https://github.com/kowainik/summoner#-summoner) for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,18 +40,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "summon" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "summoner-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
             (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

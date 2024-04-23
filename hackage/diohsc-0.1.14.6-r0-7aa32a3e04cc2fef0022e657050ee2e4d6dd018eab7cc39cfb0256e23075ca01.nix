@@ -13,7 +13,7 @@
       drunken-bishop = true;
       magic = false;
       irilinks = false;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "diohsc"; version = "0.1.14.6"; };
@@ -26,7 +26,7 @@
       synopsis = "Gemini client";
       description = "Line-based command-oriented interactive client for the gemini protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "diohsc" = {
@@ -64,9 +64,9 @@
             (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
             (hsPkgs."crypton-x509-store" or (errorHandler.buildDepError "crypton-x509-store"))
             (hsPkgs."crypton-x509-validation" or (errorHandler.buildDepError "crypton-x509-validation"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.magic) (hsPkgs."magic" or (errorHandler.buildDepError "magic"))) ++ (pkgs.lib).optional (flags.libiconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))) ++ (pkgs.lib).optional (flags.drunken-bishop) (hsPkgs."drunken-bishop" or (errorHandler.buildDepError "drunken-bishop"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (flags.magic) (hsPkgs."magic" or (errorHandler.buildDepError "magic"))) ++ pkgs.lib.optional (flags.libiconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))) ++ pkgs.lib.optional (flags.drunken-bishop) (hsPkgs."drunken-bishop" or (errorHandler.buildDepError "drunken-bishop"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

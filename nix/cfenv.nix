@@ -6,8 +6,8 @@
         nix = import ../hackage/cfenv-0.1.0.0-r0-6eb0a3d8d3ae5359cf4d9143949dd7515eb4603266472b6d84a3e111e0ff1a5a.nix;
         revNum = 0;
         sha256 = "6eb0a3d8d3ae5359cf4d9143949dd7515eb4603266472b6d84a3e111e0ff1a5a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Musical score and part representation.";
       description = "Musical score and part representation.\nThis library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
           (hsPkgs."reenact" or (errorHandler.buildDepError "reenact"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "music-score-tests" = { buildable = true; }; };
       };
-    }
+      exes = { "music-score-tests" = { buildable = true; }; };
+    };
+  }

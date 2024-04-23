@@ -21,11 +21,11 @@
       synopsis = "Haskell binding to libharu (http://libharu.sourceforge.net/)";
       description = "Haskell binding to libharu (http://libharu.sourceforge.net/)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

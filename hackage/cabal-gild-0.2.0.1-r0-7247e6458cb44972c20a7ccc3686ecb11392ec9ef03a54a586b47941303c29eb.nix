@@ -21,7 +21,7 @@
       synopsis = "Format .cabal files";
       description = "Format @.cabal@ files preserving the original field ordering, and comments.\n\nTuned for Oleg's preference, but has some knobs still.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-gild" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cabal-gild" or (errorHandler.buildDepError "cabal-gild"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cabal-gild-test-suite" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

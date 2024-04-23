@@ -21,7 +21,7 @@
       synopsis = "'NonEmpty' wrappers for text";
       description = "'NonEmpty' wrappers for text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."nonempty-wrapper" or (errorHandler.buildDepError "nonempty-wrapper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

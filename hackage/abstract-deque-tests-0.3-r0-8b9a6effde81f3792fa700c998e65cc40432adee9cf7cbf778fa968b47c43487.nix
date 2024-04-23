@@ -21,7 +21,7 @@
       synopsis = "A test-suite for any queue or double-ended queue satisfying an interface ";
       description = "This package provides tests that can be used with any queue implementation\nthat satisfies the `abstract-deque` interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-abstract-deque" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Utility function for reading a source of loaded uzbl pages.";
       description = "Utility function for reading a source of loaded uzbl\npages. It attemps to read the UZBL_SOCKET variable passed in\nby uzbl during runtime and extract source by probing it.\nThe program ‘socat’ is a run-time dependency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

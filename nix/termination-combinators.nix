@@ -6,8 +6,8 @@
         nix = import ../hackage/termination-combinators-0.1-r0-b81cb292e5c74e10aabe6c9101e71492fcec3637a982e21169a466e9f1d46ad6.nix;
         revNum = 0;
         sha256 = "b81cb292e5c74e10aabe6c9101e71492fcec3637a982e21169a466e9f1d46ad6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

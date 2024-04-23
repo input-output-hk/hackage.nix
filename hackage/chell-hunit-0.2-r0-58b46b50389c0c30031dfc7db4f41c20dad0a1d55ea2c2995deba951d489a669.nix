@@ -21,15 +21,15 @@
       synopsis = "HUnit support for the Chell testing library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."chell" or (errorHandler.buildDepError "chell"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "nanomsg - scalability protocols library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."nanomsg" or (errorHandler.sysDepError "nanomsg")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

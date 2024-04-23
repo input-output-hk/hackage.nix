@@ -21,7 +21,7 @@
       synopsis = "A roguelike game engine in early and very active development";
       description = "This is an alpha release of LambdaHack,\na game engine library for roguelike games\nof arbitrary theme, size and complexity,\npackaged together with a small example dungeon crawler.\nWhen completed, it will let you specify content\nto be procedurally generated, define the AI behaviour\non top of the generic content-independent rules\nand compile a ready-to-play game binary, using either\nthe supplied or a custom-made main loop.\nSeveral frontends are available (GTK is the default)\nand many other generic engine components are easily overridden,\nbut the fundamental source of flexibility lies\nin the strict and type-safe separation of code and content.\n\nUpcoming new features: improved squad combat,\nplayer action undo/redo, ranged combat animations,\ncompletely redesigned UI. Long term goals are focused\naround procedural content generation and include\nthe improvement of the AI monad EDSL, so that rules\nfor synthesising monster behaviour from game content\nare extensible, readable and easy to debug,\nin-game content creation, auto-balancing and persistent\ncontent modification based on player behaviour.\n\nA larger game that depends on the LambdaHack library\nis Allure of the Stars, available from\n<http://hackage.haskell.org/package/Allure>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,15 +37,15 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if flags.curses
+        ] ++ (if flags.curses
           then [
             (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
-            ]
+          ]
           else if flags.vty
             then [ (hsPkgs."vty" or (errorHandler.buildDepError "vty")) ]
-            else (pkgs.lib).optional (!flags.std) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")));
+            else pkgs.lib.optional (!flags.std) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")));
         buildable = true;
-        };
+      };
       exes = {
         "LambdaHack" = {
           depends = [
@@ -63,16 +63,16 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "DumbBot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

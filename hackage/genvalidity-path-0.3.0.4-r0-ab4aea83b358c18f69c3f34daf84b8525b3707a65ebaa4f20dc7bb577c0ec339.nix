@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for Path";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."validity-path" or (errorHandler.buildDepError "validity-path"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-path-test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."genvalidity-path" or (errorHandler.buildDepError "genvalidity-path"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "genvalidity-path-bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
             (hsPkgs."genvalidity-path" or (errorHandler.buildDepError "genvalidity-path"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

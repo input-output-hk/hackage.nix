@@ -21,7 +21,7 @@
       synopsis = "An easy-to-use video game framework for Haskell.";
       description = "See examples and full readme on the Github page: https:\\/\\/github.com\\/egonSchiele\\/actionkid";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "actionkid" = {
           depends = [
@@ -49,19 +49,19 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-actionkid" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."ActionKid" or (errorHandler.buildDepError "ActionKid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

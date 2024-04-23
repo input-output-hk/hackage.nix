@@ -21,14 +21,14 @@
       synopsis = "An HTML generator for Haskell";
       description = "An HTML generator. Intended to replace the need for a\ntemplating engine in multi-page web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "Matrix parameter combinator for servant";
       description = "Matrix parameter combinator for servant";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ] ++ (pkgs.lib).optional (flags.with-servant-aeson-specs) (hsPkgs."servant-aeson-specs" or (errorHandler.buildDepError "servant-aeson-specs"))) ++ (pkgs.lib).optionals (flags.with-servant-server) [
+        ] ++ pkgs.lib.optional (flags.with-servant-aeson-specs) (hsPkgs."servant-aeson-specs" or (errorHandler.buildDepError "servant-aeson-specs"))) ++ pkgs.lib.optionals (flags.with-servant-server) [
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -52,17 +52,17 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

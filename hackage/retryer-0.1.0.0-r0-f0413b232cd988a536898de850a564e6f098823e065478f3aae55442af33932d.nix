@@ -21,7 +21,7 @@
       synopsis = "Small haskell app that takes a command, and continually re-runs it until it exits successfully";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "retryer" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

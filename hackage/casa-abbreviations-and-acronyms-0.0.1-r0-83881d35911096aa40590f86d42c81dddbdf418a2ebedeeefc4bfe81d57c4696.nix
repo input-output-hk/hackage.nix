@@ -14,7 +14,7 @@
       identifier = {
         name = "casa-abbreviations-and-acronyms";
         version = "0.0.1";
-        };
+      };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (C) 2016 Tony Morris";
       maintainer = "Tony Morris";
@@ -24,12 +24,12 @@
       synopsis = "CASA Abbreviations and Acronyms";
       description = "CASA Abbreviations and Acronyms\n\n<https://www.casa.gov.au/standard-page/aviation-abbreviations-and-acronyms>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

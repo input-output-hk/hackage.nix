@@ -21,7 +21,7 @@
       synopsis = "Creating graphics for pencil puzzles.";
       description = "puzzle-draw is a library and tool for drawing pencil\npuzzles using Diagrams. It aims to provide a utility\nlayer on top of Diagrams to help with drawing arbitrary\npuzzles, and to support several specific puzzles types\nIn addition, it includes functionality for parsing\npuzzle data from a YAML file format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."diagrams-rasterific" or (errorHandler.buildDepError "diagrams-rasterific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "drawpuzzle" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."diagrams-rasterific" or (errorHandler.buildDepError "diagrams-rasterific"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "checkpuzzle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,10 +67,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."puzzle-draw" or (errorHandler.buildDepError "puzzle-draw"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

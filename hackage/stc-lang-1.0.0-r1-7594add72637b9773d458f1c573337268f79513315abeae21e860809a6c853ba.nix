@@ -21,7 +21,7 @@
       synopsis = "A library for implicit, monadic dataflow parallelism";
       description = "See the <https://github.com/ohua-dev/stc-lang#readme readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."monad-par-extras" or (errorHandler.buildDepError "monad-par-extras"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ohua-stream-bench" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "statefulness-test" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

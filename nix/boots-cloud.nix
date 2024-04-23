@@ -6,8 +6,8 @@
         nix = import ../hackage/boots-cloud-0.2-r0-2e77bf0e98c79f9744316456d6f7775514238b52df2ee062e0d00ac17fc9b037.nix;
         revNum = 0;
         sha256 = "2e77bf0e98c79f9744316456d6f7775514238b52df2ee062e0d00ac17fc9b037";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Useful if reading \"Why FP matters\" by John Hughes";
       description = "An attempt to implement the minimax algorithm using tic-tac-toe";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tic-tac-toe" = {
@@ -30,9 +30,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

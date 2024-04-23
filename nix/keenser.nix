@@ -6,8 +6,8 @@
         nix = import ../hackage/keenser-0.1.0.0-r0-3bced9d414d468864d3cd31668605f94dadc3d535bebf342968927dacd173822.nix;
         revNum = 0;
         sha256 = "3bced9d414d468864d3cd31668605f94dadc3d535bebf342968927dacd173822";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

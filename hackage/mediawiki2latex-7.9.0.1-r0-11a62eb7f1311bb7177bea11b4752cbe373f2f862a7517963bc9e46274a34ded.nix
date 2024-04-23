@@ -21,7 +21,7 @@
       synopsis = "Convert MediaWiki text to LaTeX";
       description = "mediawiki2latex converts MediaWiki markup to LaTeX and PDF.\nSo it provides and export from MediaWiki to LaTeX.\nIt works with any project running MediaWiki, especially Wikipedia and Wikibooks.\nPlease note, that the program requieres certain run time dependencies. Those\ncannot be expressed in cabal and thus won't be installed when installing from hackage.\nSo we strongly recommend to use the binaries included in debian as well as ubuntu or\nto use the binary version for windows provided on the sourcefogre project page.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mediawiki2latex" = {
@@ -53,9 +53,9 @@
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

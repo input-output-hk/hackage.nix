@@ -6,8 +6,8 @@
         nix = import ../hackage/papa-include-0.1.0-r0-5aedc324799efb18d5dcfe1b620a2e6468d947735adf6726750d3fd7e68ec216.nix;
         revNum = 0;
         sha256 = "5aedc324799efb18d5dcfe1b620a2e6468d947735adf6726750d3fd7e68ec216";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

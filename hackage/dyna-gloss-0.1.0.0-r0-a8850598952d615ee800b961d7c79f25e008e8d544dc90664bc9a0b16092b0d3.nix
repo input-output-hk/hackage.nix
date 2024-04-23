@@ -21,7 +21,7 @@
       synopsis = "FRP for gloss graphics and animation library";
       description = "Defines FRP for gloss graphics and animation library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dyna-gloss-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dyna-gloss" or (errorHandler.buildDepError "dyna-gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

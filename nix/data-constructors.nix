@@ -6,8 +6,8 @@
         nix = import ../hackage/data-constructors-0.1.0.0-r0-6f854e967ded9be058569121ffe2abcc88ffca6d9538b88c8d9492f42042477b.nix;
         revNum = 0;
         sha256 = "6f854e967ded9be058569121ffe2abcc88ffca6d9538b88c8d9492f42042477b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

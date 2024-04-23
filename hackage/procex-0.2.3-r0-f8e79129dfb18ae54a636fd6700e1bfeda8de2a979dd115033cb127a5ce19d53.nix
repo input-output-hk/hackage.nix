@@ -21,7 +21,7 @@
       synopsis = "Ergonomic process launching with extreme flexibility and speed";
       description = "procex is a library for launching unix processes, that DOES NOT wrap createProcess.\nIt interfaces directly with vfork and execve, and closes fds efficiently using\nthe new close_range Linux syscall (or close if not available).\nThe syntax for launching processes is clean, concise, and flexible, mimicking sh.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

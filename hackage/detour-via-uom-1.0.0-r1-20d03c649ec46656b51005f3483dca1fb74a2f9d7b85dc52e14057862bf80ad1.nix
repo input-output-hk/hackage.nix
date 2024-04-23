@@ -21,7 +21,7 @@
       synopsis = "JSON and CSV encoding for quantities.";
       description = "Lossy JSON and CSV encoding and decoding for newtype quantities via scientific with fixed decimal places and with units.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."uom-plugin" or (errorHandler.buildDepError "uom-plugin"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."uom-plugin" or (errorHandler.buildDepError "uom-plugin"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -59,9 +59,9 @@
             (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."uom-plugin" or (errorHandler.buildDepError "uom-plugin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

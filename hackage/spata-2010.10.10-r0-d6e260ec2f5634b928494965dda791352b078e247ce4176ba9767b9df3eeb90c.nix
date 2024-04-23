@@ -21,7 +21,7 @@
       synopsis = "brainless form validation";
       description = "tiny validation library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

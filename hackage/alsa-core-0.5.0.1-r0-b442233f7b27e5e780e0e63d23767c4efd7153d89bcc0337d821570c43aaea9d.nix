@@ -21,16 +21,16 @@
       synopsis = "Binding to the ALSA Library API (Exceptions).";
       description = "This package provides access to ALSA infrastructure,\nthat is needed by both alsa-seq and alsa-pcm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
-        libs = (pkgs.lib).optional (!flags.pkgconfig) (pkgs."asound" or (errorHandler.sysDepError "asound"));
-        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."alsa" or (errorHandler.pkgConfDepError "alsa"));
+        ];
+        libs = pkgs.lib.optional (!flags.pkgconfig) (pkgs."asound" or (errorHandler.sysDepError "asound"));
+        pkgconfig = pkgs.lib.optional (flags.pkgconfig) (pkgconfPkgs."alsa" or (errorHandler.pkgConfDepError "alsa"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

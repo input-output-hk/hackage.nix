@@ -21,20 +21,20 @@
       synopsis = "Customize uncaught exception handling.";
       description = "See README.md for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "uncaught-exception-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."uncaught-exception" or (errorHandler.buildDepError "uncaught-exception"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Contention-free STM hash map";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench1" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A package allowing to write Hakyll blog posts in Rmd";
       description = "This package allows to write blog posts for Hakyll in R-markdown. The R code inside the markdown will be rendered and inserted in the blog post, for example as a plot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

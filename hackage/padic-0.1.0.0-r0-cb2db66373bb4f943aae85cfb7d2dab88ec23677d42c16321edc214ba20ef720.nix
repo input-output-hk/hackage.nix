@@ -21,7 +21,7 @@
       synopsis = "Fast, type-safe p-adic arithmetic";
       description = "Implementation of p-adic arithmetics on the base of fast modular arithmetics. Module introduces data types for p-adic integers and rationals with arbitrary precision as well as some specific functions (rational reconstruction, p-adic signum function, square roots etc.).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."mod" or (errorHandler.buildDepError "mod"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "padic-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion-benchmarks" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
             (hsPkgs."mod" or (errorHandler.buildDepError "mod"))
             (hsPkgs."padic" or (errorHandler.buildDepError "padic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

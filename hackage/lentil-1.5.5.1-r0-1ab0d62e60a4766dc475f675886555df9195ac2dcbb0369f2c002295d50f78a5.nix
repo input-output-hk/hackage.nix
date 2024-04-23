@@ -21,7 +21,7 @@
       synopsis = "frugal issue tracker";
       description = "minumum effort, cohesive issue tracker based on\nubiquitous @TODO@s and @FIXME@s conventions.\nCheck homepage for manual, tutorial, binaries,\nexamples.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lentil" = {
@@ -42,10 +42,10 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -66,12 +66,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

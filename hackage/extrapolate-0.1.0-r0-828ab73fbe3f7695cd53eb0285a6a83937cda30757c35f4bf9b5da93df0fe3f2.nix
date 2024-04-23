@@ -21,7 +21,7 @@
       synopsis = "generalize counter-examples of test properties";
       description = "Extrapolate is a tool able to provide generalized counter-examples of test\nproperties where irrelevant sub-expressions are replaces with variables.\n\nFor the incorrect property @\\xs -> nub xs == (xs::[Int])@:\n\n* @[0,0]@ is a counter-example;\n\n* @x:x:_@ is a generalized counter-example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,18 +39,18 @@
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "derive" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

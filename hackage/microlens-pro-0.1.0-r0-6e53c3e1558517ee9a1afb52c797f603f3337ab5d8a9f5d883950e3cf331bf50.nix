@@ -21,7 +21,7 @@
       synopsis = "Prisms and isomorphisms for microlens";
       description = "This package provides lens-compatible 'Prism' and 'Iso'. Consequently, it\ndepends on the rather heavy @profunctors@.\n\nThank you to the <https://hackage.haskell.org/package/lens lens> contributors\nfor the original code and some docs,\nEmily Pillmore (<https://cohomolo.gy link>) and\nMario Rom&#225;n (<https://mroman42.github.io/cosmoi link>) for\n<https://golem.ph.utexas.edu/category/2020/01/profunctor_optics_the_categori.html this post>\nwhich inspired documentation, and Wikibooks contributors for\n<https://en.wikibooks.org/wiki/Haskell/Lenses_and_functional_references#Isos this article>.\n\nThis package is a part of the\n<https://hackage.haskell.org/package/microlens microlens> family; see the\nreadme <https://github.com/stevenfontanella/microlens on Github>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "8.6.5") (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "8.6.5") (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

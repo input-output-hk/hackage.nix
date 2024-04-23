@@ -6,8 +6,8 @@
         nix = import ../hackage/hybrid-2.0-r0-67050fcfc555956c9dcd61dcff56ba07b452c52e12cd2094d964107b6b18e761.nix;
         revNum = 0;
         sha256 = "67050fcfc555956c9dcd61dcff56ba07b452c52e12cd2094d964107b6b18e761";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

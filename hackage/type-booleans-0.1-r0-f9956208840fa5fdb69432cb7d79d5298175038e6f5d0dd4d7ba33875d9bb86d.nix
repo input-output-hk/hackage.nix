@@ -21,11 +21,11 @@
       synopsis = "Type-level booleans via type-families";
       description = "Type-level booleans with basic operators that short-circuit as\nmuch as possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

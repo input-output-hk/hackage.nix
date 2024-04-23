@@ -21,7 +21,7 @@
       synopsis = "Blog in LaTeX";
       description = "Markdown and HTML are the standard tools used to write your every day tech blog with. But they have pretty weak support for embedding mathematical formulas, and are not conducive to writing for an extended period of time. Plus, they aren't even Turing complete! So use BlaTeX to start blogging in LaTeX!\n\nBlaTeX is basically a static site generator (like Jekyll) that lets you write your blog in LaTeX, specify a layout file for the homepage, and publish it to github pages.\n\nTo get started, check out <https://github.com/2016rshah/BlaTeX#how-to>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "blatex" = {
@@ -34,9 +34,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Indexed version of Plated.";
       description = "This package contains an alternative version of lens' @Plated@ that\nallows for a user-specified index: where @plate@ returns a\n@Traversal@, @iplate@ takes an additional starting index and returns\na @IndexedTraversal@. It also provides an indexed equivalent to most\nof the @Plated@ functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

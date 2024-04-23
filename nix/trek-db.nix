@@ -6,8 +6,8 @@
         nix = import ../hackage/trek-db-0.1.0.0-r0-a21bb711b7b95de42404b09578bc679d0f64e3e87519fb9cad9e0bf944e4a7f4.nix;
         revNum = 0;
         sha256 = "a21bb711b7b95de42404b09578bc679d0f64e3e87519fb9cad9e0bf944e4a7f4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

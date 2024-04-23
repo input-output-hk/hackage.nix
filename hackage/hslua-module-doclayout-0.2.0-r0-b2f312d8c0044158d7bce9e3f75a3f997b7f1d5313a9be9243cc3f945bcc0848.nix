@@ -21,7 +21,7 @@
       synopsis = "Lua module wrapping Text.DocLayout.";
       description = "Lua module wrapping @Text.DocLayout@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
           (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hslua-module-doclayout-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
             (hsPkgs."hslua-module-doclayout" or (errorHandler.buildDepError "hslua-module-doclayout"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

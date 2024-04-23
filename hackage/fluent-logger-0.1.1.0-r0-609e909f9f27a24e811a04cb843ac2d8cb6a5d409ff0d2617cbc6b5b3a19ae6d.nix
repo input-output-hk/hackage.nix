@@ -21,7 +21,7 @@
       synopsis = "A structured logger for Fluentd (Haskell)";
       description = "A structured logger for Fluentd (Haskell) <http://fluentd.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fluent-logger-spec" = {
           depends = [
@@ -49,19 +49,19 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fluent-logger-benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fluent-logger" or (errorHandler.buildDepError "fluent-logger"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

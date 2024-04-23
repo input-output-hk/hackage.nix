@@ -21,7 +21,7 @@
       synopsis = "Reading, writing and manipulating \".tar\" archive files.";
       description = "This library is for working with \\\"@.tar@\\\" archive files. It\ncan read and write a range of common variations of archive\nformat including V7, POSIX USTAR and GNU formats.\n\nIt provides support for packing and unpacking portable\narchives. This makes it suitable for distribution but not\nbackup because details like file ownership and exact\npermissions are not preserved.\n\nIt also provides features for random access to archive\ncontent using an index.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -30,24 +30,24 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (if flags.old-time
+        ] ++ (if flags.old-time
           then [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ])) ++ (if flags.old-bytestring
+          ])) ++ (if flags.old-bytestring
           then [
             (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = (([
@@ -60,25 +60,25 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ] ++ (if flags.old-time
+          ] ++ (if flags.old-time
             then [
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-              ]
+            ]
             else [
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ])) ++ (if flags.old-bytestring
+            ])) ++ (if flags.old-bytestring
             then [
               (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+            ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

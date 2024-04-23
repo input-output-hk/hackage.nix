@@ -21,7 +21,7 @@
       synopsis = "Instances of classes from openapi3 for servant-queryparam-core.";
       description = "Instances of classes from [openapi3](https://hackage.haskell.org/package/openapi3) for [servant-queryparam-core](https://hackage.haskell.org/package/servant-queryparam-core).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-openapi3" or (errorHandler.buildDepError "servant-openapi3"))
           (hsPkgs."servant-queryparam-core" or (errorHandler.buildDepError "servant-queryparam-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

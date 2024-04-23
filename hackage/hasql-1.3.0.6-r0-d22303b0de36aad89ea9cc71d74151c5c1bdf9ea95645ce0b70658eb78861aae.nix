@@ -21,7 +21,7 @@
       synopsis = "An efficient PostgreSQL driver and a flexible mapping API";
       description = "This package is the root of the \\\"hasql\\\" ecosystem.\n\nThe API comes free from all kinds of exceptions. All error-reporting is explicit and is presented using the 'Either' type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -60,25 +60,25 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "threads-test" = {
           depends = [
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "profiling" = {
           depends = [
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."bug" or (errorHandler.buildDepError "bug"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

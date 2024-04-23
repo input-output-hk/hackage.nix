@@ -21,16 +21,16 @@
       synopsis = "Approximate equality for floating point numbers with HUnit";
       description = "This package exports combinators useful in comparing floating-point numbers\nin HUnit tests, by using approximate equality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sanity-check" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."HUnit-approx" or (errorHandler.buildDepError "HUnit-approx"))
             (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

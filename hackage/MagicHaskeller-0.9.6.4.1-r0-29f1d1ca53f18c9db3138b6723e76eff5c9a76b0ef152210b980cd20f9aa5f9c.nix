@@ -15,7 +15,7 @@
       readfile = true;
       debug = false;
       networkuri = true;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "MagicHaskeller"; version = "0.9.6.4.1"; };
@@ -28,7 +28,7 @@
       synopsis = "Automatic inductive functional programmer by systematic search";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -45,15 +45,15 @@
           (hsPkgs."html" or (errorHandler.buildDepError "html"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (pkgs.lib).optionals (flags.ghcapi && !system.isWindows) [
+        ] ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ pkgs.lib.optionals (flags.ghcapi && !system.isWindows) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ]) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ [
+        ]) ++ pkgs.lib.optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ [
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "MagicHaskeller" = {
           depends = ([
@@ -77,14 +77,14 @@
             (hsPkgs."abstract-par" or (errorHandler.buildDepError "abstract-par"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) ((([
+          ] ++ pkgs.lib.optionals (!system.isWindows) ((([
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (pkgs.lib).optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ (pkgs.lib).optional (flags.ghc7) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")))) ++ [
+          ] ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ pkgs.lib.optional (flags.readfile) (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))) ++ pkgs.lib.optional (flags.ghc7) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")))) ++ [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MagicHaskeller.cgi" = {
           depends = (([
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
@@ -105,12 +105,12 @@
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."mueval" or (errorHandler.buildDepError "mueval"))) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ [
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."mueval" or (errorHandler.buildDepError "mueval"))) ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

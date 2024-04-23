@@ -21,7 +21,7 @@
       synopsis = "Sample executables of moffy - GTK4 version";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy-samples-gtk4#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "moffy_samples_gtk4" = {
@@ -30,15 +30,15 @@
             (hsPkgs."moffy" or (errorHandler.buildDepError "moffy"))
             (hsPkgs."moffy-samples" or (errorHandler.buildDepError "moffy-samples"))
             (hsPkgs."moffy-samples-gtk4-run" or (errorHandler.buildDepError "moffy-samples-gtk4-run"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "moffy-samples-gtk4-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A datatype for ISO 3166 country codes";
       description = "Defines datatype CountryCode that has a two\nletter constructor corresponding to each of the two letter\nISO 3166 country codes, and mappings from that type to the\nofficial name of the country.";
       buildType = "Make";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

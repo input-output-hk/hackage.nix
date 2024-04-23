@@ -21,7 +21,7 @@
       synopsis = "Convert Hackage RSS feeds to wiki format for publishing on Haskell.org";
       description = "Convert Hackage RSS feeds to wiki format for publishing on Haskell.org";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackage2hwn" = {
@@ -30,9 +30,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."download" or (errorHandler.buildDepError "download"))
             (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

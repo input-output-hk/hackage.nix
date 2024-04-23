@@ -21,7 +21,7 @@
       synopsis = "Configuration Loader for toml";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "salak-toml-test" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "salak-toml-bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

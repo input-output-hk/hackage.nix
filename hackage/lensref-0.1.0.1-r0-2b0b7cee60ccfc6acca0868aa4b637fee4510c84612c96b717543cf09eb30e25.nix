@@ -21,7 +21,7 @@
       synopsis = "References which can be joined and on which lenses can be applied";
       description = "The lensref package provides and interface an two implementation\nfor references which can be joined and on which lenses can be applied.\n\n-The pure implementation is slow and has memory leaks but probably easier to follow.\nThis is the reference implementation, so if the the other implementation\ndiffers this has the right behaviour.\n-The fast implementation is intended for real usage.\n\nStatus:\n\n-The interface is getting stable. You can expect more functionality and minor changes on current functionality.\n-There are test cases for the first half of the interface.\nBoth implementations fulfil the test cases.\n-The pure implementation is ready.\n-The fast implementation is much faster than the pure implementation,\nbut it is far from being as fast as possible.\nProbably it also leaks memory.\n\nTo see what is possible to do with lens references, look at the test cases in \"Data.LensRef.Test\"\n\nFor more information visit the following links:\n\n-<http://www.haskell.org/haskellwiki/LGtk haskell.org wiki page>\n-<http://lgtk.wordpress.com/ Wordpress blog>\n-<https://github.com/divipp/lensref GitHub repository>\n-<http://hackage.haskell.org/package/lensref Haddock documentation (this page)>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

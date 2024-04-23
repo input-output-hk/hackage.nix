@@ -21,17 +21,17 @@
       synopsis = "Combinatorial species lite";
       description = "A simple library for combinatorial species with no\ndependencies but base. See <http://github.com/akc/spe>\nfor an introduction and examples.\nIf you want something more substantial, then you\nwill most likely be happier with the excellent\nspecies package by Brent Yorgey:\n<http://hackage.haskell.org/package/species>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "Main" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "indian-language-font-converter";
         version = "0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Akash Fulchand Jagdhane";
@@ -24,7 +24,7 @@
       synopsis = "Indian Language Font Converter";
       description = "The package is made for people who want to get the sentences in Hindi or Marathi font so that they don't need to remember keys on keyboards when they type Hindi or Marathi script. Or they don't need to waste time on virtual keyboards where everything works with a mouse.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

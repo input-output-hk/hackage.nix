@@ -21,7 +21,7 @@
       synopsis = "Cross-platform support for retrieving file access times";
       description = "Just a simple library that provides cross-platform support (Windows and Unix) for retrieving file access times";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

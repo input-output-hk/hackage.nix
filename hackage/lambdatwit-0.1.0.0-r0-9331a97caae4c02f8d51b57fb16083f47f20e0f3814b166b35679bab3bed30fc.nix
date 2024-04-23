@@ -21,7 +21,7 @@
       synopsis = "Lambdabot running as a twitter bot. Similar to the @fsibot f# bot.";
       description = "A twitter bot using mueval to evaluate haskell tweets.\nFurther info: <https://github.com/AshyIsMe/lambdatwit/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdatwit" = {
@@ -52,9 +52,9 @@
             (hsPkgs."twitter-conduit" or (errorHandler.buildDepError "twitter-conduit"))
             (hsPkgs."twitter-types" or (errorHandler.buildDepError "twitter-types"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "oauth_pin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
             (hsPkgs."twitter-conduit" or (errorHandler.buildDepError "twitter-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

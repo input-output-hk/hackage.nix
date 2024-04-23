@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-properties-array-common";
         version = "0.4.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Common functionality for 'with-tuples' and old version of properties. ";
       description = "The common functionality for phonetic-languages-simplified-properties-array and phonetic-languages-simplified-properties-array-old packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
           (hsPkgs."phonetic-languages-basis" or (errorHandler.buildDepError "phonetic-languages-basis"))
           (hsPkgs."phladiprelio-rhythmicity-shared" or (errorHandler.buildDepError "phladiprelio-rhythmicity-shared"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

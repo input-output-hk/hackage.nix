@@ -21,7 +21,7 @@
       synopsis = "Generalized bananas, lenses and barbed wire";
       description = "Generalized bananas, lenses and barbed wire";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

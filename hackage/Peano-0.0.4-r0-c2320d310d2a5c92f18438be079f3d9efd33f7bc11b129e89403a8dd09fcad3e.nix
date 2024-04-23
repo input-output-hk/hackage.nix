@@ -21,11 +21,11 @@
       synopsis = "simple Peano numbers";
       description = "Peano numbers without extra fluff, mainly for type level computations in promoted form";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

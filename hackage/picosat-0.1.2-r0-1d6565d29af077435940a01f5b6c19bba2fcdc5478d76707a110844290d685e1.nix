@@ -21,11 +21,11 @@
       synopsis = "Bindings to the PicoSAT solver";
       description = "`picosat` provides bindings for the fast PicoSAT solver library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

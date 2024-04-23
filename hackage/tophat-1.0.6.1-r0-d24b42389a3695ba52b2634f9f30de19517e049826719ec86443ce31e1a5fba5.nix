@@ -21,16 +21,16 @@
       synopsis = "Template-to-Haskell preprocessor, and templating language";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tophat" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tophat" or (errorHandler.buildDepError "tophat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "app-test-bin" = {
           depends = [
@@ -49,21 +49,21 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tophat" or (errorHandler.buildDepError "tophat"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tophat.components.exes.tophat or (pkgs.buildPackages.tophat or (errorHandler.buildToolDepError "tophat:tophat")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "app-test-src" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tophat" or (errorHandler.buildDepError "tophat"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "src-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tophat" or (errorHandler.buildDepError "tophat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

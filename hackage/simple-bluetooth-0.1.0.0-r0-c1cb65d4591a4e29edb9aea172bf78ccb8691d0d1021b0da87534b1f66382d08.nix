@@ -21,18 +21,18 @@
       synopsis = "Simple Bluetooth API for Windows and Linux (bluez)";
       description = "You must use 'Network.withSocketsDo' at the start of your program\nfor Windows compatibility.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         libs = if system.isWindows
           then [ (pkgs."ws2_32" or (errorHandler.sysDepError "ws2_32")) ]
           else [ (pkgs."bluetooth" or (errorHandler.sysDepError "bluetooth")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

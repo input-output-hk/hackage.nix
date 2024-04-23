@@ -21,7 +21,7 @@
       synopsis = "Hits a set of urls periodically to bust caches";
       description = "Buster is a simple tool to periodically make requests to a list of URLs. The\nmain use case for this is to bust caches.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "buster" = {
@@ -39,10 +39,10 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

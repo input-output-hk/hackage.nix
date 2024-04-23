@@ -6,8 +6,8 @@
         nix = import ../hackage/conkin-1.0.2-r0-3f0094e26e2152d0d6cd403b1afd1bef2d5ac2ae57bde7a6e64b332768757c21.nix;
         revNum = 0;
         sha256 = "3f0094e26e2152d0d6cd403b1afd1bef2d5ac2ae57bde7a6e64b332768757c21";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

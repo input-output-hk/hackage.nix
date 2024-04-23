@@ -21,7 +21,7 @@
       synopsis = "Enumerators for network sockets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ] ++ (if flags.network-includes-bytestring
+        ] ++ (if flags.network-includes-bytestring
           then [ (hsPkgs."network" or (errorHandler.buildDepError "network")) ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

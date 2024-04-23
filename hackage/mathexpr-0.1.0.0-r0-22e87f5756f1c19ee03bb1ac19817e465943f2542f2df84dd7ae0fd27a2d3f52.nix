@@ -21,14 +21,14 @@
       synopsis = "Parse and evaluate math expressions with variables and functions";
       description = "A simple tool to evaluate math expressions as strings with support for custom functions and operators";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

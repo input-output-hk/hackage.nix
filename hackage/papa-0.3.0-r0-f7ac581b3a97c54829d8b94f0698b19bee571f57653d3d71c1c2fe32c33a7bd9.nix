@@ -21,7 +21,7 @@
       synopsis = "Reasonable default import";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nReasonable default import";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."papa-x" or (errorHandler.buildDepError "papa-x"))
           (hsPkgs."papa-x-export" or (errorHandler.buildDepError "papa-x-export"))
           (hsPkgs."papa-x-implement" or (errorHandler.buildDepError "papa-x-implement"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

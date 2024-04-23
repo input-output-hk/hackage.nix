@@ -21,14 +21,14 @@
       synopsis = "Simple extensible sum";
       description = "Simple extensible sum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

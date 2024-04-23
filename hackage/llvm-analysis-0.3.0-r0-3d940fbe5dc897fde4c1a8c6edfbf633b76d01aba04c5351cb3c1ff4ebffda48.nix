@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for analyzing LLVM bitcode";
       description = "A Haskell library for analyzing LLVM bitcode.  To convert\nbitcode to the format used by this library, see the\nllvm-data-interop package.\n\nThis library attempts to provide some basic program analysis\ninfrastructure and aims to scale to large bitcode files.\n\nThere are some useful tools built on top of this library\navailable in the llvm-tools package.\n\nChanges since 0.2.0:\n* LLVM 3.3 support (contributed by Patrick Hulin)\n* Metadata format change.  Metadata type entries no longer have\na MetaDWFile.  Instead, file and directory names are stored\ndirectly in each MetaDW*Type.  This change lets us more easily\naccommodate changes in LLVM 3.3 (while supporting older versions).\n* Under LLVM 3.3, the 'metaCompileUnitIsMain' field of MetaDWCompileUnit\nis always False.  This disappeared in LLVM 3.3, but removing it would\nbe an unnecessary API break, I think.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."itanium-abi" or (errorHandler.buildDepError "itanium-abi"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "CallGraphTests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."llvm-analysis" or (errorHandler.buildDepError "llvm-analysis"))
             (hsPkgs."llvm-data-interop" or (errorHandler.buildDepError "llvm-data-interop"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "BlockReturnTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -80,9 +80,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."llvm-analysis" or (errorHandler.buildDepError "llvm-analysis"))
             (hsPkgs."llvm-data-interop" or (errorHandler.buildDepError "llvm-data-interop"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ReturnTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,9 +93,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."llvm-data-interop" or (errorHandler.buildDepError "llvm-data-interop"))
             (hsPkgs."llvm-analysis" or (errorHandler.buildDepError "llvm-analysis"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "AccessPathTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -104,9 +104,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."llvm-data-interop" or (errorHandler.buildDepError "llvm-data-interop"))
             (hsPkgs."llvm-analysis" or (errorHandler.buildDepError "llvm-analysis"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ClassHierarchyTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -117,9 +117,9 @@
             (hsPkgs."llvm-analysis" or (errorHandler.buildDepError "llvm-analysis"))
             (hsPkgs."llvm-data-interop" or (errorHandler.buildDepError "llvm-data-interop"))
             (hsPkgs."itanium-abi" or (errorHandler.buildDepError "itanium-abi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "AndersenTests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."llvm-data-interop" or (errorHandler.buildDepError "llvm-data-interop"))
             (hsPkgs."llvm-analysis" or (errorHandler.buildDepError "llvm-analysis"))
-            ] ++ (pkgs.lib).optional (flags.debugandersengraph) (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"));
+          ] ++ pkgs.lib.optional (flags.debugandersengraph) (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

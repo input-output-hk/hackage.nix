@@ -21,7 +21,7 @@
       synopsis = "JavaScript analysis tools";
       description = "WebBits is a collection of libraries for working with JavaScript.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

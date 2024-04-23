@@ -21,7 +21,7 @@
       synopsis = "Featherlight benchmark framework";
       description = "Featherlight framework (only one file!)\nfor performance measurement with API mimicking\n@criterion@ and @gauge@, featuring built-in comparison\nagainst baseline. Our benchmarks are just\nregular @tasty@ tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

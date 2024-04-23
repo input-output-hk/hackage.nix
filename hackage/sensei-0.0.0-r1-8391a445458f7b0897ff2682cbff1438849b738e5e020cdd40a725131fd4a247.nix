@@ -21,7 +21,7 @@
       synopsis = "Automatically run Hspec tests on file modifications";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sensei-web" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."sensei" or (errorHandler.buildDepError "sensei"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "seito" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."sensei" or (errorHandler.buildDepError "sensei"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sensei" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,10 +112,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."sensei" or (errorHandler.buildDepError "sensei"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -142,9 +142,9 @@
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

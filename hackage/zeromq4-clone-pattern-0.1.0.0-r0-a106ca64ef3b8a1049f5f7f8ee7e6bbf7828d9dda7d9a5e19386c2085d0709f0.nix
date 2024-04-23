@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the ZeroMQ clone pattern.";
       description = "Haskell implementation of the ZeroMQ Reliable Pub-Sub (Clone) pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zeromq4-clone-pattern-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."zeromq4-clone-pattern" or (errorHandler.buildDepError "zeromq4-clone-pattern"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "zeromq4-clone-pattern-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "API library for working with Git repositories";
       description = "@gitlib@ is a high-level, lazy and conduit-aware set of abstractions for\nprogramming with Git types.  Several different backends are available,\nincluding one for the libgit2 C library (<http://libgit2.github.com>) (see\n@gitlib-libgit2@).  The aim is both type-safety and convenience of use for\nHaskell users, combined with high performance and minimal memory footprint\nby taking advantage of Haskell's laziness and the conduit library's\ndeterministic resource cleanup.\n\nFor further information, as well as typical use cases, see \"Git.Tutorial\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-prop" or (errorHandler.buildDepError "doctest-prop"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

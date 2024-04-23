@@ -21,7 +21,7 @@
       synopsis = "Tiny web application framework for WAI.";
       description = "Twain is tiny web application framework for WAI. It provides routing, parameter parsing, and an either-like monad for composing responses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

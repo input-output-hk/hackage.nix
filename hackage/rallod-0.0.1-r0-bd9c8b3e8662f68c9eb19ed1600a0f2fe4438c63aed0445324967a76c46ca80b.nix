@@ -21,14 +21,14 @@
       synopsis = "'$' in reverse. ";
       description = "A Simple package that exports '==>', which operates in the opposite direction of '$'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

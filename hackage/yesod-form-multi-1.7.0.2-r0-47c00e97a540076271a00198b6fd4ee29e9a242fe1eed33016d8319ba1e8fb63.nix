@@ -21,7 +21,7 @@
       synopsis = "Multi-input form handling for Yesod Web Framework";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-form-multi>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ] ++ (pkgs.lib).optional (flags.network-uri) (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"));
+        ] ++ pkgs.lib.optional (flags.network-uri) (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

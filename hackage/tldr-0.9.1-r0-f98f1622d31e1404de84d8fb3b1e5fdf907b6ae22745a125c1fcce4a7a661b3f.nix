@@ -21,7 +21,7 @@
       synopsis = "Haskell tldr client";
       description = "Haskell tldr client with support for viewing tldr pages. Has offline\ncache for accessing pages. Visit https://tldr.sh for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,18 +38,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tldr" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tldr" or (errorHandler.buildDepError "tldr"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tldr-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tldr" or (errorHandler.buildDepError "tldr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

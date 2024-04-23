@@ -21,15 +21,15 @@
       synopsis = "Does a set of code words form a uniquely decodable code?";
       description = "A Haskell-based write-up of Mark Jason Dominus' perl UDCode package. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

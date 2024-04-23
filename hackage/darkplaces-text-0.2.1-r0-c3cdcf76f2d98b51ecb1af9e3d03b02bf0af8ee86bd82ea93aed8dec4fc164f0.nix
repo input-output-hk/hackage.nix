@@ -21,7 +21,7 @@
       synopsis = "Parser for darkplaces colorful text";
       description = "This package supports parsing and displaying darkplaces colorfull text.\nDarkplaces text may contains special color tags and unicode glyphs\nthat are unique for darkplaces fonts.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."darkplaces-text" or (errorHandler.buildDepError "darkplaces-text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

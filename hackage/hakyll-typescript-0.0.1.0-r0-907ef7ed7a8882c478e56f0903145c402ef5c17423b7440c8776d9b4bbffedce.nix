@@ -21,7 +21,7 @@
       synopsis = "Typescript and javascript hakyll compilers.";
       description = "Provides typescript to javascript hakyll compilers and a\njs minifying hakyll compiler. This is a simple wrapper\naround other common utilities found in hakyll projects,\nparticularly `hjsmin`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hakyll-typescript" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hakyll-typescript" or (errorHandler.buildDepError "hakyll-typescript"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

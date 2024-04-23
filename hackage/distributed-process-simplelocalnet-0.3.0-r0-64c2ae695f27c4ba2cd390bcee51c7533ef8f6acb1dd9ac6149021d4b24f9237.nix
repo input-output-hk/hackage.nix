@@ -14,7 +14,7 @@
       identifier = {
         name = "distributed-process-simplelocalnet";
         version = "0.3.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Well-Typed LLP";
       maintainer = "The Distributed Haskell team";
@@ -24,7 +24,7 @@
       synopsis = "Simple zero-configuration backend for Cloud Haskell";
       description = "Simple backend based on the TCP transport which offers node\ndiscovery based on UDP multicast. This is a zero-configuration\nbackend designed to get you going with Cloud Haskell quickly\nwithout imposing any structure on your application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
           (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "SimpleLocalNet-TestSuite" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."distributed-process-simplelocalnet" or (errorHandler.buildDepError "distributed-process-simplelocalnet"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An account authentication plugin for yesod with encrypted\ntoken transfer.";
       description = "This authentication plugin for Yesod uses a challenge-response\nauthentication mechanism, where the password is encrypted via HMAC-\nKeccak on the client side.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

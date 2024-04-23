@@ -21,7 +21,7 @@
       synopsis = "Tree-sitter grammar/parser for Ruby";
       description = "This package provides a parser for Ruby suitable for use with the tree-sitter package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
           (hsPkgs."tree-sitter-ruby".components.sublibs.tree-sitter-ruby-internal or (errorHandler.buildDepError "tree-sitter-ruby:tree-sitter-ruby-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "tree-sitter-ruby-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-            ];
+          ];
           libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

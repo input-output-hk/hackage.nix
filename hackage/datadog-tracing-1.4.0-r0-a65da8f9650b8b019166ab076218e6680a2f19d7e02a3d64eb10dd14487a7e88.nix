@@ -21,7 +21,7 @@
       synopsis = "Datadog tracing client and mock agent.";
       description = "An HTTP client to publish tracing to\na [datadog agent](https://docs.datadoghq.com/agent/?tab=agentv6).\n\nIn addition, an HTTP server is provided that can be used in place of\nthe official agent, that does not communicate with upstream datadog\nservers, allowing replay of all data from a `GET /dump` endpoint,\ncompatible with `jaeger-flamegraph`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "datadog-agent" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "manual-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,17 +75,17 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-            ] ++ (pkgs.lib).optionals (flags.manual) [
+          ] ++ pkgs.lib.optionals (flags.manual) [
             (hsPkgs."datadog-tracing" or (errorHandler.buildDepError "datadog-tracing"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
+          ];
           buildable = if flags.manual then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -100,12 +100,12 @@
             (hsPkgs."hspec-golden-aeson" or (errorHandler.buildDepError "hspec-golden-aeson"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

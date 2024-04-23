@@ -21,7 +21,7 @@
       synopsis = "Reading and writing Stockholm files (multiple sequence alignment, used by Rfam and Infernal).";
       description = "Parsing and pretty printing of files in Stockholm 1.0 format.  See:\n\n* <http://sonnhammer.sbc.su.se/Stockholm.html>\n\n* <ftp://ftp.sanger.ac.uk/pub/databases/Pfam/current_release/relnotes.txt>\n\n* <http://en.wikipedia.org/wiki/Stockholm_format>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
           (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

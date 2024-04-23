@@ -21,7 +21,7 @@
       synopsis = "Repackages standard type classes with the ConstraintKinds extension";
       description = "This module provides more flexible versions of common type classes that use the ConstraintKinds extension.  This allows us to make types that require constraints instances of the popular classes.  For example, we reimplement Functor and Foldable using the ContraintKinds style.  This allows us to manipulate lists and unboxed vectors using the same functions.\n\nThis library needs a lot of work before it can be considered ready for others to use.  Right now, only those instances needed by the HLearn library have been implemented in this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

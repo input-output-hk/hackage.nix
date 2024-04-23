@@ -21,7 +21,7 @@
       synopsis = "Manage Vim plugins with command";
       description = "The miv command is a cli tool to manage Vim plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "miv" = {
@@ -39,10 +39,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

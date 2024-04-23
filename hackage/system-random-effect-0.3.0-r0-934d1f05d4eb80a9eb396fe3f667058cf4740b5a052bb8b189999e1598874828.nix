@@ -21,7 +21,7 @@
       synopsis = "Random number generation for extensible effects.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
             (hsPkgs."system-random-effect" or (errorHandler.buildDepError "system-random-effect"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
             (hsPkgs."system-random-effect" or (errorHandler.buildDepError "system-random-effect"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

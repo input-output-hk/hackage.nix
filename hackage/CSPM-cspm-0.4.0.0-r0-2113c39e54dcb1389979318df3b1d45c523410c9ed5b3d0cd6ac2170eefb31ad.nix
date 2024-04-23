@@ -21,7 +21,7 @@
       synopsis = "cspm command line tool for analyzing CSPM specifications.";
       description = "cspm is a small command line tool for analyzing CSPM specifications.\nIt supports four modes of operation ('eval', 'trace', 'dot' and 'fdr')\nand can be called for example as:\n\n* 'cspm --help'      -> print a help message.\n\n* 'cspm eval '3+4''  -> evaluate an expression.\n\n* 'cspm trace spec.csp' -> interactively trace a process.\n\n* 'cspm dot spec.csp'   -> compute the labeled transition system of a process\nand dump it as dot-file.\n\n* 'cspm fdr spec.csp'   -> compute the LTS\nand dump it a fdr script suitable for refinement checking.\n\ncspm is not a full featured FDR replacement.\nThe main purpose of cspm is to show how the different CSPM-packages work together.\nLTS computation can demonstrate nice speed-ups on multi-core machines.\nTry for example 'cspm +RTS -N7 -RTS fdr spec.csp' to use 7 cores.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cspm" = {
@@ -34,9 +34,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

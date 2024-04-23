@@ -21,7 +21,7 @@
       synopsis = "Fpga bus core and serialization for RedPitaya         ";
       description = "Bus library for RedPitaya that enables data serialization\nbetween Fpga core and client running either on arm or remotely over network.\nType signature of Fpga core is used to define interface signature for client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
           (hsPkgs."Lambdaya" or (errorHandler.buildDepError "Lambdaya"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

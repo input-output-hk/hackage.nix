@@ -21,7 +21,7 @@
       synopsis = "A collection of tools which can be used to access taskwarrior from xmonad.";
       description = "TaskMonad is a collection of tools which can be used to access taskwarrior from xmonad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

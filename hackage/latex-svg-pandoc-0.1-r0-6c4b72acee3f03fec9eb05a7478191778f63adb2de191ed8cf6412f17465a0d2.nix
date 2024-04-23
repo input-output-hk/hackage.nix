@@ -21,7 +21,7 @@
       synopsis = "Render LaTeX formulae in pandoc documents to images with an actual LaTeX";
       description = "This library provides utility functions to convert LaTeX equations to images\nin Pandoc documents using the @latex-svg-image@ package.  It requires an\nactual LaTeX installation to work (@latex@, @dvisvgm@).\n\nAn executable is also provided which can be used as a Pandoc filter from the\ncommandline, which allows this technique to be used even for standalone Pandoc\njobs.\n\nThis is a fork of https://github.com/liamoc/latex-formulae";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."latex-svg-image" or (errorHandler.buildDepError "latex-svg-image"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "latex-svg-filter" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."latex-svg-image" or (errorHandler.buildDepError "latex-svg-image"))
             (hsPkgs."latex-svg-pandoc" or (errorHandler.buildDepError "latex-svg-pandoc"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

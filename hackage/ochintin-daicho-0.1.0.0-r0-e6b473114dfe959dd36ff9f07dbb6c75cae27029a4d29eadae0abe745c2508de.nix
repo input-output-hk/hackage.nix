@@ -21,33 +21,33 @@
       synopsis = "A module to manage payroll books for Japanese companies.";
       description = "A module to manage payroll books for Japanese companies. This enable to export data to tax withholding book, etc...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bookkeeping" or (errorHandler.buildDepError "bookkeeping"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ochintin-daicho-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ochintin-daicho" or (errorHandler.buildDepError "ochintin-daicho"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."ochintin-daicho" or (errorHandler.buildDepError "ochintin-daicho"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bindings to the Prosper marketplace API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-streams" or (errorHandler.buildDepError "http-streams"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

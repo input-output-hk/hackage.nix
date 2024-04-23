@@ -21,7 +21,7 @@
       synopsis = "A blog system";
       description = "blog system with tags";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."rss" or (errorHandler.buildDepError "rss"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hablog" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hablog" or (errorHandler.buildDepError "hablog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

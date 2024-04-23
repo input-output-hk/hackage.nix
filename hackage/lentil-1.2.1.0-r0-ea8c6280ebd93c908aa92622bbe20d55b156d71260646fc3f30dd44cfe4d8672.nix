@@ -21,7 +21,7 @@
       synopsis = "frugal issue tracker";
       description = "minumum effort, cohesive issue tracker based on\nubiquitous @TODO@s and @FIXME@s conventions.\nCheck homepage for manual, tutorial, examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lentil" = {
@@ -41,10 +41,10 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Signal processing and EEG data analysis";
       description = "Purely functional interface to signal processing based on hmatrix\n\nProvides data types for manipulating EEG data, including reading from BDF data format files\n\nThe vector type is Data.Vector.Storable from the 'vector' package.\n\nFeature requests, suggestions, and bug fixes welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,25 +35,25 @@
           (hsPkgs."hmatrix-gsl" or (errorHandler.buildDepError "hmatrix-gsl"))
           (hsPkgs."hmatrix-gsl-stats" or (errorHandler.buildDepError "hmatrix-gsl-stats"))
           (hsPkgs."hstatistics" or (errorHandler.buildDepError "hstatistics"))
-          ];
+        ];
         libs = ((((if flags.openblas
           then [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ]) ++ (pkgs.lib).optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ (pkgs.lib).optionals (system.isFreebsd) [
+          ]) ++ pkgs.lib.optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ pkgs.lib.optionals (system.isFreebsd) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
           (pkgs."gfortran" or (errorHandler.sysDepError "gfortran"))
           (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
-          ]) ++ (pkgs.lib).optionals (system.isWindows) [
+        ]) ++ pkgs.lib.optionals (system.isWindows) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
           (pkgs."gsl-0" or (errorHandler.sysDepError "gsl-0"))
-          ]) ++ (pkgs.lib).optional (flags.onlygsl) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
-        pkgconfig = (pkgs.lib).optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"));
+        ]) ++ pkgs.lib.optional (flags.onlygsl) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        pkgconfig = pkgs.lib.optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

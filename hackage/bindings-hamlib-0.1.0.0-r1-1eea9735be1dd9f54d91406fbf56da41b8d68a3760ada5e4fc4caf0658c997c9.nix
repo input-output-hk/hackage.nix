@@ -21,24 +21,24 @@
       synopsis = "Hamlib bindings for Haskell";
       description = "Haskell FFI bindings for hamlib";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."hamlib" or (errorHandler.sysDepError "hamlib")) ];
         buildable = true;
-        };
+      };
       exes = {
         "hamlib-hs-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bindings-hamlib" or (errorHandler.buildDepError "bindings-hamlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

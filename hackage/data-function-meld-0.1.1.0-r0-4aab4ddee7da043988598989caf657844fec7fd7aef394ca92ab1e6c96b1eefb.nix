@@ -21,11 +21,11 @@
       synopsis = "Map the arguments and return value of functions.";
       description = "Map the arguments and return value of functions.   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

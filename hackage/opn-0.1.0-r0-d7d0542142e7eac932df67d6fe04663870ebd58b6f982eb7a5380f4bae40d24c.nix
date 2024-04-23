@@ -21,7 +21,7 @@
       synopsis = "Open files or URLs using associated programs.";
       description = "The `opn` command lets you open files and URLs with\nassociated programs. It's intended to \"just work\" and to\nbe trivial to configure.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "opn" = {
@@ -35,9 +35,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

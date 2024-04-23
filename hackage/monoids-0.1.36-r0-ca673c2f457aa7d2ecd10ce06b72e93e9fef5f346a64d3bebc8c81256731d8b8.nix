@@ -20,7 +20,7 @@
       mtl = true;
       overloaded-strings = true;
       optimize = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "monoids"; version = "0.1.36"; };
@@ -33,7 +33,7 @@
       synopsis = "Monoids, specialized containers and a general map/reduce framework";
       description = "Monoids, specialized containers and a general map/reduce framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((((((([
@@ -41,8 +41,8 @@
           (hsPkgs."category-extras" or (errorHandler.buildDepError "category-extras"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.fingertree) (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))) ++ (pkgs.lib).optional (flags.parallel) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))) ++ (pkgs.lib).optional (flags.text) (hsPkgs."text" or (errorHandler.buildDepError "text"))) ++ (pkgs.lib).optional (flags.stm) (hsPkgs."stm" or (errorHandler.buildDepError "stm"))) ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))) ++ (pkgs.lib).optional (flags.reflection) (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))) ++ (pkgs.lib).optional (flags.parsec) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))) ++ (pkgs.lib).optional (flags.mtl) (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"));
+        ] ++ pkgs.lib.optional (flags.bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ pkgs.lib.optional (flags.fingertree) (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))) ++ pkgs.lib.optional (flags.parallel) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))) ++ pkgs.lib.optional (flags.text) (hsPkgs."text" or (errorHandler.buildDepError "text"))) ++ pkgs.lib.optional (flags.stm) (hsPkgs."stm" or (errorHandler.buildDepError "stm"))) ++ pkgs.lib.optional (flags.quickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))) ++ pkgs.lib.optional (flags.reflection) (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))) ++ pkgs.lib.optional (flags.parsec) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))) ++ pkgs.lib.optional (flags.mtl) (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

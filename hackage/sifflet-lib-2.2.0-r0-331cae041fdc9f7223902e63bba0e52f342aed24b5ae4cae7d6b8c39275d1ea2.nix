@@ -21,7 +21,7 @@
       synopsis = "Library of modules shared by sifflet and its\ntests and its exporters.";
       description = "Supporting modules for the Sifflet visual,\nfunctional programming language (Hackage 'sifflet' package).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,12 +37,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        libs = (pkgs.lib).optionals (!system.isWindows) [
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        libs = pkgs.lib.optionals (!system.isWindows) [
           (pkgs."gdk-x11-2.0" or (errorHandler.sysDepError "gdk-x11-2.0"))
           (pkgs."gtk-x11-2.0" or (errorHandler.sysDepError "gtk-x11-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

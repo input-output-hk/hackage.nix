@@ -21,7 +21,7 @@
       synopsis = "A polymorphic, POSIX, extended regex-engine.";
       description = "Provides a portable, POSIX, extended regex-engine, designed to process a list of /arbitrary/ objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

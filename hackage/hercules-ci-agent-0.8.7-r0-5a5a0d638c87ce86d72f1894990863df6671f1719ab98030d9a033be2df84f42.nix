@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-pkg-config-version-hook or (pkgs.buildPackages.cabal-pkg-config-version-hook or (errorHandler.setupDepError "cabal-pkg-config-version-hook")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -69,9 +69,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hercules-ci-agent" = {
           depends = [
@@ -134,9 +134,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hercules-ci-agent-worker" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -180,20 +180,20 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           libs = [
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
             (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
             (pkgconfPkgs."nix-expr" or (errorHandler.pkgConfDepError "nix-expr"))
             (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
             (pkgconfPkgs."bdw-gc" or (errorHandler.pkgConfDepError "bdw-gc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hercules-test" = {
           depends = [
@@ -224,9 +224,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

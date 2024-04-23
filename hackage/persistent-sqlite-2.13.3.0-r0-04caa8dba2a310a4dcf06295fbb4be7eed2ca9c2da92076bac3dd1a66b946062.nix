@@ -18,7 +18,7 @@
       json1 = true;
       use-stat3 = false;
       use-stat4 = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "persistent-sqlite"; version = "2.13.3.0"; };
@@ -31,7 +31,7 @@
       synopsis = "Backend for the persistent library using sqlite3.";
       description = "This package includes a thin sqlite3 wrapper based on the direct-sqlite package, as well as the entire C library, so there are no system dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,21 +51,21 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        libs = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (!flags.use-pkgconfig) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"))) ++ (pkgs.lib).optional (!system.isWindows) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
-        pkgconfig = (pkgs.lib).optionals (flags.systemlib) ((pkgs.lib).optional (flags.use-pkgconfig) (pkgconfPkgs."sqlite3" or (errorHandler.pkgConfDepError "sqlite3")));
+        ];
+        libs = pkgs.lib.optionals (flags.systemlib) (pkgs.lib.optional (!flags.use-pkgconfig) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"))) ++ pkgs.lib.optional (!system.isWindows) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+        pkgconfig = pkgs.lib.optionals (flags.systemlib) (pkgs.lib.optional (flags.use-pkgconfig) (pkgconfPkgs."sqlite3" or (errorHandler.pkgConfDepError "sqlite3")));
         buildable = true;
-        };
+      };
       exes = {
         "sanity" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ];
+          ];
           buildable = if flags.build-sanity-exe then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

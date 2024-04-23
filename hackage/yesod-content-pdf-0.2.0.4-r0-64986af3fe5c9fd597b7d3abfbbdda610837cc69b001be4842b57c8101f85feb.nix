@@ -21,7 +21,7 @@
       synopsis = "PDF Content Type for Yesod";
       description = "Provides a PDF content type for integrating wkhtmltopdf with Yesod apps. Please see README.md for further details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yesod-content-pdf-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

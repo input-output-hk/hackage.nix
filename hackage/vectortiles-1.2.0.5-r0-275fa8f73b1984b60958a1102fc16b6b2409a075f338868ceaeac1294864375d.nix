@@ -21,7 +21,7 @@
       synopsis = "GIS Vector Tiles, as defined by Mapbox.";
       description = "GIS Vector Tiles, as defined by Mapbox.\n\nThis library implements version 2.1 of the official Mapbox spec, as defined\nhere: <https://github.com/mapbox/vector-tile-spec/tree/master/2.1>\n\nNote that currently this library ignores top-level protobuf extensions,\n/Value/ extensions, and /UNKNOWN/ geometries.\n\nThe order in which to explore the modules of this library is as follows:\n\n1. \"Geography.VectorTile.VectorTile\" (high-level types)\n\n2. \"Geography.VectorTile.Geometry\" (typical GIS geometry types)\n\n3. \"Geography.VectorTile.Protobuf\" (mid-level representation of parsed protobuf data with conversion functions)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vectortiles-test" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."vectortiles" or (errorHandler.buildDepError "vectortiles"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "vectortiles-bench" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."vectortiles" or (errorHandler.buildDepError "vectortiles"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

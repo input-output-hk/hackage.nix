@@ -21,7 +21,7 @@
       synopsis = "Grammatical Framework";
       description = "GF, Grammatical Framework, is a programming language for multilingual grammar applications";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gf" = {
           depends = ([
@@ -52,22 +52,22 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ] ++ (pkgs.lib).optionals (flags.server) [
+          ] ++ pkgs.lib.optionals (flags.server) [
             (hsPkgs."httpd-shed" or (errorHandler.buildDepError "httpd-shed"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ]) ++ (if system.isWindows
+          ]) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

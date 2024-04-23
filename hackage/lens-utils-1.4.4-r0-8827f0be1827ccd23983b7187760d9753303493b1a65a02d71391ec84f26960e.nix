@@ -21,7 +21,7 @@
       synopsis = "Collection of missing lens utilities.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."monoid" or (errorHandler.buildDepError "monoid"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

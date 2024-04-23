@@ -21,7 +21,7 @@
       synopsis = "DataDog-flavored StatsD client.";
       description = "StatsD client for UDP protocol.\n\n> import Network.StatsD\n>\n> main = do\n>     sd <- connectStatsD \"localhost\" \"8125\"\n>     sendStatsDIO sd (counter_ \"launches\")\n>     sendStatsDIO sd (event \"Datadog extensions\" \"DD Agent provides a statsd protocol extension for events.\")";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

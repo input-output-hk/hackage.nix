@@ -21,7 +21,7 @@
       synopsis = "Core module for Gore&Ash engine that do something.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gore-and-ash-lambdacube-example01" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "gore-and-ash-lambdacube-example02" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "gore-and-ash-lambdacube-example03" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -101,9 +101,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "gore-and-ash-lambdacube-example04" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -123,9 +123,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

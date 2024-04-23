@@ -21,11 +21,11 @@
       synopsis = "This package has been absorbed into profunctor-extras.";
       description = "This package has been absorbed into profunctor-extras.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

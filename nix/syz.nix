@@ -6,8 +6,8 @@
         nix = import ../hackage/syz-0.2.0.0-r0-7307acb8f6ae7720e7e235c974281ecee912703c1394ebcac19caf83d70bb492.nix;
         revNum = 0;
         sha256 = "7307acb8f6ae7720e7e235c974281ecee912703c1394ebcac19caf83d70bb492";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "yesod recaptcha2";
       description = "recaptcha2 for yesod-form";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."classy-prelude-yesod" or (errorHandler.buildDepError "classy-prelude-yesod"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

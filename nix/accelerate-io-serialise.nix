@@ -6,8 +6,8 @@
         nix = import ../hackage/accelerate-io-serialise-0.1.0.0-r0-1d4d425be23b6c1542c4dd5cd22490fee41dc845448d8b548faa2f837610b551.nix;
         revNum = 0;
         sha256 = "1d4d425be23b6c1542c4dd5cd22490fee41dc845448d8b548faa2f837610b551";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

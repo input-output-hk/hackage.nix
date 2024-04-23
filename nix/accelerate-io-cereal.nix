@@ -6,8 +6,8 @@
         nix = import ../hackage/accelerate-io-cereal-0.1.0.0-r0-dd485a636c9b6dcd902062ab41a06217b9688c5d79a95dc20999b1fa95c2d29a.nix;
         revNum = 0;
         sha256 = "dd485a636c9b6dcd902062ab41a06217b9688c5d79a95dc20999b1fa95c2d29a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,18 +21,18 @@
       synopsis = "A binding to libffi";
       description = "A binding to libffi, allowing C functions of types only known at runtime to be called from Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."ffi" or (errorHandler.sysDepError "ffi")) ];
         pkgconfig = [
           (pkgconfPkgs."libffi" or (errorHandler.pkgConfDepError "libffi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

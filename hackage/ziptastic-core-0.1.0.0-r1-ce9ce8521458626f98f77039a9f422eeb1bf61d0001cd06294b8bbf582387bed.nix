@@ -21,7 +21,7 @@
       synopsis = "Core Servant specification for the Ziptastic API (https://www.getziptastic.com) for doing forward and reverse geocoding.";
       description = "This package provides a type-safe Servant specification for the Ziptastic\n(https://www.getziptastic.com) API for doing forward and reverse geocoding\nvia zip/postal code, latitude, and longitude.\n\nIf you want to use the Ziptastic API in your application, try the ziptastic-client package.\n\nThis package is maintained by Grafted-In (https://www.graftedin.io/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-core" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
             (hsPkgs."ziptastic-core" or (errorHandler.buildDepError "ziptastic-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

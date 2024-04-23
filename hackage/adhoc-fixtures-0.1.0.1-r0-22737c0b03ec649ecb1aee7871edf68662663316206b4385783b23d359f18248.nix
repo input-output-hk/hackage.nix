@@ -21,16 +21,16 @@
       synopsis = "Manage fine grained fixtures";
       description = "Helps improves tests crafting per-test fixtures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."yarl" or (errorHandler.buildDepError "yarl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "adhoc-fixtures-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."yarl" or (errorHandler.buildDepError "yarl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

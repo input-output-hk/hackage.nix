@@ -21,7 +21,7 @@
       synopsis = "High performance web server on WAI/warp";
       description = "High performance web server to handle static\nfiles and CGI on WAI/warp.\nReverse proxy functionality is also provided\nto connect web applications behind.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-app-file-cgi" or (errorHandler.buildDepError "wai-app-file-cgi"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mighty" = {
           depends = ([
@@ -72,15 +72,15 @@
             (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai-http2-extra" or (errorHandler.buildDepError "wai-http2-extra"))
-            ] ++ (pkgs.lib).optionals (flags.tls) [
+          ] ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."tls-session-manager" or (errorHandler.buildDepError "tls-session-manager"))
-            ]) ++ (pkgs.lib).optionals (flags.tls) [
+          ]) ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mighty-mkindex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,18 +88,18 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mightyctl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -107,12 +107,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ] ++ (pkgs.lib).optionals (flags.tls) [
+          ] ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

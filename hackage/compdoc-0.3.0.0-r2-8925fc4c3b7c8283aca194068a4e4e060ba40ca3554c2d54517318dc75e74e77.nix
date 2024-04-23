@@ -21,7 +21,7 @@
       synopsis = "Parse a Pandoc to a composite value.";
       description = "Provides a functionality for transforming a Pandoc into a vinyl/composite record.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

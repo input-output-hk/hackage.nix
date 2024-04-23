@@ -21,15 +21,15 @@
       synopsis = "Support for SmallCheck tests in test-framework";
       description = "Support for SmallCheck tests in test-framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

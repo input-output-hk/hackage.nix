@@ -21,7 +21,7 @@
       synopsis = "Sampling random points on general manifolds.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."linearmap-category" or (errorHandler.buildDepError "linearmap-category"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

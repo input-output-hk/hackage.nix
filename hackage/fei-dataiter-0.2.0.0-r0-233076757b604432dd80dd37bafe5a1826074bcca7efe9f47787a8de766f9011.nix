@@ -21,7 +21,7 @@
       synopsis = "mxnet dataiters";
       description = "Providing the mxnet dataiters as Stream or Conduit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
           (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
           (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mxnet-dataiter-gen" = {
           depends = [
@@ -47,11 +47,11 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
-            ];
+          ];
           libs = [ (pkgs."mxnet" or (errorHandler.sysDepError "mxnet")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "streaming" = {
           depends = [
@@ -60,18 +60,18 @@
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
             (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "conduit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
             (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Reasonable default import";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nReasonable default import";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."papa-x" or (errorHandler.buildDepError "papa-x"))
           (hsPkgs."papa-x-export" or (errorHandler.buildDepError "papa-x-export"))
           (hsPkgs."papa-x-implement" or (errorHandler.buildDepError "papa-x-implement"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

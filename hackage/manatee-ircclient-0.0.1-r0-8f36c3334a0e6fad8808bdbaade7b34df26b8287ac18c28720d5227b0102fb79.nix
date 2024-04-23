@@ -21,7 +21,7 @@
       synopsis = "IRC client extension for Manatee.";
       description = "manatee-ircclient is IRC client extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,12 +51,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."MorseCode" or (errorHandler.buildDepError "MorseCode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "manatee-irc-daemon" = { buildable = true; };
         "manatee-ircclient" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

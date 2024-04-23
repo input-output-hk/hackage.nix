@@ -6,8 +6,8 @@
         nix = import ../hackage/coerce-role-0.1.0.0-r0-a729b9f6f23b104ca550f842d574aed786ac97a18662fe2e68575d6a1fe9820d.nix;
         revNum = 0;
         sha256 = "a729b9f6f23b104ca550f842d574aed786ac97a18662fe2e68575d6a1fe9820d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

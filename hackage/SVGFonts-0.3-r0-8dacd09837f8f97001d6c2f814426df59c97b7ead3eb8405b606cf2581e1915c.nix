@@ -21,7 +21,7 @@
       synopsis = "Fonts from the SVG-Font format";
       description = "Parse SVG-Font files and generate outlines or textures or texture files from text strings.\nThis library uses algorithms similar to Freetype and therefore needs no binding.\nUnfortunately some speed issues (xml, rasterization) and bugs (triangulation,rasterization) make an actual usage problematic, but they will be solved.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tga" or (errorHandler.buildDepError "tga"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Fonts" = { buildable = true; }; };
       };
-    }
+      exes = { "Fonts" = { buildable = true; }; };
+    };
+  }

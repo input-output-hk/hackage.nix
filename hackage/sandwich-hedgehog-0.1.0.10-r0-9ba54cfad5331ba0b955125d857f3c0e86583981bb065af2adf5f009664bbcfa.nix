@@ -21,7 +21,7 @@
       synopsis = "Sandwich integration with Hedgehog";
       description = "Please see the <https://codedownio.github.io/sandwich/docs/extensions/sandwich-hedgehog documentation>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."wl-pprint-annotated" or (errorHandler.buildDepError "wl-pprint-annotated"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sandwich-hedgehog-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."wl-pprint-annotated" or (errorHandler.buildDepError "wl-pprint-annotated"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

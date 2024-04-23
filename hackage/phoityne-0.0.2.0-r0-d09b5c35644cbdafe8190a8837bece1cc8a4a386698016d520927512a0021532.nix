@@ -21,7 +21,7 @@
       synopsis = "ghci debug viewer with simple editor.";
       description = "Phoityne is a ghci debug viewer with simple editor.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phoityne" = {
@@ -47,9 +47,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

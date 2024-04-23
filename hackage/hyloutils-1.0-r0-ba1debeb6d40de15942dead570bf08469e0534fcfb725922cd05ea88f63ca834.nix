@@ -21,7 +21,7 @@
       synopsis = "Very small programs for hybrid logics";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mcheck" = {
@@ -32,18 +32,18 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewriter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

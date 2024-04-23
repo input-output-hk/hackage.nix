@@ -21,7 +21,7 @@
       synopsis = "Servant support for lucid";
       description = "Servant support for lucid.\n\n'HTML' content type which will use `ToHtml` class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

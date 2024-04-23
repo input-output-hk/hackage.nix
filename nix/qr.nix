@@ -6,8 +6,8 @@
         nix = import ../hackage/qr-0.2.0.0-r0-2c5f1c81777f9eb50a5a13172abf151ec05f4a0e20d284c1e5b6988dde4c6c8d.nix;
         revNum = 0;
         sha256 = "2c5f1c81777f9eb50a5a13172abf151ec05f4a0e20d284c1e5b6988dde4c6c8d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

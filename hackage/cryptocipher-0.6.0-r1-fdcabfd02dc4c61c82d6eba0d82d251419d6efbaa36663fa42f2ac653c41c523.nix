@@ -21,7 +21,7 @@
       synopsis = "Symmetrical block and stream ciphers.";
       description = "Symmetrical block and stream ciphers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."cipher-des" or (errorHandler.buildDepError "cipher-des"))
           (hsPkgs."cipher-blowfish" or (errorHandler.buildDepError "cipher-blowfish"))
           (hsPkgs."cipher-camellia" or (errorHandler.buildDepError "cipher-camellia"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

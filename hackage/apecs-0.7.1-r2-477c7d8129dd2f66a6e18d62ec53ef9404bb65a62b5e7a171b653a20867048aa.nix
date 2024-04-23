@@ -21,7 +21,7 @@
       synopsis = "Fast ECS framework for game programming";
       description = "Entity-Component-System frameworks provide a game programming paradigm that tackles many of the shortcomings of a more OO-oriented approach.\napecs is a type-driven ECS, that leverages strong typing for an expressive DSL that turns into fast game code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "apecs-test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "apecs-bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."apecs" or (errorHandler.buildDepError "apecs"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

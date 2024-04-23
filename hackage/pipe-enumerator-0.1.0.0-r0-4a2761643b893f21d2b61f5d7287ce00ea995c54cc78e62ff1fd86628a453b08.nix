@@ -21,7 +21,7 @@
       synopsis = "Pipes/iteratees bridge library";
       description = "This library provides a bridge between pipe-based and iteratee-based programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

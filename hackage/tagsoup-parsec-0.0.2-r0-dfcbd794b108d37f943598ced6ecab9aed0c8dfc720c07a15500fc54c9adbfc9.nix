@@ -21,15 +21,15 @@
       synopsis = "Tokenizes Tag, so [ Tag ] can be used as parser input.";
       description = "Tokenizes Tag, so [ Tag ] can be used as parser input.  Provides\nbasic combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

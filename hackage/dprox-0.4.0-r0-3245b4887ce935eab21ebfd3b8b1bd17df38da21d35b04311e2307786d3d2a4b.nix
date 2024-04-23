@@ -21,7 +21,7 @@
       synopsis = "a lightweight DNS proxy server, compatible with dnsmasq-china-list";
       description = "Please see the README on GitHub at <https://github.com/bjin/dprox#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dprox" = {
@@ -41,10 +41,10 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dprox-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

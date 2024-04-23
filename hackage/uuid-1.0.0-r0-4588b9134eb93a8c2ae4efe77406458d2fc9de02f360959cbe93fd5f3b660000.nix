@@ -21,7 +21,7 @@
       synopsis = "For creating, comparing, parsing and printing Universally Unique Identifiers";
       description = "This library is useful for creating, comparing, parsing and\nprinting Universally Unique Identifiers.\nSee <http://en.wikipedia.org/wiki/UUID> for the general idea.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
           (hsPkgs."maccatcher" or (errorHandler.buildDepError "maccatcher"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

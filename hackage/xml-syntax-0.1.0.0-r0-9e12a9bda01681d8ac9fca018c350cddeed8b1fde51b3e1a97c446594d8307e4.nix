@@ -21,7 +21,7 @@
       synopsis = "Parse XML from bytes";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."xml-syntax" or (errorHandler.buildDepError "xml-syntax"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Time zones database and library";
       description = "This package has two main goals:\n\n* To distribute the standard time zone database in a cabal package,\nso that it can be used in Haskell programs uniformly on all\nplatforms.\n\n* To provide a library that can read time zone info files\n(aka. Olson files), and does time zone conversions in a /pure/ and\n/efficient/ way.\n\nThe current version ships the @2014b@ version of the time zone\ndatabase. See: <http://www.iana.org/time-zones> for more info.\n\nThe package is currently in a draft phase, I'm still experimenting\nwith different ideas wrt. scope\\/API\\/implementation\\/etc. All comments\nare welcome!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench_c" = {
           depends = [
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
@@ -72,9 +72,9 @@
             (hsPkgs."bindings-posix" or (errorHandler.buildDepError "bindings-posix"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench_greg" = {
           depends = [
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
@@ -83,9 +83,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

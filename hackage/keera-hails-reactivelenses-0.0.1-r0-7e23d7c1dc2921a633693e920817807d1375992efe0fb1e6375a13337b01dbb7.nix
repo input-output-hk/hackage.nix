@@ -21,15 +21,15 @@
       synopsis = "Reactive Haskell on Rails - Lenses applied to Reactive Values";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

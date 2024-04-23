@@ -21,7 +21,7 @@
       synopsis = "A port of @Data.Binary@";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nA port of @Data.Binary@ that tightens up data types and parameterises error messages";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."papa" or (errorHandler.buildDepError "papa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tickle" or (errorHandler.buildDepError "tickle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

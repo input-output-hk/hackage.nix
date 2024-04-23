@@ -21,21 +21,21 @@
       synopsis = "An implementation of Mike Cowlishaw's\nGeneral Decimal Arithmetic Specification";
       description = "This package provides an implementation of the General\nDecimal Arithmetic Specification by Mike Cowlishaw.\n\nFor details, see: http://speleotrove.com/decimal/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "decimal-arithmetic-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."decimal-arithmetic" or (errorHandler.buildDepError "decimal-arithmetic"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

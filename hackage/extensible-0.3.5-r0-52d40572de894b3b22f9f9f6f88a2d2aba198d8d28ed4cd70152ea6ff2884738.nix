@@ -21,7 +21,7 @@
       synopsis = "Extensible, efficient, lens-friendly data types";
       description = "Combinators and types for extensible product and sum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

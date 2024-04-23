@@ -21,7 +21,7 @@
       synopsis = "Ripple payment system library";
       description = "Interact with Ripple servers, sign transactions, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
           (hsPkgs."ecdsa" or (errorHandler.buildDepError "ecdsa"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

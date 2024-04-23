@@ -21,7 +21,7 @@
       synopsis = "Bindings to the WebDriver API";
       description = "Please see the README on Github at <https://github.com/nbloomf/webdriver-w3c#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "webdriver-w3c-intro" = {
           depends = [
@@ -64,27 +64,27 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wd-tasty-demo" = {
           depends = [
             (hsPkgs."webdriver-w3c" or (errorHandler.buildDepError "webdriver-w3c"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wd-parallel-stress-test" = {
           depends = [
             (hsPkgs."webdriver-w3c" or (errorHandler.buildDepError "webdriver-w3c"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "webdriver-w3c-test" = {
           depends = [
@@ -116,9 +116,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

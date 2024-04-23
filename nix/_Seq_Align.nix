@@ -6,8 +6,8 @@
         nix = import ../hackage/SeqAlign-0.1.0.0-r0-bfab6bdbb86b73d06e197bf553544acdba392faf1629775fd43fa8e777921d3e.nix;
         revNum = 0;
         sha256 = "bfab6bdbb86b73d06e197bf553544acdba392faf1629775fd43fa8e777921d3e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A simple static file server, for when apache is overkill";
       description = "A simple static file server, for when apache is overkill";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simpleserver" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

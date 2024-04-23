@@ -21,11 +21,11 @@
       synopsis = "A simple, efficient supply of integers using atomic fetch-and-add.";
       description = "This package provides a simple, efficient supply of integers using atomic fetch-and-add.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

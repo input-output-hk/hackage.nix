@@ -21,7 +21,7 @@
       synopsis = "Katip scribe to send logs to Kafka";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hw-kafka-client" or (errorHandler.buildDepError "hw-kafka-client"))
           (hsPkgs."katip" or (errorHandler.buildDepError "katip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

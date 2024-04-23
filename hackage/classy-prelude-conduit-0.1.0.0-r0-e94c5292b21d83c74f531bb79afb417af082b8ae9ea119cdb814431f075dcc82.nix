@@ -21,7 +21,7 @@
       synopsis = "conduit instances for classy-prelude";
       description = "conduit instances for classy-prelude";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

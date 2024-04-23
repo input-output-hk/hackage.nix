@@ -21,7 +21,7 @@
       synopsis = "Make password-based security schemes more secure.";
       description = "Implementation of Password-Based Key Derivation\nFunction, aka pbkdf2, from RSA labs.  I'll deprecate\nthis if it gets folded into an already-existing\ncrypto package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

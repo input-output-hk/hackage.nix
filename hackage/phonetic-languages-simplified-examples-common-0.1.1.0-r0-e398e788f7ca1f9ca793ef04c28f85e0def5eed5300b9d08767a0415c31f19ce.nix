@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-examples-common";
         version = "0.1.1.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2020-2021 Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Some commonly used by phonetic-languages-simplified* series functions.";
       description = "Are intended to be used by the phonetic-languages-simplified-lists-examples and phonetic-languages-simplified-examples-array packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
           (hsPkgs."phonetic-languages-ukrainian-array" or (errorHandler.buildDepError "phonetic-languages-ukrainian-array"))
           (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/Yampa-core-0.2.0-r0-05077125ac416c90d1791d3cb68841ea82a91980bb45234ab152ae5b74b413ea.nix;
         revNum = 0;
         sha256 = "05077125ac416c90d1791d3cb68841ea82a91980bb45234ab152ae5b74b413ea";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       internalchecks = false;
       bench = false;
       properties = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "vector-algorithms"; version = "0.6.0.2"; };
@@ -27,7 +27,7 @@
       synopsis = "Efficient algorithms for vector arrays";
       description = "Efficient algorithms for vector arrays";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vector-algorithms-bench" = {
           depends = [
@@ -46,22 +46,22 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.bench then false else true;
-          };
         };
+      };
       tests = {
         "properties" = {
-          depends = (pkgs.lib).optionals (!(!flags.properties)) [
+          depends = pkgs.lib.optionals (!!flags.properties) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = if !flags.properties then false else true;
-          };
         };
       };
-    }
+    };
+  }

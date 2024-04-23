@@ -21,15 +21,15 @@
       synopsis = "Implementation of the Borda count election method.";
       description = "Implementation of the Borda count election method, optionally with\ndifferent weights for different participants.\n\nSee <https://en.wikipedia.org/wiki/Borda_count>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bordacount-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."bordacount" or (errorHandler.buildDepError "bordacount"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

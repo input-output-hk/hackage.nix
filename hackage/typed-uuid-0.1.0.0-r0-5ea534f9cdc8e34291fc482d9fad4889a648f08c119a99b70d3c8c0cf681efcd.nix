@@ -21,7 +21,7 @@
       synopsis = "Phantom-Typed version of UUID";
       description = "Please see the README on Github at <https://github.com/NorfairKing/typed-uuid#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-uuid" or (errorHandler.buildDepError "validity-uuid"))
           (hsPkgs."yamlparse-applicative" or (errorHandler.buildDepError "yamlparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

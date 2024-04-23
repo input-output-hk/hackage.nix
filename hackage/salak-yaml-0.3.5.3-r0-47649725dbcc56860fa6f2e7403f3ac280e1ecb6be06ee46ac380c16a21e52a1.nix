@@ -21,7 +21,7 @@
       synopsis = "Configuration Loader for yaml";
       description = "Yaml support for [salak](https://hackage.haskell.org/package/salak).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."libyaml" or (errorHandler.buildDepError "libyaml"))
           (hsPkgs."salak" or (errorHandler.buildDepError "salak"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "salak-yaml-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."salak" or (errorHandler.buildDepError "salak"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "salak-yaml-bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."libyaml" or (errorHandler.buildDepError "libyaml"))
             (hsPkgs."salak" or (errorHandler.buildDepError "salak"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

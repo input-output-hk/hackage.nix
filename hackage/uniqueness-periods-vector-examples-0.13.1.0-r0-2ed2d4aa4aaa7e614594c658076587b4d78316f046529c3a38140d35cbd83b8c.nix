@@ -14,7 +14,7 @@
       identifier = {
         name = "uniqueness-periods-vector-examples";
         version = "0.13.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Usage examples for the uniqueness-periods-vector series of packages";
       description = "Usage examples for the uniqueness-periods-vector series of packages. Several executables are planned to demonstrate the libraries work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."uniqueness-periods-vector-properties" or (errorHandler.buildDepError "uniqueness-periods-vector-properties"))
           (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariants" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."uniqueness-periods-vector-filters" or (errorHandler.buildDepError "uniqueness-periods-vector-filters"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."uniqueness-periods-vector-filters" or (errorHandler.buildDepError "uniqueness-periods-vector-filters"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propertiesText" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."uniqueness-periods-vector-stats" or (errorHandler.buildDepError "uniqueness-periods-vector-stats"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "distributionText" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
             (hsPkgs."uniqueness-periods-vector-stats" or (errorHandler.buildDepError "uniqueness-periods-vector-stats"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

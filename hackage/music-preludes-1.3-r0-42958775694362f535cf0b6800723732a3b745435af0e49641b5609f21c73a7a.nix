@@ -21,7 +21,7 @@
       synopsis = "Some useful preludes for the Music Suite.";
       description = "Some useful preludes for the Music Suite.\nThis library is part of the Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics" or (errorHandler.buildDepError "music-dynamics"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "complex" = { buildable = true; };
         "duo" = { buildable = true; };
@@ -48,7 +48,7 @@
         "music2ly" = { buildable = true; };
         "music2midi" = { buildable = true; };
         "music2musicxml" = { buildable = true; };
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."test-framework-quickcheck" or (errorHandler.buildDepError "test-framework-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

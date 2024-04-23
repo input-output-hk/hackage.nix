@@ -21,7 +21,7 @@
       synopsis = "Binding to the telegraph API";
       description = "Binding to the telegraph API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."optics-th" or (errorHandler.buildDepError "optics-th"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "telegraph-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."in-other-words" or (errorHandler.buildDepError "in-other-words"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."telegraph" or (errorHandler.buildDepError "telegraph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

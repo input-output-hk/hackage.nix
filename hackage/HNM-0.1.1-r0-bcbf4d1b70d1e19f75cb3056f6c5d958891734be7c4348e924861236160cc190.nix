@@ -21,7 +21,7 @@
       synopsis = "Happy Network Manager";
       description = "A quick and dirty applet to help you connect\nto wireless networks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HNM" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

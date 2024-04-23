@@ -21,7 +21,7 @@
       synopsis = "Generalization of io-streams to MonadUnliftIO";
       description = "Generalization of io-streams to MonadUnliftIO.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

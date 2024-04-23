@@ -14,7 +14,7 @@
       identifier = {
         name = "hack2-handler-happstack-server";
         version = "2011.6.10";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Hack2 Happstack server handler";
       description = "Hack2 Happstack server handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

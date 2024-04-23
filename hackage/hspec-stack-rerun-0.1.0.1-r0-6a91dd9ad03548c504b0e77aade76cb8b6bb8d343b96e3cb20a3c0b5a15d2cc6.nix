@@ -21,7 +21,7 @@
       synopsis = "Simple project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

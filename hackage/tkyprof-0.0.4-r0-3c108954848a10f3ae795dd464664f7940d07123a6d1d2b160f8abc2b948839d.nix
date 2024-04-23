@@ -21,7 +21,7 @@
       synopsis = "A visualizer for GHC Profiling Reports";
       description = "A visualizer for GHC Profiling Reports";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = if flags.devel then true else false; };
       exes = {
@@ -51,18 +51,18 @@
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-json" or (errorHandler.buildDepError "yesod-json"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-            ];
+          ];
           buildable = if flags.devel then false else true;
-          };
+        };
         "prof2json" = {
           depends = [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

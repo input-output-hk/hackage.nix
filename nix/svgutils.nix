@@ -6,8 +6,8 @@
         nix = import ../hackage/svgutils-0.1-r0-52b2516005d74014e371fbfd9771d759de455afd9873ed492cc5ff3a0060c610.nix;
         revNum = 0;
         sha256 = "52b2516005d74014e371fbfd9771d759de455afd9873ed492cc5ff3a0060c610";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

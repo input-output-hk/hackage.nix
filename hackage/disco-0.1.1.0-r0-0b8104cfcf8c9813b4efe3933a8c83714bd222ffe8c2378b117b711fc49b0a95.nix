@@ -21,7 +21,7 @@
       synopsis = "Functional programming language for teaching discrete math.";
       description = "Disco is a simple functional programming language for use in\nteaching discrete math.  Its syntax is designed to be close\nto standard mathematical practice.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."oeis" or (errorHandler.buildDepError "oeis"))
           (hsPkgs."algebraic-graphs" or (errorHandler.buildDepError "algebraic-graphs"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "disco" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."oeis" or (errorHandler.buildDepError "oeis"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "disco-tests" = {
           depends = [
@@ -87,18 +87,18 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."disco" or (errorHandler.buildDepError "disco"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "disco-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

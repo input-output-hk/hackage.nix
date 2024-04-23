@@ -21,11 +21,11 @@
       synopsis = "Distinguish between synchronous and asynchronous exceptions";
       description = "This packages serves two purposes:\n\n* provide compatibility with older `base` versions (prior to 4.7) that\nlack the `SomeAsyncException` type\n\n* define convenient functions for catching only synchronous exceptions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

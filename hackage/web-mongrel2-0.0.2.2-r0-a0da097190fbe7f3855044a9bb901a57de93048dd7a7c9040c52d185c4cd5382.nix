@@ -21,7 +21,7 @@
       synopsis = "Bindings for the Mongrel2 web server.";
       description = "A simple handler API for Mongrel2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."zeromq-haskell" or (errorHandler.buildDepError "zeromq-haskell"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

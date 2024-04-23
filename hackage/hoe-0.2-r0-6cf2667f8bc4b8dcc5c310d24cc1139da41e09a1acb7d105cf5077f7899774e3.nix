@@ -21,7 +21,7 @@
       synopsis = "Haskell One-liner Evaluator";
       description = "@hoe@ is a Haskell one-liner evaluator.\nIt can evaluate a script in various ways depending on it's type.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoe" = {
@@ -30,9 +30,9 @@
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

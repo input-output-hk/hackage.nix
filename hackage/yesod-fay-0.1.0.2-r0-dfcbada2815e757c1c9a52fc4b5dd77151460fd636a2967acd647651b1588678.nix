@@ -21,7 +21,7 @@
       synopsis = "Utilities for using the Fay Haskell-to-JS compiler with Yesod.";
       description = "For initial discussion, see <http://www.yesodweb.com/blog/2012/10/yesod-fay-js>. This is a work-in-progress.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-json" or (errorHandler.buildDepError "yesod-json"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

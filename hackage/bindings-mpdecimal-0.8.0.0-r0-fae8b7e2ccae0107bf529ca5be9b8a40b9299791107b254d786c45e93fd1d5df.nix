@@ -21,14 +21,14 @@
       synopsis = "bindings to mpdecimal library";
       description = "mpdecimal provides correctly rounded\narbitrary precision decimal floating point arithmetic.\n\nPlease see\n\n<http://www.github.com/massysett/bindings-mpdecimal>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

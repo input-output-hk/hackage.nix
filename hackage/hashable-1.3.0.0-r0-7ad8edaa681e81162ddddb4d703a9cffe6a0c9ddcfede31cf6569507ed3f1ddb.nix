@@ -13,7 +13,7 @@
       sse2 = true;
       sse41 = false;
       examples = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "hashable"; version = "1.3.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "A class for types that can be converted to a hash value";
       description = "This package defines a class, 'Hashable', for types that\ncan be converted to a hash value.  This class\nexists for the benefit of hashing-based data\nstructures.  The package provides instances for\nbasic types and a way to combine hash values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,24 +35,24 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.integer-gmp
+        ] ++ (if flags.integer-gmp
           then [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]
+          ]
           else [
             (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hashable-examples" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -67,10 +67,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = ([
@@ -80,13 +80,13 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."siphash" or (errorHandler.buildDepError "siphash"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && true) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && true) [
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && true && flags.integer-gmp) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
-          libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "6.8")) ((pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (errorHandler.sysDepError "advapi32")));
+          ]) ++ pkgs.lib.optional (compiler.isGhc && true && flags.integer-gmp) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
+          libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "6.8")) (pkgs.lib.optional (system.isWindows) (pkgs."advapi32" or (errorHandler.sysDepError "advapi32")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

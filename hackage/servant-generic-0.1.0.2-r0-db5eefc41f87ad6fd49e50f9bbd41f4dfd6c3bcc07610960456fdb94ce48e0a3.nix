@@ -21,16 +21,16 @@
       synopsis = "Specify Servant APIs with records.";
       description = "Specify Servant APIs with records instead of @:\\<|\\>@ trees. See the <https://github.com/chpatrick/servant-generic/blob/master/README.md#tldr README> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example-basic" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

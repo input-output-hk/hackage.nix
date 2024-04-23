@@ -21,7 +21,7 @@
       synopsis = "Handle per-operating-system X.509 accessors and storage";
       description = "System X.509 handling";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."Crypt32" or (errorHandler.sysDepError "Crypt32"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."Crypt32" or (errorHandler.sysDepError "Crypt32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

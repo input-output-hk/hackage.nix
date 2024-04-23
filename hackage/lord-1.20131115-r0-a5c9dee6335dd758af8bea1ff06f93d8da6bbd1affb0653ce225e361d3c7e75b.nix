@@ -21,7 +21,7 @@
       synopsis = "A command line interface to online radios.";
       description = "A unified interface to online radio service providers, use mpd as backend.\n\nSupported radios:\n<http://radioreddit.com>\n<http://cmd.fm>\n<http://douban.fm>\n<http://jing.fm>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lord" = {
@@ -50,10 +50,10 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

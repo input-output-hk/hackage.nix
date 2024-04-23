@@ -21,10 +21,10 @@
       synopsis = "DNS libary in Haskell";
       description = "DNS libary. Currently only resolver side\nis supported. That is, this library includes\na composer of DNS query and a parser of DNS\nresponse.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhc && (compiler.version).ge "7"
+        depends = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
@@ -34,7 +34,7 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
@@ -45,8 +45,8 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

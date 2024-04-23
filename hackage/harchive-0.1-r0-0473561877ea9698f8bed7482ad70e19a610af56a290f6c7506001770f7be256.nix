@@ -21,7 +21,7 @@
       synopsis = "Networked content addressed backup and restore software.";
       description = "Implements software to perform backups and restores of filesystem\ndata to a content addressed storage pool.  Very preliminary version.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hfile" = {
@@ -32,10 +32,10 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           libs = [ (pkgs."ssl" or (errorHandler.sysDepError "ssl")) ];
           buildable = true;
-          };
+        };
         "hpool" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -44,13 +44,13 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           libs = [
             (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
             (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

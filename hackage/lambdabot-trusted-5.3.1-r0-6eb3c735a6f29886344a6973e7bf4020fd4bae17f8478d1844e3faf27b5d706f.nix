@@ -21,7 +21,7 @@
       synopsis = "Lambdabot trusted code.";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nThis small package provides functions used by\nthe \\@run command.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."oeis" or (errorHandler.buildDepError "oeis"))
           (hsPkgs."QuickCheck-safe" or (errorHandler.buildDepError "QuickCheck-safe"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

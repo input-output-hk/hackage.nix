@@ -21,13 +21,13 @@
       synopsis = "convenience class for PrimMonad m/PrimState m";
       description = "This library provides convenience classes for PrimMonad/PrimBase.\n\nThe 'PrimMonad' state token type can be annoying to handle in\nconstraints. The typeclasses provided in this library let users\n(visually) notice 'PrimState' equality constraints less, by\nwitnessing that `s ~ 'PrimState' m`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

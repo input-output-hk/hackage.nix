@@ -21,7 +21,7 @@
       synopsis = "An express-like http framework";
       description = "Hexpress is an express like http framework to make it easy to write http servers. It is built on the warp http and is blazing fast. See the github readme for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

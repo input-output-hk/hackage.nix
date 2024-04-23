@@ -21,7 +21,7 @@
       synopsis = "API integration with Flowdock.";
       description = "This library uses the Network.HTTP.Client library to interact\nwith the FlowDock chat service.\n\n* Push API - <https://www.flowdock.com/api/team-inbox>\n\n* Streaming API - <https://www.flowdock.com/api/streaming>\n\n* REST API - <https://www.flowdock.com/api/rest>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flowdock" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."heredoc" or (errorHandler.buildDepError "heredoc"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

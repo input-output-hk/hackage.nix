@@ -21,7 +21,7 @@
       synopsis = "Type-safe slugs for Yesod ecosystem";
       description = "Type-safe slugs for Yesod ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
             (hsPkgs."slug" or (errorHandler.buildDepError "slug"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

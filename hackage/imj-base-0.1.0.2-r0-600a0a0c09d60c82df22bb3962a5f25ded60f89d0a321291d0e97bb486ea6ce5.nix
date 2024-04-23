@@ -21,7 +21,7 @@
       synopsis = "Game engine with geometry, easing, animated text, delta rendering.";
       description = "Game engine that is intended to help implementing games\nfor the terminal.\n\nContains types and classes about discrete and continuous\ngeometry, collision detection, animated UIs,\nanimated colored text and easing functions.\n\nAlso contains a renderer (delta-renderer) optimized to avoid\nscreen tearing in the terminal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imj-base-examples-exe" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."imj-base" or (errorHandler.buildDepError "imj-base"))
             (hsPkgs."imj-prelude" or (errorHandler.buildDepError "imj-prelude"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "imj-base-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."imj-base" or (errorHandler.buildDepError "imj-base"))
             (hsPkgs."imj-prelude" or (errorHandler.buildDepError "imj-prelude"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

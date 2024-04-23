@@ -21,7 +21,7 @@
       synopsis = "Cryptography for the casual user";
       description = "The high-level library aimed at casual users of cryptography, by the Haskell Cryptography Group";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."libsodium-bindings" or (errorHandler.buildDepError "libsodium-bindings"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sel-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Run multiple commands, interleaving output and errors";
       description = "Run multiple commands, interleaving output and errors";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "runmany" = {
@@ -32,9 +32,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

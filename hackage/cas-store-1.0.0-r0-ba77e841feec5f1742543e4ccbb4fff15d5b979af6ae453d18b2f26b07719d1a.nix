@@ -21,7 +21,7 @@
       synopsis = "A content-addressed storage";
       description = "A content-addressed storage supporting a remote caching. The API mainly consists of the cacheKleisliIO function which takes a (a -> m b) function\nand runs it only if the store doesn't already contain a result for it. Part of the funflow ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,13 +47,13 @@
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ] ++ (if system.isLinux
+        ] ++ (if system.isLinux
           then [
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-            ]
-          else (pkgs.lib).optional (system.isOsx || system.isFreebsd) (hsPkgs."kqueue" or (errorHandler.buildDepError "kqueue")));
+          ]
+          else pkgs.lib.optional (system.isOsx || system.isFreebsd) (hsPkgs."kqueue" or (errorHandler.buildDepError "kqueue")));
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

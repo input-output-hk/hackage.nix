@@ -21,15 +21,15 @@
       synopsis = "Compatibility for bang-type template";
       description = "This package provides compatible interfaces\nfor bang-type template";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

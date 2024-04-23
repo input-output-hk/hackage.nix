@@ -21,7 +21,7 @@
       synopsis = "a code generator for partial differential equations solvers.";
       description = "The purpose of this project is to design a high-level language\nfor implementing explicit partial-differential equations solvers\non supercomputers as well as today’s advanced personal\ncomputers.\nA language to describe the knowledge on algebraic concepts,\nphysical equations, integration algorithms, optimization\ntechniques, and hardware designs --- all the necessaries of the\nsimulations in abstract, modular, re-usable and combinable forms.\n\n> How to use\n\nThe module \"Language.Paraiso.OM.Builder\" contains the @Builder@\nmonad, its typeclass instance declarations and functions that can\nbe used to build Paraiso programs. Reserved words are @load@,\n@store@, @imm@, @loadIndex@, @shift@, @reduce@ and @broadcast@.\n\n\"Language.Paraiso.Tensor\" is the library for tensor calculus of\narbitrary rank and dimension. @Vector@ and @Axis@ are two main\nconcepts. The type @Vector@ represents rank-1 tensor, and tensors\nof higher ranks are recursively defined as @Vector@ of\n@Vector@s. With @Axis@ you can refer to the components of\n@Vector@s, compose them, or contract them. Standalone usecases of\n@Tensor@ library and other components of Paraiso are found in:\n<https://github.com/nushio3/Paraiso/tree/master/attic>\n\n* A document describing the current and the future designs :\n<https://github.com/nushio3/Paraiso/blob/master/paper/om.pdf>\n\n* Sample programs written in Paraiso :\n<https://github.com/nushio3/Paraiso/tree/master/examples>\n\n* The codes generated from the samples :\n<https://github.com/nushio3/Paraiso/tree/exampled/examples>\n\n* The wiki :\n<http://www.paraiso-lang.org/wiki/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

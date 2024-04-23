@@ -21,7 +21,7 @@
       synopsis = "Types for OpenAPI";
       description = "Please see the README on GitHub at <https://github.com/meeshkan/openapi-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "openapi-typed-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

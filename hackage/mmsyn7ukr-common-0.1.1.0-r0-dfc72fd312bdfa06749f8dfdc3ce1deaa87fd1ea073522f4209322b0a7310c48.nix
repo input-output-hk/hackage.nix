@@ -21,7 +21,7 @@
       synopsis = "Some common for mmsyn7ukr and mmsyn7ukr-array functionality using SoX.";
       description = "A program and a library that can be used as a simple basic interface to some SoX functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for choosing and creating color schemes.";
       description = "Sets of predefined colors and tools for choosing and\ncreating color schemes. Random colors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

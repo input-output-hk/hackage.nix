@@ -21,34 +21,34 @@
       synopsis = "Short description of your package";
       description = "Please see the README on Github at <https://github.com/githubuser/fee-estimate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fee-estimate-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."fee-estimate" or (errorHandler.buildDepError "fee-estimate"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "fee-estimate-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."fee-estimate" or (errorHandler.buildDepError "fee-estimate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

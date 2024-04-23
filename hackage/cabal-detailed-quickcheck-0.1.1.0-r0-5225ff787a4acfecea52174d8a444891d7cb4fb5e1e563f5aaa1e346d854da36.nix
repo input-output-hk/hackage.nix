@@ -21,15 +21,15 @@
       synopsis = "QuickCheck for Cabal tests";
       description = "Turn QuickCheck properties into detailed Cabal tests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

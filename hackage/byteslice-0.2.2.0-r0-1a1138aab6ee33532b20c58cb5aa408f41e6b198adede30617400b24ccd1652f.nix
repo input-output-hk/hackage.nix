@@ -21,7 +21,7 @@
       synopsis = "Slicing managed and unmanaged memory";
       description = "This library provides types that allow the user to talk about a slice of\na ByteArray or a MutableByteArray. It also offers UnmanagedBytes, which\nis kind of like a slice into unmanaged memory. However, it is just an\naddress and a length.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
           (hsPkgs."primitive-addr" or (errorHandler.buildDepError "primitive-addr"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

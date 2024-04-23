@@ -21,7 +21,7 @@
       synopsis = "Dictionary-based password generator";
       description = "This script reads dict word lists and generates word-based passwords.\nNot unlike <http://xkcd.com/936/ Xkcd>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wordpass" = {
@@ -34,9 +34,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hflags" or (errorHandler.buildDepError "hflags"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

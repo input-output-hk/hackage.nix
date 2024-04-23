@@ -21,7 +21,7 @@
       synopsis = "A generator of comics based on some ascertainable data about the requester.";
       description = "This package was writen to power <https://xkcd.com/ xkcd>'s 2012 April Fools comic <https://xkcd.com/1037 Umwelt>. It uses several datasets and a script to generate a customized story specific to the user viewing it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."browscap" or (errorHandler.buildDepError "browscap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "waldo-example" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."zlib-conduit" or (errorHandler.buildDepError "zlib-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -15,7 +15,7 @@
       bench = false;
       properties = true;
       llvm = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "vector-algorithms"; version = "0.7.0.4"; };
@@ -28,7 +28,7 @@
       synopsis = "Efficient algorithms for vector arrays";
       description = "Efficient algorithms for sorting vector arrays. At some stage\nother vector algorithms may be added.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
+      };
       exes = {
         "simple-bench" = {
           depends = [
@@ -47,22 +47,22 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.bench then false else true;
-          };
         };
+      };
       tests = {
         "properties" = {
-          depends = (pkgs.lib).optionals (!(!flags.properties)) [
+          depends = pkgs.lib.optionals (!!flags.properties) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = if !flags.properties then false else true;
-          };
         };
       };
-    }
+    };
+  }

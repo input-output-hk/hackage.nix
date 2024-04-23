@@ -21,7 +21,7 @@
       synopsis = "Redis backend for rate limiting as WAI middleware";
       description = "A Haskell library which implements rate limiting as WAI middleware";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."wai-rate-limit" or (errorHandler.buildDepError "wai-rate-limit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-rate-limit-redis-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."wai-rate-limit" or (errorHandler.buildDepError "wai-rate-limit"))
             (hsPkgs."wai-rate-limit-redis" or (errorHandler.buildDepError "wai-rate-limit-redis"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

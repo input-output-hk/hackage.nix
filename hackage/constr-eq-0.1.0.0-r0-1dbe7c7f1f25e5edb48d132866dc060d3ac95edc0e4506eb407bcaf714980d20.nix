@@ -21,11 +21,11 @@
       synopsis = "Equality by only Constructor";
       description = "This package provides functionality for equality by only Constructors.\nThat means ConstrEq is ignore all parameters of a constructor and only makes a difference based on the constructor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

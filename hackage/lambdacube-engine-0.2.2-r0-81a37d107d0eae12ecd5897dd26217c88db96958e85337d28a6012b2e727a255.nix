@@ -21,7 +21,7 @@
       synopsis = "3D rendering engine written entirely in Haskell";
       description = "LambdaCube is a 3D rendering engine written entirely in Haskell.\nIt targets newer graphics hardware. The engine uses Ogre3D's mesh\nand material file format. The main goal of this project is to\nprovide a modern and feature rich graphical backend for various\nHaskell projects (e.g. FRP libraries).\n\nWhile the interface looks huge on the surface, the only part of\ninterest to application developers is the \"Graphics.LambdaCube\"\nmodule, and possibly \"Graphics.LambdaCube.Loader.StbImage\".  The\nrest is only exposed to make low-level interfacing possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

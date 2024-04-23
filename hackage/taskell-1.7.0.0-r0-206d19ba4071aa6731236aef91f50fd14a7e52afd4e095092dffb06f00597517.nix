@@ -21,7 +21,7 @@
       synopsis = "A command-line kanban board/task manager";
       description = "Please see the README on GitHub at <https://github.com/smallhadroncollider/taskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,19 +45,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "taskell" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
             (hsPkgs."taskell" or (errorHandler.buildDepError "taskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "taskell-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

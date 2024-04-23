@@ -21,7 +21,7 @@
       synopsis = "pgdl";
       description = "a terminal user interface program that downloads a video from html and plays immediately.(Calling vlc)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pgdl" = {
@@ -41,9 +41,9 @@
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

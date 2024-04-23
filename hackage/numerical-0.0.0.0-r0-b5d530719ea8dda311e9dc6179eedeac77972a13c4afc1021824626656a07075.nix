@@ -21,7 +21,7 @@
       synopsis = "core package for Numerical Haskell project";
       description = "the core package for Numerical Haskell. Still immature and incomplete";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."numerical" or (errorHandler.buildDepError "numerical"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

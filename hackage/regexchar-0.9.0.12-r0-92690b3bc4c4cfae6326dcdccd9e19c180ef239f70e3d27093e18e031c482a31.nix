@@ -21,7 +21,7 @@
       synopsis = "A POSIX, extended regex-engine.";
       description = "Provides a POSIX, extended regex-engine, specialised from the underlying /polymorphic/ package /regexdot/, to merely process the traditional character-lists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."regexdot" or (errorHandler.buildDepError "regexdot"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "grecce" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

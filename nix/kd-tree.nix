@@ -6,8 +6,8 @@
         nix = import ../hackage/kd-tree-0.1.0-r0-1ec3a8cc2488e57ccb3270abceba6aacb6b3112f051adab3e3f0f81a12af1fc9.nix;
         revNum = 0;
         sha256 = "1ec3a8cc2488e57ccb3270abceba6aacb6b3112f051adab3e3f0f81a12af1fc9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

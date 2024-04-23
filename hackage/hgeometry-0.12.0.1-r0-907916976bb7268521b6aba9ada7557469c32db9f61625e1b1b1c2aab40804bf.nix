@@ -21,7 +21,7 @@
       synopsis = "Geometric Algorithms, Data structures, and Data types.";
       description = "HGeometry provides some basic geometry types, and geometric algorithms and\ndata structures for them. The main two focusses are: (1) Strong type safety,\nand (2) implementations of geometric algorithms and data structures with good\nasymptotic running time guarantees. Note that HGeometry is still highly experimental, don't be surprised to find bugs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,9 +60,9 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "planargraph" = {
           depends = [
@@ -79,10 +79,10 @@
             (hsPkgs."hgeometry-combinatorial" or (errorHandler.buildDepError "hgeometry-combinatorial"))
             (hsPkgs."reanimate" or (errorHandler.buildDepError "reanimate"))
             (hsPkgs."reanimate-svg" or (errorHandler.buildDepError "reanimate-svg"))
-            ];
+          ];
           buildable = if flags.planargraph then true else false;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -91,10 +91,10 @@
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -120,9 +120,9 @@
             (hsPkgs."vector-circular" or (errorHandler.buildDepError "vector-circular"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "funsat driver as backend for satchmo";
       description = "this driver calls funsat (download from hackage)\nto solve CNF-SAT constraints produced by satchmo";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

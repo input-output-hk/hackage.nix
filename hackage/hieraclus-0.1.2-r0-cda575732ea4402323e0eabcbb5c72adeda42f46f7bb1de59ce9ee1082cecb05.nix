@@ -21,7 +21,7 @@
       synopsis = "Automated clustering of arbitrary elements in Haskell.";
       description = "Hieraclus is a library that supports clustering of arbitrary elements in haskell. The\ndifference to the already existing cluster library \"hierarchical-clustering\" is the ability\nto work with abort criterias which allow an \"intelligent\" clustering. With the help of\nabort criterias the user can specify conditions that must be fulfilled in order to stop\nthe clustering process.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

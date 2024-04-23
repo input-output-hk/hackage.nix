@@ -21,12 +21,12 @@
       synopsis = "arabic to roman numeral conversions";
       description = "Please see README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "libroman-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."libroman" or (errorHandler.buildDepError "libroman"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

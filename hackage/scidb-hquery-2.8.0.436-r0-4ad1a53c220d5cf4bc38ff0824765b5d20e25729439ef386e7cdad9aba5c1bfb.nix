@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -56,14 +56,14 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.BNFC.components.exes.bnfc or (pkgs.buildPackages.bnfc or (errorHandler.buildToolDepError "BNFC:bnfc")))
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hquery" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

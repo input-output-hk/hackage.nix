@@ -15,7 +15,7 @@
       narrownumbers = false;
       threaded = true;
       unix = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "bishbosh"; version = "0.0.0.8"; };
@@ -28,7 +28,7 @@
       synopsis = "Plays chess.";
       description = "A chess-game which can be rendered in a terminal (emulator) in raw ASCII, or used as an engine by xboard.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,13 +47,13 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ] ++ (if flags.polyparse
+        ] ++ (if flags.polyparse
           then [
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ]
+          ]
           else [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "bishbosh" = {
           depends = (([
@@ -74,16 +74,16 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ] ++ (if flags.polyparse
+          ] ++ (if flags.polyparse
             then [
               (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-              ]
+            ]
             else [
               (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-              ])) ++ (pkgs.lib).optional (flags.hxtrelaxng) (hsPkgs."hxt-relaxng" or (errorHandler.buildDepError "hxt-relaxng"))) ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+            ])) ++ pkgs.lib.optional (flags.hxtrelaxng) (hsPkgs."hxt-relaxng" or (errorHandler.buildDepError "hxt-relaxng"))) ++ pkgs.lib.optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -101,15 +101,15 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ] ++ (if flags.polyparse
+          ] ++ (if flags.polyparse
             then [
               (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-              ]
+            ]
             else [
               (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

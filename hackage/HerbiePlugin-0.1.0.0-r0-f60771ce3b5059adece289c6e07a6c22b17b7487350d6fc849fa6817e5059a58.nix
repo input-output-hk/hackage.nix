@@ -21,7 +21,7 @@
       synopsis = "automatically improve your code's numeric stability";
       description = "This package contains a GHC plugin that automatically improves the numerical stability of your Haskell code.\nSee <http://github.com/mikeizbicki/HerbiePlugin the github repo> for details on how it works and how to use it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
             (hsPkgs."subhask" or (errorHandler.buildDepError "subhask"))
             (hsPkgs."HerbiePlugin" or (errorHandler.buildDepError "HerbiePlugin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

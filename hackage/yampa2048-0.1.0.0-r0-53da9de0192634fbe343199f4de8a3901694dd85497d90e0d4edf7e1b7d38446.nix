@@ -21,7 +21,7 @@
       synopsis = "2048 game clone using Yampa/Gloss";
       description = "A simple game clone of a popular 2048 game using Yampa FRP\nlibrary and Gloss for graphics.\n\nUse the arrow keys to slide the rows or columns of the board and try to\nsurvive for as long as possible. When there is no more move possible you will\nbe presented with a game over message for 5 seconds and the game will be\nrestarted after that.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yampa2048" = {
@@ -30,9 +30,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

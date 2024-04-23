@@ -21,7 +21,7 @@
       synopsis = "A library for simulating epidemics as birth-death processes.";
       description = "A library for simulating epidemics, with a focus on phylodynamics and\nobservation models.\n\nAlthough this package supports the definition of new models there are some that\nare implemented already in the `Epidemic.Model` module. Implemented models\ninclude:\n\n1. Birth-Death-Sampling-Catastrophe-Occurrence-Disaster (see `Epidemic.Model.BDSCOD`)\n2. Inhomogeneous Birth-Death-Sampling (see `Epidemic.Model.InhomogeneousBDS`)\n3. Logistic Birth-Death-Sampling-Disaster (see `Epidemic.Model.LogisticBDSD`)\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "epi-sim-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

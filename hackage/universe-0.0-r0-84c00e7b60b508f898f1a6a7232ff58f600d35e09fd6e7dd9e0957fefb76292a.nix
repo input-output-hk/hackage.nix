@@ -21,14 +21,14 @@
       synopsis = "Classes for types where we know all the values";
       description = "A small package, in the spirit of data-default, which allows the munging of finite and recursively enumerable types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

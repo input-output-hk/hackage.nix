@@ -21,7 +21,7 @@
       synopsis = "hssqlppp extras which need template-haskell";
       description = "hssqlppp extras which need template-haskell\n\nDocumentation, examples on the homepage:\n<http://jakewheat.github.com/hssqlppp/>.\n\nChanges here: <https://github.com/JakeWheat/hssqlppp/blob/master/CHANGES>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hssqlppp" or (errorHandler.buildDepError "hssqlppp"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestsTh" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hssqlppp" or (errorHandler.buildDepError "hssqlppp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Souffle Datalog bindings for Haskell";
       description = "Souffle Datalog bindings for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,10 +40,10 @@
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
         buildable = true;
-        };
+      };
       tests = {
         "souffle-haskell-test" = {
           depends = [
@@ -67,11 +67,11 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "souffle-haskell-benchmarks" = {
           depends = [
@@ -92,10 +92,10 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

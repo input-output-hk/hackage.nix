@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. The formats it can handle include\n\n- light markup formats (many variants of Markdown,\nreStructuredText, AsciiDoc, Org-mode, Muse, Textile,\ntxt2tags)\n- HTML formats (HTML 4 and 5)\n- Ebook formats (EPUB v2 and v3, FB2)\n- Documentation formats (GNU TexInfo, Haddock)\n- Roff formats (man, ms)\n- TeX formats (LaTeX, ConTeXt)\n- XML formats (DocBook 4 and 5, JATS, TEI Simple, OpenDocument)\n- Outline formats (OPML)\n- Bibliography formats (BibTeX, BibLaTeX, CSL JSON, CSL YAML)\n- Word processor formats (Docx, RTF, ODT)\n- Interactive notebook formats (Jupyter notebook ipynb)\n- Page layout formats (InDesign ICML)\n- Wiki markup formats (MediaWiki, DokuWiki, TikiWiki, TWiki,\nVimwiki, XWiki, ZimWiki, Jira wiki, Creole)\n- Slide show formats (LaTeX Beamer, PowerPoint, Slidy,\nreveal.js, Slideous, S5, DZSlides)\n- Data formats (CSV tables)\n- PDF (via external programs such as pdflatex or wkhtmltopdf)\n\nPandoc can convert mathematical content in documents\nbetween TeX, MathML, Word equations, roff eqn, and plain text.\nIt includes a powerful system for automatic citations\nand bibliographies, and it can be customized extensively\nusing templates, filters, and custom readers and writers\nwritten in Lua.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -97,31 +97,31 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "trypandoc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ] ++ (pkgs.lib).optionals (flags.trypandoc) [
+          ] ++ pkgs.lib.optionals (flags.trypandoc) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = if flags.trypandoc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -148,10 +148,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -162,9 +162,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

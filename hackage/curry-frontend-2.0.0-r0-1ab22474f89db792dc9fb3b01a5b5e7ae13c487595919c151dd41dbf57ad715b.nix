@@ -21,7 +21,7 @@
       synopsis = "Compile the functional logic language Curry to several\nintermediate formats";
       description = "The Curry front end consists of the executable program\n\"curry-frontend\".\nIt is used by various backends to compile Curry programs to\nan intermediate representation.\nThe code is a stripped-down version of an early version of\nthe Muenster Curry Compiler\n(<http://danae.uni-muenster.de/curry/>)\nwhich has been extended to produce different intermediate\nrepresentations.\nFor further information, please check\n<http://curry-language.org>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,18 +42,18 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "curry-frontend" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-frontend" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Make better services and clients.";
       description = "Combinator library to enhance the general functionality of services and clients.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "glue-core-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

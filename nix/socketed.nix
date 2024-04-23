@@ -6,8 +6,8 @@
         nix = import ../hackage/socketed-0.1.0.0-r0-c9ba677cf88e5c86c0d9867b5271b33073297743cca47e9f02b2016372f048a5.nix;
         revNum = 0;
         sha256 = "c9ba677cf88e5c86c0d9867b5271b33073297743cca47e9f02b2016372f048a5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

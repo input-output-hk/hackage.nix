@@ -21,7 +21,7 @@
       synopsis = "Primitive functions and data types";
       description = "Primitive functions and data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-prim-test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatically generate article previews for a yesod site";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-articles" or (errorHandler.buildDepError "yesod-articles"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

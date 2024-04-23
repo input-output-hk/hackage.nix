@@ -6,8 +6,8 @@
         nix = import ../hackage/freer-simple-http-0.1.0.0-r0-837cfb49c216c3124bb39a975d09707701d21c6b509de13329a4138edb49098e.nix;
         revNum = 0;
         sha256 = "837cfb49c216c3124bb39a975d09707701d21c6b509de13329a4138edb49098e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "interactive patch editor";
       description = "ipatch brings the power and convenience of selecting and editing patches in\nDarcs to those who are not using the Darcs version control system.\n\nIt allows the user to interactively split a patch file into several patch\nfile, as well as applying a patch interactively and possibly partially.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ipatch" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

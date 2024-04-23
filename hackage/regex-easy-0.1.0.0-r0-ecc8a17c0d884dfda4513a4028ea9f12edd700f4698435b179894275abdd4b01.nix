@@ -21,7 +21,7 @@
       synopsis = "sugar for regex-pcre";
       description = "This packages is intended to make perl developers happy to use Haskell.  (:";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

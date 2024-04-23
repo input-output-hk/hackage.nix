@@ -21,7 +21,7 @@
       synopsis = "Partial implementation of the XCP protocol with ethernet as transport layer.";
       description = "This library implements creating XCP packets for setting and retrieving\nvariables from a slave device using XCP. The transport layer is ethernet,\nimplemented in 'Network.XcpEth'. Other transport layers can be added easily\nand can use the same building blocks from 'Network.Xcp'.\nFor basic usage, see 'Network.XcpEth'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extra Input and Output functions for polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-kvstore" or (errorHandler.buildDepError "polysemy-kvstore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

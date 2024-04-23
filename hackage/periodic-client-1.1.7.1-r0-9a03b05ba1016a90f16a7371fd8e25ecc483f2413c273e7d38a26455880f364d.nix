@@ -21,7 +21,7 @@
       synopsis = "Periodic task system haskell client.";
       description = "Periodic task system haskell client library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."metro-socket" or (errorHandler.buildDepError "metro-socket"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

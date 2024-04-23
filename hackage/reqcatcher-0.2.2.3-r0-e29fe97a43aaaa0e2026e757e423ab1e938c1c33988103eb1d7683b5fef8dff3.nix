@@ -21,7 +21,7 @@
       synopsis = "A local http server to catch the HTTP redirect";
       description = "Manage an http server in your local PC to catch the HTTP\nredirect request from the browser. Especially, you can\ncatch the redirect from oauth providor and will get\noauth_verifier.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reqcatcher-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

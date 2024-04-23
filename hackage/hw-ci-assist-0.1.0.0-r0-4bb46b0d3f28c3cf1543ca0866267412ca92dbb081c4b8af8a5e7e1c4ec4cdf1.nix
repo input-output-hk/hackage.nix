@@ -21,22 +21,22 @@
       synopsis = "CI Assistant for Haskell projects";
       description = "CI Assistant for Haskell projects.  Implements package caching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-ci-assist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hw-ci-assist" or (errorHandler.buildDepError "hw-ci-assist"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-ci-assist-test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."hw-hedgehog" or (errorHandler.buildDepError "hw-hedgehog"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-ci-assist" or (errorHandler.buildDepError "hw-ci-assist"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

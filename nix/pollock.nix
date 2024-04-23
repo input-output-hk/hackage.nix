@@ -6,8 +6,8 @@
         nix = import ../hackage/pollock-0.1.0.0-r0-c9b95b5144d788dfb0b79704e3bc706e6ce39114f100883977fd80db7eb34014.nix;
         revNum = 0;
         sha256 = "c9b95b5144d788dfb0b79704e3bc706e6ce39114f100883977fd80db7eb34014";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A test framework and KATs for cryptographic operations.";
       description = "A test framework for hash and cipher operations using\nthe crypto-api interface.  Known answer tests (KATs)\nfor common cryptographic algorithms are included.\nPatches welcome (both adding KATs for more algorithms\nor property tests for classes of algorithms).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

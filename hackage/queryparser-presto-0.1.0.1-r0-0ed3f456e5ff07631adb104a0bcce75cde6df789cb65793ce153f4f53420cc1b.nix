@@ -21,7 +21,7 @@
       synopsis = "Parsing for Presto SQL queries";
       description = "A library for parsing Presto SQL queries into analyzable ASTs.\n\nThis library is to be used with the queryparser library, which\nprovides the common type definitions and analyses across the\ndifferent SQL dialects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."fixed-list" or (errorHandler.buildDepError "fixed-list"))
           (hsPkgs."predicate-class" or (errorHandler.buildDepError "predicate-class"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

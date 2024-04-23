@@ -21,7 +21,7 @@
       synopsis = "A framework for packaging Haskell software";
       description = "The Haskell Common Architecture for Building Applications and\nLibraries: a framework defining a common interface for authors to more\neasily build their Haskell applications in a portable way.\n\nThe Haskell Cabal is meant to be a part of a larger infrastructure\nfor distributing, organizing, and cataloging Haskell libraries\nand tools.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.small_base
@@ -33,12 +33,12 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.3") (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.3") (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

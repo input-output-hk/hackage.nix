@@ -21,7 +21,7 @@
       synopsis = "Continuous animations support for reflex";
       description = "This package provides a set of functions for creating and playing continuous animations of the form Time -> a.\nFinite animations (with a length) and infinite animations complement one another, we chose a representation of\nfinite animations which has only a length (and not a starting point) to keep things simple. If needed such animations\ncan be converted to infinite animations, combined, and clipped as required.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Encode and decode binary streams using the pipes and cereal libraries.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

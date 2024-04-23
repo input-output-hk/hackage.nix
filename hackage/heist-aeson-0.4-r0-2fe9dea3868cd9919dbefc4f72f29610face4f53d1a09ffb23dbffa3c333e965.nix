@@ -21,7 +21,7 @@
       synopsis = "Use JSON directly from Heist templates.";
       description = "Examples of how to use this library can be found in the \"tests\" directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."heist" or (errorHandler.buildDepError "heist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

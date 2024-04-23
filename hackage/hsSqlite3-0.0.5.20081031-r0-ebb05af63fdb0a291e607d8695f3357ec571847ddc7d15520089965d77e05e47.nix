@@ -21,15 +21,15 @@
       synopsis = "sqlite3 bindings";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         pkgconfig = [
           (pkgconfPkgs."sqlite3" or (errorHandler.pkgConfDepError "sqlite3"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "5minutes" = { buildable = false; }; };
       };
-    }
+      exes = { "5minutes" = { buildable = false; }; };
+    };
+  }

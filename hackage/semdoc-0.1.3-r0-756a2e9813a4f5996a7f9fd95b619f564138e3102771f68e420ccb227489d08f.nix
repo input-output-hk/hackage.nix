@@ -21,7 +21,7 @@
       synopsis = "Evaluate code snippets in Literate Haskell.";
       description = "Evaluate code snippets in Literate Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "semdoc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."semdoc" or (errorHandler.buildDepError "semdoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A MessagePack-RPC Implementation";
       description = "A MessagePack-RPC Implementation <http://msgpack.sourceforge.net/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

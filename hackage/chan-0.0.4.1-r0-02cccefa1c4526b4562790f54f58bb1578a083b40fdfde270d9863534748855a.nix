@@ -21,16 +21,16 @@
       synopsis = "Some extra kit for Chans";
       description = "Please see the README on Github at <https://github.com/athanclark/chan#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chan-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."chan" or (errorHandler.buildDepError "chan"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

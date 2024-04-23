@@ -6,8 +6,8 @@
         nix = import ../hackage/follower-0.0.1-r0-cdca3ec2e2163b29f5c8fd25ee54d128d3533fb444c7850516c88c4ab292be88.nix;
         revNum = 0;
         sha256 = "cdca3ec2e2163b29f5c8fd25ee54d128d3533fb444c7850516c88c4ab292be88";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

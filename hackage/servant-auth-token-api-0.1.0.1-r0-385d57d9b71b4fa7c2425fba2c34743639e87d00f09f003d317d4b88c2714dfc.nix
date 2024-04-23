@@ -21,7 +21,7 @@
       synopsis = "Servant based API for token based authorisation";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."servant-swagger" or (errorHandler.buildDepError "servant-swagger"))
           (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

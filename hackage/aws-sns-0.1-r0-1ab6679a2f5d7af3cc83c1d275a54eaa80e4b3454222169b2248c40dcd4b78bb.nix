@@ -21,7 +21,7 @@
       synopsis = "Bindings for AWS SNS Version 2013-03-31";
       description = "Bindings for AWS SNS\n\n/API Version: 2013-03-31/\n\n<http://docs.aws.amazon.com/sns/2010-03-31/APIReference/Welcome.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "SNS-tests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/HaMinitel-0.1.0.0-r0-828212551618ca2972e919c0737fcf9c1b80d0f187d044e247ec24a8ceb62e10.nix;
         revNum = 0;
         sha256 = "828212551618ca2972e919c0737fcf9c1b80d0f187d044e247ec24a8ceb62e10";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

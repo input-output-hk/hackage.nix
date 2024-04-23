@@ -21,7 +21,7 @@
       synopsis = "Persistent GHC powered background server for FAST haskell development tools";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hdevtools" = {
@@ -36,9 +36,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

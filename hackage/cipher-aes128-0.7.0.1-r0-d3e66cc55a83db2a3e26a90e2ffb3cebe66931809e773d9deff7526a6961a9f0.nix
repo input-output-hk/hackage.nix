@@ -21,7 +21,7 @@
       synopsis = "AES and common modes using AES-NI when available.";
       description = "Cipher-aes128 is an implementation of AES and common modes of operation.  It borrows Hanquez's C AES code (see 'cipher-aes') but\nis unique due to including compile-time detection of\nNI compiler support, a slightly more functional interface\nfor GCM operations, exposure of 'Ptr' based operations via the .Internal module, and build-in crypto-api support.\nCipher-aes128 was originally developed as \"'cipher-aes' plus trampolines\", which has since been adopted into cipher-aes.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aes128_test" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."crypto-api-tests" or (errorHandler.buildDepError "crypto-api-tests"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
@@ -44,10 +44,10 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

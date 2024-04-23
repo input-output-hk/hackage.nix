@@ -21,11 +21,11 @@
       synopsis = "Combinators for Strategic Programming";
       description = "KURE is a DSL for building rewriting DSLs.\nKURE shares combinator names and concepts with Stratego, but unlike Stratego, KURE is strongly typed.\nKURE is similar to Strafunski, but has a lightweight generic traversal mechanism using type families\nrather than SYB,\nand the KURE combinators are parameterized to provide the ability to have context sensitive rewrites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

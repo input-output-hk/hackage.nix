@@ -12,7 +12,7 @@
       debug = false;
       enable-cluster-counting = false;
       optimise-heavily = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "Agda"; version = "2.6.4"; };
@@ -31,8 +31,8 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -80,34 +80,34 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-hashtables" or (errorHandler.buildDepError "vector-hashtables"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optional (flags.enable-cluster-counting) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        ] ++ pkgs.lib.optional (flags.enable-cluster-counting) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
-        buildable = (if compiler.isGhc && (compiler.version).eq "8.6.1"
+        ];
+        buildable = (if compiler.isGhc && compiler.version.eq "8.6.1"
           then false
-          else true) && (if system.isWindows && (compiler.isGhc && (compiler.version).eq "8.6.3")
+          else true) && (if system.isWindows && (compiler.isGhc && compiler.version.eq "8.6.3")
           then false
           else true);
-        };
+      };
       exes = {
         "agda" = {
           depends = [
             (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "agda-mode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

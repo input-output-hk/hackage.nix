@@ -21,7 +21,7 @@
       synopsis = "Bidirectional (de-)serialization";
       description = "Roundtrip allows the definition of bidirectional\n(de-)serialization specifications. The specification language\nis based on the ideas described in the paper /Invertible\nSyntax Descriptions: Unifying Parsing and Pretty Printing/\nby Tillmann Rendel and Klaus Ostermann, Haskell Symposium 2010.\n\nThis package does not provide concrete instances of the\nspecification classes, see the packages roundtrip-string and\nroundtrip-xml instead.\n\nThe package contains slightly modified code from\nTillmann Rendel's partial-isomorphisms and invertible-syntax\npackages (Copyright (c) 2010-11 University of Marburg).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

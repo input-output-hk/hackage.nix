@@ -21,7 +21,7 @@
       synopsis = "Instance deriving for (a subset of) GADTs.";
       description = "Very preliminary. Haddock-generated documentation in located at\n<http://moonpatio.com/repos/derive-gadt/haddocks>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,26 +31,26 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "derive-gadt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hstidy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

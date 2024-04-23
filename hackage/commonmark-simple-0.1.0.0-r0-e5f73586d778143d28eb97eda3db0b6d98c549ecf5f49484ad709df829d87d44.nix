@@ -21,7 +21,7 @@
       synopsis = "Simple interface to commonmark-hs";
       description = "Simple interface to parsing Markdown using commonmark-hs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

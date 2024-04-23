@@ -21,7 +21,7 @@
       synopsis = "Various animations generated using HGL";
       description = "Various animations generated using HGL:\n\n* Locomotive with asymmetrically mounted wheels\n\n* Rotating stars\n\n* Rotating spiral\n\n* Rotating Lissajous curve\n\n* Probabilistic Sierpinski triangle";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hgl-example" = {
@@ -32,9 +32,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

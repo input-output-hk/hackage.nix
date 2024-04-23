@@ -21,7 +21,7 @@
       synopsis = "Second Transfer HTTP/2 web server";
       description = "Second Transfer HTTP/2 web server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,25 +43,25 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         libs = [
           (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
           (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "compiling-ok" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."second-transfer" or (errorHandler.buildDepError "second-transfer"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hunit-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

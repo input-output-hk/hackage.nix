@@ -6,8 +6,8 @@
         nix = import ../hackage/lnurl-0.1.0.0-r0-9acee7a0d58988d7937a5cf9a23cdd1db3d93fd19ae0abc79b50b680deffbe7e.nix;
         revNum = 0;
         sha256 = "9acee7a0d58988d7937a5cf9a23cdd1db3d93fd19ae0abc79b50b680deffbe7e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

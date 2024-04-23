@@ -21,14 +21,14 @@
       synopsis = "Library for programming hybrid systems.";
       description = "Domain-specific language embedded in Haskell for programming hybrid (mixed discrete-time and continuous-time) systems.\n\nYampa is based on the concepts of Functional Reactive Programming (FRP) and is structured using arrow combinators. So, this library is known as AFRP (Arrowized FRP).\n\nThis package is just cabalizing afrp-0.4. This isn't GADTed version, and doesn't include any extensions. If you want to see and use GADTed version, you must download higher version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

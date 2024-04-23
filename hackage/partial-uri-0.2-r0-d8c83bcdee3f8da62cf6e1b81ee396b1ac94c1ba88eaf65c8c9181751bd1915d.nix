@@ -21,14 +21,14 @@
       synopsis = "Datatype for passing around unresolved URIs.";
       description = "Datatype wrapping URI that has not been fully resolved yet (such as\na route in a webapp without the application root).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

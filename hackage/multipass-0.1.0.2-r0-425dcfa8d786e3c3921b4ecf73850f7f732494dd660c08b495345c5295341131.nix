@@ -21,7 +21,7 @@
       synopsis = "Folding data with multiple named passes";
       description = "Folding data with multiple named passes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

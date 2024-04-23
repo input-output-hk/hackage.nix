@@ -21,14 +21,14 @@
       synopsis = "Fast robust numeric integration via tanh-sinh quadrature";
       description = "Fast robust numeric integration via tanh-sinh quadrature";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/brick-filetree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "brick-filetree-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

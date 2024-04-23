@@ -21,15 +21,15 @@
       synopsis = "A lambda calculus interpreter";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lambda-calculator" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."Shellac" or (errorHandler.buildDepError "Shellac"))
             (hsPkgs."Shellac-readline" or (errorHandler.buildDepError "Shellac-readline"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lambda-calculus-test" = {
           depends = [
@@ -49,16 +49,16 @@
             (hsPkgs."lambda-calculator" or (errorHandler.buildDepError "lambda-calculator"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambda-calculus-lint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Use Accessor to access state in monads-fd State monad class";
       description = "Use Accessor to access state in monads-fd State monad class";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

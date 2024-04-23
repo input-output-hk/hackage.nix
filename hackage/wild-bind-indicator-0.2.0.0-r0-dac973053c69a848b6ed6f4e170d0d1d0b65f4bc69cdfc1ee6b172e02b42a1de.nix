@@ -21,7 +21,7 @@
       synopsis = "Graphical indicator for WildBind";
       description = "Graphical indicator for WildBind. See <https://github.com/debug-ito/wild-bind>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

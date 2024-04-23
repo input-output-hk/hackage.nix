@@ -21,7 +21,7 @@
       synopsis = "Bluetooth Low Energy (BLE) peripherals";
       description = "This package provides a Haskell API for writing Bluetooth Low Energy peripherals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."microlens-ghc" or (errorHandler.buildDepError "microlens-ghc"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "auth" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hrs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hrs-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -97,9 +97,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -118,10 +118,10 @@
             (hsPkgs."ble" or (errorHandler.buildDepError "ble"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

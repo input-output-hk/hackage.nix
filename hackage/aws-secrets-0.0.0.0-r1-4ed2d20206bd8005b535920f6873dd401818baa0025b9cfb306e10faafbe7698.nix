@@ -21,7 +21,7 @@
       synopsis = "Fetch data from AWS Secrets Manager";
       description = "This library can be used to fetch data from AWS Secrets Manager.\nIt depends on the AWS Command Line Interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-aws-secrets" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
             (hsPkgs."aws-secrets" or (errorHandler.buildDepError "aws-secrets"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

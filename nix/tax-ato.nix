@@ -6,10 +6,10 @@
         nix = import ../hackage/tax-ato-2022.1-r0-8b24b4b54f70eb150a90a9c31625c9d3d6aff178c4b2baa52f9f94b340d52dab.nix;
         revNum = 0;
         sha256 = "8b24b4b54f70eb150a90a9c31625c9d3d6aff178c4b2baa52f9f94b340d52dab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "2023.1" = {
     sha256 = "03ae62cb7d371670539e33609b795571f33aed0e0aebde443a85d224f8210562";
     revisions = {
@@ -17,10 +17,10 @@
         nix = import ../hackage/tax-ato-2023.1-r0-cfc068229ea0a76faaa2b52485f891dc879dbcd02d042085de93d56f3b26f243.nix;
         revNum = 0;
         sha256 = "cfc068229ea0a76faaa2b52485f891dc879dbcd02d042085de93d56f3b26f243";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "2023.2" = {
     sha256 = "bf9d241b691b9a563fcf3ef9b88a151c397556dc6c66d9337b0552ae99c4cc3f";
     revisions = {
@@ -28,8 +28,8 @@
         nix = import ../hackage/tax-ato-2023.2-r0-f7cf6d314c3a7b8aeaa67a109a773be100438e2dbaa02faba7d4526b3ae97791.nix;
         revNum = 0;
         sha256 = "f7cf6d314c3a7b8aeaa67a109a773be100438e2dbaa02faba7d4526b3ae97791";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Type-safe, non-relational, multi-backend persistence.";
       description = "This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

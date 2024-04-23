@@ -21,7 +21,7 @@
       synopsis = "Haskell mailing list manager";
       description = "A mailing list manager written in pure Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mhailist" = {
@@ -36,11 +36,11 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Test" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -52,9 +52,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

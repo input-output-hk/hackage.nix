@@ -21,7 +21,7 @@
       synopsis = "Applied pi-calculus compiler";
       description = "Phi - A compiler for the applied pi-calculus. Very rough around the edges.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phi" = {
@@ -33,9 +33,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

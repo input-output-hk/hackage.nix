@@ -21,7 +21,7 @@
       synopsis = "Weather api implemented in haskell";
       description = "This library implement generic api for retrieving weather\nby http, and has google weather api as example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

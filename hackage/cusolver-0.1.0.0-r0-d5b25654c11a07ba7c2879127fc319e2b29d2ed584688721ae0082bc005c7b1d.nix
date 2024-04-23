@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.cuda or (pkgs.buildPackages.cuda or (errorHandler.setupDepError "cuda")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -38,11 +38,11 @@
           (hsPkgs."cusparse" or (errorHandler.buildDepError "cusparse"))
           (hsPkgs."half" or (errorHandler.buildDepError "half"))
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

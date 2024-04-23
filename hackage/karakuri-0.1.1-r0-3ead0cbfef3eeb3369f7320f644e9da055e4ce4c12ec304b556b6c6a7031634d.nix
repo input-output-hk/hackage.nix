@@ -21,7 +21,7 @@
       synopsis = "Good stateful automata ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."minioperational" or (errorHandler.buildDepError "minioperational"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

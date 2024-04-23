@@ -21,11 +21,11 @@
       synopsis = "Stream GHC eventlog events to external processes";
       description = "Stream GHC eventlog events to external processes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

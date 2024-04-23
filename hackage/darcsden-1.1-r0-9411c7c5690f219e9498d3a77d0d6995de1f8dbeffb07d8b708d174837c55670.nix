@@ -14,7 +14,7 @@
       highlighter = false;
       closing = true;
       ssh = true;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "darcsden"; version = "1.1"; };
@@ -27,7 +27,7 @@
       synopsis = "Darcs repository UI and hosting/collaboration app (hub.darcs.net branch).";
       description = "A web application and SSH server for browsing and hosting darcs\nrepositories and collaborating with others.\n\nInstallation: http://hub.darcs.net/simon/darcsden/README.md\n\nRelease notes: http://hub.darcs.net/simon/darcsden/ANNOUNCE.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "darcsden" = {
@@ -68,23 +68,23 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
-            ]) ++ (pkgs.lib).optional (flags.highlightingkate) (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.highlighter) (hsPkgs."highlighter" or (errorHandler.buildDepError "highlighter"))) ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32-services-wrapper" or (errorHandler.buildDepError "Win32-services-wrapper"));
+          ]) ++ pkgs.lib.optional (flags.highlightingkate) (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))) ++ pkgs.lib.optional (flags.highlighter) (hsPkgs."highlighter" or (errorHandler.buildDepError "highlighter"))) ++ pkgs.lib.optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32-services-wrapper" or (errorHandler.buildDepError "Win32-services-wrapper"));
           buildable = true;
-          };
+        };
         "darcsden-ssh" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
-            ] ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"));
+          ] ++ pkgs.lib.optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"));
           buildable = true;
-          };
+        };
         "darcsden-post-hook" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
-            ] ++ (pkgs.lib).optional (flags.closing) (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"));
+          ] ++ pkgs.lib.optional (flags.closing) (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"));
           buildable = true;
-          };
+        };
         "darcsden-test" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -93,9 +93,9 @@
             (hsPkgs."redis" or (errorHandler.buildDepError "redis"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

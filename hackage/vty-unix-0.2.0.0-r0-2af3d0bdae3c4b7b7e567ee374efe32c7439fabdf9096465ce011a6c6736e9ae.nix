@@ -21,7 +21,7 @@
       synopsis = "Unix backend for Vty";
       description = "This package provides Unix terminal support for Vty.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,18 +42,18 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vty-unix-build-width-table" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

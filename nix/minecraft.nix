@@ -6,8 +6,8 @@
         nix = import ../hackage/minecraft-0.0.0.0-r0-59845721b597554a06ca84bb630b24f3e00b016f6e1a6ddb8b340f9bfdbde030.nix;
         revNum = 0;
         sha256 = "59845721b597554a06ca84bb630b24f3e00b016f6e1a6ddb8b340f9bfdbde030";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

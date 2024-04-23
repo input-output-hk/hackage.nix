@@ -21,7 +21,7 @@
       synopsis = "Michael-Scott queue.";
       description = "An implementation of a Michael-Scott Lock-Free queues.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."ref-mtl" or (errorHandler.buildDepError "ref-mtl"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

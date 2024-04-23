@@ -21,7 +21,7 @@
       synopsis = "Scientific workflow management system";
       description = "SciFlow is to help programmers design complex workflows\nwith ease.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optional (flags.sge) (hsPkgs."drmaa" or (errorHandler.buildDepError "drmaa"));
+        ] ++ pkgs.lib.optional (flags.sge) (hsPkgs."drmaa" or (errorHandler.buildDepError "drmaa"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

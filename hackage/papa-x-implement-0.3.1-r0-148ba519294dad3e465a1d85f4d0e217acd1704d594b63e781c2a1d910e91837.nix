@@ -21,11 +21,11 @@
       synopsis = "useful functions reimplemented";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nuseful functions reimplemented";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

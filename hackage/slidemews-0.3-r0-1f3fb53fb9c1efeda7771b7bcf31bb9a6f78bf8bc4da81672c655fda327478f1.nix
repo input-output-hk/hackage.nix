@@ -21,7 +21,7 @@
       synopsis = "ws convert markdown to reveal-js";
       description = "Simple WebService to convert markdown to reveal-js | https://github.com/j4/slidemews";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "slidemews" = {
@@ -35,9 +35,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

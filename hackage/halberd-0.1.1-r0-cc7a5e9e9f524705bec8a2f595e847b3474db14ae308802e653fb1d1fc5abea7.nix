@@ -21,7 +21,7 @@
       synopsis = "A tool to generate missing import statements for Haskell modules.";
       description = "This tool uses the Haskell Suite [0] to determine\nthe unbound variables and types in your source\ncode, and generate import statements for them. If\nthere are multiple choices, it provides a simple\ninteractive menu for you to choose from. See the\nhome page for more details.\n[0] https://github.com/haskell-suite";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "halberd" = {
@@ -37,9 +37,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

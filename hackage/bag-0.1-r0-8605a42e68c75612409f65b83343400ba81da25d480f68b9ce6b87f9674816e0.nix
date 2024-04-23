@@ -21,11 +21,11 @@
       synopsis = "A simple stable bag.";
       description = "bag provides an alternative to a list for cases where constant time\nconcatenation is required.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

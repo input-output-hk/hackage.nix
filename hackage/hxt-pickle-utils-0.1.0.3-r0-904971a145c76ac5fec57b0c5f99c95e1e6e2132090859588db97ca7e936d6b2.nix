@@ -21,15 +21,15 @@
       synopsis = "Utility functions for using HXT picklers.";
       description = "Utility functions for using HXT picklers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

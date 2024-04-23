@@ -21,7 +21,7 @@
       synopsis = "Generic Programming with Mutually Recursive Sums of Products.";
       description = "A library that supports generic programming for mutually recursive families in the sum-of-products style. . A couple usage examples can be found under \"Generics.MRSOP.Examples\" .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

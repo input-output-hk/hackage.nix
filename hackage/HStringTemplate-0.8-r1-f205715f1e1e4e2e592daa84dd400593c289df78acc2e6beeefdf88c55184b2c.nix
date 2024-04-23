@@ -21,7 +21,7 @@
       synopsis = "StringTemplate implementation in Haskell.";
       description = "A port of the Java library by Terrence Parr.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

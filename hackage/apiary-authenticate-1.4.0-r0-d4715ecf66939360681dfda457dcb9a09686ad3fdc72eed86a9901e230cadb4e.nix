@@ -21,7 +21,7 @@
       synopsis = "authenticate support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/auth.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."web-routing" or (errorHandler.buildDepError "web-routing"))
           (hsPkgs."types-compat" or (errorHandler.buildDepError "types-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

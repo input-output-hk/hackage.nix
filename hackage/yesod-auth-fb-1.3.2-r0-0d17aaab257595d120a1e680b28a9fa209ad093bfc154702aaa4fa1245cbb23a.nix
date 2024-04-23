@@ -21,7 +21,7 @@
       synopsis = "Authentication backend for Yesod using Facebook.";
       description = "This package allows you to use Yesod's authentication framework\nwith Facebook as your backend.  That is, your site's users will\nlog in to your site through Facebook.  Your application need to\nbe registered on Facebook.\n\nThis package works with both the server-side authentication\nflow\n(<https://developers.facebook.com/docs/authentication/server-side/>)\nvia the \"Yesod.Auth.Facebook.ServerSide\" module and the\nclient-side authentication\n(<https://developers.facebook.com/docs/authentication/client-side/>)\nvia the \"Yesod.Auth.Facebook.ClientSide\" module.  It's up to\nyou to decide which one to use.  The server-side code is older\nand as such has been through a lot more testing than the\nclient-side code.  Also, for now only the server-side code is\nable to work with other authentication plugins.  The\nclient-side code, however, allows you to use some features that\nare available only to the Facebook JS SDK (such as\nautomatically logging your users in, see\n<https://developers.facebook.com/blog/post/2012/05/08/how-to--improve-the-experience-for-returning-users/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

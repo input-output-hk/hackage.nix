@@ -21,7 +21,7 @@
       synopsis = "MonadLib monadic interface for the \"fclabels\" package.";
       description = "A MonadLib-compatible monadic interface for the \"fclabels\" package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

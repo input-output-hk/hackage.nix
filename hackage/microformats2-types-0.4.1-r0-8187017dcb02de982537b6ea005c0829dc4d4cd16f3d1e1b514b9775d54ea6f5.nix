@@ -21,7 +21,7 @@
       synopsis = "Microformats 2 types (with Aeson instances)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."setters" or (errorHandler.buildDepError "setters"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

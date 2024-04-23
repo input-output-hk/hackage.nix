@@ -21,7 +21,7 @@
       synopsis = "Sequential and parallel implementations of Lloyd's algorithm.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."metric" or (errorHandler.buildDepError "metric"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "kmeans-benchmark" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."metric" or (errorHandler.buildDepError "metric"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

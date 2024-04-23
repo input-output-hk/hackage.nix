@@ -21,7 +21,7 @@
       synopsis = "A compiler for the Alpha language";
       description = "Alpha is a programming language that aims at being very simple and\nlow-level, so as to be efficient, while at the same time\nbeing able to climb in abstraction through introspection\nin the Lisp Way.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "alpha" = {
@@ -43,9 +43,9 @@
             (hsPkgs."relation" or (errorHandler.buildDepError "relation"))
             (hsPkgs."AvlTree" or (errorHandler.buildDepError "AvlTree"))
             (hsPkgs."COrdering" or (errorHandler.buildDepError "COrdering"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

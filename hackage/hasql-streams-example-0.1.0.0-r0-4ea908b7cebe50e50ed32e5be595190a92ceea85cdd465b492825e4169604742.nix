@@ -21,7 +21,7 @@
       synopsis = "An example program that shows how to use Hasql streams with Rel8";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hasql-streaming" = {
@@ -46,9 +46,9 @@
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

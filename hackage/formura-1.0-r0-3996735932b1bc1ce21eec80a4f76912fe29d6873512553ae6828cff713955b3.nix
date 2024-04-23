@@ -21,7 +21,7 @@
       synopsis = "Formura is a simple language to describe stencil computation.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "formura-parser" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."formura" or (errorHandler.buildDepError "formura"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "formura-eval" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."formura" or (errorHandler.buildDepError "formura"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "formura-gen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."formura" or (errorHandler.buildDepError "formura"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

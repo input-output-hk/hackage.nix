@@ -21,7 +21,7 @@
       synopsis = "Test monadic side-effects";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-fixture-test-suite" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0.0.0") (hsPkgs."th-to-exp" or (errorHandler.buildDepError "th-to-exp"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0.0.0") (hsPkgs."th-to-exp" or (errorHandler.buildDepError "th-to-exp"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

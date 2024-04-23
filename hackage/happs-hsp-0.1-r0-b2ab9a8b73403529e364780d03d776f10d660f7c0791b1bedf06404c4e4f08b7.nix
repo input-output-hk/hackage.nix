@@ -21,7 +21,7 @@
       synopsis = "";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
           (hsPkgs."HAppS-Server" or (errorHandler.buildDepError "HAppS-Server"))
           (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

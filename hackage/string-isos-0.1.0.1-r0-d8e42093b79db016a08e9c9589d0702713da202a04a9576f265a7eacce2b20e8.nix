@@ -21,7 +21,7 @@
       synopsis = "Tools for working with isomorphisms of strings";
       description = "Haskell has 5 common string types, Text, Lazy Text, ByteString, Lazy ByteString, and String ([Char]). Assuming utf8 encoding, we can make the pain of these conflicts much less via polymorphism.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
           (hsPkgs."type-iso" or (errorHandler.buildDepError "type-iso"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

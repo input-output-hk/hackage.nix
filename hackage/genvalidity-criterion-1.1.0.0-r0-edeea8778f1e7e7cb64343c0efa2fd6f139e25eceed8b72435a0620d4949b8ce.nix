@@ -21,7 +21,7 @@
       synopsis = "Criterion benchmarks for generators";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "genvalidity-criterion-bench" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

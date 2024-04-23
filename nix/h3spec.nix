@@ -6,8 +6,8 @@
         nix = import ../hackage/h3spec-0.1.10-r0-9ab84dbe907026534708cbdd005aa9c46053c95504e2132facb8a79c41e6c9aa.nix;
         revNum = 0;
         sha256 = "9ab84dbe907026534708cbdd005aa9c46053c95504e2132facb8a79c41e6c9aa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

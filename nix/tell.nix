@@ -6,8 +6,8 @@
         nix = import ../hackage/tell-0.1-r0-e857ebf5c4b0caf16712caa7bca84c3124244e8941e32f2e2578f56f568e5900.nix;
         revNum = 0;
         sha256 = "e857ebf5c4b0caf16712caa7bca84c3124244e8941e32f2e2578f56f568e5900";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

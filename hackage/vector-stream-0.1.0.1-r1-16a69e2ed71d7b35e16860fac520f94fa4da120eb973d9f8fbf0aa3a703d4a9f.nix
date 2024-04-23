@@ -21,14 +21,14 @@
       synopsis = "Efficient Streams";
       description = "Simple yet powerful monadic streams that are used\nas a backbone for vector package fusion functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

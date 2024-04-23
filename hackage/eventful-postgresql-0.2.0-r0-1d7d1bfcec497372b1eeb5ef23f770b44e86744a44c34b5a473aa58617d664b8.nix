@@ -21,7 +21,7 @@
       synopsis = "Postgres implementations for eventful";
       description = "Postgres implementations for eventful";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."eventful-test-helpers" or (errorHandler.buildDepError "eventful-test-helpers"))
             (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

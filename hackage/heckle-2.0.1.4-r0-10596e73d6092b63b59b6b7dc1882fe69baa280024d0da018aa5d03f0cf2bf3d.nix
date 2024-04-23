@@ -21,7 +21,7 @@
       synopsis = "Jekyll in Haskell (feat. LaTeX)";
       description = "A static site generator that supports LaTeX/PDF and Markdown/HTML posts. Care has been taken to make it configurable, easy to use, and unopinionated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."dates" or (errorHandler.buildDepError "dates"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "heckle" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

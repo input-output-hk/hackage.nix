@@ -21,7 +21,7 @@
       synopsis = "Bindings to Bluemix APIs";
       description = "Bindings to Bluemix APIs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

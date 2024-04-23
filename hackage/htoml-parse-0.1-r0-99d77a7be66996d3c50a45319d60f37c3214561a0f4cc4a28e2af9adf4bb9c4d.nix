@@ -21,7 +21,7 @@
       synopsis = "Parse TOML values produced by htoml-megaparsec package.";
       description = "Package definecs set of parser combinators that allows analyzing arbitrary TOML structures.\nIncludes formatted errors that keep track of where in the original TOML file a value\ncame from.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

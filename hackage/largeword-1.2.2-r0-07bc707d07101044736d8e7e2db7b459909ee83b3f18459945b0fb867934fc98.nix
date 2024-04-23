@@ -21,15 +21,15 @@
       synopsis = "Provides Word128, Word192 and Word256 and a way of producing other large words if required.";
       description = "Provides Word128, Word192 and Word256 and a way of producing other large words if required.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."largeword" or (errorHandler.buildDepError "largeword"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

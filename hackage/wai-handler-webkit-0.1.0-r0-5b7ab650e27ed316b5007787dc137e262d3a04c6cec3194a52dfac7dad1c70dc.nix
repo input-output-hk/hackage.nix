@@ -21,18 +21,18 @@
       synopsis = "Turn WAI applications into standalone GUIs using QtWebkit.";
       description = "Runs any WAI application using\nthe simpleserver handler and then pops up a Webkit browser\nto view it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."QtWebKit" or (errorHandler.pkgConfDepError "QtWebKit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Definition of a CSP core-language. ";
       description = "This package contains an interface for the CSP core-language.\nIt defines processes, events, event sets, and a domain specific language\nfor process operations like parallel or interleaving processes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

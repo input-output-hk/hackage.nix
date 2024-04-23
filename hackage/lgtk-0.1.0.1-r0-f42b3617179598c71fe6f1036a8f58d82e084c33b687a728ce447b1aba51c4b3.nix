@@ -21,7 +21,7 @@
       synopsis = "lens-based GUI with Gtk backend";
       description = "Try the demo executable lgtkdemo and read the source.\n\nSee also <http://people.inf.elte.hu/divip/LGtk.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."control-monad-free" or (errorHandler.buildDepError "control-monad-free"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lgtkdemo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."lgtk" or (errorHandler.buildDepError "lgtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

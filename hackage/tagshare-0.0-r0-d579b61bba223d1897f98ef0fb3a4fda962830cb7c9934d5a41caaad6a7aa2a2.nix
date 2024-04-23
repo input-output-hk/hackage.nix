@@ -21,15 +21,15 @@
       synopsis = "TagShare - explicit sharing with tags";
       description = "TagShare supplies a monad for sharing values based on tags\nand types. Each tag and type is bound to at most one value\nin a dynamic map.\n\nThe principal use of this package is to ensure that\nconstant class members or other overloaded values are\nshared.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Implement monads by specifying operational semantics.";
       description = "Tiny library for implementing monads by specifying the primitive instructions\nand their operational semantics. The monad laws will hold automatically.\nCan also be used to define monad transformers,\nthe lifting laws are, again, automatic.\nAccompanies the article: \\\"The Operational Monad Tutorial\\\",\npublished in Issue 15 of The Monad.Reader <http://themonadreader.wordpress.com/2010/01/26/issue-15/>.\nRelated packages: MonadPrompt <http://hackage.haskell.org/package/MonadPrompt>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/freer-simple-time-0.1.0.0-r0-f1014dbab0f37302dbe85b99c311278578fc3b32258e9026094768c03dcad228.nix;
         revNum = 0;
         sha256 = "f1014dbab0f37302dbe85b99c311278578fc3b32258e9026094768c03dcad228";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

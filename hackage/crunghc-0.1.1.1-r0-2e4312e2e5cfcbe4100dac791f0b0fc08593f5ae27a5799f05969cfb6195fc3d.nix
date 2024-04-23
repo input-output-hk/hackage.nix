@@ -21,7 +21,7 @@
       synopsis = "A runghc replacement with transparent caching";
       description = "crunghc is a program that acts like runghc. When it\nexecutes a Haskell script, it automatically stores a\ncompiled cache of the script to the disk, so that the\ncompilation overhead can be avoided in subsequent runs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "crunghc" = {
@@ -36,9 +36,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Monads of program skeleta";
       description = "Fast operational monad library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

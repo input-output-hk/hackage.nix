@@ -21,7 +21,7 @@
       synopsis = "Orphan instances for data types in heavy-logger package";
       description = "Orphan instances for data types in heavy-logger package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-format-heavy" or (errorHandler.buildDepError "text-format-heavy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "binary-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-format-heavy" or (errorHandler.buildDepError "text-format-heavy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

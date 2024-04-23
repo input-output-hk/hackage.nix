@@ -21,7 +21,7 @@
       synopsis = "Base types and classes for statistics, sciences and humanities";
       description = "This library provides a set of basic types and classes for\nstatistics, sciences, and the humanities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "BenchmarkSciBaseTypes" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."SciBaseTypes" or (errorHandler.buildDepError "SciBaseTypes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Bit parsing/writing on top of binary.";
       description = "Bit parsing/writing on top of binary. Provides functions to\nread and write bits to and from 8\\/16\\/32\\/64 words.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "qc" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bindings to the herbstluftwm window manager";
       description = "A client-side IPC implementation for herbstluftwm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hherbstclient" = {
           depends = [
@@ -48,12 +48,12 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."hlwm" or (errorHandler.buildDepError "hlwm"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

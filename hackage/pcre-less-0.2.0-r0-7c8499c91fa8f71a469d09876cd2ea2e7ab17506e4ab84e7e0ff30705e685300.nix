@@ -21,15 +21,15 @@
       synopsis = "Nicer interface to regex-pcre";
       description = "Unfortunately, docs don't exist yet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

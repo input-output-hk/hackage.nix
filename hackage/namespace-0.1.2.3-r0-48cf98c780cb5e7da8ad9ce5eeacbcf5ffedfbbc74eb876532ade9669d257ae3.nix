@@ -21,24 +21,24 @@
       synopsis = "A Generic Haskell library for managing namespaces";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monoid-extras" or (errorHandler.buildDepError "monoid-extras"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "namespace-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."namespace" or (errorHandler.buildDepError "namespace"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

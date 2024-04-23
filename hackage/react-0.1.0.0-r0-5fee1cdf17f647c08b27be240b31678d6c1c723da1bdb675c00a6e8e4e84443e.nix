@@ -21,7 +21,7 @@
       synopsis = "Create React components in Haskell";
       description = "This library provides bindings to React that allow you to write components in\nHaskell.  Typically, these components will be compiled with GHCJS to produce\nJavaScript for inclusion in a React application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,16 +31,16 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ]
+          ]
           else [
             (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cabal plugin for UUAGC";
       description = "Cabal plugin for the Universiteit Utrecht Attribute Grammar System";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

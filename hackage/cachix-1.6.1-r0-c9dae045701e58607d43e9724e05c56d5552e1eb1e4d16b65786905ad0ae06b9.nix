@@ -21,7 +21,7 @@
       synopsis = "Command-line client for Nix binary cache hosting https://cachix.org";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -90,22 +90,22 @@
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
           (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cachix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cachix" or (errorHandler.buildDepError "cachix"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         ".cachix-deployment" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -121,10 +121,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cachix-test" = {
           depends = [
@@ -142,12 +142,12 @@
             (hsPkgs."servant-auth-client" or (errorHandler.buildDepError "servant-auth-client"))
             (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Streaming Snap handlers";
       description = "Snap handlers for streaming access with range requests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

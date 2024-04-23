@@ -21,7 +21,7 @@
       synopsis = "Haskell FFI bindings for X11 XInput library (-lXi)";
       description = "Haskell FFI bindings for X11 XInput library (-lXi).\nOnly XInput version 2.0 is supported.\nSee XInput manual pages and XInput2.h, XI2.h for more documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-          ];
+        ];
         libs = [ (pkgs."Xi" or (errorHandler.sysDepError "Xi")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

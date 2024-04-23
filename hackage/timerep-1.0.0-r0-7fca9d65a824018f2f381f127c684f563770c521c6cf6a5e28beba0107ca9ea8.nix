@@ -21,15 +21,15 @@
       synopsis = "Parse and display time according to some RFCs (RFC3339, RFC2822)";
       description = "\nParse and display time according to some RFC's.\nSupported:\nRFC3339 <http://www.ietf.org/rfc/rfc3339.txt>\nRFC2822 <http://www.ietf.org/rfc/rfc2822.txt>\n\nThis package defines a type class to parse and read time representations\nspecified in some RFC's.\nRight now there is only support for reading and showing String\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

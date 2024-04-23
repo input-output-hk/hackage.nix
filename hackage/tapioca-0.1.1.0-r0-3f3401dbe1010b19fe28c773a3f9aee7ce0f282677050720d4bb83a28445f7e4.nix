@@ -21,7 +21,7 @@
       synopsis = "A tasty enhancement to cassava for easy csv exporting";
       description = "tapioca is a package that builds on cassava, to provide a simpler, more succinct method of mapping records to and from csv data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tapioca-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tapioca" or (errorHandler.buildDepError "tapioca"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

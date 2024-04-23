@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter to customize links, images and paragraphs";
       description = "Pandoc filter to customize links, images and paragraphs\n(with restrictions). Styles are read from the metadata of the document:\nthey may reside inside the document or in a separate YAML file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "styleFromMeta" = {
@@ -32,9 +32,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."HaTeX" or (errorHandler.buildDepError "HaTeX"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Merkle Hash Tree";
       description = "Purely functional Merkle hash tree which\nimplements appe nd-only logs and\nprovides both inclusion proof and consistency proof.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

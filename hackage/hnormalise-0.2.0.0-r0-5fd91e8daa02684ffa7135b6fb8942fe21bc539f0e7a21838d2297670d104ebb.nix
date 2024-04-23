@@ -21,7 +21,7 @@
       synopsis = "Log message normalisation tool producing structured JSON messages";
       description = "Log message normalisation tool producing structured JSON messages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."permute" or (errorHandler.buildDepError "permute"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hnormalise" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hnormalise-test" = {
           depends = [
@@ -77,10 +77,10 @@
             (hsPkgs."hspec-attoparsec" or (errorHandler.buildDepError "hspec-attoparsec"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hnormalise-bench" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."hnormalise" or (errorHandler.buildDepError "hnormalise"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Modularised session state for Snaplets, in a Snaplet";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

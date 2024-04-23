@@ -13,7 +13,7 @@
       jsaddle = false;
       ios = false;
       jsstring-only = false;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "miso"; version = "1.8.3.0"; };
@@ -26,7 +26,7 @@
       synopsis = "A tasty Haskell front-end framework";
       description = "Miso is a small, production-ready, \"isomorphic\" Haskell front-end framework featuring a virtual-dom, recursive diffing / patching algorithm, event delegation, event batching, SVG, Server-sent events, Websockets, type-safe servant-style routing and an extensible Subscription-based subsystem. Inspired by Elm, Redux and Bobril. Miso is pure by default, but side effects (like XHR) can be introduced into the system via the Effect data type. Miso makes heavy use of the GHCJS FFI and therefore has minimal dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,18 +44,18 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."servant-lucid" or (errorHandler.buildDepError "servant-lucid"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -73,11 +73,11 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.tests
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

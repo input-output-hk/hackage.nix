@@ -21,7 +21,7 @@
       synopsis = "Terminal Art";
       description = "A program to make ASCII art";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tart" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."tart" or (errorHandler.buildDepError "tart"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

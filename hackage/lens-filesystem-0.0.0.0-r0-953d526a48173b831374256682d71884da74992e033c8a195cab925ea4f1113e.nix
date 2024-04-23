@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/lens-fs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lens-action" or (errorHandler.buildDepError "lens-action"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lens-filesystem-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lens-action" or (errorHandler.buildDepError "lens-action"))
             (hsPkgs."lens-filesystem" or (errorHandler.buildDepError "lens-filesystem"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

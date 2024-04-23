@@ -21,7 +21,7 @@
       synopsis = "Interpreter and language infrastructure for Boogie.";
       description = "Boogaloo is an interpreter and run-time assertion checker for the Boogie intermediate verification language.\nThe package also provides a language infrastructure library, including a Boogie AST, parser, type checker, and pretty-printer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."stream-monad" or (errorHandler.buildDepError "stream-monad"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "boogaloo" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = if !flags.boogaloo then false else true;
-          };
+        };
         "boogaloo-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."stream-monad" or (errorHandler.buildDepError "stream-monad"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

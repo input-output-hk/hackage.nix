@@ -21,11 +21,11 @@
       synopsis = "Complex numbers in polar form";
       description = "Complex numbers in polar form";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

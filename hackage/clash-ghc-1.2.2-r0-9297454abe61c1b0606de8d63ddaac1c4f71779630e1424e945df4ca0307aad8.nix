@@ -21,7 +21,7 @@
       synopsis = "CAES Language for Synchronous Hardware";
       description = "Clash is a functional hardware description language that borrows both its\nsyntax and semantics from the functional programming language Haskell. The\nClash compiler transforms these high-level descriptions to low-level\nsynthesizable VHDL, Verilog, or SystemVerilog.\n\nFeatures of Clash:\n\n* Strongly typed, but with a very high degree of type inference, enabling both\nsafe and fast prototyping using concise descriptions.\n\n* Interactive REPL: load your designs in an interpreter and easily test all\nyour component without needing to setup a test bench.\n\n* Higher-order functions, with type inference, result in designs that are\nfully parametric by default.\n\n* Synchronous sequential circuit design based on streams of values, called\n@Signal@s, lead to natural descriptions of feedback loops.\n\n* Support for multiple clock domains, with type safe clock domain crossing.\n\n\nThis package provides:\n\n* Clash Compiler binary using GHC/Haskell as a frontend\n\n\nPrelude library: <https://hackage.haskell.org/package/clash-prelude>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -60,28 +60,28 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.10.0") (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))) ++ (pkgs.lib).optional (flags.use-ghc-paths) (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))) ++ (if system.isWindows
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.10.0") (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))) ++ pkgs.lib.optional (flags.use-ghc-paths) (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "clash" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clash-ghc" or (errorHandler.buildDepError "clash-ghc"))
-            ];
+          ];
           libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
           buildable = true;
-          };
+        };
         "clashi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clash-ghc" or (errorHandler.buildDepError "clash-ghc"))
-            ];
+          ];
           libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

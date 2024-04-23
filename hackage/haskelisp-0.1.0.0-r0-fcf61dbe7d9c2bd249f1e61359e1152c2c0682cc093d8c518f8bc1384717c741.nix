@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

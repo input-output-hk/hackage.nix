@@ -21,7 +21,7 @@
       synopsis = "Perform IO actions during transactions for Hasql";
       description = "Perform IO actions during transactions for Hasql. If you need transactions in hasql but do not need to perform IO in the middle of the transaction, use haslq-transaction. This packages differs from hasql-transaction in that it sacrifices invisible retries for the ability to perform arbitrary IO in the middle of a transaction. This is beneficial when your transaction is long-lived (e.g. when using cursors) and you wish to perform IO with requested data. See <https://hackage.haskell.org/package/hasql-streams-core hasql-streams-core> for an example use case.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

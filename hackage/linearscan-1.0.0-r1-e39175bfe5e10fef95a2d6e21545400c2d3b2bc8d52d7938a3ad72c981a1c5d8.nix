@@ -21,7 +21,7 @@
       synopsis = "Linear scan register allocator, formally verified in Coq";
       description = "The @linearscan@ library is an implementation -- in Coq, extracted to\nHaskell -- of a register allocation algorithm developed by Christian Wimmer.\nIt is described in detail in his Masters thesis, which can be found at\n<http://www.christianwimmer.at/Publications/Wimmer04a/Wimmer04a.pdf>.  A\nJava implementation of this same algorithm, by that author, is used in\nOracle's Graal project. It has also been implemented in C++ by Mozilla.\n\nThis version of the algorithm was written and verified in Coq, containing\nover 231 proved lemmas, at over 10K LOC. It was funded as a research project\nby BAE Systems (<http://www.baesystems.com>), to be used in an in-house\ncompiler written in Haskell.\n\nIn order for the Coq code to be usable from Haskell, it is first extracted\nfrom Coq as a Haskell library, during which many of Coq's fundamental types\nare mapped directly onto counterparts in the Haskell Prelude.\n\nThis library's sole entry point is the function 'LinearScan.allocate', which\ntakes a list of basic blocks, and a functional characterization of those\nblocks, and produces a new list, with register allocations applied to their\ncomponent operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

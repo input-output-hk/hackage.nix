@@ -21,7 +21,7 @@
       synopsis = "A natural language generator (specifically, an FB-LTAG surface realiser)";
       description = "A natural language generator (specifically, an FB-LTAG surface realiser)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,17 +41,17 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "geni" = {
           depends = [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (flags.gui) (hsPkgs."wx" or (errorHandler.buildDepError "wx"));
+          ] ++ pkgs.lib.optional (flags.gui) (hsPkgs."wx" or (errorHandler.buildDepError "wx"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

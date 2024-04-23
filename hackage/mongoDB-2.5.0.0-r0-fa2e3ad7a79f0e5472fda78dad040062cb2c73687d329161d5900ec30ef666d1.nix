@@ -21,7 +21,7 @@
       synopsis = "Driver (client) for MongoDB, a free, scalable, fast, document\nDBMS";
       description = "This package lets you connect to MongoDB servers and\nupdate/query their data. Please see the example in\nDatabase.MongoDB and the tutorial from the homepage. For\ninformation about MongoDB itself, see www.mongodb.org.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,14 +54,14 @@
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."nonce" or (errorHandler.buildDepError "nonce"))
-          ] ++ (if flags._old-network
+        ] ++ (if flags._old-network
           then [ (hsPkgs."network" or (errorHandler.buildDepError "network")) ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -101,16 +101,16 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (if flags._old-network
+          ] ++ (if flags._old-network
             then [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Disciple Core language simplifying code transformations.";
       description = "Disciple Core language simplifying code transformations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ddc-base" or (errorHandler.buildDepError "ddc-base"))
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Exact rational multiples of pi (and integer powers of pi)";
       description = "Provides an exact representation for rational multiples of pi alongside an approximate representation of all reals.\nUseful for storing and computing with conversion factors between physical units.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."numtype-dk" or (errorHandler.buildDepError "numtype-dk"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

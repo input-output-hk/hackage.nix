@@ -21,7 +21,7 @@
       synopsis = "Just Build It - a \"do what I mean\" abstraction for Haskell build tools";
       description = "If you work with multiple Haskell projects, it can be annoying have to\nchange gears mentally as to which set of tooling you have to work with\nfor each one (configuring your editor, or even just the command-line).\n\n@jbi@ aims to provide a common interface to the various Haskell build\ntools available and automatically determine which one you should use,\nso you can get back to hacking on your code, rather than on your\nenvironment.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jbi" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

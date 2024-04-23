@@ -6,8 +6,8 @@
         nix = import ../hackage/toml-test-drivers-1.0.0.0-r0-316e7834ebee5c42f529e7b83b60194e7f4f394d24bd426d7c305a7a3d3f69d0.nix;
         revNum = 0;
         sha256 = "316e7834ebee5c42f529e7b83b60194e7f4f394d24bd426d7c305a7a3d3f69d0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

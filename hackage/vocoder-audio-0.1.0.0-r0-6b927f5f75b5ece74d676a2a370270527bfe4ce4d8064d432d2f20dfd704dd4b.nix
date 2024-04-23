@@ -21,7 +21,7 @@
       synopsis = "Phase vocoder for conduit-audio";
       description = "This module allows to easily use frequency domain processing on audio\nstreams created by @conduit-audio@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
           (hsPkgs."conduit-audio" or (errorHandler.buildDepError "conduit-audio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vocoder-file" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
@@ -53,9 +53,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

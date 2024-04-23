@@ -21,7 +21,7 @@
       synopsis = "Handles uploading to Hackage from mega repos";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mega-sdist" = {
@@ -38,9 +38,9 @@
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

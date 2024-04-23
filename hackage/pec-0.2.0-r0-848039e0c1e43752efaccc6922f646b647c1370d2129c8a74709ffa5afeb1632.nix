@@ -21,7 +21,7 @@
       synopsis = "pec embedded compiler";
       description = "The intent of pec is to provide a drop-in replacement for C, but with modern language features.  Pec is a procedural language with a functional/declarative feel.  Programming in pec is very similar to monadic programming in Haskell.  The primary use case for pec is to provide a productive environment for writing safe, efficient, embedded applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pecgen" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pec" = {
           depends = [
             (hsPkgs."pec" or (errorHandler.buildDepError "pec"))
@@ -78,9 +78,9 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pecgencnt" = {
           depends = [
             (hsPkgs."pec" or (errorHandler.buildDepError "pec"))
@@ -96,9 +96,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

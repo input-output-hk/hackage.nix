@@ -21,7 +21,7 @@
       synopsis = "Socket activation and other systemd integration for the Warp web server (WAI)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "warp-systemd-example" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-systemd" or (errorHandler.buildDepError "warp-systemd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

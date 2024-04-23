@@ -21,7 +21,7 @@
       synopsis = "Minimal mail delivery agent (MDA) for local mail with maildir support ";
       description = "Acts as a minimal (local delivery only, many features un-implemented) mail\ndelivery agent (or MDA), delivering mail to a local @maildir@ format spool.\nHandy when you don't want to install an MTA (Mail Transfer Agent) or\nfuller-featured MDA - you just want a program which accepts\n@sendmail@-style delivery of messages from local programs, and dumps them\nsomewhere you can read them.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "attomail" = {
@@ -43,10 +43,10 @@
             (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
             (hsPkgs."hsemail-ns" or (errorHandler.buildDepError "hsemail-ns"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "attomail-doctest" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

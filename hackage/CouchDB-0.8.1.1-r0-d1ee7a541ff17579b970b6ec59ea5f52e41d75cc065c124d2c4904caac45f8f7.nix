@@ -21,7 +21,7 @@
       synopsis = "CouchDB interface";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Partial functions from the prelude with a MonadFailure interface";
       description = "Partial functions from the base library, such as @head@ and @!!@, modified\nto fail in a @MonadFailure@ monad.\nThese functions can be used to reduce the number of unsafe pattern matches in\nyour code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."control-monad-failure" or (errorHandler.buildDepError "control-monad-failure"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.cme) (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception"));
+        ] ++ pkgs.lib.optional (flags.cme) (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

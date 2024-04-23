@@ -21,7 +21,7 @@
       synopsis = "Automatic differentiation and backpropagation.";
       description = "![Second order derivative of a composition](doc/images/composition_second_derivative.png)\n\nAutomatic differentiation and backpropagation.\nWe do not attract gradient tape.\nInstead, the differentiation operator is defined directly as a map between differentiable function objects.\nSuch functions are to be combined in arrow style using '(>>>)', '(***)', 'first', etc.\n\nThe original purpose of the package is an automatic backpropagation differentiation component\nfor a functional type-dependent library for deep machine learning.\nSee [tutorial](InfBackprop-Tutorial.html) details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."simple-expr" or (errorHandler.buildDepError "simple-expr"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."simple-expr" or (errorHandler.buildDepError "simple-expr"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

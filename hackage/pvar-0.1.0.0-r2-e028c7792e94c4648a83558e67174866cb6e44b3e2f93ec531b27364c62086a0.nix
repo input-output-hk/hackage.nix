@@ -21,16 +21,16 @@
       synopsis = "Mutable variable with primitive values";
       description = "Please see the README on GitHub at <https://github.com/lehins/pvar#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

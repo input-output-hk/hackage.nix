@@ -21,11 +21,11 @@
       synopsis = "Typed Transformations of Typed Abstract Syntax";
       description = "Library for Typed Transformations of Typed Abstract Syntax";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

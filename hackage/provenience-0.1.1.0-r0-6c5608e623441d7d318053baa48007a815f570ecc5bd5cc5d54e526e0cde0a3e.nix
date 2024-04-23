@@ -21,7 +21,7 @@
       synopsis = "Computations that automatically track data dependencies";
       description = "see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "provenienceExample" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
       };
-    }
+    };
+  }

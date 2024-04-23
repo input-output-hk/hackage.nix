@@ -21,7 +21,7 @@
       synopsis = "A library for existential types";
       description = "The library defines the type Cell and Cell1 uses Constraint kinds to so that it can stand for any existential type. Combinators and lenses of various types are built on top of 'Cell' and 'Cell1'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-Eq" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."existential" or (errorHandler.buildDepError "existential"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

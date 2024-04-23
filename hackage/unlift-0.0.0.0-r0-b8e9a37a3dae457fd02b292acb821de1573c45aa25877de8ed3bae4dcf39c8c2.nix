@@ -21,7 +21,7 @@
       synopsis = "Typeclass for monads that can be unlifted to arbitrary base monads";
       description = "Typeclass for monads that can be unlifted to arbitrary base monads.\nSee [README.md](https://github.com/kowainik/unlift#unlift) for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

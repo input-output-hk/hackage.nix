@@ -21,7 +21,7 @@
       synopsis = "Provide json instances automagically to vinyl types";
       description = "This adds Data.Aeson FromJSON instances for Simple records";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
+        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

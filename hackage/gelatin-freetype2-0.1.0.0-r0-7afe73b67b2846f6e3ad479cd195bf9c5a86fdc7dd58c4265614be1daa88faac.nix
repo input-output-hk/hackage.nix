@@ -21,7 +21,7 @@
       synopsis = "FreeType2 based text rendering for the gelatin realtime\nrendering system.";
       description = "FreeType2 based text rendering for the gelatin realtime\nrendering system. Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gelatin-freetype2-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gelatin-freetype2" or (errorHandler.buildDepError "gelatin-freetype2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Takes a Haskell source-code file and outputs the modules it\n. imports. Follows links to local modules as well.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "file-modules" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

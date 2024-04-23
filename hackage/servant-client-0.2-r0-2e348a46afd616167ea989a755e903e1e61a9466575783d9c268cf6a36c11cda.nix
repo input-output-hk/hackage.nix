@@ -21,7 +21,7 @@
       synopsis = "automatical derivation of haskell functions that let you query servant webservices";
       description = "This library lets you derive automatically Haskell functions that\nlet you query each endpoint of a <http://hackage.haskell.org/package/servant servant> webservice.\n\nExample below.\n\n> type MyApi = \"books\" :> Get [Book] -- GET /books\n>         :<|> \"books\" :> ReqBody Book :> Post Book -- POST /books\n>\n> myApi :: Proxy MyApi\n> myApi = Proxy\n>\n> getAllBooks :: BaseUrl -> EitherT String IO [Book]\n> postNewBook :: Book -> BaseUrl -> EitherT String IO Book\n> (getAllBooks :<|> postNewBook) = client myApi";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A servant companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
           (hsPkgs."sydtest-wai" or (errorHandler.buildDepError "sydtest-wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-servant-test" = {
           depends = [
@@ -44,12 +44,12 @@
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."sydtest-servant" or (errorHandler.buildDepError "sydtest-servant"))
             (hsPkgs."sydtest-wai" or (errorHandler.buildDepError "sydtest-wai"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

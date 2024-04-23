@@ -21,7 +21,7 @@
       synopsis = "Measure your code's complexity";
       description = "Argon performs static analysis on your code in order to compute cyclomatic\ncomplexity. It is a quantitative measure of the number of linearly\nindipendent paths through the code.\n\nThe intended usage is through Argon's executable, which accepts a list of\nfile paths to analyze. The data can be optionally exported to JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,11 +32,11 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "7.10.2"
           then false
           else true;
-        };
+      };
       exes = {
         "argon" = {
           depends = [
@@ -47,12 +47,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."argon" or (errorHandler.buildDepError "argon"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.10.2"
             then false
             else true;
-          };
         };
+      };
       tests = {
         "argon-test" = {
           depends = [
@@ -67,18 +67,18 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."argon" or (errorHandler.buildDepError "argon"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.10.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.10.2"
             then false
             else true;
-          };
+        };
         "style" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

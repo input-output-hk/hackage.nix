@@ -21,7 +21,7 @@
       synopsis = "Wake up and perform an action at a certain time.";
       description = "Please see the README at <https://github.com/DaveCTurner/alarmclock/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "alarmclock-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

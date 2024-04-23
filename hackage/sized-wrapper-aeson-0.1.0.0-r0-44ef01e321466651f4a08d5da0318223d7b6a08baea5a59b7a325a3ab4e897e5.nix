@@ -21,16 +21,16 @@
       synopsis = "aeson instances for 'Sized'";
       description = "aeson instances for 'Sized'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."sized-wrapper" or (errorHandler.buildDepError "sized-wrapper"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sized-wrapper-aeson-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

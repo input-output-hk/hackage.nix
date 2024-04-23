@@ -21,11 +21,11 @@
       synopsis = "dimensions, quantities and constants";
       description = "Library to work with typed SI dimensions and common physical functions and constants.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Provides \"Data.Tree.RoseTrie\": trees with polymorphic paths to nodes, combining\nproperties of Rose Tree data structures and Trie data structures.";
       description = "A rose tree is a tree of trees, where every node contains a leaf and set of\nsub-trees. A trie is a tree structure where each node can be accessed using a\n\"path,\" where a path is a list of keys. A rose-trie does both. RoseTries are\nbest used in situations where every leaf in the Trie needs to accessible by a\nlist of polymorphic path elements.\nThe underlying implementation is based on \"Data.Map\", from the Haskell\nPlatform's \"containers\" package. So unlike the ordinary rose tree, where each\nnode contains a list of sub-trees, the RoseTrie contains a Map of sub-trees,\nwhere each key in the Map forms a single link in the trie path. As a result, the\npath for the RoseTrie is a list data type that is polymorphic over list elements\nwhich instantiate both the 'Prelude.Ord' and 'Prelude.Eq' type classes.\nOperating on a RoseTrie with a path of length 'p' performs up to 'p' times a\nnumber of O(log n) Map operations on each of the sub-tree Map structures\ncontaining 'n' elements, therefore path lookups and insertions in a RoseTrie\ndata structure are on the order of O(p * log n) time complexity.\nThis library was originally part of the Dao package, but has been branched\ninto it's own package in the hopes that it will be useful in a wider\nvariety of projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."minilens" or (errorHandler.buildDepError "minilens"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

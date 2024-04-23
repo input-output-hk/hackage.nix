@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell commonmark parser.";
       description = "This library provides some useful extensions to core commonmark\nsyntax: smart quotes, definition lists, tables, footnotes, math,\nand more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."commonmark" or (errorHandler.buildDepError "commonmark"))
           (hsPkgs."emojis" or (errorHandler.buildDepError "emojis"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-commonmark-extensions" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-commonmark-extensions" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

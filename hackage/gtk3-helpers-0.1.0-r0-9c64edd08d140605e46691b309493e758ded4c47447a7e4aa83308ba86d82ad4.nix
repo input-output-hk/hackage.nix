@@ -21,7 +21,7 @@
       synopsis = "A collection of auxiliary operations and widgets related to Gtk";
       description = "A collection of auxiliary operations and widgets related to Gtk+.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,27 +33,27 @@
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "haddock-coverage" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
+          depends = pkgs.lib.optionals (!!flags.test-doc-coverage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if !flags.test-doc-coverage then false else true;
-          };
         };
       };
-    }
+    };
+  }

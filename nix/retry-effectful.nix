@@ -6,8 +6,8 @@
         nix = import ../hackage/retry-effectful-0.1.0.0-r0-002f735698a707f62bc7b01367ba15d47b57e0283bdefa2d975aa95b6abe57c0.nix;
         revNum = 0;
         sha256 = "002f735698a707f62bc7b01367ba15d47b57e0283bdefa2d975aa95b6abe57c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

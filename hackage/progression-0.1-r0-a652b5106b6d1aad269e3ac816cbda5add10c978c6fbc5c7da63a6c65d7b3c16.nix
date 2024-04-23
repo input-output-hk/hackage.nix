@@ -21,7 +21,7 @@
       synopsis = "Automates the recording and graphing of criterion benchmarks";
       description = "Progression is a library that builds on the criterion\nbenchmarking library.  It stores the results of running\nyour benchmarks and graphs the performance of different\nversions of your program against each other.  See the\n\"Progression.Main\" module, and the original blog post at\n<http://chplib.wordpress.com/2010/02/04/progression-supporting-optimisation-in-haskell/> to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

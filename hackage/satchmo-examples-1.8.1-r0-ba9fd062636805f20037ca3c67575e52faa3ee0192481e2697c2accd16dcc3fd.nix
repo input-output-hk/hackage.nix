@@ -21,7 +21,7 @@
       synopsis = "examples that show how to use satchmo";
       description = "examples that show how to use satchmo";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Factor" = {
@@ -32,9 +32,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "HC" = {
           depends = [
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
@@ -43,9 +43,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "VC" = {
           depends = [
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
@@ -54,9 +54,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

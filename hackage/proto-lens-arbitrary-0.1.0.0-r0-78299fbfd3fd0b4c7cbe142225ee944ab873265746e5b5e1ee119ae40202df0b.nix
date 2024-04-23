@@ -21,7 +21,7 @@
       synopsis = "Arbitrary instances for proto-lens.";
       description = "The proto-lens-arbitrary allows generating arbitrary messages for\nuse with QuickCheck.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

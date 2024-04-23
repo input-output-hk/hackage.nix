@@ -6,8 +6,8 @@
         nix = import ../hackage/frpnow-gtk3-0.2.0-r0-5b862d1dd1219940592acc0e99d8a3ebc76f4ff0e39ba83199fb41f0740ffcbe.nix;
         revNum = 0;
         sha256 = "5b862d1dd1219940592acc0e99d8a3ebc76f4ff0e39ba83199fb41f0740ffcbe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

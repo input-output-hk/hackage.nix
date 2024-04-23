@@ -21,7 +21,7 @@
       synopsis = "Web application deployment manager, focusing on Haskell web frameworks";
       description = "Deployment system for web applications, originally intended for hosting Yesod\napplications. Keter does the following actions for your application:\n\n* Binds to the main port (usually port 80) and reverse proxies requests to your application based on virtual hostnames.\n* Provides SSL support if requested.\n* Automatically launches applications, monitors processes, and relaunches any processes which die.\n* Provides graceful redeployment support, by launching a second copy of your application, performing a health check, and then switching reverse proxying to the new process.\n* Management of log files.\n\nKeter provides many more advanced features and extension points. It allows configuration of static hosts, redirect rules, management of PostgreSQL databases, and more. It supports a simple bundle format for applications which allows for easy management of your web apps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -70,19 +70,19 @@
           (hsPkgs."tls-session-manager" or (errorHandler.buildDepError "tls-session-manager"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (flags.system-filepath) (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optional (flags.system-filepath) (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"));
         buildable = true;
-        };
+      };
       exes = {
         "keter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."keter" or (errorHandler.buildDepError "keter"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."keter" or (errorHandler.buildDepError "keter"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

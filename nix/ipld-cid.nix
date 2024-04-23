@@ -6,8 +6,8 @@
         nix = import ../hackage/ipld-cid-0.1.0.0-r0-cd7869d111925d250d4cdd5bb86e10e31fb8fa6a3061e454e34c87724e8e7a9a.nix;
         revNum = 0;
         sha256 = "cd7869d111925d250d4cdd5bb86e10e31fb8fa6a3061e454e34c87724e8e7a9a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

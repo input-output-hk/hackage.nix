@@ -21,7 +21,7 @@
       synopsis = "Auth module for Yu.";
       description = "Helper of auth via SHA for Yu";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."yu-utils" or (errorHandler.buildDepError "yu-utils"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-core" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."yu-auth" or (errorHandler.buildDepError "yu-auth"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-auth" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,9 +53,9 @@
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = if flags.client then false else true;
-          };
         };
       };
-    }
+    };
+  }

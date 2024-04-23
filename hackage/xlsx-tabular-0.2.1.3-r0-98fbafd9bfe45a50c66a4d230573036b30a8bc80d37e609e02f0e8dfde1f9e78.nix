@@ -21,7 +21,7 @@
       synopsis = "Xlsx table cell value extraction utility";
       description = "\nConvenience utility to read xlsx tabular cells.\n\nYou can extract the values from xlsx files\ntable rows to JSON format by the heuristics or\nyour custom function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xlsx-tabular-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xlsx-tabular" or (errorHandler.buildDepError "xlsx-tabular"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

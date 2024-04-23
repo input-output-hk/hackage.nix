@@ -21,7 +21,7 @@
       synopsis = "An overly complex Haskell web framework.";
       description = "Skell is a Haskell web framework. Much like an actual skeleton, Skell is both\ncomplex and inflexible. Skell is inspired by Happstack, but looks more like\nYesod on the back-end.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

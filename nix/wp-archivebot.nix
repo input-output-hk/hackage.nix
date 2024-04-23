@@ -6,8 +6,8 @@
         nix = import ../hackage/wp-archivebot-0.1-r0-7cdfb6e2de302e79949059b78afb323a2c05741bdcf2c0f6b94a723def62659e.nix;
         revNum = 0;
         sha256 = "7cdfb6e2de302e79949059b78afb323a2c05741bdcf2c0f6b94a723def62659e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

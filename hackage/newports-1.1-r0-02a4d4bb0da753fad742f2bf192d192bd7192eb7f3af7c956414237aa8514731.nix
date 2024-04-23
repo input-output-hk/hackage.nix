@@ -21,7 +21,7 @@
       synopsis = "List ports newer than N days on a FreeBSD system";
       description = "List ports newer than N days on a FreeBSD system";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "newports" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

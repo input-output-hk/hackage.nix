@@ -21,14 +21,14 @@
       synopsis = "make SVG string from Haskell data";
       description = "> import Text.XML.YJSVG\n> main = putStrLn $ showSVG 500 750 [ (\"\", Line 30 40 100 200 \"yellow\" 10) ]\n\netc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

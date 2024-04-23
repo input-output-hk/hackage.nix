@@ -21,14 +21,14 @@
       synopsis = "Low-level bindings for the MonetDB API (mapi)";
       description = "This library only provides FFI bindings to the most basic functions. Feel free to create a pull request in case you need something.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         pkgconfig = [
           (pkgconfPkgs."monetdb-mapi" or (errorHandler.pkgConfDepError "monetdb-mapi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

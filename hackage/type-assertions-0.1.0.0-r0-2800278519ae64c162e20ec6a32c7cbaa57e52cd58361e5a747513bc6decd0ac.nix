@@ -21,12 +21,12 @@
       synopsis = "Runtime type assertions for testing";
       description = "This package provides a way to make runtime assertions about types that\ncooperate with the typechecker, intended for use in testing. For more\ninformation, see the module documentation for \"Test.TypeAssertions\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "type-assertions-test-suite" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."test-fixture" or (errorHandler.buildDepError "test-fixture"))
             (hsPkgs."type-assertions" or (errorHandler.buildDepError "type-assertions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

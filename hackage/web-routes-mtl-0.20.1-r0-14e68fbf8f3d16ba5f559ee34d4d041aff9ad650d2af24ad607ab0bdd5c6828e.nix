@@ -21,14 +21,14 @@
       synopsis = "Extends web-routes with mtl-based MonadIO / MonadTrans RouteT instances";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

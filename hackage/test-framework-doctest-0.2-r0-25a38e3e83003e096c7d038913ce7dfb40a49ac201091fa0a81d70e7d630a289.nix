@@ -21,7 +21,7 @@
       synopsis = "Test.Framework wrapper for DocTest";
       description = "Test.Framework wrapper for DocTest";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

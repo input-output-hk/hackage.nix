@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Ruler-core Attribute Grammar";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ruler-core" = {
@@ -37,9 +37,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

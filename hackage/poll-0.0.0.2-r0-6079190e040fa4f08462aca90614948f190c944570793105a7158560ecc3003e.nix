@@ -21,15 +21,15 @@
       synopsis = "Bindings to poll.h";
       description = "Poll functionality allows to wait on different FileDescriptors simultaneously.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."enumset" or (errorHandler.buildDepError "enumset"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Fuzzy time types, parsing and resolution";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

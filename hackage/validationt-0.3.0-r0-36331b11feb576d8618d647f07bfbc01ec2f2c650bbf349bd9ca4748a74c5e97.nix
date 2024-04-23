@@ -21,7 +21,7 @@
       synopsis = "Straightforward validation monad";
       description = "A simple data validation library. The main idea is to provide an easy way to validate web form data by aggregating errors for each field.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."validationt" or (errorHandler.buildDepError "validationt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Useful types and definitions missing from other libraries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

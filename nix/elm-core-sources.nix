@@ -6,8 +6,8 @@
         nix = import ../hackage/elm-core-sources-1.0.0-r0-a4ed2d5437fe964d8aaab3dd530a56c554e6e37b9f0bb7fc0e0ad6121dc2acd1.nix;
         revNum = 0;
         sha256 = "a4ed2d5437fe964d8aaab3dd530a56c554e6e37b9f0bb7fc0e0ad6121dc2acd1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

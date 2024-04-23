@@ -21,7 +21,7 @@
       synopsis = "Wavefront OBJ loader";
       description = "A Wavefront OBJ loader. Currently supports polygonal information. More could\nbe added if needed (like curves and surface) if people contribute. Feel free\nto help!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

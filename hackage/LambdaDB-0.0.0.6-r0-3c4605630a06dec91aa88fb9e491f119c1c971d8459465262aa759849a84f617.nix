@@ -21,34 +21,34 @@
       synopsis = "On-memory Database using Lambda Function environment.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "LambdaDB-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."LambdaDB" or (errorHandler.buildDepError "LambdaDB"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "LambdaDB-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."LambdaDB" or (errorHandler.buildDepError "LambdaDB"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

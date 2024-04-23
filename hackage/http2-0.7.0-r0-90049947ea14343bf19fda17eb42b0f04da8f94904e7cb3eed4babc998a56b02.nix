@@ -21,7 +21,7 @@
       synopsis = "HTTP/2.0 library including frames and HPACK";
       description = "HTTP/2.0 library including frames and HPACK\nCurrently HTTP/2 16 framing and HPACK 10 is supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hpack-encode" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "hpack-debug" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "hpack-stat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "frame-encode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,18 +102,18 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hpack" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -149,9 +149,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "frame" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -165,9 +165,9 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Software Transactional Memory";
       description = "A modular composable concurrency abstraction.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

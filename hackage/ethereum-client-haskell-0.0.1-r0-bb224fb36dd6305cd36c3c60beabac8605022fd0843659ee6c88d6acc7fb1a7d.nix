@@ -21,7 +21,7 @@
       synopsis = "A Haskell version of an Ethereum client";
       description = "The client described in the Ethereum Yellowpaper";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ethereumH" = {
@@ -50,9 +50,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "queryEth" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,10 +78,10 @@
             (hsPkgs."leveldb-haskell" or (errorHandler.buildDepError "leveldb-haskell"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-ethereumH" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

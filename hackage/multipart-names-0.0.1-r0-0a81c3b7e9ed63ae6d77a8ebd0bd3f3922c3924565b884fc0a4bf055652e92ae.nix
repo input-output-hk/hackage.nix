@@ -21,7 +21,7 @@
       synopsis = "Handling of multipart names in various casing styles";
       description = "Basic utilities to handle multipart names with conversion between\ncasing styles UpperCamelCase, lowerCamelCase,\nCase_insensitive_Underscored, UPPER_UNDERSCORED, lower_underscored\nand UPPER-HYPHENATED, Case-insensitive-Hyphenated, and\nlower-hyphenated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

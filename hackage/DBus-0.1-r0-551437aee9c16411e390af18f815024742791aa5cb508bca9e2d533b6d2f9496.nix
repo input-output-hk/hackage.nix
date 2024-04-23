@@ -21,11 +21,11 @@
       synopsis = "DBus bindings";
       description = "Bindings for the D-Bus API.\nFor details on D-Bus, see the D-Bus wiki at:\n<http://www.freedesktop.org/wiki/Software/dbus>\n\nIt's worth noting that this binding is not stable or\neven well-tested at all. Use this library at your own risk.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

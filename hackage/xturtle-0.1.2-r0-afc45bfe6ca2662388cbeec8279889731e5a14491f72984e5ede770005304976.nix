@@ -21,7 +21,7 @@
       synopsis = "turtle like LOGO";
       description = "In ghci\n\n> :m Graphics.X11.Turtle\n> f <- openField\n> t <- newTurtle f\n> forward t 100\n> left t 50\n\netc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."x11-xim" or (errorHandler.buildDepError "x11-xim"))
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
           (hsPkgs."yjsvg" or (errorHandler.buildDepError "yjsvg"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

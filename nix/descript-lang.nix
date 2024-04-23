@@ -6,8 +6,8 @@
         nix = import ../hackage/descript-lang-0.2.0.0-r0-095d91a39e3bafc5fbd205fedc5848dbe42cad091256c020425118d4d7b3201c.nix;
         revNum = 0;
         sha256 = "095d91a39e3bafc5fbd205fedc5848dbe42cad091256c020425118d4d7b3201c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

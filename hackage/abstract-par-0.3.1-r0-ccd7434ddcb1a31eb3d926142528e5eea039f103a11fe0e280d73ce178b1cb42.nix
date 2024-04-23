@@ -21,14 +21,14 @@
       synopsis = "Type classes generalizing the functionality of the 'monad-par' library.";
       description = "The 'Par' monad(s) offer an alternative\nparallel programming API to that provided by the\n@parallel@ package.\nA 'Par' monad allows the simple description of\nparallel computations, and can be used to add\nparallelism to pure Haskell code.  The basic API\nis straightforward: a @Par@ monad supports forking\nand simple communication in terms of 'IVar's.\nThis module is an interface module only. It\nprovides a number of type clasess, but not an\nimplementation.  The type classes separate different\nlevels of @Par@ functionality.  See the\n\"Control.Monad.Par.Class\" module for more details.\nThe 'monad-par' library is one example of a\nconcrete library providing this interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

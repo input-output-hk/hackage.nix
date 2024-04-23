@@ -21,7 +21,7 @@
       synopsis = "Test suites for `yaya-unsafe`.";
       description = "This package should not be depended on by anything.";
       buildType = "Simple";
-      };
+    };
     components = {
       tests = {
         "yaya-unsafe-test" = {
@@ -31,9 +31,9 @@
             (hsPkgs."yaya" or (errorHandler.buildDepError "yaya"))
             (hsPkgs."yaya-hedgehog" or (errorHandler.buildDepError "yaya-hedgehog"))
             (hsPkgs."yaya-unsafe" or (errorHandler.buildDepError "yaya-unsafe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

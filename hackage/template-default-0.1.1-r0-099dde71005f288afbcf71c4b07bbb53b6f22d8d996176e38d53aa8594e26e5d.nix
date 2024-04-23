@@ -21,15 +21,15 @@
       synopsis = "declaring Default instances just got even easier";
       description = "Declaring instances of the @Default@ type class has always\nbeen pretty mechanical. This package makes the compiler do\nthe mechanical bit.  This has the benefit that even less\nthought is required, and the instance will automatically\nbe corrected when the definition of the data type changes\n(say, to add more arguments to the constructor). Usage\nlooks like this, for example:\n\n> (-# LANGUAGE TemplateHaskell #-)\n> import Data.Default.TH\n> data List a = Nil | Cons a (List a)\n> deriveDefault ''List\n\nThis example results in the following instance:\n\n> instance Data.Default.Default (List a_ad2) where\n>   Data.Default.def = Nil";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

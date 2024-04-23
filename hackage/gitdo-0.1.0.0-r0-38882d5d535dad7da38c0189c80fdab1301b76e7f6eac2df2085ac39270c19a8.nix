@@ -21,7 +21,7 @@
       synopsis = "Create Github issues out of TODO comments in code";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gitdo" = {
@@ -39,9 +39,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

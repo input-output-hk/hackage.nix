@@ -21,7 +21,7 @@
       synopsis = "Michael and Scott lock-free queues.";
       description = "Michael and Scott queues are described in their PODC 1996 paper:\n\n<http://dl.acm.org/citation.cfm?id=248052.248106>\n\nThese are single-ended concurrent queues based on a singlly linked\nlist and using atomic CAS instructions to swap the tail pointers.\nAs a well-known efficient algorithm they became the basis for Java's\n@ConcurrentLinkedQueue@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."abstract-deque" or (errorHandler.buildDepError "abstract-deque"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lockfree-queue" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

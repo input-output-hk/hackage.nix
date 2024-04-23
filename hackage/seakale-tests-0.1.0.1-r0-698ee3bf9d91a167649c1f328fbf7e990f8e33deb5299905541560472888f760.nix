@@ -21,7 +21,7 @@
       synopsis = "Helpers to test code using Seakale";
       description = "This package provides a way to run code written with Seakale with a fake database using mocks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

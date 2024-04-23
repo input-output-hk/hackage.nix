@@ -21,7 +21,7 @@
       synopsis = "Useful functions and instances for using servant with a PostgreSQL context";
       description = "Useful functions and instances for using servant with a PostgreSQL context";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."servant-response" or (errorHandler.buildDepError "servant-response"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

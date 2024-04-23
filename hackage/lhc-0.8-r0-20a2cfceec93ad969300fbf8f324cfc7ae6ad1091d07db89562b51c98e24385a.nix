@@ -13,7 +13,7 @@
       threaded = false;
       lhc-regress = false;
       with-libs = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "lhc"; version = "0.8"; };
@@ -26,7 +26,7 @@
       synopsis = "LHC Haskell Compiler";
       description = "lhc is a haskell compiler which aims to produce the most efficient programs possible via whole\nprogram analysis and other optimizations.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "lhc" = {
@@ -48,17 +48,17 @@
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lhc-regress" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ];
+          ];
           buildable = if flags.lhc-regress then true else false;
-          };
+        };
         "lhc-pkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,9 +68,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

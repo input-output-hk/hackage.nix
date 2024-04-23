@@ -6,8 +6,8 @@
         nix = import ../hackage/Shrub-0.1.0.0-r0-49418d44ce9088dac620e53d560ee01a8b24e7b043eb6e3783e84a4c3be115d5.nix;
         revNum = 0;
         sha256 = "49418d44ce9088dac620e53d560ee01a8b24e7b043eb6e3783e84a4c3be115d5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

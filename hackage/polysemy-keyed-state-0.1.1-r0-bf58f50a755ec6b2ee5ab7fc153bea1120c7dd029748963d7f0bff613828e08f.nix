@@ -21,7 +21,7 @@
       synopsis = "Effect for a set of stateful values indexed by a type of keys";
       description = "The @KeyedState k@ effect provides access to a set of stateful values indexed by some key type @k :: Type -> Type@, where a key of type @k a@ can be used to access a stateful value of type @a@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
           (hsPkgs."trivial-constraint" or (errorHandler.buildDepError "trivial-constraint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."some" or (errorHandler.buildDepError "some"))
             (hsPkgs."trivial-constraint" or (errorHandler.buildDepError "trivial-constraint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

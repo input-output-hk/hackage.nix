@@ -21,7 +21,7 @@
       synopsis = "Distributions for use with the HLearn library";
       description = "This module is used to estimate statistical distributions from data.  The focus is a clean interface inspired by algebra.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
           (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
           (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HLearn-Distributions-Criterion" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "HLearn-Distributions-SpaceTests" = {
           depends = [
             (hsPkgs."HLearn-algebra" or (errorHandler.buildDepError "HLearn-algebra"))
@@ -63,9 +63,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

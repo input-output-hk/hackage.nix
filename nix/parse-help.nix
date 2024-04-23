@@ -6,8 +6,8 @@
         nix = import ../hackage/parse-help-0.0-r0-ac7500f94d51efb1b7fcfab53409517ef922ba566a8422dd466e7e138e710a85.nix;
         revNum = 0;
         sha256 = "ac7500f94d51efb1b7fcfab53409517ef922ba566a8422dd466e7e138e710a85";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

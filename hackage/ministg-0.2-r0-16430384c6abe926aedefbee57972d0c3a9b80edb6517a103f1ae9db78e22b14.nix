@@ -21,7 +21,7 @@
       synopsis = "an interpreter for an operational semantics for the STG machine. ";
       description = "ministg is an interpreter for a simple high-level operational semantics for the STG machine. The\nsemantics is taken from the research paper \"Making a fast curry: push/enter vs. eval/apply\nfor higher-order languages\", by Simon Marlow and Simon Peyton Jones. It provides the option\nto trace the execution of the interpreter, rendering each step in a HTML file. This is useful\nfor understanding the behaviour of the STG machine, and also useful for experimenting with\nchanges to the machine. It also supports an experimental call stack tracing facility.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ministg" = {
@@ -36,9 +36,9 @@
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

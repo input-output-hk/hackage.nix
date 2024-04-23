@@ -21,7 +21,7 @@
       synopsis = "Upload packages to Marmalade";
       description = "Upload Emacs packages to the Marmalade ELPA archive";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "marmalade-upload" = {
@@ -40,13 +40,13 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-multipart" or (errorHandler.buildDepError "http-client-multipart"))
-            ] ++ (pkgs.lib).optional (!system.isOsx) (hsPkgs."udbus" or (errorHandler.buildDepError "udbus"));
-          frameworks = (pkgs.lib).optionals (system.isOsx) [
+          ] ++ pkgs.lib.optional (!system.isOsx) (hsPkgs."udbus" or (errorHandler.buildDepError "udbus"));
+          frameworks = pkgs.lib.optionals (system.isOsx) [
             (pkgs."Security" or (errorHandler.sysDepError "Security"))
             (pkgs."CoreFoundation" or (errorHandler.sysDepError "CoreFoundation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

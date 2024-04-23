@@ -21,7 +21,7 @@
       synopsis = "a Paralell-DEVS implementaion based on distributed-process";
       description = "The Discrete Event System Sepcification (DEVS) formalism\ndefines discrete event simulation models in a hierachical,\nmodular manner.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
           (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lambda-devs-example" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."lambda-devs" or (errorHandler.buildDepError "lambda-devs"))
             (hsPkgs."numtype" or (errorHandler.buildDepError "numtype"))
             (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

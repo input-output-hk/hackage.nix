@@ -21,7 +21,7 @@
       synopsis = "A ByteString based library for writing HTTP(S) servers and clients.";
       description = "A ByteString based HTTP(S) library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."network-connection" or (errorHandler.buildDepError "network-connection"))
           (hsPkgs."network-dns" or (errorHandler.buildDepError "network-dns"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

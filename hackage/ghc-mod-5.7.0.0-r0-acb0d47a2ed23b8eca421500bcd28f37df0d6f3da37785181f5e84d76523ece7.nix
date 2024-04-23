@@ -29,8 +29,8 @@
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (errorHandler.setupDepError "template-haskell")))
         (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers or (errorHandler.setupDepError "transformers")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -69,9 +69,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
+      };
       exes = {
         "ghc-mod" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghc-modi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,24 +102,24 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

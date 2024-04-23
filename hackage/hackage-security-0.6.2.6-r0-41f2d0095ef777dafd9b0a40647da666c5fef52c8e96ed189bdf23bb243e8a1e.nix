@@ -21,7 +21,7 @@
       synopsis = "Hackage security library";
       description = "The hackage security library provides both server and\nclient utilities for securing the Hackage package server\n(<https://hackage.haskell.org/>).  It is based on The Update\nFramework (<https://theupdateframework.com/>), a set of\nrecommendations developed by security researchers at\nvarious universities in the US as well as developers on the\nTor project (<https://www.torproject.org/>).\n\nThe current implementation supports only index signing,\nthereby enabling untrusted mirrors. It does not yet provide\nfacilities for author package signing.\n\nThe library has two main entry points:\n\"Hackage.Security.Client\" is the main entry point for\nclients (the typical example being @cabal@), and\n\"Hackage.Security.Server\" is the main entry point for\nservers (the typical example being @hackage-server@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,20 +45,20 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.lukko
+        ] ++ (if flags.lukko
           then [ (hsPkgs."lukko" or (errorHandler.buildDepError "lukko")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (if flags.cabal-syntax
+          ])) ++ (if flags.cabal-syntax
           then [
             (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
-            ]
+          ]
           else [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "TestSuite" = {
           depends = [
@@ -79,12 +79,12 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

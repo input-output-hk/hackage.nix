@@ -21,7 +21,7 @@
       synopsis = "A unix-style (read from stdin, write to stdout) global hotkey daemon";
       description = "__spartacon__ is a Unix-style global hotkey daemon. It embraces the philosophies of \"do one thing, and do it well\" and \"text in, text out\". It allows you to capture hotkeys on X11, without having any strong opinions about what actions should happen when those keys are pressed.\n\nThere are other hotkey applications out there; for example, modern desktop environments typically have a way to bind keys to actions, and there are standalone apps like <https://hyperkeys.xureilab.com/ HyperKeys>. Typically, these implementations assume that the thing you want to happen when a key is hit is to launch a process. If what you really want is to just add hotkey functionality to an existing application without it needing to know how to do that, those are typically not suitable, because the tool being controlled is already running.\n\nspartacon sits in that space: when you want to control a \"text in, text out\"-style program with hotkeys, this is the tool for you. (And if you decide to pipe spartacon to something that launches processes, that's no skin off my teeth!)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "spartacon" = {
@@ -35,9 +35,9 @@
             (hsPkgs."relation" or (errorHandler.buildDepError "relation"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

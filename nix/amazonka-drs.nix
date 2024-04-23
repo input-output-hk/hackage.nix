@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-drs-2.0-r0-c61c4c051890deb44144a10a447825111f3a73fcd95881f7a3b1a0f606b6d204.nix;
         revNum = 0;
         sha256 = "c61c4c051890deb44144a10a447825111f3a73fcd95881f7a3b1a0f606b6d204";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/forward-chan-0.0.0.0-r0-915eb6d23a0194e99ffd242eb75d9c807cd1c614710a3e93cd634ea190c43f76.nix;
         revNum = 0;
         sha256 = "915eb6d23a0194e99ffd242eb75d9c807cd1c614710a3e93cd634ea190c43f76";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

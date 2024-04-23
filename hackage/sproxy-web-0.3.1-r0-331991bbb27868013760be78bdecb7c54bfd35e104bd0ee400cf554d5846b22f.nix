@@ -21,7 +21,7 @@
       synopsis = "Web interface to sproxy database";
       description = "Web frontend for managing sproxy.\nSee https://hackage.haskell.org/package/sproxy";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sproxy-web" = {
@@ -46,9 +46,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

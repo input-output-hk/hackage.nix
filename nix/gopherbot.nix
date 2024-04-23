@@ -6,8 +6,8 @@
         nix = import ../hackage/gopherbot-0.1.0-r0-edee8dd60800b606c14e17db37a3ac8f2ef8bc44bb05dc3eb3e53160a4a7da38.nix;
         revNum = 0;
         sha256 = "edee8dd60800b606c14e17db37a3ac8f2ef8bc44bb05dc3eb3e53160a4a7da38";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Orphan instances for data types in heavy-logger package";
       description = "This package contains orphan instances for data types in heavy-logger package for:\n* Binary type class (from binary package)\n* MonadThrow, MonadCatch, MonadMask type classes (from exceptions package) for LoggingT transformer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-format-heavy" or (errorHandler.buildDepError "text-format-heavy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "binary-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-format-heavy" or (errorHandler.buildDepError "text-format-heavy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

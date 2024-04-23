@@ -21,7 +21,7 @@
       synopsis = "Haskell-embedded OpenGL";
       description = "A simple, functional approach to\nOpenGL programming in Haskell.\n\nAll definitions that comprise HaGL are\nprovided by the top-level \"Graphics.HaGL\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."gl-capture" or (errorHandler.buildDepError "gl-capture"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "HaGL-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tool for sharing and using Elm libraries";
       description = "elm-get lets you install, update, and publish Elm libraries";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "elm-get" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

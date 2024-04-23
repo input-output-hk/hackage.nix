@@ -21,7 +21,7 @@
       synopsis = "Provides PAM authentication module";
       description = "Provides PAM authentication module that simply\nlets a user specify his/her identifier.\n\nThis is not intended for real world use,\njust for private network.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

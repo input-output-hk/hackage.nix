@@ -21,7 +21,7 @@
       synopsis = "Attoparsec integration for the streaming ecosystem";
       description = "Attoparsec integration for the streaming ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "streaming-attoparsec-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."streaming-attoparsec" or (errorHandler.buildDepError "streaming-attoparsec"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

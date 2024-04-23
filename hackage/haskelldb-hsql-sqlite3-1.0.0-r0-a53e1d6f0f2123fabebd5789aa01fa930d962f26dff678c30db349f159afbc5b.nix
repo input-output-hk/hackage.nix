@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HSQL SQLite3 driver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."haskelldb-hsql" or (errorHandler.buildDepError "haskelldb-hsql"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
           (hsPkgs."hsql-sqlite3" or (errorHandler.buildDepError "hsql-sqlite3"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "DBDirect-hsql-sqlite3" = { buildable = true; }; };
       };
-    }
+      exes = { "DBDirect-hsql-sqlite3" = { buildable = true; }; };
+    };
+  }

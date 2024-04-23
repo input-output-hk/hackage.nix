@@ -21,7 +21,7 @@
       synopsis = "Control structure similar to Control.Monad.State, allowing multiple nested states, distinguishable by provided phantom types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."prologue" or (errorHandler.buildDepError "prologue"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

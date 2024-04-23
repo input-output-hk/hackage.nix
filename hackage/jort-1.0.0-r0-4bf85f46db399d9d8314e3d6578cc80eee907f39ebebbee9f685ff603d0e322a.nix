@@ -21,7 +21,7 @@
       synopsis = "JP's own ray tracer";
       description = "A real-time raytracer in Haskell. No kidding.\n(Vintage: my first Haskell project)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jort" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Instances to use linear vector spaces on accelerate backends";
       description = "Instances to use linear vector spaces on accelerate backends";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

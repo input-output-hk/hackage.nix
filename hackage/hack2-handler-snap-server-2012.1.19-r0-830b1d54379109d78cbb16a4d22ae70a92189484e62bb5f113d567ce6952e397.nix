@@ -14,7 +14,7 @@
       identifier = {
         name = "hack2-handler-snap-server";
         version = "2012.1.19";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Jinjing Wang <nfjinjing@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Hack2 Snap server handler";
       description = "Hack2 Snap server handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

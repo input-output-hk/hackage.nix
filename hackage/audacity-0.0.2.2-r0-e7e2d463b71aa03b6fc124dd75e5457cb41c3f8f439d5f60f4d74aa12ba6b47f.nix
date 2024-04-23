@@ -21,7 +21,7 @@
       synopsis = "Interchange with the Audacity sound signal editor";
       description = "This package provides functions\nfor interchange with the Audacity sound signal editor.\nCurrently we support import and export of label tracks,\nexport of Audacity projects and\nlimited import of tracks from Audacity projects.\n\nWe provide some examples that are useful on its own:\n\n* @sox-split@:\nSplit an audio file according to a label track.\nAudacity provides this function by itself.\nYou can use placeholders like @%s@ and @%02d@\nin order to compose the names of the parts from the labels and positions.\n\n* @sox-concat@:\nConcatenate a sequence of sound files with matching\nsampling rates and numbers of channels using SoX\nand generate an Audacity label track file\nthat shows the origins of the parts.\n\n* @audacity-concat@:\nCreate an Audacity project file\ncontaining a virtual concatenation of the input sound files\nand a label track showing the origins of the sound files.\n\n* @audacity-combine@:\nPut several audio and label files into tracks of a new Audacity project.\nOpening one or even multiple such projects is much easier\nthan loading individual tracks into Audacity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sox-split" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."audacity" or (errorHandler.buildDepError "audacity"))
             (hsPkgs."soxlib" or (errorHandler.buildDepError "soxlib"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
@@ -54,11 +54,11 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "sox-concat" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."audacity" or (errorHandler.buildDepError "audacity"))
             (hsPkgs."soxlib" or (errorHandler.buildDepError "soxlib"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
@@ -68,11 +68,11 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "audacity-concat" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."audacity" or (errorHandler.buildDepError "audacity"))
             (hsPkgs."soxlib" or (errorHandler.buildDepError "soxlib"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
@@ -82,11 +82,11 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "audacity-combine" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."audacity" or (errorHandler.buildDepError "audacity"))
             (hsPkgs."soxlib" or (errorHandler.buildDepError "soxlib"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
@@ -96,9 +96,9 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

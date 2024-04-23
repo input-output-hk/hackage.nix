@@ -21,7 +21,7 @@
       synopsis = "RPM package creator for Haskell Cabal-based packages";
       description = "This package generates RPM packages from Haskell Cabal packages.\n\nSee <https://github.com/juhp/cabal-rpm/blob/master/ChangeLog> for history details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cblrpm" = {
@@ -35,9 +35,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

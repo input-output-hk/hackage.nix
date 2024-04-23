@@ -21,7 +21,7 @@
       synopsis = "Parallel rendering of raster images.";
       description = "Legacy version for Haskell Platform 2012.04.\nYou will get better performance if you upgrade to the most recent version of GHC.\nParallel rendering of raster images.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

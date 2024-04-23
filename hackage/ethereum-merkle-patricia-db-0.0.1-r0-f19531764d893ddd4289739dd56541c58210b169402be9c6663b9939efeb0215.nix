@@ -21,7 +21,7 @@
       synopsis = "A modified Merkle Patricia DB";
       description = "The modified Merkle Patricia DB described in the Ethereum Yellowpaper";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."ethereum-rlp" or (errorHandler.buildDepError "ethereum-rlp"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-merkel-patricia-db" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

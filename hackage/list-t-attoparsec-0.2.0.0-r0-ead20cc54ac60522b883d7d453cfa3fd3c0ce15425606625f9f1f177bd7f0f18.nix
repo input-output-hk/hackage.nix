@@ -21,7 +21,7 @@
       synopsis = "An \"attoparsec\" adapter for \"list-t\"";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

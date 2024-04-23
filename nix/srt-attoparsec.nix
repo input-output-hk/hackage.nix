@@ -6,8 +6,8 @@
         nix = import ../hackage/srt-attoparsec-0.1.0.0-r0-c3972f07e213a51e50ae90d0ec790ec910d24174dc0d1e4d7675a47f2a11f9ce.nix;
         revNum = 0;
         sha256 = "c3972f07e213a51e50ae90d0ec790ec910d24174dc0d1e4d7675a47f2a11f9ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Batch processing toolset for Linux / Unix";
       description = "The batchd is a toolset for batch processing for Linux / Unix operating systems.\nIt enables one to:\n\n* Create and manage queues of tasks (batch jobs);\n\n* Specify time periods (schedules) when jobs from each queue can be executed;\n\n* Run batch jobs on localhost or on several machines one-by-one or in parallel.\n\nThe main concern of batchd are batch jobs, which are\nmeant to take some time to execute (minutes to days) and\nconsume a lot of computational power (probably whole\npower of the machine). Examples of such jobs are:\n\n* Scientific calculations (physical modelling or numeric\nexperiments on differential equations, for example);\n\n* Building large software products from source code;\n\n* Running integration test suites;\n\n* Rendering complex 3D scenes or animations;\n\n* Executing complex reports on large databases;\n\n* Backups;\n\n* and so on.\n\nFor more complete description, please refer to\n<https://github.com/portnov/batchd/blob/master/README.md README>\nand <https://github.com/portnov/batchd/wiki Wiki> on GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "batchd" = {
@@ -80,9 +80,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."batchd-core" or (errorHandler.buildDepError "batchd-core"))
-            ] ++ (pkgs.lib).optional (flags.libvirt) (hsPkgs."batchd-libvirt" or (errorHandler.buildDepError "batchd-libvirt"))) ++ (pkgs.lib).optional (flags.docker) (hsPkgs."batchd-docker" or (errorHandler.buildDepError "batchd-docker"))) ++ (pkgs.lib).optional (flags.ec2) (hsPkgs."batchd-amazonka" or (errorHandler.buildDepError "batchd-amazonka"))) ++ (pkgs.lib).optional (flags.linode) (hsPkgs."batchd-linode" or (errorHandler.buildDepError "batchd-linode"));
+          ] ++ pkgs.lib.optional (flags.libvirt) (hsPkgs."batchd-libvirt" or (errorHandler.buildDepError "batchd-libvirt"))) ++ pkgs.lib.optional (flags.docker) (hsPkgs."batchd-docker" or (errorHandler.buildDepError "batchd-docker"))) ++ pkgs.lib.optional (flags.ec2) (hsPkgs."batchd-amazonka" or (errorHandler.buildDepError "batchd-amazonka"))) ++ pkgs.lib.optional (flags.linode) (hsPkgs."batchd-linode" or (errorHandler.buildDepError "batchd-linode"));
           buildable = true;
-          };
+        };
         "batchd-admin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -125,9 +125,9 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."batchd-core" or (errorHandler.buildDepError "batchd-core"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "batch" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -165,9 +165,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
             (hsPkgs."batchd-core" or (errorHandler.buildDepError "batchd-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

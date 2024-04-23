@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell common definitions used by other dph-lifted packages.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

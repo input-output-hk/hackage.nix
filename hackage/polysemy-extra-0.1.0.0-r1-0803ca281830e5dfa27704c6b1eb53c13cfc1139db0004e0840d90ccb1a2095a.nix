@@ -21,7 +21,7 @@
       synopsis = "Extra transformations functions for polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

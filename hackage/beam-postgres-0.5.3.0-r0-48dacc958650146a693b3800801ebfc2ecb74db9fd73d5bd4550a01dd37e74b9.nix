@@ -21,7 +21,7 @@
       synopsis = "Connection layer between beam and postgres";
       description = "Beam driver for <https://www.postgresql.org/ PostgreSQL>, an advanced open-source RDBMS";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "beam-postgres-tests" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

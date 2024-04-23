@@ -6,8 +6,8 @@
         nix = import ../hackage/life-0.1-r0-b219d9895257c41d8f88db94b14b0beaf7e27a1efa278bf97a117dd38c9350d4.nix;
         revNum = 0;
         sha256 = "b219d9895257c41d8f88db94b14b0beaf7e27a1efa278bf97a117dd38c9350d4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

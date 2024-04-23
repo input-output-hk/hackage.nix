@@ -6,8 +6,8 @@
         nix = import ../hackage/transformers-compose-0.1-r0-c2fd3b6f4fe17ebb7af631a15d37246e367680c1acf99a74648c7d89c93013a1.nix;
         revNum = 0;
         sha256 = "c2fd3b6f4fe17ebb7af631a15d37246e367680c1acf99a74648c7d89c93013a1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

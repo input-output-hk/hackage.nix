@@ -21,15 +21,15 @@
       synopsis = "Extensible records and polymorphic variants.";
       description = "Parameterized/indexed monoids and monads using only a single parameter type variable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-diverse" or (errorHandler.buildDepError "data-diverse"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

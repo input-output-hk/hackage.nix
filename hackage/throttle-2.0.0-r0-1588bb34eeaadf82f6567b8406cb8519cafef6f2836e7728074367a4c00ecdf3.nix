@@ -21,7 +21,7 @@
       synopsis = "Throttle TCP/IPv4 connections to a given server at n bytes/second.";
       description = "Sometimes you want to pretend you're on a\nvery slow connection to see how your program\ndeals with delays, this program does that.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "throttle" = {
@@ -32,9 +32,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."data-extra" or (errorHandler.buildDepError "data-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

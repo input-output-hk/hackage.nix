@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Command-line reporting utility for processing trade journals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,13 +43,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."mpfr" or (errorHandler.sysDepError "mpfr"))
           (pkgs."gmp" or (errorHandler.sysDepError "gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "trade-journal" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."trade-journal" or (errorHandler.buildDepError "trade-journal"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "trade-journal-tests" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."trade-journal" or (errorHandler.buildDepError "trade-journal"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

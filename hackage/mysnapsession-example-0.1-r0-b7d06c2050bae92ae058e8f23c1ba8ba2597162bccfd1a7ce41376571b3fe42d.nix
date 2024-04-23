@@ -21,7 +21,7 @@
       synopsis = "Example project using mysnapsession";
       description = "This is a simple web application that uses the\nmysnapsession package's continuation programming model\nto build an animal guessing game.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "testsnap" = {
@@ -38,9 +38,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."mysnapsession" or (errorHandler.buildDepError "mysnapsession"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Type set";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/type-set#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "type-set-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

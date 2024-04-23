@@ -6,8 +6,8 @@
         nix = import ../hackage/repo-based-blog-0.0.1-r0-dd1cdb213f545216327ae619416dc4ea7387b277b2e9bb1c3cd9ee6bcc61bcb4.nix;
         revNum = 0;
         sha256 = "dd1cdb213f545216327ae619416dc4ea7387b277b2e9bb1c3cd9ee6bcc61bcb4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

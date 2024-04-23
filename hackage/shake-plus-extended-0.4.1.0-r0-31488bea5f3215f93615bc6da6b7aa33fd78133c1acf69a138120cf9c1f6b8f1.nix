@@ -21,7 +21,7 @@
       synopsis = "Experimental extensions to shake-plus";
       description = "Experimental extensions to shake-plus - `within`-style file rules, HashMap and IxSet batch loaders.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."shake-plus" or (errorHandler.buildDepError "shake-plus"))
           (hsPkgs."within" or (errorHandler.buildDepError "within"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

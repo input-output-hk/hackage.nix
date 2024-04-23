@@ -21,15 +21,15 @@
       synopsis = "Model distributed system as type-level multi-party protocol";
       description = "This package provides type to model distributed multi-party protocols,\nensuring the continuity of the associated resource state transitions on the type level\nfor all protocol commands and scenarios.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."freer-indexed" or (errorHandler.buildDepError "freer-indexed"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

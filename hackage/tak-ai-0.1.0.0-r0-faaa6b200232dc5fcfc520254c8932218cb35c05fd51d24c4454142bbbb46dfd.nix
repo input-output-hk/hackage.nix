@@ -21,7 +21,7 @@
       synopsis = "AI(s) for playing Tak on playtak.com";
       description = "Takky is a simple bot, using a modest lookahead of 4 plies, and a heuristic\nbased purely on territory owned. It hangs around on playtak.com, providing a\nmoderate challenge to new and intermediate players.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "takky" = {
@@ -29,10 +29,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tak" or (errorHandler.buildDepError "tak"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "takky-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

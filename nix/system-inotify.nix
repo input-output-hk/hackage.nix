@@ -6,8 +6,8 @@
         nix = import ../hackage/system-inotify-0.1-r0-36f308bc49ed7462aa0a7819b5ec394d6c3a0d7b6a98920dbf48d0285a897d03.nix;
         revNum = 0;
         sha256 = "36f308bc49ed7462aa0a7819b5ec394d6c3a0d7b6a98920dbf48d0285a897d03";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

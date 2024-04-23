@@ -21,7 +21,7 @@
       synopsis = "Representing ASCII with refined supersets";
       description = "This package defines classes which describe what subset of a type\nis valid as ASCII, as well as a type constructor representing a\nvalue of a superset that is known to be valid ASCII.\n\nIt also defines the Lift class, which provides a polymorphic lift\noperation that can be used to convert characters and strings into\ntypes that support a larger set of characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ascii-superset" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ascii-superset" or (errorHandler.buildDepError "ascii-superset"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

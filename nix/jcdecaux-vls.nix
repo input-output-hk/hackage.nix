@@ -6,8 +6,8 @@
         nix = import ../hackage/jcdecaux-vls-0.1.0-r0-e54b58434a85c839f714330cd708bf5dcbaa71fe92f578c37aaf98892c34e60b.nix;
         revNum = 0;
         sha256 = "e54b58434a85c839f714330cd708bf5dcbaa71fe92f578c37aaf98892c34e60b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

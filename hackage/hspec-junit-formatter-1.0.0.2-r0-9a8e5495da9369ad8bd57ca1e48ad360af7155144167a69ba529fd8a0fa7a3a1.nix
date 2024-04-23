@@ -21,7 +21,7 @@
       synopsis = "A JUnit XML runner/formatter for hspec";
       description = "Allows hspec tests to write JUnit XML output for parsing in various tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

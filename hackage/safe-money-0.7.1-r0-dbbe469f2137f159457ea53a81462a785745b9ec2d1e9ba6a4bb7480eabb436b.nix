@@ -21,7 +21,7 @@
       synopsis = "Type-safe and lossless encoding and manipulation of money, fiat\ncurrencies, crypto currencies and precious metals.";
       description = "The Haskell @safe-money@ library offers type-safe and lossless encoding and\noperations for monetary values in all world currencies, including fiat\ncurrencies, precious metals and crypto-currencies.\n\nUseful instances for the many types defined by @safe-money@ can be found\nin these other libraries:\n\n* [safe-money-aeson](https://hackage.haskell.org/package/safe-money-aeson):\n@FromJSON@ and @ToJSON@ instances (from the [aeson](https://hackage.haskell.org/package/aeson) library).\n\n* [safe-money-cereal](https://hackage.haskell.org/package/safe-money-cereal):\n@Serialize@ instances (from the [cereal](https://hackage.haskell.org/package/cereal) library).\n\n* [safe-money-serialise](https://hackage.haskell.org/package/safe-money-serialise):\n@Serialise@ instances (from the [serialise](https://hackage.haskell.org/package/serialise) library).\n\n* [safe-money-store](https://hackage.haskell.org/package/safe-money-store):\n@Store@ instances (from the [store](https://hackage.haskell.org/package/store) library).\n\n* [safe-money-xmlbf](https://hackage.haskell.org/package/safe-money-xmlbf):\n@FromXml@ and @ToXml@ instances (from the [xmlbf](https://hackage.haskell.org/package/xmlbf) library).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

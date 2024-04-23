@@ -21,7 +21,7 @@
       synopsis = "Simple Server interface";
       description = "This library provides a very simple interface for creating a server that sends and recieves ByteString messages and attempts to remove concurrency so the programmer can focus on the functionality of the server. A simple ChatServer example is available in the Examples module";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

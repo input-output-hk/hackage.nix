@@ -21,7 +21,7 @@
       synopsis = "A toy dependently-typed language";
       description = "nanoAgda implements a type-checker for a toy dependently-typed\nlanguage.\nThe goal of the project is to provide a minimal type-checker\nwith dependent types that can be easily fiddled with.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nanoAgda" = {
@@ -34,9 +34,9 @@
             (hsPkgs."BNFC-meta" or (errorHandler.buildDepError "BNFC-meta"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

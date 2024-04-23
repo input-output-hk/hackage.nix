@@ -21,7 +21,7 @@
       synopsis = "Yet Another Parser Builder (YAPB)";
       description = "A programmable LALR(1) parser builder system. Please see the README on GitHub at <https://github.com/kwanghoon/yapb#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ambiguous-exe" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "conv-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "error-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "parser-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "syncomp-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yapb-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -107,10 +107,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "yapb-test" = {
           depends = [
@@ -121,9 +121,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yapb" or (errorHandler.buildDepError "yapb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a small roguelike game";
       description = "a small roguelike game";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "LambdaHack" = {
@@ -38,16 +38,16 @@
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.curses
+          ] ++ (if flags.curses
             then [
               (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
-              ]
+            ]
             else if flags.vty
               then [ (hsPkgs."vty" or (errorHandler.buildDepError "vty")) ]
               else [ (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")) ]);
-          libs = (pkgs.lib).optional (flags.curses) (pkgs."curses" or (errorHandler.sysDepError "curses"));
+          libs = pkgs.lib.optional (flags.curses) (pkgs."curses" or (errorHandler.sysDepError "curses"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

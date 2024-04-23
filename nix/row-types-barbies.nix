@@ -6,8 +6,8 @@
         nix = import ../hackage/row-types-barbies-1.0.0.0-r0-21ec207cec1726c967f445f392093b13d85e4de9e4c5ab460de104598050d33e.nix;
         revNum = 0;
         sha256 = "21ec207cec1726c967f445f392093b13d85e4de9e4c5ab460de104598050d33e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

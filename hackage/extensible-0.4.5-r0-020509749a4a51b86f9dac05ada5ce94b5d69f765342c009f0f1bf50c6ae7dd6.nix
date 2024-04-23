@@ -21,7 +21,7 @@
       synopsis = "Extensible, efficient, optics-friendly data types and effects";
       description = "Poly-kinded extensible records, variants, effects, tangles";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
           (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "effects" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bits" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

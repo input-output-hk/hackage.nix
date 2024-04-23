@@ -21,23 +21,23 @@
       synopsis = "Linear algebra and numerical computations";
       description = "A purely functional interface to basic linear algebra computations\nand other numerical routines, internally implemented using\nGSL, BLAS and LAPACK.\n\nMore information: <http://alberrto.googlepages.com/gslhaskell>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         libs = [
           (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

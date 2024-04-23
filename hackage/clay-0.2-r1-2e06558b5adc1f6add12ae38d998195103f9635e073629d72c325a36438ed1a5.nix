@@ -21,15 +21,15 @@
       synopsis = "CSS preprocessor as embedded Haskell.";
       description = "Clay is a CSS preprocessor like LESS and Sass, but implemented as an embedded\ndomain specific language (EDSL) in Haskell. This means that all CSS selectors\nand style rules are first class Haskell functions, which makes reuse and\ncomposability easy.\n\nThe project is described on <http://fvisser.nl/clay>.\n\nThe API documentation can be found in the top level module \"Clay\".\n\n> 0.1.1 -> 0.2\n>   - Rotate takes only one argument.\n>   - Added opacity property.\n>   - Print Clay banner in CSS comments by default.\n>   - Fixed bug in font-family rendering (Firefox only).\n>   - Added outline related properties.\n>   - Fixed bug in monospace font family.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

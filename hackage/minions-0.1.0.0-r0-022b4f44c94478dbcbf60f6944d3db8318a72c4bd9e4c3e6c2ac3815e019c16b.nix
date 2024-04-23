@@ -21,7 +21,7 @@
       synopsis = "A fast parallel ssh tool";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "minions" = {
@@ -31,9 +31,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

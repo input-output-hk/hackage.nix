@@ -21,7 +21,7 @@
       synopsis = "Generic utility functions for working with Git repositories";
       description = "@gitlib@ is a high-level, lazy and conduit-aware set of abstractions for\nprogramming with Git types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

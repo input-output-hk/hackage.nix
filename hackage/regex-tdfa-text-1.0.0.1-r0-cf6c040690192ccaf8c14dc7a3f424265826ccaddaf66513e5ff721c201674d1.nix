@@ -21,7 +21,7 @@
       synopsis = "Text interface for regex-tdfa";
       description = "This provides text interface for regex-tdfa.\n\nThis should be part of regex-tdfa package. But my patches are not accepted yet.\nSo, I made a separate package. If you are interested in my patches, see\n<http://hub.darcs.net/shelarcy/regex-base> and <http://hub.darcs.net/shelarcy/regex-tdfa>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

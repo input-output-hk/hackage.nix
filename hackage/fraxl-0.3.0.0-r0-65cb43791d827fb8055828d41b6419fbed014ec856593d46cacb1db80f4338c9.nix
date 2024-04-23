@@ -21,7 +21,7 @@
       synopsis = "Cached and parallel data fetching.";
       description = "Fraxl is a free monad designed to make concurrent data fetching easy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,29 +35,29 @@
           (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
           (hsPkgs."type-aligned" or (errorHandler.buildDepError "type-aligned"))
           (hsPkgs."fastsum" or (errorHandler.buildDepError "fastsum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fraxl" or (errorHandler.buildDepError "fraxl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
         };
+      };
       benchmarks = {
         "monadbench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fraxl" or (errorHandler.buildDepError "fraxl"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

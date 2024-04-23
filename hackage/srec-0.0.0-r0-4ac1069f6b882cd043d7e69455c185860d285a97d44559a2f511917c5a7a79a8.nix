@@ -21,11 +21,11 @@
       synopsis = "Reading S-Record files.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

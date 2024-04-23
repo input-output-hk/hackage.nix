@@ -21,7 +21,7 @@
       synopsis = "Parse Graphviz xdot files and interactively view them using GTK and Cairo";
       description = "Parse Graphviz xdot files and interactively view them using\nGTK and Cairo.\n\nCurrently not all xdot features are supported. Nodes and\nedges can be highlighted by hovering them and clicked.\n\nFor an example of using this library try the accompanying\n@Demo.hs@ with the dot-files in @dot-examples/@.\n\nThis library was originally written as part of ghc-vis, but\nis now a separate project, in case anyone else may have a\nuse for it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xdot-demo" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."xdot" or (errorHandler.buildDepError "xdot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

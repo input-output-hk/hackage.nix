@@ -21,7 +21,7 @@
       synopsis = "Church encoded Maybe";
       description = "Church encoded Maybe type, exposing the same API as Data.Maybe";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2") (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.2") (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2") (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

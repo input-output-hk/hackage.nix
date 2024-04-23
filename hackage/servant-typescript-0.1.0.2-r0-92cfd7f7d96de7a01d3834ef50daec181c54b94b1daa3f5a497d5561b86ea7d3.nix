@@ -21,7 +21,7 @@
       synopsis = "TypeScript client generation for Servant";
       description = "Please see the README on GitHub at <https://github.com/codedownio/servant-typescript>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-typescript-exe" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."servant-typescript" or (errorHandler.buildDepError "servant-typescript"))
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "servant-typescript-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."servant-typescript" or (errorHandler.buildDepError "servant-typescript"))
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

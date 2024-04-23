@@ -21,14 +21,14 @@
       synopsis = "Convert between Accelerate arrays and raw pointers";
       description = "This package provides efficient conversion routines between Accelerate arrays\nand raw pointers.\n\nAs of version 1.3 this package has been split up into smaller components each\ntargeting a specific data type.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

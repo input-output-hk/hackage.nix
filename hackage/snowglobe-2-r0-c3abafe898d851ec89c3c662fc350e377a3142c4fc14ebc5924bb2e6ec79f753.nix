@@ -21,7 +21,7 @@
       synopsis = "randomized fractal snowflakes demo";
       description = "@snowglobe@ generates random snowflakes using iterated\nfunction systems via OpenGL texture feedback.  The\nsnowflakes interact in a particle system.\n\nKeyboard controls:\n\n* f, F11: toggle full screen\n\n* shift-R: toggle recording PPM images to stdout\n\n* any other key: quit";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snowglobe" = {
@@ -34,9 +34,9 @@
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

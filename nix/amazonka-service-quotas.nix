@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-service-quotas-2.0-r0-825b9fbcfd608b8ffe42ba5b0a280c17696e5349bf514456ce52624c144e78f8.nix;
         revNum = 0;
         sha256 = "825b9fbcfd608b8ffe42ba5b0a280c17696e5349bf514456ce52624c144e78f8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Finding palindromes in strings";
       description = "palindromes is an executable and a library which takes a file name, and\nreturns information about palindromes in the file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -31,9 +31,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

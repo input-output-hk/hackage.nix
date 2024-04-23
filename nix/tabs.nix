@@ -6,8 +6,8 @@
         nix = import ../hackage/tabs-0.1.0.0-r0-881d707706008318a45c64c5cdffaf5ee01124d854b3ace533443fb5aaa8e439.nix;
         revNum = 0;
         sha256 = "881d707706008318a45c64c5cdffaf5ee01124d854b3ace533443fb5aaa8e439";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

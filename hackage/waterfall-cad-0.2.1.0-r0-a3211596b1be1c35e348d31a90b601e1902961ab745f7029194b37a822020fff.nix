@@ -21,7 +21,7 @@
       synopsis = "Declarative CAD/Solid Modeling Library";
       description = "Please see the README on GitHub at <https://github.com/joe-warren/opencascade-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."opencascade-hs" or (errorHandler.buildDepError "opencascade-hs"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

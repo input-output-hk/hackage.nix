@@ -21,6 +21,6 @@
       synopsis = "Parse Google Protocol Buffer specifications";
       description = "Parse http://code.google.com/apis/protocolbuffers/docs/proto.html\nand perhaps general haskell code to use them";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

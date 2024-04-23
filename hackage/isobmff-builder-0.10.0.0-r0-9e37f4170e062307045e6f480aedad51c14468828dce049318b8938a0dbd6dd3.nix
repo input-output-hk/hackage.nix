@@ -21,7 +21,7 @@
       synopsis = "A (bytestring-) builder for the ISO-14496-12 base media file format";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."isobmff-builder" or (errorHandler.buildDepError "isobmff-builder"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

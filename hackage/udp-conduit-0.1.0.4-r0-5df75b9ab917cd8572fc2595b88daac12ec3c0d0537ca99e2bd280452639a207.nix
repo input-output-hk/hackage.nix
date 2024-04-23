@@ -21,7 +21,7 @@
       synopsis = "Simple fire-and-forget conduit UDP wrappers";
       description = "`udp-conduit` provides simple wrappers to get fire-and-forget UDP sinks\nand sources.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."chunked-data" or (errorHandler.buildDepError "chunked-data"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

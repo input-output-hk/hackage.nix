@@ -21,7 +21,7 @@
       synopsis = "Constraint-based generics";
       description = "Write short and concise generic instances of type classes.\n\nThere are two separate parts: @Generics.OneLiner@ is for\nwriting generic functions using @GHC.Generics@.\nThe other modules show how to implement these same generic\nfunctions with a traversal-style generics type class,\nwithout the use of an intermediate generic representation\ntype.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

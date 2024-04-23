@@ -21,7 +21,7 @@
       synopsis = "Cryptol: The Language of Cryptography";
       description = "Cryptol is a domain-specific language for specifying cryptographic algorithms. A Cryptol implementation of an algorithm resembles its mathematical specification more closely than an implementation in a general purpose language. For more, see <http://www.cryptol.net/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,19 +60,19 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."panic" or (errorHandler.buildDepError "panic"))
           (hsPkgs."what4" or (errorHandler.buildDepError "what4"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "9.0"
+        ] ++ (if compiler.isGhc && compiler.version.ge "9.0"
           then [
             (hsPkgs."ghc-bignum" or (errorHandler.buildDepError "ghc-bignum"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cryptol" = {
           depends = [
@@ -88,18 +88,18 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cryptol-html" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."cryptol" or (errorHandler.buildDepError "cryptol"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "check-exercises" = {
           depends = [
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
@@ -113,10 +113,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "cryptol-bench" = {
           depends = [
@@ -128,9 +128,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

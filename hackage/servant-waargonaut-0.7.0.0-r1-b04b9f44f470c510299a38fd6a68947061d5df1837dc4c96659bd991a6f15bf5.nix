@@ -21,7 +21,7 @@
       synopsis = "Servant Integration for Waargonaut JSON Package";
       description = "Provides the types and instances necessary to utilise Waargonaut as the JSON handling library for your Servant API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."wl-pprint-annotated" or (errorHandler.buildDepError "wl-pprint-annotated"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "saarg" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty-wai" or (errorHandler.buildDepError "tasty-wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

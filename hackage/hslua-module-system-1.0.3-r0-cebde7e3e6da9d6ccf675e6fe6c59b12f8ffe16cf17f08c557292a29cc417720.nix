@@ -21,7 +21,7 @@
       synopsis = "Lua module wrapper around Haskell's System module.";
       description = "Provides access to system information and\nfunctionality to Lua scripts via Haskell's `System`\nmodule.\n\nThis package is part of HsLua, a Haskell framework\nbuilt around the embeddable scripting language\n<https://lua.org Lua>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."hslua-marshalling" or (errorHandler.buildDepError "hslua-marshalling"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hslua-module-system" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

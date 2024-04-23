@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."stdcxx" or (errorHandler.buildDepError "stdcxx"))
           (hsPkgs."HROOT-core" or (errorHandler.buildDepError "HROOT-core"))
           (hsPkgs."HROOT-hist" or (errorHandler.buildDepError "HROOT-hist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

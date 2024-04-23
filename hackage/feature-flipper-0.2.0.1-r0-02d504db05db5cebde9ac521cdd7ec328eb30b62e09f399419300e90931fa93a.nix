@@ -21,7 +21,7 @@
       synopsis = "A minimally obtrusive feature flag library";
       description = "A minimally obtrusive feature flag library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "feature-flipper-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."feature-flipper" or (errorHandler.buildDepError "feature-flipper"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

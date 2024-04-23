@@ -21,7 +21,7 @@
       synopsis = "Infernal covariance model comparison";
       description = "Compares two Infernal covariance models. Returns the common\nMaxiMin score and the offending RNA sequence. High scores point\ntoward low discriminative power of the two models. Based on:\n\n\"Christian Höner zu Siederdissen, and Ivo L. Hofacker. 2010.\nDiscriminatory power of RNA family models. Bioinformatics 26,\nno. 18: 453–59\"\n\n<http://bioinformatics.oxfordjournals.org/content/26/18/i453.long>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,16 +31,16 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
           (hsPkgs."BiobaseInfernal" or (errorHandler.buildDepError "BiobaseInfernal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "CMCompare" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

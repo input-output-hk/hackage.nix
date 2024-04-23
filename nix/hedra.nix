@@ -6,8 +6,8 @@
         nix = import ../hackage/hedra-0.1-r0-85a04b38f1292707d3fd2299e1d4eaae0a41c04975ee0dd76e0e23e4d7cd3093.nix;
         revNum = 0;
         sha256 = "85a04b38f1292707d3fd2299e1d4eaae0a41c04975ee0dd76e0e23e4d7cd3093";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/curl-cookiejar-0.1.0.0-r0-febd6d6f55afe354afd205778c400850457f74d9447b333163f63444e9aefbaa.nix;
         revNum = 0;
         sha256 = "febd6d6f55afe354afd205778c400850457f74d9447b333163f63444e9aefbaa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

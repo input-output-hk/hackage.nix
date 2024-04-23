@@ -21,15 +21,15 @@
       synopsis = "Portable interface to file locking (flock / LockFileEx)";
       description = "This package provides an interface to Windows and Unix\nfile locking functionalities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

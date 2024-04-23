@@ -21,7 +21,7 @@
       synopsis = "Substitute types for other types with Template Haskell";
       description = "Substitute types for types. Works with various Template Haskell types including Dec's, Con's and Types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
             (hsPkgs."th-instances" or (errorHandler.buildDepError "th-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extras to interface Gloss and Accelerate";
       description = "Extras to interface Gloss and Accelerate";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."gloss-rendering" or (errorHandler.buildDepError "gloss-rendering"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

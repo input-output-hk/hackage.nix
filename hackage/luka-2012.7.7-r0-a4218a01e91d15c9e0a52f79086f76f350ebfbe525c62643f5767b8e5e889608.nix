@@ -21,16 +21,16 @@
       synopsis = "Simple ObjectiveC runtime binding";
       description = "Simple ObjectiveC runtime binding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."air" or (errorHandler.buildDepError "air"))
           (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"))
-          ];
+        ];
         libs = [ (pkgs."objc" or (errorHandler.sysDepError "objc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

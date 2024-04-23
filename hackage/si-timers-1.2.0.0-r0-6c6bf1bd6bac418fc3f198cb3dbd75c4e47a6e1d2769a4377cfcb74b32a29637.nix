@@ -21,7 +21,7 @@
       synopsis = "timers using SI units (seconds)";
       description = "Timers using SI units (seconds) which are safe on 32-bit platforms and\ncompatible with [io-sim](https://hackage.haskell.org/package/io-sim).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."io-classes" or (errorHandler.buildDepError "io-classes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."si-timers" or (errorHandler.buildDepError "si-timers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

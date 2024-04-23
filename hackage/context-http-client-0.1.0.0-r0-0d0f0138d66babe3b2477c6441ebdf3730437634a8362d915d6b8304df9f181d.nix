@@ -21,16 +21,16 @@
       synopsis = "Modify HTTP requests/responses using context";
       description = "Modify outgoing HTTP requests and incoming HTTP responses using context.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."context" or (errorHandler.buildDepError "context"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "context-http-client-test-suite" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

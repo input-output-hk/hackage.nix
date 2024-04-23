@@ -21,7 +21,7 @@
       synopsis = "GCode processor";
       description = "GCode parser, pretty-printer and processing utils";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gcodehs" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gcodehs-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

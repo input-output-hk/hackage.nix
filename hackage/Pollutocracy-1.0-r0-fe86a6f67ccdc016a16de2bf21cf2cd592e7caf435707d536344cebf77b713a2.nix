@@ -21,7 +21,7 @@
       synopsis = "An imaginary world";
       description = "This is a simulated world I invented.\nIt has pollution and energy and trees and mountains\nand chaos storms.  It is randomly generated and\nnon-interactive at present.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Pollutocracy" = {
@@ -31,9 +31,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

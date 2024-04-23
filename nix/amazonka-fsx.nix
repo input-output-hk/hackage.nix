@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-fsx-2.0-r0-29eca91582273adc25911c7f682c51a9c624182550bbe67a617aa9ecf8ccfdbd.nix;
         revNum = 0;
         sha256 = "29eca91582273adc25911c7f682c51a9c624182550bbe67a617aa9ecf8ccfdbd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,18 +21,18 @@
       synopsis = "A language for generative literature";
       description = "Dickinson is a language for generative (random) literature";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."language-dickinson".components.sublibs.dickinson or (errorHandler.buildDepError "language-dickinson:dickinson"))
-          ] ++ (pkgs.lib).optionals (!flags.cross) [
+        ] ++ pkgs.lib.optionals (!flags.cross) [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "dickinson" = {
           depends = [
@@ -53,14 +53,14 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
-          build-tools = (pkgs.lib).optionals (!flags.cross) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          build-tools = pkgs.lib.optionals (!flags.cross) [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "emd" = {
           depends = [
@@ -80,11 +80,11 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."language-dickinson" or (errorHandler.buildDepError "language-dickinson"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ] ++ (pkgs.lib).optional (flags.zstd) (hsPkgs."zstd" or (errorHandler.buildDepError "zstd"));
-          build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+          ] ++ pkgs.lib.optional (flags.zstd) (hsPkgs."zstd" or (errorHandler.buildDepError "zstd"));
+          build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
           buildable = true;
-          };
         };
+      };
       tests = {
         "dickinson-test" = {
           depends = [
@@ -99,10 +99,10 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."language-dickinson" or (errorHandler.buildDepError "language-dickinson"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "dickinson-bench" = {
           depends = [
@@ -112,9 +112,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

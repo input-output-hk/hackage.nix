@@ -21,7 +21,7 @@
       synopsis = "HAR spec in Haskell";
       description = "\nData type of HAR spec: <https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/HAR/Overview.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

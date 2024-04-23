@@ -21,7 +21,7 @@
       synopsis = "Convert English words to title case";
       description = "Capitalize all English words except articles (a, an, the),\ncoordinating conjunctions (for, and, nor, but, or, yet, so), and\nprepositions (unless they begin or end the title).  The\nprepositions are taken from this list:\n<https://en.wikipedia.org/wiki/List_of_English_prepositions>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "titlecase" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."titlecase" or (errorHandler.buildDepError "titlecase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."titlecase" or (errorHandler.buildDepError "titlecase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

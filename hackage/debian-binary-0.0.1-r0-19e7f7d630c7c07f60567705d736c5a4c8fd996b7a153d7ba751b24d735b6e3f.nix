@@ -21,7 +21,7 @@
       synopsis = "Utilities to work with debian binary packages";
       description = "This package provides a library and some tools to work with debian binary\npackages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "manual" = { buildable = true; };
         "query" = { buildable = true; };
         "update" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

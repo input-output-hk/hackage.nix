@@ -21,7 +21,7 @@
       synopsis = "TLS/SSL protocol native implementation (Server and Client)";
       description = "Native Haskell TLS and SSL protocol implementation for server and client.\n\nThis provides a high-level implementation of a sensitive security protocol,\neliminating a common set of security issues through the use of the advanced\ntype system, high level constructions and common Haskell features.\n\nCurrently implement the TLS1.0, TLS1.1, TLS1.2 and TLS 1.3 protocol,\nand support RSA and Ephemeral (Elliptic curve and regular) Diffie Hellman key exchanges,\nand many extensions.\n\nSome debug tools linked with tls, are available through the\n<http://hackage.haskell.org/package/tls-debug/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -40,9 +40,9 @@
           (hsPkgs."crypton-x509-validation" or (errorHandler.buildDepError "crypton-x509-validation"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-          ] ++ (pkgs.lib).optional (flags.network) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"));
+        ] ++ pkgs.lib.optional (flags.network) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ pkgs.lib.optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"));
         buildable = true;
-        };
+      };
       tests = {
         "test-tls" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
             (hsPkgs."crypton-x509-validation" or (errorHandler.buildDepError "crypton-x509-validation"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-tls" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-detective-2.0-r0-0c08158816d2c9dedee6a713d4b678acebb730c591d5b1ea1143b2f65b9806de.nix;
         revNum = 0;
         sha256 = "0c08158816d2c9dedee6a713d4b678acebb730c591d5b1ea1143b2f65b9806de";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

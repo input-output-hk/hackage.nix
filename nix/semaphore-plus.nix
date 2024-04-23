@@ -6,8 +6,8 @@
         nix = import ../hackage/semaphore-plus-0.1-r0-5a595a550ee59d29f51486544538fa76dc961625e1bdd3c374f913a4b31e7131.nix;
         revNum = 0;
         sha256 = "5a595a550ee59d29f51486544538fa76dc961625e1bdd3c374f913a4b31e7131";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

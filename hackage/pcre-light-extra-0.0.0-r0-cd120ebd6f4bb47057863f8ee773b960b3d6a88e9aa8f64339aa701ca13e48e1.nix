@@ -21,15 +21,15 @@
       synopsis = "pcre-light extra functionality";
       description = "pcre-light utility functions for more user friendly usage.\nInstead of adding execution and compile options to the matching and\ncompiling functions, the options are added to the regular expression to be\ncompiled or run. Furthermore support for different matching return types\n(using typeclass 'MatchResult') and different regular expression types\n(compiled or uncompiled using typeclass 'RegexLike') are supported. See module\ndocumentation for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

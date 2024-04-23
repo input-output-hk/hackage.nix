@@ -6,8 +6,8 @@
         nix = import ../hackage/grafdhall-0.1.0.0-r0-0e5a337f11da81676513d33f632d4545e113449079c0a78c3c63fb62b8340efa.nix;
         revNum = 0;
         sha256 = "0e5a337f11da81676513d33f632d4545e113449079c0a78c3c63fb62b8340efa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

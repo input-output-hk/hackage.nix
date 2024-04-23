@@ -21,14 +21,14 @@
       synopsis = "Collection of useful functions for writing console applications";
       description = "Collection of useful functions for writing console applications";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

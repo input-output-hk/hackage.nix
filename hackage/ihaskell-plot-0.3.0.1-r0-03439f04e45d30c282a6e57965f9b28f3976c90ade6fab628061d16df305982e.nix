@@ -21,7 +21,7 @@
       synopsis = "IHaskell display instance for Plot (from plot package)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

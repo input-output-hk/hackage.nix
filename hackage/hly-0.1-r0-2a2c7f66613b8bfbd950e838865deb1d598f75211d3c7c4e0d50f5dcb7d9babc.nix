@@ -21,14 +21,14 @@
       synopsis = "Haskell LilyPond";
       description = "A very lightweight embedding of the lilypond\ntypesetting model in haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmt" or (errorHandler.buildDepError "hmt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

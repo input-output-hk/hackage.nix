@@ -21,11 +21,11 @@
       synopsis = "Size-parameterized vector types and functions.";
       description = "Size-parameterized vector types and functions using a data-type promotion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

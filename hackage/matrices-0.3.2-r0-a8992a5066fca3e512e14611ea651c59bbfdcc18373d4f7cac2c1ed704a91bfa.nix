@@ -21,7 +21,7 @@
       synopsis = "native matrix based on vector";
       description = "This library provide the APIs for creating, indexing,\nmodifying matrices (2d arrays). The underling data\nstructure is vector. It's not intended to be a linear\nalgebra library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."matrices" or (errorHandler.buildDepError "matrices"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

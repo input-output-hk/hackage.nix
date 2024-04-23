@@ -21,16 +21,16 @@
       synopsis = "Produces ctags \"tags\" and etags \"TAGS\" files for Haskell programs";
       description = "Produces ctags \"tags\" and etags \"TAGS\" files for Haskell programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hasktags" = {
           depends = [
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

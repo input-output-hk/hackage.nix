@@ -21,7 +21,7 @@
       synopsis = "Vec: length-indexed (sized) list: lens support";
       description = "This package provides [lenses](https://hackage.haskell.org/package/lens) and instances\nfor data types in [vec](https://hackage.haskell.org/package/vec) package.\n\n\"Data.Vec.Lens.Instances\" provides all the instances.\nthe other modules provide some named lenses too.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
           (hsPkgs."vec" or (errorHandler.buildDepError "vec"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

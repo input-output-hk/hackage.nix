@@ -21,7 +21,7 @@
       synopsis = "Parser and writer for KiCad files.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
           (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
           (hsPkgs."pretty-compact" or (errorHandler.buildDepError "pretty-compact"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "kicad-data-quickcheck" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."pretty-compact" or (errorHandler.buildDepError "pretty-compact"))
             (hsPkgs."kicad-data" or (errorHandler.buildDepError "kicad-data"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

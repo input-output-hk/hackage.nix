@@ -21,7 +21,7 @@
       synopsis = "Linear range-min algorithms.";
       description = "Rapidly (in linear time) preprocesses a vector so that the minimum element of any given subrange can be looked up in constant time.\n\nThis implementation is based on an algorithm of Fischer and Heun, which can be found at <http://dx.doi.org/10.1007/11780441_5>.\nDespite being written entirely in Haskell (and maintaining referential transparency internally), it is competitive against\nthe C++ implementation written by Fischer and Heun themselves (included in the tarball), especially when compiled with LLVM.\n\nDepending on the target system, this library compiled with -fasm approximately ties with the original authors'\nC++ implementation compiled with -O3 -funroll-loops.  With -fllvm -optlc-O3, this library has been observed to beat\nthe same C++ implementation by 20-30%.\n\nInternally, this library rolls its own stream fusion system, avoiding the @vector@ package's issues with duplicated index\nvariables and providing a few other special features.  This package's API does, however, fuse (to the extent possible) with\ninput vectors using the @vector@ package fusion system.  In particular, it automagically recognizes input vectors whose\nelement types have a natural order-preserving injection into @Int@, converts them, and uses the specialized range-min\nimplementation for @Int@ vectors.  See \"Data.RangeMin\" for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

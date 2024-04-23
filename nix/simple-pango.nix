@@ -6,8 +6,8 @@
         nix = import ../hackage/simple-pango-0.1.0.1-r0-6dec5ff59e637364e2051e90eaf7ec4d7aea9d2023c3b0af0627950fa755162d.nix;
         revNum = 0;
         sha256 = "6dec5ff59e637364e2051e90eaf7ec4d7aea9d2023c3b0af0627950fa755162d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

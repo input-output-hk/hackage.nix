@@ -21,7 +21,7 @@
       synopsis = "arbitrary bit size Words";
       description = "Monomorphized arbitrary bitsize words using backpack. Aims to allocate as little as possible, without exporting a monomoprhised type for every possible @Word@ size";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,25 +29,25 @@
           (hsPkgs."wordn".components.sublibs.wordn-indef or (errorHandler.buildDepError "wordn:wordn-indef"))
           (hsPkgs."wordn".components.sublibs.wordn-impl or (errorHandler.buildDepError "wordn:wordn-impl"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "wordn-indef" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wordn-impl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."wordn" or (errorHandler.buildDepError "wordn"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."wordn" or (errorHandler.buildDepError "wordn"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."OddWord" or (errorHandler.buildDepError "OddWord"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

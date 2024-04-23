@@ -21,7 +21,7 @@
       synopsis = "Signal Processing extension for Feldspar";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
           (hsPkgs."feldspar-compiler" or (errorHandler.buildDepError "feldspar-compiler"))
           (hsPkgs."feldspar-compiler-shim" or (errorHandler.buildDepError "feldspar-compiler-shim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

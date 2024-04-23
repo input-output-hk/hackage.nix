@@ -21,11 +21,11 @@
       synopsis = "";
       description = "A simply way to extend numerical types to add infinity.\n\nIncludes 4 data types:\n\n1. Both infinities: GADT\n\n2. Positive infinity only: GADT\n\n3. Both infinities, represented as upper and lower bound of type (well almost)\n\n4. Positive infinity only, represented as upper bound of type\n\nThere's also rewrite rules in an attempt to make this all work as efficiently as possible (although unbenchmarked and untested).\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

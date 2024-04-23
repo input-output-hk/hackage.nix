@@ -21,7 +21,7 @@
       synopsis = "Rerun only tests which failed in a previous test run";
       description = "This ingredient\nfor the <https://hackage.haskell.org/package/tasty tasty> testing framework\nallows filtering a test tree depending\non the outcome of the previous run.\nThis may be useful in many scenarios,\nespecially when a test suite grows large.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

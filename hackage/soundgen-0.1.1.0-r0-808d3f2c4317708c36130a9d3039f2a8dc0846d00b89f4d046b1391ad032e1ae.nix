@@ -21,7 +21,7 @@
       synopsis = "sound generator";
       description = "Simple tone generator. You can decide the tone frequency and duration";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "soundgen" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."WAVE" or (errorHandler.buildDepError "WAVE"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/optparse-th-0.1.0.0-r0-b7ed169095aa524be45244018ea2aa0be1dc10269bc6dc8841cf366a7e0b7e01.nix;
         revNum = 0;
         sha256 = "b7ed169095aa524be45244018ea2aa0be1dc10269bc6dc8841cf366a7e0b7e01";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

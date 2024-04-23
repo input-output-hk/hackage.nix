@@ -15,7 +15,7 @@
       debug-tracetree = false;
       lib = false;
       monolithic = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "cabal-install"; version = "2.2.0.0"; };
@@ -33,8 +33,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ((([
@@ -65,17 +65,17 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
-          ] ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
+        ] ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
           then [ (hsPkgs."windns" or (errorHandler.buildDepError "windns")) ]
           else [
             (hsPkgs."resolv" or (errorHandler.buildDepError "resolv"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"));
+          ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"));
         buildable = if !flags.lib then false else true;
-        };
+      };
       exes = {
         "cabal" = {
           depends = (if flags.lib
@@ -85,7 +85,7 @@
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ]
+            ]
             else ((([
               (hsPkgs."async" or (errorHandler.buildDepError "async"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -114,17 +114,17 @@
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
               (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
-              ] ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
+            ] ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
               then [
                 (hsPkgs."windns" or (errorHandler.buildDepError "windns"))
-                ]
+              ]
               else [
                 (hsPkgs."resolv" or (errorHandler.buildDepError "resolv"))
-                ])) ++ (if system.isWindows
+              ])) ++ (if system.isWindows
               then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
               else [
                 (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-                ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"))) ++ (pkgs.lib).optionals (flags.monolithic) [
+              ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"))) ++ pkgs.lib.optionals (flags.monolithic) [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -148,11 +148,11 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
-          libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd" or (errorHandler.sysDepError "bsd"));
+          ];
+          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd" or (errorHandler.sysDepError "bsd"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -178,9 +178,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if !flags.lib then false else true;
-          };
+        };
         "memory-usage-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -192,9 +192,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = if !flags.lib then false else true;
-          };
+        };
         "solver-quickcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -210,9 +210,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = if !flags.lib then false else true;
-          };
+        };
         "integration-tests2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -226,9 +226,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = if !flags.lib then false else true;
-          };
         };
       };
-    }
+    };
+  }

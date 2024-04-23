@@ -21,7 +21,7 @@
       synopsis = "A sensible and clean way to write WebSocket-capable servers in Haskell.";
       description = "This library allows you to write WebSocket-capable servers.\n\nSee an example: <http://github.com/jaspervdj/websockets/tree/master/example>.\n\nThe API of the 'Network.WebSockets' module should also contain enough\ninformation to get you started.\n\nThis library currently works with Chromium @>= 14@, and Firefox @>= 6@.\n\nSee also:\n\n* The specification of the WebSocket protocol:\n<http://www.whatwg.org/specs/web-socket-protocol/>\n\n* The JavaScript API for dealing with WebSockets:\n<http://www.w3.org/TR/websockets/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

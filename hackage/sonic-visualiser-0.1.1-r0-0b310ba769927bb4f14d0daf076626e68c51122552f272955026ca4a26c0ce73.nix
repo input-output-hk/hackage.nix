@@ -21,7 +21,7 @@
       synopsis = "Sonic Visualiser";
       description = "Library for reading and parsing Sonic Visualiser project files.\n\nSonic Visualiser is available at <http://sonicvisualiser.org>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "svdump" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

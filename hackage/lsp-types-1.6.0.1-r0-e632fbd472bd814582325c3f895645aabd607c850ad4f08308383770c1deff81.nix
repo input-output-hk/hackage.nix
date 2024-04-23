@@ -21,7 +21,7 @@
       synopsis = "Haskell library for the Microsoft Language Server Protocol, data types";
       description = "An implementation of the types to allow language implementors to\nsupport the Language Server Protocol for their specific language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,11 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ] ++ [
-          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ] ++ [ (hsPkgs."filepath" or (errorHandler.buildDepError "filepath")) ];
         buildable = true;
-        };
+      };
       tests = {
         "lsp-types-test" = {
           depends = [
@@ -64,12 +62,12 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

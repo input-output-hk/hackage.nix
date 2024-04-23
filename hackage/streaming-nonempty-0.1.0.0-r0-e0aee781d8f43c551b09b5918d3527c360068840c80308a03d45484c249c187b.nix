@@ -21,15 +21,15 @@
       synopsis = "Add support for non empty streams to Streaming lib";
       description = "Please see the README on GitHub at <https://gitlab.com/paolo.veronelli/streaming-nonempty/-/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "streaming-nonempty-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."streaming-nonempty" or (errorHandler.buildDepError "streaming-nonempty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

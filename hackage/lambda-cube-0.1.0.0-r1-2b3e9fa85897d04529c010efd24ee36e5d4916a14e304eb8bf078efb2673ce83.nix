@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of (some of) lambda cube calculi";
       description = "Haskell implementation of the following 4 lambda calculi:\n1. Simply typed lambda calculus\n2. System F\n3. System F omega underbar\n4. System F omega";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lambda-cube-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."lambda-cube" or (errorHandler.buildDepError "lambda-cube"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

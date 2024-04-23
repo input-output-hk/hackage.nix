@@ -21,14 +21,14 @@
       synopsis = "Lab Assignments Environment at Univeriteit Twente";
       description = "Lab Assignments Environment at Univeriteit Twente";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

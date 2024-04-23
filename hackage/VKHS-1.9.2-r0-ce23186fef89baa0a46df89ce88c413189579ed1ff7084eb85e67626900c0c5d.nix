@@ -21,7 +21,7 @@
       synopsis = "Provides access to Vkontakte social network via public API";
       description = "Provides access to Vkontakte API methods. Library requires no interaction\nwith the user during Implicit-flow authentication.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."flippers" or (errorHandler.buildDepError "flippers"))
           (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vkq" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

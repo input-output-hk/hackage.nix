@@ -21,14 +21,14 @@
       synopsis = "Signature for digest";
       description = "Provides an easily switchable layer for adler32 and crc32 checksums using backpack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

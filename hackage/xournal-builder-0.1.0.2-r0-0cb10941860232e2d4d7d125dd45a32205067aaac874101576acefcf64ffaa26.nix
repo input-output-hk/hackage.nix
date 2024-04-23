@@ -21,7 +21,7 @@
       synopsis = "text builder for xournal file format ";
       description = "This library builds text xoj format file from xournal data structure";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "MonadTell-based lens combinators";
       description = "@MonadTell@-based equivalents of @lens@ combinators that use @MonadWriter@'s @tell@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."tell" or (errorHandler.buildDepError "tell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

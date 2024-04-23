@@ -6,8 +6,8 @@
         nix = import ../hackage/scons2dot-0.9-r0-a5a7c2c99f5fae75db93f643d085d0c24ee0cbb9146fd684e51d628e10f3ed17.nix;
         revNum = 0;
         sha256 = "a5a7c2c99f5fae75db93f643d085d0c24ee0cbb9146fd684e51d628e10f3ed17";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

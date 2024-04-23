@@ -21,7 +21,7 @@
       synopsis = "A Perl 6 Implementation";
       description = "A Perl 6 Implementation";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "pugs" = {
@@ -51,9 +51,9 @@
             (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
             (hsPkgs."HsSyck" or (errorHandler.buildDepError "HsSyck"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

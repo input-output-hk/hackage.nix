@@ -21,7 +21,7 @@
       synopsis = "A Haskell Tor Node";
       description = "An implementation of the Tor anonymity system in Haskell.\nThe core functionality is exported both as an application\nand as a high-level library exported by the 'Tor' module.\nPlease see that module for common usage scenarios, and\ndip only into the other files for advanced / unplanned\ncases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -47,9 +47,9 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ] ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"));
+        ] ++ pkgs.lib.optional (flags.network && !system.isHalvm) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ pkgs.lib.optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"));
         buildable = true;
-        };
+      };
       exes = {
         "haskell-tor" = {
           depends = (([
@@ -65,15 +65,15 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ] ++ (pkgs.lib).optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"))) ++ (pkgs.lib).optional (flags.network && !system.isHalvm) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optionals (system.isHalvm) [
+          ] ++ pkgs.lib.optional (flags.hans) (hsPkgs."hans" or (errorHandler.buildDepError "hans"))) ++ pkgs.lib.optional (flags.network && !system.isHalvm) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ pkgs.lib.optionals (system.isHalvm) [
             (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
             (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
-            ];
+          ];
           buildable = if !flags.hans && !flags.network || !flags.hans && system.isHalvm
             then false
             else true;
-          };
         };
+      };
       tests = {
         "test-tor" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

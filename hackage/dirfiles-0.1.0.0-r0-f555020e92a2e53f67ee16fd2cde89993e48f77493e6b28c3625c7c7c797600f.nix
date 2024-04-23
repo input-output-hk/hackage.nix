@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Simple datatype to represent a library with files and folders";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."special-keys" or (errorHandler.buildDepError "special-keys"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

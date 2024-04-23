@@ -21,15 +21,15 @@
       synopsis = "An EDSL for creating simple diagrams";
       description = "An embedded domain-specific language (EDSL) for\ncreating simple diagrams, built on top of the Cairo\nrendering engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

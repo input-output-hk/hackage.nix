@@ -6,8 +6,8 @@
         nix = import ../hackage/api-rpc-accumulate-0.1.0.0-r0-f2138da34cc68d82015fb125041a618cb5c6948f2250c2b3f1a207ccbf13cf95.nix;
         revNum = 0;
         sha256 = "f2138da34cc68d82015fb125041a618cb5c6948f2250c2b3f1a207ccbf13cf95";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

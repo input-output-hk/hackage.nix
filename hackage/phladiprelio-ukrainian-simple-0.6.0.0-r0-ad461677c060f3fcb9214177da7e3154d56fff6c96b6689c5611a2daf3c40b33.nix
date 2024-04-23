@@ -14,7 +14,7 @@
       identifier = {
         name = "phladiprelio-ukrainian-simple";
         version = "0.6.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A PhLADiPreLiO implementation for Ukrainian that uses hashes";
       description = "It is another project that is based on the similar ideas as [phonetic-languages-simplified-examples-array package](https://hackage.haskell.org/package/phonetic-languages-simplified-examples-array). For documentation for these ideas, see: [PhLADiPreLiO.Ukr.21.pdf](https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Ukr.21.pdf) [PhLADiPreLiO.Eng.21.pdf](https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Eng.21.pdf)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phladiprelioUkr" = {
@@ -38,9 +38,9 @@
             (hsPkgs."phonetic-languages-permutations-array" or (errorHandler.buildDepError "phonetic-languages-permutations-array"))
             (hsPkgs."phonetic-languages-constraints-array" or (errorHandler.buildDepError "phonetic-languages-constraints-array"))
             (hsPkgs."phonetic-languages-simplified-base" or (errorHandler.buildDepError "phonetic-languages-simplified-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

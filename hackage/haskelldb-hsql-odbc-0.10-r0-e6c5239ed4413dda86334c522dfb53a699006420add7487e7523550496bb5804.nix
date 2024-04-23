@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HSQL ODBC driver.";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."haskelldb-hsql" or (errorHandler.buildDepError "haskelldb-hsql"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
           (hsPkgs."hsql-odbc" or (errorHandler.buildDepError "hsql-odbc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

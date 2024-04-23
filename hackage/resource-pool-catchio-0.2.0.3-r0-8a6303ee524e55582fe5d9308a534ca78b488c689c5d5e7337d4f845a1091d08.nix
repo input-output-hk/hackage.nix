@@ -21,7 +21,7 @@
       synopsis = "Fork of resource-pool, with a MonadCatchIO constraint";
       description = "This is a fork of Bryan O'Sullivan's resource-pool package. The only\ndifference is that it relies on MonadCatchIO, rather than MonadControlIO. If\nyou do not strictly need the MonadCatchIO support, please use Bryan's\noriginal package instead.\nA high-performance striped pooling abstraction for managing\nflexibly-sized collections of resources such as database\nconnections.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

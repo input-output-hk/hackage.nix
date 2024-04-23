@@ -21,7 +21,7 @@
       synopsis = "Minimalistic reference manager.";
       description = "The tool to facilitates the workflow: webbrowser -> bibtex file -> directory of .pdfs. The design is minimalistic (eg. no editor is included; emacs can be fired up by double right-clicking an entry).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "imbib" = {
@@ -43,9 +43,9 @@
             (hsPkgs."gnomevfs" or (errorHandler.buildDepError "gnomevfs"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "imbibatch" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

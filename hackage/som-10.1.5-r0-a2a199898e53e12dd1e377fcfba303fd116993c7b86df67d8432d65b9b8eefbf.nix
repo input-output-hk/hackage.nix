@@ -21,7 +21,7 @@
       synopsis = "Self-Organising Maps";
       description = "Please see the README on GitHub at <https://github.com/mhwombat/som#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."grid" or (errorHandler.buildDepError "grid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "som-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."som" or (errorHandler.buildDepError "som"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

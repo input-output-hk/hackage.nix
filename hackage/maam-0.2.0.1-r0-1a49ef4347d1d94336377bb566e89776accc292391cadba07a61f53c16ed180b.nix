@@ -21,7 +21,7 @@
       synopsis = "An application of the Galois Transformers framework to two example semantics.";
       description = "An application of the Galois Transformers framework to two example semantics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,14 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "maam" = {
           depends = [ (hsPkgs."maam" or (errorHandler.buildDepError "maam")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

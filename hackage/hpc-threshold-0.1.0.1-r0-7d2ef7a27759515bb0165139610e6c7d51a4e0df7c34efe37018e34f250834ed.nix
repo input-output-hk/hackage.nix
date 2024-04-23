@@ -21,7 +21,7 @@
       synopsis = "Configurable code coverage threshold for Haskell";
       description = "Please see the README on Github at <https://github.com/eckyputrady/hpc-threshold#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hpc-threshold" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hpc-threshold" or (errorHandler.buildDepError "hpc-threshold"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hpc-threshold-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."hpc-threshold" or (errorHandler.buildDepError "hpc-threshold"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

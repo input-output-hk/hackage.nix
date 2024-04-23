@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Nix language";
       description = "Haskell implementation of the Nix language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -65,27 +65,27 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ] ++ (pkgs.lib).optional (system.isLinux && (compiler.isGhc && (compiler.version).ge "8.2") && (compiler.isGhc && (compiler.version).lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+        ] ++ pkgs.lib.optional (system.isLinux && (compiler.isGhc && compiler.version.ge "8.2") && (compiler.isGhc && compiler.version.lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
           (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
           (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
           (hsPkgs."cryptohash-sha512" or (errorHandler.buildDepError "cryptohash-sha512"))
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-          ]) ++ [
+        ]) ++ [
           (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
           (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4.0" && !flags.profiling) (hsPkgs."ghc-datasize" or (errorHandler.buildDepError "ghc-datasize"))) ++ (if compiler.isGhcjs && true
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4.0" && !flags.profiling) (hsPkgs."ghc-datasize" or (errorHandler.buildDepError "ghc-datasize"))) ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ]
+          ]
           else [
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hnix" = {
           depends = ([
@@ -110,17 +110,17 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (system.isLinux && (compiler.isGhc && (compiler.version).ge "8.2") && (compiler.isGhc && (compiler.version).lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          ] ++ pkgs.lib.optional (system.isLinux && (compiler.isGhc && compiler.version.ge "8.2") && (compiler.isGhc && compiler.version.lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
             (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
             (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
             (hsPkgs."cryptohash-sha512" or (errorHandler.buildDepError "cryptohash-sha512"))
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
+      };
       tests = {
         "hnix-tests" = {
           depends = ([
@@ -157,20 +157,20 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (system.isLinux && (compiler.isGhc && (compiler.version).ge "8.2") && (compiler.isGhc && (compiler.version).lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          ] ++ pkgs.lib.optional (system.isLinux && (compiler.isGhc && compiler.version.ge "8.2") && (compiler.isGhc && compiler.version.lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
             (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
             (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
             (hsPkgs."cryptohash-sha512" or (errorHandler.buildDepError "cryptohash-sha512"))
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
+      };
       benchmarks = {
         "hnix-benchmarks" = {
           depends = ([
@@ -192,16 +192,16 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (system.isLinux && (compiler.isGhc && (compiler.version).ge "8.2") && (compiler.isGhc && (compiler.version).lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          ] ++ pkgs.lib.optional (system.isLinux && (compiler.isGhc && compiler.version.ge "8.2") && (compiler.isGhc && compiler.version.lt "8.3")) (hsPkgs."compact" or (errorHandler.buildDepError "compact"))) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
             (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
             (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
             (hsPkgs."cryptohash-sha512" or (errorHandler.buildDepError "cryptohash-sha512"))
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

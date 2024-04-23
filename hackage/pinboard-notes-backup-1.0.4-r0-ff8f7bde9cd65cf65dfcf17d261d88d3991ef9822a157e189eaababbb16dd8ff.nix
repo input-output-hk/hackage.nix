@@ -21,7 +21,7 @@
       synopsis = "Back up the notes you've saved to Pinboard";
       description = "A command-line application to synchronize your notes from\nthe Pinboard bookmarking service to a local SQLite\ndatabase. (This synchronization is one-way only; the\napplication will never change anything on the server.)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pnbackup" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

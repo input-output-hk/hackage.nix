@@ -21,7 +21,7 @@
       synopsis = "Ethereum API for Haskell";
       description = "Web3 is a Haskell client library for Ethereum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,10 +53,10 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ] ++ (pkgs.lib).optional (flags.solidity) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
-        libs = (pkgs.lib).optional (flags.solidity) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
+        ] ++ pkgs.lib.optional (flags.solidity) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
+        libs = pkgs.lib.optional (flags.solidity) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
         buildable = true;
-        };
+      };
       tests = {
         "live" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."web3" or (errorHandler.buildDepError "web3"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unit" = {
           depends = [
             (hsPkgs."OneTuple" or (errorHandler.buildDepError "OneTuple"))
@@ -135,9 +135,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."web3" or (errorHandler.buildDepError "web3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

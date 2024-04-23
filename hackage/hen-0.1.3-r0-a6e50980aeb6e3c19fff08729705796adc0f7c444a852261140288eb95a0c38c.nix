@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to Xen hypervisor interface";
       description = "Haskell bindings to Xen hypervisor interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,10 +31,10 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."bitset" or (errorHandler.buildDepError "bitset"))
-          ];
+        ];
         libs = [ (pkgs."xenctrl" or (errorHandler.sysDepError "xenctrl")) ];
         buildable = true;
-        };
+      };
       tests = {
         "hen-tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

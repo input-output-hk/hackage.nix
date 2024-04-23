@@ -21,11 +21,11 @@
       synopsis = "A library for postfix control flow.";
       description = "Concatenative gives haskell factor style\ncombinators and arrows for postfix notation.\nFor more information on stack based languages,\nsee <http://concatenative.org>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

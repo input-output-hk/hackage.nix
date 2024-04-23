@@ -21,7 +21,7 @@
       synopsis = "Polynomials";
       description = "Polynomials backed by `Vector`s.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,13 +30,13 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (flags.sparse) [
+        ] ++ pkgs.lib.optionals (flags.sparse) [
           (hsPkgs."finite-typelits" or (errorHandler.buildDepError "finite-typelits"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "poly-tests" = {
           depends = [
@@ -50,13 +50,13 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (flags.sparse) [
+          ] ++ pkgs.lib.optionals (flags.sparse) [
             (hsPkgs."finite-typelits" or (errorHandler.buildDepError "finite-typelits"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "poly-bench" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

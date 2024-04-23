@@ -21,11 +21,11 @@
       synopsis = "Simple tabular-text formatter";
       description = "This package has a simplistic formatter\nthat accepts a troff-style column descriptor\nand a list of lists of strings, and produces\na string consisting of a formatted table.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

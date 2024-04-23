@@ -21,7 +21,7 @@
       synopsis = "Data encoding and decoding command line utilities";
       description = "Two simple command line tools built on sandi (http://hackage.haskell.org/package/sandi).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "odec" = {
@@ -32,9 +32,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "oenc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,9 +43,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

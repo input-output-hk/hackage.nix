@@ -21,7 +21,7 @@
       synopsis = "Simple viewer for ESRI/ArcInfo (ArcGrid) geospatial data";
       description = "A simple viewer for ESRI/ArcInfo (ArcGrid) files. Users\ncan pan, zoom and rotate the rendered dataset.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "arcgrid-viewer" = {
@@ -31,9 +31,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."arcgrid" or (errorHandler.buildDepError "arcgrid"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

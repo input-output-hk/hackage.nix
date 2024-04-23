@@ -21,7 +21,7 @@
       synopsis = "Convert yarn.lock files to nix expressions";
       description = "Convert @yarn.lock@ files to nix expressions. See @yarn2nix@ executable. Contains a nix library to call the generated nix files in @nix-lib/@. Library functions and module names might be restructured in the future.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yarn-lock" or (errorHandler.buildDepError "yarn-lock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "node-package-tool" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yarn-lock" or (errorHandler.buildDepError "yarn-lock"))
             (hsPkgs."yarn2nix" or (errorHandler.buildDepError "yarn2nix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yarn2nix" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -105,10 +105,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yarn-lock" or (errorHandler.buildDepError "yarn-lock"))
             (hsPkgs."yarn2nix" or (errorHandler.buildDepError "yarn2nix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "yarn2nix-tests" = {
           depends = [
@@ -140,9 +140,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yarn-lock" or (errorHandler.buildDepError "yarn-lock"))
             (hsPkgs."yarn2nix" or (errorHandler.buildDepError "yarn2nix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

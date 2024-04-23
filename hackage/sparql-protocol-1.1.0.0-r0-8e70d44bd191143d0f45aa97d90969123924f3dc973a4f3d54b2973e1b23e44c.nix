@@ -21,7 +21,7 @@
       synopsis = "An SPARQL 1.1 Protocol client library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sparql-protocol-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sparql-protocol" or (errorHandler.buildDepError "sparql-protocol"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tiny and Incrementally-Growing HTTP library";
       description = "Example programs\n\nexamples/get.hs\n\nThis is simple client.\nThis send GET request and show page source.\nRun as following.\n\n> runhaskell get.hs hackage.haskell.org /packages/\n\nextensions\n\n* PackageImports\n\n> import \"monads-tf\" Control.Monad.Trans\n> import Data.Pipe\n> import System.Environment\n> import Network\n> import Network.TigHTTP.Client\n> import Network.TigHTTP.Types\n>\n> import qualified Data.ByteString as BS\n>\n> main :: IO ()\n> main = do\n> \taddr : pth : _ <- getArgs\n> \th <- connectTo addr $ PortNumber 80\n> \tr <- request h $ get addr 80 pth\n> \t_ <- runPipe $ responseBody r =$= finally printP (putStrLn \"\")\n> \treturn ()\n>\n> printP :: MonadIO m => Pipe BS.ByteString () m ()\n> printP = await >>= maybe (return ()) (\\s -> liftIO (BS.putStr s) >> printP)\n\nexamples/server.hs\n\nThis is simple server.\nThis recieve client's request.\nAnd send command line arguments as response.\nRun as following.\n\n> runhaskell server.hs Hello World I Am TigHTTP\n\n> import Control.Monad\n> import Control.Concurrent\n> import Data.Pipe\n> import System.IO\n> import System.Environment\n> import Network\n> import Network.TigHTTP.Server\n> import Network.TigHTTP.Types\n>\n> import qualified Data.ByteString.Char8 as BSC\n> import qualified Data.ByteString.Lazy as LBS\n>\n> main :: IO ()\n> main = do\n> \tas <- getArgs\n> \tsoc <- listenOn $ PortNumber 80\n> \tforever $ do\n> \t\t(h, _, _) <- accept soc\n> \t\tvoid . forkIO $ do\n> \t\t\treq <- getRequest h\n> \t\t\tprint $ requestPath req\n> \t\t\tputResponse h\n>\t\t\t\t. (response :: LBS.ByteString -> Response Pipe Handle)\n>\t\t\t\t. LBS.fromChunks $ map BSC.pack as\n\nIf you want more examples. Please see examples directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."papillon" or (errorHandler.buildDepError "papillon"))
           (hsPkgs."simple-pipe" or (errorHandler.buildDepError "simple-pipe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

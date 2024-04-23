@@ -21,14 +21,14 @@
       synopsis = "Implementation of priority search queues as finger trees.";
       description = "An implementation of priority search queues: a datastructure holding key/priority bindings having fast\noperations both for extracting the element with minimum priority and for modifying and looking up elements\nby key.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

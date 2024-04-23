@@ -6,8 +6,8 @@
         nix = import ../hackage/heatshrink-0.1.0.0-r0-c2bc379e8789c3f7273eeda1d8c761f3771f2535768a474b5444402b45bc4321.nix;
         revNum = 0;
         sha256 = "c2bc379e8789c3f7273eeda1d8c761f3771f2535768a474b5444402b45bc4321";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

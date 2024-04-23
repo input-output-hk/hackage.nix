@@ -21,7 +21,7 @@
       synopsis = "The HAskelL File System (\"halfs\" -- intended for use on the HaLVM)";
       description = "A library implementing a file system suitable for use in\nHaLVMs.  Provides useful abstractions over the underlying\nblock layer.  Implemented atop FUSE.  Note: This is a new\nimplementation of the halfs project, and bears little to\nno resemblance to halfs 0.2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "halfs-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if !flags.build-tests then false else true;
-          };
+        };
         "halfs" = {
           depends = [
             (hsPkgs."HFuse" or (errorHandler.buildDepError "HFuse"))
@@ -70,9 +70,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."halfs" or (errorHandler.buildDepError "halfs"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

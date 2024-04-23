@@ -21,14 +21,14 @@
       synopsis = "Could be useful";
       description = "A way of running any IO type and capturing any exception, maybe, I think...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

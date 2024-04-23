@@ -21,7 +21,7 @@
       synopsis = "An haskell port of the java version of gom ";
       description = "The executable hgom takes a module consisting of several abstract datatypes\ndeclarations as an input and ouputs java classes. It is meant to mimic the java\nversion of Gom: <http://tom.loria.fr/wiki/index.php5/Documentation:Gom>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hgom" = {
@@ -33,7 +33,7 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optionals (flags.test) [
+          ] ++ pkgs.lib.optionals (flags.test) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
@@ -41,9 +41,9 @@
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

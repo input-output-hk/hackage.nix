@@ -21,7 +21,7 @@
       synopsis = "Cryptography that's easy to digest (NaCl/libsodium bindings).";
       description = "/NaCl/ (pronounced \\\"salt\\\") is a new easy-to-use high-speed software\nlibrary for network communication, encryption, decryption,\nsignatures, etc. NaCl's goal is to provide all of the core\noperations needed to build higher-level cryptographic tools.\n\n<http://nacl.cr.yp.to/>\n\n/Sodium/ is a portable, cross-compilable, installable, packageable\ncrypto library based on NaCl, with a compatible API.\n\n<https://github.com/jedisct1/libsodium>\n\n/Saltine/ is a Haskell binding to the NaCl primitives going through\nSodium for build convenience and, eventually, portability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."sodium" or (errorHandler.sysDepError "sodium"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libsodium" or (errorHandler.pkgConfDepError "libsodium"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."sodium" or (errorHandler.sysDepError "sodium"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."libsodium" or (errorHandler.pkgConfDepError "libsodium"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."saltine" or (errorHandler.buildDepError "saltine"))
-            ];
+          ];
           libs = [ (pkgs."sodium" or (errorHandler.sysDepError "sodium")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

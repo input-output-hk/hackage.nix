@@ -21,7 +21,7 @@
       synopsis = "OpenTelemetry-based rendering for e11y";
       description = "Render [e11y](https://hackage.haskell.org/package/e11y) events to OpenTelemetry traces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."parametric-functor" or (errorHandler.buildDepError "parametric-functor"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "e11y-otel" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

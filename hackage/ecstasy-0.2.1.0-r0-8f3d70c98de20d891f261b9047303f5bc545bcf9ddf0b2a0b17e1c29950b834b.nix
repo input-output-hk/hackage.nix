@@ -21,7 +21,7 @@
       synopsis = "A GHC.Generics based entity component system.";
       description = "Ecstasy is an entity-component system for Haskell. It's inspired by\n<https://hackage.haskell.org/package/apecs apecs>, but makes the design\ndecision to focus on being idiomatic rather than being fast. Maybe. I haven't\nactually benchmarked it.\n\nWe achieve being idiomatic by using 'GHC.Generics' and tricky type families\nto derive performant data stores given only a record of the desired\ncomponents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

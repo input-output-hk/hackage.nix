@@ -21,7 +21,7 @@
       synopsis = "License Header Manager";
       description = "So you are tired of managing license headers in your codebase by hand? Then Headroom is the right tool for you! Now you can define your license header as Mustache template, put all the variables (such as author's name, year, etc.) into the YAML config file and Headroom will take care to add such license headers to all your source code files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "headroom" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."headroom" or (errorHandler.buildDepError "headroom"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -72,9 +72,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

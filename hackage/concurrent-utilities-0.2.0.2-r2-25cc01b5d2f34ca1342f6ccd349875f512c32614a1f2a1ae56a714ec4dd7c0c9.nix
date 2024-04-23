@@ -21,11 +21,11 @@
       synopsis = "More utilities and broad-used datastructures for concurrency.";
       description = "More utilities and broad-used datastructures for concurrency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

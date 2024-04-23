@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A simple snaplet based off of 'snaplet-fay'\nbut for CoffeeScript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

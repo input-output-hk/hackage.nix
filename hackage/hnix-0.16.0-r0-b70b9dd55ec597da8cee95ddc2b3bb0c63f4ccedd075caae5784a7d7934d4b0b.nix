@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Nix language";
       description = "Haskell implementation of the Nix language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -83,9 +83,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hnix" = {
           depends = [
@@ -109,12 +109,12 @@
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.10"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.10"
             then false
             else true;
-          };
         };
+      };
       tests = {
         "hnix-tests" = {
           depends = [
@@ -144,10 +144,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hnix-benchmarks" = {
           depends = [
@@ -162,9 +162,9 @@
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

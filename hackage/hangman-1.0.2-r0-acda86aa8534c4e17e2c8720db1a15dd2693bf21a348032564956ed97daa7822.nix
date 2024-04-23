@@ -21,7 +21,7 @@
       synopsis = "Hangman implementation in Haskell written in two hours.";
       description = "A command line implementation of the classic hangman game.\nI wrote this when I was desperately bored during exam revision period\nin a couple of hours.\nHopefully you will find the implementation to be of use. It sort of began as\nan assessment of the Haskell development experience, but I plan to continue\nto maintain and extend the implementation to demonstrate how to apply good\nsoftware development practises to Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hangman" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

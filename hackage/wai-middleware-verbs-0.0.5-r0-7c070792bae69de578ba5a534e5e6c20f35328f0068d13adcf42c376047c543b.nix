@@ -21,7 +21,7 @@
       synopsis = "Route different middleware responses based on the incoming HTTP verb.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

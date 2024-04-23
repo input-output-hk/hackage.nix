@@ -21,11 +21,11 @@
       synopsis = "Automatically discover and run Hspec tests";
       description = "This has been integrated into hspec.  There is no need to use\nthis package anymore!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."hspec" or (errorHandler.buildDepError "hspec")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

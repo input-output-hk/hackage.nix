@@ -21,7 +21,7 @@
       synopsis = "This library will help you generate Haskell empty Generic instances  and deriving type instances from the top automatically to the bottom for composited data types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."template-haskell-util" or (errorHandler.buildDepError "template-haskell-util"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "OAuth wrapper for yesod-auth";
       description = "OAuth client interface for yesod-auth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,14 +31,14 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."http-enumerator" or (errorHandler.buildDepError "http-enumerator"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (if flags.oauth-not-supported
+        ] ++ (if flags.oauth-not-supported
           then [
             (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
-            ]
+          ]
           else [
             (hsPkgs."authenticate" or (errorHandler.buildDepError "authenticate"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

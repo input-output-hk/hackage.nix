@@ -21,7 +21,7 @@
       synopsis = "Adds support for using web-routes with Happstack";
       description = "Added Happstack class instances for RouteT. Provides a default router for Site.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

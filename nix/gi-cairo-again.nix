@@ -6,8 +6,8 @@
         nix = import ../hackage/gi-cairo-again-1.16.0-r0-1473c610d6c8d101db8f3dc55737fe340b9c6bcab2442421c412523a514ee656.nix;
         revNum = 0;
         sha256 = "1473c610d6c8d101db8f3dc55737fe340b9c6bcab2442421c412523a514ee656";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

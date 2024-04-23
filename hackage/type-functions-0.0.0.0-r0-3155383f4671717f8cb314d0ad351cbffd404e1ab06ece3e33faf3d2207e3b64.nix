@@ -21,14 +21,14 @@
       synopsis = "Emulation of type-level functions";
       description = "This package supports emulation of type-level functions using defunctionalization.\nAll functions whose domain is a subkind of&#xA0;@*@ and whose codomain is&#xA0;@*@\nitself can be represented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kinds" or (errorHandler.buildDepError "kinds"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

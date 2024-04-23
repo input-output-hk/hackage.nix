@@ -21,7 +21,7 @@
       synopsis = "Tools to help manage Debian packages with Mercurial";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hg-importorig" = {
@@ -35,9 +35,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hg-importdsc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -49,9 +49,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hg-buildpackage" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,9 +63,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hg-markdeb" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hgmerge-debupstream" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,9 +91,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

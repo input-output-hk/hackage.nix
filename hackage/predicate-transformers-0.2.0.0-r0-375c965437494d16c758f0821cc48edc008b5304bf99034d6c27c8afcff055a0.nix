@@ -21,15 +21,15 @@
       synopsis = "A library for writing predicates and transformations over predicates in Haskell";
       description = "This package provides ways to write predicates such that they compose nicely and are easy to debug.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

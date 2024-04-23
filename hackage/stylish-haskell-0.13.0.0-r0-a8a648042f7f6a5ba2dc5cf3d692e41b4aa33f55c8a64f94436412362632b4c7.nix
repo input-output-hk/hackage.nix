@@ -21,7 +21,7 @@
       synopsis = "Haskell code prettifier";
       description = "A Haskell code prettifier. For more information, see:\n\n<https://github.com/haskell/stylish-haskell/blob/master/README.markdown>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
           (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       exes = {
         "stylish-haskell" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
             (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "stylish-haskell-tests" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
             (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

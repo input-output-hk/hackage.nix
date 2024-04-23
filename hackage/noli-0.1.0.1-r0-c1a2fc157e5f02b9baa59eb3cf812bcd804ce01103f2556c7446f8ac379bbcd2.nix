@@ -21,7 +21,7 @@
       synopsis = "A static site generator";
       description = "Yet Another static site generator for Haskell. This time easier to use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

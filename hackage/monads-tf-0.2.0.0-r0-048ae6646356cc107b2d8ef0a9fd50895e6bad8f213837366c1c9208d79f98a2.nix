@@ -21,14 +21,14 @@
       synopsis = "Monad classes, using type families";
       description = "Monad classes using type families, with instances for\nvarious monad transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

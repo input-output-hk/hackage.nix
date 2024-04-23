@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-nimble-2.0-r0-699f174cff1197fc06ae1b109daa6410dbf7adc5afefad968a626b17d88b520b.nix;
         revNum = 0;
         sha256 = "699f174cff1197fc06ae1b109daa6410dbf7adc5afefad968a626b17d88b520b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

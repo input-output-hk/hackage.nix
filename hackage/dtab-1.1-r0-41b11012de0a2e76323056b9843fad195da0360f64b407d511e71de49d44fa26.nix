@@ -21,7 +21,7 @@
       synopsis = "Harmonix (Guitar Hero, Rock Band) DTA/DTB metadata library";
       description = "Read\\/write\\/encryption functions for the DTA\\/DTB metadata format used by\nHarmonix Music Systems in their games, including the Guitar Hero, Rock Band,\nand Karaoke Revolution series. Provides both a library and executable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,22 +33,22 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dtab" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."dtab" or (errorHandler.buildDepError "dtab"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

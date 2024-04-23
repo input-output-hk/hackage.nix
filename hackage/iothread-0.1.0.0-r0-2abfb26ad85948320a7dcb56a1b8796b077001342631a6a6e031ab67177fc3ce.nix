@@ -21,11 +21,11 @@
       synopsis = "run IOs in a single thread";
       description = "run IOs in a single thread";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

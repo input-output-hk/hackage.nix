@@ -21,7 +21,7 @@
       synopsis = "Distributed Bug Tracking System";
       description = "A distributed bug tracker layered on top of Monotone.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "DisTractNewBug" = { buildable = true; };
         "DisTractModifyBug" = { buildable = true; };
@@ -50,6 +50,6 @@
         "DisTractFormatNew" = { buildable = true; };
         "DisTractSortBugs" = { buildable = true; };
         "DisTractInstaller" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

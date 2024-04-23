@@ -21,7 +21,7 @@
       synopsis = "Solve classical planning problems (STRIPS/SAS+) using Haskell & Fast Downward.";
       description = "@fast-downward@ is a library for modelling classical planning problems and\nsolving them using the Fast Downward engine. For general usage, see\n\"FastDownward\", and for an example see \"FastDownward.Examples.Gripper\".\n\nNote that usage of this library requires the @downward@ executable - see\n<http://www.fast-downward.org/ObtainingAndRunningFastDownward Obtaining and Running Fast Downward>\nfor more instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

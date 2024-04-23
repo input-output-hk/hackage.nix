@@ -21,7 +21,7 @@
       synopsis = "Amazon Web Services (AWS) for Haskell";
       description = "Bindings for Amazon Web Services (AWS), with the aim of supporting all AWS services. To see a high level overview of the library, see the README at <https://github.com/aristidb/aws/blob/master/README.org>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,22 +56,22 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       exes = {
         "GetObject" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "NukeBucket" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
@@ -79,25 +79,25 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "SimpleDb" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "Sqs" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

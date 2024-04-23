@@ -21,7 +21,7 @@
       synopsis = "Collect node stats for EKG";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
           (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

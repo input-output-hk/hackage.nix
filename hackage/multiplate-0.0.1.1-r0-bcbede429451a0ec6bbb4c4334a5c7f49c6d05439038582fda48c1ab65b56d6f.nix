@@ -21,14 +21,14 @@
       synopsis = "Lightweight generic library for mutually recursive data types.";
       description = "Multiplate is an alternative extension of the Uniplate/Compos core library\nto support mutally recursive\ndatatypes in a way that is as powerful as Compos, as easy to use as Biplate, and\nmore portable than both of them.\nMultiplate does not require GADTs and does not require multi-parameter type classes.\nIt only requires rank 3 polymorphism.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

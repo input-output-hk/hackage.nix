@@ -14,7 +14,7 @@
       identifier = {
         name = "relational-query-postgresql-pure";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2020 Kazuki Okamoto (岡本和樹), 2013 Kei Hibino";
       maintainer = "kazuki.okamoto@kakkun61.com";
@@ -24,7 +24,7 @@
       synopsis = "The connector of relational-record and postgresql-pure.";
       description = "You can use postgresql-pure as the backend of relational-record without the HDBC interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "db" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
             (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
             (hsPkgs."relational-query-postgresql-pure" or (errorHandler.buildDepError "relational-query-postgresql-pure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

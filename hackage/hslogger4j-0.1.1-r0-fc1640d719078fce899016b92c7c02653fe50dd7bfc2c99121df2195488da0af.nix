@@ -21,15 +21,15 @@
       synopsis = "hslogger handlers for log4j's XMLLayout";
       description = "Hslogger4j provides handlers for hslogger (John Goerzen's Haskell\nlogging library) that are compatible with log4j's XMLLayout. In\nparticular log messages created by the handlers can be published\ndirectly to the GUI-based log viewer Chainsaw v2.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

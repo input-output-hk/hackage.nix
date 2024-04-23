@@ -6,8 +6,8 @@
         nix = import ../hackage/meta-par-0.3-r0-18c1777cc7e54ea303dd413b680c3dee6b238c349148941efed1aff76dc3d09e.nix;
         revNum = 0;
         sha256 = "18c1777cc7e54ea303dd413b680c3dee6b238c349148941efed1aff76dc3d09e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

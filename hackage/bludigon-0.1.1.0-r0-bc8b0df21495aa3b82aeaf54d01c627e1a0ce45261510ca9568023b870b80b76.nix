@@ -21,7 +21,7 @@
       synopsis = "Configurable blue light filter";
       description = "This application is a blue light filter, with the main focus on\nconfigurability.\n\nConfiguration is done in Haskell in the style of\n<https://hackage.haskell.org/package/xmonad xmonad>.\n\nBludigon makes use of monad transformers and allows monadic calculation of\ngamma values and recoloring.\nThe user chooses, what will be captured in the monadic state.\n\nTo get started with configuring read \"Bludigon\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,22 +42,22 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-          ];
+        ];
         libs = [
           (pkgs."X11" or (errorHandler.sysDepError "X11"))
           (pkgs."Xrandr" or (errorHandler.sysDepError "Xrandr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bludigon" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bludigon" or (errorHandler.buildDepError "bludigon"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

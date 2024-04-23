@@ -21,14 +21,14 @@
       synopsis = "Convert between various source code casing conventions";
       description = "Converts between camelCase, PascalCase, kebab-case, and\nthree flavors of snake_case.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

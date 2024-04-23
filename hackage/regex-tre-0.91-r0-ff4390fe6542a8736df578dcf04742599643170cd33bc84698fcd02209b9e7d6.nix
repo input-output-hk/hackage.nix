@@ -21,15 +21,15 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The TRE backend to accompany regex-base";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-          ];
+        ];
         libs = [ (pkgs."tre" or (errorHandler.sysDepError "tre")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

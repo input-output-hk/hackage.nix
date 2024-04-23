@@ -21,7 +21,7 @@
       synopsis = "Charts in SVG";
       description = "Chart library targetting SVG.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "venn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,10 +72,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."chart-svg" or (errorHandler.buildDepError "chart-svg"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Generic cellular data representation library";
       description = "This library defines a trivial type used for streaming\nof tabular data using coinductive control structures\nsuch as pipes, conduit or iteratees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

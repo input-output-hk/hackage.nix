@@ -21,7 +21,7 @@
       synopsis = "postgis bindings for esqueleto.";
       description = "postgis bindings for esqueleto. Makes postgres a spatial database but now typesafely";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."geojson" or (errorHandler.buildDepError "geojson"))
           (hsPkgs."wkt-geom" or (errorHandler.buildDepError "wkt-geom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

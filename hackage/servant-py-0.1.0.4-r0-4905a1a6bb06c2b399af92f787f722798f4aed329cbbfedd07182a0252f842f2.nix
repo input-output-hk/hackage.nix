@@ -21,7 +21,7 @@
       synopsis = "Automatically derive python functions to query servant webservices.";
       description = "Automatically derive python functions to query servant webservices.\n\nSupports deriving functions using Python's requests library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-py-exe" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "servant-py-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

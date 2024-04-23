@@ -21,16 +21,16 @@
       synopsis = "An implementation of Turing Machine and Automaton";
       description = "An implementation of Turing Machine and Automaton for\nlanguage theory";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "state" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."QuickCheckVariant" or (errorHandler.buildDepError "QuickCheckVariant"))
             (hsPkgs."turingMachine" or (errorHandler.buildDepError "turingMachine"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sigma" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,9 +54,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."turingMachine" or (errorHandler.buildDepError "turingMachine"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "finite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."QuickCheckVariant" or (errorHandler.buildDepError "QuickCheckVariant"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."turingMachine" or (errorHandler.buildDepError "turingMachine"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

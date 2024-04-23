@@ -21,32 +21,32 @@
       synopsis = "Generate driver file for doctest's cabal integration";
       description = "doctest-driver-gen is a doctest's driver file generator.\nIt lets you automatically generate driver file for\ndoctest's cabal integration.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "doctest-driver-gen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest-driver-gen" or (errorHandler.buildDepError "doctest-driver-gen"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest-driver-gen-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-driver-gen.components.exes.doctest-driver-gen or (pkgs.buildPackages.doctest-driver-gen or (errorHandler.buildToolDepError "doctest-driver-gen:doctest-driver-gen")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

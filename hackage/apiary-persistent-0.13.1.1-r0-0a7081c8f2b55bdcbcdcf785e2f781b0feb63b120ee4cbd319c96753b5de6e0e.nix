@@ -21,7 +21,7 @@
       synopsis = "persistent support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/persistent.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

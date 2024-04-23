@@ -21,7 +21,7 @@
       synopsis = "A mechanism similar to checked exceptions that integrates with MTL and\ntransformer stacks";
       description = "Please see Control.Monad.Signal.Class module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "open-signals-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."open-signals" or (errorHandler.buildDepError "open-signals"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

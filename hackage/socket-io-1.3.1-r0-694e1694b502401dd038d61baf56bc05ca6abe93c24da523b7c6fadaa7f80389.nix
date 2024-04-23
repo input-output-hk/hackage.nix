@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This library provides an implementation of <http://socket.io Socket.io>\nprotocol (version 1). It builds on top of Engine.IO, allowing Socket.io to\nwork with both long polling XHR requests, and seamlessly upgrading them to\nHTML 5 web sockets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

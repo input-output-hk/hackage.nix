@@ -21,7 +21,7 @@
       synopsis = "Tests for the string-conv library";
       description = "These are in a separate project not only to keep\ndependencies low when the string-conv library is included\nin a project but also because these property tests use\n`quickcheck-instances` which defines many orphan\ninstances. Never a good idea to force instances like this\non other projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       tests = {
         "tests" = {
@@ -33,9 +33,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

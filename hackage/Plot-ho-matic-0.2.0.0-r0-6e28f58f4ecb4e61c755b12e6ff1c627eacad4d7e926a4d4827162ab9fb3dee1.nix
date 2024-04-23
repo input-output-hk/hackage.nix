@@ -21,7 +21,7 @@
       synopsis = "Real-time line plotter for protobuf-like data";
       description = "Plot-ho-matic provides real-time plotting of time-series data with a simple interface.\n\nChangelo";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

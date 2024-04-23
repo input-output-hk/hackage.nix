@@ -21,7 +21,7 @@
       synopsis = "Optics for Polysemy.";
       description = "Optics for interfacing with Reader, State, and Writer effects in Polysemy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."optics" or (errorHandler.buildDepError "optics"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

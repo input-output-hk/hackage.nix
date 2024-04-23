@@ -21,7 +21,7 @@
       synopsis = "A command-line FTP client.";
       description = "A command-line FTP client. Type @help@ for a list of commands.\n\nChanges from last version:\n\n* Added a restriction in the haskeline version.\n\n* Added the type synonym @FTPState@.\n\n* Removed unused function @addNChar@.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "FTPLine" = {
@@ -34,9 +34,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

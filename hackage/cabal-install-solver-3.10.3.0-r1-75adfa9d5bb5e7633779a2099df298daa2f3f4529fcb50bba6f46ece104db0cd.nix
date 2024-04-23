@@ -12,7 +12,7 @@
       debug-expensive-assertions = false;
       debug-conflict-sets = false;
       debug-tracetree = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "cabal-install-solver"; version = "3.10.3.0"; };
@@ -25,7 +25,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The solver component used in cabal-install command-line program";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -41,9 +41,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"));
+        ] ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"));
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

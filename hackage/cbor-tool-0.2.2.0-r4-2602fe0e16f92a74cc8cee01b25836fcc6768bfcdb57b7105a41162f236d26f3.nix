@@ -21,7 +21,7 @@
       synopsis = "A tool for manipulating CBOR.";
       description = "A tool for dumping and converting CBOR-encoded data.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cbor-tool" = {
@@ -37,9 +37,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."cborg" or (errorHandler.buildDepError "cborg"))
             (hsPkgs."cborg-json" or (errorHandler.buildDepError "cborg-json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

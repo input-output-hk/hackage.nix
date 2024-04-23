@@ -21,7 +21,7 @@
       synopsis = "FRP sketch programming with Copilot";
       description = "This extends Copilot with a FRP-like interface which can be used to\nimplement simple standalone programs (sketches) for embedded boards.\n\nIt is used by arduino-copilot and zephyr-copilot.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language\n(DSL) in Haskell that compiles into embedded C. Copilot contains an\ninterpreter, multiple back-end compilers, and other verification tools.\n<https://copilot-language.github.io/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

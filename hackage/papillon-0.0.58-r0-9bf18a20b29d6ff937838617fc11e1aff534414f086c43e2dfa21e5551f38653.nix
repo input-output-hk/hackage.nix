@@ -21,7 +21,7 @@
       synopsis = "packrat parser";
       description = "see examples directory";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "papillon" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."papillon" or (errorHandler.buildDepError "papillon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

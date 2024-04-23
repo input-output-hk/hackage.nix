@@ -21,7 +21,7 @@
       synopsis = "The server backend for the source code iPhone app";
       description = "a reference implementation, such that an android equivalent is less of work";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "source-code-server" = {
@@ -50,9 +50,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

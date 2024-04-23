@@ -21,7 +21,7 @@
       synopsis = "Generate images suitable for use as CAPTCHAs in online web-form security.";
       description = "Generates images suitable for use as CAPTCHAs in online web-form security.  Does not\nintegrate with any web framework; simply exports a function that creates the image\nitself as a ByteString (containing a PNG), and the correct answer to the challenge as a\nString.  HS-Captcha is designed to be as simple as possible to integrate in other\nframeworks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

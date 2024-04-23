@@ -21,7 +21,7 @@
       synopsis = "Use the Stripe API via Wreq";
       description = "This package helps you make requests to the Stripe API\nin conjunction with the wreq package. This is a minimal library\nthat makes no attempt obscure either its underpinnings in Wreq\nor any of the details of the Stripe API. Responses are returned\nas aeson values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."stripe-concepts" or (errorHandler.buildDepError "stripe-concepts"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

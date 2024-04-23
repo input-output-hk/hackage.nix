@@ -21,7 +21,7 @@
       synopsis = "Command-line tool to log time-tracking information into JIRA Tempo plugin";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tempo-git" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tempo" or (errorHandler.buildDepError "tempo"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tempo-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,18 +58,18 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tempo-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tempo" or (errorHandler.buildDepError "tempo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

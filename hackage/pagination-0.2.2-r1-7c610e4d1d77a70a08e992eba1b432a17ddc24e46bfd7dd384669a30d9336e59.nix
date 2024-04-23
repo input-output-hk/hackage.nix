@@ -21,16 +21,16 @@
       synopsis = "Framework-agnostic pagination boilerplate";
       description = "Framework-agnostic pagination boilerplate.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."pagination" or (errorHandler.buildDepError "pagination"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

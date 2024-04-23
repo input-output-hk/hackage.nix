@@ -21,7 +21,7 @@
       synopsis = "An unpacked these data type";
       description = "The 'These' type and associated operations.\n\nThis module is intended to be a drop-in(*) replacement for /Data.These/. To shave off pointer chasing, it uses -XUnboxedSums to represent the 'These' type as two machine words that are contiguous in memory, without loss of expressiveness that 'These' provides.\n\nThis library provides pattern synonyms This, That, and Both(*), which allow users to pattern match on an Unpacked These in a familiar way.\n\nFunctions are also provided for converting an Unpacked These to the these library's These, and vice versa.\n\n(*): pattern synonyms use the same namespace as type constructors, so pattern matching on an Unpacked These with the more familiar 'These' data constructor is not possible, instead, Both is provided.\n\nThis library is in alpha, and the internals are likely to change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."unpacked-maybe" or (errorHandler.buildDepError "unpacked-maybe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unpacked-these-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."unpacked-these" or (errorHandler.buildDepError "unpacked-these"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

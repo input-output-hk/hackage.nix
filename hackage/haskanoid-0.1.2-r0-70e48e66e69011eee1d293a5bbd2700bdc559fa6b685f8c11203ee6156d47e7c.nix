@@ -21,7 +21,7 @@
       synopsis = "A breakout game written in Yampa using SDL";
       description = "An arkanoid game featuring SDL graphics and sound and\nWiimote support, implemented using Yampa.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskanoid" = {
@@ -37,9 +37,9 @@
             (hsPkgs."SDL-mixer" or (errorHandler.buildDepError "SDL-mixer"))
             (hsPkgs."SDL-ttf" or (errorHandler.buildDepError "SDL-ttf"))
             (hsPkgs."IfElse" or (errorHandler.buildDepError "IfElse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

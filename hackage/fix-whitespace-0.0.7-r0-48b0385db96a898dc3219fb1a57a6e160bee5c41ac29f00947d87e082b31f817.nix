@@ -21,7 +21,7 @@
       synopsis = "Fixes whitespace issues.";
       description = "Removes trailing whitespace, lines containing only whitespace and ensure that every file ends in a newline character.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fix-whitespace" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4.1" || compiler.isGhc && (compiler.version).gt "8.4.3") (hsPkgs."text" or (errorHandler.buildDepError "text"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4.1" || compiler.isGhc && compiler.version.gt "8.4.3") (hsPkgs."text" or (errorHandler.buildDepError "text"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "secp256k1 bindings for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,10 +31,10 @@
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
-          ];
+        ];
         libs = [ (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1")) ];
         buildable = true;
-        };
+      };
       tests = {
         "secp256k1-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

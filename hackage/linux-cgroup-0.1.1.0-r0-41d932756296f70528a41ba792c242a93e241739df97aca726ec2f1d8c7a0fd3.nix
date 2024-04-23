@@ -21,14 +21,14 @@
       synopsis = "Very basic interface to the Linux CGroup Virtual Filesystem";
       description = "This library is a prototype. I intend it to grow with time, but please consider making contributions and submitting issues.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

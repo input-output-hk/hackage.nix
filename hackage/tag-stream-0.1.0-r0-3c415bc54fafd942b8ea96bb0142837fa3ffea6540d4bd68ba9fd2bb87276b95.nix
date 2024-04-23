@@ -21,7 +21,7 @@
       synopsis = "streamlined html tag parser";
       description = "Tag-stream is a library for parsing HTML/XML to a token stream. It can parse unstructured and malformed HTML from the web. It also provides an Enumeratee which can parse streamline html, which means it consumes constant memory. You can start from `tests/Tests.hs` to see what it can do.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

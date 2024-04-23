@@ -21,7 +21,7 @@
       synopsis = "Cluster algorithms, PCA, and chemical conformere analysis";
       description = "Please see the README on GitLab at <https://gitlab.com/theoretical-chemistry-jena/quantum-chemistry/ConfoCluster>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "conclusion" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."optics" or (errorHandler.buildDepError "optics"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

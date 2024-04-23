@@ -21,7 +21,7 @@
       synopsis = "Exceptional utilities";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."control" or (errorHandler.buildDepError "control"))
           (hsPkgs."lifted-base-tf" or (errorHandler.buildDepError "lifted-base-tf"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

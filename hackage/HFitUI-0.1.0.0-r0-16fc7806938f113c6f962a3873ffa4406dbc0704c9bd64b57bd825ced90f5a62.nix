@@ -21,7 +21,7 @@
       synopsis = "The library for generating a graphical interface on the web";
       description = "The library for generating a graphical interface on the web for the Haskell programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,26 +36,26 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HFitUI-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HFitUI" or (errorHandler.buildDepError "HFitUI"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "HFitUI-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HFitUI" or (errorHandler.buildDepError "HFitUI"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

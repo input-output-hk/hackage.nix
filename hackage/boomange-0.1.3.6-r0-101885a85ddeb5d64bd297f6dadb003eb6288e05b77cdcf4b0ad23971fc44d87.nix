@@ -21,7 +21,7 @@
       synopsis = "A bookmarks manager with an HTML generator";
       description = "In order to allow a unified and customized bookmarks file, boomange generates a HTML file with an user's bookmarks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "boomange" = {
@@ -32,9 +32,9 @@
             (hsPkgs."descrilo" or (errorHandler.buildDepError "descrilo"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."simtreelo" or (errorHandler.buildDepError "simtreelo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

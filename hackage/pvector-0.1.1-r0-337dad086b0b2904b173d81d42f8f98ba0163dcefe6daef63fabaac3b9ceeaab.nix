@@ -21,22 +21,22 @@
       synopsis = "Fast persistent vectors";
       description = "An persistent vector is an efficient sequence data structure.\nIt supports fast indexing, iteration, and snocing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."vector-stream" or (errorHandler.buildDepError "vector-stream"))
-          ] ++ (if flags.debug
+        ] ++ (if flags.debug
           then [
             (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
-            ]
+          ]
           else [
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "pvector-test" = {
           depends = [
@@ -51,19 +51,19 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."quickcheck-classes-base" or (errorHandler.buildDepError "quickcheck-classes-base"))
-            ] ++ (if flags.debug
+          ] ++ (if flags.debug
             then [
               (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
-              ]
+            ]
             else [
               (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-              ]);
+            ]);
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "pvector-bench" = {
           depends = [
@@ -77,15 +77,15 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."persistent-vector" or (errorHandler.buildDepError "persistent-vector"))
-            ] ++ (if flags.debug
+          ] ++ (if flags.debug
             then [
               (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
-              ]
+            ]
             else [
               (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

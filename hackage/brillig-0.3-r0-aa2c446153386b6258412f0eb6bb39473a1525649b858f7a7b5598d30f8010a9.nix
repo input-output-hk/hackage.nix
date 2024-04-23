@@ -21,7 +21,7 @@
       synopsis = "Simple part of speech tagger";
       description = "Right now, this just implements a stupid unigram tagger.\nOne day it may grow up to an HMM tagger or an implementation\nof the Brill tagger.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ListZipper" or (errorHandler.buildDepError "ListZipper"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brillig" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

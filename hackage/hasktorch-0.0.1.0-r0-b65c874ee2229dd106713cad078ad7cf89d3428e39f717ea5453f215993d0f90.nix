@@ -21,7 +21,7 @@
       synopsis = "Torch for tensors and neural networks in Haskell";
       description = "Hasktorch is a library for tensors and neural networks in Haskell. It is an independent open source community project which leverages the core C libraries shared by Torch and PyTorch. This library leverages @cabal v2-build@ and @backpack@. *Note that this project is in early development and should only be used by contributing developers. Expect substantial changes to the library API as it evolves. Contributions and PRs are welcome (see details on github).*";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."hasktorch".components.sublibs.hasktorch-cpu or (errorHandler.buildDepError "hasktorch:hasktorch-cpu"))
           (hsPkgs."hasktorch-ffi-th" or (errorHandler.buildDepError "hasktorch-ffi-th"))
           (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
-          ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."hasktorch".components.sublibs.hasktorch-gpu or (errorHandler.buildDepError "hasktorch:hasktorch-gpu"));
+        ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs."hasktorch".components.sublibs.hasktorch-gpu or (errorHandler.buildDepError "hasktorch:hasktorch-gpu"));
         buildable = true;
-        };
+      };
       sublibs = {
         "hasktorch-cpu" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-floating or (errorHandler.buildDepError "hasktorch:hasktorch-indef-floating"))
             (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-signed or (errorHandler.buildDepError "hasktorch:hasktorch-indef-signed"))
-            ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-unsigned or (errorHandler.buildDepError "hasktorch:hasktorch-indef-unsigned"));
+          ] ++ pkgs.lib.optional (!flags.lite) (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-unsigned or (errorHandler.buildDepError "hasktorch:hasktorch-indef-unsigned"));
           buildable = true;
-          };
+        };
         "hasktorch-gpu" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,64 +66,64 @@
             (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-signed or (errorHandler.buildDepError "hasktorch:hasktorch-indef-signed"))
             (hsPkgs."hasktorch-ffi-thc" or (errorHandler.buildDepError "hasktorch-ffi-thc"))
             (hsPkgs."hasktorch-types-thc" or (errorHandler.buildDepError "hasktorch-types-thc"))
-            ] ++ (pkgs.lib).optional (!flags.lite) (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-unsigned or (errorHandler.buildDepError "hasktorch:hasktorch-indef-unsigned"));
+          ] ++ pkgs.lib.optional (!flags.lite) (hsPkgs."hasktorch".components.sublibs.hasktorch-indef-unsigned or (errorHandler.buildDepError "hasktorch:hasktorch-indef-unsigned"));
           buildable = true;
-          };
+        };
         "hasktorch-indef-unsigned" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-signatures-partial" or (errorHandler.buildDepError "hasktorch-signatures-partial"))
             (hsPkgs."hasktorch-indef" or (errorHandler.buildDepError "hasktorch-indef"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hasktorch-indef-signed" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-signatures-partial" or (errorHandler.buildDepError "hasktorch-signatures-partial"))
             (hsPkgs."hasktorch-indef" or (errorHandler.buildDepError "hasktorch-indef"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hasktorch-indef-floating" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch-indef" or (errorHandler.buildDepError "hasktorch-indef"))
             (hsPkgs."hasktorch-signatures-partial" or (errorHandler.buildDepError "hasktorch-signatures-partial"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "isdefinite-cpu" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch".components.sublibs.hasktorch-cpu or (errorHandler.buildDepError "hasktorch:hasktorch-cpu"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "isdefinite-gpu" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch".components.sublibs.hasktorch-gpu or (errorHandler.buildDepError "hasktorch:hasktorch-gpu"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "isdefinite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch" or (errorHandler.buildDepError "hasktorch"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "memcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasktorch" or (errorHandler.buildDepError "hasktorch"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -141,9 +141,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

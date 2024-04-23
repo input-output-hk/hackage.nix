@@ -21,7 +21,7 @@
       synopsis = "syntax highlighting library";
       description = "Skylighting is a syntax highlighting library with\nsupport for over one hundred languages.  It derives\nits tokenizers from XML syntax definitions used\nby KDE's KSyntaxHighlighting framework, so any\nsyntax supported by that framework can be added.\nAn optional command-line program is provided.\nSkylighting is intended to be the successor to\nhighlighting-kate.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = if flags.bootstrap then false else true;
-        };
+      };
       exes = {
         "skylighting-extract" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = if flags.bootstrap then true else false;
-          };
+        };
         "skylighting" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,12 +72,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
-            ];
+          ];
           buildable = (if flags.bootstrap
             then false
             else true) && (if flags.executable then true else false);
-          };
         };
+      };
       tests = {
         "test-skylighting" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
-            ];
+          ];
           buildable = if flags.bootstrap then false else true;
-          };
         };
       };
-    }
+    };
+  }

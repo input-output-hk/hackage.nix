@@ -21,7 +21,7 @@
       synopsis = "A yesod subsite serving a wiki.";
       description = "A yesod subsite serving a wiki.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "informative-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Data frames For working with tabular data files";
       description = "User-friendly, type safe, runtime efficient tooling for\nworking with tabular data deserialized from\ncomma-separated values (CSV) files. The type of\neach row of data is inferred from data, which can\nthen be streamed from disk, or worked with in\nmemory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,21 +35,21 @@
           (hsPkgs."readable" or (errorHandler.buildDepError "readable"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "getdata" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "plot" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
@@ -64,11 +64,11 @@
             (hsPkgs."readable" or (errorHandler.buildDepError "readable"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "plot2" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
@@ -83,11 +83,11 @@
             (hsPkgs."readable" or (errorHandler.buildDepError "readable"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "demo" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
@@ -99,11 +99,11 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."readable" or (errorHandler.buildDepError "readable"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "tutorial" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
@@ -113,38 +113,38 @@
             (hsPkgs."readable" or (errorHandler.buildDepError "readable"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "benchdemo" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "missing" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "kata04" = {
-          depends = (pkgs.lib).optionals (flags.demos) [
+          depends = pkgs.lib.optionals (flags.demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Frames" or (errorHandler.buildDepError "Frames"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."readable" or (errorHandler.buildDepError "readable"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
         };
+      };
       benchmarks = {
         "insurance" = {
           depends = [
@@ -154,9 +154,9 @@
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

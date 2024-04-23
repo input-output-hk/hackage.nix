@@ -14,7 +14,7 @@
       identifier = {
         name = "extensible-effects-concurrent";
         version = "0.24.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright Sven Heyll";
       maintainer = "sven.heyll@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Message passing concurrency as extensible-effect";
       description = "Please see the README on GitHub at <https://github.com/sheyll/extensible-effects-concurrent#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "extensible-effects-concurrent-example-1" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "extensible-effects-concurrent-example-2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,9 +79,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "extensible-effects-concurrent-example-3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,9 +93,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "extensible-effects-concurrent-example-4" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,10 +105,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "extensible-effects-concurrent-test" = {
           depends = [
@@ -132,9 +132,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
             (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

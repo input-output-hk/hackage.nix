@@ -21,7 +21,7 @@
       synopsis = "Unicode characters";
       description = "Unicode characters - this package was automatically generated from the\nOpenTheory package char-1.138";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-parser" or (errorHandler.buildDepError "opentheory-parser"))
           (hsPkgs."opentheory-probability" or (errorHandler.buildDepError "opentheory-probability"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "opentheory-unicode-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-parser" or (errorHandler.buildDepError "opentheory-parser"))
             (hsPkgs."opentheory-probability" or (errorHandler.buildDepError "opentheory-probability"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

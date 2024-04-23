@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -65,11 +65,11 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-picklers" or (errorHandler.buildDepError "xml-picklers"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xml-picklers" or (errorHandler.buildDepError "xml-picklers"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,9 +115,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "runtests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -138,19 +138,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."pontarius-xmpp" or (errorHandler.buildDepError "pontarius-xmpp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

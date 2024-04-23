@@ -21,14 +21,14 @@
       synopsis = "Abstract simple network sockets usage patterns.";
       description = "Abstract simple network sockets usage patterns.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

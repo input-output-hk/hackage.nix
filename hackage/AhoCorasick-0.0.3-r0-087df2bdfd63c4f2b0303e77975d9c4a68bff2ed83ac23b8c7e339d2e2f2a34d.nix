@@ -21,7 +21,7 @@
       synopsis = "Aho-Corasick string matching algorithm";
       description = "Aho-Corasick string matching algorithm.\n\nSee homepage for examples of usage: <http://github.com/lymar/AhoCorasick>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

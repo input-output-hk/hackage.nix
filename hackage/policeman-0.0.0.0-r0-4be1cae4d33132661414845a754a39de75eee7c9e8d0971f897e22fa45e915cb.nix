@@ -21,7 +21,7 @@
       synopsis = "Haskell PVP version adviser";
       description = "Policeman assists to properly choose the next version number\naccording to PVP (Packaging Version Policy) for the Haskell packages based on\nthe semantical changes to the interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,19 +41,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "policeman" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."policeman" or (errorHandler.buildDepError "policeman"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "policeman-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."policeman" or (errorHandler.buildDepError "policeman"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

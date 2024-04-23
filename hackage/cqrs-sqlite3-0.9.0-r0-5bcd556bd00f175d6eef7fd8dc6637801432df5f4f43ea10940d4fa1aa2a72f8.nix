@@ -21,7 +21,7 @@
       synopsis = "SQLite3 backend for the cqrs package.";
       description = "SQLite3 backend for the cqrs package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cqrs-sqlite3-tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."cqrs-sqlite3" or (errorHandler.buildDepError "cqrs-sqlite3"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

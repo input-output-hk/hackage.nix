@@ -21,14 +21,14 @@
       synopsis = "export useful functions from `semigroupoids`.";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nexport useful functions from `semigroupoids`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

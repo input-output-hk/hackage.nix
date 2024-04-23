@@ -21,7 +21,7 @@
       synopsis = "hsdip - a Diplomacy parser/renderer";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "hsdip" = { buildable = true; }; };
       };
-    }
+      exes = { "hsdip" = { buildable = true; }; };
+    };
+  }

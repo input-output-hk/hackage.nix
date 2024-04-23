@@ -21,7 +21,7 @@
       synopsis = "";
       description = "`postie` is a little smtp server library for receiving emails. It is currently\nin a very early stage and not yet standard compatible although the standard\nuse cases, e.g. receiving emails already work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."postie" or (errorHandler.buildDepError "postie"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

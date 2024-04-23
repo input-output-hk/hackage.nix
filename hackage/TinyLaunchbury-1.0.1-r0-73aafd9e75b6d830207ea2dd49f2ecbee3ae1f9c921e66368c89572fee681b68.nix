@@ -21,14 +21,14 @@
       synopsis = "Simple implementation of call-by-need using Launchbury's semantics";
       description = "A simple implementation of Launchbury's operational semantics for lazy languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

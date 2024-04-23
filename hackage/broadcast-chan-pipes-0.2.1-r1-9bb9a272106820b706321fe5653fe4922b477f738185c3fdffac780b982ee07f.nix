@@ -21,7 +21,7 @@
       synopsis = "Pipes-based parallel streaming code for broadcast-chan";
       description = "__WARNING:__ While the code in this library should be fairly stable and\nproduction, the API is something I'm still working on. API changes will\nfollow the PVP, but __expect__ breaking API changes in future versions!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."broadcast-chan" or (errorHandler.buildDepError "broadcast-chan"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pipes" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

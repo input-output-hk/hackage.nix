@@ -21,7 +21,7 @@
       synopsis = "Infrastructure for DAG-shaped relational algebra plans";
       description = "This library contains infrastructure for DAG-shaped plans of relational operators.\nIt offers an API for construction and modification of algebra plans and a DSL\nfor specifying rewrites on plans. Examples of usage can be found in the packages\n<http://hackage.haskell.org/package/DSH DSH> and\n<http://hackage.haskell.org/package/algebra-sql algebra-sql>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "CBOR encoding of multihashes";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."multibase" or (errorHandler.buildDepError "multibase"))
           (hsPkgs."multihash-cryptonite" or (errorHandler.buildDepError "multihash-cryptonite"))
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."multihash-serialise" or (errorHandler.buildDepError "multihash-serialise"))
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

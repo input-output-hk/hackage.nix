@@ -21,11 +21,11 @@
       synopsis = "Haskell binding for EPANET";
       description = "Hydraulic Analysis package for water supply networks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

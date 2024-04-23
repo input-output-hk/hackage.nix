@@ -21,7 +21,7 @@
       synopsis = "The HXT RelaxNG validator";
       description = "The HXT RelaxNG validator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."hxt-charproperties" or (errorHandler.buildDepError "hxt-charproperties"))
           (hsPkgs."hxt-regex-xmlschema" or (errorHandler.buildDepError "hxt-regex-xmlschema"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

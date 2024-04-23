@@ -21,7 +21,7 @@
       synopsis = "Tool for using pdflatex with .lhs files";
       description = "Tool for using pdflatex with .lhs files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lhslatex" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

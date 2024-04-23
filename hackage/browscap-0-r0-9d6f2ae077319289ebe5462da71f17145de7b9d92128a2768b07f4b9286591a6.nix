@@ -21,7 +21,7 @@
       synopsis = "A reader and interface for the Browser Capabilities Project data files.";
       description = "A reader and interface for the Browser Capabilities Project data files. Currently it uses a linear matcher which is slow.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ini" or (errorHandler.buildDepError "ini"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

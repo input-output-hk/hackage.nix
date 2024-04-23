@@ -21,7 +21,7 @@
       synopsis = "Hack contrib";
       description = "Common middlewares and utilities that helps working with Hack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

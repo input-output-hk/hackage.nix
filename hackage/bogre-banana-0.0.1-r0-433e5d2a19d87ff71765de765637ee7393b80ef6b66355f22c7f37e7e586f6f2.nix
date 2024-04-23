@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Boge-Banana is a 3D game engine using the Reactive-Banana FRP library, the HOIS library for input, and the HOGRE library for output. An introductory tutorial is avilable at http:\\/\\/www.haskell.org\\/haskellwiki\\/User_talk:DavidE.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."hois" or (errorHandler.buildDepError "hois"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."hogre" or (errorHandler.buildDepError "hogre"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
+      };
       exes = {
         "bogre-banana-snake" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."hois" or (errorHandler.buildDepError "hois"))
             (hsPkgs."hogre" or (errorHandler.buildDepError "hogre"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

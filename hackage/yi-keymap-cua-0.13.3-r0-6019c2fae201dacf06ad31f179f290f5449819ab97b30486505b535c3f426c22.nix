@@ -21,7 +21,7 @@
       synopsis = "Cua keymap for Yi editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
           (hsPkgs."yi-keymap-emacs" or (errorHandler.buildDepError "yi-keymap-emacs"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

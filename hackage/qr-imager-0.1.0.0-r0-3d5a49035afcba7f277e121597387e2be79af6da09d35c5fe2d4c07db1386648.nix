@@ -21,7 +21,7 @@
       synopsis = "Library to generate QR codes from bytestrings and objects";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."jose-jwt" or (errorHandler.buildDepError "jose-jwt"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."haskell-qrencode" or (errorHandler.buildDepError "haskell-qrencode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "QRPipe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."qr-imager" or (errorHandler.buildDepError "qr-imager"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

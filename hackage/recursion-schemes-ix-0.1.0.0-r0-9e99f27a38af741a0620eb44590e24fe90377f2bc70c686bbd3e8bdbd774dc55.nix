@@ -21,15 +21,15 @@
       synopsis = "Recursion schemes over indexed Functors";
       description = "Please see the README on GitHub at <https://github.com/Skyb0rg007/recursion-schemes-ix#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singlethongs" or (errorHandler.buildDepError "singlethongs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "recursion-schemes-ix-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."recursion-schemes-ix" or (errorHandler.buildDepError "recursion-schemes-ix"))
             (hsPkgs."singlethongs" or (errorHandler.buildDepError "singlethongs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

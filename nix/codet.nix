@@ -6,8 +6,8 @@
         nix = import ../hackage/codet-0.1-r0-c2cf81696b6d40e83ab02fb3b26d7b382ae975b420410604bdf785bfff4bfc34.nix;
         revNum = 0;
         sha256 = "c2cf81696b6d40e83ab02fb3b26d7b382ae975b420410604bdf785bfff4bfc34";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

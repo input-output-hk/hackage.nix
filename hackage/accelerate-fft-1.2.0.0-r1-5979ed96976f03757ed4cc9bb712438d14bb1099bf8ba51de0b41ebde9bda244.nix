@@ -21,7 +21,7 @@
       synopsis = "FFT using the Accelerate library";
       description = "Rank-polymorphic discrete Fourier transform (DFT), computed with a fast\nFourier transform (FFT) algorithm using the Accelerate library. Note that\noptimised implementations are available via foreign libraries, but must be\nexplicitly enabled.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,12 +29,12 @@
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lens-accelerate" or (errorHandler.buildDepError "lens-accelerate"))
-          ] ++ (pkgs.lib).optionals (flags.llvm-cpu) [
+        ] ++ pkgs.lib.optionals (flags.llvm-cpu) [
           (hsPkgs."accelerate-llvm" or (errorHandler.buildDepError "accelerate-llvm"))
           (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
           (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
           (hsPkgs."fft" or (errorHandler.buildDepError "fft"))
-          ]) ++ (pkgs.lib).optionals (flags.llvm-ptx) [
+        ]) ++ pkgs.lib.optionals (flags.llvm-ptx) [
           (hsPkgs."accelerate-llvm" or (errorHandler.buildDepError "accelerate-llvm"))
           (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -44,9 +44,9 @@
           (hsPkgs."cufft" or (errorHandler.buildDepError "cufft"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-llvm-native" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = if !flags.llvm-cpu then false else true;
-          };
+        };
         "test-llvm-ptx" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = if !flags.llvm-ptx then false else true;
-          };
         };
       };
-    }
+    };
+  }

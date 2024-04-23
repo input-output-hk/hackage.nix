@@ -21,16 +21,16 @@
       synopsis = "Composable validations for your Haskell data types";
       description = "Composable validations for your Haskell data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "validators-doctest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."validators" or (errorHandler.buildDepError "validators"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "validators-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."validators" or (errorHandler.buildDepError "validators"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

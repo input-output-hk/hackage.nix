@@ -6,8 +6,8 @@
         nix = import ../hackage/CC-delcont-ref-0.1.0.0-r0-3473b02191589af6907505e1b456adfdc99ffc5eacc11b50ec5c9b50060c5383.nix;
         revNum = 0;
         sha256 = "3473b02191589af6907505e1b456adfdc99ffc5eacc11b50ec5c9b50060c5383";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

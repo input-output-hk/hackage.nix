@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,27 +40,27 @@
           (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dustme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dustme" or (errorHandler.buildDepError "dustme"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dustme-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."dustme" or (errorHandler.buildDepError "dustme"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Streaming interface for LZMA/XZ compression";
       description = "This package provides a <http://hackage.haskell.org/package/streaming streaming> API for the <https://en.wikipedia.org/wiki/LZMA LZMA (Lempel–Ziv–Markov chain algorithm)> compression algorithm used in the @.xz@ file format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

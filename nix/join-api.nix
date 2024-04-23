@@ -6,8 +6,8 @@
         nix = import ../hackage/join-api-0.0.0.0-r0-c1f7a57d2dc863f6fd7053bc4fafca84fd32a7d40984cf18acd1908892bf5673.nix;
         revNum = 0;
         sha256 = "c1f7a57d2dc863f6fd7053bc4fafca84fd32a7d40984cf18acd1908892bf5673";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

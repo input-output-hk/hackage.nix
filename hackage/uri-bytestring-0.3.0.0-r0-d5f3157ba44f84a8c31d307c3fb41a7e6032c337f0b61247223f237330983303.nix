@@ -21,7 +21,7 @@
       synopsis = "Haskell URI parsing as ByteStrings";
       description = "uri-bytestring aims to be an RFC3986 compliant URI parser that uses efficient ByteStrings for parsing and representing the URI data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

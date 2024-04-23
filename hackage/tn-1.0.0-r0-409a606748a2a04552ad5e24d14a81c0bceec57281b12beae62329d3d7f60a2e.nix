@@ -21,7 +21,7 @@
       synopsis = "A simple daily journal program";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tn" = {
@@ -35,9 +35,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

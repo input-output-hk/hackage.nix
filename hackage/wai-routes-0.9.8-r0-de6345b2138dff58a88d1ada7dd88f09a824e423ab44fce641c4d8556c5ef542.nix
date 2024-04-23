@@ -21,7 +21,7 @@
       synopsis = "Typesafe URLs for Wai applications.";
       description = "Provides easy to use typesafe URLs for Wai Applications. See README for more information. Also see examples/ directory for usage examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."hspec-wai-json" or (errorHandler.buildDepError "hspec-wai-json"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai-routes" or (errorHandler.buildDepError "wai-routes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

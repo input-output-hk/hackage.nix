@@ -21,7 +21,7 @@
       synopsis = "Fast incremental file transfer using Merke-Hash-Trees";
       description = "A command line tool that can be used to incrementally synchronize a directory hierarchy with a\nsecond one. It is using a Merkle-Hash-Tree to compare the folders, such that the synchronization\ntime and communication (round) complexity grows only logarithmically with the actual size of the\ndirectories (assuming the actual difference of the directories is small).\nThe communication happens through standard streams between parent and child processes, which can\neasily be routed through remote command execution tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sync-mht" = {
@@ -42,9 +42,9 @@
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

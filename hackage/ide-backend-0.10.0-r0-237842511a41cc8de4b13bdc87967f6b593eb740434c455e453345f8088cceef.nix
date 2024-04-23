@@ -21,7 +21,7 @@
       synopsis = "An IDE backend library";
       description = "See README.md for more details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."Cabal-ide-backend" or (errorHandler.buildDepError "Cabal-ide-backend"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ide-backend-exe-cabal" = {
           depends = [
@@ -89,10 +89,10 @@
             (hsPkgs."Cabal-ide-backend" or (errorHandler.buildDepError "Cabal-ide-backend"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "TestSuite" = {
           depends = [
@@ -118,9 +118,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rpc-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -143,9 +143,9 @@
             (hsPkgs."ide-backend" or (errorHandler.buildDepError "ide-backend"))
             (hsPkgs."ide-backend-common" or (errorHandler.buildDepError "ide-backend-common"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "The client implementation of servant-rawm.";
       description = "Please see <https://github.com/cdepillabout/servant-rawm#readme README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant-rawm" or (errorHandler.buildDepError "servant-rawm"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

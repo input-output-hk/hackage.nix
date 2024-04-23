@@ -21,7 +21,7 @@
       synopsis = "YAML parsing combinators for improved validation and error reporting";
       description = "Based on the article\n<https://ro-che.info/articles/2015-07-26-better-yaml-parsing Better Yaml Parsing>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml-combinators" or (errorHandler.buildDepError "yaml-combinators"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

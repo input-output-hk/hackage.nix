@@ -21,15 +21,15 @@
       synopsis = "A lightweight binding to PCRE";
       description = "A lightweight binding to PCRE\n\nThe PCRE library is a set of functions that implement regular\nexpression pattern matching using the same syntax and semantics as Perl 5.\n\nTest coverage data for this library is available at:\n<http://code.haskell.org/~dons/tests/pcre-light/hpc_index.html>\n";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."pcre" or (errorHandler.sysDepError "pcre")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

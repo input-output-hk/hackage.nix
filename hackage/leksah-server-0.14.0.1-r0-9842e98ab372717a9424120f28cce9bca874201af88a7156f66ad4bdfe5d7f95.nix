@@ -21,7 +21,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -50,24 +50,24 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-          ]) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+        ]) ++ (if compiler.isGhc && compiler.version.ge "7.2"
           then [ (hsPkgs."process" or (errorHandler.buildDepError "process")) ]
           else [
             (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+          ])) ++ pkgs.lib.optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
           (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
           (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "leksah-server" = {
           depends = ((([
@@ -96,26 +96,26 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-            ]) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          ]) ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
-          libs = (pkgs.lib).optionals (system.isWindows) [
+            ])) ++ pkgs.lib.optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
+          libs = pkgs.lib.optionals (system.isWindows) [
             (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
             (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
             (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "leksahecho" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,16 +129,16 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tool" = {
           depends = [
@@ -150,15 +150,15 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

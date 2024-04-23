@@ -21,7 +21,7 @@
       synopsis = "Simple monadic DOM parser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-writer" or (errorHandler.buildDepError "xml-conduit-writer"))
           (hsPkgs."xml-lens" or (errorHandler.buildDepError "xml-lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

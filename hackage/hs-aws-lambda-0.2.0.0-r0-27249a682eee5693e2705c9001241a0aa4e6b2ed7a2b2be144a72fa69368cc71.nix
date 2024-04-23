@@ -21,7 +21,7 @@
       synopsis = "A modern and easy-to-use wrapper for Docker-based Lambda implementations. Now with API Gateway support!";
       description = "Please see the README on GitHub at <https://github.com/RobertFischer/hs-aws-lambda#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,18 +39,18 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aws-lambda-runtime-api-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-aws-lambda" or (errorHandler.buildDepError "hs-aws-lambda"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

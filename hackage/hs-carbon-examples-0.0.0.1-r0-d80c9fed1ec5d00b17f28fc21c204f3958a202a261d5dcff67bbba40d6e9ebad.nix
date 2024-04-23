@@ -21,7 +21,7 @@
       synopsis = "Example Monte Carlo simulations implemented with Carbon";
       description = "Example Monte Carlo simulations implemented with Carbon";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "PiExample" = {
@@ -29,17 +29,17 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-carbon" or (errorHandler.buildDepError "hs-carbon"))
             (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "IntegralExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-carbon" or (errorHandler.buildDepError "hs-carbon"))
             (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TransportExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -49,9 +49,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utility library for monads, particularly those involving state.";
       description = "Utility library for monads, particularly those involving state.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."AbortT-transformers" or (errorHandler.buildDepError "AbortT-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

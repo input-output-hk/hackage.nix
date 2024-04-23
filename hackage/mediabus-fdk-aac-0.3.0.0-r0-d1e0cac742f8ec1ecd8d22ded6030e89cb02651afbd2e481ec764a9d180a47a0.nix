@@ -21,7 +21,7 @@
       synopsis = "Mediabus plugin for the Frauenhofer ISO-14496-3 AAC FDK";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,13 +43,13 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."m" or (errorHandler.sysDepError "m")) ];
         pkgconfig = [
           (pkgconfPkgs."fdk-aac" or (errorHandler.pkgConfDepError "fdk-aac"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."mediabus" or (errorHandler.buildDepError "mediabus"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "encoder-benchmark" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."mediabus" or (errorHandler.buildDepError "mediabus"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

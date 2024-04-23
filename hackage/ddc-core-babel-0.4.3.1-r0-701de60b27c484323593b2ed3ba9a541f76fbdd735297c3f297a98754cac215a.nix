@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler PHP code generator.";
       description = "Disciplined Disciple Compiler PHP code generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
           (hsPkgs."ddc-core-tetra" or (errorHandler.buildDepError "ddc-core-tetra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

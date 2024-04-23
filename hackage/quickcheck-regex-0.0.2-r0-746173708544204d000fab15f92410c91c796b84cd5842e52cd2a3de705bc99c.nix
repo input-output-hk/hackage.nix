@@ -21,7 +21,7 @@
       synopsis = "Generate regex-constrained strings for QuickCheck";
       description = "Generate regex-constrained strings for QuickCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."regex-genex" or (errorHandler.buildDepError "regex-genex"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

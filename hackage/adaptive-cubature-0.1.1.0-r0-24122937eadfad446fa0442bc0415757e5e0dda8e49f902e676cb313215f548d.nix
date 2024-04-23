@@ -21,11 +21,11 @@
       synopsis = "Multidimensional integration";
       description = "Adaptive integration of a multivariate function on a hyperrectangle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

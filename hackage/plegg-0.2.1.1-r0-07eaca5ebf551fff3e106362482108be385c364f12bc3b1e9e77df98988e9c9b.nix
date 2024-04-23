@@ -21,11 +21,11 @@
       synopsis = "A semi-cross-platform interface for pledge(2) and unveil(2)";
       description = "plegg offers a simple Haskell interface for OpenBSD's\npledge(2) and unveil(2).  A useless but non-crashing\nthing is the result of compiling (on a non-OpenBSD\noperating system) the interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

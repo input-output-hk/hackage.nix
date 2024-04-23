@@ -21,7 +21,7 @@
       synopsis = "Asynchronous DNS RBL lookup";
       description = "Asynchronous DNS RBL lookup";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hsdns" or (errorHandler.buildDepError "hsdns"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

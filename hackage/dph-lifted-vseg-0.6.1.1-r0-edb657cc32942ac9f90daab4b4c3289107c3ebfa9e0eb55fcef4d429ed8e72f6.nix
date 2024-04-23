@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell lifted array combinators.";
       description = "This package provides the following:\nnested arrays and the primitive operators that work on them (PA functions);\nthe lifted array combinators that the vectoriser introduces (PP functions);\nthe user facing library functions that work on [::] style arrays (P functions).\nThis implementation directly encodes sharing between array segments,\nand avoids the copying that dph-lifted-copy would otherwise do.\nUse this version for production code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
           (hsPkgs."dph-lifted-base" or (errorHandler.buildDepError "dph-lifted-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

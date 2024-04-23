@@ -21,7 +21,7 @@
       synopsis = "OpenSSH keys decoder/encoder";
       description = "OpenSSH keys decoder/encoder";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "crypto-pubkey-openssh-tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

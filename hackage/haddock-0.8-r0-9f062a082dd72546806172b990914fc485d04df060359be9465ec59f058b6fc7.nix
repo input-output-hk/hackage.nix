@@ -21,16 +21,16 @@
       synopsis = "Haddock is a documentation-generation tool for Haskell libraries";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "haddock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

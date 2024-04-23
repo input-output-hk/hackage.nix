@@ -21,7 +21,7 @@
       synopsis = "Parsing & Quasiquoting for RFC 6570 URI Templates";
       description = "Parsing & Quasiquoting for RFC 6570 URI Templates";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-uri-templates" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

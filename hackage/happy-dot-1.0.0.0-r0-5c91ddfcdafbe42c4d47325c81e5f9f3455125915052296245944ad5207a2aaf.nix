@@ -21,7 +21,7 @@
       synopsis = "Parser for dot made with happy.";
       description = "A parser for the [DOT language](https://www.graphviz.org/doc/info/lang.html).\nThe parser is quite fast as it uses happy.\n\nThis library also includes some convenience functions for\noutputing DOT files and for converting DOT files into\ngraphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ast" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-pretty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,9 +54,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-utils" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,10 +64,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-happy-dot" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-language-dot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
             (hsPkgs."language-dot" or (errorHandler.buildDepError "language-dot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

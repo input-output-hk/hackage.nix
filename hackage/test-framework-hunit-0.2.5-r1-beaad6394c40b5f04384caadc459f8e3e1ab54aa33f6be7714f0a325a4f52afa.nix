@@ -21,17 +21,17 @@
       synopsis = "HUnit support for the test-framework package.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ] ++ (if flags.base3
+        ] ++ (if flags.base3
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
-          else (pkgs.lib).optional (flags.base4) (hsPkgs."base" or (errorHandler.buildDepError "base")));
+          else pkgs.lib.optional (flags.base4) (hsPkgs."base" or (errorHandler.buildDepError "base")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

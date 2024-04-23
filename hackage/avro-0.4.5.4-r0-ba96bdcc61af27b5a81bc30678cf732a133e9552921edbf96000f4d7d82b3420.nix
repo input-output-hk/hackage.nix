@@ -21,7 +21,7 @@
       synopsis = "Avro serialization support for Haskell";
       description = "Avro serialization and deserialization support for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ] ++ pkgs.lib.optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -80,13 +80,13 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-time" = {
           depends = [
@@ -104,9 +104,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ] ++ pkgs.lib.optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library to fetch and parse financial data from the SimFin(+) API.";
       description = "This library aims to wrap the [SimFin(+)](https://simfin.com/) API\nas completely as possible. SimFin provides fundamental financial data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "graph-prices" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
             (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "graph-eps" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."multi-containers" or (errorHandler.buildDepError "multi-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "graph-relative-performance" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,10 +76,10 @@
             (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
             (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "simfin-test" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

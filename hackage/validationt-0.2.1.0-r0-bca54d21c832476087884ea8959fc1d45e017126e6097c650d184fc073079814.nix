@@ -21,7 +21,7 @@
       synopsis = "Straightforward validation monad.";
       description = "Convenient solution for validating web forms and APIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."transformers-lift" or (errorHandler.buildDepError "transformers-lift"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

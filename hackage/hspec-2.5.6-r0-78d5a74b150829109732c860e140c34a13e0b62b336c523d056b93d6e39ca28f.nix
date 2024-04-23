@@ -21,7 +21,7 @@
       synopsis = "A Testing Framework for Haskell";
       description = "Hspec is a testing framework for Haskell. It is inspired by\nthe Ruby library RSpec. Some of Hspec's distinctive features\nare:\n\n* a friendly DSL for defining tests\n\n* integration with QuickCheck, SmallCheck, and HUnit\n\n* parallel test execution\n\n* automatic discovery of test files\n\nThe Hspec Manual is at <http://hspec.github.io/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
           (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
           (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

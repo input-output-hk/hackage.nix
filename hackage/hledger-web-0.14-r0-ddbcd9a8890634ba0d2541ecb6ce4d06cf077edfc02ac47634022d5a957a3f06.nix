@@ -21,7 +21,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a haskell port and friendly fork of John Wiegley's ledger accounting tool.\nThis package provides a web interface as an alternative to the hledger command line interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-web" = {
@@ -41,9 +41,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

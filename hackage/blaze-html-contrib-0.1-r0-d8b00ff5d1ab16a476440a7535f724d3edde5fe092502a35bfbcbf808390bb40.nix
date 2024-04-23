@@ -21,7 +21,7 @@
       synopsis = "Some contributions to add handy things to blaze html.";
       description = "Some contributions to add handy things to blaze html. Please\nsend your contributions as pull requests to\nhttps://github.com/chrisdone/blaze-html-contrib";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Run a sequence of functions on in-memory representations of files";
       description = "See README at <https://github.com/icidasset/shikensu#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       tests = {
         "spec" = {
@@ -37,9 +37,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

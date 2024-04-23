@@ -6,8 +6,8 @@
         nix = import ../hackage/karabiner-config-0.0.0.0-r0-df1a0ee2213b748254c829624d48cb560bdcf6f7d86586177835b5b311574ad9.nix;
         revNum = 0;
         sha256 = "df1a0ee2213b748254c829624d48cb560bdcf6f7d86586177835b5b311574ad9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

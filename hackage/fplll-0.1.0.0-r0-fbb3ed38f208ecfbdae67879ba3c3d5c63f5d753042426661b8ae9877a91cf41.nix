@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to <https://fplll.github.io/fplll/ fplll>";
       description = "";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,20 +29,20 @@
           (hsPkgs."hgmp" or (errorHandler.buildDepError "hgmp"))
           (hsPkgs."semibounded-lattices" or (errorHandler.buildDepError "semibounded-lattices"))
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."fplll" or (errorHandler.pkgConfDepError "fplll"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fplll" or (errorHandler.buildDepError "fplll"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

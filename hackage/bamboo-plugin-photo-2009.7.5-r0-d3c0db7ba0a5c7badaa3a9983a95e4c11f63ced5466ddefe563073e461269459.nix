@@ -21,7 +21,7 @@
       synopsis = "A photo album middleware";
       description = "It checks for a plugin tag in html and generate a photo album with thumbnails in place, by some internal IO options. The current version makes some assumptions on where the photo should be stored, so it's mostly useful for bamboo. A download of appropriate javascript is required, e.g. innerfade.js.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

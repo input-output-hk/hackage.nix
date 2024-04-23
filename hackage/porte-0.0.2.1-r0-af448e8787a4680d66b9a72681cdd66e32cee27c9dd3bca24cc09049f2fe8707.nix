@@ -21,7 +21,7 @@
       synopsis = "FreeBSD ports index search and analysis tool";
       description = "Porte provides a simple, fast and efficient interface to searching\nFreeBSD ports index fields. It also has a simple statistics mode which\nallows collecting frequency statistics for these fields.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "porte" = { buildable = true; }; };
       };
-    }
+      exes = { "porte" = { buildable = true; }; };
+    };
+  }

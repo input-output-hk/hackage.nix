@@ -21,12 +21,12 @@
       synopsis = "A library for generic programming that aims to be easy to understand";
       description = "Documentation is here: <https://generics-eot.readthedocs.io/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -50,9 +50,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

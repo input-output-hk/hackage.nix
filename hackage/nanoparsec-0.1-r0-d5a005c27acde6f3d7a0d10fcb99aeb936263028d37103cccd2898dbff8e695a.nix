@@ -21,15 +21,15 @@
       synopsis = "An implementation of attoparsec-like parser around list-like";
       description = "An implementation of attoparsec-like parser around list-like";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

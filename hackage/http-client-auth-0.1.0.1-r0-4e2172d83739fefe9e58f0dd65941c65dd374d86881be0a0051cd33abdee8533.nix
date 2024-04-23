@@ -21,7 +21,7 @@
       synopsis = "HTTP authorization (both basic and digest) done right";
       description = "Multiple challenges aren't implemented. Authentication-Info header isn't either.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

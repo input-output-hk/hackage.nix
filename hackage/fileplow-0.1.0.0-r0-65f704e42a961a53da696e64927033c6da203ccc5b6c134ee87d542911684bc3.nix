@@ -21,7 +21,7 @@
       synopsis = "Library to process and search large files or a collection of files";
       description = "Library to process and search large files or a collection of files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."binary-search" or (errorHandler.buildDepError "binary-search"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fileplow-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for the GitLab web API";
       description = "This Haskell library queries and updates the database of a GitLab instance using the GitLab web API: <https://docs.gitlab.com/ee/api/>\n\nRun all GitLab actions with `runGitLab`:\n\n> runGitLab :: (MonadUnliftIO m, MonadIO m)\n>  => GitLabServerConfig -- ^ the GitLab server details\n>  -> GitLab m a         -- ^ the GitLab action\n>  -> m a\n\nFor example:\n\n> myProjects <- runGitLab\n>      (defaultGitLabServer\n>          { url = \"https://gitlab.example.com\"\n>          , token=\"my_token\"} )\n>      (searchUser \"joe\" >>= userProjects . fromJust)\n\nWhich uses the functions:\n\n> searchUser   :: Text -> GitLab m (Maybe User)\n> userProjects :: User -> GitLab m (Maybe [Project])\n\nUnsurprisingly, this library is maintained on GitLab: <https://gitlab.com/robstewart57/gitlab-haskell>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

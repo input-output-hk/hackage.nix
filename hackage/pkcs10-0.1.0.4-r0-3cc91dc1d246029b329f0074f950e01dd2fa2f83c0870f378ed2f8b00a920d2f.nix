@@ -21,7 +21,7 @@
       synopsis = "PKCS#10 library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
           (hsPkgs."asn1-parse" or (errorHandler.buildDepError "asn1-parse"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
             (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
             (hsPkgs."asn1-parse" or (errorHandler.buildDepError "asn1-parse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

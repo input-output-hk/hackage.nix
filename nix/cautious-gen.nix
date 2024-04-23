@@ -6,8 +6,8 @@
         nix = import ../hackage/cautious-gen-0.0.0.0-r0-f7a70a41b044d890918b94edde20bbd4b32cc524f4cf44e5aae9325bbfff2158.nix;
         revNum = 0;
         sha256 = "f7a70a41b044d890918b94edde20bbd4b32cc524f4cf44e5aae9325bbfff2158";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

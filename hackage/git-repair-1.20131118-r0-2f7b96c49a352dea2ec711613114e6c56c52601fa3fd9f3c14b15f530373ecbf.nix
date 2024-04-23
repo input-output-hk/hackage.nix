@@ -21,7 +21,7 @@
       synopsis = "repairs a damanged git repisitory";
       description = "git-repair can repair various forms of damage to git repositories.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "git-repair" = {
@@ -44,9 +44,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

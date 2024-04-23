@@ -21,7 +21,7 @@
       synopsis = "Random number generation";
       description = "Random number generation based on orthogonal typeclasses\nfor entropy sources and random variable distributions, all\nserved up on a monadic platter.  Aspires to be useful\nin an idiomatic way in both \\\"pure\\\" and \\\"impure\\\" styles,\nas well as reasonably fast.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,12 +36,12 @@
           (hsPkgs."stateref" or (errorHandler.buildDepError "stateref"))
           (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if flags.base4
+        ] ++ (if flags.base4
           then [ (hsPkgs."syb" or (errorHandler.buildDepError "syb")) ] ++ [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

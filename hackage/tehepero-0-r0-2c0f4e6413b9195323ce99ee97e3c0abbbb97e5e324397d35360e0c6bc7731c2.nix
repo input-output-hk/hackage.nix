@@ -21,7 +21,7 @@
       synopsis = "Prettier error";
       description = "Haskell port of Rust's unwrap and except";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."fallible" or (errorHandler.buildDepError "fallible"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

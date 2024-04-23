@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell common config and debugging functions.";
       description = "Common configuration, debugging and utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

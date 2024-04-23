@@ -21,7 +21,7 @@
       synopsis = "Simple command line interface arguments parser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "demo" = {
           depends = [
             (hsPkgs."optima" or (errorHandler.buildDepError "optima"))
             (hsPkgs."attoparsec-data" or (errorHandler.buildDepError "attoparsec-data"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

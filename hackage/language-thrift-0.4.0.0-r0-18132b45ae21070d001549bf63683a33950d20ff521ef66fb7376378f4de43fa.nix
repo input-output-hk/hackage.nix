@@ -21,7 +21,7 @@
       synopsis = "Parser and pretty printer for the Thrift IDL format.";
       description = "This package provides a parser and pretty printer for the\n<http://thrift.apache.org/docs/idl Thrift IDL format>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
             (hsPkgs."language-thrift" or (errorHandler.buildDepError "language-thrift"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

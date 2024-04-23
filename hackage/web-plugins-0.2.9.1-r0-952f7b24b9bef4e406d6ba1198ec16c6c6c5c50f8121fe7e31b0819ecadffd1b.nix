@@ -21,7 +21,7 @@
       synopsis = "dynamic plugin system for web applications";
       description = "This provides a simple framework for defining plugins for a web application.\nIt is designed with the requirement that plugins can be loaded into a running\nweb application with out having to know about the plugin in advance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

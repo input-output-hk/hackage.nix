@@ -21,11 +21,11 @@
       synopsis = "Binding to sources of high-efficiency, high-precision, monotonically\nincreasing relative time.";
       description = "Haskell binding to sources of high-efficiency, high-precision,\nmonotonically increasing relative time. Tested only on amd64 though, so use\nit at your own risk. Most of the credit should go to Matteo Frigo and Martin\nGrabmuller, I only cleaned up the documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

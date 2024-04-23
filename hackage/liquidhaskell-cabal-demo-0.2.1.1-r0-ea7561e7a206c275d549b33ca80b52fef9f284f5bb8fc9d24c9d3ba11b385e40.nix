@@ -25,24 +25,24 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.liquidhaskell-cabal or (pkgs.buildPackages.liquidhaskell-cabal or (errorHandler.setupDepError "liquidhaskell-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."liquidhaskell-cabal" or (errorHandler.buildDepError "liquidhaskell-cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ffi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."liquidhaskell-cabal" or (errorHandler.buildDepError "liquidhaskell-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

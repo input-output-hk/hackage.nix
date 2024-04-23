@@ -21,25 +21,25 @@
       synopsis = "Render tasty output to XML for Jenkins (ingredient transformer)";
       description = "A tasty ingredient transformer (meaning consoleTestReporter or any other ingredient can run as well) to output test results in XML, using the Ant schema. This XML can be consumed by the Jenkins continuous integration framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-jenkins-xml" or (errorHandler.buildDepError "tasty-jenkins-xml"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

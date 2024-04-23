@@ -21,7 +21,7 @@
       synopsis = "shell-/perl- like (systems) programming in Haskell";
       description = "The shellisg package provides a single module for convenient\n\\\"systems\\\" programming in Haskell, similar in spirit to POSIX\nshells or PERL.\n\n* Elegance and safety is sacrificed for conciseness and\nswiss-army-knife-ness.\n\n* The interface exported by Shellish is thread-safe.\n\nOverall, the module should help you to get a job done quickly,\nwithout getting too dirty.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

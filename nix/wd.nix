@@ -6,8 +6,8 @@
         nix = import ../hackage/wd-0.1.0.0-r0-5108139bd8d0d220640b5622fee8ad28a2211ca8266c7af25a8068cfa00d0bc4.nix;
         revNum = 0;
         sha256 = "5108139bd8d0d220640b5622fee8ad28a2211ca8266c7af25a8068cfa00d0bc4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

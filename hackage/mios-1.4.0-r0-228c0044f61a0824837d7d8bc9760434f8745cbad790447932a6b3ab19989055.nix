@@ -21,7 +21,7 @@
       synopsis = "A Minisat-based SAT solver in Haskell";
       description = "A modern and fast SAT solver written in Haskell, based on Minisat-1.14 and 2.2.\nBy using CDCL, watch literals, VSIDS, restart, blocking-literals, LBD and so on.\nThe current version is only 2.0 time slower than Minisat-2.2.\n'Mios' is an abbreviation of 'Minisat-based Implementation and Optimization Study on SAT solver'.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = if flags.lib then true else false;
-        };
+      };
       exes = {
         "mios" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

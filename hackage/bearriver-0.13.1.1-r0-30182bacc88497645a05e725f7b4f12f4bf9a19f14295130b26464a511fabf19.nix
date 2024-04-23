@@ -21,7 +21,7 @@
       synopsis = "A replacement of Yampa based on Monadic Stream Functions.";
       description = "A Yampa replacement built using Dunai.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."dunai" or (errorHandler.buildDepError "dunai"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."simple-affine-space" or (errorHandler.buildDepError "simple-affine-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

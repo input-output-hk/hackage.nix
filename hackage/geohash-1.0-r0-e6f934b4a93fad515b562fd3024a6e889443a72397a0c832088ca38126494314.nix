@@ -21,14 +21,14 @@
       synopsis = "Geohash latitudes and longitudes.";
       description = "Implements the geohash algorithm described here:\n<http://en.wikipedia.org/wiki/Geohash>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/redis-schema-0.1.0-r0-614c7721257962bb60dec8dce8119d37f572650e8eaa7ace0f68291a93e99df2.nix;
         revNum = 0;
         sha256 = "614c7721257962bb60dec8dce8119d37f572650e8eaa7ace0f68291a93e99df2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

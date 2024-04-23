@@ -21,15 +21,15 @@
       synopsis = "An atomic counter implemented using the FFI.";
       description = "This is an alternate implementation of the counter interface\nprovided by the atomic-primops packag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."bits-atomic" or (errorHandler.buildDepError "bits-atomic"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-atomic-primops-foreign" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

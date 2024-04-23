@@ -21,7 +21,7 @@
       synopsis = "Provides OAuth2 authentication for use with Req";
       description = "This package adds OAuth2 authentication to Req.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,23 +38,23 @@
           (hsPkgs."req-url-extra" or (errorHandler.buildDepError "req-url-extra"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "req-oauth2-app" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "req-oauth2-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

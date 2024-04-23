@@ -21,15 +21,15 @@
       synopsis = "data from/to ByteString";
       description = "You can read data from ByteString.\n\n> some = do\n>     x <- take 4\n>     y <- take 8\n>     return (x :: Int, y :: Integer)\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."word24" or (errorHandler.buildDepError "word24"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

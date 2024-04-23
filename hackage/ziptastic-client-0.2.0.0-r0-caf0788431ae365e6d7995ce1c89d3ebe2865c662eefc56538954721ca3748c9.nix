@@ -21,7 +21,7 @@
       synopsis = "A type-safe client for the Ziptastic API for doing forward and reverse geocoding.";
       description = "A convenient and type-safe client library for the\nZiptastic (<https://www.getziptastic.com/>) API providing forward and reverse\ngeocoding via country, zip code (postal code), latitude, and longitude.\n\nThis package is maintained by Grafted-In (<https://www.graftedin.io/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ziptastic-core" or (errorHandler.buildDepError "ziptastic-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

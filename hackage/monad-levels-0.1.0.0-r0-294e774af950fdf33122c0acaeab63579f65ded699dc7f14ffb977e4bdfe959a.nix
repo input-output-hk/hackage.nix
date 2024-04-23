@@ -21,15 +21,15 @@
       synopsis = "Specific levels of monad transformers";
       description = "An automatic way of adding instances to monad classes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

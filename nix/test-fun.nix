@@ -6,8 +6,8 @@
         nix = import ../hackage/test-fun-0.1.0.0-r0-f0315ca26b8af27ec177c89a5ab2e25b535db36029cee428d8f5eafa66407296.nix;
         revNum = 0;
         sha256 = "f0315ca26b8af27ec177c89a5ab2e25b535db36029cee428d8f5eafa66407296";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

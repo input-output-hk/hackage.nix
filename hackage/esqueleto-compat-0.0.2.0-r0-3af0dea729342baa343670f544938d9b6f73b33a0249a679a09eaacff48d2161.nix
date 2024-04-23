@@ -21,7 +21,7 @@
       synopsis = "Compatibility operators for Persistent and Esqueleto";
       description = "Please see the README on GitHub at <https://github.com/parsonsmatt/esqueleto-compat#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "esqueleto-compat-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."esqueleto-compat" or (errorHandler.buildDepError "esqueleto-compat"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

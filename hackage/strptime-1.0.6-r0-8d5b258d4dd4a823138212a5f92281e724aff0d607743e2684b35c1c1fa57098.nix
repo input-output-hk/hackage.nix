@@ -21,14 +21,14 @@
       synopsis = "Efficient parsing of LocalTime using a binding to C's strptime,\nwith some extra features (i.e. fractional seconds)";
       description = "This library provides a binding to strptime, that allows to parse\ndates and times from strings and strict/lazy bytestrings. The library\ncreates LocalTime values. It provides some extra features which\nthe original strptime lacks - parsing of fractional seconds and parsing\nof ten-powers of seconds since epoch (for example milliseconds since epoch).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

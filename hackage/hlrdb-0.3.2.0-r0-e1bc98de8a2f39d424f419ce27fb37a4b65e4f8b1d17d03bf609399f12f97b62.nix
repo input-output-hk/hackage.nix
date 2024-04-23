@@ -21,7 +21,7 @@
       synopsis = "High-level Redis Database";
       description = "A library for type-driven interaction with Redis";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."zstd" or (errorHandler.buildDepError "zstd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

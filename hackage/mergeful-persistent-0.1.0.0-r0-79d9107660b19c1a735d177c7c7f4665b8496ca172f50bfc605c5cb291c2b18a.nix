@@ -21,7 +21,7 @@
       synopsis = "Support for using mergeful from persistent-based databases";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mergeful-persistent-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
             (hsPkgs."validity-persistent" or (errorHandler.buildDepError "validity-persistent"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

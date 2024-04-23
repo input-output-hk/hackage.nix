@@ -6,8 +6,8 @@
         nix = import ../hackage/eventsourcing-postgresql-0.9.0-r0-da626325278c48957f4bcd6e6683c5b50f4fdc6f722f9afe40fd5a099f90c8d4.nix;
         revNum = 0;
         sha256 = "da626325278c48957f4bcd6e6683c5b50f4fdc6f722f9afe40fd5a099f90c8d4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

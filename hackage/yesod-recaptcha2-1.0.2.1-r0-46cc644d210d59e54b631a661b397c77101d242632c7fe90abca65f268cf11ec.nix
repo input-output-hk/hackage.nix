@@ -21,7 +21,7 @@
       synopsis = "yesod recaptcha2";
       description = "It support new Google reCAPTCHA(v2, v3) for yesod-form instead yesod-recaptcha beacuse original yesod-recaptcha is dead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

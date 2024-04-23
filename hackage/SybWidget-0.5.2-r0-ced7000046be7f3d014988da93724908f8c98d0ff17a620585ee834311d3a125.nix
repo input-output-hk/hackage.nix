@@ -21,7 +21,7 @@
       synopsis = "Library which aids constructing generic (SYB3-based) widgets";
       description = "Basic building block for creating libraries which can generically construct widgets.\nThat is, the library cannot by it self construct any widgets, but\nmakes it easier to build libraries which can. This also means that the\nlibrary is not dependent on any particular GUI library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."syb-with-class" or (errorHandler.buildDepError "syb-with-class"))
           (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,19 +21,19 @@
       synopsis = "A binding for libktx from Khronos";
       description = "Allows ktx format textures to be loaded into an OpenGL context.\nlibktx is included as a submodule and compiled with 'c-sources'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."glew" or (errorHandler.pkgConfDepError "glew"))
           (pkgconfPkgs."egl" or (errorHandler.pkgConfDepError "egl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

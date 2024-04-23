@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to Apache Portable Runtime (APR)";
       description = "Bindings to APR: <http://apr.apache.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."apr-1" or (errorHandler.pkgConfDepError "apr-1"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

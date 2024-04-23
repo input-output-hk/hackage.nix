@@ -21,7 +21,7 @@
       synopsis = "Simpler interface to the websockets api";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

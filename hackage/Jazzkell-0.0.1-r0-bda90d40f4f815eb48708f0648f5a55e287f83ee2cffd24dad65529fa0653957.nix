@@ -21,15 +21,15 @@
       synopsis = "Library for modeling jazz improvisation.";
       description = "Jazzkell is a Haskell implementation of a functional model for\njazz improvisation.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Euterpea" or (errorHandler.buildDepError "Euterpea"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

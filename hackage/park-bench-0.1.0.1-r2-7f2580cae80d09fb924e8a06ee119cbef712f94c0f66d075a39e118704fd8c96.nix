@@ -21,15 +21,15 @@
       synopsis = "A quick-and-dirty, low-friction benchmark tool with immediate feedback";
       description = "A quick-and-dirty, low-friction benchmark tool with immediate feedback.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

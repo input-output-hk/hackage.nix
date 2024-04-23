@@ -21,7 +21,7 @@
       synopsis = "Haskell API for I2P anonymous networking";
       description = "Haskell API for I2P anonymous networking";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."hspec-attoparsec" or (errorHandler.buildDepError "hspec-attoparsec"))
             (hsPkgs."network-anonymous-i2p" or (errorHandler.buildDepError "network-anonymous-i2p"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A compiler plugin which generates tags file from GHC parsed syntax tree.";
       description = "A [GHC compiler plugin](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/extending_ghc.html?highlight=compiler%20plugin#compiler-plugins)\nwhich takes parsed Haskell representation @HsModule GhcPs@,\nextracts __tags__ information and saves it either in __ctags__ or\n__etags__ format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,11 +39,11 @@
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."ghc-tags-core" or (errorHandler.buildDepError "ghc-tags-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gtp-check" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc-tags-plugin" or (errorHandler.buildDepError "ghc-tags-plugin"))
-            ];
+          ];
           buildable = if flags.gtp-check then true else false;
-          };
         };
       };
-    }
+    };
+  }

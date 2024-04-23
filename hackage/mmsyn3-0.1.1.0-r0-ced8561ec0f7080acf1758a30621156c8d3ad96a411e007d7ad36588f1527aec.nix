@@ -21,14 +21,14 @@
       synopsis = "A small library to deal with executable endings";
       description = "A small library to deal with executable endings. Uses a Maybe data representation inside an IO monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for Scientific";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-scientific" or (errorHandler.buildDepError "validity-scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-scientific-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."genvalidity-scientific" or (errorHandler.buildDepError "genvalidity-scientific"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

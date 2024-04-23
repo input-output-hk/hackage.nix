@@ -21,7 +21,7 @@
       synopsis = "Build custom libraries for Nginx haskell module";
       description = "Build custom libraries for\n<https://github.com/lyokha/nginx-haskell-module Nginx haskell module>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nhm-tool" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."cabal-plan" or (errorHandler.buildDepError "cabal-plan"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

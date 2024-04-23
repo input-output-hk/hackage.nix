@@ -21,14 +21,14 @@
       synopsis = "Make more than one point in numeric literals";
       description = "Allows use to write more pointful than usual numbers. Example: @3.14.159@.\n\nThis is very useful for various obvious undisclosed reasons.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

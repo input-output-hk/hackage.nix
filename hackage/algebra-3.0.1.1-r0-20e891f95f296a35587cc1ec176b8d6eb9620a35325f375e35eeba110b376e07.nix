@@ -21,7 +21,7 @@
       synopsis = "Constructive abstract algebra";
       description = "Constructive abstract algebra";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
           (hsPkgs."representable-tries" or (errorHandler.buildDepError "representable-tries"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

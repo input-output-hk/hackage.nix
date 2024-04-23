@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the CozoDB C API";
       description = "Simple, relatively low-level bindings to the C API\nprovided by cozo. Additionally, there are some convenience types for\nserializing function arguments and deserializing query results.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libcozo_c" or (errorHandler.pkgConfDepError "libcozo_c"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cozo-hs-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

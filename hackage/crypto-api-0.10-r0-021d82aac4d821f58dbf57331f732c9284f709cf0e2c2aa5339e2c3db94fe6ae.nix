@@ -21,7 +21,7 @@
       synopsis = "A generic interface for cryptographic operations";
       description = "A generic interface for cryptographic operations (hashes, ciphers, randomness).\nMaintainers of hash and cipher implementations are\nencouraged to add instances for the classes defined\nin Crypto.Classes.  Crypto users are similarly\nencouraged to use the interfaces defined in the Classes\nmodule.\nAny concepts or functions of general use to more than\none cryptographic algorithm (ex: padding) is within\nscope of this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."largeword" or (errorHandler.buildDepError "largeword"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Test tools for Ribosome";
       description = "See https://hackage.haskell.org/package/ribosome-test/docs/Ribosome-Test.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."ribosome" or (errorHandler.buildDepError "ribosome"))
           (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
           (hsPkgs."ribosome-host-test" or (errorHandler.buildDepError "ribosome-host-test"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ribosome-test-unit" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
             (hsPkgs."ribosome-test" or (errorHandler.buildDepError "ribosome-test"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Strategic board game of medium complexity";
       description = "Implementation in Haskell of the strategic board game\nSnorkels. Snorkels is often used as a first step when\nteaching people to play Go.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "snorkels" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

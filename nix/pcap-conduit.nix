@@ -6,8 +6,8 @@
         nix = import ../hackage/pcap-conduit-0.1-r0-452794ebe9019c19ac26af627869f2d8c54f06c6165a20a6cf7759100ebd30c7.nix;
         revNum = 0;
         sha256 = "452794ebe9019c19ac26af627869f2d8c54f06c6165a20a6cf7759100ebd30c7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

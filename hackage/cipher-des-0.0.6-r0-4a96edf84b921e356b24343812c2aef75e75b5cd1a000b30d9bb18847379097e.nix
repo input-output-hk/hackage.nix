@@ -21,7 +21,7 @@
       synopsis = "DES and 3DES primitives";
       description = "DES and 3DES primitives";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cipher-des" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-tests" or (errorHandler.buildDepError "crypto-cipher-tests"))
             (hsPkgs."cipher-des" or (errorHandler.buildDepError "cipher-des"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-cipher-des" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-benchmarks" or (errorHandler.buildDepError "crypto-cipher-benchmarks"))
             (hsPkgs."cipher-des" or (errorHandler.buildDepError "cipher-des"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

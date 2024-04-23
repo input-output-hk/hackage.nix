@@ -21,7 +21,7 @@
       synopsis = "Clojure without alphanumerics.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "swearjure" = {
@@ -38,9 +38,9 @@
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

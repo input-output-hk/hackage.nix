@@ -21,7 +21,7 @@
       synopsis = "Render math formula in ASCII, and perform some simplifications";
       description = "Haskell formula manipulation program";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "eq" = {
@@ -35,9 +35,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

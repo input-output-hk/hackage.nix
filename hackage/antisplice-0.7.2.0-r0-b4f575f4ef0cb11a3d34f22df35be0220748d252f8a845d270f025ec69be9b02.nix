@@ -21,7 +21,7 @@
       synopsis = "An engine for text-based dungeons.";
       description = "An engine for text-based dungeons.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

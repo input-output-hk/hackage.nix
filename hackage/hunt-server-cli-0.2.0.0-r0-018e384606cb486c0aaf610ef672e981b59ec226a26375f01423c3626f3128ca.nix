@@ -21,7 +21,7 @@
       synopsis = "A Command line Interface for the Hunt server.";
       description = "A Command line Interface for the Hunt server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hunt-server-cli" = {
@@ -48,9 +48,9 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

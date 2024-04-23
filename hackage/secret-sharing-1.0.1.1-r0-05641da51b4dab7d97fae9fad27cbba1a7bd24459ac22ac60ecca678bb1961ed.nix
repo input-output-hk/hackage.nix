@@ -21,7 +21,7 @@
       synopsis = "Information-theoretic secure secret sharing";
       description = "Please see the README on GitHub at <https://github.com/pwrobinson/secret-sharing#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."dice-entropy-conduit" or (errorHandler.buildDepError "dice-entropy-conduit"))
           (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "secret-sharing-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

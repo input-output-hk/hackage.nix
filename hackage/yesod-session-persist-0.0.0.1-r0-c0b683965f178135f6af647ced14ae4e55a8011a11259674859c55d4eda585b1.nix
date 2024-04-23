@@ -21,15 +21,15 @@
       synopsis = "SQL session backend for Yesod";
       description = "Use Persistent to store Yesod sessions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yesod-session-persist".components.sublibs.internal or (errorHandler.buildDepError "yesod-session-persist:internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "internal" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-session-persist" or (errorHandler.buildDepError "yesod-session-persist"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

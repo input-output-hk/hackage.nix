@@ -14,7 +14,7 @@
       identifier = {
         name = "relational-record-examples";
         version = "0.5.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "Shohei Murayama <shohei.murayama@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Examples of Haskell Relationa Record";
       description = "Provides examples of Haskell Relational Record";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."relational-schemas" or (errorHandler.buildDepError "relational-schemas"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."relational-record-examples" or (errorHandler.buildDepError "relational-record-examples"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = if flags.binary then true else false;
-          };
+        };
         "specialized-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."relational-record-examples" or (errorHandler.buildDepError "relational-record-examples"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.4" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.4" && compiler.version.lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = if flags.binary then true else false;
-          };
         };
       };
-    }
+    };
+  }

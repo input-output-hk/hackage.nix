@@ -14,7 +14,7 @@
       identifier = {
         name = "persistent-postgresql-streaming";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "(c) 2021 Supercede Ltd.";
       maintainer = "support@supercede.com";
@@ -24,7 +24,7 @@
       synopsis = "Memory-constant streaming of Persistent entities from PostgreSQL";
       description = "This library provides a set of APIs for performing queries on Persistent\nentities in constant memory, streaming the results using @conduit@.\n\nThe library relies on PostgreSQL-specific features to avoid loading all the\nresults of a query into memory at once. This allows for accessing tables of\nmillions of entities from Haskell without a memory blow-up.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

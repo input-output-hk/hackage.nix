@@ -21,16 +21,16 @@
       synopsis = "The RANSAC algorithm for parameter estimation.";
       description = "The RANdom SAmple Consensus (RANSAC) algorithm for\nestimating the parameters of a mathematical model\nfrom a data set. See\n<http://en.wikipedia.org/wiki/RANSAC> for more\ninformation.\n\nSee @tests/LinearFit.hs@ in the package contents for\nan example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."RANSAC" or (errorHandler.buildDepError "RANSAC"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

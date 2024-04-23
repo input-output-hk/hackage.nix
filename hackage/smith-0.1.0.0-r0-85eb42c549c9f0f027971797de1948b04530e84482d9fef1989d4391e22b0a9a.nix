@@ -21,15 +21,15 @@
       synopsis = "Parse arrays of tokens";
       description = "This library is similar in spirit to `bytesmith`. While `bytesmith`\nparses byte sequences, `smith` parses token sequences. The most\ncommon way to use them together is to lex with `bytesmith` and\nthen parse the token sequence with `smith`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytesmith" or (errorHandler.buildDepError "bytesmith"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

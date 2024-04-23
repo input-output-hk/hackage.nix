@@ -21,16 +21,16 @@
       synopsis = "A Haskell binding to MessagePack";
       description = "A Haskell binding to MessagePack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."msgpackc" or (errorHandler.sysDepError "msgpackc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

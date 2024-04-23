@@ -21,21 +21,21 @@
       synopsis = "Create and transform functions with variable arity.";
       description = "Please see the README on GitHub at <https://github.com/lykahb/variadic-function#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "variadic-function-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."variadic-function" or (errorHandler.buildDepError "variadic-function"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

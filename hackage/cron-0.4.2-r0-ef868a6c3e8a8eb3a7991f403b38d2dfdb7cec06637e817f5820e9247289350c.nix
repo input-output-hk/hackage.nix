@@ -21,7 +21,7 @@
       synopsis = "Cron datatypes and Attoparsec parser";
       description = "Cron data structure and Attoparsec parser. The idea is to embed it in larger\nsystems which want to roll their own scheduled tasks in a format that people\nare used to.\n'System.Cron' is where all the interesting datatypes live. You will also find\n'scheduleMatches', which you can use to compare a time against a\n'CronSchedule' to see if an action needs to be performed.  System.Cron.Parser\nis where you will find the parsers `cronSchedule`, `crontabEntry` and\n`cronTab`. To parse individual schedules up to full crontab files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A profunctor effect system.";
       description = "This might be a profunctor effect system, but unlike all the others. See the project readme.org for usage and discussion: https://github.com/tonyday567/box#readme.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

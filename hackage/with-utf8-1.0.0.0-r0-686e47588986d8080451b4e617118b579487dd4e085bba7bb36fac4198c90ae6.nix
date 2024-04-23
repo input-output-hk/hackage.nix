@@ -21,16 +21,16 @@
       synopsis = "Get your IO right on the first try";
       description = "This minimalistic library helps you navigate the world of text encodings\navoiding @invalid argument (invalid byte sequence)@\nand @invalid argument (invalid character)@ in runtime.\n\nThe two most important modules are:\n\n* \"Main.Utf8\"\n* \"System.IO.Utf8\"\n\nSee <https://serokell.io/blog/haskell-with-utf8 this blog post> for why this\nlibrary exists and what exactly it does.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "with-utf8-test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

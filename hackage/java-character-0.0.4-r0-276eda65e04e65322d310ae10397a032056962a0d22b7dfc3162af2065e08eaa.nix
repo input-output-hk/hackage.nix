@@ -21,14 +21,14 @@
       synopsis = "Functions to simulate Java's Character class.";
       description = "Functions to simulate the java.lang.Character class of Java. The specification of this class is required to implement some programming language grammars.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."diet" or (errorHandler.buildDepError "diet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

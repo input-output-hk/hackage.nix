@@ -21,7 +21,7 @@
       synopsis = "Simple command line interface arguments parser";
       description = "A very simple API for the \\\"optparse-applicative\\\" library,\nwhich maintains the compatibility with it,\nwhile being completely self-sufficient.\nIOW, you don't need to depend on \\\"optparse-applicative\\\" to\napply this library,\nyet you still can integrate with it, when needed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "demo" = {
           depends = [
             (hsPkgs."optparse-applicative-simple" or (errorHandler.buildDepError "optparse-applicative-simple"))
             (hsPkgs."attoparsec-data" or (errorHandler.buildDepError "attoparsec-data"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

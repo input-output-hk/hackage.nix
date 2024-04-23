@@ -21,7 +21,7 @@
       synopsis = "Haskell game library.";
       description = "HaskGame is meant to provide a video/audio/event handling library\nsuitable for creating games or GUI's.\nCurrently it incompletely wraps the SDL so the SDL must be used.\nIn the future, it will abstract SDL completely and perhaps will also\nhave GLUT/OpenGL or X backends.\n\nProject wiki page: <http://haskell.org/haskellwiki/HaskGame>\n\nGit repository is at: <http://github.com/Peaker/haskgame>\n\n&#169; 2009 by Eyal Lotem; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
           (hsPkgs."SDL-ttf" or (errorHandler.buildDepError "SDL-ttf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

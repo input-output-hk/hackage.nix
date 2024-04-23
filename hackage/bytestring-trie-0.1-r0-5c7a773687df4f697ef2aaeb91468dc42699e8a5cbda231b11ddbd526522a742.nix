@@ -21,14 +21,14 @@
       synopsis = "Efficient map from strings to values.";
       description = "Efficient map from strings to values.\n\nThe implementation is based on /big-endian patricia trees/, like \"Data.IntMap\". We first trie on the elements of \"Data.ByteString\" and then trie on the big-endian bit representation of those elements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

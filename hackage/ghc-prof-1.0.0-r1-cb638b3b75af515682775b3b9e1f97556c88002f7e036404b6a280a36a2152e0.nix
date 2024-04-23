@@ -21,7 +21,7 @@
       synopsis = "Library for parsing GHC time and allocation profiling reports";
       description = "Library for parsing GHC time and allocation profiling reports";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dump" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."ghc-prof" or (errorHandler.buildDepError "ghc-prof"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.dump then true else false;
-          };
         };
+      };
       tests = {
         "regression" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

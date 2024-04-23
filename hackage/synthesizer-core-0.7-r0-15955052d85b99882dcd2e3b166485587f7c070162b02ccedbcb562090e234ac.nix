@@ -13,7 +13,7 @@
       optimizeadvanced = true;
       buildprofilers = false;
       buildtests = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "synthesizer-core"; version = "0.7"; };
@@ -26,7 +26,7 @@
       synopsis = "Audio signal processing coded in Haskell: Low level part";
       description = "Low level audio signal processing\nused by the other synthesizer packages.\nThe routines can be really fast\ndue to StorableVector, Stream-like list type and aggressive inlining.\nFor an interface to Haskore see <http://code.haskell.org/haskore/revised/synthesizer/>.\nFor introductory examples see \"Synthesizer.Plain.Tutorial\"\nand \"Synthesizer.Generic.Tutorial\".\n\nFunctions:\nOscillators, Noise generators, Frequency filters,\nFast Fourier transform for computation of frequency spectrum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,34 +54,34 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = { buildable = if !flags.buildtests then false else true; };
         "fouriertest" = {
-          depends = (pkgs.lib).optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildprofilers then true else false;
-          };
+        };
         "speedtest" = {
           buildable = if !flags.buildprofilers then false else true;
-          };
+        };
         "speedtest-exp" = {
-          depends = (pkgs.lib).optionals (flags.splitbase) [
+          depends = pkgs.lib.optionals (flags.splitbase) [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = if !flags.buildprofilers then false else true;
-          };
+        };
         "speedtest-simple" = {
           buildable = if !flags.buildprofilers then false else true;
-          };
         };
       };
-    }
+    };
+  }

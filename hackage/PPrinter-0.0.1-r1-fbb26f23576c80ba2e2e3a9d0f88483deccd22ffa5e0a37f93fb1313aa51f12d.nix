@@ -21,14 +21,14 @@
       synopsis = "A derivable Haskell pretty printer.";
       description = "A library that supports deriving of pretty printing functions on data types.\n\nThe form of generics used is based on that introduced in the paper:\nPhilip Wadler, A Prettier Printer, The Fun of Programming,\nCornerstones of Computing (2003): 223-243.\n<http://homepages.inf.ed.ac.uk/wadler/papers/prettier/prettier.pdf original paper>\n\nThe implementation of API is referred to that designed in the library:\nGenericPretty, the details are introduced here:\n<https://hackage.haskell.org/package/GenericPretty>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "LZMA/XZ compression and decompression (static)";
       description = "This package provides a pure interface for compressing and\ndecompressing\n<https://en.wikipedia.org/wiki/LZMA LZMA (Lempel–Ziv–Markov chain algorithm)>\nstreams of data represented as lazy @ByteString@s. A\nmonadic incremental interface is provided as well. This package\nrelies on the <http://tukaani.org/xz/ liblzma C library>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optionals (!system.isOsx) (if system.isLinux
-          then (pkgs.lib).optionals (!system.isX86_64) ((pkgs.lib).optionals (!system.isI386) ((pkgs.lib).optionals (!system.isArm) ((pkgs.lib).optional (!system.isAarch64) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable")))))
-          else (pkgs.lib).optional (!system.isFreebsd) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))));
+        ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals (!system.isOsx) (if system.isLinux
+          then pkgs.lib.optionals (!system.isX86_64) (pkgs.lib.optionals (!system.isI386) (pkgs.lib.optionals (!system.isArm) (pkgs.lib.optional (!system.isAarch64) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable")))))
+          else pkgs.lib.optional (!system.isFreebsd) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))));
         buildable = if system.isWindows
           then true
           else if system.isOsx
@@ -43,7 +43,7 @@
                     then true
                     else if system.isAarch64 then true else false
               else if system.isFreebsd then true else false;
-        };
+      };
       tests = {
         "lzma-tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

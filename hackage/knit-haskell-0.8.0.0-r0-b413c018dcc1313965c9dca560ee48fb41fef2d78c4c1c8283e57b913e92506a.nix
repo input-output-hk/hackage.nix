@@ -21,7 +21,7 @@
       synopsis = "a minimal Rmarkdown sort-of-thing for haskell, by way of Pandoc";
       description = "knit-haskell is a beginning attempt at bringing some of the benefits of Rmarkdown to Haskell. It includes an effects stack (using <https://github.com/isovector/polysemy#readme polysemy> rather than mtl) which includes logging, a simplified interface to Pandoc and various writer-like effects to intersperse document building with regular code. Also included is a cache (in-memory and persisted to disk) to make caching results of long running computations simple. The cache provides tools for basic dependency tracking. Various helper functions are provided to simplify common operations, making it especially straightforward to build an HTML document from bits of markdown, latex and <http://hackage.haskell.org/package/lucid Lucid> or <http://hackage.haskell.org/package/blaze-html Blaze> html. Support is also included for including <http://hackage.haskell.org/package/hvega hvega> visualizations and diagrams from the <https://archives.haskell.org/projects.haskell.org/diagrams/ diagrams> package. More information is available in the <https://github.com/adamConnerSax/knit-haskell/blob/master/Readme.md readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -65,9 +65,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "AsyncExample" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CacheExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -97,9 +97,9 @@
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CacheExample2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,9 +115,9 @@
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ErrorExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,9 +129,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MtlExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,9 +144,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MultiDocExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -158,9 +158,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RandomExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -178,9 +178,9 @@
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
             (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SimpleExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -193,9 +193,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

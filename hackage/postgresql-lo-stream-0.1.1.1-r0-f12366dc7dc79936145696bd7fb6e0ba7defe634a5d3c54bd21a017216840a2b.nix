@@ -21,7 +21,7 @@
       synopsis = "Utilities for streaming PostgreSQL LargeObjects";
       description = "Functions for streaming large objects to and from PostgreSQL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

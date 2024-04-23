@@ -21,7 +21,7 @@
       synopsis = "Embed the values in scope in the haddock documentation of the module";
       description = "embeddock is a Haskell source-code preprocessor.\nIt allows you to embed computer-generated\nvalues in the documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "embeddock" = {
@@ -31,9 +31,9 @@
             (hsPkgs."her-lexer" or (errorHandler.buildDepError "her-lexer"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

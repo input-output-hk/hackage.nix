@@ -21,13 +21,13 @@
       synopsis = "Monadic loops";
       description = "Some useful control operators for looping.\n\nNew in 0.3.2.0: various functions for traversing lists and\ncomputing minima/maxima using arbitrary procedures to compare\nor score the elements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (flags.usestm) (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
+        ] ++ pkgs.lib.optional (flags.usestm) (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

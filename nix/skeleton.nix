@@ -6,8 +6,8 @@
         nix = import ../hackage/skeleton-0.1.0.0-r0-434608f55fd060a362168c681e6d56b8a8448ed02187fd672aaf25fe07aafb30.nix;
         revNum = 0;
         sha256 = "434608f55fd060a362168c681e6d56b8a8448ed02187fd672aaf25fe07aafb30";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Orphan Instances for 'Data.Vector'";
       description = "Orphan Instances for 'Data.Vector'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
-          ] ++ (pkgs.lib).optional (flags.hashable) (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"));
+        ] ++ pkgs.lib.optional (flags.hashable) (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

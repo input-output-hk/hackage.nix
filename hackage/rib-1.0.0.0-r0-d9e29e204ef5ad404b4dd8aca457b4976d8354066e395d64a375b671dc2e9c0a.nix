@@ -21,7 +21,7 @@
       synopsis = "Static site generator based on Shake";
       description = "Haskell static site generator based on Shake, with a delightful development experience.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."rib-core" or (errorHandler.buildDepError "rib-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rib-test" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

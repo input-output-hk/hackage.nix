@@ -21,7 +21,7 @@
       synopsis = "Desktop Portal.";
       description = "A Haskell wrapper for the XDG Desktop Portal DBUS API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -53,12 +53,12 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Host content provided by a Git repo";
       description = "Please see the README and generated docs at <https://www.stackage.org/package/yesod-gitrepo>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bzip2 compression and decompression for Pipes streams";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pipes-bzip-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-bzip" or (errorHandler.buildDepError "pipes-bzip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

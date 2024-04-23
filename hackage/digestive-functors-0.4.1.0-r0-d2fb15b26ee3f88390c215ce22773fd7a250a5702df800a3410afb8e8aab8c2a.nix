@@ -21,7 +21,7 @@
       synopsis = "A practical formlet library";
       description = "Digestive functors is a library inspired by formlets:\n\n<http://groups.inf.ed.ac.uk/links/formlets/>\n\nIt is intended to be an improvement of the Haskell formlets library, with as\nmain advantages:\n\n* better error handling, so a web page can display input errors right next\nto the corresponding fields;\n\n* the ability to easily add @\\<label\\>@ elements;\n\n* separation of the validation model and the HTML output.\n\nTutorial:\n<http://github.com/jaspervdj/digestive-functors/blob/master/examples/tutorial.lhs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "digestive-functors-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

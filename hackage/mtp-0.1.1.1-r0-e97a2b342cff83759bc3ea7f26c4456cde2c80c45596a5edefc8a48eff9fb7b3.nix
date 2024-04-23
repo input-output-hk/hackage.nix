@@ -21,16 +21,16 @@
       synopsis = "Bindings to libmtp";
       description = "A FFI binding to libmtp, an implementation of the Media Transfer\nProtocol.\n\nSee <http://libmtp.sourceforge.net> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         libs = [ (pkgs."mtp" or (errorHandler.sysDepError "mtp")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Csound combinator library";
       description = "Csound code generator. See \"CsoundExpr.Tutorial\" for guides and examples.\nWARNING : API changes (see TemporalFunctor method tmap, and ./Changelog)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
           (hsPkgs."temporal-media" or (errorHandler.buildDepError "temporal-media"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

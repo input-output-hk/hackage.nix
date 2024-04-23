@@ -6,8 +6,8 @@
         nix = import ../hackage/acme-hq9plus-0.1-r0-14cc320dbc07ad98c6bb4740d72b2ec01d0362ea2c2400c69ffd559c87351711.nix;
         revNum = 0;
         sha256 = "14cc320dbc07ad98c6bb4740d72b2ec01d0362ea2c2400c69ffd559c87351711";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

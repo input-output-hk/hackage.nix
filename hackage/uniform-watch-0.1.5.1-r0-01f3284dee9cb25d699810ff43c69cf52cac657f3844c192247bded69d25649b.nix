@@ -21,7 +21,7 @@
       synopsis = "uniform wrapper for watch";
       description = "watch wrapped for ErrIO to report all errors ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."twitch" or (errorHandler.buildDepError "twitch"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

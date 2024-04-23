@@ -21,7 +21,7 @@
       synopsis = "An alternative format for Haskell packages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpack" = {
@@ -35,10 +35,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

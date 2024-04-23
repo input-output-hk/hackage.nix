@@ -21,11 +21,11 @@
       synopsis = "Simple interpreter for Markov's normal algorithms";
       description = "This package contains data types for defining Markov's normal algorithms and a function to run them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

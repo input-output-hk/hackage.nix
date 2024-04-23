@@ -21,7 +21,7 @@
       synopsis = "Perfect simulation of discrete random variables";
       description = "Monadic implementation of Buffon machines meant for perfect simulation of discrete random variables";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

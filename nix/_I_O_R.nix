@@ -6,8 +6,8 @@
         nix = import ../hackage/IOR-0.1-r0-2ceef7f34f29c28c26f43b93f75a26067f3d590ccf6dac4f2cc322b1062544dc.nix;
         revNum = 0;
         sha256 = "2ceef7f34f29c28c26f43b93f75a26067f3d590ccf6dac4f2cc322b1062544dc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

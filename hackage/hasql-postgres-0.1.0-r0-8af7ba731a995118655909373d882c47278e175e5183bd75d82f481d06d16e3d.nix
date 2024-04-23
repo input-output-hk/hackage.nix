@@ -21,7 +21,7 @@
       synopsis = "A \"PostgreSQL\" driver for the \"hasql\" library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "library-tests" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."hasql-postgres" or (errorHandler.buildDepError "hasql-postgres"))
@@ -98,10 +98,10 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "competition" = {
           depends = [
@@ -120,9 +120,9 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "profiling" = {
           depends = [
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
@@ -139,9 +139,9 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

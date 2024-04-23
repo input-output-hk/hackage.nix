@@ -21,7 +21,7 @@
       synopsis = "Bindings for secp256k1 library from Bitcoin Core";
       description = "Sign and verify signatures using the very fast C secp256k1 library from Pieter Wuille. Has Haskell types and abstractions for keys and signatures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-          ];
+        ];
         libs = [ (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -50,12 +50,12 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."secp256k1-haskell" or (errorHandler.buildDepError "secp256k1-haskell"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-articles-0.1.0.0-r0-5719e9422af298e8b2506faa84697ba09fe2c19386ee885703b2415195fadf46.nix;
         revNum = 0;
         sha256 = "5719e9422af298e8b2506faa84697ba09fe2c19386ee885703b2415195fadf46";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

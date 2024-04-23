@@ -21,7 +21,7 @@
       synopsis = "Row-major coordinates";
       description = "A minimal library for handling 2D coordinates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yx-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yx" or (errorHandler.buildDepError "yx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

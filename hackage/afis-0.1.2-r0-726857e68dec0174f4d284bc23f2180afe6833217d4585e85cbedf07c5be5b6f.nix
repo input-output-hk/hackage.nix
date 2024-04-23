@@ -21,7 +21,7 @@
       synopsis = "Anti-forensic Information Splitter";
       description = "Anti-forensic Information Splitter as defined for LUKS";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
           (hsPkgs."packer" or (errorHandler.buildDepError "packer"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-afis" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

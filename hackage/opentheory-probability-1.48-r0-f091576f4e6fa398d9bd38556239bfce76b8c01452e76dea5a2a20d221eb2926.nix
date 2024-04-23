@@ -21,7 +21,7 @@
       synopsis = "Probability";
       description = "Probability - this package was automatically generated from the\nOpenTheory package probability-1.48";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

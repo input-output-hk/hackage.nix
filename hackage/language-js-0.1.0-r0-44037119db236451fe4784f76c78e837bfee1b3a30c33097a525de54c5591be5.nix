@@ -21,15 +21,15 @@
       synopsis = "javascript parser for es6 and es7.";
       description = "Please see the README on Github at <https://github.com/diasbruno/language-js#README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "language-js-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."language-js" or (errorHandler.buildDepError "language-js"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

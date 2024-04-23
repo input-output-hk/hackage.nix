@@ -21,7 +21,7 @@
       synopsis = "Data Binding in Gtk2Hs";
       description = "Bind mutable data and lists to Gtk2Hs widgets.\nExamples are provided by the included demo programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."binding-core" or (errorHandler.buildDepError "binding-core"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

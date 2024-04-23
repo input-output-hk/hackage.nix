@@ -21,7 +21,7 @@
       synopsis = "Heads up, and you see your GIT context";
       description = "GIT Heads Up Display for your terminal prompt. More efficient replacement to the great git-radar. Please see README.md for more info";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,25 +39,25 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "githud" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."githud" or (errorHandler.buildDepError "githud"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "githudd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."githud" or (errorHandler.buildDepError "githud"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "githud-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."githud" or (errorHandler.buildDepError "githud"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

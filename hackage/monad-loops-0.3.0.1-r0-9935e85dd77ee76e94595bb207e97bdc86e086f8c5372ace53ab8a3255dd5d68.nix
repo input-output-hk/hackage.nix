@@ -21,13 +21,13 @@
       synopsis = "Monadic loops";
       description = "Some useful control operators for looping";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (flags.usestm) (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
+        ] ++ pkgs.lib.optional (flags.usestm) (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fast heterogeneous maps and unconstrained typeable like functionality.";
       description = "Fast heterogeneous maps based on Hashmaps and type-able like functionality for type that are not typeable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

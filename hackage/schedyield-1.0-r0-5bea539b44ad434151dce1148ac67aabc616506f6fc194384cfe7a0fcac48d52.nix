@@ -21,14 +21,14 @@
       synopsis = "Exposes standard POSIX function sched_yield.";
       description = "sched_yield is useful, when starting many processes, and waiting for them to complete. It yields CPU time (forces context switch.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

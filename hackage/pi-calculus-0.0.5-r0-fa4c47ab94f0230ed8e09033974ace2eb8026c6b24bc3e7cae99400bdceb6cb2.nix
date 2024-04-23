@@ -21,7 +21,7 @@
       synopsis = "Applied pi-calculus interpreter";
       description = "Phi -  an interpreter for the applied pi-calculus. Very rough around the edges.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phi" = {
@@ -40,9 +40,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."AES" or (errorHandler.buildDepError "AES"))
             (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Efficient ordered (by popcount) enumeration of bits";
       description = "This library provides efficient methods to enumerate all\nelements of a set in order of the population count. First, the\nempty set, then all 1-element sets, all 2-element sets, etc.\nSuch enumerations are important for algorithms over unordered\ndata sets. Examples include the travelling salesman problem and\nthe closely related Hamiltonian path problem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "BenchmarkOrderedBits" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."OrderedBits" or (errorHandler.buildDepError "OrderedBits"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cairo rendering for the haskell postscript library";
       description = "Cairo rendering for the haskell postscript library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."hps" or (errorHandler.buildDepError "hps"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hps-cairo-animation" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."hps" or (errorHandler.buildDepError "hps"))
             (hsPkgs."hps-cairo" or (errorHandler.buildDepError "hps-cairo"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hps-cairo-screen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."hps" or (errorHandler.buildDepError "hps"))
             (hsPkgs."hps-cairo" or (errorHandler.buildDepError "hps-cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

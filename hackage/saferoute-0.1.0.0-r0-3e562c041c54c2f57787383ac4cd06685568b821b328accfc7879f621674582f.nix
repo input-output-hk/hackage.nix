@@ -21,15 +21,15 @@
       synopsis = "A simple type-safe routing library.";
       description = "saferoute is a type-safe routing library for web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.blaze) (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"));
+        ] ++ pkgs.lib.optional (flags.blaze) (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/githubuser/template-dictionary#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unfoldable-restricted" or (errorHandler.buildDepError "unfoldable-restricted"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

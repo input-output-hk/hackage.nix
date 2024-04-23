@@ -21,11 +21,11 @@
       synopsis = "GHC primitives";
       description = "GHC primitives.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."rts" or (errorHandler.buildDepError "rts")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

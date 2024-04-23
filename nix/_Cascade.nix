@@ -6,8 +6,8 @@
         nix = import ../hackage/Cascade-0.1.0.0-r0-994435ab8d057b201504384bdc31f690b248a769d10c0eba129f234d314dac87.nix;
         revNum = 0;
         sha256 = "994435ab8d057b201504384bdc31f690b248a769d10c0eba129f234d314dac87";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

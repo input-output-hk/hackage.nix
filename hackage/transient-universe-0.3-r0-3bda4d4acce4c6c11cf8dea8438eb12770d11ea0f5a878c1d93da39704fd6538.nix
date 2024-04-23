@@ -21,10 +21,10 @@
       synopsis = "remote execution and map-reduce: distributed computing for transient";
       description = "see <http://github.com/agocorona/transient>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhcjs && (compiler.version).ge "0.1"
+        depends = if compiler.isGhcjs && compiler.version.ge "0.1"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -39,7 +39,7 @@
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -63,8 +63,8 @@
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

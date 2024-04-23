@@ -21,20 +21,20 @@
       synopsis = "Comma-separated-value (CSV) read, show and write routines";
       description = "This modules provides conversion routines to and\nfrom the infamous \"comma separated value\" (CSV) format.\nIt attempts to adhere to the spirit and (mostly) to the\nletter of RFC 4180, which defines the 'text/csv' MIME\ntype.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "csvclean" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

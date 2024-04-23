@@ -21,7 +21,7 @@
       synopsis = "Nested discrete event simulation module for the Aivika library";
       description = "This package extends the aivika-transformers [1] library and allows creating branches to run\nnested simulations within simulation. The branches are very cheap but still not free.\n\nTo run the simulation experiment by the Monte-Carlo method, you can use additional packages.\nThey will allow you to save the simulation results in SQL database and then generate a report\nconsisting of HTML pages with charts, histograms, links to CSV tables, summary statistics and so on.\nPlease consult the AivikaSoft [2] website for more details.\n\n\\[1] <http://hackage.haskell.org/package/aivika-transformers>\n\n\\[2] <http://www.aivikasoft.com>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (errorHandler.buildDepError "aivika-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

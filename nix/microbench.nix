@@ -6,8 +6,8 @@
         nix = import ../hackage/microbench-0.1-r0-f5c60aa2f40f9114aa0fb1fb2fe2f6cd8506d7ce3d1f0f46295d34651e523a2c.nix;
         revNum = 0;
         sha256 = "f5c60aa2f40f9114aa0fb1fb2fe2f6cd8506d7ce3d1f0f46295d34651e523a2c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

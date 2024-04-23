@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Embedded DSL to create Dockerfiles using Haskell. Please see the README on GitHub at <https://github.com/hadolint/dockerfile-creator#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dockerfile-composer-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

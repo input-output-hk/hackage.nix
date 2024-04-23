@@ -21,16 +21,16 @@
       synopsis = "WebGL live-coding environment for writing shaders with Hylogen";
       description = "WebGL live-coding environment for writing shaders with Hylogen";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."hylogen" or (errorHandler.buildDepError "hylogen"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hylide" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

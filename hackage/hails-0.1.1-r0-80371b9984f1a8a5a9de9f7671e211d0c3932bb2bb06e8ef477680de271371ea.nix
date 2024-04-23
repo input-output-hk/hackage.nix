@@ -21,7 +21,7 @@
       synopsis = "IFC enforcing web platform framework";
       description = "Hails is a framework for building multi-app web platforms.\nThis module exports a library for building Hails platforms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."SimpleAES" or (errorHandler.buildDepError "SimpleAES"))
           (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

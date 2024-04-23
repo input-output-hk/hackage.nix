@@ -21,7 +21,7 @@
       synopsis = "Declarative feedback loop manager";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,28 +46,28 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."safe-coloured-text-terminfo" or (errorHandler.buildDepError "safe-coloured-text-terminfo"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "feedback" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."feedback" or (errorHandler.buildDepError "feedback"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "feedback-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."feedback" or (errorHandler.buildDepError "feedback"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

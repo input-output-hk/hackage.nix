@@ -21,7 +21,7 @@
       synopsis = "Package dependency graph for installed packages";
       description = "Presents the package dependencies of all installed packages maintained by a given\nset of maintainers as a \"dot\" graph";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pkggraph" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

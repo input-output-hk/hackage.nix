@@ -21,7 +21,7 @@
       synopsis = "Visual rendering for Tidal patterns and osc messages";
       description = "Tidal is a domain specific language for live coding pattern. This package allows colour patterns to be rendered as PDF or SVG files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."tidal" or (errorHandler.buildDepError "tidal"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tidal-vis" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tidal-vis" or (errorHandler.buildDepError "tidal-vis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

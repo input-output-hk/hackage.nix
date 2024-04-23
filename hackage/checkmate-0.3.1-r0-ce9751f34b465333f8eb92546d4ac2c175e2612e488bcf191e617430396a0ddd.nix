@@ -21,7 +21,7 @@
       synopsis = "Generate checklists relevant to a given patch";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."github" or (errorHandler.buildDepError "github"))
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "checkmate" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."checkmate" or (errorHandler.buildDepError "checkmate"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hlint" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."range" or (errorHandler.buildDepError "range"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

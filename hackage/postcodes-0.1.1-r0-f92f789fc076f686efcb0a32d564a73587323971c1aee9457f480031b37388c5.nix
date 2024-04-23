@@ -21,7 +21,7 @@
       synopsis = "A library that gets postcode information from the uk-postcodes.com";
       description = "This library uses uk-postcodes.com to find the latitude and longitude of a postcode, postcodes in a certain area and the postcode that a location fits into";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

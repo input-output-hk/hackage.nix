@@ -21,7 +21,7 @@
       synopsis = "Hole-Fit Synthesis using ECTAs";
       description = "A hole-fit plugin for GHC that uses an ECTA to synthesize valid hole-fits.\nSee <https://github.com/jkoppel/ecta> for more details on ECTAs!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ecta" or (errorHandler.buildDepError "ecta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

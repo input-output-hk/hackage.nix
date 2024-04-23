@@ -21,11 +21,11 @@
       synopsis = "Utilities for Orderings";
       description = "Utilities for Ordering values (the type returned by compare)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Simple random generators API for cryptography related code";
       description = "Simple random generators API for cryptography related code";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

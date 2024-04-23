@@ -21,7 +21,7 @@
       synopsis = "Binding to the GNOME Virtual File System library.";
       description = "GNOME VFS is the GNOME virtual file system.  It is the foundation of the\nNautilus file manager.  It provides a modular architecture and ships with\nseveral modules that implement support for local files, http, ftp and others.\nIt provides an URI-based API, a backend supporting asynchronous file\noperations, a MIME type manipulation library and other features.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gnome-vfs-2.0" or (errorHandler.pkgConfDepError "gnome-vfs-2.0"))
           (pkgconfPkgs."gnome-vfs-module-2.0" or (errorHandler.pkgConfDepError "gnome-vfs-module-2.0"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.gtk2hsC2hs.components.exes.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs or (errorHandler.buildToolDepError "gtk2hsC2hs:gtk2hsC2hs")))
           (hsPkgs.buildPackages.gtk2hsHookGenerator.components.exes.gtk2hsHookGenerator or (pkgs.buildPackages.gtk2hsHookGenerator or (errorHandler.buildToolDepError "gtk2hsHookGenerator:gtk2hsHookGenerator")))
           (hsPkgs.buildPackages.gtk2hsTypeGen.components.exes.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen or (errorHandler.buildToolDepError "gtk2hsTypeGen:gtk2hsTypeGen")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

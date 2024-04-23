@@ -21,7 +21,7 @@
       synopsis = "Boltzmann sampler utilities for lambda calculus.";
       description = "Uniform generation of plain and closed lambda terms\nin the de Bruijn notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lambda-sampler-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."lambda-sampler" or (errorHandler.buildDepError "lambda-sampler"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

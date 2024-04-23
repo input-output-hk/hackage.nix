@@ -21,7 +21,7 @@
       synopsis = "cabal-db";
       description = "cabal-db";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-db" = {
@@ -37,9 +37,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

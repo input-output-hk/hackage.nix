@@ -21,7 +21,7 @@
       synopsis = "Rewriting library with online termination checking";
       description = "REST is a Rewriting library with online termination checking. For more details see the paper at https://arxiv.org/abs/2202.05872.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "testlib" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-rest" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."rest-rewrite" or (errorHandler.buildDepError "rest-rewrite"))
             (hsPkgs."rest-rewrite".components.sublibs.testlib or (errorHandler.buildDepError "rest-rewrite:testlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."rest-rewrite".components.sublibs.testlib or (errorHandler.buildDepError "rest-rewrite:testlib"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

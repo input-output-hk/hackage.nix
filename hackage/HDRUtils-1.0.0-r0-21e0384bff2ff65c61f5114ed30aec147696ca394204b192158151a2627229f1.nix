@@ -21,7 +21,7 @@
       synopsis = "Utilities for reading, manipulating, and writing HDR images";
       description = "PFS is a library for manipulating Portable Floating-point Streams, an interchange\nformat for high-dynamic range images.  You will need pfstools for this library to work properly.\npfstools can be found at http://pfstools.sourceforge.net/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         libs = [ (pkgs."pfs-1.2" or (errorHandler.sysDepError "pfs-1.2")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

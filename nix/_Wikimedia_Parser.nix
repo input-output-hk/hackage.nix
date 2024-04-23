@@ -6,8 +6,8 @@
         nix = import ../hackage/WikimediaParser-0.1-r0-3d77d6bd96b52d06d8b9cee39a71b40a4db36c6bd74feaaaf1afae3fd2c7b236.nix;
         revNum = 0;
         sha256 = "3d77d6bd96b52d06d8b9cee39a71b40a4db36c6bd74feaaaf1afae3fd2c7b236";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

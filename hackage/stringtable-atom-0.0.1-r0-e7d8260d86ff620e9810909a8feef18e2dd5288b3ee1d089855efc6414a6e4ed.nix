@@ -21,15 +21,15 @@
       synopsis = "Maps strings to Atoms for fast equality and ordering comparison";
       description = "Maps strings to Atoms for fast equality and ordering comparison";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

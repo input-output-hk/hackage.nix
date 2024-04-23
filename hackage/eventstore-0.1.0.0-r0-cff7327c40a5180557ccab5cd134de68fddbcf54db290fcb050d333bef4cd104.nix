@@ -21,7 +21,7 @@
       synopsis = "EventStore Haskell TCP Client";
       description = "EventStore Haskell TCP Client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timers" or (errorHandler.buildDepError "timers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Easy functions for converting from Aeson.Value";
       description = "A small and simple library for interpreting JSON after it has\nbeen parsed by @aeson@ into the @Value@ type.\n\nDecoding failures do not come with any error messages; results\nare all @Maybe@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-aeson-decode" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."aeson-qq" or (errorHandler.buildDepError "aeson-qq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

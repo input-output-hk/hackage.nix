@@ -21,7 +21,7 @@
       synopsis = "Library and tool for parsing .eventlog files from GHC";
       description = "Parses .eventlog files emitted by GHC 6.12.1 and later.\nIncludes the show-ghc-events tool to dump an event\nlog file as text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "show-ghc-events" = { buildable = true; }; };
       };
-    }
+      exes = { "show-ghc-events" = { buildable = true; }; };
+    };
+  }

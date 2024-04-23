@@ -21,7 +21,7 @@
       synopsis = "low-level performance statistics";
       description = "\nSee <<https://tonyday567.github.io/perf>> for example results and write-up.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "perf-examples" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
             (hsPkgs."chart-unit" or (errorHandler.buildDepError "chart-unit"))
             (hsPkgs."mwc-probability" or (errorHandler.buildDepError "mwc-probability"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

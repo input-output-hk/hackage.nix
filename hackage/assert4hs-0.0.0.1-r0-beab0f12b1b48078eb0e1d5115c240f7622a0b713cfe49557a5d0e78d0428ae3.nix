@@ -21,7 +21,7 @@
       synopsis = "A set of assertion for writing more readable tests cases";
       description = "Please see the README on GitHub at <https://github.com/paweln1986/assert4hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."pretty-diff" or (errorHandler.buildDepError "pretty-diff"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "assert4hs-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."pretty-diff" or (errorHandler.buildDepError "pretty-diff"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

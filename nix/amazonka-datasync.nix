@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-datasync-2.0-r0-f517353be802e11887b2f1f6e79aca0c515df20233232b24b687c8a2b4abb50b.nix;
         revNum = 0;
         sha256 = "f517353be802e11887b2f1f6e79aca0c515df20233232b24b687c8a2b4abb50b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

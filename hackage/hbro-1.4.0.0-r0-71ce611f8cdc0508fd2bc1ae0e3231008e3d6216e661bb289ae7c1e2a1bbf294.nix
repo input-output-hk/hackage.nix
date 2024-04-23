@@ -21,7 +21,7 @@
       synopsis = "Minimal extensible web-browser";
       description = "Cf README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,17 +62,17 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"));
         buildable = true;
-        };
+      };
       exes = {
         "hbro" = {
           depends = [
             (hsPkgs."hbro" or (errorHandler.buildDepError "hbro"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

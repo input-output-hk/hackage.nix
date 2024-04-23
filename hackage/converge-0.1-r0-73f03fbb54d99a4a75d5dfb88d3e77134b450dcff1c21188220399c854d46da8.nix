@@ -21,11 +21,11 @@
       synopsis = "Limit operations for converging sequences";
       description = "Limit operations for converging sequences.  This is\nfairly simple right now.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

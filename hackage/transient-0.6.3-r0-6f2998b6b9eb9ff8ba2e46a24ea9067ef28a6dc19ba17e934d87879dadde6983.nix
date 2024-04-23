@@ -21,7 +21,7 @@
       synopsis = "composing programs with multithreading, events and distributed computing";
       description = "See <http://github.com/agocorona/transient>\nDistributed primitives are in the transient-universe package. Web primitives are in the axiom package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,14 +35,14 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optional (!(compiler.isEta && true)) (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"));
+        ] ++ pkgs.lib.optional (!(compiler.isEta && true)) (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"));
         buildable = true;
-        };
+      };
       tests = {
         "test-transient" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
@@ -53,9 +53,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

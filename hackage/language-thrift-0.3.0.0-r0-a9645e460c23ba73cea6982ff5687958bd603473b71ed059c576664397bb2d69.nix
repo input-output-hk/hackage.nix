@@ -21,7 +21,7 @@
       synopsis = "Parser for the Thrift IDL format.";
       description = "This package provides a parser for the\n<http://thrift.apache.org/docs/idl Thrift IDL format>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

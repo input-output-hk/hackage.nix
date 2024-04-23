@@ -21,14 +21,14 @@
       synopsis = "GraphQL Haskell implementation";
       description = "For now this package provides the data types for the GraphQL language.\nFurther releases will cover more aspects of the GraphQL specification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A program generating PKGBUILD for hackage packages.";
       description = "@arch-hs@ is a command-line program, which simplifies the process of producing\nand maintaining haskell packages for archlinux distribution by automating the\nPKGBUILD generation with the dependency resolving and template filling. Currently,\n@arch-hs@ is unstable, so packagers should not trust it 100%, but always follow the\n<https://wiki.archlinux.org/index.php/Haskell_package_guidelines Haskell package guidelines>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."colourista" or (errorHandler.buildDepError "colourista"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arch-hs" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."arch-hs" or (errorHandler.buildDepError "arch-hs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "arch-hs-diff" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."arch-hs" or (errorHandler.buildDepError "arch-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

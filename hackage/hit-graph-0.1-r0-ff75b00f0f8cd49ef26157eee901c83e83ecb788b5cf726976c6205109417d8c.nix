@@ -21,7 +21,7 @@
       synopsis = "Use graph algorithms to access and manipulate Git repos";
       description = "This library contains utilities for loading Git repo data into a graph, and\nusing graph algorithms to extract useful information, and perhaps even modify\nthe repo in interesting ways.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

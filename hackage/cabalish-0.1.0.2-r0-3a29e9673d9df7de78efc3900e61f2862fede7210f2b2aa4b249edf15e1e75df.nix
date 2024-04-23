@@ -21,7 +21,7 @@
       synopsis = "Provides access to the cabal file data for shell scripts";
       description = "Use \"cabalish name\" to get the name from the local cabal file in a shell script, or \"cabalish version\" to get the version from the local cabal file in a shell script.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabalish" = {
@@ -33,9 +33,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

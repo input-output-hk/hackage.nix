@@ -6,8 +6,8 @@
         nix = import ../hackage/Consumer-1.2-r0-b43fc1aacbc2a2a53756d0b419c04af2437813f199cde916f21e43a8ae003a76.nix;
         revNum = 0;
         sha256 = "b43fc1aacbc2a2a53756d0b419c04af2437813f199cde916f21e43a8ae003a76";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

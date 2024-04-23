@@ -21,11 +21,11 @@
       synopsis = "Is used in the phonetic languages approach (e. g. in the recursive mode).";
       description = "A library that has commonly used functions for the phonetic-languages implementations that deals with String data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

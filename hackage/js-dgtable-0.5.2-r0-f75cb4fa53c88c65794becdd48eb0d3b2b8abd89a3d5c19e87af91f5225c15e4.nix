@@ -21,20 +21,20 @@
       synopsis = "Obtain minified jquery.dgtable code";
       description = "This package bundles the minified <https://github.com/danielgindi/jquery.dgtable jquery.dgtable> code into a Haskell package,\nso it can be depended upon by Cabal packages. The first three components of\nthe version number match the upstream jquery.dgtable version. The package is designed\nto meet the redistribution requirements of downstream users (e.g. Debian).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "js-dgtable-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."js-dgtable" or (errorHandler.buildDepError "js-dgtable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

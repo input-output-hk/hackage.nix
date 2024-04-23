@@ -21,7 +21,7 @@
       synopsis = "Haskell raytracer";
       description = "HRay is a ray tracing application written in Haskell as part of my\nmasters thesis at Ghent University.\nIt currently supports spheres, planes and metaballs (thanks to Jean-Phillipe Bernardy).\nFor more information, see the homepage or the Haskell wiki entry:\n<http://haskell.org/haskellwiki/HRay>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "HRay" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."happy" or (errorHandler.buildDepError "happy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

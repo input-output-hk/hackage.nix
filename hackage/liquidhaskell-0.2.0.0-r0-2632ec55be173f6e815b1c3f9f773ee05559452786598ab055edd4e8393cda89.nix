@@ -21,7 +21,7 @@
       synopsis = "Liquid Types for Haskell ";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liquid" = {
           depends = [
@@ -98,10 +98,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -116,9 +116,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

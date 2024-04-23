@@ -21,15 +21,15 @@
       synopsis = "Uncontrolled toy effect for polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-methodology" or (errorHandler.buildDepError "polysemy-methodology"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

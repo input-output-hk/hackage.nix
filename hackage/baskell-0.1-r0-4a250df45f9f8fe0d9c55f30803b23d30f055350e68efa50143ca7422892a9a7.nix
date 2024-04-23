@@ -21,7 +21,7 @@
       synopsis = "An interpreter for a small functional language";
       description = "Baskell is an interpreter for a small functional\nlanguage. It supports type inference, lazy\nevaluation and strict evaluation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "baskell" = {
@@ -32,9 +32,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

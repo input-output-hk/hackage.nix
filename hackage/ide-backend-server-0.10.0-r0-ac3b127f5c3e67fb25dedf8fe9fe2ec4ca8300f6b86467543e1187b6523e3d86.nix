@@ -21,7 +21,7 @@
       synopsis = "An IDE backend server";
       description = "Server executable used internally by the ide-backend library.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ide-backend-server" = {
@@ -48,21 +48,21 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."ide-backend-common" or (errorHandler.buildDepError "ide-backend-common"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.4.2" && (compiler.version).lt "7.4.3")) [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "7.4.2" && compiler.version.lt "7.4.3")) [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")) [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "7.8" && compiler.version.lt "7.9")) [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "7.10" && (compiler.version).lt "7.11") || compiler.isGhc && ((compiler.version).ge "7.11" && (compiler.version).lt "7.12")) [
+          ]) ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "7.10" && compiler.version.lt "7.11") || compiler.isGhc && (compiler.version.ge "7.11" && compiler.version.lt "7.12")) [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

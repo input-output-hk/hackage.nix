@@ -21,15 +21,15 @@
       synopsis = "Generated messages and instances for etcd gRPC.";
       description = "Please see the README on GitHub at <https://github.com/lucasdicioccio/etcd-grpc#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."proto-lens-protoc" or (errorHandler.buildDepError "proto-lens-protoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

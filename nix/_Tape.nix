@@ -6,8 +6,8 @@
         nix = import ../hackage/Tape-0.4.0.0-r0-6ae0f8ded3d5b6cc7e15daf950f7353d12db34fd57184d93f93d2a83e55f15d6.nix;
         revNum = 0;
         sha256 = "6ae0f8ded3d5b6cc7e15daf950f7353d12db34fd57184d93f93d2a83e55f15d6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

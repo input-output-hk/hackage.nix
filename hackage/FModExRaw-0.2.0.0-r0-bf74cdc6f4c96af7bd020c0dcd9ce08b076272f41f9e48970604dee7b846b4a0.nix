@@ -21,7 +21,7 @@
       synopsis = "The Haskell FModEx raw API.";
       description = "Haskell FModEx raw API. It’s a 1:1 Haskell binding over the famous C API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -30,8 +30,8 @@
           else [ (pkgs."fmodex" or (errorHandler.sysDepError "fmodex")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

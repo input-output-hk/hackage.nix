@@ -21,7 +21,7 @@
       synopsis = "Reed-Solomon Erasure Coding in Haskell";
       description = "Please see README.md";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reedsolomon-simple-encoder" = {
-          depends = (pkgs.lib).optionals (!system.isWindows && flags.examples) [
+          depends = pkgs.lib.optionals (!system.isWindows && flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
@@ -47,13 +47,13 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = if !system.isWindows && flags.examples
             then true
             else false;
-          };
+        };
         "reedsolomon-simple-decoder" = {
-          depends = (pkgs.lib).optionals (!system.isWindows && flags.examples) [
+          depends = pkgs.lib.optionals (!system.isWindows && flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
@@ -61,24 +61,24 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = if !system.isWindows && flags.examples
             then true
             else false;
-          };
+        };
         "reedsolomon-simple-bench" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "reedsolomon-profiling" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
@@ -86,10 +86,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "reedsolomon-test" = {
           depends = [
@@ -108,10 +108,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "reedsolomon-bench" = {
           depends = [
@@ -123,9 +123,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

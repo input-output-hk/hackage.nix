@@ -14,7 +14,7 @@
       identifier = {
         name = "belgian-structured-communication";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2023 HaPyTeΧ";
       maintainer = "hapytexeu+gh@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "parsing, rendering and manipulating the structured communication of Belgian financial transactions.";
       description = "A package that exports a 'StructuredCommunication' data type that can render and manipulate structured\ncommuncation.\nThe package also has some parsers to parse structured communcation, and a quasi quoter to define these at compile time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "belgian-structured-test" = {
           depends = [
@@ -48,12 +48,12 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

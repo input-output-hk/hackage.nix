@@ -21,15 +21,15 @@
       synopsis = "Utilities for parsing numbers from strings";
       description = "parsec-numbers provides the number parsers without the need to\nuse a large (and unportable) token parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.parsec1
+        ] ++ (if flags.parsec1
           then [ (hsPkgs."parsec1" or (errorHandler.buildDepError "parsec1")) ]
           else [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

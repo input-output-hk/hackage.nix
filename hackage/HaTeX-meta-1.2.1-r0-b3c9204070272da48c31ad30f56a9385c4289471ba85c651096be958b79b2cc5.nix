@@ -21,7 +21,7 @@
       synopsis = "This package is deprecated. From version 3, HaTeX does not need this anymore.";
       description = "Please, note that this package is /deprecated/.\n\nThis packages belongs to the HaTeX project.\nIt builds the @.Monad@ modules.\n\n/Please, note that this version only works with GHC 7.4./";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "metahatex" = {
@@ -36,9 +36,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

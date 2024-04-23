@@ -6,8 +6,8 @@
         nix = import ../hackage/postgresql-typed-lifted-0.5.1.1-r0-1aa6b03d93491e775123d2ba5497730476bec2b8d989027739c45f1e348d2351.nix;
         revNum = 0;
         sha256 = "1aa6b03d93491e775123d2ba5497730476bec2b8d989027739c45f1e348d2351";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

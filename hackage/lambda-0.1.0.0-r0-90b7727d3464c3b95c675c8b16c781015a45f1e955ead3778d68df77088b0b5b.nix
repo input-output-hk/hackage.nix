@@ -21,7 +21,7 @@
       synopsis = "Interpreters for lambda calculus, calculus of constructions, and more";
       description = "A collection of interpreters, type checkers, and REPLs implemented in Haskell. Currently, the following languages are supported:\n\n* Untyped lambda calculus\n* SK combinator calculus\n* System F\n* Hindley-Milner type system\n* Calculus of constructions\n\nYou can access the different REPLs by passing an argument to the executable: \"lambda\", \"sk\", \"systemf\", \"hm\", or \"coc\". For more information, see the manual below.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambda" = {
@@ -31,9 +31,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

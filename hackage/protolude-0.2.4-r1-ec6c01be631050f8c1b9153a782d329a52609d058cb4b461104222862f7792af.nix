@@ -21,7 +21,7 @@
       synopsis = "A small prelude.";
       description = "A sensible set of defaults for writing custom Preludes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Command-line tool for uploading packages to Hackage";
       description = "This is a command-line tool program for uploading packages to the Hackage package database.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "cabal-upload" = {
@@ -30,9 +30,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Mutable vector with efficient appends";
       description = "Mutable vector with efficient updates. Simple implementation on partially filled array with capacity tracking and resizing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (if flags.liquidhaskell
+        ] ++ (if flags.liquidhaskell
           then [
             (hsPkgs."liquid-base" or (errorHandler.buildDepError "liquid-base"))
             (hsPkgs."liquid-vector" or (errorHandler.buildDepError "liquid-vector"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "grow-vector-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

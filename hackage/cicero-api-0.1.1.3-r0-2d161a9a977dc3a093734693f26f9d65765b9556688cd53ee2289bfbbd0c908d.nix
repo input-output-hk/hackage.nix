@@ -21,7 +21,7 @@
       synopsis = "API bindings to IOHK's Cicero job scheduler";
       description = "API bindings to IOHK's Cicero job scheduler. Also includes a simple CLI client.\n\nSee github.com/input-output-hk/cicero";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cicero-cli" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."cicero-api" or (errorHandler.buildDepError "cicero-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

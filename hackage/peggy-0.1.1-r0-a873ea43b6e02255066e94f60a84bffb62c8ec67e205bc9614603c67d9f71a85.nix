@@ -21,7 +21,7 @@
       synopsis = "The Parser Generator for Haskell";
       description = "The Parser Generator for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "peggy" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

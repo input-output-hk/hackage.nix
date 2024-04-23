@@ -21,11 +21,11 @@
       synopsis = "Mapping of Proxy Types";
       description = "A small collection of functions to map Proxy types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

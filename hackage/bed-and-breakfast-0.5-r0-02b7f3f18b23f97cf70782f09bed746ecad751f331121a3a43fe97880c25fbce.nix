@@ -21,7 +21,7 @@
       synopsis = "Efficient Matrix and Vector operations in 100% Haskell.";
       description = "Efficient Matrix and Vector operations in 100% Haskell.\n\nThis library uses boxed and unboxed arrays\nin the ST monad, in order to achieve efficiency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bed-and-breakfast" or (errorHandler.buildDepError "bed-and-breakfast"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A compiler for CoPilot targeting SBV.";
       description = "Blah blah blah...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

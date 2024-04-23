@@ -21,7 +21,7 @@
       synopsis = "Instances for \"exist\" package (requires more language extensions and dependencies)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."constraint" or (errorHandler.buildDepError "constraint"))
           (hsPkgs."exist" or (errorHandler.buildDepError "exist"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

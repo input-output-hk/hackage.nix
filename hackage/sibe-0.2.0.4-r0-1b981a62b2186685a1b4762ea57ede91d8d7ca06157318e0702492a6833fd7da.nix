@@ -21,7 +21,7 @@
       synopsis = "Machine Learning algorithms";
       description = "Haskell Machine Learning";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-xor" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."sibe" or (errorHandler.buildDepError "sibe"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-word2vec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,18 +64,18 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-424" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sibe" or (errorHandler.buildDepError "sibe"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-notmnist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-naivebayes-doc-classifier" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

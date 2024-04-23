@@ -21,7 +21,7 @@
       synopsis = "Monad transformers for holding bags of state.";
       description = "A state monad transformer which can hold multiple different state values\nrepresented in a type-level list.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."state-bag" or (errorHandler.buildDepError "state-bag"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

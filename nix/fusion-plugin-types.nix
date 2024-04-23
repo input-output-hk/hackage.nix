@@ -6,8 +6,8 @@
         nix = import ../hackage/fusion-plugin-types-0.1.0-r0-0f11bbc445ab8ae3dbbb3d5d2ea198bdb1ac020518b7f4f7579035dc89182438.nix;
         revNum = 0;
         sha256 = "0f11bbc445ab8ae3dbbb3d5d2ea198bdb1ac020518b7f4f7579035dc89182438";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

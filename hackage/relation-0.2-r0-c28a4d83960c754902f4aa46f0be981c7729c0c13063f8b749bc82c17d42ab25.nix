@@ -21,15 +21,15 @@
       synopsis = "A data structure representing Relations on Sets.";
       description = "A library to model relationships between two objects that are subclasses of\nOrd.\n\nInstead using a Map structure we use a two Maps that allows\nfast searching either by the key element or the value element.\n\nEach of Map is between an element and a set of values.\nThus careful coordination of operations is required.\n\nThis library lacks of extensive testing, formal testing or automated testing.\nAlso in comparison to Data.Set or Data.Map (which provide the underlying\ninfrastructure used) there are some missing methods.\n\nTwo small examples are currently provided.\n\nChanges:\n\n@\n\\ 2012.06.06.  DD. Translated to English.\n\n\\ 2009.11.09. LFL. Corrected the definition of delete.\n\n\\ 2009.11.26. LFL. Construction\n@\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Par Monad (@monad-par@) based backend for @Parallel-Arrows-Definition@.";
       description = "Par Monad (@monad-par@) based backend for @Parallel-Arrows-Definition@. Use this backend for shared-memory programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

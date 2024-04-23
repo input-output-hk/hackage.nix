@@ -6,10 +6,10 @@
         nix = import ../hackage/polynomial-algebra-0.1-r0-fe4fe9ec879678bc6a733714dae90ee9ab99d1c0661a742d46248d1baeb2083a.nix;
         revNum = 0;
         sha256 = "fe4fe9ec879678bc6a733714dae90ee9ab99d1c0661a742d46248d1baeb2083a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.1.0.1" = {
     sha256 = "4bb3bfeb7bb3ead0eb8781b3eb9b61608c26398a1dac46cc0300f2eeba737807";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/polynomial-algebra-0.1.0.1-r0-893b7d21de78ddb3c8fdaedc6063400e8c6c15663df8d012cbd48eddbb9688fe.nix;
         revNum = 0;
         sha256 = "893b7d21de78ddb3c8fdaedc6063400e8c6c15663df8d012cbd48eddbb9688fe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

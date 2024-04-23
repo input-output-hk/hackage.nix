@@ -6,8 +6,8 @@
         nix = import ../hackage/lvmrun-1.0-r0-24e2a3576dc297db4ce9abf465da4e5066ee62a97a56b2fec707c748a06e06ca.nix;
         revNum = 0;
         sha256 = "24e2a3576dc297db4ce9abf465da4e5066ee62a97a56b2fec707c748a06e06ca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

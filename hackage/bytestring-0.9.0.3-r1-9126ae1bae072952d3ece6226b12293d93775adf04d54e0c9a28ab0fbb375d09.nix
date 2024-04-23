@@ -21,16 +21,16 @@
       synopsis = "Fast, packed, strict and lazy byte arrays with a list interface";
       description = "\nA time and space-efficient implementation of byte vectors using\npacked Word8 arrays, suitable for high performance use, both in terms\nof large data quantities, or high speed requirements. Byte vectors\nare encoded as strict 'Word8' arrays of bytes, held in a 'ForeignPtr',\nand can be passed between C and Haskell with little effort.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Yet another Wiki format converter";
       description = "\"piki\" is a script to convert a WIKI text file\nto an HTML file. Unlike other WIKI systems,\n\"piki\" is not executed through a web server.\nYou can use \"piki\" in the shell command line.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "piki" = {
@@ -30,9 +30,9 @@
             (hsPkgs."parsec3" or (errorHandler.buildDepError "parsec3"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

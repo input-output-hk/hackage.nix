@@ -21,15 +21,15 @@
       synopsis = "tiny no-brainer job scheduler";
       description = "this is a tiny library to make scheduling jobs to run at predetermined intervals, easier";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A reactive frontend web framework";
       description = "A reactive frontend web framework. See haskell-front.org for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."fay" or (errorHandler.buildDepError "fay"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

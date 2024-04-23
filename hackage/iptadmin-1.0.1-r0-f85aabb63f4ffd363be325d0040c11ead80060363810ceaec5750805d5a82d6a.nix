@@ -21,7 +21,7 @@
       synopsis = "web-interface for iptables";
       description = "web-interface for iptables based on happstack with PAM authorisation";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "iptadmin" = {
@@ -49,9 +49,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
             (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

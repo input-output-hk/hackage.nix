@@ -21,7 +21,7 @@
       synopsis = "pyrg utility done right";
       description = "hpyrg is a pyrg analog written in Haskell.\n\npyrg is an utility which colorizes Python unittest module's unit tests output. It has a few fatal flaws:\n\n* It cannot into lazy IO\n\n* It cannot into really verbose colorization\n\nTo address these issues there is hpyrg.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpyrg" = {
@@ -31,9 +31,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

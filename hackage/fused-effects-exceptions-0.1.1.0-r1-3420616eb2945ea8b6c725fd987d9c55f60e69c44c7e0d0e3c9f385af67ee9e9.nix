@@ -21,7 +21,7 @@
       synopsis = "Handle exceptions thrown in IO with fused-effects.";
       description = "Provides an effect that enables catching exceptions thrown from impure computations such as 'IO'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

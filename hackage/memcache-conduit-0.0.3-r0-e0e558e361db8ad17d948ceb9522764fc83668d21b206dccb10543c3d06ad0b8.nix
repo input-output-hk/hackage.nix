@@ -21,7 +21,7 @@
       synopsis = "Conduit library for memcache procotol";
       description = "This package provides conduit functions for memcache protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."attoparsec-binary" or (errorHandler.buildDepError "attoparsec-binary"))
           (hsPkgs."memcache-haskell" or (errorHandler.buildDepError "memcache-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "memcache-sample-hemcached" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."memcache-haskell" or (errorHandler.buildDepError "memcache-haskell"))
             (hsPkgs."memcache-conduit" or (errorHandler.buildDepError "memcache-conduit"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
+        };
         "memcache-sample-proxy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."memcache-haskell" or (errorHandler.buildDepError "memcache-haskell"))
             (hsPkgs."memcache-conduit" or (errorHandler.buildDepError "memcache-conduit"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "glTF scene loader";
       description = "The package provides basic types to process JSON and \"binary\" files.\nNo further conversion is performed to keep dependencies to a minimum.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gltf-codec-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."gltf-codec" or (errorHandler.buildDepError "gltf-codec"))
             (hsPkgs."shower" or (errorHandler.buildDepError "shower"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

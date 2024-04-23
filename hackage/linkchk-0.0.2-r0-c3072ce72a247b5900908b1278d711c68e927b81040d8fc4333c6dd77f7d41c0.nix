@@ -21,7 +21,7 @@
       synopsis = "linkchk is a network interface link ping monitor.";
       description = "It supports both IPv4 and IPv6. It works by monitoring\nthe routing table and pinging the gateway (next hop)\nof a network interface. When the link is up and functioning\nthe ping time is displayed in a small gtk window, otherwise\nthe link status is displayed. linkchk can also run in a tty.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "linkchk" = {
@@ -32,9 +32,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."popenhs" or (errorHandler.buildDepError "popenhs"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

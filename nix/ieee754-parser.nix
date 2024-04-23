@@ -6,8 +6,8 @@
         nix = import ../hackage/ieee754-parser-0.1-r0-e87cdb368a8252ad87eba762c90fc8d04b3990ff064ff856f19398c6b45d82db.nix;
         revNum = 0;
         sha256 = "e87cdb368a8252ad87eba762c90fc8d04b3990ff064ff856f19398c6b45d82db";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

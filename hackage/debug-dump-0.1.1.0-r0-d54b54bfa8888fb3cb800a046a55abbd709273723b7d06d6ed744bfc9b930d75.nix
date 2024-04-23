@@ -21,7 +21,7 @@
       synopsis = "File-based debug output";
       description = "A package emulating the functionality of Debug.Trace, but capable of writing to files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

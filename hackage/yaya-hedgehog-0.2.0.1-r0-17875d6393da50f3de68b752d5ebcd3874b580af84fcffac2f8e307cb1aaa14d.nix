@@ -21,7 +21,7 @@
       synopsis = "Hedgehog testing support for the Yaya recursion scheme\nlibrary.";
       description = "If you use Yaya in your own code and have tests written\nusing Hedgehog, then this library will help you with\ngenerating trees, verifying type class instances, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deriving-compat" or (errorHandler.buildDepError "deriving-compat"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."yaya" or (errorHandler.buildDepError "yaya"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

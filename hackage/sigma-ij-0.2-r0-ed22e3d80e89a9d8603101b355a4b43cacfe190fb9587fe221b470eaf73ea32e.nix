@@ -21,7 +21,7 @@
       synopsis = "Thom polynomials of second order Thom-Boardman singularities";
       description = "A program to compute Thom polynomials of second order Thom-Boardman\nsingularities, using the localization method described in the\nauthor's PhD thesis <http://renyi.hu/~komuves/phdthesis.pdf>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec2" or (errorHandler.buildDepError "parsec2"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sigma-ij" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."parsec2" or (errorHandler.buildDepError "parsec2"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

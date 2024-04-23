@@ -21,15 +21,15 @@
       synopsis = "Various modules and constructs inspired by category theory.";
       description = "A vastly expanded collection of modules implementing various\nideas from category theory. Notable bits include: comonads,\nadjunctions, functor fixedpoints and various recursion\noperaters ala /Functional Programming with Bananas, Lenses,\nEnvelopes and Barbed Wire/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

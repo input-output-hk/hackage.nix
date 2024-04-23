@@ -21,7 +21,7 @@
       synopsis = "cryptonite conduit";
       description = "Conduit bridge for cryptonite\n\nFor now only provide a conduit version for hash and hmac, but\nwith contribution, this could provide cipher conduits too,\nand probably other things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cryptonite-conduit-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

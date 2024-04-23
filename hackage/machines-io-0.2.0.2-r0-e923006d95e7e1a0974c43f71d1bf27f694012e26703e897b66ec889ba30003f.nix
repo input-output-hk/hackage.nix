@@ -21,7 +21,7 @@
       synopsis = "IO utilities for the machines library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."chunked-data" or (errorHandler.buildDepError "chunked-data"))
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

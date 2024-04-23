@@ -21,7 +21,7 @@
       synopsis = "BCP47 orphan instances";
       description = "Orphan instances for the BCP47 type";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

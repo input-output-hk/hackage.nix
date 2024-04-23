@@ -21,7 +21,7 @@
       synopsis = "Library for Command Line Interface (CLI)";
       description = "Symantics for CLI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."symantic-document" or (errorHandler.buildDepError "symantic-document"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

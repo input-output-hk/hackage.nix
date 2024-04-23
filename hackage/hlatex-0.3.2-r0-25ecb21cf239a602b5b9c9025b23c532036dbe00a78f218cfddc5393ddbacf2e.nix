@@ -21,7 +21,7 @@
       synopsis = "A library to build valid LaTeX files";
       description = "...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "generate_hlatex_user_guide" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
-            ];
+          ];
           buildable = if !flags.build_doc then false else true;
-          };
         };
       };
-    }
+    };
+  }

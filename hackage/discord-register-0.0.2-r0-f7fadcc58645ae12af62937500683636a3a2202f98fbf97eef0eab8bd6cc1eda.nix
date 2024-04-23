@@ -21,7 +21,7 @@
       synopsis = "Discord verification bot";
       description = "This bot can send new server members a message on entry, ask for their name and an attachment.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "discord-register-exe" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

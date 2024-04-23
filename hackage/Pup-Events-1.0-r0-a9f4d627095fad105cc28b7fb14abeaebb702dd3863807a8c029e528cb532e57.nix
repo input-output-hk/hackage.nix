@@ -21,7 +21,7 @@
       synopsis = "A networked event handling framework for hooking\ninto other programs.";
       description = "Pup-Events is a networking enabled event handling\nframework. This is a virtual package to install all\nof the Pup-Events modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."Pup-Events-Server" or (errorHandler.buildDepError "Pup-Events-Server"))
           (hsPkgs."Pup-Events-Client" or (errorHandler.buildDepError "Pup-Events-Client"))
           (hsPkgs."Pup-Events-PQueue" or (errorHandler.buildDepError "Pup-Events-PQueue"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pupevents-all" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

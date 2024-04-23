@@ -6,8 +6,8 @@
         nix = import ../hackage/quickcheck-rematch-0.1.0.0-r0-d0180a22e059d6a6f0fdcc9ec391a4e9490ec58f2ffe0e768743f06e2ae79d16.nix;
         revNum = 0;
         sha256 = "d0180a22e059d6a6f0fdcc9ec391a4e9490ec58f2ffe0e768743f06e2ae79d16";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

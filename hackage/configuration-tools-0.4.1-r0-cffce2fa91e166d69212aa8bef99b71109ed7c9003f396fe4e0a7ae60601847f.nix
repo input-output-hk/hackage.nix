@@ -28,8 +28,8 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -56,7 +56,7 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optionals (flags.remote-configs) [
+        ] ++ pkgs.lib.optionals (flags.remote-configs) [
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
@@ -69,9 +69,9 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "url-example-test" = {
           depends = [
@@ -85,24 +85,24 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (pkgs.lib).optionals (flags.remote-configs) [
+          ] ++ pkgs.lib.optionals (flags.remote-configs) [
             (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "trivial" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
             (hsPkgs."configuration-tools" or (errorHandler.buildDepError "configuration-tools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

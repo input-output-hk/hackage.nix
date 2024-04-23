@@ -21,7 +21,7 @@
       synopsis = "For serving cookies";
       description = "This package aims to make it easy to set cookies from\nyour web server, even if you are not intimately familiar\nwith the details of the Set-Cookie HTTP field.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cookie-tray" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."cookie-tray" or (errorHandler.buildDepError "cookie-tray"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

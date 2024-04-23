@@ -21,7 +21,7 @@
       synopsis = "Maps and sets of partial orders";
       description = "Maps (and sets) indexed by keys satisfying <https://hackage.haskell.org/package/lattices/docs/Algebra-PartialOrd.html#t:PartialOrd PartialOrd>.\n\nThe goal is to provide asymptotically better data structures than simple association lists or lookup tables.\nAsymptotics depend on the partial order used as keys, its width /w/ specifically (the size of the biggest anti-chain).\n\nFor partial orders of great width, this package won't provide any benefit over using association lists, so benchmark for your use-case!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"));
+        ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"));
         buildable = true;
-        };
+      };
       tests = {
         "unittests" = {
           depends = [
@@ -42,18 +42,18 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."ChasingBottoms" or (errorHandler.buildDepError "ChasingBottoms"))
-            ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"));
+          ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"));
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "pomaps-benchmarks" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (!flags.no-lattices) (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"));
+          ] ++ pkgs.lib.optional (!flags.no-lattices) (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

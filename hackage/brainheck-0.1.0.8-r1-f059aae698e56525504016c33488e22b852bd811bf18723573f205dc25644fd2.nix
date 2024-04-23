@@ -21,7 +21,7 @@
       synopsis = "Brainh*ck interpreter in haskell";
       description = "Brainh*ck interpreter written in haskell and taking advantage of many prominent libraries";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brainheck" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."brainheck" or (errorHandler.buildDepError "brainheck"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "brainheck-bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."brainheck" or (errorHandler.buildDepError "brainheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

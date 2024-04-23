@@ -21,7 +21,7 @@
       synopsis = "A thread manager for async";
       description = "Cleanup and kill async threads. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "thread-clean-up-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

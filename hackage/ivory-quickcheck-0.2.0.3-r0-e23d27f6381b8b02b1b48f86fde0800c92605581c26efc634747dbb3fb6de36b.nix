@@ -21,7 +21,7 @@
       synopsis = "QuickCheck driver for Ivory.";
       description = "Warning!  This module is experimental and its implementation may change dramatically.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
           (hsPkgs."ivory-backend-c" or (errorHandler.buildDepError "ivory-backend-c"))
           (hsPkgs."ivory-eval" or (errorHandler.buildDepError "ivory-eval"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."ivory-backend-c" or (errorHandler.buildDepError "ivory-backend-c"))
             (hsPkgs."ivory-quickcheck" or (errorHandler.buildDepError "ivory-quickcheck"))
             (hsPkgs."ivory-stdlib" or (errorHandler.buildDepError "ivory-stdlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

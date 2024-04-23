@@ -21,7 +21,7 @@
       synopsis = "A simple gtk based Russian Roulette game.";
       description = "A Russian Roulette game written in Haskell\nUsing GTK2HS and Glade.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "showdown" = {
@@ -30,9 +30,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

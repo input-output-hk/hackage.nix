@@ -21,16 +21,16 @@
       synopsis = "Simple Curses binding";
       description = "This is a simple binding to the Curses library, a common\nUnix library which allows you to use a terminal as a\ncanvas on which your paint are characters (instead of line\nby line output); Curses is probably most useful for rogue-like\ninterfaces.\n\nNanocurses differs from Hscurses and Mage in that it is\nintended to be portable to Curses libraries other than Ncurses, such\nas Ocurses, Irix's curses, and so on. So it may not have all their features.\n(It does not differ significantly from Hmp3's Curses binding, as the Curses.hsc\nin Nanocurses is essentially extracted from Hmp3.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."curses" or (errorHandler.sysDepError "curses")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

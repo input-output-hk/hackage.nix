@@ -21,7 +21,7 @@
       synopsis = "Contract normaliser and simulator";
       description = "Netrium enables financial engineers to precisely describe and execute both simple and exotic contracts with both financial and physical delivery.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "normalise" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "simulate" = {
           depends = [
             (hsPkgs."netrium" or (errorHandler.buildDepError "netrium"))
@@ -54,9 +54,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "visualise" = {
           depends = [
             (hsPkgs."netrium" or (errorHandler.buildDepError "netrium"))
@@ -65,9 +65,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

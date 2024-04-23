@@ -21,7 +21,7 @@
       synopsis = "Program that sends traffic through SSH tunnels on-demand";
       description = "Program that sends traffic through SSH tunnels on-demand";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "on-demand-ssh-tunnel" = {
@@ -31,9 +31,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

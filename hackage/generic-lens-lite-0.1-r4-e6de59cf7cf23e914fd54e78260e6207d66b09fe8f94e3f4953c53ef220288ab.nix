@@ -21,20 +21,20 @@
       synopsis = "Monomorphic field lens like with generic-lens";
       description = "Derivation of (monomorphic, i.e. not type-changing) lens, like generic-lens.\n\nThe package have minimal dependecies and minimal API:\n\n@\nclass HasField (name :: Symbol) r a | name r -> a\nfield :: HasField name r a => Lens' r a\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."generic-lens-lite" or (errorHandler.buildDepError "generic-lens-lite"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "A model for human colour/color perception";
       description = "This package provides a data type for colours and transparency.\nColours can be blended and composed.\nsRGB colour space is supported (\"Data.Colour.SRGB\").\nA module of colour names (\"Data.Colour.Names\") is provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

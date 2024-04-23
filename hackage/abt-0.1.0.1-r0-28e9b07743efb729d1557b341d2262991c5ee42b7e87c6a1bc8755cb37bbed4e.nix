@@ -21,15 +21,15 @@
       synopsis = "Abstract binding trees for Haskell";
       description = "A Haskell port of the Carnegie Mellon ABT library (SML), with some improvements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

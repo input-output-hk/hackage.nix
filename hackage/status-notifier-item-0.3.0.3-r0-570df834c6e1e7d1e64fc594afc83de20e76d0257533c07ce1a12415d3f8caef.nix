@@ -21,7 +21,7 @@
       synopsis = "A wrapper over the StatusNotifierItem/libappindicator dbus specification";
       description = "Please see the README on Github at <https://github.com/IvanMalison/status-notifier-item#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sni-cl-tool" = {
           depends = [
@@ -48,17 +48,17 @@
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."status-notifier-item" or (errorHandler.buildDepError "status-notifier-item"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "status-notifier-item-static" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."status-notifier-item" or (errorHandler.buildDepError "status-notifier-item"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "status-notifier-watcher" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."status-notifier-item" or (errorHandler.buildDepError "status-notifier-item"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

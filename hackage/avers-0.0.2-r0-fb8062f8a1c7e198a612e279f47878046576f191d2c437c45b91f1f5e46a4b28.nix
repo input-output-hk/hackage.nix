@@ -21,7 +21,7 @@
       synopsis = "empty";
       description = "empty";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."rethinkdb-client-driver" or (errorHandler.buildDepError "rethinkdb-client-driver"))
           (hsPkgs."scrypt" or (errorHandler.buildDepError "scrypt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

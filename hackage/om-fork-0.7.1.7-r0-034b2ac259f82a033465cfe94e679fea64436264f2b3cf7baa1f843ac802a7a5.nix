@@ -21,7 +21,7 @@
       synopsis = "Concurrency utilities.";
       description = "Actor pattern and some limited structured concurrency\ntools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."om-show" or (errorHandler.buildDepError "om-show"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "actor-example" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "structured-example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."om-fork" or (errorHandler.buildDepError "om-fork"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

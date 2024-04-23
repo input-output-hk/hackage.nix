@@ -21,12 +21,12 @@
       synopsis = "A library for arbitrary precision decimal numbers.";
       description = "A native Haskell implementation of arbitrary precicion decimal numbers, based on Haskell Integers. Inspired by Java BigDecimals";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "HasBigDecimal-test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."HasBigDecimal" or (errorHandler.buildDepError "HasBigDecimal"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

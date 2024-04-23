@@ -21,7 +21,7 @@
       synopsis = "Expose Random and Arbitrary instances";
       description = "Random, Arbitrary instances for naming cases (PascalCase, camelCase, etc)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

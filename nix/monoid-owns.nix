@@ -6,8 +6,8 @@
         nix = import ../hackage/monoid-owns-2010.5.29-r0-51be445d60f69207ac952c13a98edf10da5cf8549bc2ca7ffbec32e782577d18.nix;
         revNum = 0;
         sha256 = "51be445d60f69207ac952c13a98edf10da5cf8549bc2ca7ffbec32e782577d18";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-generalized-properties-array";
         version = "0.13.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Some 'properties' of the phonetic languages approach text.";
       description = "Generalizes the functionality of the https://hackage.haskell.org/package/phonetic-languages-simplified-properties-array";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
           (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
           (hsPkgs."logical-constraints" or (errorHandler.buildDepError "logical-constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

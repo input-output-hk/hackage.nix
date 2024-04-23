@@ -21,25 +21,25 @@
       synopsis = "A FRP library based on signal functions.";
       description = "A FRP library based on signal functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "MoeExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

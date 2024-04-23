@@ -6,8 +6,8 @@
         nix = import ../hackage/unpacked-containers-0-r0-0e69d72f5bdf848e480cecfa8b3f093a52ec2336494359c48ba60a29ab28e093.nix;
         revNum = 0;
         sha256 = "0e69d72f5bdf848e480cecfa8b3f093a52ec2336494359c48ba60a29ab28e093";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A yesod subsite serving a wiki.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "informative-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A collection of code cheatsheet";
       description = "Starting with Google Analytics";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

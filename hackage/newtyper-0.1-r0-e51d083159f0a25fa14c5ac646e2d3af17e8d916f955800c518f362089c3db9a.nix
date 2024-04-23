@@ -21,15 +21,15 @@
       synopsis = "Extra functions for the Control.Newtype typeclass";
       description = "Extra functions for the Control.Newtype typeclass";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Kleislify" or (errorHandler.buildDepError "Kleislify"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

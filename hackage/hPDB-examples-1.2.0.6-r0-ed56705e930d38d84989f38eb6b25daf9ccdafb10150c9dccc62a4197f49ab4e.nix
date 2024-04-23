@@ -21,7 +21,7 @@
       synopsis = "Examples for hPDB library";
       description = "Examples for handling Protein Data Bank file format.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "PDB2Fasta" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ShiftToCenter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CleanPDB" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SplitModels" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -101,9 +101,9 @@
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CanonicalAxes" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -121,9 +121,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "PrintEvents" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -141,9 +141,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "PrintStructureObject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -161,9 +161,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Rg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -181,9 +181,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "StericClashCheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -203,9 +203,9 @@
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Viewer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -225,10 +225,10 @@
             (hsPkgs."hPDB" or (errorHandler.buildDepError "hPDB"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."iterable" or (errorHandler.buildDepError "iterable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ParserPerformance" = {
           depends = [
@@ -249,9 +249,9 @@
             (hsPkgs."IfElse" or (errorHandler.buildDepError "IfElse"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HTTP Racing Library";
       description = "A micro-library for racing HTTP GET requests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "craze-example" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."craze" or (errorHandler.buildDepError "craze"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "craze-spec" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."haxy" or (errorHandler.buildDepError "haxy"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "craze-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."craze" or (errorHandler.buildDepError "craze"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

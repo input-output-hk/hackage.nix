@@ -21,7 +21,7 @@
       synopsis = "Unified interface for primitive arrays";
       description = "This package provides a typeclass `Contiguous` that offers a\nunified interface to working with `Array`, `SmallArray`,\n`PrimArray`, and `UnliftedArray`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -42,19 +42,19 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "laws" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "weigh" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

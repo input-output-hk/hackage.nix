@@ -21,7 +21,7 @@
       synopsis = "Helper for the Major System";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "chitauri" = {
@@ -34,18 +34,18 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."generic-trie" or (errorHandler.buildDepError "generic-trie"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "chitauri-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."chitauri" or (errorHandler.buildDepError "chitauri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

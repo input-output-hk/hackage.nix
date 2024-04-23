@@ -21,7 +21,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The posix regex backend for regex-base";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -31,12 +31,12 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

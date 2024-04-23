@@ -21,7 +21,7 @@
       synopsis = "Display a colorized diff between two Haskell values";
       description = "@Debug.Diff@ is a quick tool for comparing two Haskell values, as\nwhen diagnosing a test failure.  It pretty-prints the values\n(using the @groom@ library) and passes them to an external @diff@\ncommand (@colordiff@ by default), which writes the diff to standard\noutput.\n\n@Debug.Diff.Config@ provides more control over the diff parameters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

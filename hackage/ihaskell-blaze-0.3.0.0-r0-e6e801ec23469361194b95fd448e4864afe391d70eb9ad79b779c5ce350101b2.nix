@@ -21,7 +21,7 @@
       synopsis = "IHaskell display instances for blaze-html types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Sixel library to show images in a terminal emulator";
       description = "Sixel can show graphics on a terminal emulator. This library is developed to showing images on ghci.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sixel-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sixel" or (errorHandler.buildDepError "sixel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

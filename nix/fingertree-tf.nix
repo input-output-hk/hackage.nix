@@ -6,8 +6,8 @@
         nix = import ../hackage/fingertree-tf-0.1.0.0-r0-fa8d598222cf04803d8e2df2fe2663919853a68c4d1c7675f011ea4771d54e9e.nix;
         revNum = 0;
         sha256 = "fa8d598222cf04803d8e2df2fe2663919853a68c4d1c7675f011ea4771d54e9e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

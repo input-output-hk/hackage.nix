@@ -6,8 +6,8 @@
         nix = import ../hackage/onu-course-1-r0-15dc966b75b2b1abaeebe4389a2fa5cbe539e5a1f1ebcdacd35378cf928e7a28.nix;
         revNum = 0;
         sha256 = "15dc966b75b2b1abaeebe4389a2fa5cbe539e5a1f1ebcdacd35378cf928e7a28";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

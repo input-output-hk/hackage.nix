@@ -21,7 +21,7 @@
       synopsis = "Presburger Arithmetic Solver for GHC Type-level natural numbers.";
       description = "@ghc-typelits-presburger@ augments GHC type-system with Presburger Arithmetic Solver for Type-level natural numbers.\nYou can use by adding this package to @build-depends@ and add the following pragma to the head of .hs files:\n\n> OPTIONS_GHC -fplugin GHC.TypeLits.Presburger";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."presburger" or (errorHandler.buildDepError "presburger"))
           (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-arith" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."ghc-typelits-presburger" or (errorHandler.buildDepError "ghc-typelits-presburger"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

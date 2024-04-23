@@ -21,7 +21,7 @@
       synopsis = "Convenient utility for distributed Nix builds";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."managed" or (errorHandler.buildDepError "managed"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nix-delegate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nix-delegate" or (errorHandler.buildDepError "nix-delegate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

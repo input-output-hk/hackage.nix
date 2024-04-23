@@ -21,7 +21,7 @@
       synopsis = "HTTP/3 library";
       description = "HTTP/3 library including frames, QPACK, client and server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time-manager" or (errorHandler.buildDepError "time-manager"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "server" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-session-manager" or (errorHandler.buildDepError "tls-session-manager"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "qif" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,10 +85,10 @@
             (hsPkgs."quic" or (errorHandler.buildDepError "quic"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -110,19 +110,19 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Snap server backend for yaml-rpc";
       description = "This package provides Snap-based server backend for yaml-rpc package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."yaml-rpc" or (errorHandler.buildDepError "yaml-rpc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

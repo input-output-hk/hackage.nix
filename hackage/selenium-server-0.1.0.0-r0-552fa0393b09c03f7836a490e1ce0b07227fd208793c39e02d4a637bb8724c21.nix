@@ -21,7 +21,7 @@
       synopsis = "Run the selenium standalone server for usage with webdriver";
       description = "Run the selenium standalone server for usage with webdriver";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."selenium-server" or (errorHandler.buildDepError "selenium-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Newtypes to carry DerivingVia instances";
       description = "This exports the newtypes 'Wrapped' and 'Wrapped1', which are meant to hold\ntypeclass implementations derived from other classes (most frequently,\n'Generic' and 'Generic1').  If you implement a general instance of a class,\nadd it as an instance for 'Wrapped' or 'Wrapped1', and users will be able to\nderive it uniformly as @deriving TheClass via Wrapped TheType@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "query tools for the local cabal database (revdeps, graph, info, search-by)";
       description = "Query tool for the local cabal database\n\n* Diff between package versions\n\n* List reverse dependencies (revdeps)\n\n* Search by author or maintainer\n\n* Generate graphs of dependencies in dot format";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-db" = {
@@ -37,9 +37,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

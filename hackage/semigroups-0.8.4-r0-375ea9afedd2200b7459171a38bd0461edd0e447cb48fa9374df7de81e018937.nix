@@ -21,7 +21,7 @@
       synopsis = "Haskell 98 semigroups";
       description = "Haskell 98 semigroups\n\nIn mathematics, a semigroup is an algebraic structure consisting of a set together with an associative binary operation. A semigroup generalizes a monoid in that there might not exist an identity element. It also (originally) generalized a group (a monoid with all inverses) to a type where every element did not have to have an inverse, thus the name semigroup.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.base2
@@ -29,8 +29,8 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

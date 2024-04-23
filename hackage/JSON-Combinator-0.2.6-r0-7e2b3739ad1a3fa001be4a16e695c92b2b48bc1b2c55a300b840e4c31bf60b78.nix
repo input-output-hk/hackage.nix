@@ -21,7 +21,7 @@
       synopsis = "A combinator library on top of a generalised JSON type";
       description = "A combinator library on top of a generalised JSON type. The highest-level module is\n@Text.JSON.Combinator@ and it is expected that no other module need to be explicitly imported.\n\nInstances for the combinators are provided for three libraries available on hackage:\n\n* json (@Text.JSON@)\n\n* JSONb (@Text.JSONb@)\n\n* hjson (@Text.HJson@)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

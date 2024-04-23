@@ -21,7 +21,7 @@
       synopsis = "Monoidal Functors Library";
       description = "A typeclass hierarchy for monoidal functors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

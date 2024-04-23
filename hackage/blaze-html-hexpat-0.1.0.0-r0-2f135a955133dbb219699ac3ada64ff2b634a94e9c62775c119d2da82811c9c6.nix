@@ -21,7 +21,7 @@
       synopsis = "A hexpat backend for blaze-html.";
       description = "Allows you to generate hexpat node trees using blaze\nsyntax.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

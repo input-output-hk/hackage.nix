@@ -6,8 +6,8 @@
         nix = import ../hackage/ClasshSS-0.1.0.0-r0-d470937ee73f037236e133195f3236f018b57d6f299ebbf1605732e868511e2a.nix;
         revNum = 0;
         sha256 = "d470937ee73f037236e133195f3236f018b57d6f299ebbf1605732e868511e2a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Hakyll compiler for arbitrary external processes.";
       description = "Exposes Hakyll compilers for passing file paths to external processes.\nTransformed results are made available as Hakyll `Items`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

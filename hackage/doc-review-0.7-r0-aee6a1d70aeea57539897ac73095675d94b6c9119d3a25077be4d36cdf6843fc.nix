@@ -21,7 +21,7 @@
       synopsis = "Document review Web application, like http://book.realworldhaskell.org/";
       description = "A standalone Web application that provides for\nparagraph-by-paragraph commentary by document reviewers,\nbased on the user interface from\n<http://book.realworldhaskell.org/>. Any Web page can be\nconfigured to work with the service by adding just a\nlittle bit of Javascript that makes it load the comment\nWeb UI. See the README or the homepage for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "doc-review" = {
@@ -54,17 +54,17 @@
             (hsPkgs."xhtml-combinators" or (errorHandler.buildDepError "xhtml-combinators"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."xml-basic" or (errorHandler.buildDepError "xml-basic"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doc-review-test" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

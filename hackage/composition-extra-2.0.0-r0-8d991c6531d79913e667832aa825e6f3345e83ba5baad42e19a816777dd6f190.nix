@@ -21,15 +21,15 @@
       synopsis = "Combinators for unorthodox structure composition";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

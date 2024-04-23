@@ -21,7 +21,7 @@
       synopsis = "Library of rules for Nomyx";
       description = "Many example of rules ready to be played";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."shortcut" or (errorHandler.buildDepError "shortcut"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-recurrence" or (errorHandler.buildDepError "time-recurrence"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

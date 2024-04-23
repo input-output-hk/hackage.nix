@@ -21,7 +21,7 @@
       synopsis = "A Tox protocol implementation in Haskell";
       description = "A Tox protocol implementation in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,35 +49,35 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (!flags.library-only) (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"));
+        ] ++ pkgs.lib.optional (!flags.library-only) (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"));
         buildable = true;
-        };
+      };
       exes = {
         "tox-refsut" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hstox" or (errorHandler.buildDepError "hstox"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "tox-spectest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hstox" or (errorHandler.buildDepError "hstox"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."hstox" or (errorHandler.buildDepError "hstox"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

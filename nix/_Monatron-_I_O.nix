@@ -6,8 +6,8 @@
         nix = import ../hackage/Monatron-IO-1.0-r0-2bcacfbcba1639d2fedc3bcdc6633fc5e10e704b34906a1b2aaf478801e59eca.nix;
         revNum = 0;
         sha256 = "2bcacfbcba1639d2fedc3bcdc6633fc5e10e704b34906a1b2aaf478801e59eca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

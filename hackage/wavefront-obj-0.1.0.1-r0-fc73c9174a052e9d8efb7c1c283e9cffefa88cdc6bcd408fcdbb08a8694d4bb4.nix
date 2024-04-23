@@ -21,7 +21,7 @@
       synopsis = "Wavefront .obj file loader";
       description = "See <https://github.com/SASinestro/wavefront-obj/blob/master/README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wavefront-obj-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."wavefront-obj" or (errorHandler.buildDepError "wavefront-obj"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

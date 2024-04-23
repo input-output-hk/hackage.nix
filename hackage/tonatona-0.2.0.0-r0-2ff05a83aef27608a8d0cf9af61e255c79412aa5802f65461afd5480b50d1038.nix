@@ -26,17 +26,17 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         (hsPkgs.buildPackages.rio or (pkgs.buildPackages.rio or (errorHandler.setupDepError "rio")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -44,18 +44,18 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pointless Rewrite library";
       description = "Library that implements a rewrite system for point-free expressions. Application scenarios include normal functional programs, strategic combinators (<http://dx.doi.org/10.1016/j.scico.2010.01.003>) and bidirectional lenses (<http://www.di.uminho.pt/~hpacheco/publications/lensopt.pdf>), all encoded with point-free combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pointless-lenses" or (errorHandler.buildDepError "pointless-lenses"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "IO-Streams interface for lzma/xz compression";
       description = "This package provides an IO-Streams interface for the LZMA\ncompression algorithm used in the @.xz@ file format.\n\nDecompressing @.xz@ 'InputStreams' and compressing 'OutputStreams'\nto @.xz@ with tunable (de)compression parameters is supported.\n\nSee also the XZ Utils home page: <http://tukaani.org/xz/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lzma-streams-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

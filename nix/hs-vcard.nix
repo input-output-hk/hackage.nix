@@ -6,8 +6,8 @@
         nix = import ../hackage/hs-vcard-0.1-r0-4fafe19771e5ee016128853e599f55a84144fd4a08852ba16013415709a5df02.nix;
         revNum = 0;
         sha256 = "4fafe19771e5ee016128853e599f55a84144fd4a08852ba16013415709a5df02";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

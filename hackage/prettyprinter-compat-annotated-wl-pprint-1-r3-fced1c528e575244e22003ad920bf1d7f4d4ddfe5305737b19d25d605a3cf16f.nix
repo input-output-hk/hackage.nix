@@ -14,7 +14,7 @@
       identifier = {
         name = "prettyprinter-compat-annotated-wl-pprint";
         version = "1";
-        };
+      };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky at google>";
@@ -24,15 +24,15 @@
       synopsis = "Prettyprinter compatibility module for previous users of the annotated-wl-pprint package.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

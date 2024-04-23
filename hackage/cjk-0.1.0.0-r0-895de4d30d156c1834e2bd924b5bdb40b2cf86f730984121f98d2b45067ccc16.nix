@@ -21,7 +21,7 @@
       synopsis = "Data about Chinese, Japanese and Korean characters and languages";
       description = "A Haskell interface to the most important information from the Unicode Unihan character\ndatabase and CC-CEDICT free Chinese-English dictionary.\n\nContributions of data from more sources are very welcome!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cjk" or (errorHandler.buildDepError "cjk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

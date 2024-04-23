@@ -6,8 +6,8 @@
         nix = import ../hackage/arcgrid-viewer-0.1.0.0-r0-ace3291dee8f8b8b9066128fa4ee471d761df650d31999f56def8690f9805098.nix;
         revNum = 0;
         sha256 = "ace3291dee8f8b8b9066128fa4ee471d761df650d31999f56def8690f9805098";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

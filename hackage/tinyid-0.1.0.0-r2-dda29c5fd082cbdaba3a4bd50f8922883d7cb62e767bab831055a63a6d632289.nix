@@ -21,15 +21,15 @@
       synopsis = "A secure URL-friendly string ID generator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

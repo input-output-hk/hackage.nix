@@ -21,14 +21,14 @@
       synopsis = "A very basic SOAP package";
       description = "Wraps a message in SOAP headers and provides a function to POST this message to a URL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

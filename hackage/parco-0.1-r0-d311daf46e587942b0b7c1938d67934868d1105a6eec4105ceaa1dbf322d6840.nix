@@ -21,14 +21,14 @@
       synopsis = "Generalised parser combinators";
       description = "General parser combinators that will work with any parser\ncombinator library.  At the moment, the contents of the library is\nnot particularly structured, and it is extended as I find it\nnecessary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

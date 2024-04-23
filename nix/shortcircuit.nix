@@ -6,8 +6,8 @@
         nix = import ../hackage/shortcircuit-0.1-r0-5586012388e50331ffd1c24b1b69ea3851d4da7dff8652d517081d2af2d13119.nix;
         revNum = 0;
         sha256 = "5586012388e50331ffd1c24b1b69ea3851d4da7dff8652d517081d2af2d13119";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "A strict, immutable, thread-safe, single-ended, bounded queue.";
       description = "A strict, immutable, thread-safe, single-ended, bounded queue\nwhich automatically forgets old values instead of blocking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bounded-queue-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."bounded-queue" or (errorHandler.buildDepError "bounded-queue"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "DSV (delimiter-separated values)";
       description = "Utilities for working with DSV (delimiter-separated values) files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-dsv" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."dsv" or (errorHandler.buildDepError "dsv"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

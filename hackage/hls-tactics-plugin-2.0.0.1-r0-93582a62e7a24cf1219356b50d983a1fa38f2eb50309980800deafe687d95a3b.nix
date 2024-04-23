@@ -21,7 +21,7 @@
       synopsis = "Wingman plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,11 +56,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.2.1"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.2.1"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -84,14 +84,14 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.2.1"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.2.1"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

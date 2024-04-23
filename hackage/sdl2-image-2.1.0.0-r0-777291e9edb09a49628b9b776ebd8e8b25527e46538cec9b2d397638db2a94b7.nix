@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to SDL2_image";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,16 +30,16 @@
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [
           (pkgs."SDL2_image" or (errorHandler.sysDepError "SDL2_image"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_image" or (errorHandler.pkgConfDepError "SDL2_image"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-image-example" = {
           depends = [
@@ -47,16 +47,16 @@
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           libs = [
             (pkgs."SDL2_image" or (errorHandler.sysDepError "SDL2_image"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
             (pkgconfPkgs."SDL2_image" or (errorHandler.pkgConfDepError "SDL2_image"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

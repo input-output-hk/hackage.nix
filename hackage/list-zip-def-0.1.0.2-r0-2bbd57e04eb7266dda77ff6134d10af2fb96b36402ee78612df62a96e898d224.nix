@@ -21,11 +21,11 @@
       synopsis = "Provides zips with default values.";
       description = "Typical zip functions like `zip`, `zipWith`, and `zipWith3` will stop with the shortest list exhausted. Consequently information is lost. This library solves this issue by inserting default values. The `these` package serves a similar purpose but allows more than just lists to be zipped with the `Align` type class. However, zipping several lists and using defaults is not as easy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a tiny ghc api wrapper";
       description = "a ghc-api wrapper, designed\nto make the api more transparent\nacross releases and offer eval and\nplugin esque facilities in the form\nof a simple, easy to modify library.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

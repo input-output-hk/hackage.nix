@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings for libsndfile (Data.Vector interface).";
       description = "Haskell bindings for libsndfile (Data.Vector interface).\n\nlibsndfile is a comprehensive C library for reading\nand writing a large number of soundfile formats:\n<http://www.mega-nerd.com/libsndfile/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsndfile" or (errorHandler.buildDepError "hsndfile"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

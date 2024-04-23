@@ -21,7 +21,7 @@
       synopsis = "PDF viewer extension for Manatee.";
       description = "manatee-pdfviewer is PDF viewer extension for Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nIf you see Chinese garbled in pdf viewer, make sure install package `poppler-data`\nfirst, example, use command \"sudo aptitude install poppler-data -y\" to install it in Debian System.\nAnd replace Chinese font in file `/etc/fonts/conf.d/49-sansserif.conf'";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-pdfviewer" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-pdfviewer" = { buildable = true; }; };
+    };
+  }

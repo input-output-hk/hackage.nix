@@ -21,7 +21,7 @@
       synopsis = "Testing framework for Morley.";
       description = "This package provides an eDSL for testing contracts written in Michelson, Morley or Lorentz. These tests can be run on an emulated environment or on a real network.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -65,9 +65,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cleveland-test" = {
           depends = [
@@ -92,12 +92,12 @@
             (hsPkgs."tasty-hunit-compat" or (errorHandler.buildDepError "tasty-hunit-compat"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lorentz-test" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -124,12 +124,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."type-spec" or (errorHandler.buildDepError "type-spec"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "morley-client-test" = {
           depends = [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
@@ -141,12 +141,12 @@
             (hsPkgs."morley-prelude" or (errorHandler.buildDepError "morley-prelude"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit-compat" or (errorHandler.buildDepError "tasty-hunit-compat"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "morley-test" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -185,13 +185,13 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "morley-bench" = {
           depends = [
@@ -203,9 +203,9 @@
             (hsPkgs."morley" or (errorHandler.buildDepError "morley"))
             (hsPkgs."morley-prelude" or (errorHandler.buildDepError "morley-prelude"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

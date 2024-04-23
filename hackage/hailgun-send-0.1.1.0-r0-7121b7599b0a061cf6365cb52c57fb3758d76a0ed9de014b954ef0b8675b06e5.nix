@@ -21,7 +21,7 @@
       synopsis = "A program to send emails throught the Mailgun api.";
       description = "Use this executable to send emails using the Mailgun api's from the command line. You require a configuraiton file\nwith your Mailgun API details to make it work. Please run hailgun-send \\-\\-help for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hailgun-send" = {
@@ -31,9 +31,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

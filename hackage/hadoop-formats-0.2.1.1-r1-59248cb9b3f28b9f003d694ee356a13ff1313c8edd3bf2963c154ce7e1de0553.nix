@@ -21,7 +21,7 @@
       synopsis = "Read/write file formats commonly used by Hadoop.";
       description = "Currently this package only supports reading sequence files.\n\nYou will need to have `libsnappy` installed to build this project. If you are\nusing OSX and homebrew to install snappy then the following should get\neverything installed successfully.\n\n> $ brew install snappy\n> $ SNAPPY=$(brew --prefix snappy)\n> $ export C_INCLUDE_PATH=$SNAPPY/include\n> $ export LIBRARY_PATH=$SNAPPY/lib\n> $ cabal install hadoop-formats";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."snappy" or (errorHandler.sysDepError "snappy")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hadoop-formats" or (errorHandler.buildDepError "hadoop-formats"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

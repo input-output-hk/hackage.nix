@@ -21,7 +21,7 @@
       synopsis = "dependently typed core language";
       description = "dependently typed core language";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pisigma" = {
@@ -32,9 +32,9 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

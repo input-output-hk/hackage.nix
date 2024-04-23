@@ -21,7 +21,7 @@
       synopsis = "Test harness for TriangleCount analysis.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -33,9 +33,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."Graph500" or (errorHandler.buildDepError "Graph500"))
             (hsPkgs."GraphHammer" or (errorHandler.buildDepError "GraphHammer"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ClusteringCoefficientTest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -44,9 +44,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."Graph500" or (errorHandler.buildDepError "Graph500"))
             (hsPkgs."GraphHammer" or (errorHandler.buildDepError "GraphHammer"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Debugging Tools for Haskell-tools";
       description = "Debugging Tools for Haskell-tools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,17 +41,17 @@
           (hsPkgs."classyplate" or (errorHandler.buildDepError "classyplate"))
           (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ht-debug" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-tools-debug" or (errorHandler.buildDepError "haskell-tools-debug"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

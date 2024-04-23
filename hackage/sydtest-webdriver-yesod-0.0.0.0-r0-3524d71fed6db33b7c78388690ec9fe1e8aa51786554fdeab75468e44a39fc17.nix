@@ -21,7 +21,7 @@
       synopsis = "A webdriver+yesod companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-webdriver-yesod-test" = {
           depends = [
@@ -53,12 +53,12 @@
             (hsPkgs."sydtest-webdriver" or (errorHandler.buildDepError "sydtest-webdriver"))
             (hsPkgs."sydtest-webdriver-yesod" or (errorHandler.buildDepError "sydtest-webdriver-yesod"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

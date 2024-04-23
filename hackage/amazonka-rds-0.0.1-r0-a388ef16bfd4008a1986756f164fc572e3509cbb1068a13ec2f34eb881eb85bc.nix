@@ -21,14 +21,14 @@
       synopsis = "Amazon Relational Database Service SDK.";
       description = "Amazon Relational Database Service (Amazon RDS) is a web service that\nmakes it easy to set up, operate, and scale a relational database in\nthe cloud. It provides cost-efficient and resizable capacity while\nmanaging time-consuming database administration tasks, freeing you up\nto focus on your applications and business.\n\n/See:/ <http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "schema guided serialization";
       description = "Schemas is a Haskell library for serializing and deserializing data in JSON.\nWith schemas one does not define parsing and encoding functions, instead one\ndefines a schema that explains the \"shape\" of the data, and the library provides\nthe encode and decode functions. Shape descriptions are statically typed.\n\nSchemas are related by a subtyping relation, which can be used to implement\na simple form of schema versioning. As long as one knows the source and target\nschemas, and the source is a subtype of the target, source values can be encoded\nin the target schema.\n\nThe library also supports @oneOf@ schemas, which extend the\nrange of versioning changes that can be supported automatically without\nresorting to explicit versions and conversion functions.\n\nA type class @HasSchema@ is provided for convenience, but none of the\ncore functions in the library rely on type classes.\n\nSchemas can be derived generically using @generics-sop@, although most of the\ntime it makes more sense to define the schemas explicitly to ensure well-behaved\nversioning.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

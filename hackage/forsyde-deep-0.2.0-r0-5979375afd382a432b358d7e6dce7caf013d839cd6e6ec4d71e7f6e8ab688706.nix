@@ -39,8 +39,8 @@
         (hsPkgs.buildPackages.type-level or (pkgs.buildPackages.type-level or (errorHandler.setupDepError "type-level")))
         (hsPkgs.buildPackages.HUnit or (pkgs.buildPackages.HUnit or (errorHandler.setupDepError "HUnit")))
         (hsPkgs.buildPackages.QuickCheck or (pkgs.buildPackages.QuickCheck or (errorHandler.setupDepError "QuickCheck")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

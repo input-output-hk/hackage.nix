@@ -21,7 +21,7 @@
       synopsis = "Library provides support for JSON. ";
       description = "This library provides support for JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."json2-types" or (errorHandler.buildDepError "json2-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

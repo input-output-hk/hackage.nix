@@ -21,7 +21,7 @@
       synopsis = "A Yampa replacement based on Dunai.";
       description = "BearRiver is an API compatible replacement of Yampa\nbased on Dunai.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dunai" or (errorHandler.buildDepError "dunai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

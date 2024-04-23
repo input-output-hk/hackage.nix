@@ -21,14 +21,14 @@
       synopsis = "Robert Penner's easing equations";
       description = "Robert Penner's easing equations transcribed to haskell and normalized";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Haskell binding to MPFR library";
       description = "Haskell binding to MPFR library. Tested with MPFR 2.3.1 and 2.3.2.\nSome simple examples of usage can be found in test/Demo.hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."mpfr" or (errorHandler.sysDepError "mpfr")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A flexible, fast, enumerator-based CSV parser library for Haskell.  ";
       description = "For more information and examples, check out the README at:\n<http://github.com/ozataman/csv-enumerator>.\nThe API is fairly well documented and I would encourage you to keep your\nhaddocks handy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

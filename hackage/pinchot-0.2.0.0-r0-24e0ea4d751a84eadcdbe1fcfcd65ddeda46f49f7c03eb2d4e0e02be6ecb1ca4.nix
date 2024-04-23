@@ -21,7 +21,7 @@
       synopsis = "Build parsers and ASTs for context-free grammars";
       description = "Pinchot provides a simple language that you use to write a Haskell\nprogram that describes a context-free grammar.  When run, this program\ncreates a value representing the grammar.  Using this value, you can\nautomatically generate data types corresponding to the grammar,\nas well as an Earley parser to parse strings in that grammar.\n\nFor more documentation, see the Haddocks for the main Pinchot module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,31 +30,31 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "print-postal-grammar" = {
-          depends = (pkgs.lib).optionals (flags.executables) [
+          depends = pkgs.lib.optionals (flags.executables) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
-            ];
+          ];
           buildable = if flags.executables then true else false;
-          };
+        };
         "postal-parser" = {
-          depends = (pkgs.lib).optionals (flags.executables) [
+          depends = pkgs.lib.optionals (flags.executables) [
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
-            ];
+          ];
           buildable = if flags.executables then true else false;
-          };
         };
       };
-    }
+    };
+  }

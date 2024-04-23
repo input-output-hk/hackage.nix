@@ -21,7 +21,7 @@
       synopsis = "Linear algebra for the numeric-prelude framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

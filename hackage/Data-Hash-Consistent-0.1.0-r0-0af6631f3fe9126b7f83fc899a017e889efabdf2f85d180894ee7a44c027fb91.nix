@@ -21,7 +21,7 @@
       synopsis = "Provide a simple consistent hashing mechanism";
       description = "Provide a simple consistent hashing mechanism";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."digest" or (errorHandler.buildDepError "digest"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

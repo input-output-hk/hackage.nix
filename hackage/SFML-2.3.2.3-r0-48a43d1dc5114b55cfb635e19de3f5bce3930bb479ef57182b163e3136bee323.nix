@@ -21,7 +21,7 @@
       synopsis = "SFML bindings";
       description = "Low level bindings for SFML 2.3.2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -32,7 +32,7 @@
             (pkgs."csfml-graphics" or (errorHandler.sysDepError "csfml-graphics"))
             (pkgs."csfml-network" or (errorHandler.sysDepError "csfml-network"))
             (pkgs."csfml-audio" or (errorHandler.sysDepError "csfml-audio"))
-            ]
+          ]
           else [
             (pkgs."csfml-window" or (errorHandler.sysDepError "csfml-window"))
             (pkgs."csfml-system" or (errorHandler.sysDepError "csfml-system"))
@@ -44,11 +44,11 @@
             (pkgs."sfml-graphics" or (errorHandler.sysDepError "sfml-graphics"))
             (pkgs."sfml-network" or (errorHandler.sysDepError "sfml-network"))
             (pkgs."sfml-audio" or (errorHandler.sysDepError "sfml-audio"))
-            ];
+          ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

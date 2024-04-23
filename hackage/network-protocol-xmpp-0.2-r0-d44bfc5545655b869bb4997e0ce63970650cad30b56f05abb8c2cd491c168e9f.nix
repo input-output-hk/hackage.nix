@@ -21,7 +21,7 @@
       synopsis = "Client <-> Server communication over XMPP";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

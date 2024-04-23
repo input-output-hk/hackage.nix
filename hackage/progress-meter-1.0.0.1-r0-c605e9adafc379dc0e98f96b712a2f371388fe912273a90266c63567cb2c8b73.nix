@@ -21,7 +21,7 @@
       synopsis = "Live diagnostics for concurrent activity";
       description = "This library can be used to display a progress bar or\nother live diagnostics for your application.  It supports partial\nupdates from multiple threads without interfering with each other,\nand it has the correct behaviour when printing diagnostics that are\nnot part of the progress bar and should just scroll by.\n\nThe @System.Progress@ module contains a tutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ] ++ (pkgs.lib).optionals (flags.devel) [
+        ] ++ pkgs.lib.optionals (flags.devel) [
           (hsPkgs."rapid" or (errorHandler.buildDepError "rapid"))
           (hsPkgs."rapid-term" or (errorHandler.buildDepError "rapid-term"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

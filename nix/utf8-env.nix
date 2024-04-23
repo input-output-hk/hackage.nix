@@ -6,8 +6,8 @@
         nix = import ../hackage/utf8-env-0.1-r0-0b9d9ae2676f7a93645993c452b83619504f26b338aa5f428525a665770ce7d3.nix;
         revNum = 0;
         sha256 = "0b9d9ae2676f7a93645993c452b83619504f26b338aa5f428525a665770ce7d3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

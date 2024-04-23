@@ -21,16 +21,16 @@
       synopsis = "Compare types of any kinds";
       description = "Please see the README on GitHub at <https://github.com/isovector/type-sets/tree/master/cmptype#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."magic-tyfams" or (errorHandler.buildDepError "magic-tyfams"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."magic-tyfams" or (errorHandler.buildDepError "magic-tyfams"))
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

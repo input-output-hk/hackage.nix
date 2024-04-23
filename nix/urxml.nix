@@ -6,8 +6,8 @@
         nix = import ../hackage/urxml-0.2.0.0-r0-1e907ba481adfe42ee03f2ab8494f7997a4e1a6d185903b211b86c5b5c30c3df.nix;
         revNum = 0;
         sha256 = "1e907ba481adfe42ee03f2ab8494f7997a4e1a6d185903b211b86c5b5c30c3df";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

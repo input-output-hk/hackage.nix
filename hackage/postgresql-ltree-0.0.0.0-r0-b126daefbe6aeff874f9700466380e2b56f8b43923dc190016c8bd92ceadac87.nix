@@ -21,7 +21,7 @@
       synopsis = "Types and functions for representing PostgreSQL's ltree";
       description = "Please see the README on GitHub at <https://github.com/simspace/postgresql-ltree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-ltree-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."postgresql-ltree" or (errorHandler.buildDepError "postgresql-ltree"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

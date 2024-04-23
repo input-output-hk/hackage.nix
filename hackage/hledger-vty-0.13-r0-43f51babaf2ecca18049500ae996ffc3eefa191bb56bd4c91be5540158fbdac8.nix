@@ -21,7 +21,7 @@
       synopsis = "A hledger add-on command providing a full-window console interface.";
       description = "A hledger add-on command providing a full-window console interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-vty" = {
@@ -31,9 +31,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

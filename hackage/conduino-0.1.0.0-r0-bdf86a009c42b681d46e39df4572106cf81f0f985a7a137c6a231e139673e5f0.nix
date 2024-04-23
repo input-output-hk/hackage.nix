@@ -21,15 +21,15 @@
       synopsis = "Lightweight composable continuation-based stream processors";
       description = "Please see the README on GitHub at <https://github.com/mstksg/conduino#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/accelerate-io-array-0.1.0.0-r0-fcccda925605d9ffc2bede1ede5b0b11a4c87ca257d74d59250e0674432981a9.nix;
         revNum = 0;
         sha256 = "fcccda925605d9ffc2bede1ede5b0b11a4c87ca257d74d59250e0674432981a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

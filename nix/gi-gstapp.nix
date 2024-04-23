@@ -6,8 +6,8 @@
         nix = import ../hackage/gi-gstapp-1.0.28-r0-233cbd2944e212f8edf86f975540c63069f824406e0e72621fba072740d21f02.nix;
         revNum = 0;
         sha256 = "233cbd2944e212f8edf86f975540c63069f824406e0e72621fba072740d21f02";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

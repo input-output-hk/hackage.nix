@@ -21,7 +21,7 @@
       synopsis = "Extra functions for trasa";
       description = "Boilerplate code for use with the trasa web framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."quantification" or (errorHandler.buildDepError "quantification"))
           (hsPkgs."trasa" or (errorHandler.buildDepError "trasa"))
           (hsPkgs."trasa-server" or (errorHandler.buildDepError "trasa-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

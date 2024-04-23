@@ -21,7 +21,7 @@
       synopsis = "Opinionated bootstrapping for Haskell web services.";
       description = "Opinionated bootstrapping for Haskell web services.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."monad-persist" or (errorHandler.buildDepError "monad-persist"))
           (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genesis-test-test-suite" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."monad-persist" or (errorHandler.buildDepError "monad-persist"))
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

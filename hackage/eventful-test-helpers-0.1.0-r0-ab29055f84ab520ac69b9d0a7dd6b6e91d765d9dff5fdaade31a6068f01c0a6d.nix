@@ -21,7 +21,7 @@
       synopsis = "Common module used for eventful tests";
       description = "Common module used for eventful tests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

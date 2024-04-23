@@ -21,7 +21,7 @@
       synopsis = "Size-parameterized vector types and functions.";
       description = "Size-parameterized vector types and functions using a data-type promotion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -33,8 +33,8 @@
           (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.7") (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.7") (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

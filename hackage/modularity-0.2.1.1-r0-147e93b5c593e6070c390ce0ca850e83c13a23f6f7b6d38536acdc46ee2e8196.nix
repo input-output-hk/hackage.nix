@@ -21,7 +21,7 @@
       synopsis = "Find the modularity of a network.";
       description = "Report Q, the Newman-Girvan modularity of an adjacency matrix.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."sparse-linear-algebra" or (errorHandler.buildDepError "sparse-linear-algebra"))
           (hsPkgs."spectral-clustering" or (errorHandler.buildDepError "spectral-clustering"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

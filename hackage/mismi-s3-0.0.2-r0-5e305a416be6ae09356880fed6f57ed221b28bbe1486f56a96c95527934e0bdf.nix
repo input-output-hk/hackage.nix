@@ -21,7 +21,7 @@
       synopsis = "AWS Library";
       description = "mismi-s3 is a library that provides a set of common and useful\noperations on top of AWS S3.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,9 +66,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -99,9 +99,9 @@
             (hsPkgs."transformers-bifunctors" or (errorHandler.buildDepError "transformers-bifunctors"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-io" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,9 +126,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-reliability" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -147,10 +147,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -173,9 +173,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

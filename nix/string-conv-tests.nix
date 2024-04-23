@@ -6,8 +6,8 @@
         nix = import ../hackage/string-conv-tests-0.1.1-r0-7cb200e941f6b9ff61b10ae94c7e861a728f1c20be8fed84aa239d5937f86d69.nix;
         revNum = 0;
         sha256 = "7cb200e941f6b9ff61b10ae94c7e861a728f1c20be8fed84aa239d5937f86d69";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

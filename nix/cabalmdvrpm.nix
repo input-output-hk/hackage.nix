@@ -6,8 +6,8 @@
         nix = import ../hackage/cabalmdvrpm-0.0.1-r0-512361ce4bc8b79ffc36b4b80638128b75e804efd143295c08dccaf476c363d4.nix;
         revNum = 0;
         sha256 = "512361ce4bc8b79ffc36b4b80638128b75e804efd143295c08dccaf476c363d4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

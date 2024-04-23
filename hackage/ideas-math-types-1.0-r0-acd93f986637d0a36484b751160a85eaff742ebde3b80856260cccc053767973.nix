@@ -21,7 +21,7 @@
       synopsis = "Common types for mathematical domain reasoners";
       description = "This package provides common datatypes and utility functions for\nmathematical domain reasoners that are based on the 'ideas' software\npackage. The package is currently used by our logic tutors (dnf/cnf\nnormal forms, equational proofs, axiomatic proofs, inductive proofs),\nthe statistics tutor that provides feedback on the structure of\nhypothesis tests, and the analyzers of the Advise-Me project. Contact\nthe package maintainers for further information about the package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

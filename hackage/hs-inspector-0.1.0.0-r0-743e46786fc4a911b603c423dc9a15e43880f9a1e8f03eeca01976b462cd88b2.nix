@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Simple package for detecting usage of certain Haskell features on a module source code";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hs-inspector" or (errorHandler.buildDepError "hs-inspector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

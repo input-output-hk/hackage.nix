@@ -21,20 +21,20 @@
       synopsis = "A minimal testing library";
       description = "dwergaz is a minimal testing library with no external dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dwergaz" or (errorHandler.buildDepError "dwergaz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

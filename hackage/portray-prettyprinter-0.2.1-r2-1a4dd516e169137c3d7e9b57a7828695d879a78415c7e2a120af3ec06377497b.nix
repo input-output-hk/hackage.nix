@@ -21,7 +21,7 @@
       synopsis = "Portray backend for prettyprinter";
       description = "This provides a\n<https://hackage.haskell.org/package/prettyprinter prettyprinter> backend for\n<https://hackage.haskell.org/package/portray portray> along with derivable\n'Pretty' instances for types with 'Portray' instances.\n\nThis backend has largely superseded the original\n<https://hackage.haskell.org/package/portray-pretty portray-pretty>.  Because\n@prettyprinter@ gives more flexibility to documents at the cost of requiring\nmore behavior to be specified explicitly, some formats are nicer with this\nbackend, configurable syntax highlighting is supported, and unicode escaping\nis configurable.  However, as this backend is still newer, there are\npotentially more unnoticed formatting bugs.  Please do file bugs on the\nGitHub issue tracker if you find anything that seems obviously wrong!\n\nTry using 'pp' as the print function in GHCi:\n@:set -interactive-print=Data.Portray.Prettyprinter.pp@!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PortrayPrettyprinter-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Shannon-fano compression algorithm in Haskell";
       description = "Shannon-fano compression algorithm in Haskell program and API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shannon-fano" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."shannon-fano" or (errorHandler.buildDepError "shannon-fano"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shannon-fano" or (errorHandler.buildDepError "shannon-fano"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

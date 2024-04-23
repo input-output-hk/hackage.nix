@@ -21,7 +21,7 @@
       synopsis = "Approximate a song from other pieces of sound";
       description = "This program allows you to decompose a set of audio files into chunks\nand use these chunks for building a new audio file\nthat matches another given audio file.\nThis is very similar to constructing an image\nfrom small images that are layed out in a rectangular grid.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sound-collage" = {
@@ -42,9 +42,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "WebSockets support for pipes.";
       description = "Use WebSockets with the @pipes@ ecosystem.\n\nThis package is organized using the following namespaces:\n\nSee the @changelog@ file in the source distribution to learn about any\nimportant changes between version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network-simple-ws" or (errorHandler.buildDepError "network-simple-ws"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

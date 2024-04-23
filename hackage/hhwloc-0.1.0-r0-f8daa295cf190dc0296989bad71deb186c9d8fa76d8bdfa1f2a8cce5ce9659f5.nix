@@ -21,11 +21,11 @@
       synopsis = "Bindings to https://www.open-mpi.org/projects/hwloc";
       description = "Please see the README on GitHub at <https://github.com/dtaskoff/hhwloc#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

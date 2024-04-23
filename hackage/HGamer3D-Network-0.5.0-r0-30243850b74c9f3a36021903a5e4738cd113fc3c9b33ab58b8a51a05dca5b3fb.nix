@@ -21,7 +21,7 @@
       synopsis = "Networking Functionality for HGamer3D";
       description = "HGamer3D is a game engine for developing 3D games in the programming\nlanguage Haskell. This package provides the Networking functionality,\nbased on the package HGamer3D-Enet-Binding. HGamer3D-Network is\navailable on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
           (hsPkgs."HGamer3D-Enet-Binding" or (errorHandler.buildDepError "HGamer3D-Enet-Binding"))
           (hsPkgs."HGamer3D-Common" or (errorHandler.buildDepError "HGamer3D-Common"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

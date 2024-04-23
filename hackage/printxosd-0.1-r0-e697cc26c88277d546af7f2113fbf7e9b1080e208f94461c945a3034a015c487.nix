@@ -21,16 +21,16 @@
       synopsis = "Simple tool to display some text on an on-screen display";
       description = "Simple tool to display some text on an on-screen display\n\n$ printxosd \"this is some text\"\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "printxosd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xosd" or (errorHandler.buildDepError "xosd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

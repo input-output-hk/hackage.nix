@@ -21,15 +21,15 @@
       synopsis = "An implementation of algorithms for matchings in graphs";
       description = "This package provides algorithms on matchings in graphs; in particular, determining whether a given set of edges is a (maximal/maximum) matching and finding maximal/maximum matchings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

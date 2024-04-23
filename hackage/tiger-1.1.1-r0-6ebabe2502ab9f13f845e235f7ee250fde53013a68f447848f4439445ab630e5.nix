@@ -21,7 +21,7 @@
       synopsis = "Tiger Compiler of Universiteit Utrecht";
       description = "Tiger compiler";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "tiger" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

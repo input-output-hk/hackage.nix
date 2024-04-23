@@ -21,7 +21,7 @@
       synopsis = "A generalisation of the Category->Functor->Applicative->Monad hierarchy and more";
       description = "This package generalises classes like Category, Functor etc to allow them to be defined on more data types, for example, tuples and sets, whilst still attempting to maintain backward compatability.\n\nSee the module \"Freelude\" for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."indextype" or (errorHandler.buildDepError "indextype"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."indextype" or (errorHandler.buildDepError "indextype"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

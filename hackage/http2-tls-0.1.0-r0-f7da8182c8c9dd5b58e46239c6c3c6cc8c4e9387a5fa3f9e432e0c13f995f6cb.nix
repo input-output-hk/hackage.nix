@@ -21,7 +21,7 @@
       synopsis = "Library for HTTP/2 over TLS";
       description = "Using the HTTP/2 library over TLS";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time-manager" or (errorHandler.buildDepError "time-manager"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

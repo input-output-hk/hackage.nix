@@ -6,8 +6,8 @@
         nix = import ../hackage/syfco-1.1.0.0-r0-5ebe036b742fd52633086792e19cbeef1016767dea653bc5f3b44ba43685399f.nix;
         revNum = 0;
         sha256 = "5ebe036b742fd52633086792e19cbeef1016767dea653bc5f3b44ba43685399f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

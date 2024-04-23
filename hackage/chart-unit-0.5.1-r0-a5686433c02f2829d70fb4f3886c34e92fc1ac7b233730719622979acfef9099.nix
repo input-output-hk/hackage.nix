@@ -21,7 +21,7 @@
       synopsis = "Native haskell charts.";
       description = "\n<<https://tonyday567.github.io/other/mainExample.svg>>\n\nchart-unit is a native haskell charting library designed:\n\n- as a chart DSL and algebra\n\n- towards a minimalist look and feel\n\n- to provide a set of default values that are robust across differet data and physical chart scales\n\n- around provision of a small but core set of chart types.\n\nSee <https://tonyday567.github.io/chart-unit/index.html chart-unit> for a chart gallery.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."numhask-range" or (errorHandler.buildDepError "numhask-range"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chart-source-examples" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."diagrams-rasterific" or (errorHandler.buildDepError "diagrams-rasterific"))
             (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

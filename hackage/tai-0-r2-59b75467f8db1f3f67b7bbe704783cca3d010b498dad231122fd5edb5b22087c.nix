@@ -21,7 +21,7 @@
       synopsis = "Support library to enable TAI usage on systems with time kept in UTC.";
       description = "This library manages leap second data to allow using TAI time inspite of the system clock being kept in UTC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

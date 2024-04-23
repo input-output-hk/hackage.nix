@@ -21,7 +21,7 @@
       synopsis = "Convert from other blog engines to Hakyll.";
       description = "WordPress and Blogger only let one export posts in a limited number of formats, none of which are supported by Hakyll. @hakyll-convert@ is created to bridge this gap, providing a way to turn other platform's datadumps into a set of files Hakyll understands.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-convert" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."hakyll-convert" or (errorHandler.buildDepError "hakyll-convert"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,9 +85,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Painless 3D graphics, no affiliation with gloss";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
           (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "not-gloss-example" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."not-gloss" or (errorHandler.buildDepError "not-gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

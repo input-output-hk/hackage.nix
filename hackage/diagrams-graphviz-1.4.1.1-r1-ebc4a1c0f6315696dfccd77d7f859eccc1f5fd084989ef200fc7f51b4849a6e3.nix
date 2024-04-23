@@ -21,7 +21,7 @@
       synopsis = "Graph layout and drawing with GraphViz and diagrams";
       description = "Use GraphViz and diagrams together, with each doing what\nit does best: GraphViz for laying out graphs, and diagrams\nfor drawing them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "Annotation Framework";
       description = "A framework introducing annotations by preprocessing. For using it, it is enough to derive 'QuickAnnotate.Annotatable' and then use the preprocessor (qapp). The package contains an example demonstrating this procedure. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "qapp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

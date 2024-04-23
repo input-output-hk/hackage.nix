@@ -21,7 +21,7 @@
       synopsis = "\"Fixed Prelude\" - Mostly total and safe, provides Text and Monad transformers";
       description = "Modern Prelude which provides safe alternatives for most of the partial functions. Text is preferred over String. Container types and Monad transformers are provided. Most important - this Prelude avoids fanciness. This means it just reexports from base and commonly used libraries and doesn\\'t invent its own stuff. Everything is in one file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."writer-cps-mtl" or (errorHandler.buildDepError "writer-cps-mtl"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "compat" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."writer-cps-mtl" or (errorHandler.buildDepError "writer-cps-mtl"))
             (hsPkgs."intro" or (errorHandler.buildDepError "intro"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

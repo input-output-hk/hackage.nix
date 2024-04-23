@@ -21,7 +21,7 @@
       synopsis = "Embedded Turtle language compiler in Haskell, with Epic output";
       description = "This language is a demonstration of the Epic compiler API.\nIt is a dynamically typed language with higher order\nfunctions and system interaction (specifically graphics).\nRequires SDL and SDL_gfx libraries, and their C headers.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "atuin" = {
@@ -32,9 +32,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."epic" or (errorHandler.buildDepError "epic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

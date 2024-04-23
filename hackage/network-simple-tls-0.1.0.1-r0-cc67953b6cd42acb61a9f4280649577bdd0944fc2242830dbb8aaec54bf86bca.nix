@@ -21,7 +21,7 @@
       synopsis = "Simple interface to TLS secured network sockets.";
       description = "Simple interface to TLS secured network sockets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "network-simple-tls-example-https-client" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "network-simple-tls-example-echo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

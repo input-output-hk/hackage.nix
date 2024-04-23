@@ -21,7 +21,7 @@
       synopsis = "CSS Minifier";
       description = "A CSS minifier which not only aims at reducing the amount of bytes of the\noutput, but also at improving gzip compression. It may be used as a library,\nor a stand-alone executable. For the library, refer to the Hasmin module\ndocumentation. For the program: the output is the minified CSS file, but\nhasmin allows also its compression into gzip using Google's Zopfli library.\n\nTo use it: ./hasmin input.css > output.css\n\nBy default, most minification techniques are enabled. For a list of\navailable flags, do: ./hasmin --help";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."numbers" or (errorHandler.buildDepError "numbers"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasmin" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -62,19 +62,19 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tiny JSON-RPC client for Haskell Web3 library.";
       description = "Client library for Third Generation of Web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

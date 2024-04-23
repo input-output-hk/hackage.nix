@@ -6,8 +6,8 @@
         nix = import ../hackage/package-vt-0.1.3.3-r0-68e99144cdac9b2d2c19431282cda9f91524282ed158e7746c39a60f0bb95133.nix;
         revNum = 0;
         sha256 = "68e99144cdac9b2d2c19431282cda9f91524282ed158e7746c39a60f0bb95133";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

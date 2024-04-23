@@ -21,7 +21,7 @@
       synopsis = "Prelude for applications";
       description = "* Re-exports subsections of common and/or practical libraries\n* Fixing Haskell's historical baggage is out of scope";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

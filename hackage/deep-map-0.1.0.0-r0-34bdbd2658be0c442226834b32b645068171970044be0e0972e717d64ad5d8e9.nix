@@ -21,16 +21,16 @@
       synopsis = "Deeply-nested, multiple key type maps.";
       description = "Please see the README at https://github.com/cigsender/deep-map";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-readme" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

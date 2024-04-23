@@ -21,7 +21,7 @@
       synopsis = "Helps to create experimental music. Uses SoX inside.";
       description = "Uses SoX fade (in a special 2D way) and frequency modulation. Provides a special representation for the composition.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mmsyn7l" or (errorHandler.buildDepError "mmsyn7l"))
           (hsPkgs."dobutokO2" or (errorHandler.buildDepError "dobutokO2"))
           (hsPkgs."vector-doublezip" or (errorHandler.buildDepError "vector-doublezip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A package for building Facebook applications using Happstack";
       description = "A package for building Facebook applications using Happstack";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -52,23 +52,23 @@
           (hsPkgs."web-routes-mtl" or (errorHandler.buildDepError "web-routes-mtl"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optionals (flags.base4) [
+        ] ++ pkgs.lib.optionals (flags.base4) [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ]) ++ (pkgs.lib).optionals (flags.formlets) [
+        ]) ++ pkgs.lib.optionals (flags.formlets) [
           (hsPkgs."happstack-extra" or (errorHandler.buildDepError "happstack-extra"))
           (hsPkgs."formlets" or (errorHandler.buildDepError "formlets"))
           (hsPkgs."formlets-hsp" or (errorHandler.buildDepError "formlets-hsp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
           build-tools = [
             (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

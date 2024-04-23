@@ -6,8 +6,8 @@
         nix = import ../hackage/shake-persist-0.1.0.0-r0-2aada4679a14638dc7fb952d6d438628026f3726cb45243a40dd274dc17ff9c3.nix;
         revNum = 0;
         sha256 = "2aada4679a14638dc7fb952d6d438628026f3726cb45243a40dd274dc17ff9c3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

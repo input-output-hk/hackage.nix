@@ -21,14 +21,14 @@
       synopsis = "A library of constructive algebra.";
       description = "A library of algebra focusing mainly on commutative ring theory from a\nconstructive point of view.\n\nClassical structures are implemented without Noetherian assumptions.\nThis means that it is not assumed that all ideals are finitely\ngenerated. For example, instead of principal ideal domains one gets\nBezout domains which are integral domains in which all finitely\ngenerated ideals are principal (and not necessarily that all ideals are\nprincipal).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

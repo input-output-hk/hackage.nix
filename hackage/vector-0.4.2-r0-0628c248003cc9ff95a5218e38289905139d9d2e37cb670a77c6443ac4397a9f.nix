@@ -21,15 +21,15 @@
       synopsis = "Efficient Arrays";
       description = "\nAn efficient implementation of Int-indexed arrays with a powerful loop\nfusion framework.\n\nIt is structured as follows:\n\n[@Data.Vector@] boxed vectors of arbitrary types\n\n[@Data.Vector.Primitive@] unboxed vectors of primitive types as\ndefined by the @primitive@ package\n\n[@Data.Vector.Storable@] unboxed vectors of 'Storable' types\n\n[@Data.Vector.Generic@] generic interface to the vector types\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Some add-on instances for the Alloy library";
       description = "Two modules supplying proxy instances that allow you to define pure and/or effectful\ninstances in terms of their more general\neffectful/route-including equivalents in Alloy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."alloy" or (errorHandler.buildDepError "alloy"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

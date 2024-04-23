@@ -21,11 +21,11 @@
       synopsis = "Render Instrument Chords";
       description = "Library which Pretty Prints Guitar Chords";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

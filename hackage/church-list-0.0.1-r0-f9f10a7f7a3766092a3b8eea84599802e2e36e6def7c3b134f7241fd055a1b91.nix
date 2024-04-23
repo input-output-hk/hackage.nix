@@ -21,21 +21,21 @@
       synopsis = "Lazy lists with O(1) concatenation that, unlike dlists, allow inspection";
       description = "Replicates the @Data.List@ interface for lists built around the type @forall\nr. Monoid r => (a -> r) -> r@.  This allows for O(1) concatenation and snoc,\njust as difference lists do, but without requiring that every operation\n(such as map) render the list.\n\nAs motivation: Although difference lists are great for use with Writer, they\nare horrible for use with State, because getting the list and querying an\nelement will result in producing a structure which is thrown away.  With\nmlists, you can both append to, and inspect, the list in progress without\nany wasted work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."church-list" or (errorHandler.buildDepError "church-list"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

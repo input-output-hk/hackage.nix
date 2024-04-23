@@ -21,7 +21,7 @@
       synopsis = "Generic programming library with representation types";
       description = "Generic programming library providing structural\npolymorphism and other features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."type-equality" or (errorHandler.buildDepError "type-equality"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

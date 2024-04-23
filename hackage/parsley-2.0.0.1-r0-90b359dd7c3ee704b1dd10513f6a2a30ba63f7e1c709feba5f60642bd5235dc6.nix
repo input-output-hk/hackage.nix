@@ -21,7 +21,7 @@
       synopsis = "A fast parser combinator library backed by Typed Template Haskell";
       description = "Parsley is a staged selective parser combinator library, which means\nit does not support monadic operations, and relies on Typed Template\nHaskell to generate very fast code. Currently there are no error messages\nbut there are plans for this in the works.\n\nBased on the work found in [/Staged Selective Parser Combinators/\n(Willis et al. 2020)](https://dl.acm.org/doi/10.1145/3409002)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."parsley-core" or (errorHandler.buildDepError "parsley-core"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "parsley-test" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."th-test-utils" or (errorHandler.buildDepError "th-test-utils"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (pkgs.lib).optional (false && (compiler.isGhc && (compiler.version).lt "9")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
+          ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "9")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "regression-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,12 +62,12 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."th-test-utils" or (errorHandler.buildDepError "th-test-utils"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (pkgs.lib).optional (false && (compiler.isGhc && (compiler.version).lt "9")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
+          ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "9")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for memoizing functions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."lrucache" or (errorHandler.buildDepError "lrucache"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."memoization-utils" or (errorHandler.buildDepError "memoization-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

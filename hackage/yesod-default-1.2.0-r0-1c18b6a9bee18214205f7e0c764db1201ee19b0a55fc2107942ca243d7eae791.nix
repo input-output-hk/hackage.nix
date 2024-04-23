@@ -21,14 +21,14 @@
       synopsis = "Default config and main functions for your yesod application (deprecated)";
       description = "Since version 1.2 of Yesod, this functionality is provided by the yesod package. This package is no longer needed.\nexecution of your yesod application";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

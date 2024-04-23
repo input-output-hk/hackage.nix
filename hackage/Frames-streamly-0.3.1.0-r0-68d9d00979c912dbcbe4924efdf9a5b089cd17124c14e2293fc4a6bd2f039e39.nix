@@ -21,7 +21,7 @@
       synopsis = "A streamly layer for Frames I/O";
       description = "More information is available in the <https://github.com/adamConnerSax/Frames-streamly/blob/master/Readme.md readme>.'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,18 +50,18 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ] ++ (if flags.streamly9
+        ] ++ (if flags.streamly9
           then [
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."streamly-core" or (errorHandler.buildDepError "streamly-core"))
             (hsPkgs."streamly-bytestring" or (errorHandler.buildDepError "streamly-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."streamly-bytestring" or (errorHandler.buildDepError "streamly-bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "Demo" = {
           depends = [
@@ -78,10 +78,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "FramesStreamlySpec" = {
           depends = [
@@ -96,10 +96,10 @@
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-frames-streamly" = {
           depends = [
@@ -114,9 +114,9 @@
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ] ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
+          ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

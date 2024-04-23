@@ -21,7 +21,7 @@
       synopsis = "A class for types with a default value";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."data-default-instances-containers" or (errorHandler.buildDepError "data-default-instances-containers"))
           (hsPkgs."data-default-instances-dlist" or (errorHandler.buildDepError "data-default-instances-dlist"))
           (hsPkgs."data-default-instances-old-locale" or (errorHandler.buildDepError "data-default-instances-old-locale"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

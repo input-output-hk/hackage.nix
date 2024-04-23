@@ -21,11 +21,11 @@
       synopsis = "Differential solving with lazy splines";
       description = "See the source of Numeric.LazySplines.Examples for usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

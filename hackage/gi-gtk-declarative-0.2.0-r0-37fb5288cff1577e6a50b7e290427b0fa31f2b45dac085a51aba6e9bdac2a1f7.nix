@@ -21,7 +21,7 @@
       synopsis = "Declarative GTK+ programming in Haskell";
       description = "A declarative programming model for GTK+ user\ninterfaces, implementing support for various widgets\nand generalized patching. This library aims to extend the\ngi-gtk library as transparently as possible, and to be\na reusable library for multiple application architectures\nand styles.\nSee [the project README](https://github.com/owickstrom/gi-gtk-declarative#readme)\nfor more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "gi-gtk-declarative-benchmark" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."gi-gtk-declarative" or (errorHandler.buildDepError "gi-gtk-declarative"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

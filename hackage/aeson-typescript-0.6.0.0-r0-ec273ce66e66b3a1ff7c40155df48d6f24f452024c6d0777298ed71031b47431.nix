@@ -21,7 +21,7 @@
       synopsis = "Generate TypeScript definition files from your ADTs";
       description = "Please see the README on Github at <https://github.com/codedownio/aeson-typescript#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-typescript-tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

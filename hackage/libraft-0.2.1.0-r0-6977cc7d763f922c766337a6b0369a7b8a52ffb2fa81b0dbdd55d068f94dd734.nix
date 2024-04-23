@@ -21,7 +21,7 @@
       synopsis = "Raft consensus algorithm";
       description = "Please see the README on GitHub at <https://github.com/adjoint-io/raft#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "raft-example" = {
           depends = [
@@ -89,10 +89,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "raft-test" = {
           depends = [
@@ -137,9 +137,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

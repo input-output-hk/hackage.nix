@@ -21,7 +21,7 @@
       synopsis = "Polkadot support for Haskell Web3 library.";
       description = "Client library for Third Generation of Web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web3-bignum" or (errorHandler.buildDepError "web3-bignum"))
           (hsPkgs."web3-crypto" or (errorHandler.buildDepError "web3-crypto"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web3-bignum" or (errorHandler.buildDepError "web3-bignum"))
             (hsPkgs."web3-crypto" or (errorHandler.buildDepError "web3-crypto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

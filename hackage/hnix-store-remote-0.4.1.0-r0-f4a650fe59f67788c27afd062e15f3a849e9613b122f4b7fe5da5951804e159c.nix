@@ -21,7 +21,7 @@
       synopsis = "Remote hnix store";
       description = "Implementation of the nix store using the daemon protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hnix-store-core" or (errorHandler.buildDepError "hnix-store-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hnix-store-remote-tests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.io-testsuite then false else true;
-          };
         };
       };
-    }
+    };
+  }

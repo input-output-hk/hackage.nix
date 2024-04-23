@@ -21,7 +21,7 @@
       synopsis = "A library to access the Dropbox HTTP API.";
       description = "The Dropbox HTTP API provides ways for applications to access\nusers' Dropbox accounts programmatically.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
           (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

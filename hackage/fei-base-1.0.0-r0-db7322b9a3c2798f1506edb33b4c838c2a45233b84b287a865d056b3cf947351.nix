@@ -21,7 +21,7 @@
       synopsis = "FFI to MXNet";
       description = "This package provides a FFI wrap of MXNet, including c-apis and symbol/array/executor operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,13 +35,13 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."store" or (errorHandler.buildDepError "store"))
-          ];
+        ];
         libs = [ (pkgs."mxnet" or (errorHandler.sysDepError "mxnet")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mxnet-op-gen" = {
           depends = [
@@ -53,13 +53,13 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           libs = [ (pkgs."mxnet" or (errorHandler.sysDepError "mxnet")) ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Induction over natural numbers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

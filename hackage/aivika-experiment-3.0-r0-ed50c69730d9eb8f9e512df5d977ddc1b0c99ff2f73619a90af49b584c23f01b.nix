@@ -21,7 +21,7 @@
       synopsis = "Simulation experiments for the Aivika library";
       description = "This package allows defining simulation experiments for the Aivika\npackage. Such experiments define in declarative manner what should be\nsimulated and in which view the simulation results should be\ngenerated. It can be charts, tables and so on.\n\nThe library is extensible and you can add new views for the results.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An interface for describing and executing terminal applications";
       description = "A quick and modular way to construct terminal interfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "qt-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quickterm" or (errorHandler.buildDepError "quickterm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

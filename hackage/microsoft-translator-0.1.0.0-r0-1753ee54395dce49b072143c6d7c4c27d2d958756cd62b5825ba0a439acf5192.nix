@@ -21,7 +21,7 @@
       synopsis = "Bindings to the Microsoft Translator API";
       description = "Bindings to the Microsoft Translator API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

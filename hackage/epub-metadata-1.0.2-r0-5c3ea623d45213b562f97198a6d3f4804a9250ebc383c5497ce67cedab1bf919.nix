@@ -21,7 +21,7 @@
       synopsis = "Library and utility for parsing and manipulating\nePub metadata";
       description = "Library for parsing and manipulating ePub OPF\nmetadata. An attempt has been made here to very\nthoroughly implement the metadata portion of the OPF\nPackage Document specification. Also included is a\ncommand-line utility to dump ePub metadata to stdout\nin a human-readable form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "epub-meta" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Term manipulation library for the tamarin prover.";
       description = "This is an internal library of the @tamarin@ prover for\nsecurity protocol verification\n(<hackage.haskell.org/package/tamarin-prover>).\n\nThis library provides term manipulation infrastructure\n(matching, unification, narrowing, finite variants) for\nthe @tamarin@ prover. It uses maude\n(<http://maude.cs.uiuc.edu/>) as a backend for\nnormalization, equational matching, and unification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
           (hsPkgs."tamarin-prover-utils" or (errorHandler.buildDepError "tamarin-prover-utils"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Google HTML5 Slide generator";
       description = "Google HTML5 Slide <https://code.google.com/p/html5slides/> generator\nfor Pandoc documents";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "google-html5-slide" = {
@@ -36,9 +36,9 @@
             (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
             (hsPkgs."shakespeare-css" or (errorHandler.buildDepError "shakespeare-css"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

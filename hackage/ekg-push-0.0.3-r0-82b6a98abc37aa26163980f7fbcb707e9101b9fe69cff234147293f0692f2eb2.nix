@@ -21,7 +21,7 @@
       synopsis = "Small framework to push metric deltas to a broadcast channel using the ekg-core library.";
       description = "This library lets you push metric samples to a broadcast channel. Consumers can then persist the samples as they wish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "basic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
             (hsPkgs."ekg-push" or (errorHandler.buildDepError "ekg-push"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

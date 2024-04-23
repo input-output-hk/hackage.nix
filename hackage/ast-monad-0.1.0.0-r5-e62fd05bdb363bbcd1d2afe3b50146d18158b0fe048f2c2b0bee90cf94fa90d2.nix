@@ -21,20 +21,20 @@
       synopsis = "A library for constructing AST by using do-notation";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "ast-monad-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ast-monad" or (errorHandler.buildDepError "ast-monad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

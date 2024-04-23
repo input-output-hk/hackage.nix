@@ -21,7 +21,7 @@
       synopsis = "Wai Middleware for Consul";
       description = "Proxies data to/from Consul. Watches for updates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-conduit" or (errorHandler.buildDepError "wai-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-middleware-consul-example" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-consul" or (errorHandler.buildDepError "wai-middleware-consul"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

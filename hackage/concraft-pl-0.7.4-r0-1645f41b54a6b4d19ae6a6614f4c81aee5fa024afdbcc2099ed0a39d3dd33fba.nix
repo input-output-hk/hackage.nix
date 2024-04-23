@@ -21,7 +21,7 @@
       synopsis = "Morphological tagger for Polish";
       description = "A morphological tagger for Polish based on the concraft library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,16 +40,16 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."lazy-io" or (errorHandler.buildDepError "lazy-io"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "concraft-pl" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

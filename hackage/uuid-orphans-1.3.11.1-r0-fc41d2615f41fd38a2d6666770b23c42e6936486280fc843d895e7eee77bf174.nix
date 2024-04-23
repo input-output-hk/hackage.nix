@@ -21,7 +21,7 @@
       synopsis = "Orphan instances for the UUID datatype";
       description = "Orphan instances for the UUID datatype.  Currently , instances\nfor SafeCopy and PathInfo are provided.  The package version number\nis inherited from the current version of uuid.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

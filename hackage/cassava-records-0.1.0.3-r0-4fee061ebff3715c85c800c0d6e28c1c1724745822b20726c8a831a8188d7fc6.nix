@@ -21,7 +21,7 @@
       synopsis = "Auto-generation of records data type.";
       description = "cassava-records library helps in auto-creating record data types using Template Haskell by inferring types from the columns of a csv or compatible input file. The record and type classes instances generated can be seamlessly used with cassava(the haskell csv reader library) to load the data into these record types without dealing with any other level of abstraction.\nPlease see README on Github at <https://github.com/gdevanla/cassava-records#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cassava-records-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Quasi-quoters for numbers of different bases";
       description = "Quasi-quoters for numbers of different bases";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "internal-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
             (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

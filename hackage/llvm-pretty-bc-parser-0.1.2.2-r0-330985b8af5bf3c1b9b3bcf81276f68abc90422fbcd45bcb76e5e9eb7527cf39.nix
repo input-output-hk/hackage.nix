@@ -21,7 +21,7 @@
       synopsis = "LLVM bitcode parsing library";
       description = "A parser for the LLVM bitcode file format, yielding a Module from the\nllvm-pretty package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "llvm-disasm" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (errorHandler.buildDepError "llvm-pretty-bc-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "disasm-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (errorHandler.buildDepError "llvm-pretty-bc-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

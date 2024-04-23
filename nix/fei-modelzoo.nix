@@ -6,8 +6,8 @@
         nix = import ../hackage/fei-modelzoo-1.0.0-r0-12ad97fa690a9dbd33d08e35f0eeff3f09403cd82a6ded06990bef957aa05e8d.nix;
         revNum = 0;
         sha256 = "12ad97fa690a9dbd33d08e35f0eeff3f09403cd82a6ded06990bef957aa05e8d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Packet Generation";
       description = "Generate pcaps from a simple packet description language";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rws" = {
@@ -30,10 +30,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-qt" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

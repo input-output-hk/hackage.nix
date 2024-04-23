@@ -21,7 +21,7 @@
       synopsis = "Small web framework using Warp and WAI";
       description = "A small Haskell web framework using Warp and WAI that tries to get\nout of your way and let you do what you want, but also providing\nmore advanced features like rate limiting and flood protection.\n\n[WAI] <http://hackage.haskell.org/package/wai>\n\n[Warp] <http://hackage.haskell.org/package/warp>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

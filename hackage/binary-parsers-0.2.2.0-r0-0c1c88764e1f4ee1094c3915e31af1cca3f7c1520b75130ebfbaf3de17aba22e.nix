@@ -21,7 +21,7 @@
       synopsis = "Extends binary with parsec/attoparsec style parsing combinators.";
       description = "Extends binary with parsec/attoparsec style parsing combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,13 +55,13 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."scanner" or (errorHandler.buildDepError "scanner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

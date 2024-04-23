@@ -21,7 +21,7 @@
       synopsis = "Process 00-index.tar.gz from Hackage";
       description = "Currently it only contains a program\nfor fetching contributions of an author to Hackage\nand format it as a LaTeX table.\n\n> hackage-find-contribution thielemann";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackage-find-contribution" = {
@@ -30,9 +30,9 @@
             (hsPkgs."hackage-db" or (errorHandler.buildDepError "hackage-db"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

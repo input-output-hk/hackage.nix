@@ -21,7 +21,7 @@
       synopsis = "Synchronize actions to a time pulse";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

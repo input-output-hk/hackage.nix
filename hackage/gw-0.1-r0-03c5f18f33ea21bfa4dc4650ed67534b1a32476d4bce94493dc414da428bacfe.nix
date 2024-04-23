@@ -21,16 +21,16 @@
       synopsis = "ghcWithPackages cmdline util";
       description = "ghcWithPackages cmdline util. supports:\n\n* multiple ghc versions\n\n* pure/impure nix-shell\n\n* entering shell with multiple packages available";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gw" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

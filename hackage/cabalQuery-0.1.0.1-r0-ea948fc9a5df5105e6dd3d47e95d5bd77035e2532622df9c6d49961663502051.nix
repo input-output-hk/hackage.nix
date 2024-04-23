@@ -21,16 +21,16 @@
       synopsis = "A simple tool to query cabal files.";
       description = "Command line access to the cabal package description\nfiles.\n\ncabalQuery allows you to query one or more .cabal files\nfor fields that may be useful in other contexts, such\nas a build system, where you may need the version number,\nlincense, authors, copyright, etc.. in a programatic way,\nbut without access to the Cabal libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabalQuery" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

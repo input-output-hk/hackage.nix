@@ -21,15 +21,15 @@
       synopsis = "Higher-order functions with their function arguments at the end,\nfor channeling the full power of BlockArguments and LambdaCase .";
       description = "Higher-order functions with their function arguments at the end,\nfor channeling the full power of BlockArguments and LambdaCase .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

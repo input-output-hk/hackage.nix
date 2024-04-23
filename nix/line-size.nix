@@ -6,8 +6,8 @@
         nix = import ../hackage/line-size-0.1.0.0-r0-8a8c4d4393ef94a9b5358a3030e9ec5bda707ba7958d30e08fb0c10bce4c2303.nix;
         revNum = 0;
         sha256 = "8a8c4d4393ef94a9b5358a3030e9ec5bda707ba7958d30e08fb0c10bce4c2303";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

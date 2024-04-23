@@ -21,7 +21,7 @@
       synopsis = "low level interface to CMPH";
       description = "a binding to the C-based CMPH library (http://cmph.sf.net).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,10 +29,10 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         libs = [ (pkgs."cmph" or (errorHandler.sysDepError "cmph")) ];
         buildable = true;
-        };
+      };
       tests = {
         "cmph-test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           libs = [ (pkgs."cmph" or (errorHandler.sysDepError "cmph")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

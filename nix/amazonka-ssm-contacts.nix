@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-ssm-contacts-2.0-r0-524cd8044612a520eadda984fa8b150b9f697e9109da0a1657837467b9d150d0.nix;
         revNum = 0;
         sha256 = "524cd8044612a520eadda984fa8b150b9f697e9109da0a1657837467b9d150d0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       build-pong = false;
       build-testserver = false;
       debug = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "snap-server"; version = "1.1.2.1"; };
@@ -27,7 +27,7 @@
       synopsis = "A web server for the Snap Framework";
       description = "Snap is a simple and fast web development framework and server written in\nHaskell. For more information or to download the latest version, you can\nvisit the Snap project website at <http://snapframework.com/>.\n\nThe Snap HTTP server is a high performance web server library written in\nHaskell. Together with the @snap-core@ library upon which it depends, it\nprovides a clean and efficient Haskell programming interface to the HTTP\nprotocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -51,12 +51,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))) ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.openssl) [
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))) ++ pkgs.lib.optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optionals (flags.openssl) [
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "snap-test-pong-server" = {
           depends = ([
@@ -80,12 +80,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.openssl) [
+          ] ++ pkgs.lib.optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optionals (flags.openssl) [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
-            ];
+          ];
           buildable = if !flags.build-pong then false else true;
-          };
+        };
         "snap-test-server" = {
           depends = ([
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -110,13 +110,13 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (flags.openssl) [
+          ] ++ pkgs.lib.optionals (flags.openssl) [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
-            ]) ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ]) ++ pkgs.lib.optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = if !flags.build-testserver then false else true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = ((([
@@ -154,13 +154,13 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))) ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (flags.openssl) [
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))) ++ pkgs.lib.optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optionals (flags.openssl) [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -175,9 +175,9 @@
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

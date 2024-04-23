@@ -21,14 +21,14 @@
       synopsis = "Efficient algorithms for uvector unboxed arrays";
       description = "Efficient algorithms for uvector unboxed arrays\nbe sure to compile with -O2, and -fvia-C -optc-O3 is\nrecommended.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."uvector" or (errorHandler.buildDepError "uvector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

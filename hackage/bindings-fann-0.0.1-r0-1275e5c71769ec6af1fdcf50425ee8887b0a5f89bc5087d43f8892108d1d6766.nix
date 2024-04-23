@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to FANN.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-common" or (errorHandler.buildDepError "bindings-common"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."fann" or (errorHandler.pkgConfDepError "fann"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

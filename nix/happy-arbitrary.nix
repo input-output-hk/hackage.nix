@@ -6,8 +6,8 @@
         nix = import ../hackage/happy-arbitrary-0.0.1-r0-a10a8f4e3cac97c39a3fa6517515afc65182c7c91704cca22fbfcdd8172cf1c0.nix;
         revNum = 0;
         sha256 = "a10a8f4e3cac97c39a3fa6517515afc65182c7c91704cca22fbfcdd8172cf1c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Could be useful";
       description = "A way of running any IO type and capturing any exception, maybe, I think...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Auto-generated interface to Fortran BLAS via CArrays";
       description = "BLAS is a package for efficient basic linear algebra operations.\nThe reference implementation is written in FORTRAN.\nThis is a semi-automatically generated mid-level wrapper.\nThe functions are not ready to use for high-level applications,\nbut they are a step closer.\n\nSee also package @lapack-carray@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

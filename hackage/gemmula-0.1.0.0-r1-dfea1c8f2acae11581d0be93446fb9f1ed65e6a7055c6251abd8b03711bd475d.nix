@@ -21,15 +21,15 @@
       synopsis = "A tiny Gemtext parser";
       description = "gemmula is a tiny and functional text/gemini (also known as Gemtext)\nparser that aims to parse a Gemtext document from and to Text,\naccording to the Section 5 of the Gemini Protocol specification at\n<https://geminiprotocol.net/docs/specification.gmi>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gemmulae-probatio" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."gemmula" or (errorHandler.buildDepError "gemmula"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

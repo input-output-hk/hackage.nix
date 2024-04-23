@@ -21,7 +21,7 @@
       synopsis = "A web interface to the notmuch email indexer";
       description = "An email client for the notmuch email indexer (<http://notmuchmail.org>),\nbuilt using Yesod.  This project implements a web server and uses bootstrap\nand jquery for the UI.  The client is fully functional, with searching, viewing,\nand composing email messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -72,9 +72,9 @@
           (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "notmuch-web" = {
           depends = [
@@ -83,10 +83,10 @@
             (hsPkgs."pwstore-fast" or (errorHandler.buildDepError "pwstore-fast"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

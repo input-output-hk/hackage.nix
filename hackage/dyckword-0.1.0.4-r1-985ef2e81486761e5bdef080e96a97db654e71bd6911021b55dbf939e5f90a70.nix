@@ -21,16 +21,16 @@
       synopsis = "A library for working with binary Dyck words.";
       description = "The binary Dyck language consists of all strings of evenly balanced left\nand right parentheses, brackets, or some other symbols, together with the\n/empty/ word. Words in this language are known as /Dyck words/, some\nexamples of which are @()()()@, @(())((()))@, and @((()()))()@.\n\nThe counting sequence associated with the Dyck language is the\n/Catalan numbers/, who describe properties of a great number of\ncombinatorial objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."exact-combinatorics" or (errorHandler.buildDepError "exact-combinatorics"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dyckword-testsuite" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."dyckword" or (errorHandler.buildDepError "dyckword"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

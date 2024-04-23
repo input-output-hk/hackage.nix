@@ -21,7 +21,7 @@
       synopsis = "A minimal gRPC server on top of Warp.";
       description = "Please see the README on Github at <https://github.com/githubuser/warp-grpc#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

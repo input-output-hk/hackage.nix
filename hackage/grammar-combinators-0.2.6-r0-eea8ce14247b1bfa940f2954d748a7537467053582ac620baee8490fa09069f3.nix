@@ -21,7 +21,7 @@
       synopsis = "A parsing library of context-free grammar combinators.";
       description = "The grammar-combinators library is a novel parsing library using\nan explicit representation of recursion to provide various novel\nfeatures, for grammar analysis, transformation and parsing\nfunctionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

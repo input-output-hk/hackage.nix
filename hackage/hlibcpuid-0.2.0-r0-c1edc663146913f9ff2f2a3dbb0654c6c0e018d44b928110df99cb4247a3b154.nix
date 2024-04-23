@@ -21,20 +21,20 @@
       synopsis = "Bindings to https://github.com/anrieff/libcpuid";
       description = "Please see the README on GitHub at <https://github.com/dtaskoff/hlibcpuid#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "cpuid" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlibcpuid" or (errorHandler.buildDepError "hlibcpuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

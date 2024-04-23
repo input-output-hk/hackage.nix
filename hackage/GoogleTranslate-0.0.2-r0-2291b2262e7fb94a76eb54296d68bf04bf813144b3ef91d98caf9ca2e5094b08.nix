@@ -21,7 +21,7 @@
       synopsis = "Interface to Google Translate API";
       description = "Interface to Google Translate API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,6 +21,6 @@
       synopsis = "This package has been subsumed by semigroupoids";
       description = "This package has been subsumed by semigroupoids";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

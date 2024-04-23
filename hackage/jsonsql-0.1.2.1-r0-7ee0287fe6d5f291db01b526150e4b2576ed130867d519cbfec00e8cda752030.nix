@@ -21,7 +21,7 @@
       synopsis = "Interpolate JSON object values into SQL strings";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jsonsql" = {
@@ -38,9 +38,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

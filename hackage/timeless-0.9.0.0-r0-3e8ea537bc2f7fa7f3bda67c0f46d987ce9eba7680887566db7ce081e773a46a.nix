@@ -21,7 +21,7 @@
       synopsis = "An Arrow based Functional Reactive Programming library";
       description = "Timeless is based on a almost completely rewriten Netwire 5 core, plus numerous (not yet for now) extensions to provide an extensive library for Arrowrized Functional Reactive Programming with continuous time semantics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

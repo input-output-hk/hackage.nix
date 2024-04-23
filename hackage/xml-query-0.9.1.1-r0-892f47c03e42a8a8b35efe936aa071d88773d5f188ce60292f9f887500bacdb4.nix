@@ -21,15 +21,15 @@
       synopsis = "A parser-agnostic declarative API for querying XML-documents";
       description = "Provides an API for definitition of destructuring of XML-documents,\nwhile delegating the actual parsing process to outer APIs.\nThus it allows the users to implement parser-agnostic XML-parsing specifications,\nwith the intent of later interpreting them with specific parsers\nor documentation generators, or what not.\n\nFollowing are the known interpreters:\n\n* <http://hackage.haskell.org/package/xml-query-xml-types \"xml-query-xml-types\">\n\n* <http://hackage.haskell.org/package/xml-query-xml-conduit \"xml-query-xml-conduit\">";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

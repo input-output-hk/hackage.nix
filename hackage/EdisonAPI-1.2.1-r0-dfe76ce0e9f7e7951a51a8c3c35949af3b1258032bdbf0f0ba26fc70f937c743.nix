@@ -21,15 +21,15 @@
       synopsis = "A library of efficient, purely-functional data structures (API)";
       description = "This package provides the typeclasses that form the Edison\nAPI and other common utility modules.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

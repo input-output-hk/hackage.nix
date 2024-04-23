@@ -21,7 +21,7 @@
       synopsis = "Amazon Route53 DNS service plugin for the aws package.";
       description = "Amazon Route53 DNS service plugin for the aws package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-hamlet" or (errorHandler.buildDepError "xml-hamlet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

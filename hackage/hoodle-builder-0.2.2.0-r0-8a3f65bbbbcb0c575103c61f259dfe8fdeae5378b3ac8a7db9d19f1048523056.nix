@@ -21,7 +21,7 @@
       synopsis = "text builder for hoodle file format ";
       description = "This library builds text xoj format file from hoodle data structure";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

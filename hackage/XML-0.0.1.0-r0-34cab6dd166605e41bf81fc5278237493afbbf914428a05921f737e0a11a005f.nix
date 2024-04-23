@@ -21,7 +21,7 @@
       synopsis = "Extensible Markup Language";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
           (hsPkgs."txt" or (errorHandler.buildDepError "txt"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."XML" or (errorHandler.buildDepError "XML"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

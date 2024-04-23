@@ -21,7 +21,7 @@
       synopsis = "Expands type synonyms in Template Haskell ASTs";
       description = "Expands type synonyms in Template Haskell ASTs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-th-expand-syns" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
             (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

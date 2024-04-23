@@ -6,8 +6,8 @@
         nix = import ../hackage/co-feldspar-0.1.0.1-r0-c24387bc51a37ab2a4c929d16d4a1c38f804489a47e22c9ea9944879dc2f71a9.nix;
         revNum = 0;
         sha256 = "c24387bc51a37ab2a4c929d16d4a1c38f804489a47e22c9ea9944879dc2f71a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Sleep tracker for X11, using XScreenSaver extension and manual input.";
       description = "posplyu is a sleep tracker for X11, using XScreenSaver extension and manual input, motivated by http://super-memory.com/articles/sleep.htm and designed to facilitate transitioning to the free running sleep regiment while living mostly with a GNU/Linux system handy. The tool allows you to measure and somewhat predict your sleeping cycle. For now it assumes a 24h cycle with one sleep period.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "posplyu" = {
@@ -35,9 +35,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Dependent finite maps (partial dependent products)";
       description = "Dependent finite maps (partial dependent products)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

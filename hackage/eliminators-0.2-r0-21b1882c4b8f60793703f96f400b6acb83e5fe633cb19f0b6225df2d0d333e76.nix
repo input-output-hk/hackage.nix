@@ -21,7 +21,7 @@
       synopsis = "Dependently typed elimination functions using singletons";
       description = "This library provides eliminators for inductive data types,\nleveraging the power of the @singletons@ library to allow\ndependently typed elimination.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."eliminators" or (errorHandler.buildDepError "eliminators"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

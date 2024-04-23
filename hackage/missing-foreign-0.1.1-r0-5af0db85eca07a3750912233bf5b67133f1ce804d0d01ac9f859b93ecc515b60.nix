@@ -21,11 +21,11 @@
       synopsis = "Convenience functions for FFI work";
       description = "Add several functions missing in the standard\nForeign modules:\n\n* copy and move based on Storable\n\n* calloc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

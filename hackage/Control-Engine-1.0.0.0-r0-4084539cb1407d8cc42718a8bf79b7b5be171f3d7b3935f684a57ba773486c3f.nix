@@ -21,7 +21,7 @@
       synopsis = "A parallel producer/consumer engine (thread pool)";
       description = "A parallel producer/consumer engine (thread pool).  There are lots\nof features in the Engine, to include dynamically adjustable hooks,\nmanaged state, and injection points.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -30,13 +30,13 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."concurrent" or (errorHandler.buildDepError "concurrent"))
             (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "The February 2000 version of Haskore.";
       description = "The February 2000 version of Haskore.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,17 +21,17 @@
       synopsis = "Compression and decompression in the gzip and zlib formats";
       description = "This package provides a pure interface for compressing and\ndecompressing streams of data represented as lazy\n'ByteString's. It uses the\n<https://en.wikipedia.org/wiki/Zlib zlib C library>\nso it has high performance. It supports the \\\"zlib\\\",\n\\\"gzip\\\" and \\\"raw\\\" compression formats.\n\nIt provides a convenient high level API suitable for most\ntasks and for the few cases where more control is needed it\nprovides access to the full zlib feature set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
-        libs = (pkgs.lib).optionals (!flags.pkg-config) ((pkgs.lib).optional (!system.isWindows) (pkgs."z" or (errorHandler.sysDepError "z")));
-        pkgconfig = (pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."zlib" or (errorHandler.pkgConfDepError "zlib"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        libs = pkgs.lib.optionals (!flags.pkg-config) (pkgs.lib.optional (!system.isWindows) (pkgs."z" or (errorHandler.sysDepError "z")));
+        pkgconfig = pkgs.lib.optional (flags.pkg-config) (pkgconfPkgs."zlib" or (errorHandler.pkgConfDepError "zlib"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

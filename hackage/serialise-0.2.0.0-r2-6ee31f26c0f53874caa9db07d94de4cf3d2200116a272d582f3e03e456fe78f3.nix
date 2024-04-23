@@ -21,7 +21,7 @@
       synopsis = "A binary serialisation library for Haskell values.";
       description = "This package (formerly @binary-serialise-cbor@) provides pure, efficient\nserialization of Haskell values directly into @ByteString@s for storage or\ntransmission purposes. By providing a set of type class instances, you can\nalso serialise any custom data type you have as well.\n\nThe underlying binary format used is the 'Concise Binary Object\nRepresentation', or CBOR, specified in RFC 7049. As a result,\nserialised Haskell values have implicit structure outside of the\nHaskell program itself, meaning they can be inspected or analyzed\nwith custom tools.\n\nAn implementation of the standard bijection between CBOR and JSON is provided\nby the [cborg-json](/package/cborg-json) package. Also see\n[cbor-tool](/package/cbor-tool) for a convenient command-line utility for\nworking with CBOR data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,14 +37,14 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.newtime15
+        ] ++ (if flags.newtime15
           then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -75,10 +75,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "instances" = {
           depends = [
@@ -90,14 +90,14 @@
             (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (if flags.newtime15
+          ] ++ (if flags.newtime15
             then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "micro" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -113,9 +113,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "versus" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -139,14 +139,14 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ] ++ (if flags.newtime15
+          ] ++ (if flags.newtime15
             then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

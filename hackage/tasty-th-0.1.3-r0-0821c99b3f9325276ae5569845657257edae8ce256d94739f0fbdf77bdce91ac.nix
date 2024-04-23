@@ -21,7 +21,7 @@
       synopsis = "Automagically generate the HUnit- and Quickcheck-bulk-code using Template Haskell.";
       description = "A fork of of test-framework-th modified to use tasty instead of test-framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."language-haskell-extract" or (errorHandler.buildDepError "language-haskell-extract"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

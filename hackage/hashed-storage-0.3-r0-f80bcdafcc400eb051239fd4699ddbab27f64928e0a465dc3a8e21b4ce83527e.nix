@@ -21,7 +21,7 @@
       synopsis = "Hashed file storage support code.";
       description = "Support code for reading and manipulating hashed file storage (where each\nfile and directory is associated with a cryptographic hash, for\ncorruption-resistant storage and fast comparisons).\n\nThe supported storage formats include darcs hashed pristine, a plain\nfilesystem tree and an indexed plain tree (where the index maintains hashes\nof the plain files and directories).";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hashed-storage-test" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

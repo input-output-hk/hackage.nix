@@ -21,7 +21,7 @@
       synopsis = "Generate HLedger Price Directives From Daily Stock Quotes.";
       description = "@hledger-stockquotes@ is an addon for <https://hledger.org/ hledger> that\nreads your journal file, pulls the historical stock prices for commodities,\nand writes out a new journal file containing the respective price\ndirectives.\n\nThe <https://www.alphavantage.co/ AlphaVantage API> is used to fetch the\nstock quotes and you will need a\n<https://www.alphavantage.co/support/#api-key free API key> to use this\nprogram.\n\nYou can install @hledger-stockquotes@ with Stack: @stack install --resolver\nnightly hledger-stockquotes@. Then run @hledger-stockquotes --help@ to see\nthe usage instructions & all available options.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger-stockquotes" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."hledger-stockquotes" or (errorHandler.buildDepError "hledger-stockquotes"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hledger-stockquotes-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

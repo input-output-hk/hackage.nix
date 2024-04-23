@@ -21,7 +21,7 @@
       synopsis = "Rate limiting for Servant";
       description = "A Haskell library which implements rate limiting for Servant";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,9 +31,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-rate-limit" or (errorHandler.buildDepError "wai-rate-limit"))
-          ] ++ (pkgs.lib).optional (flags.server) (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))) ++ (pkgs.lib).optional (flags.client) (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"));
+        ] ++ pkgs.lib.optional (flags.server) (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))) ++ pkgs.lib.optional (flags.client) (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"));
         buildable = true;
-        };
+      };
       tests = {
         "servant-rate-limit-tests" = {
           depends = ([
@@ -53,9 +53,9 @@
             (hsPkgs."wai-rate-limit" or (errorHandler.buildDepError "wai-rate-limit"))
             (hsPkgs."wai-rate-limit-redis" or (errorHandler.buildDepError "wai-rate-limit-redis"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ] ++ (pkgs.lib).optional (flags.server) (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))) ++ (pkgs.lib).optional (flags.client) (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"));
+          ] ++ pkgs.lib.optional (flags.server) (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))) ++ pkgs.lib.optional (flags.client) (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

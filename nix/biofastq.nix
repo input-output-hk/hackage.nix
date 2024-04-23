@@ -6,8 +6,8 @@
         nix = import ../hackage/biofastq-0.1-r0-781367f0b813b2204dfbed3a23ede96d8ad2a7b21184fc60a536e92ec8f59ebe.nix;
         revNum = 0;
         sha256 = "781367f0b813b2204dfbed3a23ede96d8ad2a7b21184fc60a536e92ec8f59ebe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

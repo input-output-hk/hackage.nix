@@ -21,7 +21,7 @@
       synopsis = "A graphical REPL and development environment for Haskell";
       description = "GuiHaskell aims to be a cross-platform development environment\nfor Haskell that is integrated with other popular Haskell tools.\nThe program uses the PropLang GUI combinator library to declaratively\ndefine the relationships between UI elements and data.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "guihaskell" = {
@@ -32,9 +32,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

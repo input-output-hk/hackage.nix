@@ -6,8 +6,8 @@
         nix = import ../hackage/machines-encoding-0-r0-93a594a8439283310e07f2ff9f138db33b460fcf148aa9ee98b5747fa52c0f45.nix;
         revNum = 0;
         sha256 = "93a594a8439283310e07f2ff9f138db33b460fcf148aa9ee98b5747fa52c0f45";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

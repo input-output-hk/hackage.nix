@@ -21,7 +21,7 @@
       synopsis = "WAI adapter for Nero server applications";
       description = "Check the <https://github.com/plutonbrb/nero-wai#nero-wai README> for a more\ndetailed explanation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pointfree refactoring tool";
       description = "Stand-alone command-line version of the point-less plugin for lambdabot.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "pointfree" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

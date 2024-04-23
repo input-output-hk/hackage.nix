@@ -21,7 +21,7 @@
       synopsis = "converting text to properly encoded german umlauts";
       description = "converts the convenient ae, oe and ue replacements for german\numlauts into their proper UTF-8 encoded umlauts -\nrespecting cases where the ae, oe and ue must remain\nbased on a extensible list.\nTreats a file completely.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."uniform-json" or (errorHandler.buildDepError "uniform-json"))
           (hsPkgs."uniform-pandoc" or (errorHandler.buildDepError "uniform-pandoc"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "replaceUmlaut" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."uniform-json" or (errorHandler.buildDepError "uniform-json"))
             (hsPkgs."uniform-pandoc" or (errorHandler.buildDepError "uniform-pandoc"))
             (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test1" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."uniform-json" or (errorHandler.buildDepError "uniform-json"))
             (hsPkgs."uniform-pandoc" or (errorHandler.buildDepError "uniform-pandoc"))
             (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

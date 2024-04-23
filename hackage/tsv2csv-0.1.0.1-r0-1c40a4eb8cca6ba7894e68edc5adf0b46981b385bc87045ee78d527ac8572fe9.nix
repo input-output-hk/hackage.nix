@@ -21,24 +21,24 @@
       synopsis = "Convert tsv to csv";
       description = "Convert tsv to csv";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tsv2csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tsv2csv" or (errorHandler.buildDepError "tsv2csv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

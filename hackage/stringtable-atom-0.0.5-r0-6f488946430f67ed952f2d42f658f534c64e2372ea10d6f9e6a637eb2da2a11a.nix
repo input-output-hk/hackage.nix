@@ -21,7 +21,7 @@
       synopsis = "Memoize Strings as Atoms for fast comparison and sorting, with maps and sets";
       description = "Memoize Strings as Atoms for fast comparison and sorting, with maps and sets";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

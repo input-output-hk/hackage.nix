@@ -21,7 +21,7 @@
       synopsis = "The Elm language server.";
       description = "This package provides a standalone, Happstack-based Elm server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elm-server" = {
@@ -36,9 +36,9 @@
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."Elm" or (errorHandler.buildDepError "Elm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

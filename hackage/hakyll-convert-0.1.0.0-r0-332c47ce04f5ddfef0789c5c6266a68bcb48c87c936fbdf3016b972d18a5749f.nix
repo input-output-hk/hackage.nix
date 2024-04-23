@@ -21,7 +21,7 @@
       synopsis = "Convert from other blog engines to Hakyll.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-convert" = {
           depends = [
@@ -49,18 +49,18 @@
             (hsPkgs."hakyll-convert" or (errorHandler.buildDepError "hakyll-convert"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hakyll-convert-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
             (hsPkgs."hakyll-convert" or (errorHandler.buildDepError "hakyll-convert"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Equality, containment, intersection among regular expressions via symbolic manipulation";
       description = "Equality, containment, intersection among regular expressions via symbolic manipulation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

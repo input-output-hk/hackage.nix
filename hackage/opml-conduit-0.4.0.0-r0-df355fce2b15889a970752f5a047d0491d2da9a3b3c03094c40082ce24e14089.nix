@@ -21,7 +21,7 @@
       synopsis = "Streaming parser/renderer for the OPML 2.0 format.";
       description = "This library implements the OPML 2.0 standard (<http://dev.opml.org/spec2.html>) as a 'conduit' parser/renderer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-parse" or (errorHandler.buildDepError "xml-conduit-parse"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit-parse" or (errorHandler.buildDepError "xml-conduit-parse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

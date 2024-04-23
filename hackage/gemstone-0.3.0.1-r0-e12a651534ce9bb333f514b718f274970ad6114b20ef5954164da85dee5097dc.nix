@@ -21,7 +21,7 @@
       synopsis = "A simple library of helpers for SDL+GL games.";
       description = "Gemstone helps you build games.\n\nThe main goal of Gemstone is to build a library of datatypes, combinators,\nand utilities for building general games. Gemstone differentiates itself\nfrom other game libraries by being lens-based.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stb-image" or (errorHandler.buildDepError "stb-image"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

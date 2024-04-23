@@ -21,7 +21,7 @@
       synopsis = "GHC-toolchain installer broker";
       description = "A tool for keeping track of where GHC installations have been placed and reporting\nthat to the build managers (like @stack@ and @cabal-install@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."possibly" or (errorHandler.buildDepError "possibly"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."possibly" or (errorHandler.buildDepError "possibly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

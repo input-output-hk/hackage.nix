@@ -21,7 +21,7 @@
       synopsis = "Generación interactiva de mosaicos";
       description = "Herramientas para facilitar la generación interactiva de mosaicos.  Se provee\nun tipo para representar imágenes y cargarlas desde archivos, un tipo de\nobjetos que representan ventanas que sirven como lienzos para dibujar\nmosaicos, y tipos para representar distribuciones espaciales de rectángulos de\ncolores.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

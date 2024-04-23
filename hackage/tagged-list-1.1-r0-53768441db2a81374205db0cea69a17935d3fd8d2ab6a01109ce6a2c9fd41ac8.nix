@@ -21,7 +21,7 @@
       synopsis = "Lists tagged with a type-level natural number representing their length.";
       description = "This package contains a datatype, 'TaggedList', that provides a fixed-length list\ntagged with a phantom type-level natural number that corresponds to the length of\nthe list.  It also contains some basic operations on these lists, as well as a\ntypeclass for converting tagged lists to and from tuples.\n\nNew in version 1.1:  added function castTag, improved error reporting in fromList,\nand fixed compiler error with GHC 7.0.*";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."type-level-natural-number" or (errorHandler.buildDepError "type-level-natural-number"))
           (hsPkgs."type-level-natural-number-induction" or (errorHandler.buildDepError "type-level-natural-number-induction"))
           (hsPkgs."type-level-natural-number-operations" or (errorHandler.buildDepError "type-level-natural-number-operations"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell key/value store implementation";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-mwaa-2.0-r0-84ceadedec556a07863b6c91167ee587af7bf963f5c16a6539d333a2a484fbe2.nix;
         revNum = 0;
         sha256 = "84ceadedec556a07863b6c91167ee587af7bf963f5c16a6539d333a2a484fbe2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

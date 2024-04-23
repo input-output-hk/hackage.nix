@@ -21,7 +21,7 @@
       synopsis = "Subscribe to an RSS feed and write it to an IRC channel";
       description = "Subscribe to an RSS feed and write it to an IRC channel\n\nExample, announce Hackage updates in channel:\n\n> rss2irc irc.freenode.org 6667 #zid39kd3 rss2irc http://hackage.haskell.org/packages/archive/recent.rss \"New package: \"\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rss2irc" = {
@@ -31,14 +31,14 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

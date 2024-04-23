@@ -21,7 +21,7 @@
       synopsis = "A scalable distributed logger with a high-precision global time axis.";
       description = "Haskell client to the \\\"greg\\\" distributed logger with a high-precision global time axis (<http://code.google.com/p/greg/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

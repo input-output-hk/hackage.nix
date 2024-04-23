@@ -21,29 +21,29 @@
       synopsis = "van Laarhoven encoded Free Monad with Extensible Effects";
       description = "The van Laarhoven encoding of Free Monads, both the original and with extensible effects.\n\nFor more information on the van Laarhoven Free Monads, including examples,\nplease see the following blog posts:\n\nInitial formulation by Russell O'Connor: <http://r6.ca/blog/20140210T181244Z.html>\n\nAdding Extensible Effects by Aaron Levin: <http://aaronlevin.ca/post/136494428283/extensible-effects-in-the-van-laarhoven-free-monad>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-vl" or (errorHandler.buildDepError "free-vl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "free-vl-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-vl" or (errorHandler.buildDepError "free-vl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

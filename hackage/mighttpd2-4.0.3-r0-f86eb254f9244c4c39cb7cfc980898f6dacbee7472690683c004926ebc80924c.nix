@@ -21,7 +21,7 @@
       synopsis = "High performance web server on WAI/warp";
       description = "High performance web server to handle static\nfiles and CGI on WAI/warp.\nReverse proxy functionality is also provided\nto connect web applications behind.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."wai-app-file-cgi" or (errorHandler.buildDepError "wai-app-file-cgi"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ] ++ (pkgs.lib).optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"));
+        ] ++ pkgs.lib.optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"));
         buildable = true;
-        };
+      };
       exes = {
         "mighty" = {
           depends = (((([
@@ -75,21 +75,21 @@
             (hsPkgs."wai-app-file-cgi" or (errorHandler.buildDepError "wai-app-file-cgi"))
             (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ] ++ (pkgs.lib).optionals (flags.tls) [
+          ] ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."tls-session-manager" or (errorHandler.buildDepError "tls-session-manager"))
-            ]) ++ (pkgs.lib).optionals (flags.quic) [
+          ]) ++ pkgs.lib.optionals (flags.quic) [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
-            ]) ++ (pkgs.lib).optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))) ++ (pkgs.lib).optionals (flags.tls) [
+          ]) ++ pkgs.lib.optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))) ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ]) ++ (pkgs.lib).optionals (flags.quic) [
+          ]) ++ pkgs.lib.optionals (flags.quic) [
             (hsPkgs."quic" or (errorHandler.buildDepError "quic"))
             (hsPkgs."warp-quic" or (errorHandler.buildDepError "warp-quic"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mighty-mkindex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -97,18 +97,18 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mightyctl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = ([
@@ -116,12 +116,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mighttpd2" or (errorHandler.buildDepError "mighttpd2"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ] ++ (pkgs.lib).optionals (flags.tls) [
+          ] ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ]) ++ (pkgs.lib).optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"));
+          ]) ++ pkgs.lib.optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

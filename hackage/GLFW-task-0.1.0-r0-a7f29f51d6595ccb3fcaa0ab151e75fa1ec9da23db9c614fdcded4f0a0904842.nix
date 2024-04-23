@@ -21,7 +21,7 @@
       synopsis = "GLFW utility functions for use with monad-task.";
       description = "GLFW (http://hackage.haskell.org/package/GLFW) is a Haskell\nbinding to the GLFW C library for writing OpenGL programs.\nThis package provides some utility functions for writing GLFW\nprograms using the monad-task library\n(http://hackage.haskell.org/package/GLFW-task).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
           (hsPkgs."monad-task" or (errorHandler.buildDepError "monad-task"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

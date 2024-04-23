@@ -21,7 +21,7 @@
       synopsis = "Supercharged anonymous records";
       description = "Anonymous records with various useful utilities";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "superrecord-test" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."superrecord" or (errorHandler.buildDepError "superrecord"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "superrecord-bench" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."bookkeeper" or (errorHandler.buildDepError "bookkeeper"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

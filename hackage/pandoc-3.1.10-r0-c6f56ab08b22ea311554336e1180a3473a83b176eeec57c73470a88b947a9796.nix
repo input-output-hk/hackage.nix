@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another.  The formats it can handle include\n\n- light markup formats (many variants of Markdown,\nreStructuredText, AsciiDoc, Org-mode, Muse, Textile,\ntxt2tags)\n- HTML formats (HTML 4 and 5)\n- Ebook formats (EPUB v2 and v3, FB2)\n- Documentation formats (GNU TexInfo, Haddock)\n- Roff formats (man, ms)\n- TeX formats (LaTeX, ConTeXt)\n- Typst\n- XML formats (DocBook 4 and 5, JATS, TEI Simple, OpenDocument)\n- Outline formats (OPML)\n- Bibliography formats (BibTeX, BibLaTeX, CSL JSON, CSL YAML,\nRIS)\n- Word processor formats (Docx, RTF, ODT)\n- Interactive notebook formats (Jupyter notebook ipynb)\n- Page layout formats (InDesign ICML)\n- Wiki markup formats (MediaWiki, DokuWiki, TikiWiki, TWiki,\nVimwiki, XWiki, ZimWiki, Jira wiki, Creole)\n- Slide show formats (LaTeX Beamer, PowerPoint, Slidy,\nreveal.js, Slideous, S5, DZSlides)\n- Data formats (CSV and TSV tables)\n- PDF (via external programs such as pdflatex or wkhtmltopdf)\n\nPandoc can convert mathematical content in documents\nbetween TeX, MathML, Word equations, roff eqn, typst,\nand plain text. It includes a powerful system for automatic\ncitations and bibliographies, and it can be customized\nextensively using templates, filters, and custom readers\nand writers written in Lua.\n\nFor the pandoc command-line program, see the\n@pandoc-cli@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -92,9 +92,9 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."typst" or (errorHandler.buildDepError "typst"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       sublibs = {
         "xml-light" = {
           depends = [
@@ -104,10 +104,10 @@
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -132,10 +132,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -146,9 +146,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

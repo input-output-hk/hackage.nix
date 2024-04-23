@@ -21,7 +21,7 @@
       synopsis = "Write grammars, not parsers";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,12 +33,12 @@
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "newman" = {
-          depends = (pkgs.lib).optionals (!(!flags.executables)) [
+          depends = pkgs.lib.optionals (!!flags.executables) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
@@ -47,11 +47,11 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = if !flags.executables then false else true;
-          };
+        };
         "newmanPretty" = {
-          depends = (pkgs.lib).optionals (!(!flags.executables)) [
+          depends = pkgs.lib.optionals (!!flags.executables) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
@@ -60,9 +60,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = if !flags.executables then false else true;
-          };
         };
       };
-    }
+    };
+  }

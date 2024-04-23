@@ -21,7 +21,7 @@
       synopsis = "Base64 encoding of byte sequences";
       description = "Base64 encoding of byte sequences.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
           (hsPkgs."word-compat" or (errorHandler.buildDepError "word-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

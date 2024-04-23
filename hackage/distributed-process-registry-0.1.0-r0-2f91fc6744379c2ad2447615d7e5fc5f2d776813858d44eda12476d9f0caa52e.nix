@@ -14,7 +14,7 @@
       identifier = {
         name = "distributed-process-registry";
         version = "0.1.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Tim Watson 2012 - 2015";
       maintainer = "watson.timothy@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Cloud Haskell Extended Process Registry";
       description = "This package provides an extended process registry.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,14 +44,14 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.5") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.5") [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "RegistryTests" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.5") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.5") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

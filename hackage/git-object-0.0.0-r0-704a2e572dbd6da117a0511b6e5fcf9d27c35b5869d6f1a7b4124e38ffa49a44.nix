@@ -21,7 +21,7 @@
       synopsis = "Git object and its parser";
       description = "This package provides data types for\nGit objects, enumerator-based parser\nof Git object files and manipulation\nfunctions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Concurrent utilities";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."reexport-crypto-random" or (errorHandler.buildDepError "reexport-crypto-random"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

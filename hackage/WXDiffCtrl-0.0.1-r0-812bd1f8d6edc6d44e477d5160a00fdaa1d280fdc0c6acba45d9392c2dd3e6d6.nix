@@ -21,7 +21,7 @@
       synopsis = "WXDiffCtrl";
       description = "A very simple diff control, written as an example of how to create a\ncustom control in wxHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -30,13 +30,13 @@
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

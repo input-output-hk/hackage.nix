@@ -21,7 +21,7 @@
       synopsis = "Elliptic Curve Cryptography for Haskell";
       description = "Pure math & algorithms for Elliptic Curve Cryptography in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."hF2" or (errorHandler.buildDepError "hF2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

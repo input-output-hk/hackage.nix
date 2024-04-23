@@ -21,7 +21,7 @@
       synopsis = "Utilities for stateful primitive types and types based on them";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."control" or (errorHandler.buildDepError "control"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."util-primitive-control" or (errorHandler.buildDepError "util-primitive-control"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

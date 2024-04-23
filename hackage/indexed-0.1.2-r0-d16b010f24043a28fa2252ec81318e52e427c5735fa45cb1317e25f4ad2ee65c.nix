@@ -21,11 +21,11 @@
       synopsis = "Haskell98 indexed functors, monads, comonads";
       description = "Haskell98 indexed functors, monads, comonads";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

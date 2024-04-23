@@ -21,7 +21,7 @@
       synopsis = "Multi-file, colored, filtered log tailer.";
       description = "An even more improved version of xtail/tail -f, including inotify support, full regex-based filtering, substitution, and colorization.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ztail" = {
@@ -35,9 +35,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (flags.inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
+          ] ++ pkgs.lib.optional (flags.inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

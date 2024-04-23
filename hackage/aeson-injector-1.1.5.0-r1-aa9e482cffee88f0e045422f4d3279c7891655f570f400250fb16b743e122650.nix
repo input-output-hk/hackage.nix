@@ -21,7 +21,7 @@
       synopsis = "Injecting fields into aeson values";
       description = "It is small utility library that is intented to be used in RESTful APIs, especially with [servant](http://haskell-servant.readthedocs.io/en/stable/) and [Swagger](http://swagger.io/). Its main purpose is simple injection of fields into JSONs produced by [aeson](https://hackage.haskell.org/package/aeson) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-aeson-injector" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

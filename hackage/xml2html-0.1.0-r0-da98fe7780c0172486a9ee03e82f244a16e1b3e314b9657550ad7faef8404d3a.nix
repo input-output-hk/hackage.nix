@@ -21,7 +21,7 @@
       synopsis = "blaze-html instances for xml-conduit types";
       description = "blaze-html instances for xml-conduit types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

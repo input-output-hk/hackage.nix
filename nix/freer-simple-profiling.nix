@@ -6,8 +6,8 @@
         nix = import ../hackage/freer-simple-profiling-0.1.0.0-r0-277bf26a6b72800e3cfe692cc1fb98e1e86b17d3aff8898a7b8fb27deaab0bfa.nix;
         revNum = 0;
         sha256 = "277bf26a6b72800e3cfe692cc1fb98e1e86b17d3aff8898a7b8fb27deaab0bfa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

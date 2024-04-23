@@ -21,7 +21,7 @@
       synopsis = "CUI FTP client like 'ftp', 'ncftp'";
       description = "FTP client\nJust CUI FTP client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,16 +30,16 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."ftphs" or (errorHandler.buildDepError "ftphs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yjftp" = {
           depends = [
             (hsPkgs."hsConfigure" or (errorHandler.buildDepError "hsConfigure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

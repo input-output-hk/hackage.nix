@@ -21,11 +21,11 @@
       synopsis = "Quiver finite stream processing library";
       description = "/Quiver/ is a powerful stream processing library for\ncombinatorial and monadic transformations of both inductive\nand coinductive data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

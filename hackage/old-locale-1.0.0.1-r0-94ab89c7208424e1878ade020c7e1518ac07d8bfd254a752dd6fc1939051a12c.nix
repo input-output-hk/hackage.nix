@@ -21,11 +21,11 @@
       synopsis = "locale library";
       description = "This package provides the old locale library.\nFor new code, the new locale library is recommended.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

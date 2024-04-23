@@ -21,7 +21,7 @@
       synopsis = "Find duplicate images";
       description = "Find similar images using perceptual hashes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "phash" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."par-traverse" or (errorHandler.buildDepError "par-traverse"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "phash-bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."perceptual-hash" or (errorHandler.buildDepError "perceptual-hash"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hip" or (errorHandler.buildDepError "hip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

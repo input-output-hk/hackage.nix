@@ -21,15 +21,15 @@
       synopsis = "longest common substring";
       description = "algorithms for finding the longest common substring in a set of documents";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."suffixtree" or (errorHandler.buildDepError "suffixtree"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,19 +38,19 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."string-similarity" or (errorHandler.buildDepError "string-similarity"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-lcs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."string-similarity" or (errorHandler.buildDepError "string-similarity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

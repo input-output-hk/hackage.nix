@@ -21,11 +21,11 @@
       synopsis = "Library for safe (pattern match free) functions";
       description = "Partial functions from the base library, such as @head@ and @!!@, modified\nto return more descriptive error messages, programmer defined error messages,\n@Maybe@ wrapped results and default values.\nThese functions can be used to reduce the number of unsafe pattern matches in\nyour code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

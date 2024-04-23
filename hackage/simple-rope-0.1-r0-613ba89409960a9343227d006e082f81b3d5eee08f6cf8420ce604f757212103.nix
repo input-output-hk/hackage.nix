@@ -21,15 +21,15 @@
       synopsis = "Memory-efficient strings with concatenation and splitting.";
       description = "A very simple but rather memory- and performance-efficient rope with logarithmic concatenation, access and splitting at an index or predicate. Differs from the current \"rope\" package (as of rope 0.6.1) by providing guaranteed logarithmic performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

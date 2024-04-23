@@ -21,7 +21,7 @@
       synopsis = "Representation and Incremental Processing of RDF Data";
       description = "Data structures, parsers, and encoders for RDF data sets based on the\nRDF 1.1 abstract syntax and RFC 3987. The interface is intended to support\nincremental graph processing in constant space.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench-rdf" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."rdf" or (errorHandler.buildDepError "rdf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

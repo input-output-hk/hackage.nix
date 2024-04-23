@@ -21,15 +21,15 @@
       synopsis = "A Testing Framework for Haskell";
       description = "This package provides a stable API that can be used to extend Hspec's functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -37,12 +37,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-api" or (errorHandler.buildDepError "hspec-api"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

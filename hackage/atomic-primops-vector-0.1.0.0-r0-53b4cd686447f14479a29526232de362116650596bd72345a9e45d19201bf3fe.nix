@@ -21,7 +21,7 @@
       synopsis = "Atomic operations on Data.Vector types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-atomic-primops-vector" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."atomic-primops-vector" or (errorHandler.buildDepError "atomic-primops-vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Incremental applicative JSON parser";
       description = "Easy to use JSON parser fully supporting incremental parsing.\nParsing grammar in applicative form.\n\nThe parser is compatibile with aeson and its FromJSON class.\nIt is possible to use aeson monadic parsing when appropriate.\n\nThe parser supports constant-space safe incremental parsing regardless\nof the input data. In addition to performance-critical parts written in C,\na lot of performance is gained by being less memory intensive especially\nwhen used for stream parsing.\n\n* WARNING: 0.4.0.0 has code-breaking semantic changes, see changelog!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-unicode" or (errorHandler.buildDepError "quickcheck-unicode"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-unicode" or (errorHandler.buildDepError "quickcheck-unicode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

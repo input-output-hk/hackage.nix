@@ -21,16 +21,16 @@
       synopsis = "Orphan Aeson instances to hourglass";
       description = "Orphan Aeson instances to hourglass";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hourglass-orphans-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

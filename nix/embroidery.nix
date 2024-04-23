@@ -6,8 +6,8 @@
         nix = import ../hackage/embroidery-0.1-r0-5edd030ed4f5cf61d2c27cec23d89d0df98e2ac15a16d039a97db0f0fb7a9067.nix;
         revNum = 0;
         sha256 = "5edd030ed4f5cf61d2c27cec23d89d0df98e2ac15a16d039a97db0f0fb7a9067";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

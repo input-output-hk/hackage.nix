@@ -21,7 +21,7 @@
       synopsis = "A compiler for Copilot targeting FPGAs.";
       description = "This package is a back-end from Copilot to FPGAs in Bluespec.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language (DSL) in\nHaskell. Copilot contains an interpreter, multiple back-end compilers, and\nother verification tools.\n\nA tutorial, examples, and other information are available at\n<https://copilot-language.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
           (hsPkgs."language-bluespec" or (errorHandler.buildDepError "language-bluespec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
             (hsPkgs."copilot-bluespec" or (errorHandler.buildDepError "copilot-bluespec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Backend Interface for Data Parallel Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

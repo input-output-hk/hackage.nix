@@ -21,7 +21,7 @@
       synopsis = "Simple tool to create html presentation for text.";
       description = "The idea is to post some colored text on the background.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htmlpt" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
             (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Bindings to the LLVM compiler toolkit";
       description = "Bindings to the LLVM compiler toolkit\nNew in 0.6.5.0: Adapted to LLVM 2.5";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring-in-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -36,8 +36,8 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

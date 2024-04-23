@@ -21,7 +21,7 @@
       synopsis = "Edge of developments for \"text-builder\"";
       description = "This is a development version of \\\"text-builder\\\".\nAll experimentation and feature development happens here.\nThe API can change drastically.\nFor a more stable API use \\\"text-builder\\\",\nwhich is now just a wrapper over this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,27 +44,27 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text-builder-dev" or (errorHandler.buildDepError "text-builder-dev"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-text" = {
           depends = [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             (hsPkgs."text-builder-dev" or (errorHandler.buildDepError "text-builder-dev"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "benchmark-char" = {
           depends = [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             (hsPkgs."text-builder-dev" or (errorHandler.buildDepError "text-builder-dev"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

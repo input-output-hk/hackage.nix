@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-kendra-2.0-r0-6f7f70830405371df6071a60d3c08c978ba0dde7a4e1d6f846d798b2f30287a7.nix;
         revNum = 0;
         sha256 = "6f7f70830405371df6071a60d3c08c978ba0dde7a4e1d6f846d798b2f30287a7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

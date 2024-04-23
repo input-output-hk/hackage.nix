@@ -21,7 +21,7 @@
       synopsis = "date time";
       description = "convenient type, timestamp, timezone, format";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

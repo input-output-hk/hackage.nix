@@ -21,7 +21,7 @@
       synopsis = "Salvia webserver protocol suite supporting URI, HTTP, Cookie and MIME.";
       description = "Protocol suite for the Salvia webserver, including functionality for URI,\nHTTP, Cookie and MIME.\nThis pacakage exposes the datatypes, parsers, pretty printers and some\nutility functions to deal with several web protocols. The /fclabels/ package\nis used to generate labels pointing into the exposed datatypes, allowing to\neasily get, set and modify parts of the structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

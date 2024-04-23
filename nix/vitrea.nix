@@ -6,8 +6,8 @@
         nix = import ../hackage/vitrea-0.1.0.0-r0-10da82a2868457af3ce556bd88f5b2cb551816f92c18dbed14d9fe526cd6d54f.nix;
         revNum = 0;
         sha256 = "10da82a2868457af3ce556bd88f5b2cb551816f92c18dbed14d9fe526cd6d54f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

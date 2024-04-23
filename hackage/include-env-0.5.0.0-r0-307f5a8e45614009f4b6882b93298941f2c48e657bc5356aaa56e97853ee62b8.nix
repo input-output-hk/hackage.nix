@@ -21,7 +21,7 @@
       synopsis = "Include the value of an environment variable at compile time";
       description = "Embed secrets (e.g. API keys) inside production artifacts at compile time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

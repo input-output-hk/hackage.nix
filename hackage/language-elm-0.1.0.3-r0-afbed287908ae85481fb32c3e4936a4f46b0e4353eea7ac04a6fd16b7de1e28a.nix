@@ -21,7 +21,7 @@
       synopsis = "Generate elm code";
       description = "Generate elm code from an ast";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "language-elm-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

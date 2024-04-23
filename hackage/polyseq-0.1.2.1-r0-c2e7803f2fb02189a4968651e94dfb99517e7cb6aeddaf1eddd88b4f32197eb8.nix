@@ -21,7 +21,7 @@
       synopsis = "Taming Selective Strictness";
       description = "Given a term, this program calculates a set of \\\"optimal\\\" free theorems\nthat hold in a lambda calculus with selective strictness. It omits\ntotality (in general, bottom-reflection) and other restrictions when\npossible. The underlying theory is described in the paper \\\"Taming\nSelective Strictness\\\" (ATPS'09) by Daniel Seidel and Janis Voigtländer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,14 +39,14 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "polyseq.cgi" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."free-theorems" or (errorHandler.buildDepError "free-theorems"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

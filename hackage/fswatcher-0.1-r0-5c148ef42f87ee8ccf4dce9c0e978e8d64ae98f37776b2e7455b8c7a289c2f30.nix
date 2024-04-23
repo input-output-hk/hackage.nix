@@ -21,7 +21,7 @@
       synopsis = "Watch a file/directory and run a command it is modified";
       description = "A simple program that watches a file or a directory and\nruns a given command whenever the file or a file within the\ndirectory is changed.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fswatcher" = {
@@ -32,9 +32,9 @@
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

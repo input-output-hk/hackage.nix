@@ -21,15 +21,15 @@
       synopsis = "The MonadTell class and related monad transformers.";
       description = "@MonadTell@ is (morally) a superclass of @MonadWriter@ that only provides @tell@.\nIn contrast to @MonadWriter@, implementors of @MonadTell@ are not required to hold\non to their output. This means that @MonadTell@ is a better choice in situations\nsuch as logging and writing to files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

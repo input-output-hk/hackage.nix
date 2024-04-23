@@ -21,7 +21,7 @@
       synopsis = "Java .class files assembler/disassembler";
       description = "This package declares data types for Java .class files format and functions\nto assemble/disassemble Java bytecode.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."binary-state" or (errorHandler.buildDepError "binary-state"))
           (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

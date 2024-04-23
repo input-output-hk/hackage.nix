@@ -21,13 +21,13 @@
       synopsis = "Merged into 'speculation'. Use that instead.";
       description = "Merged into 'speculation'. Use that instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."speculation" or (errorHandler.buildDepError "speculation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/source-code-server-2010.9.1-r0-dd1900fb9b9a081c4fdab7d1662284206045c94be0844529c0120e8aa356db77.nix;
         revNum = 0;
         sha256 = "dd1900fb9b9a081c4fdab7d1662284206045c94be0844529c0120e8aa356db77";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

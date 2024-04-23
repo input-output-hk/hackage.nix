@@ -21,7 +21,7 @@
       synopsis = "Yesod bindings for serversession.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-frontend-yesod>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

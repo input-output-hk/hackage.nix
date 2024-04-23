@@ -21,15 +21,15 @@
       synopsis = "Low-dimensional matrices and vectors for graphics and physics";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."NumInstances" or (errorHandler.buildDepError "NumInstances"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

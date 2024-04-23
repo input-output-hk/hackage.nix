@@ -21,7 +21,7 @@
       synopsis = "The OptDir type for representing optimization directions.";
       description = "The OptDir type for representing optimization directions (i.e. minimization and maximization).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

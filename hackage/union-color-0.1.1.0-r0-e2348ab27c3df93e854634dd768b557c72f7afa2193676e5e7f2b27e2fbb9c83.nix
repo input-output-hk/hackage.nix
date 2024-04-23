@@ -21,20 +21,20 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/githubuser/union-color#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "union-color-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

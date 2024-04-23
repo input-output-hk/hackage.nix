@@ -21,7 +21,7 @@
       synopsis = "Generic cryptography cipher tests";
       description = "Generic cryptography cipher tests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-crypto-cipher-dummy" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

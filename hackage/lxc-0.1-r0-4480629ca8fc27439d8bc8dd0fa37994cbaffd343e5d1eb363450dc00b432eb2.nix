@@ -21,14 +21,14 @@
       synopsis = "High level Haskell bindings to LXC (Linux containers).";
       description = "The library provides Haskell LXC API, wrapping <http://hackage.haskell.org/package/bindings-lxc bindings-lxc package>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-lxc" or (errorHandler.buildDepError "bindings-lxc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

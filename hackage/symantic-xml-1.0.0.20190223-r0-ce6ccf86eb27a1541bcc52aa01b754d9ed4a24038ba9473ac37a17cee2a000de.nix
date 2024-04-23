@@ -21,7 +21,7 @@
       synopsis = "Library for reading, validating and writing a subset of the XML format.";
       description = "Symantics for an approximative implementation\nof XML (eXtensible Markup Language) and RNC (RelaxNG Compact).\n\nMotivation: Other Haskell libraries do not fit my needs or are too heavy/complex.\nI like the principle to parse XML using some symantics,\nwhich can both generate a Megaparsec parser to validate the XML tree,\nand a RNC rendition of the schema it validates.\n\nDISCLAMER: My life being's too short, I'm NOT burning my brain\non seriously conforming to the too complex XML and RNC formats.\nStill I try to respect a vague subset of those,\nunless it makes the code more complex than I am comfortable with.\n\nWARNING: It's currently using an old symantic approach,\nnot the one developped in <https://hackage.haskell.org/package/symantic-http symantic-http>.\nThis may change when I'll get to it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."treeseq" or (errorHandler.buildDepError "treeseq"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "symantic-xml-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."treeseq" or (errorHandler.buildDepError "treeseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

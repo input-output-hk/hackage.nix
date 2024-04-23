@@ -21,16 +21,16 @@
       synopsis = "Loop over an action but throttle it to a certain rate";
       description = "This provides a function that loops over an IO action endlessly, but limited to a certain number of executions per time period.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."natural-numbers" or (errorHandler.buildDepError "natural-numbers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "loop-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."throttled-io-loop" or (errorHandler.buildDepError "throttled-io-loop"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

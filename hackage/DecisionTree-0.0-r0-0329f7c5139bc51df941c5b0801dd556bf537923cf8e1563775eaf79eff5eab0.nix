@@ -21,14 +21,14 @@
       synopsis = "A very simple implementation of decision trees for discrete attributes.";
       description = "A very simple implementation of decision trees, built with ID3. You can use it to classify data with a set of discrete attributes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

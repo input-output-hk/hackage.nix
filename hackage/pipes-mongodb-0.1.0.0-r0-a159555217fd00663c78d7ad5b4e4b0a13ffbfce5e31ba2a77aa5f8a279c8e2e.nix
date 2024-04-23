@@ -21,7 +21,7 @@
       synopsis = "Stream results from MongoDB";
       description = "Stream results from MongoDB";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-pipes-mongodb" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

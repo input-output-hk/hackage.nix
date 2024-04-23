@@ -21,16 +21,16 @@
       synopsis = "Useful missing instances for Reflex";
       description = "This package provides additional instances missing from <https://hackage.haskell.org/package/reflex reflex>, specificly 'Functor' and 'Applicative' for 'Dynamic'. The inclusion of these instances facilitates easier, conventional Haskell style programming in reflex.\n\nThe performance of these instances carries a 2x coefficient in the best case, and considerations for the multiplicative complexity when nesting have not been implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

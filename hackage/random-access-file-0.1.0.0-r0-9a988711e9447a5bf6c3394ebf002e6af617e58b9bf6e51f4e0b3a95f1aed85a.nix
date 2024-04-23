@@ -21,7 +21,7 @@
       synopsis = "Random file access methods, supporting application-level page cache.";
       description = "Please see the README on GitHub at <https://github.com/portnov/random-access-file#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
           (hsPkgs."unix-memory" or (errorHandler.buildDepError "unix-memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "random-access-file-benchmark" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
             (hsPkgs."unix-memory" or (errorHandler.buildDepError "unix-memory"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

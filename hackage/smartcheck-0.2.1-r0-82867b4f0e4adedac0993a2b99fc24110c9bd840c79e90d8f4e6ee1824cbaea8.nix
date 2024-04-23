@@ -21,7 +21,7 @@
       synopsis = "A smarter QuickCheck.";
       description = "See the README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.regression-flag
@@ -35,7 +35,7 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."testing-feat" or (errorHandler.buildDepError "testing-feat"))
             (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -44,9 +44,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "sc-qc" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

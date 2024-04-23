@@ -21,7 +21,7 @@
       synopsis = "Opinionated filesystem watcher";
       description = "A filesystem watcher. Triggers added/changed/removed events\nwhen the filesystem changes. Can cache in an SQL database\nand bring itself back up to date after long periods of\ndowntime.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

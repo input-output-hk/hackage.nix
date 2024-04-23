@@ -21,14 +21,14 @@
       synopsis = "Some extensions to Chris Done's path library, for use with urlpath and attoparsec-uri.";
       description = "Please see the README on Github at <https://github.com/githubuser/localcooking-db#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

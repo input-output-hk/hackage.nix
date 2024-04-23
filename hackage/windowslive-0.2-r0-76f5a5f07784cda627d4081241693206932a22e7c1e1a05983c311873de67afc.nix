@@ -21,7 +21,7 @@
       synopsis = "Implements Windows Live Web Authentication and\nDelegated Authentication";
       description = "Implements functions for initiating and processing\nWeb Authentication requests, as well as Delegated\nAuthentication. See\n<http://msdn.microsoft.com/en-us/library/bb404787.aspx>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."urlencoded" or (errorHandler.buildDepError "urlencoded"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "windowslive-library-test" = { buildable = true; }; };
       };
-    }
+      exes = { "windowslive-library-test" = { buildable = true; }; };
+    };
+  }

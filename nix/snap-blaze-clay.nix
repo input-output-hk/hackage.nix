@@ -6,8 +6,8 @@
         nix = import ../hackage/snap-blaze-clay-0.1.0.0-r0-86c71e67fee85f53afe46be3de6ba8127095a752d2e94ee83d682599119ba89f.nix;
         revNum = 0;
         sha256 = "86c71e67fee85f53afe46be3de6ba8127095a752d2e94ee83d682599119ba89f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

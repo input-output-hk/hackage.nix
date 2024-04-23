@@ -21,7 +21,7 @@
       synopsis = "Experiemental library for composable interactive programs";
       description = "Experiemental library for composable interactive programs.\nGLUT backend included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

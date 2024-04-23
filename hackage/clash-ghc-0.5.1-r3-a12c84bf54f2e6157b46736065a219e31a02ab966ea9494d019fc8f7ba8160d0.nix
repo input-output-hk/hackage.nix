@@ -21,7 +21,7 @@
       synopsis = "CAES Language for Synchronous Hardware";
       description = "CλaSH (pronounced ‘clash’) is a functional hardware description language that\nborrows both its syntax and semantics from the functional programming language\nHaskell. The merits of using a functional language to describe hardware comes\nfrom the fact that combinational circuits can be directly modelled as\nmathematical functions and that functional languages lend themselves very well\nat describing and (de-)composing mathematical functions.\n\nThis package provides:\n\n* CλaSH Compiler binary using GHC/Haskell as a frontend\n\n\nPrelude library: <http://hackage.haskell.org/package/clash-prelude>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clash" = {
@@ -48,11 +48,11 @@
             (hsPkgs."clash-systemverilog" or (errorHandler.buildDepError "clash-systemverilog"))
             (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
             (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

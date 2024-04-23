@@ -21,7 +21,7 @@
       synopsis = "A functional scripting language";
       description = "A scripting language meant to replace\nshell modeled after Joy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."ParsecTools" or (errorHandler.buildDepError "ParsecTools"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imelody" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."melody" or (errorHandler.buildDepError "melody"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-melody" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."melody" or (errorHandler.buildDepError "melody"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

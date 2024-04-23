@@ -6,8 +6,8 @@
         nix = import ../hackage/statistics-hypergeometric-genvar-0.1.0.0-r0-9c9accc78eff7d1f207a3bacf4d95faebe75ba49eeac2e086a41920eaf652354.nix;
         revNum = 0;
         sha256 = "9c9accc78eff7d1f207a3bacf4d95faebe75ba49eeac2e086a41920eaf652354";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

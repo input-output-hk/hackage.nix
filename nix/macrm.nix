@@ -6,8 +6,8 @@
         nix = import ../hackage/macrm-1.0.0.5-r0-ca52fde3a75b8042a401d64bb0ce1a41ed489f3c10abd5835857029b42e18f3e.nix;
         revNum = 0;
         sha256 = "ca52fde3a75b8042a401d64bb0ce1a41ed489f3c10abd5835857029b42e18f3e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

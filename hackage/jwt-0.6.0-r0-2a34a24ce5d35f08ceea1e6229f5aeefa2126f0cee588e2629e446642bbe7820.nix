@@ -21,7 +21,7 @@
       synopsis = "JSON Web Token (JWT) decoding and encoding";
       description = "JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties.\n\nTo get started, see the documentation for the \"Web.JWT\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -70,21 +70,21 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (flags.doctests) [
+          depends = pkgs.lib.optionals (flags.doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."jwt" or (errorHandler.buildDepError "jwt"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
-            ];
+          ];
           buildable = if flags.doctests then true else false;
-          };
         };
       };
-    }
+    };
+  }

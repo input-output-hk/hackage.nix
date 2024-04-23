@@ -6,8 +6,8 @@
         nix = import ../hackage/blubber-server-0.0.1-r0-7665dd16e24b968c5546ef1960fc12ef530d37364fe2facb95e869a3e4baa4cd.nix;
         revNum = 0;
         sha256 = "7665dd16e24b968c5546ef1960fc12ef530d37364fe2facb95e869a3e4baa4cd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/embla-0.1-r0-796917d0ff2755d116e94c86d8c2b2a6f586660fae048b3d8b1a650c109a0748.nix;
         revNum = 0;
         sha256 = "796917d0ff2755d116e94c86d8c2b2a6f586660fae048b3d8b1a650c109a0748";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "Adds license info to the top of a file.";
       description = "Adds license info to the top of a file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "addLicenseInfo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

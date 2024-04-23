@@ -21,7 +21,7 @@
       synopsis = "Haskell STatic ANalyser";
       description = "Stan is a Haskell __ST__atic __AN__alysis CLI tool.\nSee [README.md](https://github.com/kowainik/stan#stan) for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."trial-optparse-applicative" or (errorHandler.buildDepError "trial-optparse-applicative"))
           (hsPkgs."trial-tomland" or (errorHandler.buildDepError "trial-tomland"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "target" = {
           depends = [
@@ -64,19 +64,19 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "stan" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stan" or (errorHandler.buildDepError "stan"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "stan-test" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
             (hsPkgs."trial" or (errorHandler.buildDepError "trial"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

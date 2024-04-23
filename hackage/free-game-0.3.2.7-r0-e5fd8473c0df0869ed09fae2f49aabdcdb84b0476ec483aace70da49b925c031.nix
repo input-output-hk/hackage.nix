@@ -21,7 +21,7 @@
       synopsis = "Create graphical applications for free.";
       description = "Cross-platform GUI library based on free monads";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/dyna-0.1.0.0-r0-c2133269315c9067147757cca7dc34aa3cfa108f86a580dfeed8bdf6792ddb80.nix;
         revNum = 0;
         sha256 = "c2133269315c9067147757cca7dc34aa3cfa108f86a580dfeed8bdf6792ddb80";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

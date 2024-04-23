@@ -21,7 +21,7 @@
       synopsis = "Base library for bioinformatics";
       description = "Base library for bioinformatics providing a number of im- and\nexport functions for commonly used filetypes. Provided are\nfunctions and Haskell data types for RNA primary and secondary\nstructure. Otherwise, this library provides the basis for other\nlibraries to build on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

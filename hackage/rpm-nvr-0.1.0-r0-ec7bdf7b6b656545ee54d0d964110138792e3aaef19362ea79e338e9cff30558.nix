@@ -21,24 +21,24 @@
       synopsis = "RPM package name-version-release datatypes";
       description = "The library provides types related to RPM package\nname-version-releases. There are modules for reading and showing:\n\n* NV (name-version)\n\n* NVR (name-version-release)\n\n* NVRA (name-version-release.arch)\n\n* VerRel (version-release)\n\n* VerCmp for comparing RPM versions or releases\n(used to order VerRel).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rpm-nvr" or (errorHandler.buildDepError "rpm-nvr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

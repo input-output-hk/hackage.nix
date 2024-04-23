@@ -21,14 +21,14 @@
       synopsis = "Universe instances for types from the base package";
       description = "__DEPRECATED:__ instances are moved to @universe-base@ package\n@universe-base@ package provides instances for types from GHC-boot libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

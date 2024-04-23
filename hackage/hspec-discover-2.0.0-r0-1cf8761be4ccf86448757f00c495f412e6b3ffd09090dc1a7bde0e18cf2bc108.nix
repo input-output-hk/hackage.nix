@@ -21,7 +21,7 @@
       synopsis = "Automatically discover and run Hspec tests";
       description = "Automatically discover and run Hspec tests\n\n<http://hspec.github.io/hspec-discover.html>\ntest-data/nested-spec/FooSpec.hs\ntest-data/nested-spec/Foo/Bar/BazSpec.hs\ntest-data/nested-spec/Foo/BarSpec.hs\ntest-data/empty-dir/Foo/Bar/Baz/.placeholder";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -30,10 +30,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec-meta" or (errorHandler.buildDepError "hspec-meta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

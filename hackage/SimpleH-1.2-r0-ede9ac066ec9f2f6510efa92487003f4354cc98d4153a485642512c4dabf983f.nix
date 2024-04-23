@@ -21,7 +21,7 @@
       synopsis = "A light, clean and powerful Haskell utility library";
       description = "SimpleH is a Prelude complement that defines a few very\nuseful abstractions, such as Monad transformers, Lenses, parser\ncombinators, reactive events and a few others.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

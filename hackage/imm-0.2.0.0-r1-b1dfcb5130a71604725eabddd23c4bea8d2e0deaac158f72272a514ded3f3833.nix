@@ -21,7 +21,7 @@
       synopsis = "RSS-to-maildir tool";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,17 +46,17 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imm" = {
           depends = [
             (hsPkgs."imm" or (errorHandler.buildDepError "imm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/precursor-0.1.0.0-r0-75fea48aa07509dc32d1856b716b06da1b0372a7ee184ee8b7b015ae5a076214.nix;
         revNum = 0;
         sha256 = "75fea48aa07509dc32d1856b716b06da1b0372a7ee184ee8b7b015ae5a076214";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

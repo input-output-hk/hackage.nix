@@ -21,12 +21,12 @@
       synopsis = "Compression and decompression in the bzip2 format";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."bz2" or (errorHandler.sysDepError "bz2")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

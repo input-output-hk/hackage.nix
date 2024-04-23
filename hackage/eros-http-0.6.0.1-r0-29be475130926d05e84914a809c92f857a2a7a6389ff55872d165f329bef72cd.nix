@@ -21,7 +21,7 @@
       synopsis = "JSON HTTP interface to Eros.";
       description = "This is a small program that runs an HTTP server.\n\nChangelog\n\n[0.6.0.1] Remove unneeded dependency on wai-responsible.\n\n[0.6] Update to be compatible with Eros v.0.6";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "eros-http" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "encode any binary instance to white space";
       description = "SnowWhite.pack \"hello\"\n>\nSnowWhite.unpack \"                                                             \t \t \t\t \t    \t\t  \t \t \t\t \t\t   \t\t \t\t   \t\t \t\t\t\t\"\n> hello";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

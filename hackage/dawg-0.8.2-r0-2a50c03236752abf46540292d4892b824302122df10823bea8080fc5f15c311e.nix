@@ -21,7 +21,7 @@
       synopsis = "Directed acyclic word graphs";
       description = "Please see the README on GitHub at <https://github.com/kawu/dawg#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

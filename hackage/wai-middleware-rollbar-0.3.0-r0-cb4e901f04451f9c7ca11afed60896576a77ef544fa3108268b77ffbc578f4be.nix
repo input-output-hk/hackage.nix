@@ -21,7 +21,7 @@
       synopsis = "Middleware that communicates to Rollbar.";
       description = "Middleware that communicates to Rollbar.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doc-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai-middleware-rollbar" or (errorHandler.buildDepError "wai-middleware-rollbar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

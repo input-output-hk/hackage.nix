@@ -21,7 +21,7 @@
       synopsis = "A proven synchronization server for high performance computing.";
       description = "Parry is a scheduler for the exhaustive exploration of tree-like spaces. It is designed to be robust to client crashes and cluster walltimes, and is guaranteed to never \\\"forget about\\\" a job until it is done.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if !system.isWindows
@@ -40,7 +40,7 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
@@ -55,8 +55,8 @@
             (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

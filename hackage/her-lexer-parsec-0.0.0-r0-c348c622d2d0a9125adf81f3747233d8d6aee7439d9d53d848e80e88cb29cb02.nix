@@ -21,7 +21,7 @@
       synopsis = "Parsec frontend to \"her-lexer\" for Haskell source code.";
       description = "Parsec frontend to \"her-lexer\" for Haskell source code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."her-lexer" or (errorHandler.buildDepError "her-lexer"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

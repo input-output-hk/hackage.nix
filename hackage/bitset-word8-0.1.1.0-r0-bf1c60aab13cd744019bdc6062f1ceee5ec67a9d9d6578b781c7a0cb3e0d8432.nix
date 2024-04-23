@@ -21,7 +21,7 @@
       synopsis = "Space efficient set of Word8 and some pre-canned sets useful for parsing HTTP";
       description = "This package is intended to provide O(1) membership test on any subset of ASCII\nand Latin-1 character set in order to write efficient HTTP related parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bitset-word8-test" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bitset-word8" or (errorHandler.buildDepError "bitset-word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bitset-word8-bench" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

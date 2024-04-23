@@ -21,7 +21,7 @@
       synopsis = "GraphHammer Haskell graph analyses framework inspired by STINGER.";
       description = "GraphHammer is a graph analyses framework. See\n\"GraphHammer.SimplestParallel\" for library documentation. Examples\nexists in GraphHammer-examples package: see\n\"GraphHammer.VertexDegree\", \"GraphHammer.TriangleCount\",\n\"GraphHammer.ClusteringCoefficients\" for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."Graph500" or (errorHandler.buildDepError "Graph500"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

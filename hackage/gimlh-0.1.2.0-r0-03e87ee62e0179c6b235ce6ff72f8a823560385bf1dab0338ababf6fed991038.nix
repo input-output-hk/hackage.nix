@@ -21,14 +21,14 @@
       synopsis = "Haskell parser for GIML";
       description = "Parser for small simple language for big data Gimlh (https://github.com/gazay/gimlh)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

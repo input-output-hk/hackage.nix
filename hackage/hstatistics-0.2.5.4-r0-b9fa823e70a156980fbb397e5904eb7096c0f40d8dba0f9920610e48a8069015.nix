@@ -21,7 +21,7 @@
       synopsis = "Statistics";
       description = "Purely functional interface for statistics based on hmatrix and hmatrix-gsl-stats\n\nThe vector type is Data.Vector.Storable from the 'vector' package and compatible with the 'statistics' package.\n<http://hackage.haskell.org/package/statistics>\n\nFeature requests, suggestions, and bug fixes welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."hmatrix-gsl-stats" or (errorHandler.buildDepError "hmatrix-gsl-stats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

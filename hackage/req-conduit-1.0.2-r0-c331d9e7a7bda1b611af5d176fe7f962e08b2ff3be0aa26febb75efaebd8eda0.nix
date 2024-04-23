@@ -21,7 +21,7 @@
       synopsis = "Conduit helpers for the req HTTP client library";
       description = "Conduit helpers for the req HTTP client library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."req" or (errorHandler.buildDepError "req"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "httpbin-tests" = {
           depends = [
@@ -44,13 +44,13 @@
             (hsPkgs."req" or (errorHandler.buildDepError "req"))
             (hsPkgs."req-conduit" or (errorHandler.buildDepError "req-conduit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "weigh-bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."req-conduit" or (errorHandler.buildDepError "req-conduit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

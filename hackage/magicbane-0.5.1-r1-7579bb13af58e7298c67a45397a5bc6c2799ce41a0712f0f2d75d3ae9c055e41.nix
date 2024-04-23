@@ -21,7 +21,7 @@
       synopsis = "A web framework that integrates Servant, RIO, EKG, fast-logger, wai-cli…";
       description = "Inspired by Dropwizard, Magicbane provides a packaged framework for developing web services using the best available libraries, including Servant, RIO, Aeson, EKG/monad-metrics, fast-logger, wai-cli and others.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -68,8 +68,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-cli" or (errorHandler.buildDepError "wai-cli"))
           (hsPkgs."wai-middleware-metrics" or (errorHandler.buildDepError "wai-middleware-metrics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

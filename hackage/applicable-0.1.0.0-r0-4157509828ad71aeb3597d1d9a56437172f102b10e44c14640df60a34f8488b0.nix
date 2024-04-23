@@ -21,11 +21,11 @@
       synopsis = "A class for things that can be applied";
       description = "A class for things that can be applied, and utility newtypes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

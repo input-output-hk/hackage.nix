@@ -21,7 +21,7 @@
       synopsis = "Wrapper of numeric-optimization package for using with AD package";
       description = "Please see the README on GitHub at <https://github.com/msakai/nonlinear-optimization-ad/tree/master/numeric-optimization-ad#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rosenbrock-ad" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."numeric-optimization" or (errorHandler.buildDepError "numeric-optimization"))
             (hsPkgs."numeric-optimization-ad" or (errorHandler.buildDepError "numeric-optimization-ad"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       tests = {
         "numeric-optimization-ad-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."numeric-optimization" or (errorHandler.buildDepError "numeric-optimization"))
             (hsPkgs."numeric-optimization-ad" or (errorHandler.buildDepError "numeric-optimization-ad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

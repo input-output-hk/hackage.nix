@@ -21,16 +21,16 @@
       synopsis = "An OpenLayers JavaScript Wrapper and Webframework with snaplet-fay";
       description = "test";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
           (hsPkgs."fay-text" or (errorHandler.buildDepError "fay-text"))
           (hsPkgs."fay-jquery" or (errorHandler.buildDepError "fay-jquery"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "olwrapper" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."snaplet-fay" or (errorHandler.buildDepError "snaplet-fay"))
             (hsPkgs."snap-loader-static" or (errorHandler.buildDepError "snap-loader-static"))
-            ] ++ (pkgs.lib).optional (flags.development) (hsPkgs."snap-loader-dynamic" or (errorHandler.buildDepError "snap-loader-dynamic"));
+          ] ++ pkgs.lib.optional (flags.development) (hsPkgs."snap-loader-dynamic" or (errorHandler.buildDepError "snap-loader-dynamic"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

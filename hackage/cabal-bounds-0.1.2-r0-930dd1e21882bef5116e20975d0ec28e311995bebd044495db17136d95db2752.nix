@@ -21,7 +21,7 @@
       synopsis = "A command line program for managing the bounds/versions of the dependencies in a cabal file.";
       description = "A command line program for managing the bounds/versions of the dependencies in a cabal file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-bounds" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cabal-bounds-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."cabal-bounds" or (errorHandler.buildDepError "cabal-bounds"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

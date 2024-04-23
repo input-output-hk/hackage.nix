@@ -21,7 +21,7 @@
       synopsis = "Gamma function and related functions.";
       description = "Approximations of the gamma function, incomplete gamma\nfunctions, beta function, and factorials.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."converge" or (errorHandler.buildDepError "converge"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

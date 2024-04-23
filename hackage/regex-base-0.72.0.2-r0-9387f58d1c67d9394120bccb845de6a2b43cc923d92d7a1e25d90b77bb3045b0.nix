@@ -21,23 +21,23 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "Interface API for regex-posix,pcre,parsec,dfa";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (if flags.bytestring-in-base
+          ]) ++ (if flags.bytestring-in-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

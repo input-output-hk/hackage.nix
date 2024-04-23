@@ -21,21 +21,21 @@
       synopsis = "Structural assertions on generic data representations.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."generic-data-asserts" or (errorHandler.buildDepError "generic-data-asserts"))
             (hsPkgs."type-spec" or (errorHandler.buildDepError "type-spec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

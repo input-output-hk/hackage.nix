@@ -6,8 +6,8 @@
         nix = import ../hackage/medium-sdk-haskell-0.1.0.0-r0-f0f3708f482df44d9b3f74bc2c42ae7ec94f865b3e7a260d444616b6d18b7f5a.nix;
         revNum = 0;
         sha256 = "f0f3708f482df44d9b3f74bc2c42ae7ec94f865b3e7a260d444616b6d18b7f5a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

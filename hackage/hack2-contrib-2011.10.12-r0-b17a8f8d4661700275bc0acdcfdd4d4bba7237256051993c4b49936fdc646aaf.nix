@@ -21,7 +21,7 @@
       synopsis = "Hack2 contrib";
       description = "Common middlewares and utilities that helps working with Hack2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

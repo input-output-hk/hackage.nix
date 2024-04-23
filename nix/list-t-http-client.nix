@@ -6,8 +6,8 @@
         nix = import ../hackage/list-t-http-client-0.1.0.1-r0-f460d19798c83fc807abce96cdfb9153089928cfbf300e4075c879f23b6606d0.nix;
         revNum = 0;
         sha256 = "f460d19798c83fc807abce96cdfb9153089928cfbf300e4075c879f23b6606d0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

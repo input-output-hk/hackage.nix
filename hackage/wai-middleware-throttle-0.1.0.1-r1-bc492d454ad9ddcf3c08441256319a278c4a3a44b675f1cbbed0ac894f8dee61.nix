@@ -21,7 +21,7 @@
       synopsis = "WAI Middleware for Request Throttling";
       description = "WAI Middleware for request rate limiting and throttling.\n\nDesigned to be configured in the spirit of the NGinx module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."token-bucket" or (errorHandler.buildDepError "token-bucket"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -52,27 +52,27 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haddock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.haddock.components.exes.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

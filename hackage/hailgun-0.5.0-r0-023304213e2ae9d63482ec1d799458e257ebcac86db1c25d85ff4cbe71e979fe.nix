@@ -21,7 +21,7 @@
       synopsis = "Mailgun REST api interface for Haskell.";
       description = "Mailgun is an online service that sends emails. It is a great point of\nintegration for many SaaS services and this Haskell library cleanly interfaces\nwith Mailgun so that you can send emails from your Haskell applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,13 +39,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ] ++ (if flags.newtime
+        ] ++ (if flags.newtime
           then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

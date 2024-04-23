@@ -21,15 +21,15 @@
       synopsis = "Conflict-free replicated data types";
       description = "Definitions of CmRDT and CvRDT. Implementations for some classic CRDTs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."crdt" or (errorHandler.buildDepError "crdt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

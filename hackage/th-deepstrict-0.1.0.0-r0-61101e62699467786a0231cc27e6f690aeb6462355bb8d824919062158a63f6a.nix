@@ -21,7 +21,7 @@
       synopsis = "Check that datatypes are deep strict using Template Haskell.";
       description = "A library for checking that datatypes are deep strict using Template Haskell.\nDeep strictness is a helpful property for enforcing the absence of space leaks\ncaused by excessive laziness.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-deepstrict" or (errorHandler.buildDepError "th-deepstrict"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

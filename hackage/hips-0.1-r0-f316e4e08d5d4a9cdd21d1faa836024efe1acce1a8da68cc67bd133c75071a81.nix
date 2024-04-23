@@ -21,7 +21,7 @@
       synopsis = "an IPS patcher";
       description = "a program that patches files with patches of the IPS format";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hips" = {
@@ -31,9 +31,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."functors" or (errorHandler.buildDepError "functors"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

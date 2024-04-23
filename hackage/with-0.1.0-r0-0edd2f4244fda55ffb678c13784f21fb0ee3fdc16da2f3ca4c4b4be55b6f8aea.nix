@@ -21,6 +21,6 @@
       synopsis = "Simple open product type";
       description = "This is very small helper package without any dependencies";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

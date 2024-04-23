@@ -6,8 +6,8 @@
         nix = import ../hackage/derivingvia-extras-0.1.0.0-r0-36f1bbdffd936678d115bd81d1ab65786ec220d5ae8ca2e7bffb99d8545befd7.nix;
         revNum = 0;
         sha256 = "36f1bbdffd936678d115bd81d1ab65786ec220d5ae8ca2e7bffb99d8545befd7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

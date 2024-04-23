@@ -21,7 +21,7 @@
       synopsis = "Provides access to the RPC API of Bitcoin Core";
       description = "The Bitcoin Core application provides an HTTP RPC interface for communication.\nThis library implements access to these functions. It builds on top of the\n`bitcoin-tx` and `bitcoin-script`, and as such provides an extremely flexible\nenvironment to create, manipulate and store transactions and custom scripts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."bitcoin-block" or (errorHandler.buildDepError "bitcoin-block"))
           (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
           (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."bitcoin-tx" or (errorHandler.buildDepError "bitcoin-tx"))
             (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
             (hsPkgs."bitcoin-api" or (errorHandler.buildDepError "bitcoin-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

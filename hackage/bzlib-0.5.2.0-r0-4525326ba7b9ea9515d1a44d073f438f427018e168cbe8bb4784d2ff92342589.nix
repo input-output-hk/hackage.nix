@@ -21,16 +21,16 @@
       synopsis = "Compression and decompression in the bzip2 format";
       description = "This package provides a pure interface for compressing and\ndecompressing streams of data represented as lazy\n'ByteString's. It uses the bz2 C library so it has high\nperformance.\n\nIt provides a convenient high level API suitable for most\ntasks and for the few cases where more control is needed it\nprovides access to the full bzip2 feature set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!(!(system.isWindows || compiler.isGhcjs && true || system.isGhcjs || system.isWasm32))) (hsPkgs."bzip2-clib" or (errorHandler.buildDepError "bzip2-clib"));
-        libs = (pkgs.lib).optional (!(system.isWindows || compiler.isGhcjs && true || system.isGhcjs || system.isWasm32)) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (!!(system.isWindows || compiler.isGhcjs && true || system.isGhcjs || system.isWasm32)) (hsPkgs."bzip2-clib" or (errorHandler.buildDepError "bzip2-clib"));
+        libs = pkgs.lib.optional (!(system.isWindows || compiler.isGhcjs && true || system.isGhcjs || system.isWasm32)) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

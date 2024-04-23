@@ -14,7 +14,7 @@
       identifier = {
         name = "bazel-coverage-report-renderer";
         version = "0.1.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "2019 Tweag I/O Limited";
       maintainer = "m@tweag.io";
@@ -24,7 +24,7 @@
       synopsis = "HTML Coverage Reports for Rules_Haskell";
       description = "Generate coverage reports from Rules_Haskell Bazel coverage output";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bazel-coverage-report-renderer" = {
@@ -37,9 +37,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
             (hsPkgs."listsafe" or (errorHandler.buildDepError "listsafe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

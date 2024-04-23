@@ -21,7 +21,7 @@
       synopsis = "Efficient relational queries on Haskell sets.";
       description = "Create and query sets that are indexed by multiple indices.\nThis is a variant of the ixset package that tracks the index\ninformation via the type system. It should be safer to use than\nixset, but also requires more GHC extensions.\nThe two packages are currently relatively compatible. Switching\nfrom one to the other requires a little bit of manual work, but\nnot very much.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

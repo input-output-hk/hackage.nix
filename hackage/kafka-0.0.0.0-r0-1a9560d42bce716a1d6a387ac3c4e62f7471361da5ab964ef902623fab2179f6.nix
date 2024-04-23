@@ -21,6 +21,6 @@
       synopsis = "TBA";
       description = "hw-kafka-client implemented in more pragmatic haskell";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

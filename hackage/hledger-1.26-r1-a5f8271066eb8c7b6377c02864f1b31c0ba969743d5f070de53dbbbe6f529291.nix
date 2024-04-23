@@ -21,7 +21,7 @@
       synopsis = "Command-line interface for the hledger accounting system";
       description = "The command-line interface for the hledger accounting system.\nIts basic function is to read a plain text file describing\nfinancial transactions and produce useful reports.\n\nhledger is a robust, cross-platform set of tools for tracking money,\ntime, or any other commodity, using double-entry accounting and a\nsimple, editable file format, with command-line, terminal and web\ninterfaces. It is a Haskell rewrite of Ledger, and one of the leading\nimplementations of Plain Text Accounting. Read more at:\n<https://hledger.org>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,9 +62,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."wizards" or (errorHandler.buildDepError "wizards"))
-          ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+        ] ++ pkgs.lib.optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
         buildable = true;
-        };
+      };
       exes = {
         "hledger" = {
           depends = [
@@ -103,10 +103,10 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."wizards" or (errorHandler.buildDepError "wizards"))
-            ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          ] ++ pkgs.lib.optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "unittest" = {
           depends = [
@@ -145,10 +145,10 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."wizards" or (errorHandler.buildDepError "wizards"))
-            ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          ] ++ pkgs.lib.optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -189,9 +189,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."wizards" or (errorHandler.buildDepError "wizards"))
-            ] ++ (pkgs.lib).optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          ] ++ pkgs.lib.optional (!system.isWindows && flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

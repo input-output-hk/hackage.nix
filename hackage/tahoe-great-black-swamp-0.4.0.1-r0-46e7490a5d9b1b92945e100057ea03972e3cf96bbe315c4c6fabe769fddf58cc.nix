@@ -21,7 +21,7 @@
       synopsis = "An implementation of the \"Great Black Swamp\" LAFS protocol.";
       description = "This package implements the recently proposed \"Great Black Swamp\" Least\nAuthority File Store protocol from the Tahoe-LAFS project.  It also includes\npieces of a storage server and client implementation based on that protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -72,9 +72,9 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "client-test" = {
           depends = [
@@ -107,28 +107,28 @@
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."tahoe-chk" or (errorHandler.buildDepError "tahoe-chk"))
             (hsPkgs."tahoe-great-black-swamp" or (errorHandler.buildDepError "tahoe-great-black-swamp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gbs-lafs-storage-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tahoe-great-black-swamp" or (errorHandler.buildDepError "tahoe-great-black-swamp"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gbs-generate-clients" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."servant-js" or (errorHandler.buildDepError "servant-js"))
             (hsPkgs."tahoe-great-black-swamp" or (errorHandler.buildDepError "tahoe-great-black-swamp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "http-tests" = {
           depends = [
@@ -176,9 +176,9 @@
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

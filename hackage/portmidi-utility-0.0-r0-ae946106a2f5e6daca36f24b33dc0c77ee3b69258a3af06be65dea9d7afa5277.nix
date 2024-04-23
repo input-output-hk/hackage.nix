@@ -21,16 +21,16 @@
       synopsis = "PortMidi utilities";
       description = "Currently provides a command-line tool\nthat lists all MIDI devices accessible by @PortMidi@.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "portmidi-list-devices" = {
           depends = [
             (hsPkgs."PortMidi" or (errorHandler.buildDepError "PortMidi"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

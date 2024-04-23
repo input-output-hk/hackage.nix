@@ -21,7 +21,7 @@
       synopsis = "Representable profunctors";
       description = "Representable profunctors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."profunctor-extras" or (errorHandler.buildDepError "profunctor-extras"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

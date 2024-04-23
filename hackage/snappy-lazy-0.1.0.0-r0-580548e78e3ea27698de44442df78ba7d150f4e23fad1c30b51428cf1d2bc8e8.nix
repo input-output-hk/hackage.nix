@@ -21,7 +21,7 @@
       synopsis = "Lazy bytestring compression and decompression";
       description = "Higher-level wrapper for streaming snappy decompression via ByteString";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."snappy" or (errorHandler.buildDepError "snappy"))
           (hsPkgs."snappy-framing" or (errorHandler.buildDepError "snappy-framing"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

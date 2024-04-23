@@ -21,7 +21,7 @@
       synopsis = "Lens GUI Toolkit";
       description = "LGtk is a GUI Toolkit.\n\nMain goals of LGtk:\n\n-Provide a Haskell EDSL for declarative description of interactive graphical applications\n\n-Provide an API for custom widget design\n\n-Provide a playground for high-level declarative features like\nderived state-save and undo-redo operations and\ntype-driven GUI generation\n\nFor more information visit the following links:\n\n-<http://www.haskell.org/haskellwiki/LGtk haskell.org wiki page>\n\n-<http://lgtk.wordpress.com/ Wordpress blog>\n\n-<https://github.com/divipp/lgtk GitHub repository>\n\n-<http://hackage.haskell.org/package/lgtk Haddock documentation (this page)>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
           (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
           (hsPkgs."lensref" or (errorHandler.buildDepError "lensref"))
-          ] ++ (pkgs.lib).optional (flags.gtk) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"));
+        ] ++ pkgs.lib.optional (flags.gtk) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"));
         buildable = true;
-        };
+      };
       exes = {
         "lgtkdemo" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."lgtk" or (errorHandler.buildDepError "lgtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

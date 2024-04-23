@@ -21,7 +21,7 @@
       synopsis = "Automatic Rule-Based Time Tracker";
       description = "arbtt is a background daemon that stores which windows are open, which one\nhas the focus and how long since your last action (and possbly more sources\nlater), and stores this. It is also a program that will, based on\nexpressive rules you specify, derive what you were doing, and what for.\n\nThe documentation, which includes the changelog, can also be found at\n<http://arbtt.nomeata.de/doc/users_guide/>.\n\nWARNING: The log file might contain very sensitive private data. Make sure\nyou understand the consequences of a full-time logger and be careful with this\ndata.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "arbtt-capture" = {
@@ -35,21 +35,21 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (if flags.old-locale
+          ] ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if system.isWindows
+            ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."X11" or (errorHandler.buildDepError "X11")) ]);
           libs = if system.isWindows
             then [ (pkgs."psapi" or (errorHandler.sysDepError "psapi")) ]
             else [ (pkgs."Xss" or (errorHandler.sysDepError "Xss")) ];
           buildable = true;
-          };
+        };
         "arbtt-stats" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,14 +68,14 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
             (hsPkgs."bytestring-progress" or (errorHandler.buildDepError "bytestring-progress"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
+        };
         "arbtt-dump" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,14 +91,14 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
+        };
         "arbtt-import" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,14 +112,14 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
+        };
         "arbtt-recover" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -130,15 +130,15 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = ([
@@ -156,14 +156,14 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

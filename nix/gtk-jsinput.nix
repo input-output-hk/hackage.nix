@@ -6,8 +6,8 @@
         nix = import ../hackage/gtk-jsinput-0.0.0-r0-5b5b5733ae3703455cbadaadbe2d05b6a3a2dcaa26ea15f24a7474c75982b312.nix;
         revNum = 0;
         sha256 = "5b5b5733ae3703455cbadaadbe2d05b6a3a2dcaa26ea15f24a7474c75982b312";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

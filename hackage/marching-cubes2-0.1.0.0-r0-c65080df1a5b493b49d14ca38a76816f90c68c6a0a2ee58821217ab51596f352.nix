@@ -21,7 +21,7 @@
       synopsis = "Marching Cubes";
       description = "The marching cubes algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

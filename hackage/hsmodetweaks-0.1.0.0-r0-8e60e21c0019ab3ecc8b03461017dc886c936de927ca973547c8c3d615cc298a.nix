@@ -21,7 +21,7 @@
       synopsis = "Tool for generating .dir-locals.el for intero";
       description = "Keeps .dir-locals.el up to date so that intero can automatically choose the right targets";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsmodetweaks" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hpack" or (errorHandler.buildDepError "hpack"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

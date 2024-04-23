@@ -21,7 +21,7 @@
       synopsis = "gettext-th can internationalise a haskell program without runtime dependencies";
       description = "The [gettext](https://www.gnu.org/software/gettext/) project provides a library and tools for internationalization and localization of software. gettext-th allows you to use the gettext tooling without adding any runtime dependencies because texts are exchanged at compile time. But this also means that you have an application per language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."haskell-gettext" or (errorHandler.buildDepError "haskell-gettext"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

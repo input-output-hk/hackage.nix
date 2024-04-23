@@ -21,7 +21,7 @@
       synopsis = "Start and stop a temporary postgres";
       description = "@tmp-postgres@ provides functions creating a temporary @postgres@ instance.\n\nBy default it will create a temporary directory for the data,\na random port for listening and a temporary directory for a UNIX\ndomain socket.\n\nHere is an example using the expection safe 'with' function:\n\n>  with $ \\db -> bracket (connectPostgreSQL (toConnectionString db)) close $ \\conn ->\n>   execute_ conn \"CREATE TABLE foo (id int)\"\n\nMacOS and Linux are support. Windows is not.\n\nRequires PostgreSQL 9.3+\n\nWARNING!!\nUbuntu's PostgreSQL installation does not put @initdb@ on the @PATH@. We need to add it manually. The necessary binaries are in the @\\/usr\\/lib\\/postgresql\\/VERSION\\/bin\\/@ directory, and should be added to the @PATH@\n\n> echo \"export PATH=$PATH:/usr/lib/postgresql/VERSION/bin/\" >> /home/ubuntu/.bashrc\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."postgresql-simple-opts" or (errorHandler.buildDepError "postgresql-simple-opts"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."postgresql-simple-opts" or (errorHandler.buildDepError "postgresql-simple-opts"))
             (hsPkgs."postgres-options" or (errorHandler.buildDepError "postgres-options"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

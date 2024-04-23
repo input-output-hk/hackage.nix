@@ -21,7 +21,7 @@
       synopsis = "Content addressable Haskell package management";
       description = "Please see the README on GitHub at <https://github.com/commercialhaskell/pantry#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -71,9 +71,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
         buildable = true;
-        };
+      };
       exes = {
         "test-pretty-exceptions" = {
           depends = ([
@@ -125,13 +125,13 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ (pkgs.lib).optionals (system.isWindows) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"))) ++ pkgs.lib.optionals (system.isWindows) [
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = if !flags.test-pretty-exceptions then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -187,9 +187,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

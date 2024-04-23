@@ -29,8 +29,8 @@
         (hsPkgs.buildPackages.hxt or (pkgs.buildPackages.hxt or (errorHandler.setupDepError "hxt")))
         (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers or (errorHandler.setupDepError "transformers")))
         (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -39,14 +39,14 @@
           (hsPkgs."fixed" or (errorHandler.buildDepError "fixed"))
           (hsPkgs."half" or (errorHandler.buildDepError "half"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."opengl32" or (errorHandler.sysDepError "opengl32")) ]
-          else (pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optional (!system.isIos) (pkgs."GL" or (errorHandler.sysDepError "GL")));
-        frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
+          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs."GL" or (errorHandler.sysDepError "GL")));
+        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
           then [ (pkgs."OpenGL" or (errorHandler.sysDepError "OpenGL")) ]
-          else (pkgs.lib).optional (system.isIos) (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES")));
+          else pkgs.lib.optional (system.isIos) (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

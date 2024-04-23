@@ -14,7 +14,7 @@
       identifier = {
         name = "keera-hails-mvc-environment-gtk";
         version = "0.0.3.3";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -24,7 +24,7 @@
       synopsis = "Haskell on Gtk rails - Gtk-based global environment for MVC applications";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."keera-hails-mvc-model-protectedmodel" or (errorHandler.buildDepError "keera-hails-mvc-model-protectedmodel"))
           (hsPkgs."keera-hails-mvc-view" or (errorHandler.buildDepError "keera-hails-mvc-view"))
           (hsPkgs."keera-hails-mvc-view-gtk" or (errorHandler.buildDepError "keera-hails-mvc-view-gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

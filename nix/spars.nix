@@ -6,8 +6,8 @@
         nix = import ../hackage/spars-0.1.0.0-r0-643a5974f4772638873856320fc315cc0fc2ba11b030dd06a9a39a7b58d1a97c.nix;
         revNum = 0;
         sha256 = "643a5974f4772638873856320fc315cc0fc2ba11b030dd06a9a39a7b58d1a97c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

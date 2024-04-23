@@ -13,7 +13,7 @@
       optimizeadvanced = true;
       buildprofilers = false;
       buildtests = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "synthesizer-core"; version = "0.7.0.1"; };
@@ -26,7 +26,7 @@
       synopsis = "Audio signal processing coded in Haskell: Low level part";
       description = "Low level audio signal processing\nused by the other synthesizer packages.\nThe routines can be really fast\ndue to StorableVector, Stream-like list type and aggressive inlining.\nFor an interface to Haskore see <http://code.haskell.org/haskore/revised/synthesizer/>.\nFor introductory examples see \"Synthesizer.Plain.Tutorial\"\nand \"Synthesizer.Generic.Tutorial\".\n\nFunctions:\nOscillators, Noise generators, Frequency filters,\nFast Fourier transform for computation of frequency spectrum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,12 +54,12 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
             (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
@@ -72,11 +72,11 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
+        };
         "fouriertest" = {
-          depends = (pkgs.lib).optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
@@ -84,11 +84,11 @@
             (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildprofilers then true else false;
-          };
+        };
         "speedtest" = {
-          depends = (pkgs.lib).optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
@@ -97,33 +97,33 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildprofilers then true else false;
-          };
+        };
         "speedtest-exp" = {
-          depends = (pkgs.lib).optionals (flags.buildprofilers) ([
+          depends = pkgs.lib.optionals (flags.buildprofilers) ([
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.splitbase) [
+          ] ++ pkgs.lib.optionals (flags.splitbase) [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]);
+          ]);
           buildable = if flags.buildprofilers then true else false;
-          };
+        };
         "speedtest-simple" = {
-          depends = (pkgs.lib).optionals (flags.buildprofilers) [
+          depends = pkgs.lib.optionals (flags.buildprofilers) [
             (hsPkgs."synthesizer-core" or (errorHandler.buildDepError "synthesizer-core"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildprofilers then true else false;
-          };
         };
       };
-    }
+    };
+  }

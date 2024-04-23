@@ -21,7 +21,7 @@
       synopsis = "Execute arbitrary actions for each unread element of RSS/Atom feeds";
       description = "Cf README file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -70,18 +70,18 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imm" = {
           depends = [
             (hsPkgs."imm" or (errorHandler.buildDepError "imm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

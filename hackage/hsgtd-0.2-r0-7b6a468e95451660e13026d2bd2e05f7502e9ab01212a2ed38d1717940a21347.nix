@@ -21,7 +21,7 @@
       synopsis = "Console-based gettings-things-done application";
       description = "Console-based application for using the Gettings-Things-\nDone- approach for task management using projects and\ncontexts.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsgtd" = {
@@ -32,9 +32,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

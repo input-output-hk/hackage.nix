@@ -21,7 +21,7 @@
       synopsis = "Simple top-level library for Crucible Simulation";
       description = "The Crux library provides the common elements for running a Crucible\nsimulation on specific source files, with various options.  This\nlibrary is used by specific instances of Crux tools that provide a\ncommand-line interface to Crucible-based simulation and\nverification, usually by embedding verification specifications in\nthe source language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,8 +57,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

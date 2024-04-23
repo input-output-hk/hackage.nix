@@ -21,7 +21,7 @@
       synopsis = "A modern Base64 library";
       description = "A performant, featureful RFC 4648 and 7049-compliant Base64 implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "base64-tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random-bytestring" or (errorHandler.buildDepError "random-bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

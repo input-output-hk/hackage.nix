@@ -21,11 +21,11 @@
       synopsis = "Enforce endianness with types";
       description = "This package provides newtype wrappers for separating data with specified\nendianness from other data of the same type with normal, system-specific\nendianness. Since these wrappers are newtypes, no runtime overhead is\nincurred.\nCurrently the underlying 'EndianSensitive' typeclass its instances are taken\ndirectly from the 'data-endian' package. However, if Haskell or GHC ever gets\na built-in equivalent, like as is proposed in\n'http://ghc.haskell.org/trac/ghc/ticket/7902', it should be trivial to update\nthis to use that instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

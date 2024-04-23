@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-codeartifact-2.0-r0-d7fc1f6f7dee0cddccc2085e84bac621c509c9451fff434d81e503cfbb30ee19.nix;
         revNum = 0;
         sha256 = "d7fc1f6f7dee0cddccc2085e84bac621c509c9451fff434d81e503cfbb30ee19";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

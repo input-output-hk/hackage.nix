@@ -21,11 +21,11 @@
       synopsis = "Provides with the functionality like unix \"uniq\" utility";
       description = "Module provides with functions to find unique and duplicate elements in the list   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-marketplace-catalog-2.0-r0-1dbf1a435fa072839e3613ddf1cf04cd2fbb9a76a9654907a7a2991c4961fc35.nix;
         revNum = 0;
         sha256 = "1dbf1a435fa072839e3613ddf1cf04cd2fbb9a76a9654907a7a2991c4961fc35";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

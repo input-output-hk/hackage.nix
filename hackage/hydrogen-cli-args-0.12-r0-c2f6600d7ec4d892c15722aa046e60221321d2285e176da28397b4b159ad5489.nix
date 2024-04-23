@@ -21,7 +21,7 @@
       synopsis = "Hydrogen Command Line Arguments Parser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hydrogen-multimap" or (errorHandler.buildDepError "hydrogen-multimap"))
           (hsPkgs."hydrogen-prelude" or (errorHandler.buildDepError "hydrogen-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

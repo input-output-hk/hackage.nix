@@ -21,25 +21,25 @@
       synopsis = "";
       description = "Simple Option to display version text file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "optparse-version-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-version" or (errorHandler.buildDepError "optparse-version"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

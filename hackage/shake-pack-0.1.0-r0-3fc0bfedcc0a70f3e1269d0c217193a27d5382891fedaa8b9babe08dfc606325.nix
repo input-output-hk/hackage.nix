@@ -21,7 +21,7 @@
       synopsis = "Shake File Pack Actions";
       description = "Shake rule for tar-ing and compressing files with bzip2.\nUses bz2 C library on the system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

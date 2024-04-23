@@ -21,7 +21,7 @@
       synopsis = "ray tracer";
       description = "Ray Tracer capable of rendering a variety of primitives,\nwith support for CSG (difference and intersection of solids),\nBIH-based acceleration structure, and ability to load NFF\nformat files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "glome" = {
@@ -35,9 +35,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

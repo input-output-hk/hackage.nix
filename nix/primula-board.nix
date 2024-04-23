@@ -6,8 +6,8 @@
         nix = import ../hackage/primula-board-0.0.1-r0-608019a34945365a6af59eba9c13d7d88184c6d249aecb60b257d8c25b9023ae.nix;
         revNum = 0;
         sha256 = "608019a34945365a6af59eba9c13d7d88184c6d249aecb60b257d8c25b9023ae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

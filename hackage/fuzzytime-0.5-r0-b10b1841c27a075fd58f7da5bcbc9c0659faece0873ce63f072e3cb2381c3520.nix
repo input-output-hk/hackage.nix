@@ -21,7 +21,7 @@
       synopsis = "A clock which tells the time in a more familiar way";
       description = "A clock which tells the time in a more familiar way";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fuzzytime" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

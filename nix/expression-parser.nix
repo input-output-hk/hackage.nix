@@ -6,8 +6,8 @@
         nix = import ../hackage/expression-parser-0.1-r0-ce11029ac2d1eb796aebf992285e172066b77862d7d6469ec28048207bf43ca4.nix;
         revNum = 0;
         sha256 = "ce11029ac2d1eb796aebf992285e172066b77862d7d6469ec28048207bf43ca4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Bindings for signal-cli's DBus interface";
       description = "This library aims provides a way to interact programmatically with the private messenger signal <https://signal.org/>. To use this, you need an instance of [signal-cli] (https://github.com/AsamK/signal-cli) running in daemon mode, with the DBus interface enabled. Support exists for almost the whole api, which should be sufficient for your bot-writing needs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "signal-dbus-example" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."signal-messaging-dbus" or (errorHandler.buildDepError "signal-messaging-dbus"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Ogma: Runtime Monitor translator: FRET Component Requirement DB Frontend";
       description = "Ogma is a tool to facilitate the integration of safe runtime monitors into\nother systems. Ogma extends\n<https://github.com/Copilot-Language/copilot Copilot>, a high-level runtime\nverification framework that generates hard real-time C99 code.\n\nThis library contains a frontend to read FRET Component Requirement Databases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ogma-language-cocospec" or (errorHandler.buildDepError "ogma-language-cocospec"))
           (hsPkgs."ogma-language-smv" or (errorHandler.buildDepError "ogma-language-smv"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."ogma-extra" or (errorHandler.buildDepError "ogma-extra"))
             (hsPkgs."ogma-language-fret-reqs" or (errorHandler.buildDepError "ogma-language-fret-reqs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

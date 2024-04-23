@@ -6,8 +6,8 @@
         nix = import ../hackage/binary-varint-0.1.0.0-r0-4637979e3e029d5fcfc41133e9fd3b905d5d0b04d7135503911305c13093c743.nix;
         revNum = 0;
         sha256 = "4637979e3e029d5fcfc41133e9fd3b905d5d0b04d7135503911305c13093c743";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

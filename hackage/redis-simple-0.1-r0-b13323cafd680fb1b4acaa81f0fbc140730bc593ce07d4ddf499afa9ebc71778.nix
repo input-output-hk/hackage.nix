@@ -21,7 +21,7 @@
       synopsis = "Simple redis bindings for Haskell";
       description = "This package is meant to simplify usage of redis in\nHaskell. It is built on the full-blown @redis@ package\nand, in fact, does nothing more than providing an easier\ninterface to a small subset of it's functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."redis" or (errorHandler.buildDepError "redis"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

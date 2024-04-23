@@ -21,7 +21,7 @@
       synopsis = "Filesystem to manage and parse dotfiles";
       description = "A system which, when pointed to a folder full of specially\nannotated config files, will present these files tailored to\nyour current environment. Useful for making, for example, an if-block\nin your mutt-config depending on your current location, which you\ncan retrieve via some shell command.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dotfs" = {
@@ -36,10 +36,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-dotfs" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

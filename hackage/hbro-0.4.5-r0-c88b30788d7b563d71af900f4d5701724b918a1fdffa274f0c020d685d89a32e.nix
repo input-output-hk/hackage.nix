@@ -21,7 +21,7 @@
       synopsis = "A suckless minimal KISSy browser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."zeromq-haskell" or (errorHandler.buildDepError "zeromq-haskell"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hbro" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."pango" or (errorHandler.buildDepError "pango"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."webkit" or (errorHandler.buildDepError "webkit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Host content provided by a Git repo";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

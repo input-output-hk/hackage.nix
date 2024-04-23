@@ -21,7 +21,7 @@
       synopsis = "A supercompiler for f-lite";
       description = "A supercompiler for f-lite";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "optimusprime" = {
@@ -37,9 +37,9 @@
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

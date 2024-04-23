@@ -21,16 +21,16 @@
       synopsis = "Fltkhs template project";
       description = "Starter kit for an FLTKHS project";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "fltkhs-hello-world" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

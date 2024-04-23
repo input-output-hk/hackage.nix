@@ -21,14 +21,14 @@
       synopsis = "Amazon DynamoDB SDK.";
       description = "Amazon DynamoDB is a fully managed NoSQL database service that provides\nfast and predictable performance with seamless scalability. You can use\nAmazon DynamoDB to create a database table that can store and retrieve\nany amount of data, and serve any level of request traffic. Amazon\nDynamoDB automatically spreads the data and traffic for the table over\na sufficient number of servers to handle the request capacity specified\nby the customer and the amount of data stored, while maintaining\nconsistent and fast performance.\n\n/See:/ <http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

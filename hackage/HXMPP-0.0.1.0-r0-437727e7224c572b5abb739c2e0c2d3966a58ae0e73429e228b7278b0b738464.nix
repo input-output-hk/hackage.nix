@@ -21,7 +21,7 @@
       synopsis = "A (prototyped) easy to use XMPP library";
       description = "A work in progress of an implementation of RFC 3920: XMPP\nCore.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."xml-enumerator" or (errorHandler.buildDepError "xml-enumerator"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hxmpp-0.0.1.0-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."xml-enumerator" or (errorHandler.buildDepError "xml-enumerator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

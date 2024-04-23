@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of MessagePack";
       description = "A Haskell implementation of MessagePack <http://msgpack.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "msgpack-tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

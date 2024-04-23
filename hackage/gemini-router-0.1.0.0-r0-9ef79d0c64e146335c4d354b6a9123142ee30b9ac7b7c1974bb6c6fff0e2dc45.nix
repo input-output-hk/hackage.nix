@@ -21,7 +21,7 @@
       synopsis = "A simple Happstack-style Gemini router";
       description = "This package contains a 'Router' monad transformer that works on top of the\ngemini-server package, with a functional+monadic+alternative interface,\nsimilar to Happstack. With it you can define gemini endpoints, capture parts\nof the request, and pass the requests to specific handlers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."gemini-server" or (errorHandler.buildDepError "gemini-server"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

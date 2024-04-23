@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Experimental video processing DSL for polysemy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."simple-media-timestamp-formatting" or (errorHandler.buildDepError "simple-media-timestamp-formatting"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

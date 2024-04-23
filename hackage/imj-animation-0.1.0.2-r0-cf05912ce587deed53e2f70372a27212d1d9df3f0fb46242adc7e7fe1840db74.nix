@@ -21,7 +21,7 @@
       synopsis = "Animation Framework";
       description = "Framework to create event-based, physics-based, composed, generative animations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."imj-base" or (errorHandler.buildDepError "imj-base"))
           (hsPkgs."imj-prelude" or (errorHandler.buildDepError "imj-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "imj-animation-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

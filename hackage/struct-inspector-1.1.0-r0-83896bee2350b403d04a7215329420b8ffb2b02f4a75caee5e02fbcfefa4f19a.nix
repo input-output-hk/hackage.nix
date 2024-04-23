@@ -21,7 +21,7 @@
       synopsis = "Inspect the padding and size of C data declarations and their fields";
       description = "Inspect the padding and size of C data declarations and their fields.\nFor more information see <https://github.com/414owen/struct-inspector>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "struct-inspector" = {
@@ -37,9 +37,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

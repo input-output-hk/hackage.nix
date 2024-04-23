@@ -21,7 +21,7 @@
       synopsis = "e.g. `flip systemctl foo.service start` does `systemctl start foo.service`";
       description = "Haskell's flip function in our CLI";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flip" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

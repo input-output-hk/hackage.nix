@@ -6,8 +6,8 @@
         nix = import ../hackage/heterolist-0.2.0.0-r0-a511ec8e9186877d27966691f8f473daf2a8ebe177c04ea6ce2cd8b62d8040a1.nix;
         revNum = 0;
         sha256 = "a511ec8e9186877d27966691f8f473daf2a8ebe177c04ea6ce2cd8b62d8040a1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

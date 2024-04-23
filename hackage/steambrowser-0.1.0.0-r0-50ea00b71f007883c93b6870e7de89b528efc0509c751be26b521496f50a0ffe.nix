@@ -21,7 +21,7 @@
       synopsis = "List and launch steam games from the cli";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "steambrowser" = {
@@ -30,9 +30,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

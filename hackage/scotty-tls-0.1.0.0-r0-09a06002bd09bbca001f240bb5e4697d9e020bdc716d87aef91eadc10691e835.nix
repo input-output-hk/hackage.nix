@@ -21,7 +21,7 @@
       synopsis = "TLS for Scotty";
       description = "Run your Scotty apps over TLS";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

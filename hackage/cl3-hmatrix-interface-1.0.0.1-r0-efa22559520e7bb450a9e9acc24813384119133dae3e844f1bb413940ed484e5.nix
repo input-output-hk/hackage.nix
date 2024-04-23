@@ -21,15 +21,15 @@
       synopsis = "Interface to/from Cl3 and HMatrix.";
       description = "Haskell Library implementing standard interface functions for the Algebra of Physical Space Cl(3,0) and HMatrix   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cl3" or (errorHandler.buildDepError "cl3"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

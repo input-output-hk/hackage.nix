@@ -21,7 +21,7 @@
       synopsis = "portable, type-safe URL routing";
       description = "This library adds support for parsing/printing URLs using the regular generics library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."regular" or (errorHandler.buildDepError "regular"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Demo library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,8 +60,8 @@
           (hsPkgs."hw-succinct" or (errorHandler.buildDepError "hw-succinct"))
           (hsPkgs."hw-uri" or (errorHandler.buildDepError "hw-uri"))
           (hsPkgs."hw-xml" or (errorHandler.buildDepError "hw-xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

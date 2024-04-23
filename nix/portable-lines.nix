@@ -6,8 +6,8 @@
         nix = import ../hackage/portable-lines-0.1-r0-21c3b905888a4b43f957cd8e8cdf2af00942bb161aa19a6b20db18b661de0510.nix;
         revNum = 0;
         sha256 = "21c3b905888a4b43f957cd8e8cdf2af00942bb161aa19a6b20db18b661de0510";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/sirkel-0.1-r0-717c66962495de460f67e8d2d5d551c56664dd6a0c37b4bf1fe7dd2ae821412d.nix;
         revNum = 0;
         sha256 = "717c66962495de460f67e8d2d5d551c56664dd6a0c37b4bf1fe7dd2ae821412d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

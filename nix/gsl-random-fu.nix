@@ -6,8 +6,8 @@
         nix = import ../hackage/gsl-random-fu-0.0.0.1-r0-3236484977a24e275ca4c9339ad6c5ba68c503a1fea99b2c65844a9298355022.nix;
         revNum = 0;
         sha256 = "3236484977a24e275ca4c9339ad6c5ba68c503a1fea99b2c65844a9298355022";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

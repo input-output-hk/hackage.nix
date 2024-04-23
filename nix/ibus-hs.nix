@@ -6,8 +6,8 @@
         nix = import ../hackage/ibus-hs-0.0.0.1-r0-a19b060fb0d7a181ee8cdceb8dc9b9b7590321d07f3f7dfc478f78b7934e4547.nix;
         revNum = 0;
         sha256 = "a19b060fb0d7a181ee8cdceb8dc9b9b7590321d07f3f7dfc478f78b7934e4547";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A tool and library for Markov chains based text generation.";
       description = "A tool and library for Markov chains based text generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,14 +31,14 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hmark" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

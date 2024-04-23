@@ -21,7 +21,7 @@
       synopsis = "Lists of size length a power of two.";
       description = "Some algorithmic problems work only when the input list\nhas length a power of two. This library implements a\ndata structure optimized for this.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "binary-list-bench" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."binary-list" or (errorHandler.buildDepError "binary-list"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

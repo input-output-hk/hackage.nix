@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to RRDtool";
       description = "RRDtool is a high performance data logging and graphing system for\ntime series data.\nThis package provides low-level bindings to librrd, which contains\nmost of the functionality in RRDtool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."librrd" or (errorHandler.pkgConfDepError "librrd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

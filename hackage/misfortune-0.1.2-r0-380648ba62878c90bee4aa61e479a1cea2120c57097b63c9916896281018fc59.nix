@@ -21,7 +21,7 @@
       synopsis = "fortune-mod clone";
       description = "fortune-mod clone, in library and executable form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.0" && (compiler.version).lt "7.1")) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.0" && compiler.version.lt "7.1")) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
         buildable = true;
-        };
+      };
       exes = {
         "misfortune" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.0" && (compiler.version).lt "7.1")) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.0" && compiler.version.lt "7.1")) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

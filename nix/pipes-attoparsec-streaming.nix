@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-attoparsec-streaming-0.1.0.0-r0-3e2adf0d101900a32d8445cd3e19b81763d143f4c3ee30780f5a20a987756b53.nix;
         revNum = 0;
         sha256 = "3e2adf0d101900a32d8445cd3e19b81763d143f4c3ee30780f5a20a987756b53";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

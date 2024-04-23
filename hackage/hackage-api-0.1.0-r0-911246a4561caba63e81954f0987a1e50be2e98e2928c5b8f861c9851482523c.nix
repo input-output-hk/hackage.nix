@@ -21,7 +21,7 @@
       synopsis = "An API binding to Hackage API";
       description = "An (partial) API binding to Hackage API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hackage-api-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."hackage-api" or (errorHandler.buildDepError "hackage-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

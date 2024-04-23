@@ -21,7 +21,7 @@
       synopsis = "WebSocket library";
       description = "A library for creating Websocket servers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."webserver" or (errorHandler.buildDepError "webserver"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "websocket-echo" = {
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

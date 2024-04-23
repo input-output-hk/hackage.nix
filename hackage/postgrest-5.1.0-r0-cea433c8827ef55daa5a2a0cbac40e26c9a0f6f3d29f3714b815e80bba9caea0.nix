@@ -21,7 +21,7 @@
       synopsis = "REST API for any Postgres database";
       description = "Reads the schema of a PostgreSQL database and creates RESTful routes\nfor the tables and views, supporting all HTTP verbs that security\npermits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,9 +66,9 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "postgrest" = {
           depends = [
@@ -84,10 +84,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -121,9 +121,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

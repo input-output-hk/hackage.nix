@@ -21,7 +21,7 @@
       synopsis = "Electrs client library for Haskell";
       description = "You can find documentation at <https://hackage.haskell.org/package/electrs-client>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "electrs-client-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."electrs-client" or (errorHandler.buildDepError "electrs-client"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."network-bitcoin" or (errorHandler.buildDepError "network-bitcoin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,17 +21,17 @@
       synopsis = "Haskell bindings to HIDAPI";
       description = "Haskell bindings to the HIDAPI library (<http://www.signal11.us/oss/hidapi/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."hidapi-hidraw" or (errorHandler.sysDepError "hidapi-hidraw"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

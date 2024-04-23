@@ -21,7 +21,7 @@
       synopsis = "Third party extensions for xmonad";
       description = "Third party tiling algorithms, configurations and scripts to xmonad,\na tiling window manager for X, released under GPL license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

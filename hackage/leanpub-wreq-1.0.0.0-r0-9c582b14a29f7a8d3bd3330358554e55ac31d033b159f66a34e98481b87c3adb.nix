@@ -21,7 +21,7 @@
       synopsis = "Use the Leanpub API via Wreq";
       description = "This package helps you make requests to the\n<https://leanpub.com/help/api Leanpub API> in conjunction with\nthe <https://hackage.haskell.org/package/wreq wreq> package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

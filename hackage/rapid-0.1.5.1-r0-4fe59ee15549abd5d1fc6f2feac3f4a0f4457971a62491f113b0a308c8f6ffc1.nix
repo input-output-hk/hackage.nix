@@ -21,7 +21,7 @@
       synopsis = "Hot reload and reload-surviving values with GHCi";
       description = "This package provides a rapid prototyping suite for\nGHCi:\n\n- Reload individual components of your application as\nyou iterate: improves development experience for\nlong-running applications such as (web) servers or\nuser interfaces by keeping the app running in the\nbackground and allowing reloading it after code\nchanges.\n\n- Reuse expensive resources across reloads: useful in\nbatch-style programs to compute/aquire a resource\nonce, then reuse it across code reloads.\n\nTechnically, this package is a safe and convenient wrapper around\n<https://hackage.haskell.org/package/foreign-store foreign-store>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."foreign-store" or (errorHandler.buildDepError "foreign-store"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

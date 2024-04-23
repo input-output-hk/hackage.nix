@@ -21,7 +21,7 @@
       synopsis = "An experimental programming language with typed algebraic effects";
       description = "An experimental programming language with typed algebraic effects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "frank" = {
@@ -31,9 +31,9 @@
             (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."she" or (errorHandler.buildDepError "she"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

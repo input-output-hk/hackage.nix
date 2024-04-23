@@ -21,7 +21,7 @@
       synopsis = "Finite Fields";
       description = "This is an implementation of finite fields.\nCurrently only prime fields are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,16 +29,16 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (if flags.useghctypelits
+        ] ++ (if flags.useghctypelits
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ]
+          ]
           else [
             (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "TestPrimeField" = {
           depends = ([
@@ -53,16 +53,16 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
             (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
-            ] ++ (if flags.useghctypelits
+          ] ++ (if flags.useghctypelits
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-              ]
+            ]
             else [
               (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

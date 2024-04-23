@@ -6,8 +6,8 @@
         nix = import ../hackage/RoundingFiasco-0.1.0.0-r0-f21985070a14dc9cddbc3b5ab573e85dc17297776f19d1a6dc534f584fd36c18.nix;
         revNum = 0;
         sha256 = "f21985070a14dc9cddbc3b5ab573e85dc17297776f19d1a6dc534f584fd36c18";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "enumerate all the values in a finite type (automatically)";
       description = "provides (1) a typeclass for enumerating all values in a finite type, (2) a generic instance for automatic deriving, and (3) helpers that reify functions (partial or total, monadic or pure) into a Map.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."enumerate" or (errorHandler.buildDepError "enumerate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

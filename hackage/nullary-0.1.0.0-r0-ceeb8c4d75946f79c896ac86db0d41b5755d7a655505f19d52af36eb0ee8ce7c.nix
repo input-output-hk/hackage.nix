@@ -21,11 +21,11 @@
       synopsis = "A package for working with nullary type classes.";
       description = "Work with nullary type classes without orphan instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

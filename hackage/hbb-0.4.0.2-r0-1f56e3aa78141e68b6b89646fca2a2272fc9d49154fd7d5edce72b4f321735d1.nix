@@ -21,7 +21,7 @@
       synopsis = "Haskell Busy Bee, a backend for text editors.";
       description = "This project forms the executable hbb which can be used\nas backend for text editors to provide them with a rich\nHaskell editing experience.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hbb" = {
@@ -32,9 +32,9 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

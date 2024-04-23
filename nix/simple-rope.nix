@@ -6,8 +6,8 @@
         nix = import ../hackage/simple-rope-0.1-r0-613ba89409960a9343227d006e082f81b3d5eee08f6cf8420ce604f757212103.nix;
         revNum = 0;
         sha256 = "613ba89409960a9343227d006e082f81b3d5eee08f6cf8420ce604f757212103";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

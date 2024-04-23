@@ -21,7 +21,7 @@
       synopsis = "Functional synthesis of images and animations";
       description = "Propane is a system for synthesizing images and animations, in the spirit\nof Pan (<http://conal.net/Pan/>) and many other projects.  The core idea is\nthat an image is a function assigning a colour to each point in the plane.\nSimilarly, an animation assigns an image to each point in time.  Haskell's\ntools for functional and declarative programming can be used directly on\nimages and animations.\n\nSeveral examples are provided, in the @examples/@ directory.\n\nPropane uses the Repa array library.  This means that Propane automatically\nuses multiple CPU cores for rendering, provided the program is compiled and\nrun with threads enabled.  That said, the implementation has not yet been\noptimized for speed.\n\nPropane is a modest toy right now, but there are vague plans to make it\ndo fancy things.  Please contact the author with suggestions or code!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."spawn" or (errorHandler.buildDepError "spawn"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

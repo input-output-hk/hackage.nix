@@ -21,7 +21,7 @@
       synopsis = "Create Vega-Lite visualizations (version 4) in Haskell.";
       description = "This is based on the elm-vegalite package\n(<http://package.elm-lang.org/packages/gicentre/elm-vegalite/latest>)\nby Jo Wood of the giCentre at the City University of London.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "playtutorial" = {
-          depends = (pkgs.lib).optionals (flags.tools) [
+          depends = pkgs.lib.optionals (flags.tools) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,10 +43,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.tools then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

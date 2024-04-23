@@ -21,7 +21,7 @@
       synopsis = "A command line tool for resolving dropbox conflicts. Deprecated! Please use confsolve.";
       description = "A command line tool for resolving dropbox conflicts. Deprecated! Please use confsolve.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dropsolve" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

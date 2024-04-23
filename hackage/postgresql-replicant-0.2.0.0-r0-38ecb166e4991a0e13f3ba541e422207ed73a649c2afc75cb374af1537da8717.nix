@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL logical streaming replication library";
       description = "Please see the README on GitHub at <https://github.com/agentultra/postgresql-replicant#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "replicant-example" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
             (hsPkgs."postgresql-replicant" or (errorHandler.buildDepError "postgresql-replicant"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "postgres-replicant-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."postgresql-replicant" or (errorHandler.buildDepError "postgresql-replicant"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

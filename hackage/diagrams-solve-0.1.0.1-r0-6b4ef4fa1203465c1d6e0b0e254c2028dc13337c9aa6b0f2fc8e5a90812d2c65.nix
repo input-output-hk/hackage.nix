@@ -21,11 +21,11 @@
       synopsis = "Pure Haskell solver routines used by diagrams";
       description = "Pure Haskell solver routines used by the diagrams\nproject.  Currently includes finding real roots\nof low-degree (n < 5) polynomials, and solving\ntridiagonal and cyclic tridiagonal linear\nsystems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

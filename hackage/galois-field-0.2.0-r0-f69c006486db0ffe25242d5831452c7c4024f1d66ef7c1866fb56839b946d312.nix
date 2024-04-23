@@ -21,7 +21,7 @@
       synopsis = "Galois field library";
       description = "Galois field library for cryptography research";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "galois-field-tests" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "galois-field-benchmarks" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

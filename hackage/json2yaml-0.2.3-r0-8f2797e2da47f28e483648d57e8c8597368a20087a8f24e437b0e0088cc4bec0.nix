@@ -21,7 +21,7 @@
       synopsis = "Utility to convert a file from JSON to YAML format.";
       description = "Uses the yaml package, which is built off of libyaml.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "json2yaml" = {
@@ -31,9 +31,9 @@
             (hsPkgs."data-object-yaml" or (errorHandler.buildDepError "data-object-yaml"))
             (hsPkgs."data-object-json" or (errorHandler.buildDepError "data-object-json"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

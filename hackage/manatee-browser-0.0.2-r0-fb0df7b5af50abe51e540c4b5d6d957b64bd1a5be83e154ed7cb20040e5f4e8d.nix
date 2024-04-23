@@ -21,7 +21,7 @@
       synopsis = "Browser extension for Manatee.";
       description = "manatee-browser is WebKit browser extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-browser" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-browser" = { buildable = true; }; };
+    };
+  }

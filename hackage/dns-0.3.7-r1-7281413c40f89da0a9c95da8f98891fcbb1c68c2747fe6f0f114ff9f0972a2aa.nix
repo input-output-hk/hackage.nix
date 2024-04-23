@@ -21,10 +21,10 @@
       synopsis = "DNS library in Haskell";
       description = "DNS library for clients and servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhc && (compiler.version).ge "7"
+        depends = if compiler.isGhc && compiler.version.ge "7"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -39,7 +39,7 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -55,9 +55,9 @@
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

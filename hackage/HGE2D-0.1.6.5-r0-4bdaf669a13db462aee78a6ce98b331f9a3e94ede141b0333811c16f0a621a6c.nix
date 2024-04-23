@@ -21,7 +21,7 @@
       synopsis = "2D game engine written in Haskell";
       description = "See README and examples/ for further information";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,38 +29,38 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example4" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

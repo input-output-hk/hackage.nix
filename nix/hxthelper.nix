@@ -6,8 +6,8 @@
         nix = import ../hackage/hxthelper-0.2.2-r0-9a6d384bf84cfe2dfddb5fd92d6dcd23a77e146b79c298f6198669010b9383df.nix;
         revNum = 0;
         sha256 = "9a6d384bf84cfe2dfddb5fd92d6dcd23a77e146b79c298f6198669010b9383df";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

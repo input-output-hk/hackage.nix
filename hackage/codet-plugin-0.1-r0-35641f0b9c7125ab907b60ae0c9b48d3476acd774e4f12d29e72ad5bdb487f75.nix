@@ -21,16 +21,16 @@
       synopsis = "GHC type-checker plugin for solving LiftT instances from codet";
       description = "GHC type-checker plugin for solving LiftT instances from [codet](https://hackage.haskell.org/package/codet) package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."codet" or (errorHandler.buildDepError "codet"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "codet-plugin-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal or (errorHandler.setupDepError "uuagc-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (flags.with-loag) (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"));
+        ] ++ pkgs.lib.optional (flags.with-loag) (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"));
         buildable = true;
-        };
+      };
       exes = {
         "uuagc" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

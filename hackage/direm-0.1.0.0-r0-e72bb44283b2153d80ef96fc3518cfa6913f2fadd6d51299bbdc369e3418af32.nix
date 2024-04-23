@@ -21,16 +21,16 @@
       synopsis = "Deletes a directory and retains its contents in the parent directory";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "direm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

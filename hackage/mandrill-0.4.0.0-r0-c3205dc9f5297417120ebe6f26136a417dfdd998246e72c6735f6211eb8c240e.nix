@@ -21,7 +21,7 @@
       synopsis = "Library for interfacing with the Mandrill JSON API";
       description = "Pure Haskell client for the Mandrill JSON API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mandrill-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

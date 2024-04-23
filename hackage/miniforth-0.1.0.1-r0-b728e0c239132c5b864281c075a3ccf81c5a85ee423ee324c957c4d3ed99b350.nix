@@ -21,7 +21,7 @@
       synopsis = "Miniature FORTH-like interpreter";
       description = "Miniature FORTH-like interpreter for muno";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec3-numbers" or (errorHandler.buildDepError "parsec3-numbers"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "miniforth" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."miniforth" or (errorHandler.buildDepError "miniforth"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

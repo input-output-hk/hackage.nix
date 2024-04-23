@@ -21,7 +21,7 @@
       synopsis = "RIFF parser for Haskell";
       description = "This library provides a RIFF parser for Haskell for easy manipulation\nof common file formats like WAVE and RIFF container AVI files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,32 +30,32 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "riff-structure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."riff" or (errorHandler.buildDepError "riff"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "riff-identity" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."riff" or (errorHandler.buildDepError "riff"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "riff-convert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."riff" or (errorHandler.buildDepError "riff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

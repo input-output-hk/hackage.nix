@@ -21,15 +21,15 @@
       synopsis = "Collection of numerical tools for integration, differentiation etc.";
       description = "Package provides function to perform numeric integration and\ndifferentiation, function interpolation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

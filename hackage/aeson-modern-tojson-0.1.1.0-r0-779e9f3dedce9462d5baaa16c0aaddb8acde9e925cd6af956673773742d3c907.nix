@@ -21,15 +21,15 @@
       synopsis = "Provide a handy way for derving ToJSON proprely.";
       description = "Provide a newtype to be used with DerivingVia to correctly derive <https://hackage.haskell.org/package/aeson-1.5.6.0/docs/Data-Aeson.html#g:7 ToJSON>.\n\nAs simple as:\n\n\n@\ndata W = W Int Int\nderiving stock (Generic)\nderiving (ToJSON) via (ModernToJSON W)\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-modern-tojson-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."aeson-modern-tojson" or (errorHandler.buildDepError "aeson-modern-tojson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

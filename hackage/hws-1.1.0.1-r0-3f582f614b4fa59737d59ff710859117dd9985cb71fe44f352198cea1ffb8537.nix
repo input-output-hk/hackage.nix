@@ -21,7 +21,7 @@
       synopsis = "Simple Haskell Web Server";
       description = "The original Haskell Web Server, as described in the\npaper \"Developing a high-performance web server in\nConcurrent Haskell\" (JFP 12(4+5):359--374, July 2002).\nI'm making the package available for archaeological and\nillustrative reasons; while this certainly can be used to\nserve simple static content, there are other much more\nfully-featured web servers and frameworks on Hackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hws" = {
@@ -38,9 +38,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A package for working with bit masks and flags in general.";
       description = "This package provides type classes for flags and corresponding instances\nfor standard numeric types viewed as bit masks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Implementation of the Pusher WebSocket protocol";
       description = "An implementation of the Pusher WebSocket (client) protocol in\nHaskell.\n\nCurrent features:\n\n* @ws://@ and @wss://@ protocols.\n* Clusters.\n* Subscribing to channels.\n* Unsubscribing from channels.\n* Authorisation for private and presence channels.\n* Binding event handlers.\n* Unbinding event handlers\n* Sending client events.\n* Threads which automatically get cleaned up on connection close.\n* Automatic reconnection (and channel resubscription).\n* Connection state events.\n* Pusher close codes.\n\nMissing features:\n\n* \"connecting_in\" events.\n\nSee the <https://github.com/barrucadu/pusher-ws README> for more\ndetails.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

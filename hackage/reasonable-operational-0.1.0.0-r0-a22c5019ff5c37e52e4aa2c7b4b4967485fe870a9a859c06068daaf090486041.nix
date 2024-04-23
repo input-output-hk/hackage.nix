@@ -21,11 +21,11 @@
       synopsis = "library for takahashi method.";
       description = "create slide as takahashi method.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

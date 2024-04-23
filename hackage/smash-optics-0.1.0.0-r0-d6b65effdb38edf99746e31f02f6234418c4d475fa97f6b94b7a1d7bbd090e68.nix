@@ -21,15 +21,15 @@
       synopsis = "Optics for the `smash` library using `optics-core`";
       description = "Prisms, Traversals, and `optics` combinators for the `smash` library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."smash" or (errorHandler.buildDepError "smash"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

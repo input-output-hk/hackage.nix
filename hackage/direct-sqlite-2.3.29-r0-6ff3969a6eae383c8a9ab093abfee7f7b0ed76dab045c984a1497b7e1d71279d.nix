@@ -16,7 +16,7 @@
       json1 = true;
       mathfunctions = false;
       dbstat = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "direct-sqlite"; version = "2.3.29"; };
@@ -29,22 +29,22 @@
       synopsis = "Low-level binding to SQLite3.  Includes UTF8 and BLOB support.";
       description = "This package is not very different from the other SQLite3 bindings out\nthere, but it fixes a few deficiencies I was finding.  As compared to\nbindings-sqlite3, it is slightly higher-level, in that it supports\nmarshalling of data values to and from the database.  In particular,\nit supports strings encoded as UTF8, and BLOBs represented as\nByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = if flags.systemlib
           then [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ]
-          else (pkgs.lib).optional (!system.isWindows && !system.isAndroid) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+          else pkgs.lib.optional (!system.isWindows && !system.isAndroid) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "AndroidViewHierarchyImporter";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2012, alpheccar";
       maintainer = "misc@alpheccar.org";
@@ -24,7 +24,7 @@
       synopsis = "Tool to import a description of an Android view hierarchy through Abd and the Android view server";
       description = "Tool to import a description of an Android view hierarchy through Abd and the Android view server.\nYou can find more documentation in the @Main@ file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "AndroidViewHierarchyImporter" = {
@@ -42,9 +42,9 @@
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

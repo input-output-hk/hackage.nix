@@ -21,7 +21,7 @@
       synopsis = "Builds decks out of a meta";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mtg-builder" = {
@@ -30,9 +30,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An experimental HaskellDB back-end in pure Haskell (no SQL)";
       description = "This is a very experimental HaskellDB back-end which is written in pure Haskell\nand doesn't use SQL. It stores the database in a file. Using this with\nconcurrent writes leads to data loss. This back-end does not support transactions.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flatdb-create" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

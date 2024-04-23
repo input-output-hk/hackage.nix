@@ -21,7 +21,7 @@
       synopsis = "Haskell Static Web Page Generator";
       description = "A library for generating static HTML pages from XML\ntemplates and a file-based value dictionary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

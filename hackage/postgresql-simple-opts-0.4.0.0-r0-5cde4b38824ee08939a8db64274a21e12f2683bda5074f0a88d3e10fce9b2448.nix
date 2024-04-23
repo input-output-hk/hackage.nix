@@ -21,7 +21,7 @@
       synopsis = "An optparse-applicative parser for postgresql-simple's connection options";
       description = "This package exports a optparse-applicative parser and type for postgresql-simple's Options and connection string.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
           (hsPkgs."postgres-options" or (errorHandler.buildDepError "postgres-options"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-simple-opts-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."postgres-options" or (errorHandler.buildDepError "postgres-options"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

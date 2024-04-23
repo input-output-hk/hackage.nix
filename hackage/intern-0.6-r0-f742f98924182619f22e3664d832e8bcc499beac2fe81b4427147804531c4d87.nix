@@ -21,7 +21,7 @@
       synopsis = "Efficient hash-consing for arbitrary data types";
       description = "Efficient hash-consing for arbitrary data types\n\nChanges from 0.5.2 to 0.6\n\n* Widened the caches so they don't go through a single MVar per type. This has made a dramatic impact on performance. However, this broke the previous invariant that newer entries always had higher Ids than older entries.\n\nChanges from 0.5.1 to 0.5.2\n\n* Added Data.Interned.IntSet";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Yet Another High Performance and Extendable Neural Network in Haskell";
       description = "Provides execution backend of neural network on top of hmatrix.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."neural-network-base" or (errorHandler.buildDepError "neural-network-base"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ++ (pkgs.lib).optional (system.isLinux) (pkgs."blas" or (errorHandler.sysDepError "blas"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ++ pkgs.lib.optional (system.isLinux) (pkgs."blas" or (errorHandler.sysDepError "blas"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

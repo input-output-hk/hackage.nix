@@ -21,21 +21,21 @@
       synopsis = "Produce nice human-readable HTML";
       description = "An HTML-building library that gives you some control over\nhow the HTML is rendered, to produce human-readable results.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "pretty-html-paths" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pretty-html" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."pretty-html" or (errorHandler.buildDepError "pretty-html"))
             (hsPkgs."pretty-html".components.sublibs.pretty-html-paths or (errorHandler.buildDepError "pretty-html:pretty-html-paths"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

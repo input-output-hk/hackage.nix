@@ -21,13 +21,13 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hnop" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

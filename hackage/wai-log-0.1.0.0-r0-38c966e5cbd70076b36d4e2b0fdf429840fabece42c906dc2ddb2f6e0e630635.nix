@@ -21,7 +21,7 @@
       synopsis = "A logging middleware for WAI applications";
       description = "A simple logging middleware for WAI applications that\nsupports the 'log-*' family of packages:\n<https://hackage.haskell.org/package/log-base>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

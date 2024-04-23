@@ -21,11 +21,11 @@
       synopsis = "utils for Data.Coerce";
       description = "This library provides some convenience utilities for working with 'Data.Coerce'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

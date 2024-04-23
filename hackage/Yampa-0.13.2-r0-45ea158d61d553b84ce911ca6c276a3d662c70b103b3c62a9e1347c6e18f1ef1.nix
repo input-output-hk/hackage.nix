@@ -13,7 +13,7 @@
       test-doc-coverage = false;
       test-regression = true;
       examples = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "Yampa"; version = "0.13.2"; };
@@ -26,7 +26,7 @@
       synopsis = "Elegant Functional Reactive Programming Language for Hybrid Systems";
       description = "Domain-specific language embedded in Haskell for programming\nhybrid (mixed discrete-time and continuous-time) systems. Yampa is based on\nthe concepts of Functional Reactive Programming (FRP) and is structured using\narrow combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,81 +34,81 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."simple-affine-space" or (errorHandler.buildDepError "simple-affine-space"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = true;
-        };
+      };
       exes = {
         "yampa-examples-sdl-bouncingbox" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "yampa-examples-sdl-circlingmouse" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "yampa-examples-sdl-wiimote" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."hcwiid" or (errorHandler.buildDepError "hcwiid"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
-        "yampa-examples-elevator" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
-          buildable = if flags.examples then true else false;
-          };
-        "yampa-examples-tailgatingdetector" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
-          buildable = if flags.examples then true else false;
-          };
         };
+        "yampa-examples-elevator" = {
+          depends = pkgs.lib.optionals (flags.examples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
+          ];
+          buildable = if flags.examples then true else false;
+        };
+        "yampa-examples-tailgatingdetector" = {
+          depends = pkgs.lib.optionals (flags.examples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
+          ];
+          buildable = if flags.examples then true else false;
+        };
+      };
       tests = {
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "haddock-coverage" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
+          depends = pkgs.lib.optionals (!!flags.test-doc-coverage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if !flags.test-doc-coverage then false else true;
-          };
+        };
         "regression" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-regression)) [
+          depends = pkgs.lib.optionals (!!flags.test-regression) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = if !flags.test-regression then false else true;
-          };
         };
       };
-    }
+    };
+  }

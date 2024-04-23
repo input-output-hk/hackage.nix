@@ -21,14 +21,14 @@
       synopsis = "Convert strings into hexadecimal and back.";
       description = "Convert strings and bytestrings into hexadecimal and back.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Propagate HasCallStack with constraints";
       description = "See the README for more information about this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "require-callstack-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."require-callstack" or (errorHandler.buildDepError "require-callstack"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

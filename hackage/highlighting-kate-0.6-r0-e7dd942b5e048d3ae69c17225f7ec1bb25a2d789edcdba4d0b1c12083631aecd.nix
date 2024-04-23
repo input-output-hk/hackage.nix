@@ -21,7 +21,7 @@
       synopsis = "Syntax highlighting";
       description = "highlighting-kate is a syntax highlighting library\nwith support for nearly one hundred languages. The syntax\nparsers are automatically generated from Kate\nsyntax descriptions (<http://kate-editor.org/>),\nso any syntax supported by Kate can be added.\nAn (optional) command-line program is provided, along\nwith a utility for generating new parsers from Kate\nXML syntax descriptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,22 +29,22 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (if flags.pcre-light
+          ])) ++ (if flags.pcre-light
           then [
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-            ]
+          ]
           else [
             (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "highlighting-kate" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "test-highlighting-kate" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

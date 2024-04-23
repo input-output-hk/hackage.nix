@@ -21,7 +21,7 @@
       synopsis = "Notification library for a filesystem hierarchy.";
       description = "Notification library for a filesystem hierarchy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."timers-updatable" or (errorHandler.buildDepError "timers-updatable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

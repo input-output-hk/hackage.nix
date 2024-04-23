@@ -21,7 +21,7 @@
       synopsis = "A puzzle game written in Haskell with a cat in lead role";
       description = "Project Raincat is a game developed by Carnegie Mellon students\nthrough GCS during the Fall 2008 semester. Raincat features game\nplay inspired from classics Lemmings and The Incredible Machine.\nThe project proved to be an excellent learning experience for\nthe programmers. Everything is programmed in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "raincat" = {
@@ -37,9 +37,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."SDL-image" or (errorHandler.buildDepError "SDL-image"))
             (hsPkgs."SDL-mixer" or (errorHandler.buildDepError "SDL-mixer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Represent and parse yarn.lock files";
       description = "Types and parser for the lock file format of the npm successor yarn.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

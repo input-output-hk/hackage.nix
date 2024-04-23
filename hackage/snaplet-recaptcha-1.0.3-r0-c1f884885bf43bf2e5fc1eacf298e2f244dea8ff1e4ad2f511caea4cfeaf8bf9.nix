@@ -21,7 +21,7 @@
       synopsis = "A ReCAPTCHA verification snaplet with Heist integration and connection sharing.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

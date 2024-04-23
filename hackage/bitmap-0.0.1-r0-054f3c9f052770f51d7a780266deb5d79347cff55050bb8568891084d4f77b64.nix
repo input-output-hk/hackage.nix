@@ -21,14 +21,14 @@
       synopsis = "A library for handling and manipulating bitmaps.";
       description = "A library for handling and manipulating bitmaps (that is,\nrectangular pixel arrays).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

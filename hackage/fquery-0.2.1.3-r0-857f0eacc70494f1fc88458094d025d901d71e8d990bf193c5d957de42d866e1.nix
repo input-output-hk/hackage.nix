@@ -21,7 +21,7 @@
       synopsis = "Installed package query tool for Gentoo Linux";
       description = "Installed package query tool for Gentoo Linux\n\nHome page <http://home.exetel.com.au/tjaden/fquery/>";
       buildType = "Configure";
-      };
+    };
     components = {
       exes = {
         "fquery" = {
@@ -33,9 +33,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

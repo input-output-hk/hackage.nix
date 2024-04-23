@@ -21,7 +21,7 @@
       synopsis = "Balanced parentheses";
       description = "Balanced parentheses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hw-excess" or (errorHandler.buildDepError "hw-excess"))
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-balancedparens-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

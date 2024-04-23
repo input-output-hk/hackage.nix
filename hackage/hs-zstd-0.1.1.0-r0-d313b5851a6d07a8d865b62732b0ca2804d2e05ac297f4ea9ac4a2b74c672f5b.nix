@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the Zstandard compression algorithm";
       description = "A fast lossless compression algorithm, targeting real-time\ncompression scenarios at zlib-level and better compression ratios.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,10 +29,10 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
-        libs = (pkgs.lib).optional (!flags.standalone) (pkgs."zstd" or (errorHandler.sysDepError "zstd"));
+        ];
+        libs = pkgs.lib.optional (!flags.standalone) (pkgs."zstd" or (errorHandler.sysDepError "zstd"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."hs-zstd" or (errorHandler.buildDepError "hs-zstd"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."hs-zstd" or (errorHandler.buildDepError "hs-zstd"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

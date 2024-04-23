@@ -21,15 +21,15 @@
       synopsis = "3D Tic-Tac-Toe game";
       description = "Defines 3D Tic-Tac-Toe game logic and state machines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."tuples-homogenous-h98" or (errorHandler.buildDepError "tuples-homogenous-h98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

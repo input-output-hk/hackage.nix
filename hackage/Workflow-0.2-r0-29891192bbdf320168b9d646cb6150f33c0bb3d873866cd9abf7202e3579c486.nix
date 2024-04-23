@@ -21,7 +21,7 @@
       synopsis = "FreeChooser";
       description = "FreeChooser project";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."RefSerialize" or (errorHandler.buildDepError "RefSerialize"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

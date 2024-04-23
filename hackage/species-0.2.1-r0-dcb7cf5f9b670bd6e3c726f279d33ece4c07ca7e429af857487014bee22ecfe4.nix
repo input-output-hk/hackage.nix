@@ -21,7 +21,7 @@
       synopsis = "Computational combinatorial species";
       description = "A DSL for describing and computing with combinatorial species,\ne.g. counting labelled or unlabelled structures, or generating\na list of all labeled structures for a species.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."np-extras" or (errorHandler.buildDepError "np-extras"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lub" or (errorHandler.buildDepError "lub"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Terminal User Interface (TUI) for GHCi";
       description = "A terminal user interface for GHCi debug mode.\n\nFeatures:\n\n* A source view window, with debug keybindings.\n\n* Live variable bindings.\n\n* Live loaded modules.\n\n* Visible trace history.\n\n* An GHCi session in the current context.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "ghcitui-brick" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "ghcitui" = {
           depends = [
@@ -68,19 +68,19 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."ghcitui" or (errorHandler.buildDepError "ghcitui"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcitui" or (errorHandler.buildDepError "ghcitui"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

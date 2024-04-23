@@ -21,7 +21,7 @@
       synopsis = "Shake helpers.";
       description = "Primitive helpers for Shake files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

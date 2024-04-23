@@ -21,7 +21,7 @@
       synopsis = "Test interactive Haskell examples";
       description = "The doctest program checks examples in source code comments.  It is modeled\nafter doctest for Python (<https://docs.python.org/3/library/doctest.html>).\n\nDocumentation is at <https://github.com/sol/doctest#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "doctest" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -97,9 +97,9 @@
             (hsPkgs."stringbuilder" or (errorHandler.buildDepError "stringbuilder"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extends safer-file-handles with Text operations";
       description = "Extends @safer-file-handles@ with @Text@ operations";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."explicit-iomodes-text" or (errorHandler.buildDepError "explicit-iomodes-text"))
           (hsPkgs."safer-file-handles" or (errorHandler.buildDepError "safer-file-handles"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

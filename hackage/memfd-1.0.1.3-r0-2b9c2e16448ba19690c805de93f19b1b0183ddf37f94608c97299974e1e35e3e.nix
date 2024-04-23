@@ -21,14 +21,14 @@
       synopsis = "Open temporary anonymous Linux file handles";
       description = "memfd lets us open memory-only files that are not linked\ninto a directory and are not backed by persistent storage.\nThis feature is only available on Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

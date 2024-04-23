@@ -21,11 +21,11 @@
       synopsis = "QuickCheck properties for standard type classes.";
       description = "Package provide set of generic QuickCheck properties for testing\nlaws of standard type classes. At the moment is not complete. It do\nnot depend on QuickCheck and could be used with smallcheck as well.\n\nSee module Test.QuickCheck.Property.Common for general description\nof library and examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

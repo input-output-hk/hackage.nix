@@ -21,7 +21,7 @@
       synopsis = "NLP scoring command-line programs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ap" = {
@@ -31,18 +31,18 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mean" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nlp-scores" or (errorHandler.buildDepError "nlp-scores"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

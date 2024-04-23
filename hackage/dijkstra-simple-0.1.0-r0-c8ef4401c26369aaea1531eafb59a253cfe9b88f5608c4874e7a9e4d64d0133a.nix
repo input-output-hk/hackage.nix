@@ -21,16 +21,16 @@
       synopsis = "A simpler Dijkstra shortest paths implementation";
       description = "Provides a simplistic Dijkstra implementation with some useful variations and generalizations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dijkstra-simple-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."dijkstra-simple" or (errorHandler.buildDepError "dijkstra-simple"))
             (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

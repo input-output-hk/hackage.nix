@@ -21,7 +21,7 @@
       synopsis = "Haskell driver for Neo4j 3+ (BOLT protocol)";
       description = "Haskell driver for Neo4j 3+ (BOLT protocol).\n\nThe package covers:\n\n-Data serialization and deserialization\n\n-Nodes, relationships and paths support\n\n-Cypher queries and responses\n\n-Authentification\n\n-TLS/SSL connection\n\nThe code was tested with neo4j versions 3.0 — 3.4 and GrapheneDB service";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -35,9 +35,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.6") (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.6") (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = true;
-        };
+      };
       tests = {
         "hasbolt-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Process mpileup output to identify significant differences";
       description = "Using Agresti-Coull estimation of confidence interval, report\nvariant positions found in pooled samples along with significance of\nthe variant having different underlying allele frequency ('+' for 95%,\n'*' for 99%).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "varan" = {
@@ -33,9 +33,9 @@
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

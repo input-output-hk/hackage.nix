@@ -21,11 +21,11 @@
       synopsis = "Abstract Application Interface.";
       description = "The Abstract Application Interface is used to define a\ngeneric interface for handling command line parameter\nto command mapping. It may route a command by giving a\nsimple parameter list and a list of supported commands.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

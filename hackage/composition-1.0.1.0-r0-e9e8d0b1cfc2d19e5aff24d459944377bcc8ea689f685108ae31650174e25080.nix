@@ -21,6 +21,6 @@
       synopsis = "Combinators for unorthodox function composition";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

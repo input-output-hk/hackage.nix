@@ -21,7 +21,7 @@
       synopsis = "HTTP client package with enumerator interface and HTTPS support.";
       description = "This package uses attoparsec for parsing the actual contents of the HTTP connection. It also provides higher-level functions which allow you to avoid direct usage of enumerators.\n\nNote that this package has been superceded by http-conduit. If you are not using the enumerator interface of this package at all, it is highly recommended to switch to http-conduit. If you are using enumerators, please consider making the move to http-conduit anyway, as it solves some socket leaks that cannot be addressed with enumerators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,18 +47,18 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ] ++ (if flags.network-bytestring
+        ] ++ (if flags.network-bytestring
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "http-enumerator" = { buildable = if flags.test then true else false; };
-        };
       };
-    }
+    };
+  }

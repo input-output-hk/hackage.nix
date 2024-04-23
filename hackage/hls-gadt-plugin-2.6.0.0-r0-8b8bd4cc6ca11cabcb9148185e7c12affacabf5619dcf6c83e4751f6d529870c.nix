@@ -21,7 +21,7 @@
       synopsis = "Convert to GADT syntax plugin";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-gadt-plugin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,11 +41,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.8"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,11 +57,11 @@
             (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.8"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

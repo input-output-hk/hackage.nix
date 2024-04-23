@@ -21,7 +21,7 @@
       synopsis = "Simple CRUD classes for easy view creation for Yesod";
       description = "Simple CRUD classes for easy view creation for Yesod. See @Yesod.VEND@ for more informations and description how to use it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vend-test-user" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

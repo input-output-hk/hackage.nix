@@ -21,7 +21,7 @@
       synopsis = "Type-safe, non-relational, multi-backend persistence.";
       description = "This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
           (hsPkgs."web-routes-quasi" or (errorHandler.buildDepError "web-routes-quasi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Set up a GHC API session";
       description = "Set up a GHC API session and obtain flags required to compile a source file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hie-bios" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."hie-bios" or (errorHandler.buildDepError "hie-bios"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "parser-tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bios-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -94,9 +94,9 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

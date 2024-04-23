@@ -21,7 +21,7 @@
       synopsis = "IRC client";
       description = "Hircules is an IRC (Internet Relay Chat) client with a gtk GUI.\n\nSee the old project page http://haskell.org/hircules for more info.\n\nSummary of changes:\n\n0.4.1: update the gtk version dependency\n\n0.4: build updates for ghc-6.12 and gtk-0.11";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hircules" = {
@@ -36,9 +36,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

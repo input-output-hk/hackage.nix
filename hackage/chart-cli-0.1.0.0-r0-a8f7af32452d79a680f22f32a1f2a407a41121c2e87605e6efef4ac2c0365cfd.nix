@@ -21,7 +21,7 @@
       synopsis = "Command-line utility to draw charts from input data easily";
       description = "Please see the README on GitHub at <https://github.com/portnov/chart-cli#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "chart" = {
@@ -39,9 +39,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

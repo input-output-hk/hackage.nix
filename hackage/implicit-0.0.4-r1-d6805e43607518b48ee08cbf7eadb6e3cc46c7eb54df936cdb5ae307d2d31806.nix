@@ -21,7 +21,7 @@
       synopsis = "Math-inspired programmatic 2&3D CAD: CSG, bevels, and shells; gcode export..";
       description = "A math-inspired programmatic CAD library in haskell.\nBuild objects with constructive solid geometry, bevels,\nshells and more in 2D & 3D. Then export to SVGs, STLs,\nor produce gcode directly!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."NumInstances" or (errorHandler.buildDepError "NumInstances"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "extopenscad" = { buildable = true; }; };
       };
-    }
+      exes = { "extopenscad" = { buildable = true; }; };
+    };
+  }

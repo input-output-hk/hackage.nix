@@ -21,7 +21,7 @@
       synopsis = "Machinery to express how servant should turn results of database operations into proper JSON-encodable response types";
       description = "Machinery to express how servant should turn results of database operations into proper JSON-encodable response types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

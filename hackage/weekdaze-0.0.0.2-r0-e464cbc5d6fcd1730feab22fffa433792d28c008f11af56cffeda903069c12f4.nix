@@ -18,7 +18,7 @@
       static = false;
       threaded = true;
       unix = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "weekdaze"; version = "0.0.0.2"; };
@@ -31,7 +31,7 @@
       synopsis = "A school-timetable problem-solver.";
       description = "An application which searches for a solution to the configured school-timetable problem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,12 +51,12 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ] ++ (pkgs.lib).optionals (flags.hdbc-odbc || flags.hdbc-mysql) [
+        ] ++ pkgs.lib.optionals (flags.hdbc-odbc || flags.hdbc-mysql) [
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "weekdaze" = {
           depends = ([
@@ -79,14 +79,14 @@
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
             (hsPkgs."weekdaze" or (errorHandler.buildDepError "weekdaze"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ] ++ (pkgs.lib).optionals (flags.hdbc-odbc || flags.hdbc-mysql) (([
+          ] ++ pkgs.lib.optionals (flags.hdbc-odbc || flags.hdbc-mysql) (([
             (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-            ] ++ (pkgs.lib).optional (flags.hdbc-mysql) (hsPkgs."HDBC-mysql" or (errorHandler.buildDepError "HDBC-mysql"))) ++ (pkgs.lib).optional (flags.hdbc-odbc) (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc")))) ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (flags.hdbc-mysql) (hsPkgs."HDBC-mysql" or (errorHandler.buildDepError "HDBC-mysql"))) ++ pkgs.lib.optional (flags.hdbc-odbc) (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc")))) ++ pkgs.lib.optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -99,9 +99,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
             (hsPkgs."weekdaze" or (errorHandler.buildDepError "weekdaze"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

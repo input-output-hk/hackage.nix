@@ -21,7 +21,7 @@
       synopsis = "Audio delay line";
       description = "An audio file delay line for WAVE files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "delay" = {
@@ -30,9 +30,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
             (hsPkgs."WAVE" or (errorHandler.buildDepError "WAVE"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

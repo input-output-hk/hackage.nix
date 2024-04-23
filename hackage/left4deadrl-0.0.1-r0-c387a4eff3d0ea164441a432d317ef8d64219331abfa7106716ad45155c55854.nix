@@ -21,7 +21,7 @@
       synopsis = "Wau codec";
       description = "A base unary encoder/decoder";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "left4deadrl" = {
@@ -30,9 +30,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."hscharm" or (errorHandler.buildDepError "hscharm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

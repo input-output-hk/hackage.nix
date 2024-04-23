@@ -21,11 +21,11 @@
       synopsis = "Asymptotically optimal Brodal/Okasaki heaps.";
       description = "Asymptotically optimal Brodal/Okasaki bootstrapped skew-binomial heaps from the paper \\\"Optimal Purely Functional Priority Queues\\\", extended with a Foldable interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

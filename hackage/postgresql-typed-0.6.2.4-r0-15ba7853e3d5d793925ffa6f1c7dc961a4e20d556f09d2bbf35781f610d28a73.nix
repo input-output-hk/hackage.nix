@@ -18,7 +18,7 @@
       hdbc = true;
       tls = true;
       crypton = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "postgresql-typed"; version = "0.6.2.4"; };
@@ -31,7 +31,7 @@
       synopsis = "PostgreSQL interface with compile-time SQL type checking, optional HDBC backend";
       description = "Automatically type-check SQL statements at compile time.\nUses Template Haskell and the raw PostgreSQL protocol to describe SQL statements at compile time and provide appropriate type marshalling for both parameters and results.\nAllows not only syntax verification of your SQL but also full type safety between your SQL and Haskell.\nSupports many built-in PostgreSQL types already, including arrays and ranges, and can be easily extended in user code to support any other types.\n\nAlso includes an optional HDBC backend that, since it uses the raw PostgreSQL protocol, may be more efficient than the normal libpq backend in some cases (though provides no more type safety than HDBC-postgresql when used without templates).\n\nOriginally based on Chris Forno's templatepg library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -47,36 +47,36 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optionals (flags.md5) ([
+        ] ++ pkgs.lib.optionals (flags.md5) ([
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ] ++ (if flags.crypton
+        ] ++ (if flags.crypton
           then [ (hsPkgs."crypton" or (errorHandler.buildDepError "crypton")) ]
           else [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ]))) ++ (if flags.binary
+          ]))) ++ (if flags.binary
           then [
             (hsPkgs."postgresql-binary" or (errorHandler.buildDepError "postgresql-binary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ]
-          else ((pkgs.lib).optional (flags.text) (hsPkgs."text" or (errorHandler.buildDepError "text")) ++ (pkgs.lib).optional (flags.uuid) (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))) ++ (pkgs.lib).optional (flags.scientific) (hsPkgs."scientific" or (errorHandler.buildDepError "scientific")))) ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.hdbc) (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))) ++ (pkgs.lib).optionals (flags.tls) ([
+          ]
+          else (pkgs.lib.optional (flags.text) (hsPkgs."text" or (errorHandler.buildDepError "text")) ++ pkgs.lib.optional (flags.uuid) (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))) ++ pkgs.lib.optional (flags.scientific) (hsPkgs."scientific" or (errorHandler.buildDepError "scientific")))) ++ pkgs.lib.optional (flags.aeson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ pkgs.lib.optional (flags.hdbc) (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))) ++ pkgs.lib.optionals (flags.tls) ([
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ] ++ (if flags.crypton
+        ] ++ (if flags.crypton
           then [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
             (hsPkgs."crypton-x509-store" or (errorHandler.buildDepError "crypton-x509-store"))
             (hsPkgs."crypton-x509-validation" or (errorHandler.buildDepError "crypton-x509-validation"))
-            ]
+          ]
           else [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ]));
+          ]));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -86,11 +86,11 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."postgresql-typed" or (errorHandler.buildDepError "postgresql-typed"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."tls" or (errorHandler.buildDepError "tls"));
+          ] ++ pkgs.lib.optional (flags.tls) (hsPkgs."tls" or (errorHandler.buildDepError "tls"));
           buildable = true;
-          };
+        };
         "hdbc" = {
-          depends = (pkgs.lib).optionals (flags.hdbc) [
+          depends = pkgs.lib.optionals (flags.hdbc) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
@@ -100,10 +100,10 @@
             (hsPkgs."postgresql-typed" or (errorHandler.buildDepError "postgresql-typed"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."tls" or (errorHandler.buildDepError "tls"));
+          ] ++ pkgs.lib.optional (flags.tls) (hsPkgs."tls" or (errorHandler.buildDepError "tls"));
           buildable = if flags.hdbc then true else false;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -113,9 +113,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."postgresql-typed" or (errorHandler.buildDepError "postgresql-typed"))
-            ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."tls" or (errorHandler.buildDepError "tls"));
+          ] ++ pkgs.lib.optional (flags.tls) (hsPkgs."tls" or (errorHandler.buildDepError "tls"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

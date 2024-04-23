@@ -21,7 +21,7 @@
       synopsis = "Memoize Strings as Atoms for fast comparison and sorting, with maps and sets";
       description = "Memoize Strings as Atoms for fast comparison and sorting, with maps and sets";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.sybinbase
@@ -30,15 +30,15 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

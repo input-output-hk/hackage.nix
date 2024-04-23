@@ -21,16 +21,16 @@
       synopsis = "Conversion of Text to and from CP437";
       description = "Some devices such as receipt printers require\ntext encoded in CP437.\nThis library can help convert regular UTF\nsymbols to and from this format.\nSee <https://en.wikipedia.org/wiki/Code_page_437>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "text-cp437-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

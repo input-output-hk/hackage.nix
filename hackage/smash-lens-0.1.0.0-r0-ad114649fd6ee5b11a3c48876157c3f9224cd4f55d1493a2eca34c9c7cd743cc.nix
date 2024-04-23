@@ -21,21 +21,21 @@
       synopsis = "Optics for the `smash` library";
       description = "Prisms, Traversals, and combinators for the `smash` library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."smash" or (errorHandler.buildDepError "smash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smash-lens-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

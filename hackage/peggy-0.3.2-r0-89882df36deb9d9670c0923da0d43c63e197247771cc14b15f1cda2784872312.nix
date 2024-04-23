@@ -21,7 +21,7 @@
       synopsis = "The Parser Generator for Haskell";
       description = "The Parser Generator for Haskell\n<http://tanakh.github.com/Peggy>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "peggy-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."peggy" or (errorHandler.buildDepError "peggy"))
-            ];
+          ];
           buildable = if !flags.build-example then false else true;
-          };
         };
       };
-    }
+    };
+  }

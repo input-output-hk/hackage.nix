@@ -14,7 +14,7 @@
       threaded = false;
       loc = false;
       network-uri = true;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "leksah"; version = "0.15.0.4"; };
@@ -27,7 +27,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((((([
@@ -78,41 +78,41 @@
           (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
           (hsPkgs."vado" or (errorHandler.buildDepError "vado"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs."gtk3-mac-integration" or (errorHandler.buildDepError "gtk3-mac-integration"))) ++ (pkgs.lib).optionals (flags.yi) [
+          ])) ++ pkgs.lib.optional (system.isOsx) (hsPkgs."gtk3-mac-integration" or (errorHandler.buildDepError "gtk3-mac-integration"))) ++ pkgs.lib.optionals (flags.yi) [
           (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ]) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ (pkgs.lib).optionals (flags.loc && system.isLinux) [
+        ]) ++ pkgs.lib.optional (flags.yi && flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ pkgs.lib.optionals (flags.loc && system.isLinux) [
           (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-          ]) ++ (if flags.network-uri
+        ]) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."binary-shared" or (errorHandler.buildDepError "binary-shared"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs."binary-shared" or (errorHandler.buildDepError "binary-shared"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
         buildable = true;
-        };
+      };
       exes = {
         "leksah" = {
           depends = ([
             (hsPkgs."leksah" or (errorHandler.buildDepError "leksah"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (pkgs.lib).optionals (system.isLinux && flags.loc) [
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (system.isLinux && flags.loc) [
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-            ];
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+          ];
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
           buildable = true;
-          };
+        };
         "bewleksah" = {
           depends = [
             (hsPkgs."leksah" or (errorHandler.buildDepError "leksah"))
@@ -123,10 +123,10 @@
             (hsPkgs."gtksourceview3" or (errorHandler.buildDepError "gtksourceview3"))
             (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
             (hsPkgs."webkitgtk3-javascriptcore" or (errorHandler.buildDepError "webkitgtk3-javascriptcore"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -145,9 +145,9 @@
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
             (hsPkgs."gtksourceview3" or (errorHandler.buildDepError "gtksourceview3"))
             (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
-            ] ++ (pkgs.lib).optional (flags.yi) (hsPkgs."yi" or (errorHandler.buildDepError "yi"));
+          ] ++ pkgs.lib.optional (flags.yi) (hsPkgs."yi" or (errorHandler.buildDepError "yi"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

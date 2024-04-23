@@ -21,7 +21,7 @@
       synopsis = "A sensible set of defaults for writing custom Preludes.";
       description = "A sensible set of defaults for writing custom Preludes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

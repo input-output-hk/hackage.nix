@@ -21,7 +21,7 @@
       synopsis = "Posix related streaming APIs";
       description = "Posix related streaming APIs (such as file reading/writing)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
         buildable = if system.isWindows then false else true;
-        };
+      };
       tests = {
         "sf-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."streamly-posix" or (errorHandler.buildDepError "streamly-posix"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

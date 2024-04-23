@@ -21,7 +21,7 @@
       synopsis = "IHaskell display instance for Gnuplot (from gnuplot package)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."gnuplot" or (errorHandler.buildDepError "gnuplot"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

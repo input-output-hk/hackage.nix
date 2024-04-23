@@ -21,7 +21,7 @@
       synopsis = "Play Diplomacy over HTTP";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "diplomacy-server" = {
@@ -51,9 +51,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

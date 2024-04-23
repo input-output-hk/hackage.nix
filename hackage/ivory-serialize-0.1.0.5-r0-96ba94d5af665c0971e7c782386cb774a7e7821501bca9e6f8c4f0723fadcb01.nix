@@ -21,7 +21,7 @@
       synopsis = "Serialization library for Ivory.";
       description = "Used to automatically pack and unpack Ivory structures in big or little endian.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
           (hsPkgs."ivory-artifact" or (errorHandler.buildDepError "ivory-artifact"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

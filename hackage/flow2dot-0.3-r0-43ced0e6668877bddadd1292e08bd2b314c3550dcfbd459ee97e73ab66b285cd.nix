@@ -21,7 +21,7 @@
       synopsis = "Generates sequence diagrams from textual descriptions";
       description = "Generates sequence diagrams from textual descriptions with help of Graphviz graph drawing tool.\nCheck out <http://adept.linux.kiev.ua/repos/flow2dot/sample.flow> (source)\nand <http://adept.linux.kiev.ua/repos/flow2dot/sample.png> (output).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flow2dot" = {
@@ -33,9 +33,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

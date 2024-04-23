@@ -21,7 +21,7 @@
       synopsis = "Temporary version of cabal-install for ghc-7.4";
       description = "This is a naive adaption of cabal-install-ghc72 for ghc 7.4.1.\nDon't complain if it does not work for you.\n\nThe \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.\n\ncabal-install-0.10.2 does not build with the packages that come with ghc-7.4.\nThis package is a copy of cabal-install-0.10.2 with dependency version changes made in\nthe cabal file and the bootstrap.sh file to be compatible with ghc-7.4 packages.\nThanks to beastaugh on github for describing these changes at https://gist.github.com/1169332.\nThis package will be removed once a new version of cabal-install comes\nout that is compatible with the next version of ghc, 7.4.\n\nKnown bug: cabal sdist does not work with the version. You must build your own source\npackage using tar czf.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal" = {
@@ -33,7 +33,7 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (if flags.old-base
+          ] ++ (if flags.old-base
             then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -44,16 +44,16 @@
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-              ])) ++ (if flags.bytestring-in-base
+            ])) ++ (if flags.bytestring-in-base
             then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

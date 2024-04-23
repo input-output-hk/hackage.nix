@@ -21,7 +21,7 @@
       synopsis = "Experimental, RandomFu effect and interpreters for polysemy";
       description = "Please see the README on GitHub at <https://github.com/adamConnerSax/polysemy-Extra/tree/master/polysemy-RandomFu#polysemy-randomfu>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-RandomFu-test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
             (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

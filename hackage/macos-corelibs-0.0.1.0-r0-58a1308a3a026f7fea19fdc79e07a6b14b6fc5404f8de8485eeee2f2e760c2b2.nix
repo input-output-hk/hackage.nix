@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to C-based Mac OS SDK frameworks";
       description = "Type-safe Haskell bindings to C-based frameworks of the Apple\nMac OS SDK, including CoreFoundation, CoreGraphics, and Carbon\nAccessibility APIs. Please see the README on Github for more\ninformation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         frameworks = [
           (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"))
           (pkgs."Cocoa" or (errorHandler.sysDepError "Cocoa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

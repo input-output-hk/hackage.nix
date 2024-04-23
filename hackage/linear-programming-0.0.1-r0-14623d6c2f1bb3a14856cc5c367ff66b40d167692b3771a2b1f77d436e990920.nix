@@ -21,7 +21,7 @@
       synopsis = "Linear Programming basic definitions";
       description = "Basic types and generic functions for use in the packages\n@coinor-clp@ and @comfort-glpk@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

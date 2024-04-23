@@ -21,7 +21,7 @@
       synopsis = "Provides functions to inspect and manipulate virtual hard disk (VHD) files.";
       description = "Provides functions to inspect and manipulate virtual hard disk (VHD) files, according to the VHD specification (version 1.0).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
           (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vhd" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
@@ -59,10 +59,10 @@
             (hsPkgs."vhd" or (errorHandler.buildDepError "vhd"))
             (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "test-vhd" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vhd" or (errorHandler.buildDepError "vhd"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

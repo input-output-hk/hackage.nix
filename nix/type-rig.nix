@@ -6,8 +6,8 @@
         nix = import ../hackage/type-rig-0.1-r0-7ca3cb544b28926b2070cd45969beb5c65d540e15f487df824cbc738c2f5fb1a.nix;
         revNum = 0;
         sha256 = "7ca3cb544b28926b2070cd45969beb5c65d540e15f487df824cbc738c2f5fb1a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

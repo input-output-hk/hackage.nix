@@ -21,18 +21,18 @@
       synopsis = "Redland RDF library bindings";
       description = "This package provides low-level and mid-level\nRedland RDF library bindings, as well as some\nutility functions. The bindings are not complete\nin this version, though many functions are\npresent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         pkgconfig = [
           (pkgconfPkgs."raptor2" or (errorHandler.pkgConfDepError "raptor2"))
           (pkgconfPkgs."redland" or (errorHandler.pkgConfDepError "redland"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

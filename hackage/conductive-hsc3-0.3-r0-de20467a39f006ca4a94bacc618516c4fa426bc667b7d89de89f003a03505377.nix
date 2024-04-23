@@ -21,7 +21,7 @@
       synopsis = "a library with examples of using Conductive with hsc3";
       description = "This library contains examples of using Conductive with hsc3. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

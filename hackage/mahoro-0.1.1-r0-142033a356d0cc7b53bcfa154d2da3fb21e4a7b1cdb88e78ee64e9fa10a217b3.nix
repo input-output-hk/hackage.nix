@@ -21,7 +21,7 @@
       synopsis = "chans to XMPP gate";
       description = "Chans (ImageBoards) to XMPP gate. Supports Wakaba,\nKusaba and other engines.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mahoro" = {
@@ -40,9 +40,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a sexy Haskell Webserver Interface";
       description = "a sexy Haskell Webserver Interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
           (hsPkgs."kibro" or (errorHandler.buildDepError "kibro"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

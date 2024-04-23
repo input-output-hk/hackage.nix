@@ -21,7 +21,7 @@
       synopsis = "For manipulating GPS coordinates and trails.";
       description = "Useful for manipulating GPS coordinages (in various forms), building paths, and performing basic computations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."GPX" or (errorHandler.buildDepError "GPX"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."xsd" or (errorHandler.buildDepError "xsd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

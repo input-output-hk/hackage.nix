@@ -21,11 +21,11 @@
       synopsis = "Password strength estimation";
       description = "This is a Haskell binding to the C port of the zxcvbn\npassword strength estimator, from https://github.com/tsyrogit/zxcvbn-c\n\nAn article on the reasons for zxcvbn is at\nhttps://tech.dropox.com/2012/04/zxcvbn-realistic-password-strength-estimation";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell PCRE binding";
       description = "A binding to Perl's advanced regular expression library, PCRE, for Haskell programs;\nthis library is used by the Pugs interpreter/compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -29,12 +29,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

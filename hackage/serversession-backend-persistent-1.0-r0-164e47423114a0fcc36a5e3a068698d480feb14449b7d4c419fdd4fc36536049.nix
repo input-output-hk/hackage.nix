@@ -14,7 +14,7 @@
       identifier = {
         name = "serversession-backend-persistent";
         version = "1.0";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Storage backend for serversession using persistent and an RDBMS.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-backend-persistent>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
             (hsPkgs."serversession-backend-persistent" or (errorHandler.buildDepError "serversession-backend-persistent"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

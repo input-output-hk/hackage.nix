@@ -21,7 +21,7 @@
       synopsis = "Text matchers";
       description = "Helpers for performing text matches.\nFor more information, please see the Github homepage at\n\n<http://www.github.com/massysett/matchers>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."prednote" or (errorHandler.buildDepError "prednote"))
-          ];
+        ];
         libs = [ (pkgs."pcre" or (errorHandler.sysDepError "pcre")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

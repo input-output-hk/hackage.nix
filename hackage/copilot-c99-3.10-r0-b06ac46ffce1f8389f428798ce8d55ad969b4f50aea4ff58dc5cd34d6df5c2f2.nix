@@ -21,7 +21,7 @@
       synopsis = "A compiler for Copilot targeting C99.";
       description = "This package is a back-end from Copilot to C.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language (DSL) in\nHaskell that compiles into embedded C.  Copilot contains an interpreter,\nmultiple back-end compilers, and other verification tools.\n\nA tutorial, examples, and other information are available at\n<https://copilot-language.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
           (hsPkgs."language-c99" or (errorHandler.buildDepError "language-c99"))
           (hsPkgs."language-c99-simple" or (errorHandler.buildDepError "language-c99-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

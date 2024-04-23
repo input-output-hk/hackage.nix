@@ -21,7 +21,7 @@
       synopsis = "A simple QIF file format parser / printer";
       description = "A handy little library for dealing with this awful little\nQIF files in your life.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-qif-serialization" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."qif" or (errorHandler.buildDepError "qif"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

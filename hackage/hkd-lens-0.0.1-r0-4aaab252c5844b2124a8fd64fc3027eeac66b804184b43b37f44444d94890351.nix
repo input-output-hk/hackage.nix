@@ -21,14 +21,14 @@
       synopsis = "Generic lens/prism/traversal-kinded data.";
       description = "This library uses GHC Generics to generate lenses, prisms, and\ntraversals for higher-kinded data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

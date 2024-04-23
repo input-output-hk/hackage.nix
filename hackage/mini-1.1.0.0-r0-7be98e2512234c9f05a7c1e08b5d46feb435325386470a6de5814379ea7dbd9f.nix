@@ -21,11 +21,11 @@
       synopsis = "Minimal essentials";
       description = "A minimal yet powerful library of essentials, only depending on\n@base@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

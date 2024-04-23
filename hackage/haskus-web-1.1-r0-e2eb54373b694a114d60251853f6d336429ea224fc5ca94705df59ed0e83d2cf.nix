@@ -21,7 +21,7 @@
       synopsis = "Haskus web";
       description = "Haskus web related modules";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."happstack-server-tls" or (errorHandler.buildDepError "happstack-server-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

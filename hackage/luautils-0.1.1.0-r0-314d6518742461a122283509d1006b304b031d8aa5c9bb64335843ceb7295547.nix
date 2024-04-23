@@ -21,7 +21,7 @@
       synopsis = "Helpers for Haskell integration with Lua";
       description = "This package is an add-on to the @HsLua@ package by Gracjan Polak.\nHsLua only provides a very bare-bones wrapper over the Lua API, and this\npackage is meant to fill in the gap by providing some commonly used features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."custom-prelude" or (errorHandler.buildDepError "custom-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

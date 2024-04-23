@@ -21,14 +21,14 @@
       synopsis = "PNM image format header parsing and pretty printing";
       description = "PNM image format header parsing and pretty printing.  PNM is PBM + PGM + PPM,\na family of lowest common denominator image file formats.  This library makes\nno attempt to interpret raster data, instead providing a lazy ByteString.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

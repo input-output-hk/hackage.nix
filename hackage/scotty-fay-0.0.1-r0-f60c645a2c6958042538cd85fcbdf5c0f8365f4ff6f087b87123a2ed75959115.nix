@@ -21,7 +21,7 @@
       synopsis = "Fay integration for Scotty.";
       description = "Fay integration for Scotty. For more information, please see <https://github.com/hdgarrood/scotty-fay>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "scotty-fay-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

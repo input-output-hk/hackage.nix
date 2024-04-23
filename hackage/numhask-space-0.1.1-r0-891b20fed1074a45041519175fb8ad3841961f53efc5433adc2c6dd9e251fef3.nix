@@ -21,7 +21,7 @@
       synopsis = "numerical spaces";
       description = "Spaces as higher-kinded numbers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

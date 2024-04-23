@@ -21,16 +21,16 @@
       synopsis = "Time utilities";
       description = "Please see the README on GitHub at <https://github.com/jlamothe/timeutils#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "timeutils" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timeutils" or (errorHandler.buildDepError "timeutils"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "timeutils-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timeutils" or (errorHandler.buildDepError "timeutils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

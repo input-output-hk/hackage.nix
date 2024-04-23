@@ -21,24 +21,24 @@
       synopsis = "MIDI controllers";
       description = "Please see the README on GitHub at <https://github.com/githubuser/csound-controllers#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."csound-expression" or (errorHandler.buildDepError "csound-expression"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "csound-controllers-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."csound-controllers" or (errorHandler.buildDepError "csound-controllers"))
             (hsPkgs."csound-expression" or (errorHandler.buildDepError "csound-expression"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Client library for Facebook's Watchman tool";
       description = "Client library for Facebook's Watchman tool";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

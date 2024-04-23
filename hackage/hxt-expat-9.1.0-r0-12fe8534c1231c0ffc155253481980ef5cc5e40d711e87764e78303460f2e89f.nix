@@ -21,7 +21,7 @@
       synopsis = "Expat parser for HXT";
       description = "The Expat interface for the HXT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

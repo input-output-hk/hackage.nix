@@ -21,24 +21,24 @@
       synopsis = "video for linux two examples";
       description = "This package contains examples using the v4l2 package:\n\n* v4l2-capture - dumps PPM frames from a video device to stdout:\n\n@$ v4l2-capture /dev/video0 > out.ppm@\n\n* v4l2-histogram - shows RGB histogram overlaid on mirror image, using OpenGL/GLUT for display.\n\n@$ v4l2-histogram /dev/video0@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "v4l2-capture" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."v4l2" or (errorHandler.buildDepError "v4l2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "v4l2-histogram" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."v4l2" or (errorHandler.buildDepError "v4l2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

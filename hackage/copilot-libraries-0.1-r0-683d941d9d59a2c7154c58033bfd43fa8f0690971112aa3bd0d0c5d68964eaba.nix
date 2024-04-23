@@ -21,7 +21,7 @@
       synopsis = "A Haskell-embedded DSL for monitoring hard real-time\ndistributed systems.";
       description = "Libraries for the Copilot language";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."copilot-language" or (errorHandler.buildDepError "copilot-language"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

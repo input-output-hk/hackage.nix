@@ -21,7 +21,7 @@
       synopsis = "Haskell UPnP Media Server";
       description = "A simple UPnP Media Server.\n\nCurrently this has only been tested with a PlayStation 3 client. Any help/patches for getting it to work with other clients would be much appreciated.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hums" = {
@@ -45,9 +45,9 @@
             (hsPkgs."hashmap" or (errorHandler.buildDepError "hashmap"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

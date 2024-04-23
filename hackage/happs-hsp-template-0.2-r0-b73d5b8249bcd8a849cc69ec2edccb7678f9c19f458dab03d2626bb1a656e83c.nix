@@ -21,7 +21,7 @@
       synopsis = "Utilities for using HSP templates in HAppS applications.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."RJson" or (errorHandler.buildDepError "RJson"))
           (hsPkgs."HAppS-Server" or (errorHandler.buildDepError "HAppS-Server"))
           (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

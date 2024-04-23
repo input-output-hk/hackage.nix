@@ -6,8 +6,8 @@
         nix = import ../hackage/lambda-bridge-0.1-r0-7d0e6fa6c849408d728fdf04280feba57b643ce6d7d9b46e286ddc9c2eae4343.nix;
         revNum = 0;
         sha256 = "7d0e6fa6c849408d728fdf04280feba57b643ce6d7d9b46e286ddc9c2eae4343";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Gelatin's OpenGL shaders.";
       description = "Gelatin's OpenGL shaders. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."gelatin" or (errorHandler.buildDepError "gelatin"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

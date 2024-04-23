@@ -21,7 +21,7 @@
       synopsis = "Geocoding using the Google Web API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hjson" or (errorHandler.buildDepError "hjson"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

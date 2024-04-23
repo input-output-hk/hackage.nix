@@ -21,7 +21,7 @@
       synopsis = "JavaScript instance of netwire-input";
       description = "GHCJS implementation of netwire-input.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."netwire" or (errorHandler.buildDepError "netwire"))
           (hsPkgs."netwire-input" or (errorHandler.buildDepError "netwire-input"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

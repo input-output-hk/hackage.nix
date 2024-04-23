@@ -21,7 +21,7 @@
       synopsis = "A technical demo for Antisplice.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ironforge" = {
@@ -31,9 +31,9 @@
             (hsPkgs."antisplice" or (errorHandler.buildDepError "antisplice"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

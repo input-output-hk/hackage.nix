@@ -21,15 +21,15 @@
       synopsis = "Embedded domain-specific language for declarative vector graphics";
       description = "Diagrams is an embedded domain-specific langauge for\ndeclarative vector graphics.  This package is\njust a wrapper that depends on the diagrams-core,\ndiagrams-lib, and diagrams-cairo packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

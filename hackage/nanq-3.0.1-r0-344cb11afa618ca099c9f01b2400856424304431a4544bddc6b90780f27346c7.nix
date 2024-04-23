@@ -21,7 +21,7 @@
       synopsis = "Performs 漢字検定 (Japan Kanji Aptitude Test) level analysis on given Kanji.";
       description = "`nanq` can inform the user of a number of statistics\nregarding Kanji and the Nation Kanji Examination, also\nknown as 漢字検定 or 漢検. In the most simple case,\nit will reveal what inputed Kanji belong to what\nLevel of the exam.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nanq" = {
@@ -37,9 +37,9 @@
             (hsPkgs."microlens-aeson" or (errorHandler.buildDepError "microlens-aeson"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

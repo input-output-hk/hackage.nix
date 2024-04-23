@@ -21,7 +21,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "API definition DSL for Spock web framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."reroute" or (errorHandler.buildDepError "reroute"))
           (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

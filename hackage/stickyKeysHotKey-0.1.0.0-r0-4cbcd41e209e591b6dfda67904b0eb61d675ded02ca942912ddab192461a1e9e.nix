@@ -21,11 +21,11 @@
       synopsis = "get and set STICKYKEYS.SKF_HOTKEYACTIVE";
       description = "Library to get and set the status of STICKYKEYS.SKF_HOTKEYACTIVE on\nwindows. This can be used to disable the sticky keys window that\nappears when pressing shift 5 times in a row.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

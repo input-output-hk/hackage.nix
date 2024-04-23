@@ -6,8 +6,8 @@
         nix = import ../hackage/sydtest-rabbitmq-0.1.0.0-r0-94ed8d61c9fd46924a218e32f75c2c3b1001cc5bf8ad8c0bfc20103f7a536698.nix;
         revNum = 0;
         sha256 = "94ed8d61c9fd46924a218e32f75c2c3b1001cc5bf8ad8c0bfc20103f7a536698";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

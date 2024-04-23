@@ -21,7 +21,7 @@
       synopsis = "Provides library support for pseudo-dependently-typed int literals.";
       description = "This is the library counterpart of\n<https://hackage.haskell.org/package/dependent-literals-plugin dependent-literals-plugin>.\nSee that package's description for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
           (hsPkgs."snumber" or (errorHandler.buildDepError "snumber"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

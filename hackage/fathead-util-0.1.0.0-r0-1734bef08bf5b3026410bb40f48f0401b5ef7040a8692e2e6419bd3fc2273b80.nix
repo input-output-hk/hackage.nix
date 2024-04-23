@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with DuckDuckHack's FatHead Instant Answers";
       description = "Utilities for working with DuckDuckHack's FatHead Instant Answers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

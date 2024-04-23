@@ -21,14 +21,14 @@
       synopsis = "Generic cryptography Public keys algorithm types";
       description = "Generic cryptography public keys algorithm types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Relational Algebra Engine";
       description = "A relational algebra engine which can be used to persist and query Haskell data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -78,13 +78,13 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
+      };
       exes = {
         "tutd" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "project-m36-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -162,9 +162,9 @@
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bigrel" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -206,9 +206,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-SimpleClient" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -248,9 +248,9 @@
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-OutOfTheTarpit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -294,9 +294,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example-Hair" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -340,9 +340,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "project-m36-websocket-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -372,10 +372,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tutoriald" = {
           depends = [
@@ -414,9 +414,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tutoriald-atomfunctionscript" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -434,9 +434,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tutoriald-databasecontextfunctionscript" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -454,9 +454,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-relation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -491,9 +491,9 @@
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-static-optimizer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -528,9 +528,9 @@
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-transactiongraph-persist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -567,9 +567,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-relation-import-csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -603,9 +603,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-tutoriald-import-tutoriald" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -642,9 +642,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-relation-export-csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -678,9 +678,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-transactiongraph-merge" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -722,9 +722,9 @@
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -763,9 +763,9 @@
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-scripts" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -805,9 +805,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-websocket-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -852,9 +852,9 @@
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-isomorphic-schemas" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -895,9 +895,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."uuid-aeson" or (errorHandler.buildDepError "uuid-aeson"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-atomable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -941,9 +941,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-multiprocess-access" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -986,10 +986,10 @@
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -1025,9 +1025,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."project-m36" or (errorHandler.buildDepError "project-m36"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

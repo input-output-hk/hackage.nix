@@ -21,7 +21,7 @@
       synopsis = "Snap Framework utilities.";
       description = "Snap.Utils provides helper modules for making web apps\nwith Snap Framework. The underlying design goal is to rely on more\ntraditional HTTP-based methods of stateless control flow instead of\nrelying on cookies and server state continuations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."heist" or (errorHandler.buildDepError "heist"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

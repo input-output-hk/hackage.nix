@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell implelementation for GNU SHA512 crypt algorithm";
       description = "crypt() is the password encryption function.  It is based on the Data\nEncryption Standard algorithm with variations intended (among other things) to\ndiscourage use of hardware implementations of a key search.\n\nThis package provides a pure Haskell implementation of SHA512 crypt scheme.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cryptohash-sha512" or (errorHandler.buildDepError "cryptohash-sha512"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           libs = [ (pkgs."crypt" or (errorHandler.sysDepError "crypt")) ];
           buildable = if !system.isLinux then false else true;
-          };
         };
       };
-    }
+    };
+  }

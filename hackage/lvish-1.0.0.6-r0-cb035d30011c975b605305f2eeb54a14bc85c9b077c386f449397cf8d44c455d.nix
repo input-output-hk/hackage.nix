@@ -21,7 +21,7 @@
       synopsis = "Parallel scheduler, LVar data structures, and infrastructure to build more.";
       description = "\nA programming model based on monotonically-growing concurrent data structures.\n\nAs a starting point, look at \"Control.LVish\", as well as one of these papers:\n\n* FHPC 2013: /LVars: lattice-based data structures for deterministic parallelism/ (<http://dl.acm.org/citation.cfm?id=2502326>).\n\n* POPL 2014: /Freeze after writing: quasi-deterministic parallel programming with LVars/ (<http://www.cs.indiana.edu/~lkuper/papers/2013-lvish-draft.pdf>).\n\nIf the haddocks are not building, here is a mirror:\n<http://www.cs.indiana.edu/~rrnewton/haddock/lvish/>\n\nChange Log:\n\n* 1.0.0.6 - tighten up dependencies; remove unused flags; very minor doc fixes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (errorHandler.buildDepError "chaselev-deque"));
+        ] ++ pkgs.lib.optional (flags.chaselev) (hsPkgs."chaselev-deque" or (errorHandler.buildDepError "chaselev-deque"));
         buildable = true;
-        };
+      };
       tests = {
         "test-lvish" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ] ++ (pkgs.lib).optional (flags.chaselev) (hsPkgs."chaselev-deque" or (errorHandler.buildDepError "chaselev-deque"));
+          ] ++ pkgs.lib.optional (flags.chaselev) (hsPkgs."chaselev-deque" or (errorHandler.buildDepError "chaselev-deque"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatically derive API server functions with named and optional parameters";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

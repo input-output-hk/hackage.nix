@@ -21,11 +21,11 @@
       synopsis = "This package is deprecated.  It formerly contained Haskell utilities for data structures and data manipulation.";
       description = "This package is deprecated.  This Haskell library formerly contained data structures and data manipulation functions for general uses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

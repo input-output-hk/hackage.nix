@@ -21,11 +21,11 @@
       synopsis = "A Lua language interpreter embedding in Haskell";
       description = "The Scripting.Lua module is a wrapper of Lua language interpreter\nas described in www.lua.org.\n\nThe package is standalone: full Lua interpreter is distributed in this\npackage as well.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

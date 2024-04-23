@@ -21,7 +21,7 @@
       synopsis = "Principled and efficient bit-oriented binary serialization.";
       description = "Reference implementation of `flat`, a principled and efficient binary serialization format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if compiler.isEta && true
@@ -45,7 +45,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ]
+          ]
           else [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,16 +61,16 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
-            ]) ++ (if compiler.isGhc && (compiler.version).lt "8"
+          ]) ++ (if compiler.isGhc && compiler.version.lt "8"
           then [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ]
+          ]
           else [
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = ([
@@ -81,7 +81,7 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isEta && true
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isEta && true
             then [
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -93,7 +93,7 @@
               (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
               (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
               (hsPkgs."text" or (errorHandler.buildDepError "text"))
-              ]
+            ]
             else [
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -104,9 +104,9 @@
               (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
               (hsPkgs."text" or (errorHandler.buildDepError "text"))
               (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "doc-static" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -123,9 +123,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
+        };
         "repr" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -133,9 +133,9 @@
             (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

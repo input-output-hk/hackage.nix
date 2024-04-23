@@ -21,7 +21,7 @@
       synopsis = "Codecs for use with AWS rds-data";
       description = "Codecs for use with AWS rds-data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ulid" or (errorHandler.buildDepError "ulid"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rds-data-codecs" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."ulid" or (errorHandler.buildDepError "ulid"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."rds-data-codecs" or (errorHandler.buildDepError "rds-data-codecs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rds-data-codecs-test" = {
           depends = [
@@ -82,24 +82,24 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."ulid" or (errorHandler.buildDepError "ulid"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."rds-data-codecs" or (errorHandler.buildDepError "rds-data-codecs"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

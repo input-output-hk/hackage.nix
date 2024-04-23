@@ -21,7 +21,7 @@
       synopsis = "A PostgreSQL backend for the users package";
       description = "This library is a backend driver using <http://hackage.haskell.org/package/postgresql-simple postgresql-simple> for\n<http://hackage.haskell.org/package/users the \"users\" library>.\n\nIt supports all postgres versions starting from 8.3 and requires the included extensions uuid-ossp.\n\nThe package itself does not expose any bindings but provides an instance for 'UserStorageBackend'.\n\nUsage:\n\n> module Foo where\n> import Web.Users.Types\n> import Web.Users.Postgresql ()\n> -- code goes here";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "users-postgresql-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."users-postgresql-simple" or (errorHandler.buildDepError "users-postgresql-simple"))
             (hsPkgs."users-test" or (errorHandler.buildDepError "users-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,13 +21,13 @@
       synopsis = "spam";
       description = "Spam package  ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "test1" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/geocalc-1.0.0-r0-c55da1accdb7f440607279787793995012bb4736b43a43ff10201d3d1b411032.nix;
         revNum = 0;
         sha256 = "c55da1accdb7f440607279787793995012bb4736b43a43ff10201d3d1b411032";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

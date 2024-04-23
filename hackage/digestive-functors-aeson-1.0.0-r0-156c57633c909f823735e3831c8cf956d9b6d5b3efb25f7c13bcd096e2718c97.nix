@@ -21,7 +21,7 @@
       synopsis = "Run digestive-functors forms against JSON";
       description = "This package allows you to run a form created by digestive functors against a\nJSON document that has been parsed by Aeson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

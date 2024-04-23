@@ -21,7 +21,7 @@
       synopsis = "Haskell Language Server API for plugin communication";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -55,13 +55,13 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.use-fingertree) (hsPkgs."hw-fingertree" or (errorHandler.buildDepError "hw-fingertree"));
+          ])) ++ pkgs.lib.optional (flags.use-fingertree) (hsPkgs."hw-fingertree" or (errorHandler.buildDepError "hw-fingertree"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "rangemap-benchmark" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = if !flags.use-fingertree then false else true;
-          };
         };
       };
-    }
+    };
+  }

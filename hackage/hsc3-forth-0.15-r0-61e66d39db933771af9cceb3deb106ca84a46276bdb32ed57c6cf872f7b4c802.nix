@@ -21,7 +21,7 @@
       synopsis = "FORTH SUPERCOLLIDER";
       description = "FORTH SUPERCOLLIDER";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsc3-forth" = {
@@ -37,9 +37,9 @@
             (hsPkgs."hsc3-dot" or (errorHandler.buildDepError "hsc3-dot"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

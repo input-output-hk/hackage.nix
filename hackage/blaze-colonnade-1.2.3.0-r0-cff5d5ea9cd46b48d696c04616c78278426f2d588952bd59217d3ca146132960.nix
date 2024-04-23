@@ -21,7 +21,7 @@
       synopsis = "blaze-html backend for colonnade";
       description = "This library provides a backend for using blaze-html with colonnade.\nIt generates standard HTML tables with `<table>`, `<tbody>`, `<thead>`,\n`<tr>`, `<th>`, and `<td>`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."colonnade" or (errorHandler.buildDepError "colonnade"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

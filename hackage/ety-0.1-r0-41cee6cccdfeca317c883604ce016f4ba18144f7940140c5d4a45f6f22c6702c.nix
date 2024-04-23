@@ -21,7 +21,7 @@
       synopsis = "Random etymology online entry.";
       description = "Retrieve random etymology online entries. Library and program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ety" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

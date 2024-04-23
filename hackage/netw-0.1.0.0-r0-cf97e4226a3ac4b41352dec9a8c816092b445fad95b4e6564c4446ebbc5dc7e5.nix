@@ -21,7 +21,7 @@
       synopsis = "Binding to C socket API operating on bytearrays.";
       description = "Provide access to low-level socket api. Work with both bytearrays and pointers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."primitive-unaligned" or (errorHandler.buildDepError "primitive-unaligned"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "server-client-test" = {
           depends = [
@@ -40,43 +40,43 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."netw" or (errorHandler.buildDepError "netw"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "msgs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."netw" or (errorHandler.buildDepError "netw"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unix-scm-rights-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."netw" or (errorHandler.buildDepError "netw"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "send-and-recv-msgs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."netw" or (errorHandler.buildDepError "netw"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "codegen-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."netw" or (errorHandler.buildDepError "netw"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

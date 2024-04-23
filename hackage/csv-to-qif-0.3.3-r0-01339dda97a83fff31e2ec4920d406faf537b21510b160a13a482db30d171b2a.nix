@@ -21,7 +21,7 @@
       synopsis = "A small program that will read csv files and create qif files";
       description = "Binary to convert a wide range of csv files to qif files.\nThe main target is to read them into GnuCash.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "csv-to-qif" = {
@@ -32,10 +32,10 @@
             (hsPkgs."spreadsheet" or (errorHandler.buildDepError "spreadsheet"))
             (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tester" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

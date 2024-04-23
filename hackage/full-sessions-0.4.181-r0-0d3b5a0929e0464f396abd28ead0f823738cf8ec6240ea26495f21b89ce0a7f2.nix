@@ -21,14 +21,14 @@
       synopsis = "yet another implementation of session types which does not require annotations";
       description = "This library defines a @Session@ monad, which provides static checking of\nsafe and consistent use of communication channels according to protocols.\nIt requires almost no type- and term- annotations.\nAlternatives are: the simple-sessions package\n(<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/simple-sessions>) and the sessions\npackage  (<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/sessions>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

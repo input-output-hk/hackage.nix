@@ -21,7 +21,7 @@
       synopsis = "Websocket implementation for the Salvia Webserver.";
       description = "Websocket implementation for the Salvia Webserver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

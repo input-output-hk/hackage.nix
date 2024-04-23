@@ -21,7 +21,7 @@
       synopsis = "Distributed Apache Spark applications in Haskell";
       description = "See https://www.stackage.org/package/sparkle.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).gt "8.0.1") (hsPkgs."jvm-streaming" or (errorHandler.buildDepError "jvm-streaming"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "8.0.1") (hsPkgs."jvm-streaming" or (errorHandler.buildDepError "jvm-streaming"));
         buildable = true;
-        };
+      };
       exes = {
         "sparkle" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."sparkle" or (errorHandler.buildDepError "sparkle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An implementation and DSL for the Carneades argumentation model.";
       description = "An implementation and domain specific language for the Carneades\nargumentation model. See Haskell Gets Argumentative in the\nProceedings of Symposium on Trends in Functional Programming\n(TFP 2012) by Bas van Gijzel and Henrik Nilsson or the\nmaintainer's website.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."Graphalyze" or (errorHandler.buildDepError "Graphalyze"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

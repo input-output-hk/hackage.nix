@@ -21,7 +21,7 @@
       synopsis = "CGI-based web interface for the free-theorems package.";
       description = "This package provides access to the functionality of <http://hackage.haskell.org/package/free-theorems>\nthrough a web interface.\n\nAn online version can be seen at <http://www-ps.iai.uni-bonn.de/ft/>,\nwhere you can also find a more detailed description of the functionality.\n\nThere is also a shell based interface: <http://hackage.haskell.org/package/ftshell>.\n\nThe CGI binary is called \"free-theorems-webui.cgi\".\n\nTo start it locally for offline usage, just call \"free-theorems-webui\" after installation. (This needs python)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "free-theorems-webui.cgi" = {
@@ -39,10 +39,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
-        "free-theorems-webui" = { buildable = true; };
         };
+        "free-theorems-webui" = { buildable = true; };
       };
-    }
+    };
+  }

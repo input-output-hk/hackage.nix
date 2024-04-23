@@ -21,7 +21,7 @@
       synopsis = "A mailgun backend for the newsletter package.";
       description = "This package provides a backed to based on\n<mailgun https://hackage.haskell.org/package/mailgun> for\n<newsletter https://hackage.haskell.org/package/newsletter>.\n\nSubscription storage in addition to mailing is deligated to\n<mailgun.com https://www.mailgun.com/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."newsletter" or (errorHandler.buildDepError "newsletter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

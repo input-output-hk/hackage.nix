@@ -21,7 +21,7 @@
       synopsis = "Command-line tar archive utility.";
       description = "A Command-line utility to create, extract and list the\ncontents of tar archives. It can work with compressed\narchives using gzip or bzip2 compression.\n\nThis is in part a demo of the @tar@ library but it is also\nusable in place of the ordinary @tar@ program for systems\nlike Windows that do not come with it as standard.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htar" = {
@@ -35,9 +35,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

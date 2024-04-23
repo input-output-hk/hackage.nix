@@ -21,7 +21,7 @@
       synopsis = "Boltzmann sampler compiler for combinatorial systems.";
       description = "Boltzmann Brain is a combinatorial system sampler compiler.\nUsing an easy and intuitive specification input representing a\ncombinatorial system, Boltzmann Brain constructs a working,\nself-contained module implementing a dedicated singular,\nrejection-based Boltzmann sampler with some additional\ncontrol over the constructor frequencies in the generated structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
           (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bb" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."boltzmann-brain" or (errorHandler.buildDepError "boltzmann-brain"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

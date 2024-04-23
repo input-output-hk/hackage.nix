@@ -21,7 +21,7 @@
       synopsis = "Preconfigured email connection pool on top of smtp.";
       description = "Email helper functions with some sane defaults such as a resource pool and cli support";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "exe" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

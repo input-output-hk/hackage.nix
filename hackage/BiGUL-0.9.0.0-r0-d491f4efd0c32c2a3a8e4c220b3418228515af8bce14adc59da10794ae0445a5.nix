@@ -21,7 +21,7 @@
       synopsis = "The Bidirectional Generic Update Language";
       description = "Putback-based bidirectional programming allows the programmer to\nwrite only one putback transformation, from which the unique\ncorresponding forward transformation is derived for free. BiGUL,\nshort for the Bidirectional Generic Update Language, is designed to\nbe a minimalist putback-based bidirectional programming language.\nBiGUL was originally developed in the dependently typed programming\nlanguage Agda, and its well-behavedness has been completely formally\nverified; this package is the Haskell port of BiGUL.\n\nFor more detail, see the following paper:\n\n* Hsiang-Shang Ko, Tao Zan, and Zhenjiang Hu. BiGUL: A formally\nverified core language for putback-based bidirectional programming.\nIn /Partial Evaluation and Program Manipulation/, PEPM’16,\npages 61–72. ACM, 2016. <http://dx.doi.org/10.1145/2847538.2847544>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "\"Haskell on a Horse\" - A combinatorial web framework";
       description = "Please read the introduction at on-a-horse.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

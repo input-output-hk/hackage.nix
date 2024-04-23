@@ -21,7 +21,7 @@
       synopsis = "extra hoodle tools ";
       description = "extra hoodle tools ";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "networkedit" = {
@@ -37,9 +37,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "idfilepathdb" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -66,9 +66,9 @@
             (hsPkgs."hoodle-types" or (errorHandler.buildDepError "hoodle-types"))
             (hsPkgs."hoodle-parser" or (errorHandler.buildDepError "hoodle-parser"))
             (hsPkgs."xournal-parser" or (errorHandler.buildDepError "xournal-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

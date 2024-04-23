@@ -21,7 +21,7 @@
       synopsis = "A simple Game Engine using SDL";
       description = "This package contains Affection, a simple game engine\nwritten in Haskell using SDL and GEGL.\nThis Engine is still work in progress and even minor\nversion bumps may contain breaking api changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,12 +36,12 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example00" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."affection" or (errorHandler.buildDepError "affection"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
@@ -49,11 +49,11 @@
             (hsPkgs."babl" or (errorHandler.buildDepError "babl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "example01" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."affection" or (errorHandler.buildDepError "affection"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
@@ -61,11 +61,11 @@
             (hsPkgs."babl" or (errorHandler.buildDepError "babl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "example02" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."affection" or (errorHandler.buildDepError "affection"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
@@ -73,11 +73,11 @@
             (hsPkgs."babl" or (errorHandler.buildDepError "babl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "example03" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."affection" or (errorHandler.buildDepError "affection"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
@@ -86,9 +86,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

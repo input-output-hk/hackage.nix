@@ -21,24 +21,24 @@
       synopsis = "A framework for packaging Haskell software";
       description = "The Haskell Common Architecture for Building Applications and\nLibraries: a framework defining a common interface for authors to more\neasily build their Haskell applications in a portable way.\n\nThe Haskell Cabal is part of a larger infrastructure for distributing,\norganizing, and cataloging Haskell libraries and tools.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]) ++ [
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]) ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (pkgs.lib).optionals (flags.base3) [
+        ]) ++ pkgs.lib.optionals (flags.base3) [
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

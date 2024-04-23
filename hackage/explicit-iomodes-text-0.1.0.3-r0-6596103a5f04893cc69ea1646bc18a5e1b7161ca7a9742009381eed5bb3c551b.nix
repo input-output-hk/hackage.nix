@@ -21,15 +21,15 @@
       synopsis = "Extends explicit-iomodes with Text operations";
       description = "Extends @explicit-iomodes@ with @Text@ operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."explicit-iomodes" or (errorHandler.buildDepError "explicit-iomodes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

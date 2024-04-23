@@ -21,7 +21,7 @@
       synopsis = "Simle api for heavy logger";
       description = "An alternative shortcut api for heavy-logger, removes vars functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-format-heavy" or (errorHandler.buildDepError "text-format-heavy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

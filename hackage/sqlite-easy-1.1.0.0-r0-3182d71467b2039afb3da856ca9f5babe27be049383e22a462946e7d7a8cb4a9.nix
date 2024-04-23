@@ -21,7 +21,7 @@
       synopsis = "A primitive yet easy to use sqlite library.";
       description = "A primitive yet easy to use sqlite library built using sqlite-direct, resource-pool and migrant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."migrant-core" or (errorHandler.buildDepError "migrant-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sqlite-easy-test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

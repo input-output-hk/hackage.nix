@@ -21,7 +21,7 @@
       synopsis = "Extra classes/functions about monoids";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

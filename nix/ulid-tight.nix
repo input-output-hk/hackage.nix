@@ -6,8 +6,8 @@
         nix = import ../hackage/ulid-tight-0.1-r0-0d9a2a8e74daf2cd64153696f8305de092f1e993ebf808048322a455b9f55aac.nix;
         revNum = 0;
         sha256 = "0d9a2a8e74daf2cd64153696f8305de092f1e993ebf808048322a455b9f55aac";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

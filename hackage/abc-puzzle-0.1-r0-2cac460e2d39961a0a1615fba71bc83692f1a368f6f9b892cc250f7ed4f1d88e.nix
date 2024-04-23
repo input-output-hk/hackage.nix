@@ -21,7 +21,7 @@
       synopsis = "Generate instances of the ABC logic puzzle.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "abc-puzzle" = {
@@ -31,9 +31,9 @@
             (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"))
             (hsPkgs."Safe" or (errorHandler.buildDepError "Safe"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Provide a service at the data type level.";
       description = "Thin very layer over network-simple, that allows to write\na service that can be communicated with at the data level.\nMakes it trivial to build a services upon a data type,\nprovided a ByteString serialization can be given.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
+        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
         buildable = true;
-        };
+      };
       exes = {
         "echo" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

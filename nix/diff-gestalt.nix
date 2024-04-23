@@ -6,10 +6,10 @@
         nix = import ../hackage/diff-gestalt-0.1.0.0-r0-9606ddb0ac0bd56453b520f8fc24dc6ece5f36a5fa06e3e9325f943b11ee4d05.nix;
         revNum = 0;
         sha256 = "9606ddb0ac0bd56453b520f8fc24dc6ece5f36a5fa06e3e9325f943b11ee4d05";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.2.0.0" = {
     sha256 = "734d221512635a874d5aa05704e3a101d7472cb0e30ac7f40ff24c7da6f258a9";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/diff-gestalt-0.2.0.0-r0-717185673521f3e1695be848fd82d5845337a7da7e3fd1e1c20a2ddb34dfa0b8.nix;
         revNum = 0;
         sha256 = "717185673521f3e1695be848fd82d5845337a7da7e3fd1e1c20a2ddb34dfa0b8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

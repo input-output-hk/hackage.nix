@@ -21,7 +21,7 @@
       synopsis = "@minamiyama1994_bot on haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "masakazu-bot" = {
@@ -42,9 +42,9 @@
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

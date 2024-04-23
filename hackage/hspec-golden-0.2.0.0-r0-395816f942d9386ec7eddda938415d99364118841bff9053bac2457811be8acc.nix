@@ -21,7 +21,7 @@
       synopsis = "Golden tests for hspec";
       description = "Please see the README on GitHub at <https://github.com/stackbuilders/hspec-golden#README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hgold" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec-golden" or (errorHandler.buildDepError "hspec-golden"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec-golden-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-golden" or (errorHandler.buildDepError "hspec-golden"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

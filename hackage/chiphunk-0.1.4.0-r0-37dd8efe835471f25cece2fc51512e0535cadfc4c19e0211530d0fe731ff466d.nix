@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for Chipmunk2D physics engine";
       description = "Please see the README on GitHub at <https://github.com/CthulhuDen/chiphunk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,24 +30,24 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chiphunk" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (!flags.library-only) [
+          ] ++ pkgs.lib.optionals (!flags.library-only) [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."chiphunk" or (errorHandler.buildDepError "chiphunk"))
             (hsPkgs."nanovg" or (errorHandler.buildDepError "nanovg"))
             (hsPkgs."nanovg-simple" or (errorHandler.buildDepError "nanovg-simple"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,22 +21,22 @@
       synopsis = "An efficient packed Unicode text type";
       description = "An efficient packed Unicode text type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ]
+          ]
           else [
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

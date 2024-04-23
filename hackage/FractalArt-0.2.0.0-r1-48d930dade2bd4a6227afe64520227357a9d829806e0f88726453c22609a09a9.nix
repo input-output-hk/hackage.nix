@@ -21,7 +21,7 @@
       synopsis = "Generates colorful wallpapers";
       description = "This application generates colorful images as a wallpaper";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "FractalArt" = {
@@ -34,10 +34,10 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-            ];
-          libs = (pkgs.lib).optional (system.isLinux) (pkgs."X11" or (errorHandler.sysDepError "X11")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."objc" or (errorHandler.sysDepError "objc"));
+          ];
+          libs = pkgs.lib.optional (system.isLinux) (pkgs."X11" or (errorHandler.sysDepError "X11")) ++ pkgs.lib.optional (system.isOsx) (pkgs."objc" or (errorHandler.sysDepError "objc"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Toolset for Folger Shakespeare Library's XML annotated plays";
       description = "Toolset for Folger Shakespeare Library's XML annotated plays";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "folgerhs" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

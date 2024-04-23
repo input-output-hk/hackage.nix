@@ -21,16 +21,16 @@
       synopsis = "`rematch` matchers for Data.Text";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

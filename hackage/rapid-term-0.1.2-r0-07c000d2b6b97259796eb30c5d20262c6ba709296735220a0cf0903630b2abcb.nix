@@ -21,7 +21,7 @@
       synopsis = "External terminal support for rapid";
       description = "When developing interactive command line applications in\nan editor like Emacs GHCi typically has no access to an actual\nterminal.  This is good enough for applications that only read lines\nfrom stdin and print diagnostics to stdout, but as soon as terminal\nfunctionality is needed, the application has to be tested elsewhere.\n\nThis package provides functionality that, when used together with\nthe <https://hackage.haskell.org/package/rapid rapid library>, can\nopen a persistent terminal that the application can access directly,\nsuch that terminal applications can be tested with the main GHCi\ninstance.\n\nYou can find a tutorial in the documentation of the @Rapid.Term@\nmodule.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ] ++ (pkgs.lib).optional (flags.devel) (hsPkgs."rapid" or (errorHandler.buildDepError "rapid"));
+        ] ++ pkgs.lib.optional (flags.devel) (hsPkgs."rapid" or (errorHandler.buildDepError "rapid"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Uniform names (and Unicode operators) for set operations on data structures.";
       description = "Uniform names (and Unicode operators) for set operations on data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Conduit-based algorithms";
       description = "Algorithms on Conduits, including higher level asynchronous processing and some other utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "conduit-algorithms-test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

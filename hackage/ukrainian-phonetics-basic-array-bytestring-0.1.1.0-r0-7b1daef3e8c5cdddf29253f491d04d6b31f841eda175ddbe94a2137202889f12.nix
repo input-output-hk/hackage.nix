@@ -14,7 +14,7 @@
       identifier = {
         name = "ukrainian-phonetics-basic-array-bytestring";
         version = "0.1.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A library to work with the basic Ukrainian phonetics and syllable segmentation.";
       description = "The functionality that uses bytestings are moved to this package from the ukrainian-phonetics-basic-array package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
           (hsPkgs."ukrainian-phonetics-common" or (errorHandler.buildDepError "ukrainian-phonetics-common"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

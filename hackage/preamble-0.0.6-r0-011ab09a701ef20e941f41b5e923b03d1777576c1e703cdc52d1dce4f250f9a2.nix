@@ -21,7 +21,7 @@
       synopsis = "Yet another prelude.";
       description = "A prelude built on basic-prelude.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shake-preamble" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shakers" or (errorHandler.buildDepError "shakers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

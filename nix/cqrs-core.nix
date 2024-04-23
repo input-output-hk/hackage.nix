@@ -6,8 +6,8 @@
         nix = import ../hackage/cqrs-core-0.10.0-r0-1120a2e763358fe108680b7b0bfd7ec236882fdc804a35e1ba9a914f7b8ddc03.nix;
         revNum = 0;
         sha256 = "1120a2e763358fe108680b7b0bfd7ec236882fdc804a35e1ba9a914f7b8ddc03";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

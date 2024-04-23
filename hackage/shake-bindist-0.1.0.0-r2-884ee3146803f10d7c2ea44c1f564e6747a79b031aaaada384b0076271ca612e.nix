@@ -21,7 +21,7 @@
       synopsis = "Rules for binary distributions";
       description = "Pack files into a binary distribution";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,14 +33,14 @@
           (hsPkgs."archive-sig" or (errorHandler.buildDepError "archive-sig"))
           (hsPkgs."bz2" or (errorHandler.buildDepError "bz2"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if flags.pure
+        ] ++ (if flags.pure
           then [
             (hsPkgs."archive-tar" or (errorHandler.buildDepError "archive-tar"))
-            ]
+          ]
           else [
             (hsPkgs."archive-libarchive" or (errorHandler.buildDepError "archive-libarchive"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

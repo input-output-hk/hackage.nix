@@ -21,7 +21,7 @@
       synopsis = "Compiler preprocessor introducing a syntactic extension for anonymous records";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "record-preprocessor" = {
@@ -32,10 +32,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "demo" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."record-syntax" or (errorHandler.buildDepError "record-syntax"))
             (hsPkgs."basic-lens" or (errorHandler.buildDepError "basic-lens"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

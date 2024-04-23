@@ -21,11 +21,11 @@
       synopsis = "type-level binary search trees in haskell";
       description = "An efficient implementation of type-level binary search trees and of dependently-typed extensible records and unions.\n\nMore information can be found in the <http://hackage.haskell.org/package/type-level-bst hackage's haddock> or the <http://kinokkory.github.io/type-level-bst/ updated haddock>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

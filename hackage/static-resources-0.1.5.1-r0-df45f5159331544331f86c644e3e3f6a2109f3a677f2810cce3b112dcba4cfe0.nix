@@ -21,7 +21,7 @@
       synopsis = "JavaScript and Css files concat for http optimization. Now with LESS suppor.";
       description = "You need to add static resources to your web page. For production you want to decrease number of files.\nFor development you need them separated. Support for distinct sets of JS, CSS and LESS files for different views.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-static-resources" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."static-resources" or (errorHandler.buildDepError "static-resources"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Haskell Music Typesetting";
       description = "A simple music typesetting model in haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmt" or (errorHandler.buildDepError "hmt"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

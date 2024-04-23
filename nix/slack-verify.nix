@@ -6,8 +6,8 @@
         nix = import ../hackage/slack-verify-0.1.0.0-r0-20538f323bca4d1dd074ec16ce4308108a22638f5c345a2945afa820e5c32b1c.nix;
         revNum = 0;
         sha256 = "20538f323bca4d1dd074ec16ce4308108a22638f5c345a2945afa820e5c32b1c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

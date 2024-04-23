@@ -21,7 +21,7 @@
       synopsis = "A tested, minimal wrapper around GitHub's API. Very incomplete at the moment";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."dotenv" or (errorHandler.buildDepError "dotenv"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."octohat" or (errorHandler.buildDepError "octohat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

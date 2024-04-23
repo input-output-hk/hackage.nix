@@ -21,15 +21,15 @@
       synopsis = "Multi-set rewrite rules with guards and a parallel execution scheme";
       description = "Multi-set rewrite rules with guards and a parallel execution scheme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

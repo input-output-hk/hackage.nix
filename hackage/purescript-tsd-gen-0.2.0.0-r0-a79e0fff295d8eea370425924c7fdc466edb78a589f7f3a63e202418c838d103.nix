@@ -21,7 +21,7 @@
       synopsis = "TypeScript Declaration File (.d.ts) generator for PureScript";
       description = "Please see the README on Github at <https://github.com/minoki/purescript-tsd-gen#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "purs-tsd-gen" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
             (hsPkgs."purescript-tsd-gen" or (errorHandler.buildDepError "purescript-tsd-gen"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

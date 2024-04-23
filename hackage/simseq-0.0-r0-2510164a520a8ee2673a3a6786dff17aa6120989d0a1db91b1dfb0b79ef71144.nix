@@ -21,7 +21,7 @@
       synopsis = "Simulate sequencing with different models for priming and errors";
       description = "This is a simulator that can generate simulated sequences -- primarily EST type sequences,\nbut quite possibly other types as well. Mail me for further information on usage etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "simseq" = {
@@ -30,9 +30,9 @@
             (hsPkgs."bio" or (errorHandler.buildDepError "bio"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Manipulate and convert strings of characters uniformly and consistently";
       description = "Reduce complexity of Haskell by providing a\n\n- set of uniformly named conversion functions between\n\n- String,\n\n- Text,\n\n- ByteString,\n\n- LazyByteString and\n\n- urlEncoding\n\nwith the most important text manipulation functions for string and text\nwhere the semantic is the same (tested with quickcheck).\nTentatively some infix string manipulations are offered as well.\n\nPlease see the README on GitHub at <https://github.com/andrewufrank/uniform-strings/readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."uniform-algebras" or (errorHandler.buildDepError "uniform-algebras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

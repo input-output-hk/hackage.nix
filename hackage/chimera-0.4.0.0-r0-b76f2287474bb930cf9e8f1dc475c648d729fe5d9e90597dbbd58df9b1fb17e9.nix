@@ -21,7 +21,7 @@
       synopsis = "Lazy infinite streams with O(1) indexing and applications for memoization";
       description = "There are plenty of memoizing libraries on Hackage, but they\nusually fall into two categories:\n\n* Store cache as a flat array, enabling us\nto obtain cached values in O(1) time, which is nice.\nThe drawback is that one must specify the size\nof the array beforehand,\nlimiting an interval of inputs,\nand actually allocate it at once.\n* Store cache as a lazy binary tree.\nThanks to laziness, one can freely use the full range of inputs.\nThe drawback is that obtaining values from a tree\ntakes logarithmic time and is unfriendly to CPU cache,\nwhich kinda defeats the purpose.\n\nThis package intends to tackle both issues,\nproviding a data type 'Chimera' for\nlazy infinite compact streams with cache-friendly O(1) indexing.\n\nAdditional features include:\n\n* memoization of recursive functions and recurrent sequences,\n* memoization of functions of several, possibly signed arguments,\n* efficient memoization of boolean predicates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,13 +30,13 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (flags.representable) [
+        ] ++ pkgs.lib.optionals (flags.representable) [
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chimera-test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "chimera-bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

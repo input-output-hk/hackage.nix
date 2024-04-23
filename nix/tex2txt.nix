@@ -6,8 +6,8 @@
         nix = import ../hackage/tex2txt-0.1.0.0-r0-7e17b3b9e4458fd8440774fad9da5c939552e17a4f3ed1734074bf7a15ff0be8.nix;
         revNum = 0;
         sha256 = "7e17b3b9e4458fd8440774fad9da5c939552e17a4f3ed1734074bf7a15ff0be8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

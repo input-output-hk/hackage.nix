@@ -21,19 +21,19 @@
       synopsis = "Reading and writing sound files with repa arrays";
       description = "Add supporting of reading and writing audio data with repa arrays in\nvarious format.\n\nThe code is using libsndfile and hsndfile package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsndfile" or (errorHandler.buildDepError "hsndfile"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ] ++ (pkgs.lib).optionals (flags.example) [
+        ] ++ pkgs.lib.optionals (flags.example) [
           (hsPkgs."hsndfile-vector" or (errorHandler.buildDepError "hsndfile-vector"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rw" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."repa-sndfile" or (errorHandler.buildDepError "repa-sndfile"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "gensine" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,10 +54,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."repa-sndfile" or (errorHandler.buildDepError "repa-sndfile"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."repa-sndfile" or (errorHandler.buildDepError "repa-sndfile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

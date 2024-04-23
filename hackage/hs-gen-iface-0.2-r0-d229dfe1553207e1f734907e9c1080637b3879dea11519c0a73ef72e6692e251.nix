@@ -21,7 +21,7 @@
       synopsis = "Utility to generate haskell-names interface files";
       description = "Compiler which generates module interfaces for haskell-names";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hs-gen-iface" = {
@@ -36,9 +36,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."hse-cpp" or (errorHandler.buildDepError "hse-cpp"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

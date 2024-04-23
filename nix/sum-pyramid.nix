@@ -6,8 +6,8 @@
         nix = import ../hackage/sum-pyramid-0.0-r0-6d49a792b1554698aa9545033a83ed1c69309b4832ae3f51ea969d0802b9334c.nix;
         revNum = 0;
         sha256 = "6d49a792b1554698aa9545033a83ed1c69309b4832ae3f51ea969d0802b9334c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

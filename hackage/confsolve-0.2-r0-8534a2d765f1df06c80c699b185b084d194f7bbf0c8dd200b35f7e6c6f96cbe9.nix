@@ -21,7 +21,7 @@
       synopsis = "A command line tool for resolving conflicts of file synchronizers. Currently supported are Dropbox and Wuala.";
       description = "A command line tool for resolving conflicts of file synchronizers. Currently supported are Dropbox and Wuala.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "confsolve" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."hashmap" or (errorHandler.buildDepError "hashmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

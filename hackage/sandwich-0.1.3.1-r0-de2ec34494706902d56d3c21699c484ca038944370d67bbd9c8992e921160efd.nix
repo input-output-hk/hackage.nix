@@ -21,7 +21,7 @@
       synopsis = "Yet another test framework for Haskell";
       description = "Please see the <https://codedownio.github.io/sandwich documentation>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,13 +57,13 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (!system.isWindows) [
+        ] ++ pkgs.lib.optionals (!system.isWindows) [
           (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sandwich-demo" = {
           depends = [
@@ -100,13 +100,13 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sandwich-discover" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -142,13 +142,13 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sandwich-test" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -184,14 +184,14 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sandwich-test-suite" = {
           depends = [
@@ -228,13 +228,13 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

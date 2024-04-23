@@ -21,7 +21,7 @@
       synopsis = "Hack contrib";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A source code editor aiming for the convenience of use";
       description = "A simple command based code editor being developed for the mouse-free workflow.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."gtk-largeTreeStore" or (errorHandler.buildDepError "gtk-largeTreeStore"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hob" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."gtksourceview3" or (errorHandler.buildDepError "gtksourceview3"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."hob" or (errorHandler.buildDepError "hob"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."gtksourceview3" or (errorHandler.buildDepError "gtksourceview3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

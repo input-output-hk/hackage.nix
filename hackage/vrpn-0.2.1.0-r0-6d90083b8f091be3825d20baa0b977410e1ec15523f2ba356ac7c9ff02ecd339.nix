@@ -21,25 +21,25 @@
       synopsis = "Bindings to VRPN.";
       description = "See \\<<https://github.com/vrpn/vrpn/wiki>\\> for information on VRPN.  This has been tested using VRPN 07.30 on Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."vrpn" or (errorHandler.sysDepError "vrpn"))
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-vrpn" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           libs = [
             (pkgs."vrpn" or (errorHandler.sysDepError "vrpn"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

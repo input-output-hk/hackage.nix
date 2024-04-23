@@ -21,7 +21,7 @@
       synopsis = "Clipboard Manager";
       description = "See https://hackage.haskell.org/package/helic/docs/Helic.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hel" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "helic-test" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
             (hsPkgs."zeugma" or (errorHandler.buildDepError "zeugma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

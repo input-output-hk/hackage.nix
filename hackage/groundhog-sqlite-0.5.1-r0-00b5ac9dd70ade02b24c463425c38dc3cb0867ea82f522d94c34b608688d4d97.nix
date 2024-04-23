@@ -21,7 +21,7 @@
       synopsis = "Sqlite3 backend for the groundhog library";
       description = "It depends on direct-sqlite library which includes Sqlite C sources, so there are no system dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

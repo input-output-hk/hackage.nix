@@ -21,14 +21,14 @@
       synopsis = "A domain-specific type system for dimensional analysis";
       description = "The units package provides a mechanism for compile-time dimensional analysis\nin Haskell programs. It defines an embedded type system based on\nunits-of-measure. The units defined are fully extensible, and need not relate\nto physical properties. In fact, the core package defines only one built-in\nunit: Scalar. The package supports defining multiple inter-convertible units,\nsuch as Meter and Foot. When extracting a number from a dimensioned quantity,\nthe desired unit must be specified, and the value is converted into that unit.\nThe Haddock documentation is insufficient for using the units package. Please\nsee the README file, available from the package home page.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

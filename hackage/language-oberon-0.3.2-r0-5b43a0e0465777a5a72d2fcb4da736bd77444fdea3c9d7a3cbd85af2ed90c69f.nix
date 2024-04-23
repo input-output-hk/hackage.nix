@@ -21,7 +21,7 @@
       synopsis = "Parser, pretty-printer, and more for the Oberon programming language";
       description = "The library and the executable support both the original Oberon and the Oberon-2 programming language, as described\nin the respective <http://www.ethoberon.ethz.ch/compiler/index.html#report language reports>.\n\nThe original purpose for the library was to be a test of the underlying\n<http://hackage.haskell.org/package/grammatical-parsers grammatical-parsers> library. The experiment succeeded, so\nthe package can be used in practice.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."deep-transformations" or (errorHandler.buildDepError "deep-transformations"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parse" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."deep-transformations" or (errorHandler.buildDepError "deep-transformations"))
             (hsPkgs."language-oberon" or (errorHandler.buildDepError "language-oberon"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."language-oberon" or (errorHandler.buildDepError "language-oberon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Multivariate polynomials and fractions of multivariate polynomials.";
       description = "Manipulation of multivariate polynomials over a commutative ring and fractions of multivariate polynomials over a commutative field, Gröbner bases, resultant and subresultants, and greatest common divisor. It is possible to deal with multivariate polynomials whose coefficients are fractions of multivariate polynomials, and they can be interpreted as parametric polynomials with symbolic parameters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."hspray" or (errorHandler.buildDepError "hspray"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."hspray" or (errorHandler.buildDepError "hspray"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Type driven generic aeson instance customisation";
       description = "This package provides a newtype wrapper with\nFromJSON/ToJSON instances customisable via a phantom type parameter.\nThe instances can be rendered to the original type using DerivingVia.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."deriving-aeson" or (errorHandler.buildDepError "deriving-aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

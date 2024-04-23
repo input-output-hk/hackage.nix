@@ -21,14 +21,14 @@
       synopsis = "A fixed-precision real number type";
       description = "A reasonably efficient implementation of arbitrary-but-fixed precision\nreal numbers. This is inspired by, and partly based on,\nData.Number.Fixed and Data.Number.CReal, but more efficient.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

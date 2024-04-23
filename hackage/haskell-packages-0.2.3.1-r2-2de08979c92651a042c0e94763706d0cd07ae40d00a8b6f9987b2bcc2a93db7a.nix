@@ -21,7 +21,7 @@
       synopsis = "Haskell suite library for package management and integration with Cabal";
       description = "See <http://documentup.com/haskell-suite/haskell-packages>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."EitherT" or (errorHandler.buildDepError "EitherT"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

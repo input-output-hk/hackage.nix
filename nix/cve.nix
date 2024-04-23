@@ -6,8 +6,8 @@
         nix = import ../hackage/cve-0.1.0.0-r0-6937f4592c48c4722035018e54f2a420365b028ed93f37b08367f05169935d1e.nix;
         revNum = 0;
         sha256 = "6937f4592c48c4722035018e54f2a420365b028ed93f37b08367f05169935d1e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

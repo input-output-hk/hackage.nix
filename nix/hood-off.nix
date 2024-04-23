@@ -6,8 +6,8 @@
         nix = import ../hackage/hood-off-0.2-r0-9b2f31888bc103be94caf85acbfeff458657cf48944ec627a2de5d3262b65407.nix;
         revNum = 0;
         sha256 = "9b2f31888bc103be94caf85acbfeff458657cf48944ec627a2de5d3262b65407";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

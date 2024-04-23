@@ -21,7 +21,7 @@
       synopsis = "Application wrapper for the k8s environment";
       description = "A wrapper for the k8s environment. It provides the logic that\ncan automate the communication with k8s and easily provide proper\nrun in the application.\nFor more details see documentation in the \"Network.K8s.Application\"\nmodule";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "k8s-wrapper-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."k8s-wrapper" or (errorHandler.buildDepError "k8s-wrapper"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

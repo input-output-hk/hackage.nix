@@ -21,7 +21,7 @@
       synopsis = "LLVM bitcode parsing library";
       description = "A parser for the LLVM bitcode file format, yielding a Module from the\nllvm-pretty package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "llvm-disasm" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "regression-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (errorHandler.buildDepError "llvm-pretty-bc-parser"))
-            ];
+          ];
           buildable = if flags.regressions then true else false;
-          };
+        };
         "fuzz-llvm-disasm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,10 +86,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (errorHandler.buildDepError "llvm-pretty-bc-parser"))
-            ];
+          ];
           buildable = if flags.fuzz then true else false;
-          };
         };
+      };
       tests = {
         "unit-test" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (errorHandler.buildDepError "llvm-pretty-bc-parser"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "disasm-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -131,9 +131,9 @@
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."llvm-pretty" or (errorHandler.buildDepError "llvm-pretty"))
             (hsPkgs."llvm-pretty-bc-parser" or (errorHandler.buildDepError "llvm-pretty-bc-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/uniquely-represented-sets-0.1.0.0-r0-4ecfccd6c9cf8df0353cc24009624f9306497399139de1afa19c0cbcb4684ef2.nix;
         revNum = 0;
         sha256 = "4ecfccd6c9cf8df0353cc24009624f9306497399139de1afa19c0cbcb4684ef2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

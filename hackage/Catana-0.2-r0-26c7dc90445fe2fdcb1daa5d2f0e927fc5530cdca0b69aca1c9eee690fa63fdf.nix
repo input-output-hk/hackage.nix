@@ -21,14 +21,14 @@
       synopsis = "A monad for complex manipulation of a stream.          ";
       description = "A monad for complex manipulation of a stream.        ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Recursively manipulate and traverse filesystems as lazy rose trees.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."cond" or (errorHandler.buildDepError "cond"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple blog engine on Hack";
       description = "A simple blog engine on Hack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."hcheat" or (errorHandler.buildDepError "hcheat"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

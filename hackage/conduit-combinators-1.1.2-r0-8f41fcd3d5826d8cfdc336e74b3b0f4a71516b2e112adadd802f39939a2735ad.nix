@@ -21,7 +21,7 @@
       synopsis = "Commonly used conduit functions, for both chunked and unchunked data";
       description = "See docs and README at <http://www.stackage.org/package/conduit-combinators>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -42,12 +42,12 @@
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."chunked-data" or (errorHandler.buildDepError "chunked-data"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

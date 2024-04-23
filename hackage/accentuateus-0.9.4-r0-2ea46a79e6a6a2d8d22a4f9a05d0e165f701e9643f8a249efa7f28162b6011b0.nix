@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of the Accentuate.us API.";
       description = "Accentuate.us (<http://accentuate.us/>) is a free\nand open-source web service that makes computer\ninput really easy for over 115 languages. Using\nstatistics, it will automatically add diacritics\n(\\\"special characters\\\") to otherwise plain text.\nIn support of being an open web service, an API is\nprovided and documented at\n<http://accentuate.us/api>, which is implemented\nby this package.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

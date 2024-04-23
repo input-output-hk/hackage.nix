@@ -21,7 +21,7 @@
       synopsis = "A static website and blog generator";
       description = "Build websites using the full power and flexibility of Haskell.\n\nSee <https://github.com/johannesgerer/Lykah Readme> on Github.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filesystem-trees" or (errorHandler.buildDepError "filesystem-trees"))
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lykah" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filesystem-trees" or (errorHandler.buildDepError "filesystem-trees"))
             (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

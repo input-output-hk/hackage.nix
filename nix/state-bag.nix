@@ -6,8 +6,8 @@
         nix = import ../hackage/state-bag-0.1.0.0-r0-dceaf3f922212db8fa27e1970276c9093445583b8bbb3ab3118eba184cee1538.nix;
         revNum = 0;
         sha256 = "dceaf3f922212db8fa27e1970276c9093445583b8bbb3ab3118eba184cee1538";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

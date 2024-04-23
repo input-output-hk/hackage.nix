@@ -21,16 +21,16 @@
       synopsis = "Infer software license from a given license file";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."infer-license" or (errorHandler.buildDepError "infer-license"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

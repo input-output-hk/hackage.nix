@@ -6,8 +6,8 @@
         nix = import ../hackage/bidispec-extras-0.1-r0-86e6ce35f11c6afd26417e5895af4d3b65e738f92664cc47aa8acfc8a7032dbb.nix;
         revNum = 0;
         sha256 = "86e6ce35f11c6afd26417e5895af4d3b65e738f92664cc47aa8acfc8a7032dbb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

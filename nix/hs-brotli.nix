@@ -6,8 +6,8 @@
         nix = import ../hackage/hs-brotli-0.1.0.0-r0-4225137bdd99b22418a24127abd3deb11bcf715d0f6ed8128b6a2e9e5f57ef4f.nix;
         revNum = 0;
         sha256 = "4225137bdd99b22418a24127abd3deb11bcf715d0f6ed8128b6a2e9e5f57ef4f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

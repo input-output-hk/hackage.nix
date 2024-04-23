@@ -21,7 +21,7 @@
       synopsis = "Visualize live Haskell data structures using vacuum, graphviz and cairo";
       description = "Visualize live Haskell data structures using vacuum, graphviz and cairo\n\n> $ view \"hello\"\n\n<http://code.haskell.org/~dons/images/vacuum/hello.png>\n\n> $ view [1..5]\n\n<http://code.haskell.org/~dons/images/vacuum/list.png>\n\n> $ view (IntMap.fromList $ zip [1..10] [1..])\n\n<http://code.haskell.org/~dons/images/vacuum/intmap.png>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

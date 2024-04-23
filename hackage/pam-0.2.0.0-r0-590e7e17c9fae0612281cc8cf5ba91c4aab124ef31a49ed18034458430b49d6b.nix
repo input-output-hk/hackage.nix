@@ -21,15 +21,15 @@
       synopsis = "Haskell binding for C PAM API";
       description = "This package provides PAM interface for Haskell programs. See the README on GitHub at <Please see the README on GitHub at <https://github.com/oscar-h64/pam-haskell#readme> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."pam" or (errorHandler.sysDepError "pam")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

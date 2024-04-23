@@ -21,7 +21,7 @@
       synopsis = "CurryDB: In-memory Key/Value Database";
       description = "CurryDB: Simple, Persistent, Polymorphic, Transactional, In-memory Key/Value Database";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,18 +55,18 @@
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "curry-memcached" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."CurryDB" or (errorHandler.buildDepError "CurryDB"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "curry-redis" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,10 +74,10 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."CurryDB" or (errorHandler.buildDepError "CurryDB"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -97,10 +97,10 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."CurryDB" or (errorHandler.buildDepError "CurryDB"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "curry-bench" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
             (hsPkgs."CurryDB" or (errorHandler.buildDepError "CurryDB"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

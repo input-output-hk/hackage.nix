@@ -21,7 +21,7 @@
       synopsis = "Client library for the Nakadi Event Broker";
       description = "This package implements a client library for interacting with the Nakadi event broker system developed by Zalando.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "nakadi-client-test-suite" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

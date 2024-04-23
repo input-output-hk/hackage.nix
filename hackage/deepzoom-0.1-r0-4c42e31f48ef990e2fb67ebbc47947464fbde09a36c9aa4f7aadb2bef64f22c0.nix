@@ -21,7 +21,7 @@
       synopsis = "A DeepZoom image slicer.  Only known to work on 32bit Linux";
       description = "A DeepZoom image slicer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hsmagick" or (errorHandler.buildDepError "hsmagick"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Reified constraints";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."category" or (errorHandler.buildDepError "category"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

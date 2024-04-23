@@ -6,8 +6,8 @@
         nix = import ../hackage/rowrecord-0.1-r0-0b20f62a63468b28d6f0d311c5ea4e41ea918ef83347db544746cf5722acc9a6.nix;
         revNum = 0;
         sha256 = "0b20f62a63468b28d6f0d311c5ea4e41ea918ef83347db544746cf5722acc9a6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

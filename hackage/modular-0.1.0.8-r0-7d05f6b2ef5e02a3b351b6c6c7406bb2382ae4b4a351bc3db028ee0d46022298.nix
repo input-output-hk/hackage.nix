@@ -21,14 +21,14 @@
       synopsis = "Type-safe modular arithmetic";
       description = "Please see the GitHub page at <https://github.com/pgujjula/modular> for installation instructions, and the module documentation for Numeric.Modular for usage instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

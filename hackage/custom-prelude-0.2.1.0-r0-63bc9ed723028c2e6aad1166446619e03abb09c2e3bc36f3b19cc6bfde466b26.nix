@@ -21,14 +21,14 @@
       synopsis = "My own custom prelude, based off Snoyman's basic-prelude";
       description = "My own custom prelude, based off Snoyman's basic-prelude";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

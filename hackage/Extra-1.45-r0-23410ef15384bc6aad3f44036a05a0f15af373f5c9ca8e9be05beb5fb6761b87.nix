@@ -21,7 +21,7 @@
       synopsis = "A grab bag of modules.";
       description = "A hodge-podge of functions and modules that do not have a better home";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,13 +21,13 @@
       synopsis = "Decidable propositions.";
       description = "This package provides a @Dec@ type.\n\n@\ntype Not a = a -> Void\n\ndata Dec a\n\\    = Yes a\n\\    | No (Not a)\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10")) (hsPkgs."void" or (errorHandler.buildDepError "void"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10")) (hsPkgs."void" or (errorHandler.buildDepError "void"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Access to the GitHub API, v3.";
       description = "The GitHub API provides programmatic access to the full\nGitHub Web site, from Issues to Gists to repos down to the underlying git data\nlike references and trees. This library wraps all of that, exposing a basic but\nHaskell-friendly set of functions and data structures.\n\nFor supported endpoints see \"GitHub\" module.\n\n> import qualified GitHub as GH\n>\n> main :: IO ()\n> main = do\n>     possibleUser <- GH.executeRequest' $ GH.userInfoR \"phadej\"\n>     print possibleUser\n\nFor more of an overview please see the README: <https://github.com/phadej/github/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,15 +55,15 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
-          ] ++ (if flags.aeson-compat
+        ] ++ (if flags.aeson-compat
           then [
             (hsPkgs."aeson-compat" or (errorHandler.buildDepError "aeson-compat"))
-            ]
+          ]
           else [
             (hsPkgs."aeson-extra" or (errorHandler.buildDepError "aeson-extra"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "github-test" = {
           depends = [
@@ -74,15 +74,15 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ] ++ (if flags.aeson-compat
+          ] ++ (if flags.aeson-compat
             then [
               (hsPkgs."aeson-compat" or (errorHandler.buildDepError "aeson-compat"))
-              ]
+            ]
             else [
               (hsPkgs."aeson-extra" or (errorHandler.buildDepError "aeson-extra"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

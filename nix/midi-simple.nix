@@ -6,8 +6,8 @@
         nix = import ../hackage/midi-simple-0.1.0.0-r0-06d400db456ec07bf8160858024f866eee346d90effc32ec1a2d819878df37f0.nix;
         revNum = 0;
         sha256 = "06d400db456ec07bf8160858024f866eee346d90effc32ec1a2d819878df37f0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

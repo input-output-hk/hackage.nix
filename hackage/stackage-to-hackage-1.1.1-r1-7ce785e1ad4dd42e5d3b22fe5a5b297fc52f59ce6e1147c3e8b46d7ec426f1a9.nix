@@ -21,7 +21,7 @@
       synopsis = "Convert stack.yaml to cabal.project + cabal.project.freeze";
       description = "A small library (and demo app) to convert @stack.yaml@ files to @cabal.project@ \\/\n@cabal.project.freeze@ for an existing Haskell application that has its build plan\ndefined for the stack build tool.\n\nUsers will want to use the @stack2cabal@ application, integrating @hpack@ support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage-to-hackage" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stackage-to-hackage" or (errorHandler.buildDepError "stackage-to-hackage"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

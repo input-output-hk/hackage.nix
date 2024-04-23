@@ -24,27 +24,27 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
-        libs = (pkgs.lib).optionals (!flags.use-pkg-config) (if system.isWindows
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        libs = pkgs.lib.optionals (!flags.use-pkg-config) (if system.isWindows
           then [ (pkgs."libpq" or (errorHandler.sysDepError "libpq")) ]
           else [
             (pkgs."pq" or (errorHandler.sysDepError "pq"))
-            ] ++ (pkgs.lib).optionals (system.isOpenbsd) [
+          ] ++ pkgs.lib.optionals (system.isOpenbsd) [
             (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
             (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
-            ]);
-        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libpq" or (errorHandler.pkgConfDepError "libpq"));
+          ]);
+        pkgconfig = pkgs.lib.optional (flags.use-pkg-config) (pkgconfPkgs."libpq" or (errorHandler.pkgConfDepError "libpq"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

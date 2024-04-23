@@ -21,14 +21,14 @@
       synopsis = "Factorization of polynomials over finite field";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."besout" or (errorHandler.buildDepError "besout"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

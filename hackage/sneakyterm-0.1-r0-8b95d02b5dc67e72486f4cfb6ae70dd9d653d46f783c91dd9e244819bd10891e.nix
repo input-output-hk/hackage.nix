@@ -21,7 +21,7 @@
       synopsis = "Tiny, declarative wrapper around ncurses";
       description = "`SneakyTerm` gives you 'MonadTerminal' which gives you two operations, 'tmRender' to render a list of tiles, and 'tmCharEvent' to wait for character input. A simple example:\n\n> main = do\n>   let viewport = rectFromOriginAndDim (V2 0 0) (V2 80 25)\n>   runTerminal viewport $ do\n>     tmRender [Tile (V2 10 10) '@' (ColorPair Red Blue)]\n>     _ <- tmCharEvent\n>     return ()\n\nThis will render a red `@` at column 11, line 11, with blue background.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."ncurses" or (errorHandler.buildDepError "ncurses"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

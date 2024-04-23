@@ -21,7 +21,7 @@
       synopsis = "Nice formatting library";
       description = "Nice formatting library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,11 +46,11 @@
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.10"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

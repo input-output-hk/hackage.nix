@@ -21,11 +21,11 @@
       synopsis = "Conversions between floating and integral values.";
       description = "A small library to cast floating point values to integral values and back preserving the bit-pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

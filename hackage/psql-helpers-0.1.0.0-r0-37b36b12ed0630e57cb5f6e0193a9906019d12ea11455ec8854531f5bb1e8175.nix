@@ -21,14 +21,14 @@
       synopsis = "A small collection of helper functions to generate postgresql queries";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

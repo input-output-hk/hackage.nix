@@ -21,7 +21,7 @@
       synopsis = "HTTP client package with conduit interface and HTTPS support.";
       description = "This package uses conduit for parsing the actual contents of the HTTP connection. It also provides higher-level functions which allow you to avoid directly dealing with streaming data. See <http://www.yesodweb.com/book/http-conduit> for more information.\n\nThe @Network.HTTP.Conduit.Browser@ module has been moved to <http://hackage.haskell.org/package/http-conduit-browser/>\n\nThe @Network.HTTP.Conduit.MultipartFormData@ module has been moved to <http://hackage.haskell.org/package/http-client-multipart/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-client-conduit" or (errorHandler.buildDepError "http-client-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
             (hsPkgs."http-client-multipart" or (errorHandler.buildDepError "http-client-multipart"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

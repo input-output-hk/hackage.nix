@@ -21,21 +21,21 @@
       synopsis = "Common operators encouraging large-scale easy reading";
       description = "Op provides operators for writing easier-to-read Haskell. It provides new\noperators with a consistent \"look and feel\" including fixity direction and\nprecedence, resulting in easier- and quicker-to-read code especially when used\non long chains of expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

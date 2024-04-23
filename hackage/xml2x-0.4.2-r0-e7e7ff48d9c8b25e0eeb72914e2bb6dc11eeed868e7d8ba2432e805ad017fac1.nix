@@ -21,7 +21,7 @@
       synopsis = "Convert BLAST output in XML format to CSV or HTML";
       description = "xml2x - convert blast output in XML format, either to a (csv)\ntable suitable for e.g. importing into Excel or OOCalc, or\nto HTML.  Optionally annotating the output with GO terms.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xml2x" = {
@@ -33,9 +33,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

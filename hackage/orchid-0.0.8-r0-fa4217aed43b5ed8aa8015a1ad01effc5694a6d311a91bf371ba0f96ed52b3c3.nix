@@ -21,7 +21,7 @@
       synopsis = "Haskell Wiki Library";
       description = "Haskell Wiki Library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."nano-md5" or (errorHandler.buildDepError "nano-md5"))
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

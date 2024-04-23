@@ -21,11 +21,11 @@
       synopsis = "Fast computation of Fibonacci numbers.";
       description = "<http://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

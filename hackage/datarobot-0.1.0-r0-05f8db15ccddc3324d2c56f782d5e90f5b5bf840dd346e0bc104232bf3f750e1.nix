@@ -21,7 +21,7 @@
       synopsis = "Client for DataRobot API";
       description = "Client for DataRobot API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."datarobot" or (errorHandler.buildDepError "datarobot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "An inductive-form set constraint solver";
       description = "This is an implementation of an (inclusion) set constraint\nsolver.  Set constraints are a convenient and efficient way\nto specify and solve graph reachability problems.\n\nSee the Constraints.Set.Solver module for detailed documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ConstraintTests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

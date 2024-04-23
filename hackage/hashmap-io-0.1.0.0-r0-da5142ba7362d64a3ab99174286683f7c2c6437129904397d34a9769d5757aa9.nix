@@ -21,7 +21,7 @@
       synopsis = "A Hashmap on io monad.";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro/tree/master/hashmap-io#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

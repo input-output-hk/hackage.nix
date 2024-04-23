@@ -21,14 +21,14 @@
       synopsis = "Google Compute Engine Instance Group Updater SDK.";
       description = "The Google Compute Engine Instance Group Updater API provides services\nfor updating groups of Compute Engine Instances.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v1beta1@\nof the API.\n\nLabels:\n\n* Limited Availability";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utility library for the tamarin prover.";
       description = "This is an internal library of the @tamarin@ prover for\nsecurity protocol verification\n(<hackage.haskell.org/package/tamarin-prover>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

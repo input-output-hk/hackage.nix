@@ -21,14 +21,14 @@
       synopsis = "A commmon prelude for the mismi project.";
       description = "A commmon prelude for use throughout the mismi project.\n\n<https://github.com/nhibberd/mismi>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

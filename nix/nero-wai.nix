@@ -6,8 +6,8 @@
         nix = import ../hackage/nero-wai-0.3-r0-cf8f8c0b50b6ed2b91a74ce7d075901f9c9a1bb9d08cf39b924ac0f3de39e860.nix;
         revNum = 0;
         sha256 = "cf8f8c0b50b6ed2b91a74ce7d075901f9c9a1bb9d08cf39b924ac0f3de39e860";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

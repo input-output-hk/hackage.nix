@@ -21,7 +21,7 @@
       synopsis = "Background process for Haskell-tools that editors can connect to.";
       description = "Background process for Haskell-tools that provides a way to use the tools on a\nwhole project. It also makes it possible to use the tools on the project in a\nsession, reloading modules when needed. The daemon library is independent of\nthe actual set of tools, and takes them as a parameter, so the system can be\neasily extended by creating a simple new Main module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
           (hsPkgs."haskell-tools-builtin-refactorings" or (errorHandler.buildDepError "haskell-tools-builtin-refactorings"))
           (hsPkgs."fswatch" or (errorHandler.buildDepError "fswatch"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ht-daemon" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (errorHandler.buildDepError "haskell-tools-builtin-refactorings"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskell-tools-daemon-tests" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."haskell-tools-daemon" or (errorHandler.buildDepError "haskell-tools-daemon"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (errorHandler.buildDepError "haskell-tools-builtin-refactorings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

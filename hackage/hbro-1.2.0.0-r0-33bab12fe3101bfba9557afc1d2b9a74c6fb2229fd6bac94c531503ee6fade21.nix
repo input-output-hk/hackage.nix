@@ -21,7 +21,7 @@
       synopsis = "Minimal KISS-compliant browser";
       description = "Cf README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,17 +57,17 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hbro" = {
           depends = [
             (hsPkgs."hbro" or (errorHandler.buildDepError "hbro"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

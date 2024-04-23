@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.regex-compat or (pkgs.buildPackages.regex-compat or (errorHandler.setupDepError "regex-compat")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "lhs2TeX" = {
@@ -39,9 +39,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

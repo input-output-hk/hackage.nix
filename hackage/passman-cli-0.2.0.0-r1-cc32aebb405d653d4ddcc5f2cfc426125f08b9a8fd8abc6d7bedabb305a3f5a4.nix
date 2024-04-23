@@ -21,7 +21,7 @@
       synopsis = "Deterministic password generator command line interface";
       description = "Generates unique passwords deterministically from a single master password.\nA hash of the master password is stored on disk to prevent accidentally\ngenerating a password from a mistyped master password.\n\nThis is the command line interface to passman.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "passman-cli" = {
@@ -35,9 +35,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (pkgs.lib).optional (!flags.dummyclipboard) (hsPkgs."X11" or (errorHandler.buildDepError "X11"));
+          ] ++ pkgs.lib.optional (!flags.dummyclipboard) (hsPkgs."X11" or (errorHandler.buildDepError "X11"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

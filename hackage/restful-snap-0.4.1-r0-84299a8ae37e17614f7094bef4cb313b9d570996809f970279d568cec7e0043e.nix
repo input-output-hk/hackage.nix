@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A convention-based RESTful routing mechanism for snap";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
           (hsPkgs."map-syntax" or (errorHandler.buildDepError "map-syntax"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Test properties and default-mains for QuickCheck";
       description = "This package contains definitions of test properties and default-mains\nusing QuickCheck library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

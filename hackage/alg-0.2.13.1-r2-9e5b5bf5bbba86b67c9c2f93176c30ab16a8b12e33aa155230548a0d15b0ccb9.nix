@@ -21,15 +21,15 @@
       synopsis = "Algebraic structures";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dual" or (errorHandler.buildDepError "dual"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

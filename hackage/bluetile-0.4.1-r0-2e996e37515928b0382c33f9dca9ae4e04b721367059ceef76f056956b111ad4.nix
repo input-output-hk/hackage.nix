@@ -21,7 +21,7 @@
       synopsis = "A modern tiling window manager with a gentle learning curve";
       description = "Bluetile is a tiling window manager for X based on xmonad. Windows are\narranged to use the entire screen without overlapping. Bluetile's focus lies\non making the tiling paradigm easily accessible to users coming from\ntraditional window managers by drawing on known conventions and providing\nboth mouse and keyboard access for all features. It also tries to be usable\n'out of the box', requiring minimal to no configuration in most cases.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "bluetile" = {
@@ -35,9 +35,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
             (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bluetiledock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -46,17 +46,17 @@
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bluetilemockwin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bluetilegreet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

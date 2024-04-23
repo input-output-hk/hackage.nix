@@ -21,7 +21,7 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries. This is a temporary package, which is an exact replic of\nHaddock, with a more liberal exposure of modules, needed by Leksah.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = if flags.in-ghc-tree then false else true; };
       exes = {
@@ -36,9 +36,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"));
+          ] ++ pkgs.lib.optional (!flags.in-ghc-tree) (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

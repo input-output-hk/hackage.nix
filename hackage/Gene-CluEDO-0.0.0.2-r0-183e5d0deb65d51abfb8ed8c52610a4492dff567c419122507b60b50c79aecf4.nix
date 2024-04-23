@@ -21,7 +21,7 @@
       synopsis = "Hox gene clustering";
       description = "Gene Cluster Evolution Determined Order\n\n*Expansion of Gene Clusters and the Shortest Hamiltonian Path Problem*, Prohaska et al, 2017\n\nCalculate the most likely order of genes in a gene cluster.\n\nApart from being an interesting problem in computational\nbiology, it also serves as an example problem for dynamic\nprogramming over unordered sets with interfaces.\n\nBinaries available from github: <https://github.com/choener/Gene-CluEDO/releases>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
           (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
           (hsPkgs."ShortestPathProblems" or (errorHandler.buildDepError "ShortestPathProblems"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "GeneCluEDO" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Gene-CluEDO" or (errorHandler.buildDepError "Gene-CluEDO"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."Gene-CluEDO" or (errorHandler.buildDepError "Gene-CluEDO"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

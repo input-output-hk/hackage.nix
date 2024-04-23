@@ -21,7 +21,7 @@
       synopsis = "Interactive reduction of lambda-calculus with explicit sharing";
       description = "Evaluate a λ-letrec term in an interactive graph reduction system. It uses duplicators to explicitely render sharing (and unsharing) according to Wadsworth's approach.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ww" = {
@@ -35,9 +35,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."IndentParser" or (errorHandler.buildDepError "IndentParser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

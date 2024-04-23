@@ -21,7 +21,7 @@
       synopsis = "RPM package builder for Haskell Cabal source packages.";
       description = "This package turns Haskell Cabal source packages into source and\nbinary RPM packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-rpm" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Google Cloud Data Loss Prevention (DLP) SDK.";
       description = "Provides methods for detection, risk analysis, and de-identification of\nprivacy-sensitive fragments in text, images, and Google Cloud Platform\nstorage repositories.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v2@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

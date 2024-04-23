@@ -21,14 +21,14 @@
       synopsis = "An assortment of number theoretic functions";
       description = "Functions for finding prime numbers, checking whether a number is prime, finding the factors of a number etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

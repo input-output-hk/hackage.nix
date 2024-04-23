@@ -21,15 +21,15 @@
       synopsis = "A collection of different layout implementations";
       description = "A collection of different layout implementations, currently just the off-sides\nrule.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."alex-tools" or (errorHandler.buildDepError "alex-tools"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Quasiquoter for IP addresses";
       description = "WARNING: Version 1.0.0.0 is completely broken! Don't use!\nA quasiquoter for IP address literals – That is, IPv4 decimal-dotted or IPv6\ncolon-separated notation.\nCurrently only IPv4 addresses are implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."ip-quoter" or (errorHandler.buildDepError "ip-quoter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

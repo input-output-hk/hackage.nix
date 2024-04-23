@@ -21,7 +21,7 @@
       synopsis = "Modern and extensible testing framework";
       description = "Tasty is a modern testing framework for Haskell.\nIt lets you combine your unit tests, golden\ntests, QuickCheck/SmallCheck properties, and any\nother types of tests into a single test suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -32,8 +32,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ] ++ (pkgs.lib).optional (!system.isX86_64 && !system.isAarch64) (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.4")) (hsPkgs."time" or (errorHandler.buildDepError "time"))) ++ (pkgs.lib).optionals (!system.isWindows && !(compiler.isGhcjs && true)) ((pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix")));
+        ] ++ pkgs.lib.optional (!system.isX86_64 && !system.isAarch64) (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.4")) (hsPkgs."time" or (errorHandler.buildDepError "time"))) ++ pkgs.lib.optionals (!system.isWindows && !(compiler.isGhcjs && true)) (pkgs.lib.optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

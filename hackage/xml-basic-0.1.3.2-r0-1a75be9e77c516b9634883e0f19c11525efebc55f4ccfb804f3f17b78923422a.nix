@@ -21,7 +21,7 @@
       synopsis = "Basics for XML/HTML representation and processing";
       description = "We provide basic data types for XML representation,\nlike names, attributes, entities.\nYes we try hard to get type safe XML handling out of Haskell 98.\nWe also provide information about exceptional HTML tags,\nlike self-closing tags.\nThis package provides common functionality\nthat is both needed in list (tagchup) and tree (wraxml) representations of XML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isJhc && true) (hsPkgs."applicative" or (errorHandler.buildDepError "applicative"));
+        ] ++ pkgs.lib.optional (compiler.isJhc && true) (hsPkgs."applicative" or (errorHandler.buildDepError "applicative"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Alternative CSV parser for the Frames package";
       description = "Alternative CSV parser for the Frames package. In cases\nwhere the built-in Frames CSV parser does not work\n(e.g. when dealing with data files that include newlines\nembedded in data values), the parsers exposed here may\nhelp.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."Frames-dsv" or (errorHandler.buildDepError "Frames-dsv"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

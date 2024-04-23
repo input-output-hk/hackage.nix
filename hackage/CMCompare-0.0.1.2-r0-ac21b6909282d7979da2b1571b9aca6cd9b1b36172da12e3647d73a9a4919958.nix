@@ -21,7 +21,7 @@
       synopsis = "Infernal covariance model comparison";
       description = "Compares two Infernal covariance models. Returns the common\nMaxiMin score and the offending RNA sequence. High scores point\ntoward low discriminative power of the two models. Based on:\n\"Discriminatory Power or RNA Family Models, Hoener zu\nSiederdissen and Hofacker, 2010, accepted for eccb10\"";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsCMCompare" = {
@@ -31,9 +31,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."Biobase" or (errorHandler.buildDepError "Biobase"))
             (hsPkgs."HsTools" or (errorHandler.buildDepError "HsTools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A streaming text codec";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
           (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

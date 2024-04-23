@@ -21,7 +21,7 @@
       synopsis = "A preprocessor for the debug package";
       description = "A preprocessor to automate the instrumentation of a module for the debug package";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "debug-pp" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

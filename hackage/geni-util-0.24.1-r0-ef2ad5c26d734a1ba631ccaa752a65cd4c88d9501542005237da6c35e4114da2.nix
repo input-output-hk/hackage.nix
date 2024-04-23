@@ -21,7 +21,7 @@
       synopsis = "Companion tools for use with the GenI surface realiser";
       description = "Tools included:\n\n* client - sends all test cases from a GenI suite to geniserver, and saves\nresults in the same format as batch mode GenI\n\n* report - generates an HTML summary of a GenI batch operation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "geni-util" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."GenI" or (errorHandler.buildDepError "GenI"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

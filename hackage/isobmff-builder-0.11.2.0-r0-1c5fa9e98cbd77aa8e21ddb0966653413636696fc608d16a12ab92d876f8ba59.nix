@@ -21,7 +21,7 @@
       synopsis = "A (bytestring-) builder for the ISO-14496-12 base media file format";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."pretty-types" or (errorHandler.buildDepError "pretty-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bit-records" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."type-spec" or (errorHandler.buildDepError "type-spec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

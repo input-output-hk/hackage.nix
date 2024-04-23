@@ -6,8 +6,8 @@
         nix = import ../hackage/tuple-fields-0.1.0.0-r0-a9c7a12af7fc6463d1211d7d1ce00508ca41019fcc9c2139da7eae989c1182e7.nix;
         revNum = 0;
         sha256 = "a9c7a12af7fc6463d1211d7d1ce00508ca41019fcc9c2139da7eae989c1182e7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

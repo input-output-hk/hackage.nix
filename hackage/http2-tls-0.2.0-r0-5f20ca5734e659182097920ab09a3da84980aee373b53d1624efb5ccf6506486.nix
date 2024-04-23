@@ -21,7 +21,7 @@
       synopsis = "Library for HTTP/2 over TLS";
       description = "Using the HTTP/2 library over TLS";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."network-control" or (errorHandler.buildDepError "network-control"))
           (hsPkgs."recv" or (errorHandler.buildDepError "recv"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ] ++ (if flags.crypton
+        ] ++ (if flags.crypton
           then [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."crypton-x509-store" or (errorHandler.buildDepError "crypton-x509-store"))
             (hsPkgs."crypton-x509-validation" or (errorHandler.buildDepError "crypton-x509-validation"))
-            ]
+          ]
           else [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

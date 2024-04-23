@@ -6,8 +6,8 @@
         nix = import ../hackage/stack-yaml-0.1.0.0-r0-bcac60e927dcba6b8a46d4e42e41fe4be74ccfd1edf46f43295d6416c87bf40a.nix;
         revNum = 0;
         sha256 = "bcac60e927dcba6b8a46d4e42e41fe4be74ccfd1edf46f43295d6416c87bf40a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,12 +21,12 @@
       synopsis = "FlameGraphs of profiling";
       description = "Hack to turn the profiling output into the format suitable for FlameGraph.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "flamingra" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

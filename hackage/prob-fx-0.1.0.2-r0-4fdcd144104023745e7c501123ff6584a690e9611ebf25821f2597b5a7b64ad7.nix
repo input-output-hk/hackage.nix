@@ -21,7 +21,7 @@
       synopsis = "A library for modular probabilistic modelling";
       description = "A library for probabilistic programming using algebraic effects. The\nemphasis is on modular definitions of probabilistic models, and also\ncompositional implementation of model execution (inference) in terms\nof effect handlers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prob-fx" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."prob-fx" or (errorHandler.buildDepError "prob-fx"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

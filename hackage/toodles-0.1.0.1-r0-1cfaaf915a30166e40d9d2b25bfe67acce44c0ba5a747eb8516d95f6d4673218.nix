@@ -21,7 +21,7 @@
       synopsis = "Manage the TODO entries in your code";
       description = "See the README on GitHub at <https://github.com/aviaviavi/toodles#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "toodles" = {
@@ -46,9 +46,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

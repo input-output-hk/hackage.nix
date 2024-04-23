@@ -21,7 +21,7 @@
       synopsis = "Accessing the del.icio.us APIs from Haskell (v2)";
       description = "Access to the del.icio.us social tagging site's API(v2) from Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."nano-md5" or (errorHandler.buildDepError "nano-md5"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

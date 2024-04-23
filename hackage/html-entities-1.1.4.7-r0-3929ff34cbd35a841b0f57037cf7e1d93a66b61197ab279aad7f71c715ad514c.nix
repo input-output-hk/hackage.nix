@@ -21,7 +21,7 @@
       synopsis = "A codec library for HTML-escaped text and HTML-entities";
       description = "This library provides the following APIs for coding and decoding of\nHTML-escaped text:\n* \\\"attoparsec\\\" parser\n* Text decoder\n* Encoding text builder";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

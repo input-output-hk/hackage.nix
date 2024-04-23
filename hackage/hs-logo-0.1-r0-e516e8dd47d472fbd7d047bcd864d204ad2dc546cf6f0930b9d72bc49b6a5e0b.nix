@@ -21,7 +21,7 @@
       synopsis = "Logo interpreter written in Haskell";
       description = "Interpreter for the Logo programming language,\nspecialised for turtle graphics.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hs-logo" = {
@@ -36,9 +36,9 @@
             (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

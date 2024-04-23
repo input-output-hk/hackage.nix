@@ -21,7 +21,7 @@
       synopsis = "SHA hashes for io-streams.";
       description = "SHA hashes for io-streams.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sha-streams" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."sha-streams" or (errorHandler.buildDepError "sha-streams"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

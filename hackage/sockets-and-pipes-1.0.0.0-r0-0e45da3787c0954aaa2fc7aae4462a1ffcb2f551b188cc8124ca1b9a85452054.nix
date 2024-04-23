@@ -21,7 +21,7 @@
       synopsis = "Support for the Sockets and Pipes book";
       description = "This package re-exports from all the libraries mentioned in\n/Sockets and Pipes/ (available on <https://leanpub.com/sockets-and-pipes Leanpub>).\n\nVersion 1.* is for the first edition of the book, released May 2023.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unfork" or (errorHandler.buildDepError "unfork"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "minimal bindings to the audio module of sfml";
       description = "Provides a very minimal interface to the audio module of sfml.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -29,9 +29,9 @@
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           (pkgs."sndfile" or (errorHandler.sysDepError "sndfile"))
           (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-          ] ++ (pkgs.lib).optional (system.isLinux) (pkgs."openal" or (errorHandler.sysDepError "openal"))) ++ (pkgs.lib).optional (system.isWindows) (pkgs."openal32" or (errorHandler.sysDepError "openal32"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL"));
+        ] ++ pkgs.lib.optional (system.isLinux) (pkgs."openal" or (errorHandler.sysDepError "openal"))) ++ pkgs.lib.optional (system.isWindows) (pkgs."openal32" or (errorHandler.sysDepError "openal32"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

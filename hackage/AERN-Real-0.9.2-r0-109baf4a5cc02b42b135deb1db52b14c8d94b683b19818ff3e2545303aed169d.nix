@@ -21,7 +21,7 @@
       synopsis = "datatypes and abstractions for approximating exact real numbers";
       description = "Datatypes and abstractions for approximating exact real numbers\nand a basic arithmetic over such approximations.  The design is\ninspired to some degree by Mueller's iRRAM and Lambov's RealLib\n(both are C++ libraries for exact real arithmetic).\n\nAbstractions are provided via 4 type classes:\n\n* ERRealBase: abstracts floating point numbers\n\n* ERApprox: abstracts neighbourhoods of real numbers\n\n* ERIntApprox: abstracts neighbourhoods of real numbers that are known to be intervals\n\n* ERApproxElementary: abstracts real number approximations that support elementary operations\n\nFor ERRealBase we give several implementations.  The default is\nan arbitrary precision floating point type that uses Double\nfor lower precisions and an Integer-based simulation for higher\nprecisions.  Rational numbers can be used as one of the alternatives.\nAugustsson's Data.Number.BigFloat can be easily wrapped as an instance\nof ERRealBase except that it uses a different method to control precision.\n\nERIntApprox is implemented via outwards-rounded arbitrary precision interval arithmetic.\nAny instance of ERRealBase can be used for the endpoints of the intervals.\n\nERApproxElementary is implemented generically for any implementation\nof ERIntApprox.  This way some of the most common elementary operations are provided,\nnotably: sqrt, exp, log, sin, cos, atan.  These operations converge\nto an arbitrary precision and also work well over larger intervals without\nexcessive wrapping.\n\nThere is also some support for generic Taylor series, interval Newton method\nand simple numerical integration.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.containers-in-base
@@ -29,14 +29,14 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

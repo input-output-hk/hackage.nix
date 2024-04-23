@@ -21,7 +21,7 @@
       synopsis = "Extensible, efficient, optics-friendly data types";
       description = "Poly-kinded extensible records and variants";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Notify Honeybadger about exceptions via a WAI middleware.";
       description = "ratel-wai notifies Honeybadger about exceptions via a WAI middleware.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."ratel" or (errorHandler.buildDepError "ratel"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

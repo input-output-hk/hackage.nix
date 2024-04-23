@@ -21,7 +21,7 @@
       synopsis = "A pagination approach for yesod";
       description = "Paginate a list showing a per-item widget and links to other pages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-paginator-example" = {
           depends = [
@@ -45,18 +45,18 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-paginator" or (errorHandler.buildDepError "yesod-paginator"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-paginator" or (errorHandler.buildDepError "yesod-paginator"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

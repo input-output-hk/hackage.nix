@@ -21,7 +21,7 @@
       synopsis = "Parser for Org Mode documents.";
       description = "org-parser provides a parser for Org Mode documents.\nThe Org document is parsed into an AST similar to org-element's, and\naims to be accurate and performant where possible. The types have\n'multiwalk' instances that allow traversing and querying the AST, as well\nas ordering the AST semantically by its leaf text. It also features a\ntest suite comparing it with org-element against many corner cases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."replace-megaparsec" or (errorHandler.buildDepError "replace-megaparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

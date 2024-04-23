@@ -21,7 +21,7 @@
       synopsis = "A CouchDB view server for Haskell.";
       description = "A CouchDB view server for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "couch-hs" = { buildable = true; }; };
       };
-    }
+      exes = { "couch-hs" = { buildable = true; }; };
+    };
+  }

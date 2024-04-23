@@ -21,7 +21,7 @@
       synopsis = "Haskell library for the Microsoft Language Server Protocol, data types";
       description = "An implementation of the types to allow language implementors to\nsupport the Language Server Protocol for their specific language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

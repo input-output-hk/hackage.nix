@@ -21,7 +21,7 @@
       synopsis = "Haskell on Gtk rails - Reactive Fields for Gtk widgets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."gtk-helpers" or (errorHandler.buildDepError "gtk-helpers"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

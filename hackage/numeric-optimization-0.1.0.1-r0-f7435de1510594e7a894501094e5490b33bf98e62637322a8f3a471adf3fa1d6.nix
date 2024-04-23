@@ -21,7 +21,7 @@
       synopsis = "Unified interface to various numerical optimization algorithms";
       description = "Please see the README on GitHub at <https://github.com/msakai/nonlinear-optimization-ad/tree/master/numeric-optimization#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."lbfgs" or (errorHandler.buildDepError "lbfgs"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.with-cg-descent) (hsPkgs."nonlinear-optimization" or (errorHandler.buildDepError "nonlinear-optimization"));
+        ] ++ pkgs.lib.optional (flags.with-cg-descent) (hsPkgs."nonlinear-optimization" or (errorHandler.buildDepError "nonlinear-optimization"));
         buildable = true;
-        };
+      };
       exes = {
         "rosenbrock" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."numeric-optimization" or (errorHandler.buildDepError "numeric-optimization"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       tests = {
         "numeric-optimization-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."numeric-optimization" or (errorHandler.buildDepError "numeric-optimization"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

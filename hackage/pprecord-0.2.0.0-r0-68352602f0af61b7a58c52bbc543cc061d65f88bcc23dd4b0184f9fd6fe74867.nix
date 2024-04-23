@@ -21,14 +21,14 @@
       synopsis = "A library for pretty printing Records";
       description = "A pretty-printing library which is accumulates record\naccessors as Strings, and fields as Strings or formatted\nboxes. Functions are included to output lists of records as\na table, or apply a format to individual records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

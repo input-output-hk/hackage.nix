@@ -21,7 +21,7 @@
       synopsis = "Pretty-printing for primitive arrays";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nA Pretty-printer for Primitive Arrays.\n\nThe idea is not so much to provide pretty-printing for single\narrays, but rather to allow for simple prettyfication of\ntypical array data. In particular we want to have simplified\npretty-printing of Inside/Outside combinations of arrays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."diagrams-postscript" or (errorHandler.buildDepError "diagrams-postscript"))
           (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

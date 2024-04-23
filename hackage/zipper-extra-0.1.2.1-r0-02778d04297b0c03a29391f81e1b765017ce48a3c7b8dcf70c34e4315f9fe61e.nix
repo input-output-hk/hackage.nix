@@ -21,7 +21,7 @@
       synopsis = "Zipper utils that weren't in Control.Comonad.Store.Zipper";
       description = "Adds some utility functions for and reexports Control.Comonad.Store.Zipper";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."comonad-extras" or (errorHandler.buildDepError "comonad-extras"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

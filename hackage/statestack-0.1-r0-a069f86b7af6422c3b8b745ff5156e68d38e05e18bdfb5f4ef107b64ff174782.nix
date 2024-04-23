@@ -21,7 +21,7 @@
       synopsis = "Simple State-like monad transformer with saveable and restorable state";
       description = "Simple State-like monad transformer where states can be saved to\nand restored from an internal stack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

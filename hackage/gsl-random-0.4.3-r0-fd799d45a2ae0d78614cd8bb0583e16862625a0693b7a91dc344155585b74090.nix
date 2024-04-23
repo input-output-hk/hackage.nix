@@ -21,14 +21,14 @@
       synopsis = "Bindings the the GSL random number generation facilities.";
       description = "Bindings to the GNU Scientific Library random and quasi-random number\ngenerators and random distributions.\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

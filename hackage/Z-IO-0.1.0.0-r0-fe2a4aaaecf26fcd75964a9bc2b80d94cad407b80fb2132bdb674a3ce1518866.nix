@@ -21,7 +21,7 @@
       synopsis = "A simple and high performance IO toolkit for Haskell";
       description = "This package provides a simple and high performance IO toolkit for Haskell, including\npacked vectors, unicode texts, socket, file system, timers and more!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,28 +39,28 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ] ++ (if flags.integer-simple
+        ] ++ (if flags.integer-simple
           then [
             (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         libs = if system.isWindows
           then [
             (pkgs."psapi" or (errorHandler.sysDepError "psapi"))
             (pkgs."Iphlpapi" or (errorHandler.sysDepError "Iphlpapi"))
             (pkgs."userenv" or (errorHandler.sysDepError "userenv"))
             (pkgs."Ws2_32" or (errorHandler.sysDepError "Ws2_32"))
-            ]
-          else (pkgs.lib).optional (flags.no-pkg-config) (pkgs."uv" or (errorHandler.sysDepError "uv"));
-        pkgconfig = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!flags.no-pkg-config) (pkgconfPkgs."libuv" or (errorHandler.pkgConfDepError "libuv")));
+          ]
+          else pkgs.lib.optional (flags.no-pkg-config) (pkgs."uv" or (errorHandler.sysDepError "uv"));
+        pkgconfig = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!flags.no-pkg-config) (pkgconfPkgs."libuv" or (errorHandler.pkgConfDepError "libuv")));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-IO-Test" = {
           depends = [
@@ -75,15 +75,15 @@
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ] ++ (if flags.integer-simple
+          ] ++ (if flags.integer-simple
             then [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]
+            ]
             else [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

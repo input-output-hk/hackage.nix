@@ -12,7 +12,7 @@
       solvertests = false;
       drealtestdisable = false;
       stptestdisable = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "what4"; version = "1.3"; };
@@ -25,7 +25,7 @@
       synopsis = "Solver-agnostic symbolic values support for issuing queries";
       description = "What4 is a generic library for representing values as symbolic formulae which may\ncontain references to symbolic values, representing unknown variables.\nIt provides support for communicating with a variety of SAT and SMT solvers,\nincluding Z3, CVC4, Yices, Boolector, STP, and dReal.\nThe data representation types make heavy use of GADT-style type indices\nto ensure type-correct manipulation of symbolic values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -70,19 +70,19 @@
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
           (hsPkgs."zenc" or (errorHandler.buildDepError "zenc"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "quickstart" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parameterized-utils" or (errorHandler.buildDepError "parameterized-utils"))
             (hsPkgs."what4" or (errorHandler.buildDepError "what4"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "adapter-test" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = if flags.solvertests then true else false;
-          };
+        };
         "config-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,9 +115,9 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."tasty-checklist" or (errorHandler.buildDepError "tasty-checklist"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "online-solver-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -141,9 +141,9 @@
             (hsPkgs."units" or (errorHandler.buildDepError "units"))
             (hsPkgs."units-defs" or (errorHandler.buildDepError "units-defs"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = if flags.solvertests then true else false;
-          };
+        };
         "expr-builder-smtlib2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -164,9 +164,9 @@
             (hsPkgs."tasty-checklist" or (errorHandler.buildDepError "tasty-checklist"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "exprs_tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -177,9 +177,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."bv-sized" or (errorHandler.buildDepError "bv-sized"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "iteexprs_tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -191,9 +191,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."bv-sized" or (errorHandler.buildDepError "bv-sized"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bvdomain_tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -203,9 +203,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bvdomain_tests_hh" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -215,9 +215,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "template_tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -229,9 +229,9 @@
             (hsPkgs."bv-sized" or (errorHandler.buildDepError "bv-sized"))
             (hsPkgs."libBF" or (errorHandler.buildDepError "libBF"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "solver_parsing_tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -245,9 +245,9 @@
             (hsPkgs."lumberjack" or (errorHandler.buildDepError "lumberjack"))
             (hsPkgs."tasty-sugar" or (errorHandler.buildDepError "tasty-sugar"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "dice game";
       description = "A dice game simulator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pig" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

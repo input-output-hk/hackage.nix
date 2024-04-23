@@ -21,7 +21,7 @@
       synopsis = "A small tool that clears qutebrowser cookies.";
       description = "Bisc clears qutebrowser cookies and javascript local storage\nby domains, stored in a whitelist.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bisc" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

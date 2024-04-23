@@ -21,7 +21,7 @@
       synopsis = "Use graph-theory to analyse your code";
       description = "SourceGraph uses the Graphalyze library to analyse\nCabalized Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "SourceGraph" = {
@@ -38,9 +38,9 @@
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

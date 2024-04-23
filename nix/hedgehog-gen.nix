@@ -6,8 +6,8 @@
         nix = import ../hackage/hedgehog-gen-0.1.0.0-r0-d3e52dc754db8d6eac48c6805f49a713f0d02fbe1755cbe8c51ac52aa6c0a737.nix;
         revNum = 0;
         sha256 = "d3e52dc754db8d6eac48c6805f49a713f0d02fbe1755cbe8c51ac52aa6c0a737";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

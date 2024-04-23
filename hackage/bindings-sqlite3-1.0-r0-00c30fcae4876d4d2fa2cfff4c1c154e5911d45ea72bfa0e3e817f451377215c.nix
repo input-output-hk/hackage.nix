@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to sqlite3.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-common" or (errorHandler.buildDepError "bindings-common"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."sqlite3" or (errorHandler.pkgConfDepError "sqlite3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

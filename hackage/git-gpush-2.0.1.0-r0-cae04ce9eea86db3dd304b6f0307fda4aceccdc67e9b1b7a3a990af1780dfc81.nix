@@ -21,7 +21,7 @@
       synopsis = "More intelligent push-to-GitHub utility.";
       description = "More intelligent push-to-GitHub utility.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "git-gpush" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

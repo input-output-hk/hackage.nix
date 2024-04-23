@@ -21,7 +21,7 @@
       synopsis = "Haskell name counts.";
       description = "Counting of Haskell names and artifacts usage, based on stan.\n\n=== Usage\n\n- Include the following ghc-options in the cabal file of the libraries you want to analyse:\n\n> -fwrite-ide-info\n> -hiedir=.hie\n\n- Install hcount\n\n> stack install hcount\n\n- run hcount\n\n> cd project\n> hcount\n\n> See 'hcount --help' for options.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hcount" = {
@@ -35,9 +35,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."stan" or (errorHandler.buildDepError "stan"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

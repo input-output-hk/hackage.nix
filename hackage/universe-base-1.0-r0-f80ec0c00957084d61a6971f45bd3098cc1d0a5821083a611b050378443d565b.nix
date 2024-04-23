@@ -21,11 +21,11 @@
       synopsis = "A class for finite and recursively enumerable types and some helper functions for enumerating them";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

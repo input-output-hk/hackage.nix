@@ -21,11 +21,11 @@
       synopsis = "Create values which expire after a period of time.";
       description = "expiring-mvar provides the type ExpiringMVar. ExpiringMVar is a container for a single value. When creating an ExpiringMVar, a thread is spawned which deletes the value held in the ExpiringMVar after a given period of time. The timer can be reset, cancelled, or restarted with a new time amount.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

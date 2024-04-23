@@ -21,7 +21,7 @@
       synopsis = "Leksah library";
       description = "Form library used by leksah to edit preferences, cabal infos, etc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."billeksah-services" or (errorHandler.buildDepError "billeksah-services"))
           (hsPkgs."billeksah-pane" or (errorHandler.buildDepError "billeksah-pane"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

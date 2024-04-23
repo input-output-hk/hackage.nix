@@ -21,7 +21,7 @@
       synopsis = "Types, functions, and tools to manipulate the openSUSE distribution";
       description = "Types, functions, and tools to manipulate the openSUSE distribution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "guess-changelog" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."distribution-opensuse" or (errorHandler.buildDepError "distribution-opensuse"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

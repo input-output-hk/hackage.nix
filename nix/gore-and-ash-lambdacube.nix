@@ -6,8 +6,8 @@
         nix = import ../hackage/gore-and-ash-lambdacube-0.2.0.0-r0-7c447d4434fce295f1f7abe0a792e78fbf57487ad31e123b1aaa184ca90ecb1f.nix;
         revNum = 0;
         sha256 = "7c447d4434fce295f1f7abe0a792e78fbf57487ad31e123b1aaa184ca90ecb1f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

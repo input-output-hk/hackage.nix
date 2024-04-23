@@ -21,7 +21,7 @@
       synopsis = "Simulate 454 pyrosequencing";
       description = "pyrosim - a simulator for 454 pyrosequencing data\nSimulate shotgun sequencing with Roche's 454 sequencing technology.\n\nThe Darcs repository is at <http://malde.org/~ketil/biohaskell/pyrosim>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flowsim" = {
@@ -35,9 +35,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hplc" = {
           depends = [
             (hsPkgs."bio" or (errorHandler.buildDepError "bio"))
@@ -49,9 +49,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "clonesim" = {
           depends = [
             (hsPkgs."bio" or (errorHandler.buildDepError "bio"))
@@ -63,9 +63,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

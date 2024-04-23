@@ -21,7 +21,7 @@
       synopsis = "Support for parsing and rendering YAML documents.";
       description = "Please see the README.md file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,10 +42,10 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
-        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1" or (errorHandler.pkgConfDepError "yaml-0.1"));
+        ];
+        pkgconfig = pkgs.lib.optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1" or (errorHandler.pkgConfDepError "yaml-0.1"));
         buildable = true;
-        };
+      };
       exes = {
         "yaml2json" = {
           depends = [
@@ -53,19 +53,19 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
+        };
         "json2yaml" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."aeson-qq" or (errorHandler.buildDepError "aeson-qq"))
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

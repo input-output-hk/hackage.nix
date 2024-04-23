@@ -21,7 +21,7 @@
       synopsis = "Data types for programs for xournal file format";
       description = "Xournal file format data type including generic interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

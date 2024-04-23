@@ -21,7 +21,7 @@
       synopsis = "Test framework support for running simple test programs.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

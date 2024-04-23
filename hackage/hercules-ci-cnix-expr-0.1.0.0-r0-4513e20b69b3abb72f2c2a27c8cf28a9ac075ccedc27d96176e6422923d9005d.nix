@@ -21,7 +21,7 @@
       synopsis = "Bindings for the Nix evaluator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."inline-c-cpp" or (errorHandler.buildDepError "inline-c-cpp"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
           (pkgconfPkgs."nix-expr" or (errorHandler.pkgConfDepError "nix-expr"))
           (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
           (pkgconfPkgs."bdw-gc" or (errorHandler.pkgConfDepError "bdw-gc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

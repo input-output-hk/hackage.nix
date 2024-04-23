@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler code transformations.";
       description = "Disciplined Disciple Compiler code transformations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ddc-base" or (errorHandler.buildDepError "ddc-base"))
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

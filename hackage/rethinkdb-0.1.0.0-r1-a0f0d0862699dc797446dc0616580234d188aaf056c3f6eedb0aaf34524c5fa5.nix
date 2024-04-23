@@ -21,7 +21,7 @@
       synopsis = "RethinkDB client library for haskell";
       description = "This library is modelled upon the official RethinkDB API for\nPython and Javascript.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

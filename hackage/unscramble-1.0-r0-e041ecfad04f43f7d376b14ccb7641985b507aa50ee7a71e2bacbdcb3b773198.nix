@@ -21,7 +21,7 @@
       synopsis = "Solve Boggle-like word games";
       description = "Solve Boggle-like word games";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "unscramble" = {
@@ -31,9 +31,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."stream-fusion" or (errorHandler.buildDepError "stream-fusion"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

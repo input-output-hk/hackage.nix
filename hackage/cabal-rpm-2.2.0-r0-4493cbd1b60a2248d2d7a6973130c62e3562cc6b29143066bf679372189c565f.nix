@@ -21,7 +21,7 @@
       synopsis = "RPM packaging tool for Haskell Cabal-based packages";
       description = "This package provides a RPM packaging tool for Haskell Cabal-based\npackages.\n\ncabal-rpm has commands to generate a RPM spec file and srpm for a package.\nIt can rpmbuild packages, dnf/yum install their dependencies,\nprep packages, and install them.\nThere are commands to list package dependencies and missing dependencies.\nThe diff command compares the current spec file with a freshly generated\none,\nthe update command updates the spec file to latest version from Stackage\nor Hackage, and the refresh command updates the spec file to the current\ncabal-rpm packaging. It also handles Hackage revisions of packages.\nStandalone packages can also be made, built with cabal-install.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-rpm" = {
@@ -41,23 +41,23 @@
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (if flags.old-locale
+          ] ++ (if flags.old-locale
             then [
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ]
+            ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "8.0" && !flags.curl
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && compiler.version.ge "8.0" && !flags.curl
             then [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
               (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
               (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-              ]
+            ]
             else [ (hsPkgs."curl" or (errorHandler.buildDepError "curl")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

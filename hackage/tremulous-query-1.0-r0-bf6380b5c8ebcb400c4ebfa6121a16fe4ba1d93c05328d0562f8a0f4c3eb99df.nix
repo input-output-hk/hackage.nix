@@ -21,7 +21,7 @@
       synopsis = "Library for polling Tremulous servers";
       description = "A library for polling servers from the game Tremulous.\nSupports both the released 1.1 version and the 1.2 Gameplay Preview commonly known as GPP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

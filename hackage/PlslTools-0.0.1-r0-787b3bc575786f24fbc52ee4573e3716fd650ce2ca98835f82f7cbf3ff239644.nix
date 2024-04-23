@@ -21,7 +21,7 @@
       synopsis = "Tools for PL/SQL developers";
       description = "So far just a lint like program for PL/SQL. Diff and refactoring tools are planned";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "PlslLint" = {
@@ -36,9 +36,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

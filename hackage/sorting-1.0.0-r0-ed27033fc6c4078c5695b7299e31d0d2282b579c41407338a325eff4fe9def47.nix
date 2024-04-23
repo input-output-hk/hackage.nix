@@ -21,11 +21,11 @@
       synopsis = "Utils for sorting.";
       description = "Utils for sorting.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

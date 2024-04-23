@@ -21,7 +21,7 @@
       synopsis = "Conversions between Repa Arrays and ByteStrings.";
       description = "NOTE: You must use the GHC head branch > 6.13.20100309 to get decent performance.\nConversions between Repa Arrays and ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

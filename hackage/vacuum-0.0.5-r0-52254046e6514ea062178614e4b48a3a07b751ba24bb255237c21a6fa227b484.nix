@@ -21,7 +21,7 @@
       synopsis = "Extract graph representations of ghc heap values.";
       description = ".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

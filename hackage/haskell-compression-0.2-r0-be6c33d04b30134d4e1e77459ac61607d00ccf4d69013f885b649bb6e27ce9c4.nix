@@ -21,7 +21,7 @@
       synopsis = "compress files";
       description = "A program to compress a file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
           (hsPkgs."booleanlist" or (errorHandler.buildDepError "booleanlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-compress" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

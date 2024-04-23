@@ -21,7 +21,7 @@
       synopsis = "HTTP and WebSocket client based on io-streams";
       description = "An HTTP client with WebSocket (RFC 6455) support, using the Snap Framework's [io-streams](https://hackage.haskell.org/package/io-streams) library to\nhandle the streaming IO. The @http-io-streams@ API designed for ease of use when querying web services and dealing with the result as streaming I/O.\n\nThe main HTTP/1.1 part of the library is exported in a single module \"Network.Http.Client\"; the WebSocket specific functionality is available from the \"Network.Http.Client.WebSocket\" module.\n\n__NOTE__: This package originally started as a fork of [http-streams](http://hackage.haskell.org/package/http-streams) with a lighter dependency footprint focusing on core HTTP functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -43,8 +43,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (flags.fast-xor) (hsPkgs."xor" or (errorHandler.buildDepError "xor"))) ++ (pkgs.lib).optional (flags.brotli) (hsPkgs."brotli-streams" or (errorHandler.buildDepError "brotli-streams"));
+        ] ++ pkgs.lib.optional (flags.fast-xor) (hsPkgs."xor" or (errorHandler.buildDepError "xor"))) ++ pkgs.lib.optional (flags.brotli) (hsPkgs."brotli-streams" or (errorHandler.buildDepError "brotli-streams"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

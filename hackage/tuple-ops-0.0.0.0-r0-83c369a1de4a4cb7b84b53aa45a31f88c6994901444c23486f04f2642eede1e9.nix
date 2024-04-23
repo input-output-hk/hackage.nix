@@ -21,11 +21,11 @@
       synopsis = "various operations on n-ary tuples via GHC.Generics";
       description = "Uncons operation on n-ary tuples";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

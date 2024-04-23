@@ -21,7 +21,7 @@
       synopsis = "JSON to Sql raw string or db result in json format";
       description = "Use json to query the database and receive results";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

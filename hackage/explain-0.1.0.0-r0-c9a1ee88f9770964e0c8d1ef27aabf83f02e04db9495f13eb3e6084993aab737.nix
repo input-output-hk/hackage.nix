@@ -21,7 +21,7 @@
       synopsis = "Show how expressions are parsed";
       description = "@explain expr@ parenthesizes @expr@ to show you how it's parsed.\n\n@explain@ has a large number of extensions enabled by default: multi-parameter typeclasses, Template Haskell, arrow\nsyntax, and so on. This is mainly for convenience. If necessary, flags to turn certain extension on and off will be\nadded in future versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "explain" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

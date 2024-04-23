@@ -21,14 +21,14 @@
       synopsis = "A monad and monadic transformer providing \"goto\" functionality";
       description = "This module provides a monad and a monad transformer that allow the user to transfer the flow of execution from an arbitrary point of a monadic computation to another monadic computation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

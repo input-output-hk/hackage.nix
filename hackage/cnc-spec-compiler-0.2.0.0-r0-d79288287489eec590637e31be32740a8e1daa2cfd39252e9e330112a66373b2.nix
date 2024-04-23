@@ -21,7 +21,7 @@
       synopsis = "Compiler/Translator for CnC Specification Files.";
       description = "Intel (Concurrent Collections) CnC is a data-flow like\ndeterministic parallel programming model, similar to\nstream-processing but in which nodes in the computation graph share data in tables.\nIn CnC, the structure of the graph and metadata about data-access\npatterns are stored in a specification, which can be used by this\ntool to generate code which will orchestrate the execution of the graph.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cnc" = {
@@ -50,9 +50,9 @@
             (hsPkgs."hubigraph" or (errorHandler.buildDepError "hubigraph"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."haxr" or (errorHandler.buildDepError "haxr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

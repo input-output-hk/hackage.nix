@@ -21,15 +21,15 @@
       synopsis = "Accessor functions for monadLib's monads";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cheapskate-terminal" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cheapskate-terminal-test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

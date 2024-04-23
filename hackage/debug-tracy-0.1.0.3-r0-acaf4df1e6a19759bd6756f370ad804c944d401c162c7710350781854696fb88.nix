@@ -21,7 +21,7 @@
       synopsis = "More useful trace functions for investigating bugs";
       description = "A collection of things for debugging, (to prevent me from writing them again)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."debug-tracy" or (errorHandler.buildDepError "debug-tracy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

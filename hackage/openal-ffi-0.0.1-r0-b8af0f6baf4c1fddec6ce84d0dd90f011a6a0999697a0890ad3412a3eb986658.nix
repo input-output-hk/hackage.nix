@@ -21,22 +21,22 @@
       synopsis = "Low-level bindings to OpenAL.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."openal" or (errorHandler.sysDepError "openal")) ];
-        frameworks = (pkgs.lib).optional (system.isOsx || system.isIos) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL"));
+        frameworks = pkgs.lib.optional (system.isOsx || system.isIos) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL"));
         buildable = true;
-        };
+      };
       tests = {
         "openal-ffi-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."openal-ffi" or (errorHandler.buildDepError "openal-ffi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

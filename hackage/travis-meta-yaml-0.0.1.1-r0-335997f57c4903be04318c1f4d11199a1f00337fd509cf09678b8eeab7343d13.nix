@@ -21,7 +21,7 @@
       synopsis = ".travis.yml preprocessor";
       description = ".travis.yml preprocessor";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "travis-meta-yaml" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."travis-meta-yaml" or (errorHandler.buildDepError "travis-meta-yaml"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."travis-meta-yaml" or (errorHandler.buildDepError "travis-meta-yaml"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

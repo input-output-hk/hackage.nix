@@ -6,8 +6,8 @@
         nix = import ../hackage/gather-0.1.0.0-r0-2c5265ae93d50bf0eae188519922d9aad0010eff692b75589e2b721eaaf2208e.nix;
         revNum = 0;
         sha256 = "2c5265ae93d50bf0eae188519922d9aad0010eff692b75589e2b721eaaf2208e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

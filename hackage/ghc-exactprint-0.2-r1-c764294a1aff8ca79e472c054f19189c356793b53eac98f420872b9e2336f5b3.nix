@@ -21,7 +21,7 @@
       synopsis = "ExactPrint for GHC";
       description = "Using the API Annotations available from GHC 7.10 RC2, this\nlibrary provides a means to round trip any* code that can\nbe compiled by GHC\n\n* any currently excludes anything using CPP or lhs.\n\nThe dependency footprint is deliberately kept small so that\nit can easily be tested against GHC HEAD\n\nNote: requires GHC 7.10 RC2 or later";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,11 +35,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "7.10"
           then false
           else true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

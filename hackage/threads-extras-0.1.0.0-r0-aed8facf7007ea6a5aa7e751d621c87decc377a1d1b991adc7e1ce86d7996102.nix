@@ -21,24 +21,24 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."threads" or (errorHandler.buildDepError "threads"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "threads-extras-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."threads-extras" or (errorHandler.buildDepError "threads-extras"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

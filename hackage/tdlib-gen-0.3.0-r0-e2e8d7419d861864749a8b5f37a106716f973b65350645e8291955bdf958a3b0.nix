@@ -21,7 +21,7 @@
       synopsis = "Codegen for TDLib";
       description = "Please see the README on GitHub at <https://github.com/poscat0x04/tdlib-gen#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tdlib-gen" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."tdlib-gen" or (errorHandler.buildDepError "tdlib-gen"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tdlib-gen-test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."tdlib-gen" or (errorHandler.buildDepError "tdlib-gen"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

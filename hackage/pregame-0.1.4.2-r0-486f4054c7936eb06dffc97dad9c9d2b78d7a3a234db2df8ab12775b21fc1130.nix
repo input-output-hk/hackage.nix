@@ -21,7 +21,7 @@
       synopsis = "Prelude counterpart";
       description = "Excessive Prelude styled imports.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

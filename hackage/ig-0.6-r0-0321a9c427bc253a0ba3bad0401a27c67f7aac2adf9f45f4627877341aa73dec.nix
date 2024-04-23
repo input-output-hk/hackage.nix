@@ -21,7 +21,7 @@
       synopsis = "Bindings to Instagram's API.";
       description = "This package exports bindings to Instagram's APIs (see\n<http://instagram.com/developer/>).\n\nWhile we would like to have a complete binding to Instagram's\nAPI, this package is being developed on demand. If you need\nsomething that has not been implemented yet, please send a pull\nrequest or file an issue on GitHub\n(<https://github.com/prowdsponsor/ig/issues>).\n\nA sample Yesod application demonstrating the API can be found at <https://github.com/prowdsponsor/ig-testapp>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,16 +44,16 @@
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."cryptohash-cryptoapi" or (errorHandler.buildDepError "cryptohash-cryptoapi"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
-          ] ++ (if flags.conduit11
+        ] ++ (if flags.conduit11
           then [
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-            ]
+          ]
           else [
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

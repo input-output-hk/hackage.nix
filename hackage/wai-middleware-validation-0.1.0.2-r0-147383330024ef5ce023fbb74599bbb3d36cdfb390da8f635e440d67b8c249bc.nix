@@ -21,7 +21,7 @@
       synopsis = "WAI Middleware to validate the request and response bodies";
       description = "wai-middleware-validation is a WAI Middleware that automates the validation of request and response bodies. It validates JSON format bodies according to the schema defined in the OpenAPI document.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."openapi3" or (errorHandler.buildDepError "openapi3"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-validation-test" = {
           depends = [
@@ -51,16 +51,16 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-validation" or (errorHandler.buildDepError "wai-middleware-validation"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wai-middleware-validation-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

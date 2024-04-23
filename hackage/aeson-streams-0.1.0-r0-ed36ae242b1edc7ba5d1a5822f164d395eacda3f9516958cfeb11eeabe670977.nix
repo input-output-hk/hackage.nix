@@ -21,7 +21,7 @@
       synopsis = "An HTTP client library for JSON-based APIs";
       description = "An HTTP client library for JSON-based APIs using aeson and http-streams.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-streams" or (errorHandler.buildDepError "http-streams"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

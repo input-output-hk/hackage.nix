@@ -21,15 +21,15 @@
       synopsis = "A Transactional cache with configurable persitence ";
       description = "-------------------------------------------------";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fast JSON decoding via simdjson C++ bindings";
       description = "A JSON parsing library focused on speed that binds to the simdjson C++ library using\nthe Haskell FFI. Hermes offers some helpful functions for building fast JSON decoders\nfor your Haskell types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,12 +37,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
-        libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4")) (if system.isOsx || system.isFreebsd
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
+        libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4")) (if system.isOsx || system.isFreebsd
           then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
           else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "hermes-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

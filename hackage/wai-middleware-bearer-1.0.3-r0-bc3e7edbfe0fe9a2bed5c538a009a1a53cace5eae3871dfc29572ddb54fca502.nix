@@ -21,7 +21,7 @@
       synopsis = "WAI Middleware for Bearer Token Authentication";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/wai-middleware-bearer#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-bearer-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-middleware-bearer" or (errorHandler.buildDepError "wai-middleware-bearer"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Sample executables of moffy - GTK3 version";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy-samples-gtk3#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "moffy_samples_gtk3" = {
@@ -29,19 +29,19 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."moffy-samples" or (errorHandler.buildDepError "moffy-samples"))
             (hsPkgs."moffy-samples-gtk3-run" or (errorHandler.buildDepError "moffy-samples-gtk3-run"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "moffy-samples-gtk3-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."moffy-samples" or (errorHandler.buildDepError "moffy-samples"))
             (hsPkgs."moffy-samples-gtk3-run" or (errorHandler.buildDepError "moffy-samples-gtk3-run"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

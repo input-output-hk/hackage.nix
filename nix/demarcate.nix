@@ -6,8 +6,8 @@
         nix = import ../hackage/demarcate-0.1.0-r0-429f51dc63d96955bc3cb719b14f8c3182d73a17346dea5967116e43179ab1a4.nix;
         revNum = 0;
         sha256 = "429f51dc63d96955bc3cb719b14f8c3182d73a17346dea5967116e43179ab1a4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

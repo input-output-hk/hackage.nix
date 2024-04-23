@@ -21,7 +21,7 @@
       synopsis = "Test suites for `yaya`.";
       description = "This package should not be depended on by anything.";
       buildType = "Simple";
-      };
+    };
     components = {
       tests = {
         "yaya-test" = {
@@ -31,9 +31,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."yaya" or (errorHandler.buildDepError "yaya"))
             (hsPkgs."yaya-hedgehog" or (errorHandler.buildDepError "yaya-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/rws-0.1.1.2-r0-df80b3ffb8bedc10572fff0ad5846e3a1df9b486a5f287e78e0dc15ae43667e4.nix;
         revNum = 0;
         sha256 = "df80b3ffb8bedc10572fff0ad5846e3a1df9b486a5f287e78e0dc15ae43667e4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

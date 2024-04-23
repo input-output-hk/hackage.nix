@@ -21,7 +21,7 @@
       synopsis = "Validity instances for aeson";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."validity-text" or (errorHandler.buildDepError "validity-text"))
           (hsPkgs."validity-unordered-containers" or (errorHandler.buildDepError "validity-unordered-containers"))
           (hsPkgs."validity-vector" or (errorHandler.buildDepError "validity-vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

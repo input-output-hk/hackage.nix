@@ -21,7 +21,7 @@
       synopsis = "Translations of classic Truth Maintenance Systems";
       description = "Haskell monad transformer-based translations of two classic Truth Maintenance System algorithms of Forbus and de Kleer's /Building Problem Solvers/.  This version includes justification-based and assumption-based TMS (JTMS and ATMS) implementations.  See the GitHub repository <https://github.com/jphmrst/bps/>, or the Haddock documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hbps" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "BPS-test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

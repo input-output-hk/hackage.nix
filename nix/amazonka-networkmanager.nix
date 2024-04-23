@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-networkmanager-2.0-r0-199181ed4940f8c2023019e537145ed9ac6bffd6ea66f0878b774612ebfc39ce.nix;
         revNum = 0;
         sha256 = "199181ed4940f8c2023019e537145ed9ac6bffd6ea66f0878b774612ebfc39ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

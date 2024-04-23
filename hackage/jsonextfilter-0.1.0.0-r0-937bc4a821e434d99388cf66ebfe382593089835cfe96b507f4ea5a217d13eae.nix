@@ -21,7 +21,7 @@
       synopsis = "Filter select values in JSON objects to unix programs";
       description = "Filter select values in JSON objects to unix programs";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jsonextfilter" = {
@@ -39,9 +39,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-lexv2-models-2.0-r0-473469bf69099a0f5cf2433e72fc1d0d1ab94a35ddb94868cd98d1c14ab31f07.nix;
         revNum = 0;
         sha256 = "473469bf69099a0f5cf2433e72fc1d0d1ab94a35ddb94868cd98d1c14ab31f07";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

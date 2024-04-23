@@ -21,11 +21,11 @@
       synopsis = "Ad-hoc Ord instances";
       description = "Simple little thing to assign Ord instances\ndynamically.  It's a bit silly, but I've found\nuse for it, along with other things like it, when\nputting together quick hacks reusing large chunks of\nexisting code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

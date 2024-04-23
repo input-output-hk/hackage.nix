@@ -21,7 +21,7 @@
       synopsis = "Higher-order file applicator";
       description = "λtext is a general-purpose templating utility for text files.\n\nTurn plaintext files into lambdas -\nfunction application then becomes concatenation.\n\nPlease see the <https://github.com/ltext/ltext github page> for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
           (hsPkgs."composition-extra" or (errorHandler.buildDepError "composition-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ltext" = {
           depends = [
@@ -54,18 +54,18 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
             (hsPkgs."composition-extra" or (errorHandler.buildDepError "composition-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

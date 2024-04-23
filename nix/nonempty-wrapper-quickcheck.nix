@@ -6,8 +6,8 @@
         nix = import ../hackage/nonempty-wrapper-quickcheck-0.1.0.0-r0-e34cebd49d68090c27109af65be51e878eb8ac32c3d89cfa528a805553bb9a4e.nix;
         revNum = 0;
         sha256 = "e34cebd49d68090c27109af65be51e878eb8ac32c3d89cfa528a805553bb9a4e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

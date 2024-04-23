@@ -21,7 +21,7 @@
       synopsis = "NCurses bindings for Haskell";
       description = "Binding to NCurses, a library of functions that manage an\napplication's display on character-cell terminals. Additionally,\nit contains some basic widgets such as a text input widget and\na table widget.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         libs = [ (pkgs."ncurses" or (errorHandler.sysDepError "ncurses")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

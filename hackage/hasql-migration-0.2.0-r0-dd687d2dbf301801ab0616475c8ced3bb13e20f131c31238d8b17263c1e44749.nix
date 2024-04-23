@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL Schema Migrations";
       description = "A PostgreSQL-simple schema migration utility";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hasql-migration-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hasql-transaction" or (errorHandler.buildDepError "hasql-transaction"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

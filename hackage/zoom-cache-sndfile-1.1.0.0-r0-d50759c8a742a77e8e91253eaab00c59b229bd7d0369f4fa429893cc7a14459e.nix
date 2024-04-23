@@ -21,7 +21,7 @@
       synopsis = "Tools for generating zoom-cache-pcm files";
       description = "zoom-cache-sndfile provides tools for encoding and dumping zoom-cache-pcm files.\nSee the zoom-cache-pcm and zoom-cache packages for more information about\nzoom-cache files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zoom-cache-sndfile" = {
@@ -36,9 +36,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zoom-cache" or (errorHandler.buildDepError "zoom-cache"))
             (hsPkgs."zoom-cache-pcm" or (errorHandler.buildDepError "zoom-cache-pcm"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

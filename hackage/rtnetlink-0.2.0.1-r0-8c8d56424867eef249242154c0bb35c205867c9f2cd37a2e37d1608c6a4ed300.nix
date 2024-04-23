@@ -21,7 +21,7 @@
       synopsis = "Manipulate network devices, addresses, and routes on Linux";
       description = "A high-level, extensible, pure-Haskell interface to the\nROUTE_NETLINK subsystem of netlink for manipulating\nnetwork devices on Linux.\nRTNetlink provides the RTNL monad to simplify sending\nand receiving messages, pre-built types for manipulating\ndevices and addresses, and typeclasses for creating your\nown messages, based on linux\\/netlink.h,\nlinux\\/rtnetlink.h, et al.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,32 +35,32 @@
           (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rtnl-link" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."rtnetlink" or (errorHandler.buildDepError "rtnetlink"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "rtnl-address" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."rtnetlink" or (errorHandler.buildDepError "rtnetlink"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "rtnetlink-tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."linux-namespaces" or (errorHandler.buildDepError "linux-namespaces"))
             (hsPkgs."rtnetlink" or (errorHandler.buildDepError "rtnetlink"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

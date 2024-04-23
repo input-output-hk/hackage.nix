@@ -6,8 +6,8 @@
         nix = import ../hackage/sdp-binary-0.2-r0-acd7dd35b145e1b05b8b20eb4a773d2949ddba470940916256d7d98b373f9879.nix;
         revNum = 0;
         sha256 = "acd7dd35b145e1b05b8b20eb4a773d2949ddba470940916256d7d98b373f9879";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

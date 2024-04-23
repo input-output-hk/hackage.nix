@@ -21,7 +21,7 @@
       synopsis = "Bridge between packages gi-* and cairo-core.";
       description = "Bridge between packages gi-* and cairo-core. Just `fromGI` and `toGI`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cairo-core" or (errorHandler.buildDepError "cairo-core"))
           (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Query Fedora composes";
       description = "CLI tool to list and check status of Fedora composes";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fedora-composes" = {
@@ -36,21 +36,21 @@
             (hsPkgs."simple-prompt" or (errorHandler.buildDepError "simple-prompt"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.fedora-composes.components.exes.fedora-composes or (pkgs.buildPackages.fedora-composes or (errorHandler.buildToolDepError "fedora-composes:fedora-composes")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

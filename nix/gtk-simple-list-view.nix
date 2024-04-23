@@ -6,8 +6,8 @@
         nix = import ../hackage/gtk-simple-list-view-0.0.0-r0-f8d26394865413758336409c0630dc02594b6498b0c99e2d1ecc39e0bfda71e1.nix;
         revNum = 0;
         sha256 = "f8d26394865413758336409c0630dc02594b6498b0c99e2d1ecc39e0bfda71e1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

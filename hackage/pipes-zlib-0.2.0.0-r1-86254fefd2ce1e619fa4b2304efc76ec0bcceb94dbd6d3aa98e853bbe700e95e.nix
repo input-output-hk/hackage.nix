@@ -21,7 +21,7 @@
       synopsis = "Pipes to deal with zlib compressed data.";
       description = "Pipes to deal with zlib compressed data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

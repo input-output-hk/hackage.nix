@@ -21,7 +21,7 @@
       synopsis = "Common Haskell types and encoding for ceilometer";
       description = "Provides a set of common types for use with ceilometer related packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
             (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

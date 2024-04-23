@@ -21,7 +21,7 @@
       synopsis = "Chops a command or program invocation into digestable pieces.";
       description = "See the <https://github.com/lspitzner/butcher/blob/master/README.md README> (it is properly formatted on github).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."deque" or (errorHandler.buildDepError "deque"))
-          ] ++ (pkgs.lib).optional (flags.butcher-dev) (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"));
+        ] ++ pkgs.lib.optional (flags.butcher-dev) (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."deque" or (errorHandler.buildDepError "deque"))
-            ] ++ (pkgs.lib).optional (flags.butcher-dev) (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"));
+          ] ++ pkgs.lib.optional (flags.butcher-dev) (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"));
           buildable = if flags.butcher-dev then true else false;
-          };
         };
       };
-    }
+    };
+  }

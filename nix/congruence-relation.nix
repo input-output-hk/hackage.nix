@@ -6,8 +6,8 @@
         nix = import ../hackage/congruence-relation-0.1.0.0-r0-a6d592f1d86ac0f5753a1c5d50a026aff3112e8dddb20b9ef9b5661f7b1a7441.nix;
         revNum = 0;
         sha256 = "a6d592f1d86ac0f5753a1c5d50a026aff3112e8dddb20b9ef9b5661f7b1a7441";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

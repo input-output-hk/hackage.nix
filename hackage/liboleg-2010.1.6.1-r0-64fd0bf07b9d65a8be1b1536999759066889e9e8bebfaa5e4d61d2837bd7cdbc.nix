@@ -21,7 +21,7 @@
       synopsis = "An evolving collection of Oleg Kiselyov's Haskell modules";
       description = "An evolving collection of Oleg Kiselyov's Haskell modules (released with his permission)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."CC-delcont" or (errorHandler.buildDepError "CC-delcont"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/openssl-createkey-0.1-r0-c9e3682348b87d79c6e29cc4e0ba7d00a12637069bc0596888ce111b58411e89.nix;
         revNum = 0;
         sha256 = "c9e3682348b87d79c6e29cc4e0ba7d00a12637069bc0596888ce111b58411e89";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

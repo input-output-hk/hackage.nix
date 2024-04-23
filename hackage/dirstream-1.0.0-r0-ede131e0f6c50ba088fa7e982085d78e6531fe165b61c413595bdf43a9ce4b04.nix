@@ -21,7 +21,7 @@
       synopsis = "Easily stream directory contents in constant memory";
       description = "Use this library to read large directories as streams:\n\n* Use @ListT@ to assemble recursive directory traversals while still streaming\n\n* Use @pipes@ to read out the stream of results\n\n* Traversals only open directory streams lazily in response to demand\n\n* Avoid directories with insufficient permissions\n\nThis library works on both Unix, OS X, and Windows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,10 +31,10 @@
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

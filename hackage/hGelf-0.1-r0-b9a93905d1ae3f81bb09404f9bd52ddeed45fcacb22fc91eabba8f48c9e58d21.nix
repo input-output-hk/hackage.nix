@@ -21,7 +21,7 @@
       synopsis = "Haskell GELF library";
       description = "Library for sending messages in the GELF format to a server accepting Graylog2 Extended Log Format messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

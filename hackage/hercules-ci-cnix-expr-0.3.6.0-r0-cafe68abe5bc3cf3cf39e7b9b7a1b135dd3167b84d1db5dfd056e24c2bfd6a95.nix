@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-pkg-config-version-hook or (pkgs.buildPackages.cabal-pkg-config-version-hook or (errorHandler.setupDepError "cabal-pkg-config-version-hook")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -47,17 +47,17 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-          ] ++ (pkgs.lib).optional (!flags.ide) (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"));
+        ] ++ pkgs.lib.optional (!flags.ide) (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"));
         pkgconfig = [
           (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
           (pkgconfPkgs."nix-expr" or (errorHandler.pkgConfDepError "nix-expr"))
           (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
-          ] ++ (pkgs.lib).optional (flags.nix-2_8) (pkgconfPkgs."nix-cmd" or (errorHandler.pkgConfDepError "nix-cmd"));
+        ] ++ pkgs.lib.optional (flags.nix-2_8) (pkgconfPkgs."nix-cmd" or (errorHandler.pkgConfDepError "nix-cmd"));
         buildable = true;
-        };
+      };
       tests = {
         "hercules-ci-cnix-expr-unit-tests" = {
           depends = [
@@ -77,12 +77,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

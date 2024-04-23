@@ -21,11 +21,11 @@
       synopsis = "ISO-639-1 language codes ";
       description = "\nISO-639-1 language codes mapping to Haskell datatypes\n\nThe code is generated from the <http://www.loc.gov/standards/iso639-2/php/English_list.php official site> using haskell-src-exts in an extra file included in the .tar.gz.\n\nSpecial thanks to Petter Bergman for the suggestions and bug fixing\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A type inhabited by finitely many values, indexed by type-level naturals.";
       description = "A type inhabited by finitely many values, indexed by type-level naturals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -36,41 +36,41 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."quipper-utils" or (errorHandler.buildDepError "quipper-utils"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "quipper" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipperi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipperdoc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quipper-pp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

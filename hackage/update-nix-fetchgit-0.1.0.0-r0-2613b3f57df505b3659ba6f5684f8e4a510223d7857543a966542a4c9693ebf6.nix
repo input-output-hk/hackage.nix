@@ -21,7 +21,7 @@
       synopsis = "A program to update fetchgit values in Nix expressions";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,18 +40,18 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "update-nix-fetchgit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."update-nix-fetchgit" or (errorHandler.buildDepError "update-nix-fetchgit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

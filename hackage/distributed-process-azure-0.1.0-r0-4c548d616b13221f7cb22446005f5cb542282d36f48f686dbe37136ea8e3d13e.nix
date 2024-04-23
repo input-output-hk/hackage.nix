@@ -21,7 +21,7 @@
       synopsis = "Microsoft Azure backend for Cloud Haskell ";
       description = "This is a proof of concept Azure backend for Cloud Haskell. It\nprovides just enough functionality to run Cloud Haskell\napplications on Azure virtual machines. You need to create your\nvirtual machines in the Azure management portal; you can then\nuse this backend to copy or verify your executable to the\nvirtual machine, start or terminate Cloud Haskell nodes on those\nvirtual machines, and communicate with those virtual machines\nfrom your local machine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,21 +42,21 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."rank1dynamic" or (errorHandler.buildDepError "rank1dynamic"))
           (hsPkgs."distributed-static" or (errorHandler.buildDepError "distributed-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cloud-haskell-azure-echo" = {
-          depends = (pkgs.lib).optionals (flags.build-demos) [
+          depends = pkgs.lib.optionals (flags.build-demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."distributed-process-azure" or (errorHandler.buildDepError "distributed-process-azure"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.build-demos then true else false;
-          };
+        };
         "cloud-haskell-azure-ping" = {
-          depends = (pkgs.lib).optionals (flags.build-demos) [
+          depends = pkgs.lib.optionals (flags.build-demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."distributed-process-azure" or (errorHandler.buildDepError "distributed-process-azure"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
@@ -65,11 +65,11 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."libssh2" or (errorHandler.buildDepError "libssh2"))
-            ];
+          ];
           buildable = if flags.build-demos then true else false;
-          };
+        };
         "cloud-haskell-azure-fib" = {
-          depends = (pkgs.lib).optionals (flags.build-demos) [
+          depends = pkgs.lib.optionals (flags.build-demos) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."distributed-process-azure" or (errorHandler.buildDepError "distributed-process-azure"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
@@ -80,9 +80,9 @@
             (hsPkgs."rank1dynamic" or (errorHandler.buildDepError "rank1dynamic"))
             (hsPkgs."distributed-static" or (errorHandler.buildDepError "distributed-static"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.build-demos then true else false;
-          };
         };
       };
-    }
+    };
+  }

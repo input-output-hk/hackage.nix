@@ -21,7 +21,7 @@
       synopsis = "reflex backend for diagrams drawing EDSL.";
       description = "This package provides a modular backend for rendering\ndiagrams created with the diagrams EDSL to dynamic inline SVGs.\nIt uses @reflex-dom@ and the @reflex@ FRP system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."reflex-dom-contrib" or (errorHandler.buildDepError "reflex-dom-contrib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

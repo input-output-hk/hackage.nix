@@ -21,7 +21,7 @@
       synopsis = "Haskell artifact name counts.";
       description = "Counting of Haskell names and artifacts usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hcount" = {
@@ -39,9 +39,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bigram word pair alignments.";
       description = "The library provides fast dynamic programming algorithms to\nalign word pairs using either a simple or a bigram scoring\nscheme. Simple schemes are unigram schemes in nature but use an\nad-hoc scoring scheme. Bigram schemes use actual training data\nfor bigram frequences.\n\nThe WordAlign executable provides a wrapper around the provided\nalignment algorithms. Call WordAlign without any arguments (or\njust *WordAlign manual* to display the README.md).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,9 +58,9 @@
           (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
           (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "WordAlign" = {
           depends = [
@@ -86,10 +86,10 @@
             (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
             (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
             (hsPkgs."WordAlignment" or (errorHandler.buildDepError "WordAlignment"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
             (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
             (hsPkgs."WordAlignment" or (errorHandler.buildDepError "WordAlignment"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

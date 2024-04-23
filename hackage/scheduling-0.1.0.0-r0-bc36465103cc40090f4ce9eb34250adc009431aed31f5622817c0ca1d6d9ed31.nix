@@ -21,7 +21,7 @@
       synopsis = "An interview scheduler using constraint satisfaction and Google Sheets";
       description = "Primarily a command-line tool for specifying people, their availabilities,\nand desired meetings, finding the best solution to this scheduling task,\nand a few other niceties, all directly in a Google Sheets spreadsheet\nso it's easy to edit collaboratively and view the results.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scheduler" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

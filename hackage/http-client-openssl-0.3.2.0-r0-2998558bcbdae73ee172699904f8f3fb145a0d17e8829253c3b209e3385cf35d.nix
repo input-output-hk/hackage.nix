@@ -21,7 +21,7 @@
       synopsis = "http-client backend using the OpenSSL library.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/http-client>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."HsOpenSSL-x509-system" or (errorHandler.buildDepError "HsOpenSSL-x509-system"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

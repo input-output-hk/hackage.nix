@@ -6,8 +6,8 @@
         nix = import ../hackage/ghost-buster-0.1.1.0-r0-8a51f04979a8a84dd01a13f2fd27093db4d964baf64c28bb381645fff98fba3e.nix;
         revNum = 0;
         sha256 = "8a51f04979a8a84dd01a13f2fd27093db4d964baf64c28bb381645fff98fba3e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

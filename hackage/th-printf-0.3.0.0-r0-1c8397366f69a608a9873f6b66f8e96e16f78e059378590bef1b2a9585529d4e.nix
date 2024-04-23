@@ -21,7 +21,7 @@
       synopsis = "Compile-time printf";
       description = "Quasiquoters for printf: string, bytestring, text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "format" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."th-printf" or (errorHandler.buildDepError "th-printf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

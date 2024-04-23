@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the RNCryptor file format";
       description = "Pure Haskell implementation of the RNCrytor spec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
           (hsPkgs."pbkdf" or (errorHandler.buildDepError "pbkdf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rncryptor-stream" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
             (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
             (hsPkgs."rncryptor" or (errorHandler.buildDepError "rncryptor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rncryptor-tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

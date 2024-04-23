@@ -21,7 +21,7 @@
       synopsis = "A monitor for cabal builds";
       description = "A vty-based wrapper around the `fswatch` utility,\nwhich makes it easy to monitor parallel Cabal builds.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-mon" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

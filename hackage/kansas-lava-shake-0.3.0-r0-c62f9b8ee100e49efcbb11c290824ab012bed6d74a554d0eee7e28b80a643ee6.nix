@@ -21,7 +21,7 @@
       synopsis = "Shake rules for building Kansas Lava projects";
       description = "Shake rules for building Kansas Lava projects. Currently supports the\nXilinx FPGA tooling only.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mustache" or (errorHandler.buildDepError "mustache"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

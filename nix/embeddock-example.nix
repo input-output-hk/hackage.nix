@@ -6,8 +6,8 @@
         nix = import ../hackage/embeddock-example-0.1-r0-98852810113d583c17dd2d4ec876c5f8c87b179d90f8510e25caf3f423cd9e88.nix;
         revNum = 0;
         sha256 = "98852810113d583c17dd2d4ec876c5f8c87b179d90f8510e25caf3f423cd9e88";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

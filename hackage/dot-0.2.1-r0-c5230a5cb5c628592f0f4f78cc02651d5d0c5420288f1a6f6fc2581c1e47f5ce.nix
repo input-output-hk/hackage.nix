@@ -21,15 +21,15 @@
       synopsis = "Data types and encoding for graphviz dot files";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."impure-containers" or (errorHandler.buildDepError "impure-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

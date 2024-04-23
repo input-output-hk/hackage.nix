@@ -21,7 +21,7 @@
       synopsis = "A command-line tool for pasting to https://www.refheap.com";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "refh" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

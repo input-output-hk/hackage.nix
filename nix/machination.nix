@@ -6,8 +6,8 @@
         nix = import ../hackage/machination-1.0.0-r0-7aa74f36c04eb57b31b382250ff0f95a739094b34598cc6b39ffa21129b77714.nix;
         revNum = 0;
         sha256 = "7aa74f36c04eb57b31b382250ff0f95a739094b34598cc6b39ffa21129b77714";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

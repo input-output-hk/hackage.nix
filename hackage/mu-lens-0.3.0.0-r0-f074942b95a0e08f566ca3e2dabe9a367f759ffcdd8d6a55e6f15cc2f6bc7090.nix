@@ -21,7 +21,7 @@
       synopsis = "Lenses for @mu-schema@ terms";
       description = "With @mu-schema@ you can describe schemas using type-level constructs, and derive serializers from those. This package provides convenient access using @lens@es.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mu-rpc" or (errorHandler.buildDepError "mu-rpc"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

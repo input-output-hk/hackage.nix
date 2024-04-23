@@ -21,7 +21,7 @@
       synopsis = "A pandoc filter that provides a Markdown extension to wrap text in table cells.";
       description = "For more information and a tutorial on how to use this package,\nplease see the README at <https://github.com/mhwombat/pandoc-linear-table#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-linear-table" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-linear-table" or (errorHandler.buildDepError "pandoc-linear-table"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cabal package script generator for Travis-CI";
       description = "Script generator (@haskell-ci@) for\n[GitHub Actions](https://docs.github.com/en/actions) and\n[Travis-CI](https://travis-ci.org/)\nfor continuous-integration testing of Haskell Cabal packages.\n\nIncluded features (not limited to):\n\n* Multiple GHC support\n* Dependency caching\n* cabal.project support (see [Nix-style local builds documentation](https://cabal.readthedocs.io/en/latest/nix-local-build-overview.html))\n* Runs tests and builds benchmarks\n* Generates Haddocks\n* GHCJS support\n* building with specific constraints\n\n=== Quick Start Guide\n\nAdd a @tested-with@ line to your @.cabal@ file (e.g. @tested-with: GHC == 8.0.2 || == 8.2.2@) and then run @haskell-ci yourpackage.cabal -o .travis.yml@ to generate the Travis-CI job script.\n\nSee @haskell-ci --help@ for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "haskell-ci-internal" = {
@@ -58,19 +58,19 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."zinza" or (errorHandler.buildDepError "zinza"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))) ++ (pkgs.lib).optional (flags.shellcheck) (hsPkgs."ShellCheck" or (errorHandler.buildDepError "ShellCheck"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))) ++ pkgs.lib.optional (flags.shellcheck) (hsPkgs."ShellCheck" or (errorHandler.buildDepError "ShellCheck"));
           buildable = true;
-          };
         };
+      };
       exes = {
         "haskell-ci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-ci".components.sublibs.haskell-ci-internal or (errorHandler.buildDepError "haskell-ci:haskell-ci-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

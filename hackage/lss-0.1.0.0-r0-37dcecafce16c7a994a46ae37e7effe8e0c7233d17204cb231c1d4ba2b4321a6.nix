@@ -21,7 +21,7 @@
       synopsis = "Lexical Style Sheets - a language for writing styles that is focused around lexical (ie, static) scoping and re-use of large components.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lss" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec2" or (errorHandler.buildDepError "hspec2"))
             (hsPkgs."lss" or (errorHandler.buildDepError "lss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

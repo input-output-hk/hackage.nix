@@ -21,7 +21,7 @@
       synopsis = "Generated elm code for servant APIs.";
       description = "Generate Elm encoders, decoders, and API requests\nfor an Servant API, where the shape of the data\ngoing over the API is described using `json-spec`.\n\nSee the `/test/test.hs` and `/test/Api.hs` for\nan example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."json-spec-elm" or (errorHandler.buildDepError "json-spec-elm"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

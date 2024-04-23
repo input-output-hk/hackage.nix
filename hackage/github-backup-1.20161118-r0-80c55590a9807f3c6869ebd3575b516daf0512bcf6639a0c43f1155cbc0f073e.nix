@@ -35,8 +35,8 @@
         (hsPkgs.buildPackages.IfElse or (pkgs.buildPackages.IfElse or (errorHandler.setupDepError "IfElse")))
         (hsPkgs.buildPackages.mtl or (pkgs.buildPackages.mtl or (errorHandler.setupDepError "mtl")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "github-backup" = {
@@ -62,22 +62,22 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (if !system.isWindows
+          ] ++ (if !system.isWindows
             then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
             else [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "gitriddance" = {
           depends = ([
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
@@ -98,22 +98,22 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (if !system.isWindows
+          ] ++ (if !system.isWindows
             then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
             else [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

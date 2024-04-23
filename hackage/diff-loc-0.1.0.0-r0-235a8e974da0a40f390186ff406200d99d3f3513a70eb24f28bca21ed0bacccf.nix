@@ -21,18 +21,18 @@
       synopsis = "Map file locations across diffs";
       description = "See \"DiffLoc\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."show-combinators" or (errorHandler.buildDepError "show-combinators"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optionals (flags.test) [
+        ] ++ pkgs.lib.optionals (flags.test) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-higherorder" or (errorHandler.buildDepError "quickcheck-higherorder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/layered-graph-drawing-0.1.0.0-r0-a5ea46b35cdb739fddaa0113d481fa26a98f230d32a902ecb70e074865f8f117.nix;
         revNum = 0;
         sha256 = "a5ea46b35cdb739fddaa0113d481fa26a98f230d32a902ecb70e074865f8f117";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

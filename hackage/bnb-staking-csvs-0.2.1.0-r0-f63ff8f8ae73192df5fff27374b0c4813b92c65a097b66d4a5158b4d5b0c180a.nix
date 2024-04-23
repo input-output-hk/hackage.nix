@@ -21,7 +21,7 @@
       synopsis = "Generate CSV Exports of Your BNB Staking Rewards.";
       description = "@bnb-staking-csvs@ is a CLI program that queries the Binance.org API for\nall of a delegator's rewards and exports the resulting data to a CSV file.\n\nYou can install @bnb-staking-csvs@ with Stack: @stack install --resolver\nnightly bnb-staking-csvs@. Then run the following to print out your\nrewards in CSV format:\n\n@\nbnb-staking-csvs \\<DELEGATOR_PUBKEY>\n@\n\nSee @bnb-staking-csvs --help@ for additional options.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bnb-staking-csvs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bnb-staking-csvs" or (errorHandler.buildDepError "bnb-staking-csvs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "bnb-staking-csvs-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

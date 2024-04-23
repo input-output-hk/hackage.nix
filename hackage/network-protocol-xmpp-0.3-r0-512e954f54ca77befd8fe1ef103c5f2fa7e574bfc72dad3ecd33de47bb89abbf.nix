@@ -21,7 +21,7 @@
       synopsis = "Client <-> Server communication over XMPP";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           (hsPkgs."failable-list" or (errorHandler.buildDepError "failable-list"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

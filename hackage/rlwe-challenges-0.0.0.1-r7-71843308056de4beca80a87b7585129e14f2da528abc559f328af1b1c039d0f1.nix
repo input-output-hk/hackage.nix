@@ -21,7 +21,7 @@
       synopsis = "Ring-LWE/LWR challenges using Lol.";
       description = "Contains a library for reading serialized challenges (generated with <https://hackage.haskell.org/package/hprotoc hprotoc>) and an executable used to generate, suppress, and verify RLWE and RLWR challenges using <https://hackage.haskell.org/package/lol Λ ∘ λ> (Lol). You can find more information about the challenges <https://web.eecs.umich.edu/~cpeikert/rlwe-challenges here>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."protocol-buffers" or (errorHandler.buildDepError "protocol-buffers"))
           (hsPkgs."protocol-buffers-descriptor" or (errorHandler.buildDepError "protocol-buffers-descriptor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rlwe-challenges" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

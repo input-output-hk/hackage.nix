@@ -21,7 +21,7 @@
       synopsis = "A QuasiQuoter for lighttpd configuration files.";
       description = "A QuasiQuoter for lighttpd configuration files.\nSee Language.Haskell.TH.Quote for details on\nQuasiQuoters. Haddock docs are at\n<http://code.haskell.org/~morrow/code/haskell/web/lighttpd-conf-qq/haddock/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convenience functions to extend Gtk2hs.";
       description = "Convenience functions to extend Gtk2hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

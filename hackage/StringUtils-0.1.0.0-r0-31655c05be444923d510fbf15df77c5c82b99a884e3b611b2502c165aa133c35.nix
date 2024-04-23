@@ -21,11 +21,11 @@
       synopsis = "String manipulation utilities";
       description = "This little library is useful container of String manipulation function like trim, find, replace, substring, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

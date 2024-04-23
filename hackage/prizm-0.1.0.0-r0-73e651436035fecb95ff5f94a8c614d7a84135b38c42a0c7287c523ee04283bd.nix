@@ -21,11 +21,11 @@
       synopsis = "A haskell library for computing with colors";
       description = "Prizm can convert between many different color\nrepresentations; notably the sRGB and CIE\nrepresentations. Future versions will\nimplementations for mutating colors as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

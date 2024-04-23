@@ -6,8 +6,8 @@
         nix = import ../hackage/Coroutine-0.1.0.0-r0-d74ed300648727887a229f65c1a95d6fb717906cf13703aadd359175bbd937fb.nix;
         revNum = 0;
         sha256 = "d74ed300648727887a229f65c1a95d6fb717906cf13703aadd359175bbd937fb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

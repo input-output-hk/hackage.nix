@@ -21,7 +21,7 @@
       synopsis = "Implementation of the Bitcoin protocol.";
       description = "Haskoin is a package providing an implementation of the Bitcoin protocol\nspecifications. It provides the cryptographic ECDSA and hashing primitives,\nfunctions for handling BIP32 extended keys, functions for building and\nsigning various types of regular and multisig transactions and a definition\nof the network protocol messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."pbkdf" or (errorHandler.buildDepError "pbkdf"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-haskoin" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

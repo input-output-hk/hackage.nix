@@ -21,20 +21,20 @@
       synopsis = "Monoids for dealing with Pareto efficiency";
       description = "Two monoids for finding either the Pareto efficient\nsubset of a collection or splitting the collection into a\nseries of Pareto fronts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "pareto-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pareto-front" or (errorHandler.buildDepError "pareto-front"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

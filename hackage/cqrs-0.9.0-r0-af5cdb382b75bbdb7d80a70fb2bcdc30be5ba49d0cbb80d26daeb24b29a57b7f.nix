@@ -21,7 +21,7 @@
       synopsis = "Command-Query Responsibility Segregation";
       description = "Haskell implementation of the CQRS architectural pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cqrs-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."cqrs-test" or (errorHandler.buildDepError "cqrs-test"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

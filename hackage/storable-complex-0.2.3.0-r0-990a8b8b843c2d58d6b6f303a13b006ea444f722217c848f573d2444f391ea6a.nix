@@ -21,14 +21,14 @@
       synopsis = "Storable instance for Complex";
       description = "Provides a Storable instance for Complex which is binary\ncompatible with C99, C++ and Fortran complex data types.\n\nThe only purpose of this package is to provide a standard\nlocation for this instance so that other packages needing\nthis instance can play nicely together.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

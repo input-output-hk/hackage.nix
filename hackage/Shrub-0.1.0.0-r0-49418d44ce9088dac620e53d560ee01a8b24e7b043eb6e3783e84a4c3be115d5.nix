@@ -21,11 +21,11 @@
       synopsis = "4-way trie fuzzy search";
       description = "Nucleotide sequence approximate matching";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

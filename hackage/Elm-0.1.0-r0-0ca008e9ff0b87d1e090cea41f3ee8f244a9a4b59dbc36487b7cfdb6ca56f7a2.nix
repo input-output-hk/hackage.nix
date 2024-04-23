@@ -21,7 +21,7 @@
       synopsis = "The Elm compiler and server.";
       description = "Elm aims to make client-side web-development more pleasant.\nIt is a statically/strongly typed, functional reactive\nlanguage to HTML, CSS, and JS. This package provides a\ncompiler and server for Elm.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elm" = {
@@ -32,9 +32,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elm-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -45,9 +45,9 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

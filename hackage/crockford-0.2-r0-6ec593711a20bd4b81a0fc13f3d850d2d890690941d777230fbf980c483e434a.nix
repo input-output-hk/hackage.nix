@@ -21,7 +21,7 @@
       synopsis = "An implementation of Douglas Crockford's base32 encoding.";
       description = "An implementation of Douglas Crockford's base32 encoding.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."digits" or (errorHandler.buildDepError "digits"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

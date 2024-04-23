@@ -21,15 +21,15 @@
       synopsis = "Utilities for working with the java-bridge package.";
       description = "Utilities for working with the java-bridge package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."java-bridge" or (errorHandler.buildDepError "java-bridge"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A collection of commonly used utils";
       description = "A collection of commonly used util functions for basic libaries";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "util-plus-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."util-plus" or (errorHandler.buildDepError "util-plus"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

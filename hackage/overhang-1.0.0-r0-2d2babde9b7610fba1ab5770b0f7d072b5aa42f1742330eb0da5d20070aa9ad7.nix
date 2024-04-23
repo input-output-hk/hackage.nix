@@ -21,11 +21,11 @@
       synopsis = "Hang loose with your lambdas!";
       description = "Combinators for clean, \"hanging\" lambdas.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

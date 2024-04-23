@@ -21,7 +21,7 @@
       synopsis = "IRC daemon.";
       description = "An IRC daemon with mandatory authentication.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hulk" = {
@@ -38,9 +38,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hulk-generate-pass" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,9 +54,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

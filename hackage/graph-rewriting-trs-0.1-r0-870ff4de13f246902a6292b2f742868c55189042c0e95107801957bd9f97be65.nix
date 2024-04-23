@@ -21,7 +21,7 @@
       synopsis = "Evaluate a first-order term rewrite system interactively using graph reduction";
       description = "Given a set of term rewriting rules (see examples) and a term with this tool you can interactively evaluate the corresponding term graph by applying the rules, which are translated into their graph rewriting equivalents.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "trs" = {
@@ -37,9 +37,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

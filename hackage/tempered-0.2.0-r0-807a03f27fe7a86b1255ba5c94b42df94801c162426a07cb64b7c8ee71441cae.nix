@@ -21,7 +21,7 @@
       synopsis = "A dead-simple shell interpolation templating utility";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tempered" = {
           depends = [
@@ -45,18 +45,18 @@
             (hsPkgs."tempered" or (errorHandler.buildDepError "tempered"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tempered-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tempered" or (errorHandler.buildDepError "tempered"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

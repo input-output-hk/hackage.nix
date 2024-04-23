@@ -21,7 +21,7 @@
       synopsis = "Weierstrass Elliptic Functions";
       description = "Evaluation of Weierstrass elliptic functions and some related functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."jacobi-theta" or (errorHandler.buildDepError "jacobi-theta"))
           (hsPkgs."elliptic-integrals" or (errorHandler.buildDepError "elliptic-integrals"))
           (hsPkgs."gamma" or (errorHandler.buildDepError "gamma"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."weierstrass-functions" or (errorHandler.buildDepError "weierstrass-functions"))
             (hsPkgs."gamma" or (errorHandler.buildDepError "gamma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

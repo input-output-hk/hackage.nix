@@ -21,11 +21,11 @@
       synopsis = "Linux capabilities Haskell data type";
       description = "linux-capabilities provides a data type and documentation for the Linux capabilities(7).\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

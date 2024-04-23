@@ -21,7 +21,7 @@
       synopsis = "Swagger instances for servant-zeppelin combinators.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."servant-zeppelin" or (errorHandler.buildDepError "servant-zeppelin"))
           (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-zeppelin-swagger-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."servant-zeppelin" or (errorHandler.buildDepError "servant-zeppelin"))
             (hsPkgs."servant-zeppelin-swagger" or (errorHandler.buildDepError "servant-zeppelin-swagger"))
             (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

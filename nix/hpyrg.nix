@@ -6,8 +6,8 @@
         nix = import ../hackage/hpyrg-0.1.0.0-r0-c54a4518b77d585b37358c3ba875bcf7676806ccba026d3f0ea0f7b711c45be2.nix;
         revNum = 0;
         sha256 = "c54a4518b77d585b37358c3ba875bcf7676806ccba026d3f0ea0f7b711c45be2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

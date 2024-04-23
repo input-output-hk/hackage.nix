@@ -21,11 +21,11 @@
       synopsis = "(.:) and friends, syntax for Functor and Applicative.";
       description = "Alternative syntax for Functor and Applicative. Includes\n\"Caleskell\" idioms like (.) = fmap, and also extensions\nlike (.:) = fmap . fmap and (&) = (<*>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

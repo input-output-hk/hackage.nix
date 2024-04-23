@@ -21,7 +21,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -50,41 +50,41 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
           then [
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
             (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))
-            ]
-          else if compiler.isGhc && (compiler.version).ge "7.8"
+          ]
+          else if compiler.isGhc && compiler.version.ge "7.8"
             then [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-              ]
+            ]
             else [
               (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-              ])) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+            ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
           then [ (hsPkgs."process" or (errorHandler.buildDepError "process")) ]
           else [
             (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if flags.network-uri
+          ])) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
-        libs = (pkgs.lib).optionals (system.isWindows) [
+          ]);
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
           (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
           (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "leksah-server" = {
           depends = ((([
@@ -113,43 +113,43 @@
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.10"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.10"
             then [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
               (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
               (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))
-              ]
-            else if compiler.isGhc && (compiler.version).ge "7.8"
+            ]
+            else if compiler.isGhc && compiler.version.ge "7.8"
               then [
                 (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-                ]
+              ]
               else [
                 (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-                ])) ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+              ])) ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
-          libs = (pkgs.lib).optionals (system.isWindows) [
+            ]);
+          libs = pkgs.lib.optionals (system.isWindows) [
             (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
             (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
             (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "leksahecho" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -163,20 +163,20 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "leksahtrue" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tool" = {
           depends = [
@@ -188,15 +188,15 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

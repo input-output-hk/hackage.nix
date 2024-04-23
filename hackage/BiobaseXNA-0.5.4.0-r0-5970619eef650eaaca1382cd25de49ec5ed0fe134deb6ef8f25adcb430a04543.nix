@@ -21,7 +21,7 @@
       synopsis = "Efficient RNA/DNA representations";
       description = "This is a base library for bioinformatics with emphasis on RNA\nand DNA primary structure and related tools. Provided are\nefficient encodings for short sequences, as required by RNA\nfolding tools. Extended RNA secondary structures can be\nrepresented as well.\n\nChanges since 0.5.3.0\n\n* tuple-like (selN) selection of basepairing elements (baseL,baseR,baseT)\n\nChanges since 0.5.1.0\n\n* bonusTable for constrained folding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

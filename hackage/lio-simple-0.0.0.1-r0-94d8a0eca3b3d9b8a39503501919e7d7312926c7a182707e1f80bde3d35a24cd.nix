@@ -21,7 +21,7 @@
       synopsis = "LIO support for the Simple web framework";
       description = "LIO support for the Simple web framework.\nSee the 'lio' and 'simple' packages for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."lio" or (errorHandler.buildDepError "lio"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

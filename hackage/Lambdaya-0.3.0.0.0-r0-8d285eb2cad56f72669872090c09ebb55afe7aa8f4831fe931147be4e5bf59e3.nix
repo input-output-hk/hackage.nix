@@ -21,7 +21,7 @@
       synopsis = "Library for RedPitaya         ";
       description = "Native library for RedPitaya that runs on RedPitaya.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
           (hsPkgs."pipes-binary" or (errorHandler.buildDepError "pipes-binary"))
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
-          ] ++ (pkgs.lib).optional (system.isArm) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (system.isArm) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

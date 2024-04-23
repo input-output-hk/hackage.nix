@@ -14,7 +14,7 @@
       identifier = {
         name = "reflex-dom-fragment-shader-canvas";
         version = "0.1.0.1";
-        };
+      };
       license = "MIT";
       copyright = "2018 Joachim Breitner";
       maintainer = "mail@joachim-breitner.de";
@@ -24,7 +24,7 @@
       synopsis = "A reflex-dom widget to draw on a canvas with a fragment shader program";
       description = "This simple reflex-dom widget takes a `Dynamic t Text` value representing\nthe source code of a WebGL fragment shader, and renders it to\na HTML canvas element.\n\nA live demo can be found at <https://nomeata.github.io/reflex-dom-fragment-shader-canvas/>.\n\nIt also provides possible compiler errors in another `Dynamic t Text`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
             (hsPkgs."reflex-dom-fragment-shader-canvas" or (errorHandler.buildDepError "reflex-dom-fragment-shader-canvas"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

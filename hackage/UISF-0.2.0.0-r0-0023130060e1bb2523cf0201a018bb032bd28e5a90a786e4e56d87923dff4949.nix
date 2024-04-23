@@ -21,7 +21,7 @@
       synopsis = "Library for Arrowized Graphical User Interfaces.";
       description = "UISF is a library for making arrowized GUIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

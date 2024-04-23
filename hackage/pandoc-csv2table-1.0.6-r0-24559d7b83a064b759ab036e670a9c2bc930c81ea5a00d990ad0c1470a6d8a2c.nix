@@ -21,7 +21,7 @@
       synopsis = "Convert CSV to Pandoc Table Markdown";
       description = "A Pandoc filter that replaces image inline or fenced code\nblocks with pandoc table markdown. CSV contents will be\nparsed by the pandoc markdown reader.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-csv2table" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-csv2table" or (errorHandler.buildDepError "pandoc-csv2table"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

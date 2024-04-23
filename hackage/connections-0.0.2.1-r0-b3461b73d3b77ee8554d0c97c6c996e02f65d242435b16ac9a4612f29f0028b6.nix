@@ -21,7 +21,7 @@
       synopsis = "Partial orders & Galois connections.";
       description = "A library for precision rounding using Galois connections.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."property" or (errorHandler.buildDepError "property"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."connections" or (errorHandler.buildDepError "connections"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."property" or (errorHandler.buildDepError "property"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Higher-order function combinators";
       description = "Replacement for `composition` or `composition-exta`, exporting everything in one module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

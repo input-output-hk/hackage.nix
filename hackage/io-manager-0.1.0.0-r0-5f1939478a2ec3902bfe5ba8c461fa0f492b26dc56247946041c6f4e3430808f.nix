@@ -21,24 +21,24 @@
       synopsis = "Skeleton library around the IO monad.";
       description = "A skeleton library to help learners of Haskell\nconcentrate on the pure-functional aspect and\nlet the IO be handled by the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SimpleEchoExample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."io-manager" or (errorHandler.buildDepError "io-manager"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/zsyntax-0.2.0.0-r0-e19b31133fba587b129b76200efef013f3089167dec63a327947d4b3e797edfb.nix;
         revNum = 0;
         sha256 = "e19b31133fba587b129b76200efef013f3089167dec63a327947d4b3e797edfb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

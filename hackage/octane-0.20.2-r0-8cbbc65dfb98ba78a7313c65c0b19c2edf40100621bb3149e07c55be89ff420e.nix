@@ -21,7 +21,7 @@
       synopsis = "Parse Rocket League replays.";
       description = "Octane parses Rocket League replays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."overloaded-records" or (errorHandler.buildDepError "overloaded-records"))
           (hsPkgs."rattletrap" or (errorHandler.buildDepError "rattletrap"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "octane" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."octane" or (errorHandler.buildDepError "octane"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

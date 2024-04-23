@@ -21,7 +21,7 @@
       synopsis = "ListT done right";
       description = "A correct implementation of the list monad-transformer.\nUseful for basic streaming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

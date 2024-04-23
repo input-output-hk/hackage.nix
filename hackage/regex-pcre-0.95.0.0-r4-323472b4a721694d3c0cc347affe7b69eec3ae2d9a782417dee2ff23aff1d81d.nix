@@ -21,7 +21,7 @@
       synopsis = "PCRE Backend for \"Text.Regex\" (regex-base)";
       description = "This package provides a <http://pcre.org/ PCRE> backend for the <//hackage.haskell.org/package/regex-base regex-base> API.\n\nSee also <https://wiki.haskell.org/Regular_expressions> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
-        libs = (pkgs.lib).optional (!flags.pkg-config) (pkgs."pcre" or (errorHandler.sysDepError "pcre"));
-        pkgconfig = (pkgs.lib).optional (flags.pkg-config) (pkgconfPkgs."libpcre" or (errorHandler.pkgConfDepError "libpcre"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        libs = pkgs.lib.optional (!flags.pkg-config) (pkgs."pcre" or (errorHandler.sysDepError "pcre"));
+        pkgconfig = pkgs.lib.optional (flags.pkg-config) (pkgconfPkgs."libpcre" or (errorHandler.pkgConfDepError "libpcre"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

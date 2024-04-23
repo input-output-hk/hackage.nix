@@ -21,7 +21,7 @@
       synopsis = "Pointful refactoring tool";
       description = "Stand-alone command-line version of the pointful plugin\nfor lambdabot.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pointful" = {
@@ -29,14 +29,14 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (if flags.separatesyb
+          ] ++ (if flags.separatesyb
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

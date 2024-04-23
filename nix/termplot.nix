@@ -6,8 +6,8 @@
         nix = import ../hackage/termplot-0.1.0.0-r0-cb5150e89066d542a828c9217e154afff22ebd9dd074b1c7f8245f273b1541b6.nix;
         revNum = 0;
         sha256 = "cb5150e89066d542a828c9217e154afff22ebd9dd074b1c7f8245f273b1541b6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

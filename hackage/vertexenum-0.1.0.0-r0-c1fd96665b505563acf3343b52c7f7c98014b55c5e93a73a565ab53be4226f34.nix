@@ -21,7 +21,7 @@
       synopsis = "Vertex enumeration";
       description = "Vertex enumeration of convex polytopes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hmatrix-glpk" or (errorHandler.buildDepError "hmatrix-glpk"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."vertexenum" or (errorHandler.buildDepError "vertexenum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

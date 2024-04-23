@@ -21,7 +21,7 @@
       synopsis = "a url shortener";
       description = "A web application that provides a simple interface to shortening\nlong urls creating smaller and easy to remember links.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "breve" = {
@@ -39,9 +39,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Optional function arguments";
       description = "This library provides a type for specifying `Optional` function\narguments\n\nRead the tutorial in \"Data.Optional\" to learn more";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

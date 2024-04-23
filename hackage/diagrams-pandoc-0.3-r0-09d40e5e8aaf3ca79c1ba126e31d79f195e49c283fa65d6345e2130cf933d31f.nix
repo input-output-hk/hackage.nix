@@ -21,7 +21,7 @@
       synopsis = "A Pandoc filter to express diagrams inline using the Haskell EDSL _Diagrams_";
       description = "'diagrams-pandoc' replaces appropriately marked code\nblocks in pandoc input with images.  The code blocks are compiled\nusing the Haskell EDSL Diagrams.  Each block should define a\nDiagram named 'example', to be output.  This name and other\ndefaults can be overridden by command-line arguments to the\ndiagrams-pandoc program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "diagrams-pandoc" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."diagrams-pandoc" or (errorHandler.buildDepError "diagrams-pandoc"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

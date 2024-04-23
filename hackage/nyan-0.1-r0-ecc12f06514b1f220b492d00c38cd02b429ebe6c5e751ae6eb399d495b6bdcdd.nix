@@ -21,7 +21,7 @@
       synopsis = "Bored? Nyan cat!";
       description = "A little ncurses animation of nyan cat.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nyan" = {
@@ -30,9 +30,9 @@
             (hsPkgs."ncurses" or (errorHandler.buildDepError "ncurses"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

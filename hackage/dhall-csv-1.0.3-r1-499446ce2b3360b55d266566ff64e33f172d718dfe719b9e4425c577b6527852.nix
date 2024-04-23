@@ -21,7 +21,7 @@
       synopsis = "Convert bidirectionally between Dhall and CSV files.";
       description = "Use this package if you want to convert between Dhall expressions and CSV.\nYou can use this package as a library or an executable:\n\n* See the \"Dhall.Csv\" or \"Dhall.CsvToDhall\" modules if you want to use\nthis package as a library\n\n* Use the @dhall-to-csv@ or @csv-to-dhall@ programs from\nthis package if you want an executable\n\nThe \"Dhall.Csv\" and \"Dhall.CsvToDhall\" modules also contains instructions\nfor how to use this package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dhall-to-csv" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv-to-dhall" = {
           depends = [
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
@@ -73,10 +73,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

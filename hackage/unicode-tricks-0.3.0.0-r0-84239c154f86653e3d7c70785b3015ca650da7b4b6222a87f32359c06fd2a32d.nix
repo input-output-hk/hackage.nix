@@ -21,15 +21,15 @@
       synopsis = "Functions to work with unicode blocks more convenient.";
       description = "A package that makes rendering of frames, blocks, subscript and superscript\nmore convenient.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert between pointfree and pointful expressions.";
       description = "Blunt is a web front end to the pointfree and pointful libraries. While you\ncan install and run it locally, there's no real reason to prefer it over\nthe @pointfree@ and @pointful@ executables. Instead, use the hosted\nversion at <https://blunt.herokuapp.com blunt.herokuapp.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blunt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blunt" or (errorHandler.buildDepError "blunt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

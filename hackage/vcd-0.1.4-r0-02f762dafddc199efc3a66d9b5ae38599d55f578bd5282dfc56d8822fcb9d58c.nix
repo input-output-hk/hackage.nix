@@ -21,14 +21,14 @@
       synopsis = "Tools for reading and writing VCD files.";
       description = "VCD (value change dump) is a format for capturing digital and analog waveforms.\nGTKWave is a popular viewer of VCD files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

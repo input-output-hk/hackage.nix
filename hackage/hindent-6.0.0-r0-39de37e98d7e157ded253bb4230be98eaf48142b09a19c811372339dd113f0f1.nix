@@ -21,7 +21,7 @@
       synopsis = "Extensible Haskell pretty printer";
       description = "Extensible Haskell pretty printer. Both a library and an executable. See the GitHub page for usage/explanation: <https://github.com/mihaimaruseac/hindent>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,11 +45,11 @@
           (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "hindent-internal" = {
           depends = [
@@ -74,12 +74,12 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hindent" = {
           depends = [
@@ -105,12 +105,12 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hindent-test" = {
           depends = [
@@ -138,12 +138,12 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hindent-bench" = {
           depends = [
@@ -171,11 +171,11 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

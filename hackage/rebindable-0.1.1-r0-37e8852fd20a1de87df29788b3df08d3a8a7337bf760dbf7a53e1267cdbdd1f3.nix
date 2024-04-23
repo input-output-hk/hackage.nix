@@ -21,15 +21,15 @@
       synopsis = "A library to facilitate rebinding of Haskell syntax";
       description = "A library to facilitate rebinding of Haskell syntax";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."indexed" or (errorHandler.buildDepError "indexed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

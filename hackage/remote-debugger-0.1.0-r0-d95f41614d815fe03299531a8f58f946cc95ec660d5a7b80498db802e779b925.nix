@@ -21,7 +21,7 @@
       synopsis = "Interface to ghci debugger";
       description = "Wraper to GHC debugger API allowing debugging throught socket. Used in haskell-idea-plugin.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "remote-debugger" = {
@@ -32,9 +32,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

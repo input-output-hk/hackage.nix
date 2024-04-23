@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider";
       description = "Library for communicating with the SuperCollider synthesiser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

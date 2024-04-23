@@ -21,7 +21,7 @@
       synopsis = "WAI application for static serving";
       description = "Also provides some helper functions and datatypes for use outside of WAI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."crypto-conduit" or (errorHandler.buildDepError "crypto-conduit"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

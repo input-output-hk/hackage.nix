@@ -6,8 +6,8 @@
         nix = import ../hackage/ShortestPathProblems-0.0.0.1-r0-cc8694231cdab28760a6184bb4452449cd7df374c272dc04f865c6a185b43255.nix;
         revNum = 0;
         sha256 = "cc8694231cdab28760a6184bb4452449cd7df374c272dc04f865c6a185b43255";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

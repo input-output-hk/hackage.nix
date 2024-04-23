@@ -21,7 +21,7 @@
       synopsis = "An incomplete implementation of RFC 6120 (XMPP: Core)";
       description = "Pontarius is a work in progress implementation of\nRFC 6120 (XMPP: Core).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,8 +52,8 @@
           (hsPkgs."xml-picklers" or (errorHandler.buildDepError "xml-picklers"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."stringprep" or (errorHandler.buildDepError "stringprep"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

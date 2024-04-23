@@ -21,14 +21,14 @@
       synopsis = "Functor, Applicative and Monad for n-ary tuples.";
       description = "Functor, Applicative and Monad for n-ary tuples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

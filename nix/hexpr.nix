@@ -6,8 +6,8 @@
         nix = import ../hackage/hexpr-0.0.0.0-r0-82017c93784a727f97ea31b81e0c0832da87bf41cd05997094f109d128d48309.nix;
         revNum = 0;
         sha256 = "82017c93784a727f97ea31b81e0c0832da87bf41cd05997094f109d128d48309";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

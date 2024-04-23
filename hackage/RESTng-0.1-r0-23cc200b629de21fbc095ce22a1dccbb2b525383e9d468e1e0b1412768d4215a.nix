@@ -21,7 +21,7 @@
       synopsis = "A framework for writing RESTful applications.";
       description = "RESTng is still experimental and incomplete, but many implemented features may be of interest, including: grids for presentation,\nhierarchical URLs automatic handling, ORM generates tables from haskell records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."yuiGrid" or (errorHandler.buildDepError "yuiGrid"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

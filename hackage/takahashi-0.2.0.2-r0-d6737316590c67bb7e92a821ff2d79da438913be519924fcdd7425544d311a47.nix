@@ -21,7 +21,7 @@
       synopsis = "Operational Monad implementation. It is more small but adequately.";
       description = "Just size Operational Monad implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."reasonable-operational" or (errorHandler.buildDepError "reasonable-operational"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."reasonable-lens" or (errorHandler.buildDepError "reasonable-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

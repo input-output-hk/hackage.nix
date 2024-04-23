@@ -21,17 +21,17 @@
       synopsis = "Haskell bindings to FluidSynth";
       description = "Simple Haskell bindings to FluidSynth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [
           (pkgs."fluidsynth" or (errorHandler.sysDepError "fluidsynth"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

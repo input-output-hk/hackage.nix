@@ -21,14 +21,14 @@
       synopsis = "Convenient functions for getting times.";
       description = "Inspired by Rails' ActiveSupport, this package provides\nnice looking convenience functions for getting a time and\ndate, offset from today.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

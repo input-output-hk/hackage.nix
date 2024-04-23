@@ -21,7 +21,7 @@
       synopsis = "utilities for DP";
       description = "Small set of utility functions\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

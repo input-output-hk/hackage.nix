@@ -21,7 +21,7 @@
       synopsis = "Pretty printing with indentation, mixfix operators, and automatic line breaks.";
       description = "Pretty printing library supporting indentation, parenthesis-elision according\nto fixity and associativity, and automatic line breaks after text width\nexceedance.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."printcess" or (errorHandler.buildDepError "printcess"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

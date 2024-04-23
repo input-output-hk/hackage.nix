@@ -21,7 +21,7 @@
       synopsis = "Aho-Corasick string matching algorithm";
       description = "Aho-Corasick string matching algorithm.\n\nSee usage examples in \"Text.AhoCorasick\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."AhoCorasick" or (errorHandler.buildDepError "AhoCorasick"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

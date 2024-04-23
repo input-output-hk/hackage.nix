@@ -6,8 +6,8 @@
         nix = import ../hackage/riot-1.20080618-r0-9913cf990ad7128eee334b76bda4ae26d567faf0882c277795b1e7450106d20c.nix;
         revNum = 0;
         sha256 = "9913cf990ad7128eee334b76bda4ae26d567faf0882c277795b1e7450106d20c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

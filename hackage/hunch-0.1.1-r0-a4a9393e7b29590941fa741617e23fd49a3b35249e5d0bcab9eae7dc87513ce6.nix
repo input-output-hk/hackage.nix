@@ -21,7 +21,7 @@
       synopsis = "CSS-like syntax for file system manipulation.";
       description = "Hunch is a command-line, system-agnostic application that allows quick creation of file system entries with a custom DSL resembling CSS selectors.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hunch" = {
@@ -33,10 +33,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hunch-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

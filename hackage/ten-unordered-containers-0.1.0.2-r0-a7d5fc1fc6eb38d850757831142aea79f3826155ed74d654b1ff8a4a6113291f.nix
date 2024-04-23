@@ -21,7 +21,7 @@
       synopsis = "A package providing one unordered container.";
       description = "This provides unordered (hash-based) containers of kind @(k -> Type) -> Type@\nbased on\n<https://hackage.haskell.org/package/unordered-containers unordered-containers>.\nCurrently only @HashMap10@ is implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."ten" or (errorHandler.buildDepError "ten"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "HashMap-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

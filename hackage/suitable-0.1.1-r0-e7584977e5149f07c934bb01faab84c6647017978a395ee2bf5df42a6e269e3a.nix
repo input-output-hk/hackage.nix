@@ -21,17 +21,17 @@
       synopsis = "Abstract over the constraints on the parameters to type constructors";
       description = "This library provides a general purpose typeclass, 'Suitable f a',\nwhich expresses that values of type 'f a' are legal or \"make sense\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

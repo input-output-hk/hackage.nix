@@ -6,8 +6,8 @@
         nix = import ../hackage/torch-0.1-r0-8eec11c30aea5e179a564c6f5fc88d7af8fa4b3fe071c792000eaf462e7b5b22.nix;
         revNum = 0;
         sha256 = "8eec11c30aea5e179a564c6f5fc88d7af8fa4b3fe071c792000eaf462e7b5b22";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

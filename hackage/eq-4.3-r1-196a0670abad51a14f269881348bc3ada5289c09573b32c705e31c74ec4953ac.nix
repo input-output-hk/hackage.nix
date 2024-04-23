@@ -21,14 +21,14 @@
       synopsis = "Leibnizian equality";
       description = "Leibnizian equality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."type-equality" or (errorHandler.buildDepError "type-equality"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."type-equality" or (errorHandler.buildDepError "type-equality"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

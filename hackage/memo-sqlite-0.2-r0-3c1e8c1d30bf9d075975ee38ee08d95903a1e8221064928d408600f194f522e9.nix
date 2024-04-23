@@ -21,15 +21,15 @@
       synopsis = "memoize functions using SQLite3 database";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

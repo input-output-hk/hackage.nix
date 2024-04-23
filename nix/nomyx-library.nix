@@ -6,8 +6,8 @@
         nix = import ../hackage/nomyx-library-1.0.0-r0-aa2dbe1caeb0bedb16f7659373e91e14efb5b15478b9c1682a0c3ec651a5f94f.nix;
         revNum = 0;
         sha256 = "aa2dbe1caeb0bedb16f7659373e91e14efb5b15478b9c1682a0c3ec651a5f94f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

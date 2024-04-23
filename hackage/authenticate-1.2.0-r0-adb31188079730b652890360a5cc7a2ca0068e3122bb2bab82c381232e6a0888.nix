@@ -21,7 +21,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "Focus is on third-party authentication methods, such as OpenID and BrowserID.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."blaze-builder-conduit" or (errorHandler.buildDepError "blaze-builder-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

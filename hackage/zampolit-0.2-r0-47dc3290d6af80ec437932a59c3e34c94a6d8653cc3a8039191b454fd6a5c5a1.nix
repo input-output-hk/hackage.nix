@@ -21,7 +21,7 @@
       synopsis = "A tool for checking how much work is done on group projects.";
       description = "Zampolit is a tool for checking how much work each contributor to a project is doing.  It produces pretty graphs of word count per author.  This is helpful when collaborating on projects that are mostly text, and do not necessarily break lines reliably or often.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zampolit" = {
@@ -36,9 +36,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/tnet-0.0.1-r0-7c6d1598d93f3c2da1f31ab65cb1f13454b4c2d2c17c18c71e943b49a2b26a38.nix;
         revNum = 0;
         sha256 = "7c6d1598d93f3c2da1f31ab65cb1f13454b4c2d2c17c18c71e943b49a2b26a38";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

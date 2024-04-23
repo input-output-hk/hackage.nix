@@ -21,7 +21,7 @@
       synopsis = "Dynamic programming on tree and forest structures";
       description = "ADPfusion for formal languages on tree and forest structures.\nThis library connects\n<http://hackage.haskell.org/package/ForestStructures @ForestStructures@>,\na library which defines efficient, tree-like structures and\n<http://hackage.haskell.org/package/ADPfusion @ADPfusion@>.\nThe result is the ability to easily write formal grammars which\nact on input trees (as compared to the more common input\nstrings).\n\nBuild this library with GHC-8.0.2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
           (hsPkgs."GrammarProducts" or (errorHandler.buildDepError "GrammarProducts"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "AlignNewickTrees" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -60,29 +60,29 @@
             (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
             (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
             (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
-        "AffineAlignNewickTreesSmall" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
-            (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
-            (hsPkgs."ADPfusionForest" or (errorHandler.buildDepError "ADPfusionForest"))
-            (hsPkgs."BiobaseNewick" or (errorHandler.buildDepError "BiobaseNewick"))
-            (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
-            (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
-            (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-            (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
-            ];
-          buildable = if flags.examples then true else false;
-          };
         };
+        "AffineAlignNewickTreesSmall" = {
+          depends = pkgs.lib.optionals (flags.examples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+            (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
+            (hsPkgs."ADPfusionForest" or (errorHandler.buildDepError "ADPfusionForest"))
+            (hsPkgs."BiobaseNewick" or (errorHandler.buildDepError "BiobaseNewick"))
+            (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
+            (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
+            (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
+            (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
+          ];
+          buildable = if flags.examples then true else false;
+        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -92,19 +92,19 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."ADPfusionForest" or (errorHandler.buildDepError "ADPfusionForest"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

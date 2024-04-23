@@ -21,15 +21,15 @@
       synopsis = "An interface for describing and executing terminal applications";
       description = "A quick and modular way to construct terminal interfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
           (hsPkgs."hashmap" or (errorHandler.buildDepError "hashmap"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

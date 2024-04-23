@@ -21,7 +21,7 @@
       synopsis = "A tool for finding haddocks";
       description = "trawl is a human-friendly wrapper around ghc-pkg, for locating local documentation for Haskell packages and modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "trawl" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple library to cache a single IO action with timeout";
       description = "A simple library that caches an expensive IO action. This produces an IO\naction that, when run, either runs the expensive action and saves its result\nfor a period of time, or re-uses the saved value. This amortizes the cost of\nthe expensive IO action without a lot of complexity.\nSee the test program for an example of how to use it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-cachedIO" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cached-io" or (errorHandler.buildDepError "cached-io"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

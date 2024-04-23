@@ -21,7 +21,7 @@
       synopsis = "SNMP protocol library";
       description = "SNMP library for writing client applications with SNMP";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

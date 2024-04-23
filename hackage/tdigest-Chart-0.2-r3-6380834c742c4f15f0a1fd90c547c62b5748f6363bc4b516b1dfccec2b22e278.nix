@@ -21,7 +21,7 @@
       synopsis = "Chart generation from tdigest";
       description = "Chart generation from tdigest.\n\n@\n...\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "tdigest-chart-examples" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
             (hsPkgs."tdigest-Chart" or (errorHandler.buildDepError "tdigest-Chart"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

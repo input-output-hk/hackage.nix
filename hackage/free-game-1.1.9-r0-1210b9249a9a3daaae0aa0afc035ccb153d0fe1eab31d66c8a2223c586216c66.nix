@@ -21,7 +21,7 @@
       synopsis = "Create games for free";
       description = "free-game defines a monad that integrates features to create 2D games.\n\nTwitter: #hs_free_game";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."boundingboxes" or (errorHandler.buildDepError "boundingboxes"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

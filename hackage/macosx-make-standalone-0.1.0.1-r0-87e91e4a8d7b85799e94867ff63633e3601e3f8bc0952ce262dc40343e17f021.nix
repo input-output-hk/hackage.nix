@@ -21,7 +21,7 @@
       synopsis = "Make a macosx app standalone deployable";
       description = "Make a macosx app standalone by bundling all non-standard dylibs into it.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "macosx-make-standalone" = {
@@ -38,9 +38,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."graph-visit" or (errorHandler.buildDepError "graph-visit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

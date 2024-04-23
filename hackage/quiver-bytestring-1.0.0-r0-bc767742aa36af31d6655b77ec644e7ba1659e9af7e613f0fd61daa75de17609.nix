@@ -21,15 +21,15 @@
       synopsis = "Quiver combinators for bytestring streaming";
       description = "This library provides a set of combinators for efficient\nstreaming of bytestring data in the Quiver framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."quiver" or (errorHandler.buildDepError "quiver"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

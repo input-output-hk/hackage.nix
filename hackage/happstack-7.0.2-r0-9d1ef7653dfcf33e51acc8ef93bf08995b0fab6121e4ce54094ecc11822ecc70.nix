@@ -21,20 +21,20 @@
       synopsis = "The haskell application server stack + code generation";
       description = "The haskell application server stack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "happstack-tests" = {
-          depends = (pkgs.lib).optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
+          depends = pkgs.lib.optional (flags.tests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

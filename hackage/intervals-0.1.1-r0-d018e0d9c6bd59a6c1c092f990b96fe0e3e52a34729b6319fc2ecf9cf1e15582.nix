@@ -21,7 +21,7 @@
       synopsis = "Interval Arithmetic";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."numeric-extras" or (errorHandler.buildDepError "numeric-extras"))
           (hsPkgs."rounding" or (errorHandler.buildDepError "rounding"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

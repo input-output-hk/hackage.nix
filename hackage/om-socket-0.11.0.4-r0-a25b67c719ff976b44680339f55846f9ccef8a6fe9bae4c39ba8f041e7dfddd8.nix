@@ -21,7 +21,7 @@
       synopsis = "Socket utilities.";
       description = "Binary ingress server, egress client, and\nbidirectional binarry client/server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ingress-example" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "egress-example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -89,9 +89,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server-example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -113,9 +113,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "client-example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -136,9 +136,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."om-socket" or (errorHandler.buildDepError "om-socket"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

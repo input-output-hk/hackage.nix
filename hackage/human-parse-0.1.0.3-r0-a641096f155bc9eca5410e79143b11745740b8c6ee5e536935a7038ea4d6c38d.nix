@@ -21,14 +21,14 @@
       synopsis = "A lawless typeclass for parsing text entered by humans.";
       description = "An unprincipled best-effort informal attempt to figure out what a human is saying.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

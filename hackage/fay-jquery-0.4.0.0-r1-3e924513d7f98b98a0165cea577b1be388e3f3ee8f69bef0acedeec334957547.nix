@@ -21,14 +21,14 @@
       synopsis = "jQuery bindings for Fay.";
       description = "jQuery bindings for Fay.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
           (hsPkgs."fay-text" or (errorHandler.buildDepError "fay-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "a tiny library for using shared lens fields";
       description = "a pair of template haskell functions for generating fields that are shared between modules. normally with lens' makeFields function, you get clashing classes between modules, but with shared-fields you can create just the class definitions in another file and then import them to keep the classes consistent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."shared-fields" or (errorHandler.buildDepError "shared-fields"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

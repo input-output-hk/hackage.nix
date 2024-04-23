@@ -21,7 +21,7 @@
       synopsis = "A service for pull-based continuous deployment based on hydra.";
       description = "Point hail to a hydra job, set up your nix-daemon to pull\nfrom your hydra's cache, and hail will automatically pull\nthe latest results from the job and activate them.\nSee the README for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hail" = {
@@ -40,9 +40,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

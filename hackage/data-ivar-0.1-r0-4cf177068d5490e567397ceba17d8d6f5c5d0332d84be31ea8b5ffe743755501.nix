@@ -21,14 +21,14 @@
       synopsis = "Write-once variables with concurrency support";
       description = "Write-once variables, with the ability to block\non the first of a set of variables to become\navailable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

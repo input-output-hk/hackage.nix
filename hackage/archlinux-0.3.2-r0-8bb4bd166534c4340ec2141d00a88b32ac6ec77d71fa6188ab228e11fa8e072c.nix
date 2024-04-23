@@ -21,7 +21,7 @@
       synopsis = "Support for working with Arch Linux packages";
       description = "Support for working with Arch Linux packages\n\nTo get info about a package:\n\n> info \"xmonad\"\n\nTo find packages matching a string:\n\n> search \"xmonad\"\n\nTo find packages owned by a maintainer:\n\n> maintainer \"arch-haskell\"\n\nGenerate an html page of interesting facts about\npackages in AUR and Hackage.\n\n> report [\"xmonad\"]\n\nSee also the cabal2arch tool <http://hackage.haskell.org/package/cabal2arch>\nfor conversion between Hackage and AUR.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arch-report" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "distro-map" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "get-arch-url" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "latest-cabal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,9 +126,9 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mypackages" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -147,13 +147,13 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "update-aur-log" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "needs-updates" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -172,9 +172,9 @@
             (hsPkgs."strict-concurrency" or (errorHandler.buildDepError "strict-concurrency"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

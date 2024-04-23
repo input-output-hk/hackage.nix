@@ -21,7 +21,7 @@
       synopsis = "Servant support for lucid";
       description = "Servant support for lucid.\n\n'HTML' content type which will use `ToHtml` class.\n\nLucid.Servant uses `Link` rather than `Text` for safe 'href' attributes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

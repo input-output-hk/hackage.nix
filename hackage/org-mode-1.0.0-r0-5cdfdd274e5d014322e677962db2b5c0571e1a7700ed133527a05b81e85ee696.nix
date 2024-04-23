@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Parser for Emacs org-mode files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "org-mode-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."org-mode" or (errorHandler.buildDepError "org-mode"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A canteven way of setting up logging for your program.";
       description = "A library that uses <https://hackage.haskell.org/package/canteven-config canteven-config>\nto parse logging settings. Compatible with both hslogger and monad-logger.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

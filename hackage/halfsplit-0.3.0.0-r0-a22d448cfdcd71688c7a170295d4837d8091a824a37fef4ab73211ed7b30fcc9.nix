@@ -21,11 +21,11 @@
       synopsis = "A library to provide special kind of two-column terminal output for Phladiprelio. ";
       description = "Provides functions for two-column terminal output for newer versions of Phladiprelio projects. Is intended to improve UI and UX for the work with them.       ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

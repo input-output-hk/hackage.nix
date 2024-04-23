@@ -21,7 +21,7 @@
       synopsis = "Generate multipart uploads for http-client.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "CLI for pasting to hpaste.org";
       description = "PastePipe reads from standard in and posts to hpaste.org.\nIt will auto-detect your username, but that can be\noverridden with command line options (-u username)\nTitles are set with -t, language with -l.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pastepipe" = {
@@ -30,9 +30,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

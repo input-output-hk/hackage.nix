@@ -21,16 +21,16 @@
       synopsis = "Specify Servant APIs with records.";
       description = "See README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example-basic" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."servant-generic" or (errorHandler.buildDepError "servant-generic"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

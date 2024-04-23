@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Generators for the fuzzy time cursors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."fuzzy-time-gen" or (errorHandler.buildDepError "fuzzy-time-gen"))
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."genvalidity-time" or (errorHandler.buildDepError "genvalidity-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cursor-fuzzy-time-test" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."genvalidity-hspec-optics" or (errorHandler.buildDepError "genvalidity-hspec-optics"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "cursor-fuzzy-time-bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."cursor-fuzzy-time" or (errorHandler.buildDepError "cursor-fuzzy-time"))
             (hsPkgs."cursor-fuzzy-time-gen" or (errorHandler.buildDepError "cursor-fuzzy-time-gen"))
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

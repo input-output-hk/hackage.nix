@@ -21,11 +21,11 @@
       synopsis = "Proof Combinators used in Liquid Haskell for Theorem Proving";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

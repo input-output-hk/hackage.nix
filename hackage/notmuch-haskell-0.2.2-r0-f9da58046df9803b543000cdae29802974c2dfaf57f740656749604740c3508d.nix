@@ -21,7 +21,7 @@
       synopsis = "Binding for notmuch MUA library";
       description = "This is a very preliminary higher-level Haskell binding\nfor the Notmuch (notmuchmail.org) email indexing library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,7 +29,7 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         libs = [
           (pkgs."notmuch" or (errorHandler.sysDepError "notmuch"))
           (pkgs."gmime-2.4" or (errorHandler.sysDepError "gmime-2.4"))
@@ -39,9 +39,9 @@
           (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
           (pkgs."talloc" or (errorHandler.sysDepError "talloc"))
           (pkgs."xapian" or (errorHandler.sysDepError "xapian"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "notmuch-test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
-            ];
+          ];
           libs = [ (pkgs."notmuch" or (errorHandler.sysDepError "notmuch")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

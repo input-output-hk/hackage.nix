@@ -21,7 +21,7 @@
       synopsis = "Real numbers as sequences of MPBalls";
       description = "Please see the README on GitHub at <https://github.com/michalkonecny/aern2/#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
           (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aern2-real-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
             (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

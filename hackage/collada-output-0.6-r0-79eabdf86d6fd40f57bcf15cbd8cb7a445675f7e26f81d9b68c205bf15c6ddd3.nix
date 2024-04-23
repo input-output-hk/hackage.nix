@@ -21,7 +21,7 @@
       synopsis = "Generate animated 3d objects in COLLADA";
       description = "Generate a COLLADA file with textures, materials, animations, ... It can be used to visualize algorithms that produce a stream of positions, see <http://www.youtube.com/watch?v=ZpJzG28Yv8Y>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."SVGPath" or (errorHandler.buildDepError "SVGPath"))
           (hsPkgs."collada-types" or (errorHandler.buildDepError "collada-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Examples" = { buildable = true; }; };
       };
-    }
+      exes = { "Examples" = { buildable = true; }; };
+    };
+  }

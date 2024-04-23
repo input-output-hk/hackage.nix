@@ -21,7 +21,7 @@
       synopsis = "Type-classes for interacting with monomorphic containers with a key";
       description = "This is the extension of two other popular packages,\n<http://hackage.haskell.org/package/mono-traversable mono-traversable> and\n<http://hackage.haskell.org/package/keys keys>,\ndesigned to provided the functionality of the @keys@ package to the monomorphic\ncontainers enhanced by the @mono-traversable@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

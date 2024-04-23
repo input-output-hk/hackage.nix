@@ -21,7 +21,7 @@
       synopsis = "Dao is meta programming language with its own built-in\ninterpreted language, designed with artificial\nintelligence applications in mind.";
       description = "The Dao modules and interactive program is a meta programming language\nintended for artificial intelligence uses. It is very much like the\nclassic UNIX \"AWK\" scripting language, but instead of using POSIX-style\nregular epxressions, the patterns used in Dao are designed to more easily\nmatch natural language input.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dao" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "main" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

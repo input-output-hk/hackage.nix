@@ -21,7 +21,7 @@
       synopsis = "Business-quality formatting of numbers, dates, and other things";
       description = "This package defines data structures for describing\nbusiness-quality formatting for numbers, dates, etc in a\nway that can be serialized and transported.  Comes with\nexcellent built-in support for formatting numbers.  It\nalso provides a generic interface for formatting other\ntypes as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

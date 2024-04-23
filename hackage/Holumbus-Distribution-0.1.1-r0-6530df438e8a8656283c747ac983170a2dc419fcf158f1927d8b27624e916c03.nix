@@ -21,7 +21,7 @@
       synopsis = "intra- and inter-program communication";
       description = "Holumbus-Distribution offers distributed data structures like Chan, MVar or functions.\nThese datatype can be used between different programs on different computers to exchange\ndata. With the help of this library it is possible to build Erlang-Style mailboxes for an\neasy implementation of distributed systems in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "PortRegistry" = { buildable = true; };
         "PortRegistryDaemon" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

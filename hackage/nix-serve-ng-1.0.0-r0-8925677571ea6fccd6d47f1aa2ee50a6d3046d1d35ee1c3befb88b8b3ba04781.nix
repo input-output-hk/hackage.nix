@@ -21,7 +21,7 @@
       synopsis = "A drop-in replacement for nix-serve that's faster and more stable";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nix-serve" = {
@@ -42,13 +42,13 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           libs = if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
-            else (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
+            else pkgs.lib.optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
           pkgconfig = [
             (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
-            ];
+          ];
           buildable = (if system.isX86_64 && system.isLinux
             then true
             else if system.isAarch64 && system.isLinux
@@ -60,8 +60,8 @@
                   else false) && (if system.isOsx
             then true
             else if system.isLinux then true else false);
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

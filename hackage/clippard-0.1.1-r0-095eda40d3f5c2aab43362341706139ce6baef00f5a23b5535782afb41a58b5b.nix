@@ -21,14 +21,14 @@
       synopsis = "A simple Haskell library for copying text to the clipboard in a cross-platform way.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Clipboard" or (errorHandler.buildDepError "Clipboard"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Clipboard" or (errorHandler.buildDepError "Clipboard"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

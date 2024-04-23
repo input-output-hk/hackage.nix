@@ -21,15 +21,15 @@
       synopsis = "An imperative, verifiable programming language for high assurance applications.";
       description = "ImProve is an imperative DSL intended for high assurance, embedded applications.\nImProve uses infinite state, unbounded model checking to verify programs adhere\nto specifications, which are written in the form of assertion statements.\nYices (required) is the backend SMT solver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

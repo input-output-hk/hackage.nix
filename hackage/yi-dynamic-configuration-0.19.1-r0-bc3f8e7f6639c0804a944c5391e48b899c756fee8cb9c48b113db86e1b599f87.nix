@@ -21,7 +21,7 @@
       synopsis = "Dynamic configuration support for Yi";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "LC-3 virtual machine";
       description = "Haskell implementation of the LC-3 VM";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "LC3" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

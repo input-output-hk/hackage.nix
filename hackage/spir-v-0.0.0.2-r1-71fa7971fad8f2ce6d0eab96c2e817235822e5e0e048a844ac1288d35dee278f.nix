@@ -21,11 +21,11 @@
       synopsis = "Some utilities for reading and writing SPIR-V files";
       description = "This package exposes information scraped from the SPIR-V spec found <https://www.khronos.org/registry/spir-v/specs/1.0/SPIRV.html here>\nThis is a very early version, it's not quite ready to be used";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

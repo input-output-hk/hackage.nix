@@ -21,7 +21,7 @@
       synopsis = "Natural number to bit-list conversions";
       description = "Natural number to bit-list conversions - this package was automatically\ngenerated from the OpenTheory package natural-bits-1.69";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-probability" or (errorHandler.buildDepError "opentheory-probability"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

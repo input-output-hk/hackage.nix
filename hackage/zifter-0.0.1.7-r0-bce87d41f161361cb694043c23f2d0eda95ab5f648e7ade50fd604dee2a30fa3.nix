@@ -21,7 +21,7 @@
       synopsis = "zifter";
       description = "zifter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-path" or (errorHandler.buildDepError "validity-path"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zifter-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."zifter" or (errorHandler.buildDepError "zifter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

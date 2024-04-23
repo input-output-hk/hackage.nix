@@ -21,7 +21,7 @@
       synopsis = "Scientific workflow management system";
       description = "SciFlow is a DSL for building scientific workflows.\nWorkflows built with SciFlow can be run either on desktop\ncomputers or in grid computing environments that\nsupport DRMAA.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optional (flags.drmaa) (hsPkgs."drmaa" or (errorHandler.buildDepError "drmaa"));
+        ] ++ pkgs.lib.optional (flags.drmaa) (hsPkgs."drmaa" or (errorHandler.buildDepError "drmaa"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

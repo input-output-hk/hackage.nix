@@ -21,7 +21,7 @@
       synopsis = "Haskus system build tool";
       description = "Build tool to use with haskus-system.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskus-system-build" = {
@@ -39,9 +39,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

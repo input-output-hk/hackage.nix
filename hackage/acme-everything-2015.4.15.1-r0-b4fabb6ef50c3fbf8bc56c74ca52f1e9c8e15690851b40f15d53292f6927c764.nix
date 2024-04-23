@@ -21,7 +21,7 @@
       synopsis = "Everything.";
       description = "Install everything.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -7998,8 +7998,8 @@
           (hsPkgs."zot" or (errorHandler.buildDepError "zot"))
           (hsPkgs."zsh-battery" or (errorHandler.buildDepError "zsh-battery"))
           (hsPkgs."ztail" or (errorHandler.buildDepError "ztail"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

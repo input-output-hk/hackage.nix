@@ -21,7 +21,7 @@
       synopsis = "Numeric Linear Algebra";
       description = "Linear systems, matrix decompositions, and other numerical computations based on BLAS and LAPACK.\n\nStandard interface: \"Numeric.LinearAlgebra\".\n\nSafer interface with statically checked dimensions: \"Numeric.LinearAlgebra.Static\".\n\nCode examples: <http://dis.um.es/~alberto/hmatrix/hmatrix.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,37 +34,37 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        libs = (((pkgs.lib).optionals (system.isOsx) (if flags.openblas
+        ];
+        libs = ((pkgs.lib.optionals (system.isOsx) (if flags.openblas
           then [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ]) ++ (pkgs.lib).optionals (system.isFreebsd) ([
+          ]) ++ pkgs.lib.optionals (system.isFreebsd) ([
           (pkgs."gfortran" or (errorHandler.sysDepError "gfortran"))
-          ] ++ (if flags.openblas
+        ] ++ (if flags.openblas
           then [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ]))) ++ (pkgs.lib).optionals (system.isWindows) (if flags.openblas
+          ]))) ++ pkgs.lib.optionals (system.isWindows) (if flags.openblas
           then [
             (pkgs."libopenblas" or (errorHandler.sysDepError "libopenblas"))
             (pkgs."libgcc_s_seh-1" or (errorHandler.sysDepError "libgcc_s_seh-1"))
             (pkgs."libgfortran" or (errorHandler.sysDepError "libgfortran"))
             (pkgs."libquadmath-0" or (errorHandler.sysDepError "libquadmath-0"))
-            ]
+          ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ])) ++ (pkgs.lib).optionals (system.isLinux) (if flags.openblas
+          ])) ++ pkgs.lib.optionals (system.isLinux) (if flags.openblas
           then [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ]);
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+          ]);
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

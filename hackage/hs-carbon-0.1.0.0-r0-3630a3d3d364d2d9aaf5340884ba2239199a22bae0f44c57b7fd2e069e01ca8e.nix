@@ -21,7 +21,7 @@
       synopsis = "A Haskell framework for parallel monte carlo simulations";
       description = "Carbon is an open-source, Haskell framework aiming to provide easy access to\nparallel Monte Carlo simulations by providing a simple, but powerful\ncompositional method for building simulations and high-level functions for\nrunning them.\nExamples can be found at https://github.com/icasperzen/hs-carbon-examples";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."hs-carbon" or (errorHandler.buildDepError "hs-carbon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

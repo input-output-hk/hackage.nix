@@ -21,7 +21,7 @@
       synopsis = "Simple raw string quotation and dictionary interpolation";
       description = "Supply a couple of usefull QuasiQuotes so we can use functions to lookup values\nThis is an initial, and unstable package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

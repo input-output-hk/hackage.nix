@@ -21,7 +21,7 @@
       synopsis = "Homotuple, all whose elements are the same type";
       description = "Homotuple, all whose elements are the same type";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."Only" or (errorHandler.buildDepError "Only"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."single-tuple" or (errorHandler.buildDepError "single-tuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

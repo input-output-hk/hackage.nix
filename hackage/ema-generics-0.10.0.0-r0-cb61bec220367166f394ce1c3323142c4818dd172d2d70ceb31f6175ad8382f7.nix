@@ -21,7 +21,7 @@
       synopsis = "Generic deriving for Ema routes";
       description = "Generic deriving for Ema routes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-type-errors" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."url-slug" or (errorHandler.buildDepError "url-slug"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

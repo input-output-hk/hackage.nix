@@ -21,21 +21,21 @@
       synopsis = "Formats Strings with subscript or superscript characters";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "sscript-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."sscript" or (errorHandler.buildDepError "sscript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

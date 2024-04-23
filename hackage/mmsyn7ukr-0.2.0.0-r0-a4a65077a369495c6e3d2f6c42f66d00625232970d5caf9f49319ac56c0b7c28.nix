@@ -21,7 +21,7 @@
       synopsis = "A simple basic interface to some SoX functionality or to produce a close to the proper Ukrainian speech (if you pronounce sounds properly) with your own recorded voice.";
       description = "A program and a library that can be used as a simple basic interface to some SoX functionality or to produce a close to the proper Ukrainian speech (if you pronounce sounds properly) with your own recorded voice.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn7ukr" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/winio-0.1-r0-aa8d7cf8748574797c5cea6008cc890316b35f6ca16bb09f02e3b7e00677219c.nix;
         revNum = 0;
         sha256 = "aa8d7cf8748574797c5cea6008cc890316b35f6ca16bb09f02e3b7e00677219c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

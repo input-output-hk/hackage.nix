@@ -6,8 +6,8 @@
         nix = import ../hackage/RichConditional-0.1.0.0-r0-fae1bdce5f1ff45d671671254719c679062bb6f71469f4b9282cc075a64e872c.nix;
         revNum = 0;
         sha256 = "fae1bdce5f1ff45d671671254719c679062bb6f71469f4b9282cc075a64e872c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

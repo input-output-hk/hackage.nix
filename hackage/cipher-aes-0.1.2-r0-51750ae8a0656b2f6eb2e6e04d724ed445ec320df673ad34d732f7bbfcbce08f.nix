@@ -21,28 +21,28 @@
       synopsis = "Fast AES cipher implementation with advanced mode of operations";
       description = "Fast AES cipher implementation with advanced mode of operations.\n\nThe modes of operations available are ECB (Electronic code book),\nCBC (Cipher block chaining), CTR (Counter), XTS (XEX with ciphertext stealing),\nGCM (Galois Counter Mode).\n\nThe AES implementation uses AES-NI when available (on x86 and x86-64 architecture),\nbut fallback gracefully to a software C implementation.\n\nThe software implementation uses S-Boxes, which might suffer for cache timing issues.\nHowever do notes that most other known software implementations, including very popular\none (openssl, gnutls) also uses same implementation. If it matters for your\ncase, you should make sure you have AES-NI available, or you'll need to use a different\nimplementation.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Benchmarks" = {
-          depends = (pkgs.lib).optionals (flags.benchmark) [
+          depends = pkgs.lib.optionals (flags.benchmark) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
             (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.benchmark then true else false;
-          };
         };
+      };
       tests = {
         "test-cipher-aes" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

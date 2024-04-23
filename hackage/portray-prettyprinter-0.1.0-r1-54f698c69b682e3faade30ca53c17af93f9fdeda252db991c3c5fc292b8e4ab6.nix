@@ -21,7 +21,7 @@
       synopsis = "A portray backend using the prettyprinter package.";
       description = "This provides a\n<https://hackage.haskell.org/package/prettyprinter prettyprinter> backend for\n<https://hackage.haskell.org/package/portray portray> along with derivable\n'Pretty' instances for types with 'Portray' instances.\n\nThis started out as a copy of\n<https://hackage.haskell.org/package/portray-pretty portray-pretty>, and is\nstill very similar.  However, @prettyprinter@ gives more flexibility to\ndocuments at the cost of requiring more behavior to be specified explicitly.\nAs such, some formats can be nicer with the @prettyprinter@ backend, but as\nof the initial release, this backend is less mature and hasn't been used in\npractice, so there are likely more formatting bugs.  Please do file bugs on\nthe GitHub issue tracker if you find anything that seems obviously wrong!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PortrayPrettyprinter-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

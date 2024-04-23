@@ -21,11 +21,11 @@
       synopsis = "Some higher order functions for Bool and []";
       description = "Some higher order functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

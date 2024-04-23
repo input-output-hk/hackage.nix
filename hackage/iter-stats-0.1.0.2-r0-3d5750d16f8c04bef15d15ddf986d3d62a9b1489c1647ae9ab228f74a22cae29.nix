@@ -21,7 +21,7 @@
       synopsis = "iteratees for statistical processing";
       description = "efficient statistical values of data streams";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "iter-stats-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
             (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

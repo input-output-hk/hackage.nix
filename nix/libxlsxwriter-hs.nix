@@ -6,8 +6,8 @@
         nix = import ../hackage/libxlsxwriter-hs-0.1.0-r0-f7546f88304468a0f03a0d336560bb9df745eb9906bcaae69d40d5ffb3416937.nix;
         revNum = 0;
         sha256 = "f7546f88304468a0f03a0d336560bb9df745eb9906bcaae69d40d5ffb3416937";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

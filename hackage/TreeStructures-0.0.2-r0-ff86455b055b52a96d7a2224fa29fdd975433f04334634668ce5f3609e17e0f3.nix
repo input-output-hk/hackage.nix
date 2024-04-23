@@ -21,11 +21,11 @@
       synopsis = "A collection of heaps and search trees";
       description = "This package presently includes binary heaps, binomial heaps, skew heaps, splay trees, and AVL trees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

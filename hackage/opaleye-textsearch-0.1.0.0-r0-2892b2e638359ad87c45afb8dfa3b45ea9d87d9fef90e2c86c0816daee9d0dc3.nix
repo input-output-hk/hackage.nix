@@ -21,23 +21,23 @@
       synopsis = "Text search utilities for Opaleye";
       description = "Utility functions to work with TS vectors in Postgres via Opaleye.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."opaleye" or (errorHandler.buildDepError "opaleye"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "opaleye-textsearch-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."opaleye-textsearch" or (errorHandler.buildDepError "opaleye-textsearch"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

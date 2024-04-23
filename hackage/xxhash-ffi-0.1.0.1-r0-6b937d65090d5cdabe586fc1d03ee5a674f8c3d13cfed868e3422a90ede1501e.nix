@@ -21,15 +21,15 @@
       synopsis = "Bindings to the C implementation the xxHash algorithm";
       description = "Bindings to the C implementation the xxHash algorithm. xxHash provides 32-bit and 64-bit extremely fast non-cryptographic hash functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xxhash-ffi-test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "xxhash-ffi-bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."murmur-hash" or (errorHandler.buildDepError "murmur-hash"))
             (hsPkgs."xxhash" or (errorHandler.buildDepError "xxhash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

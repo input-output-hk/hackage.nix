@@ -21,7 +21,7 @@
       synopsis = "Item Response Theory functions for use in computerized adaptive testing";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ad" or (errorHandler.buildDepError "ad"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

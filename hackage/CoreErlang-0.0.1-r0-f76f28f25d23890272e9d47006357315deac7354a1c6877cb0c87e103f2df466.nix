@@ -21,7 +21,7 @@
       synopsis = "Manipulating Core Erlang source code";
       description = "Facilities for manipulating Core Erlang source code:\nan abstract syntax, parser and pretty-printer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
@@ -29,12 +29,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

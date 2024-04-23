@@ -21,14 +21,14 @@
       synopsis = "A Haskell port of the C/PHP strtok function";
       description = "This package provides a Haskell version of the strtok function from C/PHP. Successive calls of this function return tokens (delimited by given delimiting characters) from a string (or a list), one by one.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

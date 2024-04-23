@@ -21,7 +21,7 @@
       synopsis = "Potrace bindings for the diagrams library";
       description = "<http://potrace.sourceforge.net Potrace> bindings for the\n<projects.haskell.org/diagrams/ diagrams> library. Converts images\nusing the JuicyPixels library to create diagrams paths.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."potrace" or (errorHandler.buildDepError "potrace"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

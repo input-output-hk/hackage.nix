@@ -21,7 +21,7 @@
       synopsis = "SKI Combinator interpreter";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lazyi" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

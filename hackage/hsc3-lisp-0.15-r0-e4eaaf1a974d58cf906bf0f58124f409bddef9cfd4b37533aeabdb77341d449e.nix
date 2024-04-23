@@ -21,7 +21,7 @@
       synopsis = "LISP SUPERCOLLIDER";
       description = "LISP SUPERCOLLIDER";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsc3-lisp" = {
@@ -38,9 +38,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

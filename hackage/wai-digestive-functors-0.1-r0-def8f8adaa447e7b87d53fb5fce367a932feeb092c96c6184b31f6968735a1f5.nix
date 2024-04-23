@@ -21,7 +21,7 @@
       synopsis = "Helpers to bind digestive-functors onto wai requests";
       description = "Allows forms build with 'digestive-functors' to easy get their data\nout of wai requests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

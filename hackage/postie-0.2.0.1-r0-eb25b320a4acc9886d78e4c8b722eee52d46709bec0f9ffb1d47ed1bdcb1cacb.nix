@@ -21,7 +21,7 @@
       synopsis = "A library to receive emails from within Haskell programs.";
       description = "`postie` is a little smtp server library for receiving emails. It is currently\nin a very early stage and not yet fully standard compatible although the standard\nprotocol is already supported.\n\n* At the time of writing parameters on smtp commands can not be parsed.\n* Handler functions need to return more detailed information to cancel a transaction.\n\n`postie` supportes hooks on key commands in an smtp session like\n\n* on connection open and close\n* on /MAIL FROM/ command e.g. to intercept transaction if sender is blacklisted\n* on /RCPT TO/ command e.g. to check if recipient is existent on your server\n* and many more\n\nTo run `postie` you only need to supply a function which takes a `Mail` and\nreturn `Accepted` or `Rejected`. `mailBody` is a `pipes` `Producer` which\nstreams the encoded body directly to your application code. The body is not\nparsed by `postie` since it depends on what the application wants to do with\nthe mail data. Eventually I will create a seperate package for parsing mime\nmessages with `pipes-parse` when postie becomes more stable and standard compliant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "postie-example-simple" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."postie" or (errorHandler.buildDepError "postie"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

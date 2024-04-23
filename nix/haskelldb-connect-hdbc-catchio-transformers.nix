@@ -6,8 +6,8 @@
         nix = import ../hackage/haskelldb-connect-hdbc-catchio-transformers-0.1.0.0-r0-4124cfdb5dffb200d42fd82532b07afec34a04fba546a98cde0950f49a95d389.nix;
         revNum = 0;
         sha256 = "4124cfdb5dffb200d42fd82532b07afec34a04fba546a98cde0950f49a95d389";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/hscdio-0.1.0.0-r0-93db7beaede2a27617436a17b89fba27f9e70be19ee0db6bd6569ceb1b3ecc98.nix;
         revNum = 0;
         sha256 = "93db7beaede2a27617436a17b89fba27f9e70be19ee0db6bd6569ceb1b3ecc98";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

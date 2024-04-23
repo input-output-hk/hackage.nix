@@ -21,7 +21,7 @@
       synopsis = "Streaming parser/renderer for the RSS 2.0 standard.";
       description = "Cf README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-parse" or (errorHandler.buildDepError "xml-conduit-parse"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-conduit-parse" or (errorHandler.buildDepError "xml-conduit-parse"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

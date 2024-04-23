@@ -21,7 +21,7 @@
       synopsis = "a convenient handling of command line arguments";
       description = "deals with the command line arguments and fills with decent defaults";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

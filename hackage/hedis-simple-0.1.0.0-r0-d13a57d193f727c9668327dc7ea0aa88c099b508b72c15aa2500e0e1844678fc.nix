@@ -21,7 +21,7 @@
       synopsis = "A simplified API for hedis";
       description = "hedis-simple wraps most hedis commands in an EitherT monad to simplify a lot of the verbose error checking that one would normally have to perform.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

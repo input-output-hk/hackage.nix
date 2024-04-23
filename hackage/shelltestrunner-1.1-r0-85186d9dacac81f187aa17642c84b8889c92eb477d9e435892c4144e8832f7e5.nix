@@ -21,7 +21,7 @@
       synopsis = "A tool for testing command-line programs.";
       description = "shelltestrunner is a handy cross-platform tool for testing command-line\nprograms or arbitrary shell commands.  It reads simple declarative tests\nspecifying a command, some input, and the expected output, error output\nand exit status.  Tests can be run selectively, in parallel, with a\ntimeout, in color, and/or with differences highlighted.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "shelltest" = {
@@ -39,9 +39,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

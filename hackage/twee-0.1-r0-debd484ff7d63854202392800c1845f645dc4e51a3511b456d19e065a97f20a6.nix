@@ -21,7 +21,7 @@
       synopsis = "An equational theorem prover";
       description = "Twee is an experimental equational theorem prover based on\nKnuth-Bendix completion.\n\nGiven a set of equational axioms and a set of equational\nconjectures it will try to prove the conjectures.\nIt will terminate if the conjectures are true but normally\nfail to terminate if they are false.\n\nThe input problem should be in TPTP format (see\nhttp://www.tptp.org). You can use types and quantifiers, but apart\nfrom that the problem must be equational.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "twee" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."jukebox" or (errorHandler.buildDepError "jukebox"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

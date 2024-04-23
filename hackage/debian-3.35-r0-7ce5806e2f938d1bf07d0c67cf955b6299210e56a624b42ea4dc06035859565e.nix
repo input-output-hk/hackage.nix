@@ -21,7 +21,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fakechanges" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "debian-report" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-debian" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,9 +126,9 @@
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "apt-get-build-depends" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -152,9 +152,9 @@
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

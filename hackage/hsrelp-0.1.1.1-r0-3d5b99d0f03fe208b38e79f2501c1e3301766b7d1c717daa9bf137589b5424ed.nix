@@ -21,7 +21,7 @@
       synopsis = "RELP (Reliable Event Logging Protocol) server implementation";
       description = "The specification of the RELP protocol:\n<http://www.rsyslog.com/doc/relp.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

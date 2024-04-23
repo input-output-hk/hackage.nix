@@ -21,7 +21,7 @@
       synopsis = "An HTTP Performance Benchmarker";
       description = "'wrecker' is a library for creating HTTP benchmarks. It is designed for\nbenchmarking a series of HTTP request were the output of previous requests\nare used as inputs to the next request. This is useful for complex API\nprofiling situations.\n'wrecker' does not provide any mechanism for making HTTP calls. It works\nwith any HTTP client that produces a 'HttpException' during failure (so\nhttp-client and wreq will work out of the box).\nSee the documentation for examples of how to use 'wrecker' with\nbenchmarking scripts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wrecker-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."wrecker" or (errorHandler.buildDepError "wrecker"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discovery" or (errorHandler.buildDepError "hspec-discovery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "create many files from one";
       description = "saves the contents of files from a spefically defined xml document";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "multifile" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

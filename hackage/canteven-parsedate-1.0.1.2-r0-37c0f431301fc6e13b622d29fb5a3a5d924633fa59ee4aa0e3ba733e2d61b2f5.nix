@@ -21,7 +21,7 @@
       synopsis = "Date / time parsing utilities that try to guess the date / time format.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-parsedate" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Well-typed lenses for bv-sized bitvectors.";
       description = "Well-typed lenses for bv-sized bitvectors. Use with bv-sized and parameterized-utils.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bv-sized" or (errorHandler.buildDepError "bv-sized"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parameterized-utils" or (errorHandler.buildDepError "parameterized-utils"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

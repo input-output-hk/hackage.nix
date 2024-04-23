@@ -21,7 +21,7 @@
       synopsis = "Simplify and render Template Haskell";
       description = "Simplify and render Template Haskell. Functions to dump TH code for easy\ninspection and/or copy-pasting the result into your Haskell files.\n\nFor example:\n\n> putStrLn $(simplifiedTH =<< makePrisms ''Maybe)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

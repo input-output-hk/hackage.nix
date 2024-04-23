@@ -21,7 +21,7 @@
       synopsis = "Connect Reactive and FieldTrip";
       description = "This library connects ''Reactive'' (a functional reactive\nprogramming library) and ''FieldTrip'' (a functional 3D library).\n\nProject wiki page: <http://haskell.org/haskellwiki/project-foo>\n\nThe module documentation pages have links to colorized source code and\nto wiki pages where you can read and contribute user comments.  Enjoy!\n\n&#169; 2008 by Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."reactive" or (errorHandler.buildDepError "reactive"))
           (hsPkgs."reactive-glut" or (errorHandler.buildDepError "reactive-glut"))
           (hsPkgs."FieldTrip" or (errorHandler.buildDepError "FieldTrip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

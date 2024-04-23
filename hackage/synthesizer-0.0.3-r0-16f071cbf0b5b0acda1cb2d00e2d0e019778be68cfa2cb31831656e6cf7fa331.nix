@@ -13,7 +13,7 @@
       buildexamples = false;
       buildprofilers = false;
       buildtests = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "synthesizer"; version = "0.0.3"; };
@@ -26,7 +26,7 @@
       synopsis = "Audio signal processing coded in Haskell";
       description = "Audio signal processing\nfeaturing both low-level functions\nand high-level functions which use physical units,\nabstract from the sample rate and are really fast\ndue to StorableVector, Stream-like list type and aggressive inlining.\nFor an interface to Haskore see <http://darcs.haskell.org/haskore-synthesizer/>.\nFor an introduction see @doc/Prologue.txt@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,7 +39,7 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -47,37 +47,37 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "demonstration" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "traumzauberbaum" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "test" = { buildable = if !flags.buildtests then false else true; };
         "fusiontest" = {
           buildable = if !flags.buildprofilers then false else true;
-          };
+        };
         "speedtest" = {
           buildable = if !flags.buildprofilers then false else true;
-          };
+        };
         "speedtest-exp" = {
-          depends = (pkgs.lib).optionals (flags.splitbase) [
+          depends = pkgs.lib.optionals (flags.splitbase) [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = if !flags.buildprofilers then false else true;
-          };
+        };
         "speedtest-simple" = {
           buildable = if !flags.buildprofilers then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Hayes and Wilson's maxent learning algorithm for phonotactic grammars.";
       description = "Provides an implementation of Hayes and Wilson's machine learning algorithm for maxent phonotactic grammars, as both a command-line tool and a function library.  The learner takes in a lexicon and produces a list of weighted constraints penalizing certain sound sequemces in an attempt to produce a probability distribution of words which maximizes the probability of the lexicon. Once such a set of constraints is generated, it can be tested by using it to generate random pronounceable text.\n\nThis package is an implementation of the algorithm described in Hayes and Wilson's paper /A Maximum Entropy Model of Phonotactics and Phonotactic Learning/ (available at <http://www.linguistics.ucla.edu/people/hayes/Phonotactics/Index.htm>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "phono-learner-hw" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Parse (possibly malformed) HTML to hexpat tree";
       description = "An integration of the /tagsoup/ and /hexpat/ packages, allowing HTML to be parsed to a\nhexpat tree, tolerant of errors.\n\nThe real work is done by Neil Mitchell's /tagsoup/ package.\n\ndarcs repo: @http://code.haskell.org/hexpat-tagsoup/@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

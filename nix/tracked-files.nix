@@ -6,8 +6,8 @@
         nix = import ../hackage/tracked-files-0.1.0.0-r0-f1c261ca7eb55e18d02ef48f4efe49a109c9e36fc7411ef29e0d1f41fcf20dcd.nix;
         revNum = 0;
         sha256 = "f1c261ca7eb55e18d02ef48f4efe49a109c9e36fc7411ef29e0d1f41fcf20dcd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

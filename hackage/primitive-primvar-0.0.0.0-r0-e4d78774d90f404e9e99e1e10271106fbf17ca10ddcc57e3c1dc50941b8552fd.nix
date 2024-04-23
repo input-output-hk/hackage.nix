@@ -21,14 +21,14 @@
       synopsis = "Unboxed variables for `Prim` values.";
       description = "This package provides the type `PrimVar`, which is internally a\n`PrimArray` of one element, but with a convenient `MutVar`-like API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

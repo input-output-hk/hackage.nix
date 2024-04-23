@@ -21,7 +21,7 @@
       synopsis = "Model checking Atom generated C.";
       description = "A model checker for Atom generated, or similar, C code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "afv" = {
@@ -33,9 +33,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
             (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

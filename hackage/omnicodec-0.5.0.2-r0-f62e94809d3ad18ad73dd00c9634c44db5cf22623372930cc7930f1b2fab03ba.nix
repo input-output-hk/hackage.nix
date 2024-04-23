@@ -21,7 +21,7 @@
       synopsis = "data encoding and decoding command line utilities";
       description = "Two simple command line tools built on dataenc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "odec" = {
@@ -31,10 +31,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
-            ];
+          ];
           buildable = true;
-          };
-        "oenc" = { buildable = true; };
         };
+        "oenc" = { buildable = true; };
       };
-    }
+    };
+  }

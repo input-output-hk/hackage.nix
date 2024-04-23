@@ -6,8 +6,8 @@
         nix = import ../hackage/chp-spec-1.0.0-r0-c6f95fbc48d65e6bb3a6604e49789c247605b4ce97eaf0385fbb4fb9c1a22715.nix;
         revNum = 0;
         sha256 = "c6f95fbc48d65e6bb3a6604e49789c247605b4ce97eaf0385fbb4fb9c1a22715";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

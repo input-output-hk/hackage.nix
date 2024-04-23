@@ -21,16 +21,16 @@
       synopsis = "Integration between Halide and ArrayFire";
       description = "This package provides instances of [Language.Halide.IsHalideBuffer](https://hackage.haskell.org/package/halide-haskell/docs/Language-Halide.html#t:IsHalideBuffer)\nfor arrays from the [arrayfire](https://hackage.haskell.org/package/arrayfire) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."arrayfire" or (errorHandler.buildDepError "arrayfire"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."halide-haskell" or (errorHandler.buildDepError "halide-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "halide-arrayfire-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."halide-arrayfire" or (errorHandler.buildDepError "halide-arrayfire"))
             (hsPkgs."halide-haskell" or (errorHandler.buildDepError "halide-haskell"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

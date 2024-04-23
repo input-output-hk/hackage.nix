@@ -21,16 +21,16 @@
       synopsis = "a simple Paillier cryptosystem    ";
       description = "a simple Paillier cryptosystem        ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."crypto-numbers" or (errorHandler.buildDepError "crypto-numbers"))
           (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-Paillier" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."crypto-numbers" or (errorHandler.buildDepError "crypto-numbers"))
             (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
             (hsPkgs."Paillier" or (errorHandler.buildDepError "Paillier"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

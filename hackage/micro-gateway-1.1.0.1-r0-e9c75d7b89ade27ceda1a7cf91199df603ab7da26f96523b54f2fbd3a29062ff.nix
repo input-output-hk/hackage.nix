@@ -21,7 +21,7 @@
       synopsis = "A Micro service gateway.";
       description = "A Micro service gateway. Support http, and websockets reverse proxy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-gateway" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

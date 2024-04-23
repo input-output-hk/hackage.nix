@@ -21,7 +21,7 @@
       synopsis = "Append-only database";
       description = "Please see the README on GitHub at <https://github.com/tsurucapital/franz#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."unboxed-ref" or (errorHandler.buildDepError "unboxed-ref"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "franz" = {
           depends = [
@@ -64,18 +64,18 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "franzd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."franz" or (errorHandler.buildDepError "franz"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/dbmigrations-mysql-2.0.0-r0-e5eb81f414283559486770fa8d189c8ac47a896fd76bd8b9c57de308e42c4533.nix;
         revNum = 0;
         sha256 = "e5eb81f414283559486770fa8d189c8ac47a896fd76bd8b9c57de308e42c4533";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

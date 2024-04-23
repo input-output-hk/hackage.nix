@@ -21,7 +21,7 @@
       synopsis = "Generate and manipulate various combinatorial objects.";
       description = "A collection of functions to generate, count and manipulate\nall kinds of combinatorial objects like partitions,\ncompositions, permutations, Young tableaux, binary trees,\nand so on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.withquickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+        ] ++ pkgs.lib.optional (flags.withquickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

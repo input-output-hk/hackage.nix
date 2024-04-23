@@ -21,7 +21,7 @@
       synopsis = "Simpler drawing API for Cairo.";
       description = "This library provides an alternative drawing API for\nCairo which is heavily inspired by Processing and\nis much more user-friendly. If it does not support something,\nyou can always embed direct Cairo commands.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cairo-canvas-test" = {
-          depends = (pkgs.lib).optionals (flags.builddemo) [
+          depends = pkgs.lib.optionals (flags.builddemo) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
@@ -46,9 +46,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.builddemo then true else false;
-          };
         };
       };
-    }
+    };
+  }

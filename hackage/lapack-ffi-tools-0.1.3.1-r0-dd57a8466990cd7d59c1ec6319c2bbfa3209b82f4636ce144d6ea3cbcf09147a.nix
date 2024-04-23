@@ -21,7 +21,7 @@
       synopsis = "Generator for Haskell interface to Fortran LAPACK";
       description = "LAPACK is a package for efficient numerically robust linear algebra.\nThe original implementation is written in FORTRAN.\n\nThe program in this package generates the modules\nfor the packages @blas-ffi@, @blas-comfort-array@, @blas-carray@,\n@lapack-ffi@, @lapack-comfort-array@, @lapack-carray@\nfrom the FORTRAN source files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "create-lapack-ffi-single" = {
@@ -32,9 +32,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "create-lapack-ffi" = {
           depends = [
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
@@ -50,18 +50,18 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "create-lapack-csv" = {
           depends = [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A tiling window manager";
       description = "This is a modified version of xmonad used by Bluetile.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -36,13 +36,13 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = if flags.testing then false else true;
-        };
+      };
       exes = {
         "xmonad" = {
-          depends = (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck")) ++ (pkgs.lib).optionals (flags.testing && flags.small_base) [
+          depends = pkgs.lib.optional (flags.testing) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck")) ++ pkgs.lib.optionals (flags.testing && flags.small_base) [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -53,9 +53,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

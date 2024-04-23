@@ -21,11 +21,11 @@
       synopsis = "Monoids for calculation of statistics of sample";
       description = "Monoids for calculation of statistics of sample\n\nCurrently only mean and number of elements could be calculated";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

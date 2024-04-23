@@ -21,7 +21,7 @@
       synopsis = "Conversion between storablevector and carray";
       description = "Conversion from and to strict storable vectors and c-arrays.\nThis allows you to apply Fast Fourier Transform from the @fft@ package\nto storablevectors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

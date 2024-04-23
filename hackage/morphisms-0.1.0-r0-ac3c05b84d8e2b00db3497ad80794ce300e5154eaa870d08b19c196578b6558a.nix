@@ -21,6 +21,6 @@
       synopsis = "It's all about functions";
       description = "The bunch of function combinators, minimal set, zero dependency.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

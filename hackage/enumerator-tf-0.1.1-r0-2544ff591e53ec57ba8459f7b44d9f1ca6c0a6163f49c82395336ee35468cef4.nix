@@ -21,15 +21,15 @@
       synopsis = "Enumerator instances for monads-tf classes";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

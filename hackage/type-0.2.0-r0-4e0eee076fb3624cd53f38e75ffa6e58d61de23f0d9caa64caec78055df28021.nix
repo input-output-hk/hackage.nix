@@ -21,17 +21,17 @@
       synopsis = "Dynamic casting library with support for arbitrary rank type kinds.";
       description = "By default kinds which contains maximum of 8 stars (*) are supported, for example: @* -> (* -> *) -> ((* -> *) -> *) -> * -> *@.\nBy recompiling the library one can support even more complex types.\nHowever be aware that the amount of code generated increases exponentially.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "6.12"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "6.12"
           then false
           else true;
-        };
       };
-    }
+    };
+  }

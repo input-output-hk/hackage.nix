@@ -21,7 +21,7 @@
       synopsis = "Lossy conversion from JSON to Sugar";
       description = "Sugar is an alternative to: JSON, YAML, TOML, et cetera. Please see the README on GitHub at <https://github.com/jxv/sugar#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "json2sg-lib" = {
@@ -32,19 +32,19 @@
             (hsPkgs."sugar-json" or (errorHandler.buildDepError "sugar-json"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "json2sg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."json2sg".components.sublibs.json2sg-lib or (errorHandler.buildDepError "json2sg:json2sg-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "json2sg-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

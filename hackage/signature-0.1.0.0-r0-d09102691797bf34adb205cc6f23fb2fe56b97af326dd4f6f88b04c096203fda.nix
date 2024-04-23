@@ -21,7 +21,7 @@
       synopsis = "Hmac sha256 signature json and http payload";
       description = "Hmac sha256 signature json and http payload.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

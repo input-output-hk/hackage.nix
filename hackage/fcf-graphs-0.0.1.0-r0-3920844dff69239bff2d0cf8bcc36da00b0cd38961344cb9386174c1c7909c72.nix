@@ -21,16 +21,16 @@
       synopsis = "Type-level version of algebraic-graphs.";
       description = "Type-level version of algebraic-graphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fcf-containers" or (errorHandler.buildDepError "fcf-containers"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fcf-graph-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."fcf-containers" or (errorHandler.buildDepError "fcf-containers"))
             (hsPkgs."fcf-graphs" or (errorHandler.buildDepError "fcf-graphs"))
             (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

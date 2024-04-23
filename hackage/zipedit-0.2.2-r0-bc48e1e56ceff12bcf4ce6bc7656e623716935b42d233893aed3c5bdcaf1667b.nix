@@ -21,14 +21,14 @@
       synopsis = "Create simple list editor interfaces";
       description = "Create simple interfaces which allow the user to\nedit lists using various simple commands (move back,\nmove forward, modify current element, etc).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

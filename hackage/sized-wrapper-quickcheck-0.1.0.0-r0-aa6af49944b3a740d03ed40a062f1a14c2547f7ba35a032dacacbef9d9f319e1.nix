@@ -21,15 +21,15 @@
       synopsis = "QuickCheck instance for 'Sized'";
       description = "QuickCheck instance for 'Sized'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."sized-wrapper" or (errorHandler.buildDepError "sized-wrapper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Get the current system locale in System.Locale format";
       description = "Use the system 'locale' command to find out the current\nsystem locale in System.Locale format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

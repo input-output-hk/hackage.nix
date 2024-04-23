@@ -21,7 +21,7 @@
       synopsis = "Helper functions for linting with shake ";
       description = "This package provides several linters out of the box, for use with [shake](http://shakebuild.com/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

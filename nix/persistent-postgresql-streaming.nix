@@ -6,8 +6,8 @@
         nix = import ../hackage/persistent-postgresql-streaming-0.1.0.0-r0-6a6615e79ca0de43a2160bc3a420717b3320f3dde4ba0765586655995fa7650a.nix;
         revNum = 0;
         sha256 = "6a6615e79ca0de43a2160bc3a420717b3320f3dde4ba0765586655995fa7650a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

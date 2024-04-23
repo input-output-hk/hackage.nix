@@ -6,8 +6,8 @@
         nix = import ../hackage/Pup-Events-PQueue-1.0-r0-5649dbaaa5ec9e506f43ccbb7ee8000b9098cb51151c3a1dae3a48af64d636f5.nix;
         revNum = 0;
         sha256 = "5649dbaaa5ec9e506f43ccbb7ee8000b9098cb51151c3a1dae3a48af64d636f5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

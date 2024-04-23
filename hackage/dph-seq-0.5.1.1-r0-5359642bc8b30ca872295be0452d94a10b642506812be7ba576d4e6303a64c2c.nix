@@ -21,7 +21,7 @@
       synopsis = "Data structures for Nested Data-Parallel Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-seq" or (errorHandler.buildDepError "dph-prim-seq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

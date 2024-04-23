@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-sagemaker-geospatial-2.0-r0-7eed1e64d0e38a63d63479ede482fd1a306ad79f57e6000a0a349e40098ce700.nix;
         revNum = 0;
         sha256 = "7eed1e64d0e38a63d63479ede482fd1a306ad79f57e6000a0a349e40098ce700";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

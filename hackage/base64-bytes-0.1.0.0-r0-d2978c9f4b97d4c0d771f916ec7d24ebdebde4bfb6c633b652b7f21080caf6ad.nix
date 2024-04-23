@@ -21,7 +21,7 @@
       synopsis = "Base64 encoding of byte sequences";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
           (hsPkgs."bytebuild" or (errorHandler.buildDepError "bytebuild"))
           (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."small-bytearray-builder" or (errorHandler.buildDepError "small-bytearray-builder"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
             (hsPkgs."base64" or (errorHandler.buildDepError "base64"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Sphinx CLI and demo of Haskell Sphinx library";
       description = "Sphinx CLI and demo of Haskell Sphinx library.  This program\nis almost the same as the 'search' command of Sphinx and intended to be used\nfor testing and debugging only.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sphinx-cli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sphinx" or (errorHandler.buildDepError "sphinx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

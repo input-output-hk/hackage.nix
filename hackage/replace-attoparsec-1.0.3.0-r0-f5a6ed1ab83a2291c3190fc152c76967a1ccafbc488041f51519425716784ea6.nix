@@ -21,7 +21,7 @@
       synopsis = "Find, replace, and edit text patterns with Attoparsec parsers";
       description = "Find text patterns, and also edit or replace the found patterns. Use\nAttoparsec monadic parsers instead of regular expressions for pattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-bytestring" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-text" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,10 +52,10 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-unit" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL v8.x driver for haskell-relational-record";
       description = "This package contains a driver of old PostgreSQL for haskell-relational-record.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
           (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

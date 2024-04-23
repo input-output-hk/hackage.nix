@@ -21,14 +21,14 @@
       synopsis = "Lighweight pure data validation based on Applicative";
       description = "Lighweight pure data validation based on Applicative. The library provides the\nfollowing Either-like data type with suitable instances like Semigroup to accumulate validation errors in the `Failure` branch :\n\n@\n__data__ Validation e a\n\\    = Failure e\n\\    | Success a\n@\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

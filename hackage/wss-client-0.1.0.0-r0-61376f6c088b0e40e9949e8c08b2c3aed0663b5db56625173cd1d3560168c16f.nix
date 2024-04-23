@@ -21,7 +21,7 @@
       synopsis = "A-little-higher-level WebSockets client.";
       description = "A-little-higher-level WebSockets client. Based on http-client and http-client-tls.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,19 +31,19 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wss-client-sample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wss-client" or (errorHandler.buildDepError "wss-client"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.build-sample then true else false;
-          };
         };
+      };
       tests = {
         "wss-client-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."wss-client" or (errorHandler.buildDepError "wss-client"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

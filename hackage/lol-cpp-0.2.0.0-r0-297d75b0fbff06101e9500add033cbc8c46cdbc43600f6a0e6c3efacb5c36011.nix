@@ -21,7 +21,7 @@
       synopsis = "A fast C++ backend for <https://hackage.haskell.org/package/lol lol>.";
       description = "Λ ⚬ λ (Lol) is a general-purpose library for ring-based lattice cryptography. This package provides a C++ implementation of Lol's Tensor interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lol-apps-cpp" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."lol-apps" or (errorHandler.buildDepError "lol-apps"))
             (hsPkgs."lol-cpp" or (errorHandler.buildDepError "lol-cpp"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = if !flags.with-apps then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench-lol-apps-cpp" = {
           depends = [
@@ -58,18 +58,18 @@
             (hsPkgs."lol" or (errorHandler.buildDepError "lol"))
             (hsPkgs."lol-apps" or (errorHandler.buildDepError "lol-apps"))
             (hsPkgs."lol-cpp" or (errorHandler.buildDepError "lol-cpp"))
-            ];
+          ];
           buildable = if !flags.with-apps then false else true;
-          };
+        };
         "bench-lol-cpp" = {
           depends = [
             (hsPkgs."DRBG" or (errorHandler.buildDepError "DRBG"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lol" or (errorHandler.buildDepError "lol"))
             (hsPkgs."lol-cpp" or (errorHandler.buildDepError "lol-cpp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

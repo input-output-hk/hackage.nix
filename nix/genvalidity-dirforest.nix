@@ -6,8 +6,8 @@
         nix = import ../hackage/genvalidity-dirforest-0.1.0.1-r0-a15f823df1d9e9294756042495eb9a1b97b7d238869f69eea0f7dd555d48f780.nix;
         revNum = 0;
         sha256 = "a15f823df1d9e9294756042495eb9a1b97b7d238869f69eea0f7dd555d48f780";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

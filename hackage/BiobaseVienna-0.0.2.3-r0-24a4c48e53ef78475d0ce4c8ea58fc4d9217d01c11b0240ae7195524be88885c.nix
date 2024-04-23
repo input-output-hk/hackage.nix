@@ -21,7 +21,7 @@
       synopsis = "(deprecated) ViennaRNA parameter library";
       description = "Import and export of ViennaRNA-style parameters for RNA\nsecondary structure prediction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."Biobase" or (errorHandler.buildDepError "Biobase"))
           (hsPkgs."BiobaseTurner" or (errorHandler.buildDepError "BiobaseTurner"))
           (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

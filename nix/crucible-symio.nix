@@ -6,8 +6,8 @@
         nix = import ../hackage/crucible-symio-0.1-r0-89f89c1c04655c2b95bb738a1cdfdbf554d51c4c461710479fcad4f2893a9e1d.nix;
         revNum = 0;
         sha256 = "89f89c1c04655c2b95bb738a1cdfdbf554d51c4c461710479fcad4f2893a9e1d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

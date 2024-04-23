@@ -21,7 +21,7 @@
       synopsis = "Colog Adapters for Polysemy-Log";
       description = "See <https://hackage.haskell.org/package/polysemy-log-co/docs/Polysemy-Log-Colog.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."polysemy-conc" or (errorHandler.buildDepError "polysemy-conc"))
           (hsPkgs."polysemy-log" or (errorHandler.buildDepError "polysemy-log"))
           (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-log-co-unit" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
             (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

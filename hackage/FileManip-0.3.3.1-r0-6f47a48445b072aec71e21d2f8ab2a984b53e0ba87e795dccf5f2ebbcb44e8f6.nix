@@ -21,7 +21,7 @@
       synopsis = "Expressive file and directory manipulation for Haskell.";
       description = "/DEPRECATED/.  Use the @filemanip@ package (all lowercase)\ninstead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -33,15 +33,15 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

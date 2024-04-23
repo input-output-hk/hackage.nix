@@ -21,7 +21,7 @@
       synopsis = "Traits, datatypes, & parsers for Haskell Stylist";
       description = "Decoupling layer for Haskell Stylist, so other modules don't have to pull in the full CSS engine in order to integrate it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."css-syntax" or (errorHandler.buildDepError "css-syntax"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

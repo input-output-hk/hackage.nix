@@ -21,7 +21,7 @@
       synopsis = "analysis example using perf";
       description = "Analytical tools to use with perf. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."readme-lhs" or (errorHandler.buildDepError "readme-lhs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "perf-examples" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."readme-lhs" or (errorHandler.buildDepError "readme-lhs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

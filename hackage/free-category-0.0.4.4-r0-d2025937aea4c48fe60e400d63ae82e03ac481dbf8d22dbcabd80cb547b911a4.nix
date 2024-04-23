@@ -21,15 +21,15 @@
       synopsis = "efficient data types for free categories and arrows";
       description = "This package provides various data types for free categories, type\naligned queues, arrows and type classes which allow to write abstract\ncategories with side effects (Kleisli like categories).  These are useful\nfor encoding type safe state machines.  Free arrows are also provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free-algebras" or (errorHandler.buildDepError "free-algebras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cats" = {
           depends = [
@@ -39,19 +39,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."free-algebras" or (errorHandler.buildDepError "free-algebras"))
             (hsPkgs."free-category" or (errorHandler.buildDepError "free-category"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-cats" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-category" or (errorHandler.buildDepError "free-category"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Count colors in images";
       description = "This Haskell package contains functions for counting colors in images, either from a file or a camera feed.  The input image must in a standard format like JPEG or PNG.  The analyze function outputs the RGB and CIE-LAB values for each pixel, along with the color detected there.  The tally function outputs a histogram of the colors detected.  The quantize function outputs an image where the pixels have been replaced by the colors detected there.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optional (!flags.nocapture && system.isLinux) (hsPkgs."v4l2" or (errorHandler.buildDepError "v4l2"));
+        ] ++ pkgs.lib.optional (!flags.nocapture && system.isLinux) (hsPkgs."v4l2" or (errorHandler.buildDepError "v4l2"));
         buildable = true;
-        };
+      };
       exes = {
         "color-counter" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (pkgs.lib).optional (!flags.nocapture && system.isLinux) (hsPkgs."v4l2" or (errorHandler.buildDepError "v4l2"));
+          ] ++ pkgs.lib.optional (!flags.nocapture && system.isLinux) (hsPkgs."v4l2" or (errorHandler.buildDepError "v4l2"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Immutable disk-based B* trees";
       description = "Immutable disk-based B* trees";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "btree-quickcheck" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."b-tree" or (errorHandler.buildDepError "b-tree"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "btree-benchmark" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

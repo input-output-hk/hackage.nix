@@ -14,7 +14,7 @@
       identifier = {
         name = "egison-pattern-src-th-mode";
         version = "0.2.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright 2020 coord_e";
       maintainer = "coord_e <me@coord-e.com>, Satoshi Egi <egi@egison.org>";
@@ -24,7 +24,7 @@
       synopsis = "Parser and pretty printer for Egison pattern expressions to use with TH";
       description = "@egison-pattern-src-th-mode@ provides a parser and pretty printer for @egison-pattern-src@ to use it with Template Haskell.\nSee <https://github.com/egison/egison-pattern-src> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,12 +51,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

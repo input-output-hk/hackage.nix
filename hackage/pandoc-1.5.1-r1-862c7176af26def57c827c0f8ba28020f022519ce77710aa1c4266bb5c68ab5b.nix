@@ -14,7 +14,7 @@
       wrappers = true;
       library = true;
       citeproc = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "pandoc"; version = "1.5.1"; };
@@ -27,7 +27,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read markdown and (subsets of)\nreStructuredText, HTML, and LaTeX, and it can write\nmarkdown, reStructuredText, HTML, LaTeX, ConTeXt, Docbook,\nOpenDocument, ODT, RTF, MediaWiki, groff man pages, and\nS5 HTML slide shows.\n\nPandoc extends standard markdown syntax with footnotes,\nembedded LaTeX, definition lists, tables, and other\nfeatures. A compatibility mode is provided for those\nwho need a drop-in replacement for Markdown.pl.\n\nIn contrast to existing tools for converting markdown\nto HTML, which use regex substitutions, pandoc has\na modular design: it consists of a set of readers,\nwhich parse text in a given format and produce a native\nrepresentation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -48,24 +48,24 @@
           (hsPkgs."texmath" or (errorHandler.buildDepError "texmath"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (flags.highlighting) (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (errorHandler.buildDepError "citeproc-hs"));
+          ])) ++ pkgs.lib.optional (flags.highlighting) (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))) ++ pkgs.lib.optional (flags.citeproc) (hsPkgs."citeproc-hs" or (errorHandler.buildDepError "citeproc-hs"));
         buildable = if flags.library then true else false;
-        };
+      };
       exes = {
         "pandoc" = {
-          depends = (pkgs.lib).optional (flags.citeproc) (hsPkgs."citeproc-hs" or (errorHandler.buildDepError "citeproc-hs"));
+          depends = pkgs.lib.optional (flags.citeproc) (hsPkgs."citeproc-hs" or (errorHandler.buildDepError "citeproc-hs"));
           buildable = if flags.executable then true else false;
-          };
+        };
         "markdown2pdf" = {
           buildable = if flags.wrappers then true else false;
-          };
         };
       };
-    }
+    };
+  }

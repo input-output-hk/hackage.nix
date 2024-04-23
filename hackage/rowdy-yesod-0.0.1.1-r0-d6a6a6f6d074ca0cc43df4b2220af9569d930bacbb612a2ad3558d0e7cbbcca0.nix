@@ -21,16 +21,16 @@
       synopsis = "An EDSL for web application routes.";
       description = "Please see the README on Github at <https://github.com/parsonsmatt/rowdy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."rowdy" or (errorHandler.buildDepError "rowdy"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."rowdy" or (errorHandler.buildDepError "rowdy"))
             (hsPkgs."rowdy-yesod" or (errorHandler.buildDepError "rowdy-yesod"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

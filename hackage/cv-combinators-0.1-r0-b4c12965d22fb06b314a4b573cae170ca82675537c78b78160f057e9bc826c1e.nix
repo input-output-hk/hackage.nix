@@ -21,20 +21,20 @@
       synopsis = "Functional Combinators for Computer Vision";
       description = "Initial version; using HOpenCV as a backend";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HOpenCV" or (errorHandler.buildDepError "HOpenCV"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-cv-combinators" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Parsing XML with Parsec";
       description = "Helper functions to use a Parsec-based parser for XML documents.\nThis was originally developed as part of the Barracuda\nad-hoc P2P chat client.\n\nThe Darcs repository can be found at <http://repos.mroot.net/sep07-adhoc>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

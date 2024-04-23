@@ -21,16 +21,16 @@
       synopsis = "Command-line program for type-checking and compiling Agda programs";
       description = "This package provides a command-line program for type-checking and\ncompiling Agda programs. The program can also generate hyperlinked,\nhighlighted HTML files from Agda sources.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "agda" = {
           depends = [
             (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

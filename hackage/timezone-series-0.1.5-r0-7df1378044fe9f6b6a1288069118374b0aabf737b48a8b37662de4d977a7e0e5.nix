@@ -21,14 +21,14 @@
       synopsis = "Enhanced timezone handling for Data.Time";
       description = "This package endows Data.Time, from the time\npackage, with several data types and functions\nfor enhanced processing of timezones. For one way\nto create timezone series, see the timezone-olson\n(http://hackage.haskell.org/package/timezone-olson)\nand timezone-olson-th\n(http://hackage.haskell.org/package/timezone-olson-th)\npackages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

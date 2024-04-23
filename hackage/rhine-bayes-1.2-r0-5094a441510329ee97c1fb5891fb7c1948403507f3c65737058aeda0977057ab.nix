@@ -21,7 +21,7 @@
       synopsis = "monad-bayes backend for Rhine";
       description = "This package provides a backend to the @monad-bayes@ library,\nenabling you to write stochastic processes as signal functions,\nand performing online machine learning on them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."dunai" or (errorHandler.buildDepError "dunai"))
           (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
           (hsPkgs."monad-bayes" or (errorHandler.buildDepError "monad-bayes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rhine-bayes-gloss" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
             (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

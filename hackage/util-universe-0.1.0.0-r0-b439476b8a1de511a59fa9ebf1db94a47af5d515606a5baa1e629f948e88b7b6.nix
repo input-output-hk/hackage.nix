@@ -21,16 +21,16 @@
       synopsis = "Utilities for universal types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
           (hsPkgs."universe-instances-base" or (errorHandler.buildDepError "universe-instances-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."util-universe" or (errorHandler.buildDepError "util-universe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

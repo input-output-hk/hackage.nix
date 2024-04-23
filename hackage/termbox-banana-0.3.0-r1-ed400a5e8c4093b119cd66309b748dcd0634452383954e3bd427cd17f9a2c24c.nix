@@ -21,25 +21,25 @@
       synopsis = "reactive-banana + termbox";
       description = "A @reactive-banana@-based interface to writing @termbox@ programs.\n\nSee also the <https://hackage.haskell.org/termbox termbox> package for a\nlower-level, imperative interface.\n\n__/NOTE/__: The dependencies listed on Hackage are misleading! Most are only\nused in the examples provided, which are built only if the @build-examples@\nflag is explicitly enabled.\n\nThe actual dependencies of the @termbox-banana@ library are only:\n\n* base\n* reactive-banana\n* termbox";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."termbox" or (errorHandler.buildDepError "termbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "termbox-banana-example-echo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
             (hsPkgs."termbox-banana" or (errorHandler.buildDepError "termbox-banana"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "termbox-banana-example-hoogle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,11 +53,11 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = (if !flags.build-examples
             then false
             else true) && (if !flags.build-examples then false else true);
-          };
         };
       };
-    }
+    };
+  }

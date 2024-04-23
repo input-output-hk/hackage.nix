@@ -21,7 +21,7 @@
       synopsis = "Sci-fi roguelike game.  Client library.";
       description = "Roguestar-glut and roguestar-gtk depend on this library for the bulk of their functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."priority-sync" or (errorHandler.buildDepError "priority-sync"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

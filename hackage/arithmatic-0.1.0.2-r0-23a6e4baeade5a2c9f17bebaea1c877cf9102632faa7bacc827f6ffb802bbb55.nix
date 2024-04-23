@@ -21,11 +21,11 @@
       synopsis = "do things with numbers";
       description = "a library which implements arithmatic functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An FFI binding to CMU/Long's BDD library";
       description = "hBDD provides a high-level API to some Boolean Decision Diagram\nlibraries; this is the CMU/Long part of it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,15 +30,15 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hBDD" or (errorHandler.buildDepError "hBDD"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         libs = [
           (pkgs."bdd" or (errorHandler.sysDepError "bdd"))
           (pkgs."mem" or (errorHandler.sysDepError "mem"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

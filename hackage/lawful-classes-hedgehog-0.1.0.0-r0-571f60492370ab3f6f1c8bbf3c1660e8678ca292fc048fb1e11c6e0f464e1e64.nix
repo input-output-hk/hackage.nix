@@ -21,7 +21,7 @@
       synopsis = "Hedgehog support for lawful-classes";
       description = "Support code to check @lawful-classes@ laws using Hedgehog and,\noptionally, Tasty.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."lawful-classes-types" or (errorHandler.buildDepError "lawful-classes-types"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell-only implementation of zlib / DEFLATE";
       description = "A Haskell-only implementation of the zlib / DEFLATE\nprotocol. Currently only implements the decompression\nalgorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "deflate" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."pure-zlib" or (errorHandler.buildDepError "pure-zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-zlib" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

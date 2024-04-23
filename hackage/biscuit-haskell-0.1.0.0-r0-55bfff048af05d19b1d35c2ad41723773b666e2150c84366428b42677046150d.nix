@@ -21,7 +21,7 @@
       synopsis = "Library support for the Biscuit security token";
       description = "Please see the README on GitHub at <https://github.com/divarvel/biscuit-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "biscuit-haskell-exe" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "biscuit-haskell-test" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

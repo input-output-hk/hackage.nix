@@ -21,7 +21,7 @@
       synopsis = "Relatively efficient Tcl interpreter with support for basic operations";
       description = "Interpreter for a subset of tcl";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hiccup" = {
@@ -36,9 +36,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

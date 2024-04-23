@@ -21,7 +21,7 @@
       synopsis = "simple utility for rolling filesystem backups";
       description = "Take backups of a directory and store them in a hashed format.\nCurrently only supports plain files and directories. Very crude\nand limited, do NOT use in production. To be improved. Will break\nbackward compatibility in future versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsbackup" = {
@@ -35,9 +35,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

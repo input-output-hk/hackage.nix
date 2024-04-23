@@ -21,18 +21,18 @@
       synopsis = "Bindings to the c14n implementation in libxml.";
       description = "Haskell bindings for the c14n implementation in libxml (XML canonicalisation). See the README at <https://github.com/mbg/c14n#readme> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."xml2" or (errorHandler.sysDepError "xml2")) ];
         pkgconfig = [
           (pkgconfPkgs."libxml-2.0" or (errorHandler.pkgConfDepError "libxml-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

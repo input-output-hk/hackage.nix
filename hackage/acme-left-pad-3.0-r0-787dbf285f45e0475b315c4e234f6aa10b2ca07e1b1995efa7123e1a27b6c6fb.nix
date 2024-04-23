@@ -21,14 +21,14 @@
       synopsis = "free your haskell from the tyranny of npm!";
       description = "free your haskell from the tyranny of npm!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

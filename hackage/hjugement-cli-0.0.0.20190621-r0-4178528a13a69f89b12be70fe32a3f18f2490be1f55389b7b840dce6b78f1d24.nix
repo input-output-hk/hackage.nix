@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Majority Judgment command line tool";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hjugement-cli" = {
@@ -58,9 +58,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

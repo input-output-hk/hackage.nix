@@ -21,7 +21,7 @@
       synopsis = "WebSockets in the Pipes framework.";
       description = "This library provides Producers and Consumers of data\nto/from WebSocket connections.\n\nExample usage can be found in \"Pipes.WebSockets.Examples\". The executable\nproduced by this package simple runs one of the examples.\n\nImport \"Pipes.WebSockets\" to use the library.\n\nSee @CHANGELOG.md@ for changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pipes-websockets-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-websockets" or (errorHandler.buildDepError "pipes-websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

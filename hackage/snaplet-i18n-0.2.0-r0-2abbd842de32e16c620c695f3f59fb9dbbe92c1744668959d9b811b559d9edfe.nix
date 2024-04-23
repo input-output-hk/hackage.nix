@@ -21,7 +21,7 @@
       synopsis = "snaplet-i18n";
       description = "A light weight i18n snaplet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
           (hsPkgs."map-syntax" or (errorHandler.buildDepError "map-syntax"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."snaplet-i18n" or (errorHandler.buildDepError "snaplet-i18n"))
             (hsPkgs."map-syntax" or (errorHandler.buildDepError "map-syntax"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

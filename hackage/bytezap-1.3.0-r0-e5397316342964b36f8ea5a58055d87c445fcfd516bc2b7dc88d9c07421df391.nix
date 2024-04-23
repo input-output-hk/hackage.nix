@@ -21,7 +21,7 @@
       synopsis = "Bytestring builder with zero intermediate allocation";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."type-level-bytestrings" or (errorHandler.buildDepError "type-level-bytestrings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Webdriver actions to assist with testing a webpage which uses Angular.Js";
       description = "For end to end testing of web applications from Haskell, the\n<https://hackage.haskell.org/package/webdriver webdriver> package is a great tool but\ndoes not provide specific commands to make testing a webpage using\n<http://angularjs.org/ AngularJS> easier.  The\n<https://github.com/angular/protractor protractor> project provides Angular-specific\nwebdriver commands but the test code must be written in javascript.  This package\nfills the gap by reusing some of the protractor code to allow end to end tests of Angular\napplications to be written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             (hsPkgs."webdriver-angular" or (errorHandler.buildDepError "webdriver-angular"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

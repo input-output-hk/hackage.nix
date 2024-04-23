@@ -21,7 +21,7 @@
       synopsis = "Log messages in color";
       description = "ANSI color coding for logging-effect log messages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

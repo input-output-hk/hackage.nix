@@ -21,11 +21,11 @@
       synopsis = "Type-level regular expressions";
       description = "Regular expression matching of Haskell types using nondeterministic finite automata.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

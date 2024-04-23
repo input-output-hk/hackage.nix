@@ -21,21 +21,21 @@
       synopsis = "Simple deterministic game engine";
       description = "Game engine for creating deterministic games.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."deterministic-game-engine" or (errorHandler.buildDepError "deterministic-game-engine"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

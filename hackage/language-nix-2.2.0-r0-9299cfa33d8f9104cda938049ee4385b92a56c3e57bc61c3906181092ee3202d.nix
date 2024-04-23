@@ -21,7 +21,7 @@
       synopsis = "Data types and functions to represent the Nix language";
       description = "Data types and useful functions to represent and manipulate the Nix\nlanguage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parsec-class" or (errorHandler.buildDepError "parsec-class"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

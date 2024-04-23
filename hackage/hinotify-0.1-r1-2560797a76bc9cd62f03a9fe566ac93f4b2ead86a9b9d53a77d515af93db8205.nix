@@ -21,11 +21,11 @@
       synopsis = "Haskell binding to INotify";
       description = "Haskell binding to INotify";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Run a KVStore as a filesystem in polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."unliftio-path" or (errorHandler.buildDepError "unliftio-path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

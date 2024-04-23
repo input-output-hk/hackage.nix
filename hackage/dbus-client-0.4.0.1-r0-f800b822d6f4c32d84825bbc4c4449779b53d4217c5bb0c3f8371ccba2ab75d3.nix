@@ -21,7 +21,7 @@
       synopsis = "Monadic and object-oriented interfaces to DBus";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,21 +21,21 @@
       synopsis = "A parser for indentation based structures";
       description = "This is a complete rewrite of the Indentparser\npackage. Using the monad transformer structer of parsec 3, the\ncode has been greatly simplified. Besides these changes\nthe code is now in public domain.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-expression" = {
-          depends = (pkgs.lib).optional (!(!flags.examples)) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
+          depends = pkgs.lib.optional (!!flags.examples) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

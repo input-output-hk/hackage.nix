@@ -21,7 +21,7 @@
       synopsis = "Conversions on Haskell-Tools AST to prepare for refactorings";
       description = "Converts the Haskell-Tools AST between different versions to have source annotations that help refactorings. Have transformations that convert from ranges to range templates and then to source templates. The AST can be modified correctly when it has source templates. Every syntactically correct program can be transformed into source template form. Also have a transformation to put comments to their places.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."references" or (errorHandler.buildDepError "references"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

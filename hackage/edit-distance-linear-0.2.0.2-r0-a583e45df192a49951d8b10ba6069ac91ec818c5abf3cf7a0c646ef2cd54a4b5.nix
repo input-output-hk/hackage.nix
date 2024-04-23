@@ -21,16 +21,16 @@
       synopsis = "Efficient implementation of the Levenshtein edit distance in linear memory.";
       description = "Please see the README on GitHub at <https://github.com/0xd34df00d/edit-distance-linear#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "edit-distance-linear-exe" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."edit-distance-linear" or (errorHandler.buildDepError "edit-distance-linear"))
-            ];
+          ];
           buildable = if !flags.with-executable then false else true;
-          };
         };
+      };
       tests = {
         "edit-distance-linear-test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
             (hsPkgs."edit-distance-linear" or (errorHandler.buildDepError "edit-distance-linear"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "edit-distance-linear-bench" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."edit-distance-linear" or (errorHandler.buildDepError "edit-distance-linear"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

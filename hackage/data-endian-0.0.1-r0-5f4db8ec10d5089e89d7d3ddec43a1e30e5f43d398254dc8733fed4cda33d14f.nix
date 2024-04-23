@@ -21,11 +21,11 @@
       synopsis = "Endian-sensitive data";
       description = "This package provides helpers for converting endian-sensitive data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tools for working with buildbox benchmark result files.";
       description = "Tools for working with buildbox benchmark result files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "buildbox-results" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."buildbox" or (errorHandler.buildDepError "buildbox"))
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

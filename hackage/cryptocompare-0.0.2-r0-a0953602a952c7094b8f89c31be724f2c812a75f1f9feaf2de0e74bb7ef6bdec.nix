@@ -21,7 +21,7 @@
       synopsis = "Haskell wrapper for the cryptocompare API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cryptocompare-exe" = {
           depends = [
@@ -58,18 +58,18 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cryptocompare-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cryptocompare" or (errorHandler.buildDepError "cryptocompare"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

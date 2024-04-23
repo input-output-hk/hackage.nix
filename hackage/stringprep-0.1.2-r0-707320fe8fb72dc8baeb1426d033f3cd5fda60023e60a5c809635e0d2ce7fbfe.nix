@@ -21,7 +21,7 @@
       synopsis = "Implements the \"StringPrep\" algorithm";
       description = "Implements the \"StringPrep\" algorithm";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."stream-fusion" or (errorHandler.buildDepError "stream-fusion"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

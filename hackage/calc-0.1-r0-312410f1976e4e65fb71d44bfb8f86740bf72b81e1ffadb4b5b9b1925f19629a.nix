@@ -21,7 +21,7 @@
       synopsis = "A small compiler for arithmetic expressions.";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "calc" = {
@@ -31,9 +31,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

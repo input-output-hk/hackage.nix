@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler source language.";
       description = "Disciplined Disciple Compiler Tetra source language.\nDisciple Tetra is the main source language of DDC.\nThe word Tetra refers to the four base kinds:\n'Data', 'Region', 'Effect' and 'Witness'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
           (hsPkgs."ddc-core-salt" or (errorHandler.buildDepError "ddc-core-salt"))
           (hsPkgs."ddc-core-tetra" or (errorHandler.buildDepError "ddc-core-tetra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

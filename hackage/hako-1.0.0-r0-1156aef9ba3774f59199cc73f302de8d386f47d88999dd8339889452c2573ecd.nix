@@ -21,7 +21,7 @@
       synopsis = "A mako-like quasi-quoter template library";
       description = "A quasi-quote based HTML template library with a simplistic\napproach, Hako borrows its philosophy from Mako, a popular\nPython template library. The idea is that the template\nmechanism itself should be kept simple, while exposing the\nfull expressivity of Haskell itself inside the templates.\nAt the same time, any value interpolated into a template gets\nHTML-encoded by default, but you can override this behavior\nby providing your own instances of the 'ToHtml' typeclass.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hako" or (errorHandler.buildDepError "hako"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

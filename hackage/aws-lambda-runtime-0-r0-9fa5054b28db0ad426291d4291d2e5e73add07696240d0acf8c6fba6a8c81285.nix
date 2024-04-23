@@ -21,7 +21,7 @@
       synopsis = "Haskell on AWS Lambda Runtime API";
       description = "Make \"native\" Haskell AWS Lambda (using Runtime API).\n\n* \"AWS.Lambda.RuntimeAPI\" is for writing lambdas\n\n* \"AWS.Lambda.RuntimeAPI.Package\" is for packaging them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-lambda" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

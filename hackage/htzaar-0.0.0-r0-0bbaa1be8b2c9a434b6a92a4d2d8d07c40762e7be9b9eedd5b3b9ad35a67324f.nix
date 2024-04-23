@@ -21,7 +21,7 @@
       synopsis = "A two player abstract strategy game.";
       description = "Htzaar, an implementation of Tzaar ((c) 2007 Kris Brum), is a two player abstract\nstrategy game played on a hexagonal board.  Tzaar is the latest from\nthe GIPF game series.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htzaar" = {
@@ -30,9 +30,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A larger alternative to the Prelude.";
       description = "A GHC-only alternative to the Prelude with a large amount of imports available by default.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

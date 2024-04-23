@@ -21,7 +21,7 @@
       synopsis = "Generic GHC Plugin for annotating Haskell code with source\nlocation data.";
       description = "This package provides a generic Core-to-Core pass for\nannotating Haskell expressions with the original source\nlocations, making them available at runtime.\n\nYou can use it to build a GHC Plugin tailored to\nyour own library by providing a predicate to select\ninteresting expressions for annotation and a function to\nannotate the expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

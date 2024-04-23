@@ -21,7 +21,7 @@
       synopsis = "k-induction for Copilot.";
       description = "Some tools to prove properties on Copilot programs with k-induction model\nchecking.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language (DSL) in\nHaskell that compiles into embedded C.  Copilot contains an interpreter,\nmultiple back-end compilers, and other verification tools.\n\nA tutorial, examples, and other information are available at\n<https://copilot-language.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

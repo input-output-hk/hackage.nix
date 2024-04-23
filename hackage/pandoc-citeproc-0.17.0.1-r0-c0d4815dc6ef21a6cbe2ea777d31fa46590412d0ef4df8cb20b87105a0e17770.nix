@@ -15,7 +15,7 @@
       test_citeproc = false;
       debug = false;
       static = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "pandoc-citeproc"; version = "0.17.0.1"; };
@@ -31,8 +31,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -61,16 +61,16 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
           (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ (pkgs.lib).optional (flags.debug) (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ (pkgs.lib).optional (flags.bibutils) (hsPkgs."hs-bibutils" or (errorHandler.buildDepError "hs-bibutils"))) ++ (pkgs.lib).optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))) ++ (if flags.unicode_collation
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))) ++ pkgs.lib.optional (flags.debug) (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ pkgs.lib.optional (flags.bibutils) (hsPkgs."hs-bibutils" or (errorHandler.buildDepError "hs-bibutils"))) ++ pkgs.lib.optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))) ++ (if flags.unicode_collation
           then [
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-            ]
+          ]
           else [
             (hsPkgs."rfc5051" or (errorHandler.buildDepError "rfc5051"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-citeproc" = {
           depends = ([
@@ -88,9 +88,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           buildable = true;
-          };
+        };
         "test-citeproc" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -108,13 +108,13 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           build-tools = [
             (hsPkgs.buildPackages.pandoc-citeproc.components.exes.pandoc-citeproc or (pkgs.buildPackages.pandoc-citeproc or (errorHandler.buildToolDepError "pandoc-citeproc:pandoc-citeproc")))
-            ];
+          ];
           buildable = if flags.test_citeproc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc-citeproc" = {
           depends = ([
@@ -132,12 +132,12 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           build-tools = [
             (hsPkgs.buildPackages.pandoc-citeproc.components.exes.pandoc-citeproc or (pkgs.buildPackages.pandoc-citeproc or (errorHandler.buildToolDepError "pandoc-citeproc:pandoc-citeproc")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

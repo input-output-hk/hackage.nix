@@ -21,15 +21,15 @@
       synopsis = "Self-optimizing tuple types";
       description = "Self optimizing tuple types.\n\nAdaptive tuples are tuple types in which the number of elements is\ndetermined at run-time.  These structures are designed to combine\nthe space-efficiency of tuples with the size flexibility of lists.\n\nAdaptive tuples provide lazy and strict, unpacked data structures\nfor all tuple sizes from 0 to 20 elements.  Adaptive tuples of more than\n20 elements are allowed, however they are stored in an ordinary list.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

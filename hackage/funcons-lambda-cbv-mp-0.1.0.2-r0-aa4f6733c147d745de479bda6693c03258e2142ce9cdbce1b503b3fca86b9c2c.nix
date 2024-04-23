@@ -21,7 +21,7 @@
       synopsis = "call-by-value lambda-calculus with meta-programming";
       description = "Basic call-by-value lambda-calculus with operational semantics based on Funcons and meta-programming extensions";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambda-cbv" = {
@@ -31,9 +31,9 @@
             (hsPkgs."funcons-tools" or (errorHandler.buildDepError "funcons-tools"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

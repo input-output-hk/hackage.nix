@@ -21,7 +21,7 @@
       synopsis = "Utility functions for using funflow with nix";
       description = "This library provides functions to create flows which run commands\nin environments created by nix commands.\nIt is designed to be like the docker integration but the environments\nare created by nix rather than in a container.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

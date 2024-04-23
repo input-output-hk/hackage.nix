@@ -21,7 +21,7 @@
       synopsis = "Extensions for a \"hashtables\" library";
       description = "A dome API over the \\\"hashtables\\\" library,\nwhich provides 'null' and 'size' functions of /O(1)/ complexity and\nadvanced data structures: multimap, set, \"StableName\"-based structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
             (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

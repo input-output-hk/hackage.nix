@@ -21,15 +21,15 @@
       synopsis = "(C)oncurrent (M)onoidal (F)olds";
       description = "This package provides concurrent monoidal folds over various structures.\nBecause the folds are concurrent, the monoids are assumed to be commutative.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cmf" or (errorHandler.buildDepError "cmf"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

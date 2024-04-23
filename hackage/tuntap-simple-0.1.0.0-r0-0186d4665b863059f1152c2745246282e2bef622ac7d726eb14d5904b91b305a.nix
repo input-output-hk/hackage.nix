@@ -21,14 +21,14 @@
       synopsis = "A simple tun/tap library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ioctl" or (errorHandler.buildDepError "ioctl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

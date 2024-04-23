@@ -21,7 +21,7 @@
       synopsis = "Haskell Debug Adapter for Visual Studio Code.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phoityne-vscode" = {
@@ -52,9 +52,9 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

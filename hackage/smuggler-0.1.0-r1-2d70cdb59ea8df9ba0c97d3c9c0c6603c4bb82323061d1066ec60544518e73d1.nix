@@ -21,7 +21,7 @@
       synopsis = "GHC Source Plugin that helps to manage imports";
       description = "== Usage\n\nAdd @smuggler@ to the dependencies of your project.\n\nThen add the following options: @-fplugin=Smuggler.Plugin@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
           (hsPkgs."hash-store" or (errorHandler.buildDepError "hash-store"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "play-smuggler" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."smuggler" or (errorHandler.buildDepError "smuggler"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "smuggler-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."smuggler" or (errorHandler.buildDepError "smuggler"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

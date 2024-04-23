@@ -21,11 +21,11 @@
       synopsis = "Haskell binding to the Irrlicht game engine.";
       description = "Haskell binding to the Irrlicht game engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

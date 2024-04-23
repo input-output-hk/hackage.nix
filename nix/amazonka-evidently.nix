@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-evidently-2.0-r0-b84cbf1772045f163313b2917bc54ec401ffafea3d2edd72457a697f851bb702.nix;
         revNum = 0;
         sha256 = "b84cbf1772045f163313b2917bc54ec401ffafea3d2edd72457a697f851bb702";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

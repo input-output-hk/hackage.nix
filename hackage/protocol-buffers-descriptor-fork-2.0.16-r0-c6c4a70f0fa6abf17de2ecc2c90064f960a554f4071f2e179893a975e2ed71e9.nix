@@ -14,7 +14,7 @@
       identifier = {
         name = "protocol-buffers-descriptor-fork";
         version = "2.0.16";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2012 Christopher Edward Kuklewicz";
       maintainer = "Stefan Wehr <wehr@cp-med.com>";
@@ -24,15 +24,15 @@
       synopsis = "Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification";
       description = "Uses protocol-buffers package. This is a fork of the protocol-buffers-descriptor library at http://hackage.haskell.org/package/protocol-buffers-descriptor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."protocol-buffers-fork" or (errorHandler.buildDepError "protocol-buffers-fork"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

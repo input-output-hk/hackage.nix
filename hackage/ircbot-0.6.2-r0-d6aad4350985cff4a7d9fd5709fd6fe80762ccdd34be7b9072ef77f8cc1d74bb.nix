@@ -21,7 +21,7 @@
       synopsis = "A library for writing irc bots";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

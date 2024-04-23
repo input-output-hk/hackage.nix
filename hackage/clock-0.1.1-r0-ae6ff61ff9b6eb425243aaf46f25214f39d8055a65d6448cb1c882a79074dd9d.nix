@@ -21,11 +21,11 @@
       synopsis = "low-level binding to time.h: clock_gettime and clock_getres";
       description = "low-level binding to time.h: clock_gettime and clock_getres.\nclock_settime will be added in later versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

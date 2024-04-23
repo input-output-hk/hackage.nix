@@ -6,10 +6,10 @@
         nix = import ../hackage/retroclash-sim-0.1.0-r0-f4a83dd0c98e7f2bd41bfff748112d3b180f4bf7d3e66bcced54a6fe478e43ba.nix;
         revNum = 0;
         sha256 = "f4a83dd0c98e7f2bd41bfff748112d3b180f4bf7d3e66bcced54a6fe478e43ba";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.1.1" = {
     sha256 = "8347fdd19888044dd4f2636c153c0957230de28d51452ea4dffa75df973df190";
     revisions = {
@@ -17,13 +17,13 @@
         nix = import ../hackage/retroclash-sim-0.1.1-r0-079aeec4edb7298506348480df543cf59a1c1d7249aa1d0c7fb01cab0f609ff8.nix;
         revNum = 0;
         sha256 = "079aeec4edb7298506348480df543cf59a1c1d7249aa1d0c7fb01cab0f609ff8";
-        };
+      };
       r1 = {
         nix = import ../hackage/retroclash-sim-0.1.1-r1-cd0079dc90fdf50d69bad2ac415745222838280b1615a7149ffe8c38e4b94183.nix;
         revNum = 1;
         sha256 = "cd0079dc90fdf50d69bad2ac415745222838280b1615a7149ffe8c38e4b94183";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

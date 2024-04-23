@@ -21,14 +21,14 @@
       synopsis = "A raw binding for the directX 11";
       description = "A raw binding for the directX 11   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."c-storable-deriving" or (errorHandler.buildDepError "c-storable-deriving"))
-          ];
+        ];
         libs = [
           (pkgs."d3d11" or (errorHandler.sysDepError "d3d11"))
           (pkgs."d3dx11" or (errorHandler.sysDepError "d3dx11"))
@@ -36,18 +36,18 @@
           (pkgs."d3dxof" or (errorHandler.sysDepError "d3dxof"))
           (pkgs."dxgi" or (errorHandler.sysDepError "dxgi"))
           (pkgs."dxguid" or (errorHandler.sysDepError "dxguid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HelloWorld" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             (hsPkgs."d3d11binding" or (errorHandler.buildDepError "d3d11binding"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

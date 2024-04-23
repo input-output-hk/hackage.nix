@@ -21,7 +21,7 @@
       synopsis = "Simple and typesafe layer over the Munkres package.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."Munkres" or (errorHandler.buildDepError "Munkres"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

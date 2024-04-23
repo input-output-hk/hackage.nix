@@ -21,27 +21,27 @@
       synopsis = "Helps migrating projects to base-compat(-batteries).";
       description = "Please see the included README or visit <https://github.com/bergmark/base-compat-migrate#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "base-compat-migrate-generate" = {
-          depends = (pkgs.lib).optionals (flags.exe) [
+          depends = pkgs.lib.optionals (flags.exe) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-            ];
+          ];
           buildable = if flags.exe then true else false;
-          };
         };
       };
-    }
+    };
+  }

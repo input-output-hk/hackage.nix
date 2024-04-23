@@ -21,7 +21,7 @@
       synopsis = "Trying to compose non-composable";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

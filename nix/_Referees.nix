@@ -6,8 +6,8 @@
         nix = import ../hackage/Referees-0.0.0-r0-31e259ac090931ad5873479f170d4088f9c4dcd7f00dc21483c23436428f143b.nix;
         revNum = 0;
         sha256 = "31e259ac090931ad5873479f170d4088f9c4dcd7f00dc21483c23436428f143b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

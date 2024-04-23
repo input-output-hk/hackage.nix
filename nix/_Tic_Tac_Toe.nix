@@ -6,8 +6,8 @@
         nix = import ../hackage/TicTacToe-0.0.1-r0-b68b5cceaf13d61ce20741f07800d605d992d81e92886896cf298f7aa4b2cdbf.nix;
         revNum = 0;
         sha256 = "b68b5cceaf13d61ce20741f07800d605d992d81e92886896cf298f7aa4b2cdbf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

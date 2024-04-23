@@ -21,7 +21,7 @@
       synopsis = "Enumerator interface to SamTools library";
       description = "Enumerator interface to SamTools library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."samtools" or (errorHandler.buildDepError "samtools"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

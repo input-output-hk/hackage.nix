@@ -21,16 +21,16 @@
       synopsis = "Parsing of ASN1 definitions";
       description = "Language.ASN1 is a haskell library for the analysis of ASN.1 code. It features an almost-complete, somewhat tested parser for large subset of X.680-0207 -- X.683-0207 standards";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dump-asn1-ast" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."language-asn1" or (errorHandler.buildDepError "language-asn1"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "LanguageASN1Testsuite" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

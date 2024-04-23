@@ -21,16 +21,16 @@
       synopsis = "Extract data from a keyword-args config file format";
       description = "Extracts data from a configuration file with keywords\nseparated fram arguments by one or more spaces. Removes\ncomments and unnecessary whitespace.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "keyword-args" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "keyword-args-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parseerror-eq" or (errorHandler.buildDepError "parseerror-eq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

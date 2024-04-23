@@ -21,7 +21,7 @@
       synopsis = "Using MySQL to store id-to-json tables.";
       description = "Visit the homepage for more information, or read the readme.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mysql-json-table-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
             (hsPkgs."mysql-json-table" or (errorHandler.buildDepError "mysql-json-table"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

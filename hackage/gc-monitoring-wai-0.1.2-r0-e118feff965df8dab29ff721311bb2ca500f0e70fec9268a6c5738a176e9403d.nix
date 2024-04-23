@@ -21,7 +21,7 @@
       synopsis = "a wai application to show GHC.GCStats";
       description = "a wai application to show GHC.GCStats, look `test.hs` for usage, package also contains a munin plugin script in python.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

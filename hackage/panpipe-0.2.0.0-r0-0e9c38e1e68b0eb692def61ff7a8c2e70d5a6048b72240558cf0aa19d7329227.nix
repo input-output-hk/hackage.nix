@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter to execute code blocks";
       description = "Executes pandoc code blocks annotated with 'pipe'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "panpipe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."panpipe" or (errorHandler.buildDepError "panpipe"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

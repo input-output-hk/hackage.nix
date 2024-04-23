@@ -21,7 +21,7 @@
       synopsis = "Baserock Definitions Schema";
       description = "Baserock Definitions Schema - Parsers, Printers, Encoders, Decoders, ASTs, Graphs and Traversals";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."yaml-pretty-extras" or (errorHandler.buildDepError "yaml-pretty-extras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "baserock" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."yaml-pretty-extras" or (errorHandler.buildDepError "yaml-pretty-extras"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "earthquake-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."yaml-pretty-extras" or (errorHandler.buildDepError "yaml-pretty-extras"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

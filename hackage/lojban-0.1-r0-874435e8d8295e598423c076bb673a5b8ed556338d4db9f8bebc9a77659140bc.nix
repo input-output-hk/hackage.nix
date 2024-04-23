@@ -21,7 +21,7 @@
       synopsis = "Useful utilities for the Lojban language";
       description = "Some utilities such as querying Jbovlaste XML\nexports for gismu, gloss, rafsi, etc. and\nlujvo-decomposition. More stuff to come.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,16 +35,16 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jbovlastegendb" = {
           depends = [
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

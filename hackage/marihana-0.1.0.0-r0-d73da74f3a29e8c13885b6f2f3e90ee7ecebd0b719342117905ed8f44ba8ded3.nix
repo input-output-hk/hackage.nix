@@ -21,29 +21,29 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/suzukeno/marihana#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "marihana" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."marihana" or (errorHandler.buildDepError "marihana"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "marihana-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."marihana" or (errorHandler.buildDepError "marihana"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

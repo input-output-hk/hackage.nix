@@ -21,7 +21,7 @@
       synopsis = "GHCi based bare bones IDE";
       description = "Either \\\"GHCi as a daemon\\\" or \\\"GHC + a bit of an IDE\\\". A very simple Haskell development tool which shows you the errors in your project and updates them whenever you save. Run @ghcid --topmost --command=ghci@, where @--topmost@ makes the window on top of all others (Windows only) and @--command@ is the command to start GHCi on your project (defaults to @ghci@ if you have a @.ghci@ file, or else to @cabal repl@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"));
         buildable = true;
-        };
+      };
       exes = {
         "ghcid" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ghcid_test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

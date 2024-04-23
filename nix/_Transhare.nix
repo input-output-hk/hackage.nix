@@ -6,8 +6,8 @@
         nix = import ../hackage/Transhare-0.9-r0-e905bcbc93462daf42ed9b5160ddb137e3f3319e48300b444730b4ec53344d4a.nix;
         revNum = 0;
         sha256 = "e905bcbc93462daf42ed9b5160ddb137e3f3319e48300b444730b4ec53344d4a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "QuasiQuoter and Template Haskell splices for creating proxies at higher-kinds";
       description = "QuasiQuoter and Template Haskell splices for creating proxies at\nhigher-kinds (via @type-spine@'s @k -> *@ kind wrappers)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."type-spine" or (errorHandler.buildDepError "type-spine"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

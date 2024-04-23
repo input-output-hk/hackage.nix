@@ -21,7 +21,7 @@
       synopsis = "Crack various integer, floating-point data formats";
       description = "Crack HP, SP and DP floats and 8, 16, 32, 64 bit words and integers.\n\nFor details, please see: <http://github.com/LeventErkok/crackNum/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."FloatingHex" or (errorHandler.buildDepError "FloatingHex"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "crackNum" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
             (hsPkgs."FloatingHex" or (errorHandler.buildDepError "FloatingHex"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

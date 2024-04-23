@@ -21,11 +21,11 @@
       synopsis = "Restricted categories";
       description = "Data-category is a collection of categories, and some categorical constructions on them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

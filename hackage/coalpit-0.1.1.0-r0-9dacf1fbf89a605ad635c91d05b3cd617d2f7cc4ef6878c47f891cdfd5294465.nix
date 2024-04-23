@@ -21,7 +21,7 @@
       synopsis = "Command-line options and DSV parsing and printing";
       description = "This library generates parsers and printers for\ngiven data types, in the form of command-line\narguments or DSVs – so that they can be used to\nquickly get program interfaces via a shared\nlibrary, while being suitable for scripting and\nas user interfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-coalpit" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-travis" or (errorHandler.buildDepError "tasty-travis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

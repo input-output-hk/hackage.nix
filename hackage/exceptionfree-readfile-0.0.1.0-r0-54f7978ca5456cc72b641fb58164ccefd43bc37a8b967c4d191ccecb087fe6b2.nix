@@ -21,12 +21,12 @@
       synopsis = "An exception-free readFile for use with '+RTS -xc -RTS' projects";
       description = "Please see the README on Gitlab at <https://gitlab.com/mrman/haskell-exceptionfree-readfile#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."exceptionfree-readfile" or (errorHandler.buildDepError "exceptionfree-readfile"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "e2e" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -44,10 +44,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."exceptionfree-readfile" or (errorHandler.buildDepError "exceptionfree-readfile"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

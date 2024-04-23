@@ -21,7 +21,7 @@
       synopsis = "Multivariate Dirichlet distribution";
       description = "Please see the README on GitHub at <https://github.com/dschrempf/dirichlet#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dirichlet-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

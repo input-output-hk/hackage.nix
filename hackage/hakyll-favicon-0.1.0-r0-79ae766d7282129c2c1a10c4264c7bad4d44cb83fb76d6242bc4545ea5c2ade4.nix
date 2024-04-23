@@ -21,34 +21,34 @@
       synopsis = "";
       description = "Generate favicons for Hakyll websites";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hakyll-favicon" or (errorHandler.buildDepError "hakyll-favicon"))
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hakyll-favicon-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hakyll-favicon" or (errorHandler.buildDepError "hakyll-favicon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

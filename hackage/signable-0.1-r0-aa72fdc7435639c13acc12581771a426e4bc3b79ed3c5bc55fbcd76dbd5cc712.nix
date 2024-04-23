@@ -21,7 +21,7 @@
       synopsis = "Deterministic serialisation and signatures with proto-lens support";
       description = "You can find documentation at <http://hackage.haskell.org/package/signable/docs/Data-Signable.html hackage>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."secp256k1-haskell" or (errorHandler.buildDepError "secp256k1-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "signable-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

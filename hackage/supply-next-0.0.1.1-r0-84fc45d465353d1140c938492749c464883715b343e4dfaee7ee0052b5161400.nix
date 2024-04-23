@@ -21,7 +21,7 @@
       synopsis = "Supply-chain interface for basic streaming";
       description = "@Next@ is a supply-chain interface for possibly-finite\nenumeration. The @TerminableStream@ generalizes @Next@\nso that more complex interfaces that incorporate\nenumeration can use some of these utilities. We offer\ntype aliases @Producer@, @Pipe@, and @Consumer@ to\nconveniently describe vendors and jobs that involve a\n@Next@ interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."quaalude" or (errorHandler.buildDepError "quaalude"))
           (hsPkgs."supply-chain" or (errorHandler.buildDepError "supply-chain"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-supply-next" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."supply-next" or (errorHandler.buildDepError "supply-next"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

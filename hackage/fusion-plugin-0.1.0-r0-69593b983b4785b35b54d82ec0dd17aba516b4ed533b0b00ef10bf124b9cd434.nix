@@ -21,15 +21,15 @@
       synopsis = "GHC plugin to make stream fusion more predictable.";
       description = "This plugin provides the programmer with a way to annotate certain\ntypes using a 'Fuse' pragma. The programmer would annotate the types\nthat are to be eliminated by fusion. During the simplifier phase the\nplugin goes through the relevant bindings and if one of these types\nare found inside a binding then that binding is marked to be inlined\nirrespective of the size.\n\nThis plugin was primarily motivated by\n<https://hackage.haskell.org/package/streamly streamly> but it can\nbe used in general.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

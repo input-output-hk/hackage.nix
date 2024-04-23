@@ -21,7 +21,7 @@
       synopsis = "Fast Internet Relay Chat (IRC) library";
       description = "Fast Internet Relay Chat (IRC) library.  This library implements a\nattoparsec-based fast parser for IRC messages as well as a network\nmanager for IRC clients (user agents and bots).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."network-fancy" or (errorHandler.buildDepError "network-fancy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

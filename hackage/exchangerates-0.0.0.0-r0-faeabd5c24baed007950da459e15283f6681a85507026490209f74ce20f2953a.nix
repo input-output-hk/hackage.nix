@@ -21,7 +21,7 @@
       synopsis = "A Haskell client for https://exchangeratesapi.io/";
       description = "Please see the README on Github at <https://github.com/NorfairKing/exchangerates#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
           (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "exchangerates-test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
             (hsPkgs."validity-time" or (errorHandler.buildDepError "validity-time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

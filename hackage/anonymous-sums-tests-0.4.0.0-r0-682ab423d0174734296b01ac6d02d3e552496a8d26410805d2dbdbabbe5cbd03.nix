@@ -21,15 +21,15 @@
       synopsis = "QuickCheck functions to accompany the anonymous-sums package";
       description = "Contains generators, coarbitrary functions, and shrinkers to\naccompany the anonymous-sums package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."anonymous-sums" or (errorHandler.buildDepError "anonymous-sums"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

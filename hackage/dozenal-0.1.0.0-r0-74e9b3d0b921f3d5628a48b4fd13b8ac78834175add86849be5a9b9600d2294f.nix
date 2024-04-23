@@ -21,11 +21,11 @@
       synopsis = "A Haskell library for using Dozenal (Duodecimal - Base 12) numbers.";
       description = "A Haskell library for using Dozenal (Duodecimal - Base 12) numbers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

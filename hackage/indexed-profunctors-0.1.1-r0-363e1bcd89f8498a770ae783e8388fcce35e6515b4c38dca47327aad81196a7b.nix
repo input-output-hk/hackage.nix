@@ -21,11 +21,11 @@
       synopsis = "Utilities for indexed profunctors";
       description = "This package contains basic definitions related to indexed profunctors.  These\nare primarily intended as internal utilities to support the @optics@ and\n@generic-lens@ package families.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

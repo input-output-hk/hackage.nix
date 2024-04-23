@@ -21,7 +21,7 @@
       synopsis = "A converter for spinal, snake and camel case";
       description = "A parser-based converter library for spinal, snake and camel case.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "api-tests" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
             (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
             (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

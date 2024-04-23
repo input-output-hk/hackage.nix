@@ -21,7 +21,7 @@
       synopsis = "Implementation of a Bitcoin hierarchical deterministric wallet (BIP32).";
       description = "This package provides functions for generating hierarchical deterministic\nkeys (BIP32). It also provides functions for building and signing both\nsimple transactions and multisignature transactions. This package also\nprovides a command lines application called hw (haskoin wallet). It is a\nlightweight bitcoin wallet featuring BIP32 key management, deterministic\nsignatures (RFC-6979) and first order support for multisignature\ntransactions. A library API for hw is also exposed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."haskoin-protocol" or (errorHandler.buildDepError "haskoin-protocol"))
           (hsPkgs."haskoin-script" or (errorHandler.buildDepError "haskoin-script"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw" = {
           depends = [
@@ -75,10 +75,10 @@
             (hsPkgs."haskoin-crypto" or (errorHandler.buildDepError "haskoin-crypto"))
             (hsPkgs."haskoin-protocol" or (errorHandler.buildDepError "haskoin-protocol"))
             (hsPkgs."haskoin-script" or (errorHandler.buildDepError "haskoin-script"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-haskoin-wallet" = {
           depends = [
@@ -108,9 +108,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

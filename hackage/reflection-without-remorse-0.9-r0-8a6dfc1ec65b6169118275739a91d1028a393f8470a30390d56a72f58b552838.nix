@@ -21,14 +21,14 @@
       synopsis = "Efficient free and operational monads. ";
       description = "Free and operational monads that efficiently support alternating between building and observing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."type-aligned" or (errorHandler.buildDepError "type-aligned"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

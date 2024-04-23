@@ -21,7 +21,7 @@
       synopsis = "A general way to consume input using applicative functors";
       description = "Digestive functors is a library to generate and process\nHTML forms.  You can find an introduction here:\n<http://github.com/jaspervdj/digestive-functors/blob/master/README.lhs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

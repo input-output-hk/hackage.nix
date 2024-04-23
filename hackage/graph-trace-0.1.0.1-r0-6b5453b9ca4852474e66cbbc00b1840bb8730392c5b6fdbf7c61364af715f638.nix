@@ -21,7 +21,7 @@
       synopsis = "Trace the call graph of a program";
       description = "A plugin that instruments a program so that running it produces a log which\ncan be processed into a visual graph using @graph-trace-viz@.\n\nSee the [README](https://github.com/aaronallen8455/graph-trace#graph-trace) for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

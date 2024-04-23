@@ -21,7 +21,7 @@
       synopsis = "Authentication plugin for Yesod using smbclient";
       description = "Provides smbclient authentication module that simply\nlets a user specify his/her identifier.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

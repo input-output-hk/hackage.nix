@@ -21,18 +21,18 @@
       synopsis = "Bindings to the ALSA simple mixer API.";
       description = "This package provides bindings to the ALSA simple mixer API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
-          ];
+        ];
         libs = [ (pkgs."asound" or (errorHandler.sysDepError "asound")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

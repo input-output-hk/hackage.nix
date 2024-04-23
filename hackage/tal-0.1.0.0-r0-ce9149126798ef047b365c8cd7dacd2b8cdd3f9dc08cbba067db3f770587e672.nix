@@ -21,7 +21,7 @@
       synopsis = "An implementation of Typed Assembly Language (Morrisett, Walker, Crary, Glew)";
       description = "\"From System F to Typed-Assembly Language\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unbound" or (errorHandler.buildDepError "unbound"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

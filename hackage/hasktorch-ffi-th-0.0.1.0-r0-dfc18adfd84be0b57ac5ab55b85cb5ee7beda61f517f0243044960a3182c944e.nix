@@ -21,7 +21,7 @@
       synopsis = "Bindings to Torch";
       description = "Torch (and THNN) FFI bindings for CPU-based tensors and neural networks in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."ATen" or (errorHandler.sysDepError "ATen")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hasktorch-types-th" or (errorHandler.buildDepError "hasktorch-types-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

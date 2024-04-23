@@ -6,8 +6,8 @@
         nix = import ../hackage/WebBits-multiplate-0.0.0.1-r0-fa31dba3d33f04002d48f7dc49265f52c2943bed8c007a2fbdc2a9d7376db806.nix;
         revNum = 0;
         sha256 = "fa31dba3d33f04002d48f7dc49265f52c2943bed8c007a2fbdc2a9d7376db806";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

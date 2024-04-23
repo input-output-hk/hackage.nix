@@ -6,8 +6,8 @@
         nix = import ../hackage/cltw-1.1.4-r0-ae72cba30950fcc2906223293cdac59074ece4924e0c35542f58eab1f507eaa5.nix;
         revNum = 0;
         sha256 = "ae72cba30950fcc2906223293cdac59074ece4924e0c35542f58eab1f507eaa5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

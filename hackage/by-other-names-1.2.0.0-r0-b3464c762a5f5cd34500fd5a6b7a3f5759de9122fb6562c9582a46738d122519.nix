@@ -21,7 +21,7 @@
       synopsis = "Give aliases to record fields.";
       description = "Give aliases to record fields.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,17 +41,17 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."by-other-names" or (errorHandler.buildDepError "by-other-names"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."by-other-names" or (errorHandler.buildDepError "by-other-names"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

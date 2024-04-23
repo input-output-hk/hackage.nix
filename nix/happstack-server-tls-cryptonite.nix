@@ -6,8 +6,8 @@
         nix = import ../hackage/happstack-server-tls-cryptonite-0.1.1-r0-98b611f169294255b619c1d21866854453d1058b015aaebb26130009fb3e29cf.nix;
         revNum = 0;
         sha256 = "98b611f169294255b619c1d21866854453d1058b015aaebb26130009fb3e29cf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "error tracking through rollbar.com";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

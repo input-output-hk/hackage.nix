@@ -21,16 +21,16 @@
       synopsis = "a simple password generator";
       description = "hpg is a free, open source password generator. It's design\nis pretty simple and it generates random passwords between\n1 and 2^16 -1 characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ] ++ (pkgs.lib).optional (system.isOpenbsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (system.isOpenbsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

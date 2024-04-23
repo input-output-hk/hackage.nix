@@ -21,7 +21,7 @@
       synopsis = "VFR waypoints, as published in the AIP (ERSA)";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nVFR waypoints, as published in the AIP (ERSA)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
           (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vfr-waypoints" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vfr-waypoints" or (errorHandler.buildDepError "vfr-waypoints"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vfr-waypoints" or (errorHandler.buildDepError "vfr-waypoints"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

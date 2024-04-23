@@ -21,7 +21,7 @@
       synopsis = "my custom prelude";
       description = "my custom prelude. diverges from base's; adding, removing, and shadowing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

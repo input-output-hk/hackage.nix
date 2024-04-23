@@ -21,15 +21,15 @@
       synopsis = "Correctly-rounded arbitrary-precision floating-point arithmetic";
       description = "This package imports functions from MPFR to Haskell in the same way as GMP is alreay imported.\nThis package should link correctly on either MacOS X or Linux with GHC 7.8.1 or later.\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

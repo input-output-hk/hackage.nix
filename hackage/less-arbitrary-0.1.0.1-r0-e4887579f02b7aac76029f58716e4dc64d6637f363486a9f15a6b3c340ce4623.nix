@@ -21,7 +21,7 @@
       synopsis = "Linear time testing with variant of Arbitrary class that always terminates.";
       description = "Ever found non-terminating Arbitrary instance?\nEver wondered what would be a runtime cost of particular Arbitrary instance?\n\nNever let it bother you again:\nthis variant of Arbitrary is automatically generating instances, and allows you to see predictable linear time generators\nfor most types (providing that you have any terminating constructor, that is constructor that does not go deeper into the data structure.)\n\nUsage:\n```\nimport Test.LessArbitrary\n\ndata MyDataType = ...\nderiving (Show, Generic)\n\ninstance LessArbitrary MyDataType\ninstance Arbitrary where\narbitrary = lessArbitrary\n```";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "less-arbitrary" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/elm-websocket-1.0-r0-7f3c3e6360456d95da60c15243f1fd567eb594e10a01cacdb0b227f5c404fbf3.nix;
         revNum = 0;
         sha256 = "7f3c3e6360456d95da60c15243f1fd567eb594e10a01cacdb0b227f5c404fbf3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

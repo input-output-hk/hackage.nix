@@ -21,7 +21,7 @@
       synopsis = "A subsite for displaying git information.";
       description = "(Please see the readme) https://github.com/DanBurton/yesod-gitrev#readme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-gitrev" or (errorHandler.buildDepError "yesod-gitrev"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

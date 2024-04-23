@@ -21,11 +21,11 @@
       synopsis = "A documentation-only package exemplifying haddock markup features";
       description = "This package provides a documentation module giving examples of all haddock markup features.\nCompared with the official <https://haskell-haddock.readthedocs.io/en/latest/markup.html haddock documentation>\n,this package is more compact, while also being descriptive enough to use from scratch.\nBoth the source and rendered document are meant to be used together.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

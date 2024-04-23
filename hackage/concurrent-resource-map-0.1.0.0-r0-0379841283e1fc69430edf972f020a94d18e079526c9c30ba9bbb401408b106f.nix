@@ -21,15 +21,15 @@
       synopsis = "Concurrent resource map";
       description = "Please see the README on GitHub at <https://github.com/Fuuzetsu/concurrent-resource-map#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "concurrent-resource-map-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."concurrent-resource-map" or (errorHandler.buildDepError "concurrent-resource-map"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

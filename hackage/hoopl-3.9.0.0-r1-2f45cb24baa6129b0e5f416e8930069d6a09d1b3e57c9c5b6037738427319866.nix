@@ -21,14 +21,14 @@
       synopsis = "A library to support dataflow analysis and optimization";
       description = "Higher-order optimization library\n\nChanges in 3.9.0.0\n\n* Lots of API changes; mainly a new API for working with Blocks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Derive transformer type classes with DerivingVia";
       description = "MonadTrans is a prime example of a type class, that is not derivable with\nGeneralizedNewtypeDeriving.\nA simple way to still derive such an instance is by using DerivingVia.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

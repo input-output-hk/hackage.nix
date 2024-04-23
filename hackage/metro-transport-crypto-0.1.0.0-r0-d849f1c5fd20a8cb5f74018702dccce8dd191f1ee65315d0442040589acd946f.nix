@@ -21,7 +21,7 @@
       synopsis = "Crypto transport for metro";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro/tree/master/metro-transport-crypto#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."metro" or (errorHandler.buildDepError "metro"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "metro-transport-crypto-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."metro" or (errorHandler.buildDepError "metro"))
             (hsPkgs."metro-transport-crypto" or (errorHandler.buildDepError "metro-transport-crypto"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

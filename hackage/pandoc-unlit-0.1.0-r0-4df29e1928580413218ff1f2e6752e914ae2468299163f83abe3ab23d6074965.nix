@@ -21,16 +21,16 @@
       synopsis = "Literate Haskell support for GitHub's Markdown flavor";
       description = "Documentation is here: <https://github.com/sol/pandoc-unlit#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc-unlit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

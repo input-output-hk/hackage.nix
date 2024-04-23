@@ -6,8 +6,8 @@
         nix = import ../hackage/harvest-api-0.1.0-r0-4beb59c252daafb3eae9ccedd59b8211ab13e74bd027944f3771f1dc8d891942.nix;
         revNum = 0;
         sha256 = "4beb59c252daafb3eae9ccedd59b8211ab13e74bd027944f3771f1dc8d891942";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

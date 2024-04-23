@@ -21,7 +21,7 @@
       synopsis = "Convert Haskell types in OCaml types";
       description = "README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

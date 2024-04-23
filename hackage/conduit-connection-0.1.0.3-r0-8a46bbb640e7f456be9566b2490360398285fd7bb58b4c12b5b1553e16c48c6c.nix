@@ -21,7 +21,7 @@
       synopsis = "Conduit source and sink for Network.Connection.";
       description = "@conduit-connection@ provides a \"Data.Conduit\" source and sink based on\n\"Network.Connection\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-connection" or (errorHandler.buildDepError "conduit-connection"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

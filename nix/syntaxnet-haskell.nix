@@ -6,8 +6,8 @@
         nix = import ../hackage/syntaxnet-haskell-0.1.1.0-r0-90a8e1755b0e10f4e07564165e9601cfbc40b094eb5360df89b318b86da1f82e.nix;
         revNum = 0;
         sha256 = "90a8e1755b0e10f4e07564165e9601cfbc40b094eb5360df89b318b86da1f82e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

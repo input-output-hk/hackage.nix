@@ -21,7 +21,7 @@
       synopsis = "Interface for MPRIS";
       description = "This package implements the Media Player Remote Interfacing\nSpecification (MPRIS), a standard D-Bus interface which aims to\nprovide a common programmatic API for controlling media players.\n\nThe DBus specification consists of two main interfaces:\n@org.mpris.MediaPlayer2@ and @org.mpris.MediaPlayer2.Player@ which\nare implemented as modules \"Mpris.MediaPlayer2\" and\n\"Mpris.MediaPlayer2.Player\".\n\nThe full specification can be found at: <http://specifications.freedesktop.org/mpris-spec/latest/index.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

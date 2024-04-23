@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to a security-related functions of the Windows API";
       description = "This package contains bindings for security-related functions of the Windows API.\nIts main features are account name/SID lookup and editing securable objects access control lists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,33 +29,33 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."Win32-errors" or (errorHandler.buildDepError "Win32-errors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "win32-security-sid-lookup" = {
-          depends = (pkgs.lib).optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."Win32-security" or (errorHandler.buildDepError "Win32-security"))
-            ];
+          ];
           buildable = if flags.build-tests then true else false;
-          };
+        };
         "win32-security-file-security" = {
-          depends = (pkgs.lib).optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."Win32-security" or (errorHandler.buildDepError "Win32-security"))
-            ];
+          ];
           buildable = if flags.build-tests then true else false;
-          };
+        };
         "win32-security-get-process-sid" = {
-          depends = (pkgs.lib).optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Win32-security" or (errorHandler.buildDepError "Win32-security"))
-            ];
+          ];
           buildable = if flags.build-tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

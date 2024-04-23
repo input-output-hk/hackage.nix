@@ -21,23 +21,23 @@
       synopsis = "A Toolset for the Haskell Game  Programmer - CEGUI  Bindings";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. This module provides the CEGUI Bindings.\nHGamer3D-CEGUI-Binding is available on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
-          ];
+        ];
         libs = if system.isWindows
           then [
             (pkgs."hg3dcegui050" or (errorHandler.sysDepError "hg3dcegui050"))
-            ]
+          ]
           else [
             (pkgs."hg3dcegui050" or (errorHandler.sysDepError "hg3dcegui050"))
             (pkgs."CEGUIBase-0.7.7" or (errorHandler.sysDepError "CEGUIBase-0.7.7"))
             (pkgs."CEGUIOgreRenderer-0.7.7" or (errorHandler.sysDepError "CEGUIOgreRenderer-0.7.7"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

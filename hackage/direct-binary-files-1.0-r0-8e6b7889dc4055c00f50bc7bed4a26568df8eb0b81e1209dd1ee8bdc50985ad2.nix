@@ -21,15 +21,15 @@
       synopsis = "Serialization and deserialization monads for streams and ByteStrings.";
       description = "Serialization and deserialization monads which can work on either streams\nor ByteStrings, running under IO in the former case and as pure functions\nin the latter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

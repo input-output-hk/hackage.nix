@@ -21,7 +21,7 @@
       synopsis = "WGPU";
       description = "A high-level binding to WGPU.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -38,9 +38,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wgpu-hs".components.sublibs.wgpu-hs-internal or (errorHandler.buildDepError "wgpu-hs:wgpu-hs-internal"))
           (hsPkgs."wgpu-raw-hs" or (errorHandler.buildDepError "wgpu-raw-hs"))
-          ] ++ (pkgs.lib).optional (flags.glfw) (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))) ++ (pkgs.lib).optional (flags.sdl2) (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"));
+        ] ++ pkgs.lib.optional (flags.glfw) (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))) ++ pkgs.lib.optional (flags.sdl2) (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"));
         buildable = true;
-        };
+      };
       sublibs = {
         "wgpu-hs-internal" = {
           depends = ([
@@ -54,15 +54,15 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wgpu-raw-hs" or (errorHandler.buildDepError "wgpu-raw-hs"))
-            ] ++ (pkgs.lib).optional (flags.glfw) (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))) ++ (pkgs.lib).optional (flags.sdl2) (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"));
+          ] ++ pkgs.lib.optional (flags.glfw) (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))) ++ pkgs.lib.optional (flags.sdl2) (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"));
           buildable = true;
-          };
         };
+      };
       exes = {
         "triangle-sdl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.examples && flags.sdl2) [
+          ] ++ pkgs.lib.optionals (flags.examples && flags.sdl2) [
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."data-has" or (errorHandler.buildDepError "data-has"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
@@ -74,25 +74,25 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wgpu-hs" or (errorHandler.buildDepError "wgpu-hs"))
-            ];
+          ];
           buildable = if flags.examples && flags.sdl2 then true else false;
-          };
+        };
         "triangle-glfw" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.examples && flags.glfw) [
+          ] ++ pkgs.lib.optionals (flags.examples && flags.glfw) [
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wgpu-hs" or (errorHandler.buildDepError "wgpu-hs"))
-            ];
+          ];
           buildable = if flags.examples && flags.glfw then true else false;
-          };
+        };
         "cube" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.examples && flags.sdl2) [
+          ] ++ pkgs.lib.optionals (flags.examples && flags.sdl2) [
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."data-has" or (errorHandler.buildDepError "data-has"))
             (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
@@ -107,9 +107,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wgpu-hs" or (errorHandler.buildDepError "wgpu-hs"))
-            ];
+          ];
           buildable = if flags.examples && flags.sdl2 then true else false;
-          };
         };
       };
-    }
+    };
+  }

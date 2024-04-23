@@ -6,8 +6,8 @@
         nix = import ../hackage/safe-buffer-monad-0.1.0-r0-4807ac725dc6547a6c64a994d7bc68f7d427627956b361e1298be1b283ed50fe.nix;
         revNum = 0;
         sha256 = "4807ac725dc6547a6c64a994d7bc68f7d427627956b361e1298be1b283ed50fe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

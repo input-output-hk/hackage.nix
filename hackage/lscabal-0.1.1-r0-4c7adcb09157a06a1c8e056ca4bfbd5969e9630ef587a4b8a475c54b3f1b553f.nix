@@ -21,14 +21,14 @@
       synopsis = "List exported modules from a set of .cabal files";
       description = "List exported modules from a set of .cabal files\n\n> $ lscabal http://code.haskell.org/xmonad/xmonad.cabal\n> XMonad\n> XMonad.Main\n> XMonad.Core\n> XMonad.Config\n> XMonad.Layout\n> XMonad.ManageHook\n> XMonad.Operations\n> XMonad.StackSet\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lscabal" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
@@ -36,10 +36,10 @@
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

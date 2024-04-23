@@ -21,7 +21,7 @@
       synopsis = "Vector and Text utilities";
       description = "Please see the README on GitHub at <https://github.com/akashche/vt-utils#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vt-utils-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vt-utils" or (errorHandler.buildDepError "vt-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

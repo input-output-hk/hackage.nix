@@ -21,7 +21,7 @@
       synopsis = "Dump ASN1 structure";
       description = "dump ASN1 structure from file in raw or PEM format.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "asn1dump" = {
@@ -31,9 +31,9 @@
             (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
             (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
             (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

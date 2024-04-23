@@ -21,7 +21,7 @@
       synopsis = "A Quoridor implementation in Haskell";
       description = "An implementation in Haskell of the 2-to-4-player strategy game.\nFor more information, see:\n<https://github.com/talw/quoridor-hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,18 +45,18 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "quoridor-exec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quoridor-hs" or (errorHandler.buildDepError "quoridor-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "quoridor-tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."quoridor-hs" or (errorHandler.buildDepError "quoridor-hs"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

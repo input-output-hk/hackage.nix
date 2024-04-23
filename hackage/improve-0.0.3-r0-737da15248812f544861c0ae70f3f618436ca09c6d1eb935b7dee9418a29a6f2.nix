@@ -21,15 +21,15 @@
       synopsis = "An imperative, verifiable programming language for embedded applications.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

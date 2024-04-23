@@ -21,7 +21,7 @@
       synopsis = "A simple progress bar for the console.";
       description = "A simple Haskell progress bar for the console. Heavily borrows from TJ\nHolowaychuk's Node.JS project <https://github.com/tj/node-progress progress>\n@@@\nimport Control.Concurrent (threadDelay)\nimport Control.Monad (unless)\nimport System.Console.AsciiProgress (Options(..), isComplete, def,\nnewProgressBar, tick)\nmain :: IO ()\nmain = do\npg <- newProgressBar def { pgWidth = 50 }\nloop pg\nwhere\nloop pg = do\nb <- isComplete pg\nunless b $ do\nthreadDelay $ 200 * 1000\ntick pg\nloop pg\n@@@\n<https://github.com/yamadapc/haskell-ascii-progress github>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

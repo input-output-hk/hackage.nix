@@ -6,8 +6,8 @@
         nix = import ../hackage/hsc3-data-0.15-r0-fae2a47ff571a876105f328f526d57e4a06c77fc272ed3a9ba34532dda5915b8.nix;
         revNum = 0;
         sha256 = "fae2a47ff571a876105f328f526d57e4a06c77fc272ed3a9ba34532dda5915b8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

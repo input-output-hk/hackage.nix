@@ -21,7 +21,7 @@
       synopsis = "Avro serialization support for Haskell";
       description = "Avro serialization and deserialization support for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."pure-zlib" or (errorHandler.buildDepError "pure-zlib"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ] ++ pkgs.lib.optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ] ++ pkgs.lib.optional (flags.templatehaskell) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A compiler plugin which generates tags file from GHC parsed syntax tree.";
       description = "__etags__ format.  For a standalone `ghc-tags` command look for or\n[ghc-tags](https://hackage.haskell.org/package/ghc-tags) or its\n[fork](https://github.com/coot/ghc-tags) (the fork is using\n[ghc-tags-core](https://hackage.haskell.org/package/ghc-tags-core),\nthe same library which `ghc-tags-plugin` is using).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghc-tags-core" or (errorHandler.buildDepError "ghc-tags-core"))
           (hsPkgs."ghc-tags-pipes" or (errorHandler.buildDepError "ghc-tags-pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gtp-check" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc-tags-plugin" or (errorHandler.buildDepError "ghc-tags-plugin"))
-            ];
+          ];
           buildable = if flags.gtp-check then true else false;
-          };
         };
       };
-    }
+    };
+  }

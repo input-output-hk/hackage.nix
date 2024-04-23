@@ -21,7 +21,7 @@
       synopsis = "Linear Algebra";
       description = "Types and combinators for linear algebra on free vector spaces";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."simple-reflect" or (errorHandler.buildDepError "simple-reflect"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

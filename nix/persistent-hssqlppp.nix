@@ -6,8 +6,8 @@
         nix = import ../hackage/persistent-hssqlppp-0.1-r0-fbafa21c71a99c38eb6b4b0e1299c8bb5bc8d60376e1727a008899e3e73d8dde.nix;
         revNum = 0;
         sha256 = "fbafa21c71a99c38eb6b4b0e1299c8bb5bc8d60376e1727a008899e3e73d8dde";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

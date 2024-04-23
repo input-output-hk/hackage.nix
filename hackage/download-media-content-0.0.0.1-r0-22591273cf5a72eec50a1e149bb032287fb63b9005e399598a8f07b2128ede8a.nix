@@ -21,7 +21,7 @@
       synopsis = "Simple tool to download images from RSS feeds (e.g. Flickr, Picasa)";
       description = "This package provides a very simple tool to download images from RSS feeds\n(e.g. the kind that Flickr and Picasa provide).\n\nExample usage:\n\n> download-media-content <some RSS feed or local filename>\n\nThe tool will download the @media:content@ images found in the RSS feed (it\nalso supports some other formats) and place them in the current directory,\nnaming them @01.extension@, @02.extension@, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "download-media-content" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."http-enumerator" or (errorHandler.buildDepError "http-enumerator"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

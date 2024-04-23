@@ -6,8 +6,8 @@
         nix = import ../hackage/imprevu-happstack-0.1.0-r0-2314483935ab237d1dcafe01fe6a55d0cfc23550c9b42adbe0a3dd6ba12a1042.nix;
         revNum = 0;
         sha256 = "2314483935ab237d1dcafe01fe6a55d0cfc23550c9b42adbe0a3dd6ba12a1042";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

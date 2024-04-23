@@ -6,8 +6,8 @@
         nix = import ../hackage/cplusplus-th-1.0.0.0-r0-d565bf8a62f08e8c31e7f6e28f0a06807e02299960cbcc936f034deb559b8b33.nix;
         revNum = 0;
         sha256 = "d565bf8a62f08e8c31e7f6e28f0a06807e02299960cbcc936f034deb559b8b33";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

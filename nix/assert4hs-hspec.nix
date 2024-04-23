@@ -6,8 +6,8 @@
         nix = import ../hackage/assert4hs-hspec-0.1.0-r0-1e2fb678e18327747f3ef6d34e091f9e9adbd993393b0b4d231aaaec578cce93.nix;
         revNum = 0;
         sha256 = "1e2fb678e18327747f3ef6d34e091f9e9adbd993393b0b4d231aaaec578cce93";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

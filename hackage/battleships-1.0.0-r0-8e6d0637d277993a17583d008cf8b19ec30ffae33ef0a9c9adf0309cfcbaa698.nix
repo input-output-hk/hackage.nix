@@ -21,7 +21,7 @@
       synopsis = "A web-based implementation of battleships including an AI opponent.";
       description = "This package provides a web-based implementation of the popular\nbattleships game, developed over the course of a practical functional\nprogramming class at the University of Bonn (<http://www.iai.uni-bonn.de/~jv/teaching/afp13/>).\nAlongside with the classical gameplay against an AI opponent, a game mode\nis provided in which players may move their undamaged ships.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,25 +59,25 @@
           (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (pkgs.lib).optionals (flags.library-only) [
+        ] ++ pkgs.lib.optionals (flags.library-only) [
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "main.fcgi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."battleships" or (errorHandler.buildDepError "battleships"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-            ] ++ (if flags.dev
+          ] ++ (if flags.dev
             then [ (hsPkgs."warp" or (errorHandler.buildDepError "warp")) ]
             else [
               (hsPkgs."wai-handler-fastcgi" or (errorHandler.buildDepError "wai-handler-fastcgi"))
-              ]);
+            ]);
           buildable = if flags.library-only then false else true;
-          };
+        };
         "img-gen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,9 +88,9 @@
             (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "aibenchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,18 +99,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "key-gen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple effect system that integrates with MTL";
       description = "Please see the tutorial modules";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-effects" or (errorHandler.buildDepError "simple-effects"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-effects" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."simple-effects" or (errorHandler.buildDepError "simple-effects"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

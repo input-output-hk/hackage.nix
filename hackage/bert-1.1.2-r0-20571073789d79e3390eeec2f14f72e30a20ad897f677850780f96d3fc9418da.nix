@@ -21,7 +21,7 @@
       synopsis = "BERT implementation";
       description = "Implements the BERT serialization and RPC protocols\ndescribed at <http://bert-rpc.org/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "bert" = { buildable = true; }; };
       };
-    }
+      exes = { "bert" = { buildable = true; }; };
+    };
+  }

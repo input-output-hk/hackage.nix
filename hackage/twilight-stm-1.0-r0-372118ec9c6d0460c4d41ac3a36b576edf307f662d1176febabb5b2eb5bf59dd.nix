@@ -21,7 +21,7 @@
       synopsis = "Twilight STM library";
       description = "STM with safe irrevocable I/O and inconsistency repair";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."liboleg" or (errorHandler.buildDepError "liboleg"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

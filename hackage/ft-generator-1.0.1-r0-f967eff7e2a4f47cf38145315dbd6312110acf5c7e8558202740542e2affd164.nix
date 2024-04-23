@@ -21,7 +21,7 @@
       synopsis = "implementation accompanying a WFLP'19 paper";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ft-generator" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

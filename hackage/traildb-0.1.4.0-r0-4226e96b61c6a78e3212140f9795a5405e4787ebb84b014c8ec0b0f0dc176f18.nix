@@ -21,7 +21,7 @@
       synopsis = "TrailDB bindings for Haskell";
       description = "Check out README.md for information on these bindings.\n\nTrailDB project home page is at traildb.io";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,13 +37,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."traildb" or (errorHandler.sysDepError "traildb"))
           (pkgs."Judy" or (errorHandler.sysDepError "Judy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench-traildb" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."traildb" or (errorHandler.buildDepError "traildb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "OpenGL rendering routines for the gelatin-picture graphics\nEDSL.";
       description = "This package provides most of a backend to\ngelatin-picture, a DSL for decribing two dimensional\npictures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gelatin-gl-example" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

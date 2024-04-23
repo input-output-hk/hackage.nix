@@ -21,16 +21,16 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/astar-monad#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "astar-monad-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

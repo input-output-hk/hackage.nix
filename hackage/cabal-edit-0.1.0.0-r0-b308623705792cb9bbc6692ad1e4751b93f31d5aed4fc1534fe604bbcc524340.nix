@@ -21,7 +21,7 @@
       synopsis = "Cabal utility";
       description = "A utility for managing Hackage dependencies from the command line.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-edit" = {
@@ -38,9 +38,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

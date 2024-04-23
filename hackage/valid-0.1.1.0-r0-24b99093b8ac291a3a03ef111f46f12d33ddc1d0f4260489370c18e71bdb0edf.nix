@@ -21,14 +21,14 @@
       synopsis = "Type isomorphic to `Either` with `Applicative` instance which combines errors";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

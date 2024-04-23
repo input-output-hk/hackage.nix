@@ -21,7 +21,7 @@
       synopsis = "A simple Haskell bindings to DRMAA C library.";
       description = "A simple Haskell bindings to DRMAA C library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
-          ];
+        ];
         libs = [ (pkgs."drmaa" or (errorHandler.sysDepError "drmaa")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/copilot-frp-sketch-1.0.0-r0-4de8b74eee13fb5ee600828dc3004bb1b7b456f923709e442257a5bdfdf352ca.nix;
         revNum = 0;
         sha256 = "4de8b74eee13fb5ee600828dc3004bb1b7b456f923709e442257a5bdfdf352ca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

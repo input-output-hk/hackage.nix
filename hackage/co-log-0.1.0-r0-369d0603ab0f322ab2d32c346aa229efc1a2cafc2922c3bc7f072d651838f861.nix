@@ -21,7 +21,7 @@
       synopsis = "Logging library";
       description = "Logging library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "play-colog" = {
           depends = [
@@ -47,20 +47,20 @@
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."typerep-map" or (errorHandler.buildDepError "typerep-map"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."co-log" or (errorHandler.buildDepError "co-log"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

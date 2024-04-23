@@ -21,7 +21,7 @@
       synopsis = "Render engine.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -35,8 +35,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
-          ] ++ (pkgs.lib).optional (flags.opengl && !flags.webgl) (hsPkgs."gl" or (errorHandler.buildDepError "gl"))) ++ (pkgs.lib).optional (flags.webgl) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
+        ] ++ pkgs.lib.optional (flags.opengl && !flags.webgl) (hsPkgs."gl" or (errorHandler.buildDepError "gl"))) ++ pkgs.lib.optional (flags.webgl) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Standard spec's for optics";
       description = "Standard spec's for optics";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-hspec-optics-doctests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."genvalidity-hspec-optics" or (errorHandler.buildDepError "genvalidity-hspec-optics"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "genvalidity-hspec-optics-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."genvalidity-hspec-optics" or (errorHandler.buildDepError "genvalidity-hspec-optics"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

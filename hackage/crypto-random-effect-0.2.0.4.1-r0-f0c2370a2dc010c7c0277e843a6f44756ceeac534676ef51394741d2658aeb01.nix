@@ -21,7 +21,7 @@
       synopsis = "A random effect using crypto-random";
       description = "Any help (especially documentation) is welcome";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

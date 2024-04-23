@@ -21,17 +21,17 @@
       synopsis = "Fast functions on integers.";
       description = "Fast functions for number theory and combinatorics with a high level of safety guaranteed by [ATS](http://www.ats-lang.org/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ] ++ (pkgs.lib).optional (!flags.no-integer-gmp) (hsPkgs."gmpint" or (errorHandler.buildDepError "gmpint"));
+        ] ++ pkgs.lib.optional (!flags.no-integer-gmp) (hsPkgs."gmpint" or (errorHandler.buildDepError "gmpint"));
         buildable = (if system.isWindows
           then false
           else true) && (if system.isWindows then false else true);
-        };
+      };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

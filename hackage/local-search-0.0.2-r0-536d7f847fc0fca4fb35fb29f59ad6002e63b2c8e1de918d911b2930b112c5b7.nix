@@ -21,15 +21,15 @@
       synopsis = "A first attempt at generalised local search within Haskell, for applications in combinatorial optimisation. ";
       description = "This library represents a first attempt at creating a generalised library for\nlocal (non-exhaustive) search in Haskell.  It is based on work presented to\nIFL2010, a draft of which is currently available on the homepage. The library\nmodels local search space using a rose tree, with child nodes forming the\nneighbourhood of any solution. The tree can then be transformed by various\ncombinators to implement different searching strategies; the result is then\n\"navigated\" to yield a sequence of solutions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Branching discrete event simulation library";
       description = "This package extends the Aivika [1] library with facilities for creating branches to run\nnested simulations within simulation. For example, it can be useful for financial modeling.\n\n\\[1] <http://hackage.haskell.org/package/aivika-transformers>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (errorHandler.buildDepError "aivika-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

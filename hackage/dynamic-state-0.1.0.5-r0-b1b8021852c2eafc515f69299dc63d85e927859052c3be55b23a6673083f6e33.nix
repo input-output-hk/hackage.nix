@@ -21,7 +21,7 @@
       synopsis = "Optionally serializable dynamic state keyed by type";
       description = "Optionally serializable dynamic state keyed by type";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."concrete-typerep" or (errorHandler.buildDepError "concrete-typerep"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

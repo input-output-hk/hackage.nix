@@ -21,7 +21,7 @@
       synopsis = "Hash-addressed file storage";
       description = "A command-line interface for maintaining a directory wherein each file's\nname is a hash of its content.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hash-addressed" = {
@@ -39,9 +39,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

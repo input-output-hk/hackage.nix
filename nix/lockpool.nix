@@ -6,8 +6,8 @@
         nix = import ../hackage/lockpool-0.1.0.0-r0-fb1969548f5d2df4f41c7bbbd2149320bd1d84c8671fabc4e8a4d0a6ac5f796f.nix;
         revNum = 0;
         sha256 = "fb1969548f5d2df4f41c7bbbd2149320bd1d84c8671fabc4e8a4d0a6ac5f796f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

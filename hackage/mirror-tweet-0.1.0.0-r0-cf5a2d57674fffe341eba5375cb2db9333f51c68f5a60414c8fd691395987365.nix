@@ -21,7 +21,7 @@
       synopsis = "Tweet mirror";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mirror-tweet" = {
@@ -35,9 +35,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

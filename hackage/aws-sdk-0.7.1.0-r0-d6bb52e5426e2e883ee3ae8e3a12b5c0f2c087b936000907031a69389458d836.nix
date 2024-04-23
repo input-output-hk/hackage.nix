@@ -21,7 +21,7 @@
       synopsis = "AWS SDK for Haskell";
       description = "An AWS(Amazon Web Services) liblary for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

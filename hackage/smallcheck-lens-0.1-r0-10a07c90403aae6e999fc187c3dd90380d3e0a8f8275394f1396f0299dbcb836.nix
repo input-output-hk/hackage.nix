@@ -21,7 +21,7 @@
       synopsis = "SmallCheck lens laws";
       description = "@<https://hackage.haskell.org/package/smallcheck smallcheck>@ properties\nported from\n@<https://hackage.haskell.org/package/lens-properties lens-properties>@\nand @<https://hackage.haskell.org/package/tasty tasty>@ test trees to validate @Lens@es, @Setter@s, @Traversal@s, @Iso@s and @Prism@s.\n\nMost likely, you will only need the \"Test.Tasty.SmallCheck.Lens\"\nmodule, which includes test trees ready to be run.\n\nCheck the\n<https://github.com/jdnavarro/smallcheck-lens/blob/master/tests/tasty.hs tests>\nin this package for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."smallcheck-series" or (errorHandler.buildDepError "smallcheck-series"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
             (hsPkgs."smallcheck-lens" or (errorHandler.buildDepError "smallcheck-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

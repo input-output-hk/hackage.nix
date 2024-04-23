@@ -21,7 +21,7 @@
       synopsis = "tonatona plugin for logging.";
       description = "Tonatona plugin for logging. This package provides a tonatona plugin for logging.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
           (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

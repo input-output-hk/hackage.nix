@@ -21,7 +21,7 @@
       synopsis = "OpenTelemetry SDK for use in applications.";
       description = "Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry/tree/main/sdk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-opentelemetry-sdk-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

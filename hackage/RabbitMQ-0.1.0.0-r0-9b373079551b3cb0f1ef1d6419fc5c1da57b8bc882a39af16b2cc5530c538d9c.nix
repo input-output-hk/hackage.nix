@@ -21,7 +21,7 @@
       synopsis = "AMQP 0-9-1 client library for RabbitMQ servers";
       description = "This library provides an AMQP 0-9-1 client library for <http://www.rabbitmq.com RabbitMQ> servers.\n\nThis library is a fork of the <http://hackage.haskell.org/package/amqp amqp package> based on <http://hackage.haskell.org/package/HsOpenSSL HsOpenSSL> for providing TLS support.\n\nSee \"Network.AMQP\" for documentation and a usage example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."openssl-streams" or (errorHandler.buildDepError "openssl-streams"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

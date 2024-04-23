@@ -6,8 +6,8 @@
         nix = import ../hackage/function-instances-algebra-0.1-r0-defbe285c86563515065b00812d93c95e40d89b7476725e7974626555df8c54a.nix;
         revNum = 0;
         sha256 = "defbe285c86563515065b00812d93c95e40d89b7476725e7974626555df8c54a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

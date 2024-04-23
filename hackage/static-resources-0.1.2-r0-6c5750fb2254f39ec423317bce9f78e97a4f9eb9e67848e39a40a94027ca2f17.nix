@@ -21,7 +21,7 @@
       synopsis = "JavaScript and Css files concat for http optimization";
       description = "You need to add static resources to your web page. For production you want to decrease number of files.\nFor development you need them separated. Support for distinct sets of JS and CSS files for different views.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-static-resources" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."static-resources" or (errorHandler.buildDepError "static-resources"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

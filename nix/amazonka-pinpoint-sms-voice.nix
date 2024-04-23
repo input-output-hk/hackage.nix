@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-pinpoint-sms-voice-2.0-r0-1c461808024d50129e5347c97e166c01526254baaaa8611b9426700ceacfa07a.nix;
         revNum = 0;
         sha256 = "1c461808024d50129e5347c97e166c01526254baaaa8611b9426700ceacfa07a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

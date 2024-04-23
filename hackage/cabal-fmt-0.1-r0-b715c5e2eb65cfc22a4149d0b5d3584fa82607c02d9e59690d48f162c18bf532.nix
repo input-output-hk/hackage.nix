@@ -21,7 +21,7 @@
       synopsis = "Format .cabal files";
       description = "Format @.cabal@ files preserving the original ordering and comments.\n\nTuned for Oleg's preference, but has some knobs still.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "cabal-fmt-internal" = {
@@ -34,10 +34,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "cabal-fmt" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library implementing the NewHope cryptographic key-exchange protocol";
       description = "This is a Haskell implementation of the NewHope key exchange protocol. It has been made via examination of the official NewHope project's public domain C reference code and the author is not affiliated with that team or with NIST. For further details please see the package README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "PQCgenKAT" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "speed" = {
           depends = [
             (hsPkgs."AES" or (errorHandler.buildDepError "AES"))
@@ -62,10 +62,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "libtest" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

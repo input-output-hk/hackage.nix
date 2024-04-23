@@ -21,7 +21,7 @@
       synopsis = "JSON-biased spec and validation tool";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."validationt" or (errorHandler.buildDepError "validationt"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."validationt" or (errorHandler.buildDepError "validationt"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

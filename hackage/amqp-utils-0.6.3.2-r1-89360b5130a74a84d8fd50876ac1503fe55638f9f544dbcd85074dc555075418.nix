@@ -21,7 +21,7 @@
       synopsis = "AMQP toolset for the command line";
       description = "AMQP tools consisting of:\nAMQP consumer which can\ncreate a temporary queue and attach it to an exchange, or\nattach to an existing queue;\ndisplay header and body info;\nsave message bodies to files;\ncall a callback script.\nAMQP publisher with file, line-by-line and\nhotfolder capabilities.\nAMQP rpc client and server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "konsum" = {
@@ -42,9 +42,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."amqp" or (errorHandler.buildDepError "amqp"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "agitprop" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."amqp" or (errorHandler.buildDepError "amqp"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."magic" or (errorHandler.buildDepError "magic"))
-            ] ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
+          ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
           buildable = true;
-          };
+        };
         "plane" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."amqp" or (errorHandler.buildDepError "amqp"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "arbeite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -108,9 +108,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."amqp" or (errorHandler.buildDepError "amqp"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

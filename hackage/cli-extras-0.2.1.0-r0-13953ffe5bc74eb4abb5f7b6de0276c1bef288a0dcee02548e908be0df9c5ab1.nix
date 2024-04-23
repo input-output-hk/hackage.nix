@@ -21,7 +21,7 @@
       synopsis = "Miscellaneous utilities for building and working with command line interfaces";
       description = "Convenience functions for writing command line interfaces, providing facilities for logging, process management, and printing to the terminal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."which" or (errorHandler.buildDepError "which"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."shell-escape" or (errorHandler.buildDepError "shell-escape"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

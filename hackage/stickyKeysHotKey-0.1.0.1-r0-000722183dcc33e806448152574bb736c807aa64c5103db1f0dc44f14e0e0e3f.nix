@@ -21,11 +21,11 @@
       synopsis = "get and set STICKYKEYS.SKF_HOTKEYACTIVE";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

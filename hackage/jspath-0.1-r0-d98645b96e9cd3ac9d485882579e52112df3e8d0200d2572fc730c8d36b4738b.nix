@@ -21,7 +21,7 @@
       synopsis = "Extract substructures from JSON by following a path.";
       description = "Use this library to extract substructures from JSON structures by following a\npath.  Path components can select elements by key or index, map over arrays,\nor invoke user-specified functions.  Works with JSONb types.\n\nSuggestions and patches are welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

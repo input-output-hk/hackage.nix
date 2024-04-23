@@ -21,18 +21,18 @@
       synopsis = "FFT using the Accelerate library";
       description = "Rank-polymorphic discrete Fourier transform (DFT), computed with a fast\nFourier transform (FFT) algorithm using the Accelerate library\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optionals (flags.cuda) [
+        ] ++ pkgs.lib.optionals (flags.cuda) [
           (hsPkgs."accelerate-cuda" or (errorHandler.buildDepError "accelerate-cuda"))
           (hsPkgs."cuda" or (errorHandler.buildDepError "cuda"))
           (hsPkgs."cufft" or (errorHandler.buildDepError "cufft"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

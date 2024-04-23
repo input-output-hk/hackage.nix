@@ -21,7 +21,7 @@
       synopsis = "AWS EC2/VPC, ELB and CloudWatch client library for Haskell";
       description = "AWS client library with focus on infrastructure services like EC2 (with VPC), ELB and CloudWatch, extension to <https://github.com/aristidb/aws>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "put-metric" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."aws-ec2" or (errorHandler.buildDepError "aws-ec2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

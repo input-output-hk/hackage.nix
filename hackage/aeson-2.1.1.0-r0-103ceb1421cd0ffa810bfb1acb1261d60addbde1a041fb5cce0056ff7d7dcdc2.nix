@@ -21,7 +21,7 @@
       synopsis = "Fast JSON parsing and encoding";
       description = "A JSON parsing and encoding library optimized for ease of use\nand high performance.\n\nTo get started, see the documentation for the @Data.Aeson@ module\nbelow.\n\n(A note on naming: in Greek mythology, Aeson was the father of Jason.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -55,9 +55,9 @@
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.6")) (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true || !flags.cffi)) (hsPkgs."text" or (errorHandler.buildDepError "text"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.6")) (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))) ++ pkgs.lib.optional (!(compiler.isGhcjs && true || !flags.cffi)) (hsPkgs."text" or (errorHandler.buildDepError "text"));
         buildable = true;
-        };
+      };
       tests = {
         "aeson-tests" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

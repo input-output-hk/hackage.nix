@@ -21,16 +21,16 @@
       synopsis = "Command line argument processing";
       description = "An easy way to define command line parsers. The two key features are:\n1) It's very concise to use, up to three times shorter than getopt.\n2) It supports programs with multiple modes (e.g. darcs or cabal).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "cmdargs" = { buildable = true; }; };
       };
-    }
+      exes = { "cmdargs" = { buildable = true; }; };
+    };
+  }

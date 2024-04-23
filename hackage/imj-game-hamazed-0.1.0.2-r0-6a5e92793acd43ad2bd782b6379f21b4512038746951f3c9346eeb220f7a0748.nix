@@ -21,7 +21,7 @@
       synopsis = "A game with flying numbers and 8-bit color animations.";
       description = "In Hamazed, you are a 'BattleShip' pilot surrounded by flying 'Number's.\n\nYour mission is to shoot exactly the 'Number's whose sum will equate the\ncurrent 'Level' 's /target number/.\n\nThe higher the 'Level' (1..12), the more 'Number's are flying around (up-to 16).\nAnd the smaller the 'World' gets.\n\nGood luck !";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,19 +36,19 @@
           (hsPkgs."imj-animation" or (errorHandler.buildDepError "imj-animation"))
           (hsPkgs."imj-base" or (errorHandler.buildDepError "imj-base"))
           (hsPkgs."imj-prelude" or (errorHandler.buildDepError "imj-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imj-game-hamazed-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."imj-game-hamazed" or (errorHandler.buildDepError "imj-game-hamazed"))
             (hsPkgs."imj-prelude" or (errorHandler.buildDepError "imj-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "imj-game-hamazed-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."imj-game-hamazed" or (errorHandler.buildDepError "imj-game-hamazed"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

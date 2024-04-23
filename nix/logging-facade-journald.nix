@@ -6,8 +6,8 @@
         nix = import ../hackage/logging-facade-journald-0.0.0-r0-89f8eaee86a183e5bae3d50d7a5352a75f3986c877ffcb430e08525f9fe5f2fe.nix;
         revNum = 0;
         sha256 = "89f8eaee86a183e5bae3d50d7a5352a75f3986c877ffcb430e08525f9fe5f2fe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

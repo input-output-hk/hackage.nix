@@ -21,7 +21,7 @@
       synopsis = "A (prototyped) secure and easy to use XMPP library";
       description = "A work in progress of an implementation of RFC 6120: XMPP:\nCore.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

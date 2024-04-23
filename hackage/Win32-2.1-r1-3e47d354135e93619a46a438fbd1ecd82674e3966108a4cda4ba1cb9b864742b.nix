@@ -21,7 +21,7 @@
       synopsis = "A binding to part of the Win32 library";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -31,8 +31,8 @@
           (pkgs."winmm" or (errorHandler.sysDepError "winmm"))
           (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
           (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

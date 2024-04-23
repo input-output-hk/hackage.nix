@@ -21,15 +21,15 @@
       synopsis = "blaze-html integration for Snap";
       description = "blaze-html integration for Snap";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

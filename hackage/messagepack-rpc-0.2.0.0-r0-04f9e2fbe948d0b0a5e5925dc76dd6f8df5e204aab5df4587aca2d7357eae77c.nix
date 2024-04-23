@@ -21,7 +21,7 @@
       synopsis = "Message Pack RPC over TCP";
       description = "Message Pack RPC over TCP";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
           (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

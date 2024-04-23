@@ -21,7 +21,7 @@
       synopsis = "embedded DSL for defining epidemiologic cohorts";
       description = "Please see the README on GitHub at <https://github.com/novisci/asclepias#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,17 +49,17 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "exampleApp" = {
           depends = [
             (hsPkgs."hasklepias" or (errorHandler.buildDepError "hasklepias"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hasklepias-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "examples" = {
           depends = [
             (hsPkgs."hasklepias" or (errorHandler.buildDepError "hasklepias"))
@@ -88,9 +88,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Unicode 3.2.0 character names";
       description = "Unicode 3.2.0 character names";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."unicode-properties" or (errorHandler.buildDepError "unicode-properties"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

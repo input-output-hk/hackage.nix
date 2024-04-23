@@ -21,7 +21,7 @@
       synopsis = "Compilation, manipulation and decompilation of Bitcoin scripts";
       description = "Provides pure functions to compile, decompile and manipulate Bitcoin scripts.\nThis project relies heavily on the Haskoin project for the compiling and\ndecompiling of the script assembly, and continuously merges changes downstream.\nThe advantage this library has over Haskoin is that it uses very few\ndependencies and doesn't rely on external libraries such as LevelDB and snappy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Read standard file formats into Shpadoinkle with Template Haskell";
       description = "This package provides TH functions to read files at compile time\nand embed them into Shpadoinkle views.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."html-entities" or (errorHandler.buildDepError "html-entities"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sample" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."html-entities" or (errorHandler.buildDepError "html-entities"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

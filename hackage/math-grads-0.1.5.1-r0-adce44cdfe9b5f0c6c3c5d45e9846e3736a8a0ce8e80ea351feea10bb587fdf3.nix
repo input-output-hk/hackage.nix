@@ -21,7 +21,7 @@
       synopsis = "Library containing graph data structures and graph algorithms";
       description = "Library containing graph data structures and graph algorithms.\n\nGraph data structures:\n\n* Graph type class;\n\n* GenericGraph data structure.\n\nGraph algorithms:\n\n* Ullmann's subgraph isomorphism algorithm;\n\n* drawing of planar graphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Coords-test" = {
           depends = [
@@ -45,18 +45,18 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."math-grads" or (errorHandler.buildDepError "math-grads"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Graph-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."math-grads" or (errorHandler.buildDepError "math-grads"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Isomorphism-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."math-grads" or (errorHandler.buildDepError "math-grads"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

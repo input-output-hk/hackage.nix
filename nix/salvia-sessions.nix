@@ -6,8 +6,8 @@
         nix = import ../hackage/salvia-sessions-1.0.0-r0-bdae3751b91da213778bbe3a6de62eefa698387bc2947e3c7dee474b493ba05f.nix;
         revNum = 0;
         sha256 = "bdae3751b91da213778bbe3a6de62eefa698387bc2947e3c7dee474b493ba05f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

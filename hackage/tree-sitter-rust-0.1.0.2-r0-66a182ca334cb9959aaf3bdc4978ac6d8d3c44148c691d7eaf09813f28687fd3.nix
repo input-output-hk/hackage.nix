@@ -21,15 +21,15 @@
       synopsis = "Tree-sitter grammar/parser for Rust";
       description = "This package provides a parser for Rust suitable for use with the tree-sitter package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

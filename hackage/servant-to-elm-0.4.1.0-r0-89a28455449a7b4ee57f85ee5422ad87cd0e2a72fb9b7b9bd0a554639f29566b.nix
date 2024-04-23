@@ -21,7 +21,7 @@
       synopsis = "Automatically generate Elm clients for Servant APIs";
       description = "Please see the README on GitHub at <https://github.com/folq/servant-to-elm#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "user-example" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."servant-to-elm" or (errorHandler.buildDepError "servant-to-elm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "servant-to-elm-test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
             (hsPkgs."servant-to-elm" or (errorHandler.buildDepError "servant-to-elm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

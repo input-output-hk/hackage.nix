@@ -21,22 +21,22 @@
       synopsis = "Generic programming library";
       description = "Alloy is a generic programming library for performing traversals\nof data and applying specific operations to certain types.  More\ninformation is available in the tutorial\n(<http://twistedsquare.com/Alloy-Tutorial.pdf>) and the draft\npaper (<http://twistedsquare.com/Alloy.pdf>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhc && (compiler.version).lt "6.10"
+        depends = if compiler.isGhc && compiler.version.lt "6.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

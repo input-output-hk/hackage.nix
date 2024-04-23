@@ -6,8 +6,8 @@
         nix = import ../hackage/discordian-calendar-0.1-r0-ff00fe5514aa33325d9cd76158e138ae86486952a256f98f34bd556cb8611b37.nix;
         revNum = 0;
         sha256 = "ff00fe5514aa33325d9cd76158e138ae86486952a256f98f34bd556cb8611b37";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

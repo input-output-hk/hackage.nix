@@ -21,7 +21,7 @@
       synopsis = "Implements an osculatory packing (kissing circles) algorithm and display.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

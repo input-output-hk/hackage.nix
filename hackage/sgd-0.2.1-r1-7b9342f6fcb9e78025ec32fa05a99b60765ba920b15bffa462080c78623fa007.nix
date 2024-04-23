@@ -21,7 +21,7 @@
       synopsis = "Stochastic gradient descent";
       description = "Implementation of a Stochastic Gradient Descent optimization method.\nSee examples directory in the source package for examples of usage.\n\nIt is a preliminary implementation of the SGD method and API may change\nin future versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
           (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,30 +21,30 @@
       synopsis = "Password entry tool";
       description = "Please see the README on GitHub at <https://github.com/jlamothe/blindpass#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "blindpass" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blindpass" or (errorHandler.buildDepError "blindpass"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "blindpass-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blindpass" or (errorHandler.buildDepError "blindpass"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

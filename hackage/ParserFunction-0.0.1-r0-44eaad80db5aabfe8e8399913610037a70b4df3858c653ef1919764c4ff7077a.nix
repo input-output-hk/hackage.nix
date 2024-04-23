@@ -21,14 +21,14 @@
       synopsis = "Enzo Haussecker's algorithm for parsing functions.";
       description = "Enzo Haussecker's algorithm for parsing functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

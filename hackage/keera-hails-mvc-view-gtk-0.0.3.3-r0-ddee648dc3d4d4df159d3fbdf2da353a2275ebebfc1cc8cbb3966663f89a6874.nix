@@ -21,7 +21,7 @@
       synopsis = "Haskell on Gtk rails - Gtk-based View for MVC applications";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."keera-hails-mvc-view" or (errorHandler.buildDepError "keera-hails-mvc-view"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."gtk-helpers" or (errorHandler.buildDepError "gtk-helpers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

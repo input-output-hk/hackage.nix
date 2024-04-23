@@ -21,7 +21,7 @@
       synopsis = "Linear time testing with variant of Arbitrary class that always terminates.";
       description = "Ever found non-terminating Arbitrary instance?\nEver wondered what would be a runtime cost of particular Arbitrary instance?\n\nNever let it bother you again:\nthis variant of Arbitrary is automatically generating instances, and allows you to see predictable linear time generators\nfor most types (providing that you have any terminating constructor, that is constructor that does not go deeper into the data structure.)\n\nUsage:\n\n> import Test.LessArbitrary\n>\n> data MyDataType = ...\n>   deriving (Show, Generic)\n>\n> instance LessArbitrary MyDataType\n> instance Arbitrary where\n>  arbitrary = fasterArbitrary";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "less-arbitrary" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

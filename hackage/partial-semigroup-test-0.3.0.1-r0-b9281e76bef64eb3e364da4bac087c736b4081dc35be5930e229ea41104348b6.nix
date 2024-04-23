@@ -21,11 +21,11 @@
       synopsis = "Testing utilities for the partial-semigroup package";
       description = "Testing utilities for the @partial-semigroup@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (flags.enable-hedgehog) (hsPkgs."partial-semigroup-hedgehog" or (errorHandler.buildDepError "partial-semigroup-hedgehog"));
+        depends = pkgs.lib.optional (flags.enable-hedgehog) (hsPkgs."partial-semigroup-hedgehog" or (errorHandler.buildDepError "partial-semigroup-hedgehog"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

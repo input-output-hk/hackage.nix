@@ -21,15 +21,15 @@
       synopsis = "Binary instances for text types";
       description = "A compatibility layer providing Binary instances for strict\nand lazy text types for versions older than 1.2.1 of\n<https://hackage.haskell.org/package/text>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

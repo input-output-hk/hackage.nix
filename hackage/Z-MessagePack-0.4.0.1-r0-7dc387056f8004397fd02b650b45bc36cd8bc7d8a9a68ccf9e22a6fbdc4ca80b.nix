@@ -21,7 +21,7 @@
       synopsis = "MessagePack";
       description = "MessagePack binary serialization format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
           (hsPkgs."Z-IO" or (errorHandler.buildDepError "Z-IO"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-MessagePack-Test" = {
           depends = [
@@ -58,12 +58,12 @@
             (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
             (hsPkgs."Z-IO" or (errorHandler.buildDepError "Z-IO"))
             (hsPkgs."Z-MessagePack" or (errorHandler.buildDepError "Z-MessagePack"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

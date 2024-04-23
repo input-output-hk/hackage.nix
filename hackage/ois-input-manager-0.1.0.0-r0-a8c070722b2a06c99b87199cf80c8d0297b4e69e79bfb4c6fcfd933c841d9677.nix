@@ -21,15 +21,15 @@
       synopsis = "wrapper for OIS input manager for use with hogre";
       description = "This library is a wrapper around hand-written C++ code which manages an OIS::InputManager.\nIt enables you to use buffered or unbuffered mouse and keyboard input with a window created with hogre.\nSee the Haddock documentation for usage.\n\nThis is a preview release.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hogre" or (errorHandler.buildDepError "hogre"))
-          ];
+        ];
         libs = [ (pkgs."OIS" or (errorHandler.sysDepError "OIS")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

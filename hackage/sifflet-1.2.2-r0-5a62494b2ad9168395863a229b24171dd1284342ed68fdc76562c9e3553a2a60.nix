@@ -21,7 +21,7 @@
       synopsis = "A simple, visual, functional programming language.";
       description = "Sifflet is a visual, functional programming language.\nSifflet users can make programs by drawing diagrams\nto connect functions and other units.\nSifflet show the intermediate steps of the computation\non the diagram, and can expand function calls to show further details.\nIt is intended as an aid for learning about recursion.\nVersion 1.2.2: Safely quits when main (workspace) window is closed.\nVersion 1.2.1: Updated for compatibility with gtk-0.12.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sifflet" = {
@@ -37,9 +37,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."sifflet-lib" or (errorHandler.buildDepError "sifflet-lib"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

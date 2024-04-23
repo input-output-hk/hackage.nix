@@ -21,7 +21,7 @@
       synopsis = "Example usages of Shpadoinkle";
       description = "A collection of illustrative applications to show various Shpadoinkle utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "animation" = {
@@ -35,9 +35,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "calculator" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -49,9 +49,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "calculator-ie" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -66,9 +66,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "counter" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -77,9 +77,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lens" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -91,9 +91,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "servant-crud-client" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -116,17 +116,17 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ] ++ (if compiler.isGhcjs && true
+          ] ++ (if compiler.isGhcjs && true
             then [
               (hsPkgs."servant-client-js" or (errorHandler.buildDepError "servant-client-js"))
-              ]
+            ]
             else [
               (hsPkgs."beam-sqlite" or (errorHandler.buildDepError "beam-sqlite"))
               (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
               (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "servant-crud-dev" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -159,9 +159,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
+        };
         "servant-crud-server" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -188,9 +188,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
+        };
         "throttle-and-debounce" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -201,9 +201,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "todomvc" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -216,9 +216,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "widgets" = {
           depends = [
             (hsPkgs."Shpadoinkle" or (errorHandler.buildDepError "Shpadoinkle"))
@@ -231,9 +231,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

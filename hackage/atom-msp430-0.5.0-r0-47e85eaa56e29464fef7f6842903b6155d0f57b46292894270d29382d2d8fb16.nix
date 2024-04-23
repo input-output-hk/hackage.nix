@@ -21,15 +21,15 @@
       synopsis = "Convenience functions for using Atom with the MSP430 microcontroller family.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."atom" or (errorHandler.buildDepError "atom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

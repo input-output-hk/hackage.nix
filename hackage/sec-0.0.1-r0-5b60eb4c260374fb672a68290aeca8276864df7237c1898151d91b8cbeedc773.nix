@@ -21,14 +21,14 @@
       synopsis = "Semantic Editor Combinators.";
       description = "Semantic Editor Combinators as described by Conal Elliott\n(See: <http://conal.net/blog/posts/semantic-editor-combinators/>)\nand Template Haskell support for automatically creating semantic\neditor combinators from Algebraic Data Types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

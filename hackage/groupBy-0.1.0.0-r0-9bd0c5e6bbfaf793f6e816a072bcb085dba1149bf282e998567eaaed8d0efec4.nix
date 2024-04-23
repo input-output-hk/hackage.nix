@@ -21,12 +21,12 @@
       synopsis = "Replacement definition of Data.List.GroupBy";
       description = "Please see the README on Github at <https://github.com/oisdk/groupBy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "groupBy-test" = {
           depends = [
@@ -34,10 +34,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."groupBy" or (errorHandler.buildDepError "groupBy"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

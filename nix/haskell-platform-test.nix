@@ -6,8 +6,8 @@
         nix = import ../hackage/haskell-platform-test-2010.2.0.0-r0-fc6021157d4b9ea99a62932223f6367051e59dfae5e53fcabad8758883c7c470.nix;
         revNum = 0;
         sha256 = "fc6021157d4b9ea99a62932223f6367051e59dfae5e53fcabad8758883c7c470";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

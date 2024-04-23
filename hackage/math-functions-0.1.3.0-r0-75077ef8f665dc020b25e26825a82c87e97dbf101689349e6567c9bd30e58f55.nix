@@ -21,16 +21,16 @@
       synopsis = "Special functions and Chebyshev polynomials";
       description = "This library provides implementations of special mathematical\nfunctions and Chebyshev polynomials.  These functions are often\nuseful in statistical and numerical computing.\n\nChanges in 0.1.2\n\n* Error function and its inverse added.\n\n* Digamma function added\n\n* Evaluation of polynomials using Horner's method added.\n\n* Crash bug in the inverse incomplete beta fixed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."erf" or (errorHandler.buildDepError "erf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A context aware binding for the OpenGL graphics system";
       description = "A fork of the hOpenGL 2.2.1.1 package.\nModifications to OpenGL IO using the -XGeneralizedNewtypeDeriving extension create context sensitive MonadIO aliases.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

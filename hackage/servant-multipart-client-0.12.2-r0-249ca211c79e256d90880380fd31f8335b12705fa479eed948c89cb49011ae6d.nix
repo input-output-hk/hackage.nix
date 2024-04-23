@@ -21,7 +21,7 @@
       synopsis = "multipart/form-data (e.g file upload) support for servant";
       description = "This package adds client-side support for file upload to the servant ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
+        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "upload" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."servant-multipart-client" or (errorHandler.buildDepError "servant-multipart-client"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

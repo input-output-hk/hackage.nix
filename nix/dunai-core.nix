@@ -6,8 +6,8 @@
         nix = import ../hackage/dunai-core-0.5.1.0-r0-bb705ec08c1b539afb87966afe7eff88976a17360f19793c3faf77365ed7897e.nix;
         revNum = 0;
         sha256 = "bb705ec08c1b539afb87966afe7eff88976a17360f19793c3faf77365ed7897e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Scrap your qualified import clutter";
       description = "See <https://theam.github.io/require>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "requirepp" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "require-test-suite" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "require-benchmarks" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

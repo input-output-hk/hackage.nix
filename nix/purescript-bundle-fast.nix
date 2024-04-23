@@ -6,8 +6,8 @@
         nix = import ../hackage/purescript-bundle-fast-0.1.0.1-r0-6a867bd53910bc58ef98d90d705753e42fabc70a0bfbda699cb4588ece38ba76.nix;
         revNum = 0;
         sha256 = "6a867bd53910bc58ef98d90d705753e42fabc70a0bfbda699cb4588ece38ba76";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

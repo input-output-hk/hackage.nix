@@ -21,7 +21,7 @@
       synopsis = "A color pretty printer with terminfo support";
       description = "A color pretty printer with terminfo support";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
-        libs = (pkgs.lib).optional (flags.cursed) (pkgs."curses" or (errorHandler.sysDepError "curses"));
+        ];
+        libs = pkgs.lib.optional (flags.cursed) (pkgs."curses" or (errorHandler.sysDepError "curses"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

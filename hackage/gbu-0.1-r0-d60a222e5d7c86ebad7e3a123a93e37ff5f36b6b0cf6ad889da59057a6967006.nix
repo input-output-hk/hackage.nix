@@ -21,7 +21,7 @@
       synopsis = "planar graph embedding into a plane";
       description = "A library realizes one of the graph visualization process's\nsteps - graph embedding into a plane. The job of the step is\nsuch to order nodes' edges that there are capabilities to\ndraw them without any intersections.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parsing factorized ";
       description = "The library implements an Earley-style, bottom-up parser for tree adjoining\ngrammars (TAGs) with special focus on structure (and, hence, computation) sharing.\n\nTwo particular flavours of structure sharing are currently implemented:\n\n* Subtrees common to different elementary trees are shared amongst them.\nThe input TAG, which can be seen as a set of elementary (initial and auxiliary)\ngrammar trees, is in fact transformed into an equivalent DAG.\n\n* Flat production grammar rules representing the individual parts of the DAG\nare then compressed in the form of a minimal FSA. Other forms of\ncompression are also provided by the library (e.g. prefix tree).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."data-lens-light" or (errorHandler.buildDepError "data-lens-light"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

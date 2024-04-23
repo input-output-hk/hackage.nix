@@ -21,11 +21,11 @@
       synopsis = "Haskell Postscript";
       description = "Haskell library partially implementing the\npostscript drawing model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

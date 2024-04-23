@@ -21,7 +21,7 @@
       synopsis = "Various Github helper utilities.";
       description = "- Pull Request status tool.\n- Change log generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hub-automerge" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."github-tools" or (errorHandler.buildDepError "github-tools"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hub-pulls" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."github-tools" or (errorHandler.buildDepError "github-tools"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hub-changelog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,18 +79,18 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."github-tools" or (errorHandler.buildDepError "github-tools"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hub-graph" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."github-tools" or (errorHandler.buildDepError "github-tools"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hub-roadmap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."github-tools" or (errorHandler.buildDepError "github-tools"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "webservice" = {
           depends = [
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
@@ -127,10 +127,10 @@
             (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -139,12 +139,12 @@
             (hsPkgs."github-tools" or (errorHandler.buildDepError "github-tools"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

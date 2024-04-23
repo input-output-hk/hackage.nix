@@ -21,14 +21,14 @@
       synopsis = "Polykinded extensible records";
       description = "Extensible records/row polymorphism for Haskell. Fields are polykinded,\nto statically check rich structures. This library was initially conceived\nas part of the AspectAG project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."requirements" or (errorHandler.buildDepError "requirements"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

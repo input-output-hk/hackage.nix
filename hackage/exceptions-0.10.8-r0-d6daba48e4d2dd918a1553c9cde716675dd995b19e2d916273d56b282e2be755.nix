@@ -21,7 +21,7 @@
       synopsis = "Extensible optionally-pure exceptions";
       description = "Extensible optionally-pure exceptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,16 +29,16 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"))) ++ (if flags.transformers-0-4
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"))) ++ (if flags.transformers-0-4
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]
+          ]
           else [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "exceptions-tests" = {
           depends = [
@@ -51,16 +51,16 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (if flags.transformers-0-4
+          ] ++ (if flags.transformers-0-4
             then [
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-              ]
+            ]
             else [
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
               (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

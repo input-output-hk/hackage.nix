@@ -6,8 +6,8 @@
         nix = import ../hackage/HongoDB-0.0.1-r0-b43e0dd7e4fa5cff042c704351b29f3d373d6eed227d35851b5cea5b6c4131b3.nix;
         revNum = 0;
         sha256 = "b43e0dd7e4fa5cff042c704351b29f3d373d6eed227d35851b5cea5b6c4131b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Haskell SuperCollider SoundFile";
       description = "Trivial @NeXT@ sound file input and output.\nThe main module is \"Sound.File.NeXT\".\nFor almost all use cases please see Stefan\nKersten's @hsndfile@ package,\n<http://hackage.haskell.org/package/hsndfile>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

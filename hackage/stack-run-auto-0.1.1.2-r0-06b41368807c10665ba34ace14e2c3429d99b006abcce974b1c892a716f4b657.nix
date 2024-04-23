@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."extract-dependencies" or (errorHandler.buildDepError "extract-dependencies"))
           (hsPkgs."file-modules" or (errorHandler.buildDepError "file-modules"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "module-package" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."extract-dependencies" or (errorHandler.buildDepError "extract-dependencies"))
             (hsPkgs."file-modules" or (errorHandler.buildDepError "file-modules"))
             (hsPkgs."stack-run-auto" or (errorHandler.buildDepError "stack-run-auto"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stack-run-auto" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,10 +74,10 @@
             (hsPkgs."extract-dependencies" or (errorHandler.buildDepError "extract-dependencies"))
             (hsPkgs."file-modules" or (errorHandler.buildDepError "file-modules"))
             (hsPkgs."stack-run-auto" or (errorHandler.buildDepError "stack-run-auto"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "stack-run-auto-test" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."extract-dependencies" or (errorHandler.buildDepError "extract-dependencies"))
             (hsPkgs."file-modules" or (errorHandler.buildDepError "file-modules"))
             (hsPkgs."stack-run-auto" or (errorHandler.buildDepError "stack-run-auto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

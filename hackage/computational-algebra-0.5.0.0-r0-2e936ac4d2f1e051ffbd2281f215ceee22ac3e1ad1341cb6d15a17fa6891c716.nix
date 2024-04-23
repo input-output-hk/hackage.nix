@@ -21,7 +21,7 @@
       synopsis = "Well-kinded computational algebra library, currently supporting Groebner basis.";
       description = "Dependently-typed computational algebra library for Groebner basis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,18 +62,18 @@
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "groebner-prof" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."computational-algebra" or (errorHandler.buildDepError "computational-algebra"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "solve" = {
           depends = [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
@@ -90,17 +90,17 @@
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "algebraic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."algebraic-prelude" or (errorHandler.buildDepError "algebraic-prelude"))
             (hsPkgs."computational-algebra" or (errorHandler.buildDepError "computational-algebra"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "ipsolve" = {
           depends = [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
@@ -121,9 +121,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "faugere-prof" = {
           depends = [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
@@ -142,9 +142,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "hensel-prof" = {
           depends = [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
@@ -163,9 +163,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "sandpit-poly" = {
           depends = [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
@@ -175,9 +175,9 @@
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."algebra" or (errorHandler.buildDepError "algebra"))
             (hsPkgs."sized" or (errorHandler.buildDepError "sized"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "quotient" = {
           depends = [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
@@ -188,10 +188,10 @@
             (hsPkgs."algebra" or (errorHandler.buildDepError "algebra"))
             (hsPkgs."sized" or (errorHandler.buildDepError "sized"))
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       tests = {
         "test-multi-table" = {
           depends = [
@@ -216,9 +216,9 @@
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "singular-test" = {
           depends = [
             (hsPkgs."algebra" or (errorHandler.buildDepError "algebra"))
@@ -245,9 +245,9 @@
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "monomial-order-test" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -266,9 +266,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."sized" or (errorHandler.buildDepError "sized"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "linear-test" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -294,9 +294,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "matrix-test" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -322,9 +322,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "specs" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -354,9 +354,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "new-div-test" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -381,10 +381,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       benchmarks = {
         "unipol-bench" = {
           depends = [
@@ -402,9 +402,9 @@
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "normal-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -421,9 +421,9 @@
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elimination-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -440,9 +440,9 @@
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "quotient-bench-randomized" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -468,9 +468,9 @@
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "monomial-order-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -496,9 +496,9 @@
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "linear-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -528,9 +528,9 @@
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "division-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -560,9 +560,9 @@
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "sugar-paper-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -592,9 +592,9 @@
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "solve-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -624,9 +624,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "coercion-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -656,9 +656,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "faugere4-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -687,9 +687,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unipol-mult-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -718,9 +718,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unipol-div-bench" = {
           depends = [
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
@@ -749,9 +749,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

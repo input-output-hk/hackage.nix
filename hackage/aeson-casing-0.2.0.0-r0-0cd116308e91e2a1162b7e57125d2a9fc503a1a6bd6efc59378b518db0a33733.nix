@@ -21,15 +21,15 @@
       synopsis = "Tools to change the formatting of field names in Aeson\ninstances.";
       description = "Tools to change the formatting of field names in Aeson\ninstances. This includes CamelCasing, Pascal Casing and\nSnake Casing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "casing" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."aeson-casing" or (errorHandler.buildDepError "aeson-casing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

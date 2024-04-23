@@ -21,7 +21,7 @@
       synopsis = "A name resolusion library";
       description = "Please see README.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

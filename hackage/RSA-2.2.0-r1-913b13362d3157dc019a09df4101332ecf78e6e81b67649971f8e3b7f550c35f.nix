@@ -21,7 +21,7 @@
       synopsis = "Implementation of RSA, using the padding schemes of PKCS#1 v2.1.";
       description = "This library implements the RSA encryption and signature\nalgorithms for arbitrarily-sized ByteStrings. While the\nimplementations work, they are not necessarily the fastest ones\non the planet. Particularly key generation. The algorithms\nincluded are based of RFC 3447, or the Public-Key Cryptography\nStandard for RSA, version 2.1 (a.k.a, PKCS#1 v2.1).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-rsa" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

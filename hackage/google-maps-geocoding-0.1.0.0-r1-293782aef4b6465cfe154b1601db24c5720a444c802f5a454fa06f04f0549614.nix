@@ -21,7 +21,7 @@
       synopsis = "Google Maps Geocoding API bindings";
       description = "The Google Maps Geocoding API provides a direct way to\naccess geocoding and reverse geocoding services via an HTTP\nrequest. NB: The use of the services is subject to the Google\nMaps APIs Terms of Service, which terms restrict the use of\ncontent (eg no use without a Google map).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

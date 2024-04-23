@@ -21,21 +21,21 @@
       synopsis = "Composable request-response pipelines";
       description = "This package defines the @Job@ and @Vendor@ types that are the\nfocus of the @supply-chain@ package. The core package is provided\nfor the sake of exposing all of the internal detail. More likely\nyou want to use @supply-chain@ instead, which aims to be\nfriendlier and subject to fewer breaking releases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-supply-chain-core" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."supply-chain-core" or (errorHandler.buildDepError "supply-chain-core"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

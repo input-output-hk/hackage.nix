@@ -21,15 +21,15 @@
       synopsis = "Geometry and matrix manipulation";
       description = "Layout primitives and algorithms for geomancy data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."geomancy" or (errorHandler.buildDepError "geomancy"))
           (hsPkgs."gl-block" or (errorHandler.buildDepError "gl-block"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

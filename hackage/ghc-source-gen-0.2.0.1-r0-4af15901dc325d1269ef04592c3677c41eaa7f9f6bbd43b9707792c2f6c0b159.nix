@@ -21,15 +21,15 @@
       synopsis = "Constructs Haskell syntax trees for the GHC API.";
       description = "@ghc-source-gen@ is a library for generating Haskell source code.\nIt uses the <https://hackage.haskell.org/package/ghc ghc> library\nto support recent language extensions, and provides a simple, consistent\ninterface across several major versions of GHC.\n\nTo get started, take a look at the \"GHC.SourceGen\" module.\n\nFor more information, please see the <https://github.com/google/ghc-source-gen README>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "name_test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pprint_examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."ghc-source-gen" or (errorHandler.buildDepError "ghc-source-gen"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pprint_test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."ghc-source-gen" or (errorHandler.buildDepError "ghc-source-gen"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

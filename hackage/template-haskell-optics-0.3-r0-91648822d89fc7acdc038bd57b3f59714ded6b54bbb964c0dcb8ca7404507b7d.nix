@@ -21,7 +21,7 @@
       synopsis = "Optics for template-haskell types";
       description = "This package provides optics to work with @template-haskell@ types.\n\nSee the @optics-th@ package for machinery to construct optics using @TemplateHaskell@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

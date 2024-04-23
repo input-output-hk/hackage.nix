@@ -6,8 +6,8 @@
         nix = import ../hackage/eths-rlp-0.1.0.0-r0-0973fea8af208ebebb501b253cf77730902e4c5d0e42bfbb7038635dd8b77b20.nix;
         revNum = 0;
         sha256 = "0973fea8af208ebebb501b253cf77730902e4c5d0e42bfbb7038635dd8b77b20";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

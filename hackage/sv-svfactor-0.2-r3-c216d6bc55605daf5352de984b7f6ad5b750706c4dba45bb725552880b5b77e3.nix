@@ -21,7 +21,7 @@
       synopsis = "sv-core + svfactor";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nUse sv-core's decoding atop svfactor's parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."sv-core" or (errorHandler.buildDepError "sv-core"))
           (hsPkgs."svfactor" or (errorHandler.buildDepError "svfactor"))
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

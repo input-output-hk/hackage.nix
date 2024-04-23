@@ -21,7 +21,7 @@
       synopsis = "Part-of-speech tagger for Croatian";
       description = "A part-of-speech tagger for Croatian based on the concraft library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,16 +39,16 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."moan" or (errorHandler.buildDepError "moan"))
           (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "concraft-hr" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

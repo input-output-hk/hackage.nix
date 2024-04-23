@@ -21,14 +21,14 @@
       synopsis = "A simple type class for success/failure computations. (deprecated)";
       description = "Please switch to the exceptions package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

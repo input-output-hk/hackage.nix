@@ -21,7 +21,7 @@
       synopsis = "Snap bindings for serversession.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-frontend-snap>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "abstract implementation of typed and untyped web routing";
       description = "abstraction over how urls with/without parameters are mapped to their corresponding handlers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."graph-core" or (errorHandler.buildDepError "graph-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reroutetest" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."graph-core" or (errorHandler.buildDepError "graph-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

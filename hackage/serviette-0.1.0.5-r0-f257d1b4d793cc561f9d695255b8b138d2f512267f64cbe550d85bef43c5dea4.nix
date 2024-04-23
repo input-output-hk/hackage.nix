@@ -21,7 +21,7 @@
       synopsis = "JSON to Sql ";
       description = "Use json to generate simple sql queries. I needed this for the work project and decided to implement it also                             in haskell. This could be used to query the database directly from frontend.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

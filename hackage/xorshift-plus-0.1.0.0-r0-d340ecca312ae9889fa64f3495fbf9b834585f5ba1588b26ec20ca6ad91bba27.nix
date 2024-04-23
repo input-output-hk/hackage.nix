@@ -21,36 +21,36 @@
       synopsis = "Simple implementation of xorshift+ PRNG";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "specs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xorshift-plus" or (errorHandler.buildDepError "xorshift-plus"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "micro" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."xorshift" or (errorHandler.buildDepError "xorshift"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."Xorshift128Plus" or (errorHandler.buildDepError "Xorshift128Plus"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

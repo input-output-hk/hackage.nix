@@ -21,7 +21,7 @@
       synopsis = "Library and tool for parsing .eventlog files from GHC";
       description = "Parses .eventlog files emitted by GHC 6.12.1 and later.\nIncludes the ghc-events tool permitting, in particular,\nto dump an event log file as text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghc-events" = {
           depends = [
@@ -42,33 +42,33 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-versions" = {
           depends = [
             (hsPkgs."ghc-events" or (errorHandler.buildDepError "ghc-events"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "write-merge" = {
           depends = [
             (hsPkgs."ghc-events" or (errorHandler.buildDepError "ghc-events"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "roundtrip" = {
           depends = [
             (hsPkgs."ghc-events" or (errorHandler.buildDepError "ghc-events"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

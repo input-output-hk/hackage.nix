@@ -21,7 +21,7 @@
       synopsis = "Functions supporting bulk file and directory name\nnormalization.";
       description = "Denominate is a simple program and an associated library\nsupporting bulk file and directory name normalization.\n\nIf you've ever spent a long time changing filenames to\nget rid of whitespace or convert periods and underscores\nto hyphens, you know why it exists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "denominate" = {
           depends = if flags.small_base
@@ -43,13 +43,13 @@
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

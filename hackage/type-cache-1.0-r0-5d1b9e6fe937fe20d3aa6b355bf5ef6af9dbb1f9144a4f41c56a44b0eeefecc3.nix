@@ -21,7 +21,7 @@
       synopsis = "Utilities for caching type families results. Sometimes complex type families take long time to compile, so it is proficient to cache them and use the final result without the need of re-computation.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lens-utils" or (errorHandler.buildDepError "lens-utils"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "SVG renderer based on Rasterific.";
       description = "SVG renderer that will let you render svg-tree parsed\nSVG file to a JuicyPixel image or Rasterific Drawing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,12 +43,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "svgrender" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."FontyFruity" or (errorHandler.buildDepError "FontyFruity"))
             (hsPkgs."svg-tree" or (errorHandler.buildDepError "svg-tree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Functional MetaPost";
       description = "Functional MetaPost is a Haskell frontend\nto the MetaPost language by John Hobby.\nUsers write their graphics as Haskell\nprograms, which then emit MetaPost code\nthat can be compiled into encapsulated\nPostScript files and smoothly included into\ne.g. LaTeX.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

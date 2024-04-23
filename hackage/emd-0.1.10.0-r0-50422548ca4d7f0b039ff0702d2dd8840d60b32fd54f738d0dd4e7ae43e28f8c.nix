@@ -21,7 +21,7 @@
       synopsis = "Empirical Mode Decomposition and Hilbert-Huang Transform";
       description = "Empirical Mode decomposition and Hilbert-Huang Transform in pure\nHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "emd-test" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "emd-bench" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

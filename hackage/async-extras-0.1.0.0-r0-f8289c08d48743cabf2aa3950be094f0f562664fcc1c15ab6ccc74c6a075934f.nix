@@ -21,7 +21,7 @@
       synopsis = "Extra Utilities for the Async Library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

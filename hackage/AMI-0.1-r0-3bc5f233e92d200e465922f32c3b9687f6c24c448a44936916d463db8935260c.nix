@@ -21,7 +21,7 @@
       synopsis = "Low-level bindings for Asterisk Manager Interface (AMI).";
       description = "This package provides simple low-level bindings for\nAsterisk Manager Interface (AMI).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

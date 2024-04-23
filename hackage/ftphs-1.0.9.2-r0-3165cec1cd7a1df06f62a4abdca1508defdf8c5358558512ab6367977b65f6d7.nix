@@ -21,7 +21,7 @@
       synopsis = "FTP Client and Server Library";
       description = "ftphs provides a Haskell library to implement a FTP client\nand a FTP server.\n\nftphs has a number of features:\n\n* Easy to use operation.\n\n* Full support of text and binary transfers.\n\n* Optional lazy interaction.\n\n* Server can serve up a real or a virtual filesystem tree.\n\n* Standards compliant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,14 +33,14 @@
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
-          depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

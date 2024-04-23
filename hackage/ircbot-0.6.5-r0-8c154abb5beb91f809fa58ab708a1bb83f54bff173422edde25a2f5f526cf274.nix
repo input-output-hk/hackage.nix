@@ -21,7 +21,7 @@
       synopsis = "A library for writing IRC bots";
       description = "A simple library for an IRC bot";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

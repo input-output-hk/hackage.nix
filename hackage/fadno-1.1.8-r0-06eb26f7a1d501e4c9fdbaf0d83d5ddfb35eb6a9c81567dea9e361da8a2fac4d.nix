@@ -21,7 +21,7 @@
       synopsis = "Minimal library for music generation and notation";
       description = "Provides the Note type and HasNote class with polymorphic pitch and duration representations,\nmetering, barring and time signature utilities, plus midi and MusicXML support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-contrib" or (errorHandler.buildDepError "hspec-contrib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Helper functions to simplify adding integration tests.";
       description = "This package uses [hspec](http://hackage.haskell.org/package/hspec) and [dirstream](http://hackage.haskell.org/package/dirstream) to provide easy-to-use functions for integration tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec-dirstream-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec-dirstream" or (errorHandler.buildDepError "hspec-dirstream"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

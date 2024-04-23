@@ -21,22 +21,22 @@
       synopsis = "Finding out the full path of the executable.";
       description = "The documentation of \"System.Environment.getProgName\" says that\n\\\"However, this is hard-to-impossible to implement on some non-Unix OSes,\nso instead, for maximum portability, we just return the leafname\nof the program as invoked.\\\"\nThis library tries to provide the missing path.\nNote: Since base 4.6.0.0, there is also a function\n\"System.Environment.getExecutablePath\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."directory" or (errorHandler.buildDepError "directory"))) ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optionals (system.isFreebsd) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs."directory" or (errorHandler.buildDepError "directory"))) ++ pkgs.lib.optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optionals (system.isFreebsd) [
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ]) ++ (pkgs.lib).optionals (system.isOpenbsd || system.isNetbsd) [
+        ]) ++ pkgs.lib.optionals (system.isOpenbsd || system.isNetbsd) [
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ]) ++ (pkgs.lib).optional (system.isSolaris) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."CoreFoundation" or (errorHandler.sysDepError "CoreFoundation"));
+        ]) ++ pkgs.lib.optional (system.isSolaris) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."CoreFoundation" or (errorHandler.sysDepError "CoreFoundation"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

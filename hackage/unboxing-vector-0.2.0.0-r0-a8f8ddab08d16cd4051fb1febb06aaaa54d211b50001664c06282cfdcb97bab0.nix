@@ -21,7 +21,7 @@
       synopsis = "A newtype-friendly variant of unboxed vectors";
       description = "Please see the README on GitHub at <https://github.com/minoki/unboxing-vector#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
+        ] ++ pkgs.lib.optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
         buildable = true;
-        };
+      };
       tests = {
         "unboxing-vector-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
+          ] ++ pkgs.lib.optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
           buildable = true;
-          };
+        };
         "unboxing-vector-test-deriving-via" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -54,11 +54,11 @@
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
-          buildable = if compiler.isGhc && (compiler.version).ge "8.6.1"
+          ] ++ pkgs.lib.optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
+          buildable = if compiler.isGhc && compiler.version.ge "8.6.1"
             then true
             else false;
-          };
+        };
         "unboxing-vector-test-gnd" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -67,12 +67,12 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
-          buildable = if compiler.isGhc && (compiler.version).ge "8.2.1"
+          ] ++ pkgs.lib.optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
+          buildable = if compiler.isGhc && compiler.version.ge "8.2.1"
             then true
             else false;
-          };
         };
+      };
       benchmarks = {
         "unboxing-vector-benchmark" = {
           depends = [
@@ -81,11 +81,11 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
-          buildable = if compiler.isGhc && (compiler.version).ge "8.2.1"
+          ] ++ pkgs.lib.optional (flags.mono-traversable) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"));
+          buildable = if compiler.isGhc && compiler.version.ge "8.2.1"
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

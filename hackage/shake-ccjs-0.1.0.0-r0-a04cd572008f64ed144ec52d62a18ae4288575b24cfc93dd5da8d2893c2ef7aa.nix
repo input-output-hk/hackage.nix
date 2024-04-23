@@ -21,15 +21,15 @@
       synopsis = "Shake rules for CCJS";
       description = "Library for using CCJS with [shake](hackage.haskell.org/package/shake)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

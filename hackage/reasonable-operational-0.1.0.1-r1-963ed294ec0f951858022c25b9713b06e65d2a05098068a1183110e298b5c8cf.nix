@@ -21,11 +21,11 @@
       synopsis = "Just size Operational Monad implementation.";
       description = "Operational Monad implementation. It is more small but adequately.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

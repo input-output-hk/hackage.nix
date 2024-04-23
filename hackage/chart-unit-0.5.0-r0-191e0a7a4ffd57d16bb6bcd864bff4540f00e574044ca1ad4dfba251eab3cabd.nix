@@ -21,7 +21,7 @@
       synopsis = "Native haskell charts.";
       description = "See <https://tonyday567.github.io/chart-unit/index.html chart-unit> for chart bling and usage.\n\n\n![example](other/mainExample.svg)\n\nThese charts are designed to be scale independent and amenable to combinatory busywork (hence the unit suffix).\n\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."numhask-range" or (errorHandler.buildDepError "numhask-range"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chart-source-examples" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."diagrams-rasterific" or (errorHandler.buildDepError "diagrams-rasterific"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

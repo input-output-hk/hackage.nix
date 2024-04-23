@@ -21,7 +21,7 @@
       synopsis = "A modular bot for slack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "marvin-pp" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "marvin-init" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

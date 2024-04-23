@@ -6,8 +6,8 @@
         nix = import ../hackage/persistent-lens-1.0.0-r0-578a16f1adec730897252fbb4fa7ee073aad6645221ea139498f76fb23cc5609.nix;
         revNum = 0;
         sha256 = "578a16f1adec730897252fbb4fa7ee073aad6645221ea139498f76fb23cc5609";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

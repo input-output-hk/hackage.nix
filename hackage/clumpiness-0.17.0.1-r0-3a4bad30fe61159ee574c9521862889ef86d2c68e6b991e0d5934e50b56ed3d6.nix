@@ -21,15 +21,15 @@
       synopsis = "Calculate the clumpiness of leaf properties in a tree";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."tree-fun" or (errorHandler.buildDepError "tree-fun"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

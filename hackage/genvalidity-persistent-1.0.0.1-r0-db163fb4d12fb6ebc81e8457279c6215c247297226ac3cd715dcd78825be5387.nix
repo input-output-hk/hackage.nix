@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for Persistent";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
           (hsPkgs."validity-persistent" or (errorHandler.buildDepError "validity-persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-persistent-test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
             (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "genvalidity-persistent-bench" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."genvalidity-persistent" or (errorHandler.buildDepError "genvalidity-persistent"))
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A binary I/O library";
       description = "An older binary serialization library used by a number of\nprojects. For new projects consider an alternative such as 'binary'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."integer" or (errorHandler.buildDepError "integer"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

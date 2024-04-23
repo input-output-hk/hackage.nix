@@ -6,8 +6,8 @@
         nix = import ../hackage/avl-static-0.1.0.0-r0-6ebfc8e4e7d93963957e12bdbc62560f2c428cae1483895701b76ac4ec0a215f.nix;
         revNum = 0;
         sha256 = "6ebfc8e4e7d93963957e12bdbc62560f2c428cae1483895701b76ac4ec0a215f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

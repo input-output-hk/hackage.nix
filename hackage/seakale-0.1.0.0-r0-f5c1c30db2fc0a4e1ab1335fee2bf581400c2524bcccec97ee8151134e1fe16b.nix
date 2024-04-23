@@ -21,7 +21,7 @@
       synopsis = "Pure SQL layer on top of other libraries";
       description = "This library allows you to write pure code doing operations on a SQL databases. It can therefore be tested by mocking the database with the package 'seakale-tests'. To run it of a specific database, you need another package such as 'seakale-postgresql'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

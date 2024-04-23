@@ -21,7 +21,7 @@
       synopsis = "The library for generating a WebGL scene for the web";
       description = "The library for generating a WebGL scene for the web for the Haskell programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,26 +33,26 @@
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."HFitUI" or (errorHandler.buildDepError "HFitUI"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Hydrogen-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Hydrogen" or (errorHandler.buildDepError "Hydrogen"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Hydrogen-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Hydrogen" or (errorHandler.buildDepError "Hydrogen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

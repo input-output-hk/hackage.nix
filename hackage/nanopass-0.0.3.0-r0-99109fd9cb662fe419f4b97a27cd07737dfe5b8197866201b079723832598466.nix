@@ -21,7 +21,7 @@
       synopsis = "Create compilers using small passes and many intermediate representations.";
       description = "Uses Template Haskell to facilitate using a vast number of intermediate representations.\nOn the one hand, it can generate data types for syntax trees based on their relationships.\nFurther, generates the boilerplate for writing transformations between related syntax trees.\n\nSee README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dumb-nanopass-example" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

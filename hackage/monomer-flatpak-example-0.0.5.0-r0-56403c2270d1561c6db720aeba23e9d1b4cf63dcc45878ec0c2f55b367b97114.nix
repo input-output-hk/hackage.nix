@@ -21,7 +21,7 @@
       synopsis = "Monomer Flatpak Example Application.";
       description = "An example of how to package Monomer apps with Flatpak.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "monomer-flatpak-example" = {
@@ -35,9 +35,9 @@
             (hsPkgs."monomer-hagrid" or (errorHandler.buildDepError "monomer-hagrid"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

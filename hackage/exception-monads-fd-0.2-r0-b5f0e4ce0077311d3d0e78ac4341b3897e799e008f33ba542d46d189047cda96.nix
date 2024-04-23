@@ -21,7 +21,7 @@
       synopsis = "Exception monad transformer instances for monads-fd classes.";
       description = "This package provides exception monad transformer instances for\nthe classes defined by monads-fd.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

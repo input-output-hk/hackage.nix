@@ -21,7 +21,7 @@
       synopsis = "Cluster single cells and analyze cell clade relationships.";
       description = "Different methods to cluster and analyze single cell data with diversity indices and differential expression.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -92,18 +92,18 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "too-many-cells" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."too-many-cells" or (errorHandler.buildDepError "too-many-cells"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

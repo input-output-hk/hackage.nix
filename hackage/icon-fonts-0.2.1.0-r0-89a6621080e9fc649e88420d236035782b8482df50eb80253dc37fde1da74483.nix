@@ -21,11 +21,11 @@
       synopsis = "Package for handling icon fonts in Haskell";
       description = "This package is intended to provide access to a variety of icon fonts.  Everything is mostly a port of the all-the-icons package for emacs.  The largest difference is that the type system is used to ensure that the user doesn't need to worry about which font produces which icon.        ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Low-level Haskell client library for Apache Kafka 0.7.";
       description = "This package implements a low-level client client library to interface\nwith <http://kafka.apache.org/ Apache Kafka> 0.7.\n\n__Kafka 0.8 and newer are not yet supported.__";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."snappy" or (errorHandler.buildDepError "snappy"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."kafka-client" or (errorHandler.buildDepError "kafka-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "integration-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."kafka-client" or (errorHandler.buildDepError "kafka-client"))
-            ];
+          ];
           buildable = if flags.integration then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Addresses to unmanaged memory";
       description = "This library provides the `Data.Primitive.Addr` module\nthat was a part of the `primitive` library before `primitive-0.7.0.0`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

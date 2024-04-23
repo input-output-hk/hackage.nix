@@ -21,7 +21,7 @@
       synopsis = "Functions for instrumenting your application so the heap\ncan be analysed with ghc-debug-common.";
       description = "Functions for instrumenting your application so the heap can\nbe analysed with ghc-debug-common.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."ghc-debug-convention" or (errorHandler.buildDepError "ghc-debug-convention"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

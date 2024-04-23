@@ -21,7 +21,7 @@
       synopsis = "Loan calculator engine.";
       description = "Loan calculator engine implementing rules mentioned in paper \"Haskell Loan Library\".\nSee more here: https://github.com/bartoszw/haslo/blob/master/haslo.pdf.\nAcronym from Haskell Loan.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."wtk" or (errorHandler.buildDepError "wtk"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasloQC" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wtk" or (errorHandler.buildDepError "wtk"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hasloSample" = {
           depends = [
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
@@ -50,9 +50,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wtk" or (errorHandler.buildDepError "wtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generates a references DB from .hie files";
       description = "Tool and library to index and query a collection of `.hie` files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hiedb" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hiedb-tests" = {
           depends = [
@@ -66,12 +66,12 @@
             (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hiedb.components.exes.hiedb or (pkgs.buildPackages.hiedb or (errorHandler.buildToolDepError "hiedb:hiedb")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "blockfrost.io pretty-printing utilities";
       description = "prettyprinter Docs and standalone prettyPrinters";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."safe-money" or (errorHandler.buildDepError "safe-money"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

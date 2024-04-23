@@ -21,15 +21,15 @@
       synopsis = "NonEmpty for Alternative types";
       description = "This package extends @NonEmpty@ from @semigroups@ for\narbitrary @Alternative@ types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

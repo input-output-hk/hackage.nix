@@ -21,7 +21,7 @@
       synopsis = "Type Safe and End to End Decision Tree";
       description = "Please see the README on Github at <https://github.com/MarisaKirisame/HappyTree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "HappyTree-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

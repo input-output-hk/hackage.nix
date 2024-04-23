@@ -21,7 +21,7 @@
       synopsis = "Stripe API for Haskell - http-client backend";
       description = "\n<<https://stripe.com/img/navigation/logo@2x.png>>\n\n[Access Stripe API using http-client]\nThis package provides access to the Stripe API using `stripe-core`\nand `http-client`. See also the `stripe` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."stripe-core" or (errorHandler.buildDepError "stripe-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."stripe-tests" or (errorHandler.buildDepError "stripe-tests"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."stripe-http-client" or (errorHandler.buildDepError "stripe-http-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

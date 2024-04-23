@@ -21,7 +21,7 @@
       synopsis = "High-level assertion encoding to Z3 solver";
       description = "A library targeting at providing high-level, extensible, easy to use Haskell interface to Z3 solver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."z3" or (errorHandler.buildDepError "z3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "z3-encoding-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."z3-encoding" or (errorHandler.buildDepError "z3-encoding"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

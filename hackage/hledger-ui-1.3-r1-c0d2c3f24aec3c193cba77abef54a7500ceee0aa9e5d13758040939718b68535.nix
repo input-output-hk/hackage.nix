@@ -21,7 +21,7 @@
       synopsis = "Curses-style user interface for the hledger accounting tool";
       description = "This is hledger's curses-style interface.\nIt is simpler and more convenient for browsing data than the command-line interface,\nbut lighter and faster than hledger-web.\n\nhledger is a cross-platform program for tracking money, time, or\nany other commodity, using double-entry accounting and a simple,\neditable file format. It is inspired by and largely compatible\nwith ledger(1).  hledger provides command-line, curses and web\ninterfaces, and aims to be a reliable, practical tool for daily\nuse.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-ui" = {
@@ -50,17 +50,17 @@
             (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+          ] ++ pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ]) ++ (if flags.oldtime
+          ]) ++ (if flags.oldtime
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

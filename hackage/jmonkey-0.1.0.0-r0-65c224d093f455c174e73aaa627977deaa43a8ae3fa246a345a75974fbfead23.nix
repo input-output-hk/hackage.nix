@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/opyapeus/jmonkey#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."jmacro" or (errorHandler.buildDepError "jmacro"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jmonkey-example-exe" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jmonkey-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."jmacro" or (errorHandler.buildDepError "jmacro"))
             (hsPkgs."jmonkey" or (errorHandler.buildDepError "jmonkey"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

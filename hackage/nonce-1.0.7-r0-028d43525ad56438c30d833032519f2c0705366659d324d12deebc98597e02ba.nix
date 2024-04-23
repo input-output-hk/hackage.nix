@@ -21,7 +21,7 @@
       synopsis = "Generate cryptographic nonces.";
       description = "According to the Wikipedia, a nonce is an arbitrary number used\nonly once in a cryptographic communication.  This package\ncontain helper functions for generating nonces.\n\nThere are many kinds of nonces used in different situations.\nIt's not guaranteed that by using the nonces from this package\nyou won't have any security issues.  Please make sure that the\nnonces generated via this package are usable on your design.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

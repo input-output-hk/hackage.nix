@@ -21,7 +21,7 @@
       synopsis = "Haskell Lindenmayer Systems";
       description = "Haskell Lindenmayer Systems";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hcg-minus" or (errorHandler.buildDepError "hcg-minus"))
           (hsPkgs."hps" or (errorHandler.buildDepError "hps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

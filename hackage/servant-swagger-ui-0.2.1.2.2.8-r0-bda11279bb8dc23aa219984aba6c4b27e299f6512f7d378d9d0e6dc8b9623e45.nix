@@ -21,7 +21,7 @@
       synopsis = "Servant swagger ui";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,18 +40,18 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
-          ] ++ (if flags.servant-0-5
+        ] ++ (if flags.servant-0-5
           then [
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -77,18 +77,18 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ] ++ (if flags.servant-0-5
+          ] ++ (if flags.servant-0-5
             then [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
               (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-              ]
+            ]
             else [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."either" or (errorHandler.buildDepError "either"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

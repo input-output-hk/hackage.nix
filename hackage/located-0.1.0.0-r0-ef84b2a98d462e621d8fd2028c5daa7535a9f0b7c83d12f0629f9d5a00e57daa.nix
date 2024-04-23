@@ -21,14 +21,14 @@
       synopsis = "Source location helpers";
       description = "Types and functions for working with location-tagged tokens. Includes an\nimplementation of the offsides-rule, to make adding layout to a compiler an\neasy task.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

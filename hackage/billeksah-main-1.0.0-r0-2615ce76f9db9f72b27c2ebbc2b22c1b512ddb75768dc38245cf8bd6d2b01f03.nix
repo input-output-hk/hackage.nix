@@ -21,7 +21,7 @@
       synopsis = "Leksah plugin base";
       description = "Plugin framework used by leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "billeksah-main" = {
@@ -36,9 +36,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."billeksah-services" or (errorHandler.buildDepError "billeksah-services"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

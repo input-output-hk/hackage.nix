@@ -21,7 +21,7 @@
       synopsis = "Feed reader extension for Manatee.";
       description = "manatee-reader is feed reader extension for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
           (hsPkgs."download-curl" or (errorHandler.buildDepError "download-curl"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-reader" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-reader" = { buildable = true; }; };
+    };
+  }

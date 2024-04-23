@@ -21,7 +21,7 @@
       synopsis = "Toolchain of subleq computer.";
       description = "Toolchain of subleq computer, which comprise of assembler and simulator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "subleq" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-subleq-toolchain" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."subleq-toolchain" or (errorHandler.buildDepError "subleq-toolchain"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

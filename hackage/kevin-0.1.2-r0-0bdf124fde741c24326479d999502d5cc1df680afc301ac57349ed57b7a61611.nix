@@ -21,7 +21,7 @@
       synopsis = "a dAmn ↔ IRC proxy";
       description = "a dAmn ↔ IRC proxy";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kevin" = {
@@ -41,9 +41,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

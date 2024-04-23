@@ -21,7 +21,7 @@
       synopsis = "Launch a web app in the default browser.";
       description = "This handles cross-platform launching and inserts Javascript code to ping the server. When the server no longer receives pings, it shuts down.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."blaze-builder-enumerator" or (errorHandler.buildDepError "blaze-builder-enumerator"))
           (hsPkgs."zlib-enum" or (errorHandler.buildDepError "zlib-enum"))
-          ] ++ (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (!system.isOsx) (hsPkgs."process" or (errorHandler.buildDepError "process")));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."Shell32" or (errorHandler.sysDepError "Shell32"));
+        ] ++ pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (!system.isOsx) (hsPkgs."process" or (errorHandler.buildDepError "process")));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."Shell32" or (errorHandler.sysDepError "Shell32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

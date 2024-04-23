@@ -21,7 +21,7 @@
       synopsis = "Numerical computation";
       description = "Purely functional interface to selected numerical computations,\ninternally implemented using GSL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
-        libs = (((pkgs.lib).optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl")) ++ (pkgs.lib).optional (system.isFreebsd) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ (pkgs.lib).optional (system.isWindows) (pkgs."gsl-0" or (errorHandler.sysDepError "gsl-0"))) ++ (pkgs.lib).optional (flags.onlygsl) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
-        pkgconfig = (pkgs.lib).optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"));
+        ];
+        libs = ((pkgs.lib.optional (system.isOsx) (pkgs."gsl" or (errorHandler.sysDepError "gsl")) ++ pkgs.lib.optional (system.isFreebsd) (pkgs."gsl" or (errorHandler.sysDepError "gsl"))) ++ pkgs.lib.optional (system.isWindows) (pkgs."gsl-0" or (errorHandler.sysDepError "gsl-0"))) ++ pkgs.lib.optional (flags.onlygsl) (pkgs."gsl" or (errorHandler.sysDepError "gsl"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        pkgconfig = pkgs.lib.optional (!flags.onlygsl) (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

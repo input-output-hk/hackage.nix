@@ -6,8 +6,8 @@
         nix = import ../hackage/rose-0.1-r0-4b99adaae192abd06e006f593a4c6c6e197d45f812dab1faf372799e97963029.nix;
         revNum = 0;
         sha256 = "4b99adaae192abd06e006f593a4c6c6e197d45f812dab1faf372799e97963029";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

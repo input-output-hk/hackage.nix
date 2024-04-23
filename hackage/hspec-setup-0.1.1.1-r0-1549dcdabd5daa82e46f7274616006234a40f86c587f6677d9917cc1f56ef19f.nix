@@ -21,7 +21,7 @@
       synopsis = "Add an hspec test-suite in one command";
       description = "@hspec-setup@ is a command-line tool for adding an hspec\ntest-suite with minimal work. See the\n<https://github.com/yamadapc/haskell-hspec-setup GitHub README>\nfor more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hspec-setup" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."projectroot" or (errorHandler.buildDepError "projectroot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

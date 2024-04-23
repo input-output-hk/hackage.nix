@@ -21,11 +21,11 @@
       synopsis = "An aligned ForeignPtr type";
       description = "An aligned ForeignPtr type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

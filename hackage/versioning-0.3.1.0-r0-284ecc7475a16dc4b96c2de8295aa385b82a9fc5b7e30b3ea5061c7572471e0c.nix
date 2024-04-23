@@ -21,7 +21,7 @@
       synopsis = "Type-safe data versioning.";
       description = "This package provides various tools to deal with\ndata versioning in a type-safe way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."versioning" or (errorHandler.buildDepError "versioning"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

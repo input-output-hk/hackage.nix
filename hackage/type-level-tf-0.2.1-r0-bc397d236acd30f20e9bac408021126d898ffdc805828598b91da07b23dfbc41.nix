@@ -21,15 +21,15 @@
       synopsis = "Type-level programming library (type families)";
       description = "This library permits performing computations on the type-level. Type-level\nfunctions are implemented using functional dependencies of multi\nparameter type classes.\nTo date, Booleans and Numerals (Naturals and Positives) are\nsupported. With regard to Numerals, there is support for common\narithmetic operations (addition, substraction, multiplication,\ndivision, exponientation, logarithm, maximum, comparison, GCD)\nover natural numbers (using a decimal representation to make\ncompile-time errors friendlier).\nAlthough making use of type-level computations might seem devious and\nobfuscated at first sight, it is indeed useful in practice to implement\nlightweight dependent types such us number-parameterized types (e.g. an array\ntype parameterized by the array's size or a modular group type Zn\nparameterized by the modulus).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

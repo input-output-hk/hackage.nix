@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to libffi.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-common" or (errorHandler.buildDepError "bindings-common"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libffi" or (errorHandler.pkgConfDepError "libffi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

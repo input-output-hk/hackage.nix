@@ -21,7 +21,7 @@
       synopsis = "snap-core + aeson + postgresql-simple = delicious";
       description = "JSON API idioms for snap-core, preventing DB connection leaks.\nSee the README for a tutorial and example use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

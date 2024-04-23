@@ -21,7 +21,7 @@
       synopsis = "Crossing the road between Haskell and Elm";
       description = "`Elm-street` allows you to generate automatically derived from Haskell types\ndefinitions of Elm data types, JSON encoders and decoders. This helps to avoid\nwriting and maintaining huge chunk of boilerplate code when developing full-stack\napplications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "types" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."elm-street" or (errorHandler.buildDepError "elm-street"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "generate-elm" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "run-backend" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,10 +67,10 @@
             (hsPkgs."elm-street".components.sublibs.types or (errorHandler.buildDepError "elm-street:types"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "elm-street-test" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

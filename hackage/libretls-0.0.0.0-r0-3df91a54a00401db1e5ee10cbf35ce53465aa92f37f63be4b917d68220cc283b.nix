@@ -21,7 +21,7 @@
       synopsis = "libtls bindings";
       description = "A thin wrapper about the libtls wrapper of libressl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."monad-ste" or (errorHandler.buildDepError "monad-ste"))
-          ];
-        pkgconfig = (pkgs.lib).optional (system.isLinux) (pkgconfPkgs."libtls" or (errorHandler.pkgConfDepError "libtls"));
+        ];
+        pkgconfig = pkgs.lib.optional (system.isLinux) (pkgconfPkgs."libtls" or (errorHandler.pkgConfDepError "libtls"));
         buildable = true;
-        };
+      };
       tests = {
         "hunit" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."libressl" or (errorHandler.buildDepError "libressl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

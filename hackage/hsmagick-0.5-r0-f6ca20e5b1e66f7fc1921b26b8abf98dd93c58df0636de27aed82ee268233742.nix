@@ -21,7 +21,7 @@
       synopsis = "FFI bindings for the GraphicsMagick library";
       description = "FFI bindings for the GraphicsMagick library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,7 +31,7 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."tiff" or (errorHandler.sysDepError "tiff"))
           (pkgs."jasper" or (errorHandler.sysDepError "jasper"))
@@ -41,14 +41,14 @@
           (pkgs."bz2" or (errorHandler.sysDepError "bz2"))
           (pkgs."z" or (errorHandler.sysDepError "z"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."GraphicsMagick" or (errorHandler.pkgConfDepError "GraphicsMagick"))
           (pkgconfPkgs."lcms" or (errorHandler.pkgConfDepError "lcms"))
           (pkgconfPkgs."freetype2" or (errorHandler.pkgConfDepError "freetype2"))
           (pkgconfPkgs."libxml-2.0" or (errorHandler.pkgConfDepError "libxml-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

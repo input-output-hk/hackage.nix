@@ -21,7 +21,7 @@
       synopsis = "A highlight middleware";
       description = "It uses highlighting-kate to highlight any code inside pre / code with a class attribute hinting the language. It's a proper middleware that works on any html document.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

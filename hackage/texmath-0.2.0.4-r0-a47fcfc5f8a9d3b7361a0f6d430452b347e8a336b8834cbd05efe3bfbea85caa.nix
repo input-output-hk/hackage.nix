@@ -21,7 +21,7 @@
       synopsis = "Conversion of LaTeX math formulas to MathML.";
       description = "The texmathml library provides functions to convert LaTeX\nmath formulas to presentation MathML. It supports\nbasic LaTeX and AMS extensions, but not macros.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "testTeXMathML" = { buildable = if flags.test then true else false; };
         "texmath-cgi" = {
-          depends = (pkgs.lib).optionals (flags.cgi) [
+          depends = pkgs.lib.optionals (flags.cgi) [
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = if flags.cgi then true else false;
-          };
         };
       };
-    }
+    };
+  }

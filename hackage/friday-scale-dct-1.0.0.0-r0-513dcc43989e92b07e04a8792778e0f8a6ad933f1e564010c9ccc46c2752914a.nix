@@ -21,7 +21,7 @@
       synopsis = "Scale Friday images with DCT";
       description = "Scale Friday Images with DCT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."fft" or (errorHandler.buildDepError "fft"))
           (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -49,9 +49,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."JuicyPixels-util" or (errorHandler.buildDepError "JuicyPixels-util"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
       };
-    }
+    };
+  }

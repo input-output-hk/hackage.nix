@@ -21,14 +21,14 @@
       synopsis = "strict versions of many things in base";
       description = "strict versions of many functions in base,\nincluding some functions not present, such\nas foldlMapA/M, foldrMapA/M.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

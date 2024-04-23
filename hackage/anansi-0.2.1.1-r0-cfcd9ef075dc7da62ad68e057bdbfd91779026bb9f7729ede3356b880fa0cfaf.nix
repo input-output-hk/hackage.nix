@@ -21,7 +21,7 @@
       synopsis = "Simple literate programming preprocessor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "anansi" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."anansi" or (errorHandler.buildDepError "anansi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

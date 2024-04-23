@@ -21,14 +21,14 @@
       synopsis = "Bindings to FFMPEG library";
       description = "Bindings to FFMPEG library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."avformat" or (errorHandler.sysDepError "avformat"))
           (pkgs."avcodec" or (errorHandler.sysDepError "avcodec"))
@@ -44,8 +44,8 @@
           (pkgs."faac" or (errorHandler.sysDepError "faac"))
           (pkgs."z" or (errorHandler.sysDepError "z"))
           (pkgs."dc1394_control" or (errorHandler.sysDepError "dc1394_control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

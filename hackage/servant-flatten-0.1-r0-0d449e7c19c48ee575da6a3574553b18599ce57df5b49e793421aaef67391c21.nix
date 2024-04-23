@@ -21,14 +21,14 @@
       synopsis = "Utilities for flattening servant API types";
       description = "Utilities for flattening servant API types\n\nSee the documentation of @'Servant.API.Flatten.flatten'@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A static website compiler library";
       description = "Hakyll is a static website compiler library. It provides you with the tools to\ncreate a simple or advanced static website using a Haskell DSL and formats\nsuch as markdown or RST. You can find more information, including a tutorial,\non the website:\n\n* <http://jaspervdj.be/hakyll>\n\nIf you seek assistance, there's:\n\n* A google group: <http://groups.google.com/group/hakyll>\n\n* An IRC channel, @#hakyll@ on freenode\n\nAdditionally, there's the Haddock documentation in the different modules,\nmeant as a reference.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -56,30 +56,30 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optionals (flags.previewserver) [
+        ] ++ pkgs.lib.optionals (flags.previewserver) [
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ]) ++ (pkgs.lib).optionals (flags.watchserver) [
+        ]) ++ pkgs.lib.optionals (flags.watchserver) [
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ]) ++ (pkgs.lib).optionals (flags.checkexternal) [
+        ]) ++ pkgs.lib.optionals (flags.checkexternal) [
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-init" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hakyll-tests" = {
           depends = (([
@@ -119,20 +119,20 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (pkgs.lib).optionals (flags.previewserver) [
+          ] ++ pkgs.lib.optionals (flags.previewserver) [
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-            ]) ++ (pkgs.lib).optionals (flags.watchserver) [
+          ]) ++ pkgs.lib.optionals (flags.watchserver) [
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-            ]) ++ (pkgs.lib).optionals (flags.checkexternal) [
+          ]) ++ pkgs.lib.optionals (flags.checkexternal) [
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

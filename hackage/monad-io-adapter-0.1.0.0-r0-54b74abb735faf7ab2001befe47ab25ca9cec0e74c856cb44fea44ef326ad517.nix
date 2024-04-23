@@ -21,7 +21,7 @@
       synopsis = "Adapters between MonadIO and MonadBase IO.";
       description = "This package provides utilities for converting between computations\nparameterized via two different typeclasses 'MonadIO' and 'MonadBase', both of\nwhich can be used to abstract over monad transformer stacks with 'IO' at the\nbase. Unfortunately, both classes are frequently used in the Haskell\necosystem, since they have minor differences.\n\nDue to these typeclasses being unrelated, it’s not entirely uncommon to end up\nwith type signatures like @('MonadIO' m, 'MonadBaseControl' 'IO' m) => ...@,\nwhich are a little silly, since @'MonadBaseControl' 'IO'@ really includes all\nthe power of 'MonadIO'.\n\nTo help alleviate this problem, this package provides a set of utilities for\nconverting between the two constraints in situations where possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "monad-io-adapter-test-suite" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."monad-io-adapter" or (errorHandler.buildDepError "monad-io-adapter"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

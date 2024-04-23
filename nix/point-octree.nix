@@ -6,8 +6,8 @@
         nix = import ../hackage/point-octree-0.5.5.3-r0-8a01c29894d51c2555d840cf8704305d7d6879cf1d629d4c7838d366e5d6b6d5.nix;
         revNum = 0;
         sha256 = "8a01c29894d51c2555d840cf8704305d7d6879cf1d629d4c7838d366e5d6b6d5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

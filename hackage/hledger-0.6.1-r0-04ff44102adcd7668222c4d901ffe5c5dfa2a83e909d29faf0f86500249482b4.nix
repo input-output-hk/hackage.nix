@@ -21,7 +21,7 @@
       synopsis = "A command-line (or curses or web-based) double-entry accounting tool.";
       description = "hledger reads a plain text ledger file or timelog\ndescribing your transactions and displays precise\nbalance and register reports via command-line, curses\nor web interface.  It is a remix, in haskell, of John\nWiegley's excellent c++ ledger.  hledger aims to be a\npractical, accessible tool for end users and a useful\nlibrary for finance-minded haskell programmers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger" = {
           depends = ([
@@ -56,16 +56,16 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ (pkgs.lib).optionals (flags.happs) [
+          ] ++ pkgs.lib.optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ pkgs.lib.optionals (flags.happs) [
             (hsPkgs."happstack" or (errorHandler.buildDepError "happstack"))
             (hsPkgs."happstack-data" or (errorHandler.buildDepError "happstack-data"))
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
             (hsPkgs."happstack-state" or (errorHandler.buildDepError "happstack-state"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

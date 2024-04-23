@@ -6,8 +6,8 @@
         nix = import ../hackage/shell-pipe-0.1-r0-28e8775e50e1509a1353da25a83f63477214d89582d4baa4d67b10f74ae3a0b7.nix;
         revNum = 0;
         sha256 = "28e8775e50e1509a1353da25a83f63477214d89582d4baa4d67b10f74ae3a0b7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

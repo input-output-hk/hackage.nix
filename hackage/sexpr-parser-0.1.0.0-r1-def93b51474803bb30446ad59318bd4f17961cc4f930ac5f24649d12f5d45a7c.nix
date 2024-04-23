@@ -21,16 +21,16 @@
       synopsis = "Simple s-expression parser";
       description = "This package provides a simple Megaparsec-based s-expression parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sexpr-parser-z3-demo" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."sexpr-parser" or (errorHandler.buildDepError "sexpr-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sexpr-parser-spec" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."sexpr-parser" or (errorHandler.buildDepError "sexpr-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

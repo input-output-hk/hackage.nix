@@ -21,19 +21,19 @@
       synopsis = "A binding to Windows Win32 API.";
       description = "This library contains direct bindings to the Windows Win32 APIs for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0") (if flags.os-string
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0") (if flags.os-string
           then [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."os-string" or (errorHandler.buildDepError "os-string"))
-            ]
+          ]
           else [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ]);
+          ]);
         libs = [
           (pkgs."user32" or (errorHandler.sysDepError "user32"))
           (pkgs."gdi32" or (errorHandler.sysDepError "gdi32"))
@@ -44,11 +44,11 @@
           (pkgs."shlwapi" or (errorHandler.sysDepError "shlwapi"))
           (pkgs."msimg32" or (errorHandler.sysDepError "msimg32"))
           (pkgs."imm32" or (errorHandler.sysDepError "imm32"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = if !system.isWindows then false else true;
-        };
       };
-    }
+    };
+  }

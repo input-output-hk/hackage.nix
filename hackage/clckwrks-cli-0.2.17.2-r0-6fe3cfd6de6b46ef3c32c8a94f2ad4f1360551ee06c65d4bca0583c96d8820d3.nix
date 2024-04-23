@@ -21,7 +21,7 @@
       synopsis = "a command-line interface for adminstrating some aspects of clckwrks";
       description = "This tool permits browsing of users, changing their roles, and other features.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clckwrks-cli" = {
@@ -33,9 +33,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

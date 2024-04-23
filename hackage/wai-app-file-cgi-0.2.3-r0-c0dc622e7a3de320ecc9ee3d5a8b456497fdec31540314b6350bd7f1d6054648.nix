@@ -21,7 +21,7 @@
       synopsis = "File/CGI App of WAI";
       description = "This WAI application handles static files and\nexecutes CGI scripts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."static-hash" or (errorHandler.buildDepError "static-hash"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

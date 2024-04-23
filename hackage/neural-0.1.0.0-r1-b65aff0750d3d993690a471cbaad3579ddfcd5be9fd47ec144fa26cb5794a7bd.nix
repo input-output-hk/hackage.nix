@@ -21,7 +21,7 @@
       synopsis = "Neural Networks in native Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "iris" = {
           depends = [
@@ -54,18 +54,18 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."neural" or (errorHandler.buildDepError "neural"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sqrt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."neural" or (errorHandler.buildDepError "neural"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "neural-test" = {
           depends = [
@@ -73,17 +73,17 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."neural" or (errorHandler.buildDepError "neural"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "neural-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."neural" or (errorHandler.buildDepError "neural"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

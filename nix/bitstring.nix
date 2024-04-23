@@ -6,8 +6,8 @@
         nix = import ../hackage/bitstring-0.0.0-r0-7638c1c515d728a84507e33c830854cfd141a5bcabec6963e68f52baf27979e9.nix;
         revNum = 0;
         sha256 = "7638c1c515d728a84507e33c830854cfd141a5bcabec6963e68f52baf27979e9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

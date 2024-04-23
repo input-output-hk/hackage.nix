@@ -21,7 +21,7 @@
       synopsis = "FileStore utilities for Hakyll";
       description = "These utilities can (in particular) be used for extracting\ndate and author information for items from a darcs, git or\nmercurial repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

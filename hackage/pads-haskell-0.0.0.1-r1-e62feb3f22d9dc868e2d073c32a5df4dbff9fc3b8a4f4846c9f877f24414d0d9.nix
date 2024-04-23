@@ -21,7 +21,7 @@
       synopsis = "PADS data description language for Haskell";
       description = "Massive amounts of useful data are stored and processed in\nad hoc formats for which common tools like parsers,\nprinters, query engines and format converters are not readily\navailable.  Pads/Haskell is a domain-specific language that\nfacilitates the generation of data processing tools for ad hoc\nformats. Pads/Haskell includes features such as\ndependent, polymorphic and recursive datatypes, which allow\nprogrammers to describe the syntax and semantics of ad hoc data in a\nconcise,  easy-to-read notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Garbage collected event folding CRDT.";
       description = "Garbage collected event folding CRDT. Consistently\napply arbitrary operations to replicated data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

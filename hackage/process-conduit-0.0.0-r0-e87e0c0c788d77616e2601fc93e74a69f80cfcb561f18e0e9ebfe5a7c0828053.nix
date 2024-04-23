@@ -21,7 +21,7 @@
       synopsis = "Conduit for process";
       description = "Conduit for process";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,25 +33,25 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "process-conduit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."process-conduit" or (errorHandler.buildDepError "process-conduit"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "process-qq" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process-conduit" or (errorHandler.buildDepError "process-conduit"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Unicode alternatives for common functions and operators";
       description = "This package defines new symbols for a number of functions and\noperators in the base package.\n\nAll symbols are documented with their actual definition and\ninformation regarding their Unicode code point. They should be\ncompletely interchangeable with their definitions.\n\nFor further Unicode goodness you can enable the @UnicodeSyntax@\nlanguage extension \\[1\\]. This extension enables Unicode characters\nto be used to stand for certain ASCII character sequences,\ni.e. &#x2192; instead of @->@, &#x2200; instead of @forall@ and many\nothers.\n\nOriginal idea by P&#xE9;ter Divi&#xE1;nszky.\n\n\\[1\\] <http://www.haskell.org/ghc/docs/latest/html/users_guide/syntax-extns.html#unicode-syntax>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

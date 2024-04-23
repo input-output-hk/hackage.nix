@@ -6,8 +6,8 @@
         nix = import ../hackage/bighugethesaurus-0.1.0.0-r0-78adc6c24dfa8499ad33bc31c280836d4e2cabd47c879f258aa41a60df217f4b.nix;
         revNum = 0;
         sha256 = "78adc6c24dfa8499ad33bc31c280836d4e2cabd47c879f258aa41a60df217f4b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

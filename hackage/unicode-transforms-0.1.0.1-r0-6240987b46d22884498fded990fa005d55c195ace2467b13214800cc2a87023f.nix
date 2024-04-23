@@ -21,16 +21,16 @@
       synopsis = "Unicode transforms (normalization NFC/NFD/NFKC/NFKD)";
       description = "This is a lightweight library supporting a limited set of unicode\ntransformations (only normalizations as of now) on ByteStrings (UTF-8) and\nText without requiring any other system libraries. It is based on\nthe utf8proc C utility supporting unicode versions upto 5.1.0.\n\ntext-icu is a full featured alternative for all unicode operations but with\na dependency on the system installed icu libraries. This package aims to\nprovide an API similar to text-icu.\n\nFor more details see the README.md file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ] ++ (pkgs.lib).optional (flags.bench-icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
+          ] ++ pkgs.lib.optional (flags.bench-icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

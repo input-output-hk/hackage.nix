@@ -21,7 +21,7 @@
       synopsis = "An implementation of Montague's PTQ.";
       description = "An implementation of Montague's PTQ (Proper Treatment of Quantification). It translates simple plain English sentences into formulas of intentional logic.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ptq" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ptq.cgi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -39,9 +39,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

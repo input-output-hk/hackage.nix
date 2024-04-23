@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell LLVM functionality (no FFI).";
       description = "llvm-general-pure is a set of pure Haskell types and functions for interacting with LLVM <http://llvm.org/>.\nIt includes an ADT to represent LLVM IR (<http://llvm.org/docs/LangRef.html>). The llvm-general package\nbuilds on this one with FFI bindings to LLVM, but llvm-general-pure does not require LLVM to be available.\n\nFor haddock, see <http://bscarlet.github.io/llvm-general/3.4.0.0/doc/html/llvm-general-pure/index.html>.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."llvm-general-pure" or (errorHandler.buildDepError "llvm-general-pure"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

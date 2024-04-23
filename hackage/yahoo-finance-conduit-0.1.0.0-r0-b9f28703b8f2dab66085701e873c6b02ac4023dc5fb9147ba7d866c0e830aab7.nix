@@ -21,7 +21,7 @@
       synopsis = "Streaming aproach to the yahoo finance api";
       description = "Small library streaming stock market data from the yahoo finance api";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

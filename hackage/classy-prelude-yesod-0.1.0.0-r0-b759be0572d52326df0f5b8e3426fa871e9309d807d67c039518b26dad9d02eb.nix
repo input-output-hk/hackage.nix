@@ -21,7 +21,7 @@
       synopsis = "Provide a classy prelude including common Yesod functionality.";
       description = "This is an extension of classy-prelude-conduit, adding in commonly used functions and data types from Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

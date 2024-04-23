@@ -21,7 +21,7 @@
       synopsis = "a BitVector datatype that is parameterized by the vector width";
       description = "This module defines a width-parameterized 'BitVector' type and various associated\noperations that assume a 2's complement representation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bv-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

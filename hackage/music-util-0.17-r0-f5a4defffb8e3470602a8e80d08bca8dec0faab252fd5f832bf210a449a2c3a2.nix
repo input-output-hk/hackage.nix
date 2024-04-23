@@ -21,7 +21,7 @@
       synopsis = "Utility for developing the Music Suite.";
       description = "Utility program for installing and developing the music suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "music-util" = {
@@ -35,9 +35,9 @@
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

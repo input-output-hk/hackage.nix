@@ -21,7 +21,7 @@
       synopsis = "Serialization of cryptographic data types";
       description = "Haskell implementation of PKCS \\#8, PKCS \\#12 and CMS\n(Cryptographic Message Syntax).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,19 +33,19 @@
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
-          ] ++ (if flags.use_crypton
+        ] ++ (if flags.use_crypton
           then [
             (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
             (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
             (hsPkgs."crypton-x509-validation" or (errorHandler.buildDepError "crypton-x509-validation"))
-            ]
+          ]
           else [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test-cryptostore" = {
           depends = [
@@ -59,17 +59,17 @@
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
             (hsPkgs."cryptostore" or (errorHandler.buildDepError "cryptostore"))
-            ] ++ (if flags.use_crypton
+          ] ++ (if flags.use_crypton
             then [
               (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
               (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
-              ]
+            ]
             else [
               (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
               (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

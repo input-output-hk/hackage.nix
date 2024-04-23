@@ -21,7 +21,7 @@
       synopsis = "Allow GHCJS projects to compile under GHC and develop using intero.";
       description = "Allow GHCJS projects to compile under GHC and develop using intero. Please refer to README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,7 +37,7 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
+        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
           (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
@@ -46,8 +46,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

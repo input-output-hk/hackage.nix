@@ -6,8 +6,8 @@
         nix = import ../hackage/libxls-0.2-r0-f4ec2074604005c10349e188d81d70978b7db7f26392e65500ae2d7794ebdcfb.nix;
         revNum = 0;
         sha256 = "f4ec2074604005c10349e188d81d70978b7db7f26392e65500ae2d7794ebdcfb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

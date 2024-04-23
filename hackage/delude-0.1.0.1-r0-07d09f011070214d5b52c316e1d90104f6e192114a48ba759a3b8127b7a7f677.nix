@@ -21,11 +21,11 @@
       synopsis = "Generalized the Prelude more functionally.";
       description = "Generalized Prelude ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

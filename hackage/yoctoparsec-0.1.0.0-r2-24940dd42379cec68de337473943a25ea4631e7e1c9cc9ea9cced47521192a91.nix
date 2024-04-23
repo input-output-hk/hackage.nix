@@ -21,15 +21,15 @@
       synopsis = "A truly tiny monadic parsing library";
       description = "A monadic parsing library making use of the free monad\ntransformer. All instances are provided by the FreeT monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

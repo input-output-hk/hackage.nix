@@ -21,7 +21,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "This toolbox provides everything you need to get a quick start into web hacking with haskell: routing, middleware, json, blaze, sessions, cookies, database helper, csrf-protection, global state";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."xsd" or (errorHandler.buildDepError "xsd"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spocktests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."hspec2" or (errorHandler.buildDepError "hspec2"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

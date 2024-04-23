@@ -21,7 +21,7 @@
       synopsis = "Compile Elm code for inclusion in Hakyll static site.";
       description = "A Hakyll extension which allows building and including Elm\nprojects in static sites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-contrib-elm-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
             (hsPkgs."hakyll-contrib-elm" or (errorHandler.buildDepError "hakyll-contrib-elm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

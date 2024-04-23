@@ -21,16 +21,16 @@
       synopsis = "Optics for net-mqtt";
       description = "Please see the README on GitHub at <https://github.com/dustin/net-mqtt-lens#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."net-mqtt" or (errorHandler.buildDepError "net-mqtt"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "net-mqtt-lens-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

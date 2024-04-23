@@ -21,7 +21,7 @@
       synopsis = "Utilities for building ATS projects with shake";
       description = "Various helper functions for building [ATS](http://www.ats-lang.org/) with the [shake](http://shakebuild.com/) library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."shake-cabal" or (errorHandler.buildDepError "shake-cabal"))
           (hsPkgs."shake-c" or (errorHandler.buildDepError "shake-c"))
           (hsPkgs."cdeps" or (errorHandler.buildDepError "cdeps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

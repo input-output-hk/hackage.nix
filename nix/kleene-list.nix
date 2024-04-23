@@ -6,8 +6,8 @@
         nix = import ../hackage/kleene-list-0.1.0.0-r0-c226c24ff51836c836ce789b7eb0a66f369cb3e928bbeeac2348d5ddd55157e3.nix;
         revNum = 0;
         sha256 = "c226c24ff51836c836ce789b7eb0a66f369cb3e928bbeeac2348d5ddd55157e3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

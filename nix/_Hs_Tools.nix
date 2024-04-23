@@ -6,8 +6,8 @@
         nix = import ../hackage/HsTools-0.0.1.1-r0-1bfc68c4f73b9016e0fbad45a91b811982cbffabc86736a6d918df8c0df6538c.nix;
         revNum = 0;
         sha256 = "1bfc68c4f73b9016e0fbad45a91b811982cbffabc86736a6d918df8c0df6538c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

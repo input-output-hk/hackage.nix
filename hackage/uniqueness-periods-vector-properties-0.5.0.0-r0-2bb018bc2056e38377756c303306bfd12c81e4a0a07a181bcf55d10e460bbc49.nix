@@ -14,7 +14,7 @@
       identifier = {
         name = "uniqueness-periods-vector-properties";
         version = "0.5.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Metrices for the maximum element for the uniqueness-periods-vector packages family.";
       description = "Metrices for the maximum element for the uniqueness-periods-vector packages family. Generalization of the DobutokO.Poetry.Norms and DobutokO.Poetry.Norms.Extended modules from dobutokO-poetry package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."uniqueness-periods-vector-common" or (errorHandler.buildDepError "uniqueness-periods-vector-common"))
           (hsPkgs."phonetic-languages-ukrainian" or (errorHandler.buildDepError "phonetic-languages-ukrainian"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

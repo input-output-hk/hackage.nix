@@ -21,7 +21,7 @@
       synopsis = "Example applications for Elerea";
       description = "Example applications for Elerea. They are factored out into their\nown package so as to avoid unnecessary dependencies in the\nlibrary. Check out the @doc@ directory for the colourful literate\nsources.\n\nThe programs included are the following:\n\n* bounce (current): an example for creating dynamic collections of\nsignals with the experimental interface; left click to create\nballs, drag existing balls with left button to propel them and\ndrag with right to select balls for deletion (upon release)\n\n* chase (legacy): a minimal example that demonstrates reactivity and\nmutually recursive signals\n\n* breakout (legacy): a not too fancy breakout clone that also\ndemonstrates Graphviz output; you can get an SVG rendition of the\nsignal structure with the following command if Graphviz is\ninstalled: @elerea-breakout --dump-dot | dot -Tsvg -o\nbreakout.svg@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elerea-bounce" = {
@@ -30,27 +30,27 @@
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elerea-breakout" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elerea-chase" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

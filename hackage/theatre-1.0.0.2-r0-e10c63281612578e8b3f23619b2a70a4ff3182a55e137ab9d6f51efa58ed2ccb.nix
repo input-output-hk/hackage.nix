@@ -21,7 +21,7 @@
       synopsis = "Minimalistic actor library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."slave-thread" or (errorHandler.buildDepError "slave-thread"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

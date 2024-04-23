@@ -21,7 +21,7 @@
       synopsis = "An SDL2 backend for the gelatin renderer.";
       description = "Using SDL2 this package provides a backend to\ngelatin, an EDSL rendering pictures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."gelatin-gl" or (errorHandler.buildDepError "gelatin-gl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gelatin-sdl2-example" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

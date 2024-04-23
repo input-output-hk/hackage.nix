@@ -21,7 +21,7 @@
       synopsis = "A Haskell binding to MessagePack";
       description = "A Haskell binding to MessagePack <http://msgpack.sourceforge.jp/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

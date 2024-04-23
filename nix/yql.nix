@@ -6,8 +6,8 @@
         nix = import ../hackage/yql-0.0.0-r0-c8d9399e538cf4380e3868a68d70eb95254634eb131ed6e88a305fe9931d3047.nix;
         revNum = 0;
         sha256 = "c8d9399e538cf4380e3868a68d70eb95254634eb131ed6e88a305fe9931d3047";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

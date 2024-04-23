@@ -21,7 +21,7 @@
       synopsis = "Easily consume JSON data on-demand with type-safety";
       description = "Parse JSON data easily and safely without defining new data types. Useful\nfor deeply nested JSON data, which is difficult to parse using the default\nFromJSON instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-schemas-test" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
             (hsPkgs."th-test-utils" or (errorHandler.buildDepError "th-test-utils"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "9.2") (hsPkgs."hint" or (errorHandler.buildDepError "hint"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "9.2") (hsPkgs."hint" or (errorHandler.buildDepError "hint"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "aeson-schemas-bench" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-test-utils" or (errorHandler.buildDepError "th-test-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

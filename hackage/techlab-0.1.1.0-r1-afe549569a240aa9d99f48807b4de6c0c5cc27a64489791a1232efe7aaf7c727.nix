@@ -21,7 +21,7 @@
       synopsis = "Bleeding edge prelude";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
           (hsPkgs."polysemy-vinyl" or (errorHandler.buildDepError "polysemy-vinyl"))
           (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

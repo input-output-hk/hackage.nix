@@ -21,15 +21,15 @@
       synopsis = "A replacement for System.Exit and System.Process";
       description = "Specifically, this library replaces @System.Exit.ExitCode@ with an abstract data type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

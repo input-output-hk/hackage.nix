@@ -21,7 +21,7 @@
       synopsis = "Create tag files (ctags and etags) for Haskell code.";
       description = "\nExecutable to generate a tags (ctags) or TAGS (etags) file\nfor a bunch of Haskell files, using GHC as parser.\nThese tag files are used by editors (e.g. TAGS by Emacs) to\nimplement jump-to-definition (e.g. M-. in Emacs).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hs-tags" = {
@@ -36,9 +36,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

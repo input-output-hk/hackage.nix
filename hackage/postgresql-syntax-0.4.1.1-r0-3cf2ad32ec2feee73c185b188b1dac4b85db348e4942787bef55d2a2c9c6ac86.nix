@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL AST parsing and rendering";
       description = "Postgres syntax tree and related utils extracted from the \\\"hasql-th\\\" package.\nThe API is in a rather raw \\\"guts out\\\" state with most documentation lacking,\nbut the codebase is well tested.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-test" = {
           depends = [
@@ -45,17 +45,17 @@
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hedgehog-test" = {
           depends = [
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."postgresql-syntax" or (errorHandler.buildDepError "postgresql-syntax"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

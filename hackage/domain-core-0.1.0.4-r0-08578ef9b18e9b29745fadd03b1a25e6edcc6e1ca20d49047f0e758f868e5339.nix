@@ -21,7 +21,7 @@
       synopsis = "Low-level API of \"domain\"";
       description = "Use this package for defining extensions to \\\"domain\\\".\nPrimarily derivers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-lego" or (errorHandler.buildDepError "th-lego"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

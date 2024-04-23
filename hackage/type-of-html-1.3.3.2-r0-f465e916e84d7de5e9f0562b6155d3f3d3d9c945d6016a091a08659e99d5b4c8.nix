@@ -21,7 +21,7 @@
       synopsis = "High performance type driven html generation.";
       description = "This library makes most invalid html documents compile time errors and uses advanced type level features to realise compile time computations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "value" = {
           depends = [
@@ -40,14 +40,14 @@
             (hsPkgs."type-of-html" or (errorHandler.buildDepError "type-of-html"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "type" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "alloc" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."type-of-html" or (errorHandler.buildDepError "type-of-html"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "perf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

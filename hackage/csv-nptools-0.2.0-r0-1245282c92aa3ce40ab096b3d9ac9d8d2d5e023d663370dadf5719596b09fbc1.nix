@@ -21,7 +21,7 @@
       synopsis = "A collection of CSV tools";
       description = "A collection of CSV tools";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "csv2json" = {
@@ -29,44 +29,44 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."txt-sushi" or (errorHandler.buildDepError "txt-sushi"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv-add-id" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."txt-sushi" or (errorHandler.buildDepError "txt-sushi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv-reformat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."txt-sushi" or (errorHandler.buildDepError "txt-sushi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv-tr" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."txt-sushi" or (errorHandler.buildDepError "txt-sushi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv-transpose" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."txt-sushi" or (errorHandler.buildDepError "txt-sushi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csv-pad" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."txt-sushi" or (errorHandler.buildDepError "txt-sushi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

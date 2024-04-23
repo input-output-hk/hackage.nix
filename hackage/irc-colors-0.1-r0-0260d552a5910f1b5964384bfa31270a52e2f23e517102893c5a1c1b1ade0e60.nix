@@ -21,14 +21,14 @@
       synopsis = "Colourize your IRC strings";
       description = "Uses commonly accepted colour codes to colourize and style your IRC strings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

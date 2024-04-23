@@ -21,7 +21,7 @@
       synopsis = "Handle sequence locations for bioinformatics";
       description = "Handle sequence locations for bioinformatics";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-seqloc" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Linear Algebra";
       description = "Please see the README on GitHub at <https://github.com/pdlla/linear-tests#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "linear-tests-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."linear-tests" or (errorHandler.buildDepError "linear-tests"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "High-level access to HTTPS Everywhere rulesets.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."https-everywhere-rules-raw" or (errorHandler.buildDepError "https-everywhere-rules-raw"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
             (hsPkgs."https-everywhere-rules-raw" or (errorHandler.buildDepError "https-everywhere-rules-raw"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

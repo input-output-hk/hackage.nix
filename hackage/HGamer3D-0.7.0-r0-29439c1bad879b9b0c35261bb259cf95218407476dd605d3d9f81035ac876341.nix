@@ -21,7 +21,7 @@
       synopsis = "Toolset for the Haskell Game Programmer";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."fresco-binding" or (errorHandler.buildDepError "fresco-binding"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

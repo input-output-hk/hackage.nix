@@ -21,15 +21,15 @@
       synopsis = "A Haskell library for writing FastCGI programs";
       description = "This library lets you write FastCGI programs. This package reuses the\ncgi package API, making it very easy to port CGI programs to FastCGI.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-          ];
+        ];
         libs = [ (pkgs."fcgi" or (errorHandler.sysDepError "fcgi")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

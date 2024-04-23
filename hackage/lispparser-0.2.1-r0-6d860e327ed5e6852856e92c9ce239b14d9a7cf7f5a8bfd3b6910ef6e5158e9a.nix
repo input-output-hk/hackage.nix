@@ -21,14 +21,14 @@
       synopsis = "Simple parser for LISP S-expressions";
       description = "\nA simple parser for LISP S-expressions, using Parsec.\n\nThis comes from Jonathan Tang's tutorial,\n/Write Yourself a Scheme in 48 Hours/.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

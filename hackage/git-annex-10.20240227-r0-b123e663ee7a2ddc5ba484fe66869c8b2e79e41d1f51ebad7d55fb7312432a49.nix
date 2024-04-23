@@ -19,7 +19,7 @@
       benchmark = true;
       debuglocks = false;
       dbus = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "git-annex"; version = "10.20240227"; };
@@ -45,8 +45,8 @@
         (hsPkgs.buildPackages.async or (pkgs.buildPackages.async or (errorHandler.setupDepError "async")))
         (hsPkgs.buildPackages.utf8-string or (pkgs.buildPackages.utf8-string or (errorHandler.setupDepError "utf8-string")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "git-annex" = {
@@ -123,22 +123,22 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
             (hsPkgs."git-lfs" or (errorHandler.buildDepError "git-lfs"))
-            ] ++ (if flags.crypton
+          ] ++ (if flags.crypton
             then [
               (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
-              ]
+            ]
             else [
               (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optionals (flags.assistant && !system.isSolaris && !system.isHurd) ([
+            ])) ++ pkgs.lib.optionals (flags.assistant && !system.isSolaris && !system.isHurd) ([
             (hsPkgs."mountpoints" or (errorHandler.buildDepError "mountpoints"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
@@ -153,23 +153,23 @@
             (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-            ] ++ (if system.isLinux
+          ] ++ (if system.isLinux
             then [
               (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-              ]
+            ]
             else if system.isOsx
               then [
                 (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"))
-                ]
-              else (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))))) ++ (pkgs.lib).optionals (flags.dbus) ((pkgs.lib).optionals (system.isLinux) [
+              ]
+              else pkgs.lib.optional (system.isWindows) (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))))) ++ pkgs.lib.optionals (flags.dbus) (pkgs.lib.optionals (system.isLinux) [
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."fdo-notify" or (errorHandler.buildDepError "fdo-notify"))
-            ])) ++ (pkgs.lib).optionals (flags.pairing) [
+          ])) ++ pkgs.lib.optionals (flags.pairing) [
             (hsPkgs."network-multicast" or (errorHandler.buildDepError "network-multicast"))
             (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
-            ]) ++ (pkgs.lib).optional (flags.torrentparser) (hsPkgs."torrent" or (errorHandler.buildDepError "torrent"))) ++ (pkgs.lib).optional (flags.magicmime) (hsPkgs."magic" or (errorHandler.buildDepError "magic"))) ++ (pkgs.lib).optional (flags.benchmark) (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"));
+          ]) ++ pkgs.lib.optional (flags.torrentparser) (hsPkgs."torrent" or (errorHandler.buildDepError "torrent"))) ++ pkgs.lib.optional (flags.magicmime) (hsPkgs."magic" or (errorHandler.buildDepError "magic"))) ++ pkgs.lib.optional (flags.benchmark) (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

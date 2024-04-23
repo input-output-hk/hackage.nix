@@ -21,15 +21,15 @@
       synopsis = "Theme for hvega.";
       description = "A professional theme for publication quality figures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

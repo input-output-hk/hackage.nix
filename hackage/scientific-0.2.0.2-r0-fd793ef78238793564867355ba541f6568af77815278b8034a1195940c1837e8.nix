@@ -21,7 +21,7 @@
       synopsis = "Arbitrary-precision floating-point numbers represented using scientific notation";
       description = "A @Scientific@ number is an arbitrary-precision floating-point number\nrepresented using scientific notation.\n\nA scientific number with 'coefficient' @c@ and\n'base10Exponent' @e@ corresponds to the\n'Fractional' number: @'fromInteger' c * 10 '^^' e@\n\nIts primary use-case is to serve as the target of\nparsing floating point numbers. Since the textual\nrepresentation of floating point numbers use\nscientific notation they can be efficiently\nparsed to a @Scientific@ number.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-scientific" = {
           depends = [
@@ -41,19 +41,19 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-scientific" = {
           depends = [
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

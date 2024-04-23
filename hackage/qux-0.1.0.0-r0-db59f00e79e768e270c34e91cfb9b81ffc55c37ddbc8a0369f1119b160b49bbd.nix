@@ -21,7 +21,7 @@
       synopsis = "Command line binary for working with the Qux language";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "qux" = {
@@ -30,9 +30,9 @@
             (hsPkgs."language-qux" or (errorHandler.buildDepError "language-qux"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

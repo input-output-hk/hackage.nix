@@ -21,7 +21,7 @@
       synopsis = "Haskell interface to the Bus Pirate binary interface";
       description = "This package provides a simple, type-safe interface for working with\nthe Bus Pirate's binary interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

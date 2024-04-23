@@ -21,7 +21,7 @@
       synopsis = "Constraint Solver for Finite Domains";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/finito#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."numeric-domains" or (errorHandler.buildDepError "numeric-domains"))
           (hsPkgs."propeller" or (errorHandler.buildDepError "propeller"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "queens" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."numeric-domains" or (errorHandler.buildDepError "numeric-domains"))
             (hsPkgs."propeller" or (errorHandler.buildDepError "propeller"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sudoku" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."propeller" or (errorHandler.buildDepError "propeller"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

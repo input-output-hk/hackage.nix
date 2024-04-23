@@ -21,7 +21,7 @@
       synopsis = "Implementaation of unitym for Servant servers";
       description = "Implementaation of unitym for Servant servers ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unitym" or (errorHandler.buildDepError "unitym"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

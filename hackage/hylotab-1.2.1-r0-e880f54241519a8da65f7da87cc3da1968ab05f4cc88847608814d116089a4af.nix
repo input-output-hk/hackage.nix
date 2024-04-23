@@ -21,7 +21,7 @@
       synopsis = "Tableau based theorem prover for hybrid logics";
       description = "HyLoTab is a proof-of-concept tableaux prover for\nhybrid logics originally written in 2002 by Jan van Eijck.\nIt is no longer developped, but it is kept compatible\nwith the syntax used in HyLoLib.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hylotab" = {
@@ -31,9 +31,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

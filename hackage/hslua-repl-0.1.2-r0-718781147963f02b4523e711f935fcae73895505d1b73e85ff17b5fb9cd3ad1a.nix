@@ -21,7 +21,7 @@
       synopsis = "Isocline-based Lua REPL";
       description = "An embeddable Lua REPL built with Isocline and HsLua.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."isocline" or (errorHandler.buildDepError "isocline"))
           (hsPkgs."lua" or (errorHandler.buildDepError "lua"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "luarepl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hslua-core" or (errorHandler.buildDepError "hslua-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (flags.executable) (hsPkgs."hslua-repl" or (errorHandler.buildDepError "hslua-repl"));
+          ] ++ pkgs.lib.optional (flags.executable) (hsPkgs."hslua-repl" or (errorHandler.buildDepError "hslua-repl"));
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

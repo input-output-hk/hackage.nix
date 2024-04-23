@@ -21,11 +21,11 @@
       synopsis = "Free structures sans laws";
       description = "Reified structures for debugging consumers of type classes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

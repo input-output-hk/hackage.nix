@@ -21,7 +21,7 @@
       synopsis = "Logical combinatory operations dealing with datatypes\nrepresenting booleans by their constructors.";
       description = "Boolean-like logical combinatory operations under typeclasses\nAndlike, Orlike, and Xorlike and a typeclass Falsifier for datatypes with\nunary false-like values (e.g. Nothing, []).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

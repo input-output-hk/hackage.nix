@@ -21,7 +21,7 @@
       synopsis = "Recursively check that a directory is under version control.";
       description = "Version control all the things.  Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vcatt" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."vcatt" or (errorHandler.buildDepError "vcatt"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

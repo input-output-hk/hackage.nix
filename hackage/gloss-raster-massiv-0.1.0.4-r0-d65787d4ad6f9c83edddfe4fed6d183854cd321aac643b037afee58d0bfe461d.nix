@@ -21,7 +21,7 @@
       synopsis = "Massiv-based alternative for gloss-raster";
       description = "This library utilizes massiv's superb performance characteristics to supply alternative rasterization functionality to that which is provided by the gloss-raster package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."gloss-rendering" or (errorHandler.buildDepError "gloss-rendering"))
           (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gloss-raster-massiv-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gloss-raster-massiv" or (errorHandler.buildDepError "gloss-raster-massiv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

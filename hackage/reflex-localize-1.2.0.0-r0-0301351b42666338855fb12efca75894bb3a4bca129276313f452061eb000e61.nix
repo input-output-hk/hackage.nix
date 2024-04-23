@@ -21,7 +21,7 @@
       synopsis = "Localization library for reflex";
       description = "Library provides helpers for dynamic strings that depends on current selected language.\nSee also `reflex-localize-dom` for examples and DOM related helpers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."reflex-external-ref" or (errorHandler.buildDepError "reflex-external-ref"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."commutative-semigroups" or (errorHandler.buildDepError "commutative-semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

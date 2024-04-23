@@ -21,14 +21,14 @@
       synopsis = "Storable type class for variable-sized data";
       description = "The module \"Data.Storable\" provides an extension to the\nForeign.Storable type class adding support for variable-sized\ndata types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

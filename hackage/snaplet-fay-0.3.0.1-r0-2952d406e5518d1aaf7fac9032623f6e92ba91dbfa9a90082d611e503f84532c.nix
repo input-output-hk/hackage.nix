@@ -21,7 +21,7 @@
       synopsis = "Fay integration for Snap with request- and pre-compilation.";
       description = "Fay integration for Snap with request based compilation during development and precompilation in production.\nFor more information, please see <https://github.com/faylang/snaplet-fay>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

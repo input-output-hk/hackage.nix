@@ -21,7 +21,7 @@
       synopsis = "Efficient, infinite-precision 2D and 3D spatial containers.";
       description = "Please see the README on GitHub at <https://github.com/isovector/nspace#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "nspace-test" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
             (hsPkgs."nspace" or (errorHandler.buildDepError "nspace"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

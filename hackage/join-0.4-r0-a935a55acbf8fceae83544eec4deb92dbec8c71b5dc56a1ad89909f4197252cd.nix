@@ -21,7 +21,7 @@
       synopsis = "Parallel Join Patterns with Guards and Propagation";
       description = "Parallel Join Patterns with Guards and Propagation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."multisetrewrite" or (errorHandler.buildDepError "multisetrewrite"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

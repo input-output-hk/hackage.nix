@@ -21,7 +21,7 @@
       synopsis = "Some useful preludes for the Music Suite.";
       description = "Some useful preludes for the Music Suite.\nThis library is part of the Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics" or (errorHandler.buildDepError "music-dynamics"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "complex" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."music-pitch" or (errorHandler.buildDepError "music-pitch"))
             (hsPkgs."music-score" or (errorHandler.buildDepError "music-score"))
             (hsPkgs."music-preludes" or (errorHandler.buildDepError "music-preludes"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "duo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."music-pitch" or (errorHandler.buildDepError "music-pitch"))
             (hsPkgs."music-score" or (errorHandler.buildDepError "music-score"))
             (hsPkgs."music-preludes" or (errorHandler.buildDepError "music-preludes"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "triplets" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."music-pitch" or (errorHandler.buildDepError "music-pitch"))
             (hsPkgs."music-score" or (errorHandler.buildDepError "music-score"))
             (hsPkgs."music-preludes" or (errorHandler.buildDepError "music-preludes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

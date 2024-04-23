@@ -21,11 +21,11 @@
       synopsis = "A slightly better (but conservative) Prelude";
       description = "See <https://github.com/feuerbach/prelude-prime/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A streamly-based library providing performance-focused alternatives for functionality found in yesod-static.";
       description = "API docs and the README are available at https://github.com/Matthew-Mosior/yesod-static-streamly ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yesod-static-streamly-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."yesod-static-streamly" or (errorHandler.buildDepError "yesod-static-streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

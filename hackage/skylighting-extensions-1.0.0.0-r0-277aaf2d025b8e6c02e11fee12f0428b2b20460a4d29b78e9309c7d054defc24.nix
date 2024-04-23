@@ -21,7 +21,7 @@
       synopsis = "Customized Skylighting syntax highlighters";
       description = "A miscellaneous assortment of customized Skylighting syntax highlighters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
           (hsPkgs."skylighting-modding" or (errorHandler.buildDepError "skylighting-modding"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

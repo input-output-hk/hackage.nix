@@ -21,7 +21,7 @@
       synopsis = "Unit test framework (built on HUnit) for WAI applications.";
       description = "Unit test framework (built on HUnit) for WAI applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."wai-test" or (errorHandler.buildDepError "wai-test"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

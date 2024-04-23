@@ -21,7 +21,7 @@
       synopsis = "Comprehensive and efficient (multi)linear algebra implementation.";
       description = "Comprehensive and efficient (multi)linear algebra implementation, based on generic tensor formalism and concise Ricci-Curbastro index syntax. More information available on GitHub: <https://github.com/ArturB/multilinear#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "all" = {
           depends = [
@@ -45,35 +45,35 @@
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "memory" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "profile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "time" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

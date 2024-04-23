@@ -21,11 +21,11 @@
       synopsis = "Functions for dealing with bools";
       description = "Functions for dealing with bools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

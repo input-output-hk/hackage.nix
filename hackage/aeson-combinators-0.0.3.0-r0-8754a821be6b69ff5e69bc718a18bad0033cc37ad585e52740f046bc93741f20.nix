@@ -21,7 +21,7 @@
       synopsis = "Aeson combinators for dead simple JSON decoding";
       description = "Low overhead value space `Decoder`\non top of Aeson's Parser for combinator style decoding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -53,20 +53,20 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!!flags.doctest) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = (if !flags.doctest
             then false
-            else true) && (if compiler.isGhc && (compiler.version).le "8.0"
+            else true) && (if compiler.isGhc && compiler.version.le "8.0"
             then false
             else true);
-          };
         };
       };
-    }
+    };
+  }

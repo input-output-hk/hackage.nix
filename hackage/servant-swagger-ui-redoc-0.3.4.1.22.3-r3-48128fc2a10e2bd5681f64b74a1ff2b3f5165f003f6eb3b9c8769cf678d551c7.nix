@@ -14,7 +14,7 @@
       identifier = {
         name = "servant-swagger-ui-redoc";
         version = "0.3.4.1.22.3";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "haskell-servant-maintainers@googlegroups.com";
@@ -24,7 +24,7 @@
       synopsis = "Servant swagger ui: ReDoc theme";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nReDoc theme: https://github.com/Rebilly/ReDoc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Time Series Compression";
       description = "Goat is a time series compression implementation heavily\ninfluenced by the Gorilla paper published by Facebook.\nIt provides separate compression algorithms for both time\nand value points of a time series.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."floating-bits" or (errorHandler.buildDepError "floating-bits"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "goat-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."goat" or (errorHandler.buildDepError "goat"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

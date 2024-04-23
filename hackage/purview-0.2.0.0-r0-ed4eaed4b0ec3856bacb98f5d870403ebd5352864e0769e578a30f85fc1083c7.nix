@@ -21,7 +21,7 @@
       synopsis = "A simple, fun way to build websites";
       description = "A simple, fun way to build websites with Haskell.\n\nThe main points:\n\n* It's server side rendered and uses websockets to communicate HTML updates and to receive events.\n\n* State can be broken up into small components.\n\n* Attributes flow down to concrete HTML, events bubble up to handlers.\n\n* Handlers can send further events to a parent handler or themselves\n\nIt's inspired by Phoenix LiveView, React, Redux, and Redux-Sagas.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "purview-test" = {
           depends = [
@@ -61,13 +61,13 @@
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "purview-perf-test" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Generalised permutation parser combinator";
       description = "General permutation parser combinators that will work with any\nparser combinator library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

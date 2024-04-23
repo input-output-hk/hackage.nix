@@ -21,7 +21,7 @@
       synopsis = "A Compiler from XQuery to Haskell";
       description = "HXQ is a fast and space-efficient compiler from XQuery (the standard\nquery language for XML) to embedded Haskell code. The translation is\nbased on Haskell templates. It also provides an interpreter for\nevaluating ad-hoc XQueries read from input or from files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xquery" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

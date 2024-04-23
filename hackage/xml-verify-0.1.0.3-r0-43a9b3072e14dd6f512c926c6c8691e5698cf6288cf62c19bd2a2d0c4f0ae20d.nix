@@ -21,7 +21,7 @@
       synopsis = "Verifying XML signatures";
       description = "A small library, that calls xmlsec, for verifying XML. It also contains a wrapper for use with HXT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
-        pkgconfig = ((((pkgs.lib).optional (!flags.openssl && !flags.nss && !flags.gcrypt && !flags.gnutls) (pkgconfPkgs."xmlsec1" or (errorHandler.pkgConfDepError "xmlsec1")) ++ (pkgs.lib).optional (flags.openssl) (pkgconfPkgs."xmlsec1-openssl" or (errorHandler.pkgConfDepError "xmlsec1-openssl"))) ++ (pkgs.lib).optional (flags.nss) (pkgconfPkgs."xmlsec1-nss" or (errorHandler.pkgConfDepError "xmlsec1-nss"))) ++ (pkgs.lib).optional (flags.gcrypt) (pkgconfPkgs."xmlsec1-GCrypt" or (errorHandler.pkgConfDepError "xmlsec1-GCrypt"))) ++ (pkgs.lib).optional (flags.gnutls) (pkgconfPkgs."xmlsec1-gnutls" or (errorHandler.pkgConfDepError "xmlsec1-gnutls"));
+        ];
+        pkgconfig = (((pkgs.lib.optional (!flags.openssl && !flags.nss && !flags.gcrypt && !flags.gnutls) (pkgconfPkgs."xmlsec1" or (errorHandler.pkgConfDepError "xmlsec1")) ++ pkgs.lib.optional (flags.openssl) (pkgconfPkgs."xmlsec1-openssl" or (errorHandler.pkgConfDepError "xmlsec1-openssl"))) ++ pkgs.lib.optional (flags.nss) (pkgconfPkgs."xmlsec1-nss" or (errorHandler.pkgConfDepError "xmlsec1-nss"))) ++ pkgs.lib.optional (flags.gcrypt) (pkgconfPkgs."xmlsec1-GCrypt" or (errorHandler.pkgConfDepError "xmlsec1-GCrypt"))) ++ pkgs.lib.optional (flags.gnutls) (pkgconfPkgs."xmlsec1-gnutls" or (errorHandler.pkgConfDepError "xmlsec1-gnutls"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

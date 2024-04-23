@@ -21,7 +21,7 @@
       synopsis = "Various basic utilities for Pipes.";
       description = "This module contains basic utilities for Pipes to deal with files and chunked binary data, as well as extra combinators like 'zip' and 'tee'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,39 +29,39 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "telnet" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
             (hsPkgs."pipes-extra" or (errorHandler.buildDepError "pipes-extra"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
-        "compress" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
-            (hsPkgs."pipes-extra" or (errorHandler.buildDepError "pipes-extra"))
-            (hsPkgs."pipes-zlib" or (errorHandler.buildDepError "pipes-zlib"))
-            ];
-          buildable = if flags.examples then true else false;
-          };
-        "decompress" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
-            (hsPkgs."pipes-extra" or (errorHandler.buildDepError "pipes-extra"))
-            (hsPkgs."pipes-zlib" or (errorHandler.buildDepError "pipes-zlib"))
-            ];
-          buildable = if flags.examples then true else false;
-          };
         };
+        "compress" = {
+          depends = pkgs.lib.optionals (flags.examples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
+            (hsPkgs."pipes-extra" or (errorHandler.buildDepError "pipes-extra"))
+            (hsPkgs."pipes-zlib" or (errorHandler.buildDepError "pipes-zlib"))
+          ];
+          buildable = if flags.examples then true else false;
+        };
+        "decompress" = {
+          depends = pkgs.lib.optionals (flags.examples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
+            (hsPkgs."pipes-extra" or (errorHandler.buildDepError "pipes-extra"))
+            (hsPkgs."pipes-zlib" or (errorHandler.buildDepError "pipes-zlib"))
+          ];
+          buildable = if flags.examples then true else false;
+        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
             (hsPkgs."pipes-extra" or (errorHandler.buildDepError "pipes-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-general" = {
           depends = [
@@ -87,18 +87,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-zlib" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,9 +112,9 @@
             (hsPkgs."zlib-conduit" or (errorHandler.buildDepError "zlib-conduit"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

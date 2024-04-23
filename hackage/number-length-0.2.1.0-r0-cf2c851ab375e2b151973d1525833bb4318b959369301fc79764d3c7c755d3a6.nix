@@ -21,12 +21,12 @@
       synopsis = "Number of digits in a number in decimal and hexadecimal representation.";
       description = "There are situations when it is necessary to know the length of a number in\ndecimal or hexadecimal form. In example when allocating buffer while\nserializing a number in to binary or human readable format.\n\n@\nλ> numberLength (123 :: Int)\n3\n@\n\n@\nλ> numberLengthHex (123 :: Int)  -- 123 = 7b in hex\n2\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = ([
@@ -36,19 +36,19 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10") (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10") (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."number-length" or (errorHandler.buildDepError "number-length"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

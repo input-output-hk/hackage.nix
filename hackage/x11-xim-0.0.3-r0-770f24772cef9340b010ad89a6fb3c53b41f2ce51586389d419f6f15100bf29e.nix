@@ -21,15 +21,15 @@
       synopsis = "A binding to the xim of X11 graphics library";
       description = "A binding to the xim of X11 graphics library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

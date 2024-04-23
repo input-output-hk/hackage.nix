@@ -21,7 +21,7 @@
       synopsis = "Implementation of the SPAKE2 Password-Authenticated Key Exchange algorithm";
       description = "This library implements the SPAKE2 password-authenticated key exchange\n(\"PAKE\") algorithm. This allows two parties, who share a weak password, to\nsafely derive a strong shared secret (and therefore build an\nencrypted+authenticated channel).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-spake2-interop-entrypoint" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."spake2" or (errorHandler.buildDepError "spake2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."spake2" or (errorHandler.buildDepError "spake2"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

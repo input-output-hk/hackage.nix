@@ -21,7 +21,7 @@
       synopsis = "Memoize functions on Generic types";
       description = "Please see the README on GitHub at <https://github.com/davidspies/fastmemo#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fastmemo-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."fastmemo" or (errorHandler.buildDepError "fastmemo"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

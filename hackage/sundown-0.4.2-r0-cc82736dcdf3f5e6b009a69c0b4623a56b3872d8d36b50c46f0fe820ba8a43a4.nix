@@ -21,14 +21,14 @@
       synopsis = "Bindings to the sundown markdown library";
       description = "Bindings to GitHub's C markdown library: <https://github.com/tanoku/sundown>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

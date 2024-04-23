@@ -21,7 +21,7 @@
       synopsis = "Haskell code prettifier";
       description = "A Haskell code prettifier. For more information, see:\n\n<https://github.com/haskell/stylish-haskell/blob/master/README.markdown>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -40,17 +40,17 @@
           (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
           (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.4.1" && !flags.ghc-lib
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && compiler.version.ge "9.4.1" && !flags.ghc-lib
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-            ]
+          ]
           else [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "stylish-haskell" = {
           depends = ([
@@ -72,18 +72,18 @@
             (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.4.1" && !flags.ghc-lib
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && compiler.version.ge "9.4.1" && !flags.ghc-lib
             then [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
               (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-              ]
+            ]
             else [
               (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "stylish-haskell-tests" = {
           depends = ([
@@ -107,17 +107,17 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && (compiler.version).ge "9.4.1" && !flags.ghc-lib
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (if compiler.isGhc && compiler.version.ge "9.4.1" && !flags.ghc-lib
             then [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
               (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-              ]
+            ]
             else [
               (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

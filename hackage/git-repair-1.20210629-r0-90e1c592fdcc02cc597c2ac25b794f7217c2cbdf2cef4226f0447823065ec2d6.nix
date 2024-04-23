@@ -39,8 +39,8 @@
         (hsPkgs.buildPackages.mtl or (pkgs.buildPackages.mtl or (errorHandler.setupDepError "mtl")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.time or (pkgs.buildPackages.time or (errorHandler.setupDepError "time")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "git-repair" = {
@@ -71,11 +71,11 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."filepath-bytestring" or (errorHandler.buildDepError "filepath-bytestring"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."setenv" or (errorHandler.buildDepError "setenv")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

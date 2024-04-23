@@ -21,15 +21,15 @@
       synopsis = "MaybeT monad transformer using transformers instead of mtl.";
       description = "Support for computations with failures. This\npackage is a fork from the MaybeT package by Eric\nKidd, changed to depend on transformers instead\nof mtl. It also adds a few more utility\nfunctions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

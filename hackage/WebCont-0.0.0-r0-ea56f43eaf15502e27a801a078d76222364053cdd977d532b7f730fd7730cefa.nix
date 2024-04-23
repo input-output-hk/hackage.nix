@@ -21,7 +21,7 @@
       synopsis = "Continuation based web programming for Happstack";
       description = "WebCont allows continuation based web programming to be integrated with Happstack, allowing\nstep based interfaces along with traditional handlers. It is based on <http://gist.github.com/260052>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."applicative-extras" or (errorHandler.buildDepError "applicative-extras"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

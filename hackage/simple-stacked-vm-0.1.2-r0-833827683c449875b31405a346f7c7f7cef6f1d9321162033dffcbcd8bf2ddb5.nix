@@ -21,7 +21,7 @@
       synopsis = "Simple stacked virtual machine: assembler, disassembler, bytecode interpreter";
       description = "This is a simple stacked virtual machine. It works like Forth or JVM.\nThis package includes declarations of data types, assembler, disassembler,\nand bytecode interpreter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."binary-state" or (errorHandler.buildDepError "binary-state"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "ssvm" = { buildable = true; }; };
       };
-    }
+      exes = { "ssvm" = { buildable = true; }; };
+    };
+  }

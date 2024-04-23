@@ -21,15 +21,15 @@
       synopsis = "Flexible time library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

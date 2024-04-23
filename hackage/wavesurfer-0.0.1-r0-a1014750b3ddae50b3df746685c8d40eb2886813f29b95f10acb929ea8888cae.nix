@@ -21,7 +21,7 @@
       synopsis = "Parse WaveSurfer files";
       description = "Parse WaveSurfer files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
           (hsPkgs."bytestring-show" or (errorHandler.buildDepError "bytestring-show"))
           (hsPkgs."delimited-text" or (errorHandler.buildDepError "delimited-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

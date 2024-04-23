@@ -21,15 +21,15 @@
       synopsis = "A delicious set of interdependant libraries.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

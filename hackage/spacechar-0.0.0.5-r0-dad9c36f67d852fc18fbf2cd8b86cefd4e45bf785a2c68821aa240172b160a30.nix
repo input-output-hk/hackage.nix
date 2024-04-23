@@ -21,15 +21,15 @@
       synopsis = "Space Character";
       description = "All the space characters as types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/geomancy-layout-0.1-r0-fdd5687003e6aef7161dc158475e9c1d7afdfd055b83e9eb4f80b5720964f3f0.nix;
         revNum = 0;
         sha256 = "fdd5687003e6aef7161dc158475e9c1d7afdfd055b83e9eb4f80b5720964f3f0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

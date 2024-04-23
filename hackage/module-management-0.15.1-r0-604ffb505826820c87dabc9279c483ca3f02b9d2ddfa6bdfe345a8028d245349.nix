@@ -21,7 +21,7 @@
       synopsis = "Clean up module imports, split and merge modules";
       description = "Clean up module imports, split and merge modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hmm" = {
           depends = [
@@ -66,11 +66,11 @@
             (hsPkgs."set-extra" or (errorHandler.buildDepError "set-extra"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
-          depends = (pkgs.lib).optionals (flags.build-tests) [
+          depends = pkgs.lib.optionals (flags.build-tests) [
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -95,9 +95,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = if flags.build-tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

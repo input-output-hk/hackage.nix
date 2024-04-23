@@ -21,7 +21,7 @@
       synopsis = "dozens api library";
       description = "dozens(<https://dozens.jp/>) api library\n\nexamples: <https://github.com/philopon/dozens-hs/blob/master/examples/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

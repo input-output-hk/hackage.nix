@@ -21,7 +21,7 @@
       synopsis = "Easily generate Hoogle indices for installed packages";
       description = "'hoogle-index' is a small utility for generating indicies for local\nHoogle installations.\n\n> $ cabal install hoogle hoogle-index\n> $ hoogle-index    # this will take a while\n\nYour Hoogle index now covers all of the packages locally installed.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoogle-index" = {
@@ -38,9 +38,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hoogle" or (errorHandler.buildDepError "hoogle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

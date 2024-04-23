@@ -21,11 +21,11 @@
       synopsis = "The error function, erf, and friends";
       description = "A type class for the error function, erf, and related functions.\nInstances for Float and Double.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

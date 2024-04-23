@@ -21,7 +21,7 @@
       synopsis = "Graphical representations for various combinatorial objects";
       description = "Uses the @diagrams@ library to generate graphical\nrepresentations of combinatorial objects from\nthe @combinat@ library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

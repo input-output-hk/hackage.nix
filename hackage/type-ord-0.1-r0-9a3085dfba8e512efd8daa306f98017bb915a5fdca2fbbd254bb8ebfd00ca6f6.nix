@@ -21,7 +21,7 @@
       synopsis = "Type-level comparison operator";
       description = "Type-level comparison operator with instances for ()-terminated\n@type-digit@ numerals until <http://hackage.haskell.org/trac/ghc/ticket/1894>\nis resolved.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."type-booleans" or (errorHandler.buildDepError "type-booleans"))
           (hsPkgs."type-spine" or (errorHandler.buildDepError "type-spine"))
           (hsPkgs."type-digits" or (errorHandler.buildDepError "type-digits"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

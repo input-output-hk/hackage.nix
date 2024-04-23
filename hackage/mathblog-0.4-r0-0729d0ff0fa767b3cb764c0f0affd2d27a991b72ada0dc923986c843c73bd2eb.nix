@@ -21,7 +21,7 @@
       synopsis = "A program for creating and managing a static\nweblog with LaTeX math and function graphs";
       description = "This package provides a program for creating and\nmanaging a statically-generated, VCS-friendly,\nmathematically-inclined weblog.  If you're\ninterested in managing a blog with few moving\nparts and support for embedded LaTeX math,\nembedded function plotting, and the UNIX editor\nof your choice, then this is the blogging\nplatform for you!  For detailed information and a\nfull feature list, please see the README.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mb" = {
@@ -39,9 +39,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mb-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

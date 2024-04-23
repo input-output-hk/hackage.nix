@@ -21,7 +21,7 @@
       synopsis = "Timing utility for the command line";
       description = "Timing utility for the command line, like the Unix\n\"time\" command. Especially useful on systems which\ndo not have time, like Windows.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htime" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

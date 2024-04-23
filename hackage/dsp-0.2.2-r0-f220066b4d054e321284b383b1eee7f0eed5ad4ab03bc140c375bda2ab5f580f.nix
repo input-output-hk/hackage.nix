@@ -21,7 +21,7 @@
       synopsis = "Haskell Digital Signal Processing";
       description = "Digital Signal Processing, Fourier Transform, Linear Algebra, Interpolation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -29,9 +29,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

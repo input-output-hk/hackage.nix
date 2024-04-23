@@ -21,7 +21,7 @@
       synopsis = "Manage nix overrides for haskell packages";
       description = "A tool to simplify the use of nix overrides during haskell development";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskell-overridez" = {
@@ -42,9 +42,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

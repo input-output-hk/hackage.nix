@@ -21,7 +21,7 @@
       synopsis = "Generate graphs of darcs repository activity";
       description = "Generate graphs of darcs repository activity";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "darcs-graph" = {
@@ -33,10 +33,10 @@
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

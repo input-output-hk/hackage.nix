@@ -21,7 +21,7 @@
       synopsis = "A *simple* database migration tool.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dbm" = {
@@ -34,9 +34,9 @@
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

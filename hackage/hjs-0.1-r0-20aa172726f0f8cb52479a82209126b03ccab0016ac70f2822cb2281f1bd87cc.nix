@@ -21,7 +21,7 @@
       synopsis = "Javascript Parser";
       description = "A Javascript parser to be extended to an interpreter in later versions.\nParses as per ECMA-262 plus some parts of JS >=1.5";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "FixHappy" = {
@@ -30,18 +30,18 @@
             (hsPkgs."happy" or (errorHandler.buildDepError "happy"))
             (hsPkgs."alex" or (errorHandler.buildDepError "alex"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hjs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."happy" or (errorHandler.buildDepError "happy"))
             (hsPkgs."alex" or (errorHandler.buildDepError "alex"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

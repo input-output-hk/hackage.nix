@@ -6,8 +6,8 @@
         nix = import ../hackage/oauth2-jwt-bearer-0.0.1-r0-17bdd58432781ca700be05f6f57f9b01a55914499569b56128166fe30494a082.nix;
         revNum = 0;
         sha256 = "17bdd58432781ca700be05f6f57f9b01a55914499569b56128166fe30494a082";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

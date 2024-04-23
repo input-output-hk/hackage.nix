@@ -6,8 +6,8 @@
         nix = import ../hackage/Printf-TH-0.1.1-r0-36bcbfb606f394678f08e745d919c903f084fd18cdc680fc662d7ddb0daea991.nix;
         revNum = 0;
         sha256 = "36bcbfb606f394678f08e745d919c903f084fd18cdc680fc662d7ddb0daea991";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

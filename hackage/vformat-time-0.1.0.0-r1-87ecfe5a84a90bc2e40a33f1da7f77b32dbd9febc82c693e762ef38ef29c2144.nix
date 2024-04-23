@@ -21,16 +21,16 @@
       synopsis = "Extend vformat to time datatypes";
       description = "Please see http://hackage.haskell.org/package/vformat-time";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vformat-time-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
             (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Unofficial OpenAI client";
       description = "Unofficial OpenAI client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "openai-hs-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

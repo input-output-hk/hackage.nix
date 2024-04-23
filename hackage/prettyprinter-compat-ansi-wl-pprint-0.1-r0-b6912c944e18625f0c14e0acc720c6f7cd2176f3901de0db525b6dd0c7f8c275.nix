@@ -14,7 +14,7 @@
       identifier = {
         name = "prettyprinter-compat-ansi-wl-pprint";
         version = "0.1";
-        };
+      };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "David Luposchainsky <dluposchainsky at google>";
@@ -24,7 +24,7 @@
       synopsis = "Prettyprinter compatibility module for previous users of the ansi-wl-pprint package.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

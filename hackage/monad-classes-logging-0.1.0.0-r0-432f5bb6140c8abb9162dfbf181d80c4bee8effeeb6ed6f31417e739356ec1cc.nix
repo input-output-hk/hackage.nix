@@ -21,7 +21,7 @@
       synopsis = "monad-classes based typeclass for Ollie's logging-effect LoggingT";
       description = "monad-classes based typeclass for Ollie's logging-effect LoggingT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."monad-classes" or (errorHandler.buildDepError "monad-classes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "monad-classes-logging-test" = {
           depends = [
@@ -43,11 +43,11 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."monad-classes-logging" or (errorHandler.buildDepError "monad-classes-logging"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."monad-classes" or (errorHandler.buildDepError "monad-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

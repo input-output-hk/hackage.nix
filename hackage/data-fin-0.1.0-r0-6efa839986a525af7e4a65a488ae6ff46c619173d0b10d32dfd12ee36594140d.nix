@@ -21,7 +21,7 @@
       synopsis = "Finite totally ordered sets";
       description = "Finite totally ordered sets";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
           (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

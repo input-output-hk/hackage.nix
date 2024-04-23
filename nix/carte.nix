@@ -6,8 +6,8 @@
         nix = import ../hackage/carte-0.1.0.0-r0-03e2ae20609f69cecbb651543499d4b7088f19e4767fd05af2534250974f595b.nix;
         revNum = 0;
         sha256 = "03e2ae20609f69cecbb651543499d4b7088f19e4767fd05af2534250974f595b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

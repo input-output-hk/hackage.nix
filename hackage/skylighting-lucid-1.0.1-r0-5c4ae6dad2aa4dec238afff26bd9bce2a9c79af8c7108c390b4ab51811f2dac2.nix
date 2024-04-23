@@ -21,7 +21,7 @@
       synopsis = "Lucid support for Skylighting";
       description = "Lucid support for Skylighting";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."skylighting-core" or (errorHandler.buildDepError "skylighting-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

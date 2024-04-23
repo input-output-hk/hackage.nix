@@ -14,7 +14,7 @@
       identifier = {
         name = "algorithmic-composition-basic";
         version = "0.6.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Helps to create experimental music from a file (or its part) and a Ukrainian text.";
       description = "It can also generate a timbre for the notes. Uses SoX inside.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."mmsyn7l" or (errorHandler.buildDepError "mmsyn7l"))
           (hsPkgs."foldable-ix" or (errorHandler.buildDepError "foldable-ix"))
           (hsPkgs."process-sequential" or (errorHandler.buildDepError "process-sequential"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

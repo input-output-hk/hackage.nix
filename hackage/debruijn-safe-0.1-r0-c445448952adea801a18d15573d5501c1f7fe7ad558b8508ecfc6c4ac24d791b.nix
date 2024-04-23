@@ -21,7 +21,7 @@
       synopsis = "de Bruijn indices and levels";
       description = "de Bruijn indices and levels for well-scoped terms.\n\nThis is \"safe\", but slow implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

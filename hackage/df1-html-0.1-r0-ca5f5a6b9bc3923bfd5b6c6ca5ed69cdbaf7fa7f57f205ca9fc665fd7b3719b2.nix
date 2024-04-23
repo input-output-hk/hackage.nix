@@ -21,7 +21,7 @@
       synopsis = "Render and parse df1 logs as HTML";
       description = "Render and parse df1 logs as HTML";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

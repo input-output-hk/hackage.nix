@@ -21,7 +21,7 @@
       synopsis = "Fast persistent vectors";
       description = "An persistent vector is an efficient sequence data structure.\nIt supports fast indexing, iteration, snocing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."vector-stream" or (errorHandler.buildDepError "vector-stream"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pvector-test" = {
           depends = [
@@ -43,13 +43,13 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "pvector-bench" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."persistent-vector" or (errorHandler.buildDepError "persistent-vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

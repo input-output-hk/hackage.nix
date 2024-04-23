@@ -21,11 +21,11 @@
       synopsis = "RTS for the IDE backend";
       description = "Add on package used internally. End users should not need to use this.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/vicinity-0.1.0-r0-01525b063ca7a42c5b6b5f68e4138bbe0dd64c0c6687128ffdca5e7ffb785f12.nix;
         revNum = 0;
         sha256 = "01525b063ca7a42c5b6b5f68e4138bbe0dd64c0c6687128ffdca5e7ffb785f12";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

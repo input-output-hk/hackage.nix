@@ -21,7 +21,7 @@
       synopsis = "A Gtk mixer application for FreeBSD";
       description = "A Gtk mixer application for FreeBSD";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hxmixer" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

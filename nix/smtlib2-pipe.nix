@@ -6,8 +6,8 @@
         nix = import ../hackage/smtlib2-pipe-1.0-r0-f9f95c17601400ecc273240ebc3858c9fea20ae3fb6f5f4130a87f1186291535.nix;
         revNum = 0;
         sha256 = "f9f95c17601400ecc273240ebc3858c9fea20ae3fb6f5f4130a87f1186291535";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

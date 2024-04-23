@@ -21,14 +21,14 @@
       synopsis = "Pure structures that can be incrementally created\nin impure code";
       description = "This package provides a type class for\nincrementally creating pure structures in impure\ncode. Also included is a queue with a pure front\nand an impure back.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."procrastinating-variable" or (errorHandler.buildDepError "procrastinating-variable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Extremely minimal prelude";
       description = "\"Essentials\" is an minimal Prelude alternative containing\nonly what is truly needed by the vast majority of modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Implementation of servant-util primitives for beam-postgres.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."servant-util" or (errorHandler.buildDepError "servant-util"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-util-beam-pg-examples" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."servant-util" or (errorHandler.buildDepError "servant-util"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "servant-util-beam-pg-test" = {
           depends = [
@@ -74,12 +74,12 @@
             (hsPkgs."servant-util-beam-pg" or (errorHandler.buildDepError "servant-util-beam-pg"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

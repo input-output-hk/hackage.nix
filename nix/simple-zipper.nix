@@ -6,8 +6,8 @@
         nix = import ../hackage/simple-zipper-0.1.0.0-r0-1bdd0a443a04a31b04991b038085b4d0cb604b33cdda25395f4fc19bc78421f4.nix;
         revNum = 0;
         sha256 = "1bdd0a443a04a31b04991b038085b4d0cb604b33cdda25395f4fc19bc78421f4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,18 +21,18 @@
       synopsis = "Low level bindings to DirectFB";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."bindings-posix" or (errorHandler.buildDepError "bindings-posix"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."directfb" or (errorHandler.pkgConfDepError "directfb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

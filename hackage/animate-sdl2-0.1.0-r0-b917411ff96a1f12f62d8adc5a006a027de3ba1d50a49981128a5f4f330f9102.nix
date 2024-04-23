@@ -21,7 +21,7 @@
       synopsis = "sdl2 + animate auxiliary library";
       description = "sdl2 is a commonly used media library. animate is a general animation library. Combining animate and sdl2, animate-sdl2 provides accessible glue-code to load and draw sprites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

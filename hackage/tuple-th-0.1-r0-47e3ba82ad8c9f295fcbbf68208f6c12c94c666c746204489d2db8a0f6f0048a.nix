@@ -21,14 +21,14 @@
       synopsis = "Generate (non-recursive) utility functions for tuples of statically known size";
       description = "Template Haskell functions for generating functions similar to those in Data.List for tuples of statically known size.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

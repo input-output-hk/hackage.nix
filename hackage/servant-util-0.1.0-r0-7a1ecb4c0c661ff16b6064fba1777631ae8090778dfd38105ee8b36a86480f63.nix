@@ -21,7 +21,7 @@
       synopsis = "Servant servers utilities.";
       description = "Please see the README on GitHub at <https://github.com/serokell/servant-util#README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,12 +53,12 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.autoexporter.components.exes.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter:autoexporter")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-util-examples" = {
           depends = [
@@ -93,10 +93,10 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "servant-util-test" = {
           depends = [
@@ -133,12 +133,12 @@
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

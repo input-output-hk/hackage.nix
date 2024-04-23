@@ -21,7 +21,7 @@
       synopsis = "Useful utilities for the Lojban language";
       description = "Some utilities such as querying Jbovlaste XML\nexports for gismu, gloss, rafsi, etc. and\nlujvo-decomposition. More stuff to come.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for working with bitcoin-core regtest networks";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bitcoind-rpc-explorer" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."bitcoind-regtest" or (errorHandler.buildDepError "bitcoind-regtest"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "bitcoind-rpc-tests" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."bitcoind-regtest" or (errorHandler.buildDepError "bitcoind-regtest"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib or (errorHandler.setupDepError "zlib")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.parallel-io or (pkgs.buildPackages.parallel-io or (errorHandler.setupDepError "parallel-io")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -49,19 +49,19 @@
             (hsPkgs."fast-arithmetic" or (errorHandler.buildDepError "fast-arithmetic"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fast-arithmetic" or (errorHandler.buildDepError "fast-arithmetic"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

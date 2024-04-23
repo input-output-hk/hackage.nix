@@ -21,14 +21,14 @@
       synopsis = "Date cacher";
       description = "Formatting time is slow. This package provides\nmechanisms to cache formatted date";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

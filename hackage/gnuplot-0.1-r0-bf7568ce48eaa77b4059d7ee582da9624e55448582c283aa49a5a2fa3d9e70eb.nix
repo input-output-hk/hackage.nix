@@ -21,7 +21,7 @@
       synopsis = "2D and 3D plots using GNUPlot";
       description = "This is a wrapper to GNUPlot\nwhich lets you create 2D and 3D plots.\n\nIn the past this was part of the htam package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -30,9 +30,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

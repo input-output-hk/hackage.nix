@@ -21,7 +21,7 @@
       synopsis = "Library for computer music education";
       description = "Supporting library for the Haskell School of Music textbook.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,11 +36,11 @@
           (hsPkgs."markov-chain" or (errorHandler.buildDepError "markov-chain"))
           (hsPkgs."pure-fft" or (errorHandler.buildDepError "pure-fft"))
           (hsPkgs."UISF" or (errorHandler.buildDepError "UISF"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

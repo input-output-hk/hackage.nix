@@ -21,7 +21,7 @@
       synopsis = "Simple cached predicates";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."HSet" or (errorHandler.buildDepError "HSet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

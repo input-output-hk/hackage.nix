@@ -21,7 +21,7 @@
       synopsis = "Library for reading Blast XML output";
       description = "This library contains a data structure and functions for\nreading output from the BLAST sequence alignment program.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

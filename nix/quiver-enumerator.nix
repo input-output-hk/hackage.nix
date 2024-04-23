@@ -6,8 +6,8 @@
         nix = import ../hackage/quiver-enumerator-0.0.0.1-r0-f86a5d6da3109b57c37d8c6521b1dce3357e3a448fac411bd3b4d35a30f63c45.nix;
         revNum = 0;
         sha256 = "f86a5d6da3109b57c37d8c6521b1dce3357e3a448fac411bd3b4d35a30f63c45";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

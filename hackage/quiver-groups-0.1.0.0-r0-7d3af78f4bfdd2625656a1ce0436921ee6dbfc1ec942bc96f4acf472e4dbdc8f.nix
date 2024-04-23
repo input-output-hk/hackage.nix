@@ -21,16 +21,16 @@
       synopsis = "Group and chunk values within a Quiver";
       description = "Customisable Quiver grouping and chunking functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."quiver" or (errorHandler.buildDepError "quiver"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."quiver" or (errorHandler.buildDepError "quiver"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

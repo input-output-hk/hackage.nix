@@ -21,7 +21,7 @@
       synopsis = "OpenGL Logic Game";
       description = "Roll the block on the board to the end hole.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bloxorz" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

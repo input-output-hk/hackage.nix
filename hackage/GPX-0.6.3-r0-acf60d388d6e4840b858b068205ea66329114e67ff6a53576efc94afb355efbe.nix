@@ -21,7 +21,7 @@
       synopsis = "Parse GPX files";
       description = "Parse GPS Exchange (GPX) files using HXT into data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."xsd" or (errorHandler.buildDepError "xsd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

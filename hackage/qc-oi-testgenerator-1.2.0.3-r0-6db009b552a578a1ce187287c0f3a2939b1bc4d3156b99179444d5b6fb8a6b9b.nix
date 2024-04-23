@@ -21,7 +21,7 @@
       synopsis = "Compile time generation of operation invariance tests for QuickCheck";
       description = "This package generates operation invariance tests for QuickCheck from\nequation-based, QuickCheck-like properties at compile time. It\nimplements the approach from the paper \\\"Automatic Testing of Operation\nInvariance\\\" presented at WFLP'14. The paper can be downloaded at\n<http://www.iai.uni-bonn.de/~jv/GV14.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

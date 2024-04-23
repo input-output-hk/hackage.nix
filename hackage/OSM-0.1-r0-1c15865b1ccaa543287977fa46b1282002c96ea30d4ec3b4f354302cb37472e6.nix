@@ -21,15 +21,15 @@
       synopsis = "Parse OpenStreetMap files";
       description = "Parse OpenStreetMap http:\\/\\/osm.org/ files using HXT into data structures.\nThe Geo.OSM module is the core module that exports all others.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

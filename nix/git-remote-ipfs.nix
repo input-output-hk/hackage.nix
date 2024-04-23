@@ -6,8 +6,8 @@
         nix = import ../hackage/git-remote-ipfs-0.1.0.0-r0-b0b4a2263e97b963d0eefac85611515fb7175a7da148badcee40e6df25ddc3ec.nix;
         revNum = 0;
         sha256 = "b0b4a2263e97b963d0eefac85611515fb7175a7da148badcee40e6df25ddc3ec";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "A library with the kerbal space program universe and demo code";
       description = "This library is intended to help the haskell affine ksp player to\ncalculations within the ksp universe.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

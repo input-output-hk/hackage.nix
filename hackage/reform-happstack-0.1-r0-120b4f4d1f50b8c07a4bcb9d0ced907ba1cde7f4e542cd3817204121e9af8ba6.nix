@@ -21,7 +21,7 @@
       synopsis = "Happstack support for reform.";
       description = "Reform is a library for building and validating forms using applicative functors. This package add support for using reform with Happstack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."reform" or (errorHandler.buildDepError "reform"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

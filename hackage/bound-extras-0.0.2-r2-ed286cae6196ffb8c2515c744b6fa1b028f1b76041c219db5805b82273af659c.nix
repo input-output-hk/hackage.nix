@@ -21,7 +21,7 @@
       synopsis = "ScopeH and ScopeT extras for bound";
       description = "Provides more complex @Scope@ variants; @ScopeT@ and @ScopeH@:\n\n@\nScope  b f a   ~ ScopeT b IdentityT f a ~ ScopeH b f f a\nScopeT b t f a ~ ScopeH b (t f) f a\n@\n\n'ScopeH' probably should be preferred over 'ScopeT'.\nLatter is left here for completeness.\n\nSimple implementations of @ScopeH@ and @ScopeT@ would be similar\n(sans type arguments) to @Bound.Scope.Simple@.\n\nLook into @examples/@ directory for /System F/ and /Bidirectional STLC/\nimplemented with a help of 'ScopeH'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bound" or (errorHandler.buildDepError "bound"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "VRPN events via a Kafka message broker";
       description = "This package contains functions for passing VRPN \\<<https://github.com/vrpn/vrpn/wiki>\\> events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."kafka-device" or (errorHandler.buildDepError "kafka-device"))
           (hsPkgs."milena" or (errorHandler.buildDepError "milena"))
           (hsPkgs."vrpn" or (errorHandler.buildDepError "vrpn"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kafka-device-vrpn" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."kafka-device" or (errorHandler.buildDepError "kafka-device"))
             (hsPkgs."milena" or (errorHandler.buildDepError "milena"))
             (hsPkgs."vrpn" or (errorHandler.buildDepError "vrpn"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An efficient PostgreSQL driver with a flexible mapping API";
       description = "Root of the \\\"hasql\\\" ecosystem.\nFor details and tutorials see\n<https://github.com/nikita-volkov/hasql the readme>.\n.\nThe API comes free from all kinds of exceptions. All error-reporting is explicit and is presented using the 'Either' type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -59,33 +59,33 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "threads-test" = {
           depends = [
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "profiling" = {
           depends = [
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

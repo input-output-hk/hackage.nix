@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to sqlite3";
       description = "Haskell binding to sqlite3 <http://sqlite.org/>.\n";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
-        libs = (pkgs.lib).optional (!flags.builtin-sqlite3) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"));
+        ];
+        libs = pkgs.lib.optional (!flags.builtin-sqlite3) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

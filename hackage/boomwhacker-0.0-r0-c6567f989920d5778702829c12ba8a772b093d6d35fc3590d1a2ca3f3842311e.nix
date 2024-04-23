@@ -21,7 +21,7 @@
       synopsis = "Convert MIDI file to play-along boomwhacker animation";
       description = "Convert MIDI file to play-along boomwhacker animation:\n\nRun it like so:\n\n> boomwhacker song.mid song.pdf\n\n@song.mid@ is the input file that must be a MIDI file.\n@song.pdf@ is the output file, a PDF file.\nYou can convert the PDF to a series of PNG files using @ghostscript@\nand this one to a video using @ffmpeg@.\nSee @Makefile@ for example command calls.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "boomwhacker" = {
@@ -35,9 +35,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Most likely order of mutation events in RNA";
       description = "Determine the most likely order in which single nucleotide\nmutations happened between two RNA sequences.\n\nDeveloped to analyse the @HAR 1@ region.\n\nAs long as the two input RNAs are small enough enough (couple\nhundred nucleotides) and the number of mutations is small\nenough (around 20-26, since the algorithm is exponential in\nthis number) the algorithm should work for similar problems\nwithout changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."PrimitiveArray-Pretty" or (errorHandler.buildDepError "PrimitiveArray-Pretty"))
           (hsPkgs."ShortestPathProblems" or (errorHandler.buildDepError "ShortestPathProblems"))
           (hsPkgs."ViennaRNA-bindings" or (errorHandler.buildDepError "ViennaRNA-bindings"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "MutationOrder" = {
           depends = [
@@ -64,10 +64,10 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."MutationOrder" or (errorHandler.buildDepError "MutationOrder"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."MutationOrder" or (errorHandler.buildDepError "MutationOrder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

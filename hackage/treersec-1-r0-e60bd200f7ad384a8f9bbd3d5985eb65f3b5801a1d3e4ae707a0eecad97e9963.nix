@@ -21,7 +21,7 @@
       synopsis = "Structure Editing Combinators";
       description = "Build a structure editor for a programming language from combinators following the grammar.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.haste-inst
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haste-lib" or (errorHandler.buildDepError "haste-lib"))
             (hsPkgs."sneathlane-haste" or (errorHandler.buildDepError "sneathlane-haste"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haste-compiler" or (errorHandler.buildDepError "haste-compiler"))
             (hsPkgs."sneathlane-haste" or (errorHandler.buildDepError "sneathlane-haste"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Implementation of the z85 binary codec";
       description = "Please see the README on GitHub at <https://github.com/athanclark/z85#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "z85-bytestring-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
             (hsPkgs."z85" or (errorHandler.buildDepError "z85"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

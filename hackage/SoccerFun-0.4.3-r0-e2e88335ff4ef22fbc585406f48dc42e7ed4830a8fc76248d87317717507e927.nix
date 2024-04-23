@@ -21,7 +21,7 @@
       synopsis = "Football simulation framework for teaching functional programming";
       description = "This is a Haskell port of the the SoccerFun framework originally implemented in Clean. From the website: Soccer-Fun is an educational project to stimulate functional programming by thinking about, designing, implementing, running, and competing with the brains of football players! It is open for participation by everybody who likes to contribute. It is not restricted to a particular functional programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "sfRecord" = { buildable = true; }; };
       };
-    }
+      exes = { "sfRecord" = { buildable = true; }; };
+    };
+  }

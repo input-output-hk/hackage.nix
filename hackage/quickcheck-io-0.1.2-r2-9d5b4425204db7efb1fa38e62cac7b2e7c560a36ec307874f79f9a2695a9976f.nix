@@ -21,15 +21,15 @@
       synopsis = "Use HUnit assertions as QuickCheck properties";
       description = "This package provides an orphan instance that allows you to\nuse HUnit assertions as QuickCheck properties.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

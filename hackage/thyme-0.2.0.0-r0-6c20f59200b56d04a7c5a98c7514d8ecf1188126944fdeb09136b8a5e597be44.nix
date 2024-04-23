@@ -13,7 +13,7 @@
       instance-num = true;
       show-internal = false;
       werror = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "thyme"; version = "0.2.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "A faster time library";
       description = "A faster time library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sanity" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

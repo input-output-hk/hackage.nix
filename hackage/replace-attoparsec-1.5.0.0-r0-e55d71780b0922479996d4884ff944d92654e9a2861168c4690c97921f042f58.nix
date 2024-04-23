@@ -21,7 +21,7 @@
       synopsis = "Find, replace, split string patterns with Attoparsec parsers (instead of regex)";
       description = "Find text patterns, replace the patterns, split on the patterns. Use\nAttoparsec monadic parsers instead of regular expressions for pattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

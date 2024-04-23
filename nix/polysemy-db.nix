@@ -6,8 +6,8 @@
         nix = import ../hackage/polysemy-db-0.0.1.0-r0-fe8ac178cbc4ed99f0ef43f9eb71d9c6eaef92ca6bac300f9c5a6ed9698f710f.nix;
         revNum = 0;
         sha256 = "fe8ac178cbc4ed99f0ef43f9eb71d9c6eaef92ca6bac300f9c5a6ed9698f710f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter to extract only the code blocks.";
       description = "For more information and a tutorial on how to use this package,\nplease see the README at <https://github.com/mhwombat/pandoc-select-code#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc-select-code" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Encode binary representations via types.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."refined" or (errorHandler.buildDepError "refined"))
           (hsPkgs."refined-with" or (errorHandler.buildDepError "refined-with"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

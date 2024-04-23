@@ -21,7 +21,7 @@
       synopsis = "Attribute Grammar System of Universiteit Utrecht";
       description = "Generates Haskell files from an attribute grammar specification";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "uuagc-bootstrap" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

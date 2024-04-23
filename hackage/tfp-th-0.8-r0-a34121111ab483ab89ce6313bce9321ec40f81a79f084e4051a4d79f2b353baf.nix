@@ -21,15 +21,15 @@
       synopsis = "Template-Haskell code for tfp";
       description = "This package contains Template Haskell for generating tons of type integer literals\nand a module that provides integers from a large range.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

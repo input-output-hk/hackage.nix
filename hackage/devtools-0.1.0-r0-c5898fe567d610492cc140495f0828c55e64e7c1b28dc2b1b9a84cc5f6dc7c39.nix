@@ -21,7 +21,7 @@
       synopsis = "Haskell development tool agregate";
       description = "An attempt to group development that would typically run on CI / local\ninto one tasty interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."tasty-mgolden" or (errorHandler.buildDepError "tasty-mgolden"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tasty-mgolden" or (errorHandler.buildDepError "tasty-mgolden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

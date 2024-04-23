@@ -21,11 +21,11 @@
       synopsis = "Geometric Extrapolation of Integer Sequences with error prediction ";
       description = "Solves thousands of oeis.org math functions just in one, Probnet . A new way to calculate and predict results from the data source without knowing the function who composes a data set. Aplications in math, AI, infromation compresion when the data source follows math patterns. Describe the 100 % accuracy functions in 3 fraction parameters and 1 parameter for the index.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

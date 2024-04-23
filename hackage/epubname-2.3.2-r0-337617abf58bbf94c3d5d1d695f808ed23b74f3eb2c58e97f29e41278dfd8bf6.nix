@@ -21,7 +21,7 @@
       synopsis = "Rename epub ebook files based on meta information";
       description = "Command-line utility for renaming epub ebook files\nbased on the OPF Package metadata.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "epubname" = {
@@ -31,9 +31,9 @@
             (hsPkgs."epub-metadata" or (errorHandler.buildDepError "epub-metadata"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

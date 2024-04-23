@@ -21,7 +21,7 @@
       synopsis = "GraphViz wrapper for Haskell.";
       description = "Provides convenient functions to convert FGL graphs into the Dot\nlanguage used by the GraphViz (http://graphviz.org/) programs with a\nlarge degree of customisation for layout, etc.\nAlso allows a limited amount of parsing of Dot, and usage of\nGraphViz to attach positional data to each node and edge in the\ngraph.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

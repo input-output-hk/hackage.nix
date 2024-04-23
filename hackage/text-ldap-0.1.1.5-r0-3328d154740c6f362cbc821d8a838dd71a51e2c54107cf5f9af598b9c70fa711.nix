@@ -21,7 +21,7 @@
       synopsis = "Parser and Printer for LDAP text data stream";
       description = "This package contains Parser and Printer for\nLDAP text data stream like OpenLDAP backup LDIF.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,27 +33,27 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parseTest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text-ldap" or (errorHandler.buildDepError "text-ldap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ppTest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text-ldap" or (errorHandler.buildDepError "text-ldap"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pp" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."cabal-test-compat" or (errorHandler.buildDepError "cabal-test-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

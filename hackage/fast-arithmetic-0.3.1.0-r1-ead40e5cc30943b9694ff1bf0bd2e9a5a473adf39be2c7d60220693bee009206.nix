@@ -30,25 +30,25 @@
         (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib or (errorHandler.setupDepError "zlib")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.parallel-io or (pkgs.buildPackages.parallel-io or (errorHandler.setupDepError "parallel-io")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
-        depends = if compiler.isGhc && (compiler.version).lt "7.10"
+        depends = if compiler.isGhc && compiler.version.lt "7.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
             (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
             (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

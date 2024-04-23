@@ -21,7 +21,7 @@
       synopsis = "Debugging Tools for Haskell-tools";
       description = "Debugging Tools for Haskell-tools";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."haskell-tools-backend-ghc" or (errorHandler.buildDepError "haskell-tools-backend-ghc"))
           (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
           (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ht-debug" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-tools-debug" or (errorHandler.buildDepError "haskell-tools-debug"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

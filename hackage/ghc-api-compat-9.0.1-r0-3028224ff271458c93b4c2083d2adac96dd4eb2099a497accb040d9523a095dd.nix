@@ -21,15 +21,15 @@
       synopsis = "GHC-API compatibility helpers";
       description = "GHC codebase is a moving target. This package provides\ncompatibility for codes relying on an older GHC-API version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

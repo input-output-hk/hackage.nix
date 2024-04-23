@@ -21,7 +21,7 @@
       synopsis = "HSP support for digestive-functors";
       description = "This is an HSP frontend for the digestive-functors library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hsp" or (errorHandler.buildDepError "hsp"))
           (hsPkgs."hsx" or (errorHandler.buildDepError "hsx"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
-        build-tools = (pkgs.lib).optional (!system.isWindows) (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")));
+        ];
+        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

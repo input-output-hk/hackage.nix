@@ -21,7 +21,7 @@
       synopsis = "A type class for cast functions of Gtk2hs: gnomevfs package";
       description = "This package contains a type class called Cast with a function cast, that is a\nwrapper for all the castTo* functions of gtk2hs.  It makes it easier to write\nother functions that require a castTo* as a parameter, like xmlGetWidget from\nglade.\n\nThis is the gnome package of gtk2hs-cast.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."gnomevfs" or (errorHandler.buildDepError "gnomevfs"))
           (hsPkgs."gtk2hs-cast-glib" or (errorHandler.buildDepError "gtk2hs-cast-glib"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

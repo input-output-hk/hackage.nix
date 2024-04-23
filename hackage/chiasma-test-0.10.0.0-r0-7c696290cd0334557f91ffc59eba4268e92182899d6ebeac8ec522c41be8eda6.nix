@@ -21,7 +21,7 @@
       synopsis = "A tmux client for Polysemy";
       description = "See https://hackage.haskell.org/package/chiasma-test/docs/Chiasma-Test.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chiasma-test-integration" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "chiasma-test-unit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

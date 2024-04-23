@@ -21,7 +21,7 @@
       synopsis = "Exact computation with constructible real numbers";
       description = "The constructible reals are the subset of the real numbers that can\nbe represented exactly using field operations (addition,\nsubtraction, multiplication, division) and positive square roots.\nThey support exact computations, equality comparisons, and ordering.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."binary-search" or (errorHandler.buildDepError "binary-search"))
           (hsPkgs."complex-generic" or (errorHandler.buildDepError "complex-generic"))
           (hsPkgs."integer-roots" or (errorHandler.buildDepError "integer-roots"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

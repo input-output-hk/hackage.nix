@@ -21,7 +21,7 @@
       synopsis = "An OpenID Connect library that does all the heavy lifting for you";
       description = "This package provides an OpenID Connect 1.0 compliant interface for clients and\nsome useful types and functions for providers.\n\nThe primary goals of this package are security and usability.\n\nTo get started, take a look at the \"OpenID.Connect.Client.Flow.AuthorizationCode\"\nmodule.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."openid-connect" or (errorHandler.buildDepError "openid-connect"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

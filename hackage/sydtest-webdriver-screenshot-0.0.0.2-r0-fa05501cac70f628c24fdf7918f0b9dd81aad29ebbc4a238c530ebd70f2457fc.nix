@@ -14,7 +14,7 @@
       identifier = {
         name = "sydtest-webdriver-screenshot";
         version = "0.0.0.2";
-        };
+      };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2022 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -24,7 +24,7 @@
       synopsis = "A webdriver screenshot companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
           (hsPkgs."sydtest-webdriver" or (errorHandler.buildDepError "sydtest-webdriver"))
           (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-webdriver-screenshot-test" = {
           depends = [
@@ -51,12 +51,12 @@
             (hsPkgs."sydtest-webdriver" or (errorHandler.buildDepError "sydtest-webdriver"))
             (hsPkgs."sydtest-webdriver-screenshot" or (errorHandler.buildDepError "sydtest-webdriver-screenshot"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

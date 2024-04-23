@@ -21,7 +21,7 @@
       synopsis = "A git wrapper with a streamlined UX";
       description = "A git wrapper with a streamlined UX.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mit" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-ansi" or (errorHandler.buildDepError "text-ansi"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

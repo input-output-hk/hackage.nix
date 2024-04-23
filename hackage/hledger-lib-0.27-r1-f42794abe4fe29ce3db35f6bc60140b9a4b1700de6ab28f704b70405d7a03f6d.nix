@@ -21,7 +21,7 @@
       synopsis = "Core data types, parsers and functionality for the hledger accounting tools";
       description = "This is a reusable library containing hledger's core functionality.\nhledger is a cross-platform program for tracking money, time, or\nany other commodity, using double-entry accounting and a simple,\neditable file format. It is inspired by and largely compatible\nwith ledger(1).  hledger provides command-line, curses and web\ninterfaces, and aims to be a reliable, practical tool for daily\nuse.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -48,14 +48,14 @@
           (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ (if flags.old-locale
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ (if flags.old-locale
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = ([
@@ -85,14 +85,14 @@
             (hsPkgs."hledger-lib" or (errorHandler.buildDepError "hledger-lib"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4") (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4") (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

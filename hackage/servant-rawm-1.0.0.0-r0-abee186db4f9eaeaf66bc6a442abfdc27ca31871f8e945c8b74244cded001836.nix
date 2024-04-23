@@ -21,14 +21,14 @@
       synopsis = "Embed a raw 'Application' in a Servant API";
       description = "Please see <https://github.com/cdepillabout/servant-rawm#readme README.md>.\n\nAfter @servant-rawm@ 1.0.0.0, the implementation are divided into\nthree packages: @servant-rawm-server@, @servant-rawm-client@,\nand @servant-rawm-docs@.\n\nYou need to use either of the three implementations for the 'RawM' endpoint\nto function correctly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

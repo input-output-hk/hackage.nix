@@ -21,7 +21,7 @@
       synopsis = "A language based on homotopy type theory with an interval object";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hoq" = {
@@ -33,13 +33,13 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."prelude-extras" or (errorHandler.buildDepError "prelude-extras"))
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

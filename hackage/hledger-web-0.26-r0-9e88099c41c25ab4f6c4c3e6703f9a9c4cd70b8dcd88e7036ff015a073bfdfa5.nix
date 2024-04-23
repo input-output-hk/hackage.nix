@@ -13,7 +13,7 @@
       dev = false;
       library-only = false;
       old-locale = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "hledger-web"; version = "0.26"; };
@@ -26,7 +26,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,14 +63,14 @@
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ] ++ (if flags.old-locale
+        ] ++ (if flags.old-locale
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "hledger-web" = {
           depends = [
@@ -108,15 +108,15 @@
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ] ++ (if flags.old-locale
+          ] ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -126,9 +126,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

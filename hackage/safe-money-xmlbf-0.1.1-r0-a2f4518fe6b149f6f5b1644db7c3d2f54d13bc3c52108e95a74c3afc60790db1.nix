@@ -21,7 +21,7 @@
       synopsis = "Instances from the xmlbf library for the safe-money library.";
       description = "This library exports @FromXml@ and @ToXml@ instances (from the @xmlbf@\nlibrary) for many of the types exported by the @safe-money@ library.\n\nNote: The code in this library used to be part of the @safe-money@\nlibrary itself, so these instances are intended to be backwards\ncompatible with older versions of @safe-money@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."safe-money" or (errorHandler.buildDepError "safe-money"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Generate C-like storable instances from datatypes";
       description = "Automatically generates struct-rule based Storable\ninstances based on the Generic typeclass.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "invertible transformer instances for HXT Picklers";
       description = "Provides alternative syntax for HXT's Picklers (XML parser/generators) based on generic invertible Monoidal";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."hxt-charproperties" or (errorHandler.buildDepError "hxt-charproperties"))
           (hsPkgs."invertible" or (errorHandler.buildDepError "invertible"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

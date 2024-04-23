@@ -21,41 +21,41 @@
       synopsis = "Enable more deeper level style of programming than the usual Control.xxx modules express";
       description = "This module enables more deeper level style of programming than the usual Control.xxx modules provides, especially for Applicative and Monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UnitTest_Applicative" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."deepcontrol" or (errorHandler.buildDepError "deepcontrol"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UnitTest_Monad" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."deepcontrol" or (errorHandler.buildDepError "deepcontrol"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

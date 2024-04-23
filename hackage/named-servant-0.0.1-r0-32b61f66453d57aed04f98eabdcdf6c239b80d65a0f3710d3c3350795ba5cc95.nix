@@ -21,15 +21,15 @@
       synopsis = "";
       description = "support named parameters in servant using the named package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."named" or (errorHandler.buildDepError "named"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

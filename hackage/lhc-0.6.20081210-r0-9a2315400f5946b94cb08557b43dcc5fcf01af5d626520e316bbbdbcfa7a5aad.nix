@@ -14,7 +14,7 @@
       threaded = false;
       lhc-regress = false;
       with-base = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "lhc"; version = "0.6.20081210"; };
@@ -27,7 +27,7 @@
       synopsis = "LHC Haskell Compiler";
       description = "lhc is a haskell compiler which aims to produce the most efficient programs possible via whole\nprogram analysis and other optimizations.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "lhc" = {
@@ -56,20 +56,20 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ] ++ (if flags.base4
+          ] ++ (if flags.base4
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
+        };
         "lhc-regress" = {
           depends = [
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.lhc-regress then true else false;
-          };
         };
       };
-    }
+    };
+  }

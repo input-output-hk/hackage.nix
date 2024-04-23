@@ -21,7 +21,7 @@
       synopsis = "Tool to convert HTML to BlazeHtml code.";
       description = "Tool that converts HTML files to Haskell code, ready to be\nused with the BlazeHtml library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "blaze-from-html" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

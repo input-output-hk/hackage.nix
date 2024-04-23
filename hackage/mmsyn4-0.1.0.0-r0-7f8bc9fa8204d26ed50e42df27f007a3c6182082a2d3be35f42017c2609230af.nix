@@ -21,7 +21,7 @@
       synopsis = "The \"glue\" between electronic tables and GraphViz";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mmsyn4" = {
@@ -32,9 +32,9 @@
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fay integration for Snap with automatic (re)compilation during development";
       description = "For more information, please see https://github.com/faylang/snaplet-fay";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

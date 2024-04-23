@@ -21,15 +21,15 @@
       synopsis = "An HTML renderer for Haskell";
       description = "An HTML renderer for the Haskell programming\nlanguage. It functions mostly as a wrapper\nfor blaze-html. The syntax was inspired by Elm.\nA CSS solution is currently being experimented\nwith. For now, I'd recommend using this with\nTailwind CSS.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

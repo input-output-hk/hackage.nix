@@ -6,8 +6,8 @@
         nix = import ../hackage/arpa-0.0.0.0-r0-e3deb15cca6905df328cbb5577ae9834fba519ef448a6cdadc189f920382bc76.nix;
         revNum = 0;
         sha256 = "e3deb15cca6905df328cbb5577ae9834fba519ef448a6cdadc189f920382bc76";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

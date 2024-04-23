@@ -21,7 +21,7 @@
       synopsis = "Testing JSON APIs with hspec-wai";
       description = "Testing JSON APIs with hspec-wai";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
             (hsPkgs."hspec-wai-json" or (errorHandler.buildDepError "hspec-wai-json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

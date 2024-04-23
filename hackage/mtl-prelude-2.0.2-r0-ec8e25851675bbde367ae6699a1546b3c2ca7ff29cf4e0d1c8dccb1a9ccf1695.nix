@@ -21,15 +21,15 @@
       synopsis = "Reexports of most definitions from \"mtl\" and \"transformers\" ";
       description = "This package only exports definitions from the \\\"mtl\\\" and \\\"transformers\\\"\nlibraries.\nUnlike every module of \\\"mtl\\\" it does not reexport\n@Control.Monad@ and @Control.Monad.Fix@.\n\nIn combination with the <http://hackage.haskell.org/package/base-prelude \"base-prelude\"> library,\nthis should give you a quite rich prelude.\n\nThe @2.*@ versions are restricted by\nthe feature set of @mtl == 2.2.*@ and @transformers == 0.4.*@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

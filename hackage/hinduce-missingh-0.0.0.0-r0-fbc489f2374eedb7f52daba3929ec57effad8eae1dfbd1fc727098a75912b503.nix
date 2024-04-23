@@ -21,11 +21,11 @@
       synopsis = "Utility functions";
       description = "Extends base with all sorts of utility functions. Very easy, useful and portable";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

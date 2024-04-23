@@ -21,7 +21,7 @@
       synopsis = "Monad transformers and classes";
       description = "Ether is a Haskell library that extends @mtl@ and @transformers@ with\ntagged monad transformers and classes in a compatible way.\nIntroduction <https://int-index.github.io/ether/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "regression" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."ether" or (errorHandler.buildDepError "ether"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."ether" or (errorHandler.buildDepError "ether"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

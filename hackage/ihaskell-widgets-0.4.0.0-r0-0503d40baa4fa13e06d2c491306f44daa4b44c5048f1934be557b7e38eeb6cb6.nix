@@ -21,7 +21,7 @@
       synopsis = "IPython standard widgets for IHaskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.0") (hsPkgs."singletons-base" or (errorHandler.buildDepError "singletons-base"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.0") (hsPkgs."singletons-base" or (errorHandler.buildDepError "singletons-base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

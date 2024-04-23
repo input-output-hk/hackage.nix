@@ -21,11 +21,11 @@
       synopsis = "Fast Fourier Transform";
       description = "A pure-haskell implementation\nof the radix-2 DIT version of\nthe Cooley-Tukey FFT algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Classical data sets for statistics and machine learning";
       description = "Classical machine learning and statistics datasets from\nthe UCI Machine Learning Repository and other sources.\n\n> import Numeric.Datasets (getDataset)\n> import Numeric.Datasets.Iris (iris)\n>\n> main = do\n>   irises <- getDataset iris\n>   print (length irises)\n>   print (head irises)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

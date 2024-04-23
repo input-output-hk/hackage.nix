@@ -21,7 +21,7 @@
       synopsis = "Diagrams based plotting library.";
       description = "Diagrams based plotting library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,8 +54,8 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."intervals" or (errorHandler.buildDepError "intervals"))
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

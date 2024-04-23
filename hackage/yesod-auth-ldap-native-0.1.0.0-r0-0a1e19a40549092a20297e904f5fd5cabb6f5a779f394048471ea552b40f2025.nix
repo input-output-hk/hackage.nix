@@ -21,7 +21,7 @@
       synopsis = "Yesod LDAP authentication plugin";
       description = "This package provides an LDAP authentication plugin for Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yesod-auth-ldap-native-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod-auth-ldap-native" or (errorHandler.buildDepError "yesod-auth-ldap-native"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

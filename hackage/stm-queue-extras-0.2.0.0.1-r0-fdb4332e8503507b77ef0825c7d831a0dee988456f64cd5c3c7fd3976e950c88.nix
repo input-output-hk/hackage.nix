@@ -21,15 +21,15 @@
       synopsis = "Extra queue utilities for STM";
       description = "Granular signatures for STM queues";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

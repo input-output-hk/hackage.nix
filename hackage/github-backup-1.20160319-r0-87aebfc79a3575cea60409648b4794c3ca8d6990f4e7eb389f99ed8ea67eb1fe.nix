@@ -21,7 +21,7 @@
       synopsis = "backs up everything github knows about a repository, to the repository";
       description = "github-backup is a simple tool you run in a git repository you cloned from\nGithub. It backs up everything Github knows about the repository, including\nother forks, issues, comments, milestones, pull requests, and watchers.\nAlso includes gitriddance, which can be used to close all open issues and\npull requests.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "github-backup" = {
@@ -47,22 +47,22 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (if !system.isWindows
+          ] ++ (if !system.isWindows
             then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
             else [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "gitriddance" = {
           depends = ([
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
@@ -83,22 +83,22 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (if !system.isWindows
+          ] ++ (if !system.isWindows
             then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
             else [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

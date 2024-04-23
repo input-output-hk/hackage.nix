@@ -21,7 +21,7 @@
       synopsis = "dft of contiguous memory structures";
       description = "DFT and iDFT on data structures implementing a common\ncontiguous interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
           (hsPkgs."prim-instances" or (errorHandler.buildDepError "prim-instances"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

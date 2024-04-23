@@ -21,7 +21,7 @@
       synopsis = "OAuth client support for authenticate package.";
       description = "OAuth client support for authenticate package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

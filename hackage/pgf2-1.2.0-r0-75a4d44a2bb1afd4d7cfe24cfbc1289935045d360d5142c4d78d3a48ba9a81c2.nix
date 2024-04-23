@@ -21,22 +21,22 @@
       synopsis = "Bindings to the C version of the PGF runtime";
       description = "GF, Grammatical Framework, is a programming language for multilingual grammar applications.\nGF grammars are compiled into Portable Grammar Format (PGF) which can be used with the PGF runtime, written in C.\nThis package provides Haskell bindings to that runtime.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         libs = [
           (pkgs."pgf" or (errorHandler.sysDepError "pgf"))
           (pkgs."gu" or (errorHandler.sysDepError "gu"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

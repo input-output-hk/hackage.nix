@@ -21,11 +21,11 @@
       synopsis = "Tensor and Group typeclasses";
       description = "Typeclasses for Groups (Monoids with an 'invert'\noperation) and Tensors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

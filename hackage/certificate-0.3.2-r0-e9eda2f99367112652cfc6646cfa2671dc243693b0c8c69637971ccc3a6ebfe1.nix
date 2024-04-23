@@ -21,7 +21,7 @@
       synopsis = "Certificates and Key Reader/Writer";
       description = "Certificates and Key reader/writer\n\nAt the moment only X509 certificate and unencrypted private key are supported,\nbut will include PGP certificate and pkcs8 private keys";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,14 +31,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "certificate" = {
-          depends = (pkgs.lib).optional (flags.executable) (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"));
+          depends = pkgs.lib.optional (flags.executable) (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"));
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

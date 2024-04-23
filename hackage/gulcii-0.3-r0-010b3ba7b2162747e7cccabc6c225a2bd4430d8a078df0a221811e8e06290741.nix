@@ -21,7 +21,7 @@
       synopsis = "graphical untyped lambda calculus interactive interpreter";
       description = "GULCII is an untyped lambda calculus interpreter supporting interactive\nmodification of a running program with graphical display of graph reduction.\n\nSee README.md for the user manual.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gulcii" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

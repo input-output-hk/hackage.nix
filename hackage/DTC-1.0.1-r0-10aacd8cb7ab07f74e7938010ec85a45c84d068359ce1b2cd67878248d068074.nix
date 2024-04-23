@@ -21,14 +21,14 @@
       synopsis = "Data To Class transformation.";
       description = "Transform data declarations to class definitions.\n\nThe way is explained in /Data Declarations to Class Definitions/.\nYou can find more information in the homepage of the package.\n\nChanges from last version:\n\n* Modified some documentation.\n\n* Fixed a non-exhaustive pattern matching error in @dataToClassWith@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Subclasses of Monoid";
       description = "A hierarchy of subclasses of 'Monoid' together with their instances for all data structures from base, containers, and\ntext packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."commutative-semigroups" or (errorHandler.buildDepError "commutative-semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Main" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

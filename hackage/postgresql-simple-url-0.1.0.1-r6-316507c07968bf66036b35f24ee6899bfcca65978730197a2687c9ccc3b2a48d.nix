@@ -21,7 +21,7 @@
       synopsis = "Parse postgres:// url into ConnectInfo";
       description = "The 'Database.PostgreSQL.Simple.URL' module in this package exports\ntwo helper functions 'parseDatabaseUrl' and 'urlToConnectInfo'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."postgresql-simple-url" or (errorHandler.buildDepError "postgresql-simple-url"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

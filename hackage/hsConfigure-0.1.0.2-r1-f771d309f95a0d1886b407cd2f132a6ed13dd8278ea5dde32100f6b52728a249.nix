@@ -21,7 +21,7 @@
       synopsis = "By using this package, you can make application configurable.";
       description = "I inspired by xmonad. Xmonad is configurable by using user's own main.\nThis package make your application configurable like xmonad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

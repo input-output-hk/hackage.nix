@@ -21,7 +21,7 @@
       synopsis = "GUI functions as used in the book \"The Haskell School of Expression\".";
       description = "An alternative implementation of the graphics library used in the book The Haskell\nSchool of Expression, by Paul Hudak, <http://www.haskell.org/soe/\nThis library builds on top of Gtk+.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

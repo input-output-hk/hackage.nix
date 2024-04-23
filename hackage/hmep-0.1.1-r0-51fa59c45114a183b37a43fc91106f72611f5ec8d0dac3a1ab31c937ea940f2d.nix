@@ -21,7 +21,7 @@
       synopsis = "HMEP Multi Expression Programming –\na genetic programming variant";
       description = "A multi expression programming implementation with\nfocus on speed.\n\nhttps://en.wikipedia.org/wiki/Multi_expression_programming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."probable" or (errorHandler.buildDepError "probable"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hmep-demo" = {
           depends = [
@@ -40,19 +40,19 @@
             (hsPkgs."probable" or (errorHandler.buildDepError "probable"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hmep" or (errorHandler.buildDepError "hmep"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hmep-sin-approximation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."probable" or (errorHandler.buildDepError "probable"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hmep" or (errorHandler.buildDepError "hmep"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hmep-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hmep" or (errorHandler.buildDepError "hmep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

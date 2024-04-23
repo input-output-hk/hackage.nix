@@ -14,7 +14,7 @@
       identifier = {
         name = "unordered-containers-rematch";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "tcrayford@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Rematch support for unordered containers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."rematch" or (errorHandler.buildDepError "rematch"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

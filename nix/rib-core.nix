@@ -6,8 +6,8 @@
         nix = import ../hackage/rib-core-1.0.0.0-r0-3b837333314137f0b156617de1411396611d0c307b425e18aa05883676bb01e7.nix;
         revNum = 0;
         sha256 = "3b837333314137f0b156617de1411396611d0c307b425e18aa05883676bb01e7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

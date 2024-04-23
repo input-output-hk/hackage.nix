@@ -21,16 +21,16 @@
       synopsis = "Fast unboxed references for ST and IO monad";
       description = "Fast unboxed references for ST and IO monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."unboxed-ref" or (errorHandler.buildDepError "unboxed-ref"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/unac-bindings-0.1.0.0-r0-2bbc9e89447a2f75609cad53372258cc9eb6235fdfd9cc08dcfdb13a4f620577.nix;
         revNum = 0;
         sha256 = "2bbc9e89447a2f75609cad53372258cc9eb6235fdfd9cc08dcfdb13a4f620577";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

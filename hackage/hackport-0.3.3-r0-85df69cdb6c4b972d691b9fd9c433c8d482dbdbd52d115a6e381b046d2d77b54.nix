@@ -21,7 +21,7 @@
       synopsis = "Hackage and Portage integration tool";
       description = "A command line tool to manage an overlay of Gentoo ebuilds\nthat are generated from a hackage repo of Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackport" = {
@@ -43,7 +43,7 @@
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (if flags.split-base
+          ] ++ (if flags.split-base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -51,10 +51,10 @@
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
+        };
         "hackport-guess-ghc-version" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,7 +69,7 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ] ++ (if flags.split-base
+          ] ++ (if flags.split-base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -77,11 +77,11 @@
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = false;
-          };
         };
+      };
       tests = {
         "test-resolve-category" = {
           depends = [
@@ -99,9 +99,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-merge-deps" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -118,9 +118,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Stompl Conduit Client";
       description = "The Stomp Protocol specifies message-oriented interoperability.\nApplications connect to a message broker to send (publish)\nor receive (subscribe) messages through queues.\nInteroperating applications do not know\nthe location or internal structure of each other.\nThey see only each other's interfaces, /i.e./ the messages\npublished and subscribed through a broker.\n\nThe Stomp Queue library provides\na Stomp client, using abstractions like 'Reader' and 'Writer' Queues.\nThe Stomp Conduit library provides an abstraction level\non top of queues, where not single messages are in the focus\nof the API, but streams of messages,\neither infinite streams or\nmultipart messages with an explicit last message segment.\nThe latter concept is\nand extension of the Stomp specification.\n\nMore information, examples and a test suite are available\non <http://github.com/toschoo/mom>.\nThe Stomp specification can be found at\n<http://stomp.github.com>.\n\nRelease History:\n\n[0.0.1] Initial release";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mime" or (errorHandler.buildDepError "mime"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

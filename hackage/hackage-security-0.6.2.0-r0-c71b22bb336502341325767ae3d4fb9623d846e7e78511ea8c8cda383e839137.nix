@@ -15,7 +15,7 @@
       old-directory = false;
       mtl21 = false;
       lukko = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "hackage-security"; version = "0.6.2.0"; };
@@ -28,7 +28,7 @@
       synopsis = "Hackage security library";
       description = "The hackage security library provides both server and\nclient utilities for securing the Hackage package server\n(<http://hackage.haskell.org/>).  It is based on The Update\nFramework (<http://theupdateframework.com/>), a set of\nrecommendations developed by security researchers at\nvarious universities in the US as well as developers on the\nTor project (<https://www.torproject.org/>).\n\nThe current implementation supports only index signing,\nthereby enabling untrusted mirrors. It does not yet provide\nfacilities for author package signing.\n\nThe library has two main entry points:\n\"Hackage.Security.Client\" is the main entry point for\nclients (the typical example being @cabal@), and\n\"Hackage.Security.Server\" is the main entry point for\nservers (the typical example being @hackage-server@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -48,46 +48,46 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.old-directory
+        ] ++ (if flags.old-directory
           then [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ])) ++ (if flags.mtl21
+          ])) ++ (if flags.mtl21
           then [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
-            ]
+          ]
           else [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ])) ++ (if flags.lukko
+          ])) ++ (if flags.lukko
           then [ (hsPkgs."lukko" or (errorHandler.buildDepError "lukko")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (if flags.cabal-syntax
+          ])) ++ (if flags.cabal-syntax
           then [
             (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
-            ]
+          ]
           else [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
-            ])) ++ (if flags.base48
+          ])) ++ (if flags.base48
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ])) ++ (if flags.use-network-uri
+          ])) ++ (if flags.use-network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "TestSuite" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ] ++ (pkgs.lib).optional (flags.cabal-syntax) (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"));
+          ] ++ pkgs.lib.optional (flags.cabal-syntax) (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

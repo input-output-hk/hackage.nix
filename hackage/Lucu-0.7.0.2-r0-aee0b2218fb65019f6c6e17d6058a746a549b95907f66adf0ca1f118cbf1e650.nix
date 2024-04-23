@@ -21,7 +21,7 @@
       synopsis = "HTTP Daemonic Library";
       description = "Lucu is an HTTP daemonic library. It can be embedded in any\nHaskell program and runs in an independent thread.  Lucu is\nnot a replacement for Apache or lighttpd. It is intended to be\nused to create an efficient web-based RESTful application\nwithout messing around FastCGI. It is also intended to be run\nbehind a reverse-proxy so it doesn't have some facilities like\nlogging, client filtering or such like.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,13 +42,13 @@
           (hsPkgs."time-http" or (errorHandler.buildDepError "time-http"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lucu-implant-file" = {
           buildable = if flags.build-lucu-implant-file then true else false;
-          };
         };
       };
-    }
+    };
+  }

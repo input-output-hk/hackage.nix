@@ -21,7 +21,7 @@
       synopsis = "A program that displays the puppet resources associated to a node given .pp files.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "puppetresources" = {
@@ -33,9 +33,9 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

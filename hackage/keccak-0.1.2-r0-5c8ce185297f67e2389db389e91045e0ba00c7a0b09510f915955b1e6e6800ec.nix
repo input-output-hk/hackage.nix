@@ -21,15 +21,15 @@
       synopsis = "haskell keccak functions";
       description = "pure haskell implementation of keccak hash functions for\nuse with ghc or ghcjs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "collision" = {
           depends = [
@@ -37,10 +37,10 @@
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."keccak" or (errorHandler.buildDepError "keccak"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "keccak-test" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "self" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."keccak" or (errorHandler.buildDepError "keccak"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Common API for serialization libraries";
       description = "This package provides a common API for serialization libraries like\n<http://hackage.haskell.org/package/binary binary> and\n<http://hackage.haskell.org/package/cereal cereal>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."data-endian" or (errorHandler.buildDepError "data-endian"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."data-serializer" or (errorHandler.buildDepError "data-serializer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

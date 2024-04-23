@@ -21,7 +21,7 @@
       synopsis = "Support for well-typed paths";
       description = "Support for well-typed paths, utilizing ByteString under the hood.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."hpath-filepath" or (errorHandler.buildDepError "hpath-filepath"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"));
         buildable = if system.isWindows then false else true;
-        };
       };
-    }
+    };
+  }

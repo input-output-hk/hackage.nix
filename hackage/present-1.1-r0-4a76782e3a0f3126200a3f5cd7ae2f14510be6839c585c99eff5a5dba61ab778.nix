@@ -21,7 +21,7 @@
       synopsis = "Make presentations for data types.";
       description = "Make presentations for data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."atto-lisp" or (errorHandler.buildDepError "atto-lisp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

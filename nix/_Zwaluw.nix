@@ -6,8 +6,8 @@
         nix = import ../hackage/Zwaluw-0.1-r0-40ae42d60d8f27d1bb82b174b6d1e1667e4d477f2285d0999d4a08411c809392.nix;
         revNum = 0;
         sha256 = "40ae42d60d8f27d1bb82b174b6d1e1667e4d477f2285d0999d4a08411c809392";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

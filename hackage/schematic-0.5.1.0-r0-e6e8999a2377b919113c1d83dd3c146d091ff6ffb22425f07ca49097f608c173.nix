@@ -21,7 +21,7 @@
       synopsis = "JSON-biased spec and validation tool";
       description = "JSON-biased spec and validation tool. Makes possible to have a schema as a haskell type and derive json instances, validation actions, JSON generation for property-test generically. Built-in lens support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."validationt" or (errorHandler.buildDepError "validationt"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."validationt" or (errorHandler.buildDepError "validationt"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

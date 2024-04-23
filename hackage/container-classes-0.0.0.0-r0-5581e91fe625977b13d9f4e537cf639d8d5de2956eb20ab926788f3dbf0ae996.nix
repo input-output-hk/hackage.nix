@@ -21,11 +21,11 @@
       synopsis = "Generic classes for interacting with different container types";
       description = "Allow users of your library to choose which data\nstructure they want to use rather than\nconstraining them to whatever you chose at the\ntime.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

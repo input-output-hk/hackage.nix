@@ -21,15 +21,15 @@
       synopsis = "A generalization of the uniqueness-periods-vector-common package.";
       description = "Is intended to use more Data.Vector, Data.Foldable and Data.Monoid functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

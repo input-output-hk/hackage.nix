@@ -21,7 +21,7 @@
       synopsis = "Safe, programmable, speculative parallelism with monads.";
       description = "Safe, programmable, speculative parallelism with monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."speculation" or (errorHandler.buildDepError "speculation"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

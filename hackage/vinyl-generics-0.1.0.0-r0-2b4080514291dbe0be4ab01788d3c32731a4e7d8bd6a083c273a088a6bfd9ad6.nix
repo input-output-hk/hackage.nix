@@ -21,7 +21,7 @@
       synopsis = "Convert plain records to vinyl (and vice versa), generically.";
       description = "Convert plain records to @vinyl@ and vice versa, via @GHC.Generics@ and @generics-sop@/@records-sop@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."records-sop" or (errorHandler.buildDepError "records-sop"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."records-sop" or (errorHandler.buildDepError "records-sop"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Dependently-typed linked list implementation";
       description = "Length-indexed linked lists, a simple\nexercise in dependent types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

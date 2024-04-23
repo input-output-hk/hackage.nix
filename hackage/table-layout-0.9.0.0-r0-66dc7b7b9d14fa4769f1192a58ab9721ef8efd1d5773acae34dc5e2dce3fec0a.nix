@@ -21,26 +21,26 @@
       synopsis = "Layout text as grid or table.";
       description = "`table-layout` is a library for text-based table layout. It provides several\nfunctions and types which help in this task from the ground up. Although,\nusing all of them is not necessary. It provides the following layout\nfeatures:\n\n* Fixed-size and arbitrarily sized columns and limiting versions of those\n\n* Positional alignment of content in a column\n\n* Alignment of content within a column at a character occurence\n\n* Cut marks show that content has been trimmed\n\n* Fancy tables with optional headers and user styles\n\n* Justified text and vertically aligned column layout over multiple rows\n\nA small tutorial is provided in the `README.md` file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."data-default-instances-base" or (errorHandler.buildDepError "data-default-instances-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "table-layout-test-styles" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."data-default-instances-base" or (errorHandler.buildDepError "data-default-instances-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "table-layout-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."data-default-instances-base" or (errorHandler.buildDepError "data-default-instances-base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

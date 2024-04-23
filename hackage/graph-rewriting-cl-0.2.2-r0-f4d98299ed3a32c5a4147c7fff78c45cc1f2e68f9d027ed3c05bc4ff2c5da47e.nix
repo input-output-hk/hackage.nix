@@ -21,7 +21,7 @@
       synopsis = "Interactive graph rewriting system implementing various well-known combinators";
       description = "Currently the following combinators are supported: S K I B C S' B' C' W";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cl" = {
@@ -34,9 +34,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

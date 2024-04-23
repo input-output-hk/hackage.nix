@@ -21,7 +21,7 @@
       synopsis = "pure haskell MySQL driver";
       description = "pure haskell MySQL driver";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."word24" or (errorHandler.buildDepError "word24"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.openssl) (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"));
+        ] ++ pkgs.lib.optional (flags.openssl) (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

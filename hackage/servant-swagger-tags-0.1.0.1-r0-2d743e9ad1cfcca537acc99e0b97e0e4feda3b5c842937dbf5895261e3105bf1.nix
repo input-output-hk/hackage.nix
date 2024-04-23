@@ -21,7 +21,7 @@
       synopsis = "Swagger Tags for Servant";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."insert-ordered-containers" or (errorHandler.buildDepError "insert-ordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

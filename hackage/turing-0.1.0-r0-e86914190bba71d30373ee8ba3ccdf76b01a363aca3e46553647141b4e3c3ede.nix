@@ -21,12 +21,12 @@
       synopsis = "A simple simulator for Turing machines";
       description = "This package provides some basic functions and types to\nsimulate a Turing machine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "turing-test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."turing" or (errorHandler.buildDepError "turing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

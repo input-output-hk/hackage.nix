@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-forecastquery-2.0-r0-ed622c6970ca5986e8091cc2796a747e85aeb38f8cd8c70b06d7442a0e4cee1e.nix;
         revNum = 0;
         sha256 = "ed622c6970ca5986e8091cc2796a747e85aeb38f8cd8c70b06d7442a0e4cee1e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

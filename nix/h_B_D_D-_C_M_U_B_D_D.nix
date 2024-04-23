@@ -6,8 +6,8 @@
         nix = import ../hackage/hBDD-CMUBDD-0.0.3-r0-f6d1687bbf41e0e28202eb5de06560349f11794edba66da6cf7b0b58263b0e27.nix;
         revNum = 0;
         sha256 = "f6d1687bbf41e0e28202eb5de06560349f11794edba66da6cf7b0b58263b0e27";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

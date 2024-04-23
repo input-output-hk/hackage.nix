@@ -21,7 +21,7 @@
       synopsis = "Hierarchical Tags & Tag Trees";
       description = "Haskell library for representing hierarchical tags (eg: @foo\\/bar\\/qux@) and trees of such tags, as well as for searching them based on filepath patterns.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

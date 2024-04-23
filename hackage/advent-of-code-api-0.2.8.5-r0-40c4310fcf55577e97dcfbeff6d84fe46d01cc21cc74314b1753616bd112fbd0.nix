@@ -21,7 +21,7 @@
       synopsis = "Advent of Code REST API bindings and servant API";
       description = "Haskell bindings for Advent of Code REST API and a servant API.  Please use\nresponsibly! See README.md or \"Advent\" module for an introduction and\ntutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "advent-of-code-api-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

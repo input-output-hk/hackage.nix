@@ -21,11 +21,11 @@
       synopsis = "Basic type wrangling types and classes";
       description = "Primitive types and classes for\nOleg-inspired type[class] manipulation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

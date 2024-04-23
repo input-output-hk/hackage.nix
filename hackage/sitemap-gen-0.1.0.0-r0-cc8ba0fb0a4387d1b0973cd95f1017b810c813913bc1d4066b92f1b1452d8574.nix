@@ -21,7 +21,7 @@
       synopsis = "Generate XML Sitemaps & Sitemap Indexes";
       description = "The @sitemap-gen@ package uses the @xmlgen@ package to generate XML\nsitemaps that are compliant with the sitemaps.org XML schema.\n\nSee the \"Web.Sitemap.Gen\" module and the\n<https://github.com/prikhi/sitemap-gen/blob/master/README.md README> file\nfor documentation & usage details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xmlgen" or (errorHandler.buildDepError "xmlgen"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sitemap-gen-tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

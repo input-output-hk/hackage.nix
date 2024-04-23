@@ -21,14 +21,14 @@
       synopsis = "combinators based on parsing with derivatives (derp) package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."derp" or (errorHandler.buildDepError "derp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

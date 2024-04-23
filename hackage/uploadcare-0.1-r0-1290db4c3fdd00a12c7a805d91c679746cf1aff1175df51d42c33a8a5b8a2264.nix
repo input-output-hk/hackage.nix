@@ -21,7 +21,7 @@
       synopsis = "Haskell client for Uploadcare.";
       description = "Haskell client for the Uploadcare API.\nUploadcare handles file uploads and storage for you,\nwhile you focus on other important things.\n<http://uploadcare.com/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

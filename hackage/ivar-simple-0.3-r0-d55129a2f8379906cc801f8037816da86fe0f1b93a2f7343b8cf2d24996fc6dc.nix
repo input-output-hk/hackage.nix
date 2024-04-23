@@ -21,11 +21,11 @@
       synopsis = "Write once concurrency primitives.";
       description = "@IVar@s are write-once (immutable) variables.\n\nThey can be read, an operation that will block until a value was written\nto the variable. They can be written to exactly once.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

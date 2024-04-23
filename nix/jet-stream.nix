@@ -6,8 +6,8 @@
         nix = import ../hackage/jet-stream-1.0.0.0-r0-3d2bb10f754b0e8b79fb4462bdacc616d52298bdad560e412abff0200131f4a7.nix;
         revNum = 0;
         sha256 = "3d2bb10f754b0e8b79fb4462bdacc616d52298bdad560e412abff0200131f4a7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

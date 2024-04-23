@@ -21,7 +21,7 @@
       synopsis = "Yesod support for Text.Markdown.";
       description = "Use Text.Markdown in a typical yesod project.\nThis module contains instances related to persistence,\neven though it isn't tightly coupled to yesod.\n\nThis package is different from the yesod-markdown package\nwhich uses the pandoc renderer for markdown. The main\nadvantages of having Text.Markdown as underlying renderer\nis the much smaller dependencies and the permissiver\nlicense.  See\n<https://github.com/pbrisbin/yesod-markdown> and\n<https://github.com/snoyberg/markdown>.\n\nThis package intentionally tries to be like\nyesod-markdown, so switching between the markdown backends\nshould be easy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A simple environment to control access to data";
       description = "This is a small capability-based interface to check legitimacy of accesses in different parts of the program depending on the context in which the data is accessed. See the README.md in the repository for a longer explanation and an example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

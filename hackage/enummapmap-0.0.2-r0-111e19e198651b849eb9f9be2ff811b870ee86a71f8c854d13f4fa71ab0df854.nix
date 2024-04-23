@@ -21,15 +21,15 @@
       synopsis = "Map of maps using Enum types as keys";
       description = "This package provides 'maps of maps' using Enum types as keys.  The code\nis based upon Data.IntMap in containers 5.0.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-enummapmap-lazy" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapmap-intmap-lazy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapmap-strict" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-enummapmap-intmap-strict" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."enummapmap" or (errorHandler.buildDepError "enummapmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

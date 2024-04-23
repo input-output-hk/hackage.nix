@@ -21,7 +21,7 @@
       synopsis = "handling of JSON and YAML in an uniform way";
       description = "remove particular aspects of abstraction in json and yaml - with an eye to use it with pandoc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "json-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Bindings to the Vulkan graphics API.";
       description = "Please see readme.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fixed-vector" or (errorHandler.buildDepError "fixed-vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

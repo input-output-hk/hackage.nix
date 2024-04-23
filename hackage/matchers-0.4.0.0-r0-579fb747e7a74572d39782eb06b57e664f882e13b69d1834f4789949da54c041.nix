@@ -21,7 +21,7 @@
       synopsis = "Text matchers";
       description = "Helpers for performing text matches.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

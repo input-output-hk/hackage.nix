@@ -21,7 +21,7 @@
       synopsis = "Simple interface to TLS secured WebSockets.";
       description = "Simple interface to TLS secured WebSockets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network-simple-tls" or (errorHandler.buildDepError "network-simple-tls"))
           (hsPkgs."network-simple-ws" or (errorHandler.buildDepError "network-simple-ws"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Empty Cabal package";
       description = "Empty Cabal package, intended to populate the Cabal @setup-exe-cache@, which is <https://github.com/valderman/haste-compiler/issues/257 required to bootstrap> the <http://haste-lang.org/ Haste compilation system>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,21 +21,21 @@
       synopsis = "A polymorphic, POSIX, extended regex-engine.";
       description = "Provides a portable, POSIX, extended regex-engine, designed to process a list of /arbitrary/ objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ] ++ (if flags.havedeepseq
+        ] ++ (if flags.havedeepseq
           then [ (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq")) ]
           else [
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ])) ++ [
+          ])) ++ [
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

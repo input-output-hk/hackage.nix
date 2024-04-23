@@ -21,7 +21,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "This package provides a plugin to verify Haskell programs.\nBut most likely you should be using the [liquidhaskell package](https://hackage.haskell.org/package/liquidhaskell)\ninstead, which rexports this plugin together with necessary\nspecifications for definitions in the boot libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,9 +66,9 @@
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ghc-api-tests" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "liquidhaskell-parser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,9 +95,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

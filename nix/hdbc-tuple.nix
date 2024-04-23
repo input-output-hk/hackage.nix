@@ -6,8 +6,8 @@
         nix = import ../hackage/hdbc-tuple-0.0.1-r0-33e1aeaaa8b091189b0d4915c02aa7970d3f09aa5aff82106b6269b37ff5520b.nix;
         revNum = 0;
         sha256 = "33e1aeaaa8b091189b0d4915c02aa7970d3f09aa5aff82106b6269b37ff5520b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

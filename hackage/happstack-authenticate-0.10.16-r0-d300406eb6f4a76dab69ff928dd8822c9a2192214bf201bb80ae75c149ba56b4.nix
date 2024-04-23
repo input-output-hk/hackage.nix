@@ -21,7 +21,7 @@
       synopsis = "Happstack Authentication Library";
       description = "A themeable authentication library with support for username+password and OpenId.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-happstack" or (errorHandler.buildDepError "web-routes-happstack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

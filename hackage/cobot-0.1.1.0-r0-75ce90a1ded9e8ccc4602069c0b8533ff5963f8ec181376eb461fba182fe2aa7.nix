@@ -21,7 +21,7 @@
       synopsis = "Computational biology toolkit to collaborate with researchers in constructive protein engineering";
       description = "Please see the README on GitHub at <https://github.com/less-wrong/cobot#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cobot-test" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "cobot-bench" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

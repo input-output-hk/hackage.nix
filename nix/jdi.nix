@@ -6,8 +6,8 @@
         nix = import ../hackage/jdi-0.0.3-r0-cd8fbdafe3ea4eb9879b76bad05fa1dbba9c99ffb566cd4348ad14277a8b4be8.nix;
         revNum = 0;
         sha256 = "cd8fbdafe3ea4eb9879b76bad05fa1dbba9c99ffb566cd4348ad14277a8b4be8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

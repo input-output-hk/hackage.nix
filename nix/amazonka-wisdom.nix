@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-wisdom-2.0-r0-e251639562895290ea7bae0c8978ed71e7935f5dd09e41fb7141260460749631.nix;
         revNum = 0;
         sha256 = "e251639562895290ea7bae0c8978ed71e7935f5dd09e41fb7141260460749631";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

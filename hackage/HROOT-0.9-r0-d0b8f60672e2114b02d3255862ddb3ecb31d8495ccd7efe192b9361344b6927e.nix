@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to the ROOT data analysis framework";
       description = "HROOT is a haskell Foreign Function Interface (FFI) binding to ROOT. ROOT(http://root.cern.ch) is an object-oriented program and library developed by CERN for physics data analysis.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."HROOT-tree" or (errorHandler.buildDepError "HROOT-tree"))
           (hsPkgs."HROOT-graf" or (errorHandler.buildDepError "HROOT-graf"))
           (hsPkgs."HROOT-io" or (errorHandler.buildDepError "HROOT-io"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

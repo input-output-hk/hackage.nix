@@ -21,7 +21,7 @@
       synopsis = "Authenticate Routes Using Wordpress Cookies";
       description = "This package provides a Servant AuthHandler that validates Wordpress's @LOGGED_IN@ authentication Cookie & the @wp_rest@ Nonce, returning either an Authorized user with data or an Anonymous user, or calling an error handler.\n\nThis allows you to access the currently logged in User when making AJAX requests from a Wordpress site.\n\nCheck out the @wordpress-auth@ package for lower-level Wordpress Cookie & Nonce manipulation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wordpress-auth" or (errorHandler.buildDepError "wordpress-auth"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

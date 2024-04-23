@@ -21,11 +21,11 @@
       synopsis = ".NET TimeSpan";
       description = ".NET TimeSpan";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

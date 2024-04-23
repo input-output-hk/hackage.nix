@@ -21,7 +21,7 @@
       synopsis = "Format an SRT.";
       description = "Format an SRT data type as Text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."simple-media-timestamp" or (errorHandler.buildDepError "simple-media-timestamp"))
           (hsPkgs."simple-media-timestamp-formatting" or (errorHandler.buildDepError "simple-media-timestamp-formatting"))
           (hsPkgs."srt" or (errorHandler.buildDepError "srt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

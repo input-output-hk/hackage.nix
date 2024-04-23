@@ -6,8 +6,8 @@
         nix = import ../hackage/dovetail-aeson-0.1.0.0-r0-054cd6ca8c404a476d7162a587e8506210c35dac5665246c371db18ff85aee4d.nix;
         revNum = 0;
         sha256 = "054cd6ca8c404a476d7162a587e8506210c35dac5665246c371db18ff85aee4d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

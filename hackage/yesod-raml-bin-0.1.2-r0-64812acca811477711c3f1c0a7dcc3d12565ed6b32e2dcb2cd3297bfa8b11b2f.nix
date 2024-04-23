@@ -21,7 +21,7 @@
       synopsis = "The raml helper executable.";
       description = "Provides html documentation and route file generator";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yesod-raml-bin" = {
@@ -44,9 +44,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

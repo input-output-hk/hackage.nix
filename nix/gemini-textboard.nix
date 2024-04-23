@@ -6,15 +6,15 @@
         nix = import ../hackage/gemini-textboard-0.1.0.0-r0-3ab8a5ccc5e02464d4e9b36611bc2fc6ce57e9c5830f34f9348a1e25038b93bf.nix;
         revNum = 0;
         sha256 = "3ab8a5ccc5e02464d4e9b36611bc2fc6ce57e9c5830f34f9348a1e25038b93bf";
-        };
+      };
       r1 = {
         nix = import ../hackage/gemini-textboard-0.1.0.0-r1-98af768caba395d98c527c6ff30f237918d0de5058b53cb5d4eb7eaa5fec2ec0.nix;
         revNum = 1;
         sha256 = "98af768caba395d98c527c6ff30f237918d0de5058b53cb5d4eb7eaa5fec2ec0";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
+  };
   "0.2.0.1" = {
     sha256 = "40394ee4214fe86b32347e97dfa64fbc81d205ae08fce5121e2461a73afb71fb";
     revisions = {
@@ -22,13 +22,13 @@
         nix = import ../hackage/gemini-textboard-0.2.0.1-r0-57c764ba7a0ccc8af6bf1c1337a805146ee372e629a2e404b6badc8c66a8b028.nix;
         revNum = 0;
         sha256 = "57c764ba7a0ccc8af6bf1c1337a805146ee372e629a2e404b6badc8c66a8b028";
-        };
+      };
       r1 = {
         nix = import ../hackage/gemini-textboard-0.2.0.1-r1-5a72c8919fd170893a06c356d93ee4a1ed5bbff1810d7dd26d8c0da0d0f7f55e.nix;
         revNum = 1;
         sha256 = "5a72c8919fd170893a06c356d93ee4a1ed5bbff1810d7dd26d8c0da0d0f7f55e";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

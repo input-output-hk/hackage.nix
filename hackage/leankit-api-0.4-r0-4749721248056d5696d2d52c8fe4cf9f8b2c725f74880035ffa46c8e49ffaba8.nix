@@ -21,7 +21,7 @@
       synopsis = "LeanKit API";
       description = "A lightweight API for LeanKit (http:\\/\\/leankit.com)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

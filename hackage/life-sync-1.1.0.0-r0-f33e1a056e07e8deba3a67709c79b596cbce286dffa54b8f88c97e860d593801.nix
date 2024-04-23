@@ -21,7 +21,7 @@
       synopsis = "Synchronize personal configs across multiple machines.";
       description = "Synchronize personal configs across multiple machines.\nSee README for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,19 +39,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "life" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."life-sync" or (errorHandler.buildDepError "life-sync"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "life-sync-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Set implementations with trees";
       description = "Set implemantations with red-black trees,\nleft-leaning red-black Trees,\nand weight balanced trees (trees of bounded balance).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

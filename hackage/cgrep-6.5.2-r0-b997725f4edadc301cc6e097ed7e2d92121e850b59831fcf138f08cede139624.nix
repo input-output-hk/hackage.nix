@@ -21,7 +21,7 @@
       synopsis = "Command line tool";
       description = "Cgrep: a context-aware grep for source codes";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cgrep" = {
@@ -46,9 +46,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

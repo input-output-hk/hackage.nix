@@ -6,8 +6,8 @@
         nix = import ../hackage/hsc3-lisp-0.15-r0-e4eaaf1a974d58cf906bf0f58124f409bddef9cfd4b37533aeabdb77341d449e.nix;
         revNum = 0;
         sha256 = "e4eaaf1a974d58cf906bf0f58124f409bddef9cfd4b37533aeabdb77341d449e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

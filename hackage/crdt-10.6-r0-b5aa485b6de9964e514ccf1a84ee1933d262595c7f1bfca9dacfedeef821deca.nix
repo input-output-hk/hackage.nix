@@ -21,7 +21,7 @@
       synopsis = "Conflict-free replicated data types";
       description = "Definitions of CmRDT and CvRDT. Implementations for some classic CRDTs.\n\nThis package is just for experiments, so it supports only one GHC version.\nFor real CRDT applications, use `ron` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,12 +37,12 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8")) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8")) [
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

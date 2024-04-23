@@ -21,15 +21,15 @@
       synopsis = "SDP IO extension";
       description = "SDP utils for input/output";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fmr" or (errorHandler.buildDepError "fmr"))
           (hsPkgs."sdp" or (errorHandler.buildDepError "sdp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

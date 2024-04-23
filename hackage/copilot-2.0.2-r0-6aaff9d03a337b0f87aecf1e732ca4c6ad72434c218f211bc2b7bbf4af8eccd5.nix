@@ -21,7 +21,7 @@
       synopsis = "A stream DSL for writing embedded C programs.";
       description = "Documentation is available at the website, and see the included examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."copilot-language" or (errorHandler.buildDepError "copilot-language"))
           (hsPkgs."copilot-libraries" or (errorHandler.buildDepError "copilot-libraries"))
           (hsPkgs."copilot-cbmc" or (errorHandler.buildDepError "copilot-cbmc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "copilot-regression" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."copilot-c99" or (errorHandler.buildDepError "copilot-c99"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

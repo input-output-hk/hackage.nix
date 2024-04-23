@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider";
       description = "Haskell client for the SuperCollider synthesis server";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

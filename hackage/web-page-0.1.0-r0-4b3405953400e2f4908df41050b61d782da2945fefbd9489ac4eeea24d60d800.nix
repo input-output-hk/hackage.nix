@@ -21,7 +21,7 @@
       synopsis = "Monoidally construct web pages";
       description = "This package combines blaze-html, clay, jmacro and web-routes into a\nframework-agnostic library to generate web pages dynamically from\nindividual components.  It is inspired by Yesod's widgets, but is\nmore general, more powerful and can be used with other web\nframeworks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,12 +35,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "web-page-test" = {
-          depends = (pkgs.lib).optionals (flags.testprogram) [
+          depends = pkgs.lib.optionals (flags.testprogram) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -48,9 +48,9 @@
             (hsPkgs."jmacro" or (errorHandler.buildDepError "jmacro"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web-page" or (errorHandler.buildDepError "web-page"))
-            ];
+          ];
           buildable = if flags.testprogram then true else false;
-          };
         };
       };
-    }
+    };
+  }

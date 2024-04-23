@@ -21,7 +21,7 @@
       synopsis = "A Haskell library to handle mailing lists in MailchimpSimple using its JSON API.";
       description = "Library to handle mailing lists in MailchimpSimple using its JSON API ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

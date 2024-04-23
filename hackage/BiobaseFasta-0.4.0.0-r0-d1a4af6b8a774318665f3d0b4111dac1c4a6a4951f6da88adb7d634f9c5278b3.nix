@@ -21,7 +21,7 @@
       synopsis = "streaming FASTA parser";
       description = "Stream-based handling of FASTA files. The user selects a window\nsize, the library then handles the window. For each window, the\nprevious (past) window is available, in case some data sits on\nthe boundary between windows.\n\nGreg Schwartz' <http://hackage.haskell.org/package/fasta>\npackage is a lot more complete. This one is mostly tailored to\nmy usage requirements (and may at some point use his library).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
           (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fastaextract" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."BiobaseFasta" or (errorHandler.buildDepError "BiobaseFasta"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."BiobaseFasta" or (errorHandler.buildDepError "BiobaseFasta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

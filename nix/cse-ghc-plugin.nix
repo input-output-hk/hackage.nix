@@ -6,8 +6,8 @@
         nix = import ../hackage/cse-ghc-plugin-0.1.1-r0-689395a37effd91e43dc5b94016a2e79a99c339b8e1271a996f8f2b560e024fb.nix;
         revNum = 0;
         sha256 = "689395a37effd91e43dc5b94016a2e79a99c339b8e1271a996f8f2b560e024fb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

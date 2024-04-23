@@ -21,7 +21,7 @@
       synopsis = "Haskell Postscript";
       description = "Haskell library partially implementing the\npostscript drawing model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hcg-minus" or (errorHandler.buildDepError "hcg-minus"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

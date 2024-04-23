@@ -21,7 +21,7 @@
       synopsis = "a simple physics engine";
       description = "A simple physics engine(dynamics only) with collision dection";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "light-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

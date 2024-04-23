@@ -21,7 +21,7 @@
       synopsis = "Shared library used be ide-backend and ide-backend-server";
       description = "Should not be used by end users";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

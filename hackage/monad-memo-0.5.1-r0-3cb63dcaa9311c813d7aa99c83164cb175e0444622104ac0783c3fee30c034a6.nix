@@ -21,7 +21,7 @@
       synopsis = "Memoization monad transformer";
       description = "Memoization monad transformer supporting most of the standard monad transformers and a range of memoization cache types: from default pure maps to extremely fast mutable vectors\n\nTo add memoization behaviour to a monadic function:\n\n1) Add 'Control.Monad.Memo.memo' combinator at the point when memoization is required (i.e. recursive call)\n\n>import Control.Monad.Memo\n>\n>fibm 0 = return 0\n>fibm 1 = return 1\n>fibm n = do\n>  n1 <- memo fibm (n-1)\n>  n2 <- memo fibm (n-2)\n>  return (n1+n2)\n\n2) Use approprite /*eval*/ or /*run*/ function to evaluate resulting `MonadMemo` monad:\n\n>startEvalMemo (fibm 100)\n\nSee detailed description and examples: \"Control.Monad.Memo\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "all" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

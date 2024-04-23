@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-rds-data-2.0-r0-429d36df5882a0527720163586b7732de03189c578a7128ae876fa43103c1c0a.nix;
         revNum = 0;
         sha256 = "429d36df5882a0527720163586b7732de03189c578a7128ae876fa43103c1c0a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "External sorting package based on Conduit";
       description = "External (disk-backed) sorting package based on Conduit, saving intermediate files to disk and later merging them all.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "SortLines" = {
@@ -50,9 +50,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

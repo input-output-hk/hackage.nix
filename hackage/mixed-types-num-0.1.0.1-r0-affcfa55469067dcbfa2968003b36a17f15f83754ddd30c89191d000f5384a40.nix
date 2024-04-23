@@ -21,7 +21,7 @@
       synopsis = "Alternative Prelude with numeric and logic expressions typed bottom-up";
       description = "This package provides a version of Prelude where\nunary and binary operations such as @not@, @+@, @==@\nhave their result type derived from the parameter type(s).\n\nSee module \"Numeric.MixedTypes\" for further documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hspec-smallcheck" or (errorHandler.buildDepError "hspec-smallcheck"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-smallcheck" or (errorHandler.buildDepError "hspec-smallcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

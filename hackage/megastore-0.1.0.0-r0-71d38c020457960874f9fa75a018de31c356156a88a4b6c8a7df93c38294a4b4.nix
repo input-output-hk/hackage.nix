@@ -21,7 +21,7 @@
       synopsis = "Bulk image or strict bytestring storage";
       description = "Please see the README on GitHub at <https://github.com/MilesLitteral/megastore/tree/release#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "megastore" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

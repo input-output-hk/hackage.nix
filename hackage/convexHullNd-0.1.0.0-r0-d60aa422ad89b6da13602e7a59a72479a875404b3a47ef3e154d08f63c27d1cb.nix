@@ -21,7 +21,7 @@
       synopsis = "Convex hull";
       description = "Computes the convex hull of a set of points in arbitrary dimension.\n\nThis library uses the C library 'qhull'.\n\nFor examples, look at the README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."insert-ordered-containers" or (errorHandler.buildDepError "insert-ordered-containers"))
           (hsPkgs."Unique" or (errorHandler.buildDepError "Unique"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

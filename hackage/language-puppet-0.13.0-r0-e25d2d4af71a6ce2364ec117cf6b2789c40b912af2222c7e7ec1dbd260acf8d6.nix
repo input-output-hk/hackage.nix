@@ -21,7 +21,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulationg of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -63,9 +63,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
-          ] ++ (pkgs.lib).optional (flags.hruby) (hsPkgs."hruby" or (errorHandler.buildDepError "hruby"));
+        ] ++ pkgs.lib.optional (flags.hruby) (hsPkgs."hruby" or (errorHandler.buildDepError "hruby"));
         buildable = true;
-        };
+      };
       exes = {
         "puppetresources" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pdbquery" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -105,10 +105,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-evals" = {
           depends = [
@@ -117,9 +117,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-lexer" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -130,9 +130,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-expr" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -141,9 +141,9 @@
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-hiera" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -156,9 +156,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-puppetdb" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -167,9 +167,9 @@
             (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "erbparser" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -177,9 +177,9 @@
             (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

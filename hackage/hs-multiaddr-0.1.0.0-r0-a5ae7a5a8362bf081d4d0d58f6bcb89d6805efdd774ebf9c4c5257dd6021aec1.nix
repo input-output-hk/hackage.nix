@@ -21,7 +21,7 @@
       synopsis = "Multiaddr Library for LibP2P";
       description = "Multiaddr is self-describing way to represent addresses that support any standard network protocol.\nMultiaddr has a binary packed format, and nice string representation.\nIt is possible to encapsulate addresses within each other.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."multihash" or (errorHandler.buildDepError "multihash"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-multiaddr-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."multihash" or (errorHandler.buildDepError "multihash"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

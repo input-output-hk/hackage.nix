@@ -21,7 +21,7 @@
       synopsis = "Rational arithmetic in an irrational world.";
       description = "A library of number-theory functions, for; factorials, square-roots, Pi, primality-testing, prime-factorisation ...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,20 +32,18 @@
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ] ++ [
-          (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ] ++ [ (hsPkgs."parallel" or (errorHandler.buildDepError "parallel")) ];
         buildable = true;
-        };
+      };
       exes = {
         "factory" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Talk across TLS";
       description = "Server and curses client for the \"talkat\" (Talk Across TLS) real-time text communication protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htalkat" = {
@@ -55,10 +55,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.curses) (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"));
-          pkgconfig = (pkgs.lib).optional (flags.curses) (pkgconfPkgs."ncursesw" or (errorHandler.pkgConfDepError "ncursesw"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (flags.curses) (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"));
+          pkgconfig = pkgs.lib.optional (flags.curses) (pkgconfPkgs."ncursesw" or (errorHandler.pkgConfDepError "ncursesw"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

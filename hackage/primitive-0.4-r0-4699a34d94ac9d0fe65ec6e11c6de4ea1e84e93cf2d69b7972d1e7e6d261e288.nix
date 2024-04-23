@@ -21,14 +21,14 @@
       synopsis = "Wrappers for primitive operations";
       description = "\nThis package provides wrappers for primitive array operations from\nGHC.Prim.\n\nChanges in version 0.4\n\n* Support for GHC 7.2 array copying primitives\n\n* New in \"Data.Primitive.ByteArray\": @copyByteArray@,\n@copyMutableByteArray@, @moveByteArray@, @fillByteArray@\n\n* Deprecated in \"Data.Primitive.ByteArray\": @memcpyByteArray@,\n@memcpyByteArray'@, @memmoveByteArray@, @memsetByteArray@\n\n* New in \"Data.Primitive.Array\": @copyArray@, @copyMutableByteArray@\n\n* New in \"Data.Primitive.Addr\": @copyAddr@, @moveAddr@\n\n* Deprecated in \"Data.Primitive.Addr\": @memcpyAddr@\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

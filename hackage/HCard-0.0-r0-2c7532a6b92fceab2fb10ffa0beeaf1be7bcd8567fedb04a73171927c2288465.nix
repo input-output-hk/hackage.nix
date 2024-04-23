@@ -21,7 +21,7 @@
       synopsis = "A library for implementing a Deck of Cards";
       description = "HCard provides a standard interface to a deck of cards -- providing shuffling, permutation irrelevant equality of hands, etc. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

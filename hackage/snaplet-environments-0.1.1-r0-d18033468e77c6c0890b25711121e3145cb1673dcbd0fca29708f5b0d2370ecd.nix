@@ -21,7 +21,7 @@
       synopsis = "DEPRECATED! You should use standard Snap >= 0.9 \"environments\" functionality. It provided ability to easly read configuration based on given app environment given at command line, envs are defined in app configuration file";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

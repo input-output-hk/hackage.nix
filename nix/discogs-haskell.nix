@@ -6,8 +6,8 @@
         nix = import ../hackage/discogs-haskell-0.0.5.0-r0-65f1b42ee8a369ea3731df8d081b84821789396218f3273839a278746d782998.nix;
         revNum = 0;
         sha256 = "65f1b42ee8a369ea3731df8d081b84821789396218f3273839a278746d782998";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

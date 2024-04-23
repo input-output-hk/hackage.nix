@@ -21,7 +21,7 @@
       synopsis = "Streaming compression/decompression via conduits.";
       description = "Streaming compression/decompression via conduits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
+        ];
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,19 +46,19 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tool for searching java classes, members and fields in classfiles and JAR archives";
       description = "Search classfiles and JARs: like, all public 'close' methods in classes with 'Stream' in their name in a JAR.\nMostly for debugging NoSuchMethodError's etc. resulting from an outdated JAR and alike.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jarf" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

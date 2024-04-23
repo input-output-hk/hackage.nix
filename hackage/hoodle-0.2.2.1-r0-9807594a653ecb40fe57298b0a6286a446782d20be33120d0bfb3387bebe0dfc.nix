@@ -21,7 +21,7 @@
       synopsis = "Executable for hoodle";
       description = "Hoodle is a pen notetaking program written in haskell. ";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
           (hsPkgs."hoodle-core" or (errorHandler.buildDepError "hoodle-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hoodle" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."hoodle-core" or (errorHandler.buildDepError "hoodle-core"))
             (hsPkgs."hoodle" or (errorHandler.buildDepError "hoodle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Creating the Haskell-Tools AST from GHC's representations";
       description = "This package collects information from various representations of a Haskell program in GHC ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."structural-traversal" or (errorHandler.buildDepError "structural-traversal"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

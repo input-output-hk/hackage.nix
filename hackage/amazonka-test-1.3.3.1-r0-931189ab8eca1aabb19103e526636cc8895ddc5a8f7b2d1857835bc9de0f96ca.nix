@@ -21,7 +21,7 @@
       synopsis = "Common functionality for Amazonka library test-suites.";
       description = "Common functionality depended upon by test suites of the various @amazonka-*@\nservice libraries.\n\nThe external interface of this library is stable with respect to the\ndownstream Amazonka libraries, only, and as such is not suitable\nfor use in non-Amazonka projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

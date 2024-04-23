@@ -21,7 +21,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -58,30 +58,30 @@
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ] ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
+        ] ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
           then [ (hsPkgs."windns" or (errorHandler.buildDepError "windns")) ]
           else [
             (hsPkgs."resolv" or (errorHandler.buildDepError "resolv"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ]
+          ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.lukko) (hsPkgs."lukko" or (errorHandler.buildDepError "lukko"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.2") (hsPkgs."process" or (errorHandler.buildDepError "process"));
+          ])) ++ pkgs.lib.optional (flags.lukko) (hsPkgs."lukko" or (errorHandler.buildDepError "lukko"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.2") (hsPkgs."process" or (errorHandler.buildDepError "process"));
         buildable = true;
-        };
+      };
       exes = {
         "cabal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cabal-install" or (errorHandler.buildDepError "cabal-install"))
-            ];
-          libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd" or (errorHandler.sysDepError "bsd"));
+          ];
+          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd" or (errorHandler.sysDepError "bsd"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mem-use-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -122,9 +122,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "integration-tests2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -139,9 +139,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "long-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -165,9 +165,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

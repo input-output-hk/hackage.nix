@@ -21,23 +21,23 @@
       synopsis = "A light abstraction over sockets & co. for servers";
       description = "With these routines it is very easy to write a server, have it accept\nconnections on multiple ports via IP4, IP6 or unix sockets and associate\neach of these bindings with a server routine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

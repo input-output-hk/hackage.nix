@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for libvoyeur";
       description = "Haskell bindings for libvoyeur, a library for observing the private\nactivities of child processes.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

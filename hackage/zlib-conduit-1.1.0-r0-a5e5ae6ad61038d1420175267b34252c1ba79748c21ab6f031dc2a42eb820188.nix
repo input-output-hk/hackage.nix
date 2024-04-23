@@ -21,14 +21,14 @@
       synopsis = "Streaming compression/decompression via conduits. (deprecated)";
       description = "Streaming compression/decompression via conduits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

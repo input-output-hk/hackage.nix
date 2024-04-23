@@ -21,14 +21,14 @@
       synopsis = "Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds.";
       description = "Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

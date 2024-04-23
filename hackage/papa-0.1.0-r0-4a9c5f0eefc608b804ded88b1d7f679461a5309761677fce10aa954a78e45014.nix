@@ -21,7 +21,7 @@
       synopsis = "Reasonable default import";
       description = "Reasonable default import";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."papa-base" or (errorHandler.buildDepError "papa-base"))
           (hsPkgs."papa-prelude" or (errorHandler.buildDepError "papa-prelude"))
           (hsPkgs."papa-include" or (errorHandler.buildDepError "papa-include"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

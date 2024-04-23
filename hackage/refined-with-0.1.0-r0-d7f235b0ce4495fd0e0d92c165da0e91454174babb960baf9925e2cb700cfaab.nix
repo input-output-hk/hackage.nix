@@ -21,7 +21,7 @@
       synopsis = "Refinement types with an \"refinement applied\" switch.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."refined" or (errorHandler.buildDepError "refined"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Conduit-based parsing and serialization for newline delimited JSON.";
       description = "Hackage documentation generation is not reliable.\nFor up to date documentation, please see: <http://www.stackage.org/package/ndjson-conduit>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

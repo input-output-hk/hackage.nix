@@ -21,7 +21,7 @@
       synopsis = "Implementation of the Bech32 cryptocurrency address format (BIP 0173).";
       description = "Implementation of the Bech32 cryptocurrency address format documented in the\nBIP (Bitcoin Improvement Proposal) 0173.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bech32" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bech32" or (errorHandler.buildDepError "bech32"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "bech32-test" = {
           depends = [
@@ -67,13 +67,13 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."bech32" or (errorHandler.buildDepError "bech32"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.bech32.components.exes.bech32 or (pkgs.buildPackages.bech32 or (errorHandler.buildToolDepError "bech32:bech32")))
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

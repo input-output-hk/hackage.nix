@@ -21,14 +21,14 @@
       synopsis = "Combining functions";
       description = "MPTC/FD generalisations of (.) and flip";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-type" or (errorHandler.buildDepError "data-type"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

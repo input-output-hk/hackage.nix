@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-cellular-0.0.0.1-r0-f900eda1006533366c69dc7261d5b6d89480f779418a0404ce9408117f398092.nix;
         revNum = 0;
         sha256 = "f900eda1006533366c69dc7261d5b6d89480f779418a0404ce9408117f398092";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

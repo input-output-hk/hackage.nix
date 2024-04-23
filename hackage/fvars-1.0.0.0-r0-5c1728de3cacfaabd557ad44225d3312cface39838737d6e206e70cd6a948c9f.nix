@@ -21,7 +21,7 @@
       synopsis = "Fast Mutable Vars";
       description = "Fast single writer, multiple reader Vars";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fvars-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fvars" or (errorHandler.buildDepError "fvars"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

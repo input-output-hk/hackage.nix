@@ -21,7 +21,7 @@
       synopsis = "A gerrit client library";
       description = "Gerrit is a client library to interface with https://www.gerritcodereview.com/\n\nUse this library to query and post to gerrit REST API.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson-casing" or (errorHandler.buildDepError "aeson-casing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gerrit-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."gerrit" or (errorHandler.buildDepError "gerrit"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

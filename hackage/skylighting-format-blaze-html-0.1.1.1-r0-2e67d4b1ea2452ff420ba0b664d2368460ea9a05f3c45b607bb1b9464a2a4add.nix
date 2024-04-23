@@ -14,7 +14,7 @@
       identifier = {
         name = "skylighting-format-blaze-html";
         version = "0.1.1.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "(C) 2016-2022 John MacFarlane";
       maintainer = "jgm@berkeley.edu";
@@ -24,7 +24,7 @@
       synopsis = "HTML formatter for skylighting syntax highlighting library";
       description = "This module allows tokens produced by skylighting-core\nto be rendered as HTML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

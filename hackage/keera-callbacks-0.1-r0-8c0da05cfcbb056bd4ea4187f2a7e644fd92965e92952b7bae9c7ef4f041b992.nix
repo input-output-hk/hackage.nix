@@ -21,14 +21,14 @@
       synopsis = "Mutable memory locations with callbacks";
       description = "Mutable memory locations with handlers that are executed when the\nshared values are modified.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/salvia-websocket-1.0.0-r0-377ff4391948d650d06df53d97083fb4ce1121ef95957eebc19521fa205ddc57.nix;
         revNum = 0;
         sha256 = "377ff4391948d650d06df53d97083fb4ce1121ef95957eebc19521fa205ddc57";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

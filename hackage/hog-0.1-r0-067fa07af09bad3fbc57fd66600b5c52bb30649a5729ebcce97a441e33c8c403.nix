@@ -21,7 +21,7 @@
       synopsis = "Simple IRC logger bot.";
       description = "Simple IRC logger bot, connects to given channels and\nlogs lines to files of the corresponding channel names.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hog" = {
@@ -34,9 +34,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell development library";
       description = "Haskell development library and tool with support of autocompletion, symbol info, go to declaration, find references, hayoo search etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -74,26 +74,26 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.4" && (compiler.isGhc && (compiler.version).lt "8.5")) [
+          ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.4" && (compiler.isGhc && compiler.version.lt "8.5")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.2" && (compiler.isGhc && (compiler.version).lt "8.3")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.2" && (compiler.isGhc && compiler.version.lt "8.3")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0" && (compiler.isGhc && (compiler.version).lt "8.2")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0" && (compiler.isGhc && compiler.version.lt "8.2")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ]) ++ (pkgs.lib).optionals (flags.docs) [
+        ]) ++ pkgs.lib.optionals (flags.docs) [
           (hsPkgs."hdocs" or (errorHandler.buildDepError "hdocs"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hsdev" = {
           depends = [
@@ -115,10 +115,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -137,9 +137,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

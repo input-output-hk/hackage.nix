@@ -21,7 +21,7 @@
       synopsis = "Non-blocking concurrent map";
       description = "A non-blocking concurrent map implementation based on\n/lock-free concurrent hash tries/ (aka /Ctries/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "map-properties" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."ctrie" or (errorHandler.buildDepError "ctrie"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "sequential" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."ctrie" or (errorHandler.buildDepError "ctrie"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "concurrent" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,9 +74,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."ctrie" or (errorHandler.buildDepError "ctrie"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

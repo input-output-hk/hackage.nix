@@ -21,7 +21,7 @@
       synopsis = "dmenu script for killing applications. Sortable by process id or CPU/MEM usage.";
       description = "See README.md file.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "dmenu-pkill" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."dmenu" or (errorHandler.buildDepError "dmenu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

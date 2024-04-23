@@ -21,7 +21,7 @@
       synopsis = "Unstable bindings for the tree-sitter parsing library.";
       description = "Tree-sitter is a parser generator tool and an incremental parsing library.\n\nWe strongly recommend against depending on this library at this time;\nthe data types and API are subject to rapid change. Future versions\nwill provide more reliable parsers and a more stable API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Decompress SAPCAR archives";
       description = "Decompressor command line utility and library for SAP's SAPCAR format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hascar" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "hascar-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."hascar" or (errorHandler.buildDepError "hascar"))
             (hsPkgs."hex" or (errorHandler.buildDepError "hex"))
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

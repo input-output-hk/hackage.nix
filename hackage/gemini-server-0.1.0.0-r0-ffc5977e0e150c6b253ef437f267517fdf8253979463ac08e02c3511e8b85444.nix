@@ -21,7 +21,7 @@
       synopsis = "A lightweight server for the Gemini protocol";
       description = "This package contains a server for the\nGemini (<https://gemini.circumlunar.space/>) protocol.\nThere is no tls support yet, so you'll need a tls terminator like stunnel\nin front of it.\nFor a higher level interface, see the gemini-router package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

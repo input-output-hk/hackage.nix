@@ -21,7 +21,7 @@
       synopsis = "A simple, mindless parser for fasta files.";
       description = "The fasta type specifically split by String, Text, and Lazy Text for simplicity and ease of use, although lacking many features of other parsers. Mainly for use with bioinformatics applications which are very general and need no conversion overhead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,21 +21,21 @@
       synopsis = "Tools for manipulating type-level bytes and bytestrings";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."type-level-bytestrings" or (errorHandler.buildDepError "type-level-bytestrings"))
             (hsPkgs."type-spec" or (errorHandler.buildDepError "type-spec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

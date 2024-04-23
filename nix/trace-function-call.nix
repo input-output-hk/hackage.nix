@@ -6,8 +6,8 @@
         nix = import ../hackage/trace-function-call-0.1-r0-02ab251a45136cd33ba4ba0ccd1d334151f5c9278fa66a6e4e02bfa6150eb0dc.nix;
         revNum = 0;
         sha256 = "02ab251a45136cd33ba4ba0ccd1d334151f5c9278fa66a6e4e02bfa6150eb0dc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

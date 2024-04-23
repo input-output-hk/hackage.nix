@@ -21,7 +21,7 @@
       synopsis = "Haskell Git Helper Tool";
       description = "Haskell Git Helper Tool";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."shellmet" or (errorHandler.buildDepError "shellmet"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hit-on" or (errorHandler.buildDepError "hit-on"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hit-on-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."hit-on" or (errorHandler.buildDepError "hit-on"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

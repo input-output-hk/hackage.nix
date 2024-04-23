@@ -21,7 +21,7 @@
       synopsis = "Fast, incremental ESMTP sessions";
       description = "This library provides fast, incremental SMTP sessions, so you can\ncontrol each aspect of the session.  It uses iteratees and\nblaze-builder for fast I/O.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."network-fancy" or (errorHandler.buildDepError "network-fancy"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

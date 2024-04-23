@@ -6,8 +6,8 @@
         nix = import ../hackage/cfipu-1.1.0.4-r0-121821ba4955c60779001908ffbcff4b77c1b333264818dd5af09be02514084b.nix;
         revNum = 0;
         sha256 = "121821ba4955c60779001908ffbcff4b77c1b333264818dd5af09be02514084b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

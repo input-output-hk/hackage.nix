@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of Mustache templates";
       description = "Haskell implementation of Mustache templates (<http://mustache.github.com/>).\n\nSee homepage for examples of usage: <http://github.com/lymar/hastache>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."ieee754" or (errorHandler.buildDepError "ieee754"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

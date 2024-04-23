@@ -21,7 +21,7 @@
       synopsis = "Web framework";
       description = "Miscellaneous utilities for Happstack packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,18 +45,18 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "happstack-util-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ (pkgs.lib).optional (flags.tests) (hsPkgs."network" or (errorHandler.buildDepError "network"));
+          ] ++ pkgs.lib.optional (flags.tests) (hsPkgs."network" or (errorHandler.buildDepError "network"));
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

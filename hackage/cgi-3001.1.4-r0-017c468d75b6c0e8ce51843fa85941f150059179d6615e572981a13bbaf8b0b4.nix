@@ -21,7 +21,7 @@
       synopsis = "A library for writing CGI programs";
       description = "This is a Haskell library for writing CGI programs. ";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Database persistence using generics";
       description = "Please see the README on GitHub at <https://github.com/thma/generic-persistence#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "generic-persistence-demo" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."generic-persistence" or (errorHandler.buildDepError "generic-persistence"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "generic-persistence-test" = {
           depends = [
@@ -57,12 +57,12 @@
             (hsPkgs."generic-persistence" or (errorHandler.buildDepError "generic-persistence"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -12,7 +12,7 @@
       developer = false;
       split-base = true;
       applicative-in-base = true;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "attoparsec"; version = "0.9.1.1"; };
@@ -25,19 +25,19 @@
       synopsis = "Fast combinator parsing for bytestrings";
       description = "A fast parser combinator library, aimed particularly at dealing\nefficiently with network protocols and complicated text/binary\nfile formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ])) ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ])) ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

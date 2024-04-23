@@ -6,8 +6,8 @@
         nix = import ../hackage/easy-bitcoin-0.0.0.2-r0-853ca8092631c64a3d0c2987729fc06b31190914e41c621abcfb0db0a141ed6e.nix;
         revNum = 0;
         sha256 = "853ca8092631c64a3d0c2987729fc06b31190914e41c621abcfb0db0a141ed6e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

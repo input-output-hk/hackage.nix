@@ -21,7 +21,7 @@
       synopsis = "Distributed processing of changing tasks";
       description = "A framework for distributing tasks running on HDFS data using Cloud Haskell.\nThe goal is speedup through distribution on clusters using regular hardware.\nThis framework provides different, simple workarounds to transport new code to other cluster nodes.\nSee project home / README.md for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "slave" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."strings" or (errorHandler.buildDepError "strings"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."strings" or (errorHandler.buildDepError "strings"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "task-distribution-object-code-remote" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "run-demo-task" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -108,9 +108,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-visit-performance" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -118,10 +118,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-node-matching" = {
           depends = [
@@ -146,9 +146,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

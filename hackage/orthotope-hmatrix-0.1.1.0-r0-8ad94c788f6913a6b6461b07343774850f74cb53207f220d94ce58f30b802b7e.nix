@@ -21,15 +21,15 @@
       synopsis = "Some algorithms from hmatrix";
       description = "Some algorithms from hmatrix, such as matrix multiply.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."orthotope" or (errorHandler.buildDepError "orthotope"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

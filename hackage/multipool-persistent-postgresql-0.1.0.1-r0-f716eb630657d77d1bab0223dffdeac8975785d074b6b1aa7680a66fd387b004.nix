@@ -14,7 +14,7 @@
       identifier = {
         name = "multipool-persistent-postgresql";
         version = "0.1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Ian Duncan";
       maintainer = "ian@iankduncan.com";
@@ -24,7 +24,7 @@
       synopsis = "Read and write appropriately from both master and replicated postgresql instances.";
       description = "Please see the README on GitHub at <https://github.com/iand675/multipool#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."postgresql-common-persistent" or (errorHandler.buildDepError "postgresql-common-persistent"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "multipool-persistent-postgresql-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."postgresql-common-persistent" or (errorHandler.buildDepError "postgresql-common-persistent"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

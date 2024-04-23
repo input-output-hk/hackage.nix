@@ -21,20 +21,20 @@
       synopsis = "Compiler from I- to S-Expressions for the Scheme Programming Language";
       description = "This compiler translates Scheme source code written with I-Expressions (indented expressions) into S-Expressions (symbolic expressions).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "haskeme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskeme" or (errorHandler.buildDepError "haskeme"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

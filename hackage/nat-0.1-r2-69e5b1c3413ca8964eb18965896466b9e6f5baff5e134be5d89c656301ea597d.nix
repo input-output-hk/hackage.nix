@@ -21,11 +21,11 @@
       synopsis = "Lazy binary natural numbers";
       description = "Implementation of natural numbers and integers by a binary\nrepresentation. The implementation is supposed to be lazy and\nreasonable efficient (in comparison to peano numbers). This\nimplementation is inspired by a similar approach in the functional\nlogic programming language Curry.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

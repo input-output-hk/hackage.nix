@@ -21,11 +21,11 @@
       synopsis = "The Acme and AcmeT monads.";
       description = "The Acme and AcmeT monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

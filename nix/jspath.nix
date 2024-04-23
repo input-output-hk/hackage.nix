@@ -6,8 +6,8 @@
         nix = import ../hackage/jspath-0.1-r0-d98645b96e9cd3ac9d485882579e52112df3e8d0200d2572fc730c8d36b4738b.nix;
         revNum = 0;
         sha256 = "d98645b96e9cd3ac9d485882579e52112df3e8d0200d2572fc730c8d36b4738b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

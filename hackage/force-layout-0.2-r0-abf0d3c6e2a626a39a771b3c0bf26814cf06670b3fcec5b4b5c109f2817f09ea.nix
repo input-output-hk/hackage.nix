@@ -21,7 +21,7 @@
       synopsis = "Simple force-directed layout";
       description = "Simulation engine for doing simple force-based layout,\n/e.g./ for trees or graphs.  See the diagrams-contrib package\nfor usage examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector-space-points" or (errorHandler.buildDepError "vector-space-points"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "The OpenTelemetry Haskell Client (LightStep exporter) https://opentelemetry.io";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."proto-lens-protobuf-types" or (errorHandler.buildDepError "proto-lens-protobuf-types"))
           (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "just-some-usage-code-that-must-compile" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
             (hsPkgs."opentelemetry-lightstep" or (errorHandler.buildDepError "opentelemetry-lightstep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "License Header Manager";
       description = "Would you like to have nice, up-to-date license/copyright headers in your source code files but hate to manage them by hand? Then Headroom is the right tool for you! Now you can define your license header as Mustache template, put all the variables (such as author's name, year, etc.) into the YAML config file and Headroom will take care to add such license headers to all your source code files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "headroom" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."headroom" or (errorHandler.buildDepError "headroom"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -69,9 +69,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library for talking to the mDNSResponder daemon.";
       description = "On OS X, iOS, and Bonjour for Windows, mDNSResponder is\nthe daemon responsible for providing the Bonjour services.\nThis is a client implementation directly on top of the\n(not documented outside of the open source code) Unix\ndomain socket protocol, as the \"low level\" dns_sd C API\nprovided by Apple relies on heavy use of callbacks and\ndoes not allow for nonblocking connections.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."ctrie" or (errorHandler.buildDepError "ctrie"))
           (hsPkgs."data-endian" or (errorHandler.buildDepError "data-endian"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

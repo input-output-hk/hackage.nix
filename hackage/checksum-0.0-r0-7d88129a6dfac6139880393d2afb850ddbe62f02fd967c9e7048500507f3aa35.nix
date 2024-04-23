@@ -21,15 +21,15 @@
       synopsis = "Compute and verify checksums of ISBN, IBAN, etc.";
       description = "Compute and verify checksums of various identifiers,\nsuch as IBAN, ISBN, EAN, Germany's Citizen Card.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

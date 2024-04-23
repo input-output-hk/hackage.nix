@@ -21,27 +21,27 @@
       synopsis = "Haskell bindings for rlImGui";
       description = "This package contains simple bindings to the functions defined in rlImGui, allowing raylib and Dear ImGui interop";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."h-raylib" or (errorHandler.buildDepError "h-raylib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
-          depends = (pkgs.lib).optionals (!(!flags.example)) [
+          depends = pkgs.lib.optionals (!!flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dear-imgui" or (errorHandler.buildDepError "dear-imgui"))
             (hsPkgs."gl" or (errorHandler.buildDepError "gl"))
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."h-raylib" or (errorHandler.buildDepError "h-raylib"))
             (hsPkgs."raylib-imgui" or (errorHandler.buildDepError "raylib-imgui"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
       };
-    }
+    };
+  }

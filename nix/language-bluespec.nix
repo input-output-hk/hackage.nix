@@ -6,8 +6,8 @@
         nix = import ../hackage/language-bluespec-0.1-r0-2d86289500732d4b0ec2f265cb0749aa078ede847b77e1dafe72b590816122ab.nix;
         revNum = 0;
         sha256 = "2d86289500732d4b0ec2f265cb0749aa078ede847b77e1dafe72b590816122ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

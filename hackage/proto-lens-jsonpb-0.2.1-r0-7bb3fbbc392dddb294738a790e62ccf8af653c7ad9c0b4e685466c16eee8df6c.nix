@@ -21,7 +21,7 @@
       synopsis = "JSON protobuf encoding for proto-lens";
       description = "Please see the README on GitHub at <https://github.com/tclem/proto-lens-jsonpb#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

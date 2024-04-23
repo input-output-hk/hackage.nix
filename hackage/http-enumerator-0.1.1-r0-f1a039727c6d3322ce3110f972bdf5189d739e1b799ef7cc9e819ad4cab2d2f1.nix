@@ -21,7 +21,7 @@
       synopsis = "HTTP client package with enumerator interface and HTTPS support.";
       description = "This package uses attoparsec for parsing the actual contents of the HTTP connection. The only gotcha is the withHttpEnumerator function, otherwise should do exactly what you expect.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,10 +36,10 @@
           (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ] ++ (if flags.openssl
+        ] ++ (if flags.openssl
           then [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-            ]
+          ]
           else [
             (hsPkgs."AES" or (errorHandler.buildDepError "AES"))
             (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
@@ -51,11 +51,11 @@
             (hsPkgs."spoon" or (errorHandler.buildDepError "spoon"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "http-enumerator" = { buildable = if flags.test then true else false; };
-        };
       };
-    }
+    };
+  }

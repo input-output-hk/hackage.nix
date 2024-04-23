@@ -21,7 +21,7 @@
       synopsis = "Library for communication with the Bosch BNO055 orientation sensor";
       description = "Library for controlling and reading the Bosch BNO055 absolute orientation sensor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."h2c" or (errorHandler.buildDepError "h2c"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

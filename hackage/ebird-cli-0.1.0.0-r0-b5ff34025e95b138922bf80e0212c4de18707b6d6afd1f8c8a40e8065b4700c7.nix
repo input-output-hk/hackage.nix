@@ -21,7 +21,7 @@
       synopsis = "A command-line utility for interacting with the\neBird API.";
       description = "A library containing the functions used to implement a command-line utility\nfor interacting with the\n[eBird API](https://documenter.getpostman.com/view/664302/S1ENwy59).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ebird" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ebird-cli" or (errorHandler.buildDepError "ebird-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

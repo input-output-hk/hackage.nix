@@ -21,11 +21,11 @@
       synopsis = "Reifies arbitrary terms into types that can be reflected back into terms";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

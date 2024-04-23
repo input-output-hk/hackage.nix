@@ -21,7 +21,7 @@
       synopsis = "Reading and writing of ID3v2 tags";
       description = "Reading and writing of ID3v2 tags";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

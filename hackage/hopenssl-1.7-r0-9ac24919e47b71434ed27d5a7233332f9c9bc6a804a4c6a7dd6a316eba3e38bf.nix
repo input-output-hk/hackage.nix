@@ -21,16 +21,16 @@
       synopsis = "FFI bindings to OpenSSL's EVP digest interface";
       description = "Foreign-function bindings to the OpenSSL library\n<http://www.openssl.org/>. Currently provides\naccess to the messages digests MD5, DSS, DSS1,\nRIPEMD160, and several variants of SHA through\nthe EVP digest interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

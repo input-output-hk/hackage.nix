@@ -21,23 +21,23 @@
       synopsis = "Open a web browser from Haskell.";
       description = "Open a web browser from Haskell.\nCurrently only Linux and OS X are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."open-browser" or (errorHandler.buildDepError "open-browser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An MPD client designed for a Home Theatre PC";
       description = "An MPD client designed to be used on a Home Theatre PC equipt with an infrared remote\nand VDU display.\n\nHmpf is designed to allow the user to navigate through a large digital music collection with\na standard infrared remote and VDU. The client does not need or accept input from the keyboard\n\nHmpf also implements the LastFM protocol and is able to intelligently generate dynamic playlists";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hmpf" = {
@@ -35,9 +35,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

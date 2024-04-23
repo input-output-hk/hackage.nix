@@ -21,11 +21,11 @@
       synopsis = "Text paragraph formatting";
       description = "A paragraph formatting utility.  Provided with input text that is\narbitrarily split amongst several strings, this utility will\nreformat the text into paragraphs which do not exceed the\nspecified width.  Paragraphs are delimited by blank lines in the\ninput.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

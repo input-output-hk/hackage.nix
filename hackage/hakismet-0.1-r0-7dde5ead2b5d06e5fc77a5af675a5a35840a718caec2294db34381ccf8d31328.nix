@@ -21,15 +21,15 @@
       synopsis = "Akismet spam protection library";
       description = "Network.Akismet offers an easy way to interact with the stop spam service Akismet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

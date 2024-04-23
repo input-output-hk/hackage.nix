@@ -21,24 +21,24 @@
       synopsis = "Sqlite v3 driver for HDBC";
       description = "This is the Sqlite v3 driver for HDBC, the generic\ndatabase access system for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

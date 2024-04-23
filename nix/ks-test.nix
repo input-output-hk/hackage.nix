@@ -6,8 +6,8 @@
         nix = import ../hackage/ks-test-0.1-r0-0b67f3d1c6c2216ee4795889814bcfadc12b0e00397d393736c976457d09e6f1.nix;
         revNum = 0;
         sha256 = "0b67f3d1c6c2216ee4795889814bcfadc12b0e00397d393736c976457d09e6f1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

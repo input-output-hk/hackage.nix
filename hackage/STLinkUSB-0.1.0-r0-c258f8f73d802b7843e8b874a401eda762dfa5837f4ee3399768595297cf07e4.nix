@@ -21,7 +21,7 @@
       synopsis = "STLink USB interface in Haskell";
       description = "This package contains a Haskell driver for ST-Link USB dongles.\nMy use case for this driver is the STM32-Zombie library.\nThe STM32-Zombie library turns a STM32 micro-controller\ninto a powerful Haskell-hackable hardware interface.\nThe library is a based on information from the openocd library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

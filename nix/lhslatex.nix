@@ -6,8 +6,8 @@
         nix = import ../hackage/lhslatex-0.1.0.0-r0-629c567f734298b5c163a9b7933b5924b076ca0396a3a6d393ff8d92952f7d49.nix;
         revNum = 0;
         sha256 = "629c567f734298b5c163a9b7933b5924b076ca0396a3a6d393ff8d92952f7d49";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

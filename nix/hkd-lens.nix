@@ -6,8 +6,8 @@
         nix = import ../hackage/hkd-lens-0.0.1-r0-4aaab252c5844b2124a8fd64fc3027eeac66b804184b43b37f44444d94890351.nix;
         revNum = 0;
         sha256 = "4aaab252c5844b2124a8fd64fc3027eeac66b804184b43b37f44444d94890351";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "a remote procedure call framework";
       description = "A library and framework for making remote procedure calls in haskell easy and typesafe.  See http://github.com/mmirman/haskogeneous for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rpc-test" = {
           depends = [
             (hsPkgs."rpc-framework" or (errorHandler.buildDepError "rpc-framework"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

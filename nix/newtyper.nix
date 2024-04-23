@@ -6,8 +6,8 @@
         nix = import ../hackage/newtyper-0.1-r0-e51d083159f0a25fa14c5ac646e2d3af17e8d916f955800c518f362089c3db9a.nix;
         revNum = 0;
         sha256 = "e51d083159f0a25fa14c5ac646e2d3af17e8d916f955800c518f362089c3db9a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

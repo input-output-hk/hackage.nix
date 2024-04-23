@@ -21,6 +21,6 @@
       synopsis = "A class for injective (one-to-one) functions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

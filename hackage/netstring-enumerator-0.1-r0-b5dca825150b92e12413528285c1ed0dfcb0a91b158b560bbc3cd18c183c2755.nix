@@ -21,7 +21,7 @@
       synopsis = "Enumerator-based netstring parsing";
       description = "/Netstrings/ are a simple way to encode arbitrary binary data, so it\ncan be decoded without requiring sentinel bytes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

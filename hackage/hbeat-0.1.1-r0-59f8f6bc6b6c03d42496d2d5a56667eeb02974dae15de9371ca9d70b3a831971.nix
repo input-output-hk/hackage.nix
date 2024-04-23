@@ -21,7 +21,7 @@
       synopsis = "A simple step sequencer GUI.";
       description = "A toy step sequencer program written using OpenGL and the SDL libraries. Configuration (including the audio samples used) is controlled via an external file.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hbeat" = {
@@ -33,13 +33,13 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."SDL-mixer" or (errorHandler.buildDepError "SDL-mixer"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           libs = [
             (pkgs."SDL" or (errorHandler.sysDepError "SDL"))
             (pkgs."SDL_mixer" or (errorHandler.sysDepError "SDL_mixer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

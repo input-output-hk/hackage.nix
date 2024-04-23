@@ -21,7 +21,7 @@
       synopsis = "Sci-fi roguelike game.  Client application.";
       description = "Requires roguestar-engine and roguestar-glut.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "roguestar" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

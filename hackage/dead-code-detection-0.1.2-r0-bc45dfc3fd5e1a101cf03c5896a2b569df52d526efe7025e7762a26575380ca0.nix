@@ -21,7 +21,7 @@
       synopsis = "detect dead code in haskell projects";
       description = "detect dead code in haskell projects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dead-code-detection" = {
@@ -37,10 +37,10 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."interpolate" or (errorHandler.buildDepError "interpolate"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

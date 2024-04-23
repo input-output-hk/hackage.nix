@@ -6,8 +6,8 @@
         nix = import ../hackage/shapes-math-0.1.0.0-r0-1d9b8e80c036d117ddfcae35f4f610cfc8247272a7d8f6870114905680130431.nix;
         revNum = 0;
         sha256 = "1d9b8e80c036d117ddfcae35f4f610cfc8247272a7d8f6870114905680130431";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

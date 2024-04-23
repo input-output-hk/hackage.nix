@@ -6,8 +6,8 @@
         nix = import ../hackage/logentries-0.1.0.1-r0-bf1398ecd7c2c526defbbc474ba8a891731fd02fa30a97dd4e7618a47be08dc9.nix;
         revNum = 0;
         sha256 = "bf1398ecd7c2c526defbbc474ba8a891731fd02fa30a97dd4e7618a47be08dc9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

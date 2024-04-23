@@ -6,8 +6,8 @@
         nix = import ../hackage/boombox-0.0-r0-04c49a9b8f26c2c1ead32afa372cf98a9df88ee2ce3e1e12cbe1e082e6b84144.nix;
         revNum = 0;
         sha256 = "04c49a9b8f26c2c1ead32afa372cf98a9df88ee2ce3e1e12cbe1e082e6b84144";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Create ATS types from Haskell types";
       description = "This package enables scanning Haskell source files for data types and then generating [ATS](http://www.ats-lang.org/) types from them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,19 +33,19 @@
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs2ats" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."hs2ats" or (errorHandler.buildDepError "hs2ats"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hs2ats-test" = {
           depends = [
@@ -54,19 +54,19 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-dirstream" or (errorHandler.buildDepError "hspec-dirstream"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hs2ats-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs2ats" or (errorHandler.buildDepError "hs2ats"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

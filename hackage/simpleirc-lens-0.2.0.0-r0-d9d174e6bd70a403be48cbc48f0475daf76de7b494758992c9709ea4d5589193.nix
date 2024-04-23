@@ -21,15 +21,15 @@
       synopsis = "Lenses for simpleirc types";
       description = "Provides lenses for types in the\n<https://hackage.haskell.org/package/simpleirc simpleirc> package without\ndepending on <https://hackage.haskell.org/package/lens lens>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."simpleirc" or (errorHandler.buildDepError "simpleirc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatic derivation of Trie implementations.";
       description = "Automatic derivation of Trie implementations from user\ndefined key types with Template Haskell. Uses KeyMap class\nas interface for tries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

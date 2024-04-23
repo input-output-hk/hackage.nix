@@ -21,16 +21,16 @@
       synopsis = "a class for single tuple implementations";
       description = "a class for single tuple implementations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."OneTuple" or (errorHandler.buildDepError "OneTuple"))
           (hsPkgs."Only" or (errorHandler.buildDepError "Only"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."single-tuple" or (errorHandler.buildDepError "single-tuple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

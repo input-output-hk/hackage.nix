@@ -21,7 +21,7 @@
       synopsis = "Reactive programming via imperative threads";
       description = "Reactive programming with threads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-sdl" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

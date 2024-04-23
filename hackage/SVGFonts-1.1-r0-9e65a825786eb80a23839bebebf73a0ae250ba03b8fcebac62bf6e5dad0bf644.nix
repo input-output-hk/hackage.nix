@@ -21,7 +21,7 @@
       synopsis = "Fonts from the SVG-Font format";
       description = "Native font support for the Diagrams library. The SVG-Font format is easy to parse\nand was therefore chosen for a font library completely written in Haskell\n\nYou can convert your own font to SVG with <http://fontforge.sourceforge.net/> or use the included LinLibertine, Bitstream\n\nFeatures\n\n* Complete implementation of the features that fontforge produces (but not the complete SVG format):\n\n* Kerning (i.e. the two characters in \\\"VA\\\" have a shorter distance than in \\\"VV\\\")\n\n* Unicode\n\n* Ligatures\n\nXML speed issues can be solved by trimming the svg file to only those characters that are used (or maybe binary xml one day)\n\nVersion 1.0 of this library supports texturing which would only make sense in a Diagrams Backend that does rasterization in Haskell.\n\nExample:\n\n>  # LANGUAGE NoMonomorphismRestriction #\n>\n> import Diagrams.Prelude\n> import Diagrams.Backend.Cairo.CmdLine\n> import Graphics.SVGFonts.ReadFont (textSVG)\n>\n>\n> main = defaultMain ( (text' \"Hello World\") <> (rect 8 1) # alignBL )\n>\n> text'  t = stroke (textSVG t 1) # fc purple # fillRule EvenOdd\n> text'' t = stroke (textSVG_ $ TextOpts t lin INSIDE_H KERN 1 1 ) # fc purple # fillRule EvenOdd\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

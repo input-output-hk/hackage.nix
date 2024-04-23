@@ -21,14 +21,14 @@
       synopsis = "Geometry on a sphere";
       description = "Functions in pure Haskell for geometric computations on the surface of a sphere.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

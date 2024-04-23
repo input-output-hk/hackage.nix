@@ -21,7 +21,7 @@
       synopsis = "Upload files to GitHub releases.";
       description = "GitHub Release uploads files to GitHub releases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-templater" or (errorHandler.buildDepError "uri-templater"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "github-release" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uri-templater" or (errorHandler.buildDepError "uri-templater"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

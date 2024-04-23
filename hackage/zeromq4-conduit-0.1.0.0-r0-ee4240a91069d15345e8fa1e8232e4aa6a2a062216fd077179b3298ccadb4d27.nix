@@ -21,7 +21,7 @@
       synopsis = "Conduit wrapper around zeromq4-haskell";
       description = "Conduit wrapper around zeromq4-haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zeromq4-conduit-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."zeromq4-conduit" or (errorHandler.buildDepError "zeromq4-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

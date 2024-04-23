@@ -21,7 +21,7 @@
       synopsis = "Combinators for MCMC sampling";
       description = "A library of combinators to build transition kernels, proposal distributions, target distributions, and stream operations for MCMC sampling.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

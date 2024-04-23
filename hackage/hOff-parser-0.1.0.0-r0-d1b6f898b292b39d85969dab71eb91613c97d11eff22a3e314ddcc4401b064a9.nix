@@ -21,14 +21,14 @@
       synopsis = "The parser to parser the OFF(Object File Format, Princeton ModelNet).";
       description = "The parser to parset the OFF(Object File Format, Princeton ModelNet dataset) to help other program to display these data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

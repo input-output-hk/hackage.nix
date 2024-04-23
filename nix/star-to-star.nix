@@ -6,8 +6,8 @@
         nix = import ../hackage/star-to-star-1.0-r0-f77fdc4a084fc004c3a96f0efc2f98393cb14f14fc1c8adb3576162791a9eeba.nix;
         revNum = 0;
         sha256 = "f77fdc4a084fc004c3a96f0efc2f98393cb14f14fc1c8adb3576162791a9eeba";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

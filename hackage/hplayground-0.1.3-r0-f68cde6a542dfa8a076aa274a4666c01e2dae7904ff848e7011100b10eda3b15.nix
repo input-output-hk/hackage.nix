@@ -21,7 +21,7 @@
       synopsis = "monadic, reactive Formlets running in the Web browser";
       description = "client-side haskell framework that compiles to javascript with the haste compiler. See homepage";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.haste-inst
@@ -33,7 +33,7 @@
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
             (hsPkgs."haste-lib" or (errorHandler.buildDepError "haste-lib"))
             (hsPkgs."haste-perch" or (errorHandler.buildDepError "haste-perch"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
@@ -42,8 +42,8 @@
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
             (hsPkgs."haste-compiler" or (errorHandler.buildDepError "haste-compiler"))
             (hsPkgs."haste-perch" or (errorHandler.buildDepError "haste-perch"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

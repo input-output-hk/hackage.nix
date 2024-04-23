@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-textract-2.0-r0-dfe36c0eb2db7831594a797f7e8c009c6fdb3208eba1f8dbaf05c8724f8be87c.nix;
         revNum = 0;
         sha256 = "dfe36c0eb2db7831594a797f7e8c009c6fdb3208eba1f8dbaf05c8724f8be87c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

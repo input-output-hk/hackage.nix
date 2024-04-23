@@ -21,19 +21,19 @@
       synopsis = "Fast combinator parsing with Data.ByteString.Lazy";
       description = "Fast, flexible text-oriented parsing of lazy ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ])) ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ])) ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "fortran90 namelist parser/pretty printer";
       description = "fortran90 namelist parser/pretty printer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."namelist" or (errorHandler.buildDepError "namelist"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

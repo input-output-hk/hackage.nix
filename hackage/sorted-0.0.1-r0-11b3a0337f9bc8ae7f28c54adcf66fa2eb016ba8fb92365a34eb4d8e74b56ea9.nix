@@ -21,11 +21,11 @@
       synopsis = "Efficient, type-safe sorted sequences";
       description = "Sorted data types and operations that preserve their sorting.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

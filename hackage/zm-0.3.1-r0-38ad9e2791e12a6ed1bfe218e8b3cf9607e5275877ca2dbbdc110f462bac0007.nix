@@ -21,7 +21,7 @@
       synopsis = "Language independent, reproducible, absolute types";
       description = "See the <http://github.com/tittoassini/zm online tutorial>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,16 +37,16 @@
           (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
           (hsPkgs."model" or (errorHandler.buildDepError "model"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "zm-test" = {
           depends = [
@@ -62,18 +62,18 @@
             (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
             (hsPkgs."model" or (errorHandler.buildDepError "model"))
             (hsPkgs."zm" or (errorHandler.buildDepError "zm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zm-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."zm" or (errorHandler.buildDepError "zm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

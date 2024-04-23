@@ -21,15 +21,15 @@
       synopsis = "Integral and rational log2 algorithms";
       description = "This provides a user-facing API for the GHC primitive 'integerLog2#', in the\nform of functions computing the floor, ceiling, or other rounded form of the\nbase-2 logarithm of 'Integral' or 'Rational' types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Logarithms-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."numeric-logarithms" or (errorHandler.buildDepError "numeric-logarithms"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

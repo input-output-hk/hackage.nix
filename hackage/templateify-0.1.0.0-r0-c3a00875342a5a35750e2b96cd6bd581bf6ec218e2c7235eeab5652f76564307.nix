@@ -21,7 +21,7 @@
       synopsis = "Make template from website";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "templateify" = {
@@ -30,9 +30,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

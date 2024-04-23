@@ -6,8 +6,8 @@
         nix = import ../hackage/ClassyPrelude-0.1-r0-fee4a97658931094671da4519468698d53a5d382fba344f52ccc43a2ce922f82.nix;
         revNum = 0;
         sha256 = "fee4a97658931094671da4519468698d53a5d382fba344f52ccc43a2ce922f82";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

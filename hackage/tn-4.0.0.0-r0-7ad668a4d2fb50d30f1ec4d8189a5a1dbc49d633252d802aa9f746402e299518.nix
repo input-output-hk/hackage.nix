@@ -21,7 +21,7 @@
       synopsis = "A simple daily journal program";
       description = "tn is a simple program to keep journals.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tn" = {
@@ -39,10 +39,10 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tn" or (errorHandler.buildDepError "tn"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

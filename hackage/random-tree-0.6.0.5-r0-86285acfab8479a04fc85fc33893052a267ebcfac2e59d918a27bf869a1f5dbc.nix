@@ -21,7 +21,7 @@
       synopsis = "Create random trees";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."tree-fun" or (errorHandler.buildDepError "tree-fun"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

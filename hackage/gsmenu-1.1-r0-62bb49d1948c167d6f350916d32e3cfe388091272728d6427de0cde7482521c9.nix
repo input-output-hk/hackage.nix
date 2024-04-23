@@ -21,7 +21,7 @@
       synopsis = "A visual generic menu";
       description = "Standalone port of XMonadContrib's GridSelect.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "gsmenu" = {
@@ -32,12 +32,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ] ++ (pkgs.lib).optionals (flags.use_xft) [
+          ] ++ pkgs.lib.optionals (flags.use_xft) [
             (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

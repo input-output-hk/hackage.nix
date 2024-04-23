@@ -21,7 +21,7 @@
       synopsis = "Command line binary for working with the Qux language";
       description = "Qux is an experimental language developed from the ground up with the aim of static\ncompile time verification. This package provides a binary for working with it\n(compiling, type checking and pretty printing).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "qux" = {
@@ -36,9 +36,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

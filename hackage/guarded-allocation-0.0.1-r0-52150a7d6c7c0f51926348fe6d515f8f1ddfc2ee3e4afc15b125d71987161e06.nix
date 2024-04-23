@@ -21,11 +21,11 @@
       synopsis = "Memory allocation with added stress tests and integrity checks";
       description = "Provide adaptions of @mallocForeignPtrArray@ and @allocaArray@\nthat add stress tests and integrity checks.\n\nThere are three modules:\n\n* @Guarded.Plain@: exports the original allocation routines\n\n* @Guarded.Debug@: exports allocation routines that add stress and checks\n\n* @Guarded@: exports either @Guarded.Plain@ or @Guarded.Debug@\ndepending on the Cabal @debug@ flag.\n\nIt is intended that you always import the @Guarded@ module in user code\nand install a package version with enabled debug flag\nto a custom package database for debugging.\nIf you compile your user program you can choose production or debugging mode\nby choosing the default or the custom debugging package database,\nrespectively.\n\nThis package is inspired by the famous Amiga debug tool MungWall.\nThe Linux counterpart is Electric Fence.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "audio library.";
       description = "an audio library with portaudio.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."portaudio" or (errorHandler.buildDepError "portaudio"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Express portable, composable and reusable data tasks and pipelines";
       description = "porcupine is centered around the PTask datatype, which represents a\ncomputation that will request access to some resources (both in read and write\nmodes) and require some options (parameters, with docstrings and default\nvalues). PTasks are composable both sequentially and in parallel, into a\npipeline of tasks. The resources and parameters are organized in a tree which\nwill be automatically exposed to the outside world. This makes the pipeline\nself-documented, and makes it so any option or file required at some point by\nany task can be visualized and set or remapped (via a combination of a YAML or\nJSON config file and command-line arguments) before the pipeline will\nrun. That means that the PTasks are completely agnostic of their data inputs,\nand that new data sources can be added without having to change any of the\ntasks' logic or even their types. This is done via the LocationAccessor\ntypeclass. `porcupine-core` provides only access to local files (via\nresourcet), other location accessors will be in separate packages. See for\ninstance the <https://hackage.haskell.org/package/porcupine-http> package to\naccess HTTP urls. PTasks also provide caching thanks to the funflow\npackage. See the README at <https://github.com/tweag/porcupine#README.md> and\nthe examples in `porcupine-core` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -74,9 +74,9 @@
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-radon" = {
           depends = [
@@ -133,9 +133,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = if flags.usemonadbayes then true else false;
-          };
+        };
         "example0" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -188,9 +188,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example0.1" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -243,9 +243,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example1" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -298,9 +298,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example2" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -353,9 +353,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of the Stripe API.";
       description = "This is an implementation of the Stripe API as it is\ndocumented at https://stripe.com/docs/api";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

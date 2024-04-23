@@ -21,7 +21,7 @@
       synopsis = "Interactive evaluation of first-order applicative term rewrite systems";
       description = "Given a set of term rewriting rules and an initial term with this tool you can interactively evaluate the corresponding term graph. The employed rule set has to be defined in one or more files. In the examples-directory a few rewriting systems are already supplied. To see how it works invoke the with the SKI-combinator rules and an initial term as arguments: @trs examples/ski.trs \"SK(S(KIS)K)I\"@. On how to interact with the application see the @GraphRewriting.GL.UI@ module of the graph-rewriting-gl package.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "trs" = {
@@ -37,9 +37,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

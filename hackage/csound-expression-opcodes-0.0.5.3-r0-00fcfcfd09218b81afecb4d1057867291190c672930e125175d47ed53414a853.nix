@@ -21,7 +21,7 @@
       synopsis = "opcodes for the library csound-expression";
       description = "opcodes for the library csound-expression. docs are generated";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."csound-expression-typed" or (errorHandler.buildDepError "csound-expression-typed"))
           (hsPkgs."csound-expression-dynamic" or (errorHandler.buildDepError "csound-expression-dynamic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

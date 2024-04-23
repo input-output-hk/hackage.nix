@@ -21,7 +21,7 @@
       synopsis = "A universal quickfix toolkit and his protocol.";
       description = "Usage overview can be found in the <http://github.com/aloiscochard/sarsi#sarsi README>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,26 +45,26 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sarsi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."sarsi" or (errorHandler.buildDepError "sarsi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sarsi-hs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sarsi" or (errorHandler.buildDepError "sarsi"))
             (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sarsi-nvim" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,17 +82,17 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sarsi-rs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sarsi" or (errorHandler.buildDepError "sarsi"))
             (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sarsi-sbt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."machines-process" or (errorHandler.buildDepError "machines-process"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sarsi-vi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,9 +115,9 @@
             (hsPkgs."machines-io" or (errorHandler.buildDepError "machines-io"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

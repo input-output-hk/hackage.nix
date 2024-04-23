@@ -21,18 +21,18 @@
       synopsis = "Library to interface with the wiimote";
       description = "HCWiid is a working userspace driver along with various\napplications implementing event drivers, multiple\nwiimote\tconnectivity, gesture recognition,\nand other Wiimote-based functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         libs = [
           (pkgs."bluetooth" or (errorHandler.sysDepError "bluetooth"))
           (pkgs."cwiid" or (errorHandler.sysDepError "cwiid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

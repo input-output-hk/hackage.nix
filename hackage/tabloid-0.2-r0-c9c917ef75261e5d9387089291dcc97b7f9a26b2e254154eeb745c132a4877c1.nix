@@ -21,7 +21,7 @@
       synopsis = "View the output of shell commands in a table";
       description = "GUI for shell commands and log analysis";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tabloid" = {
@@ -33,9 +33,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

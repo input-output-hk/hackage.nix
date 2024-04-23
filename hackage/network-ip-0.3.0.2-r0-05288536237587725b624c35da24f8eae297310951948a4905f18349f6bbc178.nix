@@ -21,7 +21,7 @@
       synopsis = "Internet Protocol data structures";
       description = "This package provides Internet Protocol data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text-printer" or (errorHandler.buildDepError "text-printer"))
           (hsPkgs."data-textual" or (errorHandler.buildDepError "data-textual"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."data-textual" or (errorHandler.buildDepError "data-textual"))
             (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
             (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

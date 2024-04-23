@@ -21,14 +21,14 @@
       synopsis = "OpenGL support for Data.Bitmap.";
       description = "OpenGL support for Data.Bitmap. It has its own package so that\nthe bitmap package does not depend on OpenGL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bitmap" or (errorHandler.buildDepError "bitmap"))
-          ] ++ [ (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL")) ];
+        ] ++ [ (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

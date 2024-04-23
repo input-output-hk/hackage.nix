@@ -21,25 +21,25 @@
       synopsis = "Asynchronous DNS Resolver";
       description = "An asynchronous DNS resolver based on GNU ADNS.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         libs = [ (pkgs."adns" or (errorHandler.sysDepError "adns")) ];
         buildable = true;
-        };
+      };
       exes = {
         "adns-reverse-lookup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           libs = [ (pkgs."adns" or (errorHandler.sysDepError "adns")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

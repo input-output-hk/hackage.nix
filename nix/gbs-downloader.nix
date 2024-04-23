@@ -6,8 +6,8 @@
         nix = import ../hackage/gbs-downloader-0.1.0.0-r0-c1d83dd409aff729b764faa1be1daac45af45498c4384f968d132c6492396d51.nix;
         revNum = 0;
         sha256 = "c1d83dd409aff729b764faa1be1daac45af45498c4384f968d132c6492396d51";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

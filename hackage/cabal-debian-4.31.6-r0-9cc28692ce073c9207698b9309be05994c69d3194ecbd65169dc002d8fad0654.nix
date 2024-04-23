@@ -21,7 +21,7 @@
       synopsis = "Create a Debianization for a Cabal package";
       description = "This package supports the generation of a package Debianization (i.e.\nthe files in the @debian@ subdirectory) for a cabal package,\neither through a library API or using the cabal-debian executable.\nFor documentation of the executable, run\n@cabal-debian --help@, for documentation of the library API follow\nthe link to the @Debian.Debianize@ module below.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -54,12 +54,12 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-          ] ++ (if flags.pretty-112
+        ] ++ (if flags.pretty-112
           then [ (hsPkgs."pretty" or (errorHandler.buildDepError "pretty")) ]
           else [
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
-            ])) ++ (if flags.local-debian
+          ])) ++ (if flags.local-debian
           then [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
@@ -74,10 +74,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ]
+          ]
           else [ (hsPkgs."debian" or (errorHandler.buildDepError "debian")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "cabal-debian" = {
           depends = ([
@@ -88,15 +88,15 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
-            ] ++ (if flags.pretty-112
+          ] ++ (if flags.pretty-112
             then [ (hsPkgs."pretty" or (errorHandler.buildDepError "pretty")) ]
             else [
               (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
               (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
-              ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (errorHandler.buildDepError "debian"));
+            ])) ++ pkgs.lib.optional (!flags.local-debian) (hsPkgs."debian" or (errorHandler.buildDepError "debian"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "cabal-debian-tests" = {
           depends = ([
@@ -112,14 +112,14 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.pretty-112
+          ] ++ (if flags.pretty-112
             then [ (hsPkgs."pretty" or (errorHandler.buildDepError "pretty")) ]
             else [
               (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
               (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
-              ])) ++ (pkgs.lib).optional (!flags.local-debian) (hsPkgs."debian" or (errorHandler.buildDepError "debian"));
+            ])) ++ pkgs.lib.optional (!flags.local-debian) (hsPkgs."debian" or (errorHandler.buildDepError "debian"));
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

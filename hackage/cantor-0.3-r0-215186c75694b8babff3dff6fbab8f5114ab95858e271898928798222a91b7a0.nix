@@ -21,7 +21,7 @@
       synopsis = "Application for analysis of java source code";
       description = "Application for analyzing Java source code.\n\nCurrently implemented:\n\n* Package dependency analysis\n\n* Line Of Code metric.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cantor" = {
@@ -35,10 +35,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

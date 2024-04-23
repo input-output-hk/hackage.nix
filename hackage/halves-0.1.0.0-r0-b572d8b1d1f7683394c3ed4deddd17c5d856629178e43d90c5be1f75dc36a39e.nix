@@ -21,15 +21,15 @@
       synopsis = "Splitting/combining data structures to/from halves, quarters, eighths";
       description = "Splitting/combining data structures to/from halves, quarters, eighths.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "props" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."halves" or (errorHandler.buildDepError "halves"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

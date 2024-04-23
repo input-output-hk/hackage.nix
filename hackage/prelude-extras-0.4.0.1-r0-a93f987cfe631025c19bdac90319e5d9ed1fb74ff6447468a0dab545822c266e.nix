@@ -21,11 +21,11 @@
       synopsis = "Higher order versions of Prelude classes";
       description = "Higher order versions of Prelude classes to ease programming with polymorphic recursion and reduce UndecidableInstances\n\nSee <http://flint.cs.yale.edu/trifonov/papers/sqcc.pdf> for further discussion of the approach taken here.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

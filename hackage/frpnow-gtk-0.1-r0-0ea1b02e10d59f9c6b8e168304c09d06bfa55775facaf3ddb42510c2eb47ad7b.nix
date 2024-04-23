@@ -21,7 +21,7 @@
       synopsis = "Program GUIs with GTK and frpnow!";
       description = "Program GUIs with GTK and frpnow!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."frpnow" or (errorHandler.buildDepError "frpnow"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

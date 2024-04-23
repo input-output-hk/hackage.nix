@@ -21,7 +21,7 @@
       synopsis = "ODBC database transfer";
       description = "Simple ODBC application that transfers data between 2 databases.\nIt is based on `sqlcli` package that should be installed with\nthe `odbc` flag set.\nTo build the application, you need odbc libraries installed. On\nWindows, they are installed by default. On unix, you should use\n[unixODBC](http://www.unixodbc.org) package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "transfer-db" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."sqlcli" or (errorHandler.buildDepError "sqlcli"))
             (hsPkgs."sqlcli-odbc" or (errorHandler.buildDepError "sqlcli-odbc"))
             (hsPkgs."transfer-db" or (errorHandler.buildDepError "transfer-db"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec-tests" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."transfer-db" or (errorHandler.buildDepError "transfer-db"))
             (hsPkgs."sqlcli" or (errorHandler.buildDepError "sqlcli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

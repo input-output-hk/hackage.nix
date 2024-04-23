@@ -21,7 +21,7 @@
       synopsis = "Instances of the manifold-classes for colour types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."constrained-categories" or (errorHandler.buildDepError "constrained-categories"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

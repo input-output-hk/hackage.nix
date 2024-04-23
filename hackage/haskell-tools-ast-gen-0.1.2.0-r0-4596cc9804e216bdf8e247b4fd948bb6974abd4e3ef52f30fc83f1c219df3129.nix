@@ -21,7 +21,7 @@
       synopsis = "Facilities for generating new parts of the Haskell-Tools AST";
       description = "Contains utility functions to generate parts of the Haskell-Tools AST. Generates these elements to be compatible with the source annotations that are already present on the AST. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."haskell-tools-ast" or (errorHandler.buildDepError "haskell-tools-ast"))
           (hsPkgs."haskell-tools-ast-trf" or (errorHandler.buildDepError "haskell-tools-ast-trf"))
           (hsPkgs."structural-traversal" or (errorHandler.buildDepError "structural-traversal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

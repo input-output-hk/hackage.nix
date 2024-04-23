@@ -21,7 +21,7 @@
       synopsis = "A tool supporting multi cabal project builds.";
       description = "A tool supporting multi cabal project builds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "multi-cabal" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."AAI" or (errorHandler.buildDepError "AAI"))
             (hsPkgs."multi-cabal" or (errorHandler.buildDepError "multi-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "multi-cabal-tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."multi-cabal" or (errorHandler.buildDepError "multi-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

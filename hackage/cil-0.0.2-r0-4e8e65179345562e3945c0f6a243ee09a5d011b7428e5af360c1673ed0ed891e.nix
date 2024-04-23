@@ -21,15 +21,15 @@
       synopsis = "An interface to CIL and ACSL through Frama-C.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

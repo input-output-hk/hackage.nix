@@ -21,7 +21,7 @@
       synopsis = "A http client for Apiary.";
       description = "A HTTP Client for Apiary, using Apiary's extension api, suitable for proxying HTTP request to backend API, with flexible APIs and streamming proxying abilities.\n\nThis module also reexport Network.HTTP.Client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

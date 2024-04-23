@@ -21,7 +21,7 @@
       synopsis = "Response format helper for the Scotty web framework.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scotty-format-example" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."scotty-format" or (errorHandler.buildDepError "scotty-format"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "scotty-format-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."scotty-format" or (errorHandler.buildDepError "scotty-format"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

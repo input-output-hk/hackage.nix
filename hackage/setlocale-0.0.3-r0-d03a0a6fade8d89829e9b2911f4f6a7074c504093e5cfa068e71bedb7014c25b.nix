@@ -21,11 +21,11 @@
       synopsis = "A Haskell interface to setlocale()";
       description = "A Haskell interface to @setlocale()@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

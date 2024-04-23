@@ -6,8 +6,8 @@
         nix = import ../hackage/enum-utf8-0.1.0.0-r0-0164973f735ad70551c51c94f2333bebbe1768f301e2f28567935e5b0ea02e5b.nix;
         revNum = 0;
         sha256 = "0164973f735ad70551c51c94f2333bebbe1768f301e2f28567935e5b0ea02e5b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

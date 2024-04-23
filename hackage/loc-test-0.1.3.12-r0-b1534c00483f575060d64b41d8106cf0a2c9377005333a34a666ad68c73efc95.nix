@@ -21,7 +21,7 @@
       synopsis = "Test-related utilities related to the /loc/ package.";
       description = "Test-related utilities related to the /loc/ package.\nCurrently contains only Hedgehog generators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."loc" or (errorHandler.buildDepError "loc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

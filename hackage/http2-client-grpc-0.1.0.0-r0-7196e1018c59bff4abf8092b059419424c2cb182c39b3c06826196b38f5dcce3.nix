@@ -21,7 +21,7 @@
       synopsis = "Implement gRPC-over-HTTP2 clients.";
       description = "Uses http2-client and proto-lens to generate client code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."proto-lens-protoc" or (errorHandler.buildDepError "proto-lens-protoc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "http2-client-grpc-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http2-client-grpc" or (errorHandler.buildDepError "http2-client-grpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

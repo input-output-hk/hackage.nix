@@ -18,7 +18,7 @@
       network-uri = true;
       gtk-318 = true;
       gtk-320 = true;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "leksah"; version = "0.16.2.2"; };
@@ -31,7 +31,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((((((((([
@@ -88,42 +88,42 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs."gi-gtkosxapplication" or (errorHandler.buildDepError "gi-gtkosxapplication"))) ++ (if flags.webkit2 && !system.isWindows
+          ])) ++ pkgs.lib.optional (system.isOsx) (hsPkgs."gi-gtkosxapplication" or (errorHandler.buildDepError "gi-gtkosxapplication"))) ++ (if flags.webkit2 && !system.isWindows
           then [
             (hsPkgs."gi-webkit2" or (errorHandler.buildDepError "gi-webkit2"))
-            ]
+          ]
           else [
             (hsPkgs."gi-webkit" or (errorHandler.buildDepError "gi-webkit"))
-            ])) ++ (pkgs.lib).optionals (flags.yi) [
+          ])) ++ pkgs.lib.optionals (flags.yi) [
           (hsPkgs."yi" or (errorHandler.buildDepError "yi"))
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ]) ++ (pkgs.lib).optional (flags.yi && flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ (pkgs.lib).optionals (flags.codemirror) [
+        ]) ++ pkgs.lib.optional (flags.yi && flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ pkgs.lib.optionals (flags.codemirror) [
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ]) ++ (pkgs.lib).optionals (flags.loc && system.isLinux) [
+        ]) ++ pkgs.lib.optionals (flags.loc && system.isLinux) [
           (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-          ]) ++ (if flags.network-uri
+        ]) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."binary-shared" or (errorHandler.buildDepError "binary-shared"))) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs."binary-shared" or (errorHandler.buildDepError "binary-shared"))) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."leksah-server" or (errorHandler.buildDepError "leksah-server"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
-        pkgconfig = (pkgs.lib).optional (flags.gtk-318) (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0")) ++ (pkgs.lib).optional (flags.gtk-320) (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+        pkgconfig = pkgs.lib.optional (flags.gtk-318) (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0")) ++ pkgs.lib.optional (flags.gtk-320) (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"));
         buildable = true;
-        };
+      };
       exes = {
         "leksah" = {
           depends = (([
@@ -131,13 +131,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gi-gtk-hs" or (errorHandler.buildDepError "gi-gtk-hs"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (pkgs.lib).optionals (system.isLinux && flags.loc) [
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (system.isLinux && flags.loc) [
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-            ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."leksah-server" or (errorHandler.buildDepError "leksah-server"));
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+          ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."leksah-server" or (errorHandler.buildDepError "leksah-server"));
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

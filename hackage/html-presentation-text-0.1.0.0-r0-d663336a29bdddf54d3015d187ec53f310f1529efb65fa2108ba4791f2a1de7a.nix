@@ -21,7 +21,7 @@
       synopsis = "Simple tool to create html presentation for text.";
       description = "The html and css template is taken from different tutorials in the Internet (with changes). The idea is to post some text on the background partially transparent image.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htmlpt" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
             (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

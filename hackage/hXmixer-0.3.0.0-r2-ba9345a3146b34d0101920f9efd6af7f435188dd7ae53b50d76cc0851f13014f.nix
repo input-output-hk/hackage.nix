@@ -21,7 +21,7 @@
       synopsis = "A Gtk mixer GUI application for FreeBSD";
       description = "hXmixer is a Gtk 3 GUI mixer application for FreeBSD.\nIt is used to set the audio levels of @\\/dev\\/mixer*@ devices.\nTo install this package, make sure that you have the FreeBSD\nports @gtk3@, @ghc@, and @hs-cabal-install@ installed.\n\nThen, enter the following commands to install the application:\n\n@\n% cabal update\n\n% cabal install gtk2hs-buildtools\n\n% cabal install hXmixer\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hxmixer" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

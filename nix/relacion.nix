@@ -6,8 +6,8 @@
         nix = import ../hackage/relacion-0.1-r0-a6d68954432750691d58bb31ad701ba382ef5083e8de6a6e0b1725a007f0f72c.nix;
         revNum = 0;
         sha256 = "a6d68954432750691d58bb31ad701ba382ef5083e8de6a6e0b1725a007f0f72c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

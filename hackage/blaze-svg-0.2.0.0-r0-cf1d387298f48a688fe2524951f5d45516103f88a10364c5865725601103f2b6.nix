@@ -21,15 +21,15 @@
       synopsis = "SVG combinator library";
       description = "SVG combinator library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

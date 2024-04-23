@@ -21,7 +21,7 @@
       synopsis = "Haskell library for the Microsoft Language Server Protocol";
       description = "An implementation of the types, and basic message server to\nallow language implementors to support the Language Server\nProtocol for their specific language.\n\nAn example of this is for Haskell via the Haskell IDE\nEngine, at https://github.com//haskell-ide-engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lsp-hello" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
             (hsPkgs."haskell-lsp" or (errorHandler.buildDepError "haskell-lsp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskell-lsp-test" = {
           depends = [
@@ -97,12 +97,12 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

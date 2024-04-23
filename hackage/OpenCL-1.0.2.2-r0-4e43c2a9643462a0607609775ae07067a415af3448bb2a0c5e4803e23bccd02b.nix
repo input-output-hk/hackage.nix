@@ -21,19 +21,19 @@
       synopsis = "Haskell high-level wrapper for OpenCL";
       description = "Haskell FFI binding to OpenCL library. It includes high-level wrappers to\nhelp development. Based on OpenCLRaw package.\n\nMost of the functions can throw a 'CLError' Exception. Using the module\n'Control.Exception' helps to work with this package Exceptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."OpenCL" or (errorHandler.sysDepError "OpenCL"));
+        ];
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."OpenCL" or (errorHandler.sysDepError "OpenCL"));
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

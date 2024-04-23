@@ -6,8 +6,8 @@
         nix = import ../hackage/semigroupoids-do-1.0-r0-8cc1b3f2e72f9de647059ee0db8b460709cc92d4f3d8bb18beff4065a0c5c785.nix;
         revNum = 0;
         sha256 = "8cc1b3f2e72f9de647059ee0db8b460709cc92d4f3d8bb18beff4065a0c5c785";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

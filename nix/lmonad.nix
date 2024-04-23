@@ -6,8 +6,8 @@
         nix = import ../hackage/lmonad-0.1.0.0-r0-edff04ada50f5e62dc97f2fb88f2c8a78d2fc92649743b16dcf6e41015f4e0b8.nix;
         revNum = 0;
         sha256 = "edff04ada50f5e62dc97f2fb88f2c8a78d2fc92649743b16dcf6e41015f4e0b8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

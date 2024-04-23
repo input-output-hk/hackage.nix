@@ -21,7 +21,7 @@
       synopsis = "download bugs mailboxes";
       description = "See readme at https://gitlab.com/iu-guest/mbug";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mbug" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

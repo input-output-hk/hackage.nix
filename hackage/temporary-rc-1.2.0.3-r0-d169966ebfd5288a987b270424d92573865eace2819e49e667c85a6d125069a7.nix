@@ -21,7 +21,7 @@
       synopsis = "Portable temporary file and directory support for Windows and Unix, based on code from Cabal";
       description = "The functions for creating temporary files and directories in the base library are quite limited. The unixutils\npackage contains some good ones, but they aren't portable to Windows.\nThis library just repackages the Cabal implementations of its own temporary file and folder functions so that\nyou can use them without linking against Cabal or depending on it being installed.\nThis is a better maintained fork of the \"temporary\" package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

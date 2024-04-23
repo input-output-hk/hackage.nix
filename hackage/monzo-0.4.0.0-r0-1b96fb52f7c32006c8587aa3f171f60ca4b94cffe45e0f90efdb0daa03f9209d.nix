@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the Monzo API";
       description = "Provides Haskell bindings for the Monzo API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

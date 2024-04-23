@@ -6,8 +6,8 @@
         nix = import ../hackage/symengine-0.1.2.0-r0-d4b3348fa083f313e2a32ddf53e9d541e00ae1c3a2ce290e3dbcb2686b38125a.nix;
         revNum = 0;
         sha256 = "d4b3348fa083f313e2a32ddf53e9d541e00ae1c3a2ce290e3dbcb2686b38125a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

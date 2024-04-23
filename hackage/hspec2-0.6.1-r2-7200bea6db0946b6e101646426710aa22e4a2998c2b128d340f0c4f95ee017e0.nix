@@ -21,15 +21,15 @@
       synopsis = "Alpha version of Hspec 2.0";
       description = "This is an alpha release of Hspec 2.0.\nIf you are looking for a stable solution for testing Haskell\ncode, use the 1.x series of Hspec: <http://hspec.github.io/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

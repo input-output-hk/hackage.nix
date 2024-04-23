@@ -21,7 +21,7 @@
       synopsis = "Communicate with USB devices";
       description = "This library enables you to communicate with USB devices from\nuserspace. It is implemented as a high-level wrapper around\nbindings-libusb which is a low-level binding to the C library:\nlibusb-1.*.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bindings-libusb" or (errorHandler.buildDepError "bindings-libusb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

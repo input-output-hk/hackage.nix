@@ -21,7 +21,7 @@
       synopsis = "Typesafe URLs for Snap applications.";
       description = "Provides easy to use typesafe URLs for Snap Applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

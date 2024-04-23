@@ -21,7 +21,7 @@
       synopsis = "Crossbrowser async AJAX Bindings for GHCJS";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."ghcjs-ajax" or (errorHandler.buildDepError "ghcjs-ajax"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

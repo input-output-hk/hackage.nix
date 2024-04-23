@@ -21,14 +21,14 @@
       synopsis = "Binding to libSDL_image";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

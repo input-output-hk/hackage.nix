@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL client";
       description = "This package defines a PostgreSQL client.\n\nCheck out the \"PostgreSQL\" module for a documentation overview.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "psql-tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

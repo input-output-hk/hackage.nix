@@ -6,8 +6,8 @@
         nix = import ../hackage/uniform-http-0.1.5.1-r0-aee606a0f302378e1ea87175c245484dd3ab9b6e954d26f9fbfe282900a24e1c.nix;
         revNum = 0;
         sha256 = "aee606a0f302378e1ea87175c245484dd3ab9b6e954d26f9fbfe282900a24e1c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

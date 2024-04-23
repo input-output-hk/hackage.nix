@@ -21,7 +21,7 @@
       synopsis = "Back up the notes you've saved to Pinboard";
       description = "A command-line application to back up your notes from the\nPinboard bookmarking service to a local SQLite database.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pnbackup" = {
@@ -40,9 +40,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

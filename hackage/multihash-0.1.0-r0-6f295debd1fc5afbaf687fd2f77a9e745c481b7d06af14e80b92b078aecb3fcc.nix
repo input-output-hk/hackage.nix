@@ -21,7 +21,7 @@
       synopsis = "Multihash library and CLI executable";
       description = "Multihash is a protocol for encoding the hash algorithm\nand digest length at the start of the digest.\nMore information available at https:\\/\\/github.com\\/jbenet\\/multihash\\/.\n\nBase32 encoding, Blake hashing, and file checking still to be added.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."hex" or (errorHandler.buildDepError "hex"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "multihash" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."multihash" or (errorHandler.buildDepError "multihash"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

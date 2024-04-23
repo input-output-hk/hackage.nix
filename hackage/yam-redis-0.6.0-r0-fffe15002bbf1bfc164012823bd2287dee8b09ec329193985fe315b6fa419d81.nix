@@ -21,7 +21,7 @@
       synopsis = "Yam Redis Middleware";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."salak" or (errorHandler.buildDepError "salak"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."yam" or (errorHandler.buildDepError "yam"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

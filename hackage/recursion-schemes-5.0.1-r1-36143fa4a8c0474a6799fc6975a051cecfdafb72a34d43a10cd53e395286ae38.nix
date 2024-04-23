@@ -21,7 +21,7 @@
       synopsis = "Generalized bananas, lenses and barbed wire";
       description = "Generalized bananas, lenses and barbed wire";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -32,21 +32,21 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.5") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optionals (flags.template-haskell) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.5") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optionals (flags.template-haskell) [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Expr" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

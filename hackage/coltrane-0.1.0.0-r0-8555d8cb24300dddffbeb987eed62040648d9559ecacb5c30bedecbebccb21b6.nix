@@ -21,7 +21,7 @@
       synopsis = "A jazzy, minimal web framework for Haskell, inspired by Sinatra.";
       description = "Coltrane is a minimal web framework for Haskell, inspired by Ruby's Sinatra framework. Coltrane lets you write simple web applications in just a few lines of Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert between datatypes of the midi and the alsa packages";
       description = "MIDI is the Musical Instrument Digital Interface,\nALSA is the Advanced Linux Sound Architecture.\nThis package provides accessors to data structures\nof the ALSA sequencer interface\nvia the more specific types from the @midi@ package.\nThe package also contains an orphan instance\nfor the @alsa-seq:Event@ type of the @midi:Message.Class.Check@ class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

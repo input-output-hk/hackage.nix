@@ -21,7 +21,7 @@
       synopsis = "OS window icon/name utilities";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,10 +30,10 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if system.isLinux
+        ] ++ (if system.isLinux
           then [ (hsPkgs."X11" or (errorHandler.buildDepError "X11")) ]
-          else (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")));
+          else pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/osdkeys-0.0-r0-6ddd78e58720bbdf78ecbb55a94b1e77428e9f8ce167dc1e364936bff9d01b7e.nix;
         revNum = 0;
         sha256 = "6ddd78e58720bbdf78ecbb55a94b1e77428e9f8ce167dc1e364936bff9d01b7e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

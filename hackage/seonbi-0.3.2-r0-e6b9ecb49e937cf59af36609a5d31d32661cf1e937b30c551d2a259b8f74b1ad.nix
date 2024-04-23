@@ -31,8 +31,8 @@
         (hsPkgs.buildPackages.temporary or (pkgs.buildPackages.temporary or (errorHandler.setupDepError "temporary")))
         (hsPkgs.buildPackages.text or (pkgs.buildPackages.text or (errorHandler.setupDepError "text")))
         (hsPkgs.buildPackages.zip or (pkgs.buildPackages.zip or (errorHandler.setupDepError "zip")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."html-entities" or (errorHandler.buildDepError "html-entities"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "seonbi" = {
           depends = [
@@ -62,22 +62,22 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."html-entities" or (errorHandler.buildDepError "html-entities"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.iconv
+          ] ++ (if flags.iconv
             then [
               (hsPkgs."cases" or (errorHandler.buildDepError "cases"))
               (hsPkgs."html-charset" or (errorHandler.buildDepError "html-charset"))
               (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
               (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
               (hsPkgs."seonbi" or (errorHandler.buildDepError "seonbi"))
-              ]
+            ]
             else [
               (hsPkgs."cases" or (errorHandler.buildDepError "cases"))
               (hsPkgs."html-charset" or (errorHandler.buildDepError "html-charset"))
               (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
               (hsPkgs."seonbi" or (errorHandler.buildDepError "seonbi"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "seonbi-api" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -91,10 +91,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."seonbi" or (errorHandler.buildDepError "seonbi"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -121,9 +121,9 @@
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."html-entities" or (errorHandler.buildDepError "html-entities"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
@@ -140,9 +140,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."seonbi" or (errorHandler.buildDepError "seonbi"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

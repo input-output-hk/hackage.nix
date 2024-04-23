@@ -21,7 +21,7 @@
       synopsis = "QuickCheck instances for arbitrary regular expressions and regex-conforming strings";
       description = "QuickCheck instances for arbitrary regular expressions and regex-conforming strings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."regex-genex" or (errorHandler.buildDepError "regex-genex"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

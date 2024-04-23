@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Arbitrary sized type-safe grids with useful combinators";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."finite-typelits" or (errorHandler.buildDepError "finite-typelits"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Abstractions related to Tahoe-LAFS \"capabilities\".";
       description = "Tahoe-LAFS LIT, CHK, SDMF, and MDMF capabilities offer varying functionality\nfor interacting with encrypted data.  This library provides abstractions for\nfunctionality common to all of these capability types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tahoe-capabilities-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tahoe-capabilities" or (errorHandler.buildDepError "tahoe-capabilities"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

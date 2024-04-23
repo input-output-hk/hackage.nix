@@ -21,7 +21,7 @@
       synopsis = "ISO-4217 Currency Codes";
       description = "ISO-4217 Currency Codes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a lazy non-deterministic concatenative programming language";
       description = "Peg is a lazy non-deterministic concatenative programming language inspired by Haskell, Joy, and Prolog.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "peg" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

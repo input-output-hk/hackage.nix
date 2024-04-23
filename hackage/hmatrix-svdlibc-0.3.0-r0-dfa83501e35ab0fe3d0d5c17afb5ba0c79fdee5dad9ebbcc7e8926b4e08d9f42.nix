@@ -21,23 +21,23 @@
       synopsis = "SVDLIBC bindings for HMatrix";
       description = "Bindings for the sparse singular value decomposition\nprovided by SVDLIBC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "svdlibc-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-fast-devel-0.1.2.0-r0-ec486fb91ce387ff507ff95e71fe84eed643485674f4541eef5d485526178bd4.nix;
         revNum = 0;
         sha256 = "ec486fb91ce387ff507ff95e71fe84eed643485674f4541eef5d485526178bd4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

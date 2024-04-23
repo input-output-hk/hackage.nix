@@ -6,8 +6,8 @@
         nix = import ../hackage/hs-snowtify-0.1.0.0-r0-24f51e9841fee85acd2819d16ec06d2452922b24c447a7993151ceb8d968be99.nix;
         revNum = 0;
         sha256 = "24f51e9841fee85acd2819d16ec06d2452922b24c447a7993151ceb8d968be99";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

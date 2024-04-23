@@ -21,7 +21,7 @@
       synopsis = "Parser and printer for bencoded data.";
       description = "Parser and printer for bencoded data.\n\nBencode (pronounced like B encode) is the encoding used by the\npeer-to-peer file sharing system BitTorrent for storing and\ntransmitting loosely structured data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

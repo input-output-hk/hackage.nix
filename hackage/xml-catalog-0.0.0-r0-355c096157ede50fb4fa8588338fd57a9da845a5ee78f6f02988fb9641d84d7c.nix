@@ -21,7 +21,7 @@
       synopsis = "Parse XML catalog files";
       description = "Parse XML catalog files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."uri-enumerator" or (errorHandler.buildDepError "uri-enumerator"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

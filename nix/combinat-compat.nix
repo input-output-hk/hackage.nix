@@ -6,8 +6,8 @@
         nix = import ../hackage/combinat-compat-0.2.8.2-r0-feb0d8550a0662afaba23c79a2277ef7b1dd3793706e1197c8bd167f10e77518.nix;
         revNum = 0;
         sha256 = "feb0d8550a0662afaba23c79a2277ef7b1dd3793706e1197c8bd167f10e77518";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

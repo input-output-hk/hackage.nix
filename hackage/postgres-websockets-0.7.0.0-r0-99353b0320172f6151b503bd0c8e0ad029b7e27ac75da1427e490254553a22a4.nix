@@ -21,7 +21,7 @@
       synopsis = "Middleware to map LISTEN/NOTIFY messages to Websockets";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."alarmclock" or (errorHandler.buildDepError "alarmclock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "postgres-websockets" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."envparse" or (errorHandler.buildDepError "envparse"))
             (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "postgres-websockets-test" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

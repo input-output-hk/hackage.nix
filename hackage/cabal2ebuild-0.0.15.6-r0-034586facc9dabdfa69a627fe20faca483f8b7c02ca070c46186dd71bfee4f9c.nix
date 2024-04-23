@@ -21,7 +21,7 @@
       synopsis = "make gentoo's .ebuild file from .cabal file";
       description = "> % ls\n> hoge.cabal ...\n> % cabal2ebuild\n> % ls\n> % hoge.cabal hoge-0.1.2.3.ebuild ...";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2ebuild" = {
@@ -30,9 +30,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

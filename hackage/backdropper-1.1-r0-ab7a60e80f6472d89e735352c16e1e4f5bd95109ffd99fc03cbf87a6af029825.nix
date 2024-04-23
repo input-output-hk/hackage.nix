@@ -21,7 +21,7 @@
       synopsis = "Rotates backdrops for X11 displays using qiv.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -34,9 +34,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

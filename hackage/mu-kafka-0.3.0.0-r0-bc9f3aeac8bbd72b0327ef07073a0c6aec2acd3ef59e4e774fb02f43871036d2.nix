@@ -21,7 +21,7 @@
       synopsis = "Utilities for interoperation between Mu and Kafka";
       description = "This package provides simple interoperation between Mu and Kafka using @hw-kafka-client@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mu-avro" or (errorHandler.buildDepError "mu-avro"))
           (hsPkgs."mu-schema" or (errorHandler.buildDepError "mu-schema"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

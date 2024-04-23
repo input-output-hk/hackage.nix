@@ -21,7 +21,7 @@
       synopsis = "Generates HTML for Data.Tree as TreeMap";
       description = "Generates HTML for Data.Tree as TreeMap which\nis possible explore directly in browser because\nof small javascript code included.\nEach node is displayed as white box without\nany nested boxes inside.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."html" or (errorHandler.buildDepError "html"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

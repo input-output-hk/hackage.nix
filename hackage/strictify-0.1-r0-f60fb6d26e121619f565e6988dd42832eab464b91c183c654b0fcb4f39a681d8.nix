@@ -21,7 +21,7 @@
       synopsis = "Find a local optimum of strictness annotations.";
       description = "Find a local optimum of strictness annotations.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "strictify" = {
@@ -32,14 +32,14 @@
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

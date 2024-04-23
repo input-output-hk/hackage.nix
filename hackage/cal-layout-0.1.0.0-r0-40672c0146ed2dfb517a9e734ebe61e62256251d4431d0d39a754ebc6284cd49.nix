@@ -21,23 +21,23 @@
       synopsis = "Calendar Layout Algorithm";
       description = "This project demonstrates calculation of\ndimensions and positions for a list of\nevents in a given calendar.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bookings-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cal-layout" or (errorHandler.buildDepError "cal-layout"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

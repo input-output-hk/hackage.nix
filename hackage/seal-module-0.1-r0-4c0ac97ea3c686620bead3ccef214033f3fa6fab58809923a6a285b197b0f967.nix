@@ -21,14 +21,14 @@
       synopsis = "Template Haskell support for global configuration data";
       description = "A template haskell function is provided that allows the\nprogrammer to write a module as if configuration values\nwere global constants. The exported function then expect\nthose configuration values as extra parameters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

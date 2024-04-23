@@ -21,14 +21,14 @@
       synopsis = "Find the rank product of a data set.";
       description = "Find the rank product of a data set and get the p-value from a permutation test.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

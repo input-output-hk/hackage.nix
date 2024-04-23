@@ -21,15 +21,15 @@
       synopsis = "Graph decomposition algorithms";
       description = "Graph decompositions of fgl graphs. This library is rather\nexperimental.\n\nCurrently:\n\n- ear decomposition\n\n\n\nPatches and ideas welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

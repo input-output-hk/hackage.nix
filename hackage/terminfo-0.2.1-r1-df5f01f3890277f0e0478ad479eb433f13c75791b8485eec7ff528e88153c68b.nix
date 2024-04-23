@@ -21,12 +21,12 @@
       synopsis = "Haskell bindings to the terminfo library.";
       description = "This library provides an interface to the terminfo database (via bindings to the\ncurses library).  Terminfo allows programs to interact with a variety of terminals\nusing a standard set of capabilities.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."curses" or (errorHandler.sysDepError "curses")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

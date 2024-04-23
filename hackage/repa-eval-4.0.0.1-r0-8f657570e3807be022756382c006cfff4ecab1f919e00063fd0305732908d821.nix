@@ -21,14 +21,14 @@
       synopsis = "Low-level parallel operators on bulk random-accessble arrays.";
       description = "Low-level parallel operators on bulk random-accessble arrays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

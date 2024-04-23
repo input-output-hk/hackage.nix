@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-customer-profiles-2.0-r0-45379a5d7bfb59af91ac3056fdddc51a68f663fd0b189fab2de250cd166cfaa9.nix;
         revNum = 0;
         sha256 = "45379a5d7bfb59af91ac3056fdddc51a68f663fd0b189fab2de250cd166cfaa9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

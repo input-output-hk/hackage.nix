@@ -21,16 +21,16 @@
       synopsis = "Leetify text";
       description = "Leetify a string from the command line interface and\noutput it on stdout";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "leetify" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

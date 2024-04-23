@@ -21,7 +21,7 @@
       synopsis = "Example implementation of Algorithm W for Hindley-Milner\ntype inference.";
       description = "Complete implementation of the classic\nalgorithm W for Hindley-Milner polymorphic\ntype inference in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "AlgorithmW" = {
@@ -30,9 +30,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to libusb.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libusb-1.0" or (errorHandler.pkgConfDepError "libusb-1.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

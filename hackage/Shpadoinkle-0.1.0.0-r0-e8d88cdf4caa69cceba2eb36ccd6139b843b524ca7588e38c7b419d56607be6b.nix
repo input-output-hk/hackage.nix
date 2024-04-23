@@ -21,7 +21,7 @@
       synopsis = "A programming model for declarative, high performance user interface.";
       description = "Shpadoinkle is a programming model for user interface development. It supports flexible, simple, declarative code by modeling user interface interactions as Coalgebras.\nThis package implements the bare-bones core abstraction. By performing little work shpadoinkle is trivially high performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

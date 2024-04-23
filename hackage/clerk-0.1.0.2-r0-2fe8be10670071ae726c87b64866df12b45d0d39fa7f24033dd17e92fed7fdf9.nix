@@ -21,7 +21,7 @@
       synopsis = "Declaratively describe spreadsheets and generate xlsx";
       description = "Please see the README on GitHub at <https://github.com/deemp/clerk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

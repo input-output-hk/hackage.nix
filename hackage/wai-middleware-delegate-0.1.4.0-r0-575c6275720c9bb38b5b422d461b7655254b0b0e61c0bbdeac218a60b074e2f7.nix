@@ -21,7 +21,7 @@
       synopsis = "WAI middleware that delegates handling of requests.";
       description = "[WAI](http://hackage.haskell.org/package/wai) middleware that intercepts requests\nthat match a predicate and responds to them using alternate @WAI@ Applications or\nproxied hosts.\nRead this [short example](https://github.com/adetokunbo/wai-middleware-delegate#readme)\nfor an introduction to its usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-conduit" or (errorHandler.buildDepError "wai-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."wai-middleware-delegate" or (errorHandler.buildDepError "wai-middleware-delegate"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

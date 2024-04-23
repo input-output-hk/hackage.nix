@@ -6,8 +6,8 @@
         nix = import ../hackage/web3-ipfs-1.0.0.0-r0-51f088ccd0d328a51639e0faa913da2cbaf25b37b295fd58a3c90456b52a0eae.nix;
         revNum = 0;
         sha256 = "51f088ccd0d328a51639e0faa913da2cbaf25b37b295fd58a3c90456b52a0eae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

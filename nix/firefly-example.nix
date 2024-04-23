@@ -6,8 +6,8 @@
         nix = import ../hackage/firefly-example-0.1.0.0-r0-09aa0a30c966e87f5794e29b23dff9d7c37c6965cd17c424e11323534a0e8793.nix;
         revNum = 0;
         sha256 = "09aa0a30c966e87f5794e29b23dff9d7c37c6965cd17c424e11323534a0e8793";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

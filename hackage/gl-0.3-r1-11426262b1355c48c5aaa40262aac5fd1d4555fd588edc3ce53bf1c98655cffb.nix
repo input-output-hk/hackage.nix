@@ -21,7 +21,7 @@
       synopsis = "Complete OpenGL raw bindings";
       description = "Complete OpenGL raw bindings";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,14 +35,14 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."opengl32" or (errorHandler.sysDepError "opengl32")) ]
-          else (pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optional (!system.isIos) (pkgs."GL" or (errorHandler.sysDepError "GL")));
-        frameworks = (pkgs.lib).optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
+          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs."GL" or (errorHandler.sysDepError "GL")));
+        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
           then [ (pkgs."OpenGL" or (errorHandler.sysDepError "OpenGL")) ]
-          else (pkgs.lib).optional (system.isIos) (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES")));
+          else pkgs.lib.optional (system.isIos) (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,21 +21,21 @@
       synopsis = "Plot charts as unicode strings.";
       description = "Please see the README on GitHub at <https://github.com/KtorZ/machination>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."machination" or (errorHandler.buildDepError "machination"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

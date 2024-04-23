@@ -21,7 +21,7 @@
       synopsis = "WebAssembly Language Toolkit and Interpreter";
       description = "Library for parsing and interpreting WebAssembly, including:\n* WebAssembly Text Representation Parser\n* WebAssembly Binary Represetnation encoder and decoder\n* Spec-compatible Module validator (checked with Spec Core Test Suite)\n* Spec-compatible Interpreter (checked with Spec Core Test Suite)\n* Extended scripting grammar parser and executor\n* WebAssembly Module building eDSL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,13 +38,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wasm" or (errorHandler.buildDepError "wasm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

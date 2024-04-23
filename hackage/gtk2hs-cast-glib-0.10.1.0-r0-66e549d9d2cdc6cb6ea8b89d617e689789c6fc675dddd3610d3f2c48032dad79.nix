@@ -21,14 +21,14 @@
       synopsis = "A type class for cast functions of Gtk2hs: glib package";
       description = "This package contains a type class called Cast with a function cast, that is a\nwrapper for all the castTo* functions of gtk2hs.  It makes it easier to write\nother functions that require a castTo* as a parameter, like xmlGetWidget from\nglade.\n\nThis is the glib package of gtk2hs-cast.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

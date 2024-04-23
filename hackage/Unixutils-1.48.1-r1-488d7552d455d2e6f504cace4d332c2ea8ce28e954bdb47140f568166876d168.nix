@@ -21,7 +21,7 @@
       synopsis = "A crude interface between Haskell and Unix-like operating systems";
       description = "A collection of useful and mildly useful functions that you might\nexpect to find in System.* which a heavy bias towards Unix-type operating systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,10 +41,10 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
-        libs = (pkgs.lib).optional (!system.isOsx) (pkgs."crypt" or (errorHandler.sysDepError "crypt"));
+        ];
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."crypt" or (errorHandler.sysDepError "crypt"));
         buildable = true;
-        };
-      exes = { "unixtutils-test" = { buildable = false; }; };
       };
-    }
+      exes = { "unixtutils-test" = { buildable = false; }; };
+    };
+  }

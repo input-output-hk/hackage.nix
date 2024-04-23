@@ -26,24 +26,24 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.extensible-exceptions or (pkgs.buildPackages.extensible-exceptions or (errorHandler.setupDepError "extensible-exceptions")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = (([
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ]) ++ (pkgs.lib).optional (!(!flags.legacy-encoding && (compiler.isGhc && (compiler.version).ge "7.4"))) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (if system.isWindows
+        ]) ++ pkgs.lib.optional (!(!flags.legacy-encoding && (compiler.isGhc && compiler.version.ge "7.4"))) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
+          ] ++ pkgs.lib.optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/LetsBeRational-1.0.0.0-r0-93159e9253fcd3fa50cb293a21f89e80d8fb74f219da0ca1bafdbc639c556b50.nix;
         revNum = 0;
         sha256 = "93159e9253fcd3fa50cb293a21f89e80d8fb74f219da0ca1bafdbc639c556b50";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

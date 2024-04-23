@@ -21,7 +21,7 @@
       synopsis = "An autoresponder for Dragon Go Server.";
       description = "Wyvern will play pre-planned sequences for you on the\nDragon Go Server.  Just feed it some SGF files outlining\nyour plan, and it will make moves in any games that are\nwaiting.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wyvern" = {
@@ -38,9 +38,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."sgf" or (errorHandler.buildDepError "sgf"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

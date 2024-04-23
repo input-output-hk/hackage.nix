@@ -21,7 +21,7 @@
       synopsis = "Sandbox for system tests";
       description = "Allows starting and stopping previously registered programs in a sandboxed environment.\nThis package provides functions to easily communicate with the aforementioned processes\nvia TCP or standard input/output.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

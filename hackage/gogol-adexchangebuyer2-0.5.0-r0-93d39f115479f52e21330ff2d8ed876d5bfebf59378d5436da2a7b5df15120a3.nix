@@ -21,14 +21,14 @@
       synopsis = "Google Ad Exchange Buyer API II SDK.";
       description = "Accesses the latest features for managing Authorized Buyers accounts,\nReal-Time Bidding configurations and auction metrics, and Marketplace\nprogrammatic deals.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v2beta1@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple templating library using HTML5 as its template\nlanguage.";
       description = "Add replacement, insertion, conditional and loop\nattributes to your HTML tags, then perform the\ncorresponding substitutions directly on your HTML using\na context built using standard JSON tools or parsed from\na standard YAML file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

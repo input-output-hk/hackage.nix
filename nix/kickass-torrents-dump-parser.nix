@@ -6,8 +6,8 @@
         nix = import ../hackage/kickass-torrents-dump-parser-0.0.1-r0-3b5b7461a8fe592271ab7e7370adaa500dc7a50ba6ebcde4b6f0effc1d1aafd8.nix;
         revNum = 0;
         sha256 = "3b5b7461a8fe592271ab7e7370adaa500dc7a50ba6ebcde4b6f0effc1d1aafd8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

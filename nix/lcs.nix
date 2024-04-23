@@ -6,8 +6,8 @@
         nix = import ../hackage/lcs-0.2-r0-1965ea387a15f246f2a2f15002722965cdbec1807e699db8b104f5664e4e1c39.nix;
         revNum = 0;
         sha256 = "1965ea387a15f246f2a2f15002722965cdbec1807e699db8b104f5664e4e1c39";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

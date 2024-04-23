@@ -21,7 +21,7 @@
       synopsis = "Create graphical applications for free.";
       description = "Cross-platform GUI library based on free monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
           (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

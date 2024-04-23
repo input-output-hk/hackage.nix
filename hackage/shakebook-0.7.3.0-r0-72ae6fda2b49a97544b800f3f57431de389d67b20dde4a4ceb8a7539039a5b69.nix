@@ -21,7 +21,7 @@
       synopsis = "Shake-based technical documentation generator; HTML & PDF";
       description = "Shakebook is a documentation generator aimed at covering all the bases for mathematical, technical and scientific diagrams and typesetting. Shakebook provides combinators for taking markdown files and combining them into documents, but allowing the user to control how. Shakebook provides general combinators for templating single pages, cofree comonads for representing tables of contents, and zipper comonads for representing pagers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text-time" or (errorHandler.buildDepError "text-time"))
           (hsPkgs."zipper-extra" or (errorHandler.buildDepError "zipper-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "shakebook-test" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text-time" or (errorHandler.buildDepError "text-time"))
             (hsPkgs."zipper-extra" or (errorHandler.buildDepError "zipper-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

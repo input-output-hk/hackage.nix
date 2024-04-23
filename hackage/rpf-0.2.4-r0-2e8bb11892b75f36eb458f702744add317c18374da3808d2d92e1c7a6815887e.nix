@@ -21,7 +21,7 @@
       synopsis = "Receiver Policy Framework";
       description = "Receiver Policy Framework (RPF) is a Milter\nprogram to change actions of e-mail receiver\nside according to results of the anti-spam\ntechnologies.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rpf" = {
@@ -38,9 +38,9 @@
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
             (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
             (hsPkgs."domain-auth" or (errorHandler.buildDepError "domain-auth"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

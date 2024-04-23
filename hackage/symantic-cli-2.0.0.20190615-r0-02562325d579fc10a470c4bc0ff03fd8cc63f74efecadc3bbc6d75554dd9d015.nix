@@ -21,7 +21,7 @@
       synopsis = "Symantics for parsing and documenting a CLI";
       description = "An extensible, typed and embedded Domain-Specific Language (DSL)\nto build Command Line Interface (CLI)\nusing a write-an-API-then-derive-code-from-it approach.\nThe derivations currently implemented are for parsing arguments or printing help.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."symantic-document" or (errorHandler.buildDepError "symantic-document"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

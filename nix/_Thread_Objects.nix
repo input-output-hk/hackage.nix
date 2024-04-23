@@ -6,8 +6,8 @@
         nix = import ../hackage/ThreadObjects-0.0-r0-04e079c21da04299f4da48620fdcb559e78a75f7de73895404fedd9a418b43a7.nix;
         revNum = 0;
         sha256 = "04e079c21da04299f4da48620fdcb559e78a75f7de73895404fedd9a418b43a7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

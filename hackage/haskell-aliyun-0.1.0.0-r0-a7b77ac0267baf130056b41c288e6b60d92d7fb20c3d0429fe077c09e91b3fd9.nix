@@ -21,7 +21,7 @@
       synopsis = "haskell client of aliyun service.";
       description = "See git page (https://github.com/yihuang/haskell-aliyun/)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

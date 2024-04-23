@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Continuum Database Client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."nanomsg-haskell" or (errorHandler.buildDepError "nanomsg-haskell"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

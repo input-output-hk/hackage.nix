@@ -6,8 +6,8 @@
         nix = import ../hackage/physics-0.1.2.1-r0-5555fb0a679d00964f1fbd8bf1a9b233c91b363b371f092077183fe51bcffba6.nix;
         revNum = 0;
         sha256 = "5555fb0a679d00964f1fbd8bf1a9b233c91b363b371f092077183fe51bcffba6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A monad for generating QuickCheck properties without Arbitrary instances.";
       description = "When your data has many invariants, it's often difficult to write Arbitrary\ninstances for QuickCheck. This library attempts to solve that\nproblem by providing a nice interface to write QuickCheck tests without using\nArbitrary instances. It aims to be somewhere in the middle between\nHUnit and QuickCheck: Use the random test case generation of QuickCheck, but write\nHUnit like assertions.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (flags.tests) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+          ] ++ pkgs.lib.optional (flags.tests) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

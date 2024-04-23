@@ -21,7 +21,7 @@
       synopsis = "Bidirectional fast ByteString packer/unpacker";
       description = "Serializer and deserializer are unified in this way.\nThis package is suitable for parsing small data packets\nand binary blobs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

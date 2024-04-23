@@ -21,18 +21,18 @@
       synopsis = "A library for testing correctness of pseudo random number generators in Haskell.";
       description = "HTestU is a library for testing correctness of presudo random number generators (PRNGs) written in Haskell.\nHTestU uses a library TestU01 based on a paper \"TestU01: A C Library for Empirical Testing of Random Number Generators\" by P. L'Ecuyer and R. Simard.\nBasically HTestU performs a wrapping of a member of the RandomGen typeclass (any reasonable PRNG can be made a member of it) and\nfeeds a wrapped generator into a C library which calls the wrapped generator to fill the buffer with pseudo random numbers and then\nperform tests on the generated numbers.\nHTestU offers three batteries: smallCrush, crush and bigCrush (as they were specified in TestU01 paper) and a number of\nstreaming functions which allow one to wrap the PRNG differently for the purpose of testing different patterns of PRNG usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.gcc.components.exes.gcc or (pkgs.buildPackages.gcc or (errorHandler.buildToolDepError "gcc:gcc")))
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

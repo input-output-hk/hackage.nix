@@ -6,8 +6,8 @@
         nix = import ../hackage/newsletter-0-r0-fe5889956936c5f88bbc594044bb805b488f8ae70219f63b84ccdcf420f32344.nix;
         revNum = 0;
         sha256 = "fe5889956936c5f88bbc594044bb805b488f8ae70219f63b84ccdcf420f32344";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

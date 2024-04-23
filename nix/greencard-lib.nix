@@ -6,8 +6,8 @@
         nix = import ../hackage/greencard-lib-3.0.1-r0-c060e6bde521cab65f51c5a2a3355bd4e08a6c7b216f599bdaffa7ca77d3ab01.nix;
         revNum = 0;
         sha256 = "c060e6bde521cab65f51c5a2a3355bd4e08a6c7b216f599bdaffa7ca77d3ab01";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

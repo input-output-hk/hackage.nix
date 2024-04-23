@@ -21,16 +21,16 @@
       synopsis = "Use Alpine.js in your lucid templates";
       description = "Please see the README on GitHub at <https://github.com/WaviLabs/lucid-alpine#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lucid-alpine-exe" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
             (hsPkgs."lucid-alpine" or (errorHandler.buildDepError "lucid-alpine"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lucid-alpine-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
             (hsPkgs."lucid-alpine" or (errorHandler.buildDepError "lucid-alpine"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

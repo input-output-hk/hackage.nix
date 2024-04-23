@@ -21,7 +21,7 @@
       synopsis = "Diff Viewer";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdiff" = {
@@ -33,9 +33,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

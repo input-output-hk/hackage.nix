@@ -21,7 +21,7 @@
       synopsis = "Package to run moffy samples - Gtk4 version";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy-samples-gtk4-run#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,12 +41,12 @@
           (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
           (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
           (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk4" or (errorHandler.pkgConfDepError "gtk4"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "moffy-samples-gtk4-run-test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
             (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A modern command-line parser for Haskell.";
       description = "A modern command-line parser for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."read-bounded" or (errorHandler.buildDepError "read-bounded"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

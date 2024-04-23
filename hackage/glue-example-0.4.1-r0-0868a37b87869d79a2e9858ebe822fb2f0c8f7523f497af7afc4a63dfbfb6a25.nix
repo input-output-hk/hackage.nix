@@ -21,7 +21,7 @@
       synopsis = "Make better services.";
       description = "Examples of the use of glue library functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "glue-example" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

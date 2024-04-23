@@ -21,7 +21,7 @@
       synopsis = "Types and functions for working with Webmentions.";
       description = "Types and functions for working with [Webmention](https://www.w3.org/TR/webmention), which pass the [webmention.rocks](https://webmention.rocks/) test suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "webmention-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."webmention" or (errorHandler.buildDepError "webmention"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Adaptation of the apecs library for the effectful ecosystem.";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/apecs-effectful#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."apecs" or (errorHandler.buildDepError "apecs"))
           (hsPkgs."effectful-core" or (errorHandler.buildDepError "effectful-core"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

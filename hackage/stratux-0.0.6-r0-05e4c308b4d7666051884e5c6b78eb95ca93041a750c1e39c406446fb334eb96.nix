@@ -21,7 +21,7 @@
       synopsis = "A library for stratux";
       description = "A library for stratux <http://stratux.me/>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."stratux-types" or (errorHandler.buildDepError "stratux-types"))
           (hsPkgs."stratux-http" or (errorHandler.buildDepError "stratux-http"))
           (hsPkgs."stratux-websockets" or (errorHandler.buildDepError "stratux-websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,29 +21,29 @@
       synopsis = "A C-compatible array library.";
       description = "A C-compatible array library.\n\nProvides both an immutable and mutable (in the IO monad) interface.\nIncludes utilities for multi-dimensional arrays, slicing and norms.\nMemory is 16-byte aligned by default to enable use of SIMD instructions.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.bytestringinbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ]) ++ (if flags.splitbase
+          ]) ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

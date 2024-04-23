@@ -21,7 +21,7 @@
       synopsis = "like mtl's ReaderT/StateT, but more than one contained value/type.";
       description = "When using multiple ReaderT's or StateT's in the same monad stack, it becomes\nnecessary to lift the operations in order to affect a specific transformer.\nUsing heterogenous lists (type level functions), a GADT and a corresponding\ntype class, this package provides transformers that remove that necessity:\nMultiReaderT/MultiStateT can contain a heterogenous list of values.\nThe type inferred for the getter/setter determines which value is\nread/written.\nSee the Example application for some very basic usage.\nThis package currently lacks a complete set of \"lifting instances\", i.e.\ninstance definitions for classes such as mtl's MonadReader \"over\" the newly\nintroduced monad transformers. These \"lifting instances\" would be necessary\nto achieve full compatability with existing transformers. Ping me if you\nfind anything specific missing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,29 +29,29 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "multistate-test" = {
-          depends = (pkgs.lib).optionals (flags.build-test) [
+          depends = pkgs.lib.optionals (flags.build-test) [
             (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
-            ];
+          ];
           buildable = if flags.build-test then true else false;
-          };
+        };
         "multistate-example" = {
-          depends = (pkgs.lib).optionals (flags.build-example) [
+          depends = pkgs.lib.optionals (flags.build-example) [
             (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."tfp" or (errorHandler.buildDepError "tfp"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.build-example then true else false;
-          };
         };
       };
-    }
+    };
+  }

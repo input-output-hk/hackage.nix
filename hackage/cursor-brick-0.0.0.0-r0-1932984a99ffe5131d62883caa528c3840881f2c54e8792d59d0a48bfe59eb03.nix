@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/NorfairKing/cursor-brick#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
           (hsPkgs."cursor" or (errorHandler.buildDepError "cursor"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

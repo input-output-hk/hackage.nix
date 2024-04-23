@@ -21,7 +21,7 @@
       synopsis = "IHaskell display instance for hvega types.";
       description = "Support Vega-Lite visualizations in IHaskell notebooks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

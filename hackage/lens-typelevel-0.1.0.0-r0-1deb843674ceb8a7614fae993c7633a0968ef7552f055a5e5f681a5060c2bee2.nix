@@ -21,14 +21,14 @@
       synopsis = "Type-level lenses using singletons";
       description = "Type-level lenses using singletons and its defunctionalization system,\nimplemented using the same van Laarhoven encoding as the /lens/ package.\nSee README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

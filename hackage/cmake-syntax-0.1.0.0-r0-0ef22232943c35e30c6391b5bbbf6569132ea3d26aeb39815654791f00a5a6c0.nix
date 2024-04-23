@@ -21,7 +21,7 @@
       synopsis = "Parser for the CMake syntax (CMakeLists.txt and .cmake files)";
       description = "Please see the README on GitHub at <https://github.com/0xd34df00d/cmake-syntax#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cmake-syntax-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

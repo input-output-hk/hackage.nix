@@ -21,17 +21,17 @@
       synopsis = "A Haskell implementation for combining SU(n) multiplets";
       description = "See README at <https://github.com/mdrslmr/MultipletCombiner>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

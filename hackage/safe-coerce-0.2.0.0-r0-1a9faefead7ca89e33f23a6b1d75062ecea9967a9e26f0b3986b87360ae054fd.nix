@@ -21,11 +21,11 @@
       synopsis = "A friendly shorthand for an old friend";
       description = "Safe?";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

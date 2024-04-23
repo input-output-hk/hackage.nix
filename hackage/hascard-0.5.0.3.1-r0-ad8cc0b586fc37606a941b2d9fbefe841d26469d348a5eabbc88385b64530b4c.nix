@@ -21,7 +21,7 @@
       synopsis = "A TUI for reviewing notes using 'flashcards' written with markdown-like syntax.";
       description = "Hascard is a text-based user interface for reviewing notes using flashcards. Cards are written in markdown-like syntax. Please see the README file on GitHub at <https://github.com/Yvee1/hascard#readme> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hascard" = {
           depends = [
@@ -76,10 +76,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hascard-test" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

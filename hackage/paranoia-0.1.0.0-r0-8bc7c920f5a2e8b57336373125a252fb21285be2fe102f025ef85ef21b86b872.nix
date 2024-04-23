@@ -21,7 +21,7 @@
       synopsis = "http proxy server";
       description = "HTTP Proxy Server for stalking clients";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "paranoia" = {
           depends = [
@@ -51,18 +51,18 @@
             (hsPkgs."paranoia" or (errorHandler.buildDepError "paranoia"))
             (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "paranoia-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."paranoia" or (errorHandler.buildDepError "paranoia"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

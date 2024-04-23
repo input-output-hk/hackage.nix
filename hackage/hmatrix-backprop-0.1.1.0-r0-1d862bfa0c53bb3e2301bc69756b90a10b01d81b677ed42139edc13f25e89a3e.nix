@@ -21,7 +21,7 @@
       synopsis = "hmatrix operations lifted for backprop";
       description = "hmatrix operations lifted for backprop.\n\nMeant to act as a drop-in replacement to the API of\nNumeric.LinearAlgebra.Static.  Just change your imports, and your\nfunctions are automatically backpropagatable.\n\nSee README on Github at <https://github.com/mstksg/hmatrix-backprop#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hmatrix-backprop-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

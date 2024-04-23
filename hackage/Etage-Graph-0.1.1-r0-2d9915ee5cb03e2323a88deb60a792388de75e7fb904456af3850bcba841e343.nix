@@ -21,7 +21,7 @@
       synopsis = "Data-flow based graph algorithms";
       description = "Data-flow based graph algorithms using the \"Control.Etage\" framework, showcasing its use for data-flow\ncomputations. It is meant to be used with the \"Data.Graph.Inductive\" package which provides graph structures\nthese algorithms take as an input.\n\nCurrently only the shortest paths computation is implemented (from all to all nodes).\n\nAlso a benchmarking @test@ program is provided, comparing the performance with algorithms found in the\n\"Data.Graph.Inductive\" package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "etage-graph-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."Etage" or (errorHandler.buildDepError "Etage"))
             (hsPkgs."Etage-Graph" or (errorHandler.buildDepError "Etage-Graph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

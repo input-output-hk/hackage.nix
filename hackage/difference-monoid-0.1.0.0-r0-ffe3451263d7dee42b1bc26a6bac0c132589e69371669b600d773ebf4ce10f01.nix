@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A Difference Monoid, to add subtraction to arbitrary monoids. Please see the README on Github at <https://github.com/oisdk/difference-monoid#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "difference-monoid-doctests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "difference-monoid-test" = {
           depends = [
             (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
@@ -64,9 +64,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-checkers" or (errorHandler.buildDepError "hedgehog-checkers"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

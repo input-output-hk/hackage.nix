@@ -21,7 +21,7 @@
       synopsis = "Abstract representation of musical dynamics.";
       description = "Abstract representation of musical dynamic levels.\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Module limbo";
       description = "A hodge-podge of functions, modules, and instances.  These\ngenerally end up here because\n1. they are needed in two unrelated packages,\n2. they belong in some upstream module,\n3. they can't be moved to an upstream module because\nthey would add dependencies, or\n4. they are deprecated but still in use";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -60,23 +60,21 @@
           (hsPkgs."uuid-orphans" or (errorHandler.buildDepError "uuid-orphans"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs."show-please" or (errorHandler.buildDepError "show-please"))
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ]) ++ (if flags.network-uri
+        ]) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ [
-          (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+          ])) ++ [ (hsPkgs."cereal" or (errorHandler.buildDepError "cereal")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

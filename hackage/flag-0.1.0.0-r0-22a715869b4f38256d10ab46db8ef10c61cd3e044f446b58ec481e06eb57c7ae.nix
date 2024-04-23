@@ -21,11 +21,11 @@
       synopsis = "A simple flag type.";
       description = "A simple flag type, parameterised by another type. It can be enabled or disabled.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

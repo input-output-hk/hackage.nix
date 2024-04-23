@@ -21,16 +21,16 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/oisdk/uniquely-represented-sets#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "uniquely-represented-sets-test" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."uniquely-represented-sets" or (errorHandler.buildDepError "uniquely-represented-sets"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."uniquely-represented-sets" or (errorHandler.buildDepError "uniquely-represented-sets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

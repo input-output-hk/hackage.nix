@@ -21,7 +21,7 @@
       synopsis = "Reactors for the uniform workbench";
       description = "uni reactor";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."uni-util" or (errorHandler.buildDepError "uni-util"))
           (hsPkgs."uni-events" or (errorHandler.buildDepError "uni-events"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

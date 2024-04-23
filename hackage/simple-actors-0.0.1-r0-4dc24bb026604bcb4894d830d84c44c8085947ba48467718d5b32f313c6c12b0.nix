@@ -21,14 +21,14 @@
       synopsis = "A simple implementation of the actor model of concurrency";
       description = "Simple concurrency primitives based on the Actor Model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

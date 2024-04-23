@@ -21,16 +21,16 @@
       synopsis = "stringly-named getters for generic data";
       description = "Get a Tree or list of (String, a -> Double) pairs for use in plotting and data inspection";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."spatial-math" or (errorHandler.buildDepError "spatial-math"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

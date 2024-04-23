@@ -21,7 +21,7 @@
       synopsis = "Bindings to the LLVM compiler toolkit with some custom extensions.";
       description = "Bindings to the LLVM compiler toolkit.\nCustom extensions:\n* vector-aware versions of fptosi and friends\n* Callback from LLVM code into Haskell code including StablePtr support\n* tuple arguments to LLVM functions\n* instance IsFirstClass Array\n* CodeGen.constStruct\n* Instruction.extractvalue, insertvalue\n* Core.Instruction.bitcastUnify: like bitcast but uses type unification for asserting equal size of source and target\nNews in the original llvm package:\n* New in 0.7.0.0: Adapted to LLVM 2.6;\n* New in 0.6.8.0: Add functions to allow freeing function resources;\n* New in 0.6.7.0: Struct types;\n* New in 0.6.6.0: Bug fixes;\n* New in 0.6.5.0: Adapted to LLVM 2.5;";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

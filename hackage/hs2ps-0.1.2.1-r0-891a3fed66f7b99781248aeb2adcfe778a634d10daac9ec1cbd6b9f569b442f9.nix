@@ -21,15 +21,15 @@
       synopsis = "Translate Haskell types to PureScript";
       description = "Please see the README on BitBucket at <https://bitbucket.org/william_rusnack/hs2ps/src/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs2ps-types-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hs2ps" or (errorHandler.buildDepError "hs2ps"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Polydirectional maps";
       description = "Polydirectional maps for Haskell with flexible storage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example-basic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."polymap" or (errorHandler.buildDepError "polymap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

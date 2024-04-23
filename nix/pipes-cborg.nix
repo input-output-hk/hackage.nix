@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-cborg-0.1-r0-6ed4c5774f9c9ccdaab867d594481dcc04c31639fe38559e58c066afea1ef181.nix;
         revNum = 0;
         sha256 = "6ed4c5774f9c9ccdaab867d594481dcc04c31639fe38559e58c066afea1ef181";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

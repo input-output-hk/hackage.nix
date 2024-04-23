@@ -21,7 +21,7 @@
       synopsis = "Bindings for GNU libgnutls";
       description = "You almost certainly don't want to depend on this release.\n\nThis is a pre-alpha, almost useless release; its only purpose is to enable\nTLS support in some of my other libraries. More complete bindings for GNU TLS\nwill be released at a later date.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unexceptionalio-trans" or (errorHandler.buildDepError "unexceptionalio-trans"))
-          ];
+        ];
         libs = [ (pkgs."gnutls" or (errorHandler.sysDepError "gnutls")) ];
         pkgconfig = [
           (pkgconfPkgs."gnutls" or (errorHandler.pkgConfDepError "gnutls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

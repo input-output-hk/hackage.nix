@@ -6,8 +6,8 @@
         nix = import ../hackage/rlist-0.1.0-r0-ae1db7c9d4f23e0f28fe84159a51a874315d80a9a67a7e09bad0282c3b5f3965.nix;
         revNum = 0;
         sha256 = "ae1db7c9d4f23e0f28fe84159a51a874315d80a9a67a7e09bad0282c3b5f3965";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

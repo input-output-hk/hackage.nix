@@ -21,30 +21,30 @@
       synopsis = "First class type families";
       description = "First class type families,\neval-style defunctionalization\n\nSee \"Fcf\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "fcf-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fcf-doctest" = {
-          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.6") [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.6") [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "8.6"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "8.6"
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

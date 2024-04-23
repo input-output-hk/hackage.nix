@@ -21,14 +21,14 @@
       synopsis = "Provides privilege separated versions of the concurrency primitives.";
       description = "Any MVar or other concurrency primitive can be read by or written to any function which recieves it as a value. This package provides read-only and write-only versions of Chan, MVar, TChan, TMVar, and TVar. Functions which use these versions receive permission to read, write, or both based on their type signatures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

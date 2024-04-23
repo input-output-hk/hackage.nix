@@ -6,8 +6,8 @@
         nix = import ../hackage/KyotoCabinet-0.1-r0-3959b401f8c2654c2c828231f1f8bd6f6c1488a7e3c1bfb7c8557053b43a20c0.nix;
         revNum = 0;
         sha256 = "3959b401f8c2654c2c828231f1f8bd6f6c1488a7e3c1bfb7c8557053b43a20c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

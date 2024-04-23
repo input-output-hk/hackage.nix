@@ -21,15 +21,15 @@
       synopsis = "A parser for CSV files that uses Attoparsec";
       description = "An APLv2-licensed Attoparsec-based parser library for\ncomma-separated values (CSV) files.\n(http://www.ietf.org/rfc/rfc4180.txt)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

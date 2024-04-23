@@ -21,7 +21,7 @@
       synopsis = "Type-level natural and proofs of their properties.";
       description = "Type-level natural numbers and proofs of their properties.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
           (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

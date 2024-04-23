@@ -21,7 +21,7 @@
       synopsis = "Sedna Native XML Binding";
       description = "Sedna is a free native XML database which provides a full\nrange of core database services - persistent\nstorage, ACID transactions, security, indices,\nhot backup. Flexible XML processing facilities\ninclude W3C XQuery implementation, tight\nintegration of XQuery with full-text search\nfacilities and a node-level update\nlanguage. This package (will) provide a clean,\nsensible monadic interface to the\n(established) underlying C library.\nSedna Home Page:\nhttp://www.sedna.org/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [ (pkgs."sedna" or (errorHandler.sysDepError "sedna")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

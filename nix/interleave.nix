@@ -6,8 +6,8 @@
         nix = import ../hackage/interleave-1.0-r0-30e50008696a2a3cbbee9bddb869505dc9e25a44a1d47b25e8f776d5c1ea36d4.nix;
         revNum = 0;
         sha256 = "30e50008696a2a3cbbee9bddb869505dc9e25a44a1d47b25e8f776d5c1ea36d4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

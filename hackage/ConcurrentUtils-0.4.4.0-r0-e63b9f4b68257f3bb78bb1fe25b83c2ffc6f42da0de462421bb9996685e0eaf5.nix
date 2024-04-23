@@ -21,7 +21,7 @@
       synopsis = "Concurrent utilities";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

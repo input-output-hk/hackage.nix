@@ -21,14 +21,14 @@
       synopsis = "import This";
       description = "Python will print pseudophilosophical gibberish when you \\\n`import this`. Haskell does not have such a feature yet. \\\nThis cannot stand. Pun intended.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

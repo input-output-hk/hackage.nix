@@ -21,14 +21,14 @@
       synopsis = "Fold function applications. Framework for variadic functions.";
       description = "Fold function applications. Framework for variadic functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

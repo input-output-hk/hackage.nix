@@ -21,7 +21,7 @@
       synopsis = "Predicates that can explain themselves.";
       description = "Explainable predicates are essentially functions from types\nto 'Bool' which can additionally describe themselves and\nexplain why an argument does or doesn't match.  They are\nintended to be used during unit tests to provide better\nerror messages when tests fail.  For example, if a\ncollection is missing an element, an explainable predicate\ncan tell you which element is missing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."doctest-lib" or (errorHandler.buildDepError "doctest-lib"))
             (hsPkgs."explainable-predicates" or (errorHandler.buildDepError "explainable-predicates"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

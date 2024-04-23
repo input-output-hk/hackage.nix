@@ -21,7 +21,7 @@
       synopsis = "RFC 5389: Session Traversal Utilities for NAT (STUN) client";
       description = "RFC 5389: Session Traversal Utilities for NAT (STUN) client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."cryptohash-cryptoapi" or (errorHandler.buildDepError "cryptohash-cryptoapi"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-serialize" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

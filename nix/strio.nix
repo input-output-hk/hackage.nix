@@ -6,8 +6,8 @@
         nix = import ../hackage/strio-0.0.0.0-r0-b9fb7a5194e190555ba4b46fdfe91bb7e6ce14df6e2a2457d0095ac842fc62a2.nix;
         revNum = 0;
         sha256 = "b9fb7a5194e190555ba4b46fdfe91bb7e6ce14df6e2a2457d0095ac842fc62a2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

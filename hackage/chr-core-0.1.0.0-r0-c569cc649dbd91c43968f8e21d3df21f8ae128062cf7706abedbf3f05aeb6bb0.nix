@@ -21,7 +21,7 @@
       synopsis = "Constraint Handling Rules";
       description = "Constraint Handling Rules evaluation engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."chr-data" or (errorHandler.buildDepError "chr-data"))
           (hsPkgs."chr-pretty" or (errorHandler.buildDepError "chr-pretty"))
           (hsPkgs."logict-state" or (errorHandler.buildDepError "logict-state"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

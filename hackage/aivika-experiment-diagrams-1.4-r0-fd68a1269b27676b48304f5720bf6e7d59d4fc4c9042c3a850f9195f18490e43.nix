@@ -21,7 +21,7 @@
       synopsis = "Diagrams backend for the Aivika simulation library";
       description = "This package complements the Aivika and Aivika Experiment packages\nand it allows rendering the charts using the Chart-diagrams library,\ni.e. without using Cairo, which can be suitable for MS Windows.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
           (hsPkgs."aivika-experiment" or (errorHandler.buildDepError "aivika-experiment"))
           (hsPkgs."aivika-experiment-chart" or (errorHandler.buildDepError "aivika-experiment-chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

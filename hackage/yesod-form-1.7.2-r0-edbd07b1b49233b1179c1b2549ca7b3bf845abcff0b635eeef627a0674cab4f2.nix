@@ -21,7 +21,7 @@
       synopsis = "Form handling support for Yesod Web Framework";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-form>.  Third-party packages which you can find useful: <http://hackage.haskell.org/package/yesod-form-richtext yesod-form-richtext> - richtext form fields (currently it provides only Summernote support).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ] ++ (pkgs.lib).optional (flags.network-uri) (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"));
+        ] ++ pkgs.lib.optional (flags.network-uri) (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

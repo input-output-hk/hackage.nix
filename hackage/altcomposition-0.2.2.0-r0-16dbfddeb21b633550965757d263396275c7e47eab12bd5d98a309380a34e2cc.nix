@@ -21,14 +21,14 @@
       synopsis = "Alternative combinators for unorthodox function composition";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

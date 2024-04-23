@@ -21,15 +21,15 @@
       synopsis = "MaybeT monad transformer compatible with monads-tf (deprecated)";
       description = "Support for computations with failures. This is a fork of the MaybeT\npackage by Eric Kidd, but compatible with the type-family based monad\nclasses of the monads-tf package.\n\nThis package is deprecated: the MaybeT transformer exists in the\ntransformers package nowadays, and the only advantage this package\nprovides over that one is the presence of a MonadFix instance, but\nit's incorrect anyway.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

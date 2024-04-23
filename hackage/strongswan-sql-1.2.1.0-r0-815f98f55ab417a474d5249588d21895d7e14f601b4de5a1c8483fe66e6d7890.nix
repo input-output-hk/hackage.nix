@@ -21,7 +21,7 @@
       synopsis = "Interface library for strongSwan SQL backend";
       description = "Interface library and companion CLI tool to configure strongSwan IPsec over MySQL backend";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."structured-cli" or (errorHandler.buildDepError "structured-cli"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "strongswan-sql" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."structured-cli" or (errorHandler.buildDepError "structured-cli"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "strongswan-sql-test" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."structured-cli" or (errorHandler.buildDepError "structured-cli"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

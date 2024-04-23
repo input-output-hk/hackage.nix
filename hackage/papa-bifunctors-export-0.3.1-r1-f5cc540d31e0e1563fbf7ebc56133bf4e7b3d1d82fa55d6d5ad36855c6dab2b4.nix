@@ -21,14 +21,14 @@
       synopsis = "export useful functions from `bifunctors`.";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nexport useful functions from `bifunctors`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

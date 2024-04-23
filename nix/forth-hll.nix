@@ -6,8 +6,8 @@
         nix = import ../hackage/forth-hll-0.1.0.0-r0-1cf58c92e90bee6ec7feb3536417a841b3bcc7f99ca087c4654627c998f5b5c9.nix;
         revNum = 0;
         sha256 = "1cf58c92e90bee6ec7feb3536417a841b3bcc7f99ca087c4654627c998f5b5c9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

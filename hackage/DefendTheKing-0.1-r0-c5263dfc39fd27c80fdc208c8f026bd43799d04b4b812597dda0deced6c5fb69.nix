@@ -21,7 +21,7 @@
       synopsis = "A graphical demo. Will be a game";
       description = "Defend the King from the Forces of Different:\nA graphical demo.\nIntended to become a simple fast-paced multiplayer RTS game\nin the likes of Bughouse-Chess and Starcraft.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "defend" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."peakachu" or (errorHandler.buildDepError "peakachu"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

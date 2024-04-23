@@ -6,8 +6,8 @@
         nix = import ../hackage/soyuz-0.0.0-r0-de9bdde536c6d5c7991312ccd0bffd9ba0d1dd096027d18059e06b7f3c3058e7.nix;
         revNum = 0;
         sha256 = "de9bdde536c6d5c7991312ccd0bffd9ba0d1dd096027d18059e06b7f3c3058e7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Haskell code quality tool";
       description = "Homplexity aims to measure code complexity,\nwarning about fragments that might have higher defect probability\ndue to bad coding style on-the-large:\n\n* too large functions\n\n* too deeply nested conditions\n\n* too few comments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -36,18 +36,18 @@
           (hsPkgs."hflags" or (errorHandler.buildDepError "hflags"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ]) ++ (pkgs.lib).optionals (flags.html) [
+        ]) ++ pkgs.lib.optionals (flags.html) [
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "homplexity-cli" = {
           depends = [
@@ -63,13 +63,13 @@
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ] ++ (pkgs.lib).optionals (flags.html) [
+          ] ++ pkgs.lib.optionals (flags.html) [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "homplexity-tests" = {
           depends = [
@@ -78,10 +78,10 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ] ++ [ (hsPkgs."hspec" or (errorHandler.buildDepError "hspec")) ];
-          build-tools = (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.8.0") (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")));
+          ] ++ [ (hsPkgs."hspec" or (errorHandler.buildDepError "hspec")) ];
+          build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.8.0") (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

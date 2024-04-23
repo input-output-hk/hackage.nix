@@ -6,8 +6,8 @@
         nix = import ../hackage/tower-0.1.0-r0-52cc4dd1ba5eeccc61fcc99f27a0034a192c96314629ccf8fb6f2997471d5986.nix;
         revNum = 0;
         sha256 = "52cc4dd1ba5eeccc61fcc99f27a0034a192c96314629ccf8fb6f2997471d5986";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

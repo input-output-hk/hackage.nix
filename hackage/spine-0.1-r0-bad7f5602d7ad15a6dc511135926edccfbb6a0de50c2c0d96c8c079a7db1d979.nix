@@ -21,11 +21,11 @@
       synopsis = "Simple implementation of the generic spine view";
       description = "This package contains the basic representation types for defining generic\nfunctions with the spine view. It is currently incomplete with respect to the\npapers. We hope to rectify that in the future.\n\nSee the following publications for details.\n\nR. Hinze and A. Löh. \"Scrap Your Boilerplate: Reloaded\" In Functional and\nLogic Programming. 2006. pp. 13-29.\n\nR. Hinze and A. Löh. \"Scrap Your Boilerplate: Revolutions\" In Mathematics and\nProgram Construction. 2006. pp. 180-208.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

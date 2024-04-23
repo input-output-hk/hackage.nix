@@ -21,7 +21,7 @@
       synopsis = "Server and community browser for the game Tremulous";
       description = "A gtk2hs server and clan browser for the open source game Tremulous <http://tremulous.net>.\nBoth Tremulous 1.1 and GPP are supported.\n\nFeatures filtering, player search, a list of online clan members, a clan list and basic perferences.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "apelsin" = {
@@ -41,9 +41,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

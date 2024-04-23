@@ -21,11 +21,11 @@
       synopsis = "Fair Predicates";
       description = "This Haskell library provides an implementation of Boolean\npredicates with an interleaved evaluation of arguments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Build custom libraries for Nginx haskell module";
       description = "Build custom libraries for\n<http://github.com/lyokha/nginx-haskell-module Nginx haskell module>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

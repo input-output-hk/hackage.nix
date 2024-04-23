@@ -21,7 +21,7 @@
       synopsis = "Predicative tries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."composition-extra" or (errorHandler.buildDepError "composition-extra"))
           (hsPkgs."tries" or (errorHandler.buildDepError "tries"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."composition-extra" or (errorHandler.buildDepError "composition-extra"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

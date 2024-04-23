@@ -21,7 +21,7 @@
       synopsis = "A Haskell binding to a subset of the GD graphics library";
       description = "This is a binding to a (currently very small) subset of\nthe GD graphics library.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -30,8 +30,8 @@
           (pkgs."jpeg" or (errorHandler.sysDepError "jpeg"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
           (pkgs."png" or (errorHandler.sysDepError "png"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

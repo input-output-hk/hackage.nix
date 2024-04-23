@@ -21,7 +21,7 @@
       synopsis = "Polysemy versions of Path functions.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-extra" or (errorHandler.buildDepError "polysemy-extra"))
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

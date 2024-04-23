@@ -6,8 +6,8 @@
         nix = import ../hackage/mpeff-0.1.0.0-r0-087f7270f1dde16239ccf750362311554f7af9c01fa21e82d606002ae8a599a1.nix;
         revNum = 0;
         sha256 = "087f7270f1dde16239ccf750362311554f7af9c01fa21e82d606002ae8a599a1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

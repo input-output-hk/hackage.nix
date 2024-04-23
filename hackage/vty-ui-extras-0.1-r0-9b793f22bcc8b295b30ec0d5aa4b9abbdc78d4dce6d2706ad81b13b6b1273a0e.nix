@@ -21,7 +21,7 @@
       synopsis = "Extra vty-ui functionality not included in the core library";
       description = "Extra vty-ui functionality not included in the core library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vty-ui" or (errorHandler.buildDepError "vty-ui"))
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

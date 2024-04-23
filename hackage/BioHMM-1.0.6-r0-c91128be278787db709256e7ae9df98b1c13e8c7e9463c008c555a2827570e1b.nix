@@ -21,7 +21,7 @@
       synopsis = "Libary for Hidden Markov Models in HMMER3 format. ";
       description = "Libary containing parsing and visualisation functions and datastructures for Hidden Markov Models in HMMER3 format.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
           (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
           (hsPkgs."StockholmAlignment" or (errorHandler.buildDepError "StockholmAlignment"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

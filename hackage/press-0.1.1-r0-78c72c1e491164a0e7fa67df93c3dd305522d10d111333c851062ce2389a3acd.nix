@@ -21,7 +21,7 @@
       synopsis = "Text template library targeted at the web / HTML generation";
       description = "Press is a general purpose text templating engine that is targeted at generating HTML / Web content.  It uses the same syntax Django/Jinja templates use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

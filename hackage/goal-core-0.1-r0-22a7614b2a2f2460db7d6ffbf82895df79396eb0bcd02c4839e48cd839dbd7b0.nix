@@ -21,7 +21,7 @@
       synopsis = "Core imports for Geometric Optimization Libraries.";
       description = "Core provides a bunch of convenience functions, basic exports, as\nwell as plotting functionality, which are independent of the rest of the\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
           (hsPkgs."Chart-gtk" or (errorHandler.buildDepError "Chart-gtk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "contours" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."goal-core" or (errorHandler.buildDepError "goal-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "ToDhall and FromDhall instances for Path.";
       description = "ToDhall and FromDhall instances for Path.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

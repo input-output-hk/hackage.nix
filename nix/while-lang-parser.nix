@@ -6,8 +6,8 @@
         nix = import ../hackage/while-lang-parser-0.1.0.0-r0-786ec6fb2ca04c3c5708e343ae1e632e5ca79ba5d00e2baa7c484891477bb81d.nix;
         revNum = 0;
         sha256 = "786ec6fb2ca04c3c5708e343ae1e632e5ca79ba5d00e2baa7c484891477bb81d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

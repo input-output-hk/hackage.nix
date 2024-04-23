@@ -21,7 +21,7 @@
       synopsis = "Dynamic launcher of Hails applications";
       description = "Executable for deploying Hails (see the hails Hackage package)\napplications.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hails" = {
@@ -37,9 +37,9 @@
             (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
             (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

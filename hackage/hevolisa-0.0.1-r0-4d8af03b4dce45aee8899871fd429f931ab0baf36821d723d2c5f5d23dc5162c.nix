@@ -21,7 +21,7 @@
       synopsis = "Genetic Mona Lisa problem in Haskell";
       description = "Hevolisa is an application that tries to approximate a bitmap image with colored polygons. It draws a set of random polygons which are changed/mutated in small random steps. There is an error function which compares the bitmap created from the polygons with the original image. If the error between the images is smaller than before then the new image replaces the old. This is done over and over again.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hevolisa" = {
@@ -31,9 +31,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

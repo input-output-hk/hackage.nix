@@ -21,7 +21,7 @@
       synopsis = "A simple Breakout game implementation.";
       description = "A simple Breakout game implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "breakout" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskgame" or (errorHandler.buildDepError "haskgame"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Left-Leaning Red-Black Tree";
       description = "Left-Leaning Red-Black Tree";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

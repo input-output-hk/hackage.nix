@@ -21,7 +21,7 @@
       synopsis = "IHaskell display instances for diagram types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
           (hsPkgs."active" or (errorHandler.buildDepError "active"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

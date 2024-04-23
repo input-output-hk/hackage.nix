@@ -21,7 +21,7 @@
       synopsis = "Haskell to Purescript & Scala 3 transpiler";
       description = "Please see the README on GitHub at <https://github.com/albertprz/polyglot#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "polyglot" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."polyglot" or (errorHandler.buildDepError "polyglot"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

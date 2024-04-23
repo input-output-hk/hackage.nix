@@ -21,7 +21,7 @@
       synopsis = "bug tracking plugin for clckwrks";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,11 +49,11 @@
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

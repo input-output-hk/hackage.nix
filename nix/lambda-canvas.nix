@@ -6,8 +6,8 @@
         nix = import ../hackage/lambda-canvas-0.1-r0-4cab1768caa6a0d4eb7157f653e2a4b110511d164731232987f7de0b66ca2e0c.nix;
         revNum = 0;
         sha256 = "4cab1768caa6a0d4eb7157f653e2a4b110511d164731232987f7de0b66ca2e0c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

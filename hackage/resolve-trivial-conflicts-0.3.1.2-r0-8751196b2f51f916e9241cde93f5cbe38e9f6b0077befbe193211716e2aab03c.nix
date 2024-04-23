@@ -21,7 +21,7 @@
       synopsis = "Remove trivial conflict markers in a git repository";
       description = "Remove trivial conflict markers in a git repository";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "resolve-trivial-conflicts" = {
@@ -35,9 +35,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

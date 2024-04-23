@@ -21,7 +21,7 @@
       synopsis = "Generate a FlatPak manifest from a Cabal package description";
       description = "Generate a FlatPak manifest from a Cabal package description.\n\nInspired by Richard Szibele's stackpak:\n<https://gitlab.com/rszibele/stackpak#readme>\n\nSee also David Lettier's post on Flatpak for Haskell:\n<https://medium.com/@lettier/how-to-flatpak-a-haskell-app-into-flathub-86ef6d69e94d>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-flatpak" = {
@@ -43,9 +43,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

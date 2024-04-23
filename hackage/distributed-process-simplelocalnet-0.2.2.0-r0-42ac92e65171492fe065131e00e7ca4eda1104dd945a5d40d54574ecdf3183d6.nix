@@ -14,7 +14,7 @@
       identifier = {
         name = "distributed-process-simplelocalnet";
         version = "0.2.2.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Well-Typed LLP";
       maintainer = "watson.timothy@gmail.com, edsko@well-typed.com, duncan@well-typed.com";
@@ -24,7 +24,7 @@
       synopsis = "Simple zero-configuration backend for Cloud Haskell ";
       description = "Simple backend based on the TCP transport which offers node\ndiscovery based on UDP multicast. This is a zero-configuration\nbackend designed to get you going with Cloud Haskell quickly\nwithout imposing any structure on your application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
           (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TestSimpleLocalnet" = {
-          depends = (pkgs.lib).optionals (flags.build-example) [
+          depends = pkgs.lib.optionals (flags.build-example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
@@ -56,9 +56,9 @@
             (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            ];
+          ];
           buildable = if flags.build-example then true else false;
-          };
         };
       };
-    }
+    };
+  }

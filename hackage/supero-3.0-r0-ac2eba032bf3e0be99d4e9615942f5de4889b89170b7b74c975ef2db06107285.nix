@@ -21,7 +21,7 @@
       synopsis = "A Supercompiler";
       description = "A demo supercompiler - not really ready for public use yet.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "supero" = {
@@ -36,9 +36,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

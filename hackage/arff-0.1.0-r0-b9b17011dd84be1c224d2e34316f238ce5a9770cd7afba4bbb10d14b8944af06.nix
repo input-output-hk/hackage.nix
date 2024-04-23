@@ -21,7 +21,7 @@
       synopsis = "Generate Attribute-Relation File Format (ARFF) files";
       description = "Generate Attribute-Relation File Format (ARFF) files.\n\nARFF files are used by the WEKA data mining and machine\nlearning framework (<http://www.cs.waikato.ac.nz/~ml/weka/>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring-show" or (errorHandler.buildDepError "bytestring-show"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

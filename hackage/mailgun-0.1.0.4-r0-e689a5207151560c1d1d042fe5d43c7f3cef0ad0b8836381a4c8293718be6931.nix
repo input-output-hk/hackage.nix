@@ -21,7 +21,7 @@
       synopsis = "Connector to Rackspace's Mailgun Service";
       description = "Allows users to directly access Rackspace's Mailgun service\nwithout having to work with the underlying REST service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "send" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mailgun" or (errorHandler.buildDepError "mailgun"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sendmany" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mailgun" or (errorHandler.buildDepError "mailgun"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

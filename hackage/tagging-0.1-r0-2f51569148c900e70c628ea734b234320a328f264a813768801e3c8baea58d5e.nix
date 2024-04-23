@@ -21,15 +21,15 @@
       synopsis = "Library for tagging data";
       description = "A library for tagging data according to regex rules and manipulating the\ntagged structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

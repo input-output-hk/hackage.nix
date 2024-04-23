@@ -21,7 +21,7 @@
       synopsis = "A basic template language for the Simple web framework";
       description = "A basic template language for the Simple web framework. The language supports\nvariable substitution, function invokation, loops and conditionals.\n\n\"Web.Simple.Templates\" documents how to integrate into an app, while\n\"Web.Simple.Templates.Language\" documents the templating language syntax\nand semantics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-simple-templates" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."simple-templates" or (errorHandler.buildDepError "simple-templates"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Haskell interface to embedded Perl 5 interpreter";
       description = "Haskell interface to embedded Perl 5 interpreter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

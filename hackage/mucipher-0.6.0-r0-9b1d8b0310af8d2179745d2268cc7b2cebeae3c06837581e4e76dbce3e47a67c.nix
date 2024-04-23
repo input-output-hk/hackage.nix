@@ -21,11 +21,11 @@
       synopsis = "A library to produce simple ciphers for use with lambdabot.";
       description = "To use MuCipher, first import Codec.MuCipher, then pick something to say.\nThen use showCipher or printCipher to see how to hide the message.\nAfter the message is ciphered, it can be deciphered by running it\nany Haskell interpreter, like Hugs or lambdabot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

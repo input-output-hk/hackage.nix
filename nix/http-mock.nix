@@ -6,8 +6,8 @@
         nix = import ../hackage/http-mock-0.1.0.0-r0-c4c821e59bb16f3199cc81fadc0fa61dd3f4d538cb49a93d1d2ae565b3dd6dbf.nix;
         revNum = 0;
         sha256 = "c4c821e59bb16f3199cc81fadc0fa61dd3f4d538cb49a93d1d2ae565b3dd6dbf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

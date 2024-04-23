@@ -21,7 +21,7 @@
       synopsis = "open bookmarks and queries from the command line";
       description = "This package provides a command-line utility that opens bookmarks and\nqueries.  Please see the README on GitHub at\n<https://github.com/ExtremaIS/bm-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bm" = {
           depends = [
@@ -45,18 +45,18 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (if flags.optparse-applicative_ge_0_18
+          ] ++ (if flags.optparse-applicative_ge_0_18
             then [
               (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
               (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-              ]
+            ]
             else [
               (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
               (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "bm-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

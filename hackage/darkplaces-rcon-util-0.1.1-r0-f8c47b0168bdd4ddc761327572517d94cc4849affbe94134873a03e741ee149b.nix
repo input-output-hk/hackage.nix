@@ -21,7 +21,7 @@
       synopsis = "Darplaces rcon utility";
       description = "This is implementation of rcon shell for darkplaces engine.\nFor more info visit https://github.com/bacher09/darkplaces-rcon/blob/master/darkplaces-rcon-util/README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,14 +39,14 @@
           (hsPkgs."darkplaces-rcon" or (errorHandler.buildDepError "darkplaces-rcon"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ] ++ (if flags.old-locale
+        ] ++ (if flags.old-locale
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "drcon" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."darkplaces-rcon-util" or (errorHandler.buildDepError "darkplaces-rcon-util"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rcon-util-tests" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

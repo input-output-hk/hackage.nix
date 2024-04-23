@@ -21,7 +21,7 @@
       synopsis = "Introduces conduits to channels, and promotes using\nconduits concurrently.";
       description = "Provides two simple conduit wrappers around STM\nchannels - a source and a sink.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "stm-conduit-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

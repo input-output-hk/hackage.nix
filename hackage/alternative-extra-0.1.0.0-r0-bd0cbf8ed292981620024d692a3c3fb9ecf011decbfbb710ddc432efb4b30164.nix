@@ -21,11 +21,11 @@
       synopsis = "Extra utilities for alternatives";
       description = "Extra utilities for alternatives";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

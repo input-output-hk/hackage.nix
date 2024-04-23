@@ -21,7 +21,7 @@
       synopsis = "Automatically add files to @exposed-modules@ and @other-modules@.";
       description = "Velma is a Haskell package that makes it easy to automatically add files to\n@exposed-modules@ and @other-modules@ in Cabal package descriptions, also\nknown as @*.cabal@ files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "velma" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."velma" or (errorHandler.buildDepError "velma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

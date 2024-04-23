@@ -6,13 +6,13 @@
         nix = import ../hackage/haskell-src-exts-observe-0.1.0-r0-7b96cc1a828243ebd837671747978710ce968cf75baee09c649657e8d4a88642.nix;
         revNum = 0;
         sha256 = "7b96cc1a828243ebd837671747978710ce968cf75baee09c649657e8d4a88642";
-        };
+      };
       r1 = {
         nix = import ../hackage/haskell-src-exts-observe-0.1.0-r1-cc19d54903f220a949ee1a6c189bf225ddff3c5bd73c4040492f8149bd278ed8.nix;
         revNum = 1;
         sha256 = "cc19d54903f220a949ee1a6c189bf225ddff3c5bd73c4040492f8149bd278ed8";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

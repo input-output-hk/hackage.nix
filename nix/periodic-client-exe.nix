@@ -6,8 +6,8 @@
         nix = import ../hackage/periodic-client-exe-1.1.7.1-r0-8e3be46e46d31df4976c67ebca9c33686be25fe07acc0483df62d8e81f52c0d8.nix;
         revNum = 0;
         sha256 = "8e3be46e46d31df4976c67ebca9c33686be25fe07acc0483df62d8e81f52c0d8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

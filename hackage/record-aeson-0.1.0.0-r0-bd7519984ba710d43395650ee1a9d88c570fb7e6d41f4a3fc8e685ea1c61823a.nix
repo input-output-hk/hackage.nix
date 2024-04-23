@@ -21,7 +21,7 @@
       synopsis = "Instances of \"aeson\" classes for the \"record\" types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."record" or (errorHandler.buildDepError "record"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."record-aeson" or (errorHandler.buildDepError "record-aeson"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

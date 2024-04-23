@@ -21,7 +21,7 @@
       synopsis = "EIBd Client";
       description = "Simple EIBd Client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [ (pkgs."eibclient" or (errorHandler.sysDepError "eibclient")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

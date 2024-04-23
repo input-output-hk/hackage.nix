@@ -21,7 +21,7 @@
       synopsis = "LightStep OpenTracing client library";
       description = "LightStep OpenTracing client library. Uses GRPC transport via proto-lens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lightstep-haskell-example" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."http2-client" or (errorHandler.buildDepError "http2-client"))
             (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "lightstep-haskell-wai-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "lightstep-haskell-req-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,18 +79,18 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."req" or (errorHandler.buildDepError "req"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "lightstep-haskell-stress-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

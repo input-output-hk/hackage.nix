@@ -21,7 +21,7 @@
       synopsis = "Polynomials";
       description = "Polynomials backed by `Vector`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "poly-tests" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "poly-gauge" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."poly" or (errorHandler.buildDepError "poly"))
             (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

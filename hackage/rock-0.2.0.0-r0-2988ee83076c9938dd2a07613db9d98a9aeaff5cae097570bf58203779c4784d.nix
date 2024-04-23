@@ -21,7 +21,7 @@
       synopsis = "A build system for incremental, parallel, and demand-driven computations";
       description = "See <https://www.github.com/ollef/rock> for more\ninformation and\n<https://github.com/ollef/rock/tree/master/examples> for\nexamples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rock-spreadsheet" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."rock" or (errorHandler.buildDepError "rock"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

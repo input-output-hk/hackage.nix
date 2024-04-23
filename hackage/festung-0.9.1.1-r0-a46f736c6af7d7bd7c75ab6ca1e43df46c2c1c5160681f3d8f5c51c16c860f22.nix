@@ -21,7 +21,7 @@
       synopsis = "Remote multi-db SQLCipher server";
       description = "festung is a server that provides an HTTP API to execute queries\nagainst encrypted SQLite databases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "festung" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."festung" or (errorHandler.buildDepError "festung"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

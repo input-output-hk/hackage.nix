@@ -21,11 +21,11 @@
       synopsis = "Data.FunctorM (compatibility package)";
       description = "This is the Data.FunctorM module from 6.6's base, deleted from HEAD still used\nby some projects (notably jhc); this package can be used for compatibility.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

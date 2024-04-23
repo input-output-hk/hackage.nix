@@ -21,7 +21,7 @@
       synopsis = "Utility functions for using the chart library with GTK";
       description = "Utility functions for using the chart library with GTK";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

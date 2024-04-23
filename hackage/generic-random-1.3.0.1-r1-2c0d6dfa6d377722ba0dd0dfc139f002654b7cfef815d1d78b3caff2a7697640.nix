@@ -21,15 +21,15 @@
       synopsis = "Generic random generators for QuickCheck";
       description = "Derive instances of @Arbitrary@ for QuickCheck,\nwith various options to customize implementations.\n\nFor more information\n\n- See the README\n\n- \"Generic.Random.Tutorial\"\n\n- http://blog.poisson.chat/posts/2018-01-05-generic-random-tour.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -37,20 +37,20 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inspect" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
-            ];
-          buildable = if !(compiler.isGhc && (compiler.version).ge "8.0.2")
+          ];
+          buildable = if !(compiler.isGhc && compiler.version.ge "8.0.2")
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

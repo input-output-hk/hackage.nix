@@ -21,7 +21,7 @@
       synopsis = "Flash debugger";
       description = "Flash debugger. You need debug flash player installed to use it.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hfd" = {
@@ -34,9 +34,9 @@
             (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

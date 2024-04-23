@@ -21,23 +21,23 @@
       synopsis = "Type-level integers. Like KnownNat, but for integers.";
       description = "Type-level integers. Like KnownNat, but for integers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."kind-integer" or (errorHandler.buildDepError "kind-integer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

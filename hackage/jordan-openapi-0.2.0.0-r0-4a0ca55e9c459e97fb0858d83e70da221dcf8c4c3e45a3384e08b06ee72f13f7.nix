@@ -21,7 +21,7 @@
       synopsis = "OpenAPI Definitions for Jordan, Automatically";
       description = "Automatic generation of documentation for Jordan-powered types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."insert-ordered-containers" or (errorHandler.buildDepError "insert-ordered-containers"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "jordan-openapi-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."jordan-openapi" or (errorHandler.buildDepError "jordan-openapi"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

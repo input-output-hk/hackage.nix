@@ -21,14 +21,14 @@
       synopsis = "Use other Monads in functions that asks for an IO Monad.";
       description = "This module provides utilities to use functions that are not in the IO Monad\nas a callback in functions that expects an IO Monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

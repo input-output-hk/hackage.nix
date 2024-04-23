@@ -21,11 +21,11 @@
       synopsis = "Error reporting functions";
       description = "A family of functions to report errors on the standard error output.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

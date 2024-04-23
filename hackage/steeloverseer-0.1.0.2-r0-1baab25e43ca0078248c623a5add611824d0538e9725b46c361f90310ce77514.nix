@@ -21,7 +21,7 @@
       synopsis = "A tool that runs a list of commands after files change on disk.";
       description = "A command line tool that responds to changes in certain files by running\nspecific commands. Similar to the codemonitor project but simpler and\n(hopefully) cross platform.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sos" = {
@@ -34,9 +34,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cookie management helper functions for Scotty framework";
       description = "Cookie management helper functions for Scotty framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

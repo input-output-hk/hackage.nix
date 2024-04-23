@@ -21,7 +21,7 @@
       synopsis = "A wrapper for the Bullet physics engine.";
       description = "A wrapper for the Bullet physics engine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -29,8 +29,8 @@
           (pkgs."BulletDynamics" or (errorHandler.sysDepError "BulletDynamics"))
           (pkgs."LinearMath" or (errorHandler.sysDepError "LinearMath"))
           (pkgs."BulletCollision" or (errorHandler.sysDepError "BulletCollision"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

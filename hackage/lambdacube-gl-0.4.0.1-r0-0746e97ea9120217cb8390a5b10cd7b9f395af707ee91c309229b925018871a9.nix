@@ -21,7 +21,7 @@
       synopsis = "OpenGL 3.3 Core Profile backend for LambdaCube 3D";
       description = "github: https://github.com/lambdacube3d/lambdacube-gl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
           (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

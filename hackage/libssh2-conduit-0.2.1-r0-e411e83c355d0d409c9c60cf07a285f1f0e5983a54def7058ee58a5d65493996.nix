@@ -21,7 +21,7 @@
       synopsis = "Conduit wrappers for libssh2 FFI bindings (see libssh2 package).";
       description = "This package provides Conduit interface (see conduit package) for\nlibssh2 FFI bindings (see libssh2 package). This allows one to\nreceive data from SSH channels lazily, without need to read\nall channel output to the memory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."libssh2" or (errorHandler.buildDepError "libssh2"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-ssh-client" = {
-          depends = (pkgs.lib).optionals (flags.example-client) [
+          depends = pkgs.lib.optionals (flags.example-client) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."libssh2" or (errorHandler.buildDepError "libssh2"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
@@ -47,9 +47,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.example-client then true else false;
-          };
         };
       };
-    }
+    };
+  }

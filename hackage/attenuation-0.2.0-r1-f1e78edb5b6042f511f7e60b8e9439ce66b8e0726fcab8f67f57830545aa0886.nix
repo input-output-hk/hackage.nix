@@ -21,14 +21,14 @@
       synopsis = "Subtyping relations and variance roles";
       description = "This lets you coerce containers (among other things) from stronger types to\nweaker types with zero runtime cost when it's safe to do so, e.g.\n@[Fin n] -> [Int]@.  This primarily comes into play when using newtypes to\nimpose additional invariants on existing types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

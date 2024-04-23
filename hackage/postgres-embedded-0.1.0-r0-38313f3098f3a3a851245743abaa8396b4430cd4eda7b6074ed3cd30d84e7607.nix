@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Library for easily running embedded PostgreSQL server for tests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."shell-conduit" or (errorHandler.buildDepError "shell-conduit"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgres-embedded-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postgres-embedded" or (errorHandler.buildDepError "postgres-embedded"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

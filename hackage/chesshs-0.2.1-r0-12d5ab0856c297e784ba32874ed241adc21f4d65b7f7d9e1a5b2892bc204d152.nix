@@ -21,7 +21,7 @@
       synopsis = "Simple library for validating chess moves and parsing PGN files";
       description = "With this library you can load chess boards from FEN and PGN notation and apply moves to the boards. Moves will only be allowed if they are valid under the normal chess rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ (pkgs.lib).optional (!flags.no-pgn) (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"));
+        ] ++ pkgs.lib.optional (!flags.no-pgn) (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

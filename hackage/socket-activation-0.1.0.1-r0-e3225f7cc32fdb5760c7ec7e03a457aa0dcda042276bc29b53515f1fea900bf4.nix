@@ -21,7 +21,7 @@
       synopsis = "systemd socket activation library";
       description = "a module for systemd socket activation.  See\n<http://0pointer.de/blog/projects/socket-activation.html> and\n<http://www.freedesktop.org/software/systemd/man/systemd.socket.html> for more\ndetails.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

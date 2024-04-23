@@ -21,7 +21,7 @@
       synopsis = "Automatically re-export modules.";
       description = "Autoexporter automatically re-exports modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "autoexporter" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."autoexporter" or (errorHandler.buildDepError "autoexporter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

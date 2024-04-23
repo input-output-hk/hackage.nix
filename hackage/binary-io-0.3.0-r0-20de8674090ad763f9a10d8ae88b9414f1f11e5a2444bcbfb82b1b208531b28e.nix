@@ -21,7 +21,7 @@
       synopsis = "Read and write values of types that implement Binary";
       description = "Read and write values of types that implement Binary\n\nSee module \"Data.Binary.IO\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."deque" or (errorHandler.buildDepError "deque"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "binary-io-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

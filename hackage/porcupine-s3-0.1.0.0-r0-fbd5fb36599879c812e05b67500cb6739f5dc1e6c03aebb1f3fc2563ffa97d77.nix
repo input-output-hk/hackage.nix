@@ -21,7 +21,7 @@
       synopsis = "A location accessor for porcupine to connect to AWS S3 sources/sinks";
       description = "Gives a porcupine task pipeline access to AWS S3 objects (read and write). See\nthe README at <https://github.com/tweag/porcupine#README.md> and the examples\nin the `porcupine-s3` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "exampleS3" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

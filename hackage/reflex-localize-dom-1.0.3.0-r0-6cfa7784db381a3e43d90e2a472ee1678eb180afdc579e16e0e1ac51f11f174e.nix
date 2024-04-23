@@ -21,7 +21,7 @@
       synopsis = "Helper widgets for reflex-localize";
       description = "Library provides helpers for dynamic strings that depends on current selected language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
           (hsPkgs."reflex-localize" or (errorHandler.buildDepError "reflex-localize"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reflex-localize-example" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."reflex-localize" or (errorHandler.buildDepError "reflex-localize"))
             (hsPkgs."reflex-localize-dom" or (errorHandler.buildDepError "reflex-localize-dom"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

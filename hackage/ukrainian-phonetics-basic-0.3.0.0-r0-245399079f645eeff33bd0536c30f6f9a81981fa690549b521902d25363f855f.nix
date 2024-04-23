@@ -21,7 +21,7 @@
       synopsis = "A library to work with the basic Ukrainian phonetics and syllable segmentation.";
       description = "A library to work with the basic Ukrainian phonetics and syllable segmentation. Rewritten from the mmsyn6ukr and mmsyn7s packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

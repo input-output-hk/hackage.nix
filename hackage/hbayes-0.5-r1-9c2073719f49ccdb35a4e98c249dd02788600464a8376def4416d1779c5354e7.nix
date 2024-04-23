@@ -21,7 +21,7 @@
       synopsis = "Bayesian Networks";
       description = "Algorithms for Bayesian Networks.\nIt is a very preliminary version. It has only been tested on very simple\nexamples where it worked. It should be considered as experimental and not used\nin any production work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."gamma" or (errorHandler.buildDepError "gamma"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

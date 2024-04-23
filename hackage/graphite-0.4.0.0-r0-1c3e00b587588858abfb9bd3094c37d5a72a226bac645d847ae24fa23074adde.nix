@@ -21,7 +21,7 @@
       synopsis = "Graphs and networks library";
       description = "Represent, analyze and visualize graphs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "graphite-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."graphite" or (errorHandler.buildDepError "graphite"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

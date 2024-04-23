@@ -21,14 +21,14 @@
       synopsis = "Read, set and list extended attributes";
       description = "Bindings to the Linux syscalls for reading and manipulating extended\nattributes (@setxattr@, @getxattr@, @listxattr@, ...).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

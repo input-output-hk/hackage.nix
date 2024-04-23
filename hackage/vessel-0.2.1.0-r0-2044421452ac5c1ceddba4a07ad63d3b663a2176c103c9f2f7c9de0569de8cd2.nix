@@ -21,7 +21,7 @@
       synopsis = "Functor-parametric containers";
       description = "A dependently-typed key-value data structure that allows for storage of both \"queries\", (wherein keys are stored along with reasons for selecting the items or counts of the number of times something has been selected), as well as the responses to those queries, in which the type of the key additionally determines the type of the response";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "vessel-tutorial" = {
           depends = [
@@ -70,12 +70,12 @@
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."vessel" or (errorHandler.buildDepError "vessel"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

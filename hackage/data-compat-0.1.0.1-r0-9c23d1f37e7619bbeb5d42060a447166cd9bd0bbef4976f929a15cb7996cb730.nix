@@ -21,14 +21,14 @@
       synopsis = "Define Backwards Compatibility Schemes for Arbitrary Data";
       description = "Define Backwards Compatibility Schemes for Arbitrary Data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

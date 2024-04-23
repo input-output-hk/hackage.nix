@@ -21,25 +21,25 @@
       synopsis = "Matrix programming library";
       description = "Matrix programming library that uses a type-safe inductive definition\ninspired by the Linear Algebra of Programming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "laop-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."laop" or (errorHandler.buildDepError "laop"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "laop-benchmark" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."laop" or (errorHandler.buildDepError "laop"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

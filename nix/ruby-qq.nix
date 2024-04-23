@@ -6,8 +6,8 @@
         nix = import ../hackage/ruby-qq-0.1.0.0-r0-177979f273e0901d446f0a532a0289b13410d38eb87828dd98522c640e787b04.nix;
         revNum = 0;
         sha256 = "177979f273e0901d446f0a532a0289b13410d38eb87828dd98522c640e787b04";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

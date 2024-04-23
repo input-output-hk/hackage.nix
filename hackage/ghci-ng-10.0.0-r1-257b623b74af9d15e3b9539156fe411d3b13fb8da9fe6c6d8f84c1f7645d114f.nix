@@ -21,11 +21,11 @@
       synopsis = "Next generation GHCi";
       description = "GHCi plus extra goodies. See README for feature list: <<https://github.com/chrisdone/ghci-ng#features>>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghci-ng" = {
-          depends = ((pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.8") [
+          depends = (pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.8") [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -39,11 +39,11 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]) ++ (if system.isWindows
+          ]) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

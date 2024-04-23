@@ -21,7 +21,7 @@
       synopsis = "Factoring integers";
       description = "Factoring positive integers using the Williams p+1 factorization\nmethod.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "factor" = {
@@ -30,9 +30,9 @@
             (hsPkgs."arithmetic" or (errorHandler.buildDepError "arithmetic"))
             (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

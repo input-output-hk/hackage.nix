@@ -21,7 +21,7 @@
       synopsis = "Base library for bioinformatics";
       description = "Base library for bioinformatics providing the following features:\n\n* RNA primary and secondary structure\n\n* Infernal covariance models\n\n* Turner and Vienna energy files\n\n\n\nRNA sequences and energy files:\n\n* efficient format for RNA sequences, based on the vector package\n\n* import from strings, bytestrings, fasta files (using the bio library)\n\n* secondary structure manipulation functions, im- and export of Vienna-dotbracket notation\n\n* import Turner energy files\n\n* cf. http://rna.urmc.rochester.edu/NNDB/index.html\n\n* im- and export of Vienna 2.0 energy files\n\n\n\nCovariance models:\n\n* import covariance models\n\n* basic manipulation of covariance models\n\n* Stockholm file format manipulation\n\n\n\nUtility classes:\n\n* algebraic ring class\n\n* instances for Gibbs free energy, partition function probabilities, and scores\n\n* conversion between different entities\n\n* ready for the vector library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."HsTools" or (errorHandler.buildDepError "HsTools"))
           (hsPkgs."ParsecTools" or (errorHandler.buildDepError "ParsecTools"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

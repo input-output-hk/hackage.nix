@@ -21,13 +21,13 @@
       synopsis = "remote execution and map-reduce: distributed computing for transient";
       description = "see <http://github.com/agocorona/transient>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (if compiler.isGhcjs && (compiler.version).ge "0.1"
+        ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -40,7 +40,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -65,9 +65,9 @@
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test-transient" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

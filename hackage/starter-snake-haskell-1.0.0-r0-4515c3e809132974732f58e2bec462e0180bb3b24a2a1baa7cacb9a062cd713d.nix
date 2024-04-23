@@ -21,7 +21,7 @@
       synopsis = "A Haskell Battlesnake starter";
       description = "See README at <https://github.com/ccntrq/starter-snake-haskell>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "starter-snake-haskell-exe" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."starter-snake-haskell" or (errorHandler.buildDepError "starter-snake-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "starter-snake-haskell" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."starter-snake-haskell" or (errorHandler.buildDepError "starter-snake-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "SQLite backend for the Selda database EDSL.";
       description = "SQLite backend for the Selda database EDSL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."selda" or (errorHandler.buildDepError "selda"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (!flags.haste) (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"));
+        ] ++ pkgs.lib.optional (!flags.haste) (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

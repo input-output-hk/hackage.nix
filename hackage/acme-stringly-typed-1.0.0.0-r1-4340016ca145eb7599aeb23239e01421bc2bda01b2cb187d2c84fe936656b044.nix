@@ -21,11 +21,11 @@
       synopsis = "Stringly Typed Programming";
       description = "All the benefits of stringly typed programming at all of the costs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

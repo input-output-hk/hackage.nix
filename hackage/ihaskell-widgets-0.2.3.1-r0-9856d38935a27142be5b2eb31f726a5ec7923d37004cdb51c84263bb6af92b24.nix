@@ -21,7 +21,7 @@
       synopsis = "IPython standard widgets for IHaskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -36,14 +36,14 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."ihaskell" or (errorHandler.buildDepError "ihaskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.2") (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).eq "7.10.1") [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.2") (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.eq "7.10.1") [
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.10.1") [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.10.1") [
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

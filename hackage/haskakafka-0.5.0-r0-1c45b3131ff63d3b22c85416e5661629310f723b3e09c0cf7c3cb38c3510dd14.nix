@@ -21,7 +21,7 @@
       synopsis = "Kafka bindings for Haskell";
       description = "Use Apache Kafka in Haskell through the librdkafka\nC library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,13 +30,13 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         libs = [ (pkgs."rdkafka" or (errorHandler.sysDepError "rdkafka")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

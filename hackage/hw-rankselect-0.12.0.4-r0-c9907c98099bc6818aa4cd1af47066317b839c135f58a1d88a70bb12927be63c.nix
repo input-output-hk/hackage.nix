@@ -21,7 +21,7 @@
       synopsis = "Rank-select";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."hw-balancedparens" or (errorHandler.buildDepError "hw-balancedparens"))
           (hsPkgs."hw-bits" or (errorHandler.buildDepError "hw-bits"))
           (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-rankselect" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-rankselect-test" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."hw-rankselect" or (errorHandler.buildDepError "hw-rankselect"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

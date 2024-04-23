@@ -21,7 +21,7 @@
       synopsis = "Process monitoring tool written and configured in Haskell";
       description = "Sentry is a process monitoring tool written and configured in Haskell. Its\naim is to keep running programs. For each configured program, multiple\nprocesses can be started. Currently Sentry runs on Linux only.\n\nUnder normal circumstance, the \"Sentry\" module is enough to write\nconfiguration files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sentry" = {
           depends = [
@@ -49,13 +49,13 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."sentry" or (errorHandler.buildDepError "sentry"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sentry-sleep" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

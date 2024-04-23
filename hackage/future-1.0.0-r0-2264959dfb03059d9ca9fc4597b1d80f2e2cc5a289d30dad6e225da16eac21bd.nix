@@ -21,11 +21,11 @@
       synopsis = "Supposed to mimics and enhance proposed C++ \"future\" features";
       description = "Similar to \"futures\" in C++ (with support for cotinuations). This differs from IVars in that the value is from an action in a spawned thread, and exceptions are caught and returned.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

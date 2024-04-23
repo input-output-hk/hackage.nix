@@ -21,7 +21,7 @@
       synopsis = "Instance derivers for newtype wrappers";
       description = "Template Haskell based derivers for typical newtype instances,\nwhich the @GeneralizedNewtypeDeriving@ extension refuses to handle.\n\nAmongst others provides support for the \\\"monad-control\\\" classes:\n\n* \"Control.Monad.Trans.Control.MonadTransControl\"\n\n* \"Control.Monad.Trans.Control.MonadBaseControl\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

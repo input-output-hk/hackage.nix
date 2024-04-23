@@ -21,7 +21,7 @@
       synopsis = "A newtype for wrapping newtypes into beam schemas";
       description = "Please see the README on GitHub at <https://github.com/jappeace/dbfield#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."beam-migrate" or (errorHandler.buildDepError "beam-migrate"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

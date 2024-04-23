@@ -6,8 +6,8 @@
         nix = import ../hackage/smerdyakov-0.0.0.0-r0-52e702fbe6f983016b1239d8b894f77cc6ce6484135da36a3eaaa44b0e51525e.nix;
         revNum = 0;
         sha256 = "52e702fbe6f983016b1239d8b894f77cc6ce6484135da36a3eaaa44b0e51525e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

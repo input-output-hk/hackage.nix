@@ -21,7 +21,7 @@
       synopsis = "representations of a web page";
       description = "An applicative-based, shared-data representation of a web page. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,18 +45,18 @@
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "web-rep-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

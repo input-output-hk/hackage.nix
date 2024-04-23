@@ -21,7 +21,7 @@
       synopsis = "A collection of Nemesis tasks to bootstrap a Haskell project with a focus on continuous integration";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

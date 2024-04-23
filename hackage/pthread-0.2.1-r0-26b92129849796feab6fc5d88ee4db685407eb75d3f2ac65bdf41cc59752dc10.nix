@@ -21,16 +21,16 @@
       synopsis = "Bindings for the pthread library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
-          ];
+        ];
         libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."pthread" or (errorHandler.buildDepError "pthread"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

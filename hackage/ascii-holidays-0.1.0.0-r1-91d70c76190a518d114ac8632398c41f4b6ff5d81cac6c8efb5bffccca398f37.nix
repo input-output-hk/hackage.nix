@@ -21,7 +21,7 @@
       synopsis = "ASCII animations for the holidays!";
       description = "ASCII animations for various holidays. Currently two animations, both for\nChristmas, both reimplementations of animations in other languages:\n- Bash tree: https://github.com/sergiolepore/ChristBASHTree\n- Perl tree: https://github.com/rcaputo/acme-poe-tree";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ascii-holidays" = {
@@ -31,9 +31,9 @@
             (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

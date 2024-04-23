@@ -21,7 +21,7 @@
       synopsis = "IDL compiler and RPC/distributed object framework for microservices";
       description = "Nirum is an IDL compiler and RPC/distributed object framework for microservices, built on top of the modern Web server technologies such as RESTful HTTP and JSON.\nYou can find how the language looks like from source codes in the examples/ directory.\nSee also README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri" or (errorHandler.buildDepError "uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nirum" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."semver" or (errorHandler.buildDepError "semver"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hlint" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."semver" or (errorHandler.buildDepError "semver"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,9 +126,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "targets" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -148,9 +148,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

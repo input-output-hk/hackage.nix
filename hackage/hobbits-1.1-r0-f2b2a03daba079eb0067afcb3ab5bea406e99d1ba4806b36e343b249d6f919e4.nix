@@ -21,7 +21,7 @@
       synopsis = "A library for canonically representing terms with binding";
       description = "A library for canonically representing terms with binding via a\nconstructor for introducing fresh names and a restricted API that avoids the\nneed for alpha-equivalence.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

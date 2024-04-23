@@ -21,7 +21,7 @@
       synopsis = "Multi-platform parser analyzer and generator.";
       description = "Multi-platform parser analyzer and generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."ascetic" or (errorHandler.buildDepError "ascetic"))
           (hsPkgs."uxadt" or (errorHandler.buildDepError "uxadt"))
           (hsPkgs."richreports" or (errorHandler.buildDepError "richreports"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imparse" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."ascetic" or (errorHandler.buildDepError "ascetic"))
             (hsPkgs."uxadt" or (errorHandler.buildDepError "uxadt"))
             (hsPkgs."richreports" or (errorHandler.buildDepError "richreports"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

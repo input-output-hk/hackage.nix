@@ -21,7 +21,7 @@
       synopsis = "media plugin for clckwrks";
       description = "support for images and image gallerys.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

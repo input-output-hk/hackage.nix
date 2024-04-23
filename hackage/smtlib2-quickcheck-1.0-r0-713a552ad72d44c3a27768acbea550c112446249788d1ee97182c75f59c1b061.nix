@@ -21,7 +21,7 @@
       synopsis = "Helper functions to create SMTLib expressions in QuickCheck";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
           (hsPkgs."smtlib2" or (errorHandler.buildDepError "smtlib2"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

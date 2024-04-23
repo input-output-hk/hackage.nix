@@ -6,8 +6,8 @@
         nix = import ../hackage/ligature-0.1.0.0-r0-7e6af7ce067a1c71c4f390f15593d22c1d2cc70bef73704997e5cf7b5a0d8bce.nix;
         revNum = 0;
         sha256 = "7e6af7ce067a1c71c4f390f15593d22c1d2cc70bef73704997e5cf7b5a0d8bce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

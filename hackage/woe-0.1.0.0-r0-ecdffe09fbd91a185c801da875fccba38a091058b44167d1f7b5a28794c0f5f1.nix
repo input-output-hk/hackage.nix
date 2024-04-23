@@ -21,11 +21,11 @@
       synopsis = "Convenient typeclass for defining arbitrary-index enums.";
       description = "Convenient typeclass for defining arbitrary-index enums, which allow for safe derivation of Enum using DerivingVia.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

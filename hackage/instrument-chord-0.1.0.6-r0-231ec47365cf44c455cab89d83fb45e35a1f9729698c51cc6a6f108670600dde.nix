@@ -21,7 +21,7 @@
       synopsis = "Render Instrument Chords";
       description = "Library to generate descriptions of musical instrument manipluations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."music-diatonic" or (errorHandler.buildDepError "music-diatonic"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Integration with the Fourmolu code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -37,19 +37,19 @@
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "9.0" && (compiler.isGhc && (compiler.version).lt "9.2")
+        ] ++ (if compiler.isGhc && compiler.version.ge "9.0" && (compiler.isGhc && compiler.version.lt "9.2")
           then [
             (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu"))
-            ]
-          else (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.2" && (compiler.isGhc && (compiler.version).lt "9.8")) (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu")))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.2" && system.isWindows && (compiler.isGhc && (compiler.version).lt "9.4")) (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu"));
-        buildable = (if compiler.isGhc && (compiler.version).ge "9.8"
+          ]
+          else pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.2" && (compiler.isGhc && compiler.version.lt "9.8")) (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu")))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.2" && system.isWindows && (compiler.isGhc && compiler.version.lt "9.4")) (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu"));
+        buildable = (if compiler.isGhc && compiler.version.ge "9.8"
           then false
-          else true) && (if compiler.isGhc && (compiler.version).ge "9.0" && (compiler.isGhc && (compiler.version).lt "9.2")
+          else true) && (if compiler.isGhc && compiler.version.ge "9.0" && (compiler.isGhc && compiler.version.lt "9.2")
           then true
-          else if compiler.isGhc && (compiler.version).ge "9.2" && (compiler.isGhc && (compiler.version).lt "9.8")
+          else if compiler.isGhc && compiler.version.ge "9.2" && (compiler.isGhc && compiler.version.lt "9.8")
             then true
             else false);
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -61,14 +61,14 @@
             (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.fourmolu.components.exes.fourmolu or (pkgs.buildPackages.fourmolu or (errorHandler.buildToolDepError "fourmolu:fourmolu")))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.8"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

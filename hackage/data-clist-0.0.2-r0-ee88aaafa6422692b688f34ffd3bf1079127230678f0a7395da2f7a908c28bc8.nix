@@ -21,14 +21,14 @@
       synopsis = "Simple functional ring type.";
       description = "Simple functional bidirectional ring type.\nGiven that the ring terminiology\nclashes with certain mathematical branches, we're using the term\nCList or CircularList instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

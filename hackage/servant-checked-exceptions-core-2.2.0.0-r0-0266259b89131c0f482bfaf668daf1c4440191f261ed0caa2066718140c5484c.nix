@@ -14,7 +14,7 @@
       identifier = {
         name = "servant-checked-exceptions-core";
         version = "2.2.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2017-2018 Dennis Gosnell";
       maintainer = "cdep.illabout@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Checked exceptions for Servant APIs.";
       description = "Please see <https://github.com/cdepillabout/servant-checked-exceptions#readme README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."world-peace" or (errorHandler.buildDepError "world-peace"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-checked-exceptions-core-example-docs" = {
           depends = [
@@ -56,19 +56,19 @@
             (hsPkgs."servant-checked-exceptions-core" or (errorHandler.buildDepError "servant-checked-exceptions-core"))
             (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.buildexample then true else false;
-          };
         };
+      };
       tests = {
         "servant-checked-exceptions-core-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

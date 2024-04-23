@@ -6,8 +6,8 @@
         nix = import ../hackage/HasChor-0.1.0.1-r0-b15f5cbe3736fd01dc5ffbaf6cd9ae539f922a19dcc28b4b11be9070afa80e17.nix;
         revNum = 0;
         sha256 = "b15f5cbe3736fd01dc5ffbaf6cd9ae539f922a19dcc28b4b11be9070afa80e17";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

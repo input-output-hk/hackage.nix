@@ -21,7 +21,7 @@
       synopsis = "Adds a interface like mysql-simple to mysql-haskell.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

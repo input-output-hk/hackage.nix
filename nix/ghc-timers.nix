@@ -6,8 +6,8 @@
         nix = import ../hackage/ghc-timers-0.1.0.0-r0-94b7e1d92432e89cb264b909b8154cbf6c02cf2a4ac88f37bcbae966f73e421f.nix;
         revNum = 0;
         sha256 = "94b7e1d92432e89cb264b909b8154cbf6c02cf2a4ac88f37bcbae966f73e421f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

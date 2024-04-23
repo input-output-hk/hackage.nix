@@ -6,8 +6,8 @@
         nix = import ../hackage/sentry-0.1.0-r0-f227cce5fe334daee9f5c2cf5b8406a5e969cb64fc94ba9cecf2b73770c353cf.nix;
         revNum = 0;
         sha256 = "f227cce5fe334daee9f5c2cf5b8406a5e969cb64fc94ba9cecf2b73770c353cf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

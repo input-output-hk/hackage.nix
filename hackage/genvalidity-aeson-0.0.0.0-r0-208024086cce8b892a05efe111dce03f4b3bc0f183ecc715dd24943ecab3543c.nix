@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for aeson";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."genvalidity-unordered-containers" or (errorHandler.buildDepError "genvalidity-unordered-containers"))
           (hsPkgs."genvalidity-scientific" or (errorHandler.buildDepError "genvalidity-scientific"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-aeson-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."genvalidity-aeson" or (errorHandler.buildDepError "genvalidity-aeson"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Decompiles Glulx files";
       description = "Update of the mrifk decompiler to modern Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mrifk" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

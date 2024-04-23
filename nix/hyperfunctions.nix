@@ -6,8 +6,8 @@
         nix = import ../hackage/hyperfunctions-0-r0-f817c2dbd998a254165087ded754404b5c957168c2428be38617e55dff18cf43.nix;
         revNum = 0;
         sha256 = "f817c2dbd998a254165087ded754404b5c957168c2428be38617e55dff18cf43";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

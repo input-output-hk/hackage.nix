@@ -21,7 +21,7 @@
       synopsis = "Sedna C API XML Binding";
       description = "Sedna native XML database bindings.\nhttp://www.sedna.org/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [ (pkgs."sedna" or (errorHandler.sysDepError "sedna")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

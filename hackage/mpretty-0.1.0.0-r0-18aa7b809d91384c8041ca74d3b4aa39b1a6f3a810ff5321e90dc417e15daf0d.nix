@@ -21,7 +21,7 @@
       synopsis = "a monadic, extensible pretty printing library";
       description = "based on wadler-leijen printing.  supports ansi colors,\nconfigurable list printing styles, and extension of the printing monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."orders" or (errorHandler.buildDepError "orders"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

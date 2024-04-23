@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/lens-csv#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lens-csv-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lens-csv" or (errorHandler.buildDepError "lens-csv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

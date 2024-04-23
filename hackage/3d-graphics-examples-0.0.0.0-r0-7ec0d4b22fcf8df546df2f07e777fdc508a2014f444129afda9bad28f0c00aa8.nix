@@ -21,7 +21,7 @@
       synopsis = "Examples of 3D graphics programming with OpenGL";
       description = "This package demonstrates how to program simple interactive 3D\ngraphics with OpenGL. It contains two programs, which are both\nabout fractals:\n\n[L-systems] generates graphics from Lindenmayer systems\n(L-systems). It defines a language for L-systems as an embedded\nDSL.\n\n[Mountains] uses the generalized Brownian motion to generate\ngraphics that resemble mountain landscapes.\n\nThe original versions of these programs were written by Matthias\nReisner as part of a student project at the Brandenburg\nUniversity of Technology at Cottbus, Germany. Wolfgang Jeltsch,\nwho supervised this student project, is now maintaining these\nprograms.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "l-systems" = {
@@ -29,18 +29,18 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mountains" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

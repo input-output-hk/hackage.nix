@@ -21,7 +21,7 @@
       synopsis = "Measure your code's complexity";
       description = "Argon performs static analysis on your code in order to compute cyclomatic\ncomplexity. It is a quantitative measure of the number of linearly\nindipendent paths through the code.\n\nThe intended usage is through Argon's executable, which accepts a list of\nfiles or directories to analyze. The data can be optionally exported to\nJSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,11 +42,11 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "7.8"
           then false
           else true;
-        };
+      };
       exes = {
         "argon" = {
           depends = [
@@ -55,12 +55,12 @@
             (hsPkgs."docopt" or (errorHandler.buildDepError "docopt"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.8"
             then false
             else true;
-          };
         };
+      };
       tests = {
         "argon-test" = {
           depends = [
@@ -74,18 +74,18 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.8"
             then false
             else true;
-          };
+        };
         "style" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

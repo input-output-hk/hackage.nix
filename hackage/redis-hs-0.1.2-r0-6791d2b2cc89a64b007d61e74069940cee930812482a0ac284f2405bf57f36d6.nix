@@ -21,7 +21,7 @@
       synopsis = "A simple Redis library for Haskell";
       description = "This package provides access to  Redis stores using Data.ByteString.UTF8 for\nconsistent handling of UTF8 encoding. The function set is almost complete.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

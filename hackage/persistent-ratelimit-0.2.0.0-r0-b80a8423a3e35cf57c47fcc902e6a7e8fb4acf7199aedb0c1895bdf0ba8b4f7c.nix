@@ -21,15 +21,15 @@
       synopsis = "A library for rate limiting activities with a persistent backend. ";
       description = "This packages provides a library for rate limiting activities with a persistent backend. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

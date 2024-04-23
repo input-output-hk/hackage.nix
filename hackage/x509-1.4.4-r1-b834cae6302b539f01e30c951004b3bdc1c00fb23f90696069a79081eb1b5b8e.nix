@@ -21,7 +21,7 @@
       synopsis = "X509 reader and writer";
       description = "X509 reader and writer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-x509" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

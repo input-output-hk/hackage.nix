@@ -21,7 +21,7 @@
       synopsis = "Cuts out uninteresting parts of videos by detecting silences.";
       description = "Cut the crap is an automatic video editing program for streamers. It can cut out uninteresting parts by detecting silences. This was inspired by [jumpcutter](https://github.com/carykh/jumpcutter), where this program can get better quality results by using an (optional) dedicated microphone track. This prevents cutting of [quieter consonants](https://youtu.be/DQ8orIurGxw?t=675) for example. Using ffmpeg more efficiently also produces faster results and is less error prone.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,16 +39,16 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."pocketsphinx" or (errorHandler.pkgConfDepError "pocketsphinx"))
           (pkgconfPkgs."sphinxbase" or (errorHandler.pkgConfDepError "sphinxbase"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cut-the-crap" = {
           depends = [
@@ -67,17 +67,17 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."pocketsphinx" or (errorHandler.pkgConfDepError "pocketsphinx"))
             (pkgconfPkgs."sphinxbase" or (errorHandler.pkgConfDepError "sphinxbase"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -99,16 +99,16 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."pocketsphinx" or (errorHandler.pkgConfDepError "pocketsphinx"))
             (pkgconfPkgs."sphinxbase" or (errorHandler.pkgConfDepError "sphinxbase"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

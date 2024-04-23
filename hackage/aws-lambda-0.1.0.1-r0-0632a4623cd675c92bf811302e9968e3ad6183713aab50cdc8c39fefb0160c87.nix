@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for AWS Lambda";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

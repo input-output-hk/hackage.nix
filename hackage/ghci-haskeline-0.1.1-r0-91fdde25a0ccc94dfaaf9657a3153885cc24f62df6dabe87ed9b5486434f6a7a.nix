@@ -21,7 +21,7 @@
       synopsis = "An implementation of ghci using the Haskeline line-input library.";
       description = "This package reimplements ghci using the GHC API and the Haskeline\npackage for line input in command-line programs.\n\nThis is an unofficial package; thus any bugs may be the fault of\nthe maintainer rather than of the GHC team.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghci-haskeline" = {
@@ -35,13 +35,13 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ];
+            ])) ++ [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

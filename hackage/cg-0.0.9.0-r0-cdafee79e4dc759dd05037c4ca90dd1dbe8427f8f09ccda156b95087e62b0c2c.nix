@@ -21,7 +21,7 @@
       synopsis = "Parser for categorial grammars.";
       description = "Parser for categorial grammars.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "CG" = {
@@ -43,9 +43,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

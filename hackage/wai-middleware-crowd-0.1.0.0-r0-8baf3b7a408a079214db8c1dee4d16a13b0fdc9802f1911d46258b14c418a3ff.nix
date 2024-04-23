@@ -21,7 +21,7 @@
       synopsis = "Middleware and utilities for using Atlassian Crowd authentication";
       description = "See README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-crowd" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."wai-middleware-crowd" or (errorHandler.buildDepError "wai-middleware-crowd"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

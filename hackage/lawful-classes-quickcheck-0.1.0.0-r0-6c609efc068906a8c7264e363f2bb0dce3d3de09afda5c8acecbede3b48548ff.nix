@@ -21,7 +21,7 @@
       synopsis = "QuickCheck support for lawful-classes";
       description = "Support code to check @lawful-classes@ laws using QuickCheck and,\noptionally, Tasty.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

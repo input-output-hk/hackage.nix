@@ -21,7 +21,7 @@
       synopsis = "Brotli (RFC7932) compressors and decompressors for the Pipes package";
       description = "<http://brotli.org Brotli> (<https://tools.ietf.org/html/rfc7932 RFC7932>) is a generic-purpose lossless compression algorithm suitable for <https://en.wikipedia.org/wiki/HTTP_compression HTTP compression> that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling.\n\nThis package provides a @pipes@ interface to the <http://brotli.org Brotli compression algorithm>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pipes-brotli-tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."pipes-brotli" or (errorHandler.buildDepError "pipes-brotli"))
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

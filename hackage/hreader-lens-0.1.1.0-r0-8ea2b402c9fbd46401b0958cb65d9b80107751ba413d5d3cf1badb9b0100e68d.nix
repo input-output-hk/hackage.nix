@@ -21,7 +21,7 @@
       synopsis = "Optics for hreader package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hset" or (errorHandler.buildDepError "hset"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

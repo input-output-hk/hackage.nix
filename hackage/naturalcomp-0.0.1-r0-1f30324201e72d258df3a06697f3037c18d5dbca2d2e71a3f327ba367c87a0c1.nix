@@ -21,15 +21,15 @@
       synopsis = "Natural-order string comparison";
       description = "Natural order string comparison is needed when e.g. one wants\nto compare file names or strings of software version.  It's\naimed to be compatible to glibc's strverscmp() function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (flags.filepath) (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"));
+        ] ++ pkgs.lib.optional (flags.filepath) (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

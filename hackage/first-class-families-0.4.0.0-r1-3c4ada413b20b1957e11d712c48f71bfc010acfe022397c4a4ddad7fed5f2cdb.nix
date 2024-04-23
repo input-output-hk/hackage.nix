@@ -21,20 +21,20 @@
       synopsis = "First class type families";
       description = "First class type families,\neval-style defunctionalization\n\nSee \"Fcf\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "fcf-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

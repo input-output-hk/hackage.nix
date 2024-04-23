@@ -21,7 +21,7 @@
       synopsis = "Strict containers - Serialise instances";
       description = "This package provides @serialise@ utilities and instances for @strict-containers@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."strict-containers" or (errorHandler.buildDepError "strict-containers"))
           (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

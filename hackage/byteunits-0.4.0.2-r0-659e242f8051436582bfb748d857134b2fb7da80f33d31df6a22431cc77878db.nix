@@ -21,15 +21,15 @@
       synopsis = "Human friendly conversion between byte units (KB, MB, GB...)";
       description = "Human friendly conversion between byte units (KB, MB, GB...)...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testing-example" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."byteunits" or (errorHandler.buildDepError "byteunits"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

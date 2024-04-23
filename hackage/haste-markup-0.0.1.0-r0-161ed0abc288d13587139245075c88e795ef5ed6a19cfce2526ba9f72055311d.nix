@@ -21,7 +21,7 @@
       synopsis = "A port of blaze-markup and blaze-html to Haste";
       description = "A port of blaze-markup and blaze-html to Haste.\nIn particular, this removes the bytestring and text dependencies, and replaces Text with JSString.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."haste-lib" or (errorHandler.buildDepError "haste-lib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

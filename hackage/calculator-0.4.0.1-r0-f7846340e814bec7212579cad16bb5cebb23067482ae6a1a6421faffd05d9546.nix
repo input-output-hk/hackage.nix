@@ -21,7 +21,7 @@
       synopsis = "A calculator repl, with variables, functions & Mathematica like dynamic plots.";
       description = "A calculator repl that processes mathematical expressions.\nDoes basic arithmetic, and provides pre-defined basic mathematical functions.\n\nProvides binding functionality for variables and functions.\n\nOptionally provides plotting support (configure using cabal).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "calculator" = {
@@ -34,10 +34,10 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "model-test-arithmetic" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

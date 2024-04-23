@@ -21,7 +21,7 @@
       synopsis = "Create Flow type definitions from Haskell data types.";
       description = "Create Flow type definitions from Haskell data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-flowtyped" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."aeson-flowtyped" or (errorHandler.buildDepError "aeson-flowtyped"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

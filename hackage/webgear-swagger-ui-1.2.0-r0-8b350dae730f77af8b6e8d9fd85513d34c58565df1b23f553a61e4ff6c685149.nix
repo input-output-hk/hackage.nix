@@ -21,7 +21,7 @@
       synopsis = "Host swagger UI based on WebGear API specifications.";
       description = "WebGear is a library to for building composable, type-safe HTTP API servers.\nThis package can be used to serve swagger UI based on WebGear API\nspecifications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."webgear-core" or (errorHandler.buildDepError "webgear-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

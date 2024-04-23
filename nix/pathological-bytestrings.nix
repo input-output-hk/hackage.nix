@@ -6,8 +6,8 @@
         nix = import ../hackage/pathological-bytestrings-0.1.0.0-r0-0649a14d6e87091cc0f9e7430881e970e53008be262f878311b25d410ebf974b.nix;
         revNum = 0;
         sha256 = "0649a14d6e87091cc0f9e7430881e970e53008be262f878311b25d410ebf974b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "property-based host configuration management in haskell";
       description = "Propellor enures that the system it's run in satisfies a list of\nproperties, taking action as necessary when a property is not yet met.\n\nWhile Propellor can be installed from hackage, to customize and use it\nyou should fork its git repository and modify it from there:\ngit clone git://git.kitenet.net/propellor";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "propellor" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

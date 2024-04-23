@@ -21,7 +21,7 @@
       synopsis = "Application for managing playlist files on a music player";
       description = "Application for managing playlist files on a music player";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hplaylist" = {
@@ -30,9 +30,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

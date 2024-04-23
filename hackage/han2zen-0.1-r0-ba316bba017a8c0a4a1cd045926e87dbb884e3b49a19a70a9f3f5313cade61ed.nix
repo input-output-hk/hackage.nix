@@ -21,24 +21,24 @@
       synopsis = "Convert Halfwidth Katakana to Fullwidth Katakana.";
       description = "This package provides functions to convert Halfwidth Katakana to Fullwidth Katakana.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "han2zen-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."han2zen" or (errorHandler.buildDepError "han2zen"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

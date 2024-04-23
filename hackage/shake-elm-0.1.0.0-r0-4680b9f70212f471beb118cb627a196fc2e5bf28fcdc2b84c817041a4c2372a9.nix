@@ -21,14 +21,14 @@
       synopsis = "Elm builds in shake";
       description = "Helper functions for Elm builds that use [shake](http://hackage.haskell.org/package/shake).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

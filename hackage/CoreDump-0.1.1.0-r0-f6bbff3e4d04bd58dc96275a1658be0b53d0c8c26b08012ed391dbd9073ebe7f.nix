@@ -21,7 +21,7 @@
       synopsis = "A GHC plugin for printing GHC's internal Core data structures.";
       description = "See README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

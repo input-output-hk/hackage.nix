@@ -21,7 +21,7 @@
       synopsis = "types and functions for bitcoin applications";
       description = "EasyBitcoin is a simple library providing types and class-instances for bitcoin related code;\nit also include an small set of functions to handle addresses, transactions and escrows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

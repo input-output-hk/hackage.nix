@@ -6,8 +6,8 @@
         nix = import ../hackage/eio-0.0.0.0-r0-04454c16618063f3aa1289e2b7d6ba70047d4181bb6bb6d6e7af294fb6b0304e.nix;
         revNum = 0;
         sha256 = "04454c16618063f3aa1289e2b7d6ba70047d4181bb6bb6d6e7af294fb6b0304e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

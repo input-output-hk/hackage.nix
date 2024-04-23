@@ -21,7 +21,7 @@
       synopsis = "AWS Easy: Helper functions for working with amazonka";
       description = "This package provides assorted functions and some Template Haskell to simplify working the amazonka family of packages for interacting with Amazon Web Services.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aws-easy-app" = {
           depends = [
             (hsPkgs."aws-easy" or (errorHandler.buildDepError "aws-easy"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

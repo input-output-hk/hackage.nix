@@ -21,14 +21,14 @@
       synopsis = "data types to describe HTTP services";
       description = "A few datatypes useful for describing what ports an HTTP service listens on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

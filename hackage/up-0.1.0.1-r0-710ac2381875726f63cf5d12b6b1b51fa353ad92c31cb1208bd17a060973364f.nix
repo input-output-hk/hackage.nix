@@ -21,7 +21,7 @@
       synopsis = "Generates pathnames to up directories";
       description = "A command line tool to generate pathnames to facilitate moving upward in a file system.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "up" = {
@@ -33,9 +33,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

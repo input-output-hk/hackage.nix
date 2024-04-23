@@ -6,8 +6,8 @@
         nix = import ../hackage/parsnip-0-r0-78c588893fe7e09864c6b38c243c32bb2e7bbf1604172713011d62fff9dd019a.nix;
         revNum = 0;
         sha256 = "78c588893fe7e09864c6b38c243c32bb2e7bbf1604172713011d62fff9dd019a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

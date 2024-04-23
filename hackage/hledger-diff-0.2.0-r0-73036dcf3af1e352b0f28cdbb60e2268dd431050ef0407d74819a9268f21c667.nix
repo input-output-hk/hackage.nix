@@ -21,7 +21,7 @@
       synopsis = "Compares the transactions in two ledger files.";
       description = "hledger-diff is a command-line utility to compare two journal files.  It\nlooks at the transactions of a single account and prints out the transactions\nwhich are in one journal file but not in the other.  This is useful for\nreconciling existing journals with bank statements.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-diff" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hledger-lib" or (errorHandler.buildDepError "hledger-lib"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

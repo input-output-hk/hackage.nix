@@ -21,7 +21,7 @@
       synopsis = "FPGA Cores Written in Kansas Lava.";
       description = "Kansas Lava Cores is a collection of libraries, written in Kansas Lava,\nthat describe specific hardware components, as well as a Spartan3e\nboard monad and simulator, and testing framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "spartan3e-demo" = {
           depends = if flags.spartan3e || flags.all
@@ -52,10 +52,10 @@
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
               (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.spartan3e || flags.all then true else false;
-          };
+        };
         "kansas-lava-cores-tests" = {
           depends = if flags.unit || flags.all
             then [
@@ -69,10 +69,10 @@
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.unit || flags.all then true else false;
-          };
         };
       };
-    }
+    };
+  }

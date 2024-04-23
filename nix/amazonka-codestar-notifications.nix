@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-codestar-notifications-2.0-r0-4a59245ee9ae67f326b8d66bb906c920910a40fd1c183a193e137b4d6ca80f7d.nix;
         revNum = 0;
         sha256 = "4a59245ee9ae67f326b8d66bb906c920910a40fd1c183a193e137b4d6ca80f7d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

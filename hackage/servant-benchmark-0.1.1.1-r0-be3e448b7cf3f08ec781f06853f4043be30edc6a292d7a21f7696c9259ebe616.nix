@@ -21,7 +21,7 @@
       synopsis = "Generate benchmark files from a Servant API";
       description = "Please see the README on GitHub at <https://github.com/3kyro/servant-benchmark#README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-benchmark-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."servant-benchmark" or (errorHandler.buildDepError "servant-benchmark"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

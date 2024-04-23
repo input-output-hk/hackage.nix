@@ -21,7 +21,7 @@
       synopsis = "Working with the PoliMorf dictionary";
       description = "The library provides functionality for manipulating PoliMorf, the\nmorphological dictionary for Polish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

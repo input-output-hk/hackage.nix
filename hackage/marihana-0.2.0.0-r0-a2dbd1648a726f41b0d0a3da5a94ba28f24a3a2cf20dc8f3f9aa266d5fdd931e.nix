@@ -21,16 +21,16 @@
       synopsis = "Minimal tool to make your blog in Haskell";
       description = "Please see the README on Github at <https://github.com/suzukeno/marihana#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "marihana" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."marihana" or (errorHandler.buildDepError "marihana"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "marihana-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."marihana" or (errorHandler.buildDepError "marihana"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

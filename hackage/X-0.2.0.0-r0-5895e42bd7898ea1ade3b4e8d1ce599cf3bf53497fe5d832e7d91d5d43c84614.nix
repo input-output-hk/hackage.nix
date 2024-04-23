@@ -21,7 +21,7 @@
       synopsis = "A light-weight XML library";
       description = "Light-weight XML library derived from the [`xml` package](http://hackage.haskell.org/package/xml)\nfor simple parsing and creation of XML documents.\nIt only depends on @base@, @deepseq@, @bytestring@, @text@, and @text-short@.\n\nThis library provides support for the following specifications:\n\n* <http://www.w3.org/TR/xml/ Extensible Markup Language (XML) 1.0 (5ed)>\n\n* <http://www.w3.org/TR/xml-names/ Namespaces in XML 1.0 (3ed)>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

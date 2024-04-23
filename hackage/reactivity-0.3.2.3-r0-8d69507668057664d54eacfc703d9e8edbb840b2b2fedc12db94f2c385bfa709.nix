@@ -21,7 +21,7 @@
       synopsis = "An alternate implementation of push-pull FRP.";
       description = "An alternate implementation of push-pull FRP. This is based on the Reactive package (http://haskell.org/haskellwiki/reactive) (and the sources have been made available in accordance with the GPL [license] of that package).\n\nThe two types of reactive signals in this package reflect different tradeoffs. Choose Event when you need maximal speed, or to embed I/O effects in your programs. Choose MeasurementWrapper for precision.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,10 +39,10 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "6.9"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "6.9"
           then false
           else true;
-        };
       };
-    }
+    };
+  }

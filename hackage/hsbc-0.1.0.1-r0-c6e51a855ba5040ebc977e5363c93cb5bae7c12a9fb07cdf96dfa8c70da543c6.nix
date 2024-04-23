@@ -21,7 +21,7 @@
       synopsis = "Command Line Calculator";
       description = "Command Line Calculator";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsbc" = {
@@ -30,9 +30,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

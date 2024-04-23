@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-route53-recovery-readiness-2.0-r0-84df831c5cc4ab6cdb8c044c67d1e65bec2ee4ec57e33187338981791485030f.nix;
         revNum = 0;
         sha256 = "84df831c5cc4ab6cdb8c044c67d1e65bec2ee4ec57e33187338981791485030f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

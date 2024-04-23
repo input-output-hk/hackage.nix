@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-emr-containers-2.0-r0-b4b0bd1d75d45392616ec81ac58a0d0fb3532ed46287eff9c30561e4ca34784b.nix;
         revNum = 0;
         sha256 = "b4b0bd1d75d45392616ec81ac58a0d0fb3532ed46287eff9c30561e4ca34784b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

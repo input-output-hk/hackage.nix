@@ -21,7 +21,7 @@
       synopsis = "OpenSSH public keys parser";
       description = "OpenSSH public keys parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
           (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
           (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "crypto-pubkey-openssh-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

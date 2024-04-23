@@ -21,14 +21,14 @@
       synopsis = "A HTML truncator";
       description = "This package provides a simple function to truncate HTML in text form. It preserves tags open and close tags, prevents cut-off words and removes trailing empty tags.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

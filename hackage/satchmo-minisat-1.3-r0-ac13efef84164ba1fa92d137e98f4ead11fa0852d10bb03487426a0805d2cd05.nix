@@ -21,7 +21,7 @@
       synopsis = "minisat driver as backend for satchmo";
       description = "this driver calls minisat (download from http://minisat.se/)\nto solve CNF-SAT constraints produced by satchmo";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

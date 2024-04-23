@@ -21,12 +21,12 @@
       synopsis = "Call AppleScript from Haskell.";
       description = "This package enables you to compile and\nexecute AppleScript from Haskell applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"));
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"));
         buildable = if system.isOsx then true else false;
-        };
       };
-    }
+    };
+  }

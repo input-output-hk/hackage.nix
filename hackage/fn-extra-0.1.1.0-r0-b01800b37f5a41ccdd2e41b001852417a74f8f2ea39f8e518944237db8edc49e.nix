@@ -21,7 +21,7 @@
       synopsis = "Extras for Fn, a functional web framework.";
       description = "Please see README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/skylighting-format-ansi-0.1-r0-4e525cb8fc5f13d9cf9d1f1d07120cc494d91bbfe39045c41b7ab6cf1c77a361.nix;
         revNum = 0;
         sha256 = "4e525cb8fc5f13d9cf9d1f1d07120cc494d91bbfe39045c41b7ab6cf1c77a361";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

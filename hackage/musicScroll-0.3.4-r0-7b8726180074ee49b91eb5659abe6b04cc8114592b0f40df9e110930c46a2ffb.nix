@@ -21,7 +21,7 @@
       synopsis = "Supply your tunes info without leaving your music player.";
       description = "Automatically retrive the lyrics of of your current\nsong on SMPlayer/VLC and update it on each change. See the\nlyrics on a really elegant GTK app.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,23 +46,23 @@
           (hsPkgs."req" or (errorHandler.buildDepError "req"))
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "music-scroll" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."musicScroll" or (errorHandler.buildDepError "musicScroll"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

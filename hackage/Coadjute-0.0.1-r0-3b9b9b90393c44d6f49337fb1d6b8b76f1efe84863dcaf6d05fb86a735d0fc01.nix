@@ -21,7 +21,7 @@
       synopsis = "A generic build tool";
       description = "Coadjute is a generic build tool, intended as an easier to use and more\nportable replacement for make. It's not tailored toward any particular\nlanguage, and is not meant to replace tools which target a specific\nenvironment.\nPortability is striven towards in two ways:\n- You don't have to deal with the idiosyncrasies of many make implementations\n(well, people don't, but they call their GNU Make files makefiles\ninstead of GNUmakefiles, which causes misunderstandings).\n- You have Haskell at your disposal, and are encouraged to use that\nwhenever possible instead of system-specific binaries like the POSIX\ncommands we all know and love.\nWith support for:\n- Parallel task performing.\n- Advanced out-of-dateness detection:\n- Choice between timestamps and hashes.\n- Keeping track of what arguments have been passed.\n- Haskell!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."regex-dfa" or (errorHandler.buildDepError "regex-dfa"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

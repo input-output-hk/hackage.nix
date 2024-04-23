@@ -21,7 +21,7 @@
       synopsis = "Provide a simple HTTP client interface by wrapping the wget\ncommand line tool.";
       description = "This provides the simplest interface I could imagine to\nmaking HTTP requests. It supports GET and POST parameters.\nSince it simply wraps the WGET program, there are no\nlibrary dependencies, and it automatically gets HTTPS.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,10 +29,10 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

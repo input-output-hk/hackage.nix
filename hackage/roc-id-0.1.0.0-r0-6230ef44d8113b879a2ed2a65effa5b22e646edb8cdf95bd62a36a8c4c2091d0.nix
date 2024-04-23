@@ -21,7 +21,7 @@
       synopsis = "Implementation of the ROC National ID standard.";
       description = "This package provides an implementation of the ROC National Identification\nNumber (中華民國身分證號碼) standard.\n\nIn particular, it provides functions for parsing and validating identification\nnumbers from textual input.\n\nSee the \"ROC.ID\" module to get started.\n\nFor more details of the standard on which this package is based, see:\n\n* https://zh.wikipedia.org/wiki/中華民國國民身分證\n* https://en.wikipedia.org/wiki/National_Identification_Card_(Republic_of_China)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "roc-id-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."roc-id" or (errorHandler.buildDepError "roc-id"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

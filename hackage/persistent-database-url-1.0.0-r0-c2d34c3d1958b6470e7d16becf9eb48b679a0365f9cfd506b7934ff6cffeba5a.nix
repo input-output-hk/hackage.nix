@@ -21,7 +21,7 @@
       synopsis = "Parse DATABASE_URL into configuration types for Persistent";
       description = "Converts the parameters parsed from a database url to the concrete\nconfiguration types required by persistent.\n\nCurrently, only persistent-postgresql's PostgresConf is provided.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."persistent-database-url" or (errorHandler.buildDepError "persistent-database-url"))
             (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Coveralls.io support for Haskell.";
       description = "This utility converts and sends Haskell projects hpc code coverage to\n<http://coveralls.io/ coverall.io>.\n\n/Usage/\n\nCommands to add to your project .travis.yml when using Travis CI:\n\n> before_install:\n>   - cabal install hpc-coveralls\n> script:\n>   - cabal configure --enable-tests --enable-library-coverage && cabal build && cabal test\n> after_script:\n>   - hpc-coveralls [options] [test-suite-name]\n\nFurther information can be found in the <https://github.com/guillaume-nargeot/hpc-coveralls README>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hpc-coveralls" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
             (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "run-cabal-test" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -55,19 +55,19 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-all" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hpc-coveralls" or (errorHandler.buildDepError "hpc-coveralls"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

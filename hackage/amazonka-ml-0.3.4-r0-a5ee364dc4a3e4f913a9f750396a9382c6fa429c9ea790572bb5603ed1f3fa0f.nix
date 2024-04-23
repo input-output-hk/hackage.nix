@@ -21,14 +21,14 @@
       synopsis = "Amazon Machine Learning SDK.";
       description = "Amazon Machine Learning (Amazon ML) is a robust machine learning platform\nthat allows software developers to build and train predictive applications\nand host those applications in a scalable AWS cloud solution.\n\n/See:/ <http://docs.aws.amazon.com/machine-learning/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

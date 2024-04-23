@@ -21,7 +21,7 @@
       synopsis = "KRPC remote procedure call protocol implementation.";
       description = "KRPC remote procedure call protocol implementation.\n\n[/Release Notes/]\n\n* /0.1.0.0:/ Initial version.\n\n* /0.1.1.0:/ Allow passing raw argument\\/result dictionaries.\n\n* /0.2.0.0:/ Async API have been removed, use /async/ package instead.\nExpose caller address in handlers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-server" = {
           depends = [
@@ -43,18 +43,18 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
             (hsPkgs."krpc" or (errorHandler.buildDepError "krpc"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."krpc" or (errorHandler.buildDepError "krpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-client" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-client" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."krpc" or (errorHandler.buildDepError "krpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Bidings to Google's Zopfli compression library";
       description = "Hopfli provides a pure interface to compress data using the Zopfli library\nalgorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hopfli" or (errorHandler.buildDepError "hopfli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

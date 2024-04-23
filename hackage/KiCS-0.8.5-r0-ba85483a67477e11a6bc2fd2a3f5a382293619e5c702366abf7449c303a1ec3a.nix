@@ -21,7 +21,7 @@
       synopsis = "A compiler from Curry to Haskell";
       description = "This package builds two binaries, kics and kicsi, respectively.\nThe first is the Curry to Haskell compiler, the latter a text\nbased interactive environment.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kics" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "kicsi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

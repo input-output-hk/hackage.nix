@@ -6,8 +6,8 @@
         nix = import ../hackage/word12-1.0.0-r0-ba25dead17e7d6748e9e6dbbbc257c7d6b5f50f8aa34fdf0434b7bef49209928.nix;
         revNum = 0;
         sha256 = "ba25dead17e7d6748e9e6dbbbc257c7d6b5f50f8aa34fdf0434b7bef49209928";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,23 +21,23 @@
       synopsis = "Alter your records with ease";
       description = "Please see the README on GitHub at <https://github.com/parsonsmatt/record-wrangler#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "record-wrangler-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."record-wrangler" or (errorHandler.buildDepError "record-wrangler"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

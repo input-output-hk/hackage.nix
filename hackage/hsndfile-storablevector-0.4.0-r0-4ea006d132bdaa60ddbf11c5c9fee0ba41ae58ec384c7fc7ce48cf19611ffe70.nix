@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings for libsndfile (Data.StorableVector interface)";
       description = "Haskell bindings for libsndfile (@Data.StorableVector@ interface).\n\nFor more information on /hsndfile/ visit its homepage at <http://haskell.org/haskellwiki/Hsndfile>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsndfile" or (errorHandler.buildDepError "hsndfile"))
           (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

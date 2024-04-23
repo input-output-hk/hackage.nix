@@ -21,7 +21,7 @@
       synopsis = "A project manage tool for Idris.";
       description = "A general purpose project manage tool for Idris programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "idrin" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."idringen" or (errorHandler.buildDepError "idringen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

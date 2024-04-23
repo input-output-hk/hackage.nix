@@ -21,7 +21,7 @@
       synopsis = "Parallel rendering of raster images using Accelerate";
       description = "Parallel rendering of raster images using Accelerate";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."gloss-accelerate" or (errorHandler.buildDepError "gloss-accelerate"))
-          ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (errorHandler.buildDepError "accelerate-cuda"));
+        ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs."accelerate-cuda" or (errorHandler.buildDepError "accelerate-cuda"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

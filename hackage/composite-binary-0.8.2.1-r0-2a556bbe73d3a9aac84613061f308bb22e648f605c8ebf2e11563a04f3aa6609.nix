@@ -21,15 +21,15 @@
       synopsis = "Orphan binary instances.";
       description = "Binary instance for (:->) and Record.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

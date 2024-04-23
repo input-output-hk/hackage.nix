@@ -21,7 +21,7 @@
       synopsis = "IP2Proxy Haskell package for proxy detection.";
       description = "This Haskell package allows users to query an IP address to determine if it was being used as open proxy, web proxy, VPN anonymizer and TOR exits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

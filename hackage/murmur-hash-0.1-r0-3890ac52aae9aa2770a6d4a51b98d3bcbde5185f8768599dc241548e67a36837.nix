@@ -21,11 +21,11 @@
       synopsis = "MurmurHash2 implementation for ";
       description = "Implements MurmurHash2, a good, fast, general-purpose,\nnon-cryptographic hashing function.  See\n<http://murmurhash.googlepages.com/> for details.\n\nThis implementation is pure Haskell, so it might be a bit slower\nthan a C FFI binding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

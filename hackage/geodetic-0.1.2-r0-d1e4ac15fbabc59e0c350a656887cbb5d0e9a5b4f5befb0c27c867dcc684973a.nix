@@ -21,7 +21,7 @@
       synopsis = "Geodetic calculations";
       description = "<<http://i.imgur.com/Ns5hntl.jpg>>\n\nGeodetic calculations including Vincenty and Great Circle using a Latitude and Longitude pair";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."coordinate" or (errorHandler.buildDepError "coordinate"))
           (hsPkgs."optional" or (errorHandler.buildDepError "optional"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

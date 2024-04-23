@@ -21,7 +21,7 @@
       synopsis = "Factory for quickly building a web application";
       description = "A quick out-of-box factory using to build web application with many useful builtin components based on [boots](https://hackage.haskell.org/package/boots) and [servant](https://hackage.haskell.org/package/servant).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

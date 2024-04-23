@@ -21,7 +21,7 @@
       synopsis = "Discord verification bot";
       description = "This bot can send new server members a message on entry, ask for their full name (using a parser to check it is reasonable), email and a picture from them. Reset commands for improper forms are also implemented, as well as help, privacy and info commands. The default prefix is the negation symbol from mathematics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "poke-exe" = {
           depends = [
@@ -64,10 +64,10 @@
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "poke-test" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

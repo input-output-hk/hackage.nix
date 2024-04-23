@@ -21,7 +21,7 @@
       synopsis = "A definitive package allowing you to open windows, read image files and render text to be displayed or saved";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."stb-truetype" or (errorHandler.buildDepError "stb-truetype"))
           (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

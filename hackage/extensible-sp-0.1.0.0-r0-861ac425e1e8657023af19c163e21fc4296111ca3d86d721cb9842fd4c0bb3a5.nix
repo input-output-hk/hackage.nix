@@ -21,14 +21,14 @@
       synopsis = "light-weight, extensible sums and products over types and kinds";
       description = "The extensible-sp module provides a simple and straight-forward interface to anonymous, extensible sum types (e.g., Either) and product types (e.g., (,)).  Generalizations to higher kinded types are provided as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

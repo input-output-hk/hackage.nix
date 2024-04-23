@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (errorHandler.setupDepError "template-haskell")))
         (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers or (errorHandler.setupDepError "transformers")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -68,9 +68,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."cabal-helper" or (errorHandler.buildDepError "cabal-helper"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"));
         buildable = true;
-        };
+      };
       exes = {
         "ghc-mod" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghc-modi" = {
           depends = [
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
@@ -100,18 +100,18 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = ([
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -129,20 +129,20 @@
             (hsPkgs."cabal-helper" or (errorHandler.buildDepError "cabal-helper"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
           buildable = true;
-          };
+        };
         "shelltest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.shelltest.components.exes.shelltest or (pkgs.buildPackages.shelltest or (errorHandler.buildToolDepError "shelltest:shelltest")))
-            ];
+          ];
           buildable = if !flags.shelltest then false else true;
-          };
         };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -152,9 +152,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

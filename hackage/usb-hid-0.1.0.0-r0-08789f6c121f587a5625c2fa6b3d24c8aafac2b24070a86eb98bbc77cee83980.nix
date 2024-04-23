@@ -21,7 +21,7 @@
       synopsis = "Parser and request Library for USB HIDs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."usb" or (errorHandler.buildDepError "usb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fast generic automaton arrow transformer for AFRP";
       description = "This library implements a fast and powerful generic automaton arrow\ntransformer for arrowized functional reactive programming or\nautomaton programming in general.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

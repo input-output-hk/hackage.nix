@@ -21,7 +21,7 @@
       synopsis = "Functions for manipulating Curry programs";
       description = "This package serves as a foundation for Curry compilers.\nIt defines the intermediate language formats FlatCurry.\nAdditionally, it provides functionality for the smooth\nintegration of compiler frontends and backends.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -33,27 +33,27 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.4") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.4") [
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ]) ++ (if flags.broken-directory
+        ]) ++ (if flags.broken-directory
           then [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else if flags.old-time
             then [
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]
+            ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]);
+            ]);
         buildable = true;
-        };
+      };
       tests = {
         "test-base" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

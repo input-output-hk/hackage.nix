@@ -21,7 +21,7 @@
       synopsis = "Work with HTML more easily in HXT";
       description = "See examples and full readme on the Github page: https:\\/\\/github.com\\/egonSchiele\\/HandsomeSoup";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."hxt-http" or (errorHandler.buildDepError "hxt-http"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "BitTorrent file parser.";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bencode" or (errorHandler.buildDepError "bencode"))
           (hsPkgs."FilePath" or (errorHandler.buildDepError "FilePath"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

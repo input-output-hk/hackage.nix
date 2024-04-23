@@ -21,7 +21,7 @@
       synopsis = "Various system utils lifted to EitherT";
       description = "Various system functions lifted to EitherT.\nProvides higher level functions to those in system-lifted.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."system-lifted" or (errorHandler.buildDepError "system-lifted"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."easy-data" or (errorHandler.buildDepError "easy-data"))
             (hsPkgs."system-lifted" or (errorHandler.buildDepError "system-lifted"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

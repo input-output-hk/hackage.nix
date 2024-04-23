@@ -6,8 +6,8 @@
         nix = import ../hackage/aeson-possible-0.1.0.0-r0-2d6ab2d64ee410aa00f6ff2db033d9b29ca692cf194eab0acc78d735a487d62c.nix;
         revNum = 0;
         sha256 = "2d6ab2d64ee410aa00f6ff2db033d9b29ca692cf194eab0acc78d735a487d62c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

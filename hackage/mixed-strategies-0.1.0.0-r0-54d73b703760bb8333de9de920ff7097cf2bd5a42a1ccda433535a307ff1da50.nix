@@ -21,7 +21,7 @@
       synopsis = "Find optimal mixed strategies for two-player games";
       description = "A Haskell implementation of the method of\nChapter 6 of The Compleat Strategyst\n(J.D. Williams, McGraw-Hill 1955) for\nfinding optimal mixed strategies for\ntwo-player hidden information games\ngiven a payoff matrix.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."simple-tabular" or (errorHandler.buildDepError "simple-tabular"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "oms" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."simple-tabular" or (errorHandler.buildDepError "simple-tabular"))
             (hsPkgs."mixed-strategies" or (errorHandler.buildDepError "mixed-strategies"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Region based resource management for the IO monad.";
       description = "IOR monad is a wrapper around IO that allows region based\nresource management.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

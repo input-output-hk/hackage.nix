@@ -6,8 +6,8 @@
         nix = import ../hackage/Yocto-0.1.0-r0-5393d54e6c36e31d1e10ac33573808b4cda3ce54b6d572b48d3d7dc517d78b13.nix;
         revNum = 0;
         sha256 = "5393d54e6c36e31d1e10ac33573808b4cda3ce54b6d572b48d3d7dc517d78b13";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

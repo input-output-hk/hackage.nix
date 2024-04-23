@@ -21,7 +21,7 @@
       synopsis = "Clone all github repositories from a given user";
       description = "Clone all github repositories from a given user";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clone-all" = {
@@ -37,9 +37,9 @@
             (hsPkgs."github" or (errorHandler.buildDepError "github"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

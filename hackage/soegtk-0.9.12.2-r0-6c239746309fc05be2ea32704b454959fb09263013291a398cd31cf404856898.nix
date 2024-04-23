@@ -21,15 +21,15 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

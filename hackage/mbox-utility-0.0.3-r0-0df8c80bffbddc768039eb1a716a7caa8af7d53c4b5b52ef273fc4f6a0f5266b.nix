@@ -21,7 +21,7 @@
       synopsis = "List contents of an mbox file containing e-mails";
       description = "List contents of an mbox file containing e-mails.\nThis is intended for post-processing by the @cutter@ command.\nSee <http://hackage.haskell.org/package/cutter>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lsmbox" = {
@@ -34,9 +34,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

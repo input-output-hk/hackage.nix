@@ -6,8 +6,8 @@
         nix = import ../hackage/irc-bytestring-0.1-r0-39e42f1402aec62e7a149b23225f609757b540cc38ad9c93370f65256bf82c7b.nix;
         revNum = 0;
         sha256 = "39e42f1402aec62e7a149b23225f609757b540cc38ad9c93370f65256bf82c7b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

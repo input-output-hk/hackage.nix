@@ -21,7 +21,7 @@
       synopsis = "Algorithmic Doom map generation";
       description = "A system for constructing maps for the computer game Doom\nby writing algorithms to describe the geometry. A Liquorice\nprogram is a series of instructions to move a virtual\n\"turtle\" or \"pen\", which define the walls, floors, rooms\nand monsters as it goes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hwadc" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

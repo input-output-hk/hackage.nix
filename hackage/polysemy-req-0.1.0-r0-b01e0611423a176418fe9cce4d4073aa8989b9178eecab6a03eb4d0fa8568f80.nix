@@ -21,15 +21,15 @@
       synopsis = "Polysemy effect for req";
       description = "A basic effect for making req requests inside a polysemy application. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."req" or (errorHandler.buildDepError "req"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

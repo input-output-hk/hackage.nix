@@ -21,7 +21,7 @@
       synopsis = "Bond schema compiler and code generator";
       description = "Bond is a cross-platform framework for handling schematized data. It supports cross-language de/serialization and powerful generic mechanisms for efficiently manipulating data. . This package contains a library for parsing the Bond schema definition language and performing template-based code generation. The library includes built-in templates for generating standard Bond C++ and C# code, as well as utilities for writing custom codegen templates. . The package also contains a command-line compiler/codegen tool, named gbc, which is primarily used to generate code for C++ and C# programs using Bond.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gbc" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gbc-tests" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A lensy interface to regular expressions";
       description = "Please see the README on GitHub at <https://github.com/ChrisPenner/lens-regex-pcre#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lens-regex-pcre-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "lens-regex-pcre-bench" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

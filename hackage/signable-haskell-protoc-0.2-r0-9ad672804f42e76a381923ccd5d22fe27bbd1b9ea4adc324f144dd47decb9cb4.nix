@@ -21,7 +21,7 @@
       synopsis = "Deterministic serialisation and signatures with proto-lens support";
       description = "You can find documentation at <https://hackage.haskell.org/package/signable-haskell-protoc hackage>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "signable-haskell-protoc" = {
@@ -38,9 +38,9 @@
             (hsPkgs."proto-lens-protoc" or (errorHandler.buildDepError "proto-lens-protoc"))
             (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

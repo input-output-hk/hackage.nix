@@ -21,7 +21,7 @@
       synopsis = "API to the Paddle payment processor";
       description = "Please see the README on GitHub at <https://github.com/benaco/paddle#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

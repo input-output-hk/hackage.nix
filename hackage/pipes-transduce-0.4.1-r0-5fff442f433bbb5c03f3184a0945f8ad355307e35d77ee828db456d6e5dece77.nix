@@ -21,7 +21,7 @@
       synopsis = "Interfacing pipes with foldl folds.";
       description = "A fold-like datatype for pipes Producers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."conceit" or (errorHandler.buildDepError "conceit"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-transduce" or (errorHandler.buildDepError "pipes-transduce"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

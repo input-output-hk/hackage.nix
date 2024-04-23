@@ -21,7 +21,7 @@
       synopsis = "GHC core plugin supporting the derive-storable package.";
       description = "The package helps derive-storable package in forcing compile time evaluation of\nsizes, alignments and offsets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
           (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

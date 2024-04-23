@@ -21,7 +21,7 @@
       synopsis = "A sanity checker for your git history.";
       description = "This tool allow you sanity check the history of local git repository.\n\nA 'sane' history is one where there is no interleaved merged.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "git-sanity" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."git-sanity" or (errorHandler.buildDepError "git-sanity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

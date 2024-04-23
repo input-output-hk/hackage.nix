@@ -21,11 +21,11 @@
       synopsis = "Definition for Peripherals,Registers and Fields from STM32F103xx.svd";
       description = "Definition for Peripherals,Registers and Fields from STM32F103xx.svd\nThis package contains tables, that have been generated from the\ncorresponding svd file. Do not edit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

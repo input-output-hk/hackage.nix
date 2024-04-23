@@ -21,7 +21,7 @@
       synopsis = "Console and GUI interface for Google Translate service";
       description = "This package consist from console backend, GUI backend and Core module\nfor Google Translate service. It allows you to translate words and sentences\nbetween different languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gtc" = {
@@ -36,11 +36,11 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gtg" = {
-          depends = (pkgs.lib).optionals (flags.gui) [
+          depends = pkgs.lib.optionals (flags.gui) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if flags.gui then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,6 +21,6 @@
       synopsis = "TBA";
       description = "Currently being prepared for release, reserving the namespace here.";
       buildType = "Simple";
-      };
+    };
     components = { exes = { "fcg" = { buildable = true; }; }; };
-    }
+  }

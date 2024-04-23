@@ -21,7 +21,7 @@
       synopsis = "LambdaCube 3D EDSL definition";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."lambdacube-core" or (errorHandler.buildDepError "lambdacube-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

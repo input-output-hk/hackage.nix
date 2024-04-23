@@ -6,8 +6,8 @@
         nix = import ../hackage/machines-bytestring-0.1.0.0-r0-c60b556b2c956ba722c055deeacffc07c869657863100b64c168e326b7c32559.nix;
         revNum = 0;
         sha256 = "c60b556b2c956ba722c055deeacffc07c869657863100b64c168e326b7c32559";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

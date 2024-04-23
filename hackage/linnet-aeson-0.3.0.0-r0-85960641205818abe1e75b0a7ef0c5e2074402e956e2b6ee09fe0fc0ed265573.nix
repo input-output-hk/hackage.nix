@@ -21,7 +21,7 @@
       synopsis = "Aeson JSON support for Linnet";
       description = "Please see the documentation at <http://linnet.io>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."linnet" or (errorHandler.buildDepError "linnet"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "linnet-aeson-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

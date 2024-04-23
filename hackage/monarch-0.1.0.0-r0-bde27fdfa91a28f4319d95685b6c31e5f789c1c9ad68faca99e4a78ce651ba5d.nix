@@ -21,7 +21,7 @@
       synopsis = "Monadic interface for TokyoTyrant.";
       description = "This package provides simple monadic interface for TokyoTyrant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tokyotyrant-haskell" or (errorHandler.buildDepError "tokyotyrant-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tokyotyrant-haskell" or (errorHandler.buildDepError "tokyotyrant-haskell"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

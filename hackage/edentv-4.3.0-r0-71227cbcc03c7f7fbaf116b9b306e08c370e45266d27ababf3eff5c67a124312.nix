@@ -21,7 +21,7 @@
       synopsis = "A Tool to Visualize Parallel Functional Program Executions";
       description = "The Eden Trace Viewer is a tool designed to help\nprogrammers optimize Eden programs by visualising traces\n(eventlog files) of Eden program runs. It is similar to\n(and precedes) threadscope. However, it has been designed\nto visualize not just threads, but also different\nmachines, processes, and messages between processes.\nEdenTV can show you what has happened during the\nexecution of your program. This is very helpful to\noptimize parallel programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "edentv" = {
@@ -38,9 +38,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."ghc-events-parallel" or (errorHandler.buildDepError "ghc-events-parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

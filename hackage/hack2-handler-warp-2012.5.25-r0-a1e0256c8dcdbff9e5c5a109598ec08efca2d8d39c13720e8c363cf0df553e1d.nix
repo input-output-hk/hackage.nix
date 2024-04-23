@@ -21,7 +21,7 @@
       synopsis = "Hack2 warp handler";
       description = "Hack2 warp handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."air" or (errorHandler.buildDepError "air"))
           (hsPkgs."hack2-interface-wai" or (errorHandler.buildDepError "hack2-interface-wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Examples for the reactive-banana library, using wxHaskell.";
       description = "This library provides some GUI examples for the @reactive-banana@ library,\nusing wxHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Counter" = { buildable = true; };
         "TwoCounters" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

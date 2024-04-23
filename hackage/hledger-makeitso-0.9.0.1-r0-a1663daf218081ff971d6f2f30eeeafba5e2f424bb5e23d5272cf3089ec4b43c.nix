@@ -21,7 +21,7 @@
       synopsis = "An hledger workflow focusing on automated statement import and classification.";
       description = "Please see the README on GitHub at <https://github.com/apauley/hledger-makeitso#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger-makeitso" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."hledger-makeitso" or (errorHandler.buildDepError "hledger-makeitso"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hledger-makeitso-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

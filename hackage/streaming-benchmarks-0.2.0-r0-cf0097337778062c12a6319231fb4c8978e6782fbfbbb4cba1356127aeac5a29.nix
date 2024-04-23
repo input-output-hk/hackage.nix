@@ -21,7 +21,7 @@
       synopsis = "Benchmarks to compare streaming packages";
       description = "Benchmarks along with with pretty comparative graph generation for streaming\noperations and their comparisons across notable Haskell streaming libraries\nincluding `streamly`, `vector`, `streaming`, `machines`, `pipes`, and\n`conduit`.\n<http://hackage.haskell.org/package/streamly streamly> is a streaming library\nwith native - high level, declarative and composable concurrency, it\nis the primary motivation for these benchmarks.\n\nIf you are using @stack@ then you can just use @./run.sh@ to run the\nbenchmarks; use @--quick@ option to get the result quickly; charts will be\ngenerated in the `charts` directory. Use @./run.sh --help@ for all script\noptions.\n\nWith any build tool, run the benchmarks with @--csv=results.csv@ as arguments\n(you can pass any @gauge@ arguments including @--quick@) and then use\n@makecharts results.csv \"streamly,vector,...\" False@ to create the charts.\nThe second argument to @makecharts@ is the list of package names, the third\nargument is whether to plot full or diff from the first package.\n\nSee the README file shipped with the package or\n<https://github.com/composewell/streaming-benchmarks in the github repo>\nfor more details. The github repo also shows the latest comparative graphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "makecharts" = {
@@ -38,10 +38,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."getopt-generics" or (errorHandler.buildDepError "getopt-generics"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."drinkery" or (errorHandler.buildDepError "drinkery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

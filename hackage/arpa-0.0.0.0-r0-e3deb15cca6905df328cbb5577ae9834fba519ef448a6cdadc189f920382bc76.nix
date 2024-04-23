@@ -21,20 +21,20 @@
       synopsis = "Library for reading ARPA n-gram models";
       description = "This is a library for reading ARPA n-gram models.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "arpa" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."arpa" or (errorHandler.buildDepError "arpa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

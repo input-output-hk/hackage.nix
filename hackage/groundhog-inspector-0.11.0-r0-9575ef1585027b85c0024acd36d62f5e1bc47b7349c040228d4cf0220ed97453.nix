@@ -21,7 +21,7 @@
       synopsis = "Type-safe datatype-database mapping library.";
       description = "This library analyzes database tables and creates corresponding datatypes and their mappings for Groundhog <https://www.schoolofhaskell.com/user/lykahb/groundhog>. See examples at <https://github.com/lykahb/groundhog/tree/master/groundhog-inspector/examples>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "groundhog_inspector" = {
           depends = (([
@@ -51,9 +51,9 @@
             (hsPkgs."groundhog" or (errorHandler.buildDepError "groundhog"))
             (hsPkgs."groundhog-th" or (errorHandler.buildDepError "groundhog-th"))
             (hsPkgs."groundhog-inspector" or (errorHandler.buildDepError "groundhog-inspector"))
-            ] ++ (pkgs.lib).optional (flags.sqlite) (hsPkgs."groundhog-sqlite" or (errorHandler.buildDepError "groundhog-sqlite"))) ++ (pkgs.lib).optional (flags.postgresql) (hsPkgs."groundhog-postgresql" or (errorHandler.buildDepError "groundhog-postgresql"))) ++ (pkgs.lib).optional (flags.mysql) (hsPkgs."groundhog-mysql" or (errorHandler.buildDepError "groundhog-mysql"));
+          ] ++ pkgs.lib.optional (flags.sqlite) (hsPkgs."groundhog-sqlite" or (errorHandler.buildDepError "groundhog-sqlite"))) ++ pkgs.lib.optional (flags.postgresql) (hsPkgs."groundhog-postgresql" or (errorHandler.buildDepError "groundhog-postgresql"))) ++ pkgs.lib.optional (flags.mysql) (hsPkgs."groundhog-mysql" or (errorHandler.buildDepError "groundhog-mysql"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

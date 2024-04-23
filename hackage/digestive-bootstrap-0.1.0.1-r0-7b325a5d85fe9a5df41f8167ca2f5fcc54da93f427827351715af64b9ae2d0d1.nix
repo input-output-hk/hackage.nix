@@ -21,7 +21,7 @@
       synopsis = "Speed up form designing using digestive functors and bootstrap";
       description = "Generate bootstrap forms out of digestive views";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."blaze-bootstrap" or (errorHandler.buildDepError "blaze-bootstrap"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

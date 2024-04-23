@@ -21,7 +21,7 @@
       synopsis = "Social plugins for Lambdabot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nProvided plugins:\n\n[activity] Check where and how much is lambdabot used.\n\n[karma] Track who's been good and who's been naughty.\n\n[poll] Let the people vote.\n\n[seen] Track who was around when.\n\n[tell] Leave messages for other users.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

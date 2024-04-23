@@ -21,7 +21,7 @@
       synopsis = "Generates RPM Spec files from cabal files";
       description = "This package provides specfile templates and a script cabal2spec for easy\npackaging of Haskell Cabal packages (hackages) for ghc following\nthe Fedora Haskell Packaging Guidelines and associated RPM macros.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2spec" = {
@@ -39,9 +39,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

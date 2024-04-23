@@ -14,7 +14,7 @@
       highlighter = false;
       closing = true;
       ssh = true;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "darcsden"; version = "1.0.1"; };
@@ -27,7 +27,7 @@
       synopsis = "Darcs repository UI and hosting/collaboration app.";
       description = "A web application and SSH server for browsing and hosting darcs\nrepositories and collaborating with others.\n\nInstallation: http://hub.darcs.net/simon/darcsden-1.0/README\n\n1.0 release notes: http://hub.darcs.net/simon/darcsden-1.0/ANNOUNCE.md\n\n1.0.1 changes:\n\n* cabal file now includes the required highlightingkate/highlighter build flags\n\n* cabal file points to a darcsden 1.0 source repo";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "darcsden" = {
@@ -64,23 +64,23 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
-            ]) ++ (pkgs.lib).optional (flags.highlightingkate) (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))) ++ (pkgs.lib).optional (flags.highlighter) (hsPkgs."highlighter" or (errorHandler.buildDepError "highlighter"))) ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"));
+          ]) ++ pkgs.lib.optional (flags.highlightingkate) (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))) ++ pkgs.lib.optional (flags.highlighter) (hsPkgs."highlighter" or (errorHandler.buildDepError "highlighter"))) ++ pkgs.lib.optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"));
           buildable = true;
-          };
+        };
         "darcsden-ssh" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
-            ] ++ (pkgs.lib).optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"));
+          ] ++ pkgs.lib.optional (flags.ssh) (hsPkgs."ssh" or (errorHandler.buildDepError "ssh"));
           buildable = true;
-          };
+        };
         "darcsden-post-hook" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
-            ] ++ (pkgs.lib).optional (flags.closing) (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"));
+          ] ++ pkgs.lib.optional (flags.closing) (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

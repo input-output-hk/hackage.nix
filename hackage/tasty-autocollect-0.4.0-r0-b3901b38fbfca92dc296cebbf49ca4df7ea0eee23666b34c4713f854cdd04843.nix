@@ -21,7 +21,7 @@
       synopsis = "Autocollection of tasty tests.";
       description = "Autocollection of tasty tests. See README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,19 +36,19 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tasty-autocollect" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty-autocollect" or (errorHandler.buildDepError "tasty-autocollect"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty-autocollect-tests" = {
           depends = [
@@ -66,12 +66,12 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-autocollect.components.exes.tasty-autocollect or (pkgs.buildPackages.tasty-autocollect or (errorHandler.buildToolDepError "tasty-autocollect:tasty-autocollect")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

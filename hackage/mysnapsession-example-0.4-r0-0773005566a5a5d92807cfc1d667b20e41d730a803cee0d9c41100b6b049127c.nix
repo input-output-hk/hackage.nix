@@ -21,7 +21,7 @@
       synopsis = "Example projects using mysnapsession";
       description = "This is a collection of simple web applications that use\nthe mysnapsession package for stateful HTTP.\n\nAs of version 0.3, this uses Cabal's data file mechanism,\nso you'll need to install before you run to copy the\ndata files to where they are expected.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "animalgame" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mysnapsession" or (errorHandler.buildDepError "mysnapsession"))
             (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "clientcount" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,9 +50,9 @@
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."mysnapsession" or (errorHandler.buildDepError "mysnapsession"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

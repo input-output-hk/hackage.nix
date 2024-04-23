@@ -21,14 +21,14 @@
       synopsis = "Haskell 98 Distributive functors -- Dual to Traversable";
       description = "Haskell 98 Distributive functors -- Dual to Traversable";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

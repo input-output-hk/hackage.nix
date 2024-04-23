@@ -21,14 +21,14 @@
       synopsis = "Trivial re-export of Wouter Swierstra's Stream package,\navoiding module name clash.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Stream" or (errorHandler.buildDepError "Stream"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Combinators for manipulating locally-nameless generalized de Bruijn terms";
       description = "Combinators for manipulating locally-nameless generalized de Bruijn terms";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."prelude-extras" or (errorHandler.buildDepError "prelude-extras"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

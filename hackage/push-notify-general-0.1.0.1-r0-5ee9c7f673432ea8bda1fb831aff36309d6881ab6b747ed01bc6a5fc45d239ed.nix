@@ -21,7 +21,7 @@
       synopsis = "A general library for sending/receiving push notif. through dif. services.";
       description = "This library offers an API for sending/receiving notifications, and handling the registration of devices on the server.\n\nIt provides a general abstraction which can be used to communicate through different services as APNS, GCM, MPNS.\n\nFor more information and test examples: <http://gsoc2013cwithmobiledevices.blogspot.com.ar/>\n\nGitHub repository: <https://github.com/MarcosPividori/GSoC-Communicating-with-mobile-devices>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

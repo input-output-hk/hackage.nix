@@ -21,7 +21,7 @@
       synopsis = "On-disk storage, but referentially transparent";
       description = "This package provides a data type 'DiskBytes' which represents a sequence of bytes that is stored on disk — but in a referentially transparent manner.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "memory" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."disk-bytes" or (errorHandler.buildDepError "disk-bytes"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

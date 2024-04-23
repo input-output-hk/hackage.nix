@@ -14,7 +14,7 @@
       exe = false;
       prof = false;
       threaded = true;
-      };
+    };
     package = {
       specVersion = "1.24";
       identifier = { name = "lol-typing"; version = "1.20160822"; };
@@ -32,8 +32,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.setupDepError "uuagc")))
         (hsPkgs.buildPackages.uuagc-cabal or (pkgs.buildPackages.uuagc-cabal or (errorHandler.setupDepError "uuagc-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
           (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lol-typing-test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

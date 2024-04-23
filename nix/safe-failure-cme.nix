@@ -6,8 +6,8 @@
         nix = import ../hackage/safe-failure-cme-0.1.0-r0-b43bb3479681298b465a5e0ecd2226c6d964e32922975a45aefd94f7915c236a.nix;
         revNum = 0;
         sha256 = "b43bb3479681298b465a5e0ecd2226c6d964e32922975a45aefd94f7915c236a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

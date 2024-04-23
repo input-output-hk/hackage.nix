@@ -21,21 +21,21 @@
       synopsis = "A variety of mathematical utilities";
       description = "A variety of mathematical utilities not covered in base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "hedgehog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."math-extras" or (errorHandler.buildDepError "math-extras"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/nextstep-plist-0.0.1-r0-2c892ce40f29b0ddd2e0dfbda0da60f439bf2b9314ba2b4c99bcc6a4be59d272.nix;
         revNum = 0;
         sha256 = "2c892ce40f29b0ddd2e0dfbda0da60f439bf2b9314ba2b4c99bcc6a4be59d272";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

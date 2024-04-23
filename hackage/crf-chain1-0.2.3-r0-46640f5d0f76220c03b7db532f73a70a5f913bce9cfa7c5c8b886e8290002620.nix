@@ -21,7 +21,7 @@
       synopsis = "First-order, linear-chain conditional random fields";
       description = "Please see the README on GitHub at <https://github.com/kawu/crf-chain1#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

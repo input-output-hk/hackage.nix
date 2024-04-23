@@ -21,7 +21,7 @@
       synopsis = "Clean away old stack build artifacts";
       description = "A tool for removing old .stack-work/install builds and\n.stack/snapshots & programs for older ghc versions\nto recover diskspace.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-clean-old" = {
@@ -34,9 +34,9 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."simple-prompt" or (errorHandler.buildDepError "simple-prompt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

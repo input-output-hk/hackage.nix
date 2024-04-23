@@ -21,7 +21,7 @@
       synopsis = "A command line type checker for CSPM files.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cspmchecker" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Tweak .cabal files";
       description = "@uusi@ is a command-line program to tweak .cabal files.\nIt is used in distribution packaging.\nSee README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "uusi" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uusi" or (errorHandler.buildDepError "uusi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gen-setup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,10 +48,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "uusi-tests" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."uusi" or (errorHandler.buildDepError "uusi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

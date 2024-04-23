@@ -21,14 +21,14 @@
       synopsis = "2D text pretty-printing library";
       description = "A pretty-printing library for laying out text in\ntwo dimensions, using a simple box model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

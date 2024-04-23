@@ -21,15 +21,15 @@
       synopsis = "Hydrogen Data";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hydrogen-prelude" or (errorHandler.buildDepError "hydrogen-prelude"))
           (hsPkgs."hydrogen-parsing" or (errorHandler.buildDepError "hydrogen-parsing"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

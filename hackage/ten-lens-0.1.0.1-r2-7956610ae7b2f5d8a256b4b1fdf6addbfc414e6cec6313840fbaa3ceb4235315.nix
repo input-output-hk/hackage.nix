@@ -21,7 +21,7 @@
       synopsis = "Lenses for the types in the ten package.";
       description = "This provides lenses and related functionality for\n<https://hackage.haskell.org/package/ten ten>.  It's in a separate package to\nreduce the dependency weight of @ten@ itself.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
           (hsPkgs."ten" or (errorHandler.buildDepError "ten"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

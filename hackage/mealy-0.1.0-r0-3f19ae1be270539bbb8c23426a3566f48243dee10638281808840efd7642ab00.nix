@@ -21,7 +21,7 @@
       synopsis = "Mealy machines for processing time-series and ordered data.";
       description = "@mealy@ provides support for computing statistics (such as an average or a standard deviation)\nas current state. Usage is to supply a decay function representing the relative weights of recent values versus older ones, in the manner of exponentially-weighted averages. The library attempts to be polymorphic in the statistic which can be combined in applicative style.\n\n== Usage\n\n>>> import Mealy\n\n>>> fold ((,) <$> ma 0.9 <*> std 0.9) [1..100]\n(91.00265621044142,9.472822805289121)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

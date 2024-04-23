@@ -21,7 +21,7 @@
       synopsis = "Failure-tolerant file and directory editing";
       description = "Failure-tolerant file and directory editing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."plan-b" or (errorHandler.buildDepError "plan-b"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

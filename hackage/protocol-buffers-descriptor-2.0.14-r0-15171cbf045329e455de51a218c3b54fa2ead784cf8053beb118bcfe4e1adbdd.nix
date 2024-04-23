@@ -14,7 +14,7 @@
       identifier = {
         name = "protocol-buffers-descriptor";
         version = "2.0.14";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "(c) 2009-2012 Christopher Edward Kuklewicz";
       maintainer = "Chris Kuklewicz <protobuf@personal.mightyreason.com>";
@@ -24,15 +24,15 @@
       synopsis = "Text.DescriptorProto.Options and code generated from the Google Protocol Buffer specification";
       description = "Uses protocol-buffers package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."protocol-buffers" or (errorHandler.buildDepError "protocol-buffers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

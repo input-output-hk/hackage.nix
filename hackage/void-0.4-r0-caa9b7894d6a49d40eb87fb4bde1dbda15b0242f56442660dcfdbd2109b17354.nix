@@ -21,11 +21,11 @@
       synopsis = "A Haskell 98 logically uninhabited data type";
       description = "A Haskell 98 logically uninhabited data type. Used to indicate that a given term should not exist.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

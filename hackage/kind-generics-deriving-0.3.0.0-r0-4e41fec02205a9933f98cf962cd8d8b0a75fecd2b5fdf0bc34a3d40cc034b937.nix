@@ -21,7 +21,7 @@
       synopsis = "Generic programming in GHC style for arbitrary kinds and GADTs.";
       description = "This package provides automatic derivation for a wide range of classes using `kind-generics`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."kind-generics" or (errorHandler.buildDepError "kind-generics"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

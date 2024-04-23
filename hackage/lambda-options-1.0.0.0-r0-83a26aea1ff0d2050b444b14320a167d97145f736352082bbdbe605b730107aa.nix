@@ -21,7 +21,7 @@
       synopsis = "Declarative command-line parser using type-driven pattern matching.";
       description = "This is a declarative command-line parser that uses type-driven pattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."funspection" or (errorHandler.buildDepError "funspection"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."read-bounded" or (errorHandler.buildDepError "read-bounded"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

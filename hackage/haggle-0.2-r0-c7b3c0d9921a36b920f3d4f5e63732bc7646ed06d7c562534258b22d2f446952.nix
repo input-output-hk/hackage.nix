@@ -21,7 +21,7 @@
       synopsis = "A graph library offering mutable, immutable, and inductive graphs";
       description = "This library provides mutable (in ST or IO), immutable, and inductive graphs.\nThere are multiple graphs implementations provided to support different use\ncases and time/space tradeoffs.  It is a design goal of haggle to be flexible\nand allow users to \"pay as they go\".  Node and edge labels are optional.  Haggle\nalso aims to be safer than fgl: there are no partial functions in the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."monad-primitive" or (errorHandler.buildDepError "monad-primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "GraphTests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lenses for operating over text";
       description = "Lenses for operating over text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "text-lens-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."text-lens" or (errorHandler.buildDepError "text-lens"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

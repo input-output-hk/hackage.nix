@@ -21,7 +21,7 @@
       synopsis = "Utilities using ErrorOr datatype";
       description = "Builds on the error type defined in the error-or package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."error-or" or (errorHandler.buildDepError "error-or"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

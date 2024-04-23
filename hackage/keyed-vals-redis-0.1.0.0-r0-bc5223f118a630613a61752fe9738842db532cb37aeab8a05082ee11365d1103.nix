@@ -21,7 +21,7 @@
       synopsis = "Access Redis using a keyed-vals Handle";
       description = "[keyed-vals](https://hackage.haskell.org/package/keyed-vals) specifies\na focussed client of storage services like [Redis](https://redis.io).\n\nI.e, while Redis supports many features; the abstract Handle in keyed-vals\njust supports operations that access collections of key-values\n\nThis package provides a concrete implementation of Handle that uses Redis as\nthe underlying storage service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hspec-tmp-proc" or (errorHandler.buildDepError "hspec-tmp-proc"))
             (hsPkgs."tmp-proc-redis" or (errorHandler.buildDepError "tmp-proc-redis"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

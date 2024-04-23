@@ -21,7 +21,7 @@
       synopsis = "NetEase Cloud Music FM client in Haskell.";
       description = "NetEase Cloud Music FM client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "netease-fm" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."netease-fm" or (errorHandler.buildDepError "netease-fm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

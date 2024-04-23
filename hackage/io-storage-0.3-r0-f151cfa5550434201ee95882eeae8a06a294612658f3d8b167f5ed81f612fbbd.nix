@@ -21,14 +21,14 @@
       synopsis = "A key-value store in the IO monad.";
       description = "This library allows an application to extend the 'global state'\nhidden inside the IO monad with semi-arbitrary data. Data is\nrequired to be 'Typeable'. The library provides an essentially\nunbounded number of key-value stores indexed by strings, with\neach key within the stores also being a string.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

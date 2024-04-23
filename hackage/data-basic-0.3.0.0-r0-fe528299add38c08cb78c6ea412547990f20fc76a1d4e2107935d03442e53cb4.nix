@@ -21,7 +21,7 @@
       synopsis = "A database library with a focus on ease of use, type safety and useful error messages";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."simple-logging" or (errorHandler.buildDepError "simple-logging"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "basic-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

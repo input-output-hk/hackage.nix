@@ -21,7 +21,7 @@
       synopsis = "Submit and retrieve paste output from CodePad.org.";
       description = "Submit and retrieve paste output from http://codepad.org/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

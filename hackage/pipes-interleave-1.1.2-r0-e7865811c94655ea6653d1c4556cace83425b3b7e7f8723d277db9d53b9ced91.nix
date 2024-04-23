@@ -21,7 +21,7 @@
       synopsis = "Interleave and merge streams of elements";
       description = "Interleave and merge streams of elements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "LSP interface over the hsinspect binary.";
       description = "Inspect @.hs@ files using the ghc api.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,10 +38,10 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
-        build-tools = (pkgs.lib).optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
+        ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
+        build-tools = pkgs.lib.optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
         buildable = true;
-        };
+      };
       exes = {
         "hsinspect-lsp" = {
           depends = [
@@ -64,11 +64,11 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
-          build-tools = (pkgs.lib).optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
+          ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
+          build-tools = pkgs.lib.optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -87,12 +87,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hsinspect-lsp" or (errorHandler.buildDepError "hsinspect-lsp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
+          ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ] ++ (pkgs.lib).optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
+          ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

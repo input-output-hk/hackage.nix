@@ -21,7 +21,7 @@
       synopsis = "A HTTP server for testing HTTP clients";
       description = "Given a configuration file describing routes and actions, @mock-httpd@\nwill bind to the specified ports and respond to incoming HTTP\nrequests.\n\nThe primary goal of this project is to provide a simple way to test\nshell scripts that use <https://curl.haxx.se/ curl>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mock-httpd" = {
@@ -38,9 +38,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

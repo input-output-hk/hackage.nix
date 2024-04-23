@@ -21,14 +21,14 @@
       synopsis = "GHC.OverloadedLabels.IsLabel instance for lenses from ghc-generics";
       description = "Provides an orphan GHC.OverloadedLabels.IsLabel instance for lenses from\nghc-generics. All effort is taken to play as nicely as possible with other\nIsLabel instances -- however orphan instances are inherently problematic.\nPlease do not depend on this package from any hackage libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generic-lens" or (errorHandler.buildDepError "generic-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

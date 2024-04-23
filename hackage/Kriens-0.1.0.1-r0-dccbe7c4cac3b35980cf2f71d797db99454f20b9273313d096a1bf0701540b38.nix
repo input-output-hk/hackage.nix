@@ -21,11 +21,11 @@
       synopsis = "Category for Continuation Passing Style";
       description = "Provides a type for Continuation Passing Style development     ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

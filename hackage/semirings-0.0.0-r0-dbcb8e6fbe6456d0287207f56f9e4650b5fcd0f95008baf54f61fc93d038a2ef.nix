@@ -21,6 +21,6 @@
       synopsis = "TBA";
       description = "Currently being prepared for release, reserving the namespace here.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

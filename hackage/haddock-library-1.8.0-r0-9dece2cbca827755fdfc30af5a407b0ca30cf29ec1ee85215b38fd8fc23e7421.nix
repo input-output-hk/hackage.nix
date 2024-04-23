@@ -21,7 +21,7 @@
       synopsis = "Library exposing some functionality of Haddock.";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries. These modules expose some\nfunctionality of it without pulling in the GHC\ndependency. Please note that the API is likely\nto change so be sure to specify upper bounds in\nyour projects. For interacting with Haddock\nitself, see the [haddock package](https://hackage.haskell.org/package/haddock).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -47,12 +47,12 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fixtures" = {
           depends = [
             (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
@@ -62,9 +62,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

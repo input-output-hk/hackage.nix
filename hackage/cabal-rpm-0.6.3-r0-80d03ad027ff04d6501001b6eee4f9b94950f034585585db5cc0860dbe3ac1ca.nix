@@ -21,7 +21,7 @@
       synopsis = "RPM package creator for Haskell Cabal-based packages";
       description = "This package generates RPM spec files from Haskell Cabal packages.\n\nRecent changes:\n\n* 0.6.3: accept tarball arg, use temporary working directory, and add manpage\n\n* 0.6.2: fix L/GPL version output\n\n* 0.6.1: fix bugs for 'cabal-rpm pkg' unpacking and extra docs\n\n* 0.6.0: new update and release for Cabal >= 1.10";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-rpm" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

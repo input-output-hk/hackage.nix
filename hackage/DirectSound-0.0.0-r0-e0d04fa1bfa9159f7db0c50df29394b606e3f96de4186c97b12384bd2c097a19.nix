@@ -21,14 +21,14 @@
       synopsis = "Partial binding to the Microsoft DirectSound API.";
       description = "Partial binding to the Microsoft DirectSound API.\nSee the example program for a simple stereo playback.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."dsound" or (errorHandler.sysDepError "dsound")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

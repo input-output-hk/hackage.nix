@@ -21,7 +21,7 @@
       synopsis = "A command line interface to Sloane's On-Line Encyclopedia\nof Integer Sequences";
       description = "A command line interface to Sloane's On-Line Encyclopedia\nof Integer Sequences. For usage see\n<http://github.com/akc/sloane>.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "sloane" = {
@@ -40,9 +40,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

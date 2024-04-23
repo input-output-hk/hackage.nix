@@ -21,7 +21,7 @@
       synopsis = "Dynamic linking for embedded DSLs with staged compilation";
       description = "Dynamic compilation, linking and loading of functions in\nstaged languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "regression" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

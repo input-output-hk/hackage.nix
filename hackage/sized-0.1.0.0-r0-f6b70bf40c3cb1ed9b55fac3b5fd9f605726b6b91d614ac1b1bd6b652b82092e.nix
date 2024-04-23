@@ -21,7 +21,7 @@
       synopsis = "Sized sequence data-types";
       description = "A wrapper to make length-parametrized data-type from ListLike data-types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

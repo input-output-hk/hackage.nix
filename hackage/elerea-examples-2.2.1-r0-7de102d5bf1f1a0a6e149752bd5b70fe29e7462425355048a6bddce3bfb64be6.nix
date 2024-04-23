@@ -21,7 +21,7 @@
       synopsis = "Example applications for Elerea";
       description = "Example applications for Elerea. They are factored out into their\nown package so as to avoid unnecessary dependencies in the\nlibrary. Check out the @doc@ directory for the colourful literate\nsources.\n\nThe programs included are the following:\n\n* bounce: an example for creating dynamic collections of signals;\nleft click to create balls, drag existing balls with left button\nto propel them and drag with right to select balls for deletion\n(upon release);\n\n* chase: a minimal example that demonstrates reactivity and mutually\nrecursive signals;\n\n* breakout: a not too fancy breakout clone; you can simply use the\nmouse to move the paddle.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elerea-bounce" = {
@@ -30,27 +30,27 @@
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elerea-breakout" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elerea-chase" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

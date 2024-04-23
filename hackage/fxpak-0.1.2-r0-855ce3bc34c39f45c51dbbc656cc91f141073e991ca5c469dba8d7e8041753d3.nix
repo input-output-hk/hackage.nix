@@ -21,15 +21,15 @@
       synopsis = "Interface to the FXPak/FXPak Pro USB interface";
       description = "Wraps Serial interaction with FXPak/FXPak Pro devices";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

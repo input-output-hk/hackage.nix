@@ -21,7 +21,7 @@
       synopsis = "Use blaze-builder Builder's in an Iteratee.";
       description = "This package simplifies the process of using blaze-builder with the\nenumerator package by converting a function that constructs a Builder into\nan Iteratee.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

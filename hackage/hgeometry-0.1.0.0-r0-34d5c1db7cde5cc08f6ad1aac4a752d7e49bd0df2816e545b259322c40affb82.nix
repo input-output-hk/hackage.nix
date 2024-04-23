@@ -21,11 +21,11 @@
       synopsis = "Geometry types in Haskell";
       description = "Several basic geometry geometry types and functions on these types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

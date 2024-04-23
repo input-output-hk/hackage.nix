@@ -21,7 +21,7 @@
       synopsis = "Tinylog integration for cql-io.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cql-io" or (errorHandler.buildDepError "cql-io"))
           (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

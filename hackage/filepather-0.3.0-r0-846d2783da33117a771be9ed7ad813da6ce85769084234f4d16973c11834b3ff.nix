@@ -21,7 +21,7 @@
       synopsis = "Functions on System.FilePath";
       description = "Functions over @System.FilePath@ including a find function for recursing down directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

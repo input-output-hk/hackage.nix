@@ -21,7 +21,7 @@
       synopsis = "Template Haskell for embedding text rendered using PCF fonts.";
       description = "pcf-font-embed is a library for rendering X11 PCF fonts at compile-time and statically embedding those images into user programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."pcf-font" or (errorHandler.buildDepError "pcf-font"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

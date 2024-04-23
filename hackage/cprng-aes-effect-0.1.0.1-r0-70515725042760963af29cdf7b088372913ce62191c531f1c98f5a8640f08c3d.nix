@@ -21,7 +21,7 @@
       synopsis = "Run random effect using cprng-aes, a crypto pseudo number generator.";
       description = "Any help (especially documentation) is welcome";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
           (hsPkgs."crypto-random-effect" or (errorHandler.buildDepError "crypto-random-effect"))
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

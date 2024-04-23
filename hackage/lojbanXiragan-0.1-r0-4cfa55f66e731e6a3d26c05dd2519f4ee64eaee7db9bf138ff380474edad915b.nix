@@ -21,20 +21,20 @@
       synopsis = "lojban to xiragan";
       description = "xiragan -e coi rodo -> 「しょユ るぉど」\n\nxiragan -e ti ginka -> 「てぃ ぎんか」\n\nxiragan -e \".o'i mu xagji sofybakni cu zvati le purdi\" ->\n「っおひ む はぁグじ そフゥぅばクに しゅ ズう\"ぁてぃ れ ぷルゥでぃ」";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "xiragan" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lojbanXiragan" or (errorHandler.buildDepError "lojbanXiragan"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

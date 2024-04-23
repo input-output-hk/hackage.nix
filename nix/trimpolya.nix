@@ -6,8 +6,8 @@
         nix = import ../hackage/trimpolya-0-r0-2240fa5934e62299c97b3bcd2ae4a7deb7ddd4b27aaa8a61a4ee76896d063823.nix;
         revNum = 0;
         sha256 = "2240fa5934e62299c97b3bcd2ae4a7deb7ddd4b27aaa8a61a4ee76896d063823";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

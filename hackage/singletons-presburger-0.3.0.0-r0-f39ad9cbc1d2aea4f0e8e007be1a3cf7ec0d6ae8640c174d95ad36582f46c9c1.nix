@@ -21,7 +21,7 @@
       synopsis = "Presburger Arithmetic Solver for GHC Type-level natural numbers with Singletons package.";
       description = "The @singletons-presburger@ plugin augments GHC type-system with Presburger\nArithmetic Solver for Type-level natural numbers, with integration with <https://hackage.haskell.org/package/singletons singletons> package.\n\nYou can use by adding this package to @dependencies@ and add the following pragma\nto the head of .hs files:\n\n> OPTIONS_GHC -fplugin Data.Singletons.TypeNats.Presburger";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ghc-typelits-presburger" or (errorHandler.buildDepError "ghc-typelits-presburger"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-arith" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."singletons-presburger" or (errorHandler.buildDepError "singletons-presburger"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

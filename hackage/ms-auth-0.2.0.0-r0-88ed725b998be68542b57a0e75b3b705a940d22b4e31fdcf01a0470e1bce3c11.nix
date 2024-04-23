@@ -21,7 +21,7 @@
       synopsis = "Microsoft Authentication API";
       description = "Bindings to the Microsoft Identity API / Active Directory (AD) for building applications that use either Delegated or App-only permissions. Helper functions are provided for building OAuth2 authentication flows and keep tokens transactionally secure and up to date.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."validation-micro" or (errorHandler.buildDepError "validation-micro"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "GraphViz Tabular Interface";
       description = "Introduces a new file extension .gvti and is a special tabular or line-based GraphViz subset interface. Is a fork of the now deprecated mmsyn4 package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
           (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gvti" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
             (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

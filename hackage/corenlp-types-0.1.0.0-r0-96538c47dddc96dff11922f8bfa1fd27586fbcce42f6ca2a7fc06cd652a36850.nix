@@ -21,7 +21,7 @@
       synopsis = "Types for interaction with CoreNLP";
       description = "This library introduces types that make it easier to work with [CorenNLP](https://stanfordnlp.github.io/CoreNLP/) server responses (JSON).\n\nIt is mostly a fork of [`corenlp-parser`](https://hackage.haskell.org/package/corenlp-parser-0.4.0.0) however without the rockdb dependency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

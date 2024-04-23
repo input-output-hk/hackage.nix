@@ -21,7 +21,7 @@
       synopsis = "Automatic filter generator for Yesod";
       description = "Please see the README on GitHub at <https://github.com/iij-ii/yesod-filter#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yesod-filter-test" = {
           depends = [
@@ -48,16 +48,16 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."yesod-filter" or (errorHandler.buildDepError "yesod-filter"))
             (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yesod-filter-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

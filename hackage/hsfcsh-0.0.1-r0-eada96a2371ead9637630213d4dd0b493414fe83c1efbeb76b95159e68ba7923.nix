@@ -21,7 +21,7 @@
       synopsis = "Incremental builder for flash";
       description = "It is a wrapper around fcsh. It allows to build flash/flex project incrementally. Can be used from Makefile";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsfcsh" = {
@@ -31,9 +31,9 @@
             (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hsfcsh_do" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -41,9 +41,9 @@
             (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

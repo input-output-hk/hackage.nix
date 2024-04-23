@@ -6,8 +6,8 @@
         nix = import ../hackage/js-dgtable-0.5.2-r0-f75cb4fa53c88c65794becdd48eb0d3b2b8abd89a3d5c19e87af91f5225c15e4.nix;
         revNum = 0;
         sha256 = "f75cb4fa53c88c65794becdd48eb0d3b2b8abd89a3d5c19e87af91f5225c15e4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

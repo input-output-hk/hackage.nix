@@ -21,15 +21,15 @@
       synopsis = "Generate Code 128 barcodes as PDFs";
       description = "A library for generating barcodes in Code 128 in PDF format, either\ndirectly as 'Data.ByteString.Lazy.ByteString's or as drawing commands\nin 'HPDF''s command set.\nCode 128 is described at <http://en.wikipedia.org/wiki/Code_128>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."HPDF" or (errorHandler.buildDepError "HPDF"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

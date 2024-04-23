@@ -21,7 +21,7 @@
       synopsis = "Pretty-printing for RIO";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

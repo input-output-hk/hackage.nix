@@ -21,7 +21,7 @@
       synopsis = "Parse FITS files";
       description = "Parse and manipulate FITS data natively in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-latin1" or (errorHandler.buildDepError "text-latin1"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "omnibus" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "fits-tests" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "";
       description = "Haskell bindings to libuuid.\nThe library libuuid is available as a part of e2fsprogs:\n<http://e2fsprogs.sourceforge.net/>.\nThis library is useful for creating, comparing, parsing and\nprinting Universally Unique Identifiers.\nSee <http://en.wikipedia.org/wiki/UUID> for the general idea.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."uuid" or (errorHandler.sysDepError "uuid")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

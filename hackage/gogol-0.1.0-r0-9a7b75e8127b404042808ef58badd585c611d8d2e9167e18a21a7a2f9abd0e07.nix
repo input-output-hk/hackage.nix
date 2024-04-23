@@ -21,7 +21,7 @@
       synopsis = "Comprehensive Google Services SDK.";
       description = "This client library contains request and response logic to communicate\nwith Google Services compatible APIs using the types supplied by the\nvarious @gogol-*@ service libraries. See the <http://hackage.haskell.org/packages/#cat:Google Google>\ncategory on Hackage for supported services.\n\nTo get started, import the desired @gogol-*@ library (such as\n<http://hackage.haskell.org/package/gogol-gmail/docs/Network-Google-Gmail.html Network.Google.Gmail>)\nand @Network.Google@ from this package.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nGHC 7.10.2 and higher is officially supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,8 +54,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

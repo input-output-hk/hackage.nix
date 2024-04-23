@@ -21,12 +21,12 @@
       synopsis = "Boolean strong typing";
       description = "Makes sense of your booleans: strong type them!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "kill-bool-test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."kill-bool" or (errorHandler.buildDepError "kill-bool"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/bv-sized-lens-0.1.0.0-r0-6b3793833f50c31e00de30a471bb0921a8bacbefe95cf7040ffd2b1060c7d2c9.nix;
         revNum = 0;
         sha256 = "6b3793833f50c31e00de30a471bb0921a8bacbefe95cf7040ffd2b1060c7d2c9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

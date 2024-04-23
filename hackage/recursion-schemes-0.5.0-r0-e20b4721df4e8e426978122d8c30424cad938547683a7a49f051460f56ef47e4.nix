@@ -21,7 +21,7 @@
       synopsis = "Generalized bananas, lenses and barbed wire";
       description = "Generalized bananas, lenses and barbed wire\n\n/Changes since 0.4.2/:\n\n* Added futumorphisms\n\n/Changes since 0.2.2/:\n\n* Split distHisto from distGHisto\n\n* Added zygohistomorphic prepromorphisms\n\n/Changes since 0.2.1/:\n\n* Added (generalized) prepro- and postpro- morphisms\n\n/Changes since 0.2/:\n\n* Added Elgot (co)algebras\n\n/Changes since 0.1/:\n\n* Removed dependency on Foldable from Mendler-style recursion schemes\n\n* Added Lambek's Lemma";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."streams" or (errorHandler.buildDepError "streams"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

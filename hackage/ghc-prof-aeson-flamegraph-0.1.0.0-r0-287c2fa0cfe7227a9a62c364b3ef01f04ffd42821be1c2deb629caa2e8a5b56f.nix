@@ -21,7 +21,7 @@
       synopsis = "Turn GHC `-pj` profiling output into FlameGraph format.";
       description = "Please see the README on Github at <https://github.com/Fuuzetsu/ghc-prof-aeson-flamegraph#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-prof-aeson-flamegraph" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/profunctor-misc-0.0.0.1-r0-ed31d80ad6208f72dbc94e127c52768939d6034bd5d239efb07b5fa21a7196af.nix;
         revNum = 0;
         sha256 = "ed31d80ad6208f72dbc94e127c52768939d6034bd5d239efb07b5fa21a7196af";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

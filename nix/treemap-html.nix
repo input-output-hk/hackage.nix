@@ -6,8 +6,8 @@
         nix = import ../hackage/treemap-html-0.1-r0-5274f82d207ea4a8c1bfc37d6c8c80826e2120f2876f27885fdf2ddc8df7f4b0.nix;
         revNum = 0;
         sha256 = "5274f82d207ea4a8c1bfc37d6c8c80826e2120f2876f27885fdf2ddc8df7f4b0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

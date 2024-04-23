@@ -21,7 +21,7 @@
       synopsis = "Libary to interface with the NCBI blast REST interface";
       description = "Searches for a provided nucleotide or protein sequence with the NCBI Blast REST service and returns a blast result in xml format as BlastResult datatype.\n\nFor more information on BLAST refer to: <http://blast.ncbi.nlm.nih.gov/Blast.cgi>.\n\nInformation on the webservice can be found at: <http://www.ncbi.nlm.nih.gov/BLAST/developer.shtml>.\n\nIf you plan to submit more than 20 searches in one session, please look up the Usage Guidelines in the webservice information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."blastxml" or (errorHandler.buildDepError "blastxml"))
           (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
           (hsPkgs."biofasta" or (errorHandler.buildDepError "biofasta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

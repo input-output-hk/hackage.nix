@@ -21,7 +21,7 @@
       synopsis = "a bitvector datatype that is parameterized by the vector width";
       description = "This module defines a width-parameterized bitvector type and various associated operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parameterized-utils" or (errorHandler.buildDepError "parameterized-utils"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bv-sized-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."parameterized-utils" or (errorHandler.buildDepError "parameterized-utils"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

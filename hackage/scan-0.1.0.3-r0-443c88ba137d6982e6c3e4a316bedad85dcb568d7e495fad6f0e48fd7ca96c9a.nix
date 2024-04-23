@@ -21,16 +21,16 @@
       synopsis = "lexical style suggestions for source code";
       description = "scan checks the format of your haskell source code regarding:\ncomments, white spaces and line breaks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scan" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

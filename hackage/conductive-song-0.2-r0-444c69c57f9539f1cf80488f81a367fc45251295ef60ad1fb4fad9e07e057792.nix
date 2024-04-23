@@ -21,15 +21,15 @@
       synopsis = "a library of functions which are useful for composing music";
       description = "This library contains functions which are useful for composing music, including scales and pitch. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conductive-base" or (errorHandler.buildDepError "conductive-base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Lexical Style Sheets - Snap Web Framework adaptor.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-snaplet-lss" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec-snap" or (errorHandler.buildDepError "hspec-snap"))
             (hsPkgs."hspec2" or (errorHandler.buildDepError "hspec2"))
             (hsPkgs."snaplet-lss" or (errorHandler.buildDepError "snaplet-lss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

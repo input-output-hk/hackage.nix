@@ -21,7 +21,7 @@
       synopsis = "A simple C value type";
       description = "This library provides a very simple C like AST and conversion type classes. The classes use GHC.Generics and default signatures so you can painless convert to and from Haskell types.\nThis is not a library for parsing C. There are plenty of great ones on Hackage though. This is meant to make the process of converting from a non-recursive Haskell value to a C value easier for data serialization tasks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."DebugTraceHelpers" or (errorHandler.buildDepError "DebugTraceHelpers"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

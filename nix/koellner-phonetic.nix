@@ -6,8 +6,8 @@
         nix = import ../hackage/koellner-phonetic-0.0-r0-055f7baca809d98b5de1eec17c523866cca8587b28994d68b10983d87791e410.nix;
         revNum = 0;
         sha256 = "055f7baca809d98b5de1eec17c523866cca8587b28994d68b10983d87791e410";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

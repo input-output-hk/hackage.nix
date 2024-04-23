@@ -21,7 +21,7 @@
       synopsis = "Miscellaneous utilities for building and working with command line interfaces";
       description = "This library was created to hold code that is shared among multiple command line apps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."which" or (errorHandler.buildDepError "which"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

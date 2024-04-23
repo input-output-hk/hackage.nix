@@ -21,7 +21,7 @@
       synopsis = "A Microformats 2 parser.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "microformats2-parser" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             (hsPkgs."microformats2-parser" or (errorHandler.buildDepError "microformats2-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."html-conduit" or (errorHandler.buildDepError "html-conduit"))
             (hsPkgs."xml-lens" or (errorHandler.buildDepError "xml-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

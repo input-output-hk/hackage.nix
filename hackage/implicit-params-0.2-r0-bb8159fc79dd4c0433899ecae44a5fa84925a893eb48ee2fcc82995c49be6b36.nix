@@ -21,14 +21,14 @@
       synopsis = "Named and unnamed implicit parameters with defaults.";
       description = "Named and unnamed implicit parameters with defaults using type classes and\nconstraint hacks. For examples, see \"Data.Implicit\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

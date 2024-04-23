@@ -21,7 +21,7 @@
       synopsis = "Generate Haskell bindings for GObject Introspection capable libraries";
       description = "Generate Haskell bindings for GObject Introspection capable libraries. This includes most notably\nGtk+, but many other libraries in the GObject ecosystem provide introspection data too.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskell-gi" = {
@@ -42,16 +42,16 @@
             (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."gobject-introspection-1.0" or (errorHandler.pkgConfDepError "gobject-introspection-1.0"))
             (pkgconfPkgs."gobject-2.0" or (errorHandler.pkgConfDepError "gobject-2.0"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

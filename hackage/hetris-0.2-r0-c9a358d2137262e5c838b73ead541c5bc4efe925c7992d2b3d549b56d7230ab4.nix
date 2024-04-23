@@ -21,7 +21,7 @@
       synopsis = "Text Tetris";
       description = "This is a simple reimplementation of Tetris which\nuses the Curses interface to run in a terminal.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hetris" = {
@@ -31,10 +31,10 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
-            ];
+          ];
           libs = [ (pkgs."curses" or (errorHandler.sysDepError "curses")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "FRP for brick Terminal user interface library";
       description = "Defines FRP for brick Terminal user interface library (see dir examples at the repo's source)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,17 +43,17 @@
           (hsPkgs."temporal-media" or (errorHandler.buildDepError "temporal-media"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dyna-brick-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dyna-brick" or (errorHandler.buildDepError "dyna-brick"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

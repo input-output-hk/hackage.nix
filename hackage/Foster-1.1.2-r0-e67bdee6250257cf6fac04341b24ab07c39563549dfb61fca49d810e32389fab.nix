@@ -21,7 +21,7 @@
       synopsis = "Utilities to generate and solve puzzles";
       description = "Utilities to generate and solve puzzles";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "foster" = {
@@ -32,10 +32,10 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "foster-benchmark" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

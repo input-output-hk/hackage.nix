@@ -21,7 +21,7 @@
       synopsis = "Spidering robot to download files from Gopherspace";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "gopherbot" = {
@@ -33,9 +33,9 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A bioinformatics library";
       description = "A set of core definitions and data structures\ncommonly used in bioinformatics.  The intention is that bioinformatics\nlibraries will use this as a common ground to avoid needless incompatibilities\nand duplicated work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

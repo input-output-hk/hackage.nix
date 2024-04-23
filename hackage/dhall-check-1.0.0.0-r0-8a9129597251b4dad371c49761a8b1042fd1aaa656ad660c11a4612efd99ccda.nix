@@ -21,7 +21,7 @@
       synopsis = "Check all dhall files in a project";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dhall-check" = {
@@ -34,9 +34,9 @@
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

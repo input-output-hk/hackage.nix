@@ -21,14 +21,14 @@
       synopsis = "The canonical error type";
       description = "A canonical `Error` type, which provides a way to turn an error string into an `Error`, add context to an `Error`, and pretty print the `Error` for displaying it to users.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Pure Haskell implementation of the Levenberg-Marquardt algorithm";
       description = "The Levenberg-Marquardt algorithm is a minimization algorithm for functions expressed as a sum of squared errors\n\nThis can be used for curve-fitting, multidimensional function minimization, and neural networks training\n\nGo to <https://github.com/ktklam9/HaskellLM> for example usage (in tests)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

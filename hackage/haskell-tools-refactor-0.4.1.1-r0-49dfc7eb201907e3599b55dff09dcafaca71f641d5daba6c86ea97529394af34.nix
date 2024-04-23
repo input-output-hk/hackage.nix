@@ -21,7 +21,7 @@
       synopsis = "Refactoring Tool for Haskell";
       description = "Contains a set of refactorings based on the Haskell-Tools framework to easily transform a Haskell program. For the descriptions of the implemented refactorings, see the homepage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."haskell-tools-backend-ghc" or (errorHandler.buildDepError "haskell-tools-backend-ghc"))
           (hsPkgs."haskell-tools-rewrite" or (errorHandler.buildDepError "haskell-tools-rewrite"))
           (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-tools-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."haskell-tools-rewrite" or (errorHandler.buildDepError "haskell-tools-rewrite"))
             (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
             (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

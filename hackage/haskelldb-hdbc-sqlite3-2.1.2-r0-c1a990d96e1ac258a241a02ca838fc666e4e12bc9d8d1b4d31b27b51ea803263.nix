@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HDBC SQLite driver.";
       description = "HaskellDB requires this driver if HDBC will be used to connect to a SQLlite3 database.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "DBDirect-hdbc-sqlite3" = { buildable = true; }; };
       };
-    }
+      exes = { "DBDirect-hdbc-sqlite3" = { buildable = true; }; };
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Subscribe to a wiki's RSS feed and archive external links";
       description = "A MediaWiki's RecentChanges or NewPages links to every new edit or article; this bot will\npoll the corresponding RSS feeds (easier and more reliable than parsing the HTML), follow\nthe links to the new edit/article, and then use TagSoup to filter out every off-wiki link\n(eg. to http://cnn.com).\n\nWith this list of external links, the bot will then fire off requests to http://webcitation.org/,\nwhich will make a backup (similar to the Internet Archive, but on-demand).\n\nExample: to archive links from every article in the English Wikipedia's RecentChanges:\n\n> wp-archivebot gwern0@gmail.com 'http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&feed=rss'\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wp-archivebot" = {
@@ -32,9 +32,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

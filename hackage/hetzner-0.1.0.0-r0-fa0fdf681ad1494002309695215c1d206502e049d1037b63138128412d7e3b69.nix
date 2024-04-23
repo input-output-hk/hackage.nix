@@ -21,7 +21,7 @@
       synopsis = "Hetzner Cloud client library.";
       description = "Hetzner Cloud client library. Check the readme for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

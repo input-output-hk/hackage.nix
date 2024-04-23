@@ -21,12 +21,12 @@
       synopsis = "A basic library for SI/binary prefix units";
       description = "This library deals with parsing values containing \\\"prefix units\\\"\n(both binary and SI). For example, it can parse 10M and 1G, and it\ncan also format values for displaying with the \\\"optimal\\\" unit.\nFor more details, see the man page units(7),\n<http://physics.nist.gov/cuu/Units/prefixes.html> and\n<http://physics.nist.gov/cuu/Units/binary.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-units" = {
           depends = [
@@ -36,9 +36,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."prefix-units" or (errorHandler.buildDepError "prefix-units"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

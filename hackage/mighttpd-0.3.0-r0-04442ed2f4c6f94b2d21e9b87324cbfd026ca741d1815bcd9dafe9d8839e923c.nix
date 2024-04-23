@@ -21,7 +21,7 @@
       synopsis = "Simple Web Server in Haskell";
       description = "A simple but practical HTTP server in Haskell.\n'mighttpd' should be called 'mighty'.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mighttpd" = {
@@ -39,13 +39,13 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mkindex" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

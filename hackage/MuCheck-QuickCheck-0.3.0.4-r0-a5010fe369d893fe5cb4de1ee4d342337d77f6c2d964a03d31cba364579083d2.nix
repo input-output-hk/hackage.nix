@@ -21,25 +21,25 @@
       synopsis = "Automated Mutation Testing for QuickCheck tests";
       description = "This package contains the test adapter for QuickCheck tests to use it with MuCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mucheck-quickcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

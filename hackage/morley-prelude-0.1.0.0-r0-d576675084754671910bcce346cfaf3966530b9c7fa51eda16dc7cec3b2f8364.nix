@@ -21,14 +21,14 @@
       synopsis = "A custom prelude used in Morley";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

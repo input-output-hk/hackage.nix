@@ -6,8 +6,8 @@
         nix = import ../hackage/variadic-0.0.0.0-r0-3ce962ad65e6a5e97abfac5fe50aabe5317d1dd3742e9e5b4ac9990fe2f2c61b.nix;
         revNum = 0;
         sha256 = "3ce962ad65e6a5e97abfac5fe50aabe5317d1dd3742e9e5b4ac9990fe2f2c61b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Session support for the Salvia webserver.";
       description = "Session support for the Salvia webserver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."salvia" or (errorHandler.buildDepError "salvia"))
           (hsPkgs."salvia-protocol" or (errorHandler.buildDepError "salvia-protocol"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

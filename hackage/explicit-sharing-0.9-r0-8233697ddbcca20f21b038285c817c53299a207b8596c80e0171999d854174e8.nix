@@ -21,7 +21,7 @@
       synopsis = "Explicit Sharing of Monadic Effects";
       description = "This package implements a monad for non-deterministic computations\nwith sharing.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

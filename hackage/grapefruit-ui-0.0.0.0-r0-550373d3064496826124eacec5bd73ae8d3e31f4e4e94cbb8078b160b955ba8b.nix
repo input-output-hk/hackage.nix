@@ -21,7 +21,7 @@
       synopsis = "Declarative user interface programming";
       description = "Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on\nuser interfaces. FRP makes it possible to implement reactive and interactive systems\nin a declarative style. To learn more about FRP, have a look at\n<http://haskell.org/haskellwiki/Functional_Reactive_Programming>.\n\nThis package contains general user interface support. To make use of it, it has to be\ncomplemented by a UI backend. It is possible to have different UI backends\nimplementing the same general interface on top of different UI toolkits. At the\nmoment, the only backend is one based on GTK+. This is provided by the\ngrapefruit-ui-gtk package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."grapefruit-frp" or (errorHandler.buildDepError "grapefruit-frp"))
           (hsPkgs."grapefruit-records" or (errorHandler.buildDepError "grapefruit-records"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

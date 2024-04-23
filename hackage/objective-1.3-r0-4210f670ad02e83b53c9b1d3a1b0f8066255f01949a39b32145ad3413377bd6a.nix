@@ -21,7 +21,7 @@
       synopsis = "Composable objects";
       description = "Composable objects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bindings to the ALSA simple mixer API.";
       description = "This package provides bindings to the ALSA simple mixer API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         libs = [ (pkgs."asound" or (errorHandler.sysDepError "asound")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

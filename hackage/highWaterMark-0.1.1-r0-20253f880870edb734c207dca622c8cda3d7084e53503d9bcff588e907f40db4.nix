@@ -21,16 +21,16 @@
       synopsis = "Memory usage statistics";
       description = "A library for determining the amount of memory allocated a\nt any point by a GHC program. Note - it only counts memory\nunder the GHC storage manager, it does not count malloc, mmap'd stuff etc.\n\nObsolete.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "highWaterMark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

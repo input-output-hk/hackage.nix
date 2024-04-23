@@ -21,7 +21,7 @@
       synopsis = "A functionally reactive game engine.";
       description = "A functionally reactive game engine, with headgear to protect you\nfrom the headache of game development provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       tests = {
         "helm-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

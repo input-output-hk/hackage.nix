@@ -21,11 +21,11 @@
       synopsis = "Variations on flip for multiple arguments";
       description = "flip1 to flip9, revers1 to reverse9";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

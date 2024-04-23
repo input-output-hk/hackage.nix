@@ -6,8 +6,8 @@
         nix = import ../hackage/handa-data-0.2.9.9-r0-bdbc37aeac139a6f90e794908f5735407d3c7b853211bcd7e3edf20705fff103.nix;
         revNum = 0;
         sha256 = "bdbc37aeac139a6f90e794908f5735407d3c7b853211bcd7e3edf20705fff103";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

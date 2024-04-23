@@ -21,21 +21,21 @@
       synopsis = "A simple api for matchers";
       description = "Rematch is a simple library of matchers, which express rules\nthat can pass or fail. Matchers also report their failure with\nhuman readable output. Custom matchers can be build, and\nmatchers can be combined using several predefined combinators\nor you can write your own.\nMatchers are often used in automated tests to provide expressive\nfailure messages.\nRematch is very similar to, and very inspired by the hamcrest\nlibrary for Java";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Wiki";
       description = "Flippi is a Wiki clone written in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flippi" = {
@@ -35,9 +35,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."FiniteMap" or (errorHandler.buildDepError "FiniteMap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

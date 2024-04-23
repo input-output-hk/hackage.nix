@@ -21,19 +21,19 @@
       synopsis = "A binding to the X11 graphics library";
       description = "A Haskell binding to the X11 graphics library. The binding is a direct\ntranslation of the C binding; for documentation of these calls, refer\nto \\\"The Xlib Programming Manual\\\", available online at\n<http://tronche.com/gui/x/xlib/>.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         libs = [
           (pkgs."X11" or (errorHandler.sysDepError "X11"))
           (pkgs."Xrandr" or (errorHandler.sysDepError "Xrandr"))
           (pkgs."Xext" or (errorHandler.sysDepError "Xext"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

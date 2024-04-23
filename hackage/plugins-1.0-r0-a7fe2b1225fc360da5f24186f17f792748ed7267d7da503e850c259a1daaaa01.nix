@@ -21,15 +21,15 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

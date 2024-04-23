@@ -21,7 +21,7 @@
       synopsis = "An email parser that will parse everything";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."strptime" or (errorHandler.buildDepError "strptime"))
           (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "emailparse-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

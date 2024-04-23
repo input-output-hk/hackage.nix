@@ -21,11 +21,11 @@
       synopsis = "An extensible dead-man's switch system";
       description = "Vigilance is a dead man's switch (See <https://en.wikipedia.org/wiki/Dead_man%27s_switch>)\n(or vigilance switch). You define named @watches that you expect to happen\nand how long to wait inbetween before it's time to worry. You then instrument\nyour periodical tasks, whatever they are, to report to vigilance via a simple\nHTTP POST or with the included client. You can then\nconfigure notifications that will fire when a watch fails\nto check in.\nView the README on the homepage for more details.\nInstall notes:\nOn client installs where you may not want to install the\nserver component, configure like:\n\n> cabal configure -fno-server\n\nOn client installs where you may not want to install the\nclient component, configure like:\n\n> cabal configure -fno-client\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "vigilance-server" = {
-          depends = (pkgs.lib).optionals (!flags.no-server) [
+          depends = pkgs.lib.optionals (!flags.no-server) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -66,11 +66,11 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-platform" or (errorHandler.buildDepError "yesod-platform"))
-            ];
+          ];
           buildable = if flags.no-server then false else true;
-          };
+        };
         "vigilance" = {
-          depends = (pkgs.lib).optionals (!flags.no-client) [
+          depends = pkgs.lib.optionals (!flags.no-client) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -108,10 +108,10 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-platform" or (errorHandler.buildDepError "yesod-platform"))
-            ];
+          ];
           buildable = if flags.no-client then false else true;
-          };
         };
+      };
       tests = {
         "test-vigilance" = {
           depends = [
@@ -156,9 +156,9 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-platform" or (errorHandler.buildDepError "yesod-platform"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

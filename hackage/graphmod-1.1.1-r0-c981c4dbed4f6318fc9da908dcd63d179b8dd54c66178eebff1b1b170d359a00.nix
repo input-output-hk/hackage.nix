@@ -21,7 +21,7 @@
       synopsis = "Present the module dependecies of a program as a \"dot\" graph.";
       description = "This package contains a program that can compute \"dot\" grpahs\nfrom the dependecies between a number of Haskell modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "graphmod" = {
@@ -30,9 +30,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

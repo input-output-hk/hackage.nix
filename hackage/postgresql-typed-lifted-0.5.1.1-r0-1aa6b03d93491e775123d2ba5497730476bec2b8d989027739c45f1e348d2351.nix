@@ -21,7 +21,7 @@
       synopsis = "postgresql-typed operations lifted to any instance of MonadBase or MonadBaseControl.";
       description = "Provides generalized lifted operations for postgresql-typed. Version numbers track postgresql-typed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."postgresql-typed" or (errorHandler.buildDepError "postgresql-typed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

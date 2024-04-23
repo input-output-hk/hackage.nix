@@ -21,15 +21,15 @@
       synopsis = "Discordian Date Types for Haskell";
       description = "This package adds the DDate and DDateTime types\nand corresponding functions to Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."dates" or (errorHandler.buildDepError "dates"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

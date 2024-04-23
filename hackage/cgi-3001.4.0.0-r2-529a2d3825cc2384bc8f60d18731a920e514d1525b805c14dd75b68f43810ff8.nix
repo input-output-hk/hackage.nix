@@ -21,7 +21,7 @@
       synopsis = "A library for writing CGI programs";
       description = "This is a Haskell library for writing CGI programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,62 +35,62 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cookie.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "error.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "hello.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "printinput.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "redirect.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "showAllInputs.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "upload.cgi" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

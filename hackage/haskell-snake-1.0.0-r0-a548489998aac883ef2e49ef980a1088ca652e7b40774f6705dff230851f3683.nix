@@ -21,7 +21,7 @@
       synopsis = "Snake game implemetation in Haskell using SDL2";
       description = "See README at <https://github.com/CGenie/haskell-snake>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-snake" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."sdl2-ttf" or (errorHandler.buildDepError "sdl2-ttf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

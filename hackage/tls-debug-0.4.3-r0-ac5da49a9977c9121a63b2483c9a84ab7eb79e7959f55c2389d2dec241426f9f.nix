@@ -21,7 +21,7 @@
       synopsis = "Set of programs for TLS testing and debugging";
       description = "A set of program to test and debug various aspect of the TLS package.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tls-stunnel" = {
@@ -33,9 +33,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
+        };
         "tls-retrievecertificate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -48,9 +48,9 @@
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tls-simpleclient" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tls-simpleserver" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

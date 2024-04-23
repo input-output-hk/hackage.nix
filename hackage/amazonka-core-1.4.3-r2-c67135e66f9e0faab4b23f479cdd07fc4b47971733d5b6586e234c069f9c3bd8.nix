@@ -21,7 +21,7 @@
       synopsis = "Core data types and functionality for Amazonka libraries.";
       description = "Core data types, functionality and serialisation primitives for\nAmazonka related Amazon Web Services SDKs.\n\nThe external interface of this library is stable with respect to the\ndownstream Amazonka libraries, only, and as such is not suitable\nfor use in non-Amazonka projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -52,14 +52,14 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.9")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"))) ++ (if flags.old-locale
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.9")) (hsPkgs."nats" or (errorHandler.buildDepError "nats"))) ++ (if flags.old-locale
           then [
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-unicode" or (errorHandler.buildDepError "quickcheck-unicode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

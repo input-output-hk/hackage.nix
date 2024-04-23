@@ -21,11 +21,11 @@
       synopsis = "Asynchronous Computations";
       description = "An implementation of IO computations that return their value\nasynchronously.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

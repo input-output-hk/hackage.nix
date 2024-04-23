@@ -21,7 +21,7 @@
       synopsis = "A MQTT client library.";
       description = "A library to communicate with MQTT brokers.\nSee the 'Network.MQTT' module for documentation and the project repository\nfor some <https://github.com/k00mi/mqtt-hs/blob/master/examples examples>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

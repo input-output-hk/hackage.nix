@@ -21,14 +21,14 @@
       synopsis = "Library to switch to daemon mode using built-in OS facilities.";
       description = "This package is a wrapper around the daemon() function on BSD-like Unices,\nincluding Mac OS X and glibc-based Linux distributions.  It does not function on\nother systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

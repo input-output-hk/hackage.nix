@@ -21,7 +21,7 @@
       synopsis = "C/CUDA quasiquoting library.";
       description = "This package provides a general parser for the C language, including most GCC\nextensions and some CUDA extensions.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"))
             (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

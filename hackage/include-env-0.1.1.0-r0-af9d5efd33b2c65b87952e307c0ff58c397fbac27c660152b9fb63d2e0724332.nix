@@ -21,23 +21,23 @@
       synopsis = "Include the value of an environment variable at compile time";
       description = "Embed secrets (e.g. API keys) inside production artifacts without checking them into the repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "include-env" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."include-env" or (errorHandler.buildDepError "include-env"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

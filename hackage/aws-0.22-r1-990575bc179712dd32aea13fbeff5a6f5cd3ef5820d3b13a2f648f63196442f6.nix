@@ -21,7 +21,7 @@
       synopsis = "Amazon Web Services (AWS) for Haskell";
       description = "Bindings for Amazon Web Services (AWS), with the aim of supporting all AWS services. To see a high level overview of the library, see the README at <https://github.com/aristidb/aws/blob/master/README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -63,52 +63,52 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ] ++ (if flags.networkbsd
+        ] ++ (if flags.networkbsd
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       exes = {
         "GetObjectV4" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "GetObject" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "GetObjectGoogle" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "MultipartUpload" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -117,11 +117,11 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "MultipartTransfer" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
@@ -129,11 +129,11 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "NukeBucket" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
@@ -142,11 +142,11 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "PutBucketNearLine" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
@@ -155,19 +155,19 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "SimpleDb" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "DynamoDb" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
@@ -176,20 +176,20 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "Sqs" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "sqs-tests" = {
           depends = [
@@ -212,9 +212,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dynamodb-tests" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -236,9 +236,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "s3-tests" = {
           depends = [
             (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
@@ -263,9 +263,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

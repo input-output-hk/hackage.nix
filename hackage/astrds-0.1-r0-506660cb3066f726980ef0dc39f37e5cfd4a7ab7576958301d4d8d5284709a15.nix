@@ -21,7 +21,7 @@
       synopsis = "an incomplete 2d space game";
       description = "astrds is an intentionally incomplete 2d space game. The code\nis intended to be a playground for Haskell programmers who want\nto add their own features and extensions. The\nimplementation is based on SDL and OpenGL and includes\nsimple audio and joystick support.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "astrds" = {
@@ -38,9 +38,9 @@
             (hsPkgs."SDL-mixer" or (errorHandler.buildDepError "SDL-mixer"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

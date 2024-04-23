@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-generalized-examples-common";
         version = "0.1.2.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko 2020-2021";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Some common code for phonetic languages generalized functionality.";
       description = "Is intended to be used in the phonetic-languages-simplified-generalized-examples-array package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
           (hsPkgs."phonetic-languages-phonetics-basics" or (errorHandler.buildDepError "phonetic-languages-phonetics-basics"))
           (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

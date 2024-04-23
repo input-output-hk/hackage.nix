@@ -21,7 +21,7 @@
       synopsis = "A twitter client for GTK+. Beta version.";
       description = "A slick twitter client for GTK. Features syntax highlighting of tweets, URL linking.\nAutomatic URL shortening and 'timeline modifier' will be implemented in future versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hawitter" = {
@@ -41,9 +41,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

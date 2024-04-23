@@ -21,7 +21,7 @@
       synopsis = "Example applications using this library in three ways.";
       description = "Three examples of using this library, either just to demonstrate the end-to-end connection (\"Simple\"), with cookies (\"Cookies\") or with type-level authorisation (\"Authorised\").";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-middleware-auth" or (errorHandler.buildDepError "wai-middleware-auth"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-auth" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-middleware-auth" or (errorHandler.buildDepError "wai-middleware-auth"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-cookies" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -101,9 +101,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-middleware-auth" or (errorHandler.buildDepError "wai-middleware-auth"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-middleware-auth" or (errorHandler.buildDepError "wai-middleware-auth"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

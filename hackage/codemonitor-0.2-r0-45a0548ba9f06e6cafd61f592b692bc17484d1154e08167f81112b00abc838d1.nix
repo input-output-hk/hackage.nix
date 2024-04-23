@@ -21,7 +21,7 @@
       synopsis = "Tool that automatically runs arbitrary commands when files change on disk.";
       description = "Tool that automatically runs arbitrary commands when files change on disk.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "codemonitor" = {
@@ -38,9 +38,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

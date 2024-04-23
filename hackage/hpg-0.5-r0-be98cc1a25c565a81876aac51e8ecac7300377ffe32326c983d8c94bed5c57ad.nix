@@ -21,16 +21,16 @@
       synopsis = "password generator";
       description = "the haskell password generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ] ++ (pkgs.lib).optional (system.isOpenbsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (system.isOpenbsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

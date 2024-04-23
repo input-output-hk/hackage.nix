@@ -21,7 +21,7 @@
       synopsis = "Safety for the pipes ecosystem";
       description = "This package adds resource management and exception handling to the @pipes@\necosystem.\n\nNotable features include:\n\n* /Resource Safety/: Guarantee finalization using @finally@, @bracket@ and\nmore\n\n* /Exception Safety/: Even against asynchronous exceptions!\n\n* /Laziness/: Only acquire resources when you need them\n\n* /Promptness/: Finalize resources early when you are done with them\n\n* /Native Exception Handling/: Catch and resume from exceptions inside pipes\n\n* /No Buy-in/: Mix resource-safe pipes with unmanaged pipes using @hoist@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

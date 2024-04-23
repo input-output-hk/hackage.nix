@@ -21,7 +21,7 @@
       synopsis = "Simple Utf8 wrapper for ByteString Builder with conversion classes";
       description = "Simple Utf8 wrapper for ByteString Builder with conversion classes. Please see the README on GitHub at <https://github.com/cdornan/render-utf8#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

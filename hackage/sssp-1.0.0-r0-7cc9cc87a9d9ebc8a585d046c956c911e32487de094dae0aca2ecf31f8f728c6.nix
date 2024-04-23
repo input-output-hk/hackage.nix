@@ -21,7 +21,7 @@
       synopsis = "HTTP proxy for S3.";
       description = "An HTTP proxy for S3 that generates signed URLs for GETs and PUTs and\nproxies DELETEs. A very limited form of range queries, using semantic\nversion sort and ASCII set, are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sssp" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.no-cli then false else true;
-          };
         };
       };
-    }
+    };
+  }

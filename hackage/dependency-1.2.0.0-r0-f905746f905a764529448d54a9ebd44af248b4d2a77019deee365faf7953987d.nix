@@ -21,7 +21,7 @@
       synopsis = "Dependency resolution for package management";
       description = "A library for resolving dependencies; uses a topological sort to construct a build plan and then allows choice between all compatible plans.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,18 +31,18 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "8.2"
+        ] ++ (if compiler.isGhc && compiler.version.ge "8.2"
           then [
             (hsPkgs."micro-recursion-schemes" or (errorHandler.buildDepError "micro-recursion-schemes"))
-            ]
+          ]
           else [
             (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dependency-test" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "dependency-bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

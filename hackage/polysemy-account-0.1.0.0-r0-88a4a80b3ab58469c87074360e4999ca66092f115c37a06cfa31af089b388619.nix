@@ -21,7 +21,7 @@
       synopsis = "Account management with Servant and Polysemy";
       description = "See https://hackage.haskell.org/package/polysemy-account/docs/Polysemy-Account.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."sqel" or (errorHandler.buildDepError "sqel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

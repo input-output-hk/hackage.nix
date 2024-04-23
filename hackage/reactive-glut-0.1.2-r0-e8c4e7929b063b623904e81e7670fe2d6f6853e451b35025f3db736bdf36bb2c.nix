@@ -21,7 +21,7 @@
       synopsis = "Connects Reactive and GLUT";
       description = "This package contains an adapter that connects OpenGL/GLUT to the\nFRP library \\\"Reactive\\\".\n\nProject wiki page: <http://haskell.org/haskellwiki/reactive-glut>\n\n&#169; 2008 by Conal Elliott; BSD3 license.\n\nWith contributions from Andy Gill, David Sankel, Eyal Lotem, Claus Reinke,\nand ksf.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."reactive" or (errorHandler.buildDepError "reactive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

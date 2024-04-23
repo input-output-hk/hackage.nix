@@ -21,7 +21,7 @@
       synopsis = "Mandelbrot Set explorer using GTK";
       description = "A Mandelbrot Set explorer, with (currently) only one\ncontrol (left-click to center and zoom in).  Multple\nrender threads use higher precision maths at higher\nzoom levels.  Suggested usage:\n\n@gmndl +RTS -N -qa -RTS --width=640 --height=480@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gmndl" = {
@@ -34,9 +34,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."priority-queue" or (errorHandler.buildDepError "priority-queue"))
             (hsPkgs."qd" or (errorHandler.buildDepError "qd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

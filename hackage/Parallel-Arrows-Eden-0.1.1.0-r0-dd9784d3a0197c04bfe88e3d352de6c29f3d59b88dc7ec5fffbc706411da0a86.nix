@@ -21,7 +21,7 @@
       synopsis = "Eden based backend for @Parallel-Arrows-Definition@.";
       description = "Eden based backend for @Parallel-Arrows-Definition@.\nThis backend works on shared-memory (compile with -parcp) systems or on clusters (only -parmpi was tested).\nFor parallel evaluation on clusters you will have to compile your own Eden GHC (http://www.mathematik.uni-marburg.de/~eden/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."edenmodules" or (errorHandler.buildDepError "edenmodules"))
           (hsPkgs."Parallel-Arrows-Definition" or (errorHandler.buildDepError "Parallel-Arrows-Definition"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."Parallel-Arrows-Definition" or (errorHandler.buildDepError "Parallel-Arrows-Definition"))
             (hsPkgs."Parallel-Arrows-BaseSpec" or (errorHandler.buildDepError "Parallel-Arrows-BaseSpec"))
             (hsPkgs."Parallel-Arrows-Eden" or (errorHandler.buildDepError "Parallel-Arrows-Eden"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Skylark client.";
       description = "Skylark network client.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "skylark-client" = {
           depends = [
@@ -45,16 +45,16 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."preamble" or (errorHandler.buildDepError "preamble"))
             (hsPkgs."skylark-client" or (errorHandler.buildDepError "skylark-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "shake-skylark-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shakers" or (errorHandler.buildDepError "shakers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

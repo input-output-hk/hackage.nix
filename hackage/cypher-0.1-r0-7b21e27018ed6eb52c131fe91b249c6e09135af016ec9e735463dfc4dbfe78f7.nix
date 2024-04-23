@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the neo4j \"cypher\" query language";
       description = "haskell-cypher makes it easy to send cypher commands to neo4j servers over their REST API.\nAdditionally, it allows users to parse haskell datatypes from \"cypher\" queries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."OneTuple" or (errorHandler.buildDepError "OneTuple"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

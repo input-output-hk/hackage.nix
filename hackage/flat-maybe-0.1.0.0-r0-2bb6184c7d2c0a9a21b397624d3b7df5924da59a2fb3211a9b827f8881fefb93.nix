@@ -21,14 +21,14 @@
       synopsis = "Strict Maybe without space and indirection overhead";
       description = "Strict Maybe without space and indirection overhead.\nInspired by Rust's Option, which is represented by\neither a pointer to the object or a specific \"null\" pointer.\nThe implementation is a giant unsafe trick.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library utilities for constructing and signing Cardano transactions.";
       description = "Please see the README on GitHub at <https://github.com/input-output-hk/cardano-transactions>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cardano-tx" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -70,12 +70,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cardano-tx.components.exes.cardano-tx or (pkgs.buildPackages.cardano-tx or (errorHandler.buildToolDepError "cardano-tx:cardano-tx")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

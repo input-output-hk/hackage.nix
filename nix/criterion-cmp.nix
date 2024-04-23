@@ -6,8 +6,8 @@
         nix = import ../hackage/criterion-cmp-0.1.0.0-r0-da8f8663e0376cfa9eee7867f9002aa88d44036d6f1ca5df2418440601338530.nix;
         revNum = 0;
         sha256 = "da8f8663e0376cfa9eee7867f9002aa88d44036d6f1ca5df2418440601338530";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

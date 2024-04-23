@@ -21,7 +21,7 @@
       synopsis = "Convert Cabal files into Nix build instructions.";
       description = "Convert Cabal files into Nix build instructions. Users of Nix can install the latest version by running:\n> nix-env -i cabal2nix";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal2nix" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."cabal2nix" or (errorHandler.buildDepError "cabal2nix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackage2nix" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -107,9 +107,9 @@
             (hsPkgs."stackage-types" or (errorHandler.buildDepError "stackage-types"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A tiny library for benchmarking IO actions.";
       description = "A tiny library for benchmarking IO actions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

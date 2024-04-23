@@ -21,7 +21,7 @@
       synopsis = "A solver for the WordBrain game";
       description = "A solver for the WordBrain game";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Verba" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

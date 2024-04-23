@@ -21,11 +21,11 @@
       synopsis = "A recursion schemes library for GHC.";
       description = "A performant recursion schemes library for Haskell with no dependencies";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL adaptor for eventsourcing.";
       description = "Adaptor to use PostgreSQL as a back-end with eventsourcing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

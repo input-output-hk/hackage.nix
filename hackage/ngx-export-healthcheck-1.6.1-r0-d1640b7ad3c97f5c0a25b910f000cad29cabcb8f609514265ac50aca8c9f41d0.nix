@@ -21,7 +21,7 @@
       synopsis = "Active health checks and monitoring of Nginx upstreams";
       description = "Active health checks and monitoring of Nginx upstreams.\n\nThis is a part of <https://github.com/lyokha/nginx-healthcheck-plugin>.\nCustom libraries are required to be linked against C module\n/ngx_healthcheck_plugin/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -39,16 +39,16 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ] ++ (pkgs.lib).optionals (flags.snapstatsserver) [
+        ] ++ pkgs.lib.optionals (flags.snapstatsserver) [
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
           (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
-          ]) ++ (pkgs.lib).optionals (flags.healthcheckhttps) [
+        ]) ++ pkgs.lib.optionals (flags.healthcheckhttps) [
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."crypton-connection" or (errorHandler.buildDepError "crypton-connection"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

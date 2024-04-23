@@ -21,20 +21,20 @@
       synopsis = "9P2000 in pure Haskell";
       description = "Pure Haskell implementation of the 9P2000 protocol from the\nPlan 9 and Inferno operating systems.  Many implementations of\n9P2000 exist including the Linux kernel v9fs module, wmii\n(X window manager).  More information on 9P and implementations\nmay be found at http:\\/\\/9p.cat-v.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring-in-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

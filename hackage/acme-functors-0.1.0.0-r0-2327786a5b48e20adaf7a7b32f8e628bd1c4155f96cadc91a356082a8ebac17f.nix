@@ -21,11 +21,11 @@
       synopsis = "The best applicative functors.";
       description = "Types are great. Lifting them into some sort of applicative functor makes them even better. This package is an homage to our favorite applicatives, and to the semigroups with which they are instrinsically connected.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

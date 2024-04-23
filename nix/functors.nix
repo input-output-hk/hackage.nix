@@ -6,8 +6,8 @@
         nix = import ../hackage/functors-0.1-r0-5a7e63d1a25057b3e82ab5fd060a951e0593fd588f8286fbc9f90c7f1d65c3f3.nix;
         revNum = 0;
         sha256 = "5a7e63d1a25057b3e82ab5fd060a951e0593fd588f8286fbc9f90c7f1d65c3f3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

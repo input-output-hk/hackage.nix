@@ -21,15 +21,15 @@
       synopsis = "A purely functional TCP implementation";
       description = "A purely functional TCP implementation\n\nPeng Li's TCP stack based on the formal HOL4 TCP\nspecification at\n<http://www.cl.cam.ac.uk/~pes20/Netsem/>,\ncode base on the unified events and threads project\n<http://www.seas.upenn.edu/~lipeng/homepage/unify.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

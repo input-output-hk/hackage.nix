@@ -21,7 +21,7 @@
       synopsis = "open file and rewrite it with new contents";
       description = "In the Unix shell there is no easy way to use a filter program\nto change the contents of a file in-place. For example, if you\nwant to sort a file in place, this will not work:\n\nsort \\< myfile \\> myfile\n\nAll that will get you is an empty myfile. This package\ngives you the rewrite program, so this will work:\n\nrewrite myfile sort";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rewrite" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

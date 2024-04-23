@@ -21,11 +21,11 @@
       synopsis = "library for MIDI control of hardware";
       description = "maquinitas is a library for MIDI control of hardware";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

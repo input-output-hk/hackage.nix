@@ -21,7 +21,7 @@
       synopsis = "Microprints - \"greek-text\" pictures.";
       description = "\nA library to produce /microprints/ [1] sometimes known as\n\\\"greek-text\\\".\n\nNote this library only provides the graphically half of the\nfunctionality needed to make microprints. There is no support\nfor tokenizing input files, and at the moment it is really\njust a test bed for Wumpus.\n\nCurrently pictures are made within a monad providing /teletype/\nstyle operations. Other methods of drawing are possible, but\nare yet to be implemented.\n\n\\[1\\] <http://scg.unibe.ch/archive/papers/Robb05b-microprintsESUG.pdf>\n\nChangelog:\n\n0.6.0 to 0.7.0:\n\n* Again, internal changes to work with latest @Wumpus-Basic@.\n\n0.5.0 to 0.6.0:\n\n* Updated internals to work with latest @wumpus-core@ and\n@wumpus-basic@.\n\n0.4.0 to 0.5.0:\n\n* Updated internals to work with latest @wumpus-core@ and\n@wumpus-basic@.\n\n0.3.0 to 0.4.0:\n\n* Implementation modules are now hidden. Added some documentation.\n\n* DrawF renamed DrawWordF, MP_config renamed MicroPrintConfig.\n\n0.2.0 to 0.3.0:\n\n* Updated to use ConsDrawing monad from Wumpus-Basic.\n\n0.1.1 to 0.2.0:\n\n* Updated to use Basic.Graphic types from wumpus-basic-0.2.0\n\n* Added bordered printing that marks the unit character width.\n\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."wumpus-core" or (errorHandler.buildDepError "wumpus-core"))
           (hsPkgs."wumpus-basic" or (errorHandler.buildDepError "wumpus-basic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

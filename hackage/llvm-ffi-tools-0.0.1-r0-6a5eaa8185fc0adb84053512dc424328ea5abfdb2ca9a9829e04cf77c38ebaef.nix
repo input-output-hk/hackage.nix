@@ -21,7 +21,7 @@
       synopsis = "Tools for maintaining the llvm-ffi package";
       description = "The package contains tools for maintaining the FFI interface to LLVM\nin the @llvm-ffi@ package\n<http://hackage.haskell.org/package/llvm-ffi>.\nMost notably there is the @llvm-function-mangler@\nthat converts LLVM-C bindings to Haskell foreign imports.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "llvm-diff-ffi" = {
@@ -30,26 +30,26 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "llvm-function-mangler" = {
           depends = [
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "llvm-intrinsic-mangler" = {
           depends = [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

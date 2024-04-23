@@ -21,7 +21,7 @@
       synopsis = "primitive imperative language";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "brain-bleep" = {
@@ -30,9 +30,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

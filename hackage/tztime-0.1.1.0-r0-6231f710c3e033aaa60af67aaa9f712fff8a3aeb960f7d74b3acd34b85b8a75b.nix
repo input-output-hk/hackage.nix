@@ -21,7 +21,7 @@
       synopsis = "Safe timezone-aware handling of time.";
       description = "This package introduces:\n\n* The `TZTime` data type, a valid and unambiguous point in time in some time zone.\n* Functions for safely manipulating a `TZTime`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tztime-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest-parallel" or (errorHandler.buildDepError "doctest-parallel"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tztime-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -57,12 +57,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
             (hsPkgs."tztime" or (errorHandler.buildDepError "tztime"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

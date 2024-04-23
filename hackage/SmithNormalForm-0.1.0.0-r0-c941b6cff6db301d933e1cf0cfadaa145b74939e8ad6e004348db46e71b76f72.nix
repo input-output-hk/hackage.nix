@@ -21,15 +21,15 @@
       synopsis = "A lightweight Haskell implementation of Smith normal form over the integers.";
       description = "This package contains an implementation of Smith normal form for arbitrary matrices over the integers. In particular, it does not assume that the matrix is invertible or square.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

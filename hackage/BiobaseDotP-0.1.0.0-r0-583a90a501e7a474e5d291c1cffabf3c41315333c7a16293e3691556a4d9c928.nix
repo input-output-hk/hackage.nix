@@ -21,15 +21,15 @@
       synopsis = "Vienna / DotBracket / ExtSS parsers";
       description = "Parsers for Vienna dot-bracket like formats. Includes parsing\ntwo-line RNAfold output, RNAstrand dot-bracket notation and the\nRNAwolf extended RNA secondary structure notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

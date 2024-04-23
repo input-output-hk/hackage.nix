@@ -21,7 +21,7 @@
       synopsis = "Sparklines for Haskell";
       description = "Sparklines implementation of smooth and bar graphs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."gd" or (errorHandler.buildDepError "gd"))
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

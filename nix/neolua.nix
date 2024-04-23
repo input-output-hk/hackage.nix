@@ -6,8 +6,8 @@
         nix = import ../hackage/neolua-1.0.0-r0-62e134983899079337cab75f889f91effae20738e3e0f52ffac765602649ee5d.nix;
         revNum = 0;
         sha256 = "62e134983899079337cab75f889f91effae20738e3e0f52ffac765602649ee5d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

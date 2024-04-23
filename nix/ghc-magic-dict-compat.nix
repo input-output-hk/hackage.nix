@@ -6,8 +6,8 @@
         nix = import ../hackage/ghc-magic-dict-compat-0.0.0.0-r0-612f7bfcbb91b5622142bc74dc4f38b164ade648e1d7f71cff2d68ae984d173b.nix;
         revNum = 0;
         sha256 = "612f7bfcbb91b5622142bc74dc4f38b164ade648e1d7f71cff2d68ae984d173b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

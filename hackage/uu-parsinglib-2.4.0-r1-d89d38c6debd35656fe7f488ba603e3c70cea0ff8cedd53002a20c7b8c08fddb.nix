@@ -21,14 +21,14 @@
       synopsis = "Online, error-correcting parser combinators; monadic and applicative interfaces       ";
       description = "New version of the Utrecht University parser combinator library, which  provides online, error correction,\nannotation free, applicative style parser combinators. In addition to this we even  provide a monadic interface.\nParsers do analyse themselves to avoid commonly made errors\n\nThe file Text.ParserCombinators.UU.Examples contains a ready-made main function,\nwhich can be called to see the error correction at work. It contains extensive haddock documentation;\ntry all the small tests for yourself to see the correction process at work, and to get a\nfeeling for how to use the various combinators.\n\nThe file CHANGELOG which is distributed with the pacakge describes the list of changes and additions\n\nThe file README contains some references to background information\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

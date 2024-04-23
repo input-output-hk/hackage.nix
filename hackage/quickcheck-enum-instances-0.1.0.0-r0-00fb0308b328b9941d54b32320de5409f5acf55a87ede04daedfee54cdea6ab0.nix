@@ -21,15 +21,15 @@
       synopsis = "arbitrary instances for small enum types";
       description = "Instances of the `Arbitrary` typeclass for all of the types\nin `enum-types`. These are orphan instances, so this should\nonly be used in test suites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."enum-types" or (errorHandler.buildDepError "enum-types"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

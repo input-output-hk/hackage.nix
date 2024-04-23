@@ -21,7 +21,7 @@
       synopsis = "a library to work with tags created from Haskell parsed tree";
       description = "=== library scope\n\n'ghc-tags-core' library provides:\n\n*  a function to extract /tag/ information from @'HsModule' 'GhcPs'@ parsed tree representation of Haskell code\n* parsers __ctag__ and __etag__ style tag files (/vim/ \\/ /emacs/)\n* formatting tags into __ctag__ and __etag__ files.\n* tries to be compatible with [universal-ctags](https://github.com/universal-ctags/ctags)\n\n=== developer tools\nCheck out these projects:\n\n* [ghc-tags-plugin](https://hackage.haskell.org/package/ghc-tags-plugin) -\na ghc [compiler\nplugin](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/extending_ghc.html?highlight=compiler%20plugin#compiler-plugins)\nwhich extracts tags during @GHC@'s parser pass\n* more to come!\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,10 +37,10 @@
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
-        build-tools = (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.10") (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+        ];
+        build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.10") (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ghc-tags-core" or (errorHandler.buildDepError "ghc-tags-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

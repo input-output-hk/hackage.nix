@@ -21,7 +21,7 @@
       synopsis = "Sql parser and type checker";
       description = "Sql parser, pretty printer and type checker, targets PostgreSQL SQL\nand PL/pgSQL.\n\nSee the project page\n<https://launchpad.net/hssqlppp> for more information and\ndocumentation links, there are also links to some example usage\nfiles there.\n\nQuick module guide:\n\n'Ast' - ast types;\n\n'Parser' - converting strings to asts;\n\n'PrettyPrinter' - converting asts to strings containing valid SQL;\n\n'TypeChecker' - type checking and annotating asts and working\nwith annotated trees;\n\n'SqlTypes' - the data types which represent SQL types, the data\ntype for type errors, and some support functions;\n\n'Annotation' - the annotation data types and utilities;\n\n'Catalog' - read a catalog from a database to type check against,\nor to generate catalog information.\n\nAlso comes with command line access to some functions via a exe called\nHsSqlSystem, run this file with no arguments to get some help.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HsSqlSystem" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

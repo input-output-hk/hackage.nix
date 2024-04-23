@@ -21,13 +21,13 @@
       synopsis = "List ports newer than N days on a FreeBSD system";
       description = "List ports newer than N days on a FreeBSD system";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "newports" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Recursively delete CloudFormation stacks and their dependants";
       description = "This simple tool will repeatedly query CloudFormation\nstacks for outputs, and see if any other stacks are\nimporting those.  This is to make it easier to tear down\nCFn stacks which have many other stacks depending on\ntheir outputs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,19 +31,19 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "forest-fire" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cli" or (errorHandler.buildDepError "cli"))
             (hsPkgs."forest-fire" or (errorHandler.buildDepError "forest-fire"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "forest-fire-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

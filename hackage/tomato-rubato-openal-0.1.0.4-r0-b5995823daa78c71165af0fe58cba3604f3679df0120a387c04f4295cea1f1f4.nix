@@ -21,7 +21,7 @@
       synopsis = "Easy to use library for audio programming.";
       description = "WARNING: This project is still in pre-alpha stage. For adventurers only!\n\nAn easy to use library for live audio programming in Haskell.\nInstant gratification from your speakers by typing into GHCi!\n\nThis module uses the OpenAL bindings.\n\nWARNING: This project is still in pre-alpha stage. For adventurers only!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."OpenAL" or (errorHandler.buildDepError "OpenAL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

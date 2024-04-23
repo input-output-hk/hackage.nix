@@ -21,14 +21,14 @@
       synopsis = "An object frequency counter.";
       description = "This project provides an efficient object frequency counter, based upon Data.Map.Strict.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

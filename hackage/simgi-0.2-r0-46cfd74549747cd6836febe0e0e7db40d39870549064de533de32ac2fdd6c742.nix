@@ -21,7 +21,7 @@
       synopsis = "stochastic simulation engine";
       description = "simgi is a stochastic simulation engine to model\nmolecular systems using Gillespie's method.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "simgi" = {
@@ -33,9 +33,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

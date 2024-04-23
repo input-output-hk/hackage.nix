@@ -21,7 +21,7 @@
       synopsis = "Unicode General Category Database";
       description = "This package provides Unicode General Category data for Unicode 13.0.0. In addition it offers tools to process UnicodeData.txt content and turn it into a database compatible with this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."unicode-general-category" or (errorHandler.buildDepError "unicode-general-category"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

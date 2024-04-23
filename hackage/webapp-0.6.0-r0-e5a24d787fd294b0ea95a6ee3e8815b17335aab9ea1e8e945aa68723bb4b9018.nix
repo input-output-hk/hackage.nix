@@ -21,7 +21,7 @@
       synopsis = "Haskell web app framework based on WAI & Warp";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-webapp" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."webapp" or (errorHandler.buildDepError "webapp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

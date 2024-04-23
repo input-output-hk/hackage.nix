@@ -21,7 +21,7 @@
       synopsis = "Continuations for Yesod";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."system-uuid" or (errorHandler.buildDepError "system-uuid"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "yesodContinuationsTest" = { buildable = true; }; };
       };
-    }
+      exes = { "yesodContinuationsTest" = { buildable = true; }; };
+    };
+  }

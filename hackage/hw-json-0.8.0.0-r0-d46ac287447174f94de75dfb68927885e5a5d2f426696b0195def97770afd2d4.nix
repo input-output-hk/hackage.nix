@@ -21,7 +21,7 @@
       synopsis = "Memory efficient JSON parser";
       description = "Memory efficient JSON parser. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."hw-parser" or (errorHandler.buildDepError "hw-parser"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-json-example" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
             (hsPkgs."hw-mquery" or (errorHandler.buildDepError "hw-mquery"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-json-test" = {
           depends = [
@@ -82,10 +82,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

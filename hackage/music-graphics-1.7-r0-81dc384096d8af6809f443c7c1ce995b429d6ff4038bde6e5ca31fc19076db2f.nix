@@ -21,7 +21,7 @@
       synopsis = "Diagrams-based visualization of musical data structures.";
       description = "To be written.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."music-score" or (errorHandler.buildDepError "music-score"))
           (hsPkgs."music-pitch" or (errorHandler.buildDepError "music-pitch"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "FizzBuzz as a service";
       description = "FizzBuzz as a service.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fizzbuzz-server" = {
@@ -31,9 +31,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "recursive atomic build system";
       description = "*gdo* is a build system similar to **GNU Make**. It builds files from\nsources and recipes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gdo" = {
@@ -34,9 +34,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

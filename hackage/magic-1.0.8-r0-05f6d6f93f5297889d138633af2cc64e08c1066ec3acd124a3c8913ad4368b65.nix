@@ -21,12 +21,12 @@
       synopsis = "Interface to C file/magic library";
       description = "This package provides a Haskell interface to the C libmagic library.\nWith it, you can determine the type of a file by examining its contents\nrather than its name.  The Haskell interface provides a full-featured\nbinding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."magic" or (errorHandler.sysDepError "magic")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

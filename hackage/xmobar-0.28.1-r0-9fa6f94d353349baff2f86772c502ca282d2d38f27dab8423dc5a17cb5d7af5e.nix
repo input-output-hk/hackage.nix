@@ -25,7 +25,7 @@
       with_uvmeter = false;
       with_weather = true;
       with_conduit = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "xmobar"; version = "0.28.1"; };
@@ -38,7 +38,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar\nfeatures, like dynamic color management, output templates,\nand extensibility through plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xmobar" = {
@@ -59,31 +59,31 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."parsec-numbers" or (errorHandler.buildDepError "parsec-numbers"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0.2") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"))) ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0.2") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"))) ++ pkgs.lib.optionals (flags.with_xft || flags.all_extensions) [
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"))
-            ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (hsPkgs."iwlib" or (errorHandler.buildDepError "iwlib"))) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"))) ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
+          ]) ++ pkgs.lib.optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ pkgs.lib.optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ pkgs.lib.optional (flags.with_iwlib || flags.all_extensions) (hsPkgs."iwlib" or (errorHandler.buildDepError "iwlib"))) ++ pkgs.lib.optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"))) ++ pkgs.lib.optionals (flags.with_alsa || flags.all_extensions) [
             (hsPkgs."alsa-mixer" or (errorHandler.buildDepError "alsa-mixer"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
-            ]) ++ (pkgs.lib).optionals (flags.with_datezone || flags.all_extensions) [
+          ]) ++ pkgs.lib.optionals (flags.with_datezone || flags.all_extensions) [
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
-            ]) ++ (pkgs.lib).optional (flags.with_mpris || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ (pkgs.lib).optional (flags.with_dbus || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ (pkgs.lib).optionals (flags.with_weather || flags.all_extensions) ([
+          ]) ++ pkgs.lib.optional (flags.with_mpris || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ pkgs.lib.optional (flags.with_dbus || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ pkgs.lib.optionals (flags.with_weather || flags.all_extensions) ([
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ] ++ (pkgs.lib).optionals (flags.with_conduit) [
+          ] ++ pkgs.lib.optionals (flags.with_conduit) [
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ])) ++ (pkgs.lib).optionals (flags.with_uvmeter && flags.with_conduit) [
+          ])) ++ pkgs.lib.optionals (flags.with_uvmeter && flags.with_conduit) [
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           libs = ([
             (pkgs."Xrandr" or (errorHandler.sysDepError "Xrandr"))
             (pkgs."Xrender" or (errorHandler.sysDepError "Xrender"))
-            ] ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (errorHandler.sysDepError "iw"))) ++ (pkgs.lib).optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm" or (errorHandler.sysDepError "Xpm"));
+          ] ++ pkgs.lib.optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (errorHandler.sysDepError "iw"))) ++ pkgs.lib.optional (flags.with_xpm || flags.all_extensions) (pkgs."Xpm" or (errorHandler.sysDepError "Xpm"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "XmobarTest" = {
           depends = [
@@ -104,9 +104,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."parsec-numbers" or (errorHandler.buildDepError "parsec-numbers"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

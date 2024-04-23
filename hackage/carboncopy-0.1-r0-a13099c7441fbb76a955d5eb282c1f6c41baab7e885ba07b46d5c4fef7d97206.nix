@@ -21,7 +21,7 @@
       synopsis = "Drop emails from threads being watched into special CC folder.";
       description = "See README.txt";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "carboncopy" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

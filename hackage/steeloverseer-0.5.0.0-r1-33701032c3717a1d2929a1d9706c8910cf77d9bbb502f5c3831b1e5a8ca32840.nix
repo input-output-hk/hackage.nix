@@ -21,7 +21,7 @@
       synopsis = "A file watcher.";
       description = "A command line tool that responds to filesystem events. Allows the user to automatically execute commands after files are added or updated. Watches files using regular expressions. Can be invoked interactively or as a daemon.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sos" = {
@@ -36,9 +36,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."daemons" or (errorHandler.buildDepError "daemons"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

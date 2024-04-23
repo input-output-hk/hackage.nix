@@ -21,16 +21,16 @@
       synopsis = "Applying default value to FromJSON instacnes' Maybe fields";
       description = "Please see http://hackage.haskell.org/package/hkd-default";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-default-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."aeson-default" or (errorHandler.buildDepError "aeson-default"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

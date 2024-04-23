@@ -21,7 +21,7 @@
       synopsis = "Deep embedding of imperative programs with code generation";
       description = "Deep embedding of imperative programs with code generation.\n\nThe main module for users who want to write imperative\nprograms is \"Language.Embedded.Imperative\" (and optionally\n\"Language.Embedded.Expr\" which provides a simple expression\nlanguage).\n\nExamples can be found in the @examples@ directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,16 +40,16 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))
           (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
-          ] ++ (if flags.old-syntactic
+        ] ++ (if flags.old-syntactic
           then [
             (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
-            ]
+          ]
           else [
             (hsPkgs."open-typerep" or (errorHandler.buildDepError "open-typerep"))
             (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "Examples" = {
           depends = [
@@ -58,16 +58,16 @@
             (hsPkgs."mainland-pretty" or (errorHandler.buildDepError "mainland-pretty"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Semantics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."imperative-edsl" or (errorHandler.buildDepError "imperative-edsl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/HHDL-0.1.0.0-r0-c74f66bfbe93ab5c9961dff79fb34dca750b6bda6d95ae4d00bbad1b11867252.nix;
         revNum = 0;
         sha256 = "c74f66bfbe93ab5c9961dff79fb34dca750b6bda6d95ae4d00bbad1b11867252";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

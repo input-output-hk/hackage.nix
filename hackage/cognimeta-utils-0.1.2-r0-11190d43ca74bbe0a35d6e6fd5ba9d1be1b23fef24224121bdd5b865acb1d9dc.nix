@@ -21,7 +21,7 @@
       synopsis = "Utilities for Cognimeta products (such as perdure). API may change often.";
       description = "These utilities are used by Perdure and other internal Cognimeta products.\n\nPlease do not rely on these APIs. If parts of this are of interest to you please contact\n'ppremont@cognimeta.com' and we will consider creating a cleaner separate package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."data-lens-template" or (errorHandler.buildDepError "data-lens-template"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cognimeta-utils" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

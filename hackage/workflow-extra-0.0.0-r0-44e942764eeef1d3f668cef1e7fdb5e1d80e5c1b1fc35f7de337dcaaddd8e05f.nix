@@ -21,7 +21,7 @@
       synopsis = "TODO";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,37 +33,37 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-workflow-extra" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-extra" or (errorHandler.buildDepError "workflow-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-extra" or (errorHandler.buildDepError "workflow-extra"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unittest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-extra" or (errorHandler.buildDepError "workflow-extra"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "command" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."workflow-extra" or (errorHandler.buildDepError "workflow-extra"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

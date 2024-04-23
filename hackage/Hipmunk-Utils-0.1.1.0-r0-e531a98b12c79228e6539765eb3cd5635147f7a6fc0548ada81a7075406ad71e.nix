@@ -21,7 +21,7 @@
       synopsis = "Useful functions for Hipmunk";
       description = "Pack some functions for Hipmunk using Linear package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."Hipmunk" or (errorHandler.buildDepError "Hipmunk"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Hipmunk-Utils-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Hipmunk-Utils" or (errorHandler.buildDepError "Hipmunk-Utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

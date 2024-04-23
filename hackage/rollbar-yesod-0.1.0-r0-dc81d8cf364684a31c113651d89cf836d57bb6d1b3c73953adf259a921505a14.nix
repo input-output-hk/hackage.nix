@@ -21,7 +21,7 @@
       synopsis = "Provides error reporting capabilities to Yesod applications through Rollbar API.";
       description = "Please see the README on GitHub at\n<https://github.com/stackbuilders/rollbar-haskell/tree/master/rollbar-yesod>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-example" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."rollbar-yesod" or (errorHandler.buildDepError "rollbar-yesod"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -56,12 +56,12 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

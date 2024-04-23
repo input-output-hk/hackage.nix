@@ -21,7 +21,7 @@
       synopsis = "EDSL for AWS CloudFormation";
       description = "EDSL for AWS CloudFormation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "apigw-lambda-dynamodb" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "auto-scaling-group" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "ec2-with-eip" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -80,9 +80,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "rds-master-replica" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,9 +95,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "s3-copy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "simple-lambda" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -125,10 +125,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "style" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tasty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -162,9 +162,9 @@
             (hsPkgs."stratosphere" or (errorHandler.buildDepError "stratosphere"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

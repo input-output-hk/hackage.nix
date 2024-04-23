@@ -21,7 +21,7 @@
       synopsis = "Streaming processing of CSV files preceded by key-value pairs.";
       description = "Nonstandard CSV files, with the table preceded by a header consisting of key-value pairs are often the output format of varius test equipment, such as digital oscilloscopes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."vinyl-utils" or (errorHandler.buildDepError "vinyl-utils"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-kvc" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."vinyl-utils" or (errorHandler.buildDepError "vinyl-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

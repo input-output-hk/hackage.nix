@@ -6,8 +6,8 @@
         nix = import ../hackage/erlang-ffi-1.0.0-r0-60cf5bc1c40adf0d1fc733aeaee202d7444cb90fcdefc8ce62101c283183ec79.nix;
         revNum = 0;
         sha256 = "60cf5bc1c40adf0d1fc733aeaee202d7444cb90fcdefc8ce62101c283183ec79";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/BinderAnn-0.1.0.0-r0-c3b1c3fa2b55414228beb0bd8662cd0be0a85b88b30ae6c3b1498d3be53b6a33.nix;
         revNum = 0;
         sha256 = "c3b1c3fa2b55414228beb0bd8662cd0be0a85b88b30ae6c3b1498d3be53b6a33";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "Provides ARIA attributes for Lucid templates";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lucid-aria-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
             (hsPkgs."lucid-aria" or (errorHandler.buildDepError "lucid-aria"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

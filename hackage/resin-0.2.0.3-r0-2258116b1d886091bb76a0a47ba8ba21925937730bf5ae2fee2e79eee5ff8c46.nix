@@ -21,7 +21,7 @@
       synopsis = "High performance variable binders";
       description = "High Performance Variable Binders library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."ralist" or (errorHandler.buildDepError "ralist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

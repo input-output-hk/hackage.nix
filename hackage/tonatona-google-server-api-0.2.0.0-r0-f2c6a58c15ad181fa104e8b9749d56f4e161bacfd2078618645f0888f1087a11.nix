@@ -14,7 +14,7 @@
       identifier = {
         name = "tonatona-google-server-api";
         version = "0.2.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2019 Kadzuya Okamoto";
       maintainer = "arow.okamoto+github@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "tonatona plugin for google-server-api";
       description = "Tonatona plugin for [google-server-api](https://hackage.haskell.org/package/google-server-api). This package provides a tonatona plugin to use Google API for server to server applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."tonalude" or (errorHandler.buildDepError "tonalude"))
           (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
           (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tonalude" or (errorHandler.buildDepError "tonalude"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."tonalude" or (errorHandler.buildDepError "tonalude"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

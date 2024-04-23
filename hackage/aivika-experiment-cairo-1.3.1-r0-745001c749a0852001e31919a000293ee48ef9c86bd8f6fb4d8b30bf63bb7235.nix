@@ -21,7 +21,7 @@
       synopsis = "Cairo backend for the Aivika simulation library";
       description = "This package complements the Aivika and Aivika Experiment packages\nand it allows rendering the charts using the Chart-cairo library.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
           (hsPkgs."aivika-experiment" or (errorHandler.buildDepError "aivika-experiment"))
           (hsPkgs."aivika-experiment-chart" or (errorHandler.buildDepError "aivika-experiment-chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

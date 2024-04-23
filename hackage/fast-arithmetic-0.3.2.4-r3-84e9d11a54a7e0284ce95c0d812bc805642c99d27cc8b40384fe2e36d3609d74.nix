@@ -25,17 +25,17 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.ats-setup or (pkgs.buildPackages.ats-setup or (errorHandler.setupDepError "ats-setup")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

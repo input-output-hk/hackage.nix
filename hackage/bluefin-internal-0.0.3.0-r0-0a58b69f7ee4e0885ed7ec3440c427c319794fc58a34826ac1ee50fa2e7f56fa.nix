@@ -21,7 +21,7 @@
       synopsis = "The Bluefin effect system, internals";
       description = "The Bluefin effect system, internals";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bluefin-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bluefin-internal" or (errorHandler.buildDepError "bluefin-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

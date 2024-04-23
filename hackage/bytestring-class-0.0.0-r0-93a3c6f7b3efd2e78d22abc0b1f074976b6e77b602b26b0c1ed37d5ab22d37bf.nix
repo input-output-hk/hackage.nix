@@ -21,15 +21,15 @@
       synopsis = "Classes for automatic conversion to and from strict and lazy bytestrings.";
       description = "In theory, this allows the design of more data-agnostic\nAPIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Event-based distributed state.";
       description = "Web framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -42,15 +42,15 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hspread" or (errorHandler.buildDepError "hspread"))
-          ] ++ (if flags.base4
+        ] ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

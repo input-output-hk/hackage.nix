@@ -21,7 +21,7 @@
       synopsis = "A program for finding temporary build file during cabal-test.";
       description = "cabal-test-bin finds exe-file for cabal test below\n\n> cabal install --enable-tests --run-tests\n\n> cabal test\n\nWhen a project uses cabal-sandbox, cabal-test-bin checks following paths.\n\n> <project root>/dist/dist-sandbox-<hash>/build/<exe-file>/<exe-file>\n\n> <project root>/dist/build/<exe-file>/<exe-file>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-test-bin" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."cabal-test-bin" or (errorHandler.buildDepError "cabal-test-bin"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."cabal-test-bin" or (errorHandler.buildDepError "cabal-test-bin"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Editor extension for Manatee.";
       description = "manatee-editor is editor extension for Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nManual look <http://haskell.org/haskellwiki/Manatee>\n\nScreenshot at <http://goo.gl/MkVw>\n\nIRC channel:\n\nirc.freenode.net 6667 <##manatee>\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."dbus-core" or (errorHandler.buildDepError "dbus-core"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-editor" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-editor" = { buildable = true; }; };
+    };
+  }

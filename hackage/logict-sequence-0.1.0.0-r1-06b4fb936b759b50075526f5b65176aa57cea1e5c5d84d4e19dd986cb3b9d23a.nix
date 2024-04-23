@@ -21,7 +21,7 @@
       synopsis = "A backtracking logic-programming monad with asymptotic improvements to msplit";
       description = "Adapted from the paper\n<http://okmij.org/ftp/Haskell/zseq.pdf>\nby Atze van der Ploeg and Oleg Kiselyov";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,11 +30,11 @@
           (hsPkgs."type-aligned" or (errorHandler.buildDepError "type-aligned"))
           (hsPkgs."sequence" or (errorHandler.buildDepError "sequence"))
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Listen for SMTP traffic and send it to an MTA script";
       description = "This is a simple SMTP server that forwards all mail to a\nsendmail-compatible script.\n\nThe primary intended use is to allow broken MUAs that expect to always\nsend over SMTP to send with a standard MTA script.  (This allows one\nto authenticate with a mailserver using SSH keys, for example.)\n\nsmtp2mta can be run as a standalone server, or can serve connections\nfrom behind inetd.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "smtp2mta" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

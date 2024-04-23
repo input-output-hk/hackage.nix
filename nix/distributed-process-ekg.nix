@@ -6,10 +6,10 @@
         nix = import ../hackage/distributed-process-ekg-0.1.0.0-r0-22e4b3b615422f13a0b30949bc31837ce6908148561f9f7786f03afa32c8d189.nix;
         revNum = 0;
         sha256 = "22e4b3b615422f13a0b30949bc31837ce6908148561f9f7786f03afa32c8d189";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.1.1.0" = {
     sha256 = "25c15ef930311ba0d6f56b460b60a2dd2e03a8dee1e80d47721b043713240a3a";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/distributed-process-ekg-0.1.1.0-r0-cfd322d99ece451a2c67c12f1cb2befd4ae07404475e0f60db153b2decd97ba2.nix;
         revNum = 0;
         sha256 = "cfd322d99ece451a2c67c12f1cb2befd4ae07404475e0f60db153b2decd97ba2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

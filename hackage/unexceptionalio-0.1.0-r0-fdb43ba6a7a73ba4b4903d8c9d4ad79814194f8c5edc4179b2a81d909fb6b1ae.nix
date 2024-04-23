@@ -21,15 +21,15 @@
       synopsis = "IO without any non-error, synchronous exceptions";
       description = "When you've caught all the exceptions that can be handled safely,\nthis is what you're left with.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

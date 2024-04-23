@@ -21,14 +21,14 @@
       synopsis = "Mutable bag backed by weak pointers to each item";
       description = "This module defines the 'WeakBag' type, which represents a mutable\ncollection of items that does not cause the items to be retained in memory.\nIt is useful for situations where a value needs to be inspected or modified\nif it is still alive, but can be ignored if it is dead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

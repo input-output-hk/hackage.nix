@@ -21,7 +21,7 @@
       synopsis = "http-client backend using the OpenSSL library.";
       description = "Intended for use by higher-level libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

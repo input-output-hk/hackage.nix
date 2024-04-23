@@ -21,7 +21,7 @@
       synopsis = "";
       description = "The OpenTelemetry Haskell Client https://opentelemetry.io";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "eventlog-to-zipkin" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "eventlog-to-chrome" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,9 +75,9 @@
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "eventlog-to-tracy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "eventlog-summary" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,10 +98,10 @@
             (hsPkgs."opentelemetry-extra" or (errorHandler.buildDepError "opentelemetry-extra"))
             (hsPkgs."hvega" or (errorHandler.buildDepError "hvega"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -120,19 +120,19 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "ot-write-benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

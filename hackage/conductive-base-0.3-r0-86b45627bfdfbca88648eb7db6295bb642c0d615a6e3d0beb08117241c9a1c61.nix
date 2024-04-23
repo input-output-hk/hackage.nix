@@ -21,7 +21,7 @@
       synopsis = "a library for live coding and real-time musical applications";
       description = "Conductive is a set of Haskell packages for live coding and real-time music applications. One of its central purposes is controlling the timing of events. Conductive-base is the core library for the Conductive set of libraries. This library includes the play, pause, stop, and reset functions, as well as corresponding data types, MusicalEnvironment, Player, and TempoClock.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

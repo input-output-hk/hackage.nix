@@ -21,14 +21,14 @@
       synopsis = "Wrapper providing Foldable instance for MonoFoldables.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A library for number theoretic computations, written in Haskell.";
       description = "This is a toy library that implements number theoretic functions in Z, Z mod m, the Gaussian Integers, some combinatorics functions, and functions for manipulating continued fractions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "NumberTheory_Tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

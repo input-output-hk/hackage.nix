@@ -21,7 +21,7 @@
       synopsis = "NBT (named binary tag) serialization and deserialization.";
       description = "This project was created because the old nbt package has had a 1-liner open issue preventing compilation for 2 years now at the time of writing, despite submitting a pull request to fix it.\n\nWhile I was at it, I went ahead and changed the data structure to use konsumlamm's rrb-vector package instead of lists or unboxed arrays for more well-rounded asymptotics.\n\nStrictData is also turned on, and some functions are exported for reading/writing NBT files that remove some of the old boilerplate code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."rrb-vector" or (errorHandler.buildDepError "rrb-vector"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,19 +21,19 @@
       synopsis = "Bindings for the JACK Audio Connection Kit";
       description = "Very basic bindings for the JACK Audio Connection Kit";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."jack" or (errorHandler.sysDepError "jack")) ];
         buildable = true;
-        };
+      };
       exes = {
         "amplify" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           libs = [ (pkgs."jack" or (errorHandler.sysDepError "jack")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

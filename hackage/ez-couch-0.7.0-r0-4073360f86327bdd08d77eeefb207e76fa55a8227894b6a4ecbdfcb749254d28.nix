@@ -21,7 +21,7 @@
       synopsis = "A high level static library for working with CouchDB";
       description = "EZCouch is a library which takes a mission of bringing the topmost level of abstraction for working with CouchDB from Haskell. It abstracts away from loose concepts of this database and brings a strict static API over standard ADTs. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

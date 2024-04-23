@@ -17,7 +17,7 @@
       th = true;
       jsaddle = false;
       examples = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "hanabi-dealer"; version = "0.10.2.0"; };
@@ -30,41 +30,41 @@
       synopsis = "Hanabi card game";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true || flags.server || flags.jsaddle) ((pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell")))) ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true) && flags.server) (([
+        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true || flags.server || flags.jsaddle) (pkgs.lib.optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell")))) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true) && flags.server) (([
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (if flags.snap
+        ] ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (if flags.snap
           then [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."websockets-snap" or (errorHandler.buildDepError "websockets-snap"))
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."abstract-par" or (errorHandler.buildDepError "abstract-par"))
             (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
-            ]
-          else (pkgs.lib).optionals (flags.warp) [
+          ]
+          else pkgs.lib.optionals (flags.warp) [
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ]))) ++ (pkgs.lib).optionals (compiler.isGhcjs && true || flags.jsaddle) (if compiler.isGhcjs && true
+          ]))) ++ pkgs.lib.optionals (compiler.isGhcjs && true || flags.jsaddle) (if compiler.isGhcjs && true
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -76,12 +76,12 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
             (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hanabiq" = {
-          depends = (pkgs.lib).optionals (!(!flags.jsaddle)) ([
+          depends = pkgs.lib.optionals (!!flags.jsaddle) ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
@@ -101,11 +101,11 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ] ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random")));
+          ] ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random")));
           buildable = if !flags.jsaddle then false else true;
-          };
+        };
         "hanabib" = {
-          depends = (pkgs.lib).optionals (!(compiler.isGhcjs && true || !flags.server)) ((([
+          depends = pkgs.lib.optionals (!(compiler.isGhcjs && true || !flags.server)) ((([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
@@ -116,26 +116,26 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."hanabi-dealer" or (errorHandler.buildDepError "hanabi-dealer"))
-            ] ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (if flags.snap
+          ] ++ pkgs.lib.optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ pkgs.lib.optional (flags.tfrandom) (hsPkgs."tf-random" or (errorHandler.buildDepError "tf-random"))) ++ (if flags.snap
             then [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."websockets-snap" or (errorHandler.buildDepError "websockets-snap"))
               (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
               (hsPkgs."abstract-par" or (errorHandler.buildDepError "abstract-par"))
               (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
-              ]
-            else (pkgs.lib).optionals (flags.warp) [
+            ]
+            else pkgs.lib.optionals (flags.warp) [
               (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
               (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
               (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
               (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-              ]));
+            ]));
           buildable = if compiler.isGhcjs && true || !flags.server
             then false
             else true;
-          };
+        };
         "hanabif" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) ((if !(compiler.isGhcjs && true)
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) && !flags.jsaddle)) ((if !(compiler.isGhcjs && true)
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -156,7 +156,7 @@
               (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
               (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -167,11 +167,11 @@
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."hanabi-dealer" or (errorHandler.buildDepError "hanabi-dealer"))
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]) ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell")));
+            ]) ++ pkgs.lib.optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell")));
           buildable = if !(compiler.isGhcjs && true) && !flags.jsaddle
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

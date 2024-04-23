@@ -21,7 +21,7 @@
       synopsis = "A monad transformer for backtracking exceptions";
       description = "A monad transformer that adds backtracking exceptions to its base monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

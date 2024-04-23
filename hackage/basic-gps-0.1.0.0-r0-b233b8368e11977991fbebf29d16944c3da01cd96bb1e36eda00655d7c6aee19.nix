@@ -21,11 +21,11 @@
       synopsis = "Basic implementation of General Problem Solver algorithm";
       description = "Basic implementation of General Problem Solver algorithm.\nUntested, does not fix many problems.\nThe algorithm is abstract: you can provide your own type of goals and operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

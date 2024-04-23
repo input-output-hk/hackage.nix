@@ -21,7 +21,7 @@
       synopsis = "Simulate keyboard and mouse events";
       description = "Generate native keyboard and mouse events. Using this library,\napplications will respond as if the user performed the action\nthemselves.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xhb" or (errorHandler.buildDepError "xhb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

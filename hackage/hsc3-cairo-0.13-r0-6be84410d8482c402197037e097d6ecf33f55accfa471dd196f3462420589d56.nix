@@ -21,7 +21,7 @@
       synopsis = "haskell supercollider cairo drawing";
       description = "haskell supercollider cairo drawing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

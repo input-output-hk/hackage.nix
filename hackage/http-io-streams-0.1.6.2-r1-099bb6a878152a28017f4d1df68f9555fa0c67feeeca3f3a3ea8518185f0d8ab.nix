@@ -21,7 +21,7 @@
       synopsis = "HTTP and WebSocket client based on io-streams";
       description = "An HTTP client with WebSocket (RFC 6455) support, using the Snap Framework's [io-streams](https://hackage.haskell.org/package/io-streams) library to\nhandle the streaming IO. The @http-io-streams@ API designed for ease of use when querying web services and dealing with the result as streaming I/O.\n\nThe main HTTP/1.1 part of the library is exported in a single module \"Network.Http.Client\"; the WebSocket specific functionality is available from the \"Network.Http.Client.WebSocket\" module.\n\n__NOTE__: This package originally started as a fork of [http-streams](http://hackage.haskell.org/package/http-streams) with a lighter dependency footprint focusing on core HTTP functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -43,9 +43,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
-          ] ++ (pkgs.lib).optional (flags.fast-xor) (hsPkgs."xor" or (errorHandler.buildDepError "xor"))) ++ (pkgs.lib).optional (flags.brotli) (hsPkgs."brotli-streams" or (errorHandler.buildDepError "brotli-streams"));
+        ] ++ pkgs.lib.optional (flags.fast-xor) (hsPkgs."xor" or (errorHandler.buildDepError "xor"))) ++ pkgs.lib.optional (flags.brotli) (hsPkgs."brotli-streams" or (errorHandler.buildDepError "brotli-streams"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

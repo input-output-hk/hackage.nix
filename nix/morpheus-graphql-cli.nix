@@ -6,8 +6,8 @@
         nix = import ../hackage/morpheus-graphql-cli-0.1.0-r0-5a172438957d29e116c77560bfb9496cdbe58f3c9f3e578fe788d41ae1806bbe.nix;
         revNum = 0;
         sha256 = "5a172438957d29e116c77560bfb9496cdbe58f3c9f3e578fe788d41ae1806bbe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

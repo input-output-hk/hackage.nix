@@ -21,7 +21,7 @@
       synopsis = "Parsimonious XML Shorthand Language--to-XML compiler";
       description = "The package contains the pxslcc compiler, which converts\nParsimonious XML Shorthand Language (PXSL) into XML.  PXSL (\"pixel\")\nis a convenient shorthand for writing markup-heavy XML documents.\nIt provides XML authors and programmers with a simple, concise\nsyntax that they can use to create XML documents. For more advanced\nusers, PXSL offers customizable shortcuts and sophisticated\nrefactoring tools like functional macros that can markedly reduce\nthe size and complexity of markup-dense XML documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pxslcc" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

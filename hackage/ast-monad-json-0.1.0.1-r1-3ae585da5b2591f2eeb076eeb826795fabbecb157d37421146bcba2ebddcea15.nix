@@ -21,16 +21,16 @@
       synopsis = "A library for writing JSON";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ast-monad" or (errorHandler.buildDepError "ast-monad"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ast-monad-json-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."ast-monad-json" or (errorHandler.buildDepError "ast-monad-json"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

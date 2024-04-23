@@ -21,6 +21,6 @@
       synopsis = "OBSOLETE. Please use happstack-helpers";
       description = "OBSOLETE. Please use happstack-helpers";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

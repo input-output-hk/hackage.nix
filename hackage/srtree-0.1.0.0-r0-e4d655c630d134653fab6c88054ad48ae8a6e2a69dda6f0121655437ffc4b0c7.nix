@@ -21,7 +21,7 @@
       synopsis = "A general framework to work with Symbolic Regression expression trees.";
       description = "Please see the README on GitHub at <https://github.com/folivetti/srtree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "srtree-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."srtree" or (errorHandler.buildDepError "srtree"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

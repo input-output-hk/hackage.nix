@@ -21,16 +21,16 @@
       synopsis = "Distributive functors -- Dual to Traversable";
       description = "Distributive functors -- Dual to @Traversable@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.tagged) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") ((pkgs.lib).optional (flags.semigroups) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups")));
+        ] ++ pkgs.lib.optional (flags.tagged) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.6")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") (pkgs.lib.optional (flags.semigroups) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups")));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,12 +38,12 @@
             (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
             (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

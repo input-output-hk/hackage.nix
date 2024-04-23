@@ -21,14 +21,14 @@
       synopsis = "POSIX pseudo-terminal support";
       description = "Support for POSIX 1003.1 pseudo-terminal functionality.\nUnlike the @unix@ package's pseudo-terminal support, this\nbinding works with GHC 6.6.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

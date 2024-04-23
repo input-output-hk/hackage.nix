@@ -21,7 +21,7 @@
       synopsis = "binary files splitter and merger";
       description = "binary files splitter and merger, makes working with offsets in your shell less painful";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "binsm" = {
@@ -31,9 +31,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An easy way to perform and unperform IO actions.";
       description = "When doing some side-effectful computations, one might regret the decision to change the state. This package provides an 'undo' function for such cases, and universe suspension/resuming functions for finer control.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

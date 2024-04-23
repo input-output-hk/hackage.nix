@@ -21,7 +21,7 @@
       synopsis = "Adaptation of the monad-time library for the effectful ecosystem.";
       description = "Adaptation of the @<https://hackage.haskell.org/package/monad-time monad-time>@ library for the @<https://hackage.haskell.org/package/effectful effectful>@ ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."effectful-core" or (errorHandler.buildDepError "effectful-core"))
           (hsPkgs."monad-time" or (errorHandler.buildDepError "monad-time"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

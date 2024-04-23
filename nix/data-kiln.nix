@@ -6,8 +6,8 @@
         nix = import ../hackage/data-kiln-0.1.0.0-r0-d962526b4355bdd37e2ceef52a9651aee68043a024c14a4fbfa10087a581b371.nix;
         revNum = 0;
         sha256 = "d962526b4355bdd37e2ceef52a9651aee68043a024c14a4fbfa10087a581b371";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

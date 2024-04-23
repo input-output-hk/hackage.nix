@@ -21,7 +21,7 @@
       synopsis = "HSlackBuilder automatically generates slackBuild scripts from a cabal package";
       description = "HSlackBuilder automatically generates slackBuild scripts from a cabal package";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2slackBuild" = {
@@ -29,15 +29,15 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

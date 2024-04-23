@@ -21,7 +21,7 @@
       synopsis = "Abstract syntax for writing documents";
       description = "This package defines the abstract syntax only\nfor a language for writing documents.\n\nForked from part of the\n<https://hackage.haskell.org/package/prosidy prosidy>\npackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pro-abstract".components.sublibs.pro-abstract-prelude or (errorHandler.buildDepError "pro-abstract:pro-abstract-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "pro-abstract-prelude" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pro-abstract" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-optics" or (errorHandler.buildDepError "hedgehog-optics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

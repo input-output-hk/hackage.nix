@@ -21,7 +21,7 @@
       synopsis = "A tiny Gemtext converter for gemmula";
       description = "gemmula-altera is a tiny Gemtext converter, built on gemmula library.\nIt provides simple encodings for Markdown and HTML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."gemmula" or (errorHandler.buildDepError "gemmula"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gemmulae-alterius-probatio" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."gemmula" or (errorHandler.buildDepError "gemmula"))
             (hsPkgs."gemmula-altera" or (errorHandler.buildDepError "gemmula-altera"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

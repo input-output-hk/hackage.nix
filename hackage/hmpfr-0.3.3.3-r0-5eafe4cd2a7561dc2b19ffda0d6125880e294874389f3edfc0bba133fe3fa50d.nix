@@ -21,23 +21,23 @@
       synopsis = "Haskell binding to the MPFR library";
       description = "Haskell binding to the MPFR library. This version is compatible\nwith MPFR 2.4.* and later and will not work with previous releases\nof the MPFR library.\n\n/Since MPFR uses GMP, this library features infrequent but serious errors/\n/with a ghc that has been compiled with the default integer-gmp./\n/When using ghc, it is recommended to use one compiled with a modified integer-gmp,/\n/as described at http://code.google.com/p/hmpfr/wiki/GHCWithRenamedGMP, or/\n/with integer-simple, as described at http://code.google.com/p/hmpfr/wiki/GHCWithoutGMP./\n/There is a hope that at some point future versions of ghc will not need any modification for/\n/hmpfr to work with them correctly./\n\nThe library includes both a pure and a mutable interface.\nThe mutable interface should have a lot less overhead\nthan the pure one.\n\nSome simple examples of usage can be found in demo/Demo.hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.use-integer-simple
+        ] ++ (if flags.use-integer-simple
           then [
             (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         libs = [ (pkgs."mpfr" or (errorHandler.sysDepError "mpfr")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

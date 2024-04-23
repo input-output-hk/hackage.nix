@@ -21,7 +21,7 @@
       synopsis = "Can be used as a musical instrument synthesizer or for Ukrainian language listening";
       description = "A program that can be used as a musical instrument synthesizer or for Ukrainian speech synthesis especially for poets and writers";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mmsyn6ukr" = {
@@ -33,9 +33,9 @@
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
             (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

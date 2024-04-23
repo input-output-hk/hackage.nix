@@ -21,7 +21,7 @@
       synopsis = "Horizon Stable Package Set Type Definitions";
       description = "This package contains the type definitions for the Horizon stable package set (https://horizon-haskell.net). This is a schema used to define package sets sourcing from hackage and git.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

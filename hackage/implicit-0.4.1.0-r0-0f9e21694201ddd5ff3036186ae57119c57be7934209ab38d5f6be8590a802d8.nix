@@ -21,7 +21,7 @@
       synopsis = "A math-inspired programmatic 2D & 3D CAD system.";
       description = "An OpenSCAD execution engine for generating models in STL and many other formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."show-combinators" or (errorHandler.buildDepError "show-combinators"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "extopenscad" = {
           depends = [
@@ -55,17 +55,17 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = if !flags.extopenscad then false else true;
-          };
+        };
         "docgen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = if !flags.docgen then false else true;
-          };
+        };
         "implicitsnap" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -77,10 +77,10 @@
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if !flags.implicitsnap then false else true;
-          };
         };
+      };
       tests = {
         "test-implicit" = {
           depends = [
@@ -97,10 +97,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Benchmark" = {
           depends = [
@@ -108,18 +108,18 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "parser-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

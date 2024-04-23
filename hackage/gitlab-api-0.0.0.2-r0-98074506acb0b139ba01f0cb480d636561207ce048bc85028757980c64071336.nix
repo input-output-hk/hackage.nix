@@ -21,7 +21,7 @@
       synopsis = "Gitlab Web API";
       description = "Gitlab Web API V4";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gitlab-api-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."gitlab-api" or (errorHandler.buildDepError "gitlab-api"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cross platform library for file change notification.";
       description = "Cross platform library for file creation, modification,\nand deletion notification. This library builds upon\nexisting libraries for platform-specific Windows, Mac,\nand Linux filesystem event notification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,23 +33,23 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ] ++ (if system.isLinux
+        ] ++ (if system.isLinux
           then [
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-            ]
+          ]
           else if system.isWindows
             then [
               (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))
               (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
               (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-              ]
-            else (pkgs.lib).optionals (system.isOsx) [
+            ]
+            else pkgs.lib.optionals (system.isOsx) [
               (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"))
               (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
               (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-              ]);
+            ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."temporary-rc" or (errorHandler.buildDepError "temporary-rc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

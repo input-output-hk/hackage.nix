@@ -21,7 +21,7 @@
       synopsis = "GitHub WebHook Handler implementation for Snap";
       description = "...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."github-types" or (errorHandler.buildDepError "github-types"))
           (hsPkgs."github-webhook-handler" or (errorHandler.buildDepError "github-webhook-handler"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

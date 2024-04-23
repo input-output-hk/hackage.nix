@@ -21,17 +21,17 @@
       synopsis = "Cross platform serial port library.";
       description = "Cross platform haskell library for using the serial port.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if !system.isWindows
+        ] ++ (if !system.isWindows
           then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
           else [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

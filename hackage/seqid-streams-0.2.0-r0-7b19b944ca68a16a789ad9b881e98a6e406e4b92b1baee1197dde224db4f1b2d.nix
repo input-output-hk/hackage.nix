@@ -21,15 +21,15 @@
       synopsis = "Sequence ID IO-Streams";
       description = "Uniquely identify elements in a sequenced stream";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."seqid" or (errorHandler.buildDepError "seqid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pretty printing for Generic value";
       description = "Pretty printing for Generic value. For more detail, please refer to <https://github.com/tanakh/generic-pretty>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "generic-pretty-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."generic-pretty" or (errorHandler.buildDepError "generic-pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

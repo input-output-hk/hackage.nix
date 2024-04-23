@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         (hsPkgs.buildPackages.rio or (pkgs.buildPackages.rio or (errorHandler.setupDepError "rio")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."envy" or (errorHandler.buildDepError "envy"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."say" or (errorHandler.buildDepError "say"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tonaparser-example" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-            ];
+          ];
           buildable = if flags.buildexample then true else false;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."envy" or (errorHandler.buildDepError "envy"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,9 +68,9 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

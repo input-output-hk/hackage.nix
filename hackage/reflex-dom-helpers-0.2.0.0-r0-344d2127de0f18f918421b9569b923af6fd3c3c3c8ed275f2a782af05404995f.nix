@@ -21,7 +21,7 @@
       synopsis = "Html tag helpers for reflex-dom";
       description = "Allows one to write html tags as top level functions in reflex-dom,\nsuch as img instead of el \"img\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reflex-dom-helpers-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reflex-dom-helpers" or (errorHandler.buildDepError "reflex-dom-helpers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

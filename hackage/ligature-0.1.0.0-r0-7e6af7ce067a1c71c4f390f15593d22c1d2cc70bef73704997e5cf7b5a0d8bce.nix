@@ -21,14 +21,14 @@
       synopsis = "Expand ligatures in unicode text";
       description = "Utilities for expanding ligatures in unicode text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

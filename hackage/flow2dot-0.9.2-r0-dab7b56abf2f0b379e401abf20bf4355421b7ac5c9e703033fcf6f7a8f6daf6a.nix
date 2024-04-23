@@ -21,7 +21,7 @@
       synopsis = "Library and binary to generate sequence/flow diagrams from plain text source";
       description = "Generates sequence diagrams from textual descriptions with help of Graphviz graph drawing tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flow2dot" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."flow2dot" or (errorHandler.buildDepError "flow2dot"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "flow2dot-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."flow2dot" or (errorHandler.buildDepError "flow2dot"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/diff-0.1.0.0-r0-d792ee9b6ece9cf4bd0b423db55049f578379faa243b261d8fc3778e73546b60.nix;
         revNum = 0;
         sha256 = "d792ee9b6ece9cf4bd0b423db55049f578379faa243b261d8fc3778e73546b60";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

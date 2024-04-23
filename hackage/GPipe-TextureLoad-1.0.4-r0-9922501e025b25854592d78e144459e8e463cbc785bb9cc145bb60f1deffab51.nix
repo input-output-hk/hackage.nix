@@ -21,7 +21,7 @@
       synopsis = "Load GPipe textures from filesystem";
       description = "The functions of this package helps loading GPipe textures from file. It is based on the stb-image package, and supports subsets of the JPG, PNG, TGA, BMP and PSD formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stb-image" or (errorHandler.buildDepError "stb-image"))
           (hsPkgs."GPipe" or (errorHandler.buildDepError "GPipe"))
           (hsPkgs."bitmap" or (errorHandler.buildDepError "bitmap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

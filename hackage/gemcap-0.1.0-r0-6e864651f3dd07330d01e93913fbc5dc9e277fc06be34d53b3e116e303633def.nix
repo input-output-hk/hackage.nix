@@ -21,7 +21,7 @@
       synopsis = "a simple Gemini capsule (server)";
       description = "a simple Gemini capsule (server) - see README.md for details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gemcap-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

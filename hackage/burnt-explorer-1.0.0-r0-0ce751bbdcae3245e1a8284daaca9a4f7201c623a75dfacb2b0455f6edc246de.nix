@@ -21,7 +21,7 @@
       synopsis = "List OP_RETURN cryptocurrency transaction outputs.";
       description = "This unsophisticated application prints all OP_RETURN transaction\noutputs in a given block range.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "burnt-explorer" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bitcoin-script" or (errorHandler.buildDepError "bitcoin-script"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

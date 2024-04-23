@@ -21,7 +21,7 @@
       synopsis = "An implementation of concurrency ideas from Communicating Sequential Processes";
       description = "The Communicating Haskell Processes (CHP) library is an\nimplementation of ideas from Hoare's Communicating\nSequential Processes.  More details and a tutorial can be\nfound at its homepage:\n<http://www.cs.kent.ac.uk/projects/ofa/chp/>\nThe library requires at least GHC 6.8.1.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

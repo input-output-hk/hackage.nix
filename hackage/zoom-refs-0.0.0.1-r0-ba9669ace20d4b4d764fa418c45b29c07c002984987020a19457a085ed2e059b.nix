@@ -21,15 +21,15 @@
       synopsis = "Zoom (~ Functor) and pairing (~ Applicative) for mutable references.";
       description = "Zoom (a'la lens zoom for State) for TVars, IORefs, and STRefs. TVars and STRef additionaly can be paired to form composite references. Multi-refs that use Traversals instead of Lenses are also available.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

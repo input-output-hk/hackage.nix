@@ -21,7 +21,7 @@
       synopsis = "Multi-precision ball (interval) arithmetic";
       description = "Please see the README on GitHub at <https://github.com/michalkonecny/aern2/#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aern2-mp-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

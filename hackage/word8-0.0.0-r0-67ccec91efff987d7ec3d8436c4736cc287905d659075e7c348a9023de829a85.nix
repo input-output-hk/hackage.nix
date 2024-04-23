@@ -21,11 +21,11 @@
       synopsis = "Word8 library";
       description = "Word8 library to be used with Data.ByteString";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

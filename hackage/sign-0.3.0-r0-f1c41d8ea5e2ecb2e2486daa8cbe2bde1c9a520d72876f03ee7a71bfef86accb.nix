@@ -21,7 +21,7 @@
       synopsis = "Arithmetic over signs and sets of signs";
       description = "Arithmetic over signs (i.e. -, 0, +) and sets of signs\n\nChanges in 0.3.0\n\n* avoid dependency issue of comonad-4.* and representable-functors-3.2.0.1";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
           (hsPkgs."algebra" or (errorHandler.buildDepError "algebra"))
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestSign" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

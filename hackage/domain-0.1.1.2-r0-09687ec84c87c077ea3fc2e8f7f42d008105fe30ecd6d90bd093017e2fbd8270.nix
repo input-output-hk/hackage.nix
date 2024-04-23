@@ -21,7 +21,7 @@
       synopsis = "Codegen helping you define domain models";
       description = "- For introduction and demo skip to [Readme](#readme).\n- For documentation and syntax reference see the \"Domain.Docs\" module.\n- For API documentation refer to the \"Domain\" module,\nwhich exports the whole API of this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,26 +37,26 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-lego" or (errorHandler.buildDepError "th-lego"))
           (hsPkgs."yaml-unscrambler" or (errorHandler.buildDepError "yaml-unscrambler"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "loading-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."domain" or (errorHandler.buildDepError "domain"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inline-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."domain" or (errorHandler.buildDepError "domain"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test" = {
           depends = [
             (hsPkgs."domain" or (errorHandler.buildDepError "domain"))
@@ -70,9 +70,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."template-haskell-compat-v0208" or (errorHandler.buildDepError "template-haskell-compat-v0208"))
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

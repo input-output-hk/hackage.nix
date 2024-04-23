@@ -21,7 +21,7 @@
       synopsis = "Dynamic reconfiguration in Haskell";
       description = "Dyre implements dynamic reconfiguration facilities after the\nstyle of Xmonad. Dyre aims to be as simple as possible without\nsacrificing features, and places an emphasis on simplicity of\nintegration with an application.\nA full introduction with a complete example project can be found\nin the documentation for 'Config.Dyre'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,11 +34,11 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

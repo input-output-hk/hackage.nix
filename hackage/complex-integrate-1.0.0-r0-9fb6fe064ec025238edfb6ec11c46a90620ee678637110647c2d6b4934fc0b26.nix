@@ -21,11 +21,11 @@
       synopsis = "A simple integration function to integrate a complex-valued complex functions ";
       description = "Small and simple library for integration of complex functions.\nIntegrates functions along straight lines. Compatible with real-valued functions.\nUses Simpson's method.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

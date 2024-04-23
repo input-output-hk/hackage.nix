@@ -21,7 +21,7 @@
       synopsis = "Interoperability with Wai/Warp";
       description = "This is part of a library to help build command-line programs, both tools and\nlonger-running daemons.\n\nThis package in particular adds wrappers around the __wai__ (Web Application\nInterface) and __warp__ (Web Server) to facilitate integrating this commonly\nused webserver combination with the Program monad from __core-program__.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

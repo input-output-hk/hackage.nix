@@ -21,7 +21,7 @@
       synopsis = "Computer graphics for kids and artists with Processing implemented in Haskell. ";
       description = "The library implements the Processing language (see <https://processing.org/>). It's an imperative EDSL for graphics and animation.\nIt's very easy and fun to use. There are many books on processing and community is fairly active.\nWe can find the quick start guide and lots of examples in the project repository\non github <https://github.com/anton-k/processing-for-haskell> (see the directory @examples@).\nThere is a tutorial at the project homepage at github: <https://github.com/anton-k/processing-for-haskell>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."NumInstances" or (errorHandler.buildDepError "NumInstances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

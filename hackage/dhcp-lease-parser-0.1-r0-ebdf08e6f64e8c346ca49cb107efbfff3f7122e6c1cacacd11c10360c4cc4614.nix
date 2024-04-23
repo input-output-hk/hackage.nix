@@ -21,7 +21,7 @@
       synopsis = "Parse a DHCP lease file";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."chronos" or (errorHandler.buildDepError "chronos"))
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dhcp-lease-parser-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."chronos" or (errorHandler.buildDepError "chronos"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

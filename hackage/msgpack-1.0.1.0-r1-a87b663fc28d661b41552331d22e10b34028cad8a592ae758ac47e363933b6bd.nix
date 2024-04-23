@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of MessagePack";
       description = "A Haskell implementation of the <http://msgpack.org/ MessagePack> data interchange format.\nMessagePack is a binary format which aims to be compact and supports encoding a superset of the <http://json.org/ JSON> data-model.\n\n== Related Packages\n\nA JSON adapter for the <https://hackage.haskell.org/package/aeson aeson> library is provided by the <https://hackage.haskell.org/package/msgpack-aeson msgpack-aeson> package.\n\nThe <http://hackage.haskell.org/package/msgpack-rpc msgpack-rpc> package provides an implementation of the MessagePack-RPC protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "msgpack-tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

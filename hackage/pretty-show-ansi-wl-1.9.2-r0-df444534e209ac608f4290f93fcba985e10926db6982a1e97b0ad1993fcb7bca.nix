@@ -21,7 +21,7 @@
       synopsis = "Like pretty-show, but only for ansi-wl-pprint";
       description = "This is an adapted version of Iavor S. Diatchki's pretty-show package,\nbut using ansi-wl-pprint as the underlying pretty-printing library,\nand without certain extra features like HTML rendering.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."haskell-lexer" or (errorHandler.buildDepError "haskell-lexer"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

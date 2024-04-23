@@ -21,7 +21,7 @@
       synopsis = "Interfaces with FreeSwitch Event Socket.";
       description = "Interfaces with FreeSwitch Event Socket. This should be considered an alpha release and has not been tested extensively.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

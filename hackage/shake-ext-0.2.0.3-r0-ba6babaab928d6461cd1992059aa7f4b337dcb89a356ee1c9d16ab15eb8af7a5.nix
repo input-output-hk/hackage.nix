@@ -21,15 +21,15 @@
       synopsis = "Helper functions for linting with shake ";
       description = "This package provides several linters out of the box, as well as functionality for building ATS source files with [shake](http://shakebuild.com/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."language-ats" or (errorHandler.buildDepError "language-ats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

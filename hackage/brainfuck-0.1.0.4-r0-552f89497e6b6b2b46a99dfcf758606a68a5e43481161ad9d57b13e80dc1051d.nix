@@ -21,16 +21,16 @@
       synopsis = "Brainfuck interpreter";
       description = "This is an interpreter of the brainf*ck language,\nwritten in the pure, lazy, functional language Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bf" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."brainfuck" or (errorHandler.buildDepError "brainfuck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

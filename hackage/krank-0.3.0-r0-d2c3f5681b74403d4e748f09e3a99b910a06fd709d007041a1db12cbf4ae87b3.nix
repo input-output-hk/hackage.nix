@@ -21,7 +21,7 @@
       synopsis = "Krank checks issue tracker link status in your source code";
       description = "Krank checks issue tracker link status in your source code. When you implement a workaround because of an upstream issue, you often put a link in comment in your code. Krank will tell you when the issue associated with your workaround is closed, meaning that you may get ride of your workaround.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "krank" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "krank-test" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

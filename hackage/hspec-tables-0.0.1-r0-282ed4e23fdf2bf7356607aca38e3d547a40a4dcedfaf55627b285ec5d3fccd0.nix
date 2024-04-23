@@ -21,15 +21,15 @@
       synopsis = "Table-driven (by-example) HSpec tests";
       description = "Table-driven (by-example) HSpec tests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec-tables-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-tables" or (errorHandler.buildDepError "hspec-tables"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "amazonka-contrib-rds-utils";
         version = "1.6.1.0";
-        };
+      };
       license = "MPL-2.0";
       copyright = "Copyright (c) 2021 Maxim Avanov";
       maintainer = "maxim.avanov@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "A Haskell equivalent of \"aws rds generate-db-auth-token\"";
       description = "A Haskell equivalent of \"aws rds generate-db-auth-token\" CLI utility built on top of \"amazonka\" library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "generate-db-auth-token" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

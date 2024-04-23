@@ -21,7 +21,7 @@
       synopsis = "Helper functions to use reflex with gi-gtk";
       description = "This package provides a a reflex host and helper\nfunctions to create reactive GUI applications\nusing gi-gtk and reflex.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reflex-gi-gtk-example" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."patch" or (errorHandler.buildDepError "patch"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

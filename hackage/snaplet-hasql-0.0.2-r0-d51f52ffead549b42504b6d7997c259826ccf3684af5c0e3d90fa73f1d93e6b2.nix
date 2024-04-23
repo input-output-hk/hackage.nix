@@ -21,7 +21,7 @@
       synopsis = "A Hasql snaplet";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
           (hsPkgs."hasql-backend" or (errorHandler.buildDepError "hasql-backend"))
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

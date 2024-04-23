@@ -21,7 +21,7 @@
       synopsis = "Optimization on manifolds of probability distributions with Goal";
       description = "goal-probability provides tools for implementing and applying basic statistical models. The core concept of goal-probability are statistical manifolds, i.e. manifold of probability distributions, with a focus on exponential family distributions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."goal-geometry" or (errorHandler.buildDepError "goal-geometry"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "regression" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "backpropagation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."goal-geometry" or (errorHandler.buildDepError "goal-geometry"))
             (hsPkgs."goal-probability" or (errorHandler.buildDepError "goal-probability"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

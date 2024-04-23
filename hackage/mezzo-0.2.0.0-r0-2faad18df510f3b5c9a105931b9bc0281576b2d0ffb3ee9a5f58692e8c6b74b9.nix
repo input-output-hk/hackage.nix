@@ -21,7 +21,7 @@
       synopsis = "Typesafe music composition";
       description = "A Haskell music composition library that enforces common\nmusical rules in the type system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."HCodecs" or (errorHandler.buildDepError "HCodecs"))
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mezzo-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

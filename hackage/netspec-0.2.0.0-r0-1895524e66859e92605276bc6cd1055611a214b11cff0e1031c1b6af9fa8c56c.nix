@@ -21,7 +21,7 @@
       synopsis = "Simplify static Networking tasks";
       description = "A Networking library for static Networking tasks.\n\nTo learn about how to use this library in general,\nsee <http://github.com/DanBurton/netspec#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

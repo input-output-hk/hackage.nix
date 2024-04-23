@@ -21,7 +21,7 @@
       synopsis = "Detect dead code";
       description = "Find redundant package dependencies or redundant module exports.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "weeder" = {
@@ -42,9 +42,9 @@
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

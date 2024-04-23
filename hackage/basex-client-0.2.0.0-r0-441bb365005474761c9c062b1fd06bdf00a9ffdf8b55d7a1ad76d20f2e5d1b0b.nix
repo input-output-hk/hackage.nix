@@ -21,7 +21,7 @@
       synopsis = "A BaseX client for Haskell";
       description = "A BaseX client library for Haskell that connects to the BaseX server using a socket. BaseX is a light-weight, high-performance and scalable XML Database written in Java.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

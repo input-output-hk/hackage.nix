@@ -21,7 +21,7 @@
       synopsis = "Parse and render .narinfo files";
       description = "Support for parsing and rendering Nix .narinfo files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pretty-narinfo" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."nix-narinfo" or (errorHandler.buildDepError "nix-narinfo"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "nix-narinfo-samples" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."nix-narinfo" or (errorHandler.buildDepError "nix-narinfo"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "nix-narinfo-property" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."nix-narinfo" or (errorHandler.buildDepError "nix-narinfo"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

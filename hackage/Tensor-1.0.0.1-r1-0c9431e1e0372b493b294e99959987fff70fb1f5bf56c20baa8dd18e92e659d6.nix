@@ -21,11 +21,11 @@
       synopsis = "Tensor data types";
       description = "This package contains tensor data types and their instances for some basic\ntype classes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

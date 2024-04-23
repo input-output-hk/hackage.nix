@@ -21,11 +21,11 @@
       synopsis = "Extra utilities for HasCallStack";
       description = "Add notes to GHC call stacks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

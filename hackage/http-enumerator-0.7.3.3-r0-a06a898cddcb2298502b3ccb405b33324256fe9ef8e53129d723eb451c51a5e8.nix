@@ -21,7 +21,7 @@
       synopsis = "HTTP client package with enumerator interface and HTTPS support. (deprecated)";
       description = "This package has been deprecated in favor of http-conduit (<http://hackage.haskell.org/package/http-conduit>), which provides a more powerful and simpler interface. The API is very similar, and migrating should not be problematic. Send concerns about this move to the maintainer (address listed above).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,18 +47,18 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ] ++ (if flags.network-bytestring
+        ] ++ (if flags.network-bytestring
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "http-enumerator" = { buildable = if flags.test then true else false; };
-        };
       };
-    }
+    };
+  }

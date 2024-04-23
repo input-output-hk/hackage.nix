@@ -21,15 +21,15 @@
       synopsis = "Library to control network protocols";
       description = "Common parts to control network protocols";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/mcmaster-gloss-examples-2013-r0-1dd22f6c2ca6ddeba364b4bc0d381a8330f82162104e1e626d6271d3866d16e6.nix;
         revNum = 0;
         sha256 = "1dd22f6c2ca6ddeba364b4bc0d381a8330f82162104e1e626d6271d3866d16e6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -13,7 +13,7 @@
       test-hlint = true;
       unstable = false;
       measure-synchronize = false;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "rcu"; version = "0.2"; };
@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -41,52 +41,52 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.unstable) (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
+        ] ++ pkgs.lib.optional (flags.unstable) (hsPkgs."stm" or (errorHandler.buildDepError "stm"));
         buildable = true;
-        };
+      };
       exes = {
         "MoveStringSTM" = {
-          depends = (pkgs.lib).optionals (!(!flags.unstable)) [
+          depends = pkgs.lib.optionals (!!flags.unstable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if !flags.unstable then false else true;
-          };
+        };
         "MoveStringQSBR" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MoveStringGC" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
         };
+      };
       benchmarks = {
         "IncCounterExperiment" = {
           depends = [
@@ -96,9 +96,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeQSBR" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeGC" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -124,9 +124,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeQSBRUnbound" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -138,9 +138,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeGCUnbound" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -152,9 +152,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeQSBRSingleThread" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -166,9 +166,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeGCSingleThread" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -180,9 +180,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeQSBRPinned" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -194,9 +194,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeGCPinned" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -208,9 +208,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeQSBRnoGC" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -222,9 +222,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeGCnoGC" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -236,9 +236,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeQSBRnoGCPinned" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -250,9 +250,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TimeSynchronizeGCnoGCPinned" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -264,9 +264,9 @@
             (hsPkgs."rcu" or (errorHandler.buildDepError "rcu"))
             (hsPkgs."rdtsc" or (errorHandler.buildDepError "rdtsc"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

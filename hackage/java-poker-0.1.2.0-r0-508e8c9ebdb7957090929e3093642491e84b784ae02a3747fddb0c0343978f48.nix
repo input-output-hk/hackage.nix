@@ -21,23 +21,23 @@
       synopsis = "The etude of the Haskell programming";
       description = "poker like a JAVA";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "java-poker" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."java-poker" or (errorHandler.buildDepError "java-poker"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

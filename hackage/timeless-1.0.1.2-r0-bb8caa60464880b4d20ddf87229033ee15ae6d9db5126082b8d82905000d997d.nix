@@ -21,7 +21,7 @@
       synopsis = "An Arrow based Functional Reactive Programming library";
       description = "Timeless aims to be a comprehensive FRP framework. Version 1 tries to build a system like the book Functional Reactive Programming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple Gridlab-D GLM parser and utilities.";
       description = "Simple Gridlab-D GLM parser and utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "glm2props" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."GLM" or (errorHandler.buildDepError "GLM"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "glm2dot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."GLM" or (errorHandler.buildDepError "GLM"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "glm2json" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,10 +88,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."GLM" or (errorHandler.buildDepError "GLM"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-glm" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."GLM" or (errorHandler.buildDepError "GLM"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

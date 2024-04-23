@@ -21,7 +21,7 @@
       synopsis = "The GHC API, decoupled from GHC versions";
       description = "A package equivalent to the @ghc@ package, but which can be loaded on many compiler versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,14 +40,14 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ] ++ (if !system.isWindows
+        ] ++ (if !system.isWindows
           then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
           else [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]);
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

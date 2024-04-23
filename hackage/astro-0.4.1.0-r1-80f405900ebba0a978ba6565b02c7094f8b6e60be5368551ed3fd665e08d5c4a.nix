@@ -21,16 +21,16 @@
       synopsis = "Amateur astronomical computations";
       description = "Please read https://github.com/Alexander-Ignatyev/astro/blob/master/README.md to start.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "astro-app" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."astro" or (errorHandler.buildDepError "astro"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "astro-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Stream Hasql queries with Conduit";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hasql-streams-core" or (errorHandler.buildDepError "hasql-streams-core"))
           (hsPkgs."hasql-transaction-io" or (errorHandler.buildDepError "hasql-transaction-io"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

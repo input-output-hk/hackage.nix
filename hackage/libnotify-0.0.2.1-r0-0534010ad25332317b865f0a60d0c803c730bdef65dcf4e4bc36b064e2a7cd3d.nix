@@ -21,7 +21,7 @@
       synopsis = "Haskell binding for Libnotify";
       description = "Usable binding to libnotify library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [ (pkgs."notify" or (errorHandler.sysDepError "notify")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

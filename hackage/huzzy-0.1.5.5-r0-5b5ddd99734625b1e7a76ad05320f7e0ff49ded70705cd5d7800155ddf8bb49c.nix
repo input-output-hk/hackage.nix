@@ -21,14 +21,14 @@
       synopsis = "Fuzzy logic library with support for T1, IT2, GT2.";
       description = "Library for creating fuzzy sets and systems.\nThere are known issues with overly precise values in Type-2 sets.\nIncredibly alpha, please do not use this for controlling your shower.\nHuge thanks to Emilio Gallego for his work on ffuzz: http://www.cis.upenn.edu/~emilioga/software/ffuzz/.\nHeavily inspired by http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=44203";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."easyplot" or (errorHandler.buildDepError "easyplot"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

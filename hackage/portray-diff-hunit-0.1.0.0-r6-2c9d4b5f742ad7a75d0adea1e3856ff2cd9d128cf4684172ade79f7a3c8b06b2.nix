@@ -21,7 +21,7 @@
       synopsis = "HUnit assertions based on portray-diff";
       description = "This provides equality assertion functions for HUnit that pretty-print\nstructural diffs of the values in question, rather than dumping the entire\nvalues as part of the counterexamples.  This is useful when comparing very\nlarge values, since it can otherwise be difficult to tell what changed\nbetween expected and actual values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."portray-pretty" or (errorHandler.buildDepError "portray-pretty"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

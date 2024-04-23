@@ -6,8 +6,8 @@
         nix = import ../hackage/json2-types-0.1-r0-a0eaf46fd2172dfdd0885e84eb6f96f17f042f400d95a734f47b1513a158f262.nix;
         revNum = 0;
         sha256 = "a0eaf46fd2172dfdd0885e84eb6f96f17f042f400d95a734f47b1513a158f262";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

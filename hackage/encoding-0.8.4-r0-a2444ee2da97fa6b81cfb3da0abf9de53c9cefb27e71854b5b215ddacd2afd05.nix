@@ -28,8 +28,8 @@
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.ghc-prim or (pkgs.buildPackages.ghc-prim or (errorHandler.setupDepError "ghc-prim")))
         (hsPkgs.buildPackages.HaXml or (pkgs.buildPackages.HaXml or (errorHandler.setupDepError "HaXml")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "encoding-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."encoding" or (errorHandler.buildDepError "encoding"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

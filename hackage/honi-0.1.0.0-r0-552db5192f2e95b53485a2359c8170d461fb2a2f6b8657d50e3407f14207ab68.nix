@@ -21,20 +21,20 @@
       synopsis = "OpenNI 2 binding";
       description = "OpenNI 2 binding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."OpenNI2" or (errorHandler.sysDepError "OpenNI2"))
           (pkgs."freenect" or (errorHandler.sysDepError "freenect"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,13 +42,13 @@
             (hsPkgs."honi" or (errorHandler.buildDepError "honi"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           libs = [
             (pkgs."OpenNI2" or (errorHandler.sysDepError "OpenNI2"))
             (pkgs."freenect" or (errorHandler.sysDepError "freenect"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

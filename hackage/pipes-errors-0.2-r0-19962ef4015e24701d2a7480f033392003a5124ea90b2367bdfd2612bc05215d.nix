@@ -21,15 +21,15 @@
       synopsis = "Integration between pipes and errors";
       description = "This package is analogous to the\n@<http://hackage.haskell.org/package/errors errors>@ package but for\nbase monad manipulation in the presence of `Proxy` monad transformers.\nIt also provides orphan `MFunctor` instances for `EitherT` and\n`EitherRT`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

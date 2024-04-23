@@ -21,12 +21,12 @@
       synopsis = "Generic implementation of the Has and CoHas patterns";
       description = "Please see the README on GitHub at <https://github.com/0xd34df00d/can-i-haz#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "can-i-haz-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."can-i-haz" or (errorHandler.buildDepError "can-i-haz"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

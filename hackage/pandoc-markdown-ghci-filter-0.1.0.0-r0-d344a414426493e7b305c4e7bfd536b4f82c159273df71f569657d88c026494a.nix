@@ -14,7 +14,7 @@
       identifier = {
         name = "pandoc-markdown-ghci-filter";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2019 Guru Devanla";
       maintainer = "gdrvnl@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Pandoc-filter to evaluate `code` section in markdown and auto-embed output.";
       description = "Please see the README on GitHub at <https://github.com/gdevanla/pandoc-markdown-ghci-filter#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-markdown-ghci-filter-exe" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."pandoc-markdown-ghci-filter" or (errorHandler.buildDepError "pandoc-markdown-ghci-filter"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pandoc-markdown-ghci-filter-test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

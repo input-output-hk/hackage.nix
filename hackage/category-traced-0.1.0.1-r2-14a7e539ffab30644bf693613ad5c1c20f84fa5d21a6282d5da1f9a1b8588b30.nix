@@ -21,14 +21,14 @@
       synopsis = "Traced monoidal categories";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."categories" or (errorHandler.buildDepError "categories"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

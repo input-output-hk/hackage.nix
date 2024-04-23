@@ -21,7 +21,7 @@
       synopsis = "Throw behaviour for hashmap lookup.";
       description = "Adds a lookupOrThrow function that throws if the key is not found";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."hashmap" or (errorHandler.buildDepError "hashmap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

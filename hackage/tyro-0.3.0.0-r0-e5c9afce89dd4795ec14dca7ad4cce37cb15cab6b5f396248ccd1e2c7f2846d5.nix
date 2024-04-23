@@ -21,7 +21,7 @@
       synopsis = "Type derived JSON parsing using Aeson";
       description = "A library for deriving JSON parsers (using Aeson) by indicating\nJSON structure at the type level.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tyro-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

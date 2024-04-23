@@ -21,7 +21,7 @@
       synopsis = "CSV encoding and decoding for hmatrix.";
       description = "Aims to provide easy CSV encoding and decoding of matrices.\nRight now only matrices of type 'Double' are supported.\nPlease feel free to report issues or possible improvements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

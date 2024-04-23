@@ -21,7 +21,7 @@
       synopsis = "Manipulating Java source: abstract syntax, lexer, parser, and pretty-printer";
       description = "Java source manipulation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,11 +30,11 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."syb" or (errorHandler.buildDepError "syb"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."syb" or (errorHandler.buildDepError "syb"));
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

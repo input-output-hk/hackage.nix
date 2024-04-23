@@ -21,16 +21,16 @@
       synopsis = "Think back of the five tenets of hero club";
       description = "This package gives you Hero Club Five Tenets, Yuki Yuna is a Hero.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fivetenets" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."hero-club-five-tenets" or (errorHandler.buildDepError "hero-club-five-tenets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Package to list all tracked and untracked existing files via Git.";
       description = "Please see the README on GitHub at <https://github.com/joshuaclayton/tracked-files#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tracked-files" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tracked-files" or (errorHandler.buildDepError "tracked-files"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tracked-files-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tracked-files" or (errorHandler.buildDepError "tracked-files"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

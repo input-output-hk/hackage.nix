@@ -21,7 +21,7 @@
       synopsis = "A small game based on domino-like hexagonal tiles";
       description = "Hexmino is a small game where you have to put domino-like hexagonal tiles into a grid in as little time as possible";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hexmino" = {
@@ -33,9 +33,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

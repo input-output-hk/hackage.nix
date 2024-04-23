@@ -21,7 +21,7 @@
       synopsis = "git checkout command-line tool";
       description = "Please see the README on GitHub at <https://github.com/andys8/git-brunch#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "git-brunch-lib" = {
@@ -32,10 +32,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "git-brunch" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "git-brunch-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -13,7 +13,7 @@
       no-examples = true;
       system-libyaml = false;
       no-unicode = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "yaml"; version = "0.8.31"; };
@@ -26,7 +26,7 @@
       synopsis = "Support for parsing and rendering YAML documents.";
       description = "README and API documentation are available at <https://www.stackage.org/package/yaml>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,10 +47,10 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0.2") (hsPkgs."base" or (errorHandler.buildDepError "base"));
-        pkgconfig = (pkgs.lib).optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1" or (errorHandler.pkgConfDepError "yaml-0.1"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0.2") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        pkgconfig = pkgs.lib.optional (flags.system-libyaml) (pkgconfPkgs."yaml-0.1" or (errorHandler.pkgConfDepError "yaml-0.1"));
         buildable = true;
-        };
+      };
       exes = {
         "yaml2json" = {
           depends = [
@@ -58,29 +58,29 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
+        };
         "json2yaml" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
+        };
         "examples" = {
-          depends = (pkgs.lib).optionals (!flags.no-examples) [
+          depends = pkgs.lib.optionals (!flags.no-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = if flags.no-examples then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

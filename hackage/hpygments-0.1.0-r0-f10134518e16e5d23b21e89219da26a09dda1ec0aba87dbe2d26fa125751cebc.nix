@@ -21,7 +21,7 @@
       synopsis = "Highlight source code using Pygments";
       description = "Highlight source code using Pygments <http://pygments.org>. This package\ndepends on Pygments and its accompanying @pygmentize@ script.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

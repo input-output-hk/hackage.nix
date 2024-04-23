@@ -21,15 +21,15 @@
       synopsis = "YesQL-style SQL database abstraction (legacy compatibility wrapper)";
       description = "Use quasi-quotations or TemplateHaskell to write SQL in SQL, while\nadding type annotations to turn SQL into well-typed Haskell\nfunctions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yeshql-core" or (errorHandler.buildDepError "yeshql-core"))
           (hsPkgs."yeshql-hdbc" or (errorHandler.buildDepError "yeshql-hdbc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "api extensions for nvim-hs";
       description = "Please see the README on GitHub at <https://github.com/tek/ribosome>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -80,8 +80,8 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

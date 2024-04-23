@@ -14,7 +14,7 @@
       identifier = {
         name = "genvalidity-hspec-hashable";
         version = "1.0.0.1";
-        };
+      };
       license = "MIT";
       copyright = "Copyright: (c) 2016-2021 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -24,7 +24,7 @@
       synopsis = "Standard spec's for Hashable instances";
       description = "Standard spec's for Hashable instances";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-hspec-hashable-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

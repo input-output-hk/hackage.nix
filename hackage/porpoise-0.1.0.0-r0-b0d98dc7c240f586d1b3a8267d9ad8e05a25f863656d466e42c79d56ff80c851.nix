@@ -21,7 +21,7 @@
       synopsis = "A minimalist HTTP server framework written on top of wai";
       description = "A minimalist HTTP server framework written on top of wai.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "porpoise-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."porpoise" or (errorHandler.buildDepError "porpoise"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

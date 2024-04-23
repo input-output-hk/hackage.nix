@@ -21,16 +21,16 @@
       synopsis = "Pure Haskell QR encoder library and command line tool";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cqr" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."qr" or (errorHandler.buildDepError "qr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

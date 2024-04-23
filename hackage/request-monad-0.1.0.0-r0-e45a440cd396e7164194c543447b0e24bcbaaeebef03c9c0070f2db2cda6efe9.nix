@@ -21,15 +21,15 @@
       synopsis = "A transformer for generic requests";
       description = "An MTL-style monad that can be used to perform requests. Using RequestT\nsimplifies writing generic middleware.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

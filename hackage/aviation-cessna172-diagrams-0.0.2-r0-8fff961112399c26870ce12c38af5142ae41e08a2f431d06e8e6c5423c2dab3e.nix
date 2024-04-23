@@ -21,7 +21,7 @@
       synopsis = "Diagrams for the Cessna 172 aircraft in aviation.";
       description = "<<http://i.imgur.com/0h9dFhl.png>>\n\nDiagrams for the Cessna 172 aircraft in aviation.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."plots" or (errorHandler.buildDepError "plots"))
           (hsPkgs."hgeometry" or (errorHandler.buildDepError "hgeometry"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

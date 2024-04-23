@@ -21,7 +21,7 @@
       synopsis = "Command-line frontend for Haskell-tools Refact";
       description = "Command-line frontend for Haskell-tools Refact. Not meant as a final product, only for demonstration purposes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,27 +38,27 @@
           (hsPkgs."haskell-tools-ast" or (errorHandler.buildDepError "haskell-tools-ast"))
           (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
           (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ht-refact" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-tools-cli" or (errorHandler.buildDepError "haskell-tools-cli"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ht-test-stackage" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskell-tools-cli-tests" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."haskell-tools-cli" or (errorHandler.buildDepError "haskell-tools-cli"))
             (hsPkgs."knob" or (errorHandler.buildDepError "knob"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "cli-benchmark" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."knob" or (errorHandler.buildDepError "knob"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

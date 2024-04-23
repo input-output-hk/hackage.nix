@@ -21,7 +21,7 @@
       synopsis = "haskell bindings for memcached";
       description = "haskell bindings for memcached";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-light" or (errorHandler.buildDepError "utf8-light"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Example JSON parser/pretty-printer.";
       description = "Example JSON parser/pretty-printer.\n\nSource code:\n\n* <https://github.com/Pawel834/syntax-example-json/blob/7236aefc018ce3d968321b5b85ddcf80b46aeef4/Main.hs Main.hs>\n\nExample input and output:\n\n* <https://github.com/Pawel834/syntax-example-json/blob/master/in.json in.json>\n\n* <https://github.com/Pawel834/syntax-example-json/blob/master/out.json out.json>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "syntax-example-json" = {
@@ -36,9 +36,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

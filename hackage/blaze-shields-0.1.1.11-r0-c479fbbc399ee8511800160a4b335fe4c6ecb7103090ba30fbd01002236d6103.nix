@@ -21,7 +21,7 @@
       synopsis = "create svg by Haskell";
       description = "a Haskell version of shields ,which is on github.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

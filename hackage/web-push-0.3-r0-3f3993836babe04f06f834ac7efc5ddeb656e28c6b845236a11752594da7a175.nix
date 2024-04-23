@@ -21,7 +21,7 @@
       synopsis = "Send messages using Web Push protocol.";
       description = "Web Push is a simple protocol for delivery of real-time events\nto user agents using HTTP/2 server push. This can be used to send\nnotifications to browsers using the Push API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "web-push-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

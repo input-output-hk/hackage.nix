@@ -21,7 +21,7 @@
       synopsis = "A library for encoding and decoding bodies of HTTP messages";
       description = "A library for encoding and decoding bodies of HTTP messages, designed to work with the HTTP and http-server libraries. No heuristic encoding detection at this time. WANTED: a library implementing the Unix \"compress\" command encoding/decoding (or the LZW algorithm).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mime" or (errorHandler.buildDepError "mime"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

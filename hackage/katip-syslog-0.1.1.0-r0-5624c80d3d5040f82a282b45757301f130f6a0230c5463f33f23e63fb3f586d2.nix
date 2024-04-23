@@ -21,7 +21,7 @@
       synopsis = "Syslog Katip Scribe";
       description = "A simple Katip Scribe which logs to syslog";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "katip-syslog-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."katip-syslog" or (errorHandler.buildDepError "katip-syslog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

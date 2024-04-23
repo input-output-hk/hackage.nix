@@ -21,7 +21,7 @@
       synopsis = "Typed XML encoding for an xml-conduit backend.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-tydom-core" or (errorHandler.buildDepError "xml-tydom-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xml-tydom-conduit-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-tydom-conduit" or (errorHandler.buildDepError "xml-tydom-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

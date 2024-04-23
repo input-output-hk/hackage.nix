@@ -21,7 +21,7 @@
       synopsis = "Useful functions that use the GitHub API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
           (hsPkgs."github" or (errorHandler.buildDepError "github"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

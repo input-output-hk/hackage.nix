@@ -21,11 +21,11 @@
       synopsis = "Dependent sum type";
       description = "Dependent sums and supporting typeclasses for\ncomparing and formatting them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

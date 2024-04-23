@@ -6,8 +6,8 @@
         nix = import ../hackage/wigner-symbols-1.0.0-r0-d57c7fe2941557410efe72d0262465390c9583634081e71363388b70da660177.nix;
         revNum = 0;
         sha256 = "d57c7fe2941557410efe72d0262465390c9583634081e71363388b70da660177";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

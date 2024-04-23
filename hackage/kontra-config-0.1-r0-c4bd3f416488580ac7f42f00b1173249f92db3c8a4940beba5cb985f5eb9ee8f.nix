@@ -21,7 +21,7 @@
       synopsis = "JSON config file parsing based on unjson";
       description = "A library for reading JSON configuration files. Based on unjson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unjson" or (errorHandler.buildDepError "unjson"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

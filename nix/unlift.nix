@@ -6,8 +6,8 @@
         nix = import ../hackage/unlift-0.0.0.0-r0-b8e9a37a3dae457fd02b292acb821de1573c45aa25877de8ed3bae4dcf39c8c2.nix;
         revNum = 0;
         sha256 = "b8e9a37a3dae457fd02b292acb821de1573c45aa25877de8ed3bae4dcf39c8c2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

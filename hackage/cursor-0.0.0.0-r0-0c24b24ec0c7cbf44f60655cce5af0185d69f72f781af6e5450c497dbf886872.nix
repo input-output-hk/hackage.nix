@@ -21,7 +21,7 @@
       synopsis = "Purely Functional Cursors";
       description = "Purely Functional Cursors for common data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
           (hsPkgs."validity-text" or (errorHandler.buildDepError "validity-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Java interop via inline Java code in Haskell modules.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ] ++ (pkgs.lib).optional (flags.linear-types) (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"));
+        ] ++ pkgs.lib.optional (flags.linear-types) (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."inline-java" or (errorHandler.buildDepError "inline-java"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (flags.linear-types) (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"));
+          ] ++ pkgs.lib.optional (flags.linear-types) (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "micro-benchmarks" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."jni" or (errorHandler.buildDepError "jni"))
             (hsPkgs."jvm" or (errorHandler.buildDepError "jvm"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

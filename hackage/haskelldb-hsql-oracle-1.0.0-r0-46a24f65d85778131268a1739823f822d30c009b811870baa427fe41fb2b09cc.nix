@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HSQL Oracle driver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."haskelldb-hsql" or (errorHandler.buildDepError "haskelldb-hsql"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
           (hsPkgs."hsql-oracle" or (errorHandler.buildDepError "hsql-oracle"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "DBDirect-hsql-oracle" = { buildable = true; }; };
       };
-    }
+      exes = { "DBDirect-hsql-oracle" = { buildable = true; }; };
+    };
+  }

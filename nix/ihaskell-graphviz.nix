@@ -6,8 +6,8 @@
         nix = import ../hackage/ihaskell-graphviz-0.1.0.0-r0-39b695a02fb4adfa49eb054370352ff060824de7c392b355758b7d14befe2059.nix;
         revNum = 0;
         sha256 = "39b695a02fb4adfa49eb054370352ff060824de7c392b355758b7d14befe2059";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

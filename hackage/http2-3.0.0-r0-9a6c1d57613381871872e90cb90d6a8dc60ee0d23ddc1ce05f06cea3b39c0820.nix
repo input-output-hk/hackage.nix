@@ -21,7 +21,7 @@
       synopsis = "HTTP/2 library";
       description = "HTTP/2 library including frames, priority queues, HPACK, client and server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time-manager" or (errorHandler.buildDepError "time-manager"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "client" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."network-run" or (errorHandler.buildDepError "network-run"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."network-run" or (errorHandler.buildDepError "network-run"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "hpack-encode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "hpack-debug" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "hpack-stat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -116,9 +116,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
+        };
         "frame-encode" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,18 +129,18 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.devel then true else false;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = if flags.doc then true else false;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -153,12 +153,12 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."network-run" or (errorHandler.buildDepError "network-run"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -168,12 +168,12 @@
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
             (hsPkgs."network-run" or (errorHandler.buildDepError "network-run"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = if flags.h2spec then true else false;
-          };
+        };
         "hpack" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -187,12 +187,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "frame" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -208,13 +208,13 @@
             (hsPkgs."network-byte-order" or (errorHandler.buildDepError "network-byte-order"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "priority" = {
           depends = [
@@ -228,9 +228,9 @@
             (hsPkgs."network-byte-order" or (errorHandler.buildDepError "network-byte-order"))
             (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "header-compression" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -242,9 +242,9 @@
             (hsPkgs."network-byte-order" or (errorHandler.buildDepError "network-byte-order"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."http2" or (errorHandler.buildDepError "http2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

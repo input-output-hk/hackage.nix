@@ -21,7 +21,7 @@
       synopsis = "Monadic Functional Reactive Programming";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
           (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "moffy-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
             (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

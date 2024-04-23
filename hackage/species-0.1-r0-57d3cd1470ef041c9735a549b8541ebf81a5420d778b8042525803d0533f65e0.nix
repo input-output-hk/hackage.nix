@@ -21,7 +21,7 @@
       synopsis = "Combinatorial species library";
       description = "A DSL for describing combinatorial species, along with a number\nof ways to interpret it, to e.g. count labelled or unlabelled\nspecies, or generate species elements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."np-extras" or (errorHandler.buildDepError "np-extras"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lub" or (errorHandler.buildDepError "lub"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

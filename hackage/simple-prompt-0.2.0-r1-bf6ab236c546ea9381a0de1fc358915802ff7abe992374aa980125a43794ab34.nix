@@ -21,7 +21,7 @@
       synopsis = "Simple commandline text prompt functions";
       description = "The library provides prompt functions for reading user input:\nfor example `prompt` returns the input given,\n`promptEnter` expects only Enter,\nand `yesNo` asks for confirmation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

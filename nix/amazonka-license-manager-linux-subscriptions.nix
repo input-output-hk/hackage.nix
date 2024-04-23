@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-license-manager-linux-subscriptions-2.0-r0-4b0ba4c991a90facb5f737ecd6c473c33dcb75ce82e38ced4aef3d77987095af.nix;
         revNum = 0;
         sha256 = "4b0ba4c991a90facb5f737ecd6c473c33dcb75ce82e38ced4aef3d77987095af";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

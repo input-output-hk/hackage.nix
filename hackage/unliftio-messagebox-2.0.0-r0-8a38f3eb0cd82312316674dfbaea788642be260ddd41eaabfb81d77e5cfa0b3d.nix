@@ -21,7 +21,7 @@
       synopsis = "Fast and robust message queues for concurrent processes";
       description = "Please see the README on GitHub at <https://github.com/sheyll/unliftio-messagebox#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "unliftio-messagebox-memleak-test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unliftio-messagebox" or (errorHandler.buildDepError "unliftio-messagebox"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unliftio-messagebox-test" = {
           depends = [
@@ -76,10 +76,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."unliftio-messagebox" or (errorHandler.buildDepError "unliftio-messagebox"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "unliftio-messagebox-bench" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unliftio-messagebox" or (errorHandler.buildDepError "unliftio-messagebox"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

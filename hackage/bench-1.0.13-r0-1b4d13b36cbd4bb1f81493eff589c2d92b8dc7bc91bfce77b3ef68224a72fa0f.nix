@@ -21,7 +21,7 @@
       synopsis = "Command-line benchmark tool";
       description = "Think of this as a more powerful alternative to the @time@\ncommand.  Use this command-line tool to benchmark a command\nusing Haskell's @criterion@ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bench" = {
@@ -33,9 +33,9 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

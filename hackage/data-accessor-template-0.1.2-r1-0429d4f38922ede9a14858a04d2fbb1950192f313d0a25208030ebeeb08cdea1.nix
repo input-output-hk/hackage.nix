@@ -21,15 +21,15 @@
       synopsis = "Utilities for accessing and manipulating fields of records";
       description = "Automate generation of @Accessor@'s of the @data-accessor@ package\nby Template Haskell functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

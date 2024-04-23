@@ -21,15 +21,15 @@
       synopsis = "Explicit Sharing of Monadic Effects";
       description = "This package implements a monad transformer for sharing monadic\neffects of monads for non-determinism.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

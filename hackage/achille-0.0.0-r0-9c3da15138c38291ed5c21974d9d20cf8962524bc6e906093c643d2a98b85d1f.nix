@@ -21,7 +21,7 @@
       synopsis = "A library for building static site generators";
       description = "achille is a library for building incremental static site generators.\nFor more information, see here: <https://acatalepsie.fr/projects/achille>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,14 +37,14 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."binary-instances" or (errorHandler.buildDepError "binary-instances"))
-          ] ++ (pkgs.lib).optionals (flags.pandoc) [
+        ] ++ pkgs.lib.optionals (flags.pandoc) [
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."frontmatter" or (errorHandler.buildDepError "frontmatter"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-achille" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."achille" or (errorHandler.buildDepError "achille"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

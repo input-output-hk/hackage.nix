@@ -21,7 +21,7 @@
       synopsis = "Examples of using glazier-react";
       description = "\"Deprecated\" from hackage because it is not a library. Please go to github for the latest version.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "glazier-react-todo" = {
@@ -45,12 +45,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
+          ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
-            ]) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
+          ]) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."ghcjs-base-stub" or (errorHandler.buildDepError "ghcjs-base-stub"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

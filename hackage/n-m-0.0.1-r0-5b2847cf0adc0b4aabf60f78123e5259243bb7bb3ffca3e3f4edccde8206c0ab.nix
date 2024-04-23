@@ -21,12 +21,12 @@
       synopsis = "Utility to call iwconfig.";
       description = "This program choses between the available open wireless networks and tries to\nconnect to them using DHCP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "n-m" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

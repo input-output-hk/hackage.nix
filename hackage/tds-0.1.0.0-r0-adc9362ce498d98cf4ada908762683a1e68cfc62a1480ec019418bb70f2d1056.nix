@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell TDS protocol implementation. Mainly for beam-mssql and beam-sybase";
       description = "This is a work in progress! Please report bugs on github\nLow-level Haskell TDS implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,17 +41,17 @@
           (hsPkgs."attoparsec-binary" or (errorHandler.buildDepError "attoparsec-binary"))
           (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tds" or (errorHandler.buildDepError "tds"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

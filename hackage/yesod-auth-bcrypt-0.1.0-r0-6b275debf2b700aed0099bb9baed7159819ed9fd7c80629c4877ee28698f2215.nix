@@ -21,7 +21,7 @@
       synopsis = "BCrypt salted and hashed passwords in a database as auth for yesod";
       description = "BCrypt salted and hashed passwords in a database as auth for yesod";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,8 +61,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."bcrypt" or (errorHandler.buildDepError "bcrypt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

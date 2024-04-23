@@ -21,7 +21,7 @@
       synopsis = "OpenID Connect 1.0 library for RP";
       description = "This package supports implementing of an OpenID Connect 1.0 Relying Party.\n\nExamples: <https://github.com/krdlab/haskell-oidc-client/tree/master/examples>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,15 +38,15 @@
           (hsPkgs."jose-jwt" or (errorHandler.buildDepError "jose-jwt"))
           (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scotty-example" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."oidc-client" or (errorHandler.buildDepError "oidc-client"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -66,10 +66,10 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       tests = {
         "oidc-client-spec" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

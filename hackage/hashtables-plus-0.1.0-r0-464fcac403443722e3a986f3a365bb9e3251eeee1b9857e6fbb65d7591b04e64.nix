@@ -21,7 +21,7 @@
       synopsis = "Extensions for a \"hashtables\" library";
       description = "Provides advanced data structures built on top of the ones from the\n\\\"hashtables\\\" library: multimap, set, \"StableName\"-based structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
           (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

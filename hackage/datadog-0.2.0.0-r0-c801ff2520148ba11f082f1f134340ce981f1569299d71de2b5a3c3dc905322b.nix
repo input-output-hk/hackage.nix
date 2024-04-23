@@ -21,7 +21,7 @@
       synopsis = "Datadog client for Haskell. Supports both the HTTP API and StatsD.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "datadog-api-test" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."datadog" or (errorHandler.buildDepError "datadog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

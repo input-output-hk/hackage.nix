@@ -21,12 +21,12 @@
       synopsis = "A binding to the standard C math library";
       description = "A binding to the standard C math library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."m" or (errorHandler.sysDepError "m")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

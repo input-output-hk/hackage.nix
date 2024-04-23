@@ -21,7 +21,7 @@
       synopsis = "Go-to-definition for Haskell";
       description = "See <https://github.com/feuerbach/ariadne#ariadne>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ariadne-server" = {
@@ -46,10 +46,10 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."bert" or (errorHandler.buildDepError "bert"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

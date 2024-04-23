@@ -21,13 +21,13 @@
       synopsis = "A binding to part of the Win32 library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."user32" or (errorHandler.sysDepError "user32"))
           (pkgs."gdi32" or (errorHandler.sysDepError "gdi32"))
@@ -35,8 +35,8 @@
           (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"))
           (pkgs."shell32" or (errorHandler.sysDepError "shell32"))
           (pkgs."shfolder" or (errorHandler.sysDepError "shfolder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

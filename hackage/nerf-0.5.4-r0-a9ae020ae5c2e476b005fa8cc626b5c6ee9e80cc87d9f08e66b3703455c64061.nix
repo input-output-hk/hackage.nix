@@ -21,7 +21,7 @@
       synopsis = "Nerf, a named entity recognition tool based on linear-chain CRFs";
       description = "Please see the README on GitHub at <https://github.com/kawu/nerf#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
           (hsPkgs."tokenize" or (errorHandler.buildDepError "tokenize"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nerf" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
             (hsPkgs."tokenize" or (errorHandler.buildDepError "tokenize"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

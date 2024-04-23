@@ -21,7 +21,7 @@
       synopsis = "Build rules for historical benchmarking";
       description = "A library Shake rules to build and run benchmarks for multiple revisions of a project.  An example of usage can be found in the ghcide benchmark suite";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

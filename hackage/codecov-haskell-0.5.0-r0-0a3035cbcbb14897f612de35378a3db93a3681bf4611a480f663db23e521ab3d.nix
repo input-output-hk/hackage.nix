@@ -21,7 +21,7 @@
       synopsis = "Codecov.io support for Haskell.";
       description = "This utility converts and sends Haskell projects hpc code coverage to\n<http://codecov.io/ codecov.io>.\n\n/Usage/\n\nBelow is the simplest example of .travis.yml configuration to use with Travis CI:\n\n> language: haskell\n> ghc: 7.8\n> script:\n>   - cabal configure --enable-tests --enable-library-coverage && cabal build && cabal test\n> after_script:\n>   - cabal install codecov-haskell\n>   - codecov-haskell [options] [test-suite-names]\n\nFurther information can be found in the <https://github.com/guillaume-nargeot/codecov-haskell README>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "codecov-haskell" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "run-cabal-test" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -61,19 +61,19 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-all" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."codecov-haskell" or (errorHandler.buildDepError "codecov-haskell"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Evaluation metrics commonly used in supervised machine learning";
       description = "Evaluation metrics commonly used in supervised machine learning";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hstats" or (errorHandler.buildDepError "hstats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

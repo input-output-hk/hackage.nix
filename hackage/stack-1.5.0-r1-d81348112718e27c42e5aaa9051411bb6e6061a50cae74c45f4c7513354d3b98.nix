@@ -13,7 +13,7 @@
       disable-git-info = false;
       static = false;
       hide-dependency-versions = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "stack"; version = "1.5.0"; };
@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -127,14 +127,14 @@
           (hsPkgs."store-core" or (errorHandler.buildDepError "store-core"))
           (hsPkgs."annotated-wl-pprint" or (errorHandler.buildDepError "annotated-wl-pprint"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."pid1" or (errorHandler.buildDepError "pid1"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "stack" = {
           depends = ([
@@ -161,13 +161,13 @@
             (hsPkgs."stack" or (errorHandler.buildDepError "stack"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (pkgs.lib).optionals (!flags.disable-git-info) [
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (!flags.disable-git-info) [
             (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "stack-test" = {
           depends = [
@@ -206,9 +206,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stack-integration-test" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -226,9 +226,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ];
+          ];
           buildable = if !flags.integration-tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

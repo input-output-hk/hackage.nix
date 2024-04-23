@@ -21,7 +21,7 @@
       synopsis = "JSON-RPC clients and servers using JMacro, and evented client-server FRP.";
       description = "Base jmacro-rpc package. Provides server-independent functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

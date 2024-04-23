@@ -21,7 +21,7 @@
       synopsis = "In-memory TLS session manager";
       description = "TLS session manager with limitation, automatic pruning, energy saving and replay resistance";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

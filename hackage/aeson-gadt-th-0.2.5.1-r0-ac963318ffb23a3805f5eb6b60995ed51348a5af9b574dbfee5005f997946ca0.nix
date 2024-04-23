@@ -21,7 +21,7 @@
       synopsis = "Derivation of Aeson instances for GADTs";
       description = "Template Haskell for generating ToJSON and FromJSON instances for GADTs. See <https://github.com/obsidiansystems/aeson-gadt-th/blob/master/README.md README.md> for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2") (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"));
         buildable = true;
-        };
+      };
       exes = {
         "readme" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
             (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
             (hsPkgs."aeson-gadt-th" or (errorHandler.buildDepError "aeson-gadt-th"))
-            ];
+          ];
           buildable = if !flags.build-readme then false else true;
-          };
         };
+      };
       tests = {
         "aeson-gadt-th-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."aeson-gadt-th" or (errorHandler.buildDepError "aeson-gadt-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

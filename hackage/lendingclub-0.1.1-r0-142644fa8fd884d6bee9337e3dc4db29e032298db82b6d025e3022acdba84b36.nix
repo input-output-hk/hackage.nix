@@ -21,7 +21,7 @@
       synopsis = "Bindings for the LendingClub marketplace API";
       description = "Bindings for the LendingClub marketplace API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-streams" or (errorHandler.buildDepError "http-streams"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

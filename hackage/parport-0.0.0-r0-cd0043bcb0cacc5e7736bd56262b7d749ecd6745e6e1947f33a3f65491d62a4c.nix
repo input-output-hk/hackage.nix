@@ -21,14 +21,14 @@
       synopsis = "Simply interfacing the parallel port on linux";
       description = "This is a simple library that lets you read and write pins on\nthe parallel port. It is mainly intended for controlling and\nregulating hardware.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

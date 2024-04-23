@@ -21,7 +21,7 @@
       synopsis = "A collection of Oleg Kiselyov's Haskell modules (2008-2010)";
       description = "A collection of Oleg Kiselyov's Haskell modules (2008-2010) (released with his permission)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

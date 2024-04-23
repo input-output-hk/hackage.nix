@@ -21,7 +21,7 @@
       synopsis = "Isreal Swan will make a snowman for you!";
       description = "Snowman as a service. The web server calls a bash script.\nThat builds inside a nix-shell. Results are returned via http.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"));
         buildable = true;
-        };
+      };
       exes = {
         "isreal" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

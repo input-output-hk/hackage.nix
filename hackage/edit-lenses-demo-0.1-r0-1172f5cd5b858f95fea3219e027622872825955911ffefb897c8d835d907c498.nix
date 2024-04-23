@@ -21,7 +21,7 @@
       synopsis = "Programs demoing the use of symmetric, stateful edit lenses";
       description = "Some simple demo programs showing ways to use the edit-lenses package.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lens-editor" = {
@@ -34,10 +34,10 @@
               (hsPkgs."edit-lenses" or (errorHandler.buildDepError "edit-lenses"))
               (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
               (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

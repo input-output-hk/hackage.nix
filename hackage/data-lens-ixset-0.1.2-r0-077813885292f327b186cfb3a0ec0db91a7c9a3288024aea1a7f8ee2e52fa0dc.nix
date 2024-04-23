@@ -21,23 +21,23 @@
       synopsis = "A Lens for IxSet";
       description = "Integrates Data.IxSet with Data.Lens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."ixset" or (errorHandler.buildDepError "ixset"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-data-lens-ixset" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

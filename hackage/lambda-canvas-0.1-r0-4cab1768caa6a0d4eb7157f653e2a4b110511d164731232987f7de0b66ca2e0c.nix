@@ -21,7 +21,7 @@
       synopsis = "Educational drawing canvas for FP explorers.";
       description = "This package is an experimental teaching tool that\nprovides the foundation for presenting functional\nidioms with graphical metaphors. The OpenGL canvas\nboilerplate is abstracted away to a simple interface,\nwhich allows to focus on program logic instead of the\ngraphics API. It's also arguably fun.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

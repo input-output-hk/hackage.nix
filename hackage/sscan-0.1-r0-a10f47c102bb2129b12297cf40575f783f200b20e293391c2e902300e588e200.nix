@@ -21,7 +21,7 @@
       synopsis = "text UI for scanning with SANE";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sscan" = {
@@ -38,9 +38,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

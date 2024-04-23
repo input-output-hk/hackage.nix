@@ -21,18 +21,18 @@
       synopsis = "An efficient packed Unicode text type";
       description = "An efficient packed Unicode text type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

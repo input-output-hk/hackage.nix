@@ -21,15 +21,15 @@
       synopsis = "Heterogeneous maps keyed by StableNames";
       description = "Provides an unsafe API for inserting heterogeneous data in a collection keyed by StableNames and for later retrieving it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

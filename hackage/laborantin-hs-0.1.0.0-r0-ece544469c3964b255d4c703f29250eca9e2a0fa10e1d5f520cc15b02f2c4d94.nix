@@ -21,7 +21,7 @@
       synopsis = "an experiment management framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

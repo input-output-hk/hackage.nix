@@ -21,7 +21,7 @@
       synopsis = "Arrowized FRP implementation";
       description = "This library provides an arrowized functional reactive programming\n(FRP) implementation.  It is similar to Yampa and Animas, but has a\nmuch simpler internal representation and a lot of new features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

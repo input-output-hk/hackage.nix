@@ -21,7 +21,7 @@
       synopsis = "Hypergeometric function of a matrix argument";
       description = "Evaluation of hypergeometric functions of a matrix argument,\nfollowing Koev & Edelman's algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cyclotomic" or (errorHandler.buildDepError "cyclotomic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."hypergeomatrix" or (errorHandler.buildDepError "hypergeomatrix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

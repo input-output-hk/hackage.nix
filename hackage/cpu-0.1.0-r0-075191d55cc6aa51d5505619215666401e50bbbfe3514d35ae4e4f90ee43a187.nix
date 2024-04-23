@@ -21,21 +21,21 @@
       synopsis = "Cpu information and properties helpers.";
       description = "Lowlevel cpu routines to get basic properties of the cpu platform, like endianness and architecture.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "cpuid" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

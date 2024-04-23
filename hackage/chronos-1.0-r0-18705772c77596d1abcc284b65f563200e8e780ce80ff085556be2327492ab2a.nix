@@ -21,7 +21,7 @@
       synopsis = "A performant time library";
       description = "Performance-oriented time library for haskell. The main differences\nbetween this and \"time\" are that this library:\n\n* Uses machine integers where possible. This means that some time-related\narithmetic should be faster. It also means that the types are incapable\nof representing times that are very far in the future or the past.\n\n* Provides \"ToJSON\" and \"FromJSON\" instances for json serialization.\n\n* Provides \"Unbox\" instances for working with unboxed vectors.\n\n* Uses normal non-overloaded haskell functions for encoding and decoding time. It provides\n\"attoparsec\" parsers for both \"Text\" and \"ByteString\". Additionally, it\nprovides functions for encoding time as \"Text\" or \"ByteString\". The \"time\"\nlibrary uses accomplishes these with the \"Data.Time.Format\" module,\nwhich uses UNIX-style datetime format strings. It is expected that\nthe approach taken in this library is faster and catches more mistakes\nat compile time at the cost of being less expressive.\n\n* Only provides nanosecond resolution instead of picosecond resolution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chronos-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert sugar to common data types for code generation";
       description = "Please see the README on GitHub at <https://github.com/jxv/sugar#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sugar" or (errorHandler.buildDepError "sugar"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sugar-data-tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."sugar-data" or (errorHandler.buildDepError "sugar-data"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

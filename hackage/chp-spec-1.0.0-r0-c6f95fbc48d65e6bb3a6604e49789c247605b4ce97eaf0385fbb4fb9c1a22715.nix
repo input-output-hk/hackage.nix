@@ -21,7 +21,7 @@
       synopsis = "A mirror implementation of chp that generates a specification of the program";
       description = "This library mirrors the API of much of the CHP library, but\ninstead of executing the program properly, using this library\nwill generate the CSP specification of your program.  See\nthis article for details and caveats: <http://chplib.wordpress.com/2010/05/03/new-chp-spec-library-released/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Shows how to run grabber on Mac OS X";
       description = "minimung is capable to do real time CIF??\n\nOnly 'Mac', 'Mac.Carbon', 'Mac.QuickDraw', 'Mac.QuickTime' are stable and good. The rest is quick hack\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "minimung" = {
@@ -30,13 +30,13 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           frameworks = [
             (pkgs."QuickTime" or (errorHandler.sysDepError "QuickTime"))
             (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

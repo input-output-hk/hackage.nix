@@ -6,8 +6,8 @@
         nix = import ../hackage/automata-0.1.0.0-r0-0719501ee9d76779a496cd65458c6c5ca256510b0341d1b1d63c0cc6b038c97a.nix;
         revNum = 0;
         sha256 = "0719501ee9d76779a496cd65458c6c5ca256510b0341d1b1d63c0cc6b038c97a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

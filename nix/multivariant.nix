@@ -6,8 +6,8 @@
         nix = import ../hackage/multivariant-0.1.0.1-r0-03195e210762b6f0f7e1209777d691ab55ed4d187b86985681e7b1a37ebe26fd.nix;
         revNum = 0;
         sha256 = "03195e210762b6f0f7e1209777d691ab55ed4d187b86985681e7b1a37ebe26fd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

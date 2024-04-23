@@ -21,7 +21,7 @@
       synopsis = "RPN calculator";
       description = "ʜƨiloꟼ is a simple reverse polish notation calculator\nwith haskeline line editing capabilites.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsilop" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Utility functions for the Accelerate framework";
       description = "Several utility functions on top of the Accelerate framework.\nThe functions simplify working with indices and lifting and unlifting.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Transactional variables with IO hooks";
       description = "(to be expanded...)\n\nThis package provides transactional variables with IO hooks.\nSee module 'Control.Concurrent.TFile' for a concrete instance.\n\nFeedback appreciated!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."cautious-file" or (errorHandler.buildDepError "cautious-file"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

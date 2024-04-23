@@ -21,14 +21,14 @@
       synopsis = "Documentation types library.";
       description = "Currently, this package defines classes for types that represents documentation.\n\nThe point of this library is to make possible write documentation in a general format,\nand later, render it in a desired concrete format.\n\nAt the moment, only Html format are supported by default, but you can add new instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."html" or (errorHandler.buildDepError "html"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

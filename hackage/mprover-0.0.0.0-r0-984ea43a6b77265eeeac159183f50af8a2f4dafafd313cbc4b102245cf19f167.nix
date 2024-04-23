@@ -21,7 +21,7 @@
       synopsis = "Simple equational reasoning for a Haskell-ish language";
       description = "MProver is a proof checker for equational reasoning in a Haskell-like language.\nThis is an extremely preliminary release, so don't expect it to be terribly useful just yet!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mp" = {
@@ -34,9 +34,9 @@
             (hsPkgs."unbound" or (errorHandler.buildDepError "unbound"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "Modify the cpu frequency on OpenBSD systems";
       description = "cpuperf toggle the cpu frequency on OpenBSD systems between 0 and 100%.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cpuperf" = {
           depends = [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

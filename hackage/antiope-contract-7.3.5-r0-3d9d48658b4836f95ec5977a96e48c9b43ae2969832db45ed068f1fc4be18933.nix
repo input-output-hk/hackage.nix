@@ -21,7 +21,7 @@
       synopsis = "Please see the README on Github at <https://github.com/arbor/antiope#readme>";
       description = "Please see the README on Github at <https://github.com/arbor/antiope#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."avro" or (errorHandler.buildDepError "avro"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

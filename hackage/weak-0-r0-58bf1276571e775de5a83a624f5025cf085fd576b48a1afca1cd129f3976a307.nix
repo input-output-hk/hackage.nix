@@ -21,11 +21,11 @@
       synopsis = "Weak pointer extas";
       description = "Better weak pointer support for IORefs and ForeignPtrs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "N-back memory game";
       description = "N-back memory game using gtk2hs.\n\nInstructions on installation and gameplay available at:\n<http://pithyless.com/blog/2008/05/18/hback-haskell-n-back-memory-game/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hback" = {
@@ -32,9 +32,9 @@
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

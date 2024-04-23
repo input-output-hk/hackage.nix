@@ -21,7 +21,7 @@
       synopsis = "More efficient replacement to the great git-radar";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gitHUD" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gitHUD" or (errorHandler.buildDepError "gitHUD"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gitHUD-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."gitHUD" or (errorHandler.buildDepError "gitHUD"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Higher kinded type removal";
       description = "A type that can be used to cut out a type. This can be useful in records, for instance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "TrailDB bindings for Haskell";
       description = "Check out README.md for information on these bindings.\n\nTrailDB project home page is at traildb.io";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,23 +37,23 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."traildb" or (errorHandler.sysDepError "traildb"))
           (pkgs."Judy" or (errorHandler.sysDepError "Judy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "traildb-wikipedia-benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."traildb" or (errorHandler.buildDepError "traildb"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.build-wikipedia-benchmark then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench-traildb" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."traildb" or (errorHandler.buildDepError "traildb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

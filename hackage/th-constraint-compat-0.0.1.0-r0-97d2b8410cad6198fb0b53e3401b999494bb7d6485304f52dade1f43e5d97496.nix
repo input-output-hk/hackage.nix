@@ -21,16 +21,16 @@
       synopsis = "Compatibility for type constraint template";
       description = "This package provides compatibe interfaces\nfor type constraint template";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tool to keep namecoin names updated and well";
       description = "A small program that updates the names in a namecoin wallet\nto prevent expiration. It uses the JSON-RPC API provided by\nnamecoind to scan and update the values of the name when needed.\nThe tool is intended to be run regularly, for example from cron.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "namecoin-update" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."namecoin-update" or (errorHandler.buildDepError "namecoin-update"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

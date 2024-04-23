@@ -21,13 +21,13 @@
       synopsis = "32-bit non-cryptographic hashing";
       description = "MurmurHash is a family of non-cryptographic hash functions suitable for\ngeneral hash-based lookup. This implementation uses the MurmurHash3\nalgorithm and provides a type class for computing 32-bit hashes from all\nprevalent data types in the Haskell 2010 Standard.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell2010" or (errorHandler.buildDepError "haskell2010"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

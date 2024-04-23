@@ -21,7 +21,7 @@
       synopsis = "Libraries to use SNTP protocol and small client/server implementations.";
       description = "HSNTP - Haskell Simple Network Time Protocol\n\nSimple Network Time Protocol is a simple subset of NTP. This package\nincludes Haskell libraries to use SNTP Protocol and small client and\nserver implementations. The package contains everything needed for a compilation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,15 +31,15 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sntpdate" = {
           depends = [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ];
           buildable = true;
-          };
-        "sntpd" = { buildable = true; };
         };
+        "sntpd" = { buildable = true; };
       };
-    }
+    };
+  }

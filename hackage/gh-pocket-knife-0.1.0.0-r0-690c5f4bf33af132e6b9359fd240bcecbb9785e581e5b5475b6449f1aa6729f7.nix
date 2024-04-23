@@ -21,7 +21,7 @@
       synopsis = "Script helpers for interacting with GitHub";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gh-pocket-knife" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."gh-pocket-knife" or (errorHandler.buildDepError "gh-pocket-knife"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gh-pocket-knife-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."gh-pocket-knife" or (errorHandler.buildDepError "gh-pocket-knife"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

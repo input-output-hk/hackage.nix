@@ -21,7 +21,7 @@
       synopsis = "Reports on meta-information about entries in a CASR 61.345 logbook (casr-logbook)";
       description = "<<https://i.imgur.com/p6LT40r.png>>\n\nReports on meta-information about entries in a CASR 61.345 logbook (casr-logbook)\n\n<<https://i.imgur.com/Lfhcmtg.png>>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."casr-logbook" or (errorHandler.buildDepError "casr-logbook"))
           (hsPkgs."casr-logbook-meta" or (errorHandler.buildDepError "casr-logbook-meta"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

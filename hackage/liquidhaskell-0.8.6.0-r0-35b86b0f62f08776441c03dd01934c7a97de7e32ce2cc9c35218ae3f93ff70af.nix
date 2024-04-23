@@ -12,7 +12,7 @@
       devel = false;
       include = false;
       deterministic-profiling = false;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "liquidhaskell"; version = "0.8.6.0"; };
@@ -25,7 +25,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,17 +64,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liquid" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gradual" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,18 +82,18 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "target" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -112,9 +112,9 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "liquidhaskell-parser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -125,9 +125,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

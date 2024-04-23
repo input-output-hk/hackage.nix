@@ -21,7 +21,7 @@
       synopsis = "Basic X509 OCSP implementation";
       description = "Build X509 OCSP requests and parse responses";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
           (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ocsp" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
             (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
             (hsPkgs."x509-ocsp" or (errorHandler.buildDepError "x509-ocsp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

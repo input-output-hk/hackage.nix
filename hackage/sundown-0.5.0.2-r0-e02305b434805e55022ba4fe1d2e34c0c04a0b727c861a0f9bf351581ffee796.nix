@@ -21,7 +21,7 @@
       synopsis = "Bindings to the sundown markdown library";
       description = "Bindings to GitHub's C markdown library: <https://github.com/vmg/sundown>.\n\nThe Haskell code is in the public domain. For sundown's license, refer to\nits GitHub page.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

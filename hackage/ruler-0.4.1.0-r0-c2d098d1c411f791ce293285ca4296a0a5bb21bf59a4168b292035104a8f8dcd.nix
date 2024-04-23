@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.setupDepError "uuagc")))
         (hsPkgs.buildPackages.shuffle or (pkgs.buildPackages.shuffle or (errorHandler.setupDepError "shuffle")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "ruler" = {
@@ -42,9 +42,9 @@
             (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
             (hsPkgs."shuffle" or (errorHandler.buildDepError "shuffle"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

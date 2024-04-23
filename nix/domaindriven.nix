@@ -6,8 +6,8 @@
         nix = import ../hackage/domaindriven-0.5.0-r0-ee95e6cd3f83639123921ba2e4e4e566176248e6dfcc0f57191191ee1945ae2e.nix;
         revNum = 0;
         sha256 = "ee95e6cd3f83639123921ba2e4e4e566176248e6dfcc0f57191191ee1945ae2e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

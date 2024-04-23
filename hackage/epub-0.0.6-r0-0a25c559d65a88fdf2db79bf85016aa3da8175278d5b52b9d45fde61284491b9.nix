@@ -21,7 +21,7 @@
       synopsis = "EPUB E-Book construction support library";
       description = "\nEPUB E-Book Construction support library, for the details look\nat http://en.wikipedia.org/wiki/EPUB.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "xhtml2epub" = { buildable = true; }; };
       };
-    }
+      exes = { "xhtml2epub" = { buildable = true; }; };
+    };
+  }

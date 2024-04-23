@@ -21,7 +21,7 @@
       synopsis = "Extensible, efficient, optics-friendly data types and effects";
       description = "This package provides a powerful framework to combine and manipulate various types of structures.\n\nSee also <https://www.schoolofhaskell.com/user/fumieval/extensible School of Haskell> for tutorials.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -47,9 +47,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.barbies) (hsPkgs."barbies" or (errorHandler.buildDepError "barbies"))) ++ (pkgs.lib).optional (flags.cassava) (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"));
+        ] ++ pkgs.lib.optional (flags.barbies) (hsPkgs."barbies" or (errorHandler.buildDepError "barbies"))) ++ pkgs.lib.optional (flags.cassava) (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"));
         buildable = true;
-        };
+      };
       tests = {
         "bits" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

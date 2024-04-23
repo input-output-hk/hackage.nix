@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HDBC PostgreSQL driver.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."haskelldb-hdbc" or (errorHandler.buildDepError "haskelldb-hdbc"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-postgresql" or (errorHandler.buildDepError "HDBC-postgresql"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
-      exes = { "DBDirect-hdbc-postgresql" = { buildable = true; }; };
       };
-    }
+      exes = { "DBDirect-hdbc-postgresql" = { buildable = true; }; };
+    };
+  }

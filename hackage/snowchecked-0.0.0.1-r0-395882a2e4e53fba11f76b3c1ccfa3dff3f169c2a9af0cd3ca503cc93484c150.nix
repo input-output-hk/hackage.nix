@@ -21,7 +21,7 @@
       synopsis = "A checksummed variation on Twitter's Snowflake UID generation algorithm";
       description = "See the file ./README.md, which is included in the package and also on GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."snowchecked" or (errorHandler.buildDepError "snowchecked"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

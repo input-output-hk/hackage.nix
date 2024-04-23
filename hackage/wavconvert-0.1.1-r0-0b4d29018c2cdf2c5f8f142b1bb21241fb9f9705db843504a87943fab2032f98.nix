@@ -21,7 +21,7 @@
       synopsis = "Command-line tool for converting audio files and filling in ID3 tags";
       description = "This program is useful for turning a directory tree of .wav files\n(presumably created by a CD ripping program) into a tree of .ogg\nfiles with proper metadata. It is meant to be run on a directory tree\nin which the directory structure is organized according to\nthe artist and album names. It runs an .ogg encoder (which is\nassumed to be installed) and sets the metadata in the resulting\n.ogg files based on the directory organization. (See the README\nfor examples.) It would be easy to adapt the code to generate\n.mp3 files instead of .ogg, or to use a different encoder\n(currently the \"oggenc\" program is assumed.)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wavconvert" = {
@@ -30,9 +30,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

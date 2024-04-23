@@ -21,7 +21,7 @@
       synopsis = "Simple, declarative, expressive URL routing -- on happstack.";
       description = "UrlDisp combinators ported over happstack, as well as a lifted catch.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

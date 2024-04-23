@@ -21,15 +21,15 @@
       synopsis = "Nested set model implementation";
       description = "This package is a general purpose implementation of nested sets in Haskell.\n\nSupported functionality includes:\n\n* conversion from and to Forest structure from Data.Tree;\n* position support with moving to parent, sibling and child nodes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."nested-sets" or (errorHandler.buildDepError "nested-sets"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

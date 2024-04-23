@@ -21,7 +21,7 @@
       synopsis = "Public Verifiable Secret Sharing";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."cryptonite-openssl" or (errorHandler.buildDepError "cryptonite-openssl"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pvss-exe" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."pvss" or (errorHandler.buildDepError "pvss"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pvss-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."pvss" or (errorHandler.buildDepError "pvss"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Connector library for the coinbase exchange.";
       description = "Access library for the coinbase exchange. Allows the use\nof both the public market data API as well as the private\naccount data API. Additionally provides types to connect\nto the streaming API via a websocket.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sandbox" = {
           depends = [
@@ -79,10 +79,10 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."coinbase-exchange" or (errorHandler.buildDepError "coinbase-exchange"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-coinbase" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."coinbase-exchange" or (errorHandler.buildDepError "coinbase-exchange"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

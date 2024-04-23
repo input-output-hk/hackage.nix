@@ -21,11 +21,11 @@
       synopsis = "Utilities to work with lists of types";
       description = "This packages reifies the concept of list of types, and application of those to list constructors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

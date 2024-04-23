@@ -21,7 +21,7 @@
       synopsis = "Defunctionalisation for Yhc Core";
       description = "A library to transform Yhc Core programs to first-order.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."homeomorphic" or (errorHandler.buildDepError "homeomorphic"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "firstify" = { buildable = true; }; };
       };
-    }
+      exes = { "firstify" = { buildable = true; }; };
+    };
+  }

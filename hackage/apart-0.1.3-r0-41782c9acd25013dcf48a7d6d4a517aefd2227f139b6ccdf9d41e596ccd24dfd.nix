@@ -21,7 +21,7 @@
       synopsis = "Get all your structure and rip it apart.";
       description = "The main idea: if you can describe your data structure via Cofree, with apart you can serialize, persistent or hash a segment of your structure!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
             (hsPkgs."apart" or (errorHandler.buildDepError "apart"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
             (hsPkgs."apart" or (errorHandler.buildDepError "apart"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

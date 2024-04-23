@@ -21,7 +21,7 @@
       synopsis = "Audio file compressor-limiter";
       description = "An audio file compressor / limiter.  This\nprogram will adjust the dynamic range of a WAVE file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "truelevel" = {
@@ -30,9 +30,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
             (hsPkgs."WAVE" or (errorHandler.buildDepError "WAVE"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

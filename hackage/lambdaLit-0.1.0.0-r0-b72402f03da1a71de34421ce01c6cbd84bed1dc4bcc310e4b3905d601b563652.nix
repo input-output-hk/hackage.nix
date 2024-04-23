@@ -21,7 +21,7 @@
       synopsis = "...";
       description = "An repl using the lambdaBase package";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdaList" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple web server for serving directories, similar to weborf.";
       description = "The main drivers for this application were Windows (and Linux) support and\nsecurity, and to a lesser extent performance.  Security is improved over\nweborf by using Haskell, supporting TLS, and explicitly NOT supporting CGIs\nof any kind.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sws" = {
@@ -46,9 +46,9 @@
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

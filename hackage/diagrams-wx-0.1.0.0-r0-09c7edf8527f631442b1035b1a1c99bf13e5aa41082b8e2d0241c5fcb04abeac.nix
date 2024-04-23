@@ -21,7 +21,7 @@
       synopsis = "Backend for rendering diagrams in wxWidgets";
       description = "An optional add-on to the diagrams-cairo package which\nallows rendering diagrams in wxWidgets (using wxHaskell).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "diagrams-wx-demo" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

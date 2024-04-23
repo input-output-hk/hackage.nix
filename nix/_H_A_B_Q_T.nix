@@ -6,8 +6,8 @@
         nix = import ../hackage/HABQT-0.1.0.0-r0-efa51931ff98caa81ba2a337e925e1fce5cc1d7c021062da0ffc146afec6ed10.nix;
         revNum = 0;
         sha256 = "efa51931ff98caa81ba2a337e925e1fce5cc1d7c021062da0ffc146afec6ed10";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

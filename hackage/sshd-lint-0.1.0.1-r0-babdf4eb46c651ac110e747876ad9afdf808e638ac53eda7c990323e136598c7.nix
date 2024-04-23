@@ -21,7 +21,7 @@
       synopsis = "Check sshd configuration for adherence to best practices";
       description = "If not configured correctly, it may be easy for attackers\nto gain access to a system. sshd-lint checks the sshd_config file\nfor adherence to best practices.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sshd-lint" = {
@@ -31,10 +31,10 @@
             (hsPkgs."keyword-args" or (errorHandler.buildDepError "keyword-args"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."nagios-check" or (errorHandler.buildDepError "nagios-check"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sshd-lint-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."nagios-check" or (errorHandler.buildDepError "nagios-check"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

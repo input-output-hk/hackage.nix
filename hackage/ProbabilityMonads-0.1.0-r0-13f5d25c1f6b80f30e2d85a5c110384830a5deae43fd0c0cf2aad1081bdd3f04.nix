@@ -21,7 +21,7 @@
       synopsis = "Probability distribution monads.";
       description = "Tools for random sampling, explicit enumeration of possible\noutcomes, and applying Bayes' rule.  Highly experimental,\nand subject to change.  In particular, the\nData.Probability API is rather poor and could stand an\noverhaul.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "STM operations lifted through monad transformer stacks";
       description = "This package provides STM operations lifted through monad transformer\nstacks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."transformers-abort" or (errorHandler.buildDepError "transformers-abort"))
           (hsPkgs."monad-finally" or (errorHandler.buildDepError "monad-finally"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

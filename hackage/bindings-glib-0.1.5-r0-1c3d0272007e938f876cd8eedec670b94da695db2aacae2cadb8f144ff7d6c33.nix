@@ -21,18 +21,18 @@
       synopsis = "Low level bindings to GLib.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."glib-2.0" or (errorHandler.pkgConfDepError "glib-2.0"))
           (pkgconfPkgs."gthread-2.0" or (errorHandler.pkgConfDepError "gthread-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

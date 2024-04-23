@@ -21,15 +21,15 @@
       synopsis = "LDAP authentication for Haskell web applications.";
       description = "LDAP authentication for Haskell web applications. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."LDAP" or (errorHandler.buildDepError "LDAP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

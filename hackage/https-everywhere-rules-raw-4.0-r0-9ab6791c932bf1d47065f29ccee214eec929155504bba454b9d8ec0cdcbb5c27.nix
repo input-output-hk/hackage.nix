@@ -21,7 +21,7 @@
       synopsis = "Low-level (i.e. XML) access to HTTPS Everywhere rulesets.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."functor-infix" or (errorHandler.buildDepError "functor-infix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

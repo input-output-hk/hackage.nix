@@ -21,7 +21,7 @@
       synopsis = "FWGL GHCJS backend";
       description = "FWGL GHCJS backend";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

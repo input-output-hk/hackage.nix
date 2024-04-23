@@ -21,15 +21,15 @@
       synopsis = "Lightweight composable continuation-based stream processors";
       description = "Please don't use this!! I accidentally uploaded this by mistake and it's not ready at all! :O";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

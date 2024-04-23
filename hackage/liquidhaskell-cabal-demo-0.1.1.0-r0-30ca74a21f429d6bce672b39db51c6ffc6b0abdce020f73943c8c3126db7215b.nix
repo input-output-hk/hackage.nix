@@ -21,23 +21,23 @@
       synopsis = "Demo of Liquid Haskell integration for Cabal and stack";
       description = "Please see the\n<https://github.com/spinda/liquidhaskell-cabal-demo/blob/0.1.1.0/README.md README>\non GitHub for more information.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."liquidhaskell-cabal" or (errorHandler.buildDepError "liquidhaskell-cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ffi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."liquidhaskell-cabal" or (errorHandler.buildDepError "liquidhaskell-cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

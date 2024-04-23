@@ -21,7 +21,7 @@
       synopsis = "Hoodle file renderer";
       description = "Rendering library using cairo for hoodle file format";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.poppler
@@ -36,7 +36,7 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hoodle-types" or (errorHandler.buildDepError "hoodle-types"))
             (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -47,8 +47,8 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hoodle-types" or (errorHandler.buildDepError "hoodle-types"))
             (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

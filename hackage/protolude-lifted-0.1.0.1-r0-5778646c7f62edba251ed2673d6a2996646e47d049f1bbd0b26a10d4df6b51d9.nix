@@ -21,7 +21,7 @@
       synopsis = "Protolude with lifted-base and lifted-async.";
       description = "Protolude with lifted-base and lifted-async.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

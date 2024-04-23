@@ -21,7 +21,7 @@
       synopsis = "dmenu script for searching the web with customizable search engines.";
       description = "See README.md file.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "dmenu-search" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."dmenu" or (errorHandler.buildDepError "dmenu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,18 +21,18 @@
       synopsis = "Restricted monad library";
       description = "A library for restricted monads based on associated datatypes.\nThis allows datatypes such as Set to be made into monads.\nUsers can either use the NoImplicitPrelude extension and use\nControl.RMonad directly, or use Control.RMonad.AsMonad with\nthe embed and unEmbed combinators to use the normal Prelude\nmonad operations.\nThe 0.4 release mainly adds support for monad transformers.\nThe dependency on the transformers package may be replaced\nby mtl if it seems likely that mtl will stay the standard for\nsome time to come.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

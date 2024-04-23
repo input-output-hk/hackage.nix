@@ -21,7 +21,7 @@
       synopsis = "Visualize the graph-rewrite steps of a Haskell program";
       description = "Visualize the graph-rewrite steps of a Haskell program. Currently it only shows the right-hand-sides of rewrite rules (function alternatives).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."svgcairo" or (errorHandler.buildDepError "svgcairo"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "visual-graphrewrite" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."svgcairo" or (errorHandler.buildDepError "svgcairo"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

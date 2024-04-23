@@ -6,8 +6,8 @@
         nix = import ../hackage/jml-web-service-0.1.0-r0-3507550969c9c0e7028b1c072bb3ca357a018057656784114aef6c5e11002388.nix;
         revNum = 0;
         sha256 = "3507550969c9c0e7028b1c072bb3ca357a018057656784114aef6c5e11002388";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

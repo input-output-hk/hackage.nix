@@ -6,8 +6,8 @@
         nix = import ../hackage/Top-1.7-r0-b0568958b988c8a9a1cac7ed88c88ac48f5fc21aaac742f23d94421730021c54.nix;
         revNum = 0;
         sha256 = "b0568958b988c8a9a1cac7ed88c88ac48f5fc21aaac742f23d94421730021c54";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

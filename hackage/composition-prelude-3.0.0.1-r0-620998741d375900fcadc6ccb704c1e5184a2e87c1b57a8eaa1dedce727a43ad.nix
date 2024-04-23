@@ -21,12 +21,12 @@
       synopsis = "Higher-order function combinators";
       description = "Replacement for [composition](hackage.haskell.org/package/composition) or [composition-extra](hackage.haskell.org/package/composition-extra), exporting everything in one module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

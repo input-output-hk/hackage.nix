@@ -21,7 +21,7 @@
       synopsis = "Wire-aware hardware description";
       description = "An extension to the hardware description library Lava\ntargeting (not exclusively) semi-custom VLSI design. A\nparticular aim of Wired is to give the designer more\ncontrol over the routing wires' effects on performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

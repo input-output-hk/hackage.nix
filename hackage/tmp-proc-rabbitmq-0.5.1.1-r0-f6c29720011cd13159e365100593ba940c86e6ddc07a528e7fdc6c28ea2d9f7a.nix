@@ -21,7 +21,7 @@
       synopsis = "Shows how to run RabbitMQ as a tmp proc";
       description = "An example of using tmp-proc to launch dockerized RabbitMQ in integration tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
             (hsPkgs."tmp-proc-rabbitmq" or (errorHandler.buildDepError "tmp-proc-rabbitmq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

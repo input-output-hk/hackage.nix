@@ -21,7 +21,7 @@
       synopsis = "Optics for the Base16 library";
       description = "Prisms and pattern synonyms for the Base16 library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

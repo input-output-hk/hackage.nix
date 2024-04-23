@@ -21,7 +21,7 @@
       synopsis = "Embed a raw 'Application' in a Servant API";
       description = "Please see <https://github.com/cdepillabout/servant-rawm#readme README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-rawm-example-client" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."servant-rawm" or (errorHandler.buildDepError "servant-rawm"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.buildexample then true else false;
-          };
+        };
         "servant-rawm-example-docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,9 +63,9 @@
             (hsPkgs."servant-rawm" or (errorHandler.buildDepError "servant-rawm"))
             (hsPkgs."servant-docs" or (errorHandler.buildDepError "servant-docs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.buildexample then true else false;
-          };
+        };
         "servant-rawm-example-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,19 +75,19 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.buildexample then true else false;
-          };
         };
+      };
       tests = {
         "servant-rawm-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "servant-rawm-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,9 +106,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

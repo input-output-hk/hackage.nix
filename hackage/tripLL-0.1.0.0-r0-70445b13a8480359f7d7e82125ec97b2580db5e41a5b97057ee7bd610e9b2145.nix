@@ -21,7 +21,7 @@
       synopsis = "A very simple triple store";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."leveldb-haskell" or (errorHandler.buildDepError "leveldb-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

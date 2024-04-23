@@ -21,7 +21,7 @@
       synopsis = "Orchestration-style co-ordination EDSL";
       description = "Provides an EDSL with Orc primitives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "orc" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."orc" or (errorHandler.buildDepError "orc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

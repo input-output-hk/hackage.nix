@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-application-insights-2.0-r0-0507627c79f12ebf5b5080ce6f45013e2248dffd1e5128d4049b47c71056a246.nix;
         revNum = 0;
         sha256 = "0507627c79f12ebf5b5080ce6f45013e2248dffd1e5128d4049b47c71056a246";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

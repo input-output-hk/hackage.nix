@@ -21,7 +21,7 @@
       synopsis = "A HTTP Performance Benchmarker";
       description = "'wrecker' is a library for creating HTTP benchmarks. It is designed for\nbenchmarking a series of HTTP request were the output of previous requests\nare used as inputs to the next request. This is useful for complex API\nprofiling situations.\n'wrecker' does not provide any mechanism for making HTTP calls. It works\nwith any HTTP client that produces a 'HttpException' during failure (so\nhttp-client and wreq will work out of the box).\nSee the documentation for examples of how to use 'wrecker' with\nbenchmarking scripts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
           (hsPkgs."immortal" or (errorHandler.buildDepError "immortal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-server" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,9 +82,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -103,10 +103,10 @@
             (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wrecker-test" = {
           depends = [
@@ -128,9 +128,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."immortal" or (errorHandler.buildDepError "immortal"))
             (hsPkgs."next-ref" or (errorHandler.buildDepError "next-ref"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

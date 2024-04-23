@@ -21,7 +21,7 @@
       synopsis = "A simple proxy for debugging plaintext protocols communication";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "inspection-proxy" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/Stasis-0.0.1-r0-408c4824e34c5a96e0d7e67e399d57751f91fcb245deea2568a5524c53c7f7fa.nix;
         revNum = 0;
         sha256 = "408c4824e34c5a96e0d7e67e399d57751f91fcb245deea2568a5524c53c7f7fa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

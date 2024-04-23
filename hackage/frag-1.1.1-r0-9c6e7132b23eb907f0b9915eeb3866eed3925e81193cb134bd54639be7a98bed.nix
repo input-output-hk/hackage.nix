@@ -21,7 +21,7 @@
       synopsis = "A 3-D First Person Shooter Game";
       description = "A fast and basic reimplementation of the Quake III Arena engine\nin Haskell; supports many Quake III Arena maps.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "frag" = {
@@ -31,9 +31,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

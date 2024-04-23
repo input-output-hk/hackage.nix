@@ -21,7 +21,7 @@
       synopsis = "Transformers for the Aivika simulation library";
       description = "This package is a generalization of the aivika [1] simulation library\nwith extensive use of monad transformers and type families.\n\n\\[1] <http://hackage.haskell.org/package/aivika>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

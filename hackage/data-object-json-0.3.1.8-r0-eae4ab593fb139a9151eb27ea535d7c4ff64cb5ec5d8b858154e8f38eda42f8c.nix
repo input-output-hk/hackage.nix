@@ -21,7 +21,7 @@
       synopsis = "Serialize JSON data to/from Haskell using the data-object library. (deprecated)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."convertible-text" or (errorHandler.buildDepError "convertible-text"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

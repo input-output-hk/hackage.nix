@@ -21,7 +21,7 @@
       synopsis = "Native event-sourcing database";
       description = "Streaming-based interface for an event-sourcing store.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
           (hsPkgs."potoki" or (errorHandler.buildDepError "potoki"))
           (hsPkgs."potoki-cereal" or (errorHandler.buildDepError "potoki-cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

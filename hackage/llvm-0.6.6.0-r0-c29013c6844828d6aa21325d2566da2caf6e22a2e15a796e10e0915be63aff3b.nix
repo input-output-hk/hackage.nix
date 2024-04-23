@@ -21,7 +21,7 @@
       synopsis = "Bindings to the LLVM compiler toolkit.";
       description = "Bindings to the LLVM compiler toolkit.\nNew in 0.6.6.0: Bug fixes;\nNew in 0.6.5.0: Adapted to LLVM 2.5;";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

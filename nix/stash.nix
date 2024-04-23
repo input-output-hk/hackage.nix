@@ -6,8 +6,8 @@
         nix = import ../hackage/stash-0.1-r0-bc930cdbf55faebc191ce78a256a7411650eece70c84d113c6c719468b22751d.nix;
         revNum = 0;
         sha256 = "bc930cdbf55faebc191ce78a256a7411650eece70c84d113c6c719468b22751d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

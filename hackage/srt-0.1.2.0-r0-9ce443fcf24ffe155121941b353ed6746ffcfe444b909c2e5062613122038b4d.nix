@@ -21,15 +21,15 @@
       synopsis = "The data type for SRT files.";
       description = "The data type for SRT files. https://en.wikipedia.org/wiki/SubRip";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."simple-media-timestamp" or (errorHandler.buildDepError "simple-media-timestamp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

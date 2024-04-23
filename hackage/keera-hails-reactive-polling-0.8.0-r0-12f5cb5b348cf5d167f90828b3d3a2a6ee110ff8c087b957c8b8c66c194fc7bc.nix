@@ -14,7 +14,7 @@
       identifier = {
         name = "keera-hails-reactive-polling";
         version = "0.8.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "(C) 2013 Keera Studios Ltd";
       maintainer = "support@keera.co.uk";
@@ -24,34 +24,34 @@
       synopsis = "Haskell on Rails - Polling based Readable RVs";
       description = "Keera Hails is a rapid application development system.\n\nThe idea behind Hails is that you should be able to build cross platform\napplications with minimal effort, very quickly, and the result should be easy\nto maintain.\n\nLarge Hails applications are structured following an optimized MVC\narchitecture. Values are updated either from the view to the model, or from\nthe model to the view. Internally, rules use a notion of direction in the\nupdate to determine how different components must be updated.\n\nThis library provides a construct to create RVs based on an operation\nto be polled a regular intervals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."keera-callbacks" or (errorHandler.buildDepError "keera-callbacks"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "haddock-coverage" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
+          depends = pkgs.lib.optionals (!!flags.test-doc-coverage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if !flags.test-doc-coverage then false else true;
-          };
         };
       };
-    }
+    };
+  }

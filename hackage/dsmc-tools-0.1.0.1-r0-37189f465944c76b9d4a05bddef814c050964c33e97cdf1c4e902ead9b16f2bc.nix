@@ -21,7 +21,7 @@
       synopsis = "DSMC toolkit for rarefied gas dynamics";
       description = "CLI tools for dsmc library. README and examples are\nincluded in package distribution.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dsmc-caster" = {
@@ -32,9 +32,9 @@
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."gloss-raster" or (errorHandler.buildDepError "gloss-raster"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dsmc-runner" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,9 +47,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

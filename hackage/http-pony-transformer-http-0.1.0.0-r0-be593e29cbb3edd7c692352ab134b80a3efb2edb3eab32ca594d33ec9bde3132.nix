@@ -14,7 +14,7 @@
       identifier = {
         name = "http-pony-transformer-http";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nfjinjing@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "";
       description = "Transform to a basic HTTP interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

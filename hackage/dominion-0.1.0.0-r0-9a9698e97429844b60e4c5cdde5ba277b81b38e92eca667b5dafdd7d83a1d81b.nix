@@ -21,7 +21,7 @@
       synopsis = "A simulator for dominion (the board game).";
       description = "A simulator for dominion (the board game).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."random-extras" or (errorHandler.buildDepError "random-extras"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dominion" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."random-extras" or (errorHandler.buildDepError "random-extras"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

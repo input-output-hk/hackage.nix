@@ -21,24 +21,24 @@
       synopsis = "Intervals of functors.";
       description = "Closed intervals in spaces described by a functor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."interval-functor" or (errorHandler.buildDepError "interval-functor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

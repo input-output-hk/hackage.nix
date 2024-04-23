@@ -21,14 +21,14 @@
       synopsis = "Project bindings-* raw interface to HDF5 library";
       description = "Low level bindings to HDF5, part\nof the @bindings-*@ project. See:\n\n<http://bitbucket.org/mauricio/bindings-dsl>\n\n<http://www.hdfgroup.org/HDF5>";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

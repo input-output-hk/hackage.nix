@@ -21,7 +21,7 @@
       synopsis = "Authentication for Yesod.";
       description = "Authentication for Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,8 +56,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

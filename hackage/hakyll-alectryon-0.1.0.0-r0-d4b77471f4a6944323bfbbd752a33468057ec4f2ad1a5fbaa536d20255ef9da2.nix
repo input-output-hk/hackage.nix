@@ -21,7 +21,7 @@
       synopsis = "Hakyll extension for rendering Coq code using Alectryon";
       description = "An extension to write Literate Coq blog posts using Hakyll.\n\nhakyll-alectryon extends the Hakyll site generator with the Alectryon\ndocumentation tool for Coq.\n\nSee also the README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

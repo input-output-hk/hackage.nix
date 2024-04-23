@@ -21,7 +21,7 @@
       synopsis = "Wrapper to use stack as a library";
       description = "Some wrapper functions around [stack](https://hackage.haskell.org/package/stack) intended to make it easier to use [stack](https://hackage.haskell.org/package/stack) as a library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."stack" or (errorHandler.buildDepError "stack"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

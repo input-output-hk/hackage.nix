@@ -21,7 +21,7 @@
       synopsis = "Polysemy Effects for Logging";
       description = "See <https://hackage.haskell.org/package/polysemy-log/docs/Polysemy-Log.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-log-unit" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

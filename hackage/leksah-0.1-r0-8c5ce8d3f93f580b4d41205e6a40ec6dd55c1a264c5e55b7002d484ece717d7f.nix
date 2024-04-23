@@ -21,7 +21,7 @@
       synopsis = "Genuine Haskell Face";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "leksah" = {
@@ -42,9 +42,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compile source code from the standard input";
       description = "A frontend plugin for GHC to compile source code from\nthe standard input.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

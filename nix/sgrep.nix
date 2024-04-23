@@ -6,8 +6,8 @@
         nix = import ../hackage/sgrep-0.0-r0-b64d4f22d748444fdb45060ddeda35f256d460609046e5727538aa1b56c678d7.nix;
         revNum = 0;
         sha256 = "b64d4f22d748444fdb45060ddeda35f256d460609046e5727538aa1b56c678d7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

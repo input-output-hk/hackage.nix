@@ -6,8 +6,8 @@
         nix = import ../hackage/accelerate-io-vector-0.1.0.0-r0-a12013ad55ff5c626f54c44e7aaf1dbd3c9777bf0240eb5d063daa9be16785da.nix;
         revNum = 0;
         sha256 = "a12013ad55ff5c626f54c44e7aaf1dbd3c9777bf0240eb5d063daa9be16785da";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

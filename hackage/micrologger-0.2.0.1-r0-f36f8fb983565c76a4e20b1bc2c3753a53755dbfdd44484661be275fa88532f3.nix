@@ -21,7 +21,7 @@
       synopsis = "A super simple logging module. Only for use for very simple projects.";
       description = "A super simple logging module. Only for use for very simple projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

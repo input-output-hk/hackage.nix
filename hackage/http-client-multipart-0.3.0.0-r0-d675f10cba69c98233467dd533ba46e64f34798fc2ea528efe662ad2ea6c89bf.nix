@@ -21,14 +21,14 @@
       synopsis = "Generate multipart uploads for http-client. (deprecated)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

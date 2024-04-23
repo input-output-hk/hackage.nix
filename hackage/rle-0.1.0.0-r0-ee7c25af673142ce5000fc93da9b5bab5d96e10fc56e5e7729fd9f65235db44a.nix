@@ -21,7 +21,7 @@
       synopsis = "A data type of run-length-encoded lists";
       description = "Provides an @RLE@ type that stores a sequence of elements in the form of\nlength/value pairs, stored in a normal form with no adjacent runs of equal\nvalues.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."portray" or (errorHandler.buildDepError "portray"))
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "RLE-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

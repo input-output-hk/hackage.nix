@@ -21,16 +21,16 @@
       synopsis = "Produce a s-expression representation of Show values.";
       description = "Program to produce a s-expression representation of Show values.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sexp-show" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

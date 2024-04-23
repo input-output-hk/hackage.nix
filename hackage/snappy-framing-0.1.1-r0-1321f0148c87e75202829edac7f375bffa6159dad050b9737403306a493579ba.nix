@@ -21,7 +21,7 @@
       synopsis = "Snappy Framing Format in Haskell";
       description = "Implementation of the Snappy framing format (SVN revision 71, cf.\n<http://code.google.com/p/snappy/source/browse/trunk/framing_format.txt?r=71>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."snappy" or (errorHandler.buildDepError "snappy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "QuickCheck entire APIs";
       description = "This packages provides QuickCheck properties that are tested across an entire\nAPI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-io" or (errorHandler.buildDepError "quickcheck-io"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

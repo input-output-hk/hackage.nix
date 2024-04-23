@@ -21,7 +21,7 @@
       synopsis = "Guard monadic computations with cleanup actions";
       description = "This package provides a generalized version of @Control.Exception.finally@.\nThe cleanup action is run not only on successful termination of the main\ncomputation and on errors, but on any control flow disruption (e.g.\n@mzero@, short-circuiting) that causes the main computation to not produce\na result.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transformers-abort" or (errorHandler.buildDepError "transformers-abort"))
           (hsPkgs."monad-abort-fd" or (errorHandler.buildDepError "monad-abort-fd"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

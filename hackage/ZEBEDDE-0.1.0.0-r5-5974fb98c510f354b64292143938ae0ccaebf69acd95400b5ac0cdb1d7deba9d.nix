@@ -21,14 +21,14 @@
       synopsis = "Polymer growth simulation method";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

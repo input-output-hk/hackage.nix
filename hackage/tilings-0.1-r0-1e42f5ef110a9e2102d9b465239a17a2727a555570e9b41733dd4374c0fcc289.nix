@@ -21,11 +21,11 @@
       synopsis = "substitution tilings";
       description = "Substitution tilings.  The term substitution, in connection with tilings,\ndescribes a simple but powerful method to produce tilings with many\ninteresting properties.\n\nThe main idea is to use a finite set of building blocks called prototiles,\nan expanding linear map (the inflation factor), and a rule how to dissect\neach scaled tile into copies of the original prototiles.\n\nFor some examples of substitution tilings, and a glossary of terminology,\nsee the /tilings encyclopedia/\nat <http://tilings.math.uni-bielefeld.de/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

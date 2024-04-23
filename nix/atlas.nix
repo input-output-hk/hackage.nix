@@ -6,8 +6,8 @@
         nix = import ../hackage/atlas-0-r0-32c168b5b9fd4e843376ca9eb02ef33b233392cdbbcbf0b87c5f2cee00209861.nix;
         revNum = 0;
         sha256 = "32c168b5b9fd4e843376ca9eb02ef33b233392cdbbcbf0b87c5f2cee00209861";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

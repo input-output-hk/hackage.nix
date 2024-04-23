@@ -21,7 +21,7 @@
       synopsis = "A function to post an image to imgur";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-lens" or (errorHandler.buildDepError "xml-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

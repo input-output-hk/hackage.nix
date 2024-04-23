@@ -21,7 +21,7 @@
       synopsis = "C/CUDA quasiquoting library.";
       description = "C/CUDA quasiquoting library.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -37,18 +37,18 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "6.10" && (compiler.version).lt "6.12")) (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "6.10" && compiler.version.lt "6.12")) (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "6.12" && compiler.version.lt "6.13")) (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"));
         buildable = true;
-        };
+      };
       exes = {
         "unit-test" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

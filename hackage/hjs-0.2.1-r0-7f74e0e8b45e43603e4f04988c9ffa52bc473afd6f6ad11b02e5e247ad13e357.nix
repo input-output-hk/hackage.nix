@@ -21,7 +21,7 @@
       synopsis = "JavaScript Parser";
       description = "A Javascript parser and interpreter.\nWorks as per ECMA-262 plus some parts of JS >=1.5.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "hjs" = { buildable = true; }; };
       };
-    }
+      exes = { "hjs" = { buildable = true; }; };
+    };
+  }

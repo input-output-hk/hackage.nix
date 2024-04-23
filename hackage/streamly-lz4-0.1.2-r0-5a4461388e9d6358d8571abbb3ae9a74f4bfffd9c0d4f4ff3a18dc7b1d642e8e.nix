@@ -21,7 +21,7 @@
       synopsis = "Streamly combinators for LZ4 compression";
       description = "Compress and decompress streams of data using LZ4 compression.  See\n<https://github.com/lz4/lz4> .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."fusion-plugin-types" or (errorHandler.buildDepError "fusion-plugin-types"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lz4" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-lz4" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin && !(compiler.isGhc && (compiler.version).lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
+          ] ++ pkgs.lib.optional (flags.fusion-plugin && !(compiler.isGhc && compiler.version.lt "8.6")) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

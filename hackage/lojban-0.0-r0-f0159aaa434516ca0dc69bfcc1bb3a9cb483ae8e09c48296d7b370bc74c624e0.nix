@@ -21,7 +21,7 @@
       synopsis = "<Project description>";
       description = "<Project description>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

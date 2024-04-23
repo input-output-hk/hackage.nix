@@ -6,8 +6,8 @@
         nix = import ../hackage/ses-html-snaplet-0.1.0.0-r0-ad14a2fbeb585978aaa1b98838970ecb800fee21b3822d99b4cac1d0915f63b6.nix;
         revNum = 0;
         sha256 = "ad14a2fbeb585978aaa1b98838970ecb800fee21b3822d99b4cac1d0915f63b6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

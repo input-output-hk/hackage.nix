@@ -21,7 +21,7 @@
       synopsis = "Visualisation of Strange Attractors in 3-Dimensions";
       description = "This software uses innovative techniques to achieve 3-D visualisation\nof the point sets known as Strange Attractors resulting from iteration\nof non-linear maps on points in Euclidean Space. Version 0.1.3 requires new\nversions of OpenGL and GLUT libraries. Use version 0.1.2 is you have\nold OpenGL and GLUT and don't want to upgrade.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Attrac" = {
@@ -32,9 +32,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

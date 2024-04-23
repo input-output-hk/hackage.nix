@@ -21,10 +21,10 @@
       synopsis = "API bindings for Ory Kratos";
       description = "API bindings for ory-kratos 0.10.1";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.8") [
+        depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.8") [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -46,8 +46,8 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

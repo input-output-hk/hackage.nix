@@ -6,8 +6,8 @@
         nix = import ../hackage/anagrep-0.1.0.0-r0-dcb7d88d83f16226c6f8068b0ce781464dcc5d364bd70fba179c94d157fa3ea9.nix;
         revNum = 0;
         sha256 = "dcb7d88d83f16226c6f8068b0ce781464dcc5d364bd70fba179c94d157fa3ea9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

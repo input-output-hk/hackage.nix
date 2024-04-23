@@ -21,14 +21,14 @@
       synopsis = "Tracking and highlighting of locations in source files";
       description = "A library for manipulating and highlighting locations\nin source files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert various postgresql-simple calls to work with pipes";
       description = "This library provides a few Producers and Consumers that allow\n@postgresql-simple@ calls to be made within the @pipes@ framework. Currently,\nthere is support for:\n\n* Streaming queries\n\n* Streaming entire tables to and from a @ByteString@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Making composable programs with multithreading, events and distributed computing";
       description = "see <http://github.com/agocorona/transient>\nIn this release, distributed primitives have been moved to the transient-universe package\nWeb primitives have been moved to the package ghcjs-hplay";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-transient" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

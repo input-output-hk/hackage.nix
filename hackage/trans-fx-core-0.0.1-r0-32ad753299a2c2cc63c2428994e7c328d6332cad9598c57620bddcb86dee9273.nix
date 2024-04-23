@@ -21,11 +21,11 @@
       synopsis = "Monadic effect framework";
       description = "Please see the README on GitHub at <https://github.com/nbloomf/trans-fx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

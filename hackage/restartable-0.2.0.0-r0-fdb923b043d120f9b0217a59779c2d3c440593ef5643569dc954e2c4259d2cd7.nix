@@ -21,7 +21,7 @@
       synopsis = "Minimal live coding library for model-view-event-update applications.";
       description = "Minimal live coding library.\nIt can store model of the model-view-event-update applications.\nIt uses `FromJSON` and `ToJSON` with default value\nfor absent data elements, and `Generic` parser otherwise:\n\n> import Initially(initially, Initial)\n> data MyModel = Model { timestamp :: UTCTime }\n> instance ToJSON MyModel where\n> instance FromJSON MyModel where\n>   parseJSON = initially myDefaultValue\n> instance Initial MyModel\n>\n> main = restartable\n\nIt is preferred to attach initial value to every substructure,\nso whenever it fails to parse the remaining part of the state is still parsed correctly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parsec parsers for the Internet Message format (e-mail)";
       description = "Parsec parsers for the Internet Message format defined in RFC2822.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,19 +29,19 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "message-test" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hsemail" or (errorHandler.buildDepError "hsemail"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
         };
+      };
       tests = {
         "test-hsemail" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/smith-cli-0.0.1-r0-7a1e9bef9fac4c8247b7ffff40fe7c4aa241077057348c9d783511eb893af979.nix;
         revNum = 0;
         sha256 = "7a1e9bef9fac4c8247b7ffff40fe7c4aa241077057348c9d783511eb893af979";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

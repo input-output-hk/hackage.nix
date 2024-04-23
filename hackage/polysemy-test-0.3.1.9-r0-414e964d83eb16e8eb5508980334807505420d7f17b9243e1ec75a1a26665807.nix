@@ -21,7 +21,7 @@
       synopsis = "Polysemy Effects for Testing";
       description = "See https://hackage.haskell.org/package/polysemy-test/docs/Polysemy-Test.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-test-unit" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "postgresql-tx interfacing for use with squeal-postgresql.";
       description = "Please see the README on GitHub at <https://github.com/simspace/postgresql-tx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."records-sop" or (errorHandler.buildDepError "records-sop"))
           (hsPkgs."squeal-postgresql" or (errorHandler.buildDepError "squeal-postgresql"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

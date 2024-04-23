@@ -21,11 +21,11 @@
       synopsis = "Skip variables";
       description = "Please see the README on GitHub at <https://github.com/leohaskell/skip-var#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

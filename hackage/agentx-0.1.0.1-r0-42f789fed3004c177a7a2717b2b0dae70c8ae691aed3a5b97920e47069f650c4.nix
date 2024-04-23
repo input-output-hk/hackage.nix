@@ -21,7 +21,7 @@
       synopsis = "AgentX protocol for snmp subagents";
       description = "Native implementation agentx protocol (rfc2741)       ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

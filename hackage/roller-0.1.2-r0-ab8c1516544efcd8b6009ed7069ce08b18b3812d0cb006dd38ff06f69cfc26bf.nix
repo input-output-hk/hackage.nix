@@ -21,7 +21,7 @@
       synopsis = "Playing with applicatives and dice!";
       description = "A basic library and program for simulated rolling of\npolyhedral dice, as would be used in pen and paper RPGs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "roller" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."roller" or (errorHandler.buildDepError "roller"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

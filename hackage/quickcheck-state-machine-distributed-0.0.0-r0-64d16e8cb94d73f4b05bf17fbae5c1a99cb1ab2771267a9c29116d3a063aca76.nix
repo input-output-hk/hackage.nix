@@ -14,7 +14,7 @@
       identifier = {
         name = "quickcheck-state-machine-distributed";
         version = "0.0.0";
-        };
+      };
       license = "BSD-2-Clause";
       copyright = "Copyright (C) 2018, HERE Europe B.V.";
       maintainer = "stevan.andjelkovic@here.com";
@@ -24,7 +24,7 @@
       synopsis = "Test monadic programs using state machine based models";
       description = "Please see the README on Github at <https://github.com/advancedtelematic/quickcheck-state-machine-distributed#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck-state-machine-distributed-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,6 +21,6 @@
       synopsis = "SAND data serialization and manipulation library";
       description = "SAND is a Multi-Agent Systems data serialization and manipulation method.\nIt is used by monitoring & surveillance systems agent wiring to monitor-server\nand representation of agent data.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

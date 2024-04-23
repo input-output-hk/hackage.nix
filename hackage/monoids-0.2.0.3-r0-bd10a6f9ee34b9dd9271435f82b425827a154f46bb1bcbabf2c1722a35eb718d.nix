@@ -21,7 +21,7 @@
       synopsis = "Monoids, specialized containers and a general map/reduce framework";
       description = "Monoids, specialized containers and a general map/reduce framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "small dmenu wrapper";
       description = "I get so annoyed when I go to use dmenu, and the three\nprograms I use every day aren't at the beginning of the\nlist.  Let's make it so, and automatically!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yeganesh" = {
@@ -35,9 +35,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

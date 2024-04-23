@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This package provides an @engine-io@ @ServerAPI@ that is compatible with\n<http://http://hackage.haskell.org/package/growler Growler>. It also provides a few helper utilities for setting up @socket-io@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."pipes-wai" or (errorHandler.buildDepError "pipes-wai"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

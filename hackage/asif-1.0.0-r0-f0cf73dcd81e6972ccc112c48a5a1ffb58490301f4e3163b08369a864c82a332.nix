@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on Github at <https://github.com/packetloop/asif#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "asif" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "asif-test" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

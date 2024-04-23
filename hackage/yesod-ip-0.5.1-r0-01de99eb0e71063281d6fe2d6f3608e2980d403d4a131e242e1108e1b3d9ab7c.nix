@@ -21,7 +21,7 @@
       synopsis = "Code for using the ip package with yesod";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

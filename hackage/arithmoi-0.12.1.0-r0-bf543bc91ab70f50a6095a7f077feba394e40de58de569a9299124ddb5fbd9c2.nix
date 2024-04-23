@@ -21,7 +21,7 @@
       synopsis = "Efficient basic number-theoretic functions.";
       description = "A library of basic functionality needed for\nnumber-theoretic calculations. The aim of this library\nis to provide efficient implementations of the functions.\nPrimes and related things (totients, factorisation),\npowers (integer roots and tests, modular exponentiation).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "arithmoi-tests" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "arithmoi-bench" = {
           depends = [
@@ -84,18 +84,18 @@
             (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "arithmoi-sequence-model" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hmatrix-gsl" or (errorHandler.buildDepError "hmatrix-gsl"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

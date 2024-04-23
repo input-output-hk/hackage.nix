@@ -21,20 +21,20 @@
       synopsis = "Fast, packed, strict and lazy byte arrays with a list interface";
       description = "A time and space-efficient implementation of byte vectors using\npacked Word8 arrays, suitable for high performance use, both in terms\nof large data quantities, or high speed requirements. Byte vectors\nare encoded as strict 'Word8' arrays of bytes, and lazy lists of\nstrict chunks, held in a 'ForeignPtr', and can be passed between C\nand Haskell with little effort.\n\nTest coverage data for this library is available at:\n<http://code.haskell.org/~dons/tests/bytestring/hpc_index.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.split-syb
+        ] ++ (if flags.split-syb
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

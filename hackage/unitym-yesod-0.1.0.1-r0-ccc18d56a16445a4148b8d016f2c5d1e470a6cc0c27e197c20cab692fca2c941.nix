@@ -21,15 +21,15 @@
       synopsis = "Implementation of the unity monad for the Yesod framework";
       description = "Implementation of the unity monad for the Yesod framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unitym" or (errorHandler.buildDepError "unitym"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Esqueleto support for the pgcrypto PostgreSQL module";
       description = "Please see the README on GitHub at <https://github.com/3kyro/esqueleto-pgcrypto#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."esqueleto" or (errorHandler.buildDepError "esqueleto"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "esqueleto-pgcrypto-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

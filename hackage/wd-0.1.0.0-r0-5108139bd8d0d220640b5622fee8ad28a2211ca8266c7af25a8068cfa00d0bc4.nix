@@ -21,7 +21,7 @@
       synopsis = "Run a command on a specified directory.";
       description = "This is a command to run another command on a specified directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wd" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

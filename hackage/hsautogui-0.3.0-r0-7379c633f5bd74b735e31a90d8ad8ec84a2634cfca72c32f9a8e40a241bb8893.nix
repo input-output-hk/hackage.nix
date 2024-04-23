@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for PyAutoGUI, a library for automating user interaction";
       description = "Please see the README on GitHub at <https://github.com/mitchellvitez/hsautogui#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hsautogui-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."cpython" or (errorHandler.buildDepError "cpython"))
             (hsPkgs."hsautogui" or (errorHandler.buildDepError "hsautogui"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

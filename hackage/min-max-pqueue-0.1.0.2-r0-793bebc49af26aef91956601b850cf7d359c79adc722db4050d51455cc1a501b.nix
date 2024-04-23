@@ -21,15 +21,15 @@
       synopsis = "Double-ended priority queues.";
       description = "Min-max priority queues, also known as double-ended priority queues.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hedgehog" = {
           depends = [
@@ -37,10 +37,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."min-max-pqueue" or (errorHandler.buildDepError "min-max-pqueue"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
             (hsPkgs."min-max-pqueue" or (errorHandler.buildDepError "min-max-pqueue"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Semigroups with annihilators and utility functions";
       description = "Annihilators are semigroups with annihilators and therefore almost act as\nthe opposite of Alternative. This package comes with the typeclass and\nutility functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

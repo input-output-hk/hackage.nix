@@ -21,7 +21,7 @@
       synopsis = "E-library directory based on FUSE virtual file system.";
       description = "A cyber-anarchist e-library directory based on FUSE virtual file system.\nIt is intended to work with FB2 (FictionBook2) e-book archives in the first\nplace. Other e-book formats and archive layouts may be implemented later.\n\nToday Snusmumrik consists of two utilities, `snus` to index archives and\n`mumrik` to mount library directory at given mount point. Mounted directory\nis organized by author name, by genre and by language.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snus" = {
@@ -40,13 +40,13 @@
             (hsPkgs."LibZip" or (errorHandler.buildDepError "LibZip"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           libs = [ (pkgs."zip" or (errorHandler.sysDepError "zip")) ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mumrik" = {
           depends = [
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
@@ -65,13 +65,13 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."HFuse" or (errorHandler.buildDepError "HFuse"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           libs = [ (pkgs."zip" or (errorHandler.sysDepError "zip")) ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

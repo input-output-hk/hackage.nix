@@ -21,15 +21,15 @@
       synopsis = "MonadProgram typeclass for the operational package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

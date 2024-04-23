@@ -21,7 +21,7 @@
       synopsis = "A newtype around ByteString, for base64 encoding";
       description = "A newtype around ByteString, for base64 encoding.\nStrict and lazy, normal and url alphabet variants.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -35,9 +35,9 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (flags.cereal) (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))) ++ (pkgs.lib).optional (flags.serialise) (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))) ++ (pkgs.lib).optional (flags.http-api-data) (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (flags.cereal) (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))) ++ pkgs.lib.optional (flags.serialise) (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))) ++ pkgs.lib.optional (flags.http-api-data) (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = (([
@@ -48,9 +48,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ] ++ (pkgs.lib).optional (flags.cereal) (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))) ++ (pkgs.lib).optional (flags.serialise) (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))) ++ (pkgs.lib).optional (flags.http-api-data) (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"));
+          ] ++ pkgs.lib.optional (flags.cereal) (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))) ++ pkgs.lib.optional (flags.serialise) (hsPkgs."serialise" or (errorHandler.buildDepError "serialise"))) ++ pkgs.lib.optional (flags.http-api-data) (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

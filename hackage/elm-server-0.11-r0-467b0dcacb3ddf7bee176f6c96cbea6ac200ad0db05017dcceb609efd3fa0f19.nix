@@ -21,7 +21,7 @@
       synopsis = "Server for developing Elm projects";
       description = "Provides a standalone Snap server that serves static files.\nFor Elm files, it recompiles them and serves them as HTML,\nso you can just refresh to see the new version.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elm-server" = {
@@ -38,9 +38,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

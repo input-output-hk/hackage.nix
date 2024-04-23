@@ -21,7 +21,7 @@
       synopsis = "Interval Arithmetic";
       description = "A 'Numeric.Interval.Interval' is a closed, convex set of floating point values.\n\nThis package is careful to manage the rounding direction of each floating point\noperation to ensure that the resulting interval is conservative. Effectively the lower bound of each computation is always rounded down, and the upper bound is rounded up.\n\nThe correctness of this package relies on the correctness of the underlying libm's handling of rounding modes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."numeric-extras" or (errorHandler.buildDepError "numeric-extras"))
           (hsPkgs."rounding" or (errorHandler.buildDepError "rounding"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Composable, type-safe library to build HTTP API servers";
       description = "WebGear is a library to for building composable, type-safe HTTP API servers.\nWebGear focuses on good documentation and usability.\nSee the documentation of WebGear module to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "webgear-server-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."webgear-server" or (errorHandler.buildDepError "webgear-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

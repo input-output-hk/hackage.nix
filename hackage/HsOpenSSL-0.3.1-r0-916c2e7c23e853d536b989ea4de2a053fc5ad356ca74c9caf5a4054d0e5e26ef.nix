@@ -21,7 +21,7 @@
       synopsis = "(Part of) OpenSSL binding for Haskell";
       description = "HsOpenSSL is a (part of) OpenSSL binding for Haskell. It can\ngenerate RSA and DSA keys, read and write PEM files, generate\nmessage digests, sign and verify messages, encrypt and decrypt\nmessages.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -30,12 +30,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

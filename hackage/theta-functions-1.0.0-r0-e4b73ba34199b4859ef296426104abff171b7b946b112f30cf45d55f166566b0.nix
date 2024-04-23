@@ -21,11 +21,11 @@
       synopsis = "Theta-functions implemented as trigonometric series";
       description = "Small and simple library for computing values of Theta functions.\nThey're the special functions of two variables. Described very well at Wikipedia article with corresponding name.\nLibrary exports four theta-functions and a small helper to calculate their second parameter.\nTheta functions are functions of Complex variables, FYI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Provides zips where the combining doesn't stop premature, but instead uses default elements.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

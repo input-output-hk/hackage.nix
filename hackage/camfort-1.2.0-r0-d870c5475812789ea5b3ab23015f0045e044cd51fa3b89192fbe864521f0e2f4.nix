@@ -21,7 +21,7 @@
       synopsis = "CamFort - Cambridge Fortran infrastructure";
       description = "CamFort is a tool for the analysis, transformation, verification of Fortran code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,14 +60,14 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."verifiable-expressions" or (errorHandler.buildDepError "verifiable-expressions"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         libs = [ (pkgs."flint" or (errorHandler.sysDepError "flint")) ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "camfort" = {
           depends = [
@@ -90,10 +90,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."verifiable-expressions" or (errorHandler.buildDepError "verifiable-expressions"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -120,12 +120,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."verifiable-expressions" or (errorHandler.buildDepError "verifiable-expressions"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

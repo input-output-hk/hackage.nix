@@ -21,7 +21,7 @@
       synopsis = "Fresco binding for Haskell";
       description = "Fresco is a framwork for multi-language programming. This is the Haskell binding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,10 +31,10 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary-serialise-cbor" or (errorHandler.buildDepError "binary-serialise-cbor"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

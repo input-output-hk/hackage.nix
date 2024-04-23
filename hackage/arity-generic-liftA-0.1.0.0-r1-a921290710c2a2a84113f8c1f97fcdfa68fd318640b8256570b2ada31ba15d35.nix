@@ -21,21 +21,21 @@
       synopsis = "Provides an arity-generic version of the liftA2, liftA3... liftAn functions.";
       description = "Please see the README on GitHub at <https://github.com/oisdk/arity-generic-liftA#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "arity-generic-liftA-test" = {
           depends = [
             (hsPkgs."arity-generic-liftA" or (errorHandler.buildDepError "arity-generic-liftA"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

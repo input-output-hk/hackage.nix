@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "bustle" = {
@@ -49,16 +49,16 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optionals (flags.hgettext) [
+          ] ++ pkgs.lib.optionals (flags.hgettext) [
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."glib-2.0" or (errorHandler.pkgConfDepError "glib-2.0"))
             (pkgconfPkgs."gio-unix-2.0" or (errorHandler.pkgConfDepError "gio-unix-2.0"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dump-messages" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,13 +68,13 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optionals (flags.hgettext) [
+          ] ++ pkgs.lib.optionals (flags.hgettext) [
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-            ];
+          ];
           buildable = if flags.interactivetests then true else false;
-          };
         };
+      };
       tests = {
         "test-pcap-crash" = {
           depends = [
@@ -85,19 +85,19 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optionals (flags.hgettext) [
+          ] ++ pkgs.lib.optionals (flags.hgettext) [
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-regions" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-renderer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -113,12 +113,12 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ (pkgs.lib).optionals (flags.hgettext) [
+          ] ++ pkgs.lib.optionals (flags.hgettext) [
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

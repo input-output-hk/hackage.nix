@@ -21,7 +21,7 @@
       synopsis = "Code review tool";
       description = "See the @README.md@ file and the homepage for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cr" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

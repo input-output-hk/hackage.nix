@@ -6,8 +6,8 @@
         nix = import ../hackage/StatisticalMethods-0.0.0.1-r0-18491d1b64520fb056f0e35b1cc4ae75052a30e137164f59a48debe54e02a2a0.nix;
         revNum = 0;
         sha256 = "18491d1b64520fb056f0e35b1cc4ae75052a30e137164f59a48debe54e02a2a0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

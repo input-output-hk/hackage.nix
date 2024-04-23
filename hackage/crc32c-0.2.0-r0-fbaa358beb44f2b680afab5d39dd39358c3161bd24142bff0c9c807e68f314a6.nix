@@ -21,16 +21,16 @@
       synopsis = "crc32c";
       description = "Haskell bindings for crc32c";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
+      };
       tests = {
         "crc32c-test" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."crc32c" or (errorHandler.buildDepError "crc32c"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "crc32c-bench" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."crc32c" or (errorHandler.buildDepError "crc32c"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

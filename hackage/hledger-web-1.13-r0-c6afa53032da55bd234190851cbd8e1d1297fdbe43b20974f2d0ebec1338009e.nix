@@ -21,7 +21,7 @@
       synopsis = "Web interface for the hledger accounting tool";
       description = "This is hledger's web interface.\nIt provides a more user-friendly and collaborative UI than the\ncommand-line or curses-style interfaces.\n\nhledger is a cross-platform program for tracking money, time, or\nany other commodity, using double-entry accounting and a simple,\neditable file format. It is inspired by and largely compatible\nwith ledger(1).  hledger provides command-line, curses and web\ninterfaces, and aims to be a reliable, practical tool for daily\nuse.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,28 +56,28 @@
           (hsPkgs."wai-handler-launch" or (errorHandler.buildDepError "wai-handler-launch"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optionals (!(system.isOsx && (compiler.isGhc && (compiler.version).lt "8.0"))) [
+        ] ++ pkgs.lib.optionals (!(system.isOsx && (compiler.isGhc && compiler.version.lt "8.0"))) [
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-          ];
-        buildable = if system.isOsx && (compiler.isGhc && (compiler.version).lt "8.0")
+        ];
+        buildable = if system.isOsx && (compiler.isGhc && compiler.version.lt "8.0")
           then false
           else true;
-        };
+      };
       exes = {
         "hledger-web" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hledger-web" or (errorHandler.buildDepError "hledger-web"))
-            ];
+          ];
           buildable = (if flags.library-only
             then false
-            else true) && (if system.isOsx && (compiler.isGhc && (compiler.version).lt "8.0")
+            else true) && (if system.isOsx && (compiler.isGhc && compiler.version.lt "8.0")
             then false
             else true);
-          };
         };
       };
-    }
+    };
+  }

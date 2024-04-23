@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Library for getting links from a sub-reddit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."scalpel" or (errorHandler.buildDepError "scalpel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reddit-scrape-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."reddit-scrape" or (errorHandler.buildDepError "reddit-scrape"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."scalpel" or (errorHandler.buildDepError "scalpel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

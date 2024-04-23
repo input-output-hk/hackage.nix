@@ -21,16 +21,16 @@
       synopsis = "Accelerated version of ghc --make";
       description = "The @ghc-make@ program can be used as an alternative to @ghc --make@. When the build has some\nwork to do it will perform slower than @ghc --make@ alone. When there is no work to do, the build\nwill run faster, sometimes significantly so.\n\nSee the readme for full details <https://github.com/ndmitchell/ghc-make#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-make" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

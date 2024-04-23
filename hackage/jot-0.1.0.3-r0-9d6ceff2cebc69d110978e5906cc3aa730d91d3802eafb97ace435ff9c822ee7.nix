@@ -21,7 +21,7 @@
       synopsis = "Tiny markdown notebook";
       description = "Jot is a little notebook. It makes little notepages with timestamps that you can customize.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jot" = {
@@ -36,9 +36,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

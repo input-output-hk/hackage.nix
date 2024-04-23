@@ -21,17 +21,17 @@
       synopsis = "Low level binding to libcddb.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libcddb" or (errorHandler.pkgConfDepError "libcddb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

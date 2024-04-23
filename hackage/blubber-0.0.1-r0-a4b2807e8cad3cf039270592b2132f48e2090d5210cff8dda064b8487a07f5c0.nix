@@ -21,7 +21,7 @@
       synopsis = "The blubber client; connects to the blubber\nserver.";
       description = "The blubber client. blubber is an arcade game in\nwhich the player tries to build the biggest blub\nby blubberping the other blubs before they\nblubber the player's blub.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "blubber" = {
@@ -34,9 +34,9 @@
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

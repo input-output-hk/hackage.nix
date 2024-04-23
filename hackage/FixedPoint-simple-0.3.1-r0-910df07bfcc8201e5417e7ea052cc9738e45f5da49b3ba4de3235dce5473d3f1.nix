@@ -21,11 +21,11 @@
       synopsis = "Fixed point, large word, and large int numerical representations (types and common class instances)";
       description = "This library uses elementary techniques to implement fixed point types in terms\nof basic integrals such as Word64.  All mathematical operations are implemented\nexplicilty, instead of lifting to Integer, so that this code can be used for\neducational purposes or as a basis for fixed point libraries in other languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

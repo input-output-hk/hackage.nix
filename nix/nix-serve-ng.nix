@@ -6,8 +6,8 @@
         nix = import ../hackage/nix-serve-ng-1.0.0-r0-8925677571ea6fccd6d47f1aa2ee50a6d3046d1d35ee1c3befb88b8b3ba04781.nix;
         revNum = 0;
         sha256 = "8925677571ea6fccd6d47f1aa2ee50a6d3046d1d35ee1c3befb88b8b3ba04781";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

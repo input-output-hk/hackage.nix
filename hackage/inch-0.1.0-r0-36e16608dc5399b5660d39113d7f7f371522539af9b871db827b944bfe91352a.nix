@@ -21,7 +21,7 @@
       synopsis = "A type-checker for Haskell with integer constraints";
       description = "Inch is a type-checker for a subset of Haskell (plus some GHC\nextensions) with the addition of integer constraints. After\nsuccessfully type-checking a source file, it outputs an\noperationally equivalent version with the type-level integers\nerased, so it can be used as a preprocessor in order to compile\nprograms.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "inch" = {
@@ -34,10 +34,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-inch" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

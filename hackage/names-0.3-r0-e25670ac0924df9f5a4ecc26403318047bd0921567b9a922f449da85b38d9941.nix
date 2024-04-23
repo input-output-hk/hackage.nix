@@ -21,14 +21,14 @@
       synopsis = "Type level names.";
       description = "Type level names.\n\n[@v0.1@] Initial.\n\n[@v0.2@] Show Instances added. Restricted to latin1.\n\n[@v0.2.1@] Infix operator fixities set.\n\n[@v0.2.2@] Merge \"Data.Name\" and \"Data.Name.TH\".\n\n[@v0.2.3@] Added basic Documentation.\n\n[@v0.3@] Reintroduced Unicode for names.\nAdded @Name@ type class.\nTH is not used internally anymore.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

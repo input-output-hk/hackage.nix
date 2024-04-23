@@ -21,7 +21,7 @@
       synopsis = "pipes-group like functions for lines delimited by \\r\\n";
       description = "These are utility functions that were omitted from pipes-bytestring and pipes-text for grouping or splitting lines by \\r\\n.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."pipes-group" or (errorHandler.buildDepError "pipes-group"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pipes-lines-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."pipes-group" or (errorHandler.buildDepError "pipes-group"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

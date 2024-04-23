@@ -21,7 +21,7 @@
       synopsis = "A command-line http2 client.";
       description = "A reference command-line tool using http2-client. Please see the README on GitHub at <https://github.com/lucasdicioccio/http2-client-exe#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "http2-client-exe" = {
@@ -35,9 +35,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

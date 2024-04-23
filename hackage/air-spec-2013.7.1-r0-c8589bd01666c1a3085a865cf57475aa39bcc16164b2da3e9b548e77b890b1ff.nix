@@ -21,15 +21,15 @@
       synopsis = "air spec helper";
       description = "wrapper around shouldBe so error message is Unicode aware";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

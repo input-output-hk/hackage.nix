@@ -21,7 +21,7 @@
       synopsis = "A library for writing extensible algebraic effects and handlers. Similar to extensible-effects but with deep handlers.";
       description = "This is an extensible effects library for Haskell taking inspiration from the Eff language <http://www.eff-lang.org/>.\n\nSee these papers for the ideas and theory behind the library:\n\n- O. Kammar et al: Handlers in Action! <http://homepages.inf.ed.ac.uk/slindley/papers/handlers.pdf>\n- A. Bauer, M. Pretnar: Programming with Algebraic Effects and Handlers <http://arxiv.org/abs/1203.1539>\n- O Kiselyov, A Sabry, C Swords: Extensible Effects <http://dl.acm.org/citation.cfm?id=2503791>\n\nImplementation wise it's most close to @extensible-effects@ <http://hackage.haskell.org/package/extensible-effects> (also see the Extensible Effects paper) but it implements deep handlers instead of shallow.\n\n@\nimport Control.Effects.Cont.Eff\nimport Control.Effects.Cont.Reader\nimport Control.Effects.Cont.Exception\n\nprogram = do\nv <- ask\nif v < 15\nthen throw $ show v\nelse return (v+1)\n\nrun n = runPure . handle exceptionHandler . handle (readerHandler n)\n\nres :: Integer -> Either String Integer\nres n = run n program\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,19 +41,19 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."effect-handlers" or (errorHandler.buildDepError "effect-handlers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Charting library targetting SVGs.";
       description = "This package provides a charting library targetting SVG as the rendered output.\n\n== Usage\n\n>>> import Chart\n>>>\n>>> let xs = [[(0.0, 1.0), (1.0, 1.0), (2.0, 5.0)], [(0.0, 0.0), (3.0, 3.0)], [(0.5, 4.0), (0.5, 0)]] :: [[(Double, Double)]]\n>>> let ls = fmap (PointXY . uncurry Point) <$> xs\n>>> let anns = zipWith (\\w c -> LineA (LineStyle w c Nothing Nothing Nothing Nothing)) [0.015, 0.03, 0.01] palette1\n>>> let lineChart = zipWith Chart anns ls\n>>> writeChartSvgHud \"other/lineshud.svg\" lineChart\n\n![main example](other/lineshud.svg)\n\nSee \"Chart\" for a broad overview of concepts, and \"Chart.Examples\" for a variety of practical examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reanimate-example" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."chart-svg" or (errorHandler.buildDepError "chart-svg"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

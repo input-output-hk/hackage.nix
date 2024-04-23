@@ -21,7 +21,7 @@
       synopsis = "Pagarme API wrapper";
       description = "Pagarme API wrapper";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "testbin" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."pagarme" or (errorHandler.buildDepError "pagarme"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

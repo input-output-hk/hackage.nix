@@ -21,14 +21,14 @@
       synopsis = "Read instances for 'Data.Vector'";
       description = "Read instances for 'Data.Vector'. Right now, only for unboxed\nvectors. Others should be easy to implement, though.\n\nIt is planned to have read instances included in the vector\nlibrary in the future. This release is only temporary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

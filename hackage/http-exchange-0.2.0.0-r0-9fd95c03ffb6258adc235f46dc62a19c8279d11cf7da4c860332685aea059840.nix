@@ -21,7 +21,7 @@
       synopsis = "Perform HTTP Requests";
       description = "Perform HTTP requests. This uses backpack and is agnostic to the backend.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,26 +32,26 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."http-exchange".components.sublibs.types or (errorHandler.buildDepError "http-exchange:types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "types" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "testdep" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             (hsPkgs."http-exchange".components.sublibs.types or (errorHandler.buildDepError "http-exchange:types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."http-exchange".components.sublibs.testdep or (errorHandler.buildDepError "http-exchange:testdep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

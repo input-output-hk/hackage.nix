@@ -21,13 +21,13 @@
       synopsis = "Display the number of bytes of each line";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "line-size" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

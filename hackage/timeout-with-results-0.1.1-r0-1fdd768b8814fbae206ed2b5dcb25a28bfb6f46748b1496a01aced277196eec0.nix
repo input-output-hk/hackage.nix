@@ -21,15 +21,15 @@
       synopsis = "Runs a time-limited computation alowing it to return intermediate results.";
       description = "Evaluates a computation withing a given timeout limit, alowing it to return\nintermediate results. Useful for AI algorithms that should return the best\nresult within a given wallclock time limit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

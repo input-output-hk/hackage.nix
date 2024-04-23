@@ -21,7 +21,7 @@
       synopsis = "Automatically spin up and spin down local daemons";
       description = "Gargoyle is a framework for managing daemons from Haskell. In the current release the only requirement is that the daemon be able to communicate over a Unix domain socket. See <https://hackage.haskell.org/package/gargoyle-postgresql gargoyle-postgresql> for a fully worked out example.\n\nTo use Gargoyle the client must:\n\n1. Define a value of the 'Gargoyle' type which specifies how to administer the daemon.\n2. Create an executable whose `main` is 'gargoyleMain'. The name of this executable should match the executable name specified in the '_gargoyle_exec' field of the 'Gargoyle'.\n3. The client will run their code with 'withGargoyle' to gain access to the daemon.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

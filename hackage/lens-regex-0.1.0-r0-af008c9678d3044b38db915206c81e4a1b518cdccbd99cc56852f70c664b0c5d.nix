@@ -21,7 +21,7 @@
       synopsis = "Lens powered regular expression";
       description = "Lens powered regular expression";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,20 +30,20 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sample" = {
-          depends = (pkgs.lib).optionals (!(!flags.build-samples)) [
+          depends = pkgs.lib.optionals (!!flags.build-samples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lens-regex" or (errorHandler.buildDepError "lens-regex"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if !flags.build-samples then false else true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

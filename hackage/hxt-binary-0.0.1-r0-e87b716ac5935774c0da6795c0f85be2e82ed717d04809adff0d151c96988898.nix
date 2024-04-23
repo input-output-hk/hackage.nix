@@ -21,7 +21,7 @@
       synopsis = "Serialisation and deserialisation of HXT XmlTrees.";
       description = "Extension for storing and loading already parsed XML documents in an internal format.\nSerialisation and Deserialisation is done with the binary package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

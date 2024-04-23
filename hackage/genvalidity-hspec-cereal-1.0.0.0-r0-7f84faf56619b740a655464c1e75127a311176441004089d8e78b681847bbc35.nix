@@ -21,7 +21,7 @@
       synopsis = "Standard spec's for cereal-related instances";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-hspec-cereal-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."genvalidity-property" or (errorHandler.buildDepError "genvalidity-property"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

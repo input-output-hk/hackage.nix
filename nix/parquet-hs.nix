@@ -6,8 +6,8 @@
         nix = import ../hackage/parquet-hs-0.1.0.0-r0-8d4307085dae94dd5e39c4ff701f7046091422f08c38603db692720f87259f8c.nix;
         revNum = 0;
         sha256 = "8d4307085dae94dd5e39c4ff701f7046091422f08c38603db692720f87259f8c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

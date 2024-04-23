@@ -21,7 +21,7 @@
       synopsis = "A custom prelude used in Morley";
       description = "A custom prelude used in Morley. It re-exports the Universum prelude and makes some tiny changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

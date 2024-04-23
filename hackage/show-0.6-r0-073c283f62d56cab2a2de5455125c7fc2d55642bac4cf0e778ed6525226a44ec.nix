@@ -21,16 +21,16 @@
       synopsis = "'Show' instances for Lambdabot";
       description = "Show instances for functions and IO procedures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

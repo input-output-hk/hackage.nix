@@ -21,7 +21,7 @@
       synopsis = "Implementation of ULID, lexicographically sortable unique identifiers";
       description = "Implementation of alizain's ULID identifier. Canonically encoded as a 26 character string, as opposed to the 36 character UUID.\nUses Crockford's base32 for better efficiency and readability (5 bits per character)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ulid-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ulid" or (errorHandler.buildDepError "ulid"))
             (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ulid-test" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "ulid-bench" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."format-numbers" or (errorHandler.buildDepError "format-numbers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

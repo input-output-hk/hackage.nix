@@ -21,7 +21,7 @@
       synopsis = "Privacy Enhanced Mail (PEM) format reader and writer.";
       description = "Privacy Enhanced Mail (PEM) format reader and writer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-pem" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

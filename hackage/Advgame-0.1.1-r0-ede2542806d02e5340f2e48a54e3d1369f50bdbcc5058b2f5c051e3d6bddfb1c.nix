@@ -21,7 +21,7 @@
       synopsis = "Lisperati's adventure game in Lisp translated to Haskell";
       description = "Lisperati's adventure game in Lisp translated to Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "advgame" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

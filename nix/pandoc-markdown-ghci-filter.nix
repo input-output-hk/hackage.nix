@@ -6,8 +6,8 @@
         nix = import ../hackage/pandoc-markdown-ghci-filter-0.1.0.0-r0-d344a414426493e7b305c4e7bfd536b4f82c159273df71f569657d88c026494a.nix;
         revNum = 0;
         sha256 = "d344a414426493e7b305c4e7bfd536b4f82c159273df71f569657d88c026494a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

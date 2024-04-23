@@ -21,7 +21,7 @@
       synopsis = "Automatic type inference of generalized tries.";
       description = "Builds on the multirec library to create a system capable of automatic or simple generalized trie type inference.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

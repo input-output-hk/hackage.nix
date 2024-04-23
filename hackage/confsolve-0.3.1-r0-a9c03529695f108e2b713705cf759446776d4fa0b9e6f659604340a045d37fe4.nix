@@ -21,7 +21,7 @@
       synopsis = "A command line tool for resolving conflicts of file synchronizers.";
       description = "A command line tool for resolving conflicts of file synchronizers.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "confsolve" = {
@@ -36,9 +36,9 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

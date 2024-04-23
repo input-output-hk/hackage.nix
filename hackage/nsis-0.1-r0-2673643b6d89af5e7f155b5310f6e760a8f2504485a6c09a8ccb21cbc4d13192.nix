@@ -21,23 +21,23 @@
       synopsis = "Build NSIS Installers";
       description = "Helps writing NSIS Installers, see <http://nsis.sourceforge.net/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nsis" = {
           depends = [
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = if flags.testprog then true else false;
-          };
         };
       };
-    }
+    };
+  }

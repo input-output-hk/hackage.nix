@@ -21,16 +21,16 @@
       synopsis = "ANSI Escape Sequence Text Decoration Made Easy";
       description = "A library for text decoration with ANSI escape sequences made easy. Decorate your terminal text easily and expressively.\nAny complex data type, existing or custom, can be simply colorized by implementing the class 'ToEscapable', then\noutput to terminal or converted to 'String' using the provided functions.\n\nSimple Example\n\n@\nimport Data.Monoid ((\\<\\>))\nimport Text.EscapeArtist\n\nunderlines = Underline $ FgCyan \\\"I am underlined\\\" \\<\\> UnderlineOff \\\" but I am not \\\" \\<\\> FgMagenta \\\"and I am over here\\\"\n\nputEscLn underlines\n@\n\n<<https://raw.githubusercontent.com/EarthCitizen/escape-artist/master/images/underline_off.png>>\n\nImplementing 'ToEscapable'\n\n@\nimport Data.Monoid ((\\<\\>))\nimport Text.EscapeArtist\n\ndata ABC = A | B deriving (Show, Eq)\n\ninstance ToEscapable ABC where\n&#x20;   toEscapable (A) = FgRed $ show A\n&#x20;   toEscapable (B) = FgGreen $ show B\n\ninstance (ToEscapable a) => ToEscapable (Maybe a) where\n&#x20;    toEscapable (Just a) = FgGreen \\\"Just\\\" \\<\\> Inherit \\\" \\\" \\<\\> FgYellow a\n&#x20;    toEscapable a = FgRed $ show a\n@\n\nComprehensive Documentation\n\nSee comprehensive documentation with many examples here:\n\n<https://github.com/EarthCitizen/escape-artist#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "escape-artist-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

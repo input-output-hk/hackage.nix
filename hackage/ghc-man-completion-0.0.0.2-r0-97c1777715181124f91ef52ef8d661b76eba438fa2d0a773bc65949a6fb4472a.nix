@@ -21,7 +21,7 @@
       synopsis = "Generate a bash completion from the GHC manpage";
       description = "Parses the output of GHC's man page and generates a bash completion file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-man-completion" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

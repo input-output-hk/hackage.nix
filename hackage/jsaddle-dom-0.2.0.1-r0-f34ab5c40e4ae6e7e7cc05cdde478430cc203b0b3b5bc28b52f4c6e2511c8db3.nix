@@ -21,7 +21,7 @@
       synopsis = "DOM library that uses jsaddle to support both GHCJS and WebKitGTK";
       description = "Documentent Object Model (DOM) functions implemented using jsaddle.\nIt works with both GHCJS and GHC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,19 +31,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ]
+          ]
           else [
             (hsPkgs."haskell-gi-base" or (errorHandler.buildDepError "haskell-gi-base"))
             (hsPkgs."gi-glib" or (errorHandler.buildDepError "gi-glib"))
             (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
             (hsPkgs."gi-webkit" or (errorHandler.buildDepError "gi-webkit"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

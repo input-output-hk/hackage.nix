@@ -21,7 +21,7 @@
       synopsis = "A framework for declaratively writing curl based API tests";
       description = "Please see the README on Github at <https://github.com/aviaviavi/curl-runnings#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "curl-runnings" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "curl-runnings-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

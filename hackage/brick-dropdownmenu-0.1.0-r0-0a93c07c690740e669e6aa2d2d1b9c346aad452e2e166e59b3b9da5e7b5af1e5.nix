@@ -21,7 +21,7 @@
       synopsis = "A drop-down menu widget for brick.";
       description = "A simple drop-down menu widget for the declarative text user interface library brick.\nEach submenu and menu item can have an associated global key binding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."pointedlist" or (errorHandler.buildDepError "pointedlist"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brick-dropdownmenu-demo" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if flags.demo then true else false;
-          };
         };
       };
-    }
+    };
+  }

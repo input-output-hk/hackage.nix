@@ -6,8 +6,8 @@
         nix = import ../hackage/HJVM-0.1-r0-33dc9cd7532d55d93f8f48f4af9af3c78cc15ef39f4d979094e2e2ccebee8c63.nix;
         revNum = 0;
         sha256 = "33dc9cd7532d55d93f8f48f4af9af3c78cc15ef39f4d979094e2e2ccebee8c63";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

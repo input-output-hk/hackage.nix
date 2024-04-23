@@ -21,7 +21,7 @@
       synopsis = "Profunctor extras";
       description = "Profunctor extras";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."semigroupoid-extras" or (errorHandler.buildDepError "semigroupoid-extras"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

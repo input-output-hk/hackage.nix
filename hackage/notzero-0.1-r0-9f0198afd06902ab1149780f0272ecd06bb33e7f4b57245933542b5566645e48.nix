@@ -21,7 +21,7 @@
       synopsis = "A data type for representing numeric values, except zero.";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nA data type for representing numeric values, except zero. This might be useful in working with process exit codes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

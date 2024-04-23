@@ -21,13 +21,13 @@
       synopsis = "Filter to convert plain text files to RTF";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "txt2rtf" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for manipulating XML documents";
       description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,23 +29,23 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (if flags.bytestringinbase
+          ])) ++ (if flags.bytestringinbase
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "Canonicalise" = { buildable = true; };
         "CanonicaliseLazy" = { buildable = true; };
@@ -54,6 +54,6 @@
         "Validate" = { buildable = true; };
         "MkOneOf" = { buildable = true; };
         "DtdToHaskell" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

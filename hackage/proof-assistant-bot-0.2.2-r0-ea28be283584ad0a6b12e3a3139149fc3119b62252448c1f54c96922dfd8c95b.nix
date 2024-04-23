@@ -21,7 +21,7 @@
       synopsis = "Telegram bot for proof assistants";
       description = "Bridge between Telegram Bot and several proof assistants.\n\nCurrently following proof assistant supported: Agda, Arend, Coq, Idris 2, Lean, Rzk\n\nSee README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,17 +41,17 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."Agda" or (errorHandler.buildDepError "Agda"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "proof-assistant-bot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."proof-assistant-bot" or (errorHandler.buildDepError "proof-assistant-bot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

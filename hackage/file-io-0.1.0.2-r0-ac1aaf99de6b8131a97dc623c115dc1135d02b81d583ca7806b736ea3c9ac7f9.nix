@@ -21,25 +21,25 @@
       synopsis = "Basic file IO operations via 'OsPath'";
       description = "Basic file IO operations like Prelude, but for 'OsPath'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if flags.os-string
+          ])) ++ (if flags.os-string
           then [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."os-string" or (errorHandler.buildDepError "os-string"))
-            ]
+          ]
           else [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "chunked XML parsing using iteratees";
       description = "Provides chunked XML parsing using iteratees";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
           (hsPkgs."List" or (errorHandler.buildDepError "List"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

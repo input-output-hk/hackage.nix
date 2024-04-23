@@ -21,7 +21,7 @@
       synopsis = "Monadic Javascript Compiler - Server Utilities";
       description = "Utilities to use Sunroof together with Kansas-Comet to create web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."sunroof-compiler" or (errorHandler.buildDepError "sunroof-compiler"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/queryparser-demo-0.1.0.0-r0-47d088b2f6b8a15c64c265597da336089381da26492968b86ddd9ed69113cde6.nix;
         revNum = 0;
         sha256 = "47d088b2f6b8a15c64c265597da336089381da26492968b86ddd9ed69113cde6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

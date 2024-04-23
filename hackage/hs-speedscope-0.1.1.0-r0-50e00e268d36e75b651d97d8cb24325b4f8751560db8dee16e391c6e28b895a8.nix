@@ -21,7 +21,7 @@
       synopsis = "Convert an eventlog into the speedscope json format";
       description = "Convert an eventlog into the speedscope json format. The interactive visualisation\ndisplays an approximate trace of the program and summary views akin to .prof files.\nThere is also support for parallel programs, each capability is rendered in its own\nprofile.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-speedscope" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hs-speedscope" or (errorHandler.buildDepError "hs-speedscope"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,24 +21,24 @@
       synopsis = "Pretty print haskell code with comments";
       description = "Generate code from haskell-src-exts AST";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sc-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."haskell-src-exts-sc" or (errorHandler.buildDepError "haskell-src-exts-sc"))
-            ];
+          ];
           buildable = if !flags.build-example then false else true;
-          };
         };
       };
-    }
+    };
+  }

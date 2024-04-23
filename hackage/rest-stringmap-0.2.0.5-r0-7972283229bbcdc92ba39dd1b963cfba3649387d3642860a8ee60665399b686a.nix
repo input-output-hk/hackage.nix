@@ -21,7 +21,7 @@
       synopsis = "Maps with stringy keys that can be transcoded to JSON and XML.";
       description = "Maps with stringy keys that can be transcoded to JSON and XML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."json-schema" or (errorHandler.buildDepError "json-schema"))
           (hsPkgs."tostring" or (errorHandler.buildDepError "tostring"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

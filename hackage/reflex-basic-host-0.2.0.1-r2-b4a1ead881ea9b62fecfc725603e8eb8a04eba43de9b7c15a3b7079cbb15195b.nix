@@ -21,7 +21,7 @@
       synopsis = "A basic Reflex host for backend work";
       description = "<<https://raw.githubusercontent.com/qfpl/assets/master/data61-transparent-bg.png>>\n\nreflex-basic-host provides a basic Reflex host for backend work. It\nprovides instances for most of the important Reflex typeclasses.\n\n@Reflex.Host.Basic.basicHostWithQuit@ is the main entry point for\nrunning FRP code. Use the @TriggerEvent@ instance to construct\n@Event@s and control when they fire, and use the @PerformEvent@\ninstance to take actions in response to @Event@ firings.\n\nFrom @reflex >= 0.7.1.0@, there is an equivalent\n@Reflex.Host.Headless@ module, so this package is now deprecated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,26 +33,26 @@
           (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (errorHandler.buildDepError "reflex-basic-host"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "counter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (errorHandler.buildDepError "reflex-basic-host"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "multithread" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (errorHandler.buildDepError "reflex-basic-host"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

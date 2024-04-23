@@ -21,26 +21,26 @@
       synopsis = "";
       description = "A Haskell binding to CaboCha <http://taku910.github.io/cabocha>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."cabocha" or (errorHandler.sysDepError "cabocha")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cabocha" or (errorHandler.buildDepError "cabocha"))
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

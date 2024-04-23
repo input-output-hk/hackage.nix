@@ -21,7 +21,7 @@
       synopsis = "Terminal client for the Mattermost chat system";
       description = "This is a terminal client for the Mattermost chat\nsystem. Please see the README for a list of\nfeatures and information on getting started.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "matterhorn" = {
@@ -66,10 +66,10 @@
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test_messages" = {
           depends = [
@@ -110,9 +110,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

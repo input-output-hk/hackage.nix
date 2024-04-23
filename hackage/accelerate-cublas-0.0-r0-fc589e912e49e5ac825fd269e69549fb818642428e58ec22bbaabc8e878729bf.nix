@@ -21,7 +21,7 @@
       synopsis = "Basic Linear Algebra using native CUBLAS library";
       description = "Basic Linear Algebra using native CUBLAS library.\nCurrently only support for the most basic batched matrix operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "accelerate-cublas-demo" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."cublas" or (errorHandler.buildDepError "cublas"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

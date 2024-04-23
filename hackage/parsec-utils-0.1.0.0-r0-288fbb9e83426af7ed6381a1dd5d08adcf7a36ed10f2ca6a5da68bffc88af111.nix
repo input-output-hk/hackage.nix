@@ -21,14 +21,14 @@
       synopsis = "Utility functions and combinators for Text.Parsec";
       description = "Utility functions and combinators for Text.Parsec that\nallow more compact code in common use cases";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Color spaces and conversions between them";
       description = "Please see the README on GitHub at <https://github.com/lehins/Color#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,19 +46,19 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
             (hsPkgs."massiv-test" or (errorHandler.buildDepError "massiv-test"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."Color" or (errorHandler.buildDepError "Color"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "conversion" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

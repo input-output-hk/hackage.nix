@@ -6,8 +6,8 @@
         nix = import ../hackage/theoremquest-client-0.0.0-r0-36064f804c412d077d4ab25538f6749c671d5a4314493d6f2c34e84e88395e05.nix;
         revNum = 0;
         sha256 = "36064f804c412d077d4ab25538f6749c671d5a4314493d6f2c34e84e88395e05";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

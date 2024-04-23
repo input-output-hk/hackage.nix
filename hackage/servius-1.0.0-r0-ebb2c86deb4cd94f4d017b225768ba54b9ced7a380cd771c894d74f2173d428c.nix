@@ -21,7 +21,7 @@
       synopsis = "Serve Shakespearean templates via Warp";
       description = "Does not support any variable interpolation. Supports Hamlet and Lucius files (must have .hamlet and .lucius file extensions, respectively).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "servius" = {
@@ -42,9 +42,9 @@
             (hsPkgs."shakespeare-css" or (errorHandler.buildDepError "shakespeare-css"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

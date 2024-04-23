@@ -21,7 +21,7 @@
       synopsis = "a Rake like task management tool";
       description = "smart per project code snippets";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."air" or (errorHandler.buildDepError "air"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nemesis" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."air" or (errorHandler.buildDepError "air"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

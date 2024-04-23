@@ -21,7 +21,7 @@
       synopsis = "Dependent finite maps (partial dependent products)";
       description = "Provides a type called @DMap@ which generalizes\n@Data.Map.Map@, allowing keys to specify the type\nof value that can be associated with them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."constraints-extras" or (errorHandler.buildDepError "constraints-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Write functions in tacit (pointless) style using Applicative and De Bruijn index notation.";
       description = "Write functions in tacit (pointless) style using Applicative and De Bruijn index notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

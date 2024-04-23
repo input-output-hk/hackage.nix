@@ -21,7 +21,7 @@
       synopsis = "SIMD-based JSON semi-indexer";
       description = "Please see the README on GitHub at <https://github.com/haskell-works/hw-json-simd#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-json-simd" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-json-simd" or (errorHandler.buildDepError "hw-json-simd"))
-            ] ++ (pkgs.lib).optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-json-simd-test" = {
           depends = [
@@ -60,21 +60,21 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-json-simd" or (errorHandler.buildDepError "hw-json-simd"))
-            ] ++ (pkgs.lib).optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."hw-json-simd" or (errorHandler.buildDepError "hw-json-simd"))
-            ] ++ (pkgs.lib).optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

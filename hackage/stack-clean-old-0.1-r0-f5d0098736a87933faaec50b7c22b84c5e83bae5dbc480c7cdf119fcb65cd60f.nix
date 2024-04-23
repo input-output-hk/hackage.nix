@@ -21,7 +21,7 @@
       synopsis = "Clean away old stack build artefacts";
       description = "A tool for cleaning away old stack snapshots and stack-work builds\nto recover diskspace.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-clean-old" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

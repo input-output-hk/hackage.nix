@@ -6,8 +6,8 @@
         nix = import ../hackage/neko-lib-0.0.1.0-r0-3d785ac76eaba86fc57e8592a45238d222a967f0144538be0905bf701ffb24ce.nix;
         revNum = 0;
         sha256 = "3d785ac76eaba86fc57e8592a45238d222a967f0144538be0905bf701ffb24ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

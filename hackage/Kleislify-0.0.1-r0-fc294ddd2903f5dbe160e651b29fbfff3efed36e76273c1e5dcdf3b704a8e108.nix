@@ -21,11 +21,11 @@
       synopsis = "Variants of Control.Arrow functions, specialised to kleislis. ";
       description = "Avoids boxing into Control.Arrow.Kleisli values. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

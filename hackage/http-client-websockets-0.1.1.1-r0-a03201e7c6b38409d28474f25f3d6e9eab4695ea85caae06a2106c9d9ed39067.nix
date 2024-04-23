@@ -21,7 +21,7 @@
       synopsis = "Glue code for http-client and websockets";
       description = "Glue code for http-client and websockets, so that\nyou can use a @Manager@ from http-client to create\na WebSocket connection.\n\nThis way, all applicable @Manager@ options like\nTLS or proxy settings can be reused.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."http-client-websockets" or (errorHandler.buildDepError "http-client-websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

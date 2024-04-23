@@ -21,7 +21,7 @@
       synopsis = "A fork of the popular websockets package. It is used for the practical assignments of the University of Twente. A sensible and clean way to write WebSocket-capable servers in Haskell.";
       description = "A fork of the popular websockets package. It is used for the practical assignments of the University of Twente.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

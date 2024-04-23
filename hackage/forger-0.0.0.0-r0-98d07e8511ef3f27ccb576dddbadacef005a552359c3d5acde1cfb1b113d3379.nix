@@ -21,20 +21,20 @@
       synopsis = "Library for generating fake placeholder data";
       description = "This is a library for generating fake placeholder data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "forger" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."forger" or (errorHandler.buildDepError "forger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

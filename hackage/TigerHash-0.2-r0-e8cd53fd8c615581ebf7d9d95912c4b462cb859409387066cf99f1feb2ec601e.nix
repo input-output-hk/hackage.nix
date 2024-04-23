@@ -21,7 +21,7 @@
       synopsis = "TigerHash with C implementation";
       description = "This library provides Tiger Hash algorithm implemented in C\nand built with Haskell interface. As well there is implementation\nof Merkle Tree known as TTH (Tiger Tree Hash).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

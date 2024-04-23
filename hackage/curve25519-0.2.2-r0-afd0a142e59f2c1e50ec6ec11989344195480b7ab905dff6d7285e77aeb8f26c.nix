@@ -21,16 +21,16 @@
       synopsis = "Fast implementations of the curve25519 elliptic curve primitives.";
       description = "Haskell bindings and extensions to the curve25519-donna\ncodebase.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-curve25519" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

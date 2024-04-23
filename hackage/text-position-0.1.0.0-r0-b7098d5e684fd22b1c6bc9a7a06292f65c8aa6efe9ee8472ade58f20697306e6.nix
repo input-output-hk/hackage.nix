@@ -21,15 +21,15 @@
       synopsis = "Handling positions in text and position-tagging it.";
       description = "This package provides tools for tagging text with\npositions (line, column, character), and getting position\naware tokens from lexical analysis (see regex-applicative\npackage). It is based on Advances, a thin abstraction over\nregular expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
             (hsPkgs."text-position" or (errorHandler.buildDepError "text-position"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

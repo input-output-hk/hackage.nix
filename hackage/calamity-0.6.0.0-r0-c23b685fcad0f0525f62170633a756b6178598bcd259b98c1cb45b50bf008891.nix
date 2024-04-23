@@ -21,7 +21,7 @@
       synopsis = "A library for writing discord bots in haskell";
       description = "Please see the README on GitHub at <https://github.com/simmsb/calamity#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -75,8 +75,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."optics" or (errorHandler.buildDepError "optics"))
           (hsPkgs."aeson-optics" or (errorHandler.buildDepError "aeson-optics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

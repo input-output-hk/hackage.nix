@@ -6,8 +6,8 @@
         nix = import ../hackage/word-vector-0.1.0.0-r0-27e342ddf1b9b689bc471c7e0fb67d4378dbeb99ac0c569224ce3006645bdf0d.nix;
         revNum = 0;
         sha256 = "27e342ddf1b9b689bc471c7e0fb67d4378dbeb99ac0c569224ce3006645bdf0d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

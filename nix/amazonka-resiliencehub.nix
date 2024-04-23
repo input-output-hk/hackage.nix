@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-resiliencehub-2.0-r0-7b2dc2871e1f8f2929d7a3accc790616eca28f9c06b57c8599ee03f3dc20cff3.nix;
         revNum = 0;
         sha256 = "7b2dc2871e1f8f2929d7a3accc790616eca28f9c06b57c8599ee03f3dc20cff3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

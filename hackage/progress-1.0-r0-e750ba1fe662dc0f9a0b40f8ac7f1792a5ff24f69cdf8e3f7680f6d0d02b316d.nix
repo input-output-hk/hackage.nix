@@ -21,14 +21,14 @@
       synopsis = "Simple progress tracking & projection library";
       description = "Given a some \"units of work\" and points in time,\nwe (linearly) project the time until completion\nand also keep track of progress made thus far.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

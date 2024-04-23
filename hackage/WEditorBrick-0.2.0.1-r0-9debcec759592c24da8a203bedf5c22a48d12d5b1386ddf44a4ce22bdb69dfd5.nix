@@ -21,7 +21,7 @@
       synopsis = "Text-editor widget with dynamic line-wrapping for use with Brick.";
       description = "This package provides a text-editor widget for\n@<http://hackage.haskell.org/package/brick brick>@  that supports line\nwrapping with dynamic resizing. The editor functionality is extensible (e.g.,\ncustom wrapping and hyphenation) via the\n@<http://hackage.haskell.org/package/WEditor WEditor>@ package.\n\nAlso see @<http://hackage.haskell.org/package/WEditorHyphen WEditorHyphen>@\nfor  language-specific hyphenation rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."WEditor" or (errorHandler.buildDepError "WEditor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brick-example" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."WEditorBrick" or (errorHandler.buildDepError "WEditorBrick"))
             (hsPkgs."WEditor" or (errorHandler.buildDepError "WEditor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/vocoder-0.1.0.0-r0-b63d9cc8c469fc7f2e8f51101d012c879721441d410b8e5d0ae80d3a6f6385c4.nix;
         revNum = 0;
         sha256 = "b63d9cc8c469fc7f2e8f51101d012c879721441d410b8e5d0ae80d3a6f6385c4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

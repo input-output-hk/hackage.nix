@@ -21,7 +21,7 @@
       synopsis = "Perform basic syntax and deliverability checks on email addresses.";
       description = "Validate an email address using three techniques:\n\n  * Ensuring that the length of local and domain parts is within the\n    RFC-specified limits.\n\n  * A syntax check using a regular expression, or the full RFC 5322\n    grammar (see the @--rfc5322@ option).\n\n  * Confirmation of the existence of an @MX@ record for the domain part of\n    the address. This is not required; in fact many domains accept mail\n    via an @A@ record for e.g. example.com which is used in lieu of an @MX@\n    record. This behavior can be controlled via the @--accept-a@ flag.\n\nThese checks are performed in parallel using the number of available\nthreads. To increase the number of threads, you can pass the\nappropriate flag to the GHC runtime.\n\nThis will set the number of threads to 25:\n\n@\n$ email-validator +RTS -N25 < addresses.csv\n@\n\n/Input/\n\nThe @input@ (via stdin) should be a list of email addresses,\none per line. Empty lines will be ignored.\n\n/Output/\n\nValid email addresses will be written to stdout, one per line.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "email-validator" = {
@@ -36,10 +36,10 @@
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -50,16 +50,16 @@
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

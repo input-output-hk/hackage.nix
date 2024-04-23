@@ -6,8 +6,8 @@
         nix = import ../hackage/frame-markdown-0.1-r0-4fe8e5fad2041454dda0fb1167f767303edd78eae742350d43aab989b9d1c93e.nix;
         revNum = 0;
         sha256 = "4fe8e5fad2041454dda0fb1167f767303edd78eae742350d43aab989b9d1c93e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Simple wikitext-like markup format implementation.";
       description = "This package implements a simple extensible wikitext-like markup format.\nCurrently the only implemented output format is XHTML.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

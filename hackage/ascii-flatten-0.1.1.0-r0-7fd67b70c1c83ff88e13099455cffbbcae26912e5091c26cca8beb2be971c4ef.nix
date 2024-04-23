@@ -21,21 +21,21 @@
       synopsis = "Flattens European non-ASCII characaters into ASCII";
       description = "Flattens European non-ASCII characaters into ASCII";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "ascii-flatten" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ascii-flatten" or (errorHandler.buildDepError "ascii-flatten"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

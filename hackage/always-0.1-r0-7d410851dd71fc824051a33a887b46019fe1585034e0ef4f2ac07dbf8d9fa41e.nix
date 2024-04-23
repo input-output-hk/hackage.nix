@@ -21,6 +21,6 @@
       synopsis = "provides a typeclass that is always satisfied";
       description = "provides a typeclass that is always satisfied. See documentation for more details.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -35,103 +35,103 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "API_Usage_Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Array_Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UF_Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Arith_Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Arith_Example2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Arith_Example3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "GetSetSymbol_Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UF_Example2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Const_Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boolector" or (errorHandler.buildDepError "boolector"))
-            ];
+          ];
           libs = [
             (pkgs."boolector" or (errorHandler.sysDepError "boolector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

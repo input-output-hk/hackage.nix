@@ -6,8 +6,8 @@
         nix = import ../hackage/mu-kafka-0.3.0.0-r0-bc9f3aeac8bbd72b0327ef07073a0c6aec2acd3ef59e4e774fb02f43871036d2.nix;
         revNum = 0;
         sha256 = "bc9f3aeac8bbd72b0327ef07073a0c6aec2acd3ef59e4e774fb02f43871036d2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

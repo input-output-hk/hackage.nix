@@ -21,7 +21,7 @@
       synopsis = "Servant router for non-server applications.";
       description = "Write Servant APIs to be routed without a server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-router-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant-router" or (errorHandler.buildDepError "servant-router"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."servant-blaze" or (errorHandler.buildDepError "servant-blaze"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Minimal webframework using fastcgi, libxml2 and libxslt.";
       description = "Fast template based web-framework using libxslt and fastcgi.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"))
           (hsPkgs."xslt" or (errorHandler.buildDepError "xslt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

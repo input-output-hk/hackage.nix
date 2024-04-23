@@ -21,7 +21,7 @@
       synopsis = "uniform wrapper for shake";
       description = "shake top level functions using Path (not filepath)\nversion 2 to include in uniform ecosystem,\ni.e. use text, Path,";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."uniform-json" or (errorHandler.buildDepError "uniform-json"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

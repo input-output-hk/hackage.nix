@@ -21,7 +21,7 @@
       synopsis = "Command line tool for extracting demarcated snippets from text files.";
       description = "Please see the README on Github at <https://github.com/robertfischer/the-snip#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "snip" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."the-snip" or (errorHandler.buildDepError "the-snip"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "the-snip-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."the-snip" or (errorHandler.buildDepError "the-snip"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

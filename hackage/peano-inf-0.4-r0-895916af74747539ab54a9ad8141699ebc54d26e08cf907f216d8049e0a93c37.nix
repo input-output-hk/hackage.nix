@@ -21,11 +21,11 @@
       synopsis = "Lazy Peano numbers including observable infinity value.";
       description = "Lazy Peano numbers including observable infinity value.\n\nThis data type was needed in a graph traversing algorithm.\n\nThis data type is ideal for lazy list length computation (the infinite value is not needed in this case).\nFor a comparison with other Peano number implementation, see <http://people.inf.elte.hu/divip/peano/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Data structure supporting partial orders";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "partialord-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

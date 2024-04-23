@@ -21,7 +21,7 @@
       synopsis = "Generate nix sources expr for the latest version of packages";
       description = "Please see [README](https://github.com/berberman/nvfetcher/blob/master/README.md)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nvfetcher" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."nvfetcher" or (errorHandler.buildDepError "nvfetcher"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -96,9 +96,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."nvfetcher" or (errorHandler.buildDepError "nvfetcher"))
-            ];
+          ];
           buildable = if !flags.build-example then false else true;
-          };
         };
       };
-    }
+    };
+  }

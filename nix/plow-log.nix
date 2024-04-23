@@ -6,13 +6,13 @@
         nix = import ../hackage/plow-log-0.1.6.0-r0-a649957ba4835de7843454bb0b8b69d723b82063869990ad3127f60e2a709dd1.nix;
         revNum = 0;
         sha256 = "a649957ba4835de7843454bb0b8b69d723b82063869990ad3127f60e2a709dd1";
-        };
+      };
       r1 = {
         nix = import ../hackage/plow-log-0.1.6.0-r1-74ee3ca911b2ff0124bb85dd0ceb5e6afc7f8a1db9b7dba243d81793f15b9c02.nix;
         revNum = 1;
         sha256 = "74ee3ca911b2ff0124bb85dd0ceb5e6afc7f8a1db9b7dba243d81793f15b9c02";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

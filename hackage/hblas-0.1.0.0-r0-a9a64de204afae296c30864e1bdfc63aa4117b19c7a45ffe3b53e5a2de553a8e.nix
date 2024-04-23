@@ -21,7 +21,7 @@
       synopsis = "BLAS and Lapack bindings for OpenBLAS";
       description = "User friendly, simple bindings to BLAS and Lapack, favoring OpenBLAS as the substrate.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,26 +29,26 @@
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ];
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ] ++ (pkgs.lib).optionals (!system.isWindows && !system.isOsx) [
+        ] ++ pkgs.lib.optionals (!system.isWindows && !system.isOsx) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
+      };
       tests = {
         "simple-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hblas" or (errorHandler.buildDepError "hblas"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

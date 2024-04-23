@@ -21,7 +21,7 @@
       synopsis = "An XMMS2 client.";
       description = "Vision (for the Voice) is an X-platform Music Multiplexing System 2\n(http://xmms2.xmms.se) client aiming to eventually fit its author's\nviews on listening to music, managing a music library etc. Only the\ntime can tell what will come of that :]";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "vision" = {
@@ -41,9 +41,9 @@
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."url" or (errorHandler.buildDepError "url"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

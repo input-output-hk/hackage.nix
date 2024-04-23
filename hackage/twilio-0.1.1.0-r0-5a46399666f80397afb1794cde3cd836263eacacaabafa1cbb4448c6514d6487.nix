@@ -21,7 +21,7 @@
       synopsis = "Twilio REST API library for Haskell";
       description = "This package exports bindings to Twilio's REST API (<https://www.twilio.com/docs/api/rest>). While we would like to have a complete binding to Twilio's REST API, this package is being developed on demand. If you need something that has not been implemented yet, please send a pull request or file an issue on GitHub (<https://github.com/markandrus/twilio-haskell>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."twilio" or (errorHandler.buildDepError "twilio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

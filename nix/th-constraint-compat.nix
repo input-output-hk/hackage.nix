@@ -6,8 +6,8 @@
         nix = import ../hackage/th-constraint-compat-0.0.1.0-r0-97d2b8410cad6198fb0b53e3401b999494bb7d6485304f52dade1f43e5d97496.nix;
         revNum = 0;
         sha256 = "97d2b8410cad6198fb0b53e3401b999494bb7d6485304f52dade1f43e5d97496";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

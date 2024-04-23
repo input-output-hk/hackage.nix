@@ -21,7 +21,7 @@
       synopsis = "Distributed hackage mirror";
       description = "Distributed hackage mirror, based on Hellnet.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hellage" = {
@@ -36,9 +36,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hellage-genmeta" = {
           depends = [
             (hsPkgs."hellnet" or (errorHandler.buildDepError "hellnet"))
@@ -56,9 +56,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "The Hayoo! search engine for Haskell API search on hackage";
       description = "The Hayoo! search engine based no the Holumbus framework provides a document indexer\nand a crawler to build indexes over Haddock generated API documentation and packages\nas well as a query interface for these indexes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hayooIndexer" = {
@@ -48,9 +48,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hayooSearch" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,11 +62,11 @@
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xhtml-combinators" or (errorHandler.buildDepError "xhtml-combinators"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."hack-handler-simpleserver" or (errorHandler.buildDepError "hack-handler-simpleserver"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hayooSnap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -83,9 +83,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xhtml-combinators" or (errorHandler.buildDepError "xhtml-combinators"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/chalkboard-viewer-0.1-r0-6f741b54dd32e683ca3d62c40d0000263eb8ccd9c7fcece1b1661d0222440f6a.nix;
         revNum = 0;
         sha256 = "6f741b54dd32e683ca3d62c40d0000263eb8ccd9c7fcece1b1661d0222440f6a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,29 +21,29 @@
       synopsis = "Simple ANSI terminal support, with Windows compatibility";
       description = "ANSI terminal support for Haskell: allows cursor movement, screen clearing, color output, showing or hiding the cursor, and\nchanging the title. Works on UNIX and Windows.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-          ] ++ (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optionals (system.isWindows) [
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ansi-terminal-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (system.isWindows) [
+          ] ++ pkgs.lib.optionals (system.isWindows) [
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
       };
-    }
+    };
+  }

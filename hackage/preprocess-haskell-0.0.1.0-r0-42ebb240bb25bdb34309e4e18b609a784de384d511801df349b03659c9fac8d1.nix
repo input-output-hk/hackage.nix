@@ -21,7 +21,7 @@
       synopsis = "Preprocess Haskell Repositories.";
       description = "Do all of the dirty work required to get a Haskell repo\nready for straightforward static-analysis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."here" or (errorHandler.buildDepError "here"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

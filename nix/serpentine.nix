@@ -6,8 +6,8 @@
         nix = import ../hackage/serpentine-0.2-r0-d4c3fb587c008875226c3618579ef47f422655dc4fe4b42471b7e72c40bb9822.nix;
         revNum = 0;
         sha256 = "d4c3fb587c008875226c3618579ef47f422655dc4fe4b42471b7e72c40bb9822";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A reusable library providing the core functionality of hledger";
       description = "A reusable library containing hledger's core functionality.\nThis is used by most hledger* packages so that they support the same\ncommon file formats, command line options, reports etc.\n\nhledger is a robust, cross-platform set of tools for tracking money,\ntime, or any other commodity, using double-entry accounting and a\nsimple, editable file format, with command-line, terminal and web\ninterfaces. It is a Haskell rewrite of Ledger, and one of the leading\nimplementations of Plain Text Accounting. Read more at:\n<https://hledger.org>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -70,9 +70,9 @@
           (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."pager" or (errorHandler.buildDepError "pager"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."pager" or (errorHandler.buildDepError "pager"));
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -122,11 +122,11 @@
             (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."pager" or (errorHandler.buildDepError "pager"));
-          buildable = if compiler.isGhc && (compiler.version).ge "9.0" && (compiler.isGhc && (compiler.version).lt "9.2")
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."pager" or (errorHandler.buildDepError "pager"));
+          buildable = if compiler.isGhc && compiler.version.ge "9.0" && (compiler.isGhc && compiler.version.lt "9.2")
             then false
             else true;
-          };
+        };
         "unittest" = {
           depends = [
             (hsPkgs."Decimal" or (errorHandler.buildDepError "Decimal"))
@@ -175,9 +175,9 @@
             (hsPkgs."uglymemo" or (errorHandler.buildDepError "uglymemo"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."pager" or (errorHandler.buildDepError "pager"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."pager" or (errorHandler.buildDepError "pager"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

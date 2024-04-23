@@ -21,7 +21,7 @@
       synopsis = "Types representing standard and non-standard currencies";
       description = "This package provides two types for representing currencies, one that\ncan only represent ISO4217 currencies, and one that can also represent\nnonstandard currencies.\n\nAn IsString instance is provided for convenience on the general type.\n\nInstances of Eq, Ord, and, Hashable are provided for use as keys.\n\nThe Enum instance provides a mapping to/from ISO4217 numeric codes for\ncurrencies that have such a code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."iso3166-country-codes" or (errorHandler.buildDepError "iso3166-country-codes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

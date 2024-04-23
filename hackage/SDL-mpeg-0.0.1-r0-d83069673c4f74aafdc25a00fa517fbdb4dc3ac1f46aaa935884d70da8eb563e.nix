@@ -21,15 +21,15 @@
       synopsis = "Binding to the SMPEG library";
       description = "Binding to the SMPEG library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         libs = [ (pkgs."smpeg" or (errorHandler.sysDepError "smpeg")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

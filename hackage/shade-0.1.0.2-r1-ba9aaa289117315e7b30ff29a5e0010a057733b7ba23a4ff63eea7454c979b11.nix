@@ -21,20 +21,20 @@
       synopsis = "A control structure used to combine heterogenous types with delayed effects.";
       description = "Please see the readme.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "shade" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shade" or (errorHandler.buildDepError "shade"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

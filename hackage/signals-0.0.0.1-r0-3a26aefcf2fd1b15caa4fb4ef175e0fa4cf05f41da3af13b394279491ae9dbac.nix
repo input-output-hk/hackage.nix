@@ -21,7 +21,7 @@
       synopsis = "Stream Processing for Embedded Domain Specific Languages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."exception-mtl" or (errorHandler.buildDepError "exception-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

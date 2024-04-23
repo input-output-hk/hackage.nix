@@ -6,8 +6,8 @@
         nix = import ../hackage/aeson-single-field-0.1.0.0-r0-d5dfa92ab95b9733bd10776edd49be020a7cedbbb8f00cf0e434ef25fcc2ad8b.nix;
         revNum = 0;
         sha256 = "d5dfa92ab95b9733bd10776edd49be020a7cedbbb8f00cf0e434ef25fcc2ad8b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

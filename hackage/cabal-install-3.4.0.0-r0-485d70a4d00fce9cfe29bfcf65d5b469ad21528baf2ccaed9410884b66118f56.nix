@@ -14,7 +14,7 @@
       debug-conflict-sets = false;
       debug-tracetree = false;
       lukko = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "cabal-install"; version = "3.4.0.0"; };
@@ -27,7 +27,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal" = {
@@ -63,28 +63,28 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
             (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ]) ++ (pkgs.lib).optionals (flags.native-dns) (if system.isWindows
+          ]) ++ pkgs.lib.optionals (flags.native-dns) (if system.isWindows
             then [ (hsPkgs."windns" or (errorHandler.buildDepError "windns")) ]
             else [
               (hsPkgs."resolv" or (errorHandler.buildDepError "resolv"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if flags.lukko
+            ])) ++ (if flags.lukko
             then [ (hsPkgs."lukko" or (errorHandler.buildDepError "lukko")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
-              ])) ++ (pkgs.lib).optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"));
-          libs = (pkgs.lib).optional (system.isAix) (pkgs."bsd" or (errorHandler.sysDepError "bsd"));
+            ])) ++ pkgs.lib.optional (flags.debug-conflict-sets) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (flags.debug-tracetree) (hsPkgs."tracetree" or (errorHandler.buildDepError "tracetree"));
+          libs = pkgs.lib.optional (system.isAix) (pkgs."bsd" or (errorHandler.sysDepError "bsd"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generate more HTML with Lucid";
       description = "Generate more HTML with Lucid - Bootstrap, Rdash, Vega-Lite, Email.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "site-gen" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."lucid-extras" or (errorHandler.buildDepError "lucid-extras"))
             (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

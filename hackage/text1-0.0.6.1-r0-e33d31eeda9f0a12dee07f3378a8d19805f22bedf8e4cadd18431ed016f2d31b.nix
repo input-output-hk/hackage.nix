@@ -21,7 +21,7 @@
       synopsis = "Non-empty values of `Data.Text`.";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nNon-empty values of `Data.Text`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hunit" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text1" or (errorHandler.buildDepError "text1"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quickcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text1" or (errorHandler.buildDepError "text1"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

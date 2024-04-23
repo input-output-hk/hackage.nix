@@ -21,7 +21,7 @@
       synopsis = "Rename every file in a directory with his SHA1 hash.";
       description = "hashrename is a small program to that renames every file in a given\ndirectory by using (a portion) of its SHA1 hash. To clean up a messy\ndirectory call hashrename <path> or just hashrename to use the current one.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hashrename" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

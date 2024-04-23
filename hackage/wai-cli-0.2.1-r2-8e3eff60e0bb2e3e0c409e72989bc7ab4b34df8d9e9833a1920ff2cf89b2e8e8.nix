@@ -21,7 +21,7 @@
       synopsis = "Command line runner for Wai apps (using Warp) with TLS, CGI, socket activation & graceful shutdown";
       description = "Command line runner for Wai apps (using Warp) with support for UNIX domain sockets,\nTLS (can be turned off with a cabal flag to avoid compiling the TLS library), CGI,\nsocket activation (systemd-compatible, but see https://codeberg.org/valpackett/soad for a more interesting (and not linux-only) thing than what systemd does),\nand graceful shutdown (on TERM signal).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -37,11 +37,11 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ] ++ (pkgs.lib).optional (flags.tls) (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))) ++ (pkgs.lib).optional (flags.fastcgi) (hsPkgs."wai-handler-fastcgi" or (errorHandler.buildDepError "wai-handler-fastcgi"))) ++ (pkgs.lib).optionals (!system.isWindows && flags.unixsockets) [
+        ] ++ pkgs.lib.optional (flags.tls) (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))) ++ pkgs.lib.optional (flags.fastcgi) (hsPkgs."wai-handler-fastcgi" or (errorHandler.buildDepError "wai-handler-fastcgi"))) ++ pkgs.lib.optionals (!system.isWindows && flags.unixsockets) [
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."socket-activation" or (errorHandler.buildDepError "socket-activation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

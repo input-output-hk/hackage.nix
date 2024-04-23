@@ -21,7 +21,7 @@
       synopsis = "An Enigma machine simulator with display.";
       description = "The crypto-enigma package is an Enigma machine simulator\nwith rich display and machine state details.\n\nFor basic functionality, including some introspection of machine state\nand the mappings proformed, simply\n\n> > import Crypto.Enigma\n\nFor richer display functionality additionally\n\n> > import Crypto.Enigma.Display";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

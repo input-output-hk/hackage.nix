@@ -21,7 +21,7 @@
       synopsis = "Open your editor, pipe the output to the system clipboard";
       description = "This opens up your @$EDITOR@ or @$VISUAL@ using the\n<https://hackage.haskell.org/package/editor-open editor-open library.> It\nthen takes the edited text and sends it to the X11 clipboard.\n\nAs such, this will only work if you have X11. Translated, this is limited to\nLinux and BSD.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pipeclip" = {
@@ -31,9 +31,9 @@
             (hsPkgs."editor-open" or (errorHandler.buildDepError "editor-open"))
             (hsPkgs."Hclip" or (errorHandler.buildDepError "Hclip"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Mecha is a solid modeling language geared for machine design.";
       description = "Mecha is a constructive solid modeling language based on\nfunctional-representation primitives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

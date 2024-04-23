@@ -21,7 +21,7 @@
       synopsis = "Utilities for modifying Skylighting syntaxes";
       description = "Functions for making alterations to @skylighting-core@ values ('SyntaxMap',\n'Syntax', 'Context', 'Rule', etc.).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."skylighting-core" or (errorHandler.buildDepError "skylighting-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

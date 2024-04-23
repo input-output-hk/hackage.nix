@@ -21,7 +21,7 @@
       synopsis = "relatively useful fractal functions";
       description = "A library for analysis and exploration of fractals, providing\nangled internal addresses, external ray tracing, nucleus and\nbond point finding, and iterations for images of the Mandelbrot\nSet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Train a neural network with MXNet in Haskell.";
       description = "High level APIs to rain a neural network with MXNet in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lenet" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."mxnet-nn" or (errorHandler.buildDepError "mxnet-nn"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

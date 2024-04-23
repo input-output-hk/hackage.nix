@@ -21,7 +21,7 @@
       synopsis = "Unicode normalization";
       description = "Fast Unicode 9.0 normalization in Haskell (NFC, NFKC, NFD, NFKD).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bitarray" or (errorHandler.buildDepError "bitarray"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "extras" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "quickcheck" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -50,9 +50,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ] ++ (pkgs.lib).optional (flags.has-icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
+          ] ++ pkgs.lib.optional (flags.has-icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
           buildable = true;
-          };
+        };
         "ucd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,10 +60,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = ([
@@ -76,9 +76,9 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ] ++ (pkgs.lib).optional (flags.has-icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."path" or (errorHandler.buildDepError "path"));
+          ] ++ pkgs.lib.optional (flags.has-icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."path" or (errorHandler.buildDepError "path"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

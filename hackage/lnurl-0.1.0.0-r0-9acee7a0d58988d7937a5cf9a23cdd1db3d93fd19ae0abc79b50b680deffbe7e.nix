@@ -21,7 +21,7 @@
       synopsis = "Support for developing against the LNURL protocol";
       description = "See https://github.com/GambolingPangolin/lnurl/blob/master/lnurl/README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

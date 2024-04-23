@@ -21,24 +21,24 @@
       synopsis = "low-level binding to libpq";
       description = "This is a binding to libpq: the C application\nprogrammer's interface to PostgreSQL. libpq is a\nset of library functions that allow client\nprograms to pass queries to the PostgreSQL\nbackend server and to receive the results of\nthese queries.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
-        libs = (pkgs.lib).optionals (!flags.use-pkg-config) ([
+        ];
+        libs = pkgs.lib.optionals (!flags.use-pkg-config) ([
           (pkgs."pq" or (errorHandler.sysDepError "pq"))
-          ] ++ (pkgs.lib).optionals (system.isOpenbsd) [
+        ] ++ pkgs.lib.optionals (system.isOpenbsd) [
           (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
           (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
-          ]);
-        pkgconfig = (pkgs.lib).optional (flags.use-pkg-config) (pkgconfPkgs."libpq" or (errorHandler.pkgConfDepError "libpq"));
+        ]);
+        pkgconfig = pkgs.lib.optional (flags.use-pkg-config) (pkgconfPkgs."libpq" or (errorHandler.pkgConfDepError "libpq"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

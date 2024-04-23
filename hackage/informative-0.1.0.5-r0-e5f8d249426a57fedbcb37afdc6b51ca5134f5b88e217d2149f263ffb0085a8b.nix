@@ -21,7 +21,7 @@
       synopsis = "A yesod subsite serving a wiki.";
       description = "A yesod subsite serving a wiki.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "informative-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

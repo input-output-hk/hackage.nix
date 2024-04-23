@@ -21,16 +21,16 @@
       synopsis = "Extract a part from CommonMark/Markdown docs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "submark" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."submark" or (errorHandler.buildDepError "submark"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hlint" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."submark" or (errorHandler.buildDepError "submark"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

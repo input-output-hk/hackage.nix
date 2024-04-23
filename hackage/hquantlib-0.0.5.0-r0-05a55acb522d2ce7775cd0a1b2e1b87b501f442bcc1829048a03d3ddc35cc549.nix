@@ -21,7 +21,7 @@
       synopsis = "HQuantLib is a port of essencial parts of QuantLib to Haskell";
       description = "HQuantLib is intended to be a functional style port of QuantLib (<http://quantlib.org>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."hquantlib-time" or (errorHandler.buildDepError "hquantlib-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mctest" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "main-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

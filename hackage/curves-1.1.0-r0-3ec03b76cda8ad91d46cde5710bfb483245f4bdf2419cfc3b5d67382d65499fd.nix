@@ -21,7 +21,7 @@
       synopsis = "Library for drawing curve based images.";
       description = "Curves is an easy to use library for creating images. The\nbasic primitive is a curve, which, in the simplest case, is\na continuous function from a scalar parameter to a\n2-dimensional point on the curve. Images are rendered as\nPNG images.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

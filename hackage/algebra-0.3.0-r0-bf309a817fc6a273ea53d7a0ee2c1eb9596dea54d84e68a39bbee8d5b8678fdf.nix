@@ -21,7 +21,7 @@
       synopsis = "Constructive abstract algebra";
       description = "Constructive abstract algebra";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."representable-tries" or (errorHandler.buildDepError "representable-tries"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

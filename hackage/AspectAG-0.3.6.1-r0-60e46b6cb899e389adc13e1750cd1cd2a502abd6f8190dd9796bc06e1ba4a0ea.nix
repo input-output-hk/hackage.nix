@@ -21,7 +21,7 @@
       synopsis = "Attribute Grammars in the form of an EDSL";
       description = "Library of strongly typed Attribute Grammars implemented using type-level programming   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Chart generation from tdigest";
       description = "Chart generation from tdigest.\n\n@\n...\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tdigest-chart-examples" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

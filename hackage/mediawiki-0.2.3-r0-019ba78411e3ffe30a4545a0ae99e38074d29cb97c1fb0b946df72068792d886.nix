@@ -21,7 +21,7 @@
       synopsis = "Interfacing with the MediaWiki API";
       description = "A complete Haskell binding to the MediaWiki API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,20 +30,20 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."mime" or (errorHandler.buildDepError "mime"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "main" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "listCat" = {
           depends = [
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

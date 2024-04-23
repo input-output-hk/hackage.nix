@@ -21,7 +21,7 @@
       synopsis = "Wiki using HAppS, git or darcs, and pandoc.";
       description = "Gitit is a wiki program. Pages and uploaded files\nare stored in a git or darcs repository and may be modified\neither by using the VCS's command-line tools or through\nthe wiki's web interface. Pandoc's extended version\nof markdown is used as a markup language. Pages\ncan be exported in a number of different formats,\nincluding LaTeX, RTF, OpenOffice ODT, and MediaWiki\nmarkup. Gitit can be configured to display TeX math\n(using jsMath) and highlighted source code (using\nhighlighting-kate).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gitit" = {
@@ -51,18 +51,18 @@
             (hsPkgs."filestore" or (errorHandler.buildDepError "filestore"))
             (hsPkgs."datetime" or (errorHandler.buildDepError "datetime"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]) ++ (if flags.happstack
+          ]) ++ (if flags.happstack
             then [
               (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-              ]
+            ]
             else [
               (hsPkgs."HAppS-Server" or (errorHandler.buildDepError "HAppS-Server"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

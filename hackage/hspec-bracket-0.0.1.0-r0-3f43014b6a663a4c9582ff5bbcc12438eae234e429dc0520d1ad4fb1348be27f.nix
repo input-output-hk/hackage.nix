@@ -21,14 +21,14 @@
       synopsis = "The bracket definitions for Hspec";
       description = "This package provides dirty-hack implementation of\nbracket definitions for Hspec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

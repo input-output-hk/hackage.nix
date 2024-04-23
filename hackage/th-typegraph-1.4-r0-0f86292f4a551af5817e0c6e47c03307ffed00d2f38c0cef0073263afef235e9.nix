@@ -21,7 +21,7 @@
       synopsis = "Graph of the subtype relation";
       description = "This package is not the successor to th-typegraph-0.43, it is\na brand new package which forms the basis of a new package that\nwhat will eventually do what th-typegraph was supposed to.  What\nit *can* do is traverse the type \"TypeQ\", and includes versions\nof deriveSafeCopy and derivePathInfo that use the traversal to\navoid adding phantom types to the context of the instance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."userid" or (errorHandler.buildDepError "userid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "th-typegraph-tests" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."th-typegraph" or (errorHandler.buildDepError "th-typegraph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Cache for HXT XML Documents and other binary data";
       description = "Extension for caching XML documents and other binary data in cache directory\nof the local filesystem. The module exports a version of readDocument with the\nadditional cache functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."hxt-binary" or (errorHandler.buildDepError "hxt-binary"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

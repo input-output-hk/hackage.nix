@@ -21,16 +21,16 @@
       synopsis = "Strip version restrictions from Cabal files";
       description = "Strip version restrictions from build dependencies in Cabal files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jailbreak-cabal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

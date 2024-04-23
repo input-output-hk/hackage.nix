@@ -21,7 +21,7 @@
       synopsis = "Builds a services with docker and caches all of its intermediate stages";
       description = "A CLI tool to speed up multi-stage docker file builds by caching intermediate\nstages separately, so the can be used in successive builds.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "docker-build-cacher" = {
@@ -33,9 +33,9 @@
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

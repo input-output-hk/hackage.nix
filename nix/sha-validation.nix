@@ -6,8 +6,8 @@
         nix = import ../hackage/sha-validation-0.1.0.0-r0-412c651174f56a41eed68b9a6d97647b6798b9ac654bfa230db66042b553a41c.nix;
         revNum = 0;
         sha256 = "412c651174f56a41eed68b9a6d97647b6798b9ac654bfa230db66042b553a41c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

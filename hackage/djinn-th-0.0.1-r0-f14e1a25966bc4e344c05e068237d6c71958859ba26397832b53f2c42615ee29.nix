@@ -21,7 +21,7 @@
       synopsis = "Generate executable Haskell code from a type";
       description = "Djinn uses a theorem prover for intuitionistic\npropositional logic to generate a Haskell\nexpression when given a type.\n\nDjinn-TH uses Template Haskell to turn this\nexpression into executable code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

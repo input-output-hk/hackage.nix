@@ -14,7 +14,7 @@
       identifier = {
         name = "morpheus-graphql-subscriptions";
         version = "0.21.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2019 Daviti Nalchevanidze";
       maintainer = "d.nalchevanidze@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Morpheus GraphQL Subscriptions";
       description = "Build GraphQL APIs with your favourite functional language!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "morpheus-subscription-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

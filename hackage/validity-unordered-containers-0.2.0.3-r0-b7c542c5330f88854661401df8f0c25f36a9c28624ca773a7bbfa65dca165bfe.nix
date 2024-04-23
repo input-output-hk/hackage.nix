@@ -14,7 +14,7 @@
       identifier = {
         name = "validity-unordered-containers";
         version = "0.2.0.3";
-        };
+      };
       license = "MIT";
       copyright = "Copyright: (c) 2017-2020 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -24,7 +24,7 @@
       synopsis = "Validity instances for unordered-containers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

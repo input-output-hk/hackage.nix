@@ -25,16 +25,16 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.liquidhaskell or (pkgs.buildPackages.liquidhaskell or (errorHandler.setupDepError "liquidhaskell")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."liquid-ghc-prim" or (errorHandler.buildDepError "liquid-ghc-prim"))
           (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "9") (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "9") (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

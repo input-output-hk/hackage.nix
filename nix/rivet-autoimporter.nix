@@ -6,8 +6,8 @@
         nix = import ../hackage/rivet-autoimporter-0.1.0.0-r0-f9fb4ff0a613c3decdc3729364a73e9ee69735db318f65bfec5d3038b014e5f9.nix;
         revNum = 0;
         sha256 = "f9fb4ff0a613c3decdc3729364a73e9ee69735db318f65bfec5d3038b014e5f9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

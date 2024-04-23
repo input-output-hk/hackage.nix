@@ -21,7 +21,7 @@
       synopsis = "Fast byte serializer and unserializer";
       description = "Fast byte serializer and unserializer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-packer" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."packer" or (errorHandler.buildDepError "packer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Serve a WAI application with http-pony";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."http-pony-transformer-http" or (errorHandler.buildDepError "http-pony-transformer-http"))
           (hsPkgs."http-pony-transformer-startline" or (errorHandler.buildDepError "http-pony-transformer-startline"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Interpretation of leap second files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."leapseconds" or (errorHandler.buildDepError "leapseconds"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

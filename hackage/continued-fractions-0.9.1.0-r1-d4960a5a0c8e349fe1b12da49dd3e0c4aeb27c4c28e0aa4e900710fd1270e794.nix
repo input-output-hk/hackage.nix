@@ -21,11 +21,11 @@
       synopsis = "Continued fractions.";
       description = "A type and some functions for manipulating and\nevaluating continued fractions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

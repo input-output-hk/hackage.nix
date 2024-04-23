@@ -21,7 +21,7 @@
       synopsis = "Methods for composing monads.";
       description = "Methods for composing monads, including an IO monad transformer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."monad-products" or (errorHandler.buildDepError "monad-products"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A list-like type for lazy sequences, with a user-defined termination value.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."empty" or (errorHandler.buildDepError "empty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

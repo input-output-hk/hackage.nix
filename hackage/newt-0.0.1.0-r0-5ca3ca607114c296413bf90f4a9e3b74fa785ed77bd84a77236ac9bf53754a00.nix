@@ -21,7 +21,7 @@
       synopsis = "A trivially simple app to create things from simple templates.";
       description = "Instantiates text things from templates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,14 @@
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "newt" = {
           depends = [
@@ -47,11 +47,11 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-newt" = {
           depends = [
             (hsPkgs."newt" or (errorHandler.buildDepError "newt"))
@@ -62,14 +62,14 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

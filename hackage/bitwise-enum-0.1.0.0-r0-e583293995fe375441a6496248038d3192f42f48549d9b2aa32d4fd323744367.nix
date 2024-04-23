@@ -21,7 +21,7 @@
       synopsis = "Bitwise operations on bounded enumerations";
       description = "Bitwise operations on bounded enumerations.\n\n[\"Data.Enum.Set\"] Constant-time sets using bit flags.\n\n[\"Data.Enum.Memo\"] Constant-time lookup memoization for functions on enumerated types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "enumset-test-suite" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "enumset-benchmarks" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

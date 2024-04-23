@@ -21,15 +21,15 @@
       synopsis = "Evaluate Haskell expressions using Nix to get packages";
       description = "Evaluate Haskell expressions using Nix to get packages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."nix-eval" or (errorHandler.buildDepError "nix-eval"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

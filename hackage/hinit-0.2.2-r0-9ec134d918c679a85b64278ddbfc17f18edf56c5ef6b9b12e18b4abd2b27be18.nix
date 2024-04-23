@@ -21,7 +21,7 @@
       synopsis = "Generic project initialization tool";
       description = "hinit is a generic project initialization tool similar to cookiecutter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hi" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."hinit" or (errorHandler.buildDepError "hinit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hinit-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."hinit" or (errorHandler.buildDepError "hinit"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

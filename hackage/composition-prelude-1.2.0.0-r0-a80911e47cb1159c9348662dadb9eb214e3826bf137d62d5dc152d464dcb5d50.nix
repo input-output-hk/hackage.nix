@@ -21,11 +21,11 @@
       synopsis = "Higher-order function combinators";
       description = "Replacement for `composition` or `composition-exta`, exporting everything in one sane module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

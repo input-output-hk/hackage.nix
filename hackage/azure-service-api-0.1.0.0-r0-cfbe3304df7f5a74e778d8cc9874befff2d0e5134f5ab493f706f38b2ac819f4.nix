@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the Microsoft Azure Service Management API";
       description = "At the moment, this module only provides minimal\nfunctionality, just enough to support the\n\"distributed-process-azure\" package (Azure backend for\nCloud Haskell). However, the code is set up in such a way\nthat adding additional functionality should be relatively\nstraightforward; developers who wish to do will probably\nwant to consult the Windows Azure Service Management REST\nAPI Reference\n(<http://msdn.microsoft.com/en-us/library/windowsazure/ee460799.aspx>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

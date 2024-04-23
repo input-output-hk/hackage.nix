@@ -21,7 +21,7 @@
       synopsis = "Pixiv API binding based on servant-client";
       description = "Pixiv API binding based on servant-client.\nSee README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pixiv-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."pixiv" or (errorHandler.buildDepError "pixiv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

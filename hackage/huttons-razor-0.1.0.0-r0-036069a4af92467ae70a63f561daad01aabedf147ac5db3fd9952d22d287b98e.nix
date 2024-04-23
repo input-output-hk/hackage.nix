@@ -21,7 +21,7 @@
       synopsis = "Quick implemention of Hutton's Razor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "huttons-razor" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."parsec-numbers" or (errorHandler.buildDepError "parsec-numbers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

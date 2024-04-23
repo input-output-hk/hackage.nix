@@ -21,14 +21,14 @@
       synopsis = "lens-compatible tools for working with witherable";
       description = "Provides tools for integrating the witherable package with lens\ncombinators. See README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

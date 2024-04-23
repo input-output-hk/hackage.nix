@@ -14,7 +14,7 @@
       identifier = {
         name = "Shpadoinkle-backend-snabbdom";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "fresheyeball@protonmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Use the high-performance Snabbdom virtual dom library written in JavaScript.";
       description = "Snabbdom is a battle-tested virtual dom library for JavaScript. It's extremely fast, lean, and modular. Snabbdom's design made it a natural choice for a Shpadoinkle rendering backend, as it has a similar core philosophy of \"just don't do much\" and is friendly to purely functional binding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

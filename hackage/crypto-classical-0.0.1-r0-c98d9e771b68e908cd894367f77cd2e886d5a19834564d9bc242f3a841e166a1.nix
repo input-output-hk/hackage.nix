@@ -21,7 +21,7 @@
       synopsis = "An educational tool for studying classical cryptography schemes.";
       description = "An educational tool for studying classical cryptography\nschemes. Do not encrypt anything of worth with this\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

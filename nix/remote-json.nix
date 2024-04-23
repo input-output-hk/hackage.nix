@@ -6,8 +6,8 @@
         nix = import ../hackage/remote-json-0.2-r0-97a684ceb9226684bb14a025e1698d3e19ab761c3b13d83d6a43e7a3b067973e.nix;
         revNum = 0;
         sha256 = "97a684ceb9226684bb14a025e1698d3e19ab761c3b13d83d6a43e7a3b067973e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

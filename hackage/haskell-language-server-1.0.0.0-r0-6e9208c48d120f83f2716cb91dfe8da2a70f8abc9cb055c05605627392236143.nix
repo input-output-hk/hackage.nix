@@ -28,7 +28,7 @@
       ormolu = true;
       stylishhaskell = true;
       brittany = true;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "haskell-language-server"; version = "1.0.0.0"; };
@@ -41,7 +41,7 @@
       synopsis = "LSP server for GHC";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -71,9 +71,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-language-server" = {
           depends = ((((((((((((([
@@ -111,9 +111,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ] ++ (pkgs.lib).optional (flags.class || flags.all-plugins) (hsPkgs."hls-class-plugin" or (errorHandler.buildDepError "hls-class-plugin"))) ++ (pkgs.lib).optional (flags.haddockcomments || flags.all-plugins) (hsPkgs."hls-haddock-comments-plugin" or (errorHandler.buildDepError "hls-haddock-comments-plugin"))) ++ (pkgs.lib).optional (flags.eval || flags.all-plugins) (hsPkgs."hls-eval-plugin" or (errorHandler.buildDepError "hls-eval-plugin"))) ++ (pkgs.lib).optional (flags.importlens || flags.all-plugins) (hsPkgs."hls-explicit-imports-plugin" or (errorHandler.buildDepError "hls-explicit-imports-plugin"))) ++ (pkgs.lib).optional (flags.retrie || flags.all-plugins) (hsPkgs."hls-retrie-plugin" or (errorHandler.buildDepError "hls-retrie-plugin"))) ++ (pkgs.lib).optional (flags.tactic || flags.all-plugins) (hsPkgs."hls-tactics-plugin" or (errorHandler.buildDepError "hls-tactics-plugin"))) ++ (pkgs.lib).optional (flags.hlint || flags.all-plugins) (hsPkgs."hls-hlint-plugin" or (errorHandler.buildDepError "hls-hlint-plugin"))) ++ (pkgs.lib).optional (flags.pragmas || flags.all-plugins) (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))) ++ (pkgs.lib).optional (flags.splice || flags.all-plugins) (hsPkgs."hls-splice-plugin" or (errorHandler.buildDepError "hls-splice-plugin"))) ++ (pkgs.lib).optional (flags.floskell || flags.all-formatters) (hsPkgs."floskell" or (errorHandler.buildDepError "floskell"))) ++ (pkgs.lib).optional (flags.fourmolu || flags.all-formatters) (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu"))) ++ (pkgs.lib).optional (flags.ormolu || flags.all-formatters) (hsPkgs."ormolu" or (errorHandler.buildDepError "ormolu"))) ++ (pkgs.lib).optional (flags.stylishhaskell || flags.all-formatters) (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))) ++ (pkgs.lib).optional ((flags.brittany || flags.all-formatters) && flags.agpl) (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"));
+          ] ++ pkgs.lib.optional (flags.class || flags.all-plugins) (hsPkgs."hls-class-plugin" or (errorHandler.buildDepError "hls-class-plugin"))) ++ pkgs.lib.optional (flags.haddockcomments || flags.all-plugins) (hsPkgs."hls-haddock-comments-plugin" or (errorHandler.buildDepError "hls-haddock-comments-plugin"))) ++ pkgs.lib.optional (flags.eval || flags.all-plugins) (hsPkgs."hls-eval-plugin" or (errorHandler.buildDepError "hls-eval-plugin"))) ++ pkgs.lib.optional (flags.importlens || flags.all-plugins) (hsPkgs."hls-explicit-imports-plugin" or (errorHandler.buildDepError "hls-explicit-imports-plugin"))) ++ pkgs.lib.optional (flags.retrie || flags.all-plugins) (hsPkgs."hls-retrie-plugin" or (errorHandler.buildDepError "hls-retrie-plugin"))) ++ pkgs.lib.optional (flags.tactic || flags.all-plugins) (hsPkgs."hls-tactics-plugin" or (errorHandler.buildDepError "hls-tactics-plugin"))) ++ pkgs.lib.optional (flags.hlint || flags.all-plugins) (hsPkgs."hls-hlint-plugin" or (errorHandler.buildDepError "hls-hlint-plugin"))) ++ pkgs.lib.optional (flags.pragmas || flags.all-plugins) (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))) ++ pkgs.lib.optional (flags.splice || flags.all-plugins) (hsPkgs."hls-splice-plugin" or (errorHandler.buildDepError "hls-splice-plugin"))) ++ pkgs.lib.optional (flags.floskell || flags.all-formatters) (hsPkgs."floskell" or (errorHandler.buildDepError "floskell"))) ++ pkgs.lib.optional (flags.fourmolu || flags.all-formatters) (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu"))) ++ pkgs.lib.optional (flags.ormolu || flags.all-formatters) (hsPkgs."ormolu" or (errorHandler.buildDepError "ormolu"))) ++ pkgs.lib.optional (flags.stylishhaskell || flags.all-formatters) (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))) ++ pkgs.lib.optional ((flags.brittany || flags.all-formatters) && flags.agpl) (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"));
           buildable = true;
-          };
+        };
         "haskell-language-server-wrapper" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -131,10 +131,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "func-test" = {
           depends = [
@@ -171,13 +171,13 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server or (pkgs.buildPackages.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wrapper-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -209,12 +209,12 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-ant-xml" or (errorHandler.buildDepError "tasty-ant-xml"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server-wrapper or (pkgs.buildPackages.haskell-language-server-wrapper or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server-wrapper")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

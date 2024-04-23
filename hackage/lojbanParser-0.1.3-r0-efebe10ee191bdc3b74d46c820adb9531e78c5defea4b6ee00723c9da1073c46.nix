@@ -21,14 +21,14 @@
       synopsis = "lojban parser";
       description = "This is alpha version. The interface may change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
         "testParser" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

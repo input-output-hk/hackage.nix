@@ -21,15 +21,15 @@
       synopsis = "Simple package that allows for long thread suspensions.";
       description = "Simple package that allows for long thread suspensions. Uses newtype wrapper (of Int64 at the moment) to represent delay.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

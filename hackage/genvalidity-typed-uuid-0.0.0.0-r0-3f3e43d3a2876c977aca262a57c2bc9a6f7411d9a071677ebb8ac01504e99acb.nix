@@ -21,7 +21,7 @@
       synopsis = "Generators for Phantom-Typed version of UUID";
       description = "Please see the README on Github at <https://github.com/NorfairKing/typed-uuid#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."genvalidity-uuid" or (errorHandler.buildDepError "genvalidity-uuid"))
           (hsPkgs."typed-uuid" or (errorHandler.buildDepError "typed-uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typed-uuid-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."genvalidity-uuid" or (errorHandler.buildDepError "genvalidity-uuid"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."typed-uuid" or (errorHandler.buildDepError "typed-uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

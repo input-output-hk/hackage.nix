@@ -21,7 +21,7 @@
       synopsis = "typed core for the library csound-expression";
       description = "typed core for library csound-expression. Provides typed core lang for csound";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."csound-expression-dynamic" or (errorHandler.buildDepError "csound-expression-dynamic"))
           (hsPkgs."temporal-media" or (errorHandler.buildDepError "temporal-media"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

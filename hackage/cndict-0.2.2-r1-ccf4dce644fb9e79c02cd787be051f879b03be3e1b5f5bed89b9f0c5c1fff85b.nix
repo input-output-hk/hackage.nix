@@ -21,7 +21,7 @@
       synopsis = "Chinese/Mandarin <-> English dictionary, Chinese lexer.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

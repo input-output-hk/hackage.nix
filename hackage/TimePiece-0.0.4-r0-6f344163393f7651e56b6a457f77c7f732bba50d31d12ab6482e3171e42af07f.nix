@@ -21,7 +21,7 @@
       synopsis = "A simple tile-based digital clock screen saver";
       description = "A simple tile-based digital clock screen saver";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TimePiece" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

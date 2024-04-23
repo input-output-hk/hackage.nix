@@ -21,7 +21,7 @@
       synopsis = "Packed binary-coded decimal (BCD) serialization";
       description = "A module containing packed binary-coded decimal (BCD) serialization\nfunctions.  Packed BCD is commonly used to encode numbers in mainframe\ndatasets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."Decimal" or (errorHandler.buildDepError "Decimal"))
           (hsPkgs."digits" or (errorHandler.buildDepError "digits"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

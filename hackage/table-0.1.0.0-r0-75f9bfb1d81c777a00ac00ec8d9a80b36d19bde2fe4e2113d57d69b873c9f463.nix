@@ -21,7 +21,7 @@
       synopsis = "Simple tool to generate tables from DSV input";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "table" = {
@@ -31,9 +31,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

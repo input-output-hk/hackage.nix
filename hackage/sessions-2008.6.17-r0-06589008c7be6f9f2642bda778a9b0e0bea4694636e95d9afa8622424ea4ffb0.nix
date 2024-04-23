@@ -21,7 +21,7 @@
       synopsis = "Session Types for Haskell";
       description = "Session Types for Haskell. Allows the specification of communication\nprotocols and then validation that an implementation does not\nviolate said protocol.\nIgnore the build failure for hackage - it's just haddock being\nrubbish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

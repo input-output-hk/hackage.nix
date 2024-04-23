@@ -6,8 +6,8 @@
         nix = import ../hackage/bindings-libftdi-0.1-r0-e2996f931b42c7de060015aadb33eb41da659a5c965cb6ec838ad936e55f1d89.nix;
         revNum = 0;
         sha256 = "e2996f931b42c7de060015aadb33eb41da659a5c965cb6ec838ad936e55f1d89";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

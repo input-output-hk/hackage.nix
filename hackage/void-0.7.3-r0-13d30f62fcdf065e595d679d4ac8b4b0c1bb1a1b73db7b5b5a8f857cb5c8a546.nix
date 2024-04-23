@@ -21,18 +21,18 @@
       synopsis = "A Haskell 98 logically uninhabited data type";
       description = "A Haskell 98 logically uninhabited data type, used to indicate that a given term should not exist.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.9")) ([
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.9")) ([
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

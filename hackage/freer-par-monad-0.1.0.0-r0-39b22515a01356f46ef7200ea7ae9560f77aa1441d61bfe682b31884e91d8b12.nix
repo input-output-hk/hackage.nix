@@ -21,20 +21,20 @@
       synopsis = "Freer par monad";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/freer-par-monad#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "freer-par-monad-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."freer-par-monad" or (errorHandler.buildDepError "freer-par-monad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

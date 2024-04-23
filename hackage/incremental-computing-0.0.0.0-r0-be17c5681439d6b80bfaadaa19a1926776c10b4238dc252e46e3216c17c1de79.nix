@@ -21,7 +21,7 @@
       synopsis = "Incremental computing";
       description = "This package is about incremental computing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."order-maintenance" or (errorHandler.buildDepError "order-maintenance"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sequence-tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."incremental-computing" or (errorHandler.buildDepError "incremental-computing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

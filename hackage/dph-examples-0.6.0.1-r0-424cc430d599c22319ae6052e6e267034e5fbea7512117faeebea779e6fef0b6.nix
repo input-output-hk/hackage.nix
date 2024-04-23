@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell example programs.";
       description = "Data Parallel Haskell example programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dph-smoke-bool" = {
@@ -35,9 +35,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-smoke-concat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -49,9 +49,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-smoke-sumsq" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,9 +63,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-smoke-evens" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-smoke-indices" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,9 +91,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-smoke-rank" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-smoke-reverse" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -119,9 +119,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-imaginary-words" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -133,9 +133,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-spectral-dotp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -147,9 +147,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-spectral-smvm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -161,9 +161,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-spectral-quickhull" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -175,9 +175,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-spectral-quickhull-vector" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -189,9 +189,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-spectral-quicksort" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -203,9 +203,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-real-nbody-gloss" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -218,9 +218,9 @@
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dph-real-nbody" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -232,9 +232,9 @@
             (hsPkgs."dph-prim-par" or (errorHandler.buildDepError "dph-prim-par"))
             (hsPkgs."dph-lifted-vseg" or (errorHandler.buildDepError "dph-lifted-vseg"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

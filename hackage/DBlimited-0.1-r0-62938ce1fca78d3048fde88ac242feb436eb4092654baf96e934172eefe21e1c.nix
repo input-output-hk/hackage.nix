@@ -21,7 +21,7 @@
       synopsis = "A command-line SQL interface for flat files (tdf,csv,etc.)";
       description = "DBlimited requires a schema file defining the psuedo-tables. Each table is actually a flat file with a name, absolute path, delimiter character, and column definition.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "DBlimited" = {
@@ -29,9 +29,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

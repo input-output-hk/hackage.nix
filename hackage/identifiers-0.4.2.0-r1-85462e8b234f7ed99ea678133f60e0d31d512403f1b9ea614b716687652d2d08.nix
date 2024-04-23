@@ -21,7 +21,7 @@
       synopsis = "Numeric identifiers for values.";
       description = "This library allows you to turn costly repetitive values\ninto numbers in order to save memory.\nAn Identifiers value acts like a bi-directional map that\nallows you to effeciently toggle between a numeric key\nand the original value pushed into the map.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "main" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "identifiers-hashable" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."identifiers" or (errorHandler.buildDepError "identifiers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "identifiers-listlike" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."identifiers" or (errorHandler.buildDepError "identifiers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

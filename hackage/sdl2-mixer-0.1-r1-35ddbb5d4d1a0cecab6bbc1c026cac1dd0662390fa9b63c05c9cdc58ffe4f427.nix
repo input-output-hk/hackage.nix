@@ -21,7 +21,7 @@
       synopsis = "Bindings to SDL2_mixer.";
       description = "Haskell bindings to SDL2_mixer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,61 +35,61 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."SDL2_mixer" or (errorHandler.sysDepError "SDL2_mixer"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."SDL2_mixer" or (errorHandler.pkgConfDepError "SDL2_mixer"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-mixer-basic" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "sdl2-mixer-raw" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "sdl2-mixer-jumbled" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "sdl2-mixer-music" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "sdl2-mixer-effect" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-mixer" or (errorHandler.buildDepError "sdl2-mixer"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

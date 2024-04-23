@@ -6,8 +6,8 @@
         nix = import ../hackage/x11-xinput-0.1.0.0-r0-fffee292cba8e9d96e3821bb50077181a832a5bfe6efbed65d8979aa6f090513.nix;
         revNum = 0;
         sha256 = "fffee292cba8e9d96e3821bb50077181a832a5bfe6efbed65d8979aa6f090513";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

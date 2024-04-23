@@ -21,7 +21,7 @@
       synopsis = "Type-level comparison operator";
       description = "Type-level comparison operator with instances for @type-digit@\nnumerals until <http://hackage.haskell.org/trac/ghc/ticket/1894> is resolved.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."type-spine" or (errorHandler.buildDepError "type-spine"))
           (hsPkgs."type-digits" or (errorHandler.buildDepError "type-digits"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

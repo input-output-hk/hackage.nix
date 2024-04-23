@@ -21,7 +21,7 @@
       synopsis = "Prelude with only useful functions";
       description = "Prelude with only useful functions";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."papa-prelude-lens" or (errorHandler.buildDepError "papa-prelude-lens"))
           (hsPkgs."papa-prelude-semigroupoids" or (errorHandler.buildDepError "papa-prelude-semigroupoids"))
           (hsPkgs."papa-prelude-semigroups" or (errorHandler.buildDepError "papa-prelude-semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Meta-package for Quipper.";
       description = "This is a meta-package for Quipper, the embedded functional\nprogramming language for quantum computing. Installing this package\nautomatically installs everything you need for Quipper, including\nthe quipper-language, quipper-libraries, and quipper-tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
           (hsPkgs."quipper-libraries" or (errorHandler.buildDepError "quipper-libraries"))
           (hsPkgs."quipper-tools" or (errorHandler.buildDepError "quipper-tools"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

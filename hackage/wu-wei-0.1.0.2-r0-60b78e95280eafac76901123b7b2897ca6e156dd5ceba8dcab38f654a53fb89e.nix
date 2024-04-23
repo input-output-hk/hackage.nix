@@ -21,7 +21,7 @@
       synopsis = "Unimportant Unix adminstration tool";
       description = "Minimalist tool for Unix systems administration that strives to be\nunimportant and do nothing, like water.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pao" = {
@@ -31,9 +31,9 @@
             (hsPkgs."symbolic-link" or (errorHandler.buildDepError "symbolic-link"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

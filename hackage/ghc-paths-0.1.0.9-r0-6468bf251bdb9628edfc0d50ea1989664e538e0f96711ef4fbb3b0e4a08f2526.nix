@@ -21,11 +21,11 @@
       synopsis = "Knowledge of GHC's installation directories";
       description = "Knowledge of GHC's installation directories";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Data types as fixpoints";
       description = "This package allows data types to be seen and manipulated as fixpoints of\ntheir underlying functors. It is mostly based on \"Functional Programming with\nBananas, Lenses, Envelopes and Barbed Wire\" by Erik Meijer, Maarten Fokkinga\nand Ross Paterson (<http://citeseer.ist.psu.edu/meijer91functional.html>). It\nmakes essential use of associated types and related extensions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

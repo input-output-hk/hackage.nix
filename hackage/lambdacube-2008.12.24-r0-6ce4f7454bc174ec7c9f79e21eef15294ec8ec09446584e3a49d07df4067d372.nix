@@ -21,7 +21,7 @@
       synopsis = "A simple lambda cube type checker.";
       description = "A simple interactive lambda cube type checker and evaluator.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cube" = {
@@ -30,9 +30,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."editline" or (errorHandler.buildDepError "editline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

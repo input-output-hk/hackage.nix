@@ -21,7 +21,7 @@
       synopsis = "Monad for observation extraction";
       description = "The library provides an Ox monad and accompanying functions which\nare intended to simplify writing functional expressions over input\nsentence with arbitrary type of token.  Values of such functional\nexpressions can be subsequently used as observations in input data\nfor sequential classifiers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell LDAP Client Library";
       description = "Pure Haskell LDAP client library implementing (the parts of) RFC 4511.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."ldap-client" or (errorHandler.buildDepError "ldap-client"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

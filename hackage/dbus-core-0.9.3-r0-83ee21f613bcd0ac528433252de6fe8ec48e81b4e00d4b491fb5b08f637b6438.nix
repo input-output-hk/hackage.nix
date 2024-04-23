@@ -21,7 +21,7 @@
       synopsis = "Low-level D-Bus protocol implementation";
       description = "OBSOLETE: Use the \\\"dbus\\\" package instead.\n\n<http://hackage.haskell.org/package/dbus>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

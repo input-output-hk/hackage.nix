@@ -21,7 +21,7 @@
       synopsis = "Servant bindings to the Telegram bot API";
       description = "Please see the README on GitHub at <https://github.com/poscat0x04/telegram-raw-api#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
           (hsPkgs."telegram-types" or (errorHandler.buildDepError "telegram-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "telegram-raw-api-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."telegram-raw-api" or (errorHandler.buildDepError "telegram-raw-api"))
             (hsPkgs."telegram-types" or (errorHandler.buildDepError "telegram-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

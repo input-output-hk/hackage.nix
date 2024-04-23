@@ -21,7 +21,7 @@
       synopsis = "Fast JSON parsing and encoding";
       description = "A JSON parsing and encoding library optimized for ease of use\nand high performance.\n\nTo get started, see the documentation for the @Data.Aeson@ module\nbelow.\n\n(A note on naming: in Greek mythology, Aeson was the father of Jason.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.6")) (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.6")) (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"));
         buildable = true;
-        };
+      };
       tests = {
         "aeson-tests" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "9.2" && (compiler.version).lt "9.7")) (hsPkgs."nothunks" or (errorHandler.buildDepError "nothunks"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "9.2" && compiler.version.lt "9.7")) (hsPkgs."nothunks" or (errorHandler.buildDepError "nothunks"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

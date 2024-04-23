@@ -21,7 +21,7 @@
       synopsis = "A compiler for a subset of Haskell";
       description = "A compiler for a subset of Haskell.\nThe compiler translates to combinators and can compile itself.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mhs" = {
@@ -35,9 +35,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

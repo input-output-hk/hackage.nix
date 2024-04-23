@@ -21,14 +21,14 @@
       synopsis = "Tiny helper for pretty-printing values in ghci console";
       description = "Tiny helper for pretty-printing values in ghci console";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

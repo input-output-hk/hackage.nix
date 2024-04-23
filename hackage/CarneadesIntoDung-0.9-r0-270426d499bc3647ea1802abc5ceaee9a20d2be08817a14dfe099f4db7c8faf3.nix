@@ -21,7 +21,7 @@
       synopsis = "A translation from the Carneades argumentation model into Dung's AFs.";
       description = "A translation from the Carneades argumentation model\n(http://hackage.haskell.org/package/CarneadesDSL) into Dung's\nargumentation frameworks (http://hackage.haskell.org/package/Dung).\nThis package provides a translation function and correspondence\nproperties. See \"Towards a framework for the implementation and\nverification of translations between argumentation models\" by\nBas van Gijzel and Henrik Nilsson or the package's homepage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."CarneadesDSL" or (errorHandler.buildDepError "CarneadesDSL"))
           (hsPkgs."Dung" or (errorHandler.buildDepError "Dung"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Handful of simple utility functions for the path library.";
       description = "Handful of simple utility functiosn for the path library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

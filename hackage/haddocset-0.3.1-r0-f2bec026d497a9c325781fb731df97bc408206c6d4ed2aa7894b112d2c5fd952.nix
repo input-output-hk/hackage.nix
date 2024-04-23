@@ -21,7 +21,7 @@
       synopsis = "Generate docset of Dash by Haddock haskell documentation tool";
       description = "please read README.md <https://github.com/philopon/haddocset/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haddocset" = {
@@ -42,15 +42,15 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.8"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.8"
             then [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-              ]
+            ]
             else [
               (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

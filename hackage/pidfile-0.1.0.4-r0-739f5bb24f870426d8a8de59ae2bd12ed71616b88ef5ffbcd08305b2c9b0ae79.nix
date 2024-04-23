@@ -21,14 +21,14 @@
       synopsis = "Run an IO action protected by a pidfile";
       description = "Run an IO action protected by a pidfile. This will prevent\nmore than one instance of your program to run at a time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Intervals with adherences.";
       description = "Data types to represent, compare and combine intervals with adherences.\n\nSee also:\n<https://hackage.haskell.org/package/data-interval data-interval>,\n<https://hackage.haskell.org/package/intervals intervals>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "interval-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."interval" or (errorHandler.buildDepError "interval"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

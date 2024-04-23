@@ -21,11 +21,11 @@
       synopsis = "A binding for the Vulkan API";
       description = "All the examples from the OpenGL SuperBible (7th ed.) in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

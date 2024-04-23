@@ -21,7 +21,7 @@
       synopsis = "A Haskell-embedded DSL for monitoring hard real-time\ndistributed systems.";
       description = "The concrete syntax for Copilot.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language (DSL) in\nHaskell that compiles into embedded C.  Copilot contains an interpreter,\nmultiple back-end compilers, and other verification tools.\n\nA tutorial, examples, and other information are available at\n<https://copilot-language.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."copilot-interpreter" or (errorHandler.buildDepError "copilot-interpreter"))
           (hsPkgs."copilot-prettyprinter" or (errorHandler.buildDepError "copilot-prettyprinter"))
           (hsPkgs."copilot-theorem" or (errorHandler.buildDepError "copilot-theorem"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
             (hsPkgs."copilot-interpreter" or (errorHandler.buildDepError "copilot-interpreter"))
             (hsPkgs."copilot-language" or (errorHandler.buildDepError "copilot-language"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

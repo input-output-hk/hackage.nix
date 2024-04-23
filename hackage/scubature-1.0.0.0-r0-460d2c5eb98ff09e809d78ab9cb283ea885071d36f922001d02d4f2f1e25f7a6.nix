@@ -21,7 +21,7 @@
       synopsis = "Multidimensional integration over simplices";
       description = "This library allows to evaluate integrals over Euclidean and spherical simplices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ilist" or (errorHandler.buildDepError "ilist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

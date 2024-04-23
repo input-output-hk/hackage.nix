@@ -21,7 +21,7 @@
       synopsis = "Streaming compression/decompression via conduits.";
       description = "Streaming compression/decompression via conduits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,10 +33,10 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
+        ];
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

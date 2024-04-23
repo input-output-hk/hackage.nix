@@ -21,15 +21,15 @@
       synopsis = "An implementation of a real-time concurrent queue";
       description = "An implementation of a real-time concurrent queue.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "stm-queue-test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."stm-queue" or (errorHandler.buildDepError "stm-queue"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "stm-queue-benchmark" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

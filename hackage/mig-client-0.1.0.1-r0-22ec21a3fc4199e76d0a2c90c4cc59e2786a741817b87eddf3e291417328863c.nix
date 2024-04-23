@@ -21,7 +21,7 @@
       synopsis = "Build http-clients from API definition for mig servers";
       description = "With this library we can build client functions for HTTP-applications\nfrom the same code as server definition.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."mig" or (errorHandler.buildDepError "mig"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

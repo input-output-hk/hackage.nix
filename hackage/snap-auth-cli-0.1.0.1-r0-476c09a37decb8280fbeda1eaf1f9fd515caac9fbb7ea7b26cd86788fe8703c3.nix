@@ -21,7 +21,7 @@
       synopsis = "Command-line tool to manage Snap AuthManager database";
       description = "This utility provides command-line interface to user\ndatabase of standard authentication system for\nthe Snap web framework. You can create, read and\nupdate users, set passwords, roles and meta\ninformation. Currently only JsonFile backend is\nsupported. Type @snap-auth-cli -?@ to get usage\ninformation, or see\n<https://github.com/dzhus/snap-auth-cli/blob/master/README.org>\nfor details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snap-auth-cli" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

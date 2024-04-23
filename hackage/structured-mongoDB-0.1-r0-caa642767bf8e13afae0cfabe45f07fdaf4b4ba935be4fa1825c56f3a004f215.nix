@@ -21,7 +21,7 @@
       synopsis = "Structured MongoDB interface";
       description = "This module exports a structured type-safe interface to MongoDB.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
           (hsPkgs."compact-string-fix" or (errorHandler.buildDepError "compact-string-fix"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

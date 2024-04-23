@@ -21,7 +21,7 @@
       synopsis = "Library which constructing generic (SYB3-based) widgets for WxHaskell";
       description = "Constructs widgets for WxHaskell using SybWidget.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."xtc" or (errorHandler.buildDepError "xtc"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

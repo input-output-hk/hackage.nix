@@ -21,7 +21,7 @@
       synopsis = "Use cheapskate with Lucid";
       description = "Use cheapskate with Lucid";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."cheapskate" or (errorHandler.buildDepError "cheapskate"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

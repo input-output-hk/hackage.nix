@@ -21,14 +21,14 @@
       synopsis = "A sparse set-based parsing library for Haskell.";
       description = "Spars is a lightweight parsing package that uses sets to store parse results to avoid duplicates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "General datatypes for music creation for one instrument";
       description = "Inspired by the video by the link: <https://www.youtube.com/watch?v=rhgt3lZ1RUU>. A continuation of the work on @algorithmic-composition-basic@ and @dobutokO2@ series of packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

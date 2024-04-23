@@ -21,7 +21,7 @@
       synopsis = "Toolkit for quickly whipping up config files and command-line interfaces.";
       description = "A simple toolkit for quickly whipping up REPLs, input validation and sets of commands included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

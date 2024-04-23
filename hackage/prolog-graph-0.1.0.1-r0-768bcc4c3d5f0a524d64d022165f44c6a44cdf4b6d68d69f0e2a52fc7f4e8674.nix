@@ -21,7 +21,7 @@
       synopsis = "A command line tool to visualize query resolution in Prolog.";
       description = "This package installs the command line tool `hsprolog-graph` that\ngenerates images of resolution trees for given Prolog queries.\n\nSee @hsprolog-graph --help@ for more information on usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsprolog-graph" = {
@@ -34,9 +34,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

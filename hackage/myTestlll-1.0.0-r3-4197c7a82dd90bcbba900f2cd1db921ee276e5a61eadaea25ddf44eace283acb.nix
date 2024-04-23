@@ -21,7 +21,7 @@
       synopsis = "testign upload";
       description = "Can you really not delete a library?  ";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,13 +43,13 @@
           (hsPkgs."pure-fft" or (errorHandler.buildDepError "pure-fft"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.10") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.10") [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-euterpea" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

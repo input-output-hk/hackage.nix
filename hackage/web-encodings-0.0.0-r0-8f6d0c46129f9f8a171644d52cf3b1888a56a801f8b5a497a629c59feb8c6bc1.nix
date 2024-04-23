@@ -21,15 +21,15 @@
       synopsis = "Encapsulate multiple web encoding in a single package.";
       description = "The idea is to minimize external dependencies so this is usable in just about any context.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-class" or (errorHandler.buildDepError "bytestring-class"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Audio signal processing with static physical dimensions";
       description = "High-level functions that use physical units and\nabstract from the sample rate in statically type safe way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rain" = { buildable = if !flags.buildexamples then false else true; };
         "demonstration" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "traumzauberbaum" = {
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

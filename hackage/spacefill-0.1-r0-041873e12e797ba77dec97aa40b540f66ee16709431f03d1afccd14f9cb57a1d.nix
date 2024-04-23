@@ -21,17 +21,17 @@
       synopsis = "Generators for space-filling curves.";
       description = "Generators of Hilbert and Moore space-filling curves in configurable\ncoordinate domains.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doc-tests" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

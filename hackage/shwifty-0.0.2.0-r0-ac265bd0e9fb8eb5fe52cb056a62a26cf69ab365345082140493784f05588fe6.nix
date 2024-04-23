@@ -21,7 +21,7 @@
       synopsis = "Generate swift types from haskell types.";
       description = "Shwifty provides many utilities for generating swift types from haskell types,\nwith great flexibility in representation, and emphasis on generating typesafe\nSwift code. Most of the types representable in Haskell98 are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

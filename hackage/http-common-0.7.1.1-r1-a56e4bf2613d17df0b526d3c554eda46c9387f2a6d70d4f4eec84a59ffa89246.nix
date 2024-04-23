@@ -21,7 +21,7 @@
       synopsis = "Common types for HTTP clients and servers";
       description = "/Overview/\n\nBase types used by a variety of HTTP clients and servers. See http-streams\n\"Network.Http.Client\" or pipes-http \"Pipes.Http.Client\" for full\ndocumentation. You can import @Network.Http.Types@ if you like, but both\nhttp-streams and pipes-http re-export this package's types and functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

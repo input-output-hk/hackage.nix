@@ -21,7 +21,7 @@
       synopsis = "A simple, yet powerful extensible effects library.";
       description = "A simple, performant extensible effects library with seamless\nintegration with the existing Haskell ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = (([
@@ -60,9 +60,9 @@
             (hsPkgs."effectful" or (errorHandler.buildDepError "effectful"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "9") (hsPkgs."freer-simple" or (errorHandler.buildDepError "freer-simple"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "9.2")) (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.4" && (compiler.version).lt "9")) (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "9") (hsPkgs."freer-simple" or (errorHandler.buildDepError "freer-simple"))) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "9.2")) (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.4" && compiler.version.lt "9")) (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

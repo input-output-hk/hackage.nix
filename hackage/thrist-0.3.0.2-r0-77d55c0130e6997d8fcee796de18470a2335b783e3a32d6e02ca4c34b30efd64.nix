@@ -21,11 +21,11 @@
       synopsis = "Type-threaded list";
       description = "@Thrist@ is a list-like data structure (GADT)\nwhose elements are values of a two-parameter\ndatatype. The typing constraint ensures that\nthe second type parameter of a former value\nunifies with the first type parameter of the\nlatter.\n\nThis threading of types is the foundation for\nthrists' nice properties. E.g., paired with a\nsuitable semantics, function composition (.)\ncan be embedded.\n\nTechnically a thrist is embodying the concept\nof a /free category/.\n\nSub-modules demonstrate the power of the thrist\nidea by emulating some familiar data structures.\n\nFor further ideas, please consult the companion\n(draft) paper \\\"Thrists: Dominoes of Data\\\" at\n<http://omega.googlecode.com/files/Thrist-draft-2011-11-20.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

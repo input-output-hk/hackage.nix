@@ -21,7 +21,7 @@
       synopsis = "A Multipath TCP path manager";
       description = "Multipath TCP (www.multipath-tcp.org) starting from version 0.95 provides a\nnetlink path manager module. This package implements the userspace component\nin charge of controlling MPTCP subflow establishement and various behaviors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,12 +42,12 @@
           (hsPkgs."aeson-extra" or (errorHandler.buildDepError "aeson-extra"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mptcp-manager" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tcp" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."mptcp-pm" or (errorHandler.buildDepError "mptcp-pm"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

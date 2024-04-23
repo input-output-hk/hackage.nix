@@ -21,15 +21,15 @@
       synopsis = "Stream Hasql queries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
           (hsPkgs."hasql-transaction-io" or (errorHandler.buildDepError "hasql-transaction-io"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

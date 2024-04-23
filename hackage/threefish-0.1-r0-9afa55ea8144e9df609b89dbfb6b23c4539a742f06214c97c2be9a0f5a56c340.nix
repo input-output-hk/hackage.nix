@@ -21,7 +21,7 @@
       synopsis = "The Threefish block cipher and the Skein hash function for Haskell.";
       description = "Implements 256 and 512 bit variants of Threefish and Skein. Skein is usable as a \"normal\" hash function as well as in Skein-MAC mode and as a cryptographically secure PRNG, as specified in the Skein 1.3 paper.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

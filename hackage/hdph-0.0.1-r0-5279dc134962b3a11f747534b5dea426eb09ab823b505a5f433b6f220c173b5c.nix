@@ -21,7 +21,7 @@
       synopsis = "Haskell distributed parallel Haskell";
       description = "Haskell distributed parallel Haskell (HdpH) is a Haskell DSL\nfor distributed-memory parallelism, implemented entirely in\nHaskell (as supported by GHC).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."hdph-closure" or (errorHandler.buildDepError "hdph-closure"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hello" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hdph-closure" or (errorHandler.buildDepError "hdph-closure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fib" = {
           depends = [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
@@ -81,9 +81,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hdph-closure" or (errorHandler.buildDepError "hdph-closure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sumeuler" = {
           depends = [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
@@ -101,9 +101,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hdph-closure" or (errorHandler.buildDepError "hdph-closure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "nbody" = {
           depends = [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
@@ -121,9 +121,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hdph-closure" or (errorHandler.buildDepError "hdph-closure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

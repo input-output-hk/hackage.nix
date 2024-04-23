@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings to the Discount markdown library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."markdown" or (errorHandler.sysDepError "markdown")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

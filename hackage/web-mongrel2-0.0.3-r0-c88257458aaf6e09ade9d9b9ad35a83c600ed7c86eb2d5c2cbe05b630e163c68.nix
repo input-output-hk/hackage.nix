@@ -21,7 +21,7 @@
       synopsis = "Bindings for the Mongrel2 web server.";
       description = "A simple handler API for Mongrel2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

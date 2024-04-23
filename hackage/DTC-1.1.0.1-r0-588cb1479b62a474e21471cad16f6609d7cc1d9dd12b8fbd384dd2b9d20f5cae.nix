@@ -21,14 +21,14 @@
       synopsis = "Data To Class transformation.";
       description = "Create a class definition from a data declaration.\n\nHow this package works is explained in /Data Declarations to Class Definitions/ (see <http://daniel-diaz.github.io/projects/dtc/dtc.pdf>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

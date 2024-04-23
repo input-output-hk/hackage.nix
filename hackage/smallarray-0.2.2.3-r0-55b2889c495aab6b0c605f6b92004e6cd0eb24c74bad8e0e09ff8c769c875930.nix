@@ -21,7 +21,7 @@
       synopsis = "low-level unboxed arrays, with minimal features.";
       description = "This package includes low-level, portable uboxed array types.\nThe SmallArray has been tuned for size in memory, and hence\ndoes not support many of the nice operations supplied by\nother array libraries";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

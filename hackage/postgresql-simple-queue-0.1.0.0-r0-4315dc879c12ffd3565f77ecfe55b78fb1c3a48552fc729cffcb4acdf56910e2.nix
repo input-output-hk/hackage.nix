@@ -21,7 +21,7 @@
       synopsis = "A PostgreSQL backed queue";
       description = "This module utilize PostgreSQL to implement a durable queue for efficently processing arbitrary payloads which can be represented as JSON.\n\nTypically a producer would enqueue a new payload as part of larger database\ntransaction\n\n>  createAccount userRecord = do\n>     'runDBTSerializable' $ do\n>        createUserDB userRecord\n>        'enqueueDB' $ makeVerificationEmail userRecord\n\nIn another thread or process, the consumer would drain the queue.\n\n>   forever $ do\n>     -- Attempt get a payload or block until one is available\n>     payload <- 'lock' conn\n>\n>     -- Perform application specifc parsing of the payload value\n>     case fromJSON $ 'pValue' payload of\n>       Success x -> sendEmail x -- Perform application specific processing\n>       Error err -> logErr err\n>\n>     -- Remove the payload from future processing\n>     'dequeue' conn $ 'pId' payload";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "async-email-example" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "db-testing-example-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."hspec-expectations-lifted" or (errorHandler.buildDepError "hspec-expectations-lifted"))
             (hsPkgs."hspec-pg-transact" or (errorHandler.buildDepError "hspec-pg-transact"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

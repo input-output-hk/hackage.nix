@@ -21,7 +21,7 @@
       synopsis = "Dictionary-based password generator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wordpass" = {
@@ -33,9 +33,9 @@
             (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

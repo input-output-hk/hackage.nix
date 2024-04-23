@@ -13,7 +13,7 @@
       fastc = false;
       misc-executables = false;
       monitoring = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "second-transfer"; version = "0.10.0.1"; };
@@ -26,7 +26,7 @@
       synopsis = "Second Transfer HTTP/2 web server";
       description = "Second Transfer HTTP/2 web server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,16 +57,16 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
-          ] ++ (pkgs.lib).optionals (flags.monitoring) [
+        ] ++ pkgs.lib.optionals (flags.monitoring) [
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
-        libs = ((pkgs.lib).optional (system.isOsx) (pkgs."second_transfer__enable_tls" or (errorHandler.sysDepError "second_transfer__enable_tls")) ++ (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))) ++ (pkgs.lib).optionals (flags.fastc) ((pkgs.lib).optional (system.isLinux) (pkgs."botan-1.11" or (errorHandler.sysDepError "botan-1.11")));
+        ];
+        libs = (pkgs.lib.optional (system.isOsx) (pkgs."second_transfer__enable_tls" or (errorHandler.sysDepError "second_transfer__enable_tls")) ++ pkgs.lib.optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))) ++ pkgs.lib.optionals (flags.fastc) (pkgs.lib.optional (system.isLinux) (pkgs."botan-1.11" or (errorHandler.sysDepError "botan-1.11")));
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hunit-tests" = {
           depends = [
@@ -86,12 +86,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."second-transfer" or (errorHandler.buildDepError "second-transfer"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

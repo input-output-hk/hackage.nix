@@ -6,8 +6,8 @@
         nix = import ../hackage/bamboo-plugin-photo-2009.7.5-r0-d3c0db7ba0a5c7badaa3a9983a95e4c11f63ced5466ddefe563073e461269459.nix;
         revNum = 0;
         sha256 = "d3c0db7ba0a5c7badaa3a9983a95e4c11f63ced5466ddefe563073e461269459";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

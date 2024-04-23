@@ -21,7 +21,7 @@
       synopsis = "Jekyll in Haskell";
       description = "Lightweight static site compiler for markdown posts";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "heckle" = {
@@ -35,9 +35,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

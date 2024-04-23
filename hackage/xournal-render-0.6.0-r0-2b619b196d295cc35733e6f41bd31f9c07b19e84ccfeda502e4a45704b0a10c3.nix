@@ -21,7 +21,7 @@
       synopsis = "Xournal file renderer";
       description = "Rendering library using cairo for xournal file format";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.poppler
@@ -36,7 +36,7 @@
             (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
             (hsPkgs."xournal-types" or (errorHandler.buildDepError "xournal-types"))
             (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -47,8 +47,8 @@
             (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
             (hsPkgs."xournal-types" or (errorHandler.buildDepError "xournal-types"))
             (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

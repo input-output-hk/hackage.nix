@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler build framework.";
       description = "Disciplined Disciple Compiler build framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."ddc-core-llvm" or (errorHandler.buildDepError "ddc-core-llvm"))
           (hsPkgs."ddc-core-flow" or (errorHandler.buildDepError "ddc-core-flow"))
           (hsPkgs."ddc-core-tetra" or (errorHandler.buildDepError "ddc-core-tetra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extensible Authentication Protocol (EAP)";
       description = "This module provides types and on the wire de/coding of EAP packets as per RFC 3748";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

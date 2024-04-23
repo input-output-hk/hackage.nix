@@ -21,14 +21,14 @@
       synopsis = "GHC Generics automatically derived hedgehog generators";
       description = "\"Free\" hedgehog generators for types that implement Generic";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

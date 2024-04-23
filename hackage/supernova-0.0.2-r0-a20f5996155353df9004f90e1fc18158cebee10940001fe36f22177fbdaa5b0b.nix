@@ -21,7 +21,7 @@
       synopsis = "Apache Pulsar client for Haskell";
       description = "Supernova is an Apache Pulsar client that implements the specified TCP protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "supernova-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."supernova" or (errorHandler.buildDepError "supernova"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

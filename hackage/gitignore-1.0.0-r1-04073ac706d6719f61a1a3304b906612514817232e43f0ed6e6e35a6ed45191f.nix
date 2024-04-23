@@ -21,7 +21,7 @@
       synopsis = "Apply GitHub .gitignore templates to already existing repositories.";
       description = "Apply GitHub .gitignore templates to already existing repositories.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gitignore" = {
@@ -34,9 +34,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

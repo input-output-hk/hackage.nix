@@ -21,7 +21,7 @@
       synopsis = "OpenFlow protocol messages, binary formats, and servers. ";
       description = "This package provides data types that model the messages of the OpenFlow protocol,\nfunctions that implement serialization and deserialization between these data\ntypes and their binary representations in the protocol, and an efficient OpenFlow server.\nThe library is under active development.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

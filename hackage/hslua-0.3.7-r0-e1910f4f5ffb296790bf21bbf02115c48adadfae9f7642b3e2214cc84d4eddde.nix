@@ -21,15 +21,15 @@
       synopsis = "A Lua language interpreter embedding in Haskell";
       description = "The Scripting.Lua module is a wrapper of Lua language interpreter\nas described in www.lua.org.\n\nThis package contains full Lua interpreter version 5.1.4.\nIf you want to link it with system-wide Lua installation, use system-lua flag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
-        pkgconfig = (pkgs.lib).optional (flags.system-lua) (pkgconfPkgs."lua" or (errorHandler.pkgConfDepError "lua"));
+        ];
+        pkgconfig = pkgs.lib.optional (flags.system-lua) (pkgconfPkgs."lua" or (errorHandler.pkgConfDepError "lua"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Approximate a song from other pieces of sound";
       description = "Approximate a song from other pieces of sound";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sound-collage" = {
@@ -41,9 +41,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

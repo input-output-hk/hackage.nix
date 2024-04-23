@@ -6,8 +6,8 @@
         nix = import ../hackage/text-icu-translit-0.1.0.7-r0-c8eaaee3331417a250365474067b7cb0f196ebabd04b3fe834c4e2b5a212b5ce.nix;
         revNum = 0;
         sha256 = "c8eaaee3331417a250365474067b7cb0f196ebabd04b3fe834c4e2b5a212b5ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

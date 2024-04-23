@@ -21,7 +21,7 @@
       synopsis = "Haskell wrapper for Docker Remote API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

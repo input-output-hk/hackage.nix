@@ -21,7 +21,7 @@
       synopsis = "sdl-like functions for terminal applications, based on\nansi-terminal";
       description = "Library which aims to replicate standard 2d game\nfunctions (blit, ticks, timers, etc.) in a terminal\nsetting; features double buffering to optimise\nperformance.\nAims to be cross compatible (based on \"ansi-terminal\",\nno unix-only dependencies), practical.\nSee @examples@ folder for some minimal programs.  A\nfull game: <http://www.ariis.it/static/articles/venzone/page.html venzone>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,33 +41,33 @@
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."unidecode" or (errorHandler.buildDepError "unidecode"))
           (hsPkgs."timers-tick" or (errorHandler.buildDepError "timers-tick"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "alone" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ansi-terminal-game" or (errorHandler.buildDepError "ansi-terminal-game"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "alone-playback" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ansi-terminal-game" or (errorHandler.buildDepError "ansi-terminal-game"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "balls" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ansi-terminal-game" or (errorHandler.buildDepError "ansi-terminal-game"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."unidecode" or (errorHandler.buildDepError "unidecode"))
             (hsPkgs."timers-tick" or (errorHandler.buildDepError "timers-tick"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

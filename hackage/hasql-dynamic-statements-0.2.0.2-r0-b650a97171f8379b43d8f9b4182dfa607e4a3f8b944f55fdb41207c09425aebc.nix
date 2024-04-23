@@ -21,7 +21,7 @@
       synopsis = "Toolkit for constructing Hasql statements dynamically";
       description = "This library introduces into the Hasql ecosystem a new abstraction named Snippet,\nwhich makes it trivial to construct SQL, while injecting values.\nIt is intended to be used when the SQL of your statement depends on the parameters,\nthat you want to pass in.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
           (hsPkgs."hasql-implicits" or (errorHandler.buildDepError "hasql-implicits"))
           (hsPkgs."ptr" or (errorHandler.buildDepError "ptr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

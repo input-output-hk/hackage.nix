@@ -21,7 +21,7 @@
       synopsis = "Some miscellaneous basic string parsers.";
       description = "Basic string parsers for integer numbers and case-insensitive string parsing.\nAlso an alternative parse function, which throws a monadic error on parse failure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

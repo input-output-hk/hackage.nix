@@ -21,7 +21,7 @@
       synopsis = "Finite Fields";
       description = "Implementation of finite fields";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
           (hsPkgs."algebra" or (errorHandler.buildDepError "algebra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestPrimeField" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
             (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
             (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

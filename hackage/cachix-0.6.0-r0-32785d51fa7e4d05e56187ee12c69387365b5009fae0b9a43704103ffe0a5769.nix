@@ -21,7 +21,7 @@
       synopsis = "Command line client for Nix binary cache hosting https://cachix.org";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -71,30 +71,30 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
           (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
           (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cachix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cachix" or (errorHandler.buildDepError "cachix"))
             (hsPkgs."cachix-api" or (errorHandler.buildDepError "cachix-api"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cachix-test" = {
           depends = [
@@ -107,9 +107,9 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."servant-auth-client" or (errorHandler.buildDepError "servant-auth-client"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

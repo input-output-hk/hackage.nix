@@ -14,7 +14,7 @@
       identifier = {
         name = "quickcheck-monoid-subclasses";
         version = "0.1.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "2022–2023 Jonathan Knowles";
       maintainer = "mail@jonathanknowles.net";
@@ -24,7 +24,7 @@
       synopsis = "Testing monoid subclass instances with QuickCheck";
       description = "QuickCheck support for testing instances of type classes defined in the\nmonoid-subclasses library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
           (hsPkgs."quickcheck-monoid-subclasses".components.sublibs.internal or (errorHandler.buildDepError "quickcheck-monoid-subclasses:internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "internal" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "prelude" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,10 +56,10 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."quickcheck-monoid-subclasses".components.sublibs.internal or (errorHandler.buildDepError "quickcheck-monoid-subclasses:internal"))
             (hsPkgs."quickcheck-monoid-subclasses" or (errorHandler.buildDepError "quickcheck-monoid-subclasses"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -75,12 +75,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."quickcheck-monoid-subclasses" or (errorHandler.buildDepError "quickcheck-monoid-subclasses"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

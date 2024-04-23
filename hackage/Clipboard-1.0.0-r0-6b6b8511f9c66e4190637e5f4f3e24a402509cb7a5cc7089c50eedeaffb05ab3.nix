@@ -21,14 +21,14 @@
       synopsis = "Access to the Windows Clipboard.";
       description = "/Clipboard/ is a package that allows you to interact with the Windows Clipboard easily.\n\nBased on the Win32 package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

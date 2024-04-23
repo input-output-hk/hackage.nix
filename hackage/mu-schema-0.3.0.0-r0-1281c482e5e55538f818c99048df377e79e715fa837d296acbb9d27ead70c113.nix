@@ -21,7 +21,7 @@
       synopsis = "Format-independent schemas for serialization";
       description = "With @mu-schema@ you can describe schemas using type-level constructs, and derive serializers from those. See @mu-avro@, @mu-protobuf@ for the actual adapters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

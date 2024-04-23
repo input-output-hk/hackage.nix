@@ -21,7 +21,7 @@
       synopsis = "Access metadata from the Arch Linux User Repository.";
       description = "Access package information from Arch Linux\\'s AUR via its RPC interface. The main exposed functions reflect those of the RPC.\n`info` gets metadata for one package. `search` gets limited metadata for packages that match a given regex.\nBy default this library supports version 5 of the RPC, and hence version 4.2+ of the AUR.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aur-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

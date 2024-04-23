@@ -21,7 +21,7 @@
       synopsis = "Convenient Chinese character lookup.";
       description = "Convenient Chinese character lookup.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "zi4pu3" = { buildable = true; }; };
       };
-    }
+      exes = { "zi4pu3" = { buildable = true; }; };
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "An implementation of high performance, minimal statistics functions";
       description = "This package is obsolete. Please use O\\'Sullivan\\'s /statistics/\npackage: <http://hackage.haskell.org/package/statistics>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

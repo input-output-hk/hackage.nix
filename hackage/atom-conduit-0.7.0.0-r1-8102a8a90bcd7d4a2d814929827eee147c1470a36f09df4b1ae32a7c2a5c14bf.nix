@@ -21,7 +21,7 @@
       synopsis = "Streaming parser/renderer for the Atom 1.0 standard (RFC 4287).";
       description = "Cf README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quickcheck" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "golden" = {
           depends = [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
@@ -78,9 +78,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unit" = {
           depends = [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
@@ -97,17 +97,17 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if flags.enable-hlint-test then true else false;
-          };
         };
       };
-    }
+    };
+  }

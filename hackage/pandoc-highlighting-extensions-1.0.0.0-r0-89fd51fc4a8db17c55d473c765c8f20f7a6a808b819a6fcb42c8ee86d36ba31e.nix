@@ -14,7 +14,7 @@
       identifier = {
         name = "pandoc-highlighting-extensions";
         version = "1.0.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2018 Typeclass Consulting, LLC";
       maintainer = "Chris Martin, Julie Moronuki";
@@ -24,7 +24,7 @@
       synopsis = "Syntax highlighting customization for Pandoc";
       description = "This package adapts the @skylighting-modding@ and\n@skylighting-extensions@ packages for use with Pandoc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."skylighting-extensions" or (errorHandler.buildDepError "skylighting-extensions"))
           (hsPkgs."skylighting-modding" or (errorHandler.buildDepError "skylighting-modding"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

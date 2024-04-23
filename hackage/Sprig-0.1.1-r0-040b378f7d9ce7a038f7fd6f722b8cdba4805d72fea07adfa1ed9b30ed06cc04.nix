@@ -21,14 +21,14 @@
       synopsis = "Binding to Sprig";
       description = "Foreign Binding to Jonny D's SDL Primitives Generator (SPriG) library, a fork of SGE. Haddock documentation is available from the homepage.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

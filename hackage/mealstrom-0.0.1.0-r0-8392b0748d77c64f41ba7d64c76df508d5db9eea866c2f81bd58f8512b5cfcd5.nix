@@ -21,7 +21,7 @@
       synopsis = "Manipulate FSMs and store them in PostgreSQL.";
       description = "Mealstrom is a library that allows you to work with Mealy machines,\na kind of finite-state machine, in Haskell using PostgreSQL for\npersistence.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."mealstrom" or (errorHandler.buildDepError "mealstrom"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

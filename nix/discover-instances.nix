@@ -6,8 +6,8 @@
         nix = import ../hackage/discover-instances-0.1.0.0-r0-4b4c9affb6ad6f8ce76a7d9e475a99867a3ee1ce241a17c12a662c61e0c68f72.nix;
         revNum = 0;
         sha256 = "4b4c9affb6ad6f8ce76a7d9e475a99867a3ee1ce241a17c12a662c61e0c68f72";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

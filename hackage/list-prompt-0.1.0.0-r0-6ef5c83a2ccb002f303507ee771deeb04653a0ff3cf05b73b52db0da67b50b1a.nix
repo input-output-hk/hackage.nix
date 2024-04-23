@@ -21,7 +21,7 @@
       synopsis = "A simple list prompt UI for the terminal.";
       description = "See https://github.com/yamadapc/list-prompt";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple-demo" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Complete JNI raw bindings.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."thread-local-storage" or (errorHandler.buildDepError "thread-local-storage"))
-          ];
+        ];
         libs = [ (pkgs."jvm" or (errorHandler.sysDepError "jvm")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

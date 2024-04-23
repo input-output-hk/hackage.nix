@@ -21,7 +21,7 @@
       synopsis = "Console client for encyclopedias";
       description = "A console (text/terminal) based client for online\nencyclopedias such as Wikipedia.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "inquire" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aether" or (errorHandler.buildDepError "aether"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

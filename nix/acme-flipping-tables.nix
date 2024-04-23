@@ -6,8 +6,8 @@
         nix = import ../hackage/acme-flipping-tables-0-r0-1c36e35ae73dd3f61ec6fc66a29ed2d7ec2007fdfdad9dbc5c88d34652be536c.nix;
         revNum = 0;
         sha256 = "1c36e35ae73dd3f61ec6fc66a29ed2d7ec2007fdfdad9dbc5c88d34652be536c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

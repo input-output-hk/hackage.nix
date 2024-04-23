@@ -21,16 +21,16 @@
       synopsis = "";
       description = "Please see the README on GitLab at <https://gitlab.com/igrep/pure-shuffle#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pure-shuffle-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."pure-shuffle" or (errorHandler.buildDepError "pure-shuffle"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

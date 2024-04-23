@@ -21,7 +21,7 @@
       synopsis = "Rebuild default.hoo from many .hoo files in the current directory";
       description = "Rebuild default.hoo from many .hoo files in the current directory";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rehoo" = {
@@ -36,9 +36,9 @@
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

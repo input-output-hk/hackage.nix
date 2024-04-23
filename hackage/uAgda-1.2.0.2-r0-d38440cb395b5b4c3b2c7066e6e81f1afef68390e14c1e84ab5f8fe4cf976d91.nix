@@ -21,7 +21,7 @@
       synopsis = "A simplistic dependently-typed language with parametricity.";
       description = "uAgda implements an experimental dependently-typed language\n(and proof assistant by the Curry-Howard isomorphism), extended with support for parametricity.\n\nSee the share/tutorial directory for how to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uAgda" = {
@@ -36,9 +36,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

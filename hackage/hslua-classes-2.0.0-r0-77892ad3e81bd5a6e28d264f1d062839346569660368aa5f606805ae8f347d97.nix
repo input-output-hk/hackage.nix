@@ -21,7 +21,7 @@
       synopsis = "Type classes for HsLua";
       description = "Type classes for convenient marshalling and calling of\nLua functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."hslua-core" or (errorHandler.buildDepError "hslua-core"))
           (hsPkgs."hslua-marshalling" or (errorHandler.buildDepError "hslua-marshalling"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hslua-classes" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-hslua" or (errorHandler.buildDepError "tasty-hslua"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

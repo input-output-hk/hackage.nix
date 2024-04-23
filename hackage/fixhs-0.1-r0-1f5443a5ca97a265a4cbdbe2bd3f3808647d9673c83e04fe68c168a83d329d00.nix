@@ -15,7 +15,7 @@
       with-fix42 = true;
       with-fix43 = false;
       with-fix44 = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "fixhs"; version = "0.1"; };
@@ -28,7 +28,7 @@
       synopsis = "FIX (co)parser";
       description = "Financial Information eXchange (FIX) protocol (co)parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fix-generator" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "client support for named-servant";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."named-servant" or (errorHandler.buildDepError "named-servant"))
           (hsPkgs."named" or (errorHandler.buildDepError "named"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

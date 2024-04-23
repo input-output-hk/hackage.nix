@@ -21,15 +21,15 @@
       synopsis = "A Haskell library for working with forecast.io data.";
       description = "For more detailed documentation on the service, please refer to the\nexcellent documentation for the\n<https://developer.forecast.io/docs/v2 forecast.io > service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

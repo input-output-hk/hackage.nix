@@ -21,7 +21,7 @@
       synopsis = "Copy a directory tree, making zero-size sparse copies of big files.";
       description = "Copies a directory tree, preserving permissions and modification times, but\nmaking zero-size sparse copies of big files. See the README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bogocopy" = {
@@ -35,9 +35,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library to automatically put named windows into the DynamicLog.";
       description = "Fetch the window names using the xmonad-contrib NamedWindows\nextension and place them next to the numbers in comma separated form\nnext to the WindowNames in the DynamicLog.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

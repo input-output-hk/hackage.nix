@@ -21,7 +21,7 @@
       synopsis = "Let systemd bind the server's socket for you";
       description = "\"Socket activation\" is the a feature of systemd. We use it for web\nservers, to avoid the momentary downtime that otherwise occurs while restarting\nprocesses. Because the socket is manged by systemd, not by our process, the\nsocket remains even while our process is down. Requests to the socket are queued\nuntil our process comes back up to respond.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

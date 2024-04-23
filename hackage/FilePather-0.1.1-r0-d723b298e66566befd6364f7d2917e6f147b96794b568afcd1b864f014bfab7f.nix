@@ -21,7 +21,7 @@
       synopsis = "Functions on System.FilePath";
       description = "Functions over @System.FilePath@ including a find function for recursing down directories.\n\n/This package is similar to the filemanip package but without the mtl dependency./\n\nUsage example:\n\n@\nfindHere always (extensionEq \\\"hs\\\") >>= mapM_ putStrLn\n.\\/Setup.hs\n.\\/System\\/FilePath\\/FilePather.hs\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

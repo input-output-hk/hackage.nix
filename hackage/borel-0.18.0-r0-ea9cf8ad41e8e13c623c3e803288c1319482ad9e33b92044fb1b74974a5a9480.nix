@@ -21,7 +21,7 @@
       synopsis = "Metering System for OpenStack metrics provided by Vaultaire.";
       description = "Leverages Ceilometer, Chevalier and Marquise to meter OpenStack data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,12 +51,12 @@
           (hsPkgs."chevalier-common" or (errorHandler.buildDepError "chevalier-common"))
           (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
           (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -90,12 +90,12 @@
             (hsPkgs."chevalier-common" or (errorHandler.buildDepError "chevalier-common"))
             (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
             (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

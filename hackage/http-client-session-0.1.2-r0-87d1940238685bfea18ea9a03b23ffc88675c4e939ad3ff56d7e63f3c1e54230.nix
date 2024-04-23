@@ -21,7 +21,7 @@
       synopsis = "A simple abstraction over the \"http-client\" connection manager";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

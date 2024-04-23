@@ -6,8 +6,8 @@
         nix = import ../hackage/sarasvati-0.3.0.0-r0-ec1d7acbac628469042699091e40d2992c5d94c914f3e0ce35b92e4f44ec9f22.nix;
         revNum = 0;
         sha256 = "ec1d7acbac628469042699091e40d2992c5d94c914f3e0ce35b92e4f44ec9f22";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

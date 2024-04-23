@@ -21,7 +21,7 @@
       synopsis = "RPM package creator for Haskell Cabal-based packages";
       description = "This package generates RPM packages from Haskell Cabal packages.\n\n* cblrpm spec: creates a .spec file from a hackage\n* cblrpm srpm: creates an source rpm package\n* cblrpm rpm: build a binary rpm package, installing depends with yum\n* cblrpm prep: unpacks package source\n* cblrpm builddep: yum install depends\n* cblrpm install: yum install depends and then cabal install\n* cblrpm depends: list hackage dependencies\n* cblrpm requires: list package dependencies";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cblrpm" = {
@@ -35,9 +35,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

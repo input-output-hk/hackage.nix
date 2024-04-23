@@ -21,14 +21,14 @@
       synopsis = "Profunctors from Haskell to Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hs-functors" or (errorHandler.buildDepError "hs-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

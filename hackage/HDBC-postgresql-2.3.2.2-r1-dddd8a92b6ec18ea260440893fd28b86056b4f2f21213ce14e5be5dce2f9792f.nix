@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL driver for HDBC";
       description = "This package provides a PostgreSQL driver for HDBC";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,13 +35,13 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         libs = [ (pkgs."pq" or (errorHandler.sysDepError "pq")) ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."testpack" or (errorHandler.buildDepError "testpack"))
@@ -55,10 +55,10 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-            ];
+          ];
           libs = [ (pkgs."pq" or (errorHandler.sysDepError "pq")) ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

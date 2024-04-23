@@ -21,7 +21,7 @@
       synopsis = "A command line calculator";
       description = "A command line calculator";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsbc" = {
@@ -30,9 +30,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

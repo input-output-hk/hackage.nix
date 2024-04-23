@@ -21,7 +21,7 @@
       synopsis = "Semigroupoids requiring Haskell extensions";
       description = "Semigroupoids and semigroupoid operations requiring Haskell extensions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."groupoids" or (errorHandler.buildDepError "groupoids"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/mpdmate-0.1-r0-7f5692576a238eec35956235291a81813114ab09615b44168cb1a9518b81969c.nix;
         revNum = 0;
         sha256 = "7f5692576a238eec35956235291a81813114ab09615b44168cb1a9518b81969c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

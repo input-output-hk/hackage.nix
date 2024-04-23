@@ -21,14 +21,14 @@
       synopsis = "Library to enable 3D game development for Haskell - Ogre Bindings";
       description = "Library, to enable 3D game development for Haskell,\nbased on bindings to 3D Graphics, Audio and GUI libraries.\nThis is the Ogre Bindings module, which provides 3D engine\ncapabilities.\nPlatform: Windows only\nLicense: Apache License, Version 2.0\nInstall: see http://www.althainz.de/HGamer3D/Download-and-Installation.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

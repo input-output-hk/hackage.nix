@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Transaction Postgresql Plugin";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."yam-app" or (errorHandler.buildDepError "yam-app"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

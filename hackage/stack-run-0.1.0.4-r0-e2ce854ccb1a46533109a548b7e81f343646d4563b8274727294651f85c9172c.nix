@@ -21,7 +21,7 @@
       synopsis = "An equivalent to cabal run for stack.";
       description = "Finds the project root, compiles your code and runs the\nfirst or set default executable. It's a shorthand for\n@stack build && stack run executable@, much like\n@cabal run@.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-run" = {
@@ -36,9 +36,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."projectroot" or (errorHandler.buildDepError "projectroot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

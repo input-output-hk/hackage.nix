@@ -21,14 +21,14 @@
       synopsis = "Javascript: The Good Parts -- AST & Pretty Printer";
       description = "An AST for the \"the good parts\" of Javascript (as defined by Douglas Crockford)\nand a pretty printer for that AST. Designed to be the target of a code generator.\nDoes not include a parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

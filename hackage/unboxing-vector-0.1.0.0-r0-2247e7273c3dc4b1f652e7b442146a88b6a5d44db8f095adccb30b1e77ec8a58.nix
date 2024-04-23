@@ -21,7 +21,7 @@
       synopsis = "Newtype-friendly Unboxed Vectors";
       description = "Please see the README on GitHub at <https://github.com/minoki/unboxing-vector#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unboxing-vector-test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "unboxing-vector-benchmark" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."unboxing-vector" or (errorHandler.buildDepError "unboxing-vector"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

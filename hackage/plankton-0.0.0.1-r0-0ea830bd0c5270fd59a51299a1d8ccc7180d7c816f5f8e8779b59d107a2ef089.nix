@@ -21,15 +21,15 @@
       synopsis = "The core of a numeric prelude, taken from numhask";
       description = "The core of a numeric prelude, taken from numhask, because I thought it would be useful to have this as a separate library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

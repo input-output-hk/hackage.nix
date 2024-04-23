@@ -32,8 +32,8 @@
         (hsPkgs.buildPackages.gi-glib or (pkgs.buildPackages.gi-glib or (errorHandler.setupDepError "gi-glib")))
         (hsPkgs.buildPackages.gi-gio or (pkgs.buildPackages.gi-gio or (errorHandler.setupDepError "gi-gio")))
         (hsPkgs.buildPackages.gi-pango or (pkgs.buildPackages.gi-pango or (errorHandler.setupDepError "gi-pango")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -52,11 +52,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."libhandy-0.0" or (errorHandler.pkgConfDepError "libhandy-0.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

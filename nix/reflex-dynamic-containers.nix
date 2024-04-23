@@ -6,8 +6,8 @@
         nix = import ../hackage/reflex-dynamic-containers-0.1.0.0-r0-9de397d74c009706438217bfefbc05f71eef322abfec6f46fa0ef091e3e7f150.nix;
         revNum = 0;
         sha256 = "9de397d74c009706438217bfefbc05f71eef322abfec6f46fa0ef091e3e7f150";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/satchmo-minisat-1.3-r0-ac13efef84164ba1fa92d137e98f4ead11fa0852d10bb03487426a0805d2cd05.nix;
         revNum = 0;
         sha256 = "ac13efef84164ba1fa92d137e98f4ead11fa0852d10bb03487426a0805d2cd05";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

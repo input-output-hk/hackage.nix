@@ -21,7 +21,7 @@
       synopsis = "High-level interface to FFTW (Fast Fourier Transform) based on comfort-array";
       description = "FFTW claims to be the fastest Fourier Transform in the West.\nThis is a high-level interface to @libfftw@.\nWe re-use the type classes from @netlib-ffi@.\n\nFor rather simple examples\nsee the packages @align-audio@ and @morbus-meniere@.\n\nSee also package @fft@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fftw-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fixed-length large integer arithmetic for Accelerate";
       description = "This package provides fixed-length large integer types and arithmetic\noperations for Accelerate. Signed and unsigned 96, 128, 160, 192, 224, 256,\nand 512-bit types are predefined.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -29,17 +29,17 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-          ] ++ (pkgs.lib).optionals (flags.llvm-cpu) [
+        ] ++ pkgs.lib.optionals (flags.llvm-cpu) [
           (hsPkgs."accelerate-llvm" or (errorHandler.buildDepError "accelerate-llvm"))
           (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
           (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
-          ]) ++ (pkgs.lib).optionals (flags.llvm-ptx) [
+        ]) ++ pkgs.lib.optionals (flags.llvm-ptx) [
           (hsPkgs."accelerate-llvm" or (errorHandler.buildDepError "accelerate-llvm"))
           (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"))
           (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "accelerate-bignum-test" = {
           depends = ([
@@ -48,10 +48,10 @@
             (hsPkgs."accelerate-bignum" or (errorHandler.buildDepError "accelerate-bignum"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
+          ] ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))) ++ pkgs.lib.optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "accelerate-bignum-bench" = {
           depends = ([
@@ -64,9 +64,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ] ++ (pkgs.lib).optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))) ++ (pkgs.lib).optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
+          ] ++ pkgs.lib.optional (flags.llvm-cpu) (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))) ++ pkgs.lib.optional (flags.llvm-ptx) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

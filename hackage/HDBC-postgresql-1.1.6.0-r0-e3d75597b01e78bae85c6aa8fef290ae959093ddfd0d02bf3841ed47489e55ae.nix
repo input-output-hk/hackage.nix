@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL driver for HDBC";
       description = "This package provides a PostgreSQL driver for HDBC";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         libs = [ (pkgs."pq" or (errorHandler.sysDepError "pq")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Diagrams backend for Charts.";
       description = "Diagrams backend for Charts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

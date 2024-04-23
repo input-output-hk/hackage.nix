@@ -21,16 +21,16 @@
       synopsis = "Simple text based format strings with named identifiers.";
       description = "A simple library for format strings based on text and attoparsec. See the readme for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-text-format-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

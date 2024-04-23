@@ -21,7 +21,7 @@
       synopsis = "Musical score and part representation.";
       description = "Musical time struture, voices, tracks and scores.\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,8 +55,8 @@
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
           (hsPkgs."prettify" or (errorHandler.buildDepError "prettify"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

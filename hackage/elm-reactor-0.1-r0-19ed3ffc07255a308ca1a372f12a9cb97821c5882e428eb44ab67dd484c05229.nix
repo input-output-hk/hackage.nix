@@ -21,7 +21,7 @@
       synopsis = "Interactive development tool for Elm programs";
       description = "Provides an interactive development tool that makes it easy\nto develop and debug Elm programs. It will automatically\ncompile any Elm program—independent of editor. It permits\nhot-swapping and time-traveling debugging.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elm-reactor" = {
@@ -47,9 +47,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."websockets-snap" or (errorHandler.buildDepError "websockets-snap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

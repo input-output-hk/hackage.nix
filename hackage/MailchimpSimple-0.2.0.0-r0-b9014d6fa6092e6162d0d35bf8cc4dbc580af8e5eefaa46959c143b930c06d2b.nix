@@ -21,7 +21,7 @@
       synopsis = "Haskell library to interact with Mailchimp JSON API Version 3.0";
       description = "This package contains the basic functions supported by Mailchimp JSON API. For HTTP Authentication, it uses Basic HTTP Authentication. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

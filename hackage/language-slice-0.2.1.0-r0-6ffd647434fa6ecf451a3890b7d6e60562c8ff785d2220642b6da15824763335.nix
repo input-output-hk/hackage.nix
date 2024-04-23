@@ -21,16 +21,16 @@
       synopsis = "AST and parser for the ZeroC Slice language (Specification language for ICE)";
       description = "AST and parser for the ZeroC Slice language (Specification language for ICE)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-parser" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."language-slice" or (errorHandler.buildDepError "language-slice"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

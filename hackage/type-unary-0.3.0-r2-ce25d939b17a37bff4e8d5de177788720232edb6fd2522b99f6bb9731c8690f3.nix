@@ -21,7 +21,7 @@
       synopsis = "Type-level and typed unary natural numbers, inequality proofs, vectors";
       description = "Type-level and value-typed unary natural numbers, inequality proofs,\nand length-typed vectors. There are probably many of these packages.\nPerhaps consolidate.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."ty" or (errorHandler.buildDepError "ty"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."applicative-numbers" or (errorHandler.buildDepError "applicative-numbers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

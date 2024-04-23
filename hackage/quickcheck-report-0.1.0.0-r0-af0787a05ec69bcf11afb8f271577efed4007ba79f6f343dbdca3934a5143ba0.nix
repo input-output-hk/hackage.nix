@@ -21,7 +21,7 @@
       synopsis = "Customizable reports for quickcheck properties";
       description = "Add some flexibility to the creation of reports from sets of quickcheck properties";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."th-printf" or (errorHandler.buildDepError "th-printf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

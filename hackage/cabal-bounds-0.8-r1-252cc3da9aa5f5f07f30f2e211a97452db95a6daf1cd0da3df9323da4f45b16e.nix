@@ -21,7 +21,7 @@
       synopsis = "A command line program for managing the bounds/versions of the dependencies in a cabal file.";
       description = "A command line program for managing the bounds/versions of the dependencies in a cabal file.\n\n'cabal-bounds' is able to do these things with the bounds of the dependencies in the cabal file:\n\n* drop them\n\n* update them by the library versions of the current cabal build\n\n* update them by the library versions of a haskell platform release\n\n* update them by the library versions specified by a file\n\n* dump the libraries/dependencies and their lower bound versions from the cabal file(s) into a file\n\nFor further details please consult the <https://github.com/dan-t/cabal-bounds README>.\n\n/Installation/\n\nYou have to ensure, that the 'Cabal' library of 'cabal-bounds' matches the one used by the 'cabal' binary:\n\n> $ cabal --version\n> cabal-install version 1.18.0.2\n> using version 1.18.1 of the Cabal library\n\n> $ cabal install --constraint=\"Cabal == 1.18.1\" cabal-bounds\n\nIf you update the 'cabal' binary and the used 'Cabal' library changes, then you have to rebuild 'cabal-bounds'.\n\n/Issues/\n\nPerhaps the currently most annoying thing is, that you have to live with the reformating of your\n'cabal' file done by the pretty printer of the 'Cabal' library.\n\nTo reformat your 'cabal' file without changing any bounds you can call 'cabal-bounds' with the name of\na section that isn't present in the 'cabal' file:\n\n> $ cabal-bounds drop --executable=blub myproject.cabal";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."cabal-lenses" or (errorHandler.buildDepError "cabal-lenses"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-bounds" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cabal-bounds" or (errorHandler.buildDepError "cabal-bounds"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cabal-bounds-tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."cabal-bounds" or (errorHandler.buildDepError "cabal-bounds"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

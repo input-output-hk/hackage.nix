@@ -21,7 +21,7 @@
       synopsis = "Adaptation of the retry library for the effectful ecosystem.";
       description = "Adaptation of the @<https://hackage.haskell.org/package/retry retry>@ library for the @<https://hackage.haskell.org/package/effectful effectful>@ ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."effectful-core" or (errorHandler.buildDepError "effectful-core"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "retry-effectful-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."retry-effectful" or (errorHandler.buildDepError "retry-effectful"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

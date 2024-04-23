@@ -21,21 +21,21 @@
       synopsis = "Haskell 98 phantom types to avoid unsafely passing dummy arguments";
       description = "Haskell 98 phantom types to avoid unsafely passing dummy arguments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.2" && (compiler.version).lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (flags.deepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))) ++ (pkgs.lib).optionals (flags.transformers) ([
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.2" && compiler.version.lt "7.5")) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ pkgs.lib.optional (flags.deepseq) (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))) ++ pkgs.lib.optionals (flags.transformers) ([
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.10" || compiler.isGhcjs && true
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.10" || compiler.isGhcjs && true
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]
+          ]
           else [
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]));
+          ]));
         buildable = true;
-        };
       };
-    }
+    };
+  }

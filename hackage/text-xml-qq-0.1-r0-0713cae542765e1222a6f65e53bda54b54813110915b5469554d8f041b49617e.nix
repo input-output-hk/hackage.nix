@@ -21,7 +21,7 @@
       synopsis = "Quasiquoter for xml. XML DSL in Haskell.";
       description = "XML quasiquoter. Can convert XML code into Haskell data structures compile time.\n\nAt the moment only Text.XML.Light (xml-package) backend.\n\nSupports namespaces, attributes, embedding Haskell variables etc.\n\nSee github for more information and examples of usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

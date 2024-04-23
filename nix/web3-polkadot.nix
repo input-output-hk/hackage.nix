@@ -6,8 +6,8 @@
         nix = import ../hackage/web3-polkadot-1.0.0.0-r0-bec2ee88f93bc3241fe58cb6c65630a0559e2f8322d308623d4f0e7fa75710b7.nix;
         revNum = 0;
         sha256 = "bec2ee88f93bc3241fe58cb6c65630a0559e2f8322d308623d4f0e7fa75710b7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "Combinator emoticons: data-aviary in the flavor of emoticons";
       description = ">\nCombinators copied from Data.Aviary.Birds renamed according to emoticons.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Statically typechecked client for Redis";
       description = "This library is a Haskell client for the Redis datastore built on top of\nHedis, with stronger type-level guarantees.\n\nFor detailed documentation, see the \"Database.Edis\" module.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

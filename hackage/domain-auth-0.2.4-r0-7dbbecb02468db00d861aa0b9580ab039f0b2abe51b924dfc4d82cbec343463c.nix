@@ -21,7 +21,7 @@
       synopsis = "Domain authentication library";
       description = "Library for Sender Policy Framework, SenderID,\nDomainKeys and DKIM.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

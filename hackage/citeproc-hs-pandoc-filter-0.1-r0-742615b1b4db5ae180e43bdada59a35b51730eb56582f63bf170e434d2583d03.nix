@@ -21,7 +21,7 @@
       synopsis = "A Pandoc filter for processing bibliographic references with citeproc-hs";
       description = "citeproc-hs is a library for rendering\nbibliographic reference citations into a variety\nof styles using a macro language called Citation\nStyle Language (CSL). More details on CSL can be\nfound here:\n<http://citationstyles.org/>.\n\nciteproc-hs-pandoc-filter is a replacement of\nciteproc-pandoc which uses citeproc-hs for\nprocessing citations.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "citeproc-hs" = {
@@ -41,9 +41,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

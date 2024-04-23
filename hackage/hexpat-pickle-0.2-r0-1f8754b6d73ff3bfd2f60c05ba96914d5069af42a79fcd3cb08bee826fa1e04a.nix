@@ -21,7 +21,7 @@
       synopsis = "XML picklers based on hexpat, source-code-similar to those of the HXT package";
       description = "A library of combinators that allows Haskell data structures to be pickled\n(serialized) to/from XML via the Tree datatype defined in the hexpat package.\nIt is source-code-similar to the pickling functionality of the HXT package,\nto ease the transition between the two libraries. This implementation is\nfaster but less complete than HXT. This package does not depend on HXT.\n\nNote that hexpat-pickle is still under development, so it is fairly likely\nthat there will be some API changes coming.\n\nDARCS repository:\n<http://code.haskell.org/hexpat-pickle/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

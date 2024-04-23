@@ -21,15 +21,15 @@
       synopsis = "utility to add extra safety to monadic returns";
       description = "The @Final@ library makes it possible to point out return values in\n(monadic) functions.  This adds extra compile-time safety to your\ncode, because the compiler will warn you if marked return values\naccidentally became middle parts of a big function written with do\nnotation.\n\nDocumentation and examples provided in the @Control.Final@ module's\nown documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

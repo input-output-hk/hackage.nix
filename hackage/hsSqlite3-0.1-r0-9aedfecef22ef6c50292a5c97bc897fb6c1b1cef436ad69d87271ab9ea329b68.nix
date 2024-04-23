@@ -21,7 +21,7 @@
       synopsis = "Sqlite3 bindings";
       description = "Bindings for Sqlite3";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bindings-sqlite3" or (errorHandler.buildDepError "bindings-sqlite3"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

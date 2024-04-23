@@ -21,7 +21,7 @@
       synopsis = "Simple Hackage release workflow for package maintainers";
       description = "Hkgr (pronouced \"Hackager\") is a tool to help Hackage maintainers\nmake new releases of their packages, with commands for git tagging,\npristine sdist, and uploading to Hackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hkgr" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

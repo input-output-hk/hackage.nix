@@ -21,7 +21,7 @@
       synopsis = "Template Haskell utilities for beam";
       description = "(Completely optional) Template Haskell functions\nto derive common boilerplate code when writing table types\nfor the <https://hackage.haskell.org/package/beam beam> library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."beam" or (errorHandler.buildDepError "beam"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-beam-th" = {
           depends = [
@@ -45,17 +45,17 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest-beam-th" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

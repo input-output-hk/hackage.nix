@@ -21,7 +21,7 @@
       synopsis = "Transparent, persistent caching of lazy, traversable structures";
       description = "cached-traversable provides persistent (on-disk) caching of lazy, traversable\nstructures for any element type which has a Binary instance. Think of it as\na poor man's acid-state for deterministic programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

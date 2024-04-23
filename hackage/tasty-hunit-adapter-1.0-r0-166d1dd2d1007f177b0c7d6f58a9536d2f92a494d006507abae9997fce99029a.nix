@@ -21,7 +21,7 @@
       synopsis = "Use existing HUnit tests with tasty";
       description = "This package provides a function that converts exisiting\n<http://hackage.haskell.org/package/HUnit HUnit> tests to\na TestTree that can be used with\n<http://hackage.haskell.org/package/tasty tasty> testing\nframework. Code is adapted from\n<http://hackage.haskell.org/package/test-framework-hunit test-framework-hunit>\npackage authored by Max Bolingbroke.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hpc-strobe-0.1-r0-db28c05e984549d8fb02735fe137b5018ada242b883e482de27a5747f7d9b71d.nix;
         revNum = 0;
         sha256 = "db28c05e984549d8fb02735fe137b5018ada242b883e482de27a5747f7d9b71d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

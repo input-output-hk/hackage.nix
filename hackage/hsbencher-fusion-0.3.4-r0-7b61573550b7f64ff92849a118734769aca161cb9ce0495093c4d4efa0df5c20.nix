@@ -21,7 +21,7 @@
       synopsis = "Backend for uploading benchmark data to Google Fusion Tables.";
       description = "Google Fusion tables are a type of Google Doc that resembles a\nSQL database more than a spreadsheet.  They have a web\ninterface and permissions model similar to toher google docs.\nMore information can be found at:\n<https://support.google.com/fusiontables/answer/2571232?hl=en>\n\nChangeLog:\n\n* (0.3) Added RETRIES field to the core schema.\n* (0.3.3) Jump to new versions of handa-gdata, network, and http-conduit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."handa-gdata" or (errorHandler.buildDepError "handa-gdata"))
           (hsPkgs."hsbencher" or (errorHandler.buildDepError "hsbencher"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hsbencher-fusion-upload-criterion" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hsbencher-fusion" or (errorHandler.buildDepError "hsbencher-fusion"))
             (hsPkgs."hsbencher" or (errorHandler.buildDepError "hsbencher"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hsbencher-fusion-upload-csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
             (hsPkgs."hsbencher-fusion" or (errorHandler.buildDepError "hsbencher-fusion"))
             (hsPkgs."hsbencher" or (errorHandler.buildDepError "hsbencher"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

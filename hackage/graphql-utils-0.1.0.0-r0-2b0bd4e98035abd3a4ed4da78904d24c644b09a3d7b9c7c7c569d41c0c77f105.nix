@@ -21,7 +21,7 @@
       synopsis = "GraphQL Utils";
       description = "Easy use graphql on aeson library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."graphql" or (errorHandler.buildDepError "graphql"))
           (hsPkgs."aeson-helper" or (errorHandler.buildDepError "aeson-helper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

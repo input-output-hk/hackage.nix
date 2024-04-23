@@ -21,7 +21,7 @@
       synopsis = "IPFS support for Haskell Web3 library.";
       description = "Client library for Third Generation of Web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

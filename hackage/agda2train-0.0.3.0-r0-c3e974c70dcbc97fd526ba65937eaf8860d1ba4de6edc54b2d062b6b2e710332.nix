@@ -21,7 +21,7 @@
       synopsis = "Agda backend to generate training data for machine learning purposes.";
       description = "Compiles Agda modules to JSON files, containing information about\nthe imported scope of each module, its definitions and information about each\nsub-term appearing in the code (i.e. context, goal type, term).";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "agda2train-lib" = {
@@ -34,10 +34,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "agda2train" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

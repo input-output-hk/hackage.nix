@@ -21,7 +21,7 @@
       synopsis = "Client API for Rocket Scissor Spacegoo";
       description = "Using this package you can quickly create code to take\npart in a game of Rocket Scissor Spacegoo; see\n<https://bitbucket.org/dividuum/rocket-scissor-spacegoo> for more details on the\ngame.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

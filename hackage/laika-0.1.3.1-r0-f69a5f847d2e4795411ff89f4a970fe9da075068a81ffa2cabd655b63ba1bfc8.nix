@@ -21,7 +21,7 @@
       synopsis = "Minimalistic type-checked compile-time template engine";
       description = "The library integrates with Haskell's new\n<http://hackage.haskell.org/package/record first-class records>.\n\nIt inherits a remarkable quality from the dogs:\nunlike most other template engines\nat compile time it barks at you whenever you do anything wrong in your templates.\nHence the title (from Russian \"lai\" means \"bark\").\nAlso it commemorates Laika, the hero dog,\nwhich became the first animal to orbit Earth and died in space.\n\n/This library is in experimental state./\n/Detailed documentation will arrive with the first stable release./";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."record" or (errorHandler.buildDepError "record"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
-          depends = (pkgs.lib).optionals (!(!flags.demo)) [
+          depends = pkgs.lib.optionals (!!flags.demo) [
             (hsPkgs."laika" or (errorHandler.buildDepError "laika"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."record" or (errorHandler.buildDepError "record"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
         };
       };
-    }
+    };
+  }

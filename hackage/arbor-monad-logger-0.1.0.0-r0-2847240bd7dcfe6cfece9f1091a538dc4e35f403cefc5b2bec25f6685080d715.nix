@@ -21,7 +21,7 @@
       synopsis = "Simple logging library";
       description = "Please see the README on GitHub at <https://github.com/packetloop/arbor-monad-logger#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arbor-monad-logger-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."arbor-monad-logger" or (errorHandler.buildDepError "arbor-monad-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "arbor-monad-logger-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."arbor-monad-logger" or (errorHandler.buildDepError "arbor-monad-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

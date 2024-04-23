@@ -6,8 +6,8 @@
         nix = import ../hackage/attoparsec-arff-0.0-r0-3b693cad368842ef483a3b0c1c71fa85305d095b6a93c32a9d81a43df3c34acd.nix;
         revNum = 0;
         sha256 = "3b693cad368842ef483a3b0c1c71fa85305d095b6a93c32a9d81a43df3c34acd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

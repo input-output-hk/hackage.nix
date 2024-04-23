@@ -21,15 +21,15 @@
       synopsis = "Hedgehog properties for optics laws";
       description = "Are your prisms well-formed? Test and be confident.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

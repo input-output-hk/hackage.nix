@@ -21,15 +21,15 @@
       synopsis = "Polymorphic combinators for working with foreign functions";
       description = "Functions like 'alloca' are provided, except not restricted\nto 'IO'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MonadCatchIO-mtl" or (errorHandler.buildDepError "MonadCatchIO-mtl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

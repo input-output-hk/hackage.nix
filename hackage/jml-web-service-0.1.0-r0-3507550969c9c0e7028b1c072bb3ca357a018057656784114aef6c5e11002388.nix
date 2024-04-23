@@ -21,7 +21,7 @@
       synopsis = "Common utilities for running a web service";
       description = "This is a personal set of helper functions used to create a web API service.\n\nWe assume that the service is intended to run in a container on a Kubernetes\ncluster, but it\\'s likely that these routines would be useful for other\nservices.\n\nWe provide command-line options for use with optparse-applicative,\nPrometheus instrumentation, and some basic logging.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."jml-web-service" or (errorHandler.buildDepError "jml-web-service"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

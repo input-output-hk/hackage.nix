@@ -21,7 +21,7 @@
       synopsis = "A quasiquoter for PCRE regexes.";
       description = "A quasiquoter for Text.Regex.PCRE regexes.\nThis makes use of a new GHC extension known as QuasiQuotes.\nQuasiQuotes do not appear in ghc until 6.9, BUT there is a\npatch for ghc-6.8.3 which adds quasiquote functionality. A\npatched version of ghc-6.8.3, made possible by audreyt's patch, is at\n<http://code.haskell.org/~morrow/quasiquotes/ghc-6.8.3_QQ-0.1.tar.bz2>.\nAn example of the use of @regexqq@ is located at\n<http://code.haskell.org/~morrow/quasiquotes/regexqq.txt>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

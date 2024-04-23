@@ -21,7 +21,7 @@
       synopsis = "Tool for Yu";
       description = "Tool for Yu";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yu" = {
@@ -34,9 +34,9 @@
             (hsPkgs."echo" or (errorHandler.buildDepError "echo"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

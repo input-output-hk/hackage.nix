@@ -21,7 +21,7 @@
       synopsis = "A probabilistic programming embedded DSL   ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hakaru-test" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-all" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

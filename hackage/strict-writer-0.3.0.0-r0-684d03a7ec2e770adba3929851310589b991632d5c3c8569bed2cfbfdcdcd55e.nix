@@ -21,14 +21,14 @@
       synopsis = "A stricter writer, which uses StateT in order to avoid space leaks.";
       description = "A stricter writer, which uses StateT in order to avoid space leaks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

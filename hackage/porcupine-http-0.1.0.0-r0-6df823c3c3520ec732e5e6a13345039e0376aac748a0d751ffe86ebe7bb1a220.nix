@@ -21,7 +21,7 @@
       synopsis = "A location accessor for porcupine to connect to HTTP sources/sinks";
       description = "Gives a porcupine task pipeline access to HTTP urls (GET, POST or\nPUT). Implements a specific location type (represented as JSON object) to pack\ntogether the url and some common HTTP header fields (method, content-type,\netc.). See the README at <https://github.com/tweag/porcupine#README.md> and\nthe examples in the `porcupine-http` package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."streaming-conduit" or (errorHandler.buildDepError "streaming-conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-pokeapi" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-stock" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -95,9 +95,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

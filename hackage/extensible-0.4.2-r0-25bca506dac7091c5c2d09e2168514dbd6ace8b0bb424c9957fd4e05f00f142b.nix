@@ -21,7 +21,7 @@
       synopsis = "Extensible, efficient, optics-friendly data types and effects";
       description = "Poly-kinded extensible records, variants, effects, tangles";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,18 +38,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "effects" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "records" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."extensible" or (errorHandler.buildDepError "extensible"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "eff-comparison" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."effin" or (errorHandler.buildDepError "effin"))
             (hsPkgs."freer" or (errorHandler.buildDepError "freer"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

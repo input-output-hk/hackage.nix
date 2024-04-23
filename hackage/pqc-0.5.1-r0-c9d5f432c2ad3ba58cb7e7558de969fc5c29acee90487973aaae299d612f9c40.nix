@@ -21,7 +21,7 @@
       synopsis = "Parallel batch driver for QuickCheck";
       description = "Parallel batch driver for QuickCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
@@ -30,13 +30,13 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

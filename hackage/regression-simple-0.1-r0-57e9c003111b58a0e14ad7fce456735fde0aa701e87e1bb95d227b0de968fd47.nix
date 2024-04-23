@@ -21,14 +21,14 @@
       synopsis = "Simple linear and quadratic regression";
       description = "A simple package with a module for\n\n* linear and quadratic regression\n\n* linear and quadratic zeros formula\n\n* some 2d and 3d linear algebra\n\nAll specialized to @Double@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

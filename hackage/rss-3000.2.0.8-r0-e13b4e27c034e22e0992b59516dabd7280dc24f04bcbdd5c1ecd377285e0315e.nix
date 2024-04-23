@@ -21,7 +21,7 @@
       synopsis = "A library for generating RSS 2.0 feeds.";
       description = "This library allows you to generate [RSS 2.0](http://www.rssboard.org/rss-specification) feeds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

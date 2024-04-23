@@ -21,7 +21,7 @@
       synopsis = "Yet another Hangman game.";
       description = "Another command line implementation of the classic\nhangman game with ASCII shape and anumation. after\ninstallation with cabal install, execute hangman-ascii\nto run the game.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hangman-ascii" = {
@@ -32,9 +32,9 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

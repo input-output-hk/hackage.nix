@@ -21,7 +21,7 @@
       synopsis = "A string type optimized for size in memory";
       description = "A string type offering very little memory overhead. No\nstring manipulation functions are offered.\n\nEquality and ordinal comparison aim to be competitive with\nthe String type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."smallarray" or (errorHandler.buildDepError "smallarray"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generate XML sitemaps.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

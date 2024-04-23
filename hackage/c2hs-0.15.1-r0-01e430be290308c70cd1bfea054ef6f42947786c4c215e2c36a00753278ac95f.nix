@@ -21,14 +21,14 @@
       synopsis = "C->Haskell Interface Generator";
       description = "C->Haskell assists in the development of Haskell bindings to C\nlibraries.  It extracts C interface information from vanilla header\nfiles and generates marshaling and signature code in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "c2hs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.splitbase
+          ] ++ (if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
@@ -36,10 +36,10 @@
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

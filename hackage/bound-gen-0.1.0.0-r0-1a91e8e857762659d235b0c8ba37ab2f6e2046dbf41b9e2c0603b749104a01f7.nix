@@ -21,7 +21,7 @@
       synopsis = "Unwrap Scope's with globally fresh values";
       description = "It's quite common when working with bound to need to unwrap a @Scope@.\nIn order to ensure that this can be done safely, without shadowing\nany existing free variables, @bound-gen@ glues @monad-gen@'s fresh\nvalue monad into @bound@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bound" or (errorHandler.buildDepError "bound"))
           (hsPkgs."monad-gen" or (errorHandler.buildDepError "monad-gen"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

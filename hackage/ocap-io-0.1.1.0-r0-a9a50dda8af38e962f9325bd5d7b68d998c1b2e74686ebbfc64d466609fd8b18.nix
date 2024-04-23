@@ -21,20 +21,20 @@
       synopsis = "Object capability based IO";
       description = "Object capability based IO.\n\nSee <https://github.com/zenhack/haskell-ocap> for more info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ocap-io" or (errorHandler.buildDepError "ocap-io"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

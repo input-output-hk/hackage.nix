@@ -21,7 +21,7 @@
       synopsis = "Shared data types between various Stackage packages";
       description = "For more information, see <https://www.stackage.org/package/stackage-types>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,26 +21,26 @@
       synopsis = "Random Access Zippers";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "raz-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."raz" or (errorHandler.buildDepError "raz"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "raz-bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."raz" or (errorHandler.buildDepError "raz"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sequence-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."raz" or (errorHandler.buildDepError "raz"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

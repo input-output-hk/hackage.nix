@@ -21,7 +21,7 @@
       synopsis = "Background jobs library for Yesod.";
       description = "Background jobs library for Yesod\n\n* It contains management API and web interface.\n* Queue backend is Redis.\n* Support cron scheduler\n\nUsage and screen shot are available in README.md";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-job-queue-example" = {
           depends = [
@@ -58,18 +58,18 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."classy-prelude-yesod" or (errorHandler.buildDepError "classy-prelude-yesod"))
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "yesod-job-queue-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod-job-queue" or (errorHandler.buildDepError "yesod-job-queue"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

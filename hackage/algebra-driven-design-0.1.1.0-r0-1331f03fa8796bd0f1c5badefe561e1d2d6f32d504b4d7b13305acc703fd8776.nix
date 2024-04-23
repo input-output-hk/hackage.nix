@@ -21,7 +21,7 @@
       synopsis = "Companion library for the book Algebra-Driven Design by Sandy Maguire";
       description = "Please see the README on GitHub at <https://github.com/isovector/algebra-driven-design#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
           (hsPkgs."quickspec" or (errorHandler.buildDepError "quickspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A minimal Haskell bindings to DRMAA C library.";
       description = "A minimal Haskell bindings to DRMAA C library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         libs = [ (pkgs."drmaa" or (errorHandler.sysDepError "drmaa")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

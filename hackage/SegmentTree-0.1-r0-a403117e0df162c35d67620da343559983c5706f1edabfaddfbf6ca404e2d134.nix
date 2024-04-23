@@ -21,11 +21,11 @@
       synopsis = "Data structure for O(log n) mconcats on list intervals";
       description = "The 'SegmentTree' data structure allows for logarithmic\ntime accumulations on preprocessed lists of 'Monoid's.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

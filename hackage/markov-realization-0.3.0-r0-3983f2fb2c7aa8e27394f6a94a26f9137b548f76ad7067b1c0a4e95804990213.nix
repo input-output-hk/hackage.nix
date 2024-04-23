@@ -21,7 +21,7 @@
       synopsis = "Realizations of Markov chains.";
       description = "Please see the README on GitHub at <https://github.com/alexloomis/markov#markov-tutorial>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "markov-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."markov-realization" or (errorHandler.buildDepError "markov-realization"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Early return syntax in do-notation (GHC plugin)";
       description = "Please see the README on GitHub at <https://github.com/inflex-io/early#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "early" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "early-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."early" or (errorHandler.buildDepError "early"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

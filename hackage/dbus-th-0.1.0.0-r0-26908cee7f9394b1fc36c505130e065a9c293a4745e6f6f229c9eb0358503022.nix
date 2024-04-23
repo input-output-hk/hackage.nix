@@ -21,7 +21,7 @@
       synopsis = "TemplateHaskell generator of DBus bindings";
       description = "This package provides functions to easily generate bindings for\nDBus functions. See Test.hs for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."dbus-core" or (errorHandler.buildDepError "dbus-core"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

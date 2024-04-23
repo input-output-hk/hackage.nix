@@ -21,15 +21,15 @@
       synopsis = "A live recompiler";
       description = "Live recompiler for Haskell\n\n<<http://lukexi.github.io/HaliveDemo.gif>>\n\n/Usage:/\n\n> halive path/to/myfile.hs  [optionally any/extra include/dirs ..]\n\nSee <https://github.com/lukexi/halive/blob/master/README.md README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."foreign-store" or (errorHandler.buildDepError "foreign-store"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "halive" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

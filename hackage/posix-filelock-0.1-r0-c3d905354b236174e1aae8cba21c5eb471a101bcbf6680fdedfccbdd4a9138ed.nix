@@ -21,15 +21,15 @@
       synopsis = "Nice wrapper around POSIX fcntl advisory locks";
       description = "\"System.Posix.IO\" has very low-level bindings to POSIX fcntl\nadvisory locks.  This module wraps them in a cleaner API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/SGplus-1.1-r0-b0f3c4329e2355495b1fb5db341f81ac769f9f73cf884c4246d90160d925ced2.nix;
         revNum = 0;
         sha256 = "b0f3c4329e2355495b1fb5db341f81ac769f9f73cf884c4246d90160d925ced2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

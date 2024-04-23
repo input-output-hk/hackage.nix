@@ -6,8 +6,8 @@
         nix = import ../hackage/plow-log-async-0.1.4.0-r0-1fe22a01862f29c7910a8bf205dcac81b7de13d3d984445834d53002590cdbc2.nix;
         revNum = 0;
         sha256 = "1fe22a01862f29c7910a8bf205dcac81b7de13d3d984445834d53002590cdbc2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

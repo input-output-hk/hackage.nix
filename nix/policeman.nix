@@ -6,8 +6,8 @@
         nix = import ../hackage/policeman-0.0.0.0-r0-4be1cae4d33132661414845a754a39de75eee7c9e8d0971f897e22fa45e915cb.nix;
         revNum = 0;
         sha256 = "4be1cae4d33132661414845a754a39de75eee7c9e8d0971f897e22fa45e915cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

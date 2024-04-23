@@ -6,8 +6,8 @@
         nix = import ../hackage/mpi-hs-store-0.1.0.0-r0-bf5ee8e1cdb2759562168d532e623ac86ddd732dc1061011c74fef7c62729a70.nix;
         revNum = 0;
         sha256 = "bf5ee8e1cdb2759562168d532e623ac86ddd732dc1061011c74fef7c62729a70";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

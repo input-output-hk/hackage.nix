@@ -21,7 +21,7 @@
       synopsis = "A simple streamly wrapper for amqp";
       description = "A simple streamly wrapper for amqp. Provides two functions `produce` and `consume`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."streamly-core" or (errorHandler.buildDepError "streamly-core"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."testcontainers" or (errorHandler.buildDepError "testcontainers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

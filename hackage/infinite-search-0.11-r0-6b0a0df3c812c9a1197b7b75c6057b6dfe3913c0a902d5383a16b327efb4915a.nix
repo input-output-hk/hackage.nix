@@ -21,11 +21,11 @@
       synopsis = "Exhaustively searchable infinite sets.";
       description = "An implementation of Martin Escardo's exhaustively searchable sets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       lhc-regress = false;
       lhc-pkg = true;
       with-libs = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "lhc"; version = "0.10"; };
@@ -27,7 +27,7 @@
       synopsis = "LHC Haskell Compiler";
       description = "lhc is a haskell compiler which aims to produce the most efficient programs possible via whole\nprogram analysis and other optimizations.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "lhc" = {
@@ -49,11 +49,11 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
-          buildable = if compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13") && system.isX86_64
+          ];
+          buildable = if compiler.isGhc && (compiler.version.ge "6.12" && compiler.version.lt "6.13") && system.isX86_64
             then true
             else false;
-          };
+        };
         "lhc-regress" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,11 +64,11 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck" or (errorHandler.buildDepError "test-framework-quickcheck"))
-            ];
-          buildable = if flags.lhc-regress && (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) && system.isX86_64
+          ];
+          buildable = if flags.lhc-regress && (compiler.isGhc && (compiler.version.ge "6.12" && compiler.version.lt "6.13")) && system.isX86_64
             then true
             else false;
-          };
+        };
         "lhc-pkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,11 +78,11 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-          buildable = if flags.lhc-pkg && (compiler.isGhc && ((compiler.version).ge "6.12" && (compiler.version).lt "6.13")) && system.isX86_64
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          buildable = if flags.lhc-pkg && (compiler.isGhc && (compiler.version.ge "6.12" && compiler.version.lt "6.13")) && system.isX86_64
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

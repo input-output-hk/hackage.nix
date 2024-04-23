@@ -21,7 +21,7 @@
       synopsis = "A deployment library for Haskell applications";
       description = "Hapistrano makes it easy to reliably deploy Haskell\napplications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hap" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

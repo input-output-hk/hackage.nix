@@ -21,7 +21,7 @@
       synopsis = "HTTP proxy for authenticating users via OAuth2";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sproxy" = {
@@ -53,9 +53,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

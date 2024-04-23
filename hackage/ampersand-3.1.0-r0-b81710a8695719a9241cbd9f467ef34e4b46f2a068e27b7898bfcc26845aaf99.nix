@@ -21,7 +21,7 @@
       synopsis = "Toolsuite for automated design of business processes.";
       description = "You can define your business processes by means of rules, written in Relation Algebra.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ampersand" = {
@@ -53,10 +53,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ampersand-test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

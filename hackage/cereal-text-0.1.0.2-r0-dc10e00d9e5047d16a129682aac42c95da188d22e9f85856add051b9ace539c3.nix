@@ -21,15 +21,15 @@
       synopsis = "Data.Text instances for the cereal serialization library";
       description = "Data.Text instances for the cereal serialization library.\n\nProvides instances for Text and lazy Text.\nUses UTF-8 encoding for serialization.\n\nUse\n@import Data.Serialize.Text ()@\nto import instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simplistic free monad with deriving through UndecidableInstances";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/unfree#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unfree-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."unfree" or (errorHandler.buildDepError "unfree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A command line tool to manage LNURL auth identities";
       description = "See https://github.com/GambolingPangolin/lnurl/blob/master/lnurl-authenticator/README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lnurl-authenticator" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."Clipboard" or (errorHandler.buildDepError "Clipboard"))
             (hsPkgs."lnurl-authenticator" or (errorHandler.buildDepError "lnurl-authenticator"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

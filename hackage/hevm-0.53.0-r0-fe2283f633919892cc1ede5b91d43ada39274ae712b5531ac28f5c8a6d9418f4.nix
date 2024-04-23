@@ -21,7 +21,7 @@
       synopsis = "Symbolic EVM Evaluator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -79,17 +79,17 @@
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
           (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4" && !system.isOsx) (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"))) ++ (pkgs.lib).optionals (!system.isWindows) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4" && !system.isOsx) (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"))) ++ pkgs.lib.optionals (!system.isWindows) [
           (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         libs = [
           (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
           (pkgs."ff" or (errorHandler.sysDepError "ff"))
           (pkgs."gmp" or (errorHandler.sysDepError "gmp"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4" && !system.isOsx)) ((pkgs.lib).optional (!system.isOsx) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")));
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4" && !system.isOsx)) (pkgs.lib.optional (!system.isOsx) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")));
         buildable = true;
-        };
+      };
       sublibs = {
         "test-utils" = {
           depends = [
@@ -133,10 +133,10 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       exes = {
         "hevm" = {
           depends = [
@@ -174,11 +174,11 @@
             (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
             (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -223,10 +223,10 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = if system.isWindows then false else true;
-          };
+        };
         "rpc-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -270,10 +270,10 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = if system.isWindows then false else true;
-          };
+        };
         "ethereum-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -317,11 +317,11 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -338,10 +338,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

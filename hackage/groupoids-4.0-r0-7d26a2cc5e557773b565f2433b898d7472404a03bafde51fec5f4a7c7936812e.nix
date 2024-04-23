@@ -21,14 +21,14 @@
       synopsis = "This package has been absorbed into semigroupoids 4.0";
       description = "This package has been absorbed into semigroupoids 4.0";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "hedgehog-checkers wraps up the expected properties associated with various standard type classes as Hedgehog properties.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-checkers" or (errorHandler.buildDepError "hedgehog-checkers"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

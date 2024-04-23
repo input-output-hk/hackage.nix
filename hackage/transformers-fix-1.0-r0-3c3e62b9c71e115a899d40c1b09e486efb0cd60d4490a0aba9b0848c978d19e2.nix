@@ -21,14 +21,14 @@
       synopsis = "Monad transformer for evaluating to a fixpoint";
       description = "Monad transformer for evaluating to a fixpoint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

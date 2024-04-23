@@ -21,7 +21,7 @@
       synopsis = "Subcategories induced by class constraints";
       description = "Please see the README on GitHub at <https://github.com/konn/subcategories#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "subcategories-test" = {
           depends = [
@@ -73,12 +73,12 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

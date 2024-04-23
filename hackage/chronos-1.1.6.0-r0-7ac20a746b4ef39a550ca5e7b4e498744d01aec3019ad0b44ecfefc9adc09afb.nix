@@ -21,7 +21,7 @@
       synopsis = "A high-performance time library";
       description = "Chronos is a performance-oriented time library for Haskell, with a\nstraightforward API. The main differences between this\nand the <http://hackage.haskell.org/package/time time> library\nare:\n\n  * Chronos uses machine integers where possible. This means\n    that time-related arithmetic should be faster, with the\n    drawback that the types are incapable of representing times\n    that are very far in the future or the past (because Chronos\n    provides nanosecond, rather than picosecond, resolution).\n    For most users, this is not a hindrance.\n  * Chronos provides 'ToJSON'/'FromJSON' instances for serialisation.\n  * Chronos provides 'Unbox' instances for working with unboxed vectors.\n  * Chronos provides 'Prim' instances for working with byte arrays/primitive arrays.\n  * Chronos uses normal non-overloaded haskell functions for\n    encoding and decoding time. It provides <http://hackage.haskell.org/package/attoparsec attoparsec> parsers for both 'Text' and\n    'ByteString'. Additionally, Chronos provides functions for\n    encoding time to 'Text' or 'ByteString'. The http://hackage.haskell.org/package/time time> library accomplishes these with the\n    <http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html Data.Time.Format> module, which uses UNIX-style datetime\n    format strings. The approach taken by Chronos is faster and\n    catches more mistakes at compile time, at the cost of being\n    less expressive.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         buildable = true;
-        };
+      };
       tests = {
         "chronos-test" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

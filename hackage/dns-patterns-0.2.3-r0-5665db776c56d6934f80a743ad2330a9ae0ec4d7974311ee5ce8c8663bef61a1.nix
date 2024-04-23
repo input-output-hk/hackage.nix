@@ -21,7 +21,7 @@
       synopsis = "DNS name parsing and pattern matching utilities";
       description = "Domain name pattern matching, parsing and pretty printing utilities.\nSee the modules \"Network.DNS.Pattern\" and \"Network.DNS\" for full documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."dns-patterns" or (errorHandler.buildDepError "dns-patterns"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."dns-patterns" or (errorHandler.buildDepError "dns-patterns"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

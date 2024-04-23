@@ -21,7 +21,7 @@
       synopsis = "Fast and easy to use XHTML combinators.";
       description = "xhtml-combinators provides a set of (hopefully!) fast and\neasy to use XHTML 1.0 Strict combinators built on top of the\nData.Text library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

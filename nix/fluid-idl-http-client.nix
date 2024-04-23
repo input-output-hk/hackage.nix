@@ -6,8 +6,8 @@
         nix = import ../hackage/fluid-idl-http-client-0.0.0-r0-878085f566b7a588c77a6b582f3aefc37331fba8b896dd3d923f28fe0411124d.nix;
         revNum = 0;
         sha256 = "878085f566b7a588c77a6b582f3aefc37331fba8b896dd3d923f28fe0411124d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

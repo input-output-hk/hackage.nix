@@ -6,8 +6,8 @@
         nix = import ../hackage/Win32-console-0.1.0.0-r0-6b1d58bd216bd09331b88369d56582de1173fcb3ac76252348ee6455d90fb230.nix;
         revNum = 0;
         sha256 = "6b1d58bd216bd09331b88369d56582de1173fcb3ac76252348ee6455d90fb230";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

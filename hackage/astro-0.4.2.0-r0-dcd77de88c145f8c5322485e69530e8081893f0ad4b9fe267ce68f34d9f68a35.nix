@@ -21,16 +21,16 @@
       synopsis = "Amateur astronomical computations";
       description = "Amateur astronomical computations: rise and set times and azimuths,\ncoordinates, distances, angular sizes and other parameters\nof the Sun, the Moon, planets and stars.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "astro-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

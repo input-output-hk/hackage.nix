@@ -6,8 +6,8 @@
         nix = import ../hackage/random-names-0.1.0.0-r0-022d001b1f814e5a66b764b09b54be0e773f0bbc371b79839bdbde20ffcc5828.nix;
         revNum = 0;
         sha256 = "022d001b1f814e5a66b764b09b54be0e773f0bbc371b79839bdbde20ffcc5828";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

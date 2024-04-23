@@ -6,8 +6,8 @@
         nix = import ../hackage/SDL2-ttf-0.1.0-r0-c68c03100d0fb787240258ba3fe1deac1e64f932e4952b7c6b9b57efdea4ad3a.nix;
         revNum = 0;
         sha256 = "c68c03100d0fb787240258ba3fe1deac1e64f932e4952b7c6b9b57efdea4ad3a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

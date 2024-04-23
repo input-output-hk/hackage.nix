@@ -21,11 +21,11 @@
       synopsis = "Actor pattern utilities.";
       description = "Library used to build and communicate with actors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

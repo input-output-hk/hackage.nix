@@ -21,7 +21,7 @@
       synopsis = "Candidate NFData Instances for Types in base";
       description = "Candidate NFData Instances for Types in base\nThis package provides correct-but-controversial NFData instances for types\nin base. See this GitHub pull request for more details:\n<https://github.com/haskell/deepseq/pull/50>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A document store library for Git + JSON.";
       description = "A simple document store library for Git + JSON, based on Aeson. Uses command line git, at least for now. No fancy indexes and stuff, but it does what I need right now. Transactions use flock, so it's safe even across completely separate programs!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,26 +34,26 @@
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."flock" or (errorHandler.buildDepError "flock"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "documentation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,10 +65,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hastache" or (errorHandler.buildDepError "hastache"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

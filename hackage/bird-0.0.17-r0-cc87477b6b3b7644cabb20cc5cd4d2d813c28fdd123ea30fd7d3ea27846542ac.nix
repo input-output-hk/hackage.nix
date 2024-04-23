@@ -21,7 +21,7 @@
       synopsis = "A simple, sinatra-inspired web framework.";
       description = "Bird is a hack-compatible framework for simple websites.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."hack-handler-happstack" or (errorHandler.buildDepError "hack-handler-happstack"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."rallod" or (errorHandler.buildDepError "rallod"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "bird" = { buildable = true; }; };
       };
-    }
+      exes = { "bird" = { buildable = true; }; };
+    };
+  }

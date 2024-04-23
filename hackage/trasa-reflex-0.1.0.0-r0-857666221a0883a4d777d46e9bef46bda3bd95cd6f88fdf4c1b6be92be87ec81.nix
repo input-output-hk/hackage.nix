@@ -21,7 +21,7 @@
       synopsis = "Reactive Type Safe Routing";
       description = "Reflex-frp integration for trasa";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
           (hsPkgs."trasa" or (errorHandler.buildDepError "trasa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

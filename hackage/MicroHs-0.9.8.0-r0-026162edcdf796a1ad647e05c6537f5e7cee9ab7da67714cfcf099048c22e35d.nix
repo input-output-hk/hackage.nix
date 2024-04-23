@@ -21,7 +21,7 @@
       synopsis = "A compiler for Haskell";
       description = "A compiler for an extended subset of Haskell-2010.\nThe compiler translates to combinators and can compile itself.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mhs" = {
@@ -36,9 +36,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

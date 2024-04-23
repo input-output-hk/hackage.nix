@@ -21,7 +21,7 @@
       synopsis = "Haskell NetCDF library";
       description = "Bindings to the Unidata NetCDF library, along with a higher-level\nHaskell interface that attempts to provide container polymorphic\ndata access (initially just Storable vectors and Repa arrays).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,13 +33,13 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."netcdf" or (errorHandler.sysDepError "netcdf")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example1" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example2" = {
           depends = [
             (hsPkgs."hnetcdf" or (errorHandler.buildDepError "hnetcdf"))
@@ -57,10 +57,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-raw-metadata" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           libs = [ (pkgs."netcdf" or (errorHandler.sysDepError "netcdf")) ];
           buildable = true;
-          };
+        };
         "test-raw-get-put" = {
           depends = [
             (hsPkgs."hnetcdf" or (errorHandler.buildDepError "hnetcdf"))
@@ -91,10 +91,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           libs = [ (pkgs."netcdf" or (errorHandler.sysDepError "netcdf")) ];
           buildable = true;
-          };
+        };
         "test-raw-attributes" = {
           depends = [
             (hsPkgs."hnetcdf" or (errorHandler.buildDepError "hnetcdf"))
@@ -108,10 +108,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           libs = [ (pkgs."netcdf" or (errorHandler.sysDepError "netcdf")) ];
           buildable = true;
-          };
+        };
         "test-get" = {
           depends = [
             (hsPkgs."hnetcdf" or (errorHandler.buildDepError "hnetcdf"))
@@ -126,10 +126,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           libs = [ (pkgs."netcdf" or (errorHandler.sysDepError "netcdf")) ];
           buildable = true;
-          };
+        };
         "test-put" = {
           depends = [
             (hsPkgs."hnetcdf" or (errorHandler.buildDepError "hnetcdf"))
@@ -138,10 +138,10 @@
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           libs = [ (pkgs."netcdf" or (errorHandler.sysDepError "netcdf")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

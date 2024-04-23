@@ -21,7 +21,7 @@
       synopsis = "Git operations";
       description = "Provides low level git operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
           (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Hit" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -57,10 +57,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
             (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "test-unit" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-repository" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
             (hsPkgs."hit" or (errorHandler.buildDepError "hit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

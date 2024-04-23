@@ -21,7 +21,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read markdown and (subsets of)\nreStructuredText, HTML, LaTeX and Textile, and it can write\nmarkdown, reStructuredText, HTML, LaTeX, ConTeXt, Docbook,\nOpenDocument, ODT, Word docx, RTF, MediaWiki, Textile,\ngroff man pages, plain text, Emacs Org-Mode, AsciiDoc, EPUB,\nand S5 and Slidy HTML slide shows.\n\nPandoc extends standard markdown syntax with footnotes,\nembedded LaTeX, definition lists, tables, and other\nfeatures. A compatibility mode is provided for those\nwho need a drop-in replacement for Markdown.pl.\n\nIn contrast to existing tools for converting markdown\nto HTML, which use regex substitutions, pandoc has\na modular design: it consists of a set of readers,\nwhich parse text in a given format and produce a native\nrepresentation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,14 +51,14 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = if flags.library then true else false;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
@@ -88,14 +88,14 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = if flags.executable then true else false;
-          };
+        };
         "test-pandoc" = {
           depends = ([
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -124,14 +124,14 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
-              ])) ++ (pkgs.lib).optionals (!(!flags.tests)) [
+            ])) ++ pkgs.lib.optionals (!!flags.tests) [
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
@@ -140,9 +140,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

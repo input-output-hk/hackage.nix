@@ -21,7 +21,7 @@
       synopsis = "Haskeline backend module for Shellac";
       description = "This module provides a backend for Shellac using the Haskeline library.  It\nprovides rich line editing capabilities, command completion and command\nhistory features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."Shellac" or (errorHandler.buildDepError "Shellac"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

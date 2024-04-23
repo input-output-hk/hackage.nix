@@ -21,7 +21,7 @@
       synopsis = "Reflex bindings for libtelnet";
       description = "Wraps https://git.sr.ht/~jack/libtelnet-haskell , so you\ncan handle telnet data streams using reflex\n'Reflex.Event's. See @README.md@ or\n\"Reflex.LibTelnet\" to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."libtelnet" or (errorHandler.buildDepError "libtelnet"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

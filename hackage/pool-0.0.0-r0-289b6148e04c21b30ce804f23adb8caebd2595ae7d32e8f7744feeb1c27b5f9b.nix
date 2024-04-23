@@ -21,7 +21,7 @@
       synopsis = "Thread-safe resource pools.";
       description = "Useful for stuff like database connection pools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."monad-peel" or (errorHandler.buildDepError "monad-peel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

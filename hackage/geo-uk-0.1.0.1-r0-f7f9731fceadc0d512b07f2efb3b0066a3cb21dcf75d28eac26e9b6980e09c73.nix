@@ -21,7 +21,7 @@
       synopsis = "High precision conversion between GPS and UK Grid";
       description = "Conversion between GPS and UKGrid Coordinates one approximate and one using table.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optionals (flags.embeded) [
+        ] ++ pkgs.lib.optionals (flags.embeded) [
           (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

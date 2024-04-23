@@ -21,7 +21,7 @@
       synopsis = "snaplet-oauth";
       description = "This lib is in Alpha status and APIs are likely to be changed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."hoauth2" or (errorHandler.buildDepError "hoauth2"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "oauth-unit-tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."snaplet-oauth" or (errorHandler.buildDepError "snaplet-oauth"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

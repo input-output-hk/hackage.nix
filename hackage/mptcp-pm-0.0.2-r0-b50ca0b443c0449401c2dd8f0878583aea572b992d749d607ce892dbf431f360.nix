@@ -21,7 +21,7 @@
       synopsis = "A work in progress Multipath TCP path manager";
       description = "Multipath TCP (www.multipath-tcp.org) starting from version 0.95 provides a\nnetlink path manager module. This package implements the userspace part to allow\nuserspace daemons to control MPTCP behavior.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mptcp-pm" = {
@@ -45,13 +45,13 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
+          ] ++ pkgs.lib.optional (flags.dev) (hsPkgs."netlink" or (errorHandler.buildDepError "netlink"));
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

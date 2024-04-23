@@ -21,16 +21,16 @@
       synopsis = "ANSI terminal colors formatters for fmt library";
       description = "Please see the README on GitHub at <https://github.com/kfigiela/fmt-terminal-colors#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fmt-terminal-colors-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fmt" or (errorHandler.buildDepError "fmt"))
             (hsPkgs."fmt-terminal-colors" or (errorHandler.buildDepError "fmt-terminal-colors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

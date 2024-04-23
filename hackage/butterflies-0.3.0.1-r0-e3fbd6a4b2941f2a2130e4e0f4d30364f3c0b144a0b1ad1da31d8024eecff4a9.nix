@@ -21,12 +21,12 @@
       synopsis = "butterfly tilings";
       description = "various tilings with butterflies (after M C Escher 1950)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "butterflies-flat" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."repa-devil" or (errorHandler.buildDepError "repa-devil"))
             (hsPkgs."butterflies" or (errorHandler.buildDepError "butterflies"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

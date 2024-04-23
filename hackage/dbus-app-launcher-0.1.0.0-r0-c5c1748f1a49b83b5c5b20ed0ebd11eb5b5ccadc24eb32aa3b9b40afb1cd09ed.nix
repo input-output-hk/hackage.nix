@@ -21,7 +21,7 @@
       synopsis = "Simple app launcher for D-Bus";
       description = "See the README at <https://github.com/DvdGiessen/dbus-app-launcher>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dbus-app-launcher" = {
@@ -31,9 +31,9 @@
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

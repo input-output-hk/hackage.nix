@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/kkweon/usa-holidays#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "usa-holidays-dodctest" = {
           depends = [
@@ -38,18 +38,18 @@
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."usa-holidays" or (errorHandler.buildDepError "usa-holidays"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "usa-holidays-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."usa-holidays" or (errorHandler.buildDepError "usa-holidays"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

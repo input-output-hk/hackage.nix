@@ -21,7 +21,7 @@
       synopsis = "Distributed sensor network for the raspberry pi";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sensenet" = {
@@ -33,9 +33,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."zeromq3-haskell" or (errorHandler.buildDepError "zeromq3-haskell"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

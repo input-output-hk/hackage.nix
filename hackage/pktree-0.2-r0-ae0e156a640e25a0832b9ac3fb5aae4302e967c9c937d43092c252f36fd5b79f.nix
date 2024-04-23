@@ -21,14 +21,14 @@
       synopsis = "Implementation of the PKTree spatial index data structure";
       description = "This project aims to implement the great spatial index data structure, the PK tree, in Haskell.  The data structure is covered in the following papers, but the code is much easier to read than they are:\n\n<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.21.411>\n<http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.21.883>\n<http://www.cs.umd.edu/~hjs/pubs/TR-4523.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

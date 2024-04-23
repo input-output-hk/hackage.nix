@@ -21,7 +21,7 @@
       synopsis = "A build daemon for Haskell development";
       description = "Robin is a daemon for Haskell developers. It runs a build whenever a source\nfile changes. Cabal, Stack, and custom builds are all supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "robin" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

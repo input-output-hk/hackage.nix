@@ -6,8 +6,8 @@
         nix = import ../hackage/memcache-conduit-0.0.3-r0-e0e558e361db8ad17d948ceb9522764fc83668d21b206dccb10543c3d06ad0b8.nix;
         revNum = 0;
         sha256 = "e0e558e361db8ad17d948ceb9522764fc83668d21b206dccb10543c3d06ad0b8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

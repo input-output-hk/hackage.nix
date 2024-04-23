@@ -21,15 +21,15 @@
       synopsis = "Ray Tracing Library";
       description = "A ray tracing library with acceleration structure and many supported primitives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."GlomeVec" or (errorHandler.buildDepError "GlomeVec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

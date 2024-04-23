@@ -21,7 +21,7 @@
       synopsis = "Implementation of a Bitoin node.";
       description = "haskoin-node provides an implementation of the Bitcoin network protocol\nthat allows you to synchronize headers (with SPV validation) and download\nmerkle blocks and full blocks. This package can be used to implement\nwallets or other Bitcoin components that require talking to the Bitcoin\nnetwork. It provides the following features:\n\n* Implementation of the Bitcoin network protocol\n* Headertree implementation with SPV verification\n* Headers-first synchronization\n* Merkle block download from peers with bloom filters\n* Full block download from peers\n\nA wallet implementation using this package is available in haskoin-wallet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-haskoin-node" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

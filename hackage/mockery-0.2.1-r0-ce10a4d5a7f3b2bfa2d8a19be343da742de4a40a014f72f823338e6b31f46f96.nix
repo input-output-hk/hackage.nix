@@ -21,7 +21,7 @@
       synopsis = "Support functions for automated testing";
       description = "Support functions for automated testing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."logging-facade" or (errorHandler.buildDepError "logging-facade"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."logging-facade" or (errorHandler.buildDepError "logging-facade"))
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

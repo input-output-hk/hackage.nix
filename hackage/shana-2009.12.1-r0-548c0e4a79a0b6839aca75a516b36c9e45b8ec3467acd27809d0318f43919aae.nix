@@ -21,15 +21,15 @@
       synopsis = "treat haskell functions as unix pipes";
       description = "main = shana - ls \".\" > grep \"src\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

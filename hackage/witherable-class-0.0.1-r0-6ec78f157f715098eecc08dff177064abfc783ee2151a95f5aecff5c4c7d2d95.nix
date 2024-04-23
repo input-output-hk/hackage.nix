@@ -21,14 +21,14 @@
       synopsis = "Witherable = Traversable + Filterable";
       description = "This package is deprecated. Use the witherable package instead";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

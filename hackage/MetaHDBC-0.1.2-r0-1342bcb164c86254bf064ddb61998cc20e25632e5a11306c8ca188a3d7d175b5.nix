@@ -21,7 +21,7 @@
       synopsis = "Statically checked database access";
       description = "Using Template Haskell and HDBC to do statically checked\ndatabase access.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

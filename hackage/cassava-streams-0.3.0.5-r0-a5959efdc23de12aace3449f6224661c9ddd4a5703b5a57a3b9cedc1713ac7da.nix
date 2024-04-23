@@ -21,7 +21,7 @@
       synopsis = "io-streams interface for the cassava CSV library.";
       description = "The cassava-streams library glues togeter the cassava CSV library\nand the io-streams streaming library.\n\nSee the \"System.IO.Streams.Csv.Tutorial\" module for a simple tutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tutorial" = {
-          depends = (pkgs.lib).optionals (!(!flags.tutorial)) [
+          depends = pkgs.lib.optionals (!!flags.tutorial) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cassava-streams" or (errorHandler.buildDepError "cassava-streams"))
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-            ];
+          ];
           buildable = if !flags.tutorial then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

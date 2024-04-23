@@ -21,7 +21,7 @@
       synopsis = "Useful standard collections types and related functions.";
       description = "NOTE: This package is currently NOT MAINTAINED. If you are interested in a class-framework for collections (no implementations of special instances) checkthe package collections-api.\nThis package provides a suite of data structures types, with a consistent API.\nIt is intended as an evolution of the data structures in the @base@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

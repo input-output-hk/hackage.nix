@@ -21,7 +21,7 @@
       synopsis = "Bidirectional (de-)serialization for XML.";
       description = "Roundtrip allows the definition of bidirectional\n(de-)serialization specifications. This package provides\nconcrete implementations of these specifications\nfor the serialization format XML. See the roundtrip\npackage for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."reference" or (errorHandler.buildDepError "reference"))
           (hsPkgs."roundtrip" or (errorHandler.buildDepError "roundtrip"))
           (hsPkgs."roundtrip-string" or (errorHandler.buildDepError "roundtrip-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
-          depends = (pkgs.lib).optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -57,9 +57,9 @@
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             (hsPkgs."xml-enumerator" or (errorHandler.buildDepError "xml-enumerator"))
             (hsPkgs."reference" or (errorHandler.buildDepError "reference"))
-            ];
+          ];
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

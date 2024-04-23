@@ -21,7 +21,7 @@
       synopsis = "Term manipulation library for the tamarin prover.";
       description = "This is an internal library of the Tamarin prover for\nsecurity protocol verification\n(<hackage.haskell.org/package/tamarin-prover>).\n\nThis library provides the types to represent security\nprotocol, and it implements the constraint solver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."tamarin-prover-utils" or (errorHandler.buildDepError "tamarin-prover-utils"))
           (hsPkgs."tamarin-prover-term" or (errorHandler.buildDepError "tamarin-prover-term"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

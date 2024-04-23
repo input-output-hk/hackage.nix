@@ -21,7 +21,7 @@
       synopsis = "Miscellaneous Haskell utilities for data structures and data manipulation.";
       description = "This Haskell library contains miscellaneous data structures and data manipulation functions for general uses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,7 +36,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tostring" or (errorHandler.buildDepError "tostring"))
-          ] ++ (pkgs.lib).optionals (!flags.minimal) [
+        ] ++ pkgs.lib.optionals (!flags.minimal) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
@@ -44,8 +44,8 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

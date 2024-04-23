@@ -21,7 +21,7 @@
       synopsis = "Timelike interface for the time library";
       description = "This library provides\n<http://hackage.haskell.org/package/timelike timelike> orphan\ninstances for the 'UTCTime' and 'ZonedTime' from the\n<http://hackage.haskell.org/package/time time library>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timelike" or (errorHandler.buildDepError "timelike"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "utility library for Alfred version 2";
       description = "A utility library for writing workflows for Alfred version 2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."xmlgen" or (errorHandler.buildDepError "xmlgen"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

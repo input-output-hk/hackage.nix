@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -37,32 +37,32 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."tcod" or (errorHandler.sysDepError "tcod")) ];
         buildable = true;
-        };
+      };
       exes = {
         "tcod-haskell-sample01" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tcod-haskell" or (errorHandler.buildDepError "tcod-haskell"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "tcod-haskell-sample02" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tcod-haskell" or (errorHandler.buildDepError "tcod-haskell"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "tcod-haskell-sample03" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tcod-haskell" or (errorHandler.buildDepError "tcod-haskell"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

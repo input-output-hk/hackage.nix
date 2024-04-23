@@ -21,7 +21,7 @@
       synopsis = "Unicode aware uri-encoding.";
       description = "Unicode aware uri-encoding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,30 +30,30 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "uri-encode" = {
-          depends = (pkgs.lib).optionals (flags.tools) [
+          depends = pkgs.lib.optionals (flags.tools) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if flags.tools then true else false;
-          };
+        };
         "uri-decode" = {
-          depends = (pkgs.lib).optionals (flags.tools) [
+          depends = pkgs.lib.optionals (flags.tools) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if flags.tools then true else false;
-          };
         };
       };
-    }
+    };
+  }

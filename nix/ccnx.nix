@@ -6,8 +6,8 @@
         nix = import ../hackage/ccnx-0.0.0-r0-cb771eea88904eeb99077ec54f0291bcb731ef85005fa661afc55351a3102d53.nix;
         revNum = 0;
         sha256 = "cb771eea88904eeb99077ec54f0291bcb731ef85005fa661afc55351a3102d53";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,12 +21,12 @@
       synopsis = "Haskell bindings for SoftFloat";
       description = "Provides a pure functional interface to John Hauser's SoftFloat, an implementation\nof IEEE floating point in the C programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."softfloat" or (errorHandler.sysDepError "softfloat")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

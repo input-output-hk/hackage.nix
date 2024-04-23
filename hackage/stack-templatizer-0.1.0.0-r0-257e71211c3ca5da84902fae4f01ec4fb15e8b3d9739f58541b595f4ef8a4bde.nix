@@ -21,7 +21,7 @@
       synopsis = "Generate a stack template from a folder.";
       description = "@stack-templatizer@ is an application that generates a @.hsfiles@ stack\ntemplate from a folder of template files.\n\nYou can install the application using @stack install stack-templatizer\ninstall@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-templatizer" = {
@@ -30,9 +30,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

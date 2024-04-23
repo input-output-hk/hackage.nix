@@ -21,7 +21,7 @@
       synopsis = "Source code suggestions";
       description = "HLint gives suggestions on how to improve your source code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -48,30 +48,30 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
           (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "8.10.0") && (compiler.isGhc && (compiler.version).lt "8.11.0")
+        ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "8.10.0") && (compiler.isGhc && compiler.version.lt "8.11.0")
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-            ]
+          ]
           else [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ])) ++ (pkgs.lib).optional (flags.gpl) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))) ++ (if flags.hsyaml
+          ])) ++ pkgs.lib.optional (flags.gpl) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))) ++ (if flags.hsyaml
           then [
             (hsPkgs."HsYAML" or (errorHandler.buildDepError "HsYAML"))
             (hsPkgs."HsYAML-aeson" or (errorHandler.buildDepError "HsYAML-aeson"))
-            ]
+          ]
           else [ (hsPkgs."yaml" or (errorHandler.buildDepError "yaml")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

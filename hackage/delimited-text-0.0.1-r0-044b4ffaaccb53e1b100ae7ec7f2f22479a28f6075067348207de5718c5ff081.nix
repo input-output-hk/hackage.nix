@@ -21,7 +21,7 @@
       synopsis = "Parse character delimited textual data";
       description = "Parse character delimited textual data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring-show" or (errorHandler.buildDepError "bytestring-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

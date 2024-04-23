@@ -6,8 +6,8 @@
         nix = import ../hackage/c2ats-0.1.0.1-r0-1b3225b7b59bdecee98a82c07322ab3c54c6397849ad7cb42d7008a0b978f46e.nix;
         revNum = 0;
         sha256 = "1b3225b7b59bdecee98a82c07322ab3c54c6397849ad7cb42d7008a0b978f46e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

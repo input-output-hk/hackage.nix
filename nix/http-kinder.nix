@@ -6,8 +6,8 @@
         nix = import ../hackage/http-kinder-0.2.0.0-r0-b81842252466bd5d04f98984e94061b035c4d655d4cb21cbc0ed7409c21e6ef4.nix;
         revNum = 0;
         sha256 = "b81842252466bd5d04f98984e94061b035c4d655d4cb21cbc0ed7409c21e6ef4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

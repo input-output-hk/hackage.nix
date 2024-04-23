@@ -21,24 +21,24 @@
       synopsis = "Generate random strings with specific qualities";
       description = "Useful for generating test/benchmark data, the 'Test.RandomStrings' module\nprovides functions for generating random character strings in the ASCII\nrange.  You can specify probabilities for the alphabet-range chars and\ncapital case characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readme-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random-strings" or (errorHandler.buildDepError "random-strings"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-basics" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."random-strings" or (errorHandler.buildDepError "random-strings"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-randomness" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

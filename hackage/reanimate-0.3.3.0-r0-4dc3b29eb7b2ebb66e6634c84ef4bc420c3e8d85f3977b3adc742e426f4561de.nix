@@ -21,7 +21,7 @@
       synopsis = "Animation library based on SVGs.";
       description = "Animation library based on SVGs. Can import (and manipulate) SVGs from\nLaTeX and diagrams. Exports gifs, mp4s, and more. Ships with a webbased\nviewer and auto-reloader.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -65,9 +65,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ] ++ (pkgs.lib).optional (flags.hmatrix) (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"));
+        ] ++ pkgs.lib.optional (flags.hmatrix) (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

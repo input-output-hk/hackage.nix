@@ -21,7 +21,7 @@
       synopsis = "Sticky notes example program implemented in HsQML";
       description = "Sticky notes example program implemented in HsQML";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsqml-notes" = {
@@ -32,18 +32,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hsqml-notes-slow" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

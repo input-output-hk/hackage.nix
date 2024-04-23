@@ -21,7 +21,7 @@
       synopsis = "Client library for Toxiproxy: a TCP failure testing proxy.";
       description = "Please see the README on Github at <https://github.com/jpittis/toxiproxy-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "toxiproxy-haskell-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."toxiproxy-haskell" or (errorHandler.buildDepError "toxiproxy-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

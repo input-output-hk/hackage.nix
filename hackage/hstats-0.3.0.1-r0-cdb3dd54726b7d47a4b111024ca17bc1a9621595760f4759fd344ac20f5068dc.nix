@@ -21,11 +21,11 @@
       synopsis = "Statistical Computing in Haskell";
       description = "A library of commonly used statistical functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

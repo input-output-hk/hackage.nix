@@ -21,16 +21,16 @@
       synopsis = "Judy bindings, and some nice APIs";
       description = "Judy bindings (a C library that implements fast sparse dynamic\narrays) for Haskell presenting APIs conforming as much as possible to the\nexistent Haskell library interfaces, like Data.Map and Data.Array.MArray.\nThis binding for the Judy library includes all its four types: mapping from\nwords to bits (Judy1), from words to values (JudyL), from strings to values\n(JudyHS) and from array-of-bytes to values (JudyHS).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."Judy" or (errorHandler.sysDepError "Judy")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

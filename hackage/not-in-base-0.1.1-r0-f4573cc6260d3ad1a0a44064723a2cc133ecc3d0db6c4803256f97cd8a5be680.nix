@@ -21,11 +21,11 @@
       synopsis = "Useful utility functions that only depend on base. ";
       description = "Useful utility functions that only depend on base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

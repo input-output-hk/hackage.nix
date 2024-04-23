@@ -21,7 +21,7 @@
       synopsis = "Picklers for de/serialising Generic data types to and from XML";
       description = "An IsXML class and GHC.Generics implementation for pickleable\ndata types using hexpat and hexpat-pickle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hexpat-pickle" or (errorHandler.buildDepError "hexpat-pickle"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

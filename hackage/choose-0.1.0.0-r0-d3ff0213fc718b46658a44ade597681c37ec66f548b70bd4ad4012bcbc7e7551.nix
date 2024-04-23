@@ -21,14 +21,14 @@
       synopsis = "Choose random elements from a stream.";
       description = "Provides an efficient mechanism to select /n/ items uniformly at random from an input stream, for some fixed /n/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

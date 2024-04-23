@@ -21,7 +21,7 @@
       synopsis = "Resumable exceptions for the fused-effects ecosystem.";
       description = "Provides an effect and carrier capable of resuming control flow from an exceptoin handler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

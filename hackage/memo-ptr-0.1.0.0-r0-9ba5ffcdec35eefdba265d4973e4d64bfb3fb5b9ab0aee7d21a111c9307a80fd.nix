@@ -21,14 +21,14 @@
       synopsis = "Pointer equality memoization ";
       description = "This is a Haskell library that provides a memoizing combinator that is fully general and fast by relying on pointer equality. This means it is useful if you are calling the same function with the same heap object. See README.md for an example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

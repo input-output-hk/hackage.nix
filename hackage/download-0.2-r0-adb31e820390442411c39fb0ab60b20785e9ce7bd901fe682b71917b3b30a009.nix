@@ -21,20 +21,20 @@
       synopsis = "High-level file download based on URLs";
       description = "High-level file download based on URLs\n\nDownload web content as strict bytestring, strings,\nHTML tags, XML, RSS or Atom feeds or JSON, via HTTP,\nFTP or file protocols, using a URL interface.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

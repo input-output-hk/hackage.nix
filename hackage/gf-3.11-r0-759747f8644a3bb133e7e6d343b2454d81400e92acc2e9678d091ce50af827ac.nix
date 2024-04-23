@@ -13,7 +13,7 @@
       server = true;
       network-uri = true;
       c-runtime = false;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "gf"; version = "3.11"; };
@@ -32,8 +32,8 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = (([
@@ -55,42 +55,42 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"))) ++ (pkgs.lib).optionals (flags.server) ([
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"))) ++ pkgs.lib.optionals (flags.server) ([
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
           (hsPkgs."httpd-shed" or (errorHandler.buildDepError "httpd-shed"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]))) ++ (if system.isWindows
+          ]))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]);
-        libs = (pkgs.lib).optionals (flags.c-runtime) [
+          ]);
+        libs = pkgs.lib.optionals (flags.c-runtime) [
           (pkgs."pgf" or (errorHandler.sysDepError "pgf"))
           (pkgs."gu" or (errorHandler.sysDepError "gu"))
-          ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs"))) ++ [
+        ];
+        build-tools = pkgs.lib.optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs"))) ++ [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gf" = {
           depends = [
             (hsPkgs."gf" or (errorHandler.buildDepError "gf"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gf-tests" = {
           depends = [
@@ -99,12 +99,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.gf.components.exes.gf or (pkgs.buildPackages.gf or (errorHandler.buildToolDepError "gf:gf")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

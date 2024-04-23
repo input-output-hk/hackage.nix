@@ -21,7 +21,7 @@
       synopsis = "A Tox protocol implementation in Haskell";
       description = "A Tox protocol implementation in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."saltine" or (errorHandler.buildDepError "saltine"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "toxsave-convert" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."toxcore" or (errorHandler.buildDepError "toxcore"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."saltine" or (errorHandler.buildDepError "saltine"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."toxcore" or (errorHandler.buildDepError "toxcore"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

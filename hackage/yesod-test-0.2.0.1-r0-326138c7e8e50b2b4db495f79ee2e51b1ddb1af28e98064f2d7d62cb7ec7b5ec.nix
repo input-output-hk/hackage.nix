@@ -21,7 +21,7 @@
       synopsis = "integration testing for WAI/Yesod Applications ";
       description = "Behaviour Oriented integration Testing for Yesod Applications ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,18 +45,18 @@
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."xml2html" or (errorHandler.buildDepError "xml2html"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (if flags.blaze_html_0_5
+        ]) ++ (if flags.blaze_html_0_5
           then [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ]
+          ]
           else [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

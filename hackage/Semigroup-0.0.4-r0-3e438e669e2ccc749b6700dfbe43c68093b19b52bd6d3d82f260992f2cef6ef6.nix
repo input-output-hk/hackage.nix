@@ -21,11 +21,11 @@
       synopsis = "A semigroup";
       description = "A semigroup is a binary associative operation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Zendesk remote authentication support for Yesod apps.";
       description = "This package allows users of your website to login into Zendesk\nautomatically using Zendesk's remote authentication\n(<http://www.zendesk.com/support/api/remote-authentication>).\n\nNote that this is an unusual @yesod-auth-*@ package.  We do not\ndefine an @AuthPlugin@ because the user can't log in to your\nwebsite via Zendesk (it's the opposite, they login in Zendesk\nvia your website).  Instead, this plugin defines an Yesod\nsubsite that you may include on your site; the subsite defines\na route that accepts incoming users from Zendesk and\nauthenticates them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

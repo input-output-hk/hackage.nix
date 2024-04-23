@@ -21,7 +21,7 @@
       synopsis = "OpenGL Arcade Game";
       description = "Guide a jumping ball through a maze.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "topkata" = {
@@ -32,22 +32,22 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ] ++ (pkgs.lib).optionals (flags.sound) [
+          ] ++ pkgs.lib.optionals (flags.sound) [
             (hsPkgs."OpenAL" or (errorHandler.buildDepError "OpenAL"))
             (hsPkgs."ALUT" or (errorHandler.buildDepError "ALUT"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pdflaby" = {
-          depends = (pkgs.lib).optionals (flags.pdflaby) [
+          depends = pkgs.lib.optionals (flags.pdflaby) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-            ];
+          ];
           buildable = if flags.pdflaby then true else false;
-          };
         };
       };
-    }
+    };
+  }

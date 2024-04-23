@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to ReviewBoard";
       description = "Haskell bindings to ReviewBoard (<http://code.google.com/p/reviewboard/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mkrr" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rbpatch" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -57,9 +57,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

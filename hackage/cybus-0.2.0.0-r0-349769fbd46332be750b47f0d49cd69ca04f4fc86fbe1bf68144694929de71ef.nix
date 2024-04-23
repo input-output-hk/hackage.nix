@@ -21,7 +21,7 @@
       synopsis = "multi-dimensional arrays";
       description = "A library for typesafe multi-dimensional arrays . Please see the README on GitHub at <https://github.com/gbwey/cybus#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cybus-exe" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cybus-test" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

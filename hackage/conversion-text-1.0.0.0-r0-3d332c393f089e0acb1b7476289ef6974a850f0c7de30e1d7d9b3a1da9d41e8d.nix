@@ -21,7 +21,7 @@
       synopsis = "\"Conversion\" instances for the \"text\" library ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."conversion" or (errorHandler.buildDepError "conversion"))
           (hsPkgs."conversion-bytestring" or (errorHandler.buildDepError "conversion-bytestring"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

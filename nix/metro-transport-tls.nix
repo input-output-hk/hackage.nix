@@ -6,8 +6,8 @@
         nix = import ../hackage/metro-transport-tls-0.1.0.0-r0-bacda49250c0242874452e591c23fce5abc8eed3b5c64e563bf443170ffcb103.nix;
         revNum = 0;
         sha256 = "bacda49250c0242874452e591c23fce5abc8eed3b5c64e563bf443170ffcb103";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

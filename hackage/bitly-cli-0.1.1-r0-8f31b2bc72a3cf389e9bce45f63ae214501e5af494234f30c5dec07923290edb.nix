@@ -21,7 +21,7 @@
       synopsis = "A command line tool to access bit.ly URL shortener.";
       description = "This package provides a command line utility to shorten\nand expand URLs using bit.ly/j.mp service. To use this tool, an API\nkey is required. Please find yours at <http://bit.ly/account/>.\n\nConfiguration file (`~/.bitly`) format:\n\n> login = your_bit.ly_login\n> apikey = your_API_key\n\nUsage examples:\n\n> $ echo \"Text with an URL: http://example.com/\" | bitly\n> Text with an URL: http://bit.ly/2eSq1z\n> $ bitly shorten http://example.com\n> http://bit.ly/2eSq1z\n> $ bitly expand http://bit.ly/2eSq1z\n> http://example.com/";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bitly" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Make better services.";
       description = "Glue library that makes use of ekg for providing stats around services.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "glue-ekg-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

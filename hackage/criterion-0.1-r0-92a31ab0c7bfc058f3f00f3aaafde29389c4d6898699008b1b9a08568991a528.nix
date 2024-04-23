@@ -21,7 +21,7 @@
       synopsis = "Benchmarking, Performance, Testing";
       description = "This library provides a powerful but simple way to measure the\nperformance of Haskell code.  It provides both a framework for\nexecuting and analysing benchmarks and a set of driver functions\nthat makes it easy to build and run benchmarks, and to analyse their\nresults.\n\nThe fastest way to get started is to read the documentation and\nexamples in the Criterion.Main module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uvector" or (errorHandler.buildDepError "uvector"))
           (hsPkgs."uvector-algorithms" or (errorHandler.buildDepError "uvector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

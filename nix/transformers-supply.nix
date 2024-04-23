@@ -6,8 +6,8 @@
         nix = import ../hackage/transformers-supply-0.1.0-r0-a71d9b6685a09193aab4811c73f53a6eddc6d606f6daf0337ab256e5eae7f2dc.nix;
         revNum = 0;
         sha256 = "a71d9b6685a09193aab4811c73f53a6eddc6d606f6daf0337ab256e5eae7f2dc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

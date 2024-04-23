@@ -21,7 +21,7 @@
       synopsis = "A length-indexed vector type build on 'SmallArray#'";
       description = "This provides performant length-indexed vectors with a suite of rewrite rules\nimplementing fusion of intermediate structures, so that expressions involving\nmany operations can usually be compiled to a single pass of computing and\nwriting each index of the final 'Vec'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Vec-test" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Vec-benchmark" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
             (hsPkgs."short-vec" or (errorHandler.buildDepError "short-vec"))
             (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/clone-all-0.1.0.0-r0-819399216a1cc9dfbc9f9a7c55cb07cffaa27cc62fb69fc6a0e518dcdb82fbed.nix;
         revNum = 0;
         sha256 = "819399216a1cc9dfbc9f9a7c55cb07cffaa27cc62fb69fc6a0e518dcdb82fbed";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

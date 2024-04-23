@@ -21,7 +21,7 @@
       synopsis = "Given a hackage package outputs the list of its dependencies.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."package-description-remote" or (errorHandler.buildDepError "package-description-remote"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "extract-dependencies" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."package-description-remote" or (errorHandler.buildDepError "package-description-remote"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

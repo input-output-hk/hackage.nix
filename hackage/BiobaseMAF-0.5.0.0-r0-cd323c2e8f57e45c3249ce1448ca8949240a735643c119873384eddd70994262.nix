@@ -21,7 +21,7 @@
       synopsis = "Multiple Alignment Format";
       description = "MAF files store multiple (multiple) alignments, i.e. complete\nn-way alignments between different genomes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

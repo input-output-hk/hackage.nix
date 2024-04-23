@@ -21,7 +21,7 @@
       synopsis = "Crack various integer and floating-point data formats";
       description = "Crack IEEE-754 float formats and arbitrary sized words and integers, showing the layout.\n\nFor details, please see: <http://github.com/LeventErkok/crackNum/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "crackNum" = {
@@ -36,9 +36,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

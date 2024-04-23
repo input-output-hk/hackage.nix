@@ -21,7 +21,7 @@
       synopsis = "Core library for hoodle";
       description = "Hoodle is a pen notetaking program written in haskell.\nhoodle-core is the core library written in haskell and\nusing gtk2hs";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -76,11 +76,11 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."xournal-parser" or (errorHandler.buildDepError "xournal-parser"))
-          ] ++ (pkgs.lib).optional (flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ (if flags.gtk3
+        ] ++ pkgs.lib.optional (flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ (if flags.gtk3
           then [ (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3")) ]
           else [
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-            ])) ++ (pkgs.lib).optionals (flags.hub) [
+          ])) ++ pkgs.lib.optionals (flags.hub) [
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
@@ -91,14 +91,14 @@
           (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         libs = [
           (pkgs."X11" or (errorHandler.sysDepError "X11"))
           (pkgs."Xi" or (errorHandler.sysDepError "Xi"))
           (pkgs."dl" or (errorHandler.sysDepError "dl"))
           (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

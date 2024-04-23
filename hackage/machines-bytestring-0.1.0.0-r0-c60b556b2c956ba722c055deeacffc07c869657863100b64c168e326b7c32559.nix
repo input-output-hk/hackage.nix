@@ -21,15 +21,15 @@
       synopsis = "ByteString support for machines";
       description = "@machines@ utilities to work with @ByteString@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

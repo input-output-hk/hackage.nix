@@ -21,7 +21,7 @@
       synopsis = "Parser for GHC's hi files";
       description = "Please see the README on Github at <https://github.com/commercialhaskell/hi-file-parser/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hi-file-parser-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

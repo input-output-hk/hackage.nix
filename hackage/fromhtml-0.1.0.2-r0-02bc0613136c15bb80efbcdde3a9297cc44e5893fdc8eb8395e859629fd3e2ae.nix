@@ -21,7 +21,7 @@
       synopsis = "Simple adapter for transformation of HTML to other formats";
       description = "Please see the README on GitHub at <https://github.com/MarekSuchanek/FromHTML#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fromhtml" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."fromhtml" or (errorHandler.buildDepError "fromhtml"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "transdoc-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."fromhtml" or (errorHandler.buildDepError "fromhtml"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

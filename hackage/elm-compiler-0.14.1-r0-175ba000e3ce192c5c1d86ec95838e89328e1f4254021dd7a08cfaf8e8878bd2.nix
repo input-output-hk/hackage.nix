@@ -21,7 +21,7 @@
       synopsis = "Values to help with elm-package, elm-make, and elm-lang.org.";
       description = "Elm aims to make client-side web-development pleasant. It is a\nstatically/strongly typed, functional reactive language that compiles to\nHTML, CSS, and JS. This package provides a couple helpful values that are\nintended for use in packages such as elm-package and elm-make.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."union-find" or (errorHandler.buildDepError "union-find"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "elm-doc" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."union-find" or (errorHandler.buildDepError "union-find"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "compiler-tests" = {
           depends = [
@@ -107,9 +107,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."union-find" or (errorHandler.buildDepError "union-find"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

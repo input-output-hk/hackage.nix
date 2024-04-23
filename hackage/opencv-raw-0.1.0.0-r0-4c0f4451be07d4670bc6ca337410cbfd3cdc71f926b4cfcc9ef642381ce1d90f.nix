@@ -21,7 +21,7 @@
       synopsis = "Raw Haskell bindings to OpenCV >= 2.0";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."opencv" or (errorHandler.pkgConfDepError "opencv"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

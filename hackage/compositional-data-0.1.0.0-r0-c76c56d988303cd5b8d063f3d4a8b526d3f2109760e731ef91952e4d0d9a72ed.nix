@@ -21,7 +21,7 @@
       synopsis = "Compositional Data Types";
       description = "Modular data types defined as fixpoints, and term homomorphisms, like compdata package but with cleaner API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."category" or (errorHandler.buildDepError "category"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,19 +41,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."c" or (errorHandler.buildDepError "c"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."c" or (errorHandler.buildDepError "c"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

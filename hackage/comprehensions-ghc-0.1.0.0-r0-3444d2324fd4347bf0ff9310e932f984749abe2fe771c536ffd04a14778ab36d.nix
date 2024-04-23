@@ -21,7 +21,7 @@
       synopsis = "Plugin to generalize comprehensions";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."comprehensions-ghc" or (errorHandler.buildDepError "comprehensions-ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

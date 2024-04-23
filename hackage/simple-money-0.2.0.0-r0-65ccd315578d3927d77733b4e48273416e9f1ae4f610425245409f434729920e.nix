@@ -21,14 +21,14 @@
       synopsis = "Simple library to handle and interexchange money";
       description = "A simple library for handling and interexchange\nmoney using user-provided exchange rates\ndictionaries. The library also exports some basic\narithmetics on money.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An implementation of the Twofish Symmetric-key cipher.";
       description = "Implements the Twofish symmetric block cipher, designed by:\nBruce Schneier, John Kelsey, Doug Whiting, David Wagner, Chris Hall,\nand Niels Ferguson.\nAs well, this module includes some generic definitions for\nciphers and cipher-block-chaining mode, in the Data.Cipher\nmodule.  In the future, these should probably either be\nmoved to their own package, or all of this should be merged\ninto the Crypto package.\nAcknowledgments:\nDominic Steinitz and Creighton Hogg for their work on the Crypto\npackage, upon which this package depends (particularily for the\nData.LargeWord module).\nStephen Tetley for his advice and code examples provided on\nthe Haskell-Beginners mailing list, in response to a question\nI had, which helped me to create a transformer version of the Cbc monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Test" = { buildable = true; }; };
       };
-    }
+      exes = { "Test" = { buildable = true; }; };
+    };
+  }

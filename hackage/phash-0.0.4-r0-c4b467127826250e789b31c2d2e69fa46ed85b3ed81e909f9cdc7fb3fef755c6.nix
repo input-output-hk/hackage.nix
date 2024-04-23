@@ -21,13 +21,13 @@
       synopsis = "Haskell bindings to pHash, the open source perceptual hash library";
       description = "See http://www.phash.org/ for more info. Note that you\nmust have libphash installed on your system to use this\nlibrary. Check your system library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."pHash" or (errorHandler.sysDepError "pHash")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -37,19 +37,19 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-            ];
+          ];
           libs = [ (pkgs."pHash" or (errorHandler.sysDepError "pHash")) ];
           buildable = true;
-          };
+        };
         "docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."phash" or (errorHandler.buildDepError "phash"))
-            ];
+          ];
           libs = [ (pkgs."pHash" or (errorHandler.sysDepError "pHash")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

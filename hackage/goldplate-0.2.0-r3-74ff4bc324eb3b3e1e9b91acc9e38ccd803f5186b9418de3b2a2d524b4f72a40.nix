@@ -21,7 +21,7 @@
       synopsis = "A lightweight golden test runner";
       description = "Language-agnostic golden test runner for command-line applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "goldplate" = {
@@ -40,9 +40,9 @@
             (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

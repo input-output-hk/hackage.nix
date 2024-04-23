@@ -21,7 +21,7 @@
       synopsis = "Type-level natural and proofs of their properties.";
       description = "Type-level natural numbers and proofs of their properties.\n\nVersion 0.6+ supports __GHC 8+ only__.\n\n__Use 0.5.* with ~ GHC 7.10.3__.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."ghc-typelits-presburger" or (errorHandler.buildDepError "ghc-typelits-presburger"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
           (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "type-natural-test" = {
           depends = [
@@ -52,12 +52,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."type-natural" or (errorHandler.buildDepError "type-natural"))
             (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

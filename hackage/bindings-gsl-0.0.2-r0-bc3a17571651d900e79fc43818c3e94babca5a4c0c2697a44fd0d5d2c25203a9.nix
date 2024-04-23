@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to GNU GSL.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-common" or (errorHandler.buildDepError "bindings-common"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gsl" or (errorHandler.pkgConfDepError "gsl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

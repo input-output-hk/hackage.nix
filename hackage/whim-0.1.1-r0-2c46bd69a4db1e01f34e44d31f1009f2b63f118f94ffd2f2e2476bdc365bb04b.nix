@@ -21,7 +21,7 @@
       synopsis = "A Haskell window manager";
       description = "A simple X Windows window manager in Haskell; written before XMonad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "whim" = { buildable = true; }; };
       };
-    }
+      exes = { "whim" = { buildable = true; }; };
+    };
+  }

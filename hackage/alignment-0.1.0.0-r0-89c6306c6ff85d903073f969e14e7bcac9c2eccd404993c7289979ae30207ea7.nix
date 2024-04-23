@@ -21,7 +21,7 @@
       synopsis = "Zip-alignment";
       description = "<<https://system-f.gitlab.io/logo/systemf-450x450.jpg>>\n\nZipping with alignment";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."assoc" or (errorHandler.buildDepError "assoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

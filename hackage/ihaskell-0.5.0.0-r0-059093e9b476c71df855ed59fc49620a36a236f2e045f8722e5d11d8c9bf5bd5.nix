@@ -21,7 +21,7 @@
       synopsis = "A Haskell backend kernel for the IPython project.";
       description = "IHaskell is a Haskell backend kernel for the IPython project. This allows using Haskell via\na console or notebook interface. Additional packages may be installed to provide richer data visualizations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -67,9 +67,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "IHaskell" = {
           depends = [
@@ -88,10 +88,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -138,9 +138,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
             (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

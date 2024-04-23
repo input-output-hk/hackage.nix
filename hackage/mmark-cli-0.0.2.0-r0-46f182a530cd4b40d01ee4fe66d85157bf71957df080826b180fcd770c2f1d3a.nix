@@ -21,7 +21,7 @@
       synopsis = "Command line interface to MMark markdown processor";
       description = "Command line interface to MMark markdown processor.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mmark" = {
@@ -40,9 +40,9 @@
             (hsPkgs."stache" or (errorHandler.buildDepError "stache"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

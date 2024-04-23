@@ -21,11 +21,11 @@
       synopsis = "Monoids for calculation of statistics of sample";
       description = "Monoids for calculation of statistics of sample. This approach\nallows to calculate many statistics in one pass over data and\npossibility to parallelize calculations. However not all statistics\ncould be calculated this way.\n\nThis packages is quite similar to monoids package but limited to\ncalculation on statistics. In particular it makes use of\ncommutatitvity of statistical monoids.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

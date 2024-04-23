@@ -21,15 +21,15 @@
       synopsis = "Builder to efficiently append text.";
       description = "Builder to efficiently append text, optimized for\nHTML generation. There is a small usage example in the\nText.Blaze.Builder.Core module, you should begin by\nreading that.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

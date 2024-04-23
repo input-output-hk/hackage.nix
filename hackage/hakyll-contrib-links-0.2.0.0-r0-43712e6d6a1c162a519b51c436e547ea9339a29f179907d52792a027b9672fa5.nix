@@ -21,7 +21,7 @@
       synopsis = "A hakyll library that helps maintain a separate links database.";
       description = "Often when building packages we would like to collect all\ncommonly occuring urls in a separate file and include it in all\npages. This module facilitates maintaining such links database and\nincluding it with different pages. The syntax of the links database\nis that of markdown.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hakyll-contrib-links" or (errorHandler.buildDepError "hakyll-contrib-links"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

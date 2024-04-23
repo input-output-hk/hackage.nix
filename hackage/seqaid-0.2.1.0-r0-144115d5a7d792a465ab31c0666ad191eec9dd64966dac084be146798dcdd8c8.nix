@@ -21,7 +21,7 @@
       no_top_level_seqinj_dummies = false;
       nfdatan_only = false;
       show_type = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "seqaid"; version = "0.2.1.0"; };
@@ -34,7 +34,7 @@
       synopsis = "Dynamic strictness control, including space leak repair";
       description = "Seqaid is a GHC plugin for non-invasive auto-instrumentation of dynamic strictness (and parallelism) control, shortly to include optimisation for automated space leak relief using minimal strictification. [The optimiser is still in development however.]\n\nRefer to the seqaid <http://www.fremissant.net/seqaid homepage> for more information.\n\nPlease share your comments on this <http://www.reddit.com/r/haskell/comments/2pscxh/ann_deepseqbounded_seqaid_leaky/ reddit> discussion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -46,21 +46,21 @@
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ]) ++ [
+        ]) ++ [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ]) ++ (pkgs.lib).optional (flags.seqable_only) (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))) ++ (pkgs.lib).optionals (!flags.demo_mode) [
+        ]) ++ pkgs.lib.optional (flags.seqable_only) (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))) ++ pkgs.lib.optionals (!flags.demo_mode) [
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "seqaid" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "seqaidpp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

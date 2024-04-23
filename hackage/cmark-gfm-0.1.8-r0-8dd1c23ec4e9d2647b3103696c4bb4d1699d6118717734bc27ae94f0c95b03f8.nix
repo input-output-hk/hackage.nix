@@ -21,20 +21,20 @@
       synopsis = "Fast, accurate GitHub Flavored Markdown parser and renderer";
       description = "This package provides Haskell bindings for\n<https://github.com/github/cmark-gfm libcmark-gfm>, the reference\nparser for <https://github.github.com/gfm/ GitHub Flavored Markdown>, a fully\nspecified variant of Markdown. It includes sources for\nlibcmark-gfm (0.28.3.gfm.20) and does not require prior installation of the\nC library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
-        libs = (pkgs.lib).optionals (flags.pkgconfig) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        libs = pkgs.lib.optionals (flags.pkgconfig) [
           (pkgs."cmark-gfm" or (errorHandler.sysDepError "cmark-gfm"))
           (pkgs."cmark-gfm-extensions" or (errorHandler.sysDepError "cmark-gfm-extensions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cmark-gfm" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."cmark-gfm" or (errorHandler.buildDepError "cmark-gfm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-cmark-gfm" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
             (hsPkgs."discount" or (errorHandler.buildDepError "discount"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

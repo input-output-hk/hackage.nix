@@ -21,7 +21,7 @@
       synopsis = "Commonly useful extensions for the MMark markdown processor";
       description = "Commonly useful extensions for the MMark markdown processor. Click on\n\"Text.MMark.Extension.Common\" to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
           (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.4") (hsPkgs."ghc-syntax-highlighter" or (errorHandler.buildDepError "ghc-syntax-highlighter"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.4") (hsPkgs."ghc-syntax-highlighter" or (errorHandler.buildDepError "ghc-syntax-highlighter"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."mmark-ext" or (errorHandler.buildDepError "mmark-ext"))
             (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

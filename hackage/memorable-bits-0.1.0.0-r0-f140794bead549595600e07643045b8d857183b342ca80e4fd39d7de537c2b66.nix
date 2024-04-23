@@ -13,7 +13,7 @@
       network-ip-inst = true;
       cryptonite-inst = true;
       exes = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "memorable-bits"; version = "0.1.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Generate human memorable strings from binary data.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -39,15 +39,15 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optionals (flags.network-ip-inst) [
+        ] ++ pkgs.lib.optionals (flags.network-ip-inst) [
           (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
           (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))
-          ]) ++ (pkgs.lib).optional (flags.data-dword-inst) (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))) ++ (pkgs.lib).optionals (flags.cryptonite-inst) [
+        ]) ++ pkgs.lib.optional (flags.data-dword-inst) (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))) ++ pkgs.lib.optionals (flags.cryptonite-inst) [
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "membits" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = if !flags.exes then false else true;
-          };
         };
+      };
       tests = {
         "test-memorable-bits" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-memorable-bits" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."memorable-bits" or (errorHandler.buildDepError "memorable-bits"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

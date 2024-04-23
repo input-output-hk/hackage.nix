@@ -21,16 +21,16 @@
       synopsis = "A bracket function for ExceptT over IO monad.";
       description = "A bracket function for ExceptT over IO monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "errors-ext-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."errors-ext" or (errorHandler.buildDepError "errors-ext"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

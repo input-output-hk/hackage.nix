@@ -21,7 +21,7 @@
       synopsis = "Very simple library for writing fun IRC bots.";
       description = "One day an idea came up on the #freepost IRC channel: We didn't need much of\nthe serious features IRC bots provide, but we could develop an IRC bot\ncollaboratively, for fun and for learning new skills and languages! I also\nthought this is a great chance for people to quickly see their code in real\nuse, which is motivating when learning programming, and it's a chance to\nintroduce Haskell to the community.\n\nAnd so, this library was started. The API is inspired by the @Irc@ package\nand some other IRC client related packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."irc-fun-client" or (errorHandler.buildDepError "irc-fun-client"))
           (hsPkgs."irc-fun-messages" or (errorHandler.buildDepError "irc-fun-messages"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

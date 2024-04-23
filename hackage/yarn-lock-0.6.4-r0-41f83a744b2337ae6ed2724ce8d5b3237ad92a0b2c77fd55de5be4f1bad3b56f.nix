@@ -21,7 +21,7 @@
       synopsis = "Represent and parse yarn.lock files";
       description = "Types and parser for the lock file format of the npm successor yarn. All modules should be imported qualified.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yarn-lock-tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yarn-lock" or (errorHandler.buildDepError "yarn-lock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

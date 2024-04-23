@@ -21,7 +21,7 @@
       synopsis = "Ninja game";
       description = "A multiplayer game where you blend in as an NPC while trying to visit all of the ancient pillars. Press 'A' to attack, 'S' to drop smoke, 'N' for new game, 'ESC' to quit, click with your mouse to move.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Ninjas" = {
@@ -35,9 +35,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."networked-game" or (errorHandler.buildDepError "networked-game"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

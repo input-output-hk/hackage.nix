@@ -14,7 +14,7 @@
       identifier = {
         name = "morpheus-graphql-code-gen-utils";
         version = "0.24.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "(c) 2019 Daviti Nalchevanidze";
       maintainer = "d.nalchevanidze@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Morpheus GraphQL CLI";
       description = "code generator for Morpheus GraphQL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

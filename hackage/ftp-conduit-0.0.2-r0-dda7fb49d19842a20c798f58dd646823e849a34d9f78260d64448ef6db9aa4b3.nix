@@ -21,7 +21,7 @@
       synopsis = "FTP client package with conduit interface based off http-conduit";
       description = "This package allows files on remote FTP servers to be available through the Conduit interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."byteorder" or (errorHandler.buildDepError "byteorder"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "hedgehog-checkers-lens provides the various lens, prism, setter, and traversal laws as ready-to-use properties.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."hedgehog-checkers" or (errorHandler.buildDepError "hedgehog-checkers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hedgehog-checkers" or (errorHandler.buildDepError "hedgehog-checkers"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hedgehog-checkers-lens" or (errorHandler.buildDepError "hedgehog-checkers-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

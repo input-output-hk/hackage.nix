@@ -21,7 +21,7 @@
       synopsis = "Efficient RNA/DNA/Protein Primary/Secondary Structure";
       description = "This is a base library for bioinformatics with emphasis on RNA\nand DNA primary structure as well as amino acid sequences.\n\nProvided are efficient encodings for short (limited by the\namount of RAM) sequences, as required by RNA folding tools.\nExtended RNA secondary structures can be represented as well.\n\nContains data from:\n\n@\nFrequency and isostericity of RNA base pairs\nJesse Stombaugh, Craig L. Zirbel, Eric Westhof, and Neocles B. Leontis\nNucl. Acids Res. (2009)\n@\n\n<http://dx.crossref.org/10.1093%2Fnar%2Fgkp011>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,19 +52,19 @@
           (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
           (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SubOptDistance" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

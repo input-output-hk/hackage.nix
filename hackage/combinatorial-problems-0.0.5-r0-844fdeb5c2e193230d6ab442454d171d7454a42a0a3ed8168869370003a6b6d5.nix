@@ -21,7 +21,7 @@
       synopsis = "A number of data structures to represent and allow the manipulation of standard combinatorial problems, used as test problems in computer science.";
       description = "In computer science there are a number of standard test problems that are used for testing algorithms,\nespecially those related to Artificial Intelligence and Operations Research. Online there are a number\nof repositories for collections of known interesting problems, for example the TSPLIB at\n<http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/> and the SATLIB at\n<http://www.satlib.org/>.\n\nThis library seeks to provide implementations of data structures to store these problems, along with\nfunctions for manipulating the problems and routines to load problem files from various sources.\n\nAt present it supports TSP\\/TSPLIB, SAT\\/SATLIB and TIM (format used by the International Timetabling Competition,\nwhich has been run twice at current date), however it is hoped that the loading routines\ncan be expanded and the range of problems expanded to cover problems like scheduling and more general timetabling.\nThe internal data structures make heavy use of the @Data.Map@ library and @Data.Array@. It is not currently\nusing unboxed values. The library does not use the @bytestring@ library for loading and saving data either,\nwhich will probably need to be changed later.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

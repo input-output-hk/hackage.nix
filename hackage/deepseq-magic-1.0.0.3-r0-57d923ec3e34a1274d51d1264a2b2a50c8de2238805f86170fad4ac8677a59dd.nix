@@ -21,11 +21,11 @@
       synopsis = "Deep evaluation of data structures without NFData";
       description = "Deep evaluation of data structures without NFData";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

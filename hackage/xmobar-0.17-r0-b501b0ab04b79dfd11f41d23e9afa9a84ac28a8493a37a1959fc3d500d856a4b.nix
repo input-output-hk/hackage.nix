@@ -20,7 +20,7 @@
       with_mpris = false;
       with_dbus = false;
       with_threaded = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "xmobar"; version = "0.17"; };
@@ -33,7 +33,7 @@
       synopsis = "A Minimalistic Text Based Status Bar";
       description = "Xmobar is a minimalistic text based status bar.\n\nInspired by the Ion3 status bar, it supports similar\nfeatures, like dynamic color management, output templates,\nand extensibility through plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xmobar" = {
@@ -51,21 +51,21 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ] ++ (pkgs.lib).optionals (flags.with_xft || flags.all_extensions) [
+          ] ++ pkgs.lib.optionals (flags.with_xft || flags.all_extensions) [
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"))
-            ]) ++ (pkgs.lib).optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ (pkgs.lib).optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ (pkgs.lib).optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"))) ++ (pkgs.lib).optionals (flags.with_alsa || flags.all_extensions) [
+          ]) ++ pkgs.lib.optional (flags.with_utf8 || flags.all_extensions) (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))) ++ pkgs.lib.optional (flags.with_inotify || flags.all_extensions) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))) ++ pkgs.lib.optional (flags.with_mpd || flags.all_extensions) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"))) ++ pkgs.lib.optionals (flags.with_alsa || flags.all_extensions) [
             (hsPkgs."alsa-mixer" or (errorHandler.buildDepError "alsa-mixer"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
-            ]) ++ (pkgs.lib).optionals (flags.with_datezone || flags.all_extensions) [
+          ]) ++ pkgs.lib.optionals (flags.with_datezone || flags.all_extensions) [
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
-            ]) ++ (pkgs.lib).optional (flags.with_mpris || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ (pkgs.lib).optional (flags.with_dbus || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"));
+          ]) ++ pkgs.lib.optional (flags.with_mpris || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ pkgs.lib.optional (flags.with_dbus || flags.all_extensions) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"));
           libs = [
             (pkgs."Xrandr" or (errorHandler.sysDepError "Xrandr"))
-            ] ++ (pkgs.lib).optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (errorHandler.sysDepError "iw"));
+          ] ++ pkgs.lib.optional (flags.with_iwlib || flags.all_extensions) (pkgs."iw" or (errorHandler.sysDepError "iw"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

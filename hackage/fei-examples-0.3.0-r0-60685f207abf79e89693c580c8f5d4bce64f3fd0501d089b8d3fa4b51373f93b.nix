@@ -21,7 +21,7 @@
       synopsis = "fei examples";
       description = "Various fei examples";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lenet" = {
@@ -32,9 +32,9 @@
             (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
             (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
             (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cifar10" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -45,9 +45,9 @@
             (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
             (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
             (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "custom-op" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rcnn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
             (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
             (hsPkgs."fei-cocoapi" or (errorHandler.buildDepError "fei-cocoapi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

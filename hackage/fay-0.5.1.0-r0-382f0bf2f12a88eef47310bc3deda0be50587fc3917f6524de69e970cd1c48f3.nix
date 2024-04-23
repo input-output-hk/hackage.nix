@@ -21,7 +21,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which can be compiled (type-checked)\nwith GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,\nan FFI, tail-recursion optimization (experimental). It implements no type\nsystem, for type-checking you should use GHC.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> $ cabal unpack fay\n> $ cd fay-*\n> $ cabal install\n> $ dist/build/fay-docs/fay-docs\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n\n* New representation for records and support for RecDecl (closes #43)\n\nSee full history at: <https://github.com/chrisdone/fay/commits>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fay" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fay-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fay-docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,9 +91,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

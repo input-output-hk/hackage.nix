@@ -21,7 +21,7 @@
       synopsis = "A Snake II clone written using SDL.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Level0" = {
@@ -31,9 +31,9 @@
             (hsPkgs."SDL-ttf" or (errorHandler.buildDepError "SDL-ttf"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Minimalistic toolkit for simple mathematical expression.";
       description = "This is a minimalistic toolkit for simple mathematical expression developed for debug purposes similar to\n'simple-reflect' package\nbut based on slightly different principles.\nIn particular, we use ordinary syntactic trees instead of turning them into strings.\nThere is a primitive manipulation capability like\n\n@\n>>> simplify $ (x + 0) * 1 - x * (3 - 2)\n0\n@\n\nBesides an expression visualization feature is supported.\n\n![image description](doc/images/imaginary_expr_sum.png)\n\nSee [tutorial](Debug-SimpleExpr-Tutorial.html) for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."simple-expr" or (errorHandler.buildDepError "simple-expr"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

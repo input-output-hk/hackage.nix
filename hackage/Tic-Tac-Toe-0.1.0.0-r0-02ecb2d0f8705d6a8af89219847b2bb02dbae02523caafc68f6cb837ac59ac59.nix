@@ -21,7 +21,7 @@
       synopsis = "Tic Tac Toe in your command line!";
       description = "Bored, tired, or just need a break? Play a quick game of tic tac toe against your computer in the command line!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Tic-Tac-Toe" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

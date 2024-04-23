@@ -21,7 +21,7 @@
       synopsis = "Examples using the Repa array library.";
       description = "Examples using the Repa array library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "repa-fft2d" = {
@@ -32,9 +32,9 @@
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
             (hsPkgs."repa-io" or (errorHandler.buildDepError "repa-io"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "repa-fft2d-highpass" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,9 +43,9 @@
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
             (hsPkgs."repa-io" or (errorHandler.buildDepError "repa-io"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "repa-laplace" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,9 +53,9 @@
             (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."repa-io" or (errorHandler.buildDepError "repa-io"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "repa-mmult" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."repa-io" or (errorHandler.buildDepError "repa-io"))
             (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

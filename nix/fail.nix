@@ -6,8 +6,8 @@
         nix = import ../hackage/fail-4.9.0.0-r0-35d1ee29364447c1b7d616bb1ee31f162b73e85fea91d7ca6441cf901398f572.nix;
         revNum = 0;
         sha256 = "35d1ee29364447c1b7d616bb1ee31f162b73e85fea91d7ca6441cf901398f572";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

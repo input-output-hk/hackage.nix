@@ -21,7 +21,7 @@
       synopsis = "Personal Hackage replacement for testing new packages.";
       description = "Hackage documentation generation is not reliable. For up to date documentation, please see: <http://www.stackage.org/package/yackage>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yackage" = {
@@ -48,18 +48,18 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yackage-upload" = {
-          depends = (pkgs.lib).optionals (flags.upload) [
+          depends = pkgs.lib.optionals (flags.upload) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.upload then true else false;
-          };
         };
       };
-    }
+    };
+  }

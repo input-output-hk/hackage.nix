@@ -21,7 +21,7 @@
       synopsis = "clafer compiles Clafer models to other formats, such as Alloy, XML, HTML, Dot.";
       description = "Clafer is a general purpose, lightweight, structural modeling language developed at GSD Lab, University of Waterloo. Lightweight modeling aims at improving the understanding of the problem domain in the early stages of software development and determining the requirements with fewer defects. Clafer's goal is to make modeling more accessible to a wider range of users and domains. The tool provides a reference language implementation. It translates models to other formats (e.g. Alloy, XML) to allow for reasoning with existing tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,12 +45,12 @@
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
+        ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
         build-tools = [
           (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "clafer" = {
           depends = [
@@ -62,13 +62,13 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."clafer" or (errorHandler.buildDepError "clafer"))
-            ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
+          ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
           build-tools = [
             (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -84,12 +84,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."clafer" or (errorHandler.buildDepError "clafer"))
-            ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
+          ] ++ [ (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml")) ];
           build-tools = [
             (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

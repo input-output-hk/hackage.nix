@@ -21,7 +21,7 @@
       synopsis = "Geometry primitives for Keid engine.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."rio-app" or (errorHandler.buildDepError "rio-app"))
           (hsPkgs."vulkan" or (errorHandler.buildDepError "vulkan"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

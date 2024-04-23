@@ -21,14 +21,14 @@
       synopsis = "Amazon Simple Systems Management Service SDK.";
       description = "Amazon EC2 Simple Systems Manager (SSM) enables you to configure and manage\nyour EC2 instances. You can create a configuration document and then\nassociate it with one or more running instances.\n\n/See:/ <http://docs.aws.amazon.com/ssm/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

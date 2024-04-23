@@ -21,7 +21,7 @@
       synopsis = "'Sized' wrappers for text";
       description = "'Sized' wrappers for text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."sized-wrapper" or (errorHandler.buildDepError "sized-wrapper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

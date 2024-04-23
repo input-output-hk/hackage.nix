@@ -21,12 +21,12 @@
       synopsis = "Generic implementation of Storable";
       description = "Forked version of the @generic-storable@ package with updated bounds and improved ergonomics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "generic-storable-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."generic-storable" or (errorHandler.buildDepError "generic-storable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

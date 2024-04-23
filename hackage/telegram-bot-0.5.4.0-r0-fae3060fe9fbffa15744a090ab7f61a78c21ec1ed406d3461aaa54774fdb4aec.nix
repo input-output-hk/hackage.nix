@@ -21,7 +21,7 @@
       synopsis = "Telegram Bot microframework for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,27 +33,27 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hello-bot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."telegram-bot" or (errorHandler.buildDepError "telegram-bot"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "telegram-bot-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."telegram-bot" or (errorHandler.buildDepError "telegram-bot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

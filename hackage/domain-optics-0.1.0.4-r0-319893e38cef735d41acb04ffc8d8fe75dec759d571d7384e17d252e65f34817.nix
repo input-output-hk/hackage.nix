@@ -21,7 +21,7 @@
       synopsis = "Integration of domain with optics";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."template-haskell-compat-v0208" or (errorHandler.buildDepError "template-haskell-compat-v0208"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-lego" or (errorHandler.buildDepError "th-lego"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "demo" = {
           depends = [
             (hsPkgs."domain" or (errorHandler.buildDepError "domain"))
             (hsPkgs."domain-optics" or (errorHandler.buildDepError "domain-optics"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

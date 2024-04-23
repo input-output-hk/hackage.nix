@@ -21,7 +21,7 @@
       synopsis = "Program awesome stuff with Gloss and frpnow!";
       description = "Program awesome stuff with Gloss and frpnow!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."frpnow" or (errorHandler.buildDepError "frpnow"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

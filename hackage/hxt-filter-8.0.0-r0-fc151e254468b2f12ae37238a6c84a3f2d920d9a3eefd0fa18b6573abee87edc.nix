@@ -21,7 +21,7 @@
       synopsis = "A collection of tools for processing XML with Haskell (Filter variant). ";
       description = "The Haskell XML Toolbox bases on the ideas of HaXml and HXML. This package is a compatibitlity package for old software working with the filter approach like in HaXml. For new projects it's recomended to use the arrow based library (hxt).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,15 +32,15 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

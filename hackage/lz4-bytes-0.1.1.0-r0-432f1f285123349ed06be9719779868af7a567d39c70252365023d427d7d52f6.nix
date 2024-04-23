@@ -21,7 +21,7 @@
       synopsis = "Bindings to LZ4";
       description = "This library is similar to the @lz4@ library except that it works\nwith the @Bytes@ type from @byteslice@ rather than @ByteString@.\nAlso, this library has some amount of support for LZ4 frames.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
           (hsPkgs."byte-order" or (errorHandler.buildDepError "byte-order"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

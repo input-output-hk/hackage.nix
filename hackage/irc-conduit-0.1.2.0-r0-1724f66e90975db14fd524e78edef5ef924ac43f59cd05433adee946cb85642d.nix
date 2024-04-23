@@ -21,7 +21,7 @@
       synopsis = "Streaming IRC message library using conduits.";
       description = "IRC messages consist of an optional identifying prefix, a command\nname, and a list of arguments. The <http://hackage.haskell.org/package/irc irc>\npackage provides a low-level decoding and encoding scheme for\nmessages in terms of ByteStrings, but using this relies on matching\nnames of commands as strings, and unpacking this decoded structure\nyourself. This package takes it a little further, providing an ADT\nfor IRC messages and sources, and conduits which attempt to decode\nand encode messages appropriately.\n\nIn addition to providing conduits for automatically handling\nstreaming messages, there are also helper functions for connecting\nto an IRC server and hooking up conduits to the socket.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "This package enables to write SPARQL queries to remote endpoints.";
       description = "This package enables to write SPARQL queries to remote endpoints. It provides many of the options provided through the SPARQL protocol.\nIt was inspired by HSparql and SPARQL Python Wrapper (Python). For more information see also:\nhttp://www.w3.org/TR/rdf-sparql-protocol/\nhttp://www.w3.org/2005/sparql-results#\nTODO list:\nAdd internal conversion to RDFXML, N3, Turtle and JSON.\nImplement a parser to validate SPARQL queries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

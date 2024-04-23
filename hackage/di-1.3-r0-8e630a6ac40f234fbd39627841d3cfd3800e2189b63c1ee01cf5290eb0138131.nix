@@ -21,7 +21,7 @@
       synopsis = "Typeful hierarchical structured logging using di, mtl and df1.";
       description = "Typeful hierarchical structured logging using di, mtl and df1.\n\nThis is meta-package bringing in together things from:\n\n* [di-core](https://hackage.haskell.org/package/di-core)\n\n* [di-monad](https://hackage.haskell.org/package/di-monad)\n\n* [di-handle](https://hackage.haskell.org/package/di-handle)\n\n* [di-df1](https://hackage.haskell.org/package/di-df1)\n\nSee the \"Di\" module for more documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."di-handle" or (errorHandler.buildDepError "di-handle"))
           (hsPkgs."di-monad" or (errorHandler.buildDepError "di-monad"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

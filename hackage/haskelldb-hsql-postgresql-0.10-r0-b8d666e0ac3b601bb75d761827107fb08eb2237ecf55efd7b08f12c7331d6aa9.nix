@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HSQL PostgreSQL driver.";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."haskelldb-hsql" or (errorHandler.buildDepError "haskelldb-hsql"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
           (hsPkgs."hsql-postgresql" or (errorHandler.buildDepError "hsql-postgresql"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

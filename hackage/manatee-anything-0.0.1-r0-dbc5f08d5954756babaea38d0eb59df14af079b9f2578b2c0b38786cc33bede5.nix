@@ -21,7 +21,7 @@
       synopsis = "Multithread interactive input/search framework for Manatee";
       description = "manatee-anything is interactive plugin for Manatee (Haskell/Gtk+ Integrated Live Environment)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
           (hsPkgs."dbus-core" or (errorHandler.buildDepError "dbus-core"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-anything" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-anything" = { buildable = true; }; };
+    };
+  }

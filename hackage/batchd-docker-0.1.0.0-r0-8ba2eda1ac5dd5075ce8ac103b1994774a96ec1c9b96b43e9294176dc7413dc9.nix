@@ -21,7 +21,7 @@
       synopsis = "docker containers host controller for batchd";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."batchd-core" or (errorHandler.buildDepError "batchd-core"))
           (hsPkgs."docker" or (errorHandler.buildDepError "docker"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "conduit-audio interface to the libsndfile audio file library";
       description = "A wrapper around @hsndfile@ (binding to the @libsndfile@ library)\nfor use with @conduit-audio@, to load a wide variety of audio files as streams.\n\n@libsndfile@ is LGPL licensed, so you may dynamically link to it from a closed-source program.\nHowever, note that @hsndfile@ is also LGPL licensed,\nso if your program is closed-source you also must dynamically link @hsndfile@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hsndfile-vector" or (errorHandler.buildDepError "hsndfile-vector"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

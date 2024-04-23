@@ -21,15 +21,15 @@
       synopsis = "A DSL for embedded hard realtime applications.";
       description = "Atom is a Haskell DSL for designing hard realtime embedded programs.\nBased on conditional term rewriting, atom will compile\na collection of atomic state transition rules\nto a C program with constant memory use and deterministic execution time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "AMQP-based transport layer for distributed-process (aka Cloud Haskell)";
       description = "AMQP-based transport layer for distributed-process (aka Cloud Haskell)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
           (hsPkgs."lens-family-th" or (errorHandler.buildDepError "lens-family-th"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       tests = {
         "amqp-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."network-transport-tests" or (errorHandler.buildDepError "network-transport-tests"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "api-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."network-transport-tests" or (errorHandler.buildDepError "network-transport-tests"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

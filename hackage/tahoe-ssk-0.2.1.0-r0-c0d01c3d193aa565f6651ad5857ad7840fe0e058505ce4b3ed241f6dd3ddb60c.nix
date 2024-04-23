@@ -21,7 +21,7 @@
       synopsis = "An implementation of the Tahoe-LAFS SSK cryptographic protocols";
       description = "This currently includes a partial implementation of SDMF.  A future version\nmay include an implementation of MDMF.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."tahoe-chk" or (errorHandler.buildDepError "tahoe-chk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "make-keypairs" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."tahoe-ssk" or (errorHandler.buildDepError "tahoe-ssk"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "encode-ssk" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,10 +66,10 @@
             (hsPkgs."tahoe-capabilities" or (errorHandler.buildDepError "tahoe-capabilities"))
             (hsPkgs."tahoe-ssk" or (errorHandler.buildDepError "tahoe-ssk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tahoe-ssk-test" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

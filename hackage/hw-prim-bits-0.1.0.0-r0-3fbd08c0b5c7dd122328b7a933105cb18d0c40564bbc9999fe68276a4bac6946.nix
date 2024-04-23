@@ -21,30 +21,30 @@
       synopsis = "Primitive support for bit manipulation";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-prim-bits-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hw-prim-bits" or (errorHandler.buildDepError "hw-prim-bits"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-prim-bits-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hw-prim-bits" or (errorHandler.buildDepError "hw-prim-bits"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hw-prim-bits" or (errorHandler.buildDepError "hw-prim-bits"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

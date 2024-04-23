@@ -21,7 +21,7 @@
       synopsis = "Model-view-controller";
       description = "Use the @mvc@ library to distill concurrent programs into pure and\nsingle-threaded programs using the @Model@-@View@-@Controller@ pattern.  This\ntransformation lets you:\n\n* replay your program deterministically,\n\n* do property-based testing of your model (like @QuickCheck@), and:\n\n* equationally reason about your pure core.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-concurrency" or (errorHandler.buildDepError "pipes-concurrency"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Meta package for Yesod";
       description = "Instead of allowing version ranges of dependencies, this package requires specific versions to avoid dependency hell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -157,8 +157,8 @@
           (hsPkgs."yesod-routes" or (errorHandler.buildDepError "yesod-routes"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
           (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

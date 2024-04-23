@@ -21,7 +21,7 @@
       synopsis = "Extensible exceptions for servant API servers";
       description = "`servant-exceptions-server` provides the `servant-server` related\nparts for `servant-exceptions`. Namely it catches\ndeclared exceptions and renders responses using the\nhandler content-type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

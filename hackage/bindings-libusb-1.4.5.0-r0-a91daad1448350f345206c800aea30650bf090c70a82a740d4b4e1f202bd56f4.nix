@@ -21,16 +21,16 @@
       synopsis = "Low level bindings to libusb.";
       description = "Low level bindings to @libusb-1.*@:\n\n<http://libusb.sourceforge.net/api-1.0/>\n\nThis package uses @bindings-DSL@\nand conforms to its naming convention.\n\nFor a higher-level and more Haskell friendly binding\n(which uses this package) see the @usb@ package:\n\n<http://hackage.haskell.org/package/usb>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."libusb-1.0" or (errorHandler.sysDepError "libusb-1.0"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libusb-1.0" or (errorHandler.pkgConfDepError "libusb-1.0"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."libusb-1.0" or (errorHandler.sysDepError "libusb-1.0"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."libusb-1.0" or (errorHandler.pkgConfDepError "libusb-1.0"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

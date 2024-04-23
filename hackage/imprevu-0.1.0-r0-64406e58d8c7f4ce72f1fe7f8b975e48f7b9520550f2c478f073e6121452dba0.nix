@@ -21,7 +21,7 @@
       synopsis = "Reactive programming language based on a DSL";
       description = "A DSL to express events";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,18 +44,18 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."shortcut" or (errorHandler.buildDepError "shortcut"))
           (hsPkgs."NoTrace" or (errorHandler.buildDepError "NoTrace"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Imprevu" or (errorHandler.buildDepError "Imprevu"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A command line interface to Sloane's OEIS.";
       description = "A command line interface to Sloane's On-Line Encyclopedia of\nInteger Sequences with offline capabilities.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "sloane" = {
@@ -45,9 +45,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

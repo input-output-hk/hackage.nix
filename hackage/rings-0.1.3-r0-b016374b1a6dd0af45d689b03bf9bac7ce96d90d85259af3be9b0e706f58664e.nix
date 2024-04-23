@@ -21,7 +21,7 @@
       synopsis = "Ring-like objects.";
       description = "Semirings, rings, division rings, modules, and algebras.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."magmas" or (errorHandler.buildDepError "magmas"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

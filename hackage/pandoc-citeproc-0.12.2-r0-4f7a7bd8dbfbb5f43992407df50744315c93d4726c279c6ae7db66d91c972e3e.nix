@@ -15,7 +15,7 @@
       test_citeproc = false;
       debug = false;
       static = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "pandoc-citeproc"; version = "0.12.2"; };
@@ -31,8 +31,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -53,24 +53,24 @@
           (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (flags.debug) (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ (pkgs.lib).optional (flags.bibutils) (hsPkgs."hs-bibutils" or (errorHandler.buildDepError "hs-bibutils"))) ++ (pkgs.lib).optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))) ++ (if flags.unicode_collation
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optional (flags.debug) (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))) ++ pkgs.lib.optional (flags.bibutils) (hsPkgs."hs-bibutils" or (errorHandler.buildDepError "hs-bibutils"))) ++ pkgs.lib.optional (flags.embed_data_files) (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))) ++ (if flags.unicode_collation
           then [
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-            ]
+          ]
           else [
             (hsPkgs."rfc5051" or (errorHandler.buildDepError "rfc5051"))
-            ])) ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+          ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-citeproc" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-citeproc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -107,10 +107,10 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.test_citeproc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc-citeproc" = {
           depends = [
@@ -128,9 +128,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-location-2.0-r0-52feb22d8e7c7d47b5346a817ac3f030adc611786a2dd112c3dba671dd33d32a.nix;
         revNum = 0;
         sha256 = "52feb22d8e7c7d47b5346a817ac3f030adc611786a2dd112c3dba671dd33d32a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

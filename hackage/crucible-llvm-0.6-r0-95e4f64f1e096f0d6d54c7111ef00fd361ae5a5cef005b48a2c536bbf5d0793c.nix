@@ -21,7 +21,7 @@
       synopsis = "Support for translating and executing LLVM code in Crucible";
       description = "Library providing LLVM-specific extensions to the crucible core library\nfor Crucible-based simulation and verification of LLVM-compiled applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "crucible-llvm-tests" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-sugar" or (errorHandler.buildDepError "tasty-sugar"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

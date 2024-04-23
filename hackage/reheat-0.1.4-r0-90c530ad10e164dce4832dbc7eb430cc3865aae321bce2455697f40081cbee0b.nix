@@ -21,7 +21,7 @@
       synopsis = "to make notes and reduce impact on idle time on writing other programms.";
       description = "a programm to make notes and reduce impact on idle time on writing other programms.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "reheat" = {
@@ -32,10 +32,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."vty-ui" or (errorHandler.buildDepError "vty-ui"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-reheat" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."vty-ui" or (errorHandler.buildDepError "vty-ui"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

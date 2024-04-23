@@ -6,8 +6,8 @@
         nix = import ../hackage/semigroups-actions-0.1-r0-6941ccc93374d3bdafb927f1af6bbbbd91d666a608cecc1948e1455c85cabd0e.nix;
         revNum = 0;
         sha256 = "6941ccc93374d3bdafb927f1af6bbbbd91d666a608cecc1948e1455c85cabd0e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

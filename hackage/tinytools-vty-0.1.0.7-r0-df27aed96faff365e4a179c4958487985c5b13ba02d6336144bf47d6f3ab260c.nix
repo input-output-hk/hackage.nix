@@ -21,7 +21,7 @@
       synopsis = "tinytools-vty is a terminal based monospace unicode diagram editing tool";
       description = "tinytools-vty is a terminal based monospace unicode diagram editing tool";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,9 +60,9 @@
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tinytools" = {
           depends = [
@@ -102,10 +102,10 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."tinytools-vty" or (errorHandler.buildDepError "tinytools-vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tinytools-vty-test" = {
           depends = [
@@ -122,9 +122,9 @@
             (hsPkgs."tinytools-vty" or (errorHandler.buildDepError "tinytools-vty"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

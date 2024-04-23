@@ -21,7 +21,7 @@
       synopsis = "Determine which Git repositories need to actions to be taken";
       description = "A utility for determining which Git repositories need actions to be\ntaken within them.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "git-all" = {
@@ -34,9 +34,9 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Metrics support for Mu using Prometheus";
       description = "Get metrics of your running Mu servers using Prometheus";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

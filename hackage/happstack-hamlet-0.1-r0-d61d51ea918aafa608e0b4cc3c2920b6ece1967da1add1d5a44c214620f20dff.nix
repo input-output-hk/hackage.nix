@@ -21,7 +21,7 @@
       synopsis = "Support for Hamlet HTML templates in Happstack";
       description = "Happstack is a web application development framework.\nHamlet provides HTML templates which are checked for\ncorrectness at compile time. This package add support\nfor using Hamlet templates with Happstack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

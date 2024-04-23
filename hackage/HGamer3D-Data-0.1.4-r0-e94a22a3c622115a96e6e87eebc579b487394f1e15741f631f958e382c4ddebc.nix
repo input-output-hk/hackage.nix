@@ -21,7 +21,7 @@
       synopsis = "Library to enable 3D game development for Haskell - Data";
       description = "Library, to enable 3D game development for Haskell,\nbased on bindings to 3D Graphics, pyhsics engine and additional libraries.\nCurrent implementation contains the following features:\nOGRE Binding, OIS Binding (limited functionality)\nPlatform: Windows only\nInstall following packages in sequence: HGamer3D-Data, HGamer3D-Ogre-Binding, HGamer3D-OIS-Binding, HGamer3D-API\nLicense: Apache License, Version 2.0\nThis part contains different Data types of the HGamer3D API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
           (hsPkgs."Vec-Transform" or (errorHandler.buildDepError "Vec-Transform"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         libs = [
           (pkgs."stdc++.dll" or (errorHandler.sysDepError "stdc++.dll"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

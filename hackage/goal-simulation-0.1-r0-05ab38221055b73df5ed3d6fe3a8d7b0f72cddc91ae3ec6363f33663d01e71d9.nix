@@ -21,7 +21,7 @@
       synopsis = "Mealy based simulation tools";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rk4" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."goal-geometry" or (errorHandler.buildDepError "goal-geometry"))
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "markov-chain" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ito-process" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pendulum-vector-field" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."goal-probability" or (errorHandler.buildDepError "goal-probability"))
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pendulum-simulation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."goal-probability" or (errorHandler.buildDepError "goal-probability"))
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pendulum-filter-histogram" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -104,9 +104,9 @@
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pendulum-filter-simulation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -116,9 +116,9 @@
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pendulum-filter-train" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -128,9 +128,9 @@
             (hsPkgs."goal-simulation" or (errorHandler.buildDepError "goal-simulation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pendulum-filter-code" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -141,9 +141,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

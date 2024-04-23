@@ -21,7 +21,7 @@
       synopsis = "Haskell runtime for AWS Lambda";
       description = "Please see the README on GitHub at <https://github.com/theam/aws-lambda-haskell-runtime#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,27 +38,27 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bootstrap" = {
           depends = [
             (hsPkgs."aws-lambda-haskell-runtime" or (errorHandler.buildDepError "aws-lambda-haskell-runtime"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "aws-lambda-haskell-runtime-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

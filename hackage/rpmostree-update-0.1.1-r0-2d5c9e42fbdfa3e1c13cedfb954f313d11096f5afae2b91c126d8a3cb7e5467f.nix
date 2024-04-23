@@ -21,7 +21,7 @@
       synopsis = "rpm-ostree update wrapper that caches change info";
       description = "A thin wrapper of \"rpm-ostree update\", which outputs diff of changes\nrelative to the previous pull. This is useful if you rpm-ostree update\nSilverblue or Kinoite etc several times between actual reboots into\nthe latest deployment.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rpmostree-update" = {
@@ -33,9 +33,9 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-prompt" or (errorHandler.buildDepError "simple-prompt"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

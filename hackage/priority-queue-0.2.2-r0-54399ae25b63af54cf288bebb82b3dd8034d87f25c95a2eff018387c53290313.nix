@@ -21,20 +21,20 @@
       synopsis = "Simple implementation of a priority queue.";
       description = "Simple implementation of a priority queue.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."reord" or (errorHandler.buildDepError "reord"))
           (hsPkgs."stateref" or (errorHandler.buildDepError "stateref"))
           (hsPkgs."queue" or (errorHandler.buildDepError "queue"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

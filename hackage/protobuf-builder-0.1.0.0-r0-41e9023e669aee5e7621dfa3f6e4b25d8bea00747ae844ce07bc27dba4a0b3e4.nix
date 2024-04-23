@@ -21,7 +21,7 @@
       synopsis = "Slow protobuf implementation ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

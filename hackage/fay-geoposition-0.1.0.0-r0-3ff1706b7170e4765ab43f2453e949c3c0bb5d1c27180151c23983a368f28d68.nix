@@ -21,7 +21,7 @@
       synopsis = "W3C compliant implementation of GeoPosition API.";
       description = "W3C compliant implementation of GeoPosition API within the Fay Monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."fay" or (errorHandler.buildDepError "fay"))
           (hsPkgs."fay-text" or (errorHandler.buildDepError "fay-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

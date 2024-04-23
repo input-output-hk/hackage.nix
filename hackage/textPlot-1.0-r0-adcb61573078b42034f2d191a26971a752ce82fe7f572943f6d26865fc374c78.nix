@@ -21,14 +21,14 @@
       synopsis = "Plot functions in text.";
       description = "Graph plots of y(x), parametric (x(t),y(t)),\nand polar r(phi) functions with ASCII text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

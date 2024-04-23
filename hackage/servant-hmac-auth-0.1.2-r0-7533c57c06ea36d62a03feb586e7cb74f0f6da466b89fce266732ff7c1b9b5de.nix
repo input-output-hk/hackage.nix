@@ -21,7 +21,7 @@
       synopsis = "Servant authentication with HMAC";
       description = "Servant authentication with HMAC. See README.md for usage example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-hmac-auth-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant-hmac-auth" or (errorHandler.buildDepError "servant-hmac-auth"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

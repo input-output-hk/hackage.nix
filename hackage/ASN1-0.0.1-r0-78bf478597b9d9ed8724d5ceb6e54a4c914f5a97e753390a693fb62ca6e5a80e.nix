@@ -21,7 +21,7 @@
       synopsis = "General ASN.1 support.";
       description = "Enough ASN.1 suppport for X.509\nidentity and attribute certificates, PKCS8, PKCS1v15.\nOnly the Basic Encoding Rules (BER) are supported.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."NewBinary" or (errorHandler.buildDepError "NewBinary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "BERTest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (errorHandler.buildDepError "NewBinary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "BERTest2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (errorHandler.buildDepError "NewBinary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "X509Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (errorHandler.buildDepError "NewBinary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "PKCS8Example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (errorHandler.buildDepError "NewBinary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "AttributeCertificate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."NewBinary" or (errorHandler.buildDepError "NewBinary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

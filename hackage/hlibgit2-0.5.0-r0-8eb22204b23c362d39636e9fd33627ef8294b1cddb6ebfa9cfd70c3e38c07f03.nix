@@ -21,7 +21,7 @@
       synopsis = "Low-level bindings to libgit2.";
       description = "Bindings to libgit2 v0.16.0-471-g5b9fac3";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,10 +34,10 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         libs = [ (pkgs."git2" or (errorHandler.sysDepError "git2")) ];
         buildable = true;
-        };
+      };
       tests = {
         "smoke" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

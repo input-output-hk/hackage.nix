@@ -21,7 +21,7 @@
       synopsis = "A dialect of haskell with order of execution based on dependency resolution";
       description = "This haskell preprocessor will allow you to write \"haskarrow\" code.  Haskarrow is a semi-impertive language.  In a normal imperitive language evaluation happens top to bottom.  In haskarrow, each command is given a set of dependencies.  Commands are then excecuted in order of dependency resolution, those commands that have the fewest dependencies comming before those with the most.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskarrowPrecompiler" = {
@@ -33,9 +33,9 @@
             (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

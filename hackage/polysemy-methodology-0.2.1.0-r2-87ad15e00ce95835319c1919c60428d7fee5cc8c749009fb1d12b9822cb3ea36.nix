@@ -21,7 +21,7 @@
       synopsis = "Domain modelling algebra for polysemy";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-kvstore" or (errorHandler.buildDepError "polysemy-kvstore"))
           (hsPkgs."polysemy-several" or (errorHandler.buildDepError "polysemy-several"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

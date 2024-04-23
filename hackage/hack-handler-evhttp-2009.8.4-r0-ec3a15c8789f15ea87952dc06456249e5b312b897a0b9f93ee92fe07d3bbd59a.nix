@@ -21,7 +21,7 @@
       synopsis = "Hack EvHTTP (libevent) Handler";
       description = "Hack EvHTTP (libevent) Handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."hack-contrib" or (errorHandler.buildDepError "hack-contrib"))
-          ];
+        ];
         libs = [ (pkgs."event" or (errorHandler.sysDepError "event")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

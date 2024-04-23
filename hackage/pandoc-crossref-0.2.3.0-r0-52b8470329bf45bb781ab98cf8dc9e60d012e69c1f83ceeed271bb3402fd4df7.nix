@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter for cross-references";
       description = "pandoc-crossref is a pandoc filter for numbering figures, equations, tables and cross-references to them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-crossref" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc-crossref" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-integrative" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

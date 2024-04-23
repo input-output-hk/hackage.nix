@@ -21,7 +21,7 @@
       synopsis = "Beautiful error reporting done easily";
       description = "This package provides a simple way of getting beautiful compiler/interpreter errors\nusing a very simple interface for the programmer.\n\nA quick tutorial is available in the module \"Error.Diagnose\", which goes on most of the basis\nof how to use it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -32,15 +32,15 @@
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wcwidth" or (errorHandler.buildDepError "wcwidth"))
-          ] ++ (pkgs.lib).optionals (flags.json) [
+        ] ++ pkgs.lib.optionals (flags.json) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ]) ++ (pkgs.lib).optionals (flags.megaparsec-compat) [
+        ]) ++ pkgs.lib.optionals (flags.megaparsec-compat) [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ]) ++ (pkgs.lib).optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
+        ]) ++ pkgs.lib.optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
         buildable = true;
-        };
+      };
       tests = {
         "diagnose-megaparsec-tests" = {
           depends = (([
@@ -53,15 +53,15 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wcwidth" or (errorHandler.buildDepError "wcwidth"))
-            ] ++ (pkgs.lib).optionals (flags.json) [
+          ] ++ pkgs.lib.optionals (flags.json) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (pkgs.lib).optionals (flags.megaparsec-compat) [
+          ]) ++ pkgs.lib.optionals (flags.megaparsec-compat) [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ]) ++ (pkgs.lib).optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
+          ]) ++ pkgs.lib.optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
           buildable = if !flags.megaparsec-compat then false else true;
-          };
+        };
         "diagnose-parsec-tests" = {
           depends = (([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,15 +73,15 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wcwidth" or (errorHandler.buildDepError "wcwidth"))
-            ] ++ (pkgs.lib).optionals (flags.json) [
+          ] ++ pkgs.lib.optionals (flags.json) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (pkgs.lib).optionals (flags.megaparsec-compat) [
+          ]) ++ pkgs.lib.optionals (flags.megaparsec-compat) [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ]) ++ (pkgs.lib).optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
+          ]) ++ pkgs.lib.optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
           buildable = if !flags.parsec-compat then false else true;
-          };
+        };
         "diagnose-rendering-tests" = {
           depends = (([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,15 +92,15 @@
             (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wcwidth" or (errorHandler.buildDepError "wcwidth"))
-            ] ++ (pkgs.lib).optionals (flags.json) [
+          ] ++ pkgs.lib.optionals (flags.json) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (pkgs.lib).optionals (flags.megaparsec-compat) [
+          ]) ++ pkgs.lib.optionals (flags.megaparsec-compat) [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ]) ++ (pkgs.lib).optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
+          ]) ++ pkgs.lib.optional (flags.parsec-compat) (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

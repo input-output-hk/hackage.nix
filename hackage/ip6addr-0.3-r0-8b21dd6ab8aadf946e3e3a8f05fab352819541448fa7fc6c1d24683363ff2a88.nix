@@ -21,20 +21,20 @@
       synopsis = "Command-line tools to deal with IPv6 Addresses text representation";
       description = "ip6addr consists of two command-line tools: ip6addrcan which filters IPv6 addresses parsed against RFC 4291 and canonized in conformation with RFC 5952. By default, ip6addrcan outputs only validated inputs, i.e. IPv6 addresses, removing CIDR suffix if necessary. Already compressed IPv6 adresses are recomputed. -e option throws out discarded inputs to stderr (which have of course to be redirected). The second command-line tool, ip6addrgen, generates random IPv6 adresses. -p option allows to provide a prefix to all IPv6 adresses to generate. -n option allows to provide the amount of IPv6 addresses to generate. Outputted IPv6 addresses have to be pipelined through ip6addrcan to be canonized.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ip6addrcan" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "ip6addrgen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

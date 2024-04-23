@@ -21,12 +21,12 @@
       synopsis = "Encoding-independent schemas for Haskell data types.";
       description = "A Haskell implementation of encoding-independent schemas.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."schema" or (errorHandler.buildDepError "schema"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

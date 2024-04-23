@@ -21,7 +21,7 @@
       synopsis = "SDL Frontend for Glome ray tracer";
       description = "Ray Tracer capable of rendering a variety of primitives,\nwith support for CSG (difference and intersection of solids),\nBIH-based acceleration structure, and ability to load NFF\nformat files.  The rendering algorithms have been abstracted\nto an external library, GlomeTrace.  This is just a front-end\nto the library that renders scenes into an SDL window.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Glome" = {
@@ -35,9 +35,9 @@
             (hsPkgs."GlomeVec" or (errorHandler.buildDepError "GlomeVec"))
             (hsPkgs."GlomeTrace" or (errorHandler.buildDepError "GlomeTrace"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

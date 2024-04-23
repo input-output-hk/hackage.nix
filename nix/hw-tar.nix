@@ -6,8 +6,8 @@
         nix = import ../hackage/hw-tar-0.0.0.1-r0-b02cb07237473ffedaf6b7aed2a5e2811a49762a85daa2e9afeb059eb3f60558.nix;
         revNum = 0;
         sha256 = "b02cb07237473ffedaf6b7aed2a5e2811a49762a85daa2e9afeb059eb3f60558";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

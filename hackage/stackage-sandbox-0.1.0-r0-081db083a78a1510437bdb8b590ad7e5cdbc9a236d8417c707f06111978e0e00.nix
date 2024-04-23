@@ -21,7 +21,7 @@
       synopsis = "Work with shared stackage sandboxes";
       description = "Work with shared stackage sandboxes";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stackage-sandbox" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

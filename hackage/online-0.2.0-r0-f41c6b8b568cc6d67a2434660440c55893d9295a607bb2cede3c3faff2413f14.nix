@@ -21,7 +21,7 @@
       synopsis = "online statistics";
       description = "transformation of statistics to online algorithms";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

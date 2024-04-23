@@ -21,7 +21,7 @@
       synopsis = "A simple wrapper around stooq.pl API for downloading market data.";
       description = "Here's a simple wrapper around API offered by Stooq.pl.\nIt's capable of returning the latest price for the given instrument.\n\nFor more information about tickers available, visit the service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."stooq-api".components.sublibs.stooq-api-utils or (errorHandler.buildDepError "stooq-api:stooq-api-utils"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "stooq-api-utils" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Variants of Prelude and System.IO using UTF8 text I/O operations and an UTF8 testing tool";
       description = "If you want your Haskell code to have UTF8 text I/O then use libraries which have UTF8 text I/O.\nIn case of Prelude with this package only three mechanical steps needed:\n\n* In all modules import Prelude explicitly and replace every occurrence of \"Prelude\" with \"UTF8Prelude\".\n\n* Use the NoImplicitPrelude language extension.\n\n* In all modules replace every occurrence of \"System.IO\" with \"System.UTF8IO\".\n\nutf8-test tests several functions regarding UTF8 text I/O.\nNote: utf8-test creates a file named writeFile_test.txt (5,3K) in the current working directory.\n\nutf8-prelude is based on utf8-string:\n<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/utf8-string/index.html>\n\nThis package will be obsolete *after* GHC 6.10:\n<http://hackage.haskell.org/trac/ghc/wiki/Status/Releases>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "utf8-test" = { buildable = true; }; };
       };
-    }
+      exes = { "utf8-test" = { buildable = true; }; };
+    };
+  }

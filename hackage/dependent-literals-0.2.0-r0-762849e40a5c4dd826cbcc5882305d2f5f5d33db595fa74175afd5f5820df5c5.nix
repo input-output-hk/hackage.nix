@@ -21,7 +21,7 @@
       synopsis = "Library for dependent-literals-plugin";
       description = "This is the library counterpart of\n<https://hackage.haskell.org/package/dependent-literals-plugin dependent-literals-plugin>.\nSee that package's description for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."type-compare" or (errorHandler.buildDepError "type-compare"))
           (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

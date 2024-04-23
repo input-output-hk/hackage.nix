@@ -21,15 +21,15 @@
       synopsis = "Binding to GUI library FLTK";
       description = "hs-fltk is a Haskell interface to the FLTK.\nFLTK is a small and portable GUI toolkit and\nthe interface tries to be quite highlevel.\n\nThe library is very much a work in progress.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."fltk" or (errorHandler.sysDepError "fltk"))
           (pkgs."fltk_images" or (errorHandler.sysDepError "fltk_images"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Transforms URLs to PNGs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "websnap" = {
@@ -30,9 +30,9 @@
             (hsPkgs."webkit" or (errorHandler.buildDepError "webkit"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

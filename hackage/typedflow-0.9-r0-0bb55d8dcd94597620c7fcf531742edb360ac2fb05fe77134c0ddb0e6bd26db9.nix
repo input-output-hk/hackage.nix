@@ -21,7 +21,7 @@
       synopsis = "Typed frontend to TensorFlow and higher-order deep learning";
       description = "TypedFlow is a typed, higher-order frontend to TensorFlow and a high-level library for deep-learning.\n\nThe main design principles are:\n\n- To make the parameters of layers explicit. This choice makes sharing of parameters explicit and allows to implement \"layers\" as pure functions.\n\n- To provide as precise as possible types. Functions are explicit about the shapes and elements of the tensors that they manipulate (they are often polymorphic in shapes and elements though.)\n\n- To let combinators be as transparent as possible. If a NN layers is a simple tensor transformation it will be exposed as such.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
           (hsPkgs."pretty-compact" or (errorHandler.buildDepError "pretty-compact"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

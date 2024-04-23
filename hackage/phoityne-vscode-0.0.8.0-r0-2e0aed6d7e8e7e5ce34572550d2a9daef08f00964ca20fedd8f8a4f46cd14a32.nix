@@ -21,7 +21,7 @@
       synopsis = "ghci debug viewer on Visual Studio Code";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phoityne-vscode" = {
@@ -50,9 +50,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

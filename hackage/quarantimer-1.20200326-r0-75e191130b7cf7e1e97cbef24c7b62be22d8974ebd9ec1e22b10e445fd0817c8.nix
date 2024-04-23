@@ -21,7 +21,7 @@
       synopsis = "Coronavirus quarantine timer web app for your things";
       description = "Web app that tracks how long things potentially contaminated with\nCovid-19 have been in quarantine.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "quarantimer" = {
@@ -48,9 +48,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

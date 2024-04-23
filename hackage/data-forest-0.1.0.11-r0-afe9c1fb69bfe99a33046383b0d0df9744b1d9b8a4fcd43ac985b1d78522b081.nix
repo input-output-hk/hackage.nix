@@ -21,20 +21,20 @@
       synopsis = "A simple multi-way tree data structure";
       description = "A forest is a collection of zero or more trees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-forest" or (errorHandler.buildDepError "data-forest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

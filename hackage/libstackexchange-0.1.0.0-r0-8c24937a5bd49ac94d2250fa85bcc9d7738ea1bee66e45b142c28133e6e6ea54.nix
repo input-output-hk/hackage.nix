@@ -21,7 +21,7 @@
       synopsis = "StackExchange API interface";
       description = "Provides interface for StackExchange v2.1 API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-lens" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "request" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,18 +58,18 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "api" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
-            ];
+          ];
           buildable = if !flags.enable-doctests then false else true;
-          };
         };
       };
-    }
+    };
+  }

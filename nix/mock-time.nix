@@ -6,8 +6,8 @@
         nix = import ../hackage/mock-time-0.1.0-r0-e81c11d2272029c1a0b31b1a516b6f4a801baf5019439c6c365d36087f3e5667.nix;
         revNum = 0;
         sha256 = "e81c11d2272029c1a0b31b1a516b6f4a801baf5019439c6c365d36087f3e5667";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

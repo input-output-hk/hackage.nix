@@ -21,7 +21,7 @@
       synopsis = "Collection of non-fundamental handlers for the Salvia web server.";
       description = "Collection of non-fundamental handlers for the Salvia web server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."threadmanager" or (errorHandler.buildDepError "threadmanager"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

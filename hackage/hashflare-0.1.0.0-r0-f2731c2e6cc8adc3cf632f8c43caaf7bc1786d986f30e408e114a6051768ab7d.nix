@@ -21,15 +21,15 @@
       synopsis = "A library for working with HashFlare.io contracts and hashrates";
       description = "Library that models HashFlare.io cloud mining service's accounts, contracts\nand mining hashrates. Simple linear projections of the account's balance\n(increase in profits over time) can be easily modelled by provided combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."simple-money" or (errorHandler.buildDepError "simple-money"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

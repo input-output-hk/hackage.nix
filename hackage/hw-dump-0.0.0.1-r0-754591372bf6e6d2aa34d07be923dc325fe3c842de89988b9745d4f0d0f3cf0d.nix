@@ -21,7 +21,7 @@
       synopsis = "File Dump";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hw-dump" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."hw-dump" or (errorHandler.buildDepError "hw-dump"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-dump-test" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."hw-dump" or (errorHandler.buildDepError "hw-dump"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hw-dump" or (errorHandler.buildDepError "hw-dump"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

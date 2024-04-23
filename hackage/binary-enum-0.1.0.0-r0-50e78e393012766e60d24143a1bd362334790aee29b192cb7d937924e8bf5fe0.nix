@@ -21,14 +21,14 @@
       synopsis = "Simple wrappers around enum types";
       description = "allowing to serise to/from binary both as values and bitmasks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

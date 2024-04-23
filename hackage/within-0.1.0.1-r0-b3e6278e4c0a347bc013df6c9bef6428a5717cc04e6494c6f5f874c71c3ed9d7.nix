@@ -21,7 +21,7 @@
       synopsis = "A value within another path.";
       description = "Simple newtype for representing a value within a well-typed directory. Useful for when you need to jump between directories and change filenames independently. Uses the path library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

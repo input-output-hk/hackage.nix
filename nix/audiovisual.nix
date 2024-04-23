@@ -6,8 +6,8 @@
         nix = import ../hackage/audiovisual-0.0-r0-df4536512ff1a0be8fb301153b3c7275047468692f4a272d3c7539feb0b7191f.nix;
         revNum = 0;
         sha256 = "df4536512ff1a0be8fb301153b3c7275047468692f4a272d3c7539feb0b7191f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

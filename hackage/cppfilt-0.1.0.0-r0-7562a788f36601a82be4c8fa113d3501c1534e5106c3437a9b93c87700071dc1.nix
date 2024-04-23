@@ -21,18 +21,18 @@
       synopsis = "Bindings for C++ demangling routines";
       description = "Please see the README on Github at <https://github.com/0xd34df00d/cppfilt#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = if flags.use-libcpp || system.isOsx
           then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
           else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
+      };
       tests = {
         "cppfilt-test" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cppfilt" or (errorHandler.buildDepError "cppfilt"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "cppfilt-benchmarks" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cppfilt" or (errorHandler.buildDepError "cppfilt"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

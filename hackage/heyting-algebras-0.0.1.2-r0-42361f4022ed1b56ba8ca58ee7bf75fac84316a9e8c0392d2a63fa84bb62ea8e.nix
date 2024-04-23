@@ -21,7 +21,7 @@
       synopsis = "Heyting and Boolean algebras";
       description = "This package provides Heyting and Boolean operations together\nwith various constructions of Heyting algebras.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
-          ] ++ (pkgs.lib).optional (flags.export-properties) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+        ] ++ pkgs.lib.optional (flags.export-properties) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
         buildable = true;
-        };
+      };
       tests = {
         "heyting-algebras-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."heyting-algebras" or (errorHandler.buildDepError "heyting-algebras"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

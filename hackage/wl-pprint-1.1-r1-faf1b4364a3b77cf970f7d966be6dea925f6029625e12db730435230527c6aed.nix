@@ -21,11 +21,11 @@
       synopsis = "The Wadler/Leijen Pretty Printer";
       description = "This is a pretty printing library based on Wadler's paper \"A Prettier\nPrinter\".  See the haddocks for full info.  This version allows the\nlibrary user to declare overlapping instances of the 'Pretty' class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

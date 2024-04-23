@@ -21,7 +21,7 @@
       synopsis = "A theory solver for conjunctions of literals in the theory of uninterpreted functions with equality";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."union-find-array" or (errorHandler.buildDepError "union-find-array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

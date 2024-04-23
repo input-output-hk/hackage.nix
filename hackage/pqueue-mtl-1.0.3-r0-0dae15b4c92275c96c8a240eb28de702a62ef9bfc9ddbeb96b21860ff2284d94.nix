@@ -21,7 +21,7 @@
       synopsis = "Fully encapsulated monad transformers with queuelike functionality.";
       description = "Contains several implementations of data structures implementing a /single-in, single-out/ paradigm, and implements monad transformers for their safe use.  The monad transformer part of the library includes tools to fully encapsulate single-threaded use of a priority queue in a monad, including an array-based heap implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stateful-mtl" or (errorHandler.buildDepError "stateful-mtl"))
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

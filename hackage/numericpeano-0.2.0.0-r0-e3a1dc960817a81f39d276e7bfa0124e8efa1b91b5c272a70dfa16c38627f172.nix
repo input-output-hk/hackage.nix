@@ -21,11 +21,11 @@
       synopsis = "Peano numbers with attendant bells and whistles.";
       description = "Value-level lazy Peano numbers for all your proof-theoretic\nand infinity-related needs. The features are:\n1) natural and integral numbers (N and Z);\n2) lazy infinities; and\n3) instances for all relevant typeclasses, meaning that\nPeano arithmetic can be used in generic functions without\nextra hassle.\nThe implementation is naive: a number of\nmagnitude n may consume O(n) bytes of memory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -12,7 +12,7 @@
       build-all-modules = false;
       use-ghc-dump = false;
       profile-allzip = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "large-records"; version = "0.1.0.0"; };
@@ -25,7 +25,7 @@
       synopsis = "Efficient compilation for large records, linear in the size of the record";
       description = "For many reasons, the internal code generated for modules\nthat contain records is quadratic in the number of record\nfields. For large records (more than 30 fields, say), this\ncan become problematic, leading to large compilation times\nand high memory requirements for ghc. The large-records\nlibrary provides a way to define records that is guaranteed\nto result in ghc core that is /linear/ in the number of\nrecord fields.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-large-records" = {
           depends = [
@@ -69,12 +69,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (flags.use-ghc-dump) (hsPkgs."ghc-dump-core" or (errorHandler.buildDepError "ghc-dump-core"));
+          ] ++ pkgs.lib.optional (flags.use-ghc-dump) (hsPkgs."ghc-dump-core" or (errorHandler.buildDepError "ghc-dump-core"));
           build-tools = [
             (hsPkgs.buildPackages.record-dot-preprocessor.components.exes.record-dot-preprocessor or (pkgs.buildPackages.record-dot-preprocessor or (errorHandler.buildToolDepError "record-dot-preprocessor:record-dot-preprocessor")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

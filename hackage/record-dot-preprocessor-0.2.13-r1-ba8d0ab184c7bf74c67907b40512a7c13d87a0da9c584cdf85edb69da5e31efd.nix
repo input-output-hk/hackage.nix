@@ -21,7 +21,7 @@
       synopsis = "Preprocessor to allow record.field syntax";
       description = "In almost every programming language @a.b@ will get the @b@ field from the @a@ data type, and many different data types can have a @b@ field.\nThe reason this feature is ubiquitous is because it's /useful/.\nThe @record-dot-preprocessor@ brings this feature to Haskell - see the README for full details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,20 +29,20 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "8.6"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "8.6"
           then false
           else true;
-        };
+      };
       exes = {
         "record-dot-preprocessor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "record-dot-preprocessor-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."record-hasfield" or (errorHandler.buildDepError "record-hasfield"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6") (hsPkgs."record-dot-preprocessor" or (errorHandler.buildDepError "record-dot-preprocessor"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.6") (hsPkgs."record-dot-preprocessor" or (errorHandler.buildDepError "record-dot-preprocessor"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

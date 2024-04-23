@@ -21,7 +21,7 @@
       synopsis = "GTK plots and interaction with GHCi";
       description = "Allows use of 'plot' package with GTK\n\n* Provides a mechanism to display and update plots from GHCi\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."plot" or (errorHandler.buildDepError "plot"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

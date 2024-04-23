@@ -6,8 +6,8 @@
         nix = import ../hackage/battleships-1.0.0-r0-8e6d0637d277993a17583d008cf8b19ec30ffae33ef0a9c9adf0309cfcbaa698.nix;
         revNum = 0;
         sha256 = "8e6d0637d277993a17583d008cf8b19ec30ffae33ef0a9c9adf0309cfcbaa698";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

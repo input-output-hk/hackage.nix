@@ -21,15 +21,15 @@
       synopsis = "Functional concurrency with unamb using a custom scheduler.";
       description = "Functional concurrency with unamb using a custom scheduler, which\nmakes it practical to use in dense situations (eg. infinite folds\non unamb).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

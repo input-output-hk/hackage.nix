@@ -21,7 +21,7 @@
       synopsis = "OAuth2 Identity Providers";
       description = "A list of Identity Providers base on hoauth2 Haskell OAuth2 binding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

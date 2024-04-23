@@ -21,7 +21,7 @@
       synopsis = "Streaming component combinators";
       description = "SCC is a layered library of Streaming Component Combinators. The lowest layer in \"Control.Concurent.SCC.Streams\"\ndefines stream abstractions and nested producer-consumer coroutine pairs based on the Coroutine monad transformer.\nOn top of that are streaming component types, a number of primitive streaming components and a set of component\ncombinators. Finally, there is an executable that exposes all the framework functionality in a command-line shell.\n\nThe original library design is based on paper <http://conferences.idealliance.org/extreme/html/2006/Blazevic01/EML2006Blazevic01.html>\n\nMario Bla&#382;evi&#263;, Streaming component combinators, Extreme Markup Languages, 2006.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."incremental-parser" or (errorHandler.buildDepError "incremental-parser"))
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
           (hsPkgs."monad-coroutine" or (errorHandler.buildDepError "monad-coroutine"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shsh" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Main" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

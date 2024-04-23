@@ -21,7 +21,7 @@
       synopsis = "Library for functional reactive programming (FRP).";
       description = "Reactive-banana is a library for Functional Reactive Programming (FRP).\n\nFRP offers an elegant and concise way to express interactive programs such as graphical user interfaces, animations, computer music or robot controllers. It promises to avoid the spaghetti code that is all too common in traditional approaches to GUI programming.\n\nSee the project homepage <http://wiki.haskell.org/Reactive-banana>\nfor more detailed documentation and examples.\n\n/Stability forecast./\nThis is a stable library, though minor API changes are still likely.\nIt features an efficient, push-driven implementation\nand has seen some optimization work.\n\n/API guide./\nStart with the \"Reactive.Banana\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
             (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the FlatBuffers protocol.";
       description = "Haskell implementation of the FlatBuffers protocol.\n\nSee the GitHub page for documentation: <https://github.com/dcastro/haskell-flatbuffers>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-manipulate" or (errorHandler.buildDepError "text-manipulate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -76,10 +76,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-manipulate" or (errorHandler.buildDepError "text-manipulate"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "criterion-bench" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-manipulate" or (errorHandler.buildDepError "text-manipulate"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

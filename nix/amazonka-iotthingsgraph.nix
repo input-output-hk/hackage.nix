@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-iotthingsgraph-2.0-r0-93196ccf0de0fe7bd0fea0645469601b6a351ee5fd2b641511f03d08fd1f958a.nix;
         revNum = 0;
         sha256 = "93196ccf0de0fe7bd0fea0645469601b6a351ee5fd2b641511f03d08fd1f958a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A place to collect orphan instances for Template Haskell";
       description = "A IsString for name, and the beginnings of Arbitrary instances ... I have a instance for Type ... almost ... missing the ForallT.      ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."th-kinds" or (errorHandler.buildDepError "th-kinds"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/difference-monoid-0.1.0.0-r0-ffe3451263d7dee42b1bc26a6bac0c132589e69371669b600d773ebf4ce10f01.nix;
         revNum = 0;
         sha256 = "ffe3451263d7dee42b1bc26a6bac0c132589e69371669b600d773ebf4ce10f01";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

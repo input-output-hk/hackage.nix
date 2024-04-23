@@ -21,14 +21,14 @@
       synopsis = "Basic definitions for activehs";
       description = "This library consists of one module with a few definitions.\nI try to keep it small because this module has to be loaded\nin the interpreter many times during the runtime of the Active.hs\nserver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A socat-like tool for zeromq socket library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zmqat" = {
@@ -30,9 +30,9 @@
             (hsPkgs."zeromq-haskell" or (errorHandler.buildDepError "zeromq-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

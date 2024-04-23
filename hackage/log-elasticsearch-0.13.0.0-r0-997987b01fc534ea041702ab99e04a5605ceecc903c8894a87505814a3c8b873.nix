@@ -21,7 +21,7 @@
       synopsis = "Structured logging solution (Elasticsearch back end)";
       description = "Elasticsearch back end for the 'log' library suite.\nDepends on 'log-base'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,14 +43,14 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.openssl
+        ] ++ (if flags.openssl
           then [
             (hsPkgs."http-client-openssl" or (errorHandler.buildDepError "http-client-openssl"))
-            ]
+          ]
           else [
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

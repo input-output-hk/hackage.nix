@@ -6,8 +6,8 @@
         nix = import ../hackage/trans-fx-core-0.0.1-r0-32ad753299a2c2cc63c2428994e7c328d6332cad9598c57620bddcb86dee9273.nix;
         revNum = 0;
         sha256 = "32ad753299a2c2cc63c2428994e7c328d6332cad9598c57620bddcb86dee9273";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

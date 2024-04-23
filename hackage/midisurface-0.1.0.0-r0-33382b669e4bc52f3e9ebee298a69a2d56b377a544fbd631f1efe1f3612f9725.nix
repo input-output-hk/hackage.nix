@@ -21,7 +21,7 @@
       synopsis = "A control midi surface";
       description = "A simple GTK2 UI to send midi control values.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "midisurface" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

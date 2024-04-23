@@ -21,7 +21,7 @@
       synopsis = "Simple literate programming preprocessor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "anansi" = { buildable = true; }; };
       };
-    }
+      exes = { "anansi" = { buildable = true; }; };
+    };
+  }

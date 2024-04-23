@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell segmented arrays. (production version)";
       description = "Production implementation of the flat parallel array API defined\nin dph-prim-interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-interface" or (errorHandler.buildDepError "dph-prim-interface"))
           (hsPkgs."dph-prim-seq" or (errorHandler.buildDepError "dph-prim-seq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

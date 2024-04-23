@@ -21,7 +21,7 @@
       synopsis = "Command line file filtering with haskell";
       description = "A tool to let you use short haskell expressions to filter\nfiles at the command line.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "eddie" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

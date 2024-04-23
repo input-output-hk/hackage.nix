@@ -21,23 +21,23 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."timeless" or (errorHandler.buildDepError "timeless"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Tutorial1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."timeless-tutorials" or (errorHandler.buildDepError "timeless-tutorials"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

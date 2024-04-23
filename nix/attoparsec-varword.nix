@@ -6,8 +6,8 @@
         nix = import ../hackage/attoparsec-varword-0.1.0.0-r0-aa1b83f43ceb2075250339ed06d114ce6392820b88b8f6438c19fbcc3ad2aee0.nix;
         revNum = 0;
         sha256 = "aa1b83f43ceb2075250339ed06d114ce6392820b88b8f6438c19fbcc3ad2aee0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

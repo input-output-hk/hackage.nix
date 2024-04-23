@@ -21,15 +21,15 @@
       synopsis = "Functions to manipulate records";
       description = "Please see the README on GitHub at <https://github.com/kayhide/wakame>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wakame-doctest" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
             (hsPkgs."wakame" or (errorHandler.buildDepError "wakame"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wakame-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,9 +47,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wakame" or (errorHandler.buildDepError "wakame"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wakame-tasty" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -60,9 +60,9 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."wakame" or (errorHandler.buildDepError "wakame"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

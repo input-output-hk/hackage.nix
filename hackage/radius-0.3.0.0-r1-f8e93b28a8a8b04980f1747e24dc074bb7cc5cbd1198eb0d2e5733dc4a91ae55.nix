@@ -21,7 +21,7 @@
       synopsis = "Remote Authentication Dial In User Service (RADIUS)";
       description = "This module provides types and on the wire de/coding of RADIUS packets as per RFC2865";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

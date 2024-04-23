@@ -21,7 +21,7 @@
       synopsis = "A build-system library and driver";
       description = "Soon to appear.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."parsek" or (errorHandler.buildDepError "parsek"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cake" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generic cryptography cipher types";
       description = "Generic cryptography cipher types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-crypto-cipher-types" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Pipes utilities for interfacing with the courier message-passing framework.";
       description = "Pipes utilities for interfacing with the @courier@ message-passing framework.\nThis package implements shortcut fusion for both pushing and pulling streams.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."courier" or (errorHandler.buildDepError "courier"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

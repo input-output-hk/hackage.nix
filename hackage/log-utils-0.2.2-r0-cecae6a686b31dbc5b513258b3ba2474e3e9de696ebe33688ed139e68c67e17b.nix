@@ -21,7 +21,7 @@
       synopsis = "Utils for working with logs";
       description = "Two utilities for working with logs:\nlog-server and log-fetcher.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "log-server" = {
@@ -45,9 +45,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "log-fetcher" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unjson" or (errorHandler.buildDepError "unjson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

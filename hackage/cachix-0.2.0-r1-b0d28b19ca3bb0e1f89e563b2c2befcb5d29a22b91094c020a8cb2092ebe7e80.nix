@@ -21,7 +21,7 @@
       synopsis = "Command line client for Nix binary cache hosting https://cachix.org";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,22 +66,22 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cachix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cachix" or (errorHandler.buildDepError "cachix"))
             (hsPkgs."cachix-api" or (errorHandler.buildDepError "cachix-api"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cachix-test" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."here" or (errorHandler.buildDepError "here"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

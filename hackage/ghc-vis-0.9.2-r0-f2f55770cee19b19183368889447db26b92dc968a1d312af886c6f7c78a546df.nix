@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -41,11 +41,11 @@
           (hsPkgs."svgcairo" or (errorHandler.buildDepError "svgcairo"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."ghc-heap-view" or (errorHandler.buildDepError "ghc-heap-view"))
-          ] ++ (pkgs.lib).optionals (flags.graph) [
+        ] ++ pkgs.lib.optionals (flags.graph) [
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."xdot" or (errorHandler.buildDepError "xdot"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

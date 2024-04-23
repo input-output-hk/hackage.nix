@@ -21,7 +21,7 @@
       synopsis = "A game engine for running werewolf in a chat client";
       description = "This engine is based off of Werewolves of Millers Hollow\n(http://www.games-wiki.org/wiki/Werewolves_of_Millers_Hollow/).\nSee https://github.com/hjwylde/werewolf for help on writing chat interfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "werewolf" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."werewolf" or (errorHandler.buildDepError "werewolf"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "werewolf-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."werewolf" or (errorHandler.buildDepError "werewolf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

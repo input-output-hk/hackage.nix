@@ -21,7 +21,7 @@
       synopsis = "A collection of tools for processing XML with Haskell. ";
       description = "The Haskell XML Toolbox bases on the ideas of HaXml and HXML,\nbut introduces a more general approach for processing XML with Haskell.\nThe Haskell XML Toolbox uses a generic data model for representing XML documents,\nincluding the DTD subset and the document subset, in Haskell.\nIt contains a validating XML parser, a HTML parser, namespace support,\nan XPath expression evaluator, an XSLT library, a RelaxNG schema validator\nand funtions for serialization and deserialization of user defined data.\nThe library makes extensive use of the arrow approach for processing XML.\nSince version 8.5 XPath and XSLT have been moved to separate packages hxt-xpath and hxt-xslt,\nserialisation is in package hxt-binary";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

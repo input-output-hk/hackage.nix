@@ -21,30 +21,30 @@
       synopsis = "testing code for the language-python library";
       description = "testing code for the language-python library";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "language-python-roundtrip" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-python" or (errorHandler.buildDepError "language-python"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "language-python-tokens" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-python" or (errorHandler.buildDepError "language-python"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "language-python-parse-pretty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-python" or (errorHandler.buildDepError "language-python"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Monad transformers that mirror worker-wrapper transformations.";
       description = "Provides a typeclass and Template Haskell-driven instance generators that create \"worker-wrapper\"\n@ReaderT@ monad transformers, which unpacks the arguments of single-constructor data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

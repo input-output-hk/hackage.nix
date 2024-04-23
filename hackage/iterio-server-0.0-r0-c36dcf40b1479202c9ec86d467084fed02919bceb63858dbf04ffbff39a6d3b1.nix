@@ -21,7 +21,7 @@
       synopsis = "Library for building servers with IterIO";
       description = "This module contains a set of generic building blocks for building servers with IterIO.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
           (hsPkgs."iterIO" or (errorHandler.buildDepError "iterIO"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

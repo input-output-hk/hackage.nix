@@ -21,7 +21,7 @@
       synopsis = "A language for teaching simple programming languages";
       description = "Another implemention of the EWE programming language originally created and designed by Kent D. Lee. EWE is an extension of the RAM programming language (Ravin Sethi).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ewe" = {
@@ -32,13 +32,13 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

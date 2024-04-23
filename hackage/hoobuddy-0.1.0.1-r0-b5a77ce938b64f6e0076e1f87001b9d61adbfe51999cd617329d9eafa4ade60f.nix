@@ -21,7 +21,7 @@
       synopsis = "Simple tool for fetching and merging hoogle data";
       description = "Hoobuddy parses the specified cabal project file and invokes hoogle to fetch databases for\nall specified dependencies merging the result into a `default.hoo` file in the current directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoobuddy" = {
@@ -37,9 +37,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

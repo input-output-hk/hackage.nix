@@ -21,7 +21,7 @@
       synopsis = "A network server to show bottlenecks of GHC";
       description = "A network server to show bottlenecks of GHC";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "witty" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

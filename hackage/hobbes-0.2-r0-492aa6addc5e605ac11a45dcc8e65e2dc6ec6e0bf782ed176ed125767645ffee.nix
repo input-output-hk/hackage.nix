@@ -21,7 +21,7 @@
       synopsis = "A small file watcher for OSX";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hobbes" = {
@@ -30,9 +30,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

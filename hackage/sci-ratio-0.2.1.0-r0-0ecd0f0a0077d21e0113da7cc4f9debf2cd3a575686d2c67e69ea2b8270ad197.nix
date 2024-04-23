@@ -21,23 +21,23 @@
       synopsis = "Rational numbers in scientific notation.";
       description = "Parsing and pretty-printing of exact rational numbers with arbitrarily large\nexponents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "main" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sci-ratio" or (errorHandler.buildDepError "sci-ratio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

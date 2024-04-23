@@ -6,8 +6,8 @@
         nix = import ../hackage/state-record-0.0.1-r0-f123f642cbc4b79da308fd8a221f8431e6ceed57aa3431c0a5f114a1172738fa.nix;
         revNum = 0;
         sha256 = "f123f642cbc4b79da308fd8a221f8431e6ceed57aa3431c0a5f114a1172738fa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

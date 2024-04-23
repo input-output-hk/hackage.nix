@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-finspace-2.0-r0-f2b65a99caafef5180e872abef0121971bd796a5d9288802ac5c1bd3dc4669c7.nix;
         revNum = 0;
         sha256 = "f2b65a99caafef5180e872abef0121971bd796a5d9288802ac5c1bd3dc4669c7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

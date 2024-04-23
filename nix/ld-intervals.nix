@@ -6,8 +6,8 @@
         nix = import ../hackage/ld-intervals-0.1.0.0-r0-236122df978ef6302e48eced74dfdb1ad8a164ab469520522363f090eb71d483.nix;
         revNum = 0;
         sha256 = "236122df978ef6302e48eced74dfdb1ad8a164ab469520522363f090eb71d483";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

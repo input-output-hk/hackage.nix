@@ -21,7 +21,7 @@
       synopsis = "Connection layer between beam and MySQL/MariaDB";
       description = "Beam driver for MySQL or MariaDB databases, two popular open-source databases.\nSupports most beam features, but does not yet have support for \"beam-migrate\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

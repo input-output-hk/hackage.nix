@@ -21,7 +21,7 @@
       synopsis = "handling of   some pandoc stuff";
       description = "remove particular aspects of abstraction ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."uniform-json" or (errorHandler.buildDepError "uniform-json"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

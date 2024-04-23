@@ -21,7 +21,7 @@
       synopsis = "Hexadecimal ByteString literals, with placeholders that bind variables";
       description = "This library defines a quasiquoter for @ByteString@s. As an expression, it\nprovides hexadecimal @ByteString@ literals.  As a pattern, the hexdump can\ncontain named placeholders of fixed size, which bind local variables when\npattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Template Haskell helpers for fused-effects.";
       description = "This package provides Template Haskell splices that wrap the smart constructors needed for declaring new effects when using the fused-effects effect system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fused-effects-th-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."fused-effects-th" or (errorHandler.buildDepError "fused-effects-th"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bindings for the JACK Audio Connection Kit";
       description = "Very basic bindings for the JACK Audio Connection Kit.\nIt has support both for PCM audio and MIDI handling.\n\nIn order to adapt to your system,\nyou may have to disable pkgConfig or jackFree cabal flags.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,39 +33,39 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
-        libs = (pkgs.lib).optional (!flags.pkgconfig) (pkgs."jack" or (errorHandler.sysDepError "jack"));
-        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."jack" or (errorHandler.pkgConfDepError "jack"));
+        ];
+        libs = pkgs.lib.optional (!flags.pkgconfig) (pkgs."jack" or (errorHandler.sysDepError "jack"));
+        pkgconfig = pkgs.lib.optional (flags.pkgconfig) (pkgconfPkgs."jack" or (errorHandler.pkgConfDepError "jack"));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "amplify" = {
           depends = [
             (hsPkgs."jack" or (errorHandler.buildDepError "jack"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "impulse-train" = {
           depends = [
             (hsPkgs."jack" or (errorHandler.buildDepError "jack"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "midimon" = {
           depends = [
             (hsPkgs."jack" or (errorHandler.buildDepError "jack"))
             (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

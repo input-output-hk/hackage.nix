@@ -6,8 +6,8 @@
         nix = import ../hackage/sugar-data-0.0.0.0-r0-fb9ca65a10f1f963abbf2f42d63f604a060b3b001e1cbd201050966c2a19efe3.nix;
         revNum = 0;
         sha256 = "fb9ca65a10f1f963abbf2f42d63f604a060b3b001e1cbd201050966c2a19efe3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

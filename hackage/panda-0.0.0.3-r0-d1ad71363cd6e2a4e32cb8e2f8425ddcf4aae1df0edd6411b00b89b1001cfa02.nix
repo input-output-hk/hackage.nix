@@ -21,7 +21,7 @@
       synopsis = "Simple Static Blog Engine";
       description = "Simple Static Blog Engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."kibro" or (errorHandler.buildDepError "kibro"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

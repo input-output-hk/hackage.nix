@@ -6,8 +6,8 @@
         nix = import ../hackage/happybara-webkit-server-0.0.1-r0-dbcae717b8b262097177e013f48e7910f8d6b3f0e06679c9101fb5e8e8e6ee9c.nix;
         revNum = 0;
         sha256 = "dbcae717b8b262097177e013f48e7910f8d6b3f0e06679c9101fb5e8e8e6ee9c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

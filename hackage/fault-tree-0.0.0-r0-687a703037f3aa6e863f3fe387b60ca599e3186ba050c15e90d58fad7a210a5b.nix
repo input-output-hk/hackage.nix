@@ -21,14 +21,14 @@
       synopsis = "A fault tree analysis library.";
       description = "Fault tree analysis is used to determine probability of failure modes\nin safety critical applications.  Generates fault tree graphs (Graphviz)\nand calculates cutsets.\nYices (required) is the backend SMT solver used for cutset calculation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

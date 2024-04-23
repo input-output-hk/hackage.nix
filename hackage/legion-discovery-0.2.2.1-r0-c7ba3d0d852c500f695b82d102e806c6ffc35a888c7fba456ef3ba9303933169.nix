@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,26 +51,26 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "legion-discovery" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."legion-discovery" or (errorHandler.buildDepError "legion-discovery"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "legion-discovery-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."legion-discovery" or (errorHandler.buildDepError "legion-discovery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

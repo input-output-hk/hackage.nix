@@ -21,11 +21,11 @@
       synopsis = "A library for units of measurement";
       description = "A library for units of measurement";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

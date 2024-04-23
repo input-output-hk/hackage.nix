@@ -21,7 +21,7 @@
       synopsis = "Automatic Rule-Based Time Tracker";
       description = "arbtt is a background daemon that stores which windows are open, which one\nhas the focus and how long since your last action (and possbly more sources\nlater), and stores this. It is also a program that will, based on\nexpressive rules you specify, derive what you were doing, and what for.\n\nThe documentation, which includes the changelog, can also be found at\n<http://arbtt.nomeata.de/doc/users_guide/>.\n\nWARNING: The log file might contain very sensitive private data. Make sure\nyou understand the consequences of a full-time logger and be careful with this\ndata.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "arbtt-capture" = {
@@ -37,24 +37,24 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (if flags.old-locale
+          ] ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if system.isWindows
+            ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
-            else (pkgs.lib).optional (!system.isOsx) (hsPkgs."X11" or (errorHandler.buildDepError "X11")));
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."psapi" or (errorHandler.sysDepError "psapi"));
-          frameworks = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optionals (system.isOsx) [
+            else pkgs.lib.optional (!system.isOsx) (hsPkgs."X11" or (errorHandler.buildDepError "X11")));
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."psapi" or (errorHandler.sysDepError "psapi"));
+          frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals (system.isOsx) [
             (pkgs."Foundation" or (errorHandler.sysDepError "Foundation"))
             (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"))
             (pkgs."IOKit" or (errorHandler.sysDepError "IOKit"))
-            ]);
+          ]);
           buildable = true;
-          };
+        };
         "arbtt-stats" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,14 +75,14 @@
             (hsPkgs."bytestring-progress" or (errorHandler.buildDepError "bytestring-progress"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
+        };
         "arbtt-dump" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,14 +98,14 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
+        };
         "arbtt-import" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -126,14 +126,14 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
+        };
         "arbtt-recover" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,15 +144,15 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = ([
@@ -171,20 +171,20 @@
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           build-tools = [
             (hsPkgs.buildPackages.arbtt.components.exes.arbtt-stats or (pkgs.buildPackages.arbtt-stats or (errorHandler.buildToolDepError "arbtt:arbtt-stats")))
             (hsPkgs.buildPackages.arbtt.components.exes.arbtt-dump or (pkgs.buildPackages.arbtt-dump or (errorHandler.buildToolDepError "arbtt:arbtt-dump")))
             (hsPkgs.buildPackages.arbtt.components.exes.arbtt-import or (pkgs.buildPackages.arbtt-import or (errorHandler.buildToolDepError "arbtt:arbtt-import")))
             (hsPkgs.buildPackages.arbtt.components.exes.arbtt-recover or (pkgs.buildPackages.arbtt-recover or (errorHandler.buildToolDepError "arbtt:arbtt-recover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

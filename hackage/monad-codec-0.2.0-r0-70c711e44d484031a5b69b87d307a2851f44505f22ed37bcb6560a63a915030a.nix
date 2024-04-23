@@ -21,7 +21,7 @@
       synopsis = "Monadic conversion between complex data structures and unique integers";
       description = "The library provides functions for encoding and decoding complex data\nstructures with unique integer numbers.  The codec structure can be\nexplicitly defined which distinguishes this package from a monad-atom\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

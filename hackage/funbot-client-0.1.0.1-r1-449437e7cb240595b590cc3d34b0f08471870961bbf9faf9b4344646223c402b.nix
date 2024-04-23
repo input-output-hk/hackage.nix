@@ -21,7 +21,7 @@
       synopsis = "Report events to FunBot over a JSON/HTTP API.";
       description = "This is a library for reporting events to a running instance of\n<https://notabug.org/fr33domlover/funbot FunBot>, so that the bot can\nannounce the event to IRC. For example, if you are writing a paste server,\nyou can add support for IRC announcments of new pastes by reporting the paste\nto a running bot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,16 +30,16 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."funbot-ext-events" or (errorHandler.buildDepError "funbot-ext-events"))
-          ] ++ (if flags.old
+        ] ++ (if flags.old
           then [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ]
+          ]
           else [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

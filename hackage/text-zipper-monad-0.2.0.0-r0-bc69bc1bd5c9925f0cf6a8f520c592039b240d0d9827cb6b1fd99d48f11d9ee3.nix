@@ -21,16 +21,16 @@
       synopsis = "Monadic interface to the text-zipper package";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "text-zipper-monad-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
             (hsPkgs."text-zipper-monad" or (errorHandler.buildDepError "text-zipper-monad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for downloading data from a Great Black Swamp server";
       description = "Integrate tahoe-ssk, tahoe-chk, and tahoe-directory to provide a high-level\nAPI for downloading immutable and mutable files and directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."tahoe-ssk" or (errorHandler.buildDepError "tahoe-ssk"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "download-chk" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."tahoe-chk" or (errorHandler.buildDepError "tahoe-chk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "download-sdmf" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -77,9 +77,9 @@
             (hsPkgs."tahoe-ssk" or (errorHandler.buildDepError "tahoe-ssk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "list-dircap" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -93,10 +93,10 @@
             (hsPkgs."tahoe-ssk" or (errorHandler.buildDepError "tahoe-ssk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gbs-downloader-test" = {
           depends = [
@@ -125,9 +125,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

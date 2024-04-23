@@ -21,7 +21,7 @@
       synopsis = "Runtime-editable program settings.";
       description = "This library aims to be a tool for constructing a settings management UI on\ntop of the relevant part of your program state. The settings tree structure\ndefinition is separate from the actual setting values, so your program logic\ncode doesn't need to be changed. It can access the settings as regular\nHaskell values.\n\nThe settings are presented to the user as a tree hierarchy. The idea has some\nsimilarity to @git config@ and <http://weechat.org Weechat>'s settings\nsystem, but isn't identical.\n\nTo get started, see the tutorial in the \"Data.Settings\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

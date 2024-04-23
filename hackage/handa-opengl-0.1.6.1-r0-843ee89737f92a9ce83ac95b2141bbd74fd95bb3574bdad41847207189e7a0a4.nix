@@ -21,7 +21,7 @@
       synopsis = "Utility functions for OpenGL and GLUT";
       description = "This is a collection of miscellaneous utility functions for OpenGL and GLUT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."opengl-dlp-stereo" or (errorHandler.buildDepError "opengl-dlp-stereo"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

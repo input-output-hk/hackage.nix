@@ -21,15 +21,15 @@
       synopsis = "A lightweight structured-concurrency library";
       description = "A lightweight structured-concurrency library.\n\nFor a specialised variant of this API that does not use\n@<https://hackage.haskell.org/package/unliftio-core unliftio-core>@, see\n@<https://hackage.haskell.org/package/ki ki>@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ki" or (errorHandler.buildDepError "ki"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

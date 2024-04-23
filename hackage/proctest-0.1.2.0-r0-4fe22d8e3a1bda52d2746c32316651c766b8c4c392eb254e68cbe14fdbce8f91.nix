@@ -21,7 +21,7 @@
       synopsis = "An IO library for testing interactive command line programs";
       description = "An IO library for testing interactive command line programs\n\nProctest aims to simplify interacting with and testing\nterminal programs, providing convenience functions\nfor starting programs and reading their output.\n\nAll blocking operations support timeouts so that misbehaving\nprograms cannot block your test pipeline.\n\nFind more examples and contribute at\n<https://github.com/nh2/proctest>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-netcat-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

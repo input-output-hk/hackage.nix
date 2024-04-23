@@ -21,7 +21,7 @@
       synopsis = "Generate sparkline graphs of hackage statistics";
       description = "Generate sparkline graphs of hackage statistics";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackagesparks" = {
@@ -30,16 +30,16 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."parsedate" or (errorHandler.buildDepError "parsedate"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

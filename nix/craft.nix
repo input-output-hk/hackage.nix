@@ -6,8 +6,8 @@
         nix = import ../hackage/craft-0.0.0.1-r0-45ae71a9af6776f4d21bda5c8c0d04c2f830a420234c25c7dfb36b950ea718cd.nix;
         revNum = 0;
         sha256 = "45ae71a9af6776f4d21bda5c8c0d04c2f830a420234c25c7dfb36b950ea718cd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

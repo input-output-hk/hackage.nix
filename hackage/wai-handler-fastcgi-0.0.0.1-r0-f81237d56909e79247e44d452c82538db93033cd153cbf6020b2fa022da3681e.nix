@@ -21,7 +21,7 @@
       synopsis = "WAI wrapper around direct-fastcgi";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."direct-fastcgi" or (errorHandler.buildDepError "direct-fastcgi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

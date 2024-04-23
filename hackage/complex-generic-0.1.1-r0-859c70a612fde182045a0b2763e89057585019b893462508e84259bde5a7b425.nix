@@ -21,14 +21,14 @@
       synopsis = "complex numbers with non-mandatory RealFloat";
       description = "The base package's 'Data.Complex' has a 'RealFloat' requirement for\nalmost all operations, which rules out uses such as 'Complex Rational'\nor 'Complex Integer'.  This package provides an alternative, putting\nmost operations into additional type classes.  Generating instances\nwith template haskell helps reduce excessive boilerplate and avoids\ninstance overlap.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

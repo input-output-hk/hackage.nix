@@ -21,7 +21,7 @@
       synopsis = "Decode a UTF-8 byte stream on standard input";
       description = "This package implements a simple utility to decode a UTF-8 byte stream\nfed in on standard input, displaying the valid Unicode characters read\nand the invalid bytes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "decode-utf8" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."opentheory-unicode" or (errorHandler.buildDepError "opentheory-unicode"))
             (hsPkgs."api-opentheory-unicode" or (errorHandler.buildDepError "api-opentheory-unicode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

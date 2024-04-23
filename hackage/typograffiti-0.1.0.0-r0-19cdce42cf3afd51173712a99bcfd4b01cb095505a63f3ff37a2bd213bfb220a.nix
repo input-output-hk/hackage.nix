@@ -21,7 +21,7 @@
       synopsis = "Display TTF fonts in OpenGL. Includes caching for fast rendering.";
       description = "Please see the README on GitHub at <https://github.com/githubuser/typograffiti#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "typograffiti-exe" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."typograffiti" or (errorHandler.buildDepError "typograffiti"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "typograffiti-test" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."typograffiti" or (errorHandler.buildDepError "typograffiti"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

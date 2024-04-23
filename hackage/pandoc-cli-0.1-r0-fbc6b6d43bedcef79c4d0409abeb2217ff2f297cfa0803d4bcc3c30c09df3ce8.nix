@@ -21,7 +21,7 @@
       synopsis = "Conversion between documentation formats";
       description = "Pandoc-cli provides a command-line executable that uses the\npandoc library to convert between markup formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc" = {
@@ -29,20 +29,20 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optionals (flags.nightly) [
+          ] ++ pkgs.lib.optionals (flags.nightly) [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]) ++ (pkgs.lib).optionals (flags.server) [
+          ]) ++ pkgs.lib.optionals (flags.server) [
             (hsPkgs."pandoc-server" or (errorHandler.buildDepError "pandoc-server"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ]) ++ (pkgs.lib).optionals (flags.lua) [
+          ]) ++ pkgs.lib.optionals (flags.lua) [
             (hsPkgs."hslua-cli" or (errorHandler.buildDepError "hslua-cli"))
             (hsPkgs."pandoc-lua-engine" or (errorHandler.buildDepError "pandoc-lua-engine"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

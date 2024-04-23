@@ -6,8 +6,8 @@
         nix = import ../hackage/processor-creative-kit-0.1.0.1-r0-f3b5bba2d4726054dd9d63327972043aa6fb3e45c8673f555ce4b513675b00ca.nix;
         revNum = 0;
         sha256 = "f3b5bba2d4726054dd9d63327972043aa6fb3e45c8673f555ce4b513675b00ca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

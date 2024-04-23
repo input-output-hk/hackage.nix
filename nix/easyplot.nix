@@ -6,8 +6,8 @@
         nix = import ../hackage/easyplot-1.0-r0-3fec6ccf425b370ab668eb342bc4cd92777880653e27a982db7b225fd007cb2b.nix;
         revNum = 0;
         sha256 = "3fec6ccf425b370ab668eb342bc4cd92777880653e27a982db7b225fd007cb2b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

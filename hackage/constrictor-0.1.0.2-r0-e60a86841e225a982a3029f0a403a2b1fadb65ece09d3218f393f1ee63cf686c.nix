@@ -21,14 +21,14 @@
       synopsis = "strict versions of many things in base";
       description = "This package provides strict versions of many functions in\nbase, including some functions not present, such as\n'foldlMapA', 'foldlMapM', 'foldrMapA', and foldrMapM.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Asynchronous backend for co-log library";
       description = "Buiding block for writing asynchronous logger pipelines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."co-log-core" or (errorHandler.buildDepError "co-log-core"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

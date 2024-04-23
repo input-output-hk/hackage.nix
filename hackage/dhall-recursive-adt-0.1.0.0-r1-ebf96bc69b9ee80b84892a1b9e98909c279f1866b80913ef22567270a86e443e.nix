@@ -21,7 +21,7 @@
       synopsis = "Convert recursive ADTs from and to Dhall";
       description = "Convert recursive ADTs from and to Dhall by automating derivation of @FromDhall@/@ToDhall@ as much as possible";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
           (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -44,16 +44,16 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "docspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

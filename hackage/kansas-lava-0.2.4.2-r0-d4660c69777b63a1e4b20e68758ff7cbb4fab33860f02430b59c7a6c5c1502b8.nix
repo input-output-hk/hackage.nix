@@ -21,7 +21,7 @@
       synopsis = "Kansas Lava is a hardware simulator and VHDL generator.";
       description = "Kansas Lava is a Domain Specific Language (DSL) for expressing\nhardware-oriented descriptions of computations, and is hosted inside\nthe language Haskell. Kansas Lava programs are descriptions of\nspecific hardware entities, the connections between them, and other\ncomputational abstractions that can compile down to these entities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kansas-lava-unittest" = {
           depends = if flags.unit || flags.all
@@ -64,10 +64,10 @@
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.unit || flags.all then true else false;
-          };
+        };
         "kansas-lava-testreport" = {
           depends = if flags.unit || flags.all
             then [
@@ -87,10 +87,10 @@
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.unit || flags.all then true else false;
-          };
+        };
         "kansas-lava-tbf2vcd" = {
           depends = if flags.tools || flags.all
             then [
@@ -110,10 +110,10 @@
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.tools || flags.all then true else false;
-          };
         };
       };
-    }
+    };
+  }

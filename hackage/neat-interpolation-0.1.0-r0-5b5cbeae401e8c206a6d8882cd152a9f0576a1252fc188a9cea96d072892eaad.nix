@@ -21,7 +21,7 @@
       synopsis = "A quasiquoter for neat and simple multiline text interpolation";
       description = "NeatInterpolation provides a quasiquoter for producing `Text` data with a simple interpolation of input values. It removes the excessive indentation from the input text and accurately manages the indentation of all lines of interpolated variables. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

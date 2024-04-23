@@ -21,12 +21,12 @@
       synopsis = "Carlson Elliptic Integrals and Incomplete Elliptic Integrals";
       description = "Evaluation of the Carlson elliptic integrals and the incomplete elliptic integrals with complex arguments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."elliptic-integrals" or (errorHandler.buildDepError "elliptic-integrals"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

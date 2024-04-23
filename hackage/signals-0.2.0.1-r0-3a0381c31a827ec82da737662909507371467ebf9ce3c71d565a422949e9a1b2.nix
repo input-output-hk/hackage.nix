@@ -21,7 +21,7 @@
       synopsis = "Synchronous signal processing for DSLs.";
       description = "A library for expressing digital signal processing algorithms using a deeply\nembedded domain-specific language. The library supports definitions in functional\nprogramming style, reducing the gap between the mathematical description of\nstreaming  algorithms and their implementation. The deep embedding makes it possible\nto generate efficient VHDL code without any overhead associated with the\nhigh-level programming model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
           (hsPkgs."exception-mtl" or (errorHandler.buildDepError "exception-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A binding for the OpenAL Utility Toolkit";
       description = "A Haskell binding for the OpenAL Utility Toolkit, which makes\nmanaging of OpenAL contexts, loading sounds in various formats\nand creating waveforms very easy. For more information about the\nC library on which this binding is based, please see:\n<http://connect.creativelabs.com/openal/Documentation/The%20OpenAL%20Utility%20Toolkit.pdf>.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."OpenAL" or (errorHandler.buildDepError "OpenAL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Loop over an action but throttle it to a certain rate";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."natural-numbers" or (errorHandler.buildDepError "natural-numbers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "loop-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."throttled-io-loop" or (errorHandler.buildDepError "throttled-io-loop"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

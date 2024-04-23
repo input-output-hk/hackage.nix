@@ -21,7 +21,7 @@
       synopsis = "IP2Proxy Haskell package for proxy detection.";
       description = "This Haskell package allows users to query an IP address to determine if it was being used as VPN anonymizer, open proxies, web proxies, Tor exits, data center, web hosting (DCH) range, search engine robots (SES) and residential (RES).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

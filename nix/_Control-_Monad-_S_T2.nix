@@ -6,8 +6,8 @@
         nix = import ../hackage/Control-Monad-ST2-0.1.0.1-r0-0606701014b11c432df73ec9893f4c657e11c8464835a31ebb1ece2c2c3215b0.nix;
         revNum = 0;
         sha256 = "0606701014b11c432df73ec9893f4c657e11c8464835a31ebb1ece2c2c3215b0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

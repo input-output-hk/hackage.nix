@@ -21,7 +21,7 @@
       synopsis = "Flexible wrappers";
       description = "MPTC/FD framework using multi-purpose wrappers\nto direct instance selection";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-type" or (errorHandler.buildDepError "data-type"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "6.6.1") (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "6.6.1") (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

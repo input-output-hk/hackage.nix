@@ -21,7 +21,7 @@
       synopsis = "Check how up-to-date your .cabal dependencies are.";
       description = "Check how up-to-date your .cabal dependencies are.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-audit" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A parser/generator for Kindle-format clipping files (`My Clippings.txt`),";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."assert" or (errorHandler.buildDepError "assert"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "clippings2tsv" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wright-tests" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."assertions" or (errorHandler.buildDepError "assertions"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

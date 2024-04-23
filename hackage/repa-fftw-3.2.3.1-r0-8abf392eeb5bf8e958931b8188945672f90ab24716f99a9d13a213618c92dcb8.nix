@@ -21,7 +21,7 @@
       synopsis = "Perform fft with repa via FFTW";
       description = "Performs FFT on repa array data with fftw.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."fft" or (errorHandler.buildDepError "fft"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
             (hsPkgs."repa-fftw" or (errorHandler.buildDepError "repa-fftw"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

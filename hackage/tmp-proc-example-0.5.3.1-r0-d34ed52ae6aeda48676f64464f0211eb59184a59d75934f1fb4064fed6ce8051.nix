@@ -21,7 +21,7 @@
       synopsis = "Test a simple service with backends running on docker using tmp-proc";
       description = "An example of testing a service that uses Postgresql and Redis where these\nbackends are launched in docker via simple test setup code that uses tmp-proc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,25 +53,25 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec-integration-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tmp-proc-example" or (errorHandler.buildDepError "tmp-proc-example"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tasty-integration-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tmp-proc-example" or (errorHandler.buildDepError "tmp-proc-example"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

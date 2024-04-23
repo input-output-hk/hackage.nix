@@ -21,7 +21,7 @@
       synopsis = "Import Vienna energy parameters";
       description = "Importer and Exporter for Vienna energy files. Allows\nconverting Turner parameter files to Vienna parameter files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."BiobaseTurner" or (errorHandler.buildDepError "BiobaseTurner"))
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

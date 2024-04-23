@@ -21,11 +21,11 @@
       synopsis = "Ordinal arithmetic";
       description = "Ordinal arithmetic implementation up to epsilon_0.\nCurrently based on interated multiset representation,\nplanning to add CNF based implenetation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/jordan-servant-openapi-0.1.0.0-r0-3dc5aff1cdbd2d45a1dc0697749a680ef77d6d758d6bebb03201d5694296a6aa.nix;
         revNum = 0;
         sha256 = "3dc5aff1cdbd2d45a1dc0697749a680ef77d6d758d6bebb03201d5694296a6aa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

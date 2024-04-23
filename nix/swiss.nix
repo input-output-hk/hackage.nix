@@ -6,8 +6,8 @@
         nix = import ../hackage/swiss-0.0.1-r0-51d832e4203b310c2cb225d04d15d3e6a5ff4716471e1759e605759b96a37ee9.nix;
         revNum = 0;
         sha256 = "51d832e4203b310c2cb225d04d15d3e6a5ff4716471e1759e605759b96a37ee9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

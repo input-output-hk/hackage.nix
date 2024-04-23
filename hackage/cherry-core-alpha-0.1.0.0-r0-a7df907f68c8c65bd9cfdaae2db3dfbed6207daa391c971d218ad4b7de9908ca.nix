@@ -21,7 +21,7 @@
       synopsis = "The core library for Cherry Haskell.";
       description = "The core library for Cherry Haskell, including a standard fuctions, server, and json parsing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -61,12 +61,12 @@
             (hsPkgs."text-utf8" or (errorHandler.buildDepError "text-utf8"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cherry-core" or (errorHandler.buildDepError "cherry-core"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

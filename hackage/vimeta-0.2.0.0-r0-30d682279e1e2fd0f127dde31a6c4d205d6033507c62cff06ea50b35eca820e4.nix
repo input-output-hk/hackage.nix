@@ -21,7 +21,7 @@
       synopsis = "Frontend for video metadata tagging tools";
       description = "Vimeta is a tool to fetch video metadata from the interwebs and\nupdate video files using a tagging tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,17 +49,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vimeta" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vimeta" or (errorHandler.buildDepError "vimeta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

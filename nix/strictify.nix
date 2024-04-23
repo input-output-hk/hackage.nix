@@ -6,8 +6,8 @@
         nix = import ../hackage/strictify-0.1-r0-f60fb6d26e121619f565e6988dd42832eab464b91c183c654b0fcb4f39a681d8.nix;
         revNum = 0;
         sha256 = "f60fb6d26e121619f565e6988dd42832eab464b91c183c654b0fcb4f39a681d8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

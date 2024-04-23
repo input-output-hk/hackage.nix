@@ -21,7 +21,7 @@
       synopsis = "RPM package creator for Haskell Cabal-based packages";
       description = "This package generates RPM spec files from Haskell Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-rpm" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

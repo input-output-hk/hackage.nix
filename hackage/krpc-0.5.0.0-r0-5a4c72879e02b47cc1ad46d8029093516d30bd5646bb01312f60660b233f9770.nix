@@ -21,7 +21,7 @@
       synopsis = "KRPC protocol implementation";
       description = "The KRPC protocol is a simple RPC mechanism consisting of bencoded\ndictionaries sent over UDP.\n\n<http://bittorrent.org/beps/bep_0005.html#krpc-protocol>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
             (hsPkgs."krpc" or (errorHandler.buildDepError "krpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."krpc" or (errorHandler.buildDepError "krpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

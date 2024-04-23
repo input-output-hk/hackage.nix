@@ -21,7 +21,7 @@
       synopsis = "A preprocessor and quasiquoter for translating arrow notation";
       description = "A suite of preprocessor and quasiquoter to desugar arrow notation built on top of Ross Paterson's arrowp and the venerable haskell-src-exts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,28 +34,28 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ] ++ (if flags.debug
+        ] ++ (if flags.debug
           then [
             (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
             (hsPkgs."haskell-src-exts-observe" or (errorHandler.buildDepError "haskell-src-exts-observe"))
-            ]
+          ]
           else [ (hsPkgs."NoHoed" or (errorHandler.buildDepError "NoHoed")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "arrowp-ext" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."arrowp-qq" or (errorHandler.buildDepError "arrowp-qq"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ] ++ (if flags.debug
+          ] ++ (if flags.debug
             then [ (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed")) ]
             else [
               (hsPkgs."NoHoed" or (errorHandler.buildDepError "NoHoed"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
             (hsPkgs."arrowp-qq" or (errorHandler.buildDepError "arrowp-qq"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = if flags.testexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Control your Arduino board from Haskell.";
       description = "hArduino allows Haskell programs to control Arduino boards (<http://www.arduino.cc>)\nand peripherals, using the Firmata protocol (<http://firmata.org>).\n\nFor details, see: <http://leventerkok.github.com/hArduino>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Password strength estimation based on zxcvbn.";
       description = "This is a native Haskell implementation of the zxcvbn password\nstrength estimation algorithm as it appears in the 2016 USENIX Security\n<https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/wheeler paper>\nand presentation (with some small modifications).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zxcvbn-tools" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
-            ];
+          ];
           buildable = if !flags.tools then false else true;
-          };
+        };
         "zxcvbn-example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -89,10 +89,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -116,10 +116,10 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -140,9 +140,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

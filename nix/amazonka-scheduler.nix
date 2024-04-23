@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-scheduler-2.0-r0-64c7c40dbedd21d2fdfb271a52e7a86fe9cb407a00c8252c4c965b8629e2b669.nix;
         revNum = 0;
         sha256 = "64c7c40dbedd21d2fdfb271a52e7a86fe9cb407a00c8252c4c965b8629e2b669";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

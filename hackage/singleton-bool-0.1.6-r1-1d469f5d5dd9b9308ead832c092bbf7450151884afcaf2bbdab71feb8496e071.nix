@@ -21,7 +21,7 @@
       synopsis = "Type level booleans";
       description = "Type level booleans.\n\n@singletons@ package provides similar functionality,\nbut it has tight dependency constraints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."dec" or (errorHandler.buildDepError "dec"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

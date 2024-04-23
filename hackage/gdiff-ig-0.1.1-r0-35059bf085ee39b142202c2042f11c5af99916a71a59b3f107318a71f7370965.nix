@@ -21,7 +21,7 @@
       synopsis = "Generic diff for the instant-generics library";
       description = "The generic diff of <http://hackage.haskell.org/package/gdiff> adapted to the\n<http://hackage.haskell.org/package/instant-generics> library.\n\nThe Test.hs file (included in the package) shows an example of use of this\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple tool to illustrate dependencies between Haskell types";
       description = "This tools produces diagrams of Haskell type interdependencies in the given source.\nActual drawing is done by graphviz tools (dot).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "graphtype" = {
@@ -31,9 +31,9 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

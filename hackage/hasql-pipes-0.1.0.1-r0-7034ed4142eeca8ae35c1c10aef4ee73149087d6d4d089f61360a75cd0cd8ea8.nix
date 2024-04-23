@@ -21,7 +21,7 @@
       synopsis = "A pipe to stream a postgres database cursor in the hasql ecosystem";
       description = "Please see the README on GitLab at <https://gitlab.com/paolo.veronelli/hasql-pipes>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

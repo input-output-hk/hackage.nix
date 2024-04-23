@@ -6,8 +6,8 @@
         nix = import ../hackage/nthable-0.1-r0-f8bbf00d85158a0a82fd250d1b6f9e6b55f52de9fa33984e03e6189f270bfcb3.nix;
         revNum = 0;
         sha256 = "f8bbf00d85158a0a82fd250d1b6f9e6b55f52de9fa33984e03e6189f270bfcb3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

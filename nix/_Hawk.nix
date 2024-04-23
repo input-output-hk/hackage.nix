@@ -6,8 +6,8 @@
         nix = import ../hackage/Hawk-0.0.2-r0-dadcab622cf2b3ad6d4a221317eeed28fe7437b4bea16ea744bd08803b04dab8.nix;
         revNum = 0;
         sha256 = "dadcab622cf2b3ad6d4a221317eeed28fe7437b4bea16ea744bd08803b04dab8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

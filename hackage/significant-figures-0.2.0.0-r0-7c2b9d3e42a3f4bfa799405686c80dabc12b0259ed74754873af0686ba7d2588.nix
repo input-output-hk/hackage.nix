@@ -21,7 +21,7 @@
       synopsis = "Calculate expressions involving significant figures.";
       description = "This library provides a module \"Data.SigFig\" that helps with the parsing and evaluation of expressions involving significant figures. Significant figures are a method, often used in chemistry, of assessing and controlling the precision/uncertainty from measured values in calculations.\n\nExpressions with significant figures are not easily calculable with a normal calculator, since they require intermediate rounding based on certain rules. This library takes care of intermediate rounding during evaluation and provides functions to parse text into expressions. Parsing supports integer, float, and scientific notation (via E notation), constant terms (terms with effectively infinite significant figures), common operations, parentheses, and an additional small set of functions. Expressions may also be constructed via helper functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."HasBigDecimal" or (errorHandler.buildDepError "HasBigDecimal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "significant-figures-cli" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."HasBigDecimal" or (errorHandler.buildDepError "HasBigDecimal"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."significant-figures" or (errorHandler.buildDepError "significant-figures"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "significant-figures-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."HasBigDecimal" or (errorHandler.buildDepError "HasBigDecimal"))
             (hsPkgs."significant-figures" or (errorHandler.buildDepError "significant-figures"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

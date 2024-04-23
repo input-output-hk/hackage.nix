@@ -21,7 +21,7 @@
       synopsis = "A pretty printer for Android Lint errors";
       description = "An easily digestible overview of errors and warnings from Android Lint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
+        ] ++ pkgs.lib.optional (flags.documentation) (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"));
         buildable = true;
-        };
+      };
       exes = {
         "android-lint-summary" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec-tests" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."stringable" or (errorHandler.buildDepError "stringable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

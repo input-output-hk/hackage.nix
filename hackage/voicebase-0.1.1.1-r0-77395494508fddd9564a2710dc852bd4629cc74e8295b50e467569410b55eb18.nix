@@ -21,7 +21,7 @@
       synopsis = "Upload audio files to voicebase to get a transcription";
       description = "voicebase bindings for <http://voicebase.readthedocs.io/en/v2-beta/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "voicebase" = {
           depends = [
@@ -47,18 +47,18 @@
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
             (hsPkgs."options" or (errorHandler.buildDepError "options"))
             (hsPkgs."voicebase" or (errorHandler.buildDepError "voicebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "voicebase-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."voicebase" or (errorHandler.buildDepError "voicebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

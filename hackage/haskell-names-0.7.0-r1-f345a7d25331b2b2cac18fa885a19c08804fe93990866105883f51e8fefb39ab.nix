@@ -21,7 +21,7 @@
       synopsis = "Name resolution library for Haskell";
       description = "This package takes modules parsed with `haskell-src-exts`, resolves used names and annotates the parsed module with scoping information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."data-lens-light" or (errorHandler.buildDepError "data-lens-light"))
           (hsPkgs."traverse-with-class" or (errorHandler.buildDepError "traverse-with-class"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."traverse-with-class" or (errorHandler.buildDepError "traverse-with-class"))
             (hsPkgs."haskell-names" or (errorHandler.buildDepError "haskell-names"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

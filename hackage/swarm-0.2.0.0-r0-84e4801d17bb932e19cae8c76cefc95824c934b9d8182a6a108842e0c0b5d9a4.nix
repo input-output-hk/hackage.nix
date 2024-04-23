@@ -21,7 +21,7 @@
       synopsis = "2D resource gathering game with programmable robots";
       description = "Swarm is a 2D programming and resource gathering\ngame. Program your robots to explore the world and\ncollect resources, which in turn allows you to\nbuild upgraded robots that can run more\ninteresting and complex programs. See the README\nfor more information and instructions on how to\nplay or contribute!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -76,9 +76,9 @@
           (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
           (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "swarm" = {
           depends = [
@@ -87,10 +87,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."swarm" or (errorHandler.buildDepError "swarm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "swarm-unit" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."swarm" or (errorHandler.buildDepError "swarm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "swarm-integration" = {
           depends = [
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
@@ -129,10 +129,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."swarm" or (errorHandler.buildDepError "swarm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

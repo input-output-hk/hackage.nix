@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Base-N ByteStrings for base{16,32,58,64}";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "basen-bytestring-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."basen-bytestring" or (errorHandler.buildDepError "basen-bytestring"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Enumerator tools for text-based network protocols";
       description = "Enumerator tools for text-based network protocols.  This includes,\namong other things, an enumeratee to split an incoming ByteString\nstream to a length-limited line stream in a safe manner (i.e. in\nconstant space).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."contstuff" or (errorHandler.buildDepError "contstuff"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

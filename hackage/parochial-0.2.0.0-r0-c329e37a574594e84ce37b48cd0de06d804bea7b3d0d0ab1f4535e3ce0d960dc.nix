@@ -21,7 +21,7 @@
       synopsis = "Help Manage project specific documentation";
       description = "Parochial helps manage local documentation by creating an index of\na project's html, it also builds a hoogle index. In both instances\nthe project's transitive dependencies are included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."filepattern" or (errorHandler.buildDepError "filepattern"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parochial" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."parochial" or (errorHandler.buildDepError "parochial"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

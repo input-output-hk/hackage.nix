@@ -14,7 +14,7 @@
       identifier = {
         name = "uniqueness-periods-vector-properties";
         version = "0.6.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Metrices for the maximum element for the uniqueness-periods-vector packages family.";
       description = "Metrices for the maximum element for the uniqueness-periods-vector packages family. Generalization of the DobutokO.Poetry.Norms and DobutokO.Poetry.Norms.Extended modules from dobutokO-poetry package. Please, consider switching to the phonetic-languages-simplified-examples-array package related functionality. It is still under development and introducing new advanced features being more optimized.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."phonetic-languages-ukrainian" or (errorHandler.buildDepError "phonetic-languages-ukrainian"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

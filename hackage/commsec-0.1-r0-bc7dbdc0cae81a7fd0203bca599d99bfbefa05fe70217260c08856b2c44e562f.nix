@@ -21,7 +21,7 @@
       synopsis = "Communications security\ndescription:        A basic communications security package that provides confidentiallity, integrity and replay detection.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cipher-aes128" or (errorHandler.buildDepError "cipher-aes128"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "(deprecated)";
       description = "(deprecated)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

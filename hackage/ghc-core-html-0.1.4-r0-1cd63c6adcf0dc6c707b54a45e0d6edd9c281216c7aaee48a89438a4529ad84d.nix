@@ -21,7 +21,7 @@
       synopsis = "Core to HTML display";
       description = "Display GHC core using a friendly colored, clickable and dynamic html output";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-core-html" = {
@@ -33,9 +33,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

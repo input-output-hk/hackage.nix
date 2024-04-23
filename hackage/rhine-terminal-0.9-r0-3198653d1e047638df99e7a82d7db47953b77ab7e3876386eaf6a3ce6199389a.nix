@@ -21,7 +21,7 @@
       synopsis = "Terminal backend for Rhine";
       description = "This package provides an example of a `terminal` based program using rhine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."dunai" or (errorHandler.buildDepError "dunai"))
           (hsPkgs."terminal" or (errorHandler.buildDepError "terminal"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rhine-terminal-simple" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."terminal" or (errorHandler.buildDepError "terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rhine-terminal-tests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

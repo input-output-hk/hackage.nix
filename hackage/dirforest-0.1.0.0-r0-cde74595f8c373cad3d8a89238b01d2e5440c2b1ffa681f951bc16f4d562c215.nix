@@ -21,7 +21,7 @@
       synopsis = "Typed directory forest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
           (hsPkgs."validity-path" or (errorHandler.buildDepError "validity-path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

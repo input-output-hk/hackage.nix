@@ -21,7 +21,7 @@
       synopsis = "Creating and extracting compressed tar archives";
       description = "Creating and extracting compressed tar archives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."ztar" or (errorHandler.buildDepError "ztar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

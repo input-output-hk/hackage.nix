@@ -21,7 +21,7 @@
       synopsis = "An API wrapper for Discord in Haskell";
       description = "Provides an api wrapper and framework for writing\nbots against the Discord <https://discordapp.com/> API.\nIf for some reason hackage/stackage is failing to build\ndocumentation, a backup set is hosted at <https://jano017.github.io/Discord.hs/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

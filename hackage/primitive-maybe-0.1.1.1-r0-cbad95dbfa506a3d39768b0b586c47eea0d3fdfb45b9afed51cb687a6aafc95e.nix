@@ -21,15 +21,15 @@
       synopsis = "Arrays of Maybes";
       description = "This library provides types for working with arrays of @Maybe@\nvalues. The types in this library can be used as replacements\nfor @Array (Maybe a)@ and @SmallArray (Maybe a)@ that consume\nless memory and have fewer indirections.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

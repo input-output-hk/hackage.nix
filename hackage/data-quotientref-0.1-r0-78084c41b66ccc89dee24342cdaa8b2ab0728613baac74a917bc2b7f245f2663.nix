@@ -21,11 +21,11 @@
       synopsis = "Reference cells that need two independent indices to be accessed.";
       description = "Reference cells that need two independent indices to be accessed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

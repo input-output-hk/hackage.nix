@@ -21,14 +21,14 @@
       synopsis = "Disciplined Disciple Compiler base libraries.";
       description = "Disciplined Disciple Compiler base libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

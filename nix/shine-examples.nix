@@ -6,8 +6,8 @@
         nix = import ../hackage/shine-examples-0.1-r0-b77b48ae29d4b5cb82cb8e9dca4c770a83a3c297217491a79a83b7e215ff86df.nix;
         revNum = 0;
         sha256 = "b77b48ae29d4b5cb82cb8e9dca4c770a83a3c297217491a79a83b7e215ff86df";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

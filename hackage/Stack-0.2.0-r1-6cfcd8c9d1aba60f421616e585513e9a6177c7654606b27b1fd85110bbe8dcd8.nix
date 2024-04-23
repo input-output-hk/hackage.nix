@@ -21,11 +21,11 @@
       synopsis = "Stack data structure type";
       description = "Stack implementation for Haskell.\n\n<<https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

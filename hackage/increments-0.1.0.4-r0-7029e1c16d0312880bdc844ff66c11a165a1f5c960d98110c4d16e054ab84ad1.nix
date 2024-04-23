@@ -21,7 +21,7 @@
       synopsis = "type classes for incremental updates to data";
       description = "incremental updates to large data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."beamable" or (errorHandler.buildDepError "beamable"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "increments-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."beamable" or (errorHandler.buildDepError "beamable"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

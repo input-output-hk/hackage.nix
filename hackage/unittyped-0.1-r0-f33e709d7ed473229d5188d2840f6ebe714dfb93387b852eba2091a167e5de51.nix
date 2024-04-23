@@ -21,20 +21,20 @@
       synopsis = "An extendable library for type-safe computations including units.";
       description = "UnitTyped is a Haskell library that makes it possible to do computations on values with a dimension and a unit. The typechecker ensures that all operations are using the proper dimensions, and all units can be converted to compatible units automatically. New dimensions and units can be defined from other modules, requiring just a data type and one class instance to work with everything else. The library comes with all SI dimensions and units, and many units derived from those.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-si" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unittyped" or (errorHandler.buildDepError "unittyped"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

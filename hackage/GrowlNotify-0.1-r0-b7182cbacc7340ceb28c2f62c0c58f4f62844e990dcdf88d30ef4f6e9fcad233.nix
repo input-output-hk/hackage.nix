@@ -21,7 +21,7 @@
       synopsis = "Notification utility for Growl.";
       description = "Notification utility for Growl.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "growlnotify" = {
@@ -31,10 +31,10 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."Crypto" or (errorHandler.buildDepError "Crypto"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           libs = [ (pkgs."pcap" or (errorHandler.sysDepError "pcap")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

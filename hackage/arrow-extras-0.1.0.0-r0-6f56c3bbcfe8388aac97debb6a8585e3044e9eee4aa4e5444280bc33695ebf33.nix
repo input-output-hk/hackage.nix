@@ -21,11 +21,11 @@
       synopsis = "Extra functions for Control.Arrow";
       description = "Extra functions for Control.Arrow";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

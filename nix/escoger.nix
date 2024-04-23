@@ -6,8 +6,8 @@
         nix = import ../hackage/escoger-0.1.0.0-r0-ad27d3d48ae05a73d8dacdfa68e6cf4a93892583a0c85398d88ef28ab58a5c95.nix;
         revNum = 0;
         sha256 = "ad27d3d48ae05a73d8dacdfa68e6cf4a93892583a0c85398d88ef28ab58a5c95";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

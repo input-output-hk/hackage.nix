@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/NorfairKing/mergeless#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
           (hsPkgs."genvalidity-time" or (errorHandler.buildDepError "genvalidity-time"))
           (hsPkgs."mergeless" or (errorHandler.buildDepError "mergeless"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-mergeless-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."typed-uuid" or (errorHandler.buildDepError "typed-uuid"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

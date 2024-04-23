@@ -21,7 +21,7 @@
       synopsis = "Shallow embedding implementation of non-linear pattern matching";
       description = "The [sweet-egison](https://hackage.haskell.org/package/sweet-egison) is a shallow embedding implementation of non-linear pattern matching with extensible and polymorphic patterns.\nIn other words, this implements [Egison](https:///www.egison.org) pattern matching in Haskell by desugaring pattern expressions.\nThis library provides a base of the Pattern-Match-Oriented (PMO) programming style for Haskell users at a practical level of efficiency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,30 +45,30 @@
             (hsPkgs."sweet-egison" or (errorHandler.buildDepError "sweet-egison"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "comb2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."sweet-egison" or (errorHandler.buildDepError "sweet-egison"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "perm2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."sweet-egison" or (errorHandler.buildDepError "sweet-egison"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/mptcpanalyzer-0.0.2.0-r0-fc2fc37e0719ae7bcec0bfb11239a019a451f493287d6eb6d34636930deaf636.nix;
         revNum = 0;
         sha256 = "fc2fc37e0719ae7bcec0bfb11239a019a451f493287d6eb6d34636930deaf636";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Non-total extensions to the Yaya recursion scheme library.";
       description = "Yaya is designed as a _total_ library. However, it is often\nexpedient to use partial operations in some cases, and this\npackage extends Yaya to provide those operations. It’s in a\nseparate package (and modules) in order to make sure its\nuse is very intentional and also relatively obvious to\nthose reading your code. It’s recommended that you import\nthese modules qualified and, in particular, all the type\nclass instances here have been pulled into a separate\nmodule to avoid accidentally bringing them into scope.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."yaya" or (errorHandler.buildDepError "yaya"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yaya-unsafe-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."yaya" or (errorHandler.buildDepError "yaya"))
             (hsPkgs."yaya-hedgehog" or (errorHandler.buildDepError "yaya-hedgehog"))
             (hsPkgs."yaya-unsafe" or (errorHandler.buildDepError "yaya-unsafe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

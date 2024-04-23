@@ -6,8 +6,8 @@
         nix = import ../hackage/ieee-utils-tempfix-0.4.0.1-r0-435f35ed975e6562a9cd825008ffcdf56bddf105b87755aae4e297f0c4bddd57.nix;
         revNum = 0;
         sha256 = "435f35ed975e6562a9cd825008ffcdf56bddf105b87755aae4e297f0c4bddd57";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

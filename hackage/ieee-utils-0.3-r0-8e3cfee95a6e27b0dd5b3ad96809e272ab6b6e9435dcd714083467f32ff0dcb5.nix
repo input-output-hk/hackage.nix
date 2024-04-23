@@ -21,11 +21,11 @@
       synopsis = "ieee-utils";
       description = "IEEE 754 (Standard for Binary Floating-Point Arithmetic) Utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

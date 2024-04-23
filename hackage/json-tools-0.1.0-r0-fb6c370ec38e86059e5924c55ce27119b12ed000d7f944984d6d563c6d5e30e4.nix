@@ -21,7 +21,7 @@
       synopsis = "A collection of JSON tools";
       description = "A collection of JSON tools";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "json-concat" = {
@@ -29,67 +29,67 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-deep-select-key" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-iter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-lines" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-strings" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-unlines" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-wrap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json-xargs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tar2json" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
             (hsPkgs."data-object-json" or (errorHandler.buildDepError "data-object-json"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

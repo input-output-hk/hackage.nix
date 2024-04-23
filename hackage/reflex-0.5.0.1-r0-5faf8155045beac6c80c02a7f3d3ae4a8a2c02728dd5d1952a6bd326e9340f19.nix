@@ -13,7 +13,7 @@
       use-template-haskell = true;
       debug-trace-events = false;
       fast-weak = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "reflex"; version = "0.5.0.1"; };
@@ -26,7 +26,7 @@
       synopsis = "Higher-order Functional Reactive Programming";
       description = "Reflex is a high-performance, deterministic, higher-order Functional Reactive Programming system";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -56,18 +56,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
-          ] ++ (pkgs.lib).optional (flags.debug-trace-events) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.use-reflex-optimizer) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (if flags.use-template-haskell
+        ] ++ pkgs.lib.optional (flags.debug-trace-events) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ pkgs.lib.optional (flags.use-reflex-optimizer) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (if flags.use-template-haskell
           then [
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ]
+          ]
           else [
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
+          ])) ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
         buildable = true;
-        };
+      };
       tests = {
         "semantics" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CrossImpl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,9 +106,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
+        };
         "EventWriterT" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -122,9 +122,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RequesterT" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -135,9 +135,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "QueryT" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -153,9 +153,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "GC-Semantics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -168,9 +168,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
+        };
         "rootCleanup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -181,10 +181,10 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "spider-bench" = {
           depends = [
@@ -201,9 +201,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "saulzar-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -222,9 +222,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

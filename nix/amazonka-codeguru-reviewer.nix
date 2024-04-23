@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-codeguru-reviewer-2.0-r0-b7a9a7f2e883785fef9812aa267c0f5ba08d42abb4ec2a90c32449ecbc51bffd.nix;
         revNum = 0;
         sha256 = "b7a9a7f2e883785fef9812aa267c0f5ba08d42abb4ec2a90c32449ecbc51bffd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

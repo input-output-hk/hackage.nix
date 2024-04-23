@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-properties-array";
         version = "0.17.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Some properties of the data related to rhythmicity.";
       description = "A generalization of the uniqueness-periods-vector-properties package. Is a simplified version of the functionality of the former one. Uses lists and arrays as main processment data types. Uses Double whenever applicable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
           (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
           (hsPkgs."logical-constraints" or (errorHandler.buildDepError "logical-constraints"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

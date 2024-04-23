@@ -21,7 +21,7 @@
       synopsis = "A battery-included audiovisual framework";
       description = "Types and utilities for audio and graphic stuff";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."WAVE" or (errorHandler.buildDepError "WAVE"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

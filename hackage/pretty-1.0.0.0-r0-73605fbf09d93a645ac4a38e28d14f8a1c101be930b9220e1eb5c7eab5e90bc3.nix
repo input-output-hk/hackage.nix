@@ -21,11 +21,11 @@
       synopsis = "Pretty-printing library";
       description = "This package contains a pretty-printing library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

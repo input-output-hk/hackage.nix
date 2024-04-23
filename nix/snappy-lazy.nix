@@ -6,8 +6,8 @@
         nix = import ../hackage/snappy-lazy-0.1.0.0-r0-580548e78e3ea27698de44442df78ba7d150f4e23fad1c30b51428cf1d2bc8e8.nix;
         revNum = 0;
         sha256 = "580548e78e3ea27698de44442df78ba7d150f4e23fad1c30b51428cf1d2bc8e8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

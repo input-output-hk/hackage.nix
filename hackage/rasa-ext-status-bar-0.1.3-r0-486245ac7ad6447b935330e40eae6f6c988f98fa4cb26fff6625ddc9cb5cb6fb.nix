@@ -21,7 +21,7 @@
       synopsis = "Rasa Ext for populating status-bar";
       description = "Rasa Ext for populating status-status-bar";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

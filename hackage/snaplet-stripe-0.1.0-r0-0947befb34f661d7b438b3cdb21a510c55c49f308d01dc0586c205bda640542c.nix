@@ -21,7 +21,7 @@
       synopsis = "Stripe snaplet for the Snap Framework";
       description = "This snaplet contains support for using the Stripe\npayment platform with a Snap Framework application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
           (hsPkgs."stripe" or (errorHandler.buildDepError "stripe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

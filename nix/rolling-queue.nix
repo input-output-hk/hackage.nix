@@ -6,8 +6,8 @@
         nix = import ../hackage/rolling-queue-0.1-r0-9283b4267a60f98652ec69d24dda6028e164c37c84e4ee8519379a02dc3876aa.nix;
         revNum = 0;
         sha256 = "9283b4267a60f98652ec69d24dda6028e164c37c84e4ee8519379a02dc3876aa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

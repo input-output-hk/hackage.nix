@@ -21,7 +21,7 @@
       synopsis = "Periodic task system haskell client executables";
       description = "Periodic task system haskell client executables.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "periodic" = {
@@ -38,9 +38,9 @@
             (hsPkgs."metro-transport-xor" or (errorHandler.buildDepError "metro-transport-xor"))
             (hsPkgs."metro-transport-tls" or (errorHandler.buildDepError "metro-transport-tls"))
             (hsPkgs."metro-transport-websockets" or (errorHandler.buildDepError "metro-transport-websockets"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "periodic-run" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."metro-transport-xor" or (errorHandler.buildDepError "metro-transport-xor"))
             (hsPkgs."metro-transport-tls" or (errorHandler.buildDepError "metro-transport-tls"))
             (hsPkgs."metro-transport-websockets" or (errorHandler.buildDepError "metro-transport-websockets"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "periodic-http-bridge" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."metro-transport-tls" or (errorHandler.buildDepError "metro-transport-tls"))
             (hsPkgs."metro-transport-websockets" or (errorHandler.buildDepError "metro-transport-websockets"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

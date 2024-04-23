@@ -21,15 +21,15 @@
       synopsis = "Prelude with only useful functions";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nPrelude with only useful functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."papa-x-export" or (errorHandler.buildDepError "papa-x-export"))
           (hsPkgs."papa-x-implement" or (errorHandler.buildDepError "papa-x-implement"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

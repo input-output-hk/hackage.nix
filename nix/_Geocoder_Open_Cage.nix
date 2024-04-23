@@ -6,8 +6,8 @@
         nix = import ../hackage/GeocoderOpenCage-0.1.0.1-r0-2f2123490283ebd250d0bd1823867a379d7de638f1fc4af82850c1b8b0aa594c.nix;
         revNum = 0;
         sha256 = "2f2123490283ebd250d0bd1823867a379d7de638f1fc4af82850c1b8b0aa594c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

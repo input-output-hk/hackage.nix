@@ -21,7 +21,7 @@
       synopsis = "Conduit wrappers for libssh2 FFI bindings (see libssh2 package).";
       description = "This package provides Conduit interface (see conduit package) for\nlibssh2 FFI bindings (see libssh2 package). This allows one to\nreceive data from SSH channels lazily, without need to read\nall channel output to the memory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."libssh2" or (errorHandler.buildDepError "libssh2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

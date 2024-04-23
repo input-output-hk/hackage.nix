@@ -21,7 +21,7 @@
       synopsis = "More informative parser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."selective" or (errorHandler.buildDepError "selective"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

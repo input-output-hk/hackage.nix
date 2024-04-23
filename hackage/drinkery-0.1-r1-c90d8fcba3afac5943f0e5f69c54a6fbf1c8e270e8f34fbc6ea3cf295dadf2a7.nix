@@ -21,16 +21,16 @@
       synopsis = "Boozy streaming library";
       description = "<https://www.schoolofhaskell.com/user/fumieval/drinkery-the-boozy-streaming-library drinkery the boozy streaming library>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
             (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
             (hsPkgs."ListT" or (errorHandler.buildDepError "ListT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

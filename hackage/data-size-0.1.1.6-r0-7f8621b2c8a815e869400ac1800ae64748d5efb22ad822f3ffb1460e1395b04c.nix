@@ -21,7 +21,7 @@
       synopsis = "Profiling of data structures";
       description = "Profiling of data structures\nfor counting the # of object allocated for a value\nand estimating the total # of words used for a value.\nStatistics for every type or constructor\noccuring as component or subcomponent are gathered.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Unbelievably fast streaming DSV file parser";
       description = "Please see the README on Github at <https://github.com/haskell-works/hw-dsv#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -36,9 +36,9 @@
           (hsPkgs."hw-rankselect-base" or (errorHandler.buildDepError "hw-rankselect-base"))
           (hsPkgs."hw-simd" or (errorHandler.buildDepError "hw-simd"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
-        };
+      };
       exes = {
         "hw-dsv" = {
           depends = ([
@@ -59,10 +59,10 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-dsv" or (errorHandler.buildDepError "hw-dsv"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0.1")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-dsv-space" = {
           depends = [
@@ -80,12 +80,12 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
             (hsPkgs."hw-dsv" or (errorHandler.buildDepError "hw-dsv"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hw-dsv-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,13 +105,13 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-dsv" or (errorHandler.buildDepError "hw-dsv"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -131,9 +131,9 @@
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hw-dsv" or (errorHandler.buildDepError "hw-dsv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

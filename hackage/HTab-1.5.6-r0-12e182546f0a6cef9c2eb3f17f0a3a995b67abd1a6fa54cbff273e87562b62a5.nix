@@ -21,7 +21,7 @@
       synopsis = "Tableau based theorem prover for hybrid logics";
       description = "Tableau based theorem prover for hybrid logics";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htab" = {
@@ -42,9 +42,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
             (hsPkgs."hylolib" or (errorHandler.buildDepError "hylolib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

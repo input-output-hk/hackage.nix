@@ -21,7 +21,7 @@
       synopsis = "A Haskell backend kernel for the Jupyter project.";
       description = "IHaskell is a Haskell backend kernel for the Jupyter project. This allows using Haskell via\na console or notebook interface. Additional packages may be installed to provide richer data visualizations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -57,9 +57,9 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
-          ] ++ (pkgs.lib).optional (flags.use-hlint) (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))) ++ (pkgs.lib).optional (flags.use-hlint && (compiler.isGhc && (compiler.version).lt "8.10")) (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"));
+        ] ++ pkgs.lib.optional (flags.use-hlint) (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))) ++ pkgs.lib.optional (flags.use-hlint && (compiler.isGhc && compiler.version.lt "8.10")) (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"));
         buildable = true;
-        };
+      };
       exes = {
         "ihaskell" = {
           depends = [
@@ -77,10 +77,10 @@
             (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

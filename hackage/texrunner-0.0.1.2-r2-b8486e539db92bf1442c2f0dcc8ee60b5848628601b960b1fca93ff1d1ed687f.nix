@@ -21,7 +21,7 @@
       synopsis = "Functions for running Tex from Haskell.";
       description = "texrunner is an interface to tex that attempts to parse errors and\ncan parse tex in online mode to retrive hbox sizes.\n\nThis package should be considered very experimental. Eventually I hope\nit will be good enough for general use but for now it's only suitable\nfor simple things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."texrunner" or (errorHandler.buildDepError "texrunner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

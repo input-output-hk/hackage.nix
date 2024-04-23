@@ -21,7 +21,7 @@
       synopsis = "Library to communicate with Mt.Gox";
       description = "See Network.MtGoxAPI for documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."watchdog" or (errorHandler.buildDepError "watchdog"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

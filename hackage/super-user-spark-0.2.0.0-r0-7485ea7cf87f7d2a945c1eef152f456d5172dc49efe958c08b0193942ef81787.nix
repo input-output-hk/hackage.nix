@@ -21,7 +21,7 @@
       synopsis = "Configure your dotfile deployment with a DSL.";
       description = "Configure your dotfile deployment with a DSL.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "spark" = {
@@ -43,10 +43,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spark-tests" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

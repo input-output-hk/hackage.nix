@@ -6,8 +6,8 @@
         nix = import ../hackage/replicant-0.1.0.0-r0-b57f95b22acadf83b8f468959a496bd2acb9451ec714bf2e17e8b86e60567783.nix;
         revNum = 0;
         sha256 = "b57f95b22acadf83b8f468959a496bd2acb9451ec714bf2e17e8b86e60567783";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

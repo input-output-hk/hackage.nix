@@ -21,7 +21,7 @@
       synopsis = "Data structure agnostic JSON serialization";
       description = "Most json packages define a data structure that corresponds to json values.\nTo serialize other values to a json string, then that value must be\nmarshalled into the json data structure.\n\nThis library avoids this marshalling step, and is thus potentially more\nefficient when serializing arbitrary data structures.  Unfortunately\njson-builder cannot yet read or process json data,  and it's not clear\nto me yet how pull a similar kind of trick to avoid unnecessary data\nstructures when parsing json data into arbitrary data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

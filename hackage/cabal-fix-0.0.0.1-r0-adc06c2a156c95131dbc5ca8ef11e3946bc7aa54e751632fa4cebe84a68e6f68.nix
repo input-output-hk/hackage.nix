@@ -21,7 +21,7 @@
       synopsis = "Fix for cabal files.";
       description = "An executable and library to help fix cabal files and explore cabal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-fix" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

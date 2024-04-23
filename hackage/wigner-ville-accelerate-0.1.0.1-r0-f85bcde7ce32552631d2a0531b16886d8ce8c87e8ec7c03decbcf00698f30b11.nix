@@ -21,24 +21,24 @@
       synopsis = "Wigner-ville transform using the Accelerate library";
       description = "Wigner-ville and Pseudo wigner-ville transform algorithm, inspired by \"Time-frequency toolbox\"\nand adapted to use with the Accelerate library. If you want to use accelerated backends,\nlike Native or PTX, build accelerate-fft package with corresponding flags.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."accelerate-fft" or (errorHandler.buildDepError "accelerate-fft"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wigner-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wigner" or (errorHandler.buildDepError "wigner"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

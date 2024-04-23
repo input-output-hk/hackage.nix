@@ -21,7 +21,7 @@
       synopsis = "Assorted decision procedures";
       description = "Toy-level implementation of some decision procedures";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "toysolver" = {
@@ -36,9 +36,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "toysat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,9 +54,9 @@
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ] ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
+        };
         "lp2yices" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cnf2lp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "maxsat2lp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,9 +88,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pb2lp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,10 +99,10 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "TestSAT" = {
           depends = [
@@ -116,9 +116,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestSimplex2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -130,9 +130,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestMIPSolver2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -145,9 +145,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."OptDir" or (errorHandler.buildDepError "OptDir"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestPolynomial" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -159,9 +159,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestInterval" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -172,9 +172,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestAReal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -187,9 +187,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestLPFile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -203,9 +203,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestPBFile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -218,10 +218,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
@@ -232,9 +232,9 @@
             (hsPkgs."queue" or (errorHandler.buildDepError "queue"))
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

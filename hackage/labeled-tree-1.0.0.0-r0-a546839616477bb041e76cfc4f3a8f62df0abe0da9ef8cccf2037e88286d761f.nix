@@ -21,11 +21,11 @@
       synopsis = "Labeled tree structure";
       description = "Labeled tree structure, on the model of the standard Data.Tree";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

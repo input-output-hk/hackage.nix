@@ -21,14 +21,14 @@
       synopsis = "default arguments in haskell";
       description = "Default arguments in Haskell. More information can be found in the <http://hackage.haskell.org/package/defargs hackage's haddock> or the <http://kinokkory.github.io/defargs/ updated haddock>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cluss" or (errorHandler.buildDepError "cluss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

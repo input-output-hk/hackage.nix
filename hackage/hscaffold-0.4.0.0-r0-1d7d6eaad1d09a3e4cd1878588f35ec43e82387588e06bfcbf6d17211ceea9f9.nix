@@ -21,7 +21,7 @@
       synopsis = "Very simple file/directory structure scaffolding writer monad EDSL";
       description = "See our README on GitHub at <https://github.com/yamadapc/hscaffold> ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hsfiles-from-directory" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."hscaffold" or (errorHandler.buildDepError "hscaffold"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."hscaffold" or (errorHandler.buildDepError "hscaffold"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

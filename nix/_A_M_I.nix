@@ -6,8 +6,8 @@
         nix = import ../hackage/AMI-0.1-r0-3bc5f233e92d200e465922f32c3b9687f6c24c448a44936916d463db8935260c.nix;
         revNum = 0;
         sha256 = "3bc5f233e92d200e465922f32c3b9687f6c24c448a44936916d463db8935260c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

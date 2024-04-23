@@ -6,8 +6,8 @@
         nix = import ../hackage/tracker-0.1-r0-bca4315dcba16d24f559f1e50c968e1aaa20f5308dbc790e19fb1c106678bca5.nix;
         revNum = 0;
         sha256 = "bca4315dcba16d24f559f1e50c968e1aaa20f5308dbc790e19fb1c106678bca5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Free algebras";
       description = "Algebraic approach to free algebras, inspired by Univeral Algebra and\nCategory Theory, including higher kinded algebraic structures like functors,\napplicative functors, monads or categories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-free-algebras" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

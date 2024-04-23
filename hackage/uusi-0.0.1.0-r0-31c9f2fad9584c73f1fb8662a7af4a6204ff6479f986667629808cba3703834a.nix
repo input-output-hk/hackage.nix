@@ -21,7 +21,7 @@
       synopsis = "Remove all version constraints of dependencies in .cabal file";
       description = "@uusi@ is a command-line program to remove all version constraints of dependencies in .cabal files.\nIt is used in distribution packaging because @--allow-newer@ is not present when calling @Setup.hs@\ninstead of cabal-install.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uusi" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."colourista" or (errorHandler.buildDepError "colourista"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

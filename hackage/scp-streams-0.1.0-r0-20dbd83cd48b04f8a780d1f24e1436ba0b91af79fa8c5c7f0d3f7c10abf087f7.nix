@@ -21,7 +21,7 @@
       synopsis = "An SCP protocol implementation.";
       description = "An SCP protocol implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "scp-streams" = {
           depends = [
@@ -44,19 +44,19 @@
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."sha-streams" or (errorHandler.buildDepError "sha-streams"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "scp-broken-upload" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."scp-streams" or (errorHandler.buildDepError "scp-streams"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "run-tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."scp-streams" or (errorHandler.buildDepError "scp-streams"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,18 +21,18 @@
       synopsis = "Low-level bindings to sophia library";
       description = "Low-level bindings to <http://sphia.org/ sophia>, an open source,\nmodern, fast key/value store.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

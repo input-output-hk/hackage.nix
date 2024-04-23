@@ -21,7 +21,7 @@
       synopsis = "QuickCheck instances for the Mattermost client API library";
       description = "A library providing QuickCheck for the mattermost-api\nlibrary to allow testing.  This is provided as a\nseparate library to allow use of the API library\nwithout testing dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

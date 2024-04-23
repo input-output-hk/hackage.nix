@@ -21,7 +21,7 @@
       synopsis = "Language independent, reproducible, absolute types";
       description = "See the <http://github.com/tittoassini/zm online tutorial>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,16 +36,16 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "zm-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."model" or (errorHandler.buildDepError "model"))
             (hsPkgs."zm" or (errorHandler.buildDepError "zm"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

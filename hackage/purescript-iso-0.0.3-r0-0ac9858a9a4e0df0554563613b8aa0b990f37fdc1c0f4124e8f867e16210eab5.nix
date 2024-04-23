@@ -21,7 +21,7 @@
       synopsis = "Isomorphic trivial data type definitions over JSON";
       description = "Please see the README on GitHub at <https://github.com/githubuser/purescript-iso#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
           (hsPkgs."zeromq4-simple" or (errorHandler.buildDepError "zeromq4-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "purescript-iso-test" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
             (hsPkgs."zeromq4-simple" or (errorHandler.buildDepError "zeromq4-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Assorted utility modules";
       description = "Various unrelated utility modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."ALUT" or (errorHandler.buildDepError "ALUT"))
           (hsPkgs."OpenAL" or (errorHandler.buildDepError "OpenAL"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

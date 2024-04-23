@@ -6,8 +6,8 @@
         nix = import ../hackage/om-http-logging-0.1.0.0-r0-4215bcc47039d6ab8520fbfc4da7682a57b6701369aa214b4b61c6cd34f20b60.nix;
         revNum = 0;
         sha256 = "4215bcc47039d6ab8520fbfc4da7682a57b6701369aa214b4b61c6cd34f20b60";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

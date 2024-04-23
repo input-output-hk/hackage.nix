@@ -21,7 +21,7 @@
       synopsis = "Radix tree data structive over short byte-strings";
       description = "This module provides a memory-efficient map from\nData.ByteString.Short keys to arbitrary values implemented as a radix\ntree datastructure. Memory efficiency is achieved by sharing common\nprefixes of all keys.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "radix-tree-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."radix-tree" or (errorHandler.buildDepError "radix-tree"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "radix-tree-bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."radix-tree" or (errorHandler.buildDepError "radix-tree"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

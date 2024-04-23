@@ -21,7 +21,7 @@
       synopsis = "Monadic extensions to the xml package.";
       description = "A monadic interface for xml based on transformers and transformers-compose. It provides filter composition, similar to hxt, and a\nsuccinct monadic interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers-compose" or (errorHandler.buildDepError "transformers-compose"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

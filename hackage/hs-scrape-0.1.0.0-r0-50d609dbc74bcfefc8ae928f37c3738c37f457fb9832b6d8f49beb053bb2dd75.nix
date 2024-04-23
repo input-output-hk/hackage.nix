@@ -21,7 +21,7 @@
       synopsis = "Simple and easy web scraping and automation in Haskell.";
       description = "Shpider/mechanize inspired web automation with a focus on convenience for web scraping.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."hs-scrape" or (errorHandler.buildDepError "hs-scrape"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

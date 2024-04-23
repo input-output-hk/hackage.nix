@@ -21,7 +21,7 @@
       synopsis = "Simple, IO-based library for Erlang-style thread supervision";
       description = "Simple, IO-based library for Erlang-style thread supervision";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "threads-supervisor-tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

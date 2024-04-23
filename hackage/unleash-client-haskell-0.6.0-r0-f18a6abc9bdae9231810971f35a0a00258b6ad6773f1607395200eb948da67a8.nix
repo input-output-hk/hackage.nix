@@ -21,7 +21,7 @@
       synopsis = "Unleash feature toggle client";
       description = "This is an [Unleash](https://www.getunleash.io/) client SDK for Haskell.\n\n'Unleash.Client' provides a stateful HTTP client with functions and types for:\n\n    - Client configuration\n    - Client registration\n    - Fetching feature toggles\n    - Fetching variants\n    - Sending metrics\n\nSee [the source repo](https://github.com/finn-no/unleash-client-haskell) for more information and example usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."unleash-client-haskell-core" or (errorHandler.buildDepError "unleash-client-haskell-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unleash-client-haskell" or (errorHandler.buildDepError "unleash-client-haskell"))
             (hsPkgs."unleash-client-haskell-core" or (errorHandler.buildDepError "unleash-client-haskell-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

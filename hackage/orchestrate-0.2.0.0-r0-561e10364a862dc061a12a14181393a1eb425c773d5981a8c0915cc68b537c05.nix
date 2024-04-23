@@ -21,7 +21,7 @@
       synopsis = "An API client for http://orchestrate.io/.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "orchestrate-specs" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

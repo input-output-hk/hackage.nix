@@ -21,17 +21,17 @@
       synopsis = "Remove all the functions come from Debug.Trace after debugging";
       description = "This module introduce functions with identical types with functions in the Debug.Trace.\nWhen completing the debug process,\nuse this module to overwrite and silently remove all the tracing functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "main" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

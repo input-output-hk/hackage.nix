@@ -6,8 +6,8 @@
         nix = import ../hackage/simplenote-1.0-r0-d51c2419ffea155edd281a23a514f3bedfc485a157cb7e7275862f6a0ab068f6.nix;
         revNum = 0;
         sha256 = "d51c2419ffea155edd281a23a514f3bedfc485a157cb7e7275862f6a0ab068f6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

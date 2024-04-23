@@ -21,11 +21,11 @@
       synopsis = "A library for patching functions and data structures";
       description = "A library for patching functions and data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

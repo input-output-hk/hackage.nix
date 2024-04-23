@@ -21,7 +21,7 @@
       synopsis = "MD5 Hash";
       description = "This library is a copy of cryptohash-md5 that works on GC-managed\nbyte arrays instead of ByteString. The C code is a copied from\nthat library. If you find an issue with the C code, you should\nopen an issue on cryptohash-md5.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."bytebuild" or (errorHandler.buildDepError "bytebuild"))
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."md5" or (errorHandler.buildDepError "md5"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

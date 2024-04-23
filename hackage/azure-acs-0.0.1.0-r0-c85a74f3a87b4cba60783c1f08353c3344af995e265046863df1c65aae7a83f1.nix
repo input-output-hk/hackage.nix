@@ -21,7 +21,7 @@
       synopsis = "Windows Azure ACS ";
       description = "Haskell wrappers  over REST API for <http://msdn.microsoft.com/en-us/library/hh147631.aspx Windows Azure Active Directory Access Control>.\nCurrently only API that is supported is the one to request a password token from ACS via the <http://msdn.microsoft.com/en-us/library/hh674475.aspx OAuth WRAP  protocol>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

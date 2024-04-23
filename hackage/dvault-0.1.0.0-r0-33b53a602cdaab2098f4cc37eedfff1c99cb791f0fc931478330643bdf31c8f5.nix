@@ -21,7 +21,7 @@
       synopsis = "Dead simple password manager";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dvault" = {
@@ -34,9 +34,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

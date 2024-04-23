@@ -21,7 +21,7 @@
       synopsis = "tinytools is a monospace unicode diagram editor";
       description = "tinytools is a mono-space unicode diagram editor library, tinytools is only the model and controller. See tinytools-vty for a terminal based view frontend.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tinytools-test" = {
           depends = [
@@ -78,12 +78,12 @@
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

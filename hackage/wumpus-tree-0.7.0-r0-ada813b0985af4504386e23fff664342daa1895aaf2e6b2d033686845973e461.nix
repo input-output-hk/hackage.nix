@@ -21,7 +21,7 @@
       synopsis = "Drawing trees";
       description = "\nTree drawing with /nice/ layout.\n\nDraw trees represented by Data.Tree, output SVG or EPS. The\noutput should be quite good - no overlapping edges, identical\nsubtrees should have the same shape, leaf nodes evenly spaced.\n\n\nChangelog:\n\n0.6.0 to 0.7.0:\n\n* More example trees in Demo01.hs.\n\n* Updated to track changes in Wumpus-Basic.\n\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."wumpus-core" or (errorHandler.buildDepError "wumpus-core"))
           (hsPkgs."wumpus-basic" or (errorHandler.buildDepError "wumpus-basic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

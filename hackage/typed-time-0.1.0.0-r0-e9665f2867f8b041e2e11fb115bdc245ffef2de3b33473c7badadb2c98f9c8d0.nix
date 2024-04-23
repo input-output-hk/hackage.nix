@@ -21,15 +21,15 @@
       synopsis = "A strongly typed way to handle time and date formats";
       description = "Simple type-safe wrapper for <https://hackage.haskell.org/package/time time>'s\n<https://hackage.haskell.org/package/time-1.11.1.2/docs/Data-Time-Format.html Data.Time.Format>.\n\nYou are are to represent a sound formatting at type-level:\n\n\n@\nmyInput :: 'FormattedTime' 'RFC822'\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typed-time-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."typed-time" or (errorHandler.buildDepError "typed-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

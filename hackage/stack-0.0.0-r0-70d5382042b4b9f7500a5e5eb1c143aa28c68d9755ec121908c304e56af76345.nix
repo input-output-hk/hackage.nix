@@ -21,13 +21,13 @@
       synopsis = "The Haskell Tool Stack";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

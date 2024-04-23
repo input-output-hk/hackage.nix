@@ -21,7 +21,7 @@
       synopsis = "a diceware passphrase generator";
       description = "Alea is a utility that helps you generate diceware passphrases.\nYou can choose to roll the dice on your own or let the program\ngenerates the words for you.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "alea" = {
@@ -30,9 +30,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."threefish" or (errorHandler.buildDepError "threefish"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

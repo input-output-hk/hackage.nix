@@ -21,11 +21,11 @@
       synopsis = "Variants of Control.Arrow functions, specialised to kleislis.";
       description = "Precomposition and postcomposition of functors and monads.\nVariants of Control.Arrow functions, specialised to kleislis.\nAvoids boxing into Kleisli values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

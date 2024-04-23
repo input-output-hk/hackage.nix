@@ -21,7 +21,7 @@
       synopsis = "Efficiently hash (large) Haskell values";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."utf8-light" or (errorHandler.buildDepError "utf8-light"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "large-hashable-test" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "large-hashable-benchmark" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

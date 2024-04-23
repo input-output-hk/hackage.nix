@@ -21,7 +21,7 @@
       synopsis = "Tests for hmatrix";
       description = "Tests for hmatrix";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "basic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hmatrix-tests" or (errorHandler.buildDepError "hmatrix-tests"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

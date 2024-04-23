@@ -21,7 +21,7 @@
       synopsis = "Alternate Prelude for the pipes ecosystem";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,26 +41,26 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
           (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pipes-protolude-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-protolude" or (errorHandler.buildDepError "pipes-protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pipes-protolude-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-protolude" or (errorHandler.buildDepError "pipes-protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

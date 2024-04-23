@@ -21,7 +21,7 @@
       synopsis = "a terminal based unicode diagram editing tool";
       description = "Please see the README on GitHub at <https://github.com/pdlla/tinytools-vty#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,9 +60,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tinytools" or (errorHandler.buildDepError "tinytools"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tinytools" = {
           depends = [
@@ -102,9 +102,9 @@
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "write-term-width" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -140,10 +140,10 @@
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tinytools-vty-test" = {
           depends = [
@@ -186,9 +186,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tinytools" or (errorHandler.buildDepError "tinytools"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

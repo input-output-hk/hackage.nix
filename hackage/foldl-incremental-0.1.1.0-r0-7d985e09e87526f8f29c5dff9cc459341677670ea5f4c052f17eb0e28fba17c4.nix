@@ -21,15 +21,15 @@
       synopsis = "incremental folds";
       description = "This library provides incremental statistical folds based upon the\nfoldl libray.  An incremental statistical fold can be thought of as\nexponentially-weighting statistics designed to be efficient computations over\na Foldable.\nIt supplies \"incrementalize\" which turns any unary function into a\n\"Fold\".  As a reference, \\\"incrementalize id\\\" is an exponentially-weighted moving average.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."foldl-incremental" or (errorHandler.buildDepError "foldl-incremental"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."hastache" or (errorHandler.buildDepError "hastache"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."foldl-incremental" or (errorHandler.buildDepError "foldl-incremental"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

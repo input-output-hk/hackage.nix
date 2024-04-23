@@ -21,7 +21,7 @@
       synopsis = "Provides conduits to upload data to S3 using the Multipart API";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,12 +41,12 @@
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.11") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11") [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "s3upload" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

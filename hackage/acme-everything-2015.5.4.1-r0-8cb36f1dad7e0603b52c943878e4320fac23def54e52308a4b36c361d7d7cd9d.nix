@@ -21,7 +21,7 @@
       synopsis = "Install everything.";
       description = "This package requires the entirety of Hackage to be built.\nThe joke started when a colleague liked the\n@leftToMaybe :: Either a b -> Maybe a@ function from @either@, which has a\n*huge* footprint compared to the utility it provides.\nThis got us thinking about seemingly small packages that have lots of hidden\ntransitive dependencies, e.g. \"only\" @base@, @lens@ and @yesod@. And that's\nwhere `acme-everything` was born, which (transitively) depends on the\nentirety of Hackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -4805,8 +4805,8 @@
           (hsPkgs."zot" or (errorHandler.buildDepError "zot"))
           (hsPkgs."zsh-battery" or (errorHandler.buildDepError "zsh-battery"))
           (hsPkgs."ztail" or (errorHandler.buildDepError "ztail"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

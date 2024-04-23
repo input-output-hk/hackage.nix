@@ -6,8 +6,8 @@
         nix = import ../hackage/fluid-idl-scotty-0.0.0-r0-6a99b3b9787a3a4a1cbd654a3ef23c388fd94c3fe04c09f1a242d3145675e816.nix;
         revNum = 0;
         sha256 = "6a99b3b9787a3a4a1cbd654a3ef23c388fd94c3fe04c09f1a242d3145675e816";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

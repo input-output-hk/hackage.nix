@@ -21,7 +21,7 @@
       synopsis = "A database of USB identifiers";
       description = "Functions to find the names associated with various identifiers from the USB\nspecification. This is useful if you want to display full human-readable names\ninstead of cryptic numeric codes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,11 +31,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."containers-unicode-symbols" or (errorHandler.buildDepError "containers-unicode-symbols"))
           (hsPkgs."parsimony" or (errorHandler.buildDepError "parsimony"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = { buildable = if flags.example then true else false; };
-        };
       };
-    }
+    };
+  }

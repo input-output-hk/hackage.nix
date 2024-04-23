@@ -21,7 +21,7 @@
       synopsis = "Attoparsec parsers for the units package";
       description = "This package provides parsers for the units defined in the\n@units-defs@ package, used with @units@.\nUser contributions to this package are strongly encouraged. Please\nsubmit pull requests!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

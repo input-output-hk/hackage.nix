@@ -21,7 +21,7 @@
       synopsis = "conferer's FromConfig instances for hedis settings";
       description = "Library to abstract the parsing of many haskell config values from different config sources";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."conferer" or (errorHandler.buildDepError "conferer"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

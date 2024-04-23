@@ -21,7 +21,7 @@
       synopsis = "Cayenne Low Power Payload";
       description = "Cayenne Low Power Payload format encoding and decoding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cayene-lpp-tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."cayene-lpp" or (errorHandler.buildDepError "cayene-lpp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

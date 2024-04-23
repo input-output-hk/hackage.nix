@@ -21,7 +21,7 @@
       synopsis = "Adapter to stream over HTTP(s) with quiver";
       description = "A simple wrapper around http-client to facilitate HTTP streaming. Very\nsimilar to pipes-http.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parallel implementation of Ritt-Wu's algorithm.";
       description = "Please see the README on GitHub at <https://github.com/xxAVOGADROxx/Ritt-Wu/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
           (hsPkgs."scheduler" or (errorHandler.buildDepError "scheduler"))
           (hsPkgs."sscript" or (errorHandler.buildDepError "sscript"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Ritt-Wu-exe" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
             (hsPkgs."scheduler" or (errorHandler.buildDepError "scheduler"))
             (hsPkgs."sscript" or (errorHandler.buildDepError "sscript"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Ritt-Wu-test" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Ritt-Wu-benchmark" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
             (hsPkgs."scheduler" or (errorHandler.buildDepError "scheduler"))
             (hsPkgs."sscript" or (errorHandler.buildDepError "sscript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

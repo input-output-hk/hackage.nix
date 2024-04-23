@@ -21,15 +21,15 @@
       synopsis = "Definitions of AST that represents a Commonmark (markdown) document.";
       description = "See <https://github.com/zudov/haskell-comark#readme README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/radix-1.0.0.0-r0-47421b3a031cf8dda38f4bb0e557c445f55c99a6b5a08b5c35748715707ff362.nix;
         revNum = 0;
         sha256 = "47421b3a031cf8dda38f4bb0e557c445f55c99a6b5a08b5c35748715707ff362";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Human exchangable identifiers and locators";
       description = "/Overview/\n\nSimple identifiers (as used, for example, as \"locators\" in airline reservation\nsystems) using a subset of the Latin1 alphabet whose characters are unambigious\nwhen written or spoken.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "check" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."locators" or (errorHandler.buildDepError "locators"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

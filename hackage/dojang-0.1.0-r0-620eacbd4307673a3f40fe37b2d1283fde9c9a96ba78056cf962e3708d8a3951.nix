@@ -21,7 +21,7 @@
       synopsis = "A cross-platform dotfiles manager";
       description = "See also the README.md file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dojang" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

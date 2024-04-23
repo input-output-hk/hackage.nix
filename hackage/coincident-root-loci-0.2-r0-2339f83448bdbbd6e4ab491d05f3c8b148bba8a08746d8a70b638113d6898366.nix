@@ -21,7 +21,7 @@
       synopsis = "Equivariant CSM classes of coincident root loci";
       description = "This library contians a set of function to compute, among\nothers, the @GL(2)@-equivariant Chern-Schwartz-MacPherson\nclasses of coincident root loci, which are subvarieties\nof the space of unordered @n@-tuples of points in the complex\nprojective line. To such an @n@-tuples we can associate\na partition of @n@ given by the multiplicities of the distinct\npoints; this stratifies the set of all @n@-tuples, and we\ncall these strata \\\"coincident root loci\\\".\nThis package is supplementary software for a forthcoming paper.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
             (hsPkgs."coincident-root-loci" or (errorHandler.buildDepError "coincident-root-loci"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

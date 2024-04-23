@@ -21,7 +21,7 @@
       synopsis = "Text implementation based on unboxed char vector.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

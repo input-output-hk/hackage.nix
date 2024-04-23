@@ -21,13 +21,13 @@
       synopsis = "(deprecated) see bindings-posix instead";
       description = "Deprecated.  Use bindings-posix >= 1.2.3 Bindings.Posix.Sys.Mman instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."bindings-posix" or (errorHandler.buildDepError "bindings-posix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

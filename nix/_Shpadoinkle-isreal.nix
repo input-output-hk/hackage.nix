@@ -6,8 +6,8 @@
         nix = import ../hackage/Shpadoinkle-isreal-0.0.0.2-r0-b9c4f1b388997ece76bc5714ba8f477bf864d42e73112022b487c5471dcad0eb.nix;
         revNum = 0;
         sha256 = "b9c4f1b388997ece76bc5714ba8f477bf864d42e73112022b487c5471dcad0eb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

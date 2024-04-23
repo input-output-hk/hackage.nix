@@ -21,7 +21,7 @@
       synopsis = "json to xlsx converter";
       description = "json to xlsx converter";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jsonxlsx" = {
@@ -41,9 +41,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

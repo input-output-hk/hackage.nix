@@ -21,7 +21,7 @@
       synopsis = "zooming rotating fractal gears graphics demo";
       description = "OpenGL gearbox iterated function system.  Usage:\n@gearbox quality@ where quality is an integer between\n6 and 14 (default 9).  Shaders generate a gear shape\nand hue rotate succesive copies via texture feedback.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gearbox" = {
@@ -30,9 +30,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
             (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

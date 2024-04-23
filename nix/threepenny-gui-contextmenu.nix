@@ -6,8 +6,8 @@
         nix = import ../hackage/threepenny-gui-contextmenu-0.1.0.0-r0-c93410f3b51aea734487ece16dae06b348128440e91fadadf298eb58f2752bdb.nix;
         revNum = 0;
         sha256 = "c93410f3b51aea734487ece16dae06b348128440e91fadadf298eb58f2752bdb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

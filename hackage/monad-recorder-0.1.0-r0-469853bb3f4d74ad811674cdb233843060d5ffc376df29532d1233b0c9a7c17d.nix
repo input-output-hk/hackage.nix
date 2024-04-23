@@ -21,7 +21,7 @@
       synopsis = "Record and replay the results of monadic actions";
       description = "A monad transformer and class that allows recording\nthe results of monadic actions and replay them later.\nInspired by the logging implementation in the transient\npackage by Alberto G. Corona. Related packages:\n\n* https://hackage.haskell.org/package/transient\n* https://hackage.haskell.org/package/Workflow";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."monad-recorder" or (errorHandler.buildDepError "monad-recorder"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

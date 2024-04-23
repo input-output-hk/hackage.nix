@@ -21,7 +21,7 @@
       synopsis = "Wrapper around the pdfinfo command.";
       description = "Just a wrapper around the pdfinfo command. See man pdfinfo.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Hardware software co-design Feldspar";
       description = "An implementation of the Feldspar EDSL with a focus on\nhardware software co-design and resource-awareness.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."hardware-edsl" or (errorHandler.buildDepError "hardware-edsl"))
           (hsPkgs."imperative-edsl" or (errorHandler.buildDepError "imperative-edsl"))
           (hsPkgs."signals" or (errorHandler.buildDepError "signals"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

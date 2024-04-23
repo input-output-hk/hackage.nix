@@ -21,7 +21,7 @@
       synopsis = "Extract and create tar files using conduit for streaming";
       description = "Please see README.md. This is just filler to avoid warnings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,21 +31,21 @@
           (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ]
+          ]
           else [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]);
-        buildable = if compiler.isGhc && (compiler.version).lt "8"
+          ]);
+        buildable = if compiler.isGhc && compiler.version.lt "8"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "space" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,10 +75,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "time" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Video Compression Library (see http://theora.org)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."ogg" or (errorHandler.sysDepError "ogg"))
           (pkgs."theora" or (errorHandler.sysDepError "theora"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

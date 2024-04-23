@@ -6,8 +6,8 @@
         nix = import ../hackage/graphmod-plugin-0.1.0.0-r0-2457ba9f746fb5a1b0b9ab630c960f6e095cabc88334a1cd4c995d9cdaff4647.nix;
         revNum = 0;
         sha256 = "2457ba9f746fb5a1b0b9ab630c960f6e095cabc88334a1cd4c995d9cdaff4647";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

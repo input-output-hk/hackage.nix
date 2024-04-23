@@ -21,7 +21,7 @@
       synopsis = "Shows how to run redis as a tmp proc";
       description = "An example of using tmp-proc to launch dockerized ZipKin in integration tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
           (hsPkgs."tracing" or (errorHandler.buildDepError "tracing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
             (hsPkgs."tmp-proc-zipkin" or (errorHandler.buildDepError "tmp-proc-zipkin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

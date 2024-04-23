@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Nix language";
       description = "Haskell implementation of the Nix language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -84,9 +84,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hnix" = {
           depends = [
@@ -110,12 +110,12 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."repline" or (errorHandler.buildDepError "repline"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.10"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.10"
             then false
             else true;
-          };
         };
+      };
       tests = {
         "hnix-tests" = {
           depends = [
@@ -145,10 +145,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hnix-benchmarks" = {
           depends = [
@@ -163,9 +163,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hnix" or (errorHandler.buildDepError "hnix"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

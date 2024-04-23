@@ -6,8 +6,8 @@
         nix = import ../hackage/ribosome-app-0.9.9.9-r0-32f71bb46c22c90c3ea15a39272a009f08e2fe4c74a8ea85496f1ca2900d2d77.nix;
         revNum = 0;
         sha256 = "32f71bb46c22c90c3ea15a39272a009f08e2fe4c74a8ea85496f1ca2900d2d77";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

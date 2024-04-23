@@ -21,11 +21,11 @@
       synopsis = "Utility functions for writing command-line programs";
       description = "Utility functions for writing command-line programs including\nparsing of numbers with restrictions and enumerations\nfor command-line arguments,\nverbosity controlled output,\nescaping shell arguments, exit with message.\n\nThe package has very light dependencies and is Haskell 98.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

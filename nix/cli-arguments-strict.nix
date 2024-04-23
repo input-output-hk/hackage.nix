@@ -6,8 +6,8 @@
         nix = import ../hackage/cli-arguments-strict-0.1.0.0-r0-199b6d4d1d799e825ac6d7ace88a0f69a2409665c6110ceb89038c5a686835d7.nix;
         revNum = 0;
         sha256 = "199b6d4d1d799e825ac6d7ace88a0f69a2409665c6110ceb89038c5a686835d7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

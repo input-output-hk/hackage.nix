@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."fixedprec" or (errorHandler.buildDepError "fixedprec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gridsynth" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."newsynth" or (errorHandler.buildDepError "newsynth"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

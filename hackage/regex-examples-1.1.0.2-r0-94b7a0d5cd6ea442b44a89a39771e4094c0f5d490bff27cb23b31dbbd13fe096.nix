@@ -21,7 +21,7 @@
       synopsis = "Tutorial, tests and example programs for regex";
       description = "Tutorial, tests and example programs for regex,\na Regular Expression Toolkit for regex-base with\nCompile-time checking of RE syntax, data types for\nmatches and captures, a text replacement toolkit,\nportable options, high-level AWK-like tools\nfor building text processing apps, regular expression\nmacros and test bench, a tutorial and copious examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "re-gen-cabals" = {
@@ -37,9 +37,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-gen-modules" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -52,9 +52,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-include" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -64,9 +64,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-nginx-log-processor" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -85,9 +85,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-prep" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -101,9 +101,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-sort-imports" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -114,9 +114,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tests" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -141,9 +141,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-top" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -160,9 +160,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -188,9 +188,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-options" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -217,9 +217,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-replacing" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -245,9 +245,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-testbench" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -273,9 +273,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-tools" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -301,10 +301,10 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "re-gen-cabals-test" = {
           depends = [
@@ -319,9 +319,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-gen-modules-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -334,9 +334,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-include-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -346,9 +346,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-nginx-log-processor-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -367,9 +367,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-prep-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -383,9 +383,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-sort-imports-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -396,9 +396,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tests-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -423,9 +423,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-top-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -442,9 +442,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -470,9 +470,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-os-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -498,9 +498,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-options-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -527,9 +527,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-replacing-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -555,9 +555,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-testbench-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -583,9 +583,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "re-tutorial-tools-test" = {
           depends = [
             (hsPkgs."regex" or (errorHandler.buildDepError "regex"))
@@ -611,9 +611,9 @@
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

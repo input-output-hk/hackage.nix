@@ -21,7 +21,7 @@
       synopsis = "Cairo backend for Charts.";
       description = "Cairo backend for Charts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

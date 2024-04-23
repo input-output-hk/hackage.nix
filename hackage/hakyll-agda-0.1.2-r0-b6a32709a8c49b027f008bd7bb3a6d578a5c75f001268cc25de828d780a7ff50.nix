@@ -21,7 +21,7 @@
       synopsis = "Wrapper to integrate literate Agda files with Hakyll";
       description = "Simple module useful to generate blog posts from literate Agda files.\n\nNote: Currently this package requires the development version of Hakyll,\nsee <http://mazzo.li/posts/agda-hakyll.html> for more info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

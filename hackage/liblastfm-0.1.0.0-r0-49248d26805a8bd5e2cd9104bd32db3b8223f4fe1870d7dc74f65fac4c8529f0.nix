@@ -21,7 +21,7 @@
       synopsis = "Lastfm API interface";
       description = "Provides interface to Lastfm REST API, supports XML and JSON formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Model API for udbus introspection and definitions";
       description = "Model API for udbus introspection and definitions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,19 +29,19 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."udbus" or (errorHandler.buildDepError "udbus"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dbus-model-parse" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."udbus" or (errorHandler.buildDepError "udbus"))
             (hsPkgs."udbus-model" or (errorHandler.buildDepError "udbus-model"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

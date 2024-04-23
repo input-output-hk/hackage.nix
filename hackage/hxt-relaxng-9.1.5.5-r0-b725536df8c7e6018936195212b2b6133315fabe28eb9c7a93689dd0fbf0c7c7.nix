@@ -21,7 +21,7 @@
       synopsis = "The HXT RelaxNG validator";
       description = "The HXT RelaxNG validator";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."hxt-charproperties" or (errorHandler.buildDepError "hxt-charproperties"))
           (hsPkgs."hxt-regex-xmlschema" or (errorHandler.buildDepError "hxt-regex-xmlschema"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
-          else if compiler.isGhc && (compiler.version).ge "7.10"
+          ]
+          else if compiler.isGhc && compiler.version.ge "7.10"
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

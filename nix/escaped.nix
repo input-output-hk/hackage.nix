@@ -6,8 +6,8 @@
         nix = import ../hackage/escaped-1.0.0.0-r0-9347d0e90cb1a66d0f7c8cbe7607b6ccba2c914b6fe7277b7175d6f4df2b1dee.nix;
         revNum = 0;
         sha256 = "9347d0e90cb1a66d0f7c8cbe7607b6ccba2c914b6fe7277b7175d6f4df2b1dee";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Space simulation game";
       description = "Space simulation game.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "starrover2" = {
@@ -36,9 +36,9 @@
             (hsPkgs."FTGL" or (errorHandler.buildDepError "FTGL"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

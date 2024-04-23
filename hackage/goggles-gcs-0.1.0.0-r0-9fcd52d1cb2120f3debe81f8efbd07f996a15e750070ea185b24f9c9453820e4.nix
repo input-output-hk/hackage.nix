@@ -21,7 +21,7 @@
       synopsis = "`goggles` interface to Google Cloud Storage";
       description = "`goggles` interface to Google Cloud Storage";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."req" or (errorHandler.buildDepError "req"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

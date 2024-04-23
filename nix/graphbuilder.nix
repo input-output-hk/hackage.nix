@@ -6,8 +6,8 @@
         nix = import ../hackage/graphbuilder-0.1.0.0-r0-3316b38bd6603ecad412a3bb4bbbea5c46921030aaf2b0e345d85a39460663be.nix;
         revNum = 0;
         sha256 = "3316b38bd6603ecad412a3bb4bbbea5c46921030aaf2b0e345d85a39460663be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

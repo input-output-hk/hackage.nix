@@ -21,7 +21,7 @@
       synopsis = "CLI tool for building across Stackage major versions";
       description = "Build your Haskell project over Stackage major LTS versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-all" = {
@@ -41,9 +41,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

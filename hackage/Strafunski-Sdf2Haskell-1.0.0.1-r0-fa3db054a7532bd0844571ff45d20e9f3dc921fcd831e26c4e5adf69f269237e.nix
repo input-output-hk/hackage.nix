@@ -21,7 +21,7 @@
       synopsis = "Converts SDF to Haskell";
       description = "Generates code for using SDF grammars in Haskell. See <http://www.syntax-definition.org/> for more information about SDF.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Sdf2Haskell" = {
@@ -35,9 +35,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

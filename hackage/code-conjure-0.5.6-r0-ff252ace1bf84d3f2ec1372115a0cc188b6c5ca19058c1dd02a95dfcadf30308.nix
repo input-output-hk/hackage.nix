@@ -21,7 +21,7 @@
       synopsis = "synthesize Haskell functions out of partial definitions";
       description = "Conjure is a tool that synthesizes Haskell functions out of partial definitions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
           (hsPkgs."express" or (errorHandler.buildDepError "express"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "expr" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."express" or (errorHandler.buildDepError "express"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."code-conjure" or (errorHandler.buildDepError "code-conjure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "defn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."express" or (errorHandler.buildDepError "express"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."code-conjure" or (errorHandler.buildDepError "code-conjure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "conjurable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."express" or (errorHandler.buildDepError "express"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."code-conjure" or (errorHandler.buildDepError "code-conjure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "utils" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."express" or (errorHandler.buildDepError "express"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."code-conjure" or (errorHandler.buildDepError "code-conjure"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "derive" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."express" or (errorHandler.buildDepError "express"))
             (hsPkgs."speculate" or (errorHandler.buildDepError "speculate"))
             (hsPkgs."code-conjure" or (errorHandler.buildDepError "code-conjure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

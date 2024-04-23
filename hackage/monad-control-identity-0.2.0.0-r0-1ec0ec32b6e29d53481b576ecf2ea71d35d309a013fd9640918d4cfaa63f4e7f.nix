@@ -21,7 +21,7 @@
       synopsis = "Stronger classes than monad-control";
       description = "This package defines the type class 'MonadBaseControlIdentity', which is very\nsimilar to 'MonadBaseControl' from\n<https://hackage.haskell.org/package/monad-control monad-control>.\nThe difference is, that 'MonadBaseControlIdentity' instances are only valid,\nwhen there is no monadic state.\nThis results in simpler type signatures to lift values in contravariant\npositions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

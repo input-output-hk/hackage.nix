@@ -21,7 +21,7 @@
       synopsis = "Functional test framework for LSP servers.";
       description = "A test framework for writing tests against\n<https://microsoft.github.io/language-server-protocol/ Language Server Protocol servers>.\n@Language.LSP.Test@ launches your server as a subprocess and allows you to simulate a session\ndown to the wire.\nTo see examples of it in action, check out <https://github.com/haskell/haskell-ide-engine haskell-ide-engine>,\n<https://github.com/haskell/haskell-language-server haskell-language-server> and\n<https://github.com/digital-asset/ghcide ghcide>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,11 +53,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "func-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -90,21 +90,21 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.lsp.components.exes.lsp-demo-reactor-server or (pkgs.buildPackages.lsp-demo-reactor-server or (errorHandler.buildToolDepError "lsp:lsp-demo-reactor-server")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "simple-bench" = {
           depends = [
@@ -113,9 +113,9 @@
             (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

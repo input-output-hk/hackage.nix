@@ -21,7 +21,7 @@
       synopsis = "Reservoir Computing, fast RNNs";
       description = "Please see the README on Github at <https://github.com/masterdezign/rc#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ntc" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."rc" or (errorHandler.buildDepError "rc"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rc-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."rc" or (errorHandler.buildDepError "rc"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

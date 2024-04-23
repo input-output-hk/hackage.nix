@@ -21,15 +21,15 @@
       synopsis = "OpenTelemetry protocol buffer modules generated for the OTLP protocol by the proto-lens package";
       description = "Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

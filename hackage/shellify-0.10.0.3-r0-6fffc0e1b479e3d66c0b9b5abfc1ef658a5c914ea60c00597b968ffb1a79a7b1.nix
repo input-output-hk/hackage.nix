@@ -21,7 +21,7 @@
       synopsis = "A tool for generating shell.nix files";
       description = "Please see the README on GitHub at <https://github.com/danielrolls/shellify>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shellify" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shellify" or (errorHandler.buildDepError "shellify"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskelltest-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."shellify" or (errorHandler.buildDepError "shellify"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

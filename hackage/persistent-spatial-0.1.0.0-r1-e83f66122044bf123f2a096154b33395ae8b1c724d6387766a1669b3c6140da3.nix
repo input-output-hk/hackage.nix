@@ -21,7 +21,7 @@
       synopsis = "Database agnostic, spatially indexed type for geographic points.";
       description = "Defines type for storing geographic coordinates that can be spatially indexed by any database which supports Word64.\nThis inxeding is implemented using a normal integer index on points repersented using a Morton Z-Order curve.\nGeographic regions are transformed into a covering set of tiles (contigious ranges) which can be used in a single query.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Code highlighting for cmark";
       description = "Code highlighting for cmark-parsed Markdown. Takes cmark AST, returns cmark\nAST with code blocks highlighted.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

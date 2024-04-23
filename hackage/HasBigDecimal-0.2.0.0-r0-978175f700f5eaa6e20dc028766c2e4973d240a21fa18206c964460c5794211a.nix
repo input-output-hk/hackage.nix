@@ -21,29 +21,29 @@
       synopsis = "A library for arbitrary precision decimal numbers.";
       description = "Please see the README on GitHub at <https://github.com/thma/HasBigDecimal#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "HasBigDecimal-Demo" = {
           depends = [
             (hsPkgs."HasBigDecimal" or (errorHandler.buildDepError "HasBigDecimal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "benchmark" = {
           depends = [
             (hsPkgs."HasBigDecimal" or (errorHandler.buildDepError "HasBigDecimal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "HasBigDecimal-test" = {
           depends = [
@@ -51,12 +51,12 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

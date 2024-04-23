@@ -21,7 +21,7 @@
       synopsis = "Add support for using blaze-html with Reform";
       description = "Reform is a library for building and validating forms using applicative functors. This package add support for using reform with blaze-html.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."reform" or (errorHandler.buildDepError "reform"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

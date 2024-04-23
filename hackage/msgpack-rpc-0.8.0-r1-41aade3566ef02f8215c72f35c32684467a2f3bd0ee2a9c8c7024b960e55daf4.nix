@@ -21,7 +21,7 @@
       synopsis = "A MessagePack-RPC Implementation";
       description = "A MessagePack-RPC Implementation <http://msgpack.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
           (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
           (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "msgpack-rpc-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."msgpack-rpc" or (errorHandler.buildDepError "msgpack-rpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

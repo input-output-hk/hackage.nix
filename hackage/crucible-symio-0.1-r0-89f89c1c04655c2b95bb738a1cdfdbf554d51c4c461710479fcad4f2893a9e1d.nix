@@ -21,7 +21,7 @@
       synopsis = "An implementation of symbolic I/O primitives for Crucible";
       description = "This library provides language-independent overrides implementing filesystem\noperations (as provided by most operating systems). These primitives support\nreading and writing symbolic data. An example use case would be to support verifying\nprograms that e.g., use configuration files or accept input from files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."parameterized-utils" or (errorHandler.buildDepError "parameterized-utils"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."what4" or (errorHandler.buildDepError "what4"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "crucible-symio-tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."crucible-symio" or (errorHandler.buildDepError "crucible-symio"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

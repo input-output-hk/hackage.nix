@@ -21,7 +21,7 @@
       synopsis = "Convert Cabal files into Nix build instructions";
       description = "This utility converts Cabal files into Nix build\ninstructions. The commandline syntax is:\n\n> cabal2nix cabal-file-uri [sha256-hash]\n\nThe first argument is the path to the cabal\nfile. That path can be an HTTP URL or local file\npath. For example:\n\n> cabal2nix http://hackage.haskell.org/packages/archive/cabal2nix/1.4/cabal2nix.cabal 0m7zgsd1pxmw504xpvl7dg25ana6dkk1mcyjj4c1wdbkvhvbn3gn\n> cabal2nix file:///tmp/cabal2nix.cabal 0m7zgsd1pxmw504xpvl7dg25ana6dkk1mcyjj4c1wdbkvhvbn3gn\n> cabal2nix /tmp/cabal2nix.cabal 0m7zgsd1pxmw504xpvl7dg25ana6dkk1mcyjj4c1wdbkvhvbn3gn\n\nThe second argument -- the hash of the source\ntarball -- is optional. If it's not specified,\ncabal2nix calls @nix-prefetch-url@ to determine\nthe hash automatically. This causes network\ntraffic, obviously.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2nix" = {
@@ -30,9 +30,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

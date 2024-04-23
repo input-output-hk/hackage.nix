@@ -21,15 +21,15 @@
       synopsis = "Rewrites Template Haskell splices using the API";
       description = "A GHC plugin to perform source-to-source transformation on parsed Haskell, used to manually inline Template Haskell calls for lens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-session-mysql-0.2.1.0-r0-94515c7de16f9c34228301737e8be53bcd15df0290245a928e80dd6bacac89f8.nix;
         revNum = 0;
         sha256 = "94515c7de16f9c34228301737e8be53bcd15df0290245a928e80dd6bacac89f8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

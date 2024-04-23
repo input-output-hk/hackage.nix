@@ -6,8 +6,8 @@
         nix = import ../hackage/http-slim-1.0-r0-d6619079dc0c2902df1b34e5bf35bde46a8f20b1adbcbfa1d723997739a96448.nix;
         revNum = 0;
         sha256 = "d6619079dc0c2902df1b34e5bf35bde46a8f20b1adbcbfa1d723997739a96448";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

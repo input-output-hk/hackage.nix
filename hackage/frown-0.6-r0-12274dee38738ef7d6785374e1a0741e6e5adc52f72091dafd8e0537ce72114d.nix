@@ -21,16 +21,16 @@
       synopsis = "LALR(k) parser generator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "frown" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

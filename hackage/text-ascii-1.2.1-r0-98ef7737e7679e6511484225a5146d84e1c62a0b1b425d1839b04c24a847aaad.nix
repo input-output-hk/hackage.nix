@@ -21,7 +21,7 @@
       synopsis = "ASCII string and character processing.";
       description = "A total-by-default, tested and documented library for\nworking with ASCII text. Low on dependencies, high on usability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

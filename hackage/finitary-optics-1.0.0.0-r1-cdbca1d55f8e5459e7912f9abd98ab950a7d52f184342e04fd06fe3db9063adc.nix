@@ -21,7 +21,7 @@
       synopsis = "Prisms and Isos between finitary types.";
       description = "Provides convenience optics for working with finitary types.\nSpecifically gives an Iso for inter-converting between types\nof the same cardinality, and a Prism for inter-converting\nbetween types of different cardinalities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."finitary" or (errorHandler.buildDepError "finitary"))
           (hsPkgs."finite-typelits" or (errorHandler.buildDepError "finite-typelits"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

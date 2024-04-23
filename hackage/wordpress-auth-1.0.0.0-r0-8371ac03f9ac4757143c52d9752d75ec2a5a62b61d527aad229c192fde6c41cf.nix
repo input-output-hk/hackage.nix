@@ -21,7 +21,7 @@
       synopsis = "Validate Wordpress Cookies & Nonces; Build Wordpress Hashes & Salts";
       description = "This package is used for validating Cookie data & Nonces from Wordpress.\n\nYou may find it useful if you're trying to serve a Haskell application alongside a Wordpress site. By validating the Cookies set by Wordpress, you can access the currently logged-in Wordpress user in Haskell without having to devise a Wordpress-to-Haskell authentication scheme.\n\nIt includes a generalized authentication function, as well as various helpers, validators, & hashers if you'd like to build a custom authentication process.\n\nServant users may want to just use the @servant-auth-wordpress@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

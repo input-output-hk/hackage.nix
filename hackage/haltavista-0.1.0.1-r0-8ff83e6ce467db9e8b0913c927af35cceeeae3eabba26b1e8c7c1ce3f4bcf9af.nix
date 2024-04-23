@@ -21,7 +21,7 @@
       synopsis = "looks for functions given a set of example input/outputs";
       description = "Looks for functions in the local hoogle library given a set of example input/outputs.\nRequires hoogle.\n\nUsage:\n\n> ~$ haltavista\n> input_1_1 ... input_1_n output_1\n> ...\n> input_m_1 ... input_m_n output_m\n> <EOF>\n\nExample usage:\n\n> ~$ haltavista\n> 1 1 2\n> 1 2 3\n> <EOF>\n>\n> Prelude (+)\n\nSee README.md for more examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haltavista" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

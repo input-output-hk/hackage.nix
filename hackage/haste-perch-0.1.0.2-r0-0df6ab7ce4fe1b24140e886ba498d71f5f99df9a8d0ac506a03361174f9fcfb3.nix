@@ -21,7 +21,7 @@
       synopsis = "Create dynamic HTML in the browser using declarative notation ";
       description = "see the description at the homepage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.haste-inst
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."haste-lib" or (errorHandler.buildDepError "haste-lib"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."haste-compiler" or (errorHandler.buildDepError "haste-compiler"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

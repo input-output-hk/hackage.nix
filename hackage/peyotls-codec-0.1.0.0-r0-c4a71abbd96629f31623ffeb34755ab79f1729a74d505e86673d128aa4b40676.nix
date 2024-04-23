@@ -21,7 +21,7 @@
       synopsis = "Codec parts of Pretty Easy YOshikuni-made TLS library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."crypto-pubkey" or (errorHandler.buildDepError "crypto-pubkey"))
           (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
           (hsPkgs."bytable" or (errorHandler.buildDepError "bytable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

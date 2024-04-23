@@ -21,7 +21,7 @@
       synopsis = "API Wrapping for Coinbase's GDAX exchange.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sandbox" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-gdax" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

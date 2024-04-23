@@ -21,15 +21,15 @@
       synopsis = "Spec for testing properties for variant types";
       description = "Spec for testing properties for variant types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheckVariant" or (errorHandler.buildDepError "QuickCheckVariant"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

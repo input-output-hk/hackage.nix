@@ -21,7 +21,7 @@
       synopsis = "Various trie implementations in Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
             (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

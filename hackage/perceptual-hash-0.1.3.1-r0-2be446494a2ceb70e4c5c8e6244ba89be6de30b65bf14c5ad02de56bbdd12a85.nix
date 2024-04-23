@@ -21,7 +21,7 @@
       synopsis = "Find duplicate images";
       description = "Find similar images using perceptual hashes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,19 +31,19 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
-        pkgconfig = (pkgs.lib).optional (flags.with-phash) (pkgconfPkgs."pHash" or (errorHandler.pkgConfDepError "pHash"));
+        ];
+        pkgconfig = pkgs.lib.optional (flags.with-phash) (pkgconfPkgs."pHash" or (errorHandler.pkgConfDepError "pHash"));
         buildable = true;
-        };
+      };
       foreignlibs = {
         "hsphash" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."perceptual-hash" or (errorHandler.buildDepError "perceptual-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "phash" = {
           depends = [
@@ -54,20 +54,20 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."par-traverse" or (errorHandler.buildDepError "par-traverse"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "perceptual-hash-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."perceptual-hash" or (errorHandler.buildDepError "perceptual-hash"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "phash-bench" = {
           depends = [
@@ -76,12 +76,12 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

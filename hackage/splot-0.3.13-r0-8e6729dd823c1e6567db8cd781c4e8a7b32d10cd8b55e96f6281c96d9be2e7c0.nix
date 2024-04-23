@@ -21,7 +21,7 @@
       synopsis = "A tool for visualizing the lifecycle of many concurrent multi-staged processes.";
       description = "A tool for visualizing the lifecycle of many concurrent multi-staged processes.\nEach process has a name, it starts at a point in time, ends at a point in time, and at some\npoints in time it changes colour. See presentation <http://www.slideshare.net/jkff/two-visualization-tools>\nor download <http://jkff.info/presentations/two-visualization-tools.pdf>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "splot" = {
@@ -37,9 +37,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."vcs-revision" or (errorHandler.buildDepError "vcs-revision"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

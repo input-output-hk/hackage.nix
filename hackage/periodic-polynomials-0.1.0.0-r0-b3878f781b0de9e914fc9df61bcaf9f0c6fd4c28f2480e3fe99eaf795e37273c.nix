@@ -21,14 +21,14 @@
       synopsis = "A library for working with periodic polynomials (very basic functionality)";
       description = "Provides also simle tools to make a numerical function a periodical or somewhat similar one.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

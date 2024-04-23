@@ -21,7 +21,7 @@
       synopsis = "Space Invaders";
       description = "A simple clone of Space Invaders for playing on one's terminal.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hinvaders" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pseudo terminal interaction with subprocesses.";
       description = "This package simplifies the creation of subprocesses that interact with\ntheir parent via a pseudo terminal (see @man pty@).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,10 +29,10 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux || system.isFreebsd) (pkgs."util" or (errorHandler.sysDepError "util"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux || system.isFreebsd) (pkgs."util" or (errorHandler.sysDepError "util"));
         buildable = true;
-        };
+      };
       tests = {
         "stty" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."posix-pty" or (errorHandler.buildDepError "posix-pty"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

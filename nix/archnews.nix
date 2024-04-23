@@ -6,8 +6,8 @@
         nix = import ../hackage/archnews-0.2-r0-7df587fe3e549dbf070952caa259dae450600f7b5f170e5e4a362ce79ede84aa.nix;
         revNum = 0;
         sha256 = "7df587fe3e549dbf070952caa259dae450600f7b5f170e5e4a362ce79ede84aa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

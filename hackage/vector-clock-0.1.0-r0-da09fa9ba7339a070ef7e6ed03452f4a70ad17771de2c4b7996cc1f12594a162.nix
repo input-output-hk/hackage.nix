@@ -21,15 +21,15 @@
       synopsis = "Vector clocks for versioning message flows";
       description = "The vector-clock library provides a ready to use\nimplementation of the vector clock data-structures, which may\nbe used to version messages and determine causality relations\nbetween messages in a distributed system.\n\nSee \"Fundamentals of Distributed Computing: A Practical Tour\nof Vector Clock Systems\" by Baldoni and Raynal for an overview\nof vector clocks.\n\nSee the README.md file for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "props" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

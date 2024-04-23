@@ -21,7 +21,7 @@
       synopsis = "Tools for using markdown in a yesod application";
       description = "A subset of Pandoc functionality useful for markdown processing in yesod applications";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yesod-markdown" or (errorHandler.buildDepError "yesod-markdown"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

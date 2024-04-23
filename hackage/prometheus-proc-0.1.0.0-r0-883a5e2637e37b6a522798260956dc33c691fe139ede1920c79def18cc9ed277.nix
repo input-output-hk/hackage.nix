@@ -21,7 +21,7 @@
       synopsis = "Export metrics from /proc for the current process";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
           (hsPkgs."prometheus-client" or (errorHandler.buildDepError "prometheus-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

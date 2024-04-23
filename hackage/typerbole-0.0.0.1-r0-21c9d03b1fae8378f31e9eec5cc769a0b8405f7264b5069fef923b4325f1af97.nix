@@ -21,7 +21,7 @@
       synopsis = "A typeystems library with exaggerated claims";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "typerbole-diagrams" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "typerbole-testing" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "IPLD Content-IDentifiers <https://github.com/ipld/cid>";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."multibase" or (errorHandler.buildDepError "multibase"))
           (hsPkgs."multihash-cryptonite" or (errorHandler.buildDepError "multihash-cryptonite"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."multibase" or (errorHandler.buildDepError "multibase"))
             (hsPkgs."multihash-cryptonite" or (errorHandler.buildDepError "multihash-cryptonite"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

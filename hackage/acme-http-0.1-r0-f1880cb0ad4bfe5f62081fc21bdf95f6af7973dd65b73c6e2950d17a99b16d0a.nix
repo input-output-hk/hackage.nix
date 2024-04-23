@@ -21,7 +21,7 @@
       synopsis = "fastest Haskell PONG server in the world";
       description = "winning the PONG benchmark at all costs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "pong" = { buildable = true; }; };
       };
-    }
+      exes = { "pong" = { buildable = true; }; };
+    };
+  }

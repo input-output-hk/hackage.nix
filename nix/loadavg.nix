@@ -6,8 +6,8 @@
         nix = import ../hackage/loadavg-0.1-r0-270ffd766826ecc84f5ad16ac709712371585aa5eef160cf0d45ec30fdeb430e.nix;
         revNum = 0;
         sha256 = "270ffd766826ecc84f5ad16ac709712371585aa5eef160cf0d45ec30fdeb430e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

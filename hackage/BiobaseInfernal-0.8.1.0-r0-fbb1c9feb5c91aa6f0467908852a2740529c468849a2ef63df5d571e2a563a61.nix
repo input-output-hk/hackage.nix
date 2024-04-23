@@ -21,7 +21,7 @@
       synopsis = "Infernal data structures and tools";
       description = "Provides import and export facilities for Infernal/Rfam data\nformats. We include Stockholm, CM, verbose Infernal results,\nand tabulated Infernal results. Some small tools are included.\n\nThe VerboseHit format is slightly extended to allow simple\nannotations. This extension should be backward-compatible with\nstandard-compliant parsers.\n\nThe @cmsearchFilter@ program provides filtering and coloring\noptions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -62,19 +62,19 @@
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
           (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cmsearchFilter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."BiobaseInfernal" or (errorHandler.buildDepError "BiobaseInfernal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -87,10 +87,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."BiobaseInfernal" or (errorHandler.buildDepError "BiobaseInfernal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "parsing" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."BiobaseInfernal" or (errorHandler.buildDepError "BiobaseInfernal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

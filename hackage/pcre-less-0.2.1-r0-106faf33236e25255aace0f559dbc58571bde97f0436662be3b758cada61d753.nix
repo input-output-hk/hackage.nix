@@ -21,15 +21,15 @@
       synopsis = "Nicer interface to regex-pcre.";
       description = "Uses regex-pcre to provide substitution, backrefs.\nUses '`' over '\\\\' just to be idiosyncratic. (It's prettier.)\nSee the tests for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

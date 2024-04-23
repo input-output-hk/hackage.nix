@@ -21,14 +21,14 @@
       synopsis = "Geometric predicates (Intel SSE) ";
       description = "Exact, hardware based computation of geometric predicates using an SSE based interval filter and the ESSA algorithm.\nSee \\\"Exact computation of Voronoi diagram and Delaunay triangulation\\\" by Marina Gavrilova, Helmut Ratschek and Jon Rokne.\nThis package is a specialization of the @GeomPredicates@ package and uses it's primitives defined under @Numeric.Geometric.Primitives@.\nThis package requires a CPU with @Streaming SIMD Extensions 2@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."GeomPredicates" or (errorHandler.buildDepError "GeomPredicates"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

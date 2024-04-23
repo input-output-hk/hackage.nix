@@ -21,7 +21,7 @@
       synopsis = "A simple blog middleware on hack";
       description = "A simple blog middleware on hack";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."hack-contrib" or (errorHandler.buildDepError "hack-contrib"))
           (hsPkgs."tokyocabinet-haskell" or (errorHandler.buildDepError "tokyocabinet-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

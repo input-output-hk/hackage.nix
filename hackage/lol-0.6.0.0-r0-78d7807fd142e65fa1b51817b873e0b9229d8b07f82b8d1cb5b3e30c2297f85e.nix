@@ -21,7 +21,7 @@
       synopsis = "A library for lattice cryptography.";
       description = "Λ ∘ λ (Lol) is a general-purpose library for ring-based lattice cryptography.\nFor a detailed description of interfaces and functionality, see\n<https://eprint.iacr.org/2015/1134 Λ ∘ λ: Functional Lattice Cryptography>.\nBackends for the library include <https://hackage.haskell.org/package/lol-cpp lol-cpp>\nand <https://hackage.haskell.org/package/lol-repa lol-repa>.\nFor example cryptographic applications, see <https://hackage.haskell.org/package/lol-apps lol-apps>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

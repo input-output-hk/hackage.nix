@@ -21,7 +21,7 @@
       synopsis = "HIE-based Haskell call graph and source code visualizer";
       description = "Calligraphy is a Haskell call graph/source code visualizer.\nIt works directly on GHC-generated HIE files, giving us features that would otherwise be tricky, like type information and support for generated files.\nCalligraphy has been tested with all versions of GHC that produce HIE files (i.e. GHC 8.8 through 9.6.)\nSee the project's github page for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "calligraphy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."calligraphy" or (errorHandler.buildDepError "calligraphy"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "calligraphy-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

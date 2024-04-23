@@ -6,8 +6,8 @@
         nix = import ../hackage/websockets-json-1.0.0-r0-6fcd9559401b8c0bcb17b974c51ab48696169b4aaca47afe162fc9c7eda37364.nix;
         revNum = 0;
         sha256 = "6fcd9559401b8c0bcb17b974c51ab48696169b4aaca47afe162fc9c7eda37364";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A high-powered, single-pass tree parser.";
       description = "Please see the README on GitHub at <https://github.com/isovector/lasercutter#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."selective" or (errorHandler.buildDepError "selective"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lasercutter-test" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."selective" or (errorHandler.buildDepError "selective"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "lasercutter-bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

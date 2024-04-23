@@ -21,7 +21,7 @@
       synopsis = "Typing speed game";
       description = "A simple game where you need to type the letters scrolling down the screen before they reach the bottom. Using SDL and SDL_ttf.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "TypeClass" = {
@@ -35,9 +35,9 @@
             (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
             (hsPkgs."reactive-banana-sdl" or (errorHandler.buildDepError "reactive-banana-sdl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

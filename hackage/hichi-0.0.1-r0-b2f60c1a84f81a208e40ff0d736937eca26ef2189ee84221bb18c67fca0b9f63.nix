@@ -21,7 +21,7 @@
       synopsis = "haskell robot for IChat protocol";
       description = "haskell robot for IChat protocol";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hichi" = {
@@ -31,10 +31,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
-        "test-rc4" = { buildable = if flags.test then true else false; };
         };
+        "test-rc4" = { buildable = if flags.test then true else false; };
       };
-    }
+    };
+  }

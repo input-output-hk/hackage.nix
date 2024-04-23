@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Tokyo Tyrant binary protocol";
       description = "A pure Haskell implementation of the Tokyo Tyrant binary protocol.\nTokyo Tyrant is a database server for the Tokyo Cabinet\ndatabase library.  http://tokyocabinet.sourceforge.net/tyrantdoc/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network-bytestring" or (errorHandler.buildDepError "network-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

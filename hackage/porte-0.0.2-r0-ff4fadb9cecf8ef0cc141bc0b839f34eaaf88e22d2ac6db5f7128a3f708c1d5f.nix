@@ -21,7 +21,7 @@
       synopsis = "FreeBSD ports interface";
       description = "Haskell FreeBSD ports analysis library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "porte" = { buildable = true; }; };
       };
-    }
+      exes = { "porte" = { buildable = true; }; };
+    };
+  }

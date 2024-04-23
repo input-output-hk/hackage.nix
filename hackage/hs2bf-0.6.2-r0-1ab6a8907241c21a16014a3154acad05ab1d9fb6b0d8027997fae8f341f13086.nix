@@ -21,7 +21,7 @@
       synopsis = "Haskell to Brainfuck compiler";
       description = "Proof of concept implementation of Haskell to Brainfuck compiler.\nYou can find examples of compilable codes at <http://www.xanxys.net/public/hs2bf-demo/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hs2bf" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

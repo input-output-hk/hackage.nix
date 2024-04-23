@@ -21,11 +21,11 @@
       synopsis = "The perceptron learning algorithm.";
       description = "This package provides a straightforward implementation of the perceptron\nlearning algorithm for supervised binary linear classification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

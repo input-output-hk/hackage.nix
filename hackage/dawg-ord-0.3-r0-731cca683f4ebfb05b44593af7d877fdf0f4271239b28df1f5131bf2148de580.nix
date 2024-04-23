@@ -21,7 +21,7 @@
       synopsis = "Directed acyclic word graphs";
       description = "The library implements /directed acyclic word graphs/ (DAWGs)\ninternally represented as /minimal acyclic deterministic\nfinite-state automata/.\n\nThe library allows to build DAWGs from words over any alphabet\nproviding an `Ord` instance.\nIt also provides a fast insert operation which can be used to\nbuild DAWGs on-the-fly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

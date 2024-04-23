@@ -21,7 +21,7 @@
       synopsis = "message queue using MongoDB";
       description = "simple messaging queue using MongoDB. Designed to be worse than real queueing infrastructure but easy to start using if you are already running MongoDB. Rather than polling it Uses tailable cursors, which should actually make this fairly efficient. However, tailable cursors have a bug that makes them use a large amount of CPU when the system is idle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

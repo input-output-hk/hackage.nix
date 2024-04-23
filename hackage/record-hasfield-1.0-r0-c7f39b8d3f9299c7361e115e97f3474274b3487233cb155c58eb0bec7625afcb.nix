@@ -21,20 +21,20 @@
       synopsis = "A version of GHC.Records as available in future GHCs.";
       description = "This package provides a version of \"GHC.Records\" as it will be after the implementation of\n<https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0042-record-set-field.rst GHC proposal #42>,\nplus some helper functions over it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "record-hasfield-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."record-hasfield" or (errorHandler.buildDepError "record-hasfield"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

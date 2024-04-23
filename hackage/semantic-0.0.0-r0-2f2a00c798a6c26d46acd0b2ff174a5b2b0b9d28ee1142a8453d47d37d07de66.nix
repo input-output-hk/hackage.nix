@@ -21,11 +21,11 @@
       synopsis = "Framework and service for analyzing and diffing untrusted code.";
       description = "Semantic provides a framework for analysis, interpretation, and diffing of arbitrary, untrusted parse trees.\n\nThis is a placeholder package pending a full Hackage release.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

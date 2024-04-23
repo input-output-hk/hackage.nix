@@ -21,7 +21,7 @@
       synopsis = "Picture loading/serialization (in png, jpeg, bitmap and gif)";
       description = "This library can load and store images in PNG/Bitmap and Jpeg, and\nread Gif images.\nVersion 2.0 changelog:\n- New extractComponent version with type safe plane\nextraction\n- Gif file reading\nVersion 1.3 changelog:\n- Fix extractComponent function\n- Adding saving for YA8 functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

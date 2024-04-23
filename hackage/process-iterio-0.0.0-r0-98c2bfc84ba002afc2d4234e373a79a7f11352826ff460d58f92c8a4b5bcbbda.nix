@@ -21,7 +21,7 @@
       synopsis = "IterIO Process Library";
       description = "IterIO combinators for the Process library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

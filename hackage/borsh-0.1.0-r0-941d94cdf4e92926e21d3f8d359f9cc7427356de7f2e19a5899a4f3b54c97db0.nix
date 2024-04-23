@@ -21,7 +21,7 @@
       synopsis = "Implementation of BORSH serialisation";
       description = "This package provides type classes and combinators for\nserialisation\\/deserialisation to\\/from [Borsh](https://borsh.io/) format.\nUnlike [CBOR](http://cbor.io/), Borsh is a non self-describing serialisation\nformat. It is designed such that any object serialises to a canonical and\ndeterministic string of bytes.\n\nThe library supports incremental encoding and incremental decoding, and\nsupports the use of the @ST@ monad in the decoder for efficient decoding for\ntypes such as arrays. However, the library has currently not been optimized\nfor speed, and there may well be low-hanging fruit to make it faster.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-borsh" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

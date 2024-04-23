@@ -21,7 +21,7 @@
       synopsis = "high-level CPLEX interface";
       description = "High level interface to CPLEX";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,13 +33,13 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        libs = (pkgs.lib).optionals (system.isLinux) [
+        ];
+        libs = pkgs.lib.optionals (system.isLinux) [
           (pkgs."cplex" or (errorHandler.sysDepError "cplex"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
           (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

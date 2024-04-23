@@ -21,7 +21,7 @@
       synopsis = "A natural language generator (specifically, an FB-LTAG surface realiser)";
       description = "A natural language generator (specifically, an FB-LTAG surface realiser)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."yaml-light" or (errorHandler.buildDepError "yaml-light"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "geni" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "geni-test" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."test-framework-smallcheck" or (errorHandler.buildDepError "test-framework-smallcheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

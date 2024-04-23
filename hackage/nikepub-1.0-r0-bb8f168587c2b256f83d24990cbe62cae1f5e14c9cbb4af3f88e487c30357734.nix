@@ -21,7 +21,7 @@
       synopsis = "Command line utility publishes Nike+ runs on blogs and Twitter";
       description = "Simple commandline program that given a Nike+ user id will fetch the\nmost recent Nike+ run and publish it to any blog and/or Twitter account.\nAssumes the Nike+ user profile is public. Supports customizable templates\nfor the blog entry title, body and Twitter status update. Any blogging\nsystem with XML-RPC support for metaWeblog.newPost\n(like WordPress or MovableType) is supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nikepub" = {
@@ -41,9 +41,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."hs-twitter" or (errorHandler.buildDepError "hs-twitter"))
             (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

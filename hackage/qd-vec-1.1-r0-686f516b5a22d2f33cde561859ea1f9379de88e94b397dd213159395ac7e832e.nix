@@ -21,15 +21,15 @@
       synopsis = "'Vec' instances for 'qd' types";
       description = "Instances of Vec's NearZero and Packed for qd's types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."qd" or (errorHandler.buildDepError "qd"))
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

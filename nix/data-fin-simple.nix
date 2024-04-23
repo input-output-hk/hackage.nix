@@ -6,8 +6,8 @@
         nix = import ../hackage/data-fin-simple-0.1.0.0-r0-17257ea00a3de58b8070e448a8d34727b0bcafad07f465bb0e0d7395312e7d3b.nix;
         revNum = 0;
         sha256 = "17257ea00a3de58b8070e448a8d34727b0bcafad07f465bb0e0d7395312e7d3b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

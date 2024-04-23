@@ -21,7 +21,7 @@
       synopsis = "Types which represent functions k -> v";
       description = "A typeclass and a number of implementations; please read README.md on github";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
           (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "view" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
             (hsPkgs."mappings" or (errorHandler.buildDepError "mappings"))
             (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mapping" = {
           depends = [
@@ -59,12 +59,12 @@
             (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
             (hsPkgs."mappings" or (errorHandler.buildDepError "mappings"))
             (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

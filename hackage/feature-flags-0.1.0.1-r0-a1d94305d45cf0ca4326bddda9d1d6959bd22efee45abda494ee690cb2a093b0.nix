@@ -21,14 +21,14 @@
       synopsis = "A simple library for dynamically enabling and disabling functionality.";
       description = "A simple library for dynamically enabling and disabling functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

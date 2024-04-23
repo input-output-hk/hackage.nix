@@ -21,7 +21,7 @@
       synopsis = "BIP-0032: Hierarchical Deterministic Wallets for Bitcoin and other cryptocurrencies";
       description = "BIP-0032: Hierarchical Deterministic Wallets for Bitcoin and other cryptocurrencies";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base58-bytestring" or (errorHandler.buildDepError "base58-bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."secp256k1-haskell" or (errorHandler.buildDepError "secp256k1-haskell"))
-          ];
+        ];
         buildable = if compiler.isGhcjs && true then false else true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

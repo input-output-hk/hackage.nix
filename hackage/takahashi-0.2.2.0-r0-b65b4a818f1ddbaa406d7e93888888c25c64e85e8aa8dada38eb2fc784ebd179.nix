@@ -21,7 +21,7 @@
       synopsis = "create slide for presentation.";
       description = "library for create slide for your presentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."monad-skeleton" or (errorHandler.buildDepError "monad-skeleton"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

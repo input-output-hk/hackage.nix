@@ -21,7 +21,7 @@
       synopsis = "JSON Pointer parsing and interpretation utilities";
       description = "This library provides a parser and a model,\nwhich is supposed to be later interpreted by the client libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

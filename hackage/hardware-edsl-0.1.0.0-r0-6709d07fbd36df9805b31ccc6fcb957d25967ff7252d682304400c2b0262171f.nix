@@ -21,7 +21,7 @@
       synopsis = "Deep embedding of hardware descriptions with code generation.";
       description = "Deep embedding of hardware descriptions with code generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
           (hsPkgs."operational-alacarte" or (errorHandler.buildDepError "operational-alacarte"))
           (hsPkgs."language-vhdl" or (errorHandler.buildDepError "language-vhdl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

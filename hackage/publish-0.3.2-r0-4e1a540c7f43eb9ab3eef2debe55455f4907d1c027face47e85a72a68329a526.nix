@@ -21,7 +21,7 @@
       synopsis = "Publishing tools for papers, books, and presentations";
       description = "Tools for rendering markdown-centric documents into PDFs.\n\nA description of this package, a list of features, and some background\nto its design is contained in the\n<https://github.com/oprdyn/publish/blob/master/README.markdown README>\non GitHub.\n\nThe main program, @render@, is available via a Docker image at\n<https://cloud.docker.com/u/oprdyn/repository/docker/oprdyn/publish-render/general docker.io/oprdyn/publish-render:latest>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "format" = {
@@ -40,9 +40,9 @@
             (hsPkgs."unbeliever" or (errorHandler.buildDepError "unbeliever"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "render" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."unbeliever" or (errorHandler.buildDepError "unbeliever"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

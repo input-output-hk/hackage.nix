@@ -21,7 +21,7 @@
       synopsis = "Core types and utilities for working with hledger (or c++ ledger) data.";
       description = "This is the reusable core of the hledger financial app; use it to\nbuild hledger and c++-ledger compatible finance tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

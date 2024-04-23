@@ -21,7 +21,7 @@
       synopsis = "Generating images of resolution trees for Prolog queries.";
       description = "This is the library part (See <http://hackage.haskell.org/package/prolog-graph> for the command line tool).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

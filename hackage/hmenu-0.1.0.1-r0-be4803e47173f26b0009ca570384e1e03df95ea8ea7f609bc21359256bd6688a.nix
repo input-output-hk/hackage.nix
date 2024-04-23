@@ -21,7 +21,7 @@
       synopsis = "CLI fuzzy finder and launcher";
       description = "hmenu is a program launcher for the terminal inspired by\ndmenu. Contrary to dmenu, it uses fuzzy filtering to find\nthe program you are looking for.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hmenu" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

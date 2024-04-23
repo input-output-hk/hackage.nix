@@ -6,8 +6,8 @@
         nix = import ../hackage/text-offset-0.1.0.0-r0-abdebe7411be8ef7cf689c88b69fe413414eb349259b6172d13ed102684c0937.nix;
         revNum = 0;
         sha256 = "abdebe7411be8ef7cf689c88b69fe413414eb349259b6172d13ed102684c0937";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

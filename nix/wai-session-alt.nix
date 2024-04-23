@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-session-alt-0.0.0-r0-73a5bc5b9bf897f90e3b537b2d167b988dd0547967f936d7da75a7d7e847f55d.nix;
         revNum = 0;
         sha256 = "73a5bc5b9bf897f90e3b537b2d167b988dd0547967f936d7da75a7d7e847f55d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

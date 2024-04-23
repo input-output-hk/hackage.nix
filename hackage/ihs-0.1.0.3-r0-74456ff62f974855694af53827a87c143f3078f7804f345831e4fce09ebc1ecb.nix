@@ -21,16 +21,16 @@
       synopsis = "Interpolated Haskell";
       description = "This abomination allows you to quickly generate text files in a style similar to ERB from Ruby or PHP. But you stay typesafe!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ihs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

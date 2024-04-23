@@ -21,15 +21,15 @@
       synopsis = "lens instances for extended-containers";
       description = "This package contains orphan instances of lens classes for the container types from extended-containers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."extended-containers" or (errorHandler.buildDepError "extended-containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

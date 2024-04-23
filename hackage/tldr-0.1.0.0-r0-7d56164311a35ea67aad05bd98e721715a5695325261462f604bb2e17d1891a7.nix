@@ -21,7 +21,7 @@
       synopsis = "Haskell tldr client";
       description = "Haskell tldr client with support for updating and viewing tldr pages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tldr" = {
           depends = [
@@ -42,18 +42,18 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."shell-conduit" or (errorHandler.buildDepError "shell-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tldr-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tldr" or (errorHandler.buildDepError "tldr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

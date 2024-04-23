@@ -21,7 +21,7 @@
       synopsis = "MState: A consistent State monad for concurrent applications.";
       description = "MState offers a State monad which can be used in concurrent\napplications. It also manages new threads and waits until the\nwhole state monad has been evaluated/executed before it returns\nthe state values (if desired).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."monad-peel" or (errorHandler.buildDepError "monad-peel"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

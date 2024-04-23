@@ -21,7 +21,7 @@
       synopsis = "Easy trivial configuration for Redis";
       description = "Datatype to parse redis connection settings from file like\n\n> host: localhost                 # host name or address\n> port: 6379                      # you can specify either port\n> # socket: /run/redis.socket     # or unix socket path\n> # service: redis                # or service name\n> password: \"pass\"                # if not specified then no password used\n> database: 0                     # database number to connect to\n> max-connections: 5              # max connections in pool\n> max-idle-time: 30               # keep connection open for 30 seconds";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

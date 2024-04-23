@@ -21,11 +21,11 @@
       synopsis = "Tightly binding infix function application";
       description = "Tightly binding infix function application for Haskell. `apply` has the highest infix precedence of 9, allowing it to be used in places where `$` would be appropriate if not for its precedence being the lowest precedence of 0.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

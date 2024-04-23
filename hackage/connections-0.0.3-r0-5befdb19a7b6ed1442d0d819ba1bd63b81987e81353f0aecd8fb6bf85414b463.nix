@@ -21,7 +21,7 @@
       synopsis = "Partial orders, Galois connections, and lattices.";
       description = "A library for numerical conversions using Galois connections.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."rings" or (errorHandler.buildDepError "rings"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."rings" or (errorHandler.buildDepError "rings"))
             (hsPkgs."lawz" or (errorHandler.buildDepError "lawz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

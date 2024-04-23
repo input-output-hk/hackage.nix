@@ -21,7 +21,7 @@
       synopsis = "Lenses and traversals for xml-conduit based on microlens";
       description = "This package provides DOM selectors based on lenses, using microlens instead of lens for a smaller dependency footprint";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."microlens-ghc" or (errorHandler.buildDepError "microlens-ghc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

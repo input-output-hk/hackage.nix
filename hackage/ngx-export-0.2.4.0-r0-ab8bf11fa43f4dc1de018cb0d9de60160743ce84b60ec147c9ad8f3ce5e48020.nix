@@ -21,7 +21,7 @@
       synopsis = "Helper module for Nginx haskell module";
       description = "Helper module for\n<http://github.com/lyokha/nginx-haskell-module Nginx haskell module>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

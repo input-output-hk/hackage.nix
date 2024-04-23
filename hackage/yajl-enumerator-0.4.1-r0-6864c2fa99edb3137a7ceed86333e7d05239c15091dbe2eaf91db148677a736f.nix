@@ -21,7 +21,7 @@
       synopsis = "Enumerator-based interface to YAJL, an event-based JSON implementation";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yajl" or (errorHandler.buildDepError "yajl"))
           (hsPkgs."json-types" or (errorHandler.buildDepError "json-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

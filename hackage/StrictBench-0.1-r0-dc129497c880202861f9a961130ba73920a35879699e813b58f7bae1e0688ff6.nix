@@ -21,15 +21,15 @@
       synopsis = "Benchmarking code through strict evaluation";
       description = "A benchmarking library with a simple purpose:\nto strictly evaluate a value and report how long it takes.\n\nCan be useful to identify the slow part of an\nalgorithm, since Haskell's lazy evaluation can make\nit hard to see where the bottleneck lies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."benchpress" or (errorHandler.buildDepError "benchpress"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

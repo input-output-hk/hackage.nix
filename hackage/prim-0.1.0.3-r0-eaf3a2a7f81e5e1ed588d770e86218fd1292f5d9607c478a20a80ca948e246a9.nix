@@ -21,13 +21,13 @@
       synopsis = "An ergonomic but conservative interface to ghc-prim";
       description = "This library reorganizes @ghc-prim@ in a sane but conservative way\n, without adding any fancy tricks like overloading or extra functions.\nIt's meant as a foundation for low-level programming in haskell, as well as (eventually),\na comprehensive home for documentation on ghc magic.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

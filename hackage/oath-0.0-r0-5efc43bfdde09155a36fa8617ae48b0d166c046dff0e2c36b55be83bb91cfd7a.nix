@@ -21,16 +21,16 @@
       synopsis = "Composable concurrent computation done right";
       description = "See README.md for details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-delay" or (errorHandler.buildDepError "stm-delay"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."oath" or (errorHandler.buildDepError "oath"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."oath" or (errorHandler.buildDepError "oath"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

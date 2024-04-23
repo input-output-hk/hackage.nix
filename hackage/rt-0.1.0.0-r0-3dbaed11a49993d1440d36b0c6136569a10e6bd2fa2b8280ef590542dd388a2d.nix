@@ -21,11 +21,11 @@
       synopsis = "A more fine-grained version of state threads (ST)";
       description = "Introduces the RT monad, which can be used to have more fine-grained STRefs without an extra parameter\nin the monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

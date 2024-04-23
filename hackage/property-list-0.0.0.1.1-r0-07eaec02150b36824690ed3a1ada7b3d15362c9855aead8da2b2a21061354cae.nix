@@ -21,7 +21,7 @@
       synopsis = "XML property list parser";
       description = "Parser for Apple's XML property list 1.0 format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."th-fold" or (errorHandler.buildDepError "th-fold"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

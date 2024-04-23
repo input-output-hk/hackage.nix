@@ -21,21 +21,21 @@
       synopsis = "A compatibility layer for base";
       description = "Ban CPP from your code.  See the README for what is covered:\n<https://github.com/sol/base-compat#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

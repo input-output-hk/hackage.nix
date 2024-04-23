@@ -21,7 +21,7 @@
       synopsis = "Input validation combinator library";
       description = "A small Haskell combinator library that provides a simple way of\nvalidating user provided data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "validate-input-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."validate-input" or (errorHandler.buildDepError "validate-input"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

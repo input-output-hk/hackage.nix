@@ -21,7 +21,7 @@
       synopsis = "Haskell Music Theory";
       description = "Haskell music theory library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."permutation" or (errorHandler.buildDepError "permutation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

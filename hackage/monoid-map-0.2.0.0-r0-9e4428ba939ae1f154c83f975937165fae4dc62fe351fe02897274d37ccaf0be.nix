@@ -21,7 +21,7 @@
       synopsis = "A monoidal map with the right group instance";
       description = "Newtype wrapper around 'Data.Map.Monoidal.MonoidalMap' that has a correct\n'Group' instance.  The 'Group' instance for Data.MonoidMap has a unique\nneutral element, as compared to 'Data.Map.Monoidal.MonoidalMap'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
           (hsPkgs."patch" or (errorHandler.buildDepError "patch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

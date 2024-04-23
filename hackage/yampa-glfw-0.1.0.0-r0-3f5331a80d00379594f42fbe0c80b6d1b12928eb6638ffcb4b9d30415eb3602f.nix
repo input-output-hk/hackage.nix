@@ -21,7 +21,7 @@
       synopsis = "Connects GLFW-b (GLFW 3+) with the Yampa FRP library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yampa-glfw-example" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
             (hsPkgs."yampa-glfw" or (errorHandler.buildDepError "yampa-glfw"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

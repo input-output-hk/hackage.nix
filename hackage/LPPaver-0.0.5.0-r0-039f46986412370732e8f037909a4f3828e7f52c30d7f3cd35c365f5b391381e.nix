@@ -21,7 +21,7 @@
       synopsis = "An automated prover targeting problems that involve nonlinear real arithmetic";
       description = "Please see the README on GitHub at <https://github.com/rasheedja/LPPaver#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
           (hsPkgs."simplex-method" or (errorHandler.buildDepError "simplex-method"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lppaver" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
             (hsPkgs."simplex-method" or (errorHandler.buildDepError "simplex-method"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "LPPaver-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
             (hsPkgs."simplex-method" or (errorHandler.buildDepError "simplex-method"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

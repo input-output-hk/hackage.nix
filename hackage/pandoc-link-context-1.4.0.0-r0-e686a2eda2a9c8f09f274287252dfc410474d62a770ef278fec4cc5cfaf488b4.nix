@@ -21,7 +21,7 @@
       synopsis = "Extract \"contextual links\" from Pandoc";
       description = "A library to pull out all links with their surrounding context in your Pandoc documents. Useful for software dealing with wiki-links and Zettelkasten.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

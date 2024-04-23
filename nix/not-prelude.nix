@@ -6,8 +6,8 @@
         nix = import ../hackage/not-prelude-0.1.0.0-r0-a1f95d85dc142c321e8f131d38f7606c7575159a2581335fcf9d456db569f12e.nix;
         revNum = 0;
         sha256 = "a1f95d85dc142c321e8f131d38f7606c7575159a2581335fcf9d456db569f12e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

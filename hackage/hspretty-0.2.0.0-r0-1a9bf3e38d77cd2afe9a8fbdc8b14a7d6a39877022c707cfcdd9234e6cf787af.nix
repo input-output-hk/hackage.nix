@@ -21,7 +21,7 @@
       synopsis = "My opinionated Haskell project formatter.";
       description = "This is a formatter for Haskell projects (for example, for *.cabal files and\n*.hs files) that can perform both in-place formatting and formatting checks.\nIn the background, it uses Ormolu and cabal-fmt. Please make sure that\ncabal-fmt is installed separately before running it, since it invokes\ncabal-fmt as a command-line utility.\n.\nIt is licensed under the BSD-3-Clause license to match Ormolu and cabal-fmt.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,26 +39,26 @@
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hspretty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspretty" or (errorHandler.buildDepError "hspretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspretty-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

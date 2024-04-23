@@ -21,7 +21,7 @@
       synopsis = "List dir files starting from a specific name";
       description = "`lsfrom` lists files in a directory that start with\na particular sequence of characters and those after it\nwith respect to locale collation.\nThis can be useful for continuing a script on the files in a dir\nafter a failure, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lsfrom" = {
@@ -30,10 +30,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

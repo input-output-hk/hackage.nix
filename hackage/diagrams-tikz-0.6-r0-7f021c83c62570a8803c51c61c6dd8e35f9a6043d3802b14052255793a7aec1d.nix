@@ -21,7 +21,7 @@
       synopsis = "TikZ backend for diagrams drawing EDSL";
       description = "This package provides a modular backend for rendering\ndiagrams created with the diagrams EDSL using the\nTikZ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

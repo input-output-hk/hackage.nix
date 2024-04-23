@@ -21,7 +21,7 @@
       synopsis = "Voice support for discord-haskell.";
       description = "Supplementary library to discord-haskell. See the project README on GitHub for more information. <https://github.com/yutotakano/discord-haskell-voice>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "basic-music-bot" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "join-all-on-start" = {
           depends = [
             (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))
@@ -101,9 +101,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for processing LLVM assembly codes";
       description = "A pure Haskell library for analyzing and transforming LLVM assembly codes.\nIt includes:\n1) a parser to parse LLVM code in its text form\n2) an internal IR that can be feed into Hoopl\n3) a set of utility functions to convert LLVM AST to and from the internal IR\n4) a set of utility functions to query the IR";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "llvm-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

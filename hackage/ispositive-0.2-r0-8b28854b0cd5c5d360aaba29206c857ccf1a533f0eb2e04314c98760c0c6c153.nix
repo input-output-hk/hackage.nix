@@ -21,21 +21,21 @@
       synopsis = "Positive integers test.";
       description = "Tests whether a number is a positive integer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."ispositive" or (errorHandler.buildDepError "ispositive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

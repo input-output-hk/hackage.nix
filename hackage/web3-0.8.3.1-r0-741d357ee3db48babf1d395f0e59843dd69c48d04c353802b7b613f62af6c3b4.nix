@@ -21,7 +21,7 @@
       synopsis = "Ethereum API for Haskell";
       description = "Web3 is a Haskell client library for Ethereum";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,10 +53,10 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ] ++ (pkgs.lib).optional (flags.compiler) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
-        libs = (pkgs.lib).optional (flags.compiler) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
+        ] ++ pkgs.lib.optional (flags.compiler) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
+        libs = pkgs.lib.optional (flags.compiler) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
         buildable = true;
-        };
+      };
       tests = {
         "live" = {
           depends = [
@@ -96,10 +96,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ] ++ (pkgs.lib).optional (flags.compiler) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
-          libs = (pkgs.lib).optional (flags.compiler) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
+          ] ++ pkgs.lib.optional (flags.compiler) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
+          libs = pkgs.lib.optional (flags.compiler) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
           buildable = true;
-          };
+        };
         "unit" = {
           depends = [
             (hsPkgs."OneTuple" or (errorHandler.buildDepError "OneTuple"))
@@ -134,10 +134,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ] ++ (pkgs.lib).optional (flags.compiler) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
-          libs = (pkgs.lib).optional (flags.compiler) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
+          ] ++ pkgs.lib.optional (flags.compiler) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
+          libs = pkgs.lib.optional (flags.compiler) (pkgs."solidity" or (errorHandler.sysDepError "solidity"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

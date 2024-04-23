@@ -21,7 +21,7 @@
       synopsis = "Snippet support for yi";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."yi-snippet" or (errorHandler.buildDepError "yi-snippet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

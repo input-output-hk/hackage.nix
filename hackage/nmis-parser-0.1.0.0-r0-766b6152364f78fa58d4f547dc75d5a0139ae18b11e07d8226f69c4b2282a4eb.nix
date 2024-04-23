@@ -21,24 +21,24 @@
       synopsis = "NMIS file parser";
       description = "Parser for __NMIS__ (Network Management Information System) files to record type. Main module to use is __Text.Nmis__ and __parseNmis__ function";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "nmis-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Nmis" or (errorHandler.buildDepError "Nmis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

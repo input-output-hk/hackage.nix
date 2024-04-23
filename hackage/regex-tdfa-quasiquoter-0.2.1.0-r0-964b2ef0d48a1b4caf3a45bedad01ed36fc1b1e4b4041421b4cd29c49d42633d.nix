@@ -21,15 +21,15 @@
       synopsis = "Quasi-quoter for TDFA (extended POSIX) regular\nexpressions.";
       description = "Quasi-quoter for TDFA (extended POSIX) regular\nexpressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Bindings for the pthread library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

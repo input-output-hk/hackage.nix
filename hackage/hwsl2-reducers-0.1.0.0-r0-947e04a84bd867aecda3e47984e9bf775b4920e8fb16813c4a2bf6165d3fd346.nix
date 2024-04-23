@@ -21,7 +21,7 @@
       synopsis = "Semigroup and Reducer instances for Data.Hash.SL2";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hwsl2" or (errorHandler.buildDepError "hwsl2"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."reducers" or (errorHandler.buildDepError "reducers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

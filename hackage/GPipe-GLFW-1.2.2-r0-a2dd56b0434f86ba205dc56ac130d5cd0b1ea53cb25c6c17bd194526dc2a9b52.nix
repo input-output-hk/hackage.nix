@@ -21,7 +21,7 @@
       synopsis = "GLFW OpenGL context creation for GPipe";
       description = "GPipe-GLFW is a utility library to enable the use of GLFW as\nthe OpenGL window and context handler for GPipe. GPipe is a\ntypesafe functional API based on the conceptual model of\nOpenGL, but without the imperative state machine.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
           (hsPkgs."GPipe" or (errorHandler.buildDepError "GPipe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

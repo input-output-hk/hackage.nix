@@ -21,13 +21,13 @@
       synopsis = "The Bluefin effect system";
       description = "The Bluefin effect system";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."bluefin-internal" or (errorHandler.buildDepError "bluefin-internal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

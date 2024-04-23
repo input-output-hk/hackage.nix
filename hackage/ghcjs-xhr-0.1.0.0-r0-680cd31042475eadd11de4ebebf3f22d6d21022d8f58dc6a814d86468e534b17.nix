@@ -21,15 +21,15 @@
       synopsis = "XmlHttpRequest (\"AJAX\") bindings for GHCJS";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "3D model parsers";
       description = "3D model parsers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."packer" or (errorHandler.buildDepError "packer"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

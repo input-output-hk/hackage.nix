@@ -21,7 +21,7 @@
       synopsis = "composable SQL generation";
       description = "A mid level applicative SQL generation library\n\nHaskqly intends to be a mid-level SQL generation library.  It doesn't use advanced type extensions\nto encode the schema in the types., but provides a light applicative layer to easy the conversion\nbetween haskell and SQL.  It is inspired by the clojures honeysql library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

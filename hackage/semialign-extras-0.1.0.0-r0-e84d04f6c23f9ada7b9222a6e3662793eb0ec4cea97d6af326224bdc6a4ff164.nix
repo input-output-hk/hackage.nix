@@ -21,7 +21,7 @@
       synopsis = "Extra functions for working with Semialigns";
       description = "The 'Semialign' typeclass lets us line up two structures of the\nsame type. By combining this with the classes from the\n\"witherable\" package, we can derive a number of useful\ndiff \\/ patch \\/ merge-style operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."semialign-indexed" or (errorHandler.buildDepError "semialign-indexed"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

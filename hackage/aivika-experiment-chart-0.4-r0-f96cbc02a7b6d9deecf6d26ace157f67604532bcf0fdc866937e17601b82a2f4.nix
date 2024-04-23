@@ -21,7 +21,7 @@
       synopsis = "Simulation experiments with charting for the Aivika library";
       description = "This package complements the Aivika and Aivika Experiment packages with\ncharting capabilites. Now the simulation results can be represented\nas charts.\n\nIt was intentionally made a separate package as it has heavy dependencies\non Haskell Charts, Cairo and GTK.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-experiment" or (errorHandler.buildDepError "aivika-experiment"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

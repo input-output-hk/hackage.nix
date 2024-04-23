@@ -21,14 +21,14 @@
       synopsis = "Finds values satisfying a lazy predicate";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."size-based" or (errorHandler.buildDepError "size-based"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

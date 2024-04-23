@@ -21,7 +21,7 @@
       synopsis = "Be notified when a file gets appended, solely with what was added.";
       description = "See module for docs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "follow-file" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."attoparsec-path" or (errorHandler.buildDepError "attoparsec-path"))
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generates DDL suggestions based on a CSV file";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dawdle" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."dawdle" or (errorHandler.buildDepError "dawdle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

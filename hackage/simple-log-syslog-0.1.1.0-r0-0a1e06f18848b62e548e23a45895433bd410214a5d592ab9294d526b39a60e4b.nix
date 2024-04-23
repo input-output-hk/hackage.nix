@@ -21,7 +21,7 @@
       synopsis = "Syslog backend for simple-log";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."simple-log" or (errorHandler.buildDepError "simple-log"))
           (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

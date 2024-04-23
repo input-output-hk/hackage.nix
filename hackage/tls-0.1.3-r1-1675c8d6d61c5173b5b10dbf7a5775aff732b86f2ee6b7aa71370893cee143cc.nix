@@ -21,7 +21,7 @@
       synopsis = "TLS protocol for Server and Client sides";
       description = "Implementation of the TLS protocol, focusing on purity and more type-checking.\n\nCurrently implement only partially the TLS1.0 protocol. Not yet properly secure.\nDo not yet use as replacement to more mature implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,28 +37,28 @@
           (hsPkgs."spoon" or (errorHandler.buildDepError "spoon"))
           (hsPkgs."cryptocipher" or (errorHandler.buildDepError "cryptocipher"))
           (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stunnel" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
+        };
         "Tests" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

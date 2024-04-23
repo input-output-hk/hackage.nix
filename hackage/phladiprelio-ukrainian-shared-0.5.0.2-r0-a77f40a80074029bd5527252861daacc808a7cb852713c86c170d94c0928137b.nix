@@ -14,7 +14,7 @@
       identifier = {
         name = "phladiprelio-ukrainian-shared";
         version = "0.5.0.2";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A shared by different Ukrainian implementations of the PhLADiPreLiO functionality.";
       description = "Is intended to be used by both old phonetic-languages-simplified-examples-array and new phladiprelio-ukrainian-simple packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
           (hsPkgs."phladiprelio-general-datatype" or (errorHandler.buildDepError "phladiprelio-general-datatype"))
           (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/gogol-cloudprivatecatalog-0.5.0-r0-fba766382f1f60d63fc0eb71c4129449c7e3795b40a594d9ba672fa20da2e9ab.nix;
         revNum = 0;
         sha256 = "fba766382f1f60d63fc0eb71c4129449c7e3795b40a594d9ba672fa20da2e9ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

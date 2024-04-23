@@ -21,7 +21,7 @@
       synopsis = "A full-featured library for parsing, validating, and rendering email addresses";
       description = "A modern library for working with email addresses.  This package can\nbe used to validate user input or handle various flavors of\naddresses that appear in places such as mail messages.\n\nEmail addresses can be decoded, manipulated, then rendered back to\ntext using the simple @local-part\\@domain@ format or the more\ncomplete syntax that allows for display names and comments.\n\nComprehensive documentation can be found in the \"Addy\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

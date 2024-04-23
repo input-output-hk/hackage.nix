@@ -21,7 +21,7 @@
       synopsis = "publish hoodle files as a static web site";
       description = "This package provieds a simple tool hoodle-publish which make a static web site from a directory containing hoodle files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,11 +47,11 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ] ++ (if flags.gtk3
+        ] ++ (if flags.gtk3
           then [ (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3")) ]
           else [ (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "hoodle-publish" = {
           depends = [
@@ -61,11 +61,11 @@
             (hsPkgs."directory-tree" or (errorHandler.buildDepError "directory-tree"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hoodle-publish" or (errorHandler.buildDepError "hoodle-publish"))
-            ] ++ (if flags.gtk3
+          ] ++ (if flags.gtk3
             then [ (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3")) ]
             else [ (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

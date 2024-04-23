@@ -21,7 +21,7 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "The PCRE backend to accompany regex-base, with bundled code from www.pcre.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.newbase
@@ -31,7 +31,7 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else if flags.splitbase
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -39,12 +39,12 @@
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
-              ];
+            ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

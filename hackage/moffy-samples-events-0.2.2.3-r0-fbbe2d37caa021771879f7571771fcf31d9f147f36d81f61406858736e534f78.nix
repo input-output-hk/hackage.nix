@@ -21,7 +21,7 @@
       synopsis = "Events for sample codes of moffy";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy-samples-events#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
           (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
           (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "moffy-samples-events-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
             (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

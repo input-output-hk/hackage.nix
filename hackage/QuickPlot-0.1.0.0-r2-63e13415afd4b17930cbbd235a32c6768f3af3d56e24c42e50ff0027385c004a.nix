@@ -21,7 +21,7 @@
       synopsis = "Quick and easy data visualization with Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "BasicPlotting" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickPlot" or (errorHandler.buildDepError "QuickPlot"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "XPath-like syntax for querying JSON";
       description = "JPath is XPath-inspired query language to query JSON data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Video game";
       description = "Video game implemented in Yampa.\n\n<<https://github.com/ivanperez-keera/SpaceInvaders/blob/develop/screenshots/gameplay.gif?raw=true>>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "spaceInvaders" = {
@@ -31,9 +31,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

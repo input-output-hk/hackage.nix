@@ -6,8 +6,8 @@
         nix = import ../hackage/sh2md-0.1.0.0-r0-9c79beec27d89aece1110280ad503bd65f1a28d1bb528c1db3226bc401eb8b96.nix;
         revNum = 0;
         sha256 = "9c79beec27d89aece1110280ad503bd65f1a28d1bb528c1db3226bc401eb8b96";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

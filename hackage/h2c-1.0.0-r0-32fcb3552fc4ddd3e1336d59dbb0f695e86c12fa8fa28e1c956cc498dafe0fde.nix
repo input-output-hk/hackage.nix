@@ -21,7 +21,7 @@
       synopsis = "Bindings to Linux I2C with support for repeated-start transactions.";
       description = "H2C is a high-level binding to the Linux I2C subsystem with support for repeated-start transactions, not just individual reads and writes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

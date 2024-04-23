@@ -21,7 +21,7 @@
       synopsis = "Haskell IDE written in Haskell";
       description = "An Integrated Development Environment for Haskell written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "leksah" = {
@@ -47,13 +47,13 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."igemacintegration" or (errorHandler.sysDepError "igemacintegration"));
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32")) ++ pkgs.lib.optional (system.isOsx) (pkgs."igemacintegration" or (errorHandler.sysDepError "igemacintegration"));
           buildable = true;
-          };
-        "leksahecho" = { buildable = true; };
         };
+        "leksahecho" = { buildable = true; };
       };
-    }
+    };
+  }

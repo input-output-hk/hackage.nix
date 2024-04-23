@@ -21,38 +21,38 @@
       synopsis = "Debug anything without recomping everything!";
       description = "Lighweight debugging based on the observing of intermediate values. How values are observed can be derived with the Generic Deriving Mechanism, or generated with Template Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hoed-examples-SternBrocot" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "hoed-examples-GDM-hello" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "hoed-examples-TH-hello" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

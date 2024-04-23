@@ -21,17 +21,17 @@
       synopsis = "Lexical extension for Quasi-Quotations using French-Quotes";
       description = "Translate the French-Quotes in a UTF-8 Haskell file into\na Quasi-Quotation that can be instantiated later on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "frquotes" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A live recompiler";
       description = "Live recompiler for Haskell\n\n<<http://lukexi.github.io/HaliveDemo.gif>>\n\n/Usage:/\n\n> halive path/to/myfile.hs [optionally any/extra include/dirs ..] -- [args to app]\n\nSee <https://github.com/lukexi/halive/blob/master/README.md README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."signal" or (errorHandler.buildDepError "signal"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
+      };
       exes = {
         "halive" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."halive" or (errorHandler.buildDepError "halive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "demo" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "subhalive" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Groups, rings, semirings, and dioids.";
       description = "Lawful algebraic classes and a la carte instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."connections" or (errorHandler.buildDepError "connections"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."property" or (errorHandler.buildDepError "property"))
             (hsPkgs."rings" or (errorHandler.buildDepError "rings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Informative annotations which don't change equality";
       description = "This package introduces a type @Ann a@ to annotate data types\nwith information which doesn't influence the behaviour of your\nprogram. These annotations can then be displayed, as assistance to\nthe user.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

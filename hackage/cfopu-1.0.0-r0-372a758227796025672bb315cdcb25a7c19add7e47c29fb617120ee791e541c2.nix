@@ -21,7 +21,7 @@
       synopsis = "cfopu processor";
       description = "A cfopu processor that can interpret and process cfopu source";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cfopu" = {
@@ -32,12 +32,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."dequeue" or (errorHandler.buildDepError "dequeue"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

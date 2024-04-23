@@ -21,7 +21,7 @@
       synopsis = "Zobrist keys for game state tracking";
       description = "ZCache provides zobrist key generation for perfect information games.\nIt also includes convenience data structures  (maps and sets) that\nuse zobrist keys internally.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Dingo is a Rich Internet Application platform based on the Warp web server.";
       description = "Dingo is a Rich Internet Application platform based on the Warp web server. It allows you to write code which looks very much like regular GUI code and have it work in the browser.\nThis package contains the core modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,8 +54,8 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."web-css" or (errorHandler.buildDepError "web-css"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

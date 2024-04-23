@@ -21,7 +21,7 @@
       synopsis = "Auto-generate a server for your datatype";
       description = "This library auto-generates a REST API from any datatype\nthat derives the `Generic` interface\n\nSee the documentation in \"Server.Generic\" for an example of\nhow to use this library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

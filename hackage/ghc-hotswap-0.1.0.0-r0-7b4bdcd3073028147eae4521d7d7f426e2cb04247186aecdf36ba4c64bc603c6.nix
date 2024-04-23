@@ -21,7 +21,7 @@
       synopsis = "Library for hot-swapping shared objects in GHC";
       description = "Convenience API for safely hot-swapping shared objects using GHC's GHCi linker";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."concurrent-extra" or (errorHandler.buildDepError "concurrent-extra"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

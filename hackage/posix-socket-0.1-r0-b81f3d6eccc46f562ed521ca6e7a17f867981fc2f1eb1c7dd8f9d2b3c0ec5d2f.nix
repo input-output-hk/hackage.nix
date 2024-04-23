@@ -21,7 +21,7 @@
       synopsis = "Bindings to the POSIX socket API";
       description = "This package provides bindings to the POSIX socket API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."data-flags" or (errorHandler.buildDepError "data-flags"))
           (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

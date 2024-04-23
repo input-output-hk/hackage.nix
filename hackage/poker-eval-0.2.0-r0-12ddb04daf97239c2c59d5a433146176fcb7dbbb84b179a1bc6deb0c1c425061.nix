@@ -21,7 +21,7 @@
       synopsis = "Binding to libpoker-eval";
       description = "Performance oriented functions for judging poker hands\nand related tasks.\n\nHaddock documentation can be found here: <http://mirror.seize.it/poker-eval/documentation/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,11 +30,11 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."poker-eval" or (errorHandler.sysDepError "poker-eval"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tests for hmatrix";
       description = "Tests for hmatrix";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ] ++ (pkgs.lib).optional (flags.gsl) (hsPkgs."hmatrix-gsl" or (errorHandler.buildDepError "hmatrix-gsl"));
+        ] ++ pkgs.lib.optional (flags.gsl) (hsPkgs."hmatrix-gsl" or (errorHandler.buildDepError "hmatrix-gsl"));
         buildable = true;
-        };
+      };
       tests = {
         "hmatrix-base-testsuite" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hmatrix-gsl-testsuite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,10 +53,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.gsl then true else false;
-          };
         };
+      };
       benchmarks = {
         "hmatrix-base-benchmark" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

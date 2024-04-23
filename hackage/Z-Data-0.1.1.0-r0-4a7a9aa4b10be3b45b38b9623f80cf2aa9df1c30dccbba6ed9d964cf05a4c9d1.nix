@@ -21,7 +21,7 @@
       synopsis = "array, vector and text";
       description = "This package provides array, slice and text operations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,19 +36,19 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ] ++ (if flags.integer-simple
+        ] ++ (if flags.integer-simple
           then [
             (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-Data-Test" = {
           depends = [
@@ -62,15 +62,15 @@
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ] ++ (if flags.integer-simple
+          ] ++ (if flags.integer-simple
             then [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]
+            ]
             else [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

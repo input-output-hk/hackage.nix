@@ -6,8 +6,8 @@
         nix = import ../hackage/Blueprint-0.1-r0-1cfa46d6ac8133048d392edef3802d328724213372c7c4d77550746d216899e2.nix;
         revNum = 0;
         sha256 = "1cfa46d6ac8133048d392edef3802d328724213372c7c4d77550746d216899e2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

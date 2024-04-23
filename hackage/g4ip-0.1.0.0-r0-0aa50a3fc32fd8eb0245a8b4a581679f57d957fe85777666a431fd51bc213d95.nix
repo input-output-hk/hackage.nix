@@ -21,20 +21,20 @@
       synopsis = "A theorem prover for propositional logic that uses G4ip";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-g4ip" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."g4ip" or (errorHandler.buildDepError "g4ip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

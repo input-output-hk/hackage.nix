@@ -21,7 +21,7 @@
       synopsis = "Default config and main functions for your yesod application";
       description = "Convenient wrappers for your the configuration and\nexecution of your yesod application";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."shakespeare-css" or (errorHandler.buildDepError "shakespeare-css"))
           (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

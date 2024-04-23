@@ -6,8 +6,8 @@
         nix = import ../hackage/boardgame-0.0.0.1-r0-66b5c85ee51e7ad65b67ae7f93b73587a228a1badbb70938a173b38c3a291281.nix;
         revNum = 0;
         sha256 = "66b5c85ee51e7ad65b67ae7f93b73587a228a1badbb70938a173b38c3a291281";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

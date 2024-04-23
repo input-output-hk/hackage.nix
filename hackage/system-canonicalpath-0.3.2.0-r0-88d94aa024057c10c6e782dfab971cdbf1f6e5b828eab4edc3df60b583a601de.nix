@@ -21,7 +21,7 @@
       synopsis = "Abstract data type for canonical paths with some utilities";
       description = "This library provides abstract data type named 'Filesystem.CanonicalPath.CanonicalPath' and some useful functions for working with it.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "canonicalpath_tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."chell" or (errorHandler.buildDepError "chell"))
             (hsPkgs."system-canonicalpath" or (errorHandler.buildDepError "system-canonicalpath"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

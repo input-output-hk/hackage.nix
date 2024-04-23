@@ -21,14 +21,14 @@
       synopsis = "Port of parsec's expression parser to attoparsec.";
       description = "Port of parsec's expression parser to attoparsec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Utilities for working with OpenGL matrices";
       description = "Some utilities for working with OpenGL matrices,\nmost of the source is from\nhttps://github.com/kig/tomtegebra/blob/master/Tomtegebra/Matrix.hs,\nby kig (Ilmari Heikkinen).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

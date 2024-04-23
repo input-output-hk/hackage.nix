@@ -21,7 +21,7 @@
       synopsis = "Zeit Now haskell-side integration and introspection tools.";
       description = "\nClient library for calling the AWS Lambda Runtime API API based on http-client.\n\nhost: localhost\n\nbase path: http://localhost/2018-06-01\n\nAWS Lambda Runtime API API version: 1.0.3\n\nOpenAPI version: 3.0.0\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,13 +51,13 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ] ++ (if flags.usekatip
+        ] ++ (if flags.usekatip
           then [ (hsPkgs."katip" or (errorHandler.buildDepError "katip")) ]
           else [
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "module-scanner" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -96,9 +96,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Basic plotting of tabular data for the command line.";
       description = "A quick and easy way to plot tabular data from the command line. Meant for quick visualizations, not too customizable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ploterific" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."ploterific" or (errorHandler.buildDepError "ploterific"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

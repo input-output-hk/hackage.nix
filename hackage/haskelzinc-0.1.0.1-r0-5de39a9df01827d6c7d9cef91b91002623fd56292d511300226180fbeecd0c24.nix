@@ -21,7 +21,7 @@
       synopsis = "CP in Haskell through MiniZinc       ";
       description = "This library aims to link Haskell with MiniZinc. It\nprovides an abstract syntax tree for the MiniZinc\nlanguage, with which one can define MiniZinc\nconstraint models. One can directly get the solution(s)\nof the model or separately use the corresponding modules\nof the library to pretty-print the model or parse its\nsolution(s).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

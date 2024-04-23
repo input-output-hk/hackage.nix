@@ -21,14 +21,14 @@
       synopsis = "Invertible syntax descriptions for both parsing and pretty printing.";
       description = "Invertible syntax descriptions as a common\ninterface for parser combinator and pretty\nprinting libraries, as described in the paper:\n\nTillmann Rendel and Klaus Ostermann.\nInvertible Syntax Descriptions:\nUnifying Parsing and Pretty Printing.\nIn /Proc. of Haskell Symposium/, 2010.\n\nThe distribution contains a file\n/Example.lhs/ with the example grammar from\nthe paper.\n\nThe paper also describes partial isomorphisms.\nThese are distributed separately in the\n/partial-isomorphism/ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."partial-isomorphisms" or (errorHandler.buildDepError "partial-isomorphisms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

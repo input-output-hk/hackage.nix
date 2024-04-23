@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to Google's AJAX Language API for Translation and Detection";
       description = "Haskell binding to Google's AJAX Language API for Translation and Detection.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Shield.io style badge generator";
       description = "see example: <https://github.com/philopon/barrier/blob/master/examples/example.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,36 +31,36 @@
           (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "barrier-data-generator" = {
-          depends = (pkgs.lib).optionals (flags.generator) [
+          depends = pkgs.lib.optionals (flags.generator) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."freetype2" or (errorHandler.buildDepError "freetype2"))
-            ];
+          ];
           buildable = if flags.generator then true else false;
-          };
-        "barrier-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
-            (hsPkgs."barrier" or (errorHandler.buildDepError "barrier"))
-            ];
-          buildable = if flags.example then true else false;
-          };
-        "barrier-test-result-generator" = {
-          depends = (pkgs.lib).optionals (flags.test-results) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
-            (hsPkgs."barrier" or (errorHandler.buildDepError "barrier"))
-            ];
-          buildable = if flags.test-results then true else false;
-          };
         };
+        "barrier-example" = {
+          depends = pkgs.lib.optionals (flags.example) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
+            (hsPkgs."barrier" or (errorHandler.buildDepError "barrier"))
+          ];
+          buildable = if flags.example then true else false;
+        };
+        "barrier-test-result-generator" = {
+          depends = pkgs.lib.optionals (flags.test-results) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
+            (hsPkgs."barrier" or (errorHandler.buildDepError "barrier"))
+          ];
+          buildable = if flags.test-results then true else false;
+        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."barrier" or (errorHandler.buildDepError "barrier"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

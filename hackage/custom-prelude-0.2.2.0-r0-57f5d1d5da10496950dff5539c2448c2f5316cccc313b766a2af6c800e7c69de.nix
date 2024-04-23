@@ -21,15 +21,15 @@
       synopsis = "An enhanced prelude, serving as a foundation for my projects";
       description = "An enhanced prelude, serving as a foundation for my projects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

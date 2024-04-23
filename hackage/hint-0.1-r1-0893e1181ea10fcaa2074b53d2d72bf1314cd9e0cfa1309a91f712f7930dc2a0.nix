@@ -21,7 +21,7 @@
       synopsis = "Runtime Haskell interpreter (GHC API wrapper)";
       description = "This library defines an @Interpreter@ monad, inside which modules can be\nloaded, and strings with Haskell expressions can be evaluated, coerced\ninto values, or type-checked. The library is thread-safe and all\noperations (even the coertion of expressions to values) are type-safe.\nIt is, esentially, a huge subset of the GHC API wrapped in a simpler\nAPI. Tested with GHC 6.6.1.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

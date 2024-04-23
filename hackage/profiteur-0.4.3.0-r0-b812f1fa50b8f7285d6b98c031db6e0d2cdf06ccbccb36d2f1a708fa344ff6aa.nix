@@ -21,7 +21,7 @@
       synopsis = "Treemap visualiser for GHC prof files";
       description = "Treemap visualiser for GHC prof files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "profiteur" = {
@@ -37,9 +37,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Client for Stratum protocol";
       description = "Connects to Electrum server via Stratum protocol and\nallows querying bitcoin wallet balances and other commands\nsupported by the server. It supports the original JSON format\nin addition to shell script friendly JSON breadcrumbs format.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stratum-tool" = {
@@ -41,9 +41,9 @@
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (flags.ssl) (hsPkgs."connection" or (errorHandler.buildDepError "connection"));
+          ] ++ pkgs.lib.optional (flags.ssl) (hsPkgs."connection" or (errorHandler.buildDepError "connection"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

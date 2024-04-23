@@ -21,20 +21,20 @@
       synopsis = "A minimal testing library";
       description = "A minimal testing library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dwergaz" or (errorHandler.buildDepError "dwergaz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

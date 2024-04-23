@@ -21,7 +21,7 @@
       synopsis = "Basic support for using the Ace editor with Reflex.";
       description = "Provides basic support for using the Ace editor with Reflex-DOM web apps.\n\nAce editor: <https://ace.c9.io/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

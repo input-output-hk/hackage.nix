@@ -21,15 +21,15 @@
       synopsis = "rfc1413 server";
       description = "Haskell implementation of a user space rfc1413 server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
           (hsPkgs."rfc1413-types" or (errorHandler.buildDepError "rfc1413-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

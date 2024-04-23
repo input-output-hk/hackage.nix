@@ -21,7 +21,7 @@
       synopsis = "Test your 'Aeson' 'Serialize' and 'Binary' instances for stability over time";
       description = "When I am programming haskell I write a lot of getter setter serialization tests\nfor aeson, binary, cereal\nThese libraries are often associated with state.\nThis library standardizes those tests";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

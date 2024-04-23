@@ -21,14 +21,14 @@
       synopsis = "Amazon Data Pipeline SDK.";
       description = "AWS Data Pipeline is a web service that you can use to automate the\nmovement and transformation of data. With AWS Data Pipeline, you can\ndefine data-driven workflows, so that tasks can be dependent on the\nsuccessful completion of previous tasks.\n\n/See:/ <http://docs.aws.amazon.com/datapipeline/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -15,7 +15,7 @@
       cryptonite = false;
       pbkdf2 = true;
       scrypt = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "password"; version = "3.0.4.0"; };
@@ -32,8 +32,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -44,13 +44,13 @@
           (hsPkgs."password-types" or (errorHandler.buildDepError "password-types"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if flags.crypton
+        ] ++ (if flags.crypton
           then [ (hsPkgs."crypton" or (errorHandler.buildDepError "crypton")) ]
           else [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "password-tasty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,15 +78,15 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.crypton
+          ] ++ (if flags.crypton
             then [
               (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
-              ]
+            ]
             else [
               (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

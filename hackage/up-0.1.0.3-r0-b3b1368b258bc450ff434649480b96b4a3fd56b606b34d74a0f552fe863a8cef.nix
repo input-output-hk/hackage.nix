@@ -21,7 +21,7 @@
       synopsis = "Command line tool to generate pathnames to facilitate moving upward in a file system.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "up" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."lambda-options" or (errorHandler.buildDepError "lambda-options"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Helper functions for working with haskell-src-exts trees";
       description = "Helper functions for working with haskell-src-exts trees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

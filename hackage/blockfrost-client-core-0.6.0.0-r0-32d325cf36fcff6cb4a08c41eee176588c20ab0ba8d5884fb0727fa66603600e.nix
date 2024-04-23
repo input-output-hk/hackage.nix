@@ -21,7 +21,7 @@
       synopsis = "blockfrost.io common client definitions / instances";
       description = "HasClient for our auth";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."servant-multipart-api" or (errorHandler.buildDepError "servant-multipart-api"))
           (hsPkgs."servant-multipart-client" or (errorHandler.buildDepError "servant-multipart-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

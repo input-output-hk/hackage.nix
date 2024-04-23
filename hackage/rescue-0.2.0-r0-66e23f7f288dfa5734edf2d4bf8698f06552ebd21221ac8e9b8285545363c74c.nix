@@ -21,7 +21,7 @@
       synopsis = "More understandable exceptions";
       description = "An error handling library focused on clarity and control";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."world-peace" or (errorHandler.buildDepError "world-peace"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rescue-doctest" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."world-peace" or (errorHandler.buildDepError "world-peace"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rescue-lint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."world-peace" or (errorHandler.buildDepError "world-peace"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rescue-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -90,10 +90,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."world-peace" or (errorHandler.buildDepError "world-peace"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "rescue-benchmark" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."world-peace" or (errorHandler.buildDepError "world-peace"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

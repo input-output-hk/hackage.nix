@@ -21,7 +21,7 @@
       synopsis = "Typson Esqueleto Integration";
       description = "Please see the README on GitHub at <https://github.com/aaronallen8455/typson#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typson-core" or (errorHandler.buildDepError "typson-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typson-esqueleto-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typson-core" or (errorHandler.buildDepError "typson-core"))
             (hsPkgs."typson-esqueleto" or (errorHandler.buildDepError "typson-esqueleto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

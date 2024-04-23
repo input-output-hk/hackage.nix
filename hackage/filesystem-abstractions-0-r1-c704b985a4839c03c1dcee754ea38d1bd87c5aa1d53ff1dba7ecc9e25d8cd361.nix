@@ -21,7 +21,7 @@
       synopsis = "A shared set of abstractions and types for representing filessytem data.";
       description = "A shared set of abstractions and types for representing filessytem data, and functions to work with them.\nFocused on a correct representation of important aspects of specific views of filesystems and type safety.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."list-tries" or (errorHandler.buildDepError "list-tries"))
           (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

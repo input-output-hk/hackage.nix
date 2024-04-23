@@ -21,7 +21,7 @@
       synopsis = "Encoder and decoder for the TensorFlow \\\"TFRecords\\\" format.";
       description = "Encoder and decoder for the TensorFlow \\\"TFRecords\\\" format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."snappy-framing" or (errorHandler.buildDepError "snappy-framing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "RecordsTest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tensorflow-records" or (errorHandler.buildDepError "tensorflow-records"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

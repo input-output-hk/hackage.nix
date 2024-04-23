@@ -21,14 +21,14 @@
       synopsis = "Haskell interface to the DTrace system tracing utility";
       description = "Haskell interface to the DTrace system tracing utility";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "DTTest" = { buildable = if flags.test then true else false; };
-        };
       };
-    }
+    };
+  }

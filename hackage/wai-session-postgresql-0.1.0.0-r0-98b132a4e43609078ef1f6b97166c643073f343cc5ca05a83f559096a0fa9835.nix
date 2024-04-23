@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL backed Wai session store";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "postgresql-session-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postgresql-session" or (errorHandler.buildDepError "postgresql-session"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

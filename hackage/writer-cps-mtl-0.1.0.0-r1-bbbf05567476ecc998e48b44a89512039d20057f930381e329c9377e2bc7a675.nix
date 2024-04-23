@@ -21,7 +21,7 @@
       synopsis = "MonadWriter orphan instances for writer-cps-transformers";
       description = "The WriterT and RWST monad transformers provided by writer-cps-transformers are written in continuation passing style and avoid the space-leak problem of the traditional Control.Monad.Trans.Writer.Strict/Lazy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."writer-cps-transformers" or (errorHandler.buildDepError "writer-cps-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

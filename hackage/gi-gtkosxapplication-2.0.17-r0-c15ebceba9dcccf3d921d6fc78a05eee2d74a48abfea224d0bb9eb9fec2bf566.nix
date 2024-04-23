@@ -28,8 +28,8 @@
         (hsPkgs.buildPackages.gi-gtk or (pkgs.buildPackages.gi-gtk or (errorHandler.setupDepError "gi-gtk")))
         (hsPkgs.buildPackages.gi-gdkpixbuf or (pkgs.buildPackages.gi-gdkpixbuf or (errorHandler.setupDepError "gi-gdkpixbuf")))
         (hsPkgs.buildPackages.gi-gobject or (pkgs.buildPackages.gi-gobject or (errorHandler.setupDepError "gi-gobject")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -44,11 +44,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."gtk-mac-integration-gtk3" or (errorHandler.pkgConfDepError "gtk-mac-integration-gtk3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

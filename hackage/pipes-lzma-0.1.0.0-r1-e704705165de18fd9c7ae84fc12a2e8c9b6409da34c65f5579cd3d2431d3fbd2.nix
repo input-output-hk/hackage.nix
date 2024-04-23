@@ -21,7 +21,7 @@
       synopsis = "LZMA compressors and decompressors for the Pipes package";
       description = "This package provides a @pipes@ interface to the LZMA compression algorithm\nused by the @.xz@ file format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pipes-lzma-tests" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."pipes-lzma" or (errorHandler.buildDepError "pipes-lzma"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pipes-lzma-unxz" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."pipes-lzma" or (errorHandler.buildDepError "pipes-lzma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

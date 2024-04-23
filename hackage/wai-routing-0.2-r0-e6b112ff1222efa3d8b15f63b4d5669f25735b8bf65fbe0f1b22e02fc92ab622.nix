@@ -21,7 +21,7 @@
       synopsis = "Declarative routing for WAI.";
       description = "Enables the declaration of \\\"routes\\\" which handle requests to a\nspecific URL.\n\nThe set of possible handlers can be restricted by \\\"predicates\\\",\nwhich operate on WAI requests and have to be true or else the\nhandler will not be called.\n\nFor details have a look at the haddock documentation of\n@Network.Wai.Routing.Tutorial@ or the @examples@ folder in the\nsource distribution.\n\nThis library is a port of @snap-predicates@ which provides\nsimilar functionality for the snap-framework.\n\nThe routing tree construction is implemented using @wai-route@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-route" or (errorHandler.buildDepError "wai-route"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-routing-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-routing" or (errorHandler.buildDepError "wai-routing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

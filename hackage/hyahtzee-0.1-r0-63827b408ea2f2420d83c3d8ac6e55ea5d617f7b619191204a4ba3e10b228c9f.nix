@@ -21,7 +21,7 @@
       synopsis = "A Yahtzee game implementation in Haskell";
       description = "The classic dice game Yahtzee implemented in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hyahtzee" = {
@@ -30,9 +30,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

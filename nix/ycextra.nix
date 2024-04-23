@@ -6,8 +6,8 @@
         nix = import ../hackage/ycextra-0.1-r0-e36598bc1bf08d0de97fb2fa022a65a1f37b6aa349730e423a6a49c8b870d2fe.nix;
         revNum = 0;
         sha256 = "e36598bc1bf08d0de97fb2fa022a65a1f37b6aa349730e423a6a49c8b870d2fe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

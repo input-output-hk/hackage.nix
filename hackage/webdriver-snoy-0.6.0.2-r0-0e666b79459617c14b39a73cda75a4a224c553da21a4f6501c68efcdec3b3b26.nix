@@ -21,7 +21,7 @@
       synopsis = "a Haskell client for the Selenium WebDriver protocol";
       description = "This is a temporary release to deal with upstream dependency issues. It will be deprecated as soon as <https://github.com/kallisti-dev/hs-webdriver/issues/53> is dealt with.\n\nA Selenium WebDriver client for Haskell.\nYou can use it to automate browser sessions\nfor testing, system administration, etc.\n\nFor more information about Selenium itself, see\n<http://seleniumhq.org/>\n\nTo find out what's been changed in this version and others,\nsee the change log at\n<https://github.com/kallisti-dev/hs-webdriver/blob/master/CHANGELOG.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."cond" or (errorHandler.buildDepError "cond"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-search-baidu" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

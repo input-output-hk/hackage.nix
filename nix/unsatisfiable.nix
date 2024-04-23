@@ -6,8 +6,8 @@
         nix = import ../hackage/unsatisfiable-0-r0-58829b698f77739d588952b6dbea1c85c783f3c6972d1016b46af695f662a993.nix;
         revNum = 0;
         sha256 = "58829b698f77739d588952b6dbea1c85c783f3c6972d1016b46af695f662a993";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

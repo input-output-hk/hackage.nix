@@ -21,14 +21,14 @@
       synopsis = "Link shortcuts for use in text markup";
       description = "This package is a database of link shortcuts. A Markdown example:\n@[Google](\\@w)@ turns into <http://en.wikipedia.org/wiki/Google Google>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

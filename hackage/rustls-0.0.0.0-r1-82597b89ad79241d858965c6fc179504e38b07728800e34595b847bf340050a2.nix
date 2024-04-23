@@ -21,7 +21,7 @@
       synopsis = "TLS bindings for Rustls";
       description = "TLS bindings for [Rustls](https://github.com/rustls/rustls)\nvia [rustls-ffi](https://github.com/rustls/rustls-ffi).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ (pkgs.lib).optional (flags.derive-storable-plugin) (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"));
+        ] ++ pkgs.lib.optional (flags.derive-storable-plugin) (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"));
         libs = [ (pkgs."rustls" or (errorHandler.sysDepError "rustls")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

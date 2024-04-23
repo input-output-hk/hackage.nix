@@ -21,7 +21,7 @@
       synopsis = "reactive-banana + termbox";
       description = "A @reactive-banana@-based interface to writing @termbox@ programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."termbox" or (errorHandler.buildDepError "termbox"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

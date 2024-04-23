@@ -21,7 +21,7 @@
       synopsis = "A true type file format loader";
       description = "A haskell Truetype file parser.\n\nYou can load a font file and extract some curves to be\ndrawed with a library like Rasterific .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

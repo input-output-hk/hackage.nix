@@ -21,7 +21,7 @@
       synopsis = "Preview tool for sprite animation";
       description = "Preview tool for sprite animation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,17 +50,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "animate-preview" = {
           depends = [
             (hsPkgs."animate-preview" or (errorHandler.buildDepError "animate-preview"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

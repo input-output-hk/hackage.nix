@@ -6,8 +6,8 @@
         nix = import ../hackage/cqrs-testkit-0.10.0-r0-c2d8162b483d92e6a51471493beb8e1d2f2a9bfbb1f9d4756873ca6eae0e3ba2.nix;
         revNum = 0;
         sha256 = "c2d8162b483d92e6a51471493beb8e1d2f2a9bfbb1f9d4756873ca6eae0e3ba2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

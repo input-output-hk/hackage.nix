@@ -14,7 +14,7 @@
       unsafe-checks = true;
       internal-checks = true;
       chase-lev = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "accelerate-llvm"; version = "1.0.0.0"; };
@@ -27,7 +27,7 @@
       synopsis = "Accelerate backend generating LLVM";
       description = "This library implements direct LLVM IR generation for the /Accelerate/\nlanguage. For further information, refer to the main /Accelerate/ package:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.chase-lev) (hsPkgs."chaselev-deque" or (errorHandler.buildDepError "chaselev-deque"));
+        ] ++ pkgs.lib.optional (flags.chase-lev) (hsPkgs."chaselev-deque" or (errorHandler.buildDepError "chaselev-deque"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

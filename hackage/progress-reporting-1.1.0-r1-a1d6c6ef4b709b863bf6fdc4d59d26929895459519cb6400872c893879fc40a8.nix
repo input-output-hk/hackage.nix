@@ -21,7 +21,7 @@
       synopsis = "Functionality for reporting function progress.";
       description = "This module provides a set of functions for writing\nfunctions that report their own progress in a monadic\ncontext, which can be evaluated to get progress reports\nwhile time-consuming functions are running.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

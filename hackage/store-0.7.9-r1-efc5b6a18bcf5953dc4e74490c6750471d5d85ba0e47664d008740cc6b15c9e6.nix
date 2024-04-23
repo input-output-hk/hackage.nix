@@ -12,7 +12,7 @@
       comparison-bench = false;
       integer-simple = false;
       small-bench = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "store"; version = "0.7.9"; };
@@ -25,7 +25,7 @@
       synopsis = "Fast binary serialization";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -70,18 +70,18 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (if flags.integer-simple
+        ] ++ (if flags.integer-simple
           then [
             (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+          ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "store-test" = {
           depends = ([
@@ -128,19 +128,19 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
-            ] ++ (if flags.integer-simple
+          ] ++ (if flags.integer-simple
             then [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]
+            ]
             else [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+            ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
             (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "store-bench" = {
           depends = (([
@@ -187,23 +187,23 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
-            ] ++ (if flags.integer-simple
+          ] ++ (if flags.integer-simple
             then [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]
+            ]
             else [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+            ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
             (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ]) ++ (pkgs.lib).optionals (flags.comparison-bench) [
+          ]) ++ pkgs.lib.optionals (flags.comparison-bench) [
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "store-weigh" = {
           depends = ([
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -253,18 +253,18 @@
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ] ++ (if flags.integer-simple
+          ] ++ (if flags.integer-simple
             then [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]
+            ]
             else [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ])) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+            ])) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
             (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

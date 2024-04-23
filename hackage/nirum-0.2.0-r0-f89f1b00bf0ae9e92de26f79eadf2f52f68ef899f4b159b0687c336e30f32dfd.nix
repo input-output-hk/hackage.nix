@@ -21,7 +21,7 @@
       synopsis = "IDL compiler and RPC/distributed object framework for\nmicroservices";
       description = "Nirum is an IDL compiler and RPC/distributed object\nframework for microservices, built on top of the modern\nWeb server technologies such as RESTful HTTP and JSON.\n\nYou can find how its IDL looks like from source codes in\nthe examples/ directory.\n\nSee also README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,25 +35,25 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."semver" or (errorHandler.buildDepError "semver"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nirum" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nirum" or (errorHandler.buildDepError "nirum"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "nirum-static" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nirum" or (errorHandler.buildDepError "nirum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -73,16 +73,16 @@
             (hsPkgs."semver" or (errorHandler.buildDepError "semver"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

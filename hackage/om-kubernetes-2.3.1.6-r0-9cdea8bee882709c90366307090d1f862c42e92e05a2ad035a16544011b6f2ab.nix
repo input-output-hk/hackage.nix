@@ -21,7 +21,7 @@
       synopsis = "om-kubernetes";
       description = "Haskell Kubernetes utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

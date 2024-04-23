@@ -21,7 +21,7 @@
       synopsis = "High-level IO operations on files/directories";
       description = "High-level IO operations on files/directories, utilizing type-safe Paths";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -35,8 +35,8 @@
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.11")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.11")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = if system.isWindows then false else true;
-        };
       };
-    }
+    };
+  }

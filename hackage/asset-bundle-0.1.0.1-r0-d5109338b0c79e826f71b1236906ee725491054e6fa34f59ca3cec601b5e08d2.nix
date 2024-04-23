@@ -21,7 +21,7 @@
       synopsis = "A build-time Cabal library that bundles executables with assets";
       description = "Please see the Hackage documentation at <http://hackage.haskell.org/package/asset-bundle/docs/Distribution-Simple-AssetBundle.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

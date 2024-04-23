@@ -21,14 +21,14 @@
       synopsis = "A fast implementation of synchronous channels with a CML-like API";
       description = "This is a short implementation of synchronous channels\nwith choice, based on the code described at <http://chplib.wordpress.com/2010/03/04/choice-over-events-using-stm/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

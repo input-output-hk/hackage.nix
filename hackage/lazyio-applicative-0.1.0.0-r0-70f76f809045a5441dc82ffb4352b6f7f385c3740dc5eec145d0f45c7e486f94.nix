@@ -21,11 +21,11 @@
       synopsis = "LazyIO applicative for asymptotic performance regain when effectfully generating structures";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A fast event-based XML parser in pure Haskell";
       description = "A fast, low-memory use, event-based XML parser in pure Haskell.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mutable-containers" or (errorHandler.buildDepError "mutable-containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xeno-bench" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
             (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "xeno-test" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "xeno-speed-bench" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
-            ] ++ (pkgs.lib).optional (flags.libxml2) (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"));
+          ] ++ pkgs.lib.optional (flags.libxml2) (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"));
           buildable = true;
-          };
+        };
         "xeno-memory-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."hexml" or (errorHandler.buildDepError "hexml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "xeno-speed-big-files-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (flags.libxml2) (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"));
+          ] ++ pkgs.lib.optional (flags.libxml2) (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

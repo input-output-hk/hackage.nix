@@ -21,7 +21,7 @@
       synopsis = "Render engine.";
       description = "Ombra is a render engine written in Haskell. It provides a purely functional interface for advanced graphics programming, including a type safe embedded DSL for GPU programming. You are not required to know or use OpenGL directly to work with Ombra, you just need a basic knowledge of what vertex/fragment shaders, uniforms and attributes are (if you are going to make a more advanced use of it). Ombra supports both OpenGL and WebGL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
-          ] ++ (pkgs.lib).optional (flags.opengl && !(compiler.isGhcjs && true)) (hsPkgs."gl" or (errorHandler.buildDepError "gl"))) ++ (pkgs.lib).optional (flags.webgl && (compiler.isGhcjs && true)) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
+        ] ++ pkgs.lib.optional (flags.opengl && !(compiler.isGhcjs && true)) (hsPkgs."gl" or (errorHandler.buildDepError "gl"))) ++ pkgs.lib.optional (flags.webgl && (compiler.isGhcjs && true)) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

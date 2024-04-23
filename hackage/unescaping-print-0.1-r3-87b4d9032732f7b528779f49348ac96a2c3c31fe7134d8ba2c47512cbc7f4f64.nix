@@ -21,11 +21,11 @@
       synopsis = "Tiny package providing unescaping versions of show and print";
       description = "This package solves the problem of escaping all \"non-printable\" symbols by the standard `show` function. It provides the `ushow` and `uprint` functions which replace `show` and `print` from `Prelude`. The function `uprint` is intended to be used as custom printing function in GHCi (with the `-interactive-print` option).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

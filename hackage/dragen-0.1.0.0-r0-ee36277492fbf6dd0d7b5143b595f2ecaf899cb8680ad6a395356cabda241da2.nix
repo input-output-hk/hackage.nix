@@ -21,7 +21,7 @@
       synopsis = "Automatic derivation of optimized QuickCheck random generators.";
       description = "DRAGEN is a Template Haskell tool for automatically deriving QuickCheck generators in compile-time. The user sets a desired distribution of values, and DRAGEN will try optimize the generation parameters to satisfy it using probabilistic analyses based on multi-type branching processes.\nDRAGEN is based on the following paper\nBranching processes for QuickCheck generators. Agustín Mista, Alejandro Russo, John Hughes. Haskell Symposium, 2018. https://dl.acm.org/citation.cfm?doid=3242744.3242747";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

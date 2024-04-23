@@ -21,7 +21,7 @@
       synopsis = "A Template Haskell library for generating type safe web REST API calls";
       description = "A library that uses Open Data Tables and JSON Schemas to\ngenerate Haskell types and web REST API calls.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

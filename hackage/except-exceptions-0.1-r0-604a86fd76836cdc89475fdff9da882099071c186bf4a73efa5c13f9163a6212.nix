@@ -21,15 +21,15 @@
       synopsis = "Safely deal with exceptions in ExceptT";
       description = "Exception-related functions for @ExceptT@.\n\nAs of @exceptions-0.9.0@, @ExceptT@ has a valid and sensible\n@MonadMask@ instance. If available, this package simply re-exports the\nrelevant functions from @exceptions@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

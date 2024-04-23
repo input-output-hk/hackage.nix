@@ -21,7 +21,7 @@
       synopsis = "B-Splines, other splines, and NURBS.";
       description = "This is a fairly simple implementation of a\ngeneral-purpose spline library, just to get the code\nout there.  Its interface is still mildly unstable and\nmay change (hopefully not drastically) as new needs or\nbetter style ideas come up.  Patches, suggestions\nand/or feature requests are welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."polynomial" or (errorHandler.buildDepError "polynomial"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

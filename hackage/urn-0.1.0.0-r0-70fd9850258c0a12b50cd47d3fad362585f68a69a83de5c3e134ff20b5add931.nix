@@ -21,24 +21,24 @@
       synopsis = "Universal Resource Names";
       description = "URN parsing and rendering according to RFC 2141. For more info see\n<http://tools.ietf.org/html/rfc2141>.\n\nIf you need to represent both URLs and URIs then use\n\"Network.URI\" from the @network@ package or \"Data.URI\" from the\n@uri@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."urn" or (errorHandler.buildDepError "urn"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

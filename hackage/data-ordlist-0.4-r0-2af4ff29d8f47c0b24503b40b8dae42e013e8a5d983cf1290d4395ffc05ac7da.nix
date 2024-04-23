@@ -21,11 +21,11 @@
       synopsis = "Set and bag operations on ordered lists";
       description = "This module provides set and multiset operations on ordered lists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

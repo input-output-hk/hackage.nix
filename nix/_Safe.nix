@@ -6,8 +6,8 @@
         nix = import ../hackage/Safe-0.1-r0-ba901b7db0761f7ed504dd8c0f35817a54332cad7c8d6f05bb4531e76277c597.nix;
         revNum = 0;
         sha256 = "ba901b7db0761f7ed504dd8c0f35817a54332cad7c8d6f05bb4531e76277c597";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

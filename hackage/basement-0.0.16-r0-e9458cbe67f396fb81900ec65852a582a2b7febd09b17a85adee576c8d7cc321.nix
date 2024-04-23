@@ -21,16 +21,16 @@
       synopsis = "Foundation scrap box of array & string";
       description = "Foundation most basic primitives without any dependencies";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).lt "8.10")) ([
+        depends = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.10")) ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")));
-        buildable = if compiler.isGhc && (compiler.version).lt "8.10"
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")));
+        buildable = if compiler.isGhc && compiler.version.lt "8.10"
           then false
           else true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/rtld-0.0.2-r0-ebf8a2ae1cd04e829f5b86b5638ed66139a76cbbe75ae43394d37cb9bd8f5037.nix;
         revNum = 0;
         sha256 = "ebf8a2ae1cd04e829f5b86b5638ed66139a76cbbe75ae43394d37cb9bd8f5037";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

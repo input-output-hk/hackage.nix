@@ -21,14 +21,14 @@
       synopsis = "Colorization of text for command-line output";
       description = "Paint is a small module that implements the essential\nsubset of the ANSI terminal codes that provide various\ntext styling features, such as underlining, blinking or\ndifferent foreground and background coloring.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

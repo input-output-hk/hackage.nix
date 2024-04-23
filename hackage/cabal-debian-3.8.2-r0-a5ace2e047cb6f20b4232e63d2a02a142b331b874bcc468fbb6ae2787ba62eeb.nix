@@ -21,7 +21,7 @@
       synopsis = "Create a debianization for a cabal package";
       description = "Tool for creating debianizations of Haskell packages based on the\n.cabal file.  If apt-file is installed it will use it to discover\nwhat is the debian package name of a C library.  Basic usage is via\nthe cabal-debian executable.  A more powerful but still undocumented\nprogrammatic interface is also provided.  Normal usage for this is to\nput a script in debian/Debianize.hs (such as the one in this source\npackage) which is run to create the debianization.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-debian" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."cabal-debian" or (errorHandler.buildDepError "cabal-debian"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

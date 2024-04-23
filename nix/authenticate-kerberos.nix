@@ -6,8 +6,8 @@
         nix = import ../hackage/authenticate-kerberos-1.0.0-r0-037981340ade6f58db8348cf08dbcab16da4a985088a2d729f7f209aeaebbe27.nix;
         revNum = 0;
         sha256 = "037981340ade6f58db8348cf08dbcab16da4a985088a2d729f7f209aeaebbe27";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

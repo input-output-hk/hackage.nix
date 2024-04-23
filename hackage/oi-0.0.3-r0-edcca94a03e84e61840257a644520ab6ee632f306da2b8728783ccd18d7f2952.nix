@@ -21,15 +21,15 @@
       synopsis = "Purely Functional Lazy Interaction with the outer world";
       description = "This package implements a data structure and operations on it\nfor making interactive program without using explicitly IO monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

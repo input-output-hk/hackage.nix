@@ -21,7 +21,7 @@
       synopsis = "A generator for different kinds of logs.";
       description = "A Haskell library for generating logs\nfrom user specifications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."quantification" or (errorHandler.buildDepError "quantification"))
           (hsPkgs."savage" or (errorHandler.buildDepError "savage"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

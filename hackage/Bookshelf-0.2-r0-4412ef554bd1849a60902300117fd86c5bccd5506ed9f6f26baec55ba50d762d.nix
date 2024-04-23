@@ -21,7 +21,7 @@
       synopsis = "A simple document organizer with some wiki functionality";
       description = "A simple document organizer with some wiki functionality";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bookshelf" = {
@@ -32,9 +32,9 @@
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

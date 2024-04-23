@@ -21,15 +21,15 @@
       synopsis = "Library to provide the behaviour similar to quantum states superposition. ";
       description = "Has three modules with similar functionality. The functions provide the somewhat generalized way to round the numbers based on some data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
           (hsPkgs."uniqueness-periods-vector-stats" or (errorHandler.buildDepError "uniqueness-periods-vector-stats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

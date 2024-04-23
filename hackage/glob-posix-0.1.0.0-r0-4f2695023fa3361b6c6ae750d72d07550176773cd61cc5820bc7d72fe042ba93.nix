@@ -21,12 +21,12 @@
       synopsis = "Haskell bindings for POSIX glob library.";
       description = "Wrapper for the glob(3) function. The key functions are glob and globMany.\nGNU extensions are supported but contained in a different module to encourage portability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "glob-posix-test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "glob-posix-bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."glob-posix" or (errorHandler.buildDepError "glob-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

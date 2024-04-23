@@ -21,7 +21,7 @@
       synopsis = "EXIF handling library in pure Haskell";
       description = "The hsexif library provides functions for working with EXIF data\ncontained in JPEG files. Currently it only supports reading the data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.iconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"));
+        ] ++ pkgs.lib.optional (flags.iconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (flags.iconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"));
+          ] ++ pkgs.lib.optional (flags.iconv) (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

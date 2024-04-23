@@ -21,7 +21,7 @@
       synopsis = "In-memory implementations for eventful";
       description = "In-memory implementations for eventful";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."eventful-test-helpers" or (errorHandler.buildDepError "eventful-test-helpers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

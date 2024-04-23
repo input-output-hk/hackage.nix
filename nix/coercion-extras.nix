@@ -6,8 +6,8 @@
         nix = import ../hackage/coercion-extras-0.1.0.0-r0-3c48b0aed35ff854616de60b14842fd16dcd94a1a3a625893eaeeae2ac520f18.nix;
         revNum = 0;
         sha256 = "3c48b0aed35ff854616de60b14842fd16dcd94a1a3a625893eaeeae2ac520f18";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

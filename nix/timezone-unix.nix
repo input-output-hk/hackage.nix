@@ -6,8 +6,8 @@
         nix = import ../hackage/timezone-unix-1.0-r0-b43c9f4169fd978530cf4c5f6e55c8ba0e0087486b4055c23947f31a491d21b7.nix;
         revNum = 0;
         sha256 = "b43c9f4169fd978530cf4c5f6e55c8ba0e0087486b4055c23947f31a491d21b7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

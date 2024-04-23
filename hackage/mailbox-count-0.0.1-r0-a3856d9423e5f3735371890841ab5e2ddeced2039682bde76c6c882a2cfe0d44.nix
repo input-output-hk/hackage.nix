@@ -21,7 +21,7 @@
       synopsis = "Count mailboxes in a SQL database.";
       description = "Count mailboxes in a SQL database.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mailbox-count" = {
@@ -38,10 +38,10 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -57,17 +57,17 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

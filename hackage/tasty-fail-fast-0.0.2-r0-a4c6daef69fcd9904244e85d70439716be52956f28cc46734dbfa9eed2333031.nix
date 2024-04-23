@@ -21,7 +21,7 @@
       synopsis = "Adds the ability to fail a tasty test suite on first test failure";
       description = "tasty-fail-fast wraps any ingredient to fail as soon as the first test fails. For example:\n\n@\ndefaultMainWithIngredients (map failFast defaultIngredients) tests\n@\n\nYour test suite will now get a @--fail-fast@ flag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-tap" or (errorHandler.buildDepError "tasty-tap"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

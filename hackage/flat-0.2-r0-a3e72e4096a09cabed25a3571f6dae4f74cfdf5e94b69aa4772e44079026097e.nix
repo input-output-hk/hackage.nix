@@ -21,7 +21,7 @@
       synopsis = "Principled and efficient bit-oriented binary serialization.";
       description = "See http\\://github.com/tittoassini/flat for a tutorial";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "flat-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

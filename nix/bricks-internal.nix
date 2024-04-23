@@ -6,8 +6,8 @@
         nix = import ../hackage/bricks-internal-0.0.0.4-r0-842ed5b6bd01514f7fa062e47510dec9233da5d2f0bfefdb5cdbc5b714d0dc72.nix;
         revNum = 0;
         sha256 = "842ed5b6bd01514f7fa062e47510dec9233da5d2f0bfefdb5cdbc5b714d0dc72";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/pstemmer-0.1.0.0-r0-b4e0d6c02d6cf7cacdbaed58caceb1b76928a4237cd50014c5f21ef00f590f62.nix;
         revNum = 0;
         sha256 = "b4e0d6c02d6cf7cacdbaed58caceb1b76928a4237cd50014c5f21ef00f590f62";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

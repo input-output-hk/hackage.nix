@@ -21,7 +21,7 @@
       synopsis = "OAuth2 Identity Providers";
       description = "A few well known Identity Providers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."uri-bytestring-aeson" or (errorHandler.buildDepError "uri-bytestring-aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hoauth-providers-tests" = {
           depends = [
@@ -52,12 +52,12 @@
             (hsPkgs."hoauth2-providers" or (errorHandler.buildDepError "hoauth2-providers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

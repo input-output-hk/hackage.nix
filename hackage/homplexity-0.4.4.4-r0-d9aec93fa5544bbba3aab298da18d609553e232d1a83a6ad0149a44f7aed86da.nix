@@ -21,7 +21,7 @@
       synopsis = "Haskell code quality tool";
       description = "Homplexity aims to measure code complexity,\nwarning about fragments that might have higher defect probability\ndue to bad coding style on-the-large:\n\n* too large functions\n\n* too deeply nested conditions\n\n* too few comments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,12 +36,12 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
           (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "homplexity-cli" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Comments" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

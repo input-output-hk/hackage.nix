@@ -21,7 +21,7 @@
       synopsis = "EDN parsing and encoding";
       description = "A EDN parsing and encoding library.\n\nBased on \"specs\" published at <https://github.com/edn-format/edn>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "edn-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

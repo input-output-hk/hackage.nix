@@ -21,7 +21,7 @@
       synopsis = "A simple document-oriented database";
       description = "@muesli@ is a simple\n<https://en.wikipedia.org/wiki/Multiversion_concurrency_control MVCC>\n<https://en.wikipedia.org/wiki/Document-oriented_database document-oriented database>\nfeaturing ACID transactions, automatic index management and minimal boilerplate.\n\nImport the \"Database.Muesli.Types\" module to mark up your types for indexing,\n\"Database.Muesli.Query\" for writing and running queries,\nand \"Database.Muesli.Handle\" for database management.\nThe rest of the modules are internal, but exposed just in case.\n\nSee the README.md file for an usage example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

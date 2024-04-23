@@ -21,12 +21,12 @@
       synopsis = "Class of graphs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."graph" or (errorHandler.buildDepError "graph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

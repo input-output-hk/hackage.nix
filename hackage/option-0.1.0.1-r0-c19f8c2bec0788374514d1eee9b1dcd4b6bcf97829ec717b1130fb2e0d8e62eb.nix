@@ -21,11 +21,11 @@
       synopsis = "A strict version of Maybe";
       description = "A strict version of Maybe";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

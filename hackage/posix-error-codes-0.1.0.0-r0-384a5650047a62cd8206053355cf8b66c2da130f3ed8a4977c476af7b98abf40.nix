@@ -21,11 +21,11 @@
       synopsis = "POSIX error codes";
       description = "A more readable version of ERRNO codes for POSIX-compatible programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

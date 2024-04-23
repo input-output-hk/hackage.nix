@@ -21,7 +21,7 @@
       synopsis = "Assertions for HUnit with difference reporting";
       description = "HUnit assertion operators that show a diff on failure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
           (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

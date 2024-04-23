@@ -21,7 +21,7 @@
       synopsis = "Flexible and easy deriving of type classes for finitary\ntypes.";
       description = "Provides a collection of wrappers, allowing you to easily\ndefine (among others) Unbox, Storable, Hashable and\nBinary instances for finitary types with flexibility in\nterms of representation and efficiency. Never write an\nUnbox instance by hand again!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,15 +39,15 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "9.0"
+        ] ++ (if compiler.isGhc && compiler.version.ge "9.0"
           then [
             (hsPkgs."ghc-bignum" or (errorHandler.buildDepError "ghc-bignum"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."finitary-derive" or (errorHandler.buildDepError "finitary-derive"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hedgehog-classes" or (errorHandler.buildDepError "hedgehog-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

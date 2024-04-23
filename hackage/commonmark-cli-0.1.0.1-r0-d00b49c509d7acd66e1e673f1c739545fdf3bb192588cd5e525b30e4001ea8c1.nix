@@ -21,7 +21,7 @@
       synopsis = "Command-line commonmark converter and highlighter.";
       description = "This package provides a command-line tool, `commonmark`,\nfor converting and syntax-highlighting commonmark documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "commonmark" = {
@@ -39,9 +39,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

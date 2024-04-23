@@ -21,14 +21,14 @@
       synopsis = "Open temporary anonymous Linux file handles";
       description = "\"memfd\" (__mem__ory __f__ile __d__escriptor) lets us open\npseudo-\"files\" that are not actually stored in the \"real\"\nfile system. This feature is only available on Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-throw-exit-0.1.0.0-r0-a41300207b9676da44fa4921f318a0d7ff74b5013dfae8de055e8cdb1ac7b8bb.nix;
         revNum = 0;
         sha256 = "a41300207b9676da44fa4921f318a0d7ff74b5013dfae8de055e8cdb1ac7b8bb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

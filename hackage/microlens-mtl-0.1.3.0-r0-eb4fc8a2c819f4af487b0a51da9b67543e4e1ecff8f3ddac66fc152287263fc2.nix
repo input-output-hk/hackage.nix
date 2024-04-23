@@ -21,7 +21,7 @@
       synopsis = "microlens support for Reader/Writer/State from mtl";
       description = "This package contains functions (like 'view' or '+=') which work\non 'MonadReader', 'MonadWriter', and 'MonadState' from the mtl package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

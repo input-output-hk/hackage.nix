@@ -21,14 +21,14 @@
       synopsis = "A geometric library with bindings to GPC.";
       description = "hgeometric is a geometric library with bindings to the General Polygon\nClipper Library (GPC), a flexible and highly robust polygon set operations\nlibrary. GPC is free for non-comercial use and can be obtained at\n<http://www.cs.man.ac.uk/~toby/alan/software/>. hgeometric also include\nsome functions to deal with geometric types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

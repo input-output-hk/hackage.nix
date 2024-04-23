@@ -6,8 +6,8 @@
         nix = import ../hackage/asset-map-0.1.0.0-r0-7635c7bede8609533a8ca79548151ef0b0e0999f1983cd47c4ac8feae87e99b4.nix;
         revNum = 0;
         sha256 = "7635c7bede8609533a8ca79548151ef0b0e0999f1983cd47c4ac8feae87e99b4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

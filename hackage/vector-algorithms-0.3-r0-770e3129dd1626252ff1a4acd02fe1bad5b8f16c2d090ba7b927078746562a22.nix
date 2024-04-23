@@ -12,7 +12,7 @@
       boundschecks = true;
       unsafechecks = false;
       internalchecks = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "vector-algorithms"; version = "0.3"; };
@@ -25,15 +25,15 @@
       synopsis = "Efficient algorithms for vector arrays";
       description = "Efficient algorithms for vector arrays\nbe sure to compile with -O2, and -fvia-C -optc-O3 is\nrecommended.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "ST-like monad capturing variables to regions and supporting STM.";
       description = "ST-like monad capturing variables to regions and supporting STM.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."monad-stlike-io" or (errorHandler.buildDepError "monad-stlike-io"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

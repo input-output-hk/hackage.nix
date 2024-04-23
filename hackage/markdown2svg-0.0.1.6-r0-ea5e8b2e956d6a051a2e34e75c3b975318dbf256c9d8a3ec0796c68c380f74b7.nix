@@ -21,7 +21,7 @@
       synopsis = "markdown to svg converter";
       description = "Usage: markdown2svg foo.md\n\nNow. Implemented only following features.\n\nparagraph, header, code, list\n\nNot yet implemented following features.\n\nnewline, bold, quote, link, horizontal line";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "markdown2svg" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
             (hsPkgs."markdown-pap" or (errorHandler.buildDepError "markdown-pap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

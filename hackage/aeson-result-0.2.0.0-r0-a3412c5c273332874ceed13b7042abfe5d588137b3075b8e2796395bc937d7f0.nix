@@ -21,7 +21,7 @@
       synopsis = "API Result for aeson";
       description = "API Result for aeson. Make json rest ful api stand.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson-helper" or (errorHandler.buildDepError "aeson-helper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

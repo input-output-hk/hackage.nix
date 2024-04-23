@@ -21,7 +21,7 @@
       synopsis = "Space-efficient Unix timestamp and utilities";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

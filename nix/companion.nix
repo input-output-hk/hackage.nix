@@ -6,8 +6,8 @@
         nix = import ../hackage/companion-0.1.0-r0-99f6de52c832d433639232a6d77d33abbca3b3037e49b7db6242fb9f569a8a2b.nix;
         revNum = 0;
         sha256 = "99f6de52c832d433639232a6d77d33abbca3b3037e49b7db6242fb9f569a8a2b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

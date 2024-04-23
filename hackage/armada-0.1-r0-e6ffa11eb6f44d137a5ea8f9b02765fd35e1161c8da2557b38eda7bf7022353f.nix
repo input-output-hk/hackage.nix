@@ -21,7 +21,7 @@
       synopsis = "Space-based real time strategy game";
       description = "Players use an armada of spaceships to collect resources, build their\nmilitary, and dominate space.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "armada" = {
@@ -31,9 +31,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

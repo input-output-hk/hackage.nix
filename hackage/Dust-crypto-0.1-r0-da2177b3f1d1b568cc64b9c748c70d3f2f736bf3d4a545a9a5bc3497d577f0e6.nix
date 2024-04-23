@@ -21,7 +21,7 @@
       synopsis = "Cryptographic operations";
       description = "Cryptographic operations used by the Dust polymorphic protocl engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,10 +43,10 @@
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."threefish" or (errorHandler.buildDepError "threefish"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux || system.isOsx) (pkgs."crypto" or (errorHandler.sysDepError "crypto"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs."crypto" or (errorHandler.sysDepError "crypto"));
         buildable = true;
-        };
+      };
       tests = {
         "crypto" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

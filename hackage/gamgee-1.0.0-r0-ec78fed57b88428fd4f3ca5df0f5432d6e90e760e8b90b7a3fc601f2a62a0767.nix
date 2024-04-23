@@ -21,7 +21,7 @@
       synopsis = "Tool for generating TOTP MFA tokens.";
       description = "Tool for generating TOTP MFA tokens. Please see the README on GitHub at <https://github.com/rkaippully/gamgee#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gamgee" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."Hclip" or (errorHandler.buildDepError "Hclip"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gamgee-test" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

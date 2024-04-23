@@ -21,7 +21,7 @@
       synopsis = "Haskell To ECMAScript compiler";
       description = "This package provides a featureful compiler from Haskell to\nJavascript. It generates small, fast code, makes use of\nstandard Haskell libraries, integrates with Cabal, supports\nmost GHC extensions and works on Windows, Linux and OSX.\nBug reports are highly appreciated.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haste-boot" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             (hsPkgs."shellmate" or (errorHandler.buildDepError "shellmate"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hastec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,9 +89,9 @@
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             (hsPkgs."shellmate" or (errorHandler.buildDepError "shellmate"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haste-inst" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haste-pkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -109,9 +109,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haste-install-his" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -119,9 +119,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haste-copy-pkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -133,9 +133,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             (hsPkgs."shellmate" or (errorHandler.buildDepError "shellmate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

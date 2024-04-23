@@ -21,7 +21,7 @@
       synopsis = "A file watcher. ";
       description = "A command line tool that responds to filesystem events. Users can provide regular expressions to match on filepaths and shell commands to execute in serial when matches are found. Displays text using a subset of available primary colors.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sos" = {
@@ -35,9 +35,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

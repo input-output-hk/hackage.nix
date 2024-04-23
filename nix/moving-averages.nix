@@ -6,8 +6,8 @@
         nix = import ../hackage/moving-averages-0.2.0.0-r0-53e4e28225b7edbe70ecfd91366cdbb6c6d7ea603d375a09cc771d867aa770ec.nix;
         revNum = 0;
         sha256 = "53e4e28225b7edbe70ecfd91366cdbb6c6d7ea603d375a09cc771d867aa770ec";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

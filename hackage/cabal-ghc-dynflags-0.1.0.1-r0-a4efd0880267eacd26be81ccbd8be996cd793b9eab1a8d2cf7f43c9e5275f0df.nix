@@ -21,7 +21,7 @@
       synopsis = "Conveniently configure GHC's dynamic flags for use with Cabal projects";
       description = "One of the challenges of using the GHC API for external tooling\nis handling integration with Cabal. This library provides a simple\ninterface for configuring GHC's dynamic flags as Cabal would have,\nallowing seamless tooling use on Cabal projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

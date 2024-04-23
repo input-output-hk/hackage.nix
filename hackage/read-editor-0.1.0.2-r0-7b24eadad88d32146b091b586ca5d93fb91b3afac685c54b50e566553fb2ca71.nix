@@ -21,31 +21,31 @@
       synopsis = "Opens a temporary file on the system's EDITOR and returns the resulting edits";
       description = "See <https://github.com/yamadapc/haskell-read-editor> for more information";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."read-editor" or (errorHandler.buildDepError "read-editor"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "example-with" = {
-          depends = (pkgs.lib).optionals (!(!flags.examples)) [
+          depends = pkgs.lib.optionals (!!flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."read-editor" or (errorHandler.buildDepError "read-editor"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

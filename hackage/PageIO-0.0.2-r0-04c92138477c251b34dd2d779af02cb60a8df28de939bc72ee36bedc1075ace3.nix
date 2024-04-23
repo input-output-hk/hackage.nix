@@ -21,7 +21,7 @@
       synopsis = "Page-oriented extraction and composition library";
       description = "Provides an interface to the PageIn export format (.dux)\nfrom the StreamServe Persuasion(tm) platform, using it\nboth as a data extraction as well as a page layout DSL.\n(Extremely experimental, no documentations at the moment!)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
           (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

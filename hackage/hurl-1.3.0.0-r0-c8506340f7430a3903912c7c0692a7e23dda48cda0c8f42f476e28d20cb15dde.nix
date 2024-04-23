@@ -14,7 +14,7 @@
       data = true;
       freedesktop = true;
       appstream = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "hurl"; version = "1.3.0.0"; };
@@ -27,7 +27,7 @@
       synopsis = "Haskell URL resolver";
       description = "Retrieves resources for a URI, whether they be HTTP(S), file:, or data:.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -35,20 +35,20 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optionals (flags.http) [
+        ] ++ pkgs.lib.optionals (flags.http) [
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-          ]) ++ (pkgs.lib).optional (flags.data) (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))) ++ (pkgs.lib).optionals (flags.freedesktop) [
+        ]) ++ pkgs.lib.optional (flags.data) (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))) ++ pkgs.lib.optionals (flags.freedesktop) [
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ]) ++ (pkgs.lib).optionals (flags.freedesktop && flags.appstream) [
+        ]) ++ pkgs.lib.optionals (flags.freedesktop && flags.appstream) [
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

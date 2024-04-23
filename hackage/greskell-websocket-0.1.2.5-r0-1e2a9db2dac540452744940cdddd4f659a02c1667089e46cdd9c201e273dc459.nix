@@ -21,7 +21,7 @@
       synopsis = "Haskell client for Gremlin Server using WebSocket serializer";
       description = "Haskell client for [Gremlin Server](http://tinkerpop.apache.org/docs/current/reference/#gremlin-server) using WebSocket serializer.\nSee [README.md](https://github.com/debug-ito/greskell/blob/master/README.md) for detail.\n\nThis package is based on [greskell-core](http://hackage.haskell.org/package/greskell-core),\nand best used with [greskell](http://hackage.haskell.org/package/greskell) package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,11 +54,11 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."greskell-core" or (errorHandler.buildDepError "greskell-core"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "server-test" = {
-          depends = (pkgs.lib).optionals (flags.server-test) [
+          depends = pkgs.lib.optionals (flags.server-test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."greskell-websocket" or (errorHandler.buildDepError "greskell-websocket"))
             (hsPkgs."greskell-core" or (errorHandler.buildDepError "greskell-core"))
@@ -73,9 +73,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = if flags.server-test then true else false;
-          };
         };
       };
-    }
+    };
+  }

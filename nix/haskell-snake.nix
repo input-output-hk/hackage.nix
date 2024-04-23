@@ -6,8 +6,8 @@
         nix = import ../hackage/haskell-snake-1.0.0-r0-a548489998aac883ef2e49ef980a1088ca652e7b40774f6705dff230851f3683.nix;
         revNum = 0;
         sha256 = "a548489998aac883ef2e49ef980a1088ca652e7b40774f6705dff230851f3683";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

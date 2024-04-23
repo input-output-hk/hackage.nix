@@ -21,7 +21,7 @@
       synopsis = "Type safe string transformations";
       description = "See README.md in the project github repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."symbols" or (errorHandler.buildDepError "symbols"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typed-encoding-doctest" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."symbols" or (errorHandler.buildDepError "symbols"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-encoding" or (errorHandler.buildDepError "typed-encoding"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "typed-encoding-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -60,9 +60,9 @@
             (hsPkgs."symbols" or (errorHandler.buildDepError "symbols"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-encoding" or (errorHandler.buildDepError "typed-encoding"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

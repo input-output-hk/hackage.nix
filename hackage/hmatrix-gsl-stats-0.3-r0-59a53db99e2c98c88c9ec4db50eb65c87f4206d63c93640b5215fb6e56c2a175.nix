@@ -21,7 +21,7 @@
       synopsis = "GSL Statistics interface";
       description = "Purely functional interface for statistics based on hmatrix and GSL\n\nRelieves the burden of alloc/free routines and is otherwise essentially 1:1\n\nDocumentation can be found at <http://www.gnu.org/software/gsl/manual/>\n\nThe vector type is Data.Vector.Storable from the 'vector' package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,22 +29,22 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         libs = ((if flags.openblas
           then [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ]) ++ (pkgs.lib).optionals (system.isFreebsd) [
+          ]) ++ pkgs.lib.optionals (system.isFreebsd) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
           (pkgs."gfortran" or (errorHandler.sysDepError "gfortran"))
-          ]) ++ (pkgs.lib).optionals (system.isWindows) [
+        ]) ++ pkgs.lib.optionals (system.isWindows) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

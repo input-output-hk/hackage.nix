@@ -21,7 +21,7 @@
       synopsis = "A wrapper for the chart library to assist with basic plots (Deprecated - use the Easy module instead)";
       description = "A wrapper for the chart library to assist with basic plots  (Deprecated - use the Easy module instead)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
           (hsPkgs."Chart-gtk" or (errorHandler.buildDepError "Chart-gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

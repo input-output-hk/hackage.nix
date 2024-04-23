@@ -21,7 +21,7 @@
       synopsis = "A tool to send command execution results to Sensu";
       description = "@sensu-run@ is a command line tool to send command execution results to Sensu\nmonitoring server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sensu-run" = {
@@ -41,9 +41,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

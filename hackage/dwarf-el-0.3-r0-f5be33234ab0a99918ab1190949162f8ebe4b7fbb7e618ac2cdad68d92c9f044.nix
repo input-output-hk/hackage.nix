@@ -21,7 +21,7 @@
       synopsis = "Parser for DWARF debug format.";
       description = "Parser for DWARF debug format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

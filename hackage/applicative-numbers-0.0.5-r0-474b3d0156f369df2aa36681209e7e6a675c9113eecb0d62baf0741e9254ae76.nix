@@ -21,14 +21,14 @@
       synopsis = "Applicative-based numeric instances";
       description = "Any applicative functor can be given numeric instances in a boilerplate way.\nThe /applicative-numbers/ package provides an include file that makes it a\nsnap to define these instances.\nSee @src/ApplicativeNumeric-inc.hs@ for details and\n@src/Data/Numeric/Function.hs@ for an example.\n\nProject wiki page: <http://haskell.org/haskellwiki/applicative-numbers>\n\nCopyright 2009 Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

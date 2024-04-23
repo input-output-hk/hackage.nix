@@ -6,8 +6,8 @@
         nix = import ../hackage/google-oauth2-easy-0.0.0-r0-fb9c6beac00b231ac4cb41cff4a873437d3edcc39e6180555469177abaa25ce8.nix;
         revNum = 0;
         sha256 = "fb9c6beac00b231ac4cb41cff4a873437d3edcc39e6180555469177abaa25ce8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

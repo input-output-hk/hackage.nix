@@ -21,15 +21,15 @@
       synopsis = "Online XML parsing with polyparse and tagsoup";
       description = "The library provides combinators for lazy, incremental XML parsing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

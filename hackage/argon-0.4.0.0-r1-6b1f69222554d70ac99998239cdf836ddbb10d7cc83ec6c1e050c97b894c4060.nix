@@ -21,7 +21,7 @@
       synopsis = "Measure your code's complexity";
       description = "Argon performs static analysis on your code in order to compute cyclomatic\ncomplexity. It is a quantitative measure of the number of linearly\nindipendent paths through the code.\n\nThe intended usage is through Argon's executable, which accepts a list of\nfile paths to analyze. The data can be optionally exported to JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,11 +41,11 @@
           (hsPkgs."pathwalk" or (errorHandler.buildDepError "pathwalk"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "7.8"
           then false
           else true;
-        };
+      };
       exes = {
         "argon" = {
           depends = [
@@ -53,12 +53,12 @@
             (hsPkgs."docopt" or (errorHandler.buildDepError "docopt"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."argon" or (errorHandler.buildDepError "argon"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."pathwalk" or (errorHandler.buildDepError "pathwalk"));
-          buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."pathwalk" or (errorHandler.buildDepError "pathwalk"));
+          buildable = if compiler.isGhc && compiler.version.lt "7.8"
             then false
             else true;
-          };
         };
+      };
       tests = {
         "argon-test" = {
           depends = [
@@ -81,18 +81,18 @@
             (hsPkgs."docopt" or (errorHandler.buildDepError "docopt"))
             (hsPkgs."pathwalk" or (errorHandler.buildDepError "pathwalk"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.8"
             then false
             else true;
-          };
+        };
         "style" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

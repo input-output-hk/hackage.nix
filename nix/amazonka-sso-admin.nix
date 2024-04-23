@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-sso-admin-2.0-r0-fb719d76d5086eebdddad54016f8c2be5afea69a34f63dfbf2b6f30605cd75d0.nix;
         revNum = 0;
         sha256 = "fb719d76d5086eebdddad54016f8c2be5afea69a34f63dfbf2b6f30605cd75d0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

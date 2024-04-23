@@ -14,7 +14,7 @@
       identifier = {
         name = "servant-auth-token-rocksdb";
         version = "0.5.3.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2017 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "RocksDB backend for servant-auth-token server";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

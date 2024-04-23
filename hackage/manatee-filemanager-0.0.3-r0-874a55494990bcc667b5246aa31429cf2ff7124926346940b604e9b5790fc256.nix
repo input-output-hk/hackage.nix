@@ -21,7 +21,7 @@
       synopsis = "File manager extension for Manatee.";
       description = "manatee-filemanager is file manager extension for Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nManual look <http://haskell.org/haskellwiki/Manatee>\n\nScreenshot at <http://goo.gl/MkVw>\n\nIRC channel:\n\nirc.freenode.net 6667 <##manatee>\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."gio" or (errorHandler.buildDepError "gio"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-filemanager" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-filemanager" = { buildable = true; }; };
+    };
+  }

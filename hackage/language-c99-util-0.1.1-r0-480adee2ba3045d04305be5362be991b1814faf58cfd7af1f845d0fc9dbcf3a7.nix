@@ -21,14 +21,14 @@
       synopsis = "Utilities for language-c99.";
       description = "This library contains a number of utility functions and wrappers for the\n'language-c99' package. For an actual high-level approach to writing C99\nprograms, see 'language-c99-simple'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."language-c99" or (errorHandler.buildDepError "language-c99"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

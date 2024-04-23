@@ -21,7 +21,7 @@
       synopsis = "bindings to the CoNaLa dataset";
       description = "bindings to the CoNaLa dataset (Code-Natural Language Challenge)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."conduit-aeson" or (errorHandler.buildDepError "conduit-aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "conala-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."conala" or (errorHandler.buildDepError "conala"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

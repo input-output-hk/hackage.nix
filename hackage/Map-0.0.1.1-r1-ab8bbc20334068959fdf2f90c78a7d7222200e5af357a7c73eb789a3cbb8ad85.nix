@@ -21,7 +21,7 @@
       synopsis = "Class of key-value maps";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."either-both" or (errorHandler.buildDepError "either-both"))
           (hsPkgs."filtrable" or (errorHandler.buildDepError "filtrable"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."Map" or (errorHandler.buildDepError "Map"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

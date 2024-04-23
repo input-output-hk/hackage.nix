@@ -21,7 +21,7 @@
       synopsis = "Name generator.";
       description = "Random name generator with web scrapping.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hs-nombre-generator" = {
@@ -30,9 +30,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."HandsomeSoup" or (errorHandler.buildDepError "HandsomeSoup"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Backend for persistent library using Redis.";
       description = "Based on the Redis package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "basic" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."persistent-redis" or (errorHandler.buildDepError "persistent-redis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

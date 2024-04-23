@@ -21,15 +21,15 @@
       synopsis = "Fast AES encryption/decryption for bytestrings";
       description = "A simplified binding to Brian Gladman's AES implementation, including a copy of that implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

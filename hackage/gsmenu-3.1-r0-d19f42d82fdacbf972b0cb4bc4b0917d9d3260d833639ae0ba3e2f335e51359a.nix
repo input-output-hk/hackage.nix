@@ -21,7 +21,7 @@
       synopsis = "A visual generic menu";
       description = "Grid-oriented element selection inspired by XMonadContrib's GridSelect.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gsmenu" = {
@@ -34,9 +34,9 @@
             (hsPkgs."sindre" or (errorHandler.buildDepError "sindre"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."permute" or (errorHandler.buildDepError "permute"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

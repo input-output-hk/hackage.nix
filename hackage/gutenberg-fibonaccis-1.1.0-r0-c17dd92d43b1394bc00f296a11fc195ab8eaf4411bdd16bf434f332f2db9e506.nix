@@ -21,11 +21,11 @@
       synopsis = "The first 1001 Fibonacci numbers, retrieved from the Gutenberg Project.";
       description = "Provides the first 1001 Fibonacci numbers, retrieved from the Gutenberg Project,\nalong with functions to retrieve and query these numbers.\n\nSee \"Algorithm.Gutenberg.Fibonaccis\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

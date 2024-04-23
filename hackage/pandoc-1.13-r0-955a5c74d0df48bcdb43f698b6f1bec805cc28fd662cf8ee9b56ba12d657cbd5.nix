@@ -12,7 +12,7 @@
       embed_data_files = false;
       https = true;
       make-pandoc-man-pages = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "pandoc"; version = "1.13"; };
@@ -25,7 +25,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read markdown and (subsets of) HTML,\nreStructuredText, LaTeX, DocBook, MediaWiki markup, Haddock\nmarkup, OPML, Emacs Org-Mode, txt2tags and Textile, and it can write\nmarkdown, reStructuredText, HTML, LaTeX, ConTeXt, Docbook,\nOPML, OpenDocument, ODT, Word docx, RTF, MediaWiki, DokuWiki,\nTextile, groff man pages, plain text, Emacs Org-Mode, AsciiDoc,\nHaddock markup, EPUB (v2 and v3), FictionBook2,\nInDesign ICML, and several kinds of HTML/javascript\nslide shows (S5, Slidy, Slideous, DZSlides, reveal.js).\n\nPandoc extends standard markdown syntax with footnotes,\nembedded LaTeX, definition lists, tables, and other\nfeatures. A compatibility mode is provided for those\nwho need a drop-in replacement for Markdown.pl.\n\nIn contrast to existing tools for converting markdown\nto HTML, which use regex substitutions, pandoc has\na modular design: it consists of a set of readers,\nwhich parse text in a given format and produce a native\nrepresentation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -70,13 +70,13 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ] ++ (pkgs.lib).optionals (flags.https) [
+        ] ++ pkgs.lib.optionals (flags.https) [
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "make-pandoc-man-pages" = {
           depends = [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -105,10 +105,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.make-pandoc-man-pages then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -132,10 +132,10 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -143,9 +143,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

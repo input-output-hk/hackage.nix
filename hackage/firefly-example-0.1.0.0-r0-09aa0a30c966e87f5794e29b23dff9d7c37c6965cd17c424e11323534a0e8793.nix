@@ -21,7 +21,7 @@
       synopsis = "A simple example using Firefly";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "firefly-example-exe" = {
@@ -33,9 +33,9 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

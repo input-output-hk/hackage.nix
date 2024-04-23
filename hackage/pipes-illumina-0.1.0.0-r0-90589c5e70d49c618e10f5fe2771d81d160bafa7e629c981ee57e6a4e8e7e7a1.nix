@@ -21,7 +21,7 @@
       synopsis = "Illumina NGS data processing";
       description = "Streaming of Bcl and other Illumina file formats";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-bgzf" or (errorHandler.buildDepError "pipes-bgzf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

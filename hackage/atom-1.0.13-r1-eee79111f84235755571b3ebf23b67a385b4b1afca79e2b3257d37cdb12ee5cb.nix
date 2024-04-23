@@ -21,7 +21,7 @@
       synopsis = "An EDSL for embedded hard realtime applications.";
       description = "Atom is a Haskell EDSL for designing hard realtime embedded software.\nBased on guarded atomic actions (similar to STM), Atom enables\nhighly concurrent programming without the need for mutex locking.\nIn addition, Atom performs compile-time task scheduling and generates code\nwith deterministic execution time and constant memory use, simplifying the\nprocess of timing verification and memory consumption in hard realtime\napplications.\nWithout mutex locking and run-time task scheduling, Atom eliminates\nthe need and overhead of RTOSes for many embedded applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

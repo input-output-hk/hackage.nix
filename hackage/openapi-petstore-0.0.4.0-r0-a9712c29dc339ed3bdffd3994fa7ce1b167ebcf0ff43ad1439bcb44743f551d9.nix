@@ -21,7 +21,7 @@
       synopsis = "Auto-generated openapi-petstore API Client";
       description = "\nClient library for calling the OpenAPI Petstore API based on http-client.\n\nhost: petstore.swagger.io\n\nbase path: http://petstore.swagger.io:80/v2\n\nOpenAPI Petstore API version: 1.0.0\n\nOpenAPI version: 3.0.1\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,13 +49,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if flags.usekatip
+        ] ++ (if flags.usekatip
           then [ (hsPkgs."katip" or (errorHandler.buildDepError "katip")) ]
           else [
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

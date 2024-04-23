@@ -21,27 +21,27 @@
       synopsis = "A class for monads which can keep a stack trace";
       description = "This package defines a class for monads which can keep a monadic call trace.\n\n. See http://pepeiborra.posterous.com/monadic-stack-traces-that-make-a-lot-of-sense for more information.\n\nA preprocessor is provided which can insert calls\nto withLoc before every monadic statement in a module.\n\nTo invoke the preprocessor, add the following pragma at the top of a source file:\n\n> {-# OPTIONS_GHC -F -pgmF MonadLoc #-}\n\ntogether with an import for the @Control.Monad.Loc@ module\n\nThis package provides no implementation of the MonadLoc interface.\nCurrently the only package that does so is \"control-monad-exception\",\nbut any other package can implement it and provide monadic call traces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if flags.syb-in-base
+        ] ++ (if flags.syb-in-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "MonadLoc" = {
           depends = [
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

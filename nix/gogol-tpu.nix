@@ -6,10 +6,10 @@
         nix = import ../hackage/gogol-tpu-0.4.0-r0-325191cf34699c37bf6f5357147edbe9739e9cb7d085652a7b86f8505475d06a.nix;
         revNum = 0;
         sha256 = "325191cf34699c37bf6f5357147edbe9739e9cb7d085652a7b86f8505475d06a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.5.0" = {
     sha256 = "63771dc1f03cae9817c55e66e0fb45ccebd7e7357dda446201f3e9113e66d8f0";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/gogol-tpu-0.5.0-r0-9f74aa4972151558ce6233c618b82b85b4fe59f7dd1e7f7e6cf3b0c94d2ee18f.nix;
         revNum = 0;
         sha256 = "9f74aa4972151558ce6233c618b82b85b4fe59f7dd1e7f7e6cf3b0c94d2ee18f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

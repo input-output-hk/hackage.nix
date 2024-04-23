@@ -21,7 +21,7 @@
       synopsis = "Incremental SMTP sessions";
       description = "This library provides incremental SMTP sessions, so you can control\neach aspect of the session.  It also provides a small DNS cache for\nMX records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."network-fancy" or (errorHandler.buildDepError "network-fancy"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

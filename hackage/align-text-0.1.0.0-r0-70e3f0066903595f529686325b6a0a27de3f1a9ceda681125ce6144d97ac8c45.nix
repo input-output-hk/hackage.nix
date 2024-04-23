@@ -21,7 +21,7 @@
       synopsis = "A simple unix filter to align text on specified substrings";
       description = "A simple unix filter to align text on specified substrings ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "align" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

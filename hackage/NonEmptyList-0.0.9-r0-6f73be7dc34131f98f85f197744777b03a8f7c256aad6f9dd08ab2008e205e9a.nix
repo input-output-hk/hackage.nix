@@ -21,7 +21,7 @@
       synopsis = "A list with a length of at least one.";
       description = "A list with a length of at least one and type-safe head/tail operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."Semigroup" or (errorHandler.buildDepError "Semigroup"))
           (hsPkgs."category-extras" or (errorHandler.buildDepError "category-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An HTML and CSS renderer for Haskell";
       description = "An HTML and CSS renderer for the Haskell\nprogramming language. It functions mostly\nas a wrapper for blaze-html and clay. The\nsyntax was inspired by Elm and elm-css.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Making composable programs with multithreading, events and distributed computing";
       description = "see <http://github.com/agocorona/transient>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

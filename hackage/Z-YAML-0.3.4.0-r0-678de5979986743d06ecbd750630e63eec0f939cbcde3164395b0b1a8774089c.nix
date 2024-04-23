@@ -21,7 +21,7 @@
       synopsis = "YAML tools";
       description = "YAML reading & writing tools for Z project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-YAML-Test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
             (hsPkgs."Z-YAML" or (errorHandler.buildDepError "Z-YAML"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

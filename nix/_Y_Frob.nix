@@ -6,8 +6,8 @@
         nix = import ../hackage/YFrob-0.4-r0-505f7e84d45c4b9b9eb8cf3cb9e6b1bd3637a332ff7ad157d7df996b08f00015.nix;
         revNum = 0;
         sha256 = "505f7e84d45c4b9b9eb8cf3cb9e6b1bd3637a332ff7ad157d7df996b08f00015";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

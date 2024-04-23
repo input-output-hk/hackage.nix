@@ -21,20 +21,20 @@
       synopsis = "Let the Haskell logo talk to your users!";
       description = "Please see the README on GitHub at <https://github.com/periodic/haskell-say#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-say-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-say" or (errorHandler.buildDepError "haskell-say"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

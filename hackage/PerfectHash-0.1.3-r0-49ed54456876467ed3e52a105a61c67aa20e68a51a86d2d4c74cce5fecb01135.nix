@@ -21,7 +21,7 @@
       synopsis = "A perfect hashing library for mapping bytestrings to values.";
       description = "A perfect hashing library for mapping bytestrings to values.\nInsertion is not supported (by design): this is just a binding\nto the C-based CMPH library (http://cmph.sf.net). Only fromList\nand lookup operations are supported, but in many circumstances\nthis is all that's required.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         libs = [ (pkgs."cmph" or (errorHandler.sysDepError "cmph")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

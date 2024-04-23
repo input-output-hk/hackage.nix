@@ -21,11 +21,11 @@
       synopsis = "Deprecated in favor of eros.";
       description = "This package is deprecated in favour of\n<https://github.com/pharpend/eros eros>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

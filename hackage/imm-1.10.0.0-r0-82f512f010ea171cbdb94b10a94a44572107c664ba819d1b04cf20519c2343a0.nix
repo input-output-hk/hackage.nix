@@ -21,7 +21,7 @@
       synopsis = "Execute arbitrary callbacks for each element of RSS/Atom feeds";
       description = "Cf README file";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "imm" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "imm-writefile" = {
           depends = [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
@@ -110,9 +110,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "imm-sendmail" = {
           depends = [
             (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
@@ -134,9 +134,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

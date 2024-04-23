@@ -21,11 +21,11 @@
       synopsis = "A library to provide special kind of big numbers writing. ";
       description = "Provides a function that shows the somewhat \"reversed\" scientific notation of the big 'Integer' number so that it is easier (more likely exact) to compare at quick glance two numbers in such a notation by their order and values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

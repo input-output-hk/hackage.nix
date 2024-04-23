@@ -21,7 +21,7 @@
       synopsis = "Integration for tasty and hedgehog.";
       description = "Integrates the hedgehog testing library with the tasty testing framework. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-hedgehog-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

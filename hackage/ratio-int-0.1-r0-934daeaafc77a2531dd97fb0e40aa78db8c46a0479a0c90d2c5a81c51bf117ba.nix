@@ -21,11 +21,11 @@
       synopsis = "Fast specialisation of Data.Ratio for Int.";
       description = "Fast specialisation of Data.Ratio for Int.\n\nRuns about ten times faster than Data.Int while being half\nas fast as floating-point types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

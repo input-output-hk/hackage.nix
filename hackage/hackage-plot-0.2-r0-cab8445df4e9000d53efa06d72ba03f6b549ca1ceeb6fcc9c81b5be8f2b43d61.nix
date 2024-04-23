@@ -21,7 +21,7 @@
       synopsis = "Generate cumulative graphs of hackage uploads";
       description = "Generate cumulative graphs of hackage uploads";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackage-plot" = {
@@ -30,17 +30,17 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."parsedate" or (errorHandler.buildDepError "parsedate"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

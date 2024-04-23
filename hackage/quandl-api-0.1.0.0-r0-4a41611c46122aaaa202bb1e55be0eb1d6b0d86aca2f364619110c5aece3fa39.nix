@@ -21,7 +21,7 @@
       synopsis = "Quandl.com API library";
       description = "This library provides an easy way to download data from Quandl.com.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

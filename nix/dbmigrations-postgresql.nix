@@ -6,8 +6,8 @@
         nix = import ../hackage/dbmigrations-postgresql-2.0.0-r0-89ed3d6ac7e7871464cacb2fc5f98884faee750e5ebb050c5d0c7eb9e3757ba9.nix;
         revNum = 0;
         sha256 = "89ed3d6ac7e7871464cacb2fc5f98884faee750e5ebb050c5d0c7eb9e3757ba9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "Useful distance datatype and functions";
       description = "A data type for distances with some useful utility functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

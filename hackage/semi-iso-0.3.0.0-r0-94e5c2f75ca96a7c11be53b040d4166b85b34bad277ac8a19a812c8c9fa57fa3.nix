@@ -21,7 +21,7 @@
       synopsis = "Weakened partial isomorphisms that work with lenses.";
       description = "Semi-isomorphisms are partial isomorphisms with weakened iso laws.\nAnd they work with Iso and Prism from @lens@!\n\nSee first \"Control.Lens.SemiIso\" for semi-isomoprhisms.\nAfter that look at \"Data.SemiIsoFunctor\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

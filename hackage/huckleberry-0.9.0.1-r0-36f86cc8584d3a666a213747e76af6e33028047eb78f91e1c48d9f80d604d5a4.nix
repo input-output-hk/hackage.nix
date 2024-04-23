@@ -21,7 +21,7 @@
       synopsis = "IchigoJam BASIC expressed in Haskell.";
       description = "The EDSL Provides bridge between IchigoJam BASIC and Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."huckleberry" or (errorHandler.buildDepError "huckleberry"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Free monads suitable for concurrent computation";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."type-aligned" or (errorHandler.buildDepError "type-aligned"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

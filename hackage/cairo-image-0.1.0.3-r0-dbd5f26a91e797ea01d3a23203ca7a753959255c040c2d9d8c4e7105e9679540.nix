@@ -21,7 +21,7 @@
       synopsis = "Image for Cairo";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/cairo-image#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."c-enum" or (errorHandler.buildDepError "c-enum"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."cairo" or (errorHandler.pkgConfDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cairo-image-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."cairo-image" or (errorHandler.buildDepError "cairo-image"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-endian" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,9 +53,9 @@
             (hsPkgs."cairo-image" or (errorHandler.buildDepError "cairo-image"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

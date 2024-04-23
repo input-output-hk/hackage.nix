@@ -6,8 +6,8 @@
         nix = import ../hackage/private-hackage-uploader-0.2.3.0-r0-a4603ca37bf5edec8df2e7770517f4d8626e0a122ddfe46bbae80f0a43f6812f.nix;
         revNum = 0;
         sha256 = "a4603ca37bf5edec8df2e7770517f4d8626e0a122ddfe46bbae80f0a43f6812f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

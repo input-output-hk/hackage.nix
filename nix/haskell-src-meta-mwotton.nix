@@ -6,8 +6,8 @@
         nix = import ../hackage/haskell-src-meta-mwotton-0.1.0-r0-152d7612743387a47a28aece446b6d3b62c24475970d037109cdb93df2b24b4f.nix;
         revNum = 0;
         sha256 = "152d7612743387a47a28aece446b6d3b62c24475970d037109cdb93df2b24b4f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Large utility library";
       description = "@MissingH@ is a library of all sorts of utility functions for Haskell\nprogrammers.  It is written in pure Haskell and thus should be\nextremely portable and easy to use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -39,16 +39,16 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (if flags.network--ge-3_0_0
+        ] ++ (if flags.network--ge-3_0_0
           then [
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."errorcall-eq-instance" or (errorHandler.buildDepError "errorcall-eq-instance"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

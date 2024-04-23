@@ -6,8 +6,8 @@
         nix = import ../hackage/simplemesh-0.1.0.0-r0-7b88946e8cf38c93d551ca25aab469cab689b3d288d41d5c78d17015ecc1fcec.nix;
         revNum = 0;
         sha256 = "7b88946e8cf38c93d551ca25aab469cab689b3d288d41d5c78d17015ecc1fcec";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,16 +21,16 @@
       synopsis = "Generate Accelerate arrays filled with high quality pseudorandom numbers";
       description = "Please see the README on GitHub at <https://github.com/tmcdonell/mwc-random-accelerate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench-random" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."mwc-random-accelerate" or (errorHandler.buildDepError "mwc-random-accelerate"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

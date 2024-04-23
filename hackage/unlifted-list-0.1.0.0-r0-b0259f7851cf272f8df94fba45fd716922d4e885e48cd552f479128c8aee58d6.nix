@@ -21,15 +21,15 @@
       synopsis = "GHC Haskell lists of non-thunks (things of kind TYPE 'UnliftedRep)";
       description = "The type provided by this library is a linked list that guarantees\nthe values it stores are not thunks. It could certainly be useful\nfor something stack-like, where the values are unlifted.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

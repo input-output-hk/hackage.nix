@@ -21,7 +21,7 @@
       synopsis = "Tree-sitter grammar/parser for JSON";
       description = "This package provides a parser for JSON suitable for use with the tree-sitter package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
           (hsPkgs."tree-sitter-json".components.sublibs.tree-sitter-json-internal or (errorHandler.buildDepError "tree-sitter-json:tree-sitter-json-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "tree-sitter-json-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Generics functionality for BSON";
       description = "This package offers easy conversion from and to BSON data type for most of user defined data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Gloss Picture data type and rendering functions.     ";
       description = "Gloss Picture data type and rendering functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

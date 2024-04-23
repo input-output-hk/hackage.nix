@@ -21,14 +21,14 @@
       synopsis = "Partial port of prelude to the type level. Requires GHC 7.6.1.";
       description = "This module contains functions from the prelude implemented at the type level as both type classes and type families. It comes with an Integer kind.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A simple random generator library for effin";
       description = "A simple random generator library for effin";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."effin" or (errorHandler.buildDepError "effin"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ] ++ (pkgs.lib).optional (flags.monadrandom) (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"));
+        ] ++ pkgs.lib.optional (flags.monadrandom) (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

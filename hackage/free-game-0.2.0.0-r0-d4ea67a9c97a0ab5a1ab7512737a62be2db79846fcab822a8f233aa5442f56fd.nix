@@ -21,7 +21,7 @@
       synopsis = "Create graphical applications for free.";
       description = "Create something graphical with useful free monads.\n\n/Small instruction/\n\n* load your image by loadBitmapFromFile, embedIO, and loadPicture.\n\n* describe an application using drawPicture, askInput, tick, and so on, in Game monad.\n\n* apply `runGame defaultGameParam` to run.\n\n* That's all!\n\nIn windows, free-game requires DXFI.dll. You can obtain it from <http://botis.org/shared/dist/DXFI-0.2.dll>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
           (hsPkgs."stb-truetype" or (errorHandler.buildDepError "stb-truetype"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

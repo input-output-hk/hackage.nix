@@ -21,7 +21,7 @@
       synopsis = "Haskell Web Library";
       description = "The library includes attoparsec based incremental parsers for\nrfc2616 (http) and rfc3986 (uri). rfcs 2045, 2046, 2109, 2388, 2617\nare planned.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

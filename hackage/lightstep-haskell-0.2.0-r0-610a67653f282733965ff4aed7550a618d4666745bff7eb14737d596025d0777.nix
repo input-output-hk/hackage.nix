@@ -21,7 +21,7 @@
       synopsis = "LightStep OpenTracing client library";
       description = "LightStep OpenTracing client library. Uses GRPC transport via proto-lens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lightstep-haskell-example" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."http2-client" or (errorHandler.buildDepError "http2-client"))
             (hsPkgs."lightstep-haskell" or (errorHandler.buildDepError "lightstep-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

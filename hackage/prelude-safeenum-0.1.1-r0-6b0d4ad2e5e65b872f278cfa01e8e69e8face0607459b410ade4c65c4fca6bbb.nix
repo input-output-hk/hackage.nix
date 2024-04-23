@@ -21,11 +21,11 @@
       synopsis = "A redefinition of the Prelude's Enum class in order to render it safe.";
       description = "A redefinition of the Prelude's Enum class in order to render\nit safe. That is, the Haskell Language Report defines pred,\nsucc, fromEnum, and toEnum to be partial functions when the\ntype is Bounded, but this is unacceptable. We define a new\ntype-class hierarchy for enumeration which is safe and also\ngeneralizes to cover types which can only be enumerated in one\ndirection.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

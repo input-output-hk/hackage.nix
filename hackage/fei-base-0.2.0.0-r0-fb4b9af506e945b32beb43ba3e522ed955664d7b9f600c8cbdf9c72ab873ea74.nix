@@ -13,7 +13,7 @@
       mxnet_1_4 = false;
       mxnet_1_3 = false;
       mxnet_1_0 = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "fei-base"; version = "0.2.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "FFI to MXNet";
       description = "This package provides a FFI wrap of MXNet, including c-apis and symbol/array/executor operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,13 +36,13 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         libs = [ (pkgs."mxnet" or (errorHandler.sysDepError "mxnet")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mxnet-op-gen" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
-            ];
+          ];
           libs = [ (pkgs."mxnet" or (errorHandler.sysDepError "mxnet")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

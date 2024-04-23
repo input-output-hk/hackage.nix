@@ -21,7 +21,7 @@
       synopsis = "Fuzzy finder for cabal executables";
       description = "Simple program that looks for executables in your .cabal and presents you\nwith a list. You can then complete the command you need, or simply hit enter\nwhen the fuzzy finder narrowed the list down to what you need.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "giak" = {
@@ -43,9 +43,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."wybor" or (errorHandler.buildDepError "wybor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Randomized templating language DSL";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."tibetan-utils" or (errorHandler.buildDepError "tibetan-utils"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "madlang" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."madlang" or (errorHandler.buildDepError "madlang"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "madlang-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

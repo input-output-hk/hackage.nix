@@ -21,7 +21,7 @@
       synopsis = "Functional 3D";
       description = "FieldTrip is a library for functional 3D geometry\n\nPlease see the project wiki page: <http://haskell.org/haskellwiki/FieldTrip>\n\n&#169; 2008 by Andy Gill and Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."graphicsFormats" or (errorHandler.buildDepError "graphicsFormats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

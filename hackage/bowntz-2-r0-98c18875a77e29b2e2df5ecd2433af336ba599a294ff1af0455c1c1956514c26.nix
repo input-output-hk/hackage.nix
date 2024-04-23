@@ -21,7 +21,7 @@
       synopsis = "audio-visual pseudo-physical simulation of colliding circles";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bowntz" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
             (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

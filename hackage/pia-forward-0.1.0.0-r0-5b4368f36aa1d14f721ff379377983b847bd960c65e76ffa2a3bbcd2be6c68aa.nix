@@ -21,7 +21,7 @@
       synopsis = "Set up port forwarding with the Private Internet Access\nVPN service.";
       description = "Sets up and maintains a forwarded port. See https://www.privateinternetaccess.com/forum/discussion/180/port-forwarding-without-the-application-advanced-users.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pia-forward" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

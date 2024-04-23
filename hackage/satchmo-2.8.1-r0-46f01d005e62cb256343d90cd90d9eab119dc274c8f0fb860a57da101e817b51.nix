@@ -21,7 +21,7 @@
       synopsis = "SAT encoding monad";
       description = "Encoding for boolean and integral constraints into CNF-SAT.\nThe encoder is provided as a State monad\n(hence the \"mo\" in \"satchmo\").\nThis package depends on minisat-haskell-bindings, see\n<https://github.com/niklasso/minisat-haskell-bindings>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Thread-safe resource pools. (deprecated)";
       description = "This package is deprecated. Users are recommended to switch over to resource-pool and/or pool-conduit. Note: pool-conduit is built on top of resource-pool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

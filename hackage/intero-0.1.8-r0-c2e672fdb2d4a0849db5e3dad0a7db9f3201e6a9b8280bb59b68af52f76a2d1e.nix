@@ -21,7 +21,7 @@
       synopsis = "Complete interactive development program for Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "intero" = {
@@ -39,12 +39,12 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "intero-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

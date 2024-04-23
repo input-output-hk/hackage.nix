@@ -21,7 +21,7 @@
       synopsis = "DNF wrapper tool to control repos";
       description = "A command-line wrapper of the dnf package manager to\ncontrol the repos enabled for a dnf invocation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dnf-repo" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell 98 Partial Lenses";
       description = "Haskell 98 Partial Lenses";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

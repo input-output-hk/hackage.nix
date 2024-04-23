@@ -21,7 +21,7 @@
       synopsis = "Code to generate instances for the package \"ghc-instances\"";
       description = "Functions in this package look at the hackage database to get all the public modules of packages.\n\nIt then creates Haskell files containing each module as an import statement.\n\nIt's primary purpose is to produce files for the\npackage [ghc-instances](https://hackage.haskell.org/package/ghc-instances).\nSee that package for the motivation behind this.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

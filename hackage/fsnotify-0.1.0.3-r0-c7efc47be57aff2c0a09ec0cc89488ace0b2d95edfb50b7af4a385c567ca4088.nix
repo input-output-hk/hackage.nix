@@ -21,7 +21,7 @@
       synopsis = "Cross platform library for file change notification.";
       description = "Cross platform library for file creation, modification,\nand deletion notification. This library builds upon\nexisting libraries for platform-specific Windows, Mac,\nand Linux filesystem event notification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ] ++ (if system.isLinux
+        ] ++ (if system.isLinux
           then [
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-            ]
+          ]
           else if system.isWindows
             then [
               (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))
-              ]
-            else (pkgs.lib).optional (system.isOsx) (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents")));
+            ]
+            else pkgs.lib.optional (system.isOsx) (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents")));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."temporary-rc" or (errorHandler.buildDepError "temporary-rc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

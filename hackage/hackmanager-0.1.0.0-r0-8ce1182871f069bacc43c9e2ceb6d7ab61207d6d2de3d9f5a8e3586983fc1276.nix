@@ -21,7 +21,7 @@
       synopsis = "Generate useful files for Haskell projects";
       description = "Simplify managing Haskell projects by generating files like README.md, .travis.yml, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hackmanager" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."hackmanager" or (errorHandler.buildDepError "hackmanager"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

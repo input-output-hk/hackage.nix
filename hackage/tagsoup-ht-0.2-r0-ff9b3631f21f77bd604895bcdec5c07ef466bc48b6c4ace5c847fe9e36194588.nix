@@ -21,7 +21,7 @@
       synopsis = "alternative parser for the tagsoup package";
       description = "TagSoup is a package for parsing and extracting information from (possibly malformed) HTML/XHTML documents.\nHere I present my own parser,\nwhich I find (of course) more comprehensible and easier to extend.\nIt also handles XML declarations and CDATA sections correctly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tagsouptest" = {
           depends = [
@@ -39,18 +39,18 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "validate-tagsoup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

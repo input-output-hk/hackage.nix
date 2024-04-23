@@ -21,7 +21,7 @@
       synopsis = "Automatically bump package versions, also transitively.";
       description = "Automatically bump package versions, also transitively.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bumper" = {
@@ -42,9 +42,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

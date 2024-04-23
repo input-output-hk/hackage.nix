@@ -21,7 +21,7 @@
       synopsis = "Dingo Example";
       description = "Example application for the Dingo Rich Internet Application platform.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dingo-example" = {
@@ -37,9 +37,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

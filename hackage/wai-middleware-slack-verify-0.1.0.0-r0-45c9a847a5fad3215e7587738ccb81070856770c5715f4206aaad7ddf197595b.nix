@@ -14,7 +14,7 @@
       identifier = {
         name = "wai-middleware-slack-verify";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Copyright (c) 2018 Brandon Hamilton";
       maintainer = "brandon.hamilton@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "WAI Slack request verification middleware";
       description = "Middleware for WAI that uses signed secrets to verify Slack requests.\\n\nSee <https://api.slack.com/docs/verifying-requests-from-slack>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bot-example" = {
           depends = [
@@ -48,15 +48,15 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ] ++ (pkgs.lib).optionals (flags.build-example) [
+          ] ++ pkgs.lib.optionals (flags.build-example) [
             (hsPkgs."linklater" or (errorHandler.buildDepError "linklater"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai-middleware-slack-verify" or (errorHandler.buildDepError "wai-middleware-slack-verify"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.build-example then true else false;
-          };
         };
+      };
       tests = {
         "wai-middleware-slack-verify-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-slack-verify" or (errorHandler.buildDepError "wai-middleware-slack-verify"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

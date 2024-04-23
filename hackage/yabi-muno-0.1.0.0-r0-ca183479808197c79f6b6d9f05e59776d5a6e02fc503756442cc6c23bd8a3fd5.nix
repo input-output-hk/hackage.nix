@@ -21,7 +21,7 @@
       synopsis = "Yet Another Brainfuck Interpreter";
       description = "Yet Another Brainfuck Interpreter for muno";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yabi" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."yabi" or (errorHandler.buildDepError "yabi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

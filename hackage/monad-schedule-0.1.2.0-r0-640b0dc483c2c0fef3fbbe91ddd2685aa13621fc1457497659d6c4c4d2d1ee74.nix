@@ -21,7 +21,7 @@
       synopsis = "A new, simple, composable concurrency abstraction.";
       description = "A monad @m@ is said to allow scheduling if you can pass a number of actions @m a@ to it,\nand those can be executed at the same time concurrently.\nYou can observe the result of the actions after some time:\nSome actions will complete first, and the results of these are returned then as a list @'NonEmpty' a@.\nOther actions are still running, and for these you will receive continuations of type @m a@,\nwhich you can further run or schedule to completion as you like.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."time-domain" or (errorHandler.buildDepError "time-domain"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."monad-schedule" or (errorHandler.buildDepError "monad-schedule"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

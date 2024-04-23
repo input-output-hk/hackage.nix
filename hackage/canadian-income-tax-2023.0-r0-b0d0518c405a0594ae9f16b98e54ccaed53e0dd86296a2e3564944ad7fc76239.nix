@@ -21,7 +21,7 @@
       synopsis = "Canadian income tax calculation";
       description = "This package provides a library and executable to fill out\nincomplete Canadian tax forms in FDF format and to populate all\nfields therein that can be automatically calculated from the rest\nof the form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."forms-data-format" or (errorHandler.buildDepError "forms-data-format"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "complete-canadian-taxes" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."ca-province-codes" or (errorHandler.buildDepError "ca-province-codes"))
             (hsPkgs."forms-data-format" or (errorHandler.buildDepError "forms-data-format"))
             (hsPkgs."canadian-income-tax" or (errorHandler.buildDepError "canadian-income-tax"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "serve-canadian-taxes" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -79,10 +79,10 @@
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."forms-data-format" or (errorHandler.buildDepError "forms-data-format"))
             (hsPkgs."canadian-income-tax" or (errorHandler.buildDepError "canadian-income-tax"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."canadian-income-tax" or (errorHandler.buildDepError "canadian-income-tax"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "regression" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -120,9 +120,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."canadian-income-tax" or (errorHandler.buildDepError "canadian-income-tax"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

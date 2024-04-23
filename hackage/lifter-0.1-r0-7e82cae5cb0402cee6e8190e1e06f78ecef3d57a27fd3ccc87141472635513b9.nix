@@ -21,7 +21,7 @@
       synopsis = "A boulderdash-like game and solution validator";
       description = "ICFP Contest 2012 task";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lifter" = {
@@ -35,9 +35,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

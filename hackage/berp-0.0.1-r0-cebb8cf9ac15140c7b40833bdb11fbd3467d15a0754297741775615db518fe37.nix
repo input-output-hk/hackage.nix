@@ -21,7 +21,7 @@
       synopsis = "An implementation of Python 3. ";
       description = "Berp is an implementation of Python 3, written in Haskell.\nIt provides a compiler and an interpreter. In both cases\nthe input Python program is translated into Haskell code.\nThe compiler turns the Haskell code into machine code.\nThe interpreter runs the Haskell code immediately via\nthe GHCi interpreter. The user interface of the interpreter\nimitates the one provided by CPython.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."integer" or (errorHandler.buildDepError "integer"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "berp" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

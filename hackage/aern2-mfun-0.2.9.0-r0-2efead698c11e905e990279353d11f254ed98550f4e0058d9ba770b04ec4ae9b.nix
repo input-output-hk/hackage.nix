@@ -21,7 +21,7 @@
       synopsis = "Multi-variate real function optimisation and proving";
       description = "Please see the README on GitHub at <https://github.com/michalkonecny/aern2/#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."collect-errors" or (errorHandler.buildDepError "collect-errors"))
           (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aern2-mfun-benchmark-optimisation" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."collect-errors" or (errorHandler.buildDepError "collect-errors"))
             (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

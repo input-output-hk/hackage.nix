@@ -21,15 +21,15 @@
       synopsis = "a cyclic doubly linked list";
       description = "This package implements a cyclic doubly linked list and\ndefines various instances for it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."collections-api" or (errorHandler.buildDepError "collections-api"))
           (hsPkgs."collections-base-instances" or (errorHandler.buildDepError "collections-base-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

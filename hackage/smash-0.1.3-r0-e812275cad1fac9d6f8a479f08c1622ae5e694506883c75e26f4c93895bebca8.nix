@@ -21,7 +21,7 @@
       synopsis = "Combinators for Maybe types";
       description = "Smash products are like the 'These' datatype, only with a unit. You can\nthink of this type as isomorphic to 'Maybe (These a b)'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

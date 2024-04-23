@@ -6,8 +6,8 @@
         nix = import ../hackage/church-0.1.0.0-r0-7be113dce410dc080a70703c004ba3ad32c59ced6cb5bad38e91fe0fc4fb4357.nix;
         revNum = 0;
         sha256 = "7be113dce410dc080a70703c004ba3ad32c59ced6cb5bad38e91fe0fc4fb4357";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

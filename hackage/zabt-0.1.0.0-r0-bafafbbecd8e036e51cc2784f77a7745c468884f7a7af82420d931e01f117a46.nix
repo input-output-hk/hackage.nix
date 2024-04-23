@@ -21,15 +21,15 @@
       synopsis = "Simpleminded abstract binding trees";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zabt-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."zabt" or (errorHandler.buildDepError "zabt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Simple fix-expression parser";
       description = "Simple fix-expression parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

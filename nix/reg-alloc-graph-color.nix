@@ -6,8 +6,8 @@
         nix = import ../hackage/reg-alloc-graph-color-0.0.0.0-r0-783606c98cf5ca7ae1cace5cbc24a407a4b534694056c676fe2e36001f959eb7.nix;
         revNum = 0;
         sha256 = "783606c98cf5ca7ae1cace5cbc24a407a4b534694056c676fe2e36001f959eb7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Data types and typeclasses to deal with universally and existentially quantified types";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

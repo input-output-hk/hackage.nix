@@ -21,7 +21,7 @@
       synopsis = "Useful glue functions between the fb library and Yesod.";
       description = "This package contains useful glue functions between the fb\npackage (<http://hackage.haskell.org/package/fb>) and Yesod.\nThese functions can't be included on the fb package itself\nbecause it should not depend on Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

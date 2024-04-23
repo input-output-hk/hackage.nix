@@ -21,7 +21,7 @@
       synopsis = "Derive monad type classes with DerivingVia";
       description = "Deriving type class instances for monad transformer stacks can be tedious.\nBy actually composing transformers with `ComposeT` we don't need to implement\neach type class for each transformer.\nInstead we need a single instance for `Elevator`, which will then help us pick\nthe correct instance with DerivingVia.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

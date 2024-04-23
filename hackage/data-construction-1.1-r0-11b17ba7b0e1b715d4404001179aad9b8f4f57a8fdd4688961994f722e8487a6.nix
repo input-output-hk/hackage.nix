@@ -21,11 +21,11 @@
       synopsis = "Data construction abstractions including Constructor, Destructor, Maker, Destroyer, Producer and Consumer.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Secure WebSocket (WSS) clients";
       description = "Wuss is a library that lets you easily create secure WebSocket clients over\nthe WSS protocol.\n\nPlease read <https://github.com/tfausak/wuss#readme the readme> for example\nusage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

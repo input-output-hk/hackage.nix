@@ -21,15 +21,15 @@
       synopsis = "Slices of primitive arrays";
       description = "The `vector` library provides types for slicing into many\ntypes of arrays. However, it does not include slices of\n`SmallArray` or `UnliftedArray`. This library provides types\nfor working with such slices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

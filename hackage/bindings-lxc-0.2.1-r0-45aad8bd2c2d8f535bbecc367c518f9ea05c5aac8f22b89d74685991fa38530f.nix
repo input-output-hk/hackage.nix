@@ -21,15 +21,15 @@
       synopsis = "Direct Haskell bindings to LXC (Linux containers) C API.";
       description = "The package provides direct bindings to LXC C API through @bindings-dsl@.\nFor high-level Haskell LXC API see <http://hackage.haskell.org/package/lxc lxc package>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."lxc" or (errorHandler.sysDepError "lxc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

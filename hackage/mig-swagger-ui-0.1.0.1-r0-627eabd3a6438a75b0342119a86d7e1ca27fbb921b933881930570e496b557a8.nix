@@ -21,7 +21,7 @@
       synopsis = "Swagger servers for mig library";
       description = "Appends swagger servers for mig servers.\nExample of the usage. This code adds swagger server which is serverd on path \"swagger-ui\" to our server\n\n> withSwagger def server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."mig" or (errorHandler.buildDepError "mig"))
           (hsPkgs."openapi3" or (errorHandler.buildDepError "openapi3"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

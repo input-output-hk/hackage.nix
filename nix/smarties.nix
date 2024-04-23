@@ -6,8 +6,8 @@
         nix = import ../hackage/smarties-1.2.1-r0-40dbd6c2cfca89c24e975d2914e4e156670abcf151491e78d6875dcd55117b76.nix;
         revNum = 0;
         sha256 = "40dbd6c2cfca89c24e975d2914e4e156670abcf151491e78d6875dcd55117b76";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

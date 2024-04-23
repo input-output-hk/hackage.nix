@@ -6,8 +6,8 @@
         nix = import ../hackage/GoogleSB-0.1-r0-c91470d8827027ef5d8aed9000cbb3cc4d834be762ae10e00e5108fb7e0e11ff.nix;
         revNum = 0;
         sha256 = "c91470d8827027ef5d8aed9000cbb3cc4d834be762ae10e00e5108fb7e0e11ff";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

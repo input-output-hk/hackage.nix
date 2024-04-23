@@ -21,7 +21,7 @@
       synopsis = "First class records implemented with quasi-quotation";
       description = "An API of just two quasi-quoters,\nproviding a full-scale solution to the notorious records problem of Haskell.\n\nLinks:\n\n* <http://nikita-volkov.github.io/record A comprehensive introduction to the library>.\n\n* <https://github.com/nikita-volkov/record/blob/master/demo/Main.hs Demo>.\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,30 +31,30 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
-          depends = (pkgs.lib).optionals (!(!flags.demo)) [
+          depends = pkgs.lib.optionals (!!flags.demo) [
             (hsPkgs."record" or (errorHandler.buildDepError "record"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
         };
+      };
       tests = {
         "doctest" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctest)) [
+          depends = pkgs.lib.optionals (!!flags.doctest) [
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.doctest then false else true;
-          };
         };
       };
-    }
+    };
+  }

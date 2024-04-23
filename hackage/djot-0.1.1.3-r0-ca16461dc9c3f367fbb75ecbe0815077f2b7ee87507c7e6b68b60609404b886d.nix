@@ -21,7 +21,7 @@
       synopsis = "Parser and renderer for djot light markup syntax.";
       description = "Djot (<https://djot.net>) is a light markup language.\nThis package provides a data structure to represent\ndjot documents, a very fast parser, and functions\nto render a parsed document as HTML and as djot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "djoths" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-djot" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-djot" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."doclayout" or (errorHandler.buildDepError "doclayout"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

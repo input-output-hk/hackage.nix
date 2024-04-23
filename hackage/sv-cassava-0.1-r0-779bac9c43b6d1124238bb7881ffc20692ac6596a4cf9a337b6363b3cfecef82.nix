@@ -21,7 +21,7 @@
       synopsis = "Integration to use sv with cassava's parser";
       description = "This package provides functions allowing you to use cassava's parser\ntogether with sv's decoding. You might prefer this to using sv's own\nparser if speed is a significant concern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."sv" or (errorHandler.buildDepError "sv"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hunit" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

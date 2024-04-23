@@ -21,7 +21,7 @@
       synopsis = "Textual type class for data that represent text";
       description = "Exposes the Textual type class, for data that represent textual content\n\nAlso, exposes a simple utility for conversion between instances, much like\nfromIntegral converts between Integral instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

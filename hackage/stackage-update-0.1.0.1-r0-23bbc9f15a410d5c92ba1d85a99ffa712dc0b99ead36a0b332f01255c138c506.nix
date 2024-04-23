@@ -21,7 +21,7 @@
       synopsis = "Update your package index incrementally (requires git)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage-update" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stackage-update" or (errorHandler.buildDepError "stackage-update"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

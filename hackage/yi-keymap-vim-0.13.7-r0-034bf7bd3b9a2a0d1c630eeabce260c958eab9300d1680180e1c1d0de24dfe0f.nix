@@ -21,7 +21,7 @@
       synopsis = "Vim keymap for Yi editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
             (hsPkgs."yi-keymap-vim" or (errorHandler.buildDepError "yi-keymap-vim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

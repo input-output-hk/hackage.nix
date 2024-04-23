@@ -21,7 +21,7 @@
       synopsis = "Key agreement for commsec.";
       description = "Use RSA keys to authenticate a key exchange to\nestablish a commsec 'Connection'.  This package comes with\nthe same warnings as 'commsec': There is minimal testing\nand no code review.  Use at your own risk.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."DRBG" or (errorHandler.buildDepError "DRBG"))
           (hsPkgs."monadcryptorandom" or (errorHandler.buildDepError "monadcryptorandom"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

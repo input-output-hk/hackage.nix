@@ -21,21 +21,21 @@
       synopsis = "Idiomatic data structure for agreement";
       description = "Please see the README on GitHub at <https://github.com/jcranch/agreeing#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "agreeing-test" = {
           depends = [
             (hsPkgs."agreeing" or (errorHandler.buildDepError "agreeing"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,19 +21,19 @@
       synopsis = "Implementation of Oleg Kiselyov's left-fold enumerators";
       description = "Based on Oleg Kiselyov's IterateeM: <http://okmij.org/ftp/Haskell/Iteratee/IterateeM.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ])) ++ [ (hsPkgs."text" or (errorHandler.buildDepError "text")) ];
+          ])) ++ [ (hsPkgs."text" or (errorHandler.buildDepError "text")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "OpenAPI Definitions for Jordan, Automatically";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "jordan-openapi-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."jordan-openapi" or (errorHandler.buildDepError "jordan-openapi"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

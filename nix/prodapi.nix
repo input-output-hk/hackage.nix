@@ -6,8 +6,8 @@
         nix = import ../hackage/prodapi-0.1.0.0-r0-ff6288b84fa95f74208d63dc3dfa222766b1fd07cb262b01dff60a3a97394377.nix;
         revNum = 0;
         sha256 = "ff6288b84fa95f74208d63dc3dfa222766b1fd07cb262b01dff60a3a97394377";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

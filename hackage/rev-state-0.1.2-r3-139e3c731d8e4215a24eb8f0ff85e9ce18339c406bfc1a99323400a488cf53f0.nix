@@ -21,24 +21,24 @@
       synopsis = "Reverse State monad transformer";
       description = "It's like the State monad transformer.\nBut Reversed! The state goes backwards.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rev-state-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rev-state" or (errorHandler.buildDepError "rev-state"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

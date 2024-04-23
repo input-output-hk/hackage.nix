@@ -14,7 +14,7 @@
       identifier = {
         name = "atlassian-connect-descriptor";
         version = "0.1.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "rmassaioli@atlassian.com";
@@ -24,7 +24,7 @@
       synopsis = "Code that helps you create a valid Atlassian Connect Descriptor.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
           (hsPkgs."cases" or (errorHandler.buildDepError "cases"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-descriptor" = {
           depends = [
@@ -53,12 +53,12 @@
             (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
             (hsPkgs."cases" or (errorHandler.buildDepError "cases"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "hex dumper for UTF-8 text";
       description = "hex dumper for UTF-8 text";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uhexdump" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

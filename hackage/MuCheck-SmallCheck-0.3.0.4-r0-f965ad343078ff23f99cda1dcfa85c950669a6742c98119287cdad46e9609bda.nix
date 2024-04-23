@@ -21,25 +21,25 @@
       synopsis = "Automated Mutation Testing for SmallCheck tests";
       description = "This package contains the test adapter for SmallCheck tests to use it with MuCheck";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
           (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mucheck-smallcheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
             (hsPkgs."MuCheck" or (errorHandler.buildDepError "MuCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

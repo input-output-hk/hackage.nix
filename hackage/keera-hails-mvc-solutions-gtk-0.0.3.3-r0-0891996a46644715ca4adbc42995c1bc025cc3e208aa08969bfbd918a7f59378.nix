@@ -14,7 +14,7 @@
       identifier = {
         name = "keera-hails-mvc-solutions-gtk";
         version = "0.0.3.3";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.es";
@@ -24,7 +24,7 @@
       synopsis = "Haskell on Gtk rails - Common solutions to recurrent problems in Gtk applications";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."keera-hails-mvc-model-protectedmodel" or (errorHandler.buildDepError "keera-hails-mvc-model-protectedmodel"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."MissingK" or (errorHandler.buildDepError "MissingK"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "SVG to G-Code converter";
       description = "SVG to G-code converter that aims to support most SVG features. The flavor of the generated G-Code can be influenced providing a configuration file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "juicy-gcode" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

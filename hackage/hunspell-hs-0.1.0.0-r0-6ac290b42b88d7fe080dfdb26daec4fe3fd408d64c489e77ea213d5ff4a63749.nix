@@ -21,16 +21,16 @@
       synopsis = "Hunspell thread-safe FFI bindings for spell checking.";
       description = "Please see the README on GitHub at <https://github.com/ashutoshrishi/hunspell-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux) (pkgs."hunspell" or (errorHandler.sysDepError "hunspell")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6" or (errorHandler.sysDepError "hunspell-1.6"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."hunspell" or (errorHandler.sysDepError "hunspell")) ++ pkgs.lib.optional (system.isOsx) (pkgs."hunspell-1.6" or (errorHandler.sysDepError "hunspell-1.6"));
         buildable = true;
-        };
+      };
       tests = {
         "hunspell-hs-test" = {
           depends = [
@@ -38,11 +38,11 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hunspell-hs" or (errorHandler.buildDepError "hunspell-hs"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
-          libs = (pkgs.lib).optional (system.isLinux) (pkgs."hunspell" or (errorHandler.sysDepError "hunspell")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6" or (errorHandler.sysDepError "hunspell-1.6"));
+          ];
+          libs = pkgs.lib.optional (system.isLinux) (pkgs."hunspell" or (errorHandler.sysDepError "hunspell")) ++ pkgs.lib.optional (system.isOsx) (pkgs."hunspell-1.6" or (errorHandler.sysDepError "hunspell-1.6"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hunspell-hs-bench" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hunspell-hs" or (errorHandler.buildDepError "hunspell-hs"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
-          libs = (pkgs.lib).optional (system.isLinux) (pkgs."hunspell" or (errorHandler.sysDepError "hunspell")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."hunspell-1.6" or (errorHandler.sysDepError "hunspell-1.6"));
+          ];
+          libs = pkgs.lib.optional (system.isLinux) (pkgs."hunspell" or (errorHandler.sysDepError "hunspell")) ++ pkgs.lib.optional (system.isOsx) (pkgs."hunspell-1.6" or (errorHandler.sysDepError "hunspell-1.6"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

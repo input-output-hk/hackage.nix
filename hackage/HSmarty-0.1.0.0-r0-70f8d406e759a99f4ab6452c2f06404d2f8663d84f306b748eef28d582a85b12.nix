@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of a subset of the PHP-Smarty template language";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TestHSmarty" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

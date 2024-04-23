@@ -21,7 +21,7 @@
       synopsis = "Build and create Fedora package repos and branches";
       description = "fbrnch (fedora branch) is a convenient packaging tool for\nFedora Packagers, with integration for Bugzilla, Koji, and Bodhi.\n\nFeatures include:\n\n- merging and building a package across release branches\n\n- automated parallel builds of sets of packages in dependency order\n\n- creating, updating and listing one's package reviews\n\n- requesting repos for new approved packages and branch requests\n\n- import srpms from package reviews\n\n- progressive copr builds\n\nand many more commands.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fbrnch" = {
@@ -56,9 +56,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

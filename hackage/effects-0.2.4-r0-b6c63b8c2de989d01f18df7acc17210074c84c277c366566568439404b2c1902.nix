@@ -21,7 +21,7 @@
       synopsis = "Computational Effects";
       description = "Control.Effects is a library for programming with effects, like in the the Eff language by\nAndrej Bauer and Matija Pretnar. Effects can be used instead of monad transformers.\n\nSee the home page for some example code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."newtype-generics" or (errorHandler.buildDepError "newtype-generics"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

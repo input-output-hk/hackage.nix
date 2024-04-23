@@ -21,7 +21,7 @@
       synopsis = "a library of functions which are useful for composing music";
       description = "This library contains functions which are useful for composing music. One module deals with lists, intially intended to be useful for algorithmically generating rhythm patterns. The other two modules, Scale and Pitch, deal with exactly those two concepts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

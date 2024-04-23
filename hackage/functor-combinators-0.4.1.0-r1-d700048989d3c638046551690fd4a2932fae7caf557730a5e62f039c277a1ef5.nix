@@ -21,7 +21,7 @@
       synopsis = "Tools for functor combinator-based program design";
       description = "Tools for working with /functor combinators/: types that take functors (or\nother indexed types) and returns a new functor that \"enhances\" or \"mixes\"\nthem in some way.  In the process, you can design featureful programs by\ncomposing smaller \"primitives\" using basic unversal combinators.\n\nThe main entry point is \"Data.Functor.Combinators\", but more fine-grained\nfunctionality and extra combinators (some of them re-implementations for\ncompatibility) are available in other modules as well.\n\nThis library does not define new functor combinators for the most part,\nbut rather re-exports them from different parts of the Haskell ecosystem\nand provides a uniform interface.\n\nSee the README for a quick overview, and also\n<https://blog.jle.im/entry/functor-combinatorpedia.html> for an in-depth\ndive into the motivation behind functor combinator-driven development,\nexamples of the functor combinators in this library, and details about how\nto use these abstractions!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."trivial-constraint" or (errorHandler.buildDepError "trivial-constraint"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "functor-combinators-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."trivial-constraint" or (errorHandler.buildDepError "trivial-constraint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

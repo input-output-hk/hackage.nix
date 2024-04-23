@@ -21,7 +21,7 @@
       synopsis = "Library for localization (l10n)";
       description = "This is a library to manage localization (l10n) of messages\naccording to some (builtin or user-defined) locales.\n\nThe type system ensures that each message has a localization\nfor each of the wanted locales.\n\nMessages can be declared using a data type or a type class,\nand then rendered to the wanted output type, using 'localize' (resp. 'loqualize').\n\nFor examples, see the source code of @Data.Locale.Tutorial@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Implements an osculatory packing (kissing circles) algorithm and display.";
       description = "Implements the simple algorithm for packing an area with circles that are\n'mutually tangent' as well as functions for displaying the image on-screen.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

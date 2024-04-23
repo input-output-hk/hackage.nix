@@ -14,7 +14,7 @@
       identifier = {
         name = "gargoyle-postgresql-connect";
         version = "0.1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2019 Obsidian Systems LLC";
       maintainer = "maintainer@obsidian.systems";
@@ -24,7 +24,7 @@
       synopsis = "Connect to gargoyle-managed postgresql instances";
       description = "A convenience utility for connecting to a postgresql instance managed by gargoyle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."gargoyle-postgresql-nix" or (errorHandler.buildDepError "gargoyle-postgresql-nix"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

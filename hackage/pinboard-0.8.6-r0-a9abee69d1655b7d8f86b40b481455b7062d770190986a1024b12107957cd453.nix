@@ -21,7 +21,7 @@
       synopsis = "Access to the Pinboard API";
       description = "\nThe Pinboard API is a way to interact programatically with\nyour bookmarks, notes and other Pinboard data. This\nlibrary wraps the API exposing functions and data\nstructures suitable for usage in Haskell programs.\n\nExample:\n\n> import Pinboard\n>\n> main :: IO ()\n> main = do\n>   let config = fromApiToken \"api token\"\n>   result <- runPinboard config $ getPostsRecent Nothing Nothing\n>   case result of\n>     Right details -> print details\n>     Left pinboardError -> print pinboardError\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

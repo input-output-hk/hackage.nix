@@ -6,8 +6,8 @@
         nix = import ../hackage/multi-trie-0.1-r0-8a54515258bc2f897b767f9520bdf576270fda65373f6f1b6d3dfd5a5f6a0a29.nix;
         revNum = 0;
         sha256 = "8a54515258bc2f897b767f9520bdf576270fda65373f6f1b6d3dfd5a5f6a0a29";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

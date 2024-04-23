@@ -21,18 +21,18 @@
       synopsis = "Interface to TUN/TAP drivers.";
       description = "TUN/TAP is a virtual network adapter supported by serveral\noperating systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (system.isOsx || system.isFreebsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isOsx || system.isFreebsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."Iphlpapi" or (errorHandler.sysDepError "Iphlpapi"))
           (pkgs."ws2_32" or (errorHandler.sysDepError "ws2_32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

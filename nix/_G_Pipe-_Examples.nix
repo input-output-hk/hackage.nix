@@ -6,8 +6,8 @@
         nix = import ../hackage/GPipe-Examples-0.1-r0-e1c55b4905721d3d14d495ce93e52af8dc073a342d1f17db7efc3c16fcf9b7c7.nix;
         revNum = 0;
         sha256 = "e1c55b4905721d3d14d495ce93e52af8dc073a342d1f17db7efc3c16fcf9b7c7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

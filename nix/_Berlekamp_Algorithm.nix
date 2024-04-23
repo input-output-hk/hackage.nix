@@ -6,8 +6,8 @@
         nix = import ../hackage/BerlekampAlgorithm-0.1.0.0-r0-d9c184310d7bca126a42ddcb3b680aa6dd942464b7e8a8aabc97886565396280.nix;
         revNum = 0;
         sha256 = "d9c184310d7bca126a42ddcb3b680aa6dd942464b7e8a8aabc97886565396280";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

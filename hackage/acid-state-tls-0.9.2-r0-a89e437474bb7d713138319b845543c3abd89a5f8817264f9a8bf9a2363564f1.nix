@@ -21,7 +21,7 @@
       synopsis = "Add TLS support for Data.Acid.Remote";
       description = "Adds TLS support for connections to remote AcidState databases";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

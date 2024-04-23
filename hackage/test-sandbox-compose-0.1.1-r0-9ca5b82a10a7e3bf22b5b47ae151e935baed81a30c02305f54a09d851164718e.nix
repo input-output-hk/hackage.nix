@@ -21,7 +21,7 @@
       synopsis = "Lightweight development enviroments using test-sandbox";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-sandbox-compose" = {
           depends = [
@@ -75,10 +75,10 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."cabal-test-bin" or (errorHandler.buildDepError "cabal-test-bin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

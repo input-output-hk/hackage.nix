@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-personalize-runtime-2.0-r0-9714c90e5d6427beb6e853c55c0614ed90bd27a3f28490fbd568619db5d565bf.nix;
         revNum = 0;
         sha256 = "9714c90e5d6427beb6e853c55c0614ed90bd27a3f28490fbd568619db5d565bf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

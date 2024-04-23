@@ -6,8 +6,8 @@
         nix = import ../hackage/regex-tdfa-pipes-0.1.0.0-r0-3acea91cf1e2f1e7c77de8526cce9f4af0ed81be6fafe49e2a212ebe468e0b58.nix;
         revNum = 0;
         sha256 = "3acea91cf1e2f1e7c77de8526cce9f4af0ed81be6fafe49e2a212ebe468e0b58";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

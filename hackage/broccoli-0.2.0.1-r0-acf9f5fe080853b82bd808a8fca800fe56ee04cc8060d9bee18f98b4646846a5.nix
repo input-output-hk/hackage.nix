@@ -21,15 +21,15 @@
       synopsis = "Small library for interactive functional programs.";
       description = "Small library for interactive functional programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unamb" or (errorHandler.buildDepError "unamb"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

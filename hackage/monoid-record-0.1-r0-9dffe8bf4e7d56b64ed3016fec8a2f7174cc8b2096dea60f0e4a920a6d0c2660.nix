@@ -21,11 +21,11 @@
       synopsis = "Support for modifying record fields of monoidal type";
       description = "Small module with utility function and class for modifying record fields\nof a monoidal type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

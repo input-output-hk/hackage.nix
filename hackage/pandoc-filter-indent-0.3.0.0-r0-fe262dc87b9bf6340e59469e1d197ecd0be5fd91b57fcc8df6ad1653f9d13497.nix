@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter formatting Haskell code fragments using GHC lexer.";
       description = "Formats marked code fragments, and allows `pandoc` to safely process rest of your literate program:\n\n> ```{.haskell}\n\n\nUsage:\n\n> stack install pandoc-filter-indent\n> pandoc --filter pandoc-filter-indent -f input.md -o output.pdf\n> pandoc --filter pandoc-filter-indent -f input.md -o output.html\n\nUsing `lhs2TeX` is somewhat inconvenient on large Markdown documents\nprocessed with `pandoc`, since it assumes that it can freely redefine everything.\nIt is also pretty heavy on learning.\n\nSo instead we have a simple Pandoc filter that is only applied to `CodeFragment`s\nand creates tabular code structures from indentation.\nIt uses GHC lexer to assure that latest features are always parsed correctly.\n\nPlease see the README on GitHub at <https://github.com/mgajda/pandoc-filter-indent#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-filter-indent" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pandoc-filter-indent-test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

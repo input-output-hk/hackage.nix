@@ -21,7 +21,7 @@
       synopsis = "Very fast JSON serialisation and parsing library";
       description = "Low boilerplate, easy to use and very fast JSON serialisation and parsing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
           (hsPkgs."buffer-builder" or (errorHandler.buildDepError "buffer-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "highjson-tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."highjson" or (errorHandler.buildDepError "highjson"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "highjson-benchmarks" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

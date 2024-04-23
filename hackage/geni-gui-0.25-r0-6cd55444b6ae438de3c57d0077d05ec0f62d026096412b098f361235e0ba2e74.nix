@@ -28,8 +28,8 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -50,18 +50,18 @@
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "geni-gui" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GenI" or (errorHandler.buildDepError "GenI"))
             (hsPkgs."geni-gui" or (errorHandler.buildDepError "geni-gui"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

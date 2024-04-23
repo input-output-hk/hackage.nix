@@ -21,7 +21,7 @@
       synopsis = "Render and insert PlantUML diagrams with Pandoc";
       description = "PlantUML renders different types of UML diagrams.\nThis filter invokes plantuml.jar (which must be present\nin the current directory) for any yet unrendered diagrams.\n\nDiagrams are recognized in CodeBlocks that have the\nclass \"uml\". It is advisable to also include an attribute\n\"caption\", which is rendered as alternate text for the image.\nIf an ID is present, it is additionally appended compatible\nwith pandoc-crossref.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,19 +32,19 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-plantuml-diagrams" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-plantuml-diagrams" or (errorHandler.buildDepError "pandoc-plantuml-diagrams"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc-crossref" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

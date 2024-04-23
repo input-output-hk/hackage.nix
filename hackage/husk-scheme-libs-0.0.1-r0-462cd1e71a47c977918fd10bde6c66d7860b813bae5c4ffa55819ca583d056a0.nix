@@ -21,7 +21,7 @@
       synopsis = "Extra libraries for the husk Scheme platform.";
       description = "Extra libraries for the husk Scheme platform.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."husk-scheme" or (errorHandler.buildDepError "husk-scheme"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Get timing informations for SMT queries";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

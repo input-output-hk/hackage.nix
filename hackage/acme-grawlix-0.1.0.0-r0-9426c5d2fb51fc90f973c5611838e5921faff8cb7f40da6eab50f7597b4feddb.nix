@@ -21,11 +21,11 @@
       synopsis = "More readable names for commonly used symbols";
       description = "Readable code is a laudable goal, yet most Haskell code\nis littered with totally unpronounceable symbols of\nvarious sorts. How can code be readable if it's\nunspeakable?\nThis package is designed to improve upon this sad state\nof affairs by giving pronounceable aliases to various\nsymbols of all sorts.\n/Share and Enjoy/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

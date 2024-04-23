@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to libsystemd-journal";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,11 +39,11 @@
           (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libsystemd" or (errorHandler.pkgConfDepError "libsystemd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

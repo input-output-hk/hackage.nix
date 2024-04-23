@@ -21,7 +21,7 @@
       synopsis = "Cabal file access";
       description = "cabal-file is a small library on top of the 'hackage-security' library\nfor accessing the local Hackage repo index cache, and a command-line tool\n'cblfile' which can diff .cabal versions, list package versions,\nsave a cabal file, and show metadata from the index. It uses\nsimple-cabal to display package dependency lists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."simple-cabal" or (errorHandler.buildDepError "simple-cabal"))
           (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cblfile" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."simple-cabal" or (errorHandler.buildDepError "simple-cabal"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

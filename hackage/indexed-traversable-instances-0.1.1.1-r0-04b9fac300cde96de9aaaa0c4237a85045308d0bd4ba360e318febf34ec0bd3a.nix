@@ -14,7 +14,7 @@
       identifier = {
         name = "indexed-traversable-instances";
         version = "0.1.1.1";
-        };
+      };
       license = "BSD-2-Clause";
       copyright = "";
       maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
@@ -24,7 +24,7 @@
       synopsis = "More instances of FunctorWithIndex, FoldableWithIndex, TraversableWithIndex";
       description = "This package provides extra instances for type-classes in the [indexed-traversable](https://hackage.haskell.org/package/indexed-traversable) package.\n\nThe intention is to keep this package minimal;\nit provides instances that formely existed in @lens@ or @optics-extra@.\nWe recommend putting other instances directly into their defining packages.\nThe @indexed-traversable@ package is light, having only GHC boot libraries\nas its dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "safe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
             (hsPkgs."indexed-traversable-instances" or (errorHandler.buildDepError "indexed-traversable-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "indexed-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

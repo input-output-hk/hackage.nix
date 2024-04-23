@@ -21,7 +21,7 @@
       synopsis = "Extend vformat to Aeson datatypes";
       description = "Please see http://hackage.haskell.org/package/vformat-aeson";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vformat-aeson-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vformat" or (errorHandler.buildDepError "vformat"))
             (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

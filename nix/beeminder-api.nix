@@ -6,8 +6,8 @@
         nix = import ../hackage/beeminder-api-1.0-r0-c9326ba8af7c50ab3161e4093bbfd89597a9aa2451149847f7d2fb23f1376a8d.nix;
         revNum = 0;
         sha256 = "c9326ba8af7c50ab3161e4093bbfd89597a9aa2451149847f7d2fb23f1376a8d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

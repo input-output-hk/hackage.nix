@@ -21,7 +21,7 @@
       synopsis = "Safely output coloured text";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-bytestring" or (errorHandler.buildDepError "validity-bytestring"))
           (hsPkgs."validity-text" or (errorHandler.buildDepError "validity-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

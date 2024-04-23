@@ -21,7 +21,7 @@
       synopsis = "Collection of types for bioinformatics";
       description = "Types used in a number of bioinformatics libraries.\n\n* linear indices\n\n* energies\n\n* numerics\n\n* biostring wrappers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."bimaps" or (errorHandler.buildDepError "bimaps"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

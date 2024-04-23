@@ -21,7 +21,7 @@
       synopsis = "Automated test tool for QuickCheck.";
       description = "A program to invoke quickCheck for all properties in a module (this version invokes ghci, but is easily modified to other interpreters instead).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "quickCheck" = {
@@ -31,13 +31,13 @@
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

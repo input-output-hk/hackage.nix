@@ -21,7 +21,7 @@
       synopsis = "TLS support for mysql-haskell package using openssl";
       description = "TLS support for mysql-haskell package using openssl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."wire-streams" or (errorHandler.buildDepError "wire-streams"))
           (hsPkgs."mysql-haskell" or (errorHandler.buildDepError "mysql-haskell"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

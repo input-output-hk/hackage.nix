@@ -6,10 +6,10 @@
         nix = import ../hackage/starter-snake-haskell-1.0.0-r0-4515c3e809132974732f58e2bec462e0180bb3b24a2a1baa7cacb9a062cd713d.nix;
         revNum = 0;
         sha256 = "4515c3e809132974732f58e2bec462e0180bb3b24a2a1baa7cacb9a062cd713d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "1.1.0" = {
     sha256 = "c7d9bedd29558b879b2a8e0f57b3c34ee4f54e429833f7bc8ff7a543e722538b";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/starter-snake-haskell-1.1.0-r0-171a5ce3d2ab7b2207f5a8fc764d3f0887eb6593d3b9e1116f32d534397d6778.nix;
         revNum = 0;
         sha256 = "171a5ce3d2ab7b2207f5a8fc764d3f0887eb6593d3b9e1116f32d534397d6778";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

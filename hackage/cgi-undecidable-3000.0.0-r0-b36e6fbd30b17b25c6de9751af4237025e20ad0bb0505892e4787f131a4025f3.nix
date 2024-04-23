@@ -21,15 +21,15 @@
       synopsis = "Undecidable instances for the cgi package.";
       description = "This package adds some useful type class instances to the\ncgi package. This is in a separate package to allow the cgi\npackage to be compatible with Haskell implementations that\ndon't support undecidable instances.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

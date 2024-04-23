@@ -6,8 +6,8 @@
         nix = import ../hackage/managed-functions-json-1.0.0-r0-de0a5f2ed1ca7ba2d1099242dec47aebfa6652474d6dd7912d5a8069845b9adb.nix;
         revNum = 0;
         sha256 = "de0a5f2ed1ca7ba2d1099242dec47aebfa6652474d6dd7912d5a8069845b9adb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

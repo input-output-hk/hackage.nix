@@ -21,7 +21,7 @@
       synopsis = "Fast logging";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
           (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

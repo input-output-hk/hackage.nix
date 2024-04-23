@@ -21,15 +21,15 @@
       synopsis = "Haskell SuperCollider SoundFile";
       description = "Trivial NeXT/Sun sound file input/output.\nFor almost all use cases please see Stefan\nKersten's hsndfile package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

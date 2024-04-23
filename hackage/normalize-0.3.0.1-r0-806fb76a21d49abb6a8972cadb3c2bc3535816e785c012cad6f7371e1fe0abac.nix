@@ -21,7 +21,7 @@
       synopsis = "Normalize data using a variety of methods.";
       description = "Normalize data using a variety of methods. For use with csv files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "normalize" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "MPD/PowerMate executable";
       description = "This library exploits the PowerMate bindings\nto provide PowerMate+MPD utility.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mpdmate" = {
@@ -31,9 +31,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

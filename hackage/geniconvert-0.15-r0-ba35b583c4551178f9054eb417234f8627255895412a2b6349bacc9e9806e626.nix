@@ -21,7 +21,7 @@
       synopsis = "Conversion utility for the GenI generator";
       description = "Conversion utility for the GenI generator";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "geniconvert" = {
@@ -36,9 +36,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

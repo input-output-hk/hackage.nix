@@ -6,8 +6,8 @@
         nix = import ../hackage/compact-list-0.1.0-r0-47b500afaf39207ed9ec491fe2ec833d3f44e8bc18e867a86df8a398019f2af9.nix;
         revNum = 0;
         sha256 = "47b500afaf39207ed9ec491fe2ec833d3f44e8bc18e867a86df8a398019f2af9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

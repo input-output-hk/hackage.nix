@@ -6,8 +6,8 @@
         nix = import ../hackage/bidi-icu-0-r0-a313643a30970705c0cc7f695abdb92648f1745521f32a44d153933656ec641e.nix;
         revNum = 0;
         sha256 = "a313643a30970705c0cc7f695abdb92648f1745521f32a44d153933656ec641e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

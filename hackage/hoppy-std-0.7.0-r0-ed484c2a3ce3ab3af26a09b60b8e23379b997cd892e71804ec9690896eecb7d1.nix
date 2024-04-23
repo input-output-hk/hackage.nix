@@ -21,7 +21,7 @@
       synopsis = "C++ FFI generator - Standard library bindings";
       description = "Hoppy generates Haskell bindings to C++ libraries.\n\nThis package contains definitions for the C++ standard library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
           (hsPkgs."hoppy-generator" or (errorHandler.buildDepError "hoppy-generator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

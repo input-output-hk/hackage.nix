@@ -6,8 +6,8 @@
         nix = import ../hackage/AC-PPM-1.1.1-r0-feb173d696edca1db7d125e6876e4d2061184155e3a3633a25a196b6d3e62563.nix;
         revNum = 0;
         sha256 = "feb173d696edca1db7d125e6876e4d2061184155e3a3633a25a196b6d3e62563";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Haskell interface to Zenity dialogs";
       description = "This is a Haskell wrapper around the\n<https://en.wikipedia.org/wiki/Zenity Zenity> dialog\nprogram.\n\nExamples can be found in the <https://github.com/emilaxelsson/hzenity/tree/master/examples examples/>\ndirectory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

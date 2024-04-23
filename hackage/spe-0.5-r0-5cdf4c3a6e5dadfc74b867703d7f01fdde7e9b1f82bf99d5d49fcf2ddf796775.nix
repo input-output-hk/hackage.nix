@@ -21,11 +21,11 @@
       synopsis = "Combinatorial species lite";
       description = "A simple library for combinatorial species with no\ndependencies but base. If you want something more\nsubstantial, then you will most likely be happier\nwith the excellent species package by Brent Yorgey:\n<http://hackage.haskell.org/package/species>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

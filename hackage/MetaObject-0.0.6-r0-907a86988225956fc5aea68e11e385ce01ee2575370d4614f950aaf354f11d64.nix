@@ -21,7 +21,7 @@
       synopsis = "A meta-object system for Haskell based on Perl 6";
       description = "A meta-object system for Haskell based on Perl 6";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

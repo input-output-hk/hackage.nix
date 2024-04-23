@@ -21,7 +21,7 @@
       synopsis = "Type specifiers for Lua.";
       description = "Structure to hold detailed type information. The primary\nuse-case at this time are auto-generated docs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hslua-core" or (errorHandler.buildDepError "hslua-core"))
           (hsPkgs."hslua-marshalling" or (errorHandler.buildDepError "hslua-marshalling"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hslua-typing" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

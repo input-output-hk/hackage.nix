@@ -21,7 +21,7 @@
       synopsis = "Standard spec's for binary-related Instances";
       description = "Standard spec's for cereal-related Instances, see https://hackage.haskell.org/package/binary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,27 +32,27 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-hspec-binary-doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."genvalidity-hspec-binary" or (errorHandler.buildDepError "genvalidity-hspec-binary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "genvalidity-hspec-binary-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
             (hsPkgs."genvalidity-hspec-binary" or (errorHandler.buildDepError "genvalidity-hspec-binary"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

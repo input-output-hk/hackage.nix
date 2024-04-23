@@ -6,8 +6,8 @@
         nix = import ../hackage/postgresql-common-persistent-0.1.0.0-r0-cfb2ab6c370ada3b5aa8027773f734692a020baee03196571ed86f7e9bc18c01.nix;
         revNum = 0;
         sha256 = "cfb2ab6c370ada3b5aa8027773f734692a020baee03196571ed86f7e9bc18c01";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

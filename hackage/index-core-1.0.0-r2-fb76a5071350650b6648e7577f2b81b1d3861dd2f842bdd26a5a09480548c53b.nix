@@ -21,11 +21,11 @@
       synopsis = "Indexed Types";
       description = "This library implements indexed types in the style of Conor McBride,\ndescribed in the functional pearl \\\"Kleisli arrows of outrageous fortune\\\",\nfollowing his presentation closely.\n\nThis provides a more general form of indexed monad than the one people are\nmost commonly familiar with.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

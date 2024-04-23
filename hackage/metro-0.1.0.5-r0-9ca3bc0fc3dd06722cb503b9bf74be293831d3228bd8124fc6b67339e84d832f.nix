@@ -21,7 +21,7 @@
       synopsis = "A simple tcp and udp socket server framework";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

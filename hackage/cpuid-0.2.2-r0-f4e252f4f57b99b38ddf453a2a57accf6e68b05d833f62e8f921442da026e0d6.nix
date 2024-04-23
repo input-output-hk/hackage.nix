@@ -21,22 +21,22 @@
       synopsis = "Binding for the cpuid machine instruction on x86 compatible processors";
       description = "This module provides the function 'cpuid'\nfor accessing information about the currently running IA-32 processor.\nBoth a function for calling the 'cpuid' instruction directly,\nand some convenience functions for common uses are provided.\nThis package is only portable to IA-32 machines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."enumset" or (errorHandler.buildDepError "enumset"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = if !system.isI386 then false else true;
-        };
+      };
       exes = {
         "cpuid-test" = {
           buildable = if !(flags.buildexamples && system.isI386)
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

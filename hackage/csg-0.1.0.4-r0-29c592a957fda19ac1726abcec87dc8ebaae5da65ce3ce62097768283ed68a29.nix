@@ -21,7 +21,7 @@
       synopsis = "Analytical CSG (Constructive Solid Geometry) library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."simple-vec3" or (errorHandler.buildDepError "simple-vec3"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "csg-raycaster" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "csg-doctests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-driver-gen" or (errorHandler.buildDepError "doctest-driver-gen"))
             (hsPkgs."simple-vec3" or (errorHandler.buildDepError "simple-vec3"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "csg-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,10 +71,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "csg-benchmark" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."simple-vec3" or (errorHandler.buildDepError "simple-vec3"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

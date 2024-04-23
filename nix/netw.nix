@@ -6,8 +6,8 @@
         nix = import ../hackage/netw-0.1.0.0-r0-cf97e4226a3ac4b41352dec9a8c816092b445fad95b4e6564c4446ebbc5dc7e5.nix;
         revNum = 0;
         sha256 = "cf97e4226a3ac4b41352dec9a8c816092b445fad95b4e6564c4446ebbc5dc7e5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

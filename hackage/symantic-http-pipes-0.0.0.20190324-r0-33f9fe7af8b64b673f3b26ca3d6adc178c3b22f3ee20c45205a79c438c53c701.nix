@@ -14,7 +14,7 @@
       identifier = {
         name = "symantic-http-pipes";
         version = "0.0.0.20190324";
-        };
+      };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julien Moutinho <julm+symantic-http@autogeree.net>";
@@ -24,7 +24,7 @@
       synopsis = "Streaming support through pipes for symantic-http";
       description = "This library provides orphan instances gluing\n<https://hackage.haskell.org/package/symantic-http symantic-http>\nto the streaming engine <https://hackage.haskell.org/package/pipes pipes>\n(allowing to (safely) run effects (eg. in IO) during an HTTP transfer).\n\nFor learning how to use this library,\nyou can read the demo example\nin <git://git.autogeree.net/symantic-http symantic-http.git>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

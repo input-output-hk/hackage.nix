@@ -21,7 +21,7 @@
       synopsis = "Package to run moffy samples - GTK3 version";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy-samples-gtk3-run#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,12 +40,12 @@
           (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
           (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
           (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "moffy-samples-gtk3-run-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
             (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

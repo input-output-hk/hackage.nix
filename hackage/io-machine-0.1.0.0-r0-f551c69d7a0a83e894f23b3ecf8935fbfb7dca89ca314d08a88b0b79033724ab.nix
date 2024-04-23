@@ -21,23 +21,23 @@
       synopsis = "Easy I/O model to learn IO monad";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "io-machine-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."io-machine" or (errorHandler.buildDepError "io-machine"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

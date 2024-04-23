@@ -21,7 +21,7 @@
       synopsis = "Extra utilities and instances for optics-core";
       description = "This package provides extra definitions and instances that extend the\n@<https://hackage.haskell.org/package/optics-core optics-core>@ package,\nwithout incurring too many dependencies.  See the\n@<https://hackage.haskell.org/package/optics optics>@ package for more\ndocumentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."indexed-traversable-instances" or (errorHandler.buildDepError "indexed-traversable-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

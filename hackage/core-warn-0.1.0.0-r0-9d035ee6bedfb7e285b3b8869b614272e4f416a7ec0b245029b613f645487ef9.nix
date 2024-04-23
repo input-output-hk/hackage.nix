@@ -21,7 +21,7 @@
       synopsis = "\"Provide warnings for unexpected Core generation\"";
       description = "Please see the README on GitHub at <https://github.com/JonathanLorimer/core-warn#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."containers-good-graph" or (errorHandler.buildDepError "containers-good-graph"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."core-warn" or (errorHandler.buildDepError "core-warn"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

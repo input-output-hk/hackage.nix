@@ -21,7 +21,7 @@
       synopsis = "Context Algebra";
       description = "Context Algebra to identify typical exemplars of a concept influenced by a context. A executable model is included in the package NearContextAlgebra also available here";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
           (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "CLI frecency history";
       description = "Extremely simple CLI frecency histories.\nIntended for adding frecency to tools like dmenu / rofi / fzf.\nSee the README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "frecently" = {
@@ -35,9 +35,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

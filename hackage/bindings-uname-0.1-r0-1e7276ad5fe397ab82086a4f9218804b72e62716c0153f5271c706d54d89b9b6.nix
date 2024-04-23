@@ -21,11 +21,11 @@
       synopsis = "Low-level binding to POSIX uname(3)";
       description = "This is a low-level binding to POSIX uname(3)\nfunction. Perhaps it shoule be part of unix package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

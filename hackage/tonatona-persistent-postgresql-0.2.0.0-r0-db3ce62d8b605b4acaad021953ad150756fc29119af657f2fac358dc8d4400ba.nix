@@ -14,7 +14,7 @@
       identifier = {
         name = "tonatona-persistent-postgresql";
         version = "0.2.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2018 Kadzuya Okamoto";
       maintainer = "arow.okamoto+github@gmail.com";
@@ -29,8 +29,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
         (hsPkgs.buildPackages.rio or (pkgs.buildPackages.rio or (errorHandler.setupDepError "rio")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
           (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

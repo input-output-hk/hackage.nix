@@ -21,7 +21,7 @@
       synopsis = "ATS scripts for Cabal builds";
       description = "This package contains various scripts that go in a package's @Setup.hs@ to make building libraries with ATS dependencies easier.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

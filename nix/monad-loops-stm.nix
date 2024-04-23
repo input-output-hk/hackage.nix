@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-loops-stm-0.4-r0-a944c43cad949152297214ccd177d8fc21cfd9b6668055410688dc6d7f5eed70.nix;
         revNum = 0;
         sha256 = "a944c43cad949152297214ccd177d8fc21cfd9b6668055410688dc6d7f5eed70";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

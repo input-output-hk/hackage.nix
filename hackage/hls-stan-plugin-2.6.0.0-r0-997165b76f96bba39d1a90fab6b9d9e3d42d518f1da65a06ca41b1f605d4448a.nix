@@ -21,7 +21,7 @@
       synopsis = "Stan integration plugin with Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,11 +41,11 @@
           (hsPkgs."stan" or (errorHandler.buildDepError "stan"))
           (hsPkgs."trial" or (errorHandler.buildDepError "trial"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).gt "8.8.1" && (compiler.isGhc && (compiler.version).le "9.2.3") || compiler.isGhc && (compiler.version).ge "9.4.0" && (compiler.isGhc && (compiler.version).lt "9.10.0")
+        ];
+        buildable = if compiler.isGhc && compiler.version.gt "8.8.1" && (compiler.isGhc && compiler.version.le "9.2.3") || compiler.isGhc && compiler.version.ge "9.4.0" && (compiler.isGhc && compiler.version.lt "9.10.0")
           then true
           else false;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -59,11 +59,11 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).gt "8.8.1" && (compiler.isGhc && (compiler.version).le "9.2.3") || compiler.isGhc && (compiler.version).ge "9.4.0" && (compiler.isGhc && (compiler.version).lt "9.10.0")
+          ];
+          buildable = if compiler.isGhc && compiler.version.gt "8.8.1" && (compiler.isGhc && compiler.version.le "9.2.3") || compiler.isGhc && compiler.version.ge "9.4.0" && (compiler.isGhc && compiler.version.lt "9.10.0")
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

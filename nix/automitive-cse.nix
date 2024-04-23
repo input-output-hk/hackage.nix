@@ -6,8 +6,8 @@
         nix = import ../hackage/automitive-cse-0.0.1.0-r0-896d49ad96073e3cf7fe417ba697f0caf67c9346edc09edf34c612237fdca232.nix;
         revNum = 0;
         sha256 = "896d49ad96073e3cf7fe417ba697f0caf67c9346edc09edf34c612237fdca232";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

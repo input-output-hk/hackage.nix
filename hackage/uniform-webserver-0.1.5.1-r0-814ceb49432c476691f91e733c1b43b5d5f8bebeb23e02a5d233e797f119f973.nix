@@ -21,7 +21,7 @@
       synopsis = "uniform text based operations to call http";
       description = "http using text in all arguments and converting internally";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

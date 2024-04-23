@@ -14,7 +14,7 @@
       identifier = {
         name = "simple-genetic-algorithm-mr";
         version = "0.4.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "mail@eax.me";
@@ -24,7 +24,7 @@
       synopsis = "Simple parallel genetic algorithm implementation";
       description = "Simple parallel genetic algorithm implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ga-sin-example" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

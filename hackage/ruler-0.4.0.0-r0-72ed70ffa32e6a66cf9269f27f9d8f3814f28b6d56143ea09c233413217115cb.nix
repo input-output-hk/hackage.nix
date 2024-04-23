@@ -21,7 +21,7 @@
       synopsis = "Ruler tool for UHC";
       description = "Ruler tool used by UHC (Utrecht Haskell Compiler)";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ruler" = {
@@ -34,9 +34,9 @@
             (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
             (hsPkgs."shuffle" or (errorHandler.buildDepError "shuffle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

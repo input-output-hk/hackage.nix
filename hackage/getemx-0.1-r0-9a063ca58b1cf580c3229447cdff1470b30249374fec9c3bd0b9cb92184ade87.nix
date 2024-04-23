@@ -21,7 +21,7 @@
       synopsis = "Fetch from emusic using .emx files";
       description = "Read emusic's .emx files and download media";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "getemx" = {
@@ -36,9 +36,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

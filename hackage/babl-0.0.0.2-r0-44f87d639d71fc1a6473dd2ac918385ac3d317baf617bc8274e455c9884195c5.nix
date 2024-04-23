@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings to BABL library.";
       description = "This package contains the Haskell bindings to the BABL\nlibrary.\nThis package is still unstable und evenminor version bumps\nmay contain breaking API changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."babl-0.1" or (errorHandler.sysDepError "babl-0.1")) ];
         pkgconfig = [
           (pkgconfPkgs."babl" or (errorHandler.pkgConfDepError "babl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

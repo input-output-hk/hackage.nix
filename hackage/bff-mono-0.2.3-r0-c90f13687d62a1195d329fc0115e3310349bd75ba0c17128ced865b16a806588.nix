@@ -21,15 +21,15 @@
       synopsis = "\"Bidirectionalization for Free\" for Monomorphic Transformations";
       description = "This package provides a way to make a bidirectional\ntransformation (a getter/setter pair, or so-called lens)\nfrom a description of unidirectional transformation.\nLike 'bff' package, the package constructs bidirectional\ntransformations based on the free theorem.\nUnlike 'bff' package,\nthe package supports some of monomorphic transformations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

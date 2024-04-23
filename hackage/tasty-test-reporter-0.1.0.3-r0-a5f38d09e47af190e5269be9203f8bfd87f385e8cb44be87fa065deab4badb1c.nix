@@ -21,7 +21,7 @@
       synopsis = "Producing JUnit-style XML test reports.";
       description = "Please see the README at <https://github.com/stoeffel/tasty-test-reporter>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-test-reporter" or (errorHandler.buildDepError "tasty-test-reporter"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

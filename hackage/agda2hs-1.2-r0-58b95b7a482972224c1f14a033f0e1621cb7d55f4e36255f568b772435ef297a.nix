@@ -21,7 +21,7 @@
       synopsis = "Compiling Agda code to readable Haskell.";
       description = "Produces verified and readable Haskell code by extracting it from a\n(lightly annotated) Agda program.\nThe tool is implemented as an Agda backend, which means that `agda2hs` is a\nfully functional Agda compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "agda2hs" = {
@@ -40,9 +40,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A web based Haskell IDE";
       description = "Provides a web based Haskell IDE, on top of Ghcid";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,18 +49,18 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reload-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reload" or (errorHandler.buildDepError "reload"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "reload-test" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

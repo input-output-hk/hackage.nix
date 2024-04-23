@@ -21,7 +21,7 @@
       synopsis = "A Riemann client for Haskell";
       description = "Very simple event sending to a Riemann server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "property" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."riemann" or (errorHandler.buildDepError "riemann"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."riemann" or (errorHandler.buildDepError "riemann"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

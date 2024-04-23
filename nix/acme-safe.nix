@@ -6,8 +6,8 @@
         nix = import ../hackage/acme-safe-0.1.0.0-r0-8fc5452cbdacc3226c5088716da780ab02c6df74c4a23673aec81a0bc7103ea4.nix;
         revNum = 0;
         sha256 = "8fc5452cbdacc3226c5088716da780ab02c6df74c4a23673aec81a0bc7103ea4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Developer tools for the Michelson Language";
       description = "A library to make writing smart contracts in Michelson — the smart contract language of the Tezos blockchain — pleasant and effective.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -79,9 +79,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "morley" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."morley" or (errorHandler.buildDepError "morley"))
             (hsPkgs."morley-prelude" or (errorHandler.buildDepError "morley-prelude"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "some tools for Monad";
       description = "ifM, whenM, unlessM, doWhile, doWhile_ and so on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

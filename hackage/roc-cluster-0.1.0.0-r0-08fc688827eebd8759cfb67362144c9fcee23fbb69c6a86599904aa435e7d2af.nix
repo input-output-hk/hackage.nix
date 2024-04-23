@@ -21,15 +21,15 @@
       synopsis = "ROC online clustering algorithm";
       description = "Provides generic implementation for ROC online clustering algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "roc-cluster-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."roc-cluster" or (errorHandler.buildDepError "roc-cluster"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

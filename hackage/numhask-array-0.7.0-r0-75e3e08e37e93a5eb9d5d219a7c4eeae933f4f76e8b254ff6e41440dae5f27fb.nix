@@ -21,7 +21,7 @@
       synopsis = "n-dimensional arrays";
       description = "n-dimensional arrays founded on numhask.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask-array" or (errorHandler.buildDepError "numhask-array"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

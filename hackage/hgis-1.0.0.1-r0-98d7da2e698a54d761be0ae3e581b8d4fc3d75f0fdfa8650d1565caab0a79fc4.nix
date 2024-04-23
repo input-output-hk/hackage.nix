@@ -21,7 +21,7 @@
       synopsis = "Library and for GIS with Haskell";
       description = "Package containing functions to make graphs, read\nshapefiles, and compute areas/perimeters of\ngeographic features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -38,18 +38,18 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ] ++ (pkgs.lib).optional (flags.cairo) (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))) ++ (pkgs.lib).optional (flags.diagrams) (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"));
+        ] ++ pkgs.lib.optional (flags.cairo) (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))) ++ pkgs.lib.optional (flags.diagrams) (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"));
         buildable = true;
-        };
+      };
       tests = {
         "hgis-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hgis" or (errorHandler.buildDepError "hgis"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

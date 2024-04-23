@@ -21,7 +21,7 @@
       synopsis = "Helper functions and data types for producing News feeds.";
       description = "Helper functions and data types for producing News feeds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,15 +32,15 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ] ++ (if flags.blaze_html_0_5
+        ] ++ (if flags.blaze_html_0_5
           then [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ]
+          ]
           else [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "2D text zipper based on text-rope";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text-rope-zipper" or (errorHandler.buildDepError "text-rope-zipper"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "The Possehl Analytics Prelude";
       description = "A prelude to be used in addition to `base`’s `Prelude`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

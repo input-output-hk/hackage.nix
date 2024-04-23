@@ -21,7 +21,7 @@
       synopsis = "Backend for the persistent library using sqlite3.";
       description = "This package includes a thin sqlite3 wrapper based on the direct-sqlite package, as well as the entire C library, so there are no system dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
-        libs = (pkgs.lib).optional (flags.systemlib) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ++ (pkgs.lib).optional (!system.isWindows) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+        ];
+        libs = pkgs.lib.optional (flags.systemlib) (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ++ pkgs.lib.optional (!system.isWindows) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
         buildable = true;
-        };
+      };
       exes = {
         "sanity" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))
-            ];
+          ];
           buildable = if flags.build-sanity-exe then true else false;
-          };
         };
       };
-    }
+    };
+  }

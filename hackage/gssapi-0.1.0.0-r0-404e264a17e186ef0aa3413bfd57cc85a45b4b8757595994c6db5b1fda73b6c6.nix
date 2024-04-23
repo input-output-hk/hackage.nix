@@ -21,7 +21,7 @@
       synopsis = "libgssapi and libkrb5 bindings for haskell";
       description = "Simple bindings for libgssapi(SSO) and libkrb5(user/password) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [
           (pkgs."gssapi_krb5" or (errorHandler.sysDepError "gssapi_krb5"))
           (pkgs."krb5" or (errorHandler.sysDepError "krb5"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

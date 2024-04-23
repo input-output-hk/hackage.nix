@@ -21,7 +21,7 @@
       synopsis = "Disambiguate obvious uses of effects.";
       description = "Please see the README on GitHub at <https://github.com/isovector/polysemy/tree/master/polysemy-plugin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-tcplugins-extra" or (errorHandler.buildDepError "ghc-tcplugins-extra"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-plugin-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

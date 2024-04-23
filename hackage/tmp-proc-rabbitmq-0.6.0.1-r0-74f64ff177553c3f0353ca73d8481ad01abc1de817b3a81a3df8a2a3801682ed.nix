@@ -21,7 +21,7 @@
       synopsis = "Launch RabbitMQ in docker using tmp-proc";
       description = "Demos how to use tmp-proc to run RabbitMQ in docker in a unittest.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
             (hsPkgs."tmp-proc-rabbitmq" or (errorHandler.buildDepError "tmp-proc-rabbitmq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

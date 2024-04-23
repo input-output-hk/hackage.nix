@@ -21,7 +21,7 @@
       synopsis = "Wrapper around the usb package adding extra type-safety";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

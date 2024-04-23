@@ -21,7 +21,7 @@
       synopsis = "Resolves links to Haskell identifiers.";
       description = "To be written.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hslinks" = {
@@ -32,9 +32,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

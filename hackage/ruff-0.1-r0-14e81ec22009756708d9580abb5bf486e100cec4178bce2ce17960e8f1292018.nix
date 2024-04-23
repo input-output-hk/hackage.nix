@@ -21,7 +21,7 @@
       synopsis = "relatively useful fractal functions";
       description = "A library for analysis and exploration of fractals.  This initial\nversion provides angled internal addresses, external ray tracing,\nand iterations for images of the Mandelbrot Set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

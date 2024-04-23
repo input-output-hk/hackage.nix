@@ -21,7 +21,7 @@
       synopsis = "Hopfield Networks, Boltzmann Machines and Clusters";
       description = "Attractor Neural Networks for Modelling Associative Memory\n\nReport: <https://github.com/imperialhopfield/hopfield/raw/master/report/report.pdf>\n\nA third year group project at Imperial College London,\nsupervised by Prof. Abbas Edalat.\n\nThis projects implements:\n\n* Hopfield Networks\n\n* Clusters and Super Attractors\n\n* The Restricted Boltzmann Machine\n\n* A Boltzmann Machine for classification\n\nand comes with a range of experiments to evaluate their properties.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,25 +41,25 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         libs = [
           (pkgs."MagickWand" or (errorHandler.sysDepError "MagickWand"))
           (pkgs."MagickCore" or (errorHandler.sysDepError "MagickCore"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "experiment" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hopfield" or (errorHandler.buildDepError "hopfield"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "recognize" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,10 +70,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."exact-combinatorics" or (errorHandler.buildDepError "exact-combinatorics"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

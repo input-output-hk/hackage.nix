@@ -21,7 +21,7 @@
       synopsis = "Implementation of the BGAPI serial protocol";
       description = "This library implements Silicon Labs' (formerly BlueGiga)\nserial protocol to communicate with certain Bluetooth and\nWifi products such as the BLED112 USB dongle or the BLE112\nand BLE113 Bluetooth Low Energy modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bgapitest" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

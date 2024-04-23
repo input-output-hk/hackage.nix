@@ -6,8 +6,8 @@
         nix = import ../hackage/wide-word-instances-0.1-r0-2ccb21b6f4b130017957b4b6a2663e2b74ed137d107faadc96b72c75234d912c.nix;
         revNum = 0;
         sha256 = "2ccb21b6f4b130017957b4b6a2663e2b74ed137d107faadc96b72c75234d912c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

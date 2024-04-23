@@ -21,7 +21,7 @@
       synopsis = "pgdownloader";
       description = "a terminal user interface program that downloads a video from html and call vlc to play it immediately.\n(Linux: vlc -f \"video.mp4\", MACOSX: open \"video.mp4\" -a vlc)\n\nClient: Only for Linux and MACOSX.\nServer: Only for nginx's file download page.\n\nThe program will sort the video files and folders by date while files in nginx's download page just sort by name.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pgdl" = {
@@ -39,9 +39,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

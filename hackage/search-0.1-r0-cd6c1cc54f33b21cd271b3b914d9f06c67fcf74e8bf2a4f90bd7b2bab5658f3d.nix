@@ -21,7 +21,7 @@
       synopsis = "Infinite search in finite time with Hilbert's epsilon";
       description = "Infinite search in finite time with Hilbert's epsilon";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."search" or (errorHandler.buildDepError "search"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

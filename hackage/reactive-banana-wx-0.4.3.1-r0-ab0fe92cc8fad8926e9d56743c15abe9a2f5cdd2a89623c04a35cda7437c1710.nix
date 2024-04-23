@@ -21,7 +21,7 @@
       synopsis = "Examples for the reactive-banana library, using wxHaskell.";
       description = "This library provides some GUI examples for the @reactive-banana@ library,\nusing wxHaskell.\n\nNote: You need to install the (platform independent)\n@cabal-macosx@ library before you can configure/build and install this library.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Arithmetic" = { buildable = true; };
         "Asteroids" = {
@@ -40,31 +40,31 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Counter" = { buildable = true; };
         "CurrencyConverter" = { buildable = true; };
         "CRUD" = {
           depends = [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "NetMonitor" = {
           depends = [
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TicTacToe" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TwoCounters" = { buildable = true; };
         "Wave" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

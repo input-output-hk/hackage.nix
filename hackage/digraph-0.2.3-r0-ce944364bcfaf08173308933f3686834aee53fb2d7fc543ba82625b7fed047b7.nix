@@ -21,7 +21,7 @@
       synopsis = "Directed Graphs";
       description = "Directed graphs implementation that is based on unordered-containers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "digraph-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "persistent snaplet for the Snap Framework";
       description = "Snaplet support for using the Postgresql database\nwith a Snap Framework application via the persistent\npackage.  It also includes an authentication backend.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."map-syntax" or (errorHandler.buildDepError "map-syntax"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

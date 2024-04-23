@@ -21,7 +21,7 @@
       synopsis = "Find the latest version of a package on npm";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "latest-npm-version" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

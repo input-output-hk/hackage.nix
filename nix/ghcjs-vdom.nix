@@ -6,8 +6,8 @@
         nix = import ../hackage/ghcjs-vdom-0.2.0.0-r0-0a1a61d79a2fc9997a90c70ee6c0b37e2414f1e47d4eb2079ea97da0688ff159.nix;
         revNum = 0;
         sha256 = "0a1a61d79a2fc9997a90c70ee6c0b37e2414f1e47d4eb2079ea97da0688ff159";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

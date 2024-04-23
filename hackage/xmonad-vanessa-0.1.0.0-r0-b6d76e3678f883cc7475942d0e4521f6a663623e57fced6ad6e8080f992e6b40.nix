@@ -21,7 +21,7 @@
       synopsis = "Custom xmonad, via stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,24 +33,24 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."tibetan-utils" or (errorHandler.buildDepError "tibetan-utils"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xmonad" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xmonad-vanessa" or (errorHandler.buildDepError "xmonad-vanessa"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "getkb" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xmonad-vanessa" or (errorHandler.buildDepError "xmonad-vanessa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

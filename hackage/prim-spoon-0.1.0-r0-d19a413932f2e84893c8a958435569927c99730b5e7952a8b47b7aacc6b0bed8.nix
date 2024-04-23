@@ -21,16 +21,16 @@
       synopsis = "Catch errors thrown from pure computations using primops.";
       description = "Takes an error-throwing expression and puts it back in the Maybe it belongs in, but with primops.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."spoon" or (errorHandler.buildDepError "spoon"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "prim-spoon-test" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."spoon" or (errorHandler.buildDepError "spoon"))
             (hsPkgs."prim-spoon" or (errorHandler.buildDepError "prim-spoon"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "prim-spoon-bench" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."prim-spoon" or (errorHandler.buildDepError "prim-spoon"))
             (hsPkgs."spoon" or (errorHandler.buildDepError "spoon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

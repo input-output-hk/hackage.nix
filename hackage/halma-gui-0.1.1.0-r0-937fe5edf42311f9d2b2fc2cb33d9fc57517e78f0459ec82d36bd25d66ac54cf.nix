@@ -21,7 +21,7 @@
       synopsis = "GTK application for playing Halma";
       description = "Play Halma (aka Chinese Checkers) on your desktop against your friends or an AI";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "halma-gui" = {
@@ -38,9 +38,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

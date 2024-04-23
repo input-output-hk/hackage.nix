@@ -21,7 +21,7 @@
       synopsis = "Conduit interface for fluent-logger";
       description = "Conduit interface for fluent-logger";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Missing presentations for Double numbers (fixed, scientific etc.)";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,11 +30,11 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optional (flags.cassava) (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))) ++ (pkgs.lib).optionals (flags.rawstring-qm) [
+        ] ++ pkgs.lib.optional (flags.cassava) (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))) ++ pkgs.lib.optionals (flags.rawstring-qm) [
           (hsPkgs."rawstring-qm" or (errorHandler.buildDepError "rawstring-qm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

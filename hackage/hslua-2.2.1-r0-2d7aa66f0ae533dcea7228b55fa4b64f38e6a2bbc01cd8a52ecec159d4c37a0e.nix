@@ -21,7 +21,7 @@
       synopsis = "Bindings to Lua, an embeddable scripting language";
       description = "HsLua provides wrappers and helpers\nto bridge Haskell and <https://www.lua.org/ Lua>.\n\nIt builds upon the /lua/ package, which allows to bundle\na Lua interpreter with a Haskell program.\n\nExample programs are can be found in the @hslua-examples@\nsubdir of the project\n<https://github.com/hslua/hslua repository>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."hslua-packaging" or (errorHandler.buildDepError "hslua-packaging"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hslua" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."tasty-hslua" or (errorHandler.buildDepError "tasty-hslua"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

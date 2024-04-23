@@ -21,7 +21,7 @@
       synopsis = "The Artist Formerly Known as Prints";
       description = "In 1993, in rebellion against Warner Bros., which refused\nto release Prince's enormous backlog of music at a steady\npace, he changed his name to an unpronounceable symbol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

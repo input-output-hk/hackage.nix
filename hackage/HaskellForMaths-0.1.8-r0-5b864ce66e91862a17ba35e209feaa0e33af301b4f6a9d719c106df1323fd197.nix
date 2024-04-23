@@ -21,14 +21,14 @@
       synopsis = "Combinatorics, group theory, commutative algebra, non-commutative algebra";
       description = "Math library - combinatorics, group theory, commutative algebra, non-commutative algebra";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

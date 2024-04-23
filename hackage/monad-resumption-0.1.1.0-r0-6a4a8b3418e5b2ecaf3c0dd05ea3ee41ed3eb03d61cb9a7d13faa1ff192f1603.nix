@@ -21,15 +21,15 @@
       synopsis = "Resumption and reactive resumption monads for Haskell.";
       description = "This package contains the definitions of Resumption and Reactive Resumption Monads.\nThese monads can be used to construct structures such as coroutines and iteratees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

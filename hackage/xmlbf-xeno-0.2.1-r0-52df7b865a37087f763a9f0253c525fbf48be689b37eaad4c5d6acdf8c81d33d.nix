@@ -21,7 +21,7 @@
       synopsis = "xeno backend support for the xmlbf library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
           (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
             (hsPkgs."xmlbf-xeno" or (errorHandler.buildDepError "xmlbf-xeno"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "xmlbf-speed-bench" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."xmlbf-xeno" or (errorHandler.buildDepError "xmlbf-xeno"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

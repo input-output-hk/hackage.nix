@@ -21,7 +21,7 @@
       synopsis = "Datatype Manipulation with Template Haskell";
       description = "Thorn generates\n\n* functors from various kinds of datatypes, regardless of arity or variances.\n\n* folds and unfolds from various kinds of recursive datatypes, including mutually recursive ones.\n\nA single function of Thorn will give you a lot. Just try it.\n\nThe haddock is here. <http://kinokkory.github.io/Thorn/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

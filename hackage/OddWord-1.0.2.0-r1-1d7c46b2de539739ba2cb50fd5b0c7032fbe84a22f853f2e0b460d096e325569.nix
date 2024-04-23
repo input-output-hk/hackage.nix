@@ -21,12 +21,12 @@
       synopsis = "Provides a wrapper for deriving word types with fewer bits.";
       description = "Provdes the 'OddWord' type, which wraps an existing integer type and\nexposes a subset of its bits as a new narrower word type. Includes\npredefined type synonyms for all the odd sized words up to 63 bits.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "oddword-tests" = {
           depends = [
@@ -34,19 +34,19 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."OddWord" or (errorHandler.buildDepError "OddWord"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "oddword-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."OddWord" or (errorHandler.buildDepError "OddWord"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

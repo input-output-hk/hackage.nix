@@ -21,7 +21,7 @@
       synopsis = "An elegant analog clock using Haskell, GTK and Cairo";
       description = "An elegant analog clock using Haskell, GTK and Cairo";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsclock" = {
@@ -29,14 +29,14 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

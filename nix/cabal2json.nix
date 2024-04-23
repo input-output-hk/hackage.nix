@@ -6,13 +6,13 @@
         nix = import ../hackage/cabal2json-0.0.0.0-r0-a3f396229ecea1b341241daf62bbf3328b6bfb996fc1e926f8d2d771ee0540ad.nix;
         revNum = 0;
         sha256 = "a3f396229ecea1b341241daf62bbf3328b6bfb996fc1e926f8d2d771ee0540ad";
-        };
+      };
       r1 = {
         nix = import ../hackage/cabal2json-0.0.0.0-r1-a2c7bb6706cf162c75d794bf63de2473a2c92b31aaf47204ebb83b010d6cb5d3.nix;
         revNum = 1;
         sha256 = "a2c7bb6706cf162c75d794bf63de2473a2c92b31aaf47204ebb83b010d6cb5d3";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

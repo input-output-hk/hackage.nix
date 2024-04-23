@@ -21,7 +21,7 @@
       synopsis = "Web development framework.";
       description = "Web development framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."fastcgi" or (errorHandler.buildDepError "fastcgi"))
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
           (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kibro" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."validate" or (errorHandler.buildDepError "validate"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

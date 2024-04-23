@@ -21,7 +21,7 @@
       synopsis = "Fibonacci numbers";
       description = "Fibonacci numbers - this package was automatically generated from the\nOpenTheory package natural-fibonacci-1.72";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-stream" or (errorHandler.buildDepError "opentheory-stream"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "opentheory-fibonacci-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
             (hsPkgs."opentheory-stream" or (errorHandler.buildDepError "opentheory-stream"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

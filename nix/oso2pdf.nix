@@ -6,8 +6,8 @@
         nix = import ../hackage/oso2pdf-0.1.0-r0-3a9832c60e6813a5676dc00a09e7a0fe4755272b15c621444297f3ddc601b026.nix;
         revNum = 0;
         sha256 = "3a9832c60e6813a5676dc00a09e7a0fe4755272b15c621444297f3ddc601b026";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

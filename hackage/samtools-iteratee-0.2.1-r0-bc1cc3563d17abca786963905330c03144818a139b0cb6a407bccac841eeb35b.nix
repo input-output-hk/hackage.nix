@@ -21,7 +21,7 @@
       synopsis = "Iteratee interface to SamTools library";
       description = "Iteratee interface to SamTools library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."samtools" or (errorHandler.buildDepError "samtools"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bam-filter" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = if !flags.utilities then false else true;
-          };
         };
       };
-    }
+    };
+  }

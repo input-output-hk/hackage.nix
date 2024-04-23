@@ -21,7 +21,7 @@
       synopsis = "ircbot plugin for clckwrks";
       description = "At the moment, this ircbot just provides channel logs";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,11 +49,11 @@
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsx2hs.components.exes.hsx2hs or (pkgs.buildPackages.hsx2hs or (errorHandler.buildToolDepError "hsx2hs:hsx2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

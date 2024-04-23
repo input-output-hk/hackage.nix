@@ -21,7 +21,7 @@
       synopsis = "A Transaction Framework for Happstack         ";
       description = "This is the integration of tsession to Happstack\n\nFor more information check my master thesis:\n\n<http://stud.micheler.net/master.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."tsession" or (errorHandler.buildDepError "tsession"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

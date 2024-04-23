@@ -21,7 +21,7 @@
       synopsis = "Finds the file-size frequency-distribution for the referenced files.";
       description = "Counts the number of files in a set of bins, each of which holds only those files which fall within a specific size-interval.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fishfood" = {
@@ -32,9 +32,9 @@
             (hsPkgs."factory" or (errorHandler.buildDepError "factory"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

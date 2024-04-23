@@ -21,7 +21,7 @@
       synopsis = "Helper functions for using lucid with colonnade";
       description = "Lucid and colonnade";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."colonnade" or (errorHandler.buildDepError "colonnade"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

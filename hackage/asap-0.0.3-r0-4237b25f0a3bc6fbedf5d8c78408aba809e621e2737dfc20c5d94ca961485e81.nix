@@ -21,7 +21,7 @@
       synopsis = "Atlassian Service Authentication Protocol";
       description = "Atlassian Service Authentication Protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "asap-tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."jwt" or (errorHandler.buildDepError "jwt"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

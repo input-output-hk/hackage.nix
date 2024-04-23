@@ -21,11 +21,11 @@
       synopsis = "Set and bag operations on ordered lists";
       description = "Ordered Lists";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

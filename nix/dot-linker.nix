@@ -6,8 +6,8 @@
         nix = import ../hackage/dot-linker-0.1.0.0-r0-ee35284cad73f51a8bb5f2abfabbb656f46ff536cac7e6141d00cc54e7cf06cd.nix;
         revNum = 0;
         sha256 = "ee35284cad73f51a8bb5f2abfabbb656f46ff536cac7e6141d00cc54e7cf06cd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

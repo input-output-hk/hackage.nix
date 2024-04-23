@@ -6,8 +6,8 @@
         nix = import ../hackage/posix-filelock-0.1-r0-c3d905354b236174e1aae8cba21c5eb471a101bcbf6680fdedfccbdd4a9138ed.nix;
         revNum = 0;
         sha256 = "c3d905354b236174e1aae8cba21c5eb471a101bcbf6680fdedfccbdd4a9138ed";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

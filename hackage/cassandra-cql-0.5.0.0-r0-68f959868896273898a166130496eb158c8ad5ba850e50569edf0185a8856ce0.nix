@@ -21,7 +21,7 @@
       synopsis = "Haskell client for Cassandra's CQL protocol";
       description = "Haskell client for Cassandra's CQL protocol\n\nReivision history:\n\n* 0.5.0.0 Upgrade to CQL Binary Protocol v2. Support Cassandra Lightweight transactions.\n* 0.4.0.1 Add PasswordAuthenticator (thanks Curtis Carter) & accept ghc-7.8\n* 0.3.0.1 Fix socket issue on Mac.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."Decimal" or (errorHandler.buildDepError "Decimal"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Advanced telemetry";
       description = "This is part of a library to help build command-line programs, both tools and\nlonger-running daemons.\n\nThis package in particular adds helpers for recording telemetry for\nsubsequent analysis. You can instrument your code with tracing and spans,\nand also emit events carrying arbitrary metadata. Backends are provided for\nstructured logs, sending traces to observability services, or even just\noutputting the telemetry to console.\n\nSee \"Core.Telemetry.Observability\" to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

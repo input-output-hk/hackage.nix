@@ -21,7 +21,7 @@
       synopsis = "Push notifications for Android and iOS";
       description = "Push notifications for Android and iOS\n\nFunctions for sending push notifications to popular mobile platforms.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."casing" or (errorHandler.buildDepError "casing"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for containers";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-containers-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
             (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

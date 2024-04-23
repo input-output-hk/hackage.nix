@@ -21,7 +21,7 @@
       synopsis = "Thread delays and timeouts using proper time units ";
       description = "Higher level interface to unbounded-delays lib, allowing you to specify\nthe time delays in whatever unit you prefer, us, ms, seconds, minutes, hours.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."units" or (errorHandler.buildDepError "units"))
           (hsPkgs."units-defs" or (errorHandler.buildDepError "units-defs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "run shell commands from code";
       description = "run shell commands from code";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."dmc" or (errorHandler.buildDepError "dmc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

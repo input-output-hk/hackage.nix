@@ -14,7 +14,7 @@
       identifier = {
         name = "call-haskell-from-anything";
         version = "1.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "Niklas Hambüchen (mail@nh2.me)";
@@ -24,7 +24,7 @@
       synopsis = "Call Haskell functions from other languages via serialization and dynamic libraries";
       description = "FFI via serialisation. See https://github.com/nh2/call-haskell-from-anything for details.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "call-haskell-from-anything.so" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."data-msgpack" or (errorHandler.buildDepError "data-msgpack"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

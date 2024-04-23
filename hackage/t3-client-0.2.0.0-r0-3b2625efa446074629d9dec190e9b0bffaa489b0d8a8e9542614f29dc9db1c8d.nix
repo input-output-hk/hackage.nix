@@ -21,15 +21,15 @@
       synopsis = "tic-tac-toe Rexports for client";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."t3-game" or (errorHandler.buildDepError "t3-game"))
           (hsPkgs."t3-server" or (errorHandler.buildDepError "t3-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

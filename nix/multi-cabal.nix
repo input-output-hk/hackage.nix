@@ -6,8 +6,8 @@
         nix = import ../hackage/multi-cabal-0.1.0.0-r0-436e2f8722d70c9e5ddb119109df86db17c6b5ec9643943f6cd0f55d9a292a89.nix;
         revNum = 0;
         sha256 = "436e2f8722d70c9e5ddb119109df86db17c6b5ec9643943f6cd0f55d9a292a89";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

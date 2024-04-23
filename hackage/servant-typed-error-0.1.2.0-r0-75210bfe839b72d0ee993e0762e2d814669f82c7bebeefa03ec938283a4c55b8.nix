@@ -21,7 +21,7 @@
       synopsis = "Typed error wrapper for Servant";
       description = "Typed error wrapper using UVerb for Servant";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

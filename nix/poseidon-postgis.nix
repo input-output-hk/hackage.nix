@@ -6,8 +6,8 @@
         nix = import ../hackage/poseidon-postgis-0.1.1.0-r0-0224caff08282eabb90daa93f7d2c166996ea1795865c964b76577ab6c6c4660.nix;
         revNum = 0;
         sha256 = "0224caff08282eabb90daa93f7d2c166996ea1795865c964b76577ab6c6c4660";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

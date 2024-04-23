@@ -21,7 +21,7 @@
       synopsis = "Automatically generated Thrift definitions for the Concrete data format.";
       description = "Concrete is a Thrift-based data specification designed for Natural Language Processing (NLP) applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."thrift" or (errorHandler.buildDepError "thrift"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simulation experiments with charting for the Aivika library";
       description = "This package complements the Aivika and Aivika Experiment packages with\ncharting capabilites. Now the simulation results can be represented\nas charts.\n\nNevertheless, to plot the charts, you hould use one of the rendering backends\nprovided by packages Aivika Experiment Cairo or Aivika Experiment Diagrams.\nWhile the Cairo backend suits mostly to Linux and partially OS X, the Diagrams\nbackend is mainly destined for MS Windows, although it should work on Linux\nand OS X too.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-experiment" or (errorHandler.buildDepError "aivika-experiment"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

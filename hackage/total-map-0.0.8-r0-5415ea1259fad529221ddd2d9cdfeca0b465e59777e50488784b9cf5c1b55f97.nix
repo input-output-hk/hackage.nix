@@ -21,15 +21,15 @@
       synopsis = "Finitely represented /total/ maps";
       description = "Finitely represented /total/ maps. Represented by as a partial map and\na default value. Has Applicative and Monad instances (unlike Data.Map).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."semiring-num" or (errorHandler.buildDepError "semiring-num"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

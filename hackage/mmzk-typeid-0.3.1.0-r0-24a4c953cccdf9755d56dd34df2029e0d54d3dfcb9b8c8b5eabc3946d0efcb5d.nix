@@ -21,7 +21,7 @@
       synopsis = "A TypeID implementation for Haskell";
       description = "'TypeID' is a type-safe, K-sortable, globally unique identifier inspired by Stripe IDs.\n\nThe specification is available at https://github.com/jetpack-io/typeid.\n\nThis library supports generating and parsing speç-conforming 'TypeID's, with the following additional features:\n\n- Batch generating 'TypeID's with the same UUIDv7 timestamp\n\n- Encode prefixes at type-level for better type-safety\n\nIt also serves as a (temporary) UUIDv7 implementation in Haskell, since there are no official ones yet.\n\nPlease enable the following extensions if working with 'KindID':\n\n> {-# LANGUAGE DataKinds #-}\n> {-# LANGUAGE PolyKinds #-}\n> {-# LANGUAGE TypeApplications #-}\n> {-# LANGUAGE TypeFamilies #-}\n\nWhile the following is not required, it is quite convenient to have\n\n> {-# LANGUAGE OverloadedStrings #-}\n\nFor a quick \"how-to-use\" guide, please refer to the README.md file at https://github.com/MMZK1526/mmzk-typeid#readme.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

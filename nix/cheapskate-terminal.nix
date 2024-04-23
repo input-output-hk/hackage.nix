@@ -6,8 +6,8 @@
         nix = import ../hackage/cheapskate-terminal-0.1.0.0-r0-d2a990b87356653c1f1191c28c0ee8f6bc1520997004582b39ae4ba626ae8b2a.nix;
         revNum = 0;
         sha256 = "d2a990b87356653c1f1191c28c0ee8f6bc1520997004582b39ae4ba626ae8b2a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

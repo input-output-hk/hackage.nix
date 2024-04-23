@@ -21,29 +21,29 @@
       synopsis = "Shared memory and control structures for IPC";
       description = "Provides portable shared memory allocator and semaphores.\nCan be used for interprocess communication.\nRefer to README.md for further information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "interprocess-concurrent-malloc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."interprocess" or (errorHandler.buildDepError "interprocess"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "interprocess-wait-qsem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."interprocess" or (errorHandler.buildDepError "interprocess"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

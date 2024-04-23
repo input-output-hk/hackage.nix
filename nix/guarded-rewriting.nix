@@ -6,8 +6,8 @@
         nix = import ../hackage/guarded-rewriting-0.1-r0-dcda6903e606c198cfcfaa4812197ecb65f2770f8a3d2e53713e499ec3aa9e59.nix;
         revNum = 0;
         sha256 = "dcda6903e606c198cfcfaa4812197ecb65f2770f8a3d2e53713e499ec3aa9e59";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

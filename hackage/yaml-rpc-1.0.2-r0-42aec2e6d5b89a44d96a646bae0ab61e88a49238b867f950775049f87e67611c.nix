@@ -21,7 +21,7 @@
       synopsis = "Simple library for network (HTTP REST-like) YAML RPC";
       description = "This library aimed to organize remote procedure call (RPC)\nover HTTP protocol, using YAML as data serialization format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

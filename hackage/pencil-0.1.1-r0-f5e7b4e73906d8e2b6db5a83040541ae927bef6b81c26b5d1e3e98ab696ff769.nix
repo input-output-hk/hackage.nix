@@ -21,7 +21,7 @@
       synopsis = "Static site generator";
       description = "Pencil is a static site generator. Use it to generate your personal website!\nPencil comes pre-loaded with goodies such as blogging, tagging, templating,\nand Markdown Sass/Scss support. Flexible enough to extend for your own needs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,36 +43,36 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pencil-example-simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pencil" or (errorHandler.buildDepError "pencil"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pencil-example-blog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pencil" or (errorHandler.buildDepError "pencil"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pencil-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pencil" or (errorHandler.buildDepError "pencil"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

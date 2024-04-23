@@ -21,6 +21,6 @@
       synopsis = "Backwards-compatible orphan instances for base";
       description = "@base-orphans@ defines orphan instances that mimic instances available in later versions of @base@ to a wider (older) range of compilers. @base-orphans@ does not export anything except the orphan instances themselves and complements @<http://hackage.haskell.org/package/base-compat base-compat>@.\n`base-orphans-0` is an intentional empty release. For an explanation as to why it exists, see the <https://github.com/haskell-compat/base-orphans/tree/base-orphans-0#readme README>.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

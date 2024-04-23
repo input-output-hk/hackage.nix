@@ -21,7 +21,7 @@
       synopsis = "Modular template compiler library";
       description = "Template compiler library, compiles template code into\nPHP or Javascript, or interprets it directly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

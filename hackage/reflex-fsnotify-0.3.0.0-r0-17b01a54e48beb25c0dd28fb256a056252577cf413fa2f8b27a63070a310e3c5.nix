@@ -21,7 +21,7 @@
       synopsis = "Reflex FRP interface for watching files";
       description = "Watch files and directories for changes using a functional-reactive interface!\n\n<https://reflex-frp.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

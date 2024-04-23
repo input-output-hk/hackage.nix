@@ -21,11 +21,11 @@
       synopsis = "Stop execution with rage.";
       description = "(╯°□°）╯︵ ┻━┻";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

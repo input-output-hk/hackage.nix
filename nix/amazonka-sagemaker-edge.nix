@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-sagemaker-edge-2.0-r0-838549c309283b28d4cf2b6ca610c1ff1e96bc9c8162f921c6e44634fdf89307.nix;
         revNum = 0;
         sha256 = "838549c309283b28d4cf2b6ca610c1ff1e96bc9c8162f921c6e44634fdf89307";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

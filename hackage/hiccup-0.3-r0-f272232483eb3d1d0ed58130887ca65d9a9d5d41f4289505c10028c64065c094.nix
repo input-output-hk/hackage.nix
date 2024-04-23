@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A simplistic interpreter for a subset of tcl ";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hiccup" = {
@@ -30,9 +30,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

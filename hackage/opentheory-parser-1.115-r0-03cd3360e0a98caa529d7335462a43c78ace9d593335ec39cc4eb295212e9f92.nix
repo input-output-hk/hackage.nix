@@ -21,7 +21,7 @@
       synopsis = "Stream parsers";
       description = "Stream parsers - automatically generated from the opentheory package\nhaskell-parser-1.115";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "opentheory-parser-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

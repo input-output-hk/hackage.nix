@@ -21,7 +21,7 @@
       synopsis = "Proof assistant for Haskell using DataKinds & PolyKinds";
       description = "A simple convenient library to write equational / preorder proof as in Agda.\nSince 0.6.0.0, this no longer depends on @singletons@ package, and the @Proof.Induction@ module goes to @equational-reasoning-induction@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,15 +29,15 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "8.4"
+        ] ++ (if compiler.isGhc && compiler.version.ge "8.4"
           then [
             (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
-            ]
+          ]
           else [
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

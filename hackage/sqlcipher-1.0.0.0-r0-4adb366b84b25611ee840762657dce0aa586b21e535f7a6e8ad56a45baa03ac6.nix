@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to sqlcipher";
       description = "Haskell binding to sqlcipher <https://www.zetetic.net/sqlcipher/>.\nThis was forked from sqlite3 library from Galois, Inc. since sqlcipher share most of its API.\n";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,15 +31,15 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         libs = if flags.builtin-sqlcipher
           then [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ]
           else [
             (pkgs."sqlcipher" or (errorHandler.sysDepError "sqlcipher"))
             (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       tests = {
         "sqlite-tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

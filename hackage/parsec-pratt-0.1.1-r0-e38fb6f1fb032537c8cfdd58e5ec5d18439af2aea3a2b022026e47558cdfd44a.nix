@@ -21,16 +21,16 @@
       synopsis = "Pratt Parser combinator for Parsec";
       description = "A combinator to generate Pratt Parsers (aka Top Down Operator\nPrecedence parsers) for expressions with infix and prefix\noperators.  Integrates with Parsec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parsec-pratt-example" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec-pratt" or (errorHandler.buildDepError "parsec-pratt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

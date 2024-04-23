@@ -21,15 +21,15 @@
       synopsis = "A markdown to Frame GUI writer for Pandoc";
       description = "A markdown to Frame GUI writer for Pandoc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."frame" or (errorHandler.buildDepError "frame"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

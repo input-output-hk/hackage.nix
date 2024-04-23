@@ -21,15 +21,15 @@
       synopsis = "Simple bidirectional serialization and deserialization";
       description = "Bidirectional serialization based on https://blog.poisson.chat/posts/2017-01-01-monadic-profunctors.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bidirectional-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."bidirectional" or (errorHandler.buildDepError "bidirectional"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

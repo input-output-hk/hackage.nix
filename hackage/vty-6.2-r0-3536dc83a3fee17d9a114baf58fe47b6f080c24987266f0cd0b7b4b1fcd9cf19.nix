@@ -21,7 +21,7 @@
       synopsis = "A simple terminal UI library";
       description = "vty is terminal GUI library in the niche of ncurses. It is intended to\nbe easy to use and to provide good support for common terminal types.\n\nSee the @vty-examples@ package as well as the program\n@examples/interactive_terminal_test.hs@ included in the @vty@\nrepository for examples on how to use the library.\n\nImport the @Graphics.Vty@ convenience module to get access to the core\nparts of the library.\n\n&#169; 2006-2007 Stefan O'Rear; BSD3 license.\n\n&#169; Corey O'Connor; BSD3 license.\n\n&#169; Jonathan Daugherty; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,11 +40,11 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

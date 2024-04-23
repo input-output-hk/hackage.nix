@@ -21,7 +21,7 @@
       synopsis = "Generate graphs of install-time Cabal dependencies";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-graphdeps" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/ungadtagger-1.0.0-r0-60054b1d7a0d252a6f14b0dc69e9c54a883860d4884bc483f6be0e30ac8a0c66.nix;
         revNum = 0;
         sha256 = "60054b1d7a0d252a6f14b0dc69e9c54a883860d4884bc483f6be0e30ac8a0c66";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

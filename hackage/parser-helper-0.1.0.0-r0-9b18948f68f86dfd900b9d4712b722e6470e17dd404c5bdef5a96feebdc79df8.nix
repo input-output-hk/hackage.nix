@@ -21,7 +21,7 @@
       synopsis = "Prints Haskell parse trees in JSON.";
       description = "Serialize haskell-src-exts parse trees to JSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "parser-helper" = {
@@ -31,9 +31,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

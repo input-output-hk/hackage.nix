@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-redshift-serverless-2.0-r0-e5fc8a65917571071d7cc1c48f48be9e1c332c8afd7f8d85e45d0be19cf5335e.nix;
         revNum = 0;
         sha256 = "e5fc8a65917571071d7cc1c48f48be9e1c332c8afd7f8d85e45d0be19cf5335e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       identifier = {
         name = "dependent-sum-aeson-orphans";
         version = "0.3.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2020 Obsidian Systems LLC";
       maintainer = "maintainer@obsidian.systems";
@@ -24,7 +24,7 @@
       synopsis = "JSON instances for DSum, DMap, and Some";
       description = "JSON instances for DSum, DMap, and Some.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

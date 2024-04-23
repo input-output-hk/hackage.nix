@@ -14,7 +14,7 @@
       identifier = {
         name = "monad-parallel-progressbar";
         version = "0.1.0.1";
-        };
+      };
       license = "MIT";
       copyright = "Copyright (c) 2015 Mitsuhiro Nakamura";
       maintainer = "Mitsuhiro Nakamura <m.nacamura@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Parallel execution of monadic computations with a progress bar";
       description = "This library attaches a progress bar to a subset of\nfunctions in \"Control.Monad.Parallel\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
           (hsPkgs."monadIO" or (errorHandler.buildDepError "monadIO"))
           (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

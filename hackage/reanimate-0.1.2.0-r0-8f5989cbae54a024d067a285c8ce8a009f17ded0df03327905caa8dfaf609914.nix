@@ -21,7 +21,7 @@
       synopsis = "Animation library based on SVGs.";
       description = "Animation library based on SVGs. Can import (and manipulate) SVGs from\nLaTeX and diagrams. Exports gifs, mp4s, and more. Ships with a webbased\nviewer and auto-reloader.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."palette" or (errorHandler.buildDepError "palette"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (pkgs.lib).optional (flags.inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
+        ] ++ pkgs.lib.optional (flags.inotify) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"));
         buildable = true;
-        };
+      };
       exes = {
         "reanimate-server" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.server then true else false;
-          };
         };
       };
-    }
+    };
+  }

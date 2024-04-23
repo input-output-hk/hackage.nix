@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to Google translate";
       description = "translate \"en\" \"fr\" \"hello\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

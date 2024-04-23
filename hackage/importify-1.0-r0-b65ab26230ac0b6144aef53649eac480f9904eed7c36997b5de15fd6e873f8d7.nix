@@ -21,7 +21,7 @@
       synopsis = "Tool for haskell imports refactoring";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "importify" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."log-warper" or (errorHandler.buildDepError "log-warper"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "golden-generator" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,10 +74,10 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "importify-test" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

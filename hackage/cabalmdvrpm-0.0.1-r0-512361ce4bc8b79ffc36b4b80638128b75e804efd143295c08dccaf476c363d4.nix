@@ -21,7 +21,7 @@
       synopsis = "Create mandriva rpm from cabal package";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."cabalrpmdeps" or (errorHandler.buildDepError "cabalrpmdeps"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabalmdvspec" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."cabalrpmdeps" or (errorHandler.buildDepError "cabalrpmdeps"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

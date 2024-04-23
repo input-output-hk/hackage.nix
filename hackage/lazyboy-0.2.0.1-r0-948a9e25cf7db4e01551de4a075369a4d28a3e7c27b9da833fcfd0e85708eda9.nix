@@ -21,7 +21,7 @@
       synopsis = "An EDSL for programming the Game Boy.";
       description = "An EDSL for programming the Nintendo Game Boy. <https://github.com/ix/lazyboy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."microstache" or (errorHandler.buildDepError "microstache"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lazyboy-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."microstache" or (errorHandler.buildDepError "microstache"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

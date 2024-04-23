@@ -21,7 +21,7 @@
       synopsis = "Convert Hackage RSS feeds to Haskell Weekly News format";
       description = "Download and parse the Hackage RSS 2.0 feed for the\nautomatic inclusion in the Haskell Weekly News.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hackage2hwn" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

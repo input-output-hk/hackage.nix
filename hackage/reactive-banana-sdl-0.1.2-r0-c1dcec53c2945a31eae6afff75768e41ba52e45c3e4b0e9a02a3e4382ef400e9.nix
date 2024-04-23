@@ -21,7 +21,7 @@
       synopsis = "Reactive Banana bindings for SDL";
       description = "Provides bindings and convenience functions for using reactive banana with SDL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
           (hsPkgs."data-lens-template" or (errorHandler.buildDepError "data-lens-template"))
           (hsPkgs."SDL-image" or (errorHandler.buildDepError "SDL-image"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

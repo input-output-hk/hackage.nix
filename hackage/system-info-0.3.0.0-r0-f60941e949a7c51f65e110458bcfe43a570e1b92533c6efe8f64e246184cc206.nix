@@ -21,7 +21,7 @@
       synopsis = "Get information about CPUs, memory, etc.";
       description = "An OS independent Haskell library for getting information about CPUs, memory, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,22 +29,22 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
           (pkgs."oleaut32" or (errorHandler.sysDepError "oleaut32"))
           (pkgs."wbemuuid" or (errorHandler.sysDepError "wbemuuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "system-info-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."system-info" or (errorHandler.buildDepError "system-info"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for encoding and decoding of BEncode data.";
       description = "A library for encoding and decoding of BEncode data.\n\n[/Release notes/]\n\n* /0.1.0.0:/ Initial version.\n\n* /0.2.0.0:/ Added default decoders/encoders using GHC Generics.\n\n* /0.2.1.0:/ Arbitrary length integers. (by specification)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-comparison" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."bencoding" or (errorHandler.buildDepError "bencoding"))
             (hsPkgs."bencode" or (errorHandler.buildDepError "bencode"))
             (hsPkgs."AttoBencode" or (errorHandler.buildDepError "AttoBencode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

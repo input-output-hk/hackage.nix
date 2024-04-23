@@ -21,15 +21,15 @@
       synopsis = "Simple directory traversal library";
       description = "Simple cross-platform directory traversals in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "dir-traverse-bench" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

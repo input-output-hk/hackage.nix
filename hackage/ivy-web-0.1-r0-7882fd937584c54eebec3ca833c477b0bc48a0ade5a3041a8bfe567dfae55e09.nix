@@ -21,7 +21,7 @@
       synopsis = "A lightweight web framework, with type safe routes, based on invertible-syntax, and i18n support.";
       description = "The features of this web framework:\n*   Type safe routes, specify url-handler mapping in one place\n*   Simple yet elegant handler via type class\n*   Flexible template system, utilize exsisting libraries such as Blaze-Html and Hastache.\n*   Easy i18n\nFor an example, refer to https://github.com/lilac/ivy-example/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."invertible-syntax" or (errorHandler.buildDepError "invertible-syntax"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

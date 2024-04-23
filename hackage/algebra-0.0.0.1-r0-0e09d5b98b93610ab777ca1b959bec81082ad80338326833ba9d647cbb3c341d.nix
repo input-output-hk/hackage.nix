@@ -21,11 +21,11 @@
       synopsis = "Algebraic structures";
       description = "This package provides common algebraic structures in the form of type classes. In the\nfuture, there might be other things than type classes in this package. Currently,\nthere is only the class of semigroups.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

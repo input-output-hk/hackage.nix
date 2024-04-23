@@ -21,7 +21,7 @@
       synopsis = "a dAmn ↔ IRC proxy";
       description = "a dAmn ↔ IRC proxy";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kevin" = {
@@ -42,12 +42,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "7.7") [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "7.7") [
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"));
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

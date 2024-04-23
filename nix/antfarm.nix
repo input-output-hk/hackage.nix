@@ -6,8 +6,8 @@
         nix = import ../hackage/antfarm-0.1.0.0-r0-e737ef325800c57cc4b1dc6aae70afa18f9966e19ce39f163104ecb5ac30ead0.nix;
         revNum = 0;
         sha256 = "e737ef325800c57cc4b1dc6aae70afa18f9966e19ce39f163104ecb5ac30ead0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

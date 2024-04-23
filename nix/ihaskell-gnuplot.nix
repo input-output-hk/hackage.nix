@@ -6,8 +6,8 @@
         nix = import ../hackage/ihaskell-gnuplot-0.1.0.1-r0-856a3e1a7372bad45091971a427707f0f7404e206992e2a15290abd63aa25c92.nix;
         revNum = 0;
         sha256 = "856a3e1a7372bad45091971a427707f0f7404e206992e2a15290abd63aa25c92";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

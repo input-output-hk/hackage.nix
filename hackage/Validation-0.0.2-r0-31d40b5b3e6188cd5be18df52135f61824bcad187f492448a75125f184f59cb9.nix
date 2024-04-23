@@ -21,7 +21,7 @@
       synopsis = "A data-type like Either but with an accumulating Applicative";
       description = "A data-type like Either but with an accumulating Applicative";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

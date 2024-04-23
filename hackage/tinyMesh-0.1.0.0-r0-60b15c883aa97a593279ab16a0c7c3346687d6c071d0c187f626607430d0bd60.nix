@@ -21,7 +21,7 @@
       synopsis = "TinyMesh - communicating with auto-meshing sensor network";
       description = "TinyMesh are modules build on CC11xx TI MCU transceivers\nthat allow for automatic meshing, and remote sensor reading.\n\nWhole sensor network may be orchestrated by a single *gateway*\nmachine that is best connected to internet in order\nto submit the data to the cloud.\n\nThis library is aimed to allow programming such a gateway machine\nin Haskell, so that it may be Raspberry Pi, or a similar networked\nARM device.\n\nCurrent functionality of the module is limited to querying\nall the nodes within the mesh.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hex" or (errorHandler.buildDepError "hex"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

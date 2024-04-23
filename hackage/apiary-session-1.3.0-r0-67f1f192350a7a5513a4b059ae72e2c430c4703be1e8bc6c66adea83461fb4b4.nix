@@ -21,7 +21,7 @@
       synopsis = "session support for apiary web framework.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."apiary" or (errorHandler.buildDepError "apiary"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."web-routing" or (errorHandler.buildDepError "web-routing"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

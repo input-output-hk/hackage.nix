@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-globalaccelerator-2.0-r0-dcbbcbc6eed991b8d61ccf84b9a69cd7cff5025c012d27b2d6a20d5e83aa46d4.nix;
         revNum = 0;
         sha256 = "dcbbcbc6eed991b8d61ccf84b9a69cd7cff5025c012d27b2d6a20d5e83aa46d4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

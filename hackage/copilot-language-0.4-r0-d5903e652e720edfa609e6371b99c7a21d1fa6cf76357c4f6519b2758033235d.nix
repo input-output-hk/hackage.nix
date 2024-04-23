@@ -21,7 +21,7 @@
       synopsis = "A Haskell-embedded DSL for monitoring hard real-time\ndistributed systems.";
       description = "Blah blah blah...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."copilot-core" or (errorHandler.buildDepError "copilot-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Various floating point limit related constants.";
       description = "Various floating point limit related constants.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,22 +21,22 @@
       synopsis = "mutable ring buffers with atomic updates in GHC Haskell";
       description = "mutable ring buffers with atomic updates in GHC Haskell, using the contiguous api internally to provide multiple array backends";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
-          ] ++ (if flags.checked
+        ] ++ (if flags.checked
           then [
             (hsPkgs."contiguous-checked" or (errorHandler.buildDepError "contiguous-checked"))
             (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
-            ]
+          ]
           else [
             (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

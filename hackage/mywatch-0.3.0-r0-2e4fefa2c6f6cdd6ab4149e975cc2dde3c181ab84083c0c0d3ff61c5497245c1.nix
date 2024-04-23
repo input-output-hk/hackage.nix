@@ -21,7 +21,7 @@
       synopsis = "Web application to view and kill MySQL queries";
       description = "View and kill queries on multiple MySQL servers.\nDesigned to work behind Sproxy.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mywatch" = {
@@ -50,9 +50,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell wrapper for Docker Remote API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

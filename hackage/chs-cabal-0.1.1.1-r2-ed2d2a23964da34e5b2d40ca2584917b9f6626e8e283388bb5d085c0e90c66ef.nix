@@ -21,15 +21,15 @@
       synopsis = "Cabal with c2hs dependencies";
       description = "Custom Cabal setup that orders chs dependencies correctly";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."chs-deps" or (errorHandler.buildDepError "chs-deps"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

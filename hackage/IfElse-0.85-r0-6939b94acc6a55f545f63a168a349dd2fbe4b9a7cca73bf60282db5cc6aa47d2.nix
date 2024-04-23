@@ -21,14 +21,14 @@
       synopsis = "Anaphoric and miscellaneous useful control-flow";
       description = "Anaphoric and miscellaneous useful control-flow";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Small DBus implementation";
       description = "Small and flexible implementation of the dbus protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,14 +33,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dbus" = {
-          depends = (pkgs.lib).optional (flags.executable) (hsPkgs."network" or (errorHandler.buildDepError "network"));
+          depends = pkgs.lib.optional (flags.executable) (hsPkgs."network" or (errorHandler.buildDepError "network"));
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

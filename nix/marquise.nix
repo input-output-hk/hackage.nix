@@ -6,8 +6,8 @@
         nix = import ../hackage/marquise-4.0.0-r0-e174c4240dc2b3242eb7e34280914e619f84ecb7511673c6bc30a2f31c1b4cee.nix;
         revNum = 0;
         sha256 = "e174c4240dc2b3242eb7e34280914e619f84ecb7511673c6bc30a2f31c1b4cee";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

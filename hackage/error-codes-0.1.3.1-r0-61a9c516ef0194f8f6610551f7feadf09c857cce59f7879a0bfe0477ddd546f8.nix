@@ -21,7 +21,7 @@
       synopsis = "Error code functions";
       description = "A library for creating human-readable descriptions of error codes from the operating system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."error-codes" or (errorHandler.buildDepError "error-codes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

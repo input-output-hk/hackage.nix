@@ -21,20 +21,20 @@
       synopsis = "Intro reexported as Prelude";
       description = "Intro reexported as Prelude. Replace base with base-noprelude and intro-prelude in your build-depends.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."intro" or (errorHandler.buildDepError "intro")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."intro" or (errorHandler.buildDepError "intro"))
             (hsPkgs."intro-prelude" or (errorHandler.buildDepError "intro-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

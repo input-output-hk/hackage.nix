@@ -14,7 +14,7 @@
       quickcheck = true;
       hunit = true;
       dev = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "explainable-predicates"; version = "0.1.2.4"; };
@@ -27,7 +27,7 @@
       synopsis = "Predicates that can explain themselves.";
       description = "Explainable predicates are essentially functions from types\nto 'Bool' which can additionally describe themselves and\nexplain why an argument does or doesn't match.  They are\nintended to be used during unit tests to provide better\nerror messages when tests fail.  For example, if a\ncollection is missing an element, an explainable predicate\ncan tell you which element is missing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -35,9 +35,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (flags.regex) (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))) ++ (pkgs.lib).optional (flags.containers) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))) ++ (pkgs.lib).optional (flags.quickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))) ++ (pkgs.lib).optional (flags.hunit) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
+        ] ++ pkgs.lib.optional (flags.regex) (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))) ++ pkgs.lib.optional (flags.containers) (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))) ++ pkgs.lib.optional (flags.quickcheck) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))) ++ pkgs.lib.optional (flags.hunit) (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."doctest-lib" or (errorHandler.buildDepError "doctest-lib"))
             (hsPkgs."explainable-predicates" or (errorHandler.buildDepError "explainable-predicates"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

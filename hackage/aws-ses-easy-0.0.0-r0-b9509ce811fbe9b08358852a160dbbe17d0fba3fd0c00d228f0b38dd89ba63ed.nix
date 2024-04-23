@@ -21,7 +21,7 @@
       synopsis = "Wrapper over Amazonka's SES";
       description = "Opinionated use of Amazonka's SES for ease";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aws-ses-easy-test-suite" = {
           depends = [
@@ -44,19 +44,19 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "aws-ses-easy-benchmarks" = {
           depends = [
             (hsPkgs."aws-ses-easy" or (errorHandler.buildDepError "aws-ses-easy"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

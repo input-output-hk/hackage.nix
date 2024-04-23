@@ -21,7 +21,7 @@
       synopsis = "DEPRECATED Grab current metadata for all packages";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "all-cabal-metadata-tool" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."stackage-update" or (errorHandler.buildDepError "stackage-update"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

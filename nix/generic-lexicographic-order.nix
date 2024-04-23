@@ -6,8 +6,8 @@
         nix = import ../hackage/generic-lexicographic-order-0.1.0.0-r0-4e126eb0d9f2566ebbfad8c5b7e9ac69edcdc64ff5f8024866d999342b666cee.nix;
         revNum = 0;
         sha256 = "4e126eb0d9f2566ebbfad8c5b7e9ac69edcdc64ff5f8024866d999342b666cee";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

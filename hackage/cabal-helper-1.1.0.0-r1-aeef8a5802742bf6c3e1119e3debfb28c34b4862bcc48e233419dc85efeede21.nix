@@ -21,7 +21,7 @@
       synopsis = "Give Haskell development tools access to Cabal project environment";
       description = "The purpose of the @cabal-helper@ library is to give Haskell development\ntools access to the same environment which build tools such as @cabal@ and\n@stack@ normally provide to the compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -45,21 +45,21 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]
+          ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ]
+          ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "cabal-helper-main" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = if flags.dev then true else false;
-          };
         };
+      };
       tests = {
         "compile-test" = {
           depends = ([
@@ -97,21 +97,21 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
+        };
         "programs-test" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -135,21 +135,21 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
+        };
         "ghc-session" = {
           depends = (([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -174,28 +174,28 @@
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
+        };
         "examples" = {
           depends = (([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -218,28 +218,28 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-              ]
+            ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

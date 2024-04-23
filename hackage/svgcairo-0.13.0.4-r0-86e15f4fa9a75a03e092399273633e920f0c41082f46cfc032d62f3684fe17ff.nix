@@ -21,7 +21,7 @@
       synopsis = "Binding to the libsvg-cairo library.";
       description = "Svgcairo is used to render SVG with cairo.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,15 +30,15 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."librsvg-2.0" or (errorHandler.pkgConfDepError "librsvg-2.0"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.gtk2hsC2hs.components.exes.gtk2hsC2hs or (pkgs.buildPackages.gtk2hsC2hs or (errorHandler.buildToolDepError "gtk2hsC2hs:gtk2hsC2hs")))
           (hsPkgs.buildPackages.gtk2hsTypeGen.components.exes.gtk2hsTypeGen or (pkgs.buildPackages.gtk2hsTypeGen or (errorHandler.buildToolDepError "gtk2hsTypeGen:gtk2hsTypeGen")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Intel AMT serial-over-lan (SOL) client";
       description = "hamtsolo lets you connect to Intel computers with enabled\nAMT and establish a serial-over-lan (SOL) connection.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hamtsolo" = {
@@ -41,9 +41,9 @@
             (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

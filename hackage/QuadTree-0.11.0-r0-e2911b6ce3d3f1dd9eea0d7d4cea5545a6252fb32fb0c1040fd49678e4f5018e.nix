@@ -21,16 +21,16 @@
       synopsis = "QuadTree library for Haskell, with lens support.";
       description = "The purpose of this package is to provide discrete region quadtrees that can be used as effective functional alternatives to 2D arrays, with lens support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "quadtree-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

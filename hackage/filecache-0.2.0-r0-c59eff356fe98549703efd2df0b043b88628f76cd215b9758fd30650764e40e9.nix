@@ -21,7 +21,7 @@
       synopsis = "A Linux-only cache system associating values to files. The values are discarded when the files are modified.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
           (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

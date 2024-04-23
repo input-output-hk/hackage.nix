@@ -21,7 +21,7 @@
       synopsis = "SmallCheck support for the Hspec testing framework";
       description = "SmallCheck support for the Hspec testing framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-smallcheck" or (errorHandler.buildDepError "hspec-smallcheck"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

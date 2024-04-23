@@ -21,16 +21,16 @@
       synopsis = "Type-level rationals. Like KnownNat, but for rationals.";
       description = "Type-level rationals. Like KnownNat, but for rationals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kind-integer" or (errorHandler.buildDepError "kind-integer"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."kind-integer" or (errorHandler.buildDepError "kind-integer"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."kind-rational" or (errorHandler.buildDepError "kind-rational"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

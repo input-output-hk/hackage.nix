@@ -21,7 +21,7 @@
       synopsis = "Lenses for toml-parser";
       description = "Lenses for toml-parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,16 +43,16 @@
             (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
             (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
             (hsPkgs."lens-toml-parser" or (errorHandler.buildDepError "lens-toml-parser"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

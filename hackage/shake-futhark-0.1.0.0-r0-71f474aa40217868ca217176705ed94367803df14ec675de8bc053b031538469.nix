@@ -21,7 +21,7 @@
       synopsis = "Dependency tracking for Futhark";
       description = "Dependency trakcing using the [futhark library](http://hackage.haskell.org/package/futhark) for transitive dependencies in Futhark projects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

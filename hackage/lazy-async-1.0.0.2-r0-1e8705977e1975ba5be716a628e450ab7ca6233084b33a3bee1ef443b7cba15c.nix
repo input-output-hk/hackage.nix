@@ -21,7 +21,7 @@
       synopsis = "Asynchronous actions that don't start right away";
       description = "Sometimes we have a bunch of I/O actions that might not end up\nbeing needed, and we don't want to simply run all the actions upfront.\nWe also don't want to simply run an action right before its result is\nneeded, because it might be needed in more than one place, which opens\nthe possibility of unnecessarily running the same action more than once.\nIn situations like these, we use LazyAsync.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."lazy-async" or (errorHandler.buildDepError "lazy-async"))
             (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
             (hsPkgs."optics-th" or (errorHandler.buildDepError "optics-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

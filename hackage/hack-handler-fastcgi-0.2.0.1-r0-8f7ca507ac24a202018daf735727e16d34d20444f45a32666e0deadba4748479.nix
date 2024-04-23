@@ -21,7 +21,7 @@
       synopsis = "Hack handler direct to fastcgi (deprecated)";
       description = "";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hack-handler-cgi" or (errorHandler.buildDepError "hack-handler-cgi"))
-          ];
+        ];
         libs = [ (pkgs."fcgi" or (errorHandler.sysDepError "fcgi")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

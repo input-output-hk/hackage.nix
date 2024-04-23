@@ -21,16 +21,16 @@
       synopsis = "Monad to pull from fake stream-like objects.";
       description = "See <https://github.com/igrep/haskell-fakepull#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fakepull-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."fakepull" or (errorHandler.buildDepError "fakepull"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

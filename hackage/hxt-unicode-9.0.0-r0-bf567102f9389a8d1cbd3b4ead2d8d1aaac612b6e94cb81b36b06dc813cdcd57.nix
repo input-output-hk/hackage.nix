@@ -21,14 +21,14 @@
       synopsis = "Unicode en-/decoding functions for utf8, iso-latin-* and other encodings";
       description = "Unicode encoding and decoding functions for utf8, iso-latin-* and somes other encodings,\nused in the Haskell XML Toolbox.\nISO Latin 1 - 16, utf8, utf16, ASCII are supported. Decoding\nis done with lasy functions, errors may be detected or ignored.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hxt-charproperties" or (errorHandler.buildDepError "hxt-charproperties"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

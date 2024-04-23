@@ -21,7 +21,7 @@
       synopsis = "Hlint integration plugin with Haskell Language Server";
       description = "Please see Haskell Language Server Readme (https://github.com/haskell/haskell-language-server#readme)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,14 +51,14 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "8.10.1") && (compiler.isGhc && (compiler.version).lt "9.0.0")
+        ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "8.10.1") && (compiler.isGhc && compiler.version.lt "9.0.0")
           then [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ]
           else [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-lib" or (errorHandler.buildDepError "ghc-lib"))
             (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

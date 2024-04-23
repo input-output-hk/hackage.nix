@@ -21,7 +21,7 @@
       synopsis = "An extensible mysql effect using extensible-effects and mysql-simple";
       description = "Any help (especially documentation) is very welcome,";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
           (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
           (hsPkgs."mysql" or (errorHandler.buildDepError "mysql"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

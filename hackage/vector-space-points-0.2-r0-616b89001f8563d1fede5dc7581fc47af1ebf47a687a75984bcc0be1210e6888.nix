@@ -21,14 +21,14 @@
       synopsis = "A type for points, as distinct from vectors.";
       description = "A type for points, as distinct from vectors, built on top\nof Data.AffineSpace.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

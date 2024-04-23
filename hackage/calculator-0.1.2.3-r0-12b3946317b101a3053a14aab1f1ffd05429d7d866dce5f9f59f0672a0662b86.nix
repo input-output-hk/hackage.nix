@@ -21,7 +21,7 @@
       synopsis = "A calculator that operates on string inputs";
       description = "A calculator repl that processes mathematical expressions.\nDoes basic arithmetic, and provides pre-defined basic mathematical functions.\nAims to provide variable bindings and function bindings in the future.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "calculator" = {
@@ -30,19 +30,19 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "model-test-arithmetic" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

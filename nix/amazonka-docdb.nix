@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-docdb-2.0-r0-f6e0550b84bb05dd51b36d75b56dd14cebc43ac128636e358bb9aaea5b9a0b1a.nix;
         revNum = 0;
         sha256 = "f6e0550b84bb05dd51b36d75b56dd14cebc43ac128636e358bb9aaea5b9a0b1a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

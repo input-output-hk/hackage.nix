@@ -21,7 +21,7 @@
       synopsis = "A command-line double-entry accounting tool.";
       description = "hledger reads a plain text general journal or time log\ndescribing your transactions and displays precise\nbalance and register reports on the console.\nIt is a remix, in haskell, of John Wiegley's excellent c++\nledger.  hledger aims to be a practical, accessible tool\nfor end users and a useful library for finance-minded\nhaskell programmers.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

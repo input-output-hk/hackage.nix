@@ -21,11 +21,11 @@
       synopsis = "A battery-included platform for LiquidHaskell";
       description = "A battery-included platform for LiquidHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "liquidhaskell" = {
-          depends = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).lt "8.10.1")) [
+          depends = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.10.1")) [
             (hsPkgs."liquid-base" or (errorHandler.buildDepError "liquid-base"))
             (hsPkgs."liquid-containers" or (errorHandler.buildDepError "liquid-containers"))
             (hsPkgs."liquid-prelude" or (errorHandler.buildDepError "liquid-prelude"))
@@ -34,11 +34,11 @@
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.10.1"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.10.1"
             then false
             else true;
-          };
+        };
         "gradual" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -46,17 +46,17 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "target" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

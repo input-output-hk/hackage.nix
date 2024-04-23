@@ -21,7 +21,7 @@
       synopsis = "Constructing, analyzing and destructing annotated trees";
       description = "@Annotations@ provides utility functions to make working with annotated trees easier. There are two implementations: one for working with open datatypes that explicitly make their child positions accessible through a type argument, and one for working with MultiRec datatypes.\n\nParser combinators make it easy to construct trees annotated with position information. For the MultiRec implementation, there is the @Yield@ monad that allows construction of trees in postorder.\n\nError algebras allow destruction of trees using catamorphisms. The algebra is allowed to indicate failure in which case the error is automatically coupled with the annotation at the position at which the error occurred.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."multirec" or (errorHandler.buildDepError "multirec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."multirec" or (errorHandler.buildDepError "multirec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

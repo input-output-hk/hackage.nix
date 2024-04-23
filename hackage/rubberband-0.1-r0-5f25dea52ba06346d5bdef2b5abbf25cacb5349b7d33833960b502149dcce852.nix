@@ -21,17 +21,17 @@
       synopsis = "Binding to the C++ audio stretching library Rubber Band";
       description = "Rubber Band is a high quality software library for audio\ntime-stretching and pitch-shifting. It permits you to\nchange the tempo and pitch of an audio stream or recording\ndynamically and independently of one another.\n\nRubber Band is open source software under the GNU General\nPublic License. If you want to distribute it in a\nproprietary commercial application, you need to buy a\nlicense: <http://breakfastquay.com/rubberband/license.html>\n\nThis is a binding to Rubber Band library v1.8.1.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."rubberband" or (errorHandler.sysDepError "rubberband"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A generic boundingbox for an arbitrary vector";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."boundingboxes" or (errorHandler.buildDepError "boundingboxes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

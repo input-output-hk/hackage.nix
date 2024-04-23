@@ -21,14 +21,14 @@
       synopsis = "Parsing and processing s-records.";
       description = "S-records are common binary files used in embedded programming.\nThis library provides basic parsing, generation, and other\nutilities for s-records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

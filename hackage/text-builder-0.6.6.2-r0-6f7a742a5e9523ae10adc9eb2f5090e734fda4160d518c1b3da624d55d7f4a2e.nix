@@ -21,7 +21,7 @@
       synopsis = "An efficient strict text builder";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deferred-folds" or (errorHandler.buildDepError "deferred-folds"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,27 +43,27 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-text" = {
           depends = [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "benchmark-char" = {
           depends = [
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

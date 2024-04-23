@@ -6,8 +6,8 @@
         nix = import ../hackage/IntFormats-0.1.0.0-r0-2b4dab662c836ddbf00d4e9d93fe4e23d7708122b729df85c555a42f5682ee63.nix;
         revNum = 0;
         sha256 = "2b4dab662c836ddbf00d4e9d93fe4e23d7708122b729df85c555a42f5682ee63";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

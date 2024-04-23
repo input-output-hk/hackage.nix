@@ -21,7 +21,7 @@
       synopsis = "Gopher server library and daemon";
       description = "Simple gopher library that allows writing custom gopher\napplications. Also includes a fully-featured gopher server\ndaemon complete with gophermap-support built on top of it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hxt-unicode" or (errorHandler.buildDepError "hxt-unicode"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "spacecookie" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."systemd" or (errorHandler.buildDepError "systemd"))
             (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."spacecookie" or (errorHandler.buildDepError "spacecookie"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."download-curl" or (errorHandler.buildDepError "download-curl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

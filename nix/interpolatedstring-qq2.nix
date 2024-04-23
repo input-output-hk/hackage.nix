@@ -6,8 +6,8 @@
         nix = import ../hackage/interpolatedstring-qq2-0.1.0.0-r0-221e4d7bff33e45e14abe510e3fb9323e7a5bd6d13fe9436e6e56254a658419e.nix;
         revNum = 0;
         sha256 = "221e4d7bff33e45e14abe510e3fb9323e7a5bd6d13fe9436e6e56254a658419e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

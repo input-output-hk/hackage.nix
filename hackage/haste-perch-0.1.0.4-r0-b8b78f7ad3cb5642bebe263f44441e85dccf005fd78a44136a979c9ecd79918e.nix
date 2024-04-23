@@ -21,7 +21,7 @@
       synopsis = "Create, navigate and modify the DOM tree with composable syntax, with the haste compiler";
       description = "see the description at the homepage.\nThis version add JQuery-like DOM manipulation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.haste-inst
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."haste-lib" or (errorHandler.buildDepError "haste-lib"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."haste-compiler" or (errorHandler.buildDepError "haste-compiler"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

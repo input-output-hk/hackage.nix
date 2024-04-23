@@ -21,7 +21,7 @@
       synopsis = "A better, more type-safe Enum.";
       description = "Provides a type class witnessing that a type has\nfinitely-many inhabitants, as well as its cardinality.\nAlso provides an auto-deriving framework using GHC\nGenerics, together with a range of instances for existing\ntypes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Egyptian fractions in Haskell";
       description = "Fibonacci's algorithm for computing Egyptian fractions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

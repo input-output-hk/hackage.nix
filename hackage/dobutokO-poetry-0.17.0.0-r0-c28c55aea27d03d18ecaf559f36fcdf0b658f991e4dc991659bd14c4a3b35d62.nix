@@ -21,7 +21,7 @@
       synopsis = "Helps to order the 7 or less Ukrainian words to obtain somewhat suitable for poetry or music text";
       description = "Helps to order the 7 or less Ukrainian words (or their concatenations) to obtain somewhat suitable for poetry or music text. Can be also used as a research instrument with generalized functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."uniqueness-periods" or (errorHandler.buildDepError "uniqueness-periods"))
           (hsPkgs."dobutokO-poetry-general" or (errorHandler.buildDepError "dobutokO-poetry-general"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dobutokO-poetry" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
             (hsPkgs."uniqueness-periods" or (errorHandler.buildDepError "uniqueness-periods"))
             (hsPkgs."dobutokO-poetry-general" or (errorHandler.buildDepError "dobutokO-poetry-general"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

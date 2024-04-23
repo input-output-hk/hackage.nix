@@ -21,11 +21,11 @@
       synopsis = "Functions for grouping a list into sublists  ";
       description = "Functions for grouping a list into sublists based on predicate or integer offsets.\n\nGrouping a list based on integer offsets:\n\n> splitEvery 3 [1..10]  ==  [[1,2,3],[4,5,6],[7,8,9],[10]]\n> splitWith [1,3,1,3] [1..10]  ==  [[1],[2,3,4],[5],[6,7,8],[9,10]]\n> splitWithDrop [1,3,1,3] [1..10]  ==  [[1],[2,3,4],[5],[6,7,8]]\n\nGrouping based on a predicate:\n\n> breakBefore odd [2..9]  ==  [[2],[3,4],[5,6],[7,8],[9]]\n> breakAfter odd [2..9]  ==  [[2,3],[4,5],[6,7],[8,9]]\n> breakDrop odd [0,0,0,1,0,1,1,0,0]  ==  [[0,0,0],[0],[0,0]]\n\nPlease send me any comments, requests or bug reports\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

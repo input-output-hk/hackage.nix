@@ -21,16 +21,16 @@
       synopsis = "A terminal presentation tool";
       description = "Give fancy presentations in your terminal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "hspresent" = { buildable = true; }; };
       };
-    }
+      exes = { "hspresent" = { buildable = true; }; };
+    };
+  }

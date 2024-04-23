@@ -21,7 +21,7 @@
       synopsis = "A library for functional GUI development";
       description = "PropLang provides a combinator library for event-driven\nfunctional GUI programming. GUI elements can be tied together\nin a declarative style to make the resulting code clearer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

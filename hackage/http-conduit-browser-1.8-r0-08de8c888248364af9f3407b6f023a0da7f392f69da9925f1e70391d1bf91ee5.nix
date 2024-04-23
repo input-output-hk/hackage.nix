@@ -21,7 +21,7 @@
       synopsis = "Browser interface to the http-conduit package";
       description = "This package creates a monad representing things that browsers do,\nletting you elegantly describe a browsing session. This package wraps\nthe http-conduit package by Michael Snoyman.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

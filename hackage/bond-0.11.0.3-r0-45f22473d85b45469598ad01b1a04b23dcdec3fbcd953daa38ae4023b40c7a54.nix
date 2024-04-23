@@ -21,7 +21,7 @@
       synopsis = "Bond schema compiler and code generator";
       description = "Bond is a cross-platform framework for handling schematized\ndata. It supports cross-language de/serialization and\npowerful generic mechanisms for efficiently manipulating\ndata.\n\nThis package contains a library for parsing the Bond\nschema definition language and performing template-based\ncode generation. The library includes built-in templates\nfor generating standard Bond C++ and C# code, as well as\nutilities for writing custom codegen templates.\n\nThe package also contains a command-line compiler/codegen\ntool, named gbc, which is primarily used to generate code\nfor C++ and C# programs using Bond.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gbc" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gbc-tests" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

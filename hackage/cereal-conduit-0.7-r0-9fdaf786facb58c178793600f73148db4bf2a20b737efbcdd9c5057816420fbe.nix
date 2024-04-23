@@ -21,7 +21,7 @@
       synopsis = "Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits";
       description = "Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits.\n\n[0.7]\nUpgrade to conduit 1.0.0";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cereal-conduit" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

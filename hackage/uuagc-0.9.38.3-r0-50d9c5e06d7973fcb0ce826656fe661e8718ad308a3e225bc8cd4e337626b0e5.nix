@@ -21,7 +21,7 @@
       synopsis = "Attribute Grammar System of Universiteit Utrecht";
       description = "Generates Haskell files from an attribute grammar specification";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "uuagc" = {
           depends = ([
@@ -43,25 +43,25 @@
             (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ] ++ (if flags.compatibility1
+          ] ++ (if flags.compatibility1
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
-              ])) ++ (if flags.compatibility2
+            ])) ++ (if flags.compatibility2
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

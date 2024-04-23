@@ -21,7 +21,7 @@
       synopsis = "Handy metrics that don't belong to ridley.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ridley" or (errorHandler.buildDepError "ridley"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ridley-extras-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ridley-extras" or (errorHandler.buildDepError "ridley-extras"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

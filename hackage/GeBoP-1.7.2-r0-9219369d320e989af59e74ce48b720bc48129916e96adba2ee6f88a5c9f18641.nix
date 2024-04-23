@@ -21,7 +21,7 @@
       synopsis = "Several games";
       description = "The games: Ataxx, Bamp, Halma, Hez, Kram, Nim, Reversi, TicTacToe, and Zenix";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gebop" = {
@@ -31,9 +31,9 @@
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

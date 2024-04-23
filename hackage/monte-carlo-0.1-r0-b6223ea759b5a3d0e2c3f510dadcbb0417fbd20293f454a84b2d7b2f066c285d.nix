@@ -21,15 +21,15 @@
       synopsis = "A monad and transformer for Monte Carlo calculations.";
       description = "A monad and transformer for Monte Carlo calculations.  The monads\ncarry and provide access to a random number generator.  Importantly,\nthey only keep one copy of the generator state, and so are much more\nefficient than MonadRandom.  Currently, only the generator that comes\nwith the GNU Scientific Library is supported.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."gsl-random" or (errorHandler.buildDepError "gsl-random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

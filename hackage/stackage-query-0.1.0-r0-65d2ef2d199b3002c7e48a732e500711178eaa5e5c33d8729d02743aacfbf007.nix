@@ -21,7 +21,7 @@
       synopsis = "Stackage package query";
       description = "Tool to query package versions in Stackage";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stackage" = {
@@ -36,9 +36,9 @@
             (hsPkgs."stackage-types" or (errorHandler.buildDepError "stackage-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,39 +21,39 @@
       synopsis = "piecewise linear and cubic Hermite interpolation";
       description = "Represent real functions by linear or cubic segments.\nThe package provides both data structures\nfor efficient lookup of interpolation intervals,\nand computation of basis functions.\n\nThere are two examples that can be built with\n\n> cabal install -fbuildExamples\n\n* @example/Plot.hs@:\nInterpolate a sinus curve using piecewise linear interpolation\nand piecewise Hermite cubic interpolation.\nFor the latter one we provide the derivatives of the sinus function\nat the interpolation nodes.\n\n* @example/Fit.hs@:\nDemonstrates how to use the basis functions\nfor fitting an interpolation function to a given function\nusing a linear least squares solver like @<\\>@ from @hmatrix@.\nWe use a distorted sinus as target.\n\nThe package needs only Haskell 98.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "interpolation-plot" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."interpolation" or (errorHandler.buildDepError "interpolation"))
             (hsPkgs."gnuplot" or (errorHandler.buildDepError "gnuplot"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "interpolation-fit" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples && flags.hmatrix) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.hmatrix) [
             (hsPkgs."interpolation" or (errorHandler.buildDepError "interpolation"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."gnuplot" or (errorHandler.buildDepError "gnuplot"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples && flags.hmatrix
             then true
             else false;
-          };
         };
+      };
       tests = {
         "interpolation-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

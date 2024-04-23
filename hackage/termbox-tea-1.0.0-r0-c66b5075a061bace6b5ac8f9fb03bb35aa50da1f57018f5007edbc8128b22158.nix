@@ -21,32 +21,32 @@
       synopsis = "termbox + The Elm Architecture";
       description = "This package provides an Elm Architecture interface to @termbox@ programs.\n\nSee also:\n\n* @<https://hackage.haskell.org/package/termbox-banana termbox-banana>@ for a @reactive-banana@ FRP interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."termbox" or (errorHandler.buildDepError "termbox"))
           (hsPkgs."ki" or (errorHandler.buildDepError "ki"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "termbox-tea-example-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ki" or (errorHandler.buildDepError "ki"))
             (hsPkgs."termbox-tea" or (errorHandler.buildDepError "termbox-tea"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
+        };
         "termbox-tea-example-quick-start" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termbox-tea" or (errorHandler.buildDepError "termbox-tea"))
-            ];
+          ];
           buildable = if !flags.build-examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

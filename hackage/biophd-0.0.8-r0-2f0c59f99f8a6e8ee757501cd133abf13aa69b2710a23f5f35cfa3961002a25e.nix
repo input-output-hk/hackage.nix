@@ -21,7 +21,7 @@
       synopsis = "Library for reading phd sequence files";
       description = "Library for reading phd sequence files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

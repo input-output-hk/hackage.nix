@@ -6,8 +6,8 @@
         nix = import ../hackage/SQLDeps-0.1-r0-8a28f0cced4f92079d52e993c84cb7105f8e7e852ec2dc7b5bfccf98e85cb943.nix;
         revNum = 0;
         sha256 = "8a28f0cced4f92079d52e993c84cb7105f8e7e852ec2dc7b5bfccf98e85cb943";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

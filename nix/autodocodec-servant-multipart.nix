@@ -6,8 +6,8 @@
         nix = import ../hackage/autodocodec-servant-multipart-0.0.0.0-r0-75cd051bffedac228ec8ed03f6bc098314fcabc04365ed77d5d1ccece4b135be.nix;
         revNum = 0;
         sha256 = "75cd051bffedac228ec8ed03f6bc098314fcabc04365ed77d5d1ccece4b135be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

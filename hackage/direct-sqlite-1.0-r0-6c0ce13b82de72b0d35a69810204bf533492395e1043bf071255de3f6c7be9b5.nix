@@ -21,15 +21,15 @@
       synopsis = "Low-level binding to SQLite3.  Includes UTF8 and BLOB support.";
       description = "This package is not very different from the other SQLite3 bindings out there, but\nit fixes a few deficiencies I was finding.  It is not as complete as bindings-sqlite3,\nbut is slightly higher-level, in that it supports marshalling of data values to and\nfrom the database.  In particular, it supports strings encoded as UTF8, and BLOBs\nrepresented as ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

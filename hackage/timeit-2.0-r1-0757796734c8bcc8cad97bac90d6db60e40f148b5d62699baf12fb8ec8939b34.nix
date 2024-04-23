@@ -21,13 +21,13 @@
       synopsis = "Time monadic computations with an IO base.";
       description = "A simple wrapper to show the used CPU time of monadic computation with an\nIO base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

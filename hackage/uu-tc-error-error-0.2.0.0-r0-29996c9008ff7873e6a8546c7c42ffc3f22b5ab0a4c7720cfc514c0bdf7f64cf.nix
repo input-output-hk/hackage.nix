@@ -21,7 +21,7 @@
       synopsis = "utilities for parse errors";
       description = "utilities for parse errors for\n@[uu-tc-error](https://hackage.haskell.org/package/uu-tc-error)@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A note taking CLI tool.";
       description = "Please see the README on Github at <https://github.com/evuez/slate#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "slate" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."slate" or (errorHandler.buildDepError "slate"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "slate-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."slate" or (errorHandler.buildDepError "slate"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

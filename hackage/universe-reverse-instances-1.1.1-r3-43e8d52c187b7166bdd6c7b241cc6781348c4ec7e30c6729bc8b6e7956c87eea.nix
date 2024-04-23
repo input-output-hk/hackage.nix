@@ -21,15 +21,15 @@
       synopsis = "Instances of standard classes that are made possible by enumerations";
       description = "For example this package provides a @Eq (a -> b)@ instance:\n\n@\ninstance (Finite a, Eq b) => Eq (a -> b) where\nf == g = and [f x == g x | x <- universeF]\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

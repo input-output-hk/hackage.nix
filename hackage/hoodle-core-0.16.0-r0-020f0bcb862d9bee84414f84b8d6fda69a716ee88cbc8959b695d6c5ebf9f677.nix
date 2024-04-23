@@ -21,7 +21,7 @@
       synopsis = "Core library for hoodle";
       description = "Hoodle is a pen notetaking program written in haskell.\nhoodle-core is the core library written in haskell and\nusing gtk2hs";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -73,7 +73,7 @@
           (hsPkgs."hoodle-publish" or (errorHandler.buildDepError "hoodle-publish"))
           (hsPkgs."hoodle-render" or (errorHandler.buildDepError "hoodle-render"))
           (hsPkgs."hoodle-types" or (errorHandler.buildDepError "hoodle-types"))
-          ] ++ (pkgs.lib).optional (flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ (pkgs.lib).optionals (flags.hub) [
+        ] ++ pkgs.lib.optional (flags.dyre) (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))) ++ pkgs.lib.optionals (flags.hub) [
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
@@ -87,14 +87,14 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."handa-gdata" or (errorHandler.buildDepError "handa-gdata"))
-          ];
+        ];
         libs = [
           (pkgs."X11" or (errorHandler.sysDepError "X11"))
           (pkgs."Xi" or (errorHandler.sysDepError "Xi"))
           (pkgs."dl" or (errorHandler.sysDepError "dl"))
           (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

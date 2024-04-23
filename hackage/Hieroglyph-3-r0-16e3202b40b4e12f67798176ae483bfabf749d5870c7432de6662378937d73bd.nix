@@ -21,7 +21,7 @@
       synopsis = "Purely functional 2D drawing";
       description = "A purely functional 2D scenegraph library with functionality similar to a barebones Processing.\nCurrently entirely implmeneted using Cairo, although I would like to go to OpenGL as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."buster-gtk" or (errorHandler.buildDepError "buster-gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

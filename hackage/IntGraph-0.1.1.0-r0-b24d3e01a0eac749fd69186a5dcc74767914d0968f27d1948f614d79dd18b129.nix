@@ -21,24 +21,24 @@
       synopsis = "Dynamically sized graph library";
       description = "Graph implemented as an IntMap to Sets of Ints. Functions for Directed and Undirected graphs are provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "IntGraph-test" = {
           depends = [
             (hsPkgs."IntGraph" or (errorHandler.buildDepError "IntGraph"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

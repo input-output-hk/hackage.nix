@@ -21,7 +21,7 @@
       synopsis = "SVG to G-Code converter";
       description = "SVG to G-code converter that aims to support almost all of the SVG features. It currently supports all of the shapes except images (not planned) and text (maybe once as you it can be converted to curves easily anyway). The flavor of the generated G-Code can be configured providing a configuration file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "juicy-gcode" = {
@@ -34,9 +34,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

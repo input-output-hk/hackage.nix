@@ -21,7 +21,7 @@
       synopsis = "Various trie implementations in Haskell";
       description = "Please see the README on Github at <https://github.com/athanclark/rose-trees#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rose-trees-test" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "rose-trees-bench" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

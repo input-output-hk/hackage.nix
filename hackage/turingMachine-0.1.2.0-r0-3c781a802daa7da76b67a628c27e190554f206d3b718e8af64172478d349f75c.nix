@@ -21,14 +21,14 @@
       synopsis = "An implementation of Turing Machine and Automaton";
       description = "An implementation of Turing Machine and Automaton for\nlanguage theory";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

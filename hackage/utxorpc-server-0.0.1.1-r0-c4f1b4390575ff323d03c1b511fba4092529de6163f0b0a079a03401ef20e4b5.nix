@@ -21,7 +21,7 @@
       synopsis = "An SDK for UTxO RPC services.";
       description = "An SDK to reduce boilerplate, improve ease-of-use, and support logging for `utxorpc`.\nTo get started, see the documentation for `Utxorpc.Server` below.\nConsult the README for help with dependency configurations.\nWARNING: This package is currently pre-release. Any version < 0.1.0.0 is subject to breaking\nchanges without change in major version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "server-example" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "logged_test_server" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

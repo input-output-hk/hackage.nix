@@ -21,7 +21,7 @@
       synopsis = "A pandoc filter that provides a Markdown extension for logic proofs.";
       description = "For more information and a tutorial on how to use this package,\nplease see the README at <https://github.com/mhwombat/pandoc-logic-proof#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-logic-proof" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-logic-proof" or (errorHandler.buildDepError "pandoc-logic-proof"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

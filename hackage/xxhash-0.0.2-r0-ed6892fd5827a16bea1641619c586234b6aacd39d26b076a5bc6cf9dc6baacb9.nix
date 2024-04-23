@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of the xxHash algorithm";
       description = "A Haskell implementation of the xxHash algorithm, for fast\nnon-cryptographic checksums of ByteStrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "check" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."xxhash" or (errorHandler.buildDepError "xxhash"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."xxhash" or (errorHandler.buildDepError "xxhash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

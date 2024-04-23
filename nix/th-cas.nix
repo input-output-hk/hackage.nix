@@ -6,8 +6,8 @@
         nix = import ../hackage/th-cas-0.1.0-r0-528dd04aa58da5338d945a5cfa6939e3b34b7003173ae0037384970ac9d1556e.nix;
         revNum = 0;
         sha256 = "528dd04aa58da5338d945a5cfa6939e3b34b7003173ae0037384970ac9d1556e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

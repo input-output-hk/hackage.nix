@@ -21,15 +21,15 @@
       synopsis = "Provides an orphan instance Default (Wrapped Generic a)";
       description = "This provides support for Generic-based deriving of Default as an instance on\nWrapped Generic, so that Default instances can be derived as\n@deriving Default via Wrapped Generic MyType@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

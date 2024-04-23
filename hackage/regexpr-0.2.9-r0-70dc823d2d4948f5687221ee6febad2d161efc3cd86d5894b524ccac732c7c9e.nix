@@ -21,7 +21,7 @@
       synopsis = "regular expression like Perl/Ruby in Haskell";
       description = "Regular expression library like Perl/Ruby's regular expressions.\nThis package has a module RegexPR.\nAnd RegexPR export functions matchRegexPR and gsubRegexPR.\n\nmatchRegexPR :: String -> Maybe ((String, (String, String)), [(Int, String)])\n\ngmatchRegexPR :: String -> [((String, (String, String)), [(Int, String)])]\n\nsubRegexPR :: String -> String -> String\n\ngsubRegexPR :: String -> String -> String\n\nsplitRegexPR :: String -> String -> [String]\n\nExamples:\n\nmatchRegexPR \"ab(cde)f\\\\1\" \"kkkabcdefcdefgh\" =>\nJust ((\"abcdefcde\", (\"kkk\", \"fgh\")),[(1,\"cde\")])\n\nmatchRegexPR \"(?<=hij)abc\" \"kkkabchijabcde\" =>\nJust ((\"abc\",(\"kkkabchij\",\"de\")),[])\n\ngsubRegexPR \"\\\\G(\\\\d\\\\d\\\\d)\" \"\\\\1,\" \"123456 789\" => \"123,456, 789\"\n\nsubRegexPR \"(?<=(.)(.)(.))e\" \" \\\\3\\\\2\\\\1 \" \"abcdefg\" => \"abcd dcb fg\"\n\ngsubRegexPR \"(?ixm)  aBc  . # comment \\n\\n\" \"abc!\" \"abc\\nABCDAbcAbc\" =>\n\"abc!abc!abc!bc\"\n\ngmatchRegexPR \"(?=(?<!(?!abc)))abc\" \"abcdefdefabc\" =>\n[((\"abc\", (\"\", \"defdefabc\")), []), ((\"abc\", (\"defdef\", \"\")), [])]\n\nsplitRegexPR \"\\\\s*,\\\\s*\" \"a,b ,c\\t ,d , e\" => [\"a\",\"b\",\"c\",\"d\",\"e\"]";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."mtlparse" or (errorHandler.buildDepError "mtlparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

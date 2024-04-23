@@ -14,7 +14,7 @@
       identifier = {
         name = "gi-webkitwebprocessextension";
         version = "6.0.2";
-        };
+      };
       license = "LGPL-2.1-only";
       copyright = "";
       maintainer = "Iñaki García Etxebarria";
@@ -34,8 +34,8 @@
         (hsPkgs.buildPackages.gi-gdk or (pkgs.buildPackages.gi-gdk or (errorHandler.setupDepError "gi-gdk")))
         (hsPkgs.buildPackages.gi-gtk or (pkgs.buildPackages.gi-gtk or (errorHandler.setupDepError "gi-gtk")))
         (hsPkgs.buildPackages.gi-gobject or (pkgs.buildPackages.gi-gobject or (errorHandler.setupDepError "gi-gobject")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -53,11 +53,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."webkitgtk-web-process-extension-6.0" or (errorHandler.pkgConfDepError "webkitgtk-web-process-extension-6.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

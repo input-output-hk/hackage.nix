@@ -21,15 +21,15 @@
       synopsis = "instances of standard classes that are made possible by enumerations";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."universe-instances-base" or (errorHandler.buildDepError "universe-instances-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

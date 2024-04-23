@@ -21,7 +21,7 @@
       synopsis = "A small command-line accounting tool: hledger + bugs - features? maybe...";
       description = "This is a very minimal command-line program to read a\nplain-text ledger file and display balance information\nand other reports. I could have used hledger or ledger\nfor this, but I had some things I wanted to do a little\ndifferently... so I did.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "umm" = {
@@ -31,9 +31,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

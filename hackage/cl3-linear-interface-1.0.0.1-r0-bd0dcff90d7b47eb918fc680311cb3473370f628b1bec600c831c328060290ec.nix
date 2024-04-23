@@ -21,15 +21,15 @@
       synopsis = "Interface to/from Cl3 and Linear.";
       description = "Haskell Library implementing standard interface functions for the Algebra of Physical Space Cl(3,0) and Linear   ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cl3" or (errorHandler.buildDepError "cl3"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

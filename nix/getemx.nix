@@ -6,8 +6,8 @@
         nix = import ../hackage/getemx-0.1-r0-9a063ca58b1cf580c3229447cdff1470b30249374fec9c3bd0b9cb92184ade87.nix;
         revNum = 0;
         sha256 = "9a063ca58b1cf580c3229447cdff1470b30249374fec9c3bd0b9cb92184ade87";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

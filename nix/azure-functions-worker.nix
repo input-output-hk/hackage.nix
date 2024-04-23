@@ -6,8 +6,8 @@
         nix = import ../hackage/azure-functions-worker-0.0.0.0-r0-57f0da3c7213692add681ae350fbd6602dba0362c41c65c837644d734df67ca1.nix;
         revNum = 0;
         sha256 = "57f0da3c7213692add681ae350fbd6602dba0362c41c65c837644d734df67ca1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A journaling program for Linux";
       description = "Extremely simple CLI-based program for keeping diaries or journals.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tn" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

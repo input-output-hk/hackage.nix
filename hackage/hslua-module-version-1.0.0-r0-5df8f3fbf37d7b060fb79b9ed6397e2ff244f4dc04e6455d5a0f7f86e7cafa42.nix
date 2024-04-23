@@ -21,7 +21,7 @@
       synopsis = "Lua module to work with version specifiers.";
       description = "Wrapper for the Data.Version.Version Haskell type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hslua-marshalling" or (errorHandler.buildDepError "hslua-marshalling"))
           (hsPkgs."hslua-packaging" or (errorHandler.buildDepError "hslua-packaging"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hslua-module-version-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

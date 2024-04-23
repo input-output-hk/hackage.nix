@@ -21,14 +21,14 @@
       synopsis = "Semigroupoids that depend on PolyKinds";
       description = "Semigroupoids that depend on PolyKinds";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ] ++ (pkgs.lib).optional (flags.profunctors) (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"));
+        ] ++ pkgs.lib.optional (flags.profunctors) (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

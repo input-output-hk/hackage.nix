@@ -21,7 +21,7 @@
       synopsis = "Haskell library for the Microsoft Language Server Protocol";
       description = "An implementation of the types, and basic message server to\nallow language implementors to support the Language Server\nProtocol for their specific language.\n\nAn example of this is for Haskell via the Haskell Language\nServer, at https://github.com/haskell/haskell-language-server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lsp-demo-reactor-server" = {
           depends = [
@@ -62,18 +62,18 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
+        };
         "lsp-demo-simple-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
         };
+      };
       tests = {
         "unit-test" = {
           depends = [
@@ -91,12 +91,12 @@
             (hsPkgs."sorted-list" or (errorHandler.buildDepError "sorted-list"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

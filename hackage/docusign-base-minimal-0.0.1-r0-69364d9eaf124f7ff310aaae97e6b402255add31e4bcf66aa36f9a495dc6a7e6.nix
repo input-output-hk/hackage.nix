@@ -21,7 +21,7 @@
       synopsis = "Low-level bindings to the DocuSign API (only what is necessary for docusign-client)";
       description = "DocuSign is an electronic signature technology and digital transaction\nmanagement. These are just low-level bindings to the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Packing and unpacking flat tables.";
       description = "Packing and unpacking flat tables.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
           (hsPkgs."repa-scalar" or (errorHandler.buildDepError "repa-scalar"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

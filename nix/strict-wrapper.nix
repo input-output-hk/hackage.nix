@@ -6,8 +6,8 @@
         nix = import ../hackage/strict-wrapper-0.0.0.0-r0-d7d0badd654f0b825347e22af54f4e3d02d5a68d3c9a31dff2dab88bebbd8b99.nix;
         revNum = 0;
         sha256 = "d7d0badd654f0b825347e22af54f4e3d02d5a68d3c9a31dff2dab88bebbd8b99";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

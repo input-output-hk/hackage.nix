@@ -21,7 +21,7 @@
       synopsis = "Tiger Compiler of Universiteit Utrecht";
       description = "Tiger compiler";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tiger" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

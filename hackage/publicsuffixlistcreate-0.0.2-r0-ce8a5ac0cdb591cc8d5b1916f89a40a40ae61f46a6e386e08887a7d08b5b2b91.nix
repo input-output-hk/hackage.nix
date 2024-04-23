@@ -21,7 +21,7 @@
       synopsis = "Create the publicsuffixlist package";
       description = "Create the publicsuffixlist package. This is broken out into its own package so users of the publicsuffixlist package don't have to depend on ICU.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."publicsuffixlist" or (errorHandler.buildDepError "publicsuffixlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-public-suffix-list-create" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."publicsuffixlist" or (errorHandler.buildDepError "publicsuffixlist"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

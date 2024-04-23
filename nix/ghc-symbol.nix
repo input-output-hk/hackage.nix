@@ -6,8 +6,8 @@
         nix = import ../hackage/ghc-symbol-0-r0-2b1d4fb2697f4999bb319b83f3edd2d0d91f40ecc30a102ee0a24a40cf998c35.nix;
         revNum = 0;
         sha256 = "2b1d4fb2697f4999bb319b83f3edd2d0d91f40ecc30a102ee0a24a40cf998c35";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

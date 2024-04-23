@@ -21,24 +21,24 @@
       synopsis = "Shake helpers.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shake-shakers" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shakers" or (errorHandler.buildDepError "shakers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

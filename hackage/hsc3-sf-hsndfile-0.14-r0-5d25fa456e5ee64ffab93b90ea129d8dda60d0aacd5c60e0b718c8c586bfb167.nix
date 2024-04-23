@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider SoundFile";
       description = "hsc3-sf-sndfile provides a trivial hsc3-sf equivalent\ninterface to Stefan Kersten's hsndfile package.  hsndfile\nhas more extensive dependencies than hsc3-sf, and this\nallows the two packages to be used interchangably by\nmodifying a single import.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hsndfile" or (errorHandler.buildDepError "hsndfile"))
           (hsPkgs."hsndfile-vector" or (errorHandler.buildDepError "hsndfile-vector"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

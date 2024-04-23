@@ -21,7 +21,7 @@
       synopsis = "A wiki implemented with a firm theoretical foundation.";
       description = "This project is a simple wiki developed based on a\nfirm theoretical foundation.\n\nDocuments are not stored directly, but as a composition\ntree of patches to an initial empty document. As our\npatches support operational transform, edits can be\nmade to any version of each document and they are\ntransformed to be applied to the latest version.\n\nThis also makes it easy to use the group structure of\npatches to be able to revert changes (or the composition\nof several changes) from deep in a document's history and\npreserve every other change.\n\nRight now the wiki doesn't support many bells and whistles,\nsuch as administrator control, configurability, or user accounts,\nbut they're coming.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dixi" = {
@@ -57,9 +57,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

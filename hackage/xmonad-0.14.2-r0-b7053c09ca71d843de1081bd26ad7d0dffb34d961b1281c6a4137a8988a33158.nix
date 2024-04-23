@@ -21,7 +21,7 @@
       synopsis = "A tiling window manager";
       description = "xmonad is a tiling window manager for X. Windows are arranged\nautomatically to tile the screen without gaps or overlap, maximising\nscreen use. All features of the window manager are accessible from the\nkeyboard: a mouse is strictly optional. xmonad is written and\nextensible in Haskell. Custom layout algorithms, and other extensions,\nmay be written by the user in config files. Layouts are applied\ndynamically, and different layouts may be used on each workspace.\nXinerama is fully supported, allowing windows to be tiled on several\nscreens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = if flags.testing then false else true;
-        };
+      };
       exes = {
         "xmonad" = {
           depends = [
@@ -48,19 +48,19 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "generatemanpage" = {
-          depends = (pkgs.lib).optionals (flags.generatemanpage) [
+          depends = pkgs.lib.optionals (flags.generatemanpage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.generatemanpage then true else false;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

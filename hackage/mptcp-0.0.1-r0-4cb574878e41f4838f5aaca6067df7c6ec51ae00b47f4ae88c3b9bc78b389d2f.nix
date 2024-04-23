@@ -21,7 +21,7 @@
       synopsis = "Datastructures to describe TCP and MPTCP connections";
       description = "This provides very basic datastructures to describe TCP or multipath TCP (MPTCP)\ndata structures, to record their subflows, the associated tokens etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."mptcp" or (errorHandler.buildDepError "mptcp"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

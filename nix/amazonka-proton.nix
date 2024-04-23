@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-proton-2.0-r0-1aadccece9fb0d0628c45869f07a7a7791c54378f98b5c656924e0a84d2fe1cf.nix;
         revNum = 0;
         sha256 = "1aadccece9fb0d0628c45869f07a7a7791c54378f98b5c656924e0a84d2fe1cf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

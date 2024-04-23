@@ -21,7 +21,7 @@
       synopsis = "Typeful hierarchical structured logging using di, mtl and df1.";
       description = "Typeful hierarchical structured logging using di, mtl and df1.\n\nThis is meta-package bringing in together things from the @di-core@,\n@di-monad@, @di-handle@ and @di-df1@ libraries.\n\nSee the \"Di\" module for more documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."di-handle" or (errorHandler.buildDepError "di-handle"))
           (hsPkgs."di-monad" or (errorHandler.buildDepError "di-monad"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

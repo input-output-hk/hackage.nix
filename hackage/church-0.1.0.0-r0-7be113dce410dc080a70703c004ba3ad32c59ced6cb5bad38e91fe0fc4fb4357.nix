@@ -21,11 +21,11 @@
       synopsis = "Automatically convert Generic instances to and from church representations";
       description = "This package provides a type 'ChurchRep' to generically construct\nthe type of the church representation.\nAdditionally, it provides a type class 'Church' which contains\na pair of functions for mapping back and forth between the two\nrepresentations.\nBoth the @ChurchRep@ and the @Church@ instance are be automatically constructed\nfor all types with a @Generic@ instance.\nBased on code by Danny Gratzer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

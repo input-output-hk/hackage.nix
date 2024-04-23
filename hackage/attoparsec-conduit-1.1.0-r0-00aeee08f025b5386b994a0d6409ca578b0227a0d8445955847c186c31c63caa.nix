@@ -21,14 +21,14 @@
       synopsis = "Consume attoparsec parsers via conduit. (deprecated)";
       description = "Consume attoparsec parsers via conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

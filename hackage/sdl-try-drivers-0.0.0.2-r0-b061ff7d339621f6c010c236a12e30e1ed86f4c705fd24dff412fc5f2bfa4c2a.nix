@@ -21,7 +21,7 @@
       synopsis = "small testing tool for sdl2 and accelerated drivers";
       description = "For each reported driver sdl-try-drivers tries to create a renderer\nand reports success or failure with the catched exception.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sdl-try-drivers" = {
@@ -30,9 +30,9 @@
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

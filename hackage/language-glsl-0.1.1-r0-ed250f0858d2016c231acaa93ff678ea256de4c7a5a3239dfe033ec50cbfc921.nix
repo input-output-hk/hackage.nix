@@ -21,16 +21,16 @@
       synopsis = "GLSL abstract syntax tree, parser, and pretty-printer";
       description = "The package language-glsl is a Haskell library for the\nrepresentation, the parsing, and the pretty-printing of\nGLSL 1.50 code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "glsl-pprint" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

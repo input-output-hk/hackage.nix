@@ -21,7 +21,7 @@
       synopsis = "Yam DataSource Middleware";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."yam" or (errorHandler.buildDepError "yam"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

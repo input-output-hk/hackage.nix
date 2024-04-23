@@ -21,7 +21,7 @@
       synopsis = "Generate Flow routes for Yesod";
       description = "Parse the Yesod routes data structure and generate routes that can be used with Flow.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-routes-flow" or (errorHandler.buildDepError "yesod-routes-flow"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

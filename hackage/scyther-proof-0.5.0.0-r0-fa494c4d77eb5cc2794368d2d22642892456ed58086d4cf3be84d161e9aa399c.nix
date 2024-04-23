@@ -21,7 +21,7 @@
       synopsis = "Automatic generation of Isabelle/HOL correctness proofs for security protocols.";
       description = "scyther-proof is a security protocol verification tool\nbased on an algorithm similar to the Scyther tool developed\nby Cas Cremers\n(<http://people.inf.ethz.ch/cremersc/scyther/index.html>).\nThe theory underlying scyther-proof is described in the\npaper \\\"Strong Invariants for the Efficient Construction of\nMachine-Checked Protocol Security Proofs\\\" by Meier,\nCremers, and Basin available from\n<http://people.inf.ethz.ch/meiersi/publications/index.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scyther-proof" = {
@@ -41,9 +41,9 @@
             (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

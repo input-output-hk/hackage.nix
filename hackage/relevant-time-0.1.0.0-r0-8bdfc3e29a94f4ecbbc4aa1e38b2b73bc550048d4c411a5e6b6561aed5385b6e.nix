@@ -21,7 +21,7 @@
       synopsis = "humanised relevant time";
       description = "Humans tend to think of time relative to a fixed point.\nThis library offers a simple datatype, 'RelevantTime',\nwhich captures the logic behind that idea.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."chronos" or (errorHandler.buildDepError "chronos"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

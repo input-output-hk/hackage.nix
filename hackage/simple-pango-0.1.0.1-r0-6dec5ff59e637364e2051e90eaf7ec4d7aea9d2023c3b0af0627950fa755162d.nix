@@ -21,7 +21,7 @@
       synopsis = "Binding to Pango library";
       description = "Please see the README on GitHub at <https://github.com/githubuser/simple-pango#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,12 +38,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."union-angle" or (errorHandler.buildDepError "union-angle"))
           (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."pangocairo" or (errorHandler.pkgConfDepError "pangocairo"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-pango-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."union-angle" or (errorHandler.buildDepError "union-angle"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

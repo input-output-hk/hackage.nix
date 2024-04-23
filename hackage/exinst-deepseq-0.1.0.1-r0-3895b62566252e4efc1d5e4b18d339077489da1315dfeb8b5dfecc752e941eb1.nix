@@ -21,7 +21,7 @@
       synopsis = "Derive instances for the `deepseq` library for your existential types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."exinst" or (errorHandler.buildDepError "exinst"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

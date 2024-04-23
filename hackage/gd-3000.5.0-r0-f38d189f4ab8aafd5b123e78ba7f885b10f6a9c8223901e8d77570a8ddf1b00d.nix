@@ -21,13 +21,13 @@
       synopsis = "A Haskell binding to a subset of the GD graphics library";
       description = "This is a binding to a (currently very small) subset of\nthe GD graphics library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."gd" or (errorHandler.sysDepError "gd"))
           (pkgs."png" or (errorHandler.sysDepError "png"))
@@ -37,8 +37,8 @@
           (pkgs."fontconfig" or (errorHandler.sysDepError "fontconfig"))
           (pkgs."freetype" or (errorHandler.sysDepError "freetype"))
           (pkgs."expat" or (errorHandler.sysDepError "expat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

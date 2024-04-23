@@ -6,8 +6,8 @@
         nix = import ../hackage/tehepero-0-r0-2c0f4e6413b9195323ce99ee97e3c0abbbb97e5e324397d35360e0c6bc7731c2.nix;
         revNum = 0;
         sha256 = "2c0f4e6413b9195323ce99ee97e3c0abbbb97e5e324397d35360e0c6bc7731c2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

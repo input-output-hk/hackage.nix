@@ -21,25 +21,25 @@
       synopsis = "A class for monads which can fail with an error.";
       description = "A class for monads which can fail with an error.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if flags.transformers
+        ] ++ (if flags.transformers
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]
+          ]
           else [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ])) ++ (if flags.extensibleexceptionsinbase
+          ])) ++ (if flags.extensibleexceptionsinbase
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

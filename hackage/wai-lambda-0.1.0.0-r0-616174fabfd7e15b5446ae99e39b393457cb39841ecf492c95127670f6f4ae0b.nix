@@ -21,7 +21,7 @@
       synopsis = "Haskell Webapps on AWS Lambda";
       description = "\n![wai-lambda](https://github.com/deckgo/wai-lambda/raw/master/assets/wai-lambda-small.png)\n\nTurn any [wai](https://www.stackage.org/package/wai) webapp ( [spock](https://www.spock.li/), [servant](https://docs.servant.dev/en/stable/), etc) into a handler for AWS [Lambda](https://aws.amazon.com/lambda/) and [API Gateway](https://aws.amazon.com/api-gateway/) requests.\n\nWorks with any Lambda environment (nodejs, python, etc). Find out more in the [README](https://github.com/deckgo/wai-lambda#wai-lambda---haskell-webapps-on-aws-lambda).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-lambda" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-lambda" or (errorHandler.buildDepError "wai-lambda"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

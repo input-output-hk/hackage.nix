@@ -21,15 +21,15 @@
       synopsis = "Intervals";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."alg" or (errorHandler.buildDepError "alg"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."ival" or (errorHandler.buildDepError "ival"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "All-in-one session handling for servant-based frontends";
       description = "Uses cookies to store session keys.\n\nOffers CSRF protection.\n\nDesigned with HTML frontends in mind, but Suitable for any HTTP service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

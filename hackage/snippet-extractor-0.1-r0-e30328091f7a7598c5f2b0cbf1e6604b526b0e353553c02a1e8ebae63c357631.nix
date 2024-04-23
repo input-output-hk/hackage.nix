@@ -21,16 +21,16 @@
       synopsis = "Extracts labeled snippets of code to files.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snippet-extractor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

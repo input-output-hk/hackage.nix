@@ -21,7 +21,7 @@
       synopsis = "Easy-to-use TODOs manager.";
       description = "todos is a simple TODO manager. TODO records theirself are described in\nplain-text file, and todos allows you to show only needed of\nthem. So, todos works as specialized `grep' utility.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,12 +41,12 @@
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
-          ] ++ (pkgs.lib).optionals (flags.with_curses) [
+        ] ++ pkgs.lib.optionals (flags.with_curses) [
           (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
           (hsPkgs."setlocale" or (errorHandler.buildDepError "setlocale"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "todos" = { buildable = true; }; };
       };
-    }
+      exes = { "todos" = { buildable = true; }; };
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A strange message received at the Pegovka observatory";
       description = "A strange message received at the Pegovka observatory. For more info read https://icfpcontest2020.github.io/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

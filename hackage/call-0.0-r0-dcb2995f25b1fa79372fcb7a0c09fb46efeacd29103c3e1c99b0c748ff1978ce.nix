@@ -21,7 +21,7 @@
       synopsis = "The call game engine";
       description = "Call is a minimalistic game engine which supports 2D graphics and sounds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,8 +50,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."objective" or (errorHandler.buildDepError "objective"))
           (hsPkgs."bindings-portaudio" or (errorHandler.buildDepError "bindings-portaudio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

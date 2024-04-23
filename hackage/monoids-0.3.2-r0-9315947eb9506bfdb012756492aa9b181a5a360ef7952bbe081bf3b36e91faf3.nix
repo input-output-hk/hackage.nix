@@ -21,7 +21,7 @@
       synopsis = "Deprecated: Use 'reducers'";
       description = "Deprecated: Use 'reducers'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

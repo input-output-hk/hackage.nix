@@ -21,7 +21,7 @@
       synopsis = "A tiling window manager";
       description = "This is a modified version of xmonad used by Bluetile.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,22 +29,22 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = if flags.testing then false else true;
-        };
+      };
       exes = {
         "xmonad" = {
-          depends = (pkgs.lib).optional (flags.testing) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck")) ++ (pkgs.lib).optional (flags.testing && flags.small_base) (hsPkgs."random" or (errorHandler.buildDepError "random"));
+          depends = pkgs.lib.optional (flags.testing) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck")) ++ pkgs.lib.optional (flags.testing && flags.small_base) (hsPkgs."random" or (errorHandler.buildDepError "random"));
           buildable = if flags.testing then true else false;
-          };
         };
       };
-    }
+    };
+  }

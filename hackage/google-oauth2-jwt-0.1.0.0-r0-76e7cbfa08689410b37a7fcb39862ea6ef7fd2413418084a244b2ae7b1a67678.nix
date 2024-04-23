@@ -21,7 +21,7 @@
       synopsis = "Get a signed JWT for Google Service Accounts";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

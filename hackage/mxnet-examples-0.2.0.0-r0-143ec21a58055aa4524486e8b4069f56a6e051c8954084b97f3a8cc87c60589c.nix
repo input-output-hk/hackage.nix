@@ -21,23 +21,23 @@
       synopsis = "Examples for MXNet in Haskell.";
       description = "Examples for MXNet in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ndarray" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mxnet" or (errorHandler.buildDepError "mxnet"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "symbol" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mxnet" or (errorHandler.buildDepError "mxnet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

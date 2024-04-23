@@ -21,11 +21,11 @@
       synopsis = "Strict tuples";
       description = "Strict tuples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

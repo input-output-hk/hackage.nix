@@ -15,7 +15,7 @@
       https = true;
       network-uri = true;
       old-locale = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "pandoc"; version = "1.19.2.1"; };
@@ -28,7 +28,7 @@
       synopsis = "Conversion between markup formats";
       description = "Pandoc is a Haskell library for converting from one markup\nformat to another, and a command-line tool that uses\nthis library. It can read several dialects of Markdown and\n(subsets of) HTML, reStructuredText, LaTeX, DocBook,\nMediaWiki markup, TWiki markup, Haddock markup, OPML,\nEmacs Org-Mode, txt2tags, Word Docx, ODT, and Textile, and\nit can write Markdown, reStructuredText, XHTML, HTML 5,\nLaTeX, ConTeXt, DocBook, OPML, TEI, OpenDocument, ODT,\nWord docx, RTF, MediaWiki, DokuWiki, ZimWiki, Textile,\ngroff man pages, plain text, Emacs Org-Mode, AsciiDoc,\nHaddock markup, EPUB (v2 and v3), FictionBook2, InDesign ICML,\nand several kinds of HTML/javascript slide shows (S5, Slidy,\nSlideous, DZSlides, reveal.js).\n\nIn contrast to most existing tools for converting Markdown\nto HTML, pandoc has a modular design: it consists of a set of\nreaders, which parse text in a given format and produce a\nnative representation of the document, and a set of writers,\nwhich convert this native representation into a target\nformat. Thus, adding an input or output format requires\nonly adding a reader or writer.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -74,28 +74,28 @@
           (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
           (hsPkgs."doctemplates" or (errorHandler.buildDepError "doctemplates"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (if flags.old-locale
+        ] ++ (if flags.old-locale
           then [
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ])) ++ (if flags.network-uri
+          ])) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optionals (flags.https) [
+          ])) ++ pkgs.lib.optionals (flags.https) [
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
-        build-tools = (pkgs.lib).optional (flags.embed_data_files) (hsPkgs.buildPackages.hsb2hs.components.exes.hsb2hs or (pkgs.buildPackages.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")));
+        ];
+        build-tools = pkgs.lib.optional (flags.embed_data_files) (hsPkgs.buildPackages.hsb2hs.components.exes.hsb2hs or (pkgs.buildPackages.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")));
         buildable = true;
-        };
+      };
       exes = {
         "pandoc" = {
           depends = ([
@@ -112,18 +112,18 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+            ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "trypandoc" = {
-          depends = (pkgs.lib).optionals (flags.trypandoc) [
+          depends = pkgs.lib.optionals (flags.trypandoc) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
@@ -131,18 +131,18 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = if flags.trypandoc then true else false;
-          };
+        };
         "weigh-pandoc" = {
-          depends = (pkgs.lib).optionals (flags.weigh-pandoc) [
+          depends = pkgs.lib.optionals (flags.weigh-pandoc) [
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = if flags.weigh-pandoc then true else false;
-          };
         };
+      };
       tests = {
         "test-pandoc" = {
           depends = [
@@ -166,10 +166,10 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-pandoc" = {
           depends = [
@@ -177,9 +177,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

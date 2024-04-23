@@ -21,7 +21,7 @@
       synopsis = "Tools for maintaining a database";
       description = "Tools for maintaining a database";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "refurb-test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

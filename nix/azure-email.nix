@@ -6,8 +6,8 @@
         nix = import ../hackage/azure-email-0.1.0.0-r0-6f6219b05a04e69633ed95d714fe1923589da058924205c395ad4ef00a79a976.nix;
         revNum = 0;
         sha256 = "6f6219b05a04e69633ed95d714fe1923589da058924205c395ad4ef00a79a976";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Command line Dreamcast VMU filesystem toolset.";
       description = "A Portable command line toolset written in Haskell for interacting with the Dreamcast Virtual Memory Unit filesystem.\nNamed after the 8-bit Sanyo LC8670 Potato CPU contained in the VMU. It allows for injecting, extracing, removing, and\nviewing files in a dreamcast VMU file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "potato-tool" = {
@@ -30,9 +30,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

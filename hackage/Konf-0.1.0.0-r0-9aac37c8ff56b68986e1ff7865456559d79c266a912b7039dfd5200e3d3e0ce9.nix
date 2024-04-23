@@ -21,15 +21,15 @@
       synopsis = "A configuration language and a parser.";
       description = "Konf is a minimal konfiguration language, and ``Text.Konf'' is an implementation of this language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

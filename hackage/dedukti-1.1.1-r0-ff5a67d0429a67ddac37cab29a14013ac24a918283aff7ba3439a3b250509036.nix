@@ -21,12 +21,12 @@
       synopsis = "A type-checker for the λΠ-modulo calculus.";
       description = "Dedukti is a proof checker for the λΠ-modulo calculus, a\ndependently typed λ-calculus with the addition of typed rewrite\nrules, capable of expressing proofs in Deduction Modulo [1].\n\n[1] G. Dowek, Th. Hardin, C. Kirchner, Theorem proving modulo,\n/Journal of Automated Reasoning/, 31, 2003, pp. 33-72.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ];
         buildable = true;
-        };
+      };
       exes = {
         "dedukti" = {
           depends = [
@@ -44,18 +44,18 @@
             (hsPkgs."Stream" or (errorHandler.buildDepError "Stream"))
             (hsPkgs."hmk" or (errorHandler.buildDepError "hmk"))
             (hsPkgs."stringtable-atom" or (errorHandler.buildDepError "stringtable-atom"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dedukti-tests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test)) [
+          depends = pkgs.lib.optionals (!!flags.test) [
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

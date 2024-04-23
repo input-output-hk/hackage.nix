@@ -14,7 +14,7 @@
       identifier = {
         name = "data-default-instances-base";
         version = "0.1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "<l.mai@web.de>";
@@ -24,14 +24,14 @@
       synopsis = "Default instances for types in base";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

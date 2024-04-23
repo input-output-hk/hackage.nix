@@ -21,14 +21,14 @@
       synopsis = "Simple library for solar calculations";
       description = "Simple library for solar calculations, to determine sunset, sunrise, solar noon, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

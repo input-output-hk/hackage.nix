@@ -21,15 +21,15 @@
       synopsis = "An imperative, verifiable programming language for high assurance applications.";
       description = "ImProve is an imperative programming language for high assurance applications.\nImProve uses infinite state, unbounded model checking to verify programs adhere\nto specifications.  Yices (required) is the backend SMT solver.\nImProve compiles to C, Simulink, and Modelica.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

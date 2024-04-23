@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to FANN neural network library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."fann" or (errorHandler.pkgConfDepError "fann"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Data To Class transformation.";
       description = "Transform data declarations to class definitions.\n\nThe way is explained in /Data Declarations to Class Definitions/ (see the homepage).\n\nChanges from last version:\n\n* Now @DTC@ uses @haskell-src-exts@ instead of @haskell-src@.\n\n* New module: @DataInfo@.\n\n* The @Maybe@ example included (in \"Language.Haskell.DTC.Class\" module).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

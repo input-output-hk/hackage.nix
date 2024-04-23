@@ -21,7 +21,7 @@
       synopsis = "Provide communications security using symmetric ephemeral keys";
       description = "This package provides confidentiallity,\nintegrity and replay detection. Users must\nprovide ephemeral keys for one time use (reuse\nwill compromise the security guarentees).\nStarting with shared secret, this package\nbuilds bi-directional channels for datagram\nbased communication.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

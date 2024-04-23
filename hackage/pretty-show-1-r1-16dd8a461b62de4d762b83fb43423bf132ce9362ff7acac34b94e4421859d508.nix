@@ -21,7 +21,7 @@
       synopsis = "Tools for working with derived Show instances.";
       description = "We provide a library and an executable for\nworking with derived Show instances.  By using\nthe library, we can parse derived Show instances\ninto a generic data structure.  The tool uses\nthe library to produce human-readable versions\nof Show instances, which can be quite handy\nfor debugging Haskell programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."haskell-lexer" or (errorHandler.buildDepError "haskell-lexer"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ppsh" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."haskell-lexer" or (errorHandler.buildDepError "haskell-lexer"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

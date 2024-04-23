@@ -21,7 +21,7 @@
       synopsis = "A generic interface for cryptographic operations";
       description = "A generic interface for cryptographic operations,\nplatform independent quality RNG, property tests\nand known-answer tests (KATs) for common algorithms,\nand a basic benchmark infrastructure.\nMaintainers of hash and cipher implementations are\nencouraged to add instances for the classes defined\nin Crypto.Classes.  Crypto users are similarly\nencouraged to use the interfaces defined in the Classes\nmodule.\nAny concepts or functions of general use to more than\none cryptographic algorithm (ex: padding) is within\nscope of this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,15 +30,15 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ] ++ (pkgs.lib).optionals (flags.tests) [
+        ] ++ pkgs.lib.optionals (flags.tests) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ]) ++ (pkgs.lib).optionals (flags.benchmarks) [
+        ]) ++ pkgs.lib.optionals (flags.benchmarks) [
           (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."advapi32" or (errorHandler.sysDepError "advapi32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

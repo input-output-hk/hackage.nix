@@ -21,7 +21,7 @@
       synopsis = "A concurrent, mutable ring-buffer";
       description = "A concurrent, mutable ring-buffer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ring-buffer" or (errorHandler.buildDepError "ring-buffer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

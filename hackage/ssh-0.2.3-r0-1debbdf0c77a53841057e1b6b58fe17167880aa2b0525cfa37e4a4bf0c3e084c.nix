@@ -21,7 +21,7 @@
       synopsis = "A pure-Haskell SSH server library.";
       description = "This package was split from darcsden into its own project; documentation is\nlacking, but you can find example usage here:\n<http://darcsden.com/alex/darcsden/browse/Main.hs>.\nThis is not a standalone SSH server - it is intended to be used as\na library for implementing your own servers that handle requests and\nauthorization, etc. Similar to Python's Twisted Conch library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
           (hsPkgs."SimpleAES" or (errorHandler.buildDepError "SimpleAES"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/cabal-install-ghc74-0.10.4-r0-91871e651717687a670ec093ad588da6f002a9aab1598294af4bfc784b48b469.nix;
         revNum = 0;
         sha256 = "91871e651717687a670ec093ad588da6f002a9aab1598294af4bfc784b48b469";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

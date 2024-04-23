@@ -21,7 +21,7 @@
       synopsis = "mysql backend for sql-simple";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
           (hsPkgs."mysql" or (errorHandler.buildDepError "mysql"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.8") (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Uninstall cabal packages";
       description = "Very simple script to delete a cabal package.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-uninstall" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

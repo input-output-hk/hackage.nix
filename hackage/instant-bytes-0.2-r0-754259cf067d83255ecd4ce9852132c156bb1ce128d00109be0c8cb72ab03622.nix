@@ -21,16 +21,16 @@
       synopsis = "Generic Serial instances through instant-generics";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."instant-bytes" or (errorHandler.buildDepError "instant-bytes"))
             (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

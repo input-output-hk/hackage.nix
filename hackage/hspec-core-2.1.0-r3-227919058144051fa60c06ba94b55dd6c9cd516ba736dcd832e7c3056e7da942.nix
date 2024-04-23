@@ -21,7 +21,7 @@
       synopsis = "A Testing Framework for Haskell";
       description = "This package exposes internal types and functions that can be\nused to extend Hspec's functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."quickcheck-io" or (errorHandler.buildDepError "quickcheck-io"))
           (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."hspec-meta" or (errorHandler.buildDepError "hspec-meta"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

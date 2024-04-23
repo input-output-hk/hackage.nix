@@ -21,7 +21,7 @@
       synopsis = "a faster debian repository";
       description = "apotiki generates debian repositories fast. its goal is\nto be a great companion to fpm and jenkins.\n\napotiki operates with the following features and constraints:\n\n- Supports a single debian release\n\n- Supports a single debian component\n\n- Supports an arbitrary number of architectures which need to be preprovisionned\n\n- Requires a valid PGP private key for signing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "apotiki" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

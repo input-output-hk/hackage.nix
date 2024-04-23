@@ -21,7 +21,7 @@
       synopsis = "Aviation Navigation functions";
       description = "Aviation Navigation functions e.g. wind correction";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."radian" or (errorHandler.buildDepError "radian"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wind-correction" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."radian" or (errorHandler.buildDepError "radian"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."aviation-navigation" or (errorHandler.buildDepError "aviation-navigation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple Haskel thread management in hierarchical manner";
       description = "This package provides parent-child association and guaranteed clean-up of children\nover plain Haskell thread.  You can terminate all child threads and grand child threads by\njust killing their parent thread.\nasynchronous exception.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "thread-hierarchy-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."thread-hierarchy" or (errorHandler.buildDepError "thread-hierarchy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

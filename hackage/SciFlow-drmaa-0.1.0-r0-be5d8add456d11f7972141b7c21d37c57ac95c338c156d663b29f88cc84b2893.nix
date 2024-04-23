@@ -21,7 +21,7 @@
       synopsis = "Scientific workflow management system";
       description = "DRMAA backend for SciFlow";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."SciFlow" or (errorHandler.buildDepError "SciFlow"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

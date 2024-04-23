@@ -21,7 +21,7 @@
       synopsis = "Simple Map-based Trie";
       description = "A trie data structure @TMap c v@, to hold a mapping from list of characters (@[c]@) to\nsomething. In other words, a data structure isomorphic to @Map [c] v@.\nIt is more efficient to query compared to @Map@. Also, it supports extra\noperations like prefix matching.\nThis package contains @TSet c@ too, which is isomorphic to @Set [c]@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "trie-simple-test" = {
           depends = [
@@ -47,13 +47,13 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."trie-simple" or (errorHandler.buildDepError "trie-simple"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "trie-benchmark" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."trie-simple" or (errorHandler.buildDepError "trie-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

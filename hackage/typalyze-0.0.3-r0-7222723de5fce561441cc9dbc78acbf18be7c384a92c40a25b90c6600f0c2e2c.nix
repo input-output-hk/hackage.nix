@@ -21,7 +21,7 @@
       synopsis = "Analyzes Haskell source files and dumps info in parsable format";
       description = "A tool to assist developers of IDEs and other code analyzing\nprograms.  Processes Haskell source files and outputs\ninformation about types in an efficient machine-readable\nformat.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "typalyze" = {
@@ -32,9 +32,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hswatch" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,9 +43,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

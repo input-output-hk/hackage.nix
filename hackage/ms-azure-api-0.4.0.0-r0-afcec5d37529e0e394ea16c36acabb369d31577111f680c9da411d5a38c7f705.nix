@@ -21,7 +21,7 @@
       synopsis = "Microsoft Azure API";
       description = "Bindings to the Microsoft Azure API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."xeno" or (errorHandler.buildDepError "xeno"))
           (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
           (hsPkgs."xmlbf-xeno" or (errorHandler.buildDepError "xmlbf-xeno"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

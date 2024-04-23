@@ -21,7 +21,7 @@
       synopsis = "A library for client-side HTTP";
       description = "A library for client-side HTTP, version 4. Rewrite of existing HTTP\npackage to allow overloaded representation of HTTP request bodies\nand responses. Provides three such instances: lazy and strict 'ByteString',\nalong with the good old @String@.\n\nInspired in part by Jonas Aadahl et al's work on ByteString'ifying HTTP\na couple of years ago.\n\nGit repository available at <git://code.galois.com/HTTPbis.git>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

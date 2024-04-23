@@ -21,7 +21,7 @@
       synopsis = "reflex-frp interface for watching files";
       description = "Receive FRP events whenever files change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

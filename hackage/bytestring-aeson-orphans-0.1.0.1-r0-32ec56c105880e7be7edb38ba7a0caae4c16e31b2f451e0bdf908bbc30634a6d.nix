@@ -21,7 +21,7 @@
       synopsis = "Aeson instances for ByteString, using base 64 encoding";
       description = "Encode ByteStrings as valid JSON using Aeson.  The instances provided by this\npackage use base64 encoding to ensure that the ByteString does not contain\ninvalid (for JSON) characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

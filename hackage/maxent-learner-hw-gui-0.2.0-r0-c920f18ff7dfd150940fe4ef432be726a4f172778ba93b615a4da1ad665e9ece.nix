@@ -21,7 +21,7 @@
       synopsis = "GUI for maxent-learner-hw";
       description = "This is a GUI frontent for maxent-learner-hw using GTK.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phono-learner-hw-gui" = {
@@ -48,9 +48,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "When you need just the RIO monad";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/little-rio#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

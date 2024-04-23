@@ -21,7 +21,7 @@
       synopsis = "Wai error catching middleware";
       description = "Error handling middleware for 'Wai'.\n/Note/: This package uses ideas fron not released package\n/enumerator-exception/\n(<https://github.com/snoyberg/enumerator-exception>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

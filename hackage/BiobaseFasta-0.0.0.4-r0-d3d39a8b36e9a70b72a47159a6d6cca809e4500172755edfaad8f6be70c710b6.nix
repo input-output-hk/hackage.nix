@@ -21,7 +21,7 @@
       synopsis = "Iteratee-based FASTA parser";
       description = "Enumeratees for FASTA-handling and convenience functions. In a\ntypical application, the user should write an enumeratee to\nextract information to allow for efficient low-memory handling\nof queries.\n\nFacilities for fast, efficient linear scans are provided. These\nfunctions are not yet stable and could move to another library,\nif more data sources require efficient scans.\n\nThe library is, in general, in a \"preview\" state. In cases\nwhere you need to scan large FASTA files fast and with low\nmemory overhead, the enumeratees should, however, already be\nuseable enough.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."iteratee-compress" or (errorHandler.buildDepError "iteratee-compress"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Test" = { buildable = if flags.tests then true else false; }; };
       };
-    }
+      exes = { "Test" = { buildable = if flags.tests then true else false; }; };
+    };
+  }

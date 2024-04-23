@@ -21,7 +21,7 @@
       synopsis = "Compression and decompression in the gzip and zlib formats";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring-in-base
@@ -29,9 +29,9 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."z" or (errorHandler.sysDepError "z"));
+          ];
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."z" or (errorHandler.sysDepError "z"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

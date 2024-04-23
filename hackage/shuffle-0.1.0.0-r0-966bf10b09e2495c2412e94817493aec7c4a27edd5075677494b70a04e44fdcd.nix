@@ -21,7 +21,7 @@
       synopsis = "Shuffle tool for UHC";
       description = "Shuffle tool used by UHC (Utrecht Haskell Compiler)";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "shuffle" = {
@@ -36,9 +36,9 @@
             (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
             (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
             (hsPkgs."uhc-util" or (errorHandler.buildDepError "uhc-util"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/http-client-request-modifiers-0.1-r0-67e3ed0c38ba25113e877885fc6621965e29fae57f88b0d809cfee4f6c694e98.nix;
         revNum = 0;
         sha256 = "67e3ed0c38ba25113e877885fc6621965e29fae57f88b0d809cfee4f6c694e98";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

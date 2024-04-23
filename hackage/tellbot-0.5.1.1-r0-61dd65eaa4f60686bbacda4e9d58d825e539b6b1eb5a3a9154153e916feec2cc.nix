@@ -21,7 +21,7 @@
       synopsis = "IRC tellbot";
       description = "An IRC bot that can be used to create queuing message.\nIt also offers a simple administration IRC bot interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tellbot" = {
@@ -37,9 +37,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Deriving (Show|Read)(1|2)";
       description = "Deriving (Show|Read)(1|2) from the usual, stock deriveable\ninstances like @Show a => Show (f a)@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "run-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."auto-lift-classes" or (errorHandler.buildDepError "auto-lift-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

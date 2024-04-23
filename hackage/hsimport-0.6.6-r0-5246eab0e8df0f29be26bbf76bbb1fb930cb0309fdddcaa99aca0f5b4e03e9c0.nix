@@ -21,7 +21,7 @@
       synopsis = "A command line program for extending the import list of a Haskell source file.";
       description = "A command line program for extending the import list of a Haskell source file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hsimport" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hsimport" or (errorHandler.buildDepError "hsimport"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hsimport-tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."hsimport" or (errorHandler.buildDepError "hsimport"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

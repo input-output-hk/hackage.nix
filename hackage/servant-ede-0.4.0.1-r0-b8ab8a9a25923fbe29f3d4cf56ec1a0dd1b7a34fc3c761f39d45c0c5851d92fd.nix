@@ -21,7 +21,7 @@
       synopsis = "Combinators for rendering EDE templates in servant web applications";
       description = "Combinators for rendering EDE templates in servant web applications.\n\nDocumentation and examples available at \"Servant.HTML.EDE\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-ede-example" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."servant-ede" or (errorHandler.buildDepError "servant-ede"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "DSL for creating zero-knowledge proofs";
       description = "Please see the README on GitHub at <https://github.com/btq-ag/keelung#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

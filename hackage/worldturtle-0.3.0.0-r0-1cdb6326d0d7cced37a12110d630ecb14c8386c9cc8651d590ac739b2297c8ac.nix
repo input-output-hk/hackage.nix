@@ -21,7 +21,7 @@
       synopsis = "LOGO-like Turtle graphics with a monadic interface.";
       description = "Have you ever heard of [Turtle Graphics](https://en.wikipedia.org/wiki/Turtle_graphics)?\n\nIf not, then think of a @turtle@ as a cursor you can program to draw! \n\nTurtle graphics are a fantastic introduction to the world of\n  programming and to the syntax of a new programming language.\n\n![parallelcircles gif](https://hackage.haskell.org/package/worldturtle-0.2.0.0/docs/docs/images/parallel_circles_animated_300.gif)\n\nThis module is a framework built on top \nof [gloss](https://hackage.haskell.org/package/gloss) to render turtles\nprogrammed in Haskell as animations. This is primarily aimed as a \nteaching tool to beginners - but also, it's cool to draw things!\n\nSee The API ref, \"Graphics.WorldTurtle\", for features!\n\nIt's easy to create a new project with stack:\n\n> stack new my-worldturtle-project aneilmac/worldturtle\n> cd my-worldturtle-project\n> stack build\n> stack exec my-worldturtle-project";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-coroutine" or (errorHandler.buildDepError "monad-coroutine"))
           (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

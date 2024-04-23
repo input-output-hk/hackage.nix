@@ -12,7 +12,7 @@
       old-bytestring = false;
       old-directory = false;
       network-uri = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "cabal-install"; version = "1.24.0.0"; };
@@ -25,7 +25,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "cabal" = {
@@ -51,35 +51,35 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
-            ] ++ (if flags.old-bytestring
+          ] ++ (if flags.old-bytestring
             then [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."bytestring-builder" or (errorHandler.buildDepError "bytestring-builder"))
-              ]
+            ]
             else [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ])) ++ (if flags.old-directory
+            ])) ++ (if flags.old-directory
             then [
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ]
+            ]
             else [
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (if system.isWindows
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = ((([
@@ -107,14 +107,14 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optional (flags.old-directory) (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))) ++ [
+          ] ++ pkgs.lib.optional (flags.old-directory) (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))) ++ [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (if system.isWindows
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
+        };
         "integration-tests" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
@@ -127,11 +127,11 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

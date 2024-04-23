@@ -21,12 +21,12 @@
       synopsis = "GMP integer conversions";
       description = "This defines a 'Storable' instance for GMP's @mpz@ type and provides functions for working with GMP integers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."gmp" or (errorHandler.sysDepError "gmp")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

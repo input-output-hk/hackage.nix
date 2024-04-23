@@ -21,7 +21,7 @@
       synopsis = "Liquid Haskell integration for Cabal and Stack";
       description = "Provides support for checking projects using Cabal\nand/or stack with LiquidHaskell.\nPlease see the\n<https://github.com/spinda/liquidhaskell-cabal/blob/0.2.1.0/README.md README>\non GitHub for setup and usage instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

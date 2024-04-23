@@ -21,41 +21,41 @@
       synopsis = "SymEngine symbolic mathematics engine for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "symengine-hs-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."symengine-hs" or (errorHandler.buildDepError "symengine-hs"))
-            ];
+          ];
           libs = [
             (pkgs."symengine" or (errorHandler.sysDepError "symengine"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
             (pkgs."gmpxx" or (errorHandler.sysDepError "gmpxx"))
             (pkgs."gmp" or (errorHandler.sysDepError "gmp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "symengine-hs-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."symengine-hs" or (errorHandler.buildDepError "symengine-hs"))
-            ];
+          ];
           libs = [
             (pkgs."symengine" or (errorHandler.sysDepError "symengine"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
             (pkgs."gmpxx" or (errorHandler.sysDepError "gmpxx"))
             (pkgs."gmp" or (errorHandler.sysDepError "gmp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A type definition compiler supporting multiple output languages.";
       description = "Compiles type definitions into F#, TypeScript and Python, with validators/decoders/encoders.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gotyno-hs" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "gotyno-hs-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

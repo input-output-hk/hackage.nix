@@ -21,7 +21,7 @@
       synopsis = "Get rid of unicode (utf-8) symbols in Haskell sources";
       description = "A very simple-minded program to replace utf-8 encoded\nunicode operators in Haskell source files with their\nequivalent in ascii. It takes no arguments and acts as\na pure filter from stdin to stdout.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "deunicode" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

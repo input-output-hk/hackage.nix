@@ -14,7 +14,7 @@
       identifier = {
         name = "timestamp-subprocess-lines";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Eyal Lotem (2012)";
       maintainer = "eyal.lotem@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Run a command and timestamp its stdout/stderr lines";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Timestamp" = {
@@ -38,9 +38,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

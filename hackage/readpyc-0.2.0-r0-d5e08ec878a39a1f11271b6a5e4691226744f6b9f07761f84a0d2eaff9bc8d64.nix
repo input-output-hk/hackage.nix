@@ -21,7 +21,7 @@
       synopsis = "Read and pretty print Python bytecode (.pyc) files.";
       description = "Read and pretty print Python bytecode (.pyc) files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "readpyc" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bliplib" or (errorHandler.buildDepError "bliplib"))
             (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

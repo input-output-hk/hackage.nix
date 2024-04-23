@@ -21,11 +21,11 @@
       synopsis = "Lists of size length a power of two.";
       description = "Some algorithmic problems work only when the input list\nhas length a power of two. This library provides with a\ndata structure optimized for this.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

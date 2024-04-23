@@ -15,7 +15,7 @@
       stage3 = false;
       terminfo = true;
       dynamic-system-linker = true;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "ghc"; version = "9.2.1"; };
@@ -28,7 +28,7 @@
       synopsis = "The GHC API";
       description = "GHC's functionality can be useful for more things than just\ncompiling Haskell programs. Important use cases are programs\nthat analyse (and perhaps transform) Haskell code. Others\ninclude loading Haskell code dynamically in a GHCi-like manner.\nFor this reason, a lot of GHC's functionality is made available\nthrough this package.\n\nSee <https://gitlab.haskell.org/ghc/ghc/-/wikis/commentary/compiler>\nfor more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,12 +51,12 @@
           (hsPkgs."ghc-heap" or (errorHandler.buildDepError "ghc-heap"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
           (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
+          ] ++ pkgs.lib.optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -16,7 +16,7 @@
       mysql = false;
       high_precision_date = false;
       nooverlap = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "persistent-test"; version = "2.0.0.3"; };
@@ -29,7 +29,7 @@
       synopsis = "Tests for Persistent";
       description = "Tests for Persistent";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -79,29 +79,29 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ] ++ (pkgs.lib).optional (!flags.postgresql && !flags.mysql && !flags.mongodb && !flags.zookeeper) (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))) ++ (pkgs.lib).optionals (flags.postgresql) [
+        ] ++ pkgs.lib.optional (!flags.postgresql && !flags.mysql && !flags.mongodb && !flags.zookeeper) (hsPkgs."persistent-sqlite" or (errorHandler.buildDepError "persistent-sqlite"))) ++ pkgs.lib.optionals (flags.postgresql) [
           (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
-          ]) ++ (pkgs.lib).optionals (flags.mysql) [
+        ]) ++ pkgs.lib.optionals (flags.mysql) [
           (hsPkgs."persistent-mysql" or (errorHandler.buildDepError "persistent-mysql"))
           (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
           (hsPkgs."mysql" or (errorHandler.buildDepError "mysql"))
-          ]) ++ (pkgs.lib).optionals (flags.mongodb) [
+        ]) ++ pkgs.lib.optionals (flags.mongodb) [
           (hsPkgs."persistent-mongoDB" or (errorHandler.buildDepError "persistent-mongoDB"))
           (hsPkgs."mongoDB" or (errorHandler.buildDepError "mongoDB"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ]) ++ (pkgs.lib).optionals (flags.zookeeper) [
+        ]) ++ pkgs.lib.optionals (flags.zookeeper) [
           (hsPkgs."persistent-zookeeper" or (errorHandler.buildDepError "persistent-zookeeper"))
           (hsPkgs."hzk" or (errorHandler.buildDepError "hzk"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "persistent-test" = {
           depends = [
@@ -113,9 +113,9 @@
             (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

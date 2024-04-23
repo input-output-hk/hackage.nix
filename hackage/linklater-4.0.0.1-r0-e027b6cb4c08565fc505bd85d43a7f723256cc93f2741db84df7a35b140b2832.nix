@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for the Slack API";
       description = "<https://github.com/hlian/linklater/blob/master/README.md ~please see our lovely README.md~>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "linklater-tests" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."linklater" or (errorHandler.buildDepError "linklater"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Slack chat client for playing werewolf (https://github.com/hjwylde/werewolf)";
       description = "The game engine is based off of the party game Mafia, also known as Werewolf.\nSee https://github.com/hjwylde/werewolf-slack for help on running the chat client.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "werewolf-slack" = {
@@ -38,9 +38,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."werewolf" or (errorHandler.buildDepError "werewolf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

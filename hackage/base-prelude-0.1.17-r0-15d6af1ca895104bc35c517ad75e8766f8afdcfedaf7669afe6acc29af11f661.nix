@@ -21,11 +21,11 @@
       synopsis = "The most complete prelude formed from only the \"base\" package";
       description = "A library which reexports all non-conflicting and\nmost general definitions from the \\\"base\\\" package.\nThis includes APIs for applicatives, arrows, monoids, foldables, traversables,\nexceptions, generics, ST, MVars and STM.\n\nThis package will never have any dependencies other than \\\"base\\\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tools for diffing stdout";
       description = "Command-line tools for diffing and patching stdout";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "diffdump" = {
@@ -36,16 +36,16 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "patchdump" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

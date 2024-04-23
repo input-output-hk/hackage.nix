@@ -21,23 +21,23 @@
       synopsis = "Efficient lazy parsers for CSV (comma-separated values).";
       description = "The CSV format is defined by RFC 4180.\nThese efficient lazy parsers (String and ByteString variants)\ncan report all CSV formatting errors, whilst also\nreturning all the valid data, so the user can choose\nwhether to continue, to show warnings, or to halt on\nerror.  Valid fields retain information about their\noriginal location in the input, so a secondary parser from\ntextual fields to typed values can give intelligent error\nmessages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "csvSelect" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

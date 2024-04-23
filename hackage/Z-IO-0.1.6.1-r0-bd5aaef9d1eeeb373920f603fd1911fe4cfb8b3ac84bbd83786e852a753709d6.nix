@@ -21,7 +21,7 @@
       synopsis = "Simple and high performance IO toolkit for Haskell";
       description = "Simple and high performance IO toolkit for Haskell, including\nfile system, network, ipc and more!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,22 +32,22 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         libs = if system.isWindows
           then [
             (pkgs."psapi" or (errorHandler.sysDepError "psapi"))
             (pkgs."Iphlpapi" or (errorHandler.sysDepError "Iphlpapi"))
             (pkgs."userenv" or (errorHandler.sysDepError "userenv"))
             (pkgs."Ws2_32" or (errorHandler.sysDepError "Ws2_32"))
-            ]
-          else (pkgs.lib).optionals (!system.isLinux) ((pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optional (flags.no-pkg-config) (pkgs."uv" or (errorHandler.sysDepError "uv"))));
-        pkgconfig = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optionals (!system.isLinux) ((pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optional (!flags.no-pkg-config) (pkgconfPkgs."libuv" or (errorHandler.pkgConfDepError "libuv")))));
+          ]
+          else pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (flags.no-pkg-config) (pkgs."uv" or (errorHandler.sysDepError "uv"))));
+        pkgconfig = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!flags.no-pkg-config) (pkgconfPkgs."libuv" or (errorHandler.pkgConfDepError "libuv")))));
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-IO-Test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

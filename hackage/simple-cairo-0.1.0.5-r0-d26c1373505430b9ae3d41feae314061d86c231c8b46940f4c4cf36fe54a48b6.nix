@@ -21,7 +21,7 @@
       synopsis = "Binding to Cairo library";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/simple-cairo#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,12 +37,12 @@
           (hsPkgs."union-angle" or (errorHandler.buildDepError "union-angle"))
           (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."cairo" or (errorHandler.pkgConfDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cairo-image-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."union-angle" or (errorHandler.buildDepError "union-angle"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "exception-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."union-angle" or (errorHandler.buildDepError "union-angle"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-rotate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -95,9 +95,9 @@
             (hsPkgs."union-angle" or (errorHandler.buildDepError "union-angle"))
             (hsPkgs."union-color" or (errorHandler.buildDepError "union-color"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

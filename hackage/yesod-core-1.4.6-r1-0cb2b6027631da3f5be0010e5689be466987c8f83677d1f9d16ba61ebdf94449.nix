@@ -21,7 +21,7 @@
       synopsis = "Creation of type-safe, RESTful web applications.";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -71,9 +71,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-routes" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -114,10 +114,10 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "widgets" = {
           depends = [
@@ -128,9 +128,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

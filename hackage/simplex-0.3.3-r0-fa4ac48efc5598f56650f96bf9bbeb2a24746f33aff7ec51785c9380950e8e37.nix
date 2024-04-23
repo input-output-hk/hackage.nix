@@ -21,7 +21,7 @@
       synopsis = "A simple markup language that translates to LaTeX";
       description = "A simple markup language that translates to LaTeX\n\nSee the PDF included in the cabal tarball to see\nhow Simplex works.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "simplex" = {
@@ -35,9 +35,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

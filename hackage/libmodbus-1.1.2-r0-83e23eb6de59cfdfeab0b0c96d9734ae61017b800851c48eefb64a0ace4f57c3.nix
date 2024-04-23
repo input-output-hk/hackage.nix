@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the C modbus library";
       description = "This library supports Modbus communication over both TCP and serial ports.\n\nIt is a FFI to the C modbus library from https://libmodbus.org/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."modbus" or (errorHandler.sysDepError "modbus")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

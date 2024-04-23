@@ -6,8 +6,8 @@
         nix = import ../hackage/bricks-parsec-0.0.0.4-r0-56dede99b97ceb86ec751441ec005570e43f7e41bce405c68b1102c7f99d81ec.nix;
         revNum = 0;
         sha256 = "56dede99b97ceb86ec751441ec005570e43f7e41bce405c68b1102c7f99d81ec";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Spec based JSON parsing/serialisation";
       description = "Low boilerplate, easy to use and very fast JSON serialisation and parsing without generics or TemplateHaskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "highjson-tests" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "highjson-benchmarks" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."highjson" or (errorHandler.buildDepError "highjson"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

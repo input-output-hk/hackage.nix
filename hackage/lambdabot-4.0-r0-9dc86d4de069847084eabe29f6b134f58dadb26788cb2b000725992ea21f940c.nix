@@ -21,7 +21,7 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "BotPP" = {
@@ -36,9 +36,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambdabot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hoogle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "djinn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unlambda" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "runplugs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,9 +111,9 @@
             (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

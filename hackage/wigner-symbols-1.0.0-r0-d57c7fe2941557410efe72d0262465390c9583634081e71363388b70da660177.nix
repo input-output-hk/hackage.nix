@@ -21,12 +21,12 @@
       synopsis = "CG coefficients and Wigner symbols.";
       description = "Clebsch-Gordan coefficients and Wigner 3-j, 6-j, and 9-j\nsymbols.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -34,10 +34,10 @@
             (hsPkgs."wigner-symbols" or (errorHandler.buildDepError "wigner-symbols"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

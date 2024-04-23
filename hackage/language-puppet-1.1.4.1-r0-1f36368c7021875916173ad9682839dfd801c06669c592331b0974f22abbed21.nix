@@ -21,7 +21,7 @@
       synopsis = "Tools to parse and evaluate the Puppet DSL.";
       description = "This is a set of tools that is supposed to fill all your Puppet needs : syntax checks, catalog compilation, PuppetDB queries, simulationg of complex interactions between nodes, Puppet master replacement, and more !";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -70,9 +70,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "puppetresources" = {
           depends = [
@@ -99,9 +99,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pdbquery" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -116,10 +116,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-evals" = {
           depends = [
@@ -129,9 +129,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-lexer" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -142,9 +142,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-expr" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -154,9 +154,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-hiera" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -169,9 +169,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-puppetdb" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -181,9 +181,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "erbparser" = {
           depends = [
             (hsPkgs."language-puppet" or (errorHandler.buildDepError "language-puppet"))
@@ -191,9 +191,9 @@
             (hsPkgs."strict-base-types" or (errorHandler.buildDepError "strict-base-types"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

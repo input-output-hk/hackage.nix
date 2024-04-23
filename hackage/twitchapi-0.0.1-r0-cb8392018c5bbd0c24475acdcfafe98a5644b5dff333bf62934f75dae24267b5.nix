@@ -21,7 +21,7 @@
       synopsis = "Client access to Twitch.tv API endpoints";
       description = "Twitch.tv API client supporting Helix and PubSub";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pubsub" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

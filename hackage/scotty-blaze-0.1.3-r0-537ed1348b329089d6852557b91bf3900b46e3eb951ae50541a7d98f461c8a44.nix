@@ -21,7 +21,7 @@
       synopsis = "blaze-html integration for Scotty";
       description = "blaze-html integration for Scotty";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

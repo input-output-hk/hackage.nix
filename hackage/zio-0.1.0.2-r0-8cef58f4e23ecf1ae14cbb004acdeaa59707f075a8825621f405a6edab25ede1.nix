@@ -21,7 +21,7 @@
       synopsis = "App-centric Monad-transformer based on Scala ZIO (UIO + ReaderT + ExceptT).";
       description = "Please see the README on GitHub at <https://github.com/bbarker/haskell-zio#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unexceptionalio" or (errorHandler.buildDepError "unexceptionalio"))
           (hsPkgs."unexceptionalio-trans" or (errorHandler.buildDepError "unexceptionalio-trans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zio-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."unexceptionalio" or (errorHandler.buildDepError "unexceptionalio"))
             (hsPkgs."unexceptionalio-trans" or (errorHandler.buildDepError "unexceptionalio-trans"))
             (hsPkgs."zio" or (errorHandler.buildDepError "zio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

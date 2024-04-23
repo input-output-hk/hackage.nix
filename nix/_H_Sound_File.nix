@@ -6,8 +6,8 @@
         nix = import ../hackage/HSoundFile-0.2.2-r0-c633a290a4ffaf7b9205f210073a29df7f8b57c8436a832ea77dd11bf7788f75.nix;
         revNum = 0;
         sha256 = "c633a290a4ffaf7b9205f210073a29df7f8b57c8436a832ea77dd11bf7788f75";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

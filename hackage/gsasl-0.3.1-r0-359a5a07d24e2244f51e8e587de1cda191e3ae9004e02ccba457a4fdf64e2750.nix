@@ -21,18 +21,18 @@
       synopsis = "Bindings for GNU SASL";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libgsasl" or (errorHandler.pkgConfDepError "libgsasl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

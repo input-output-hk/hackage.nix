@@ -21,7 +21,7 @@
       synopsis = "utilities for DP";
       description = "Small set of utility functions, as well as the base types for\ngeneric backtracing.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -75,10 +75,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -104,9 +104,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "streaming" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -130,9 +130,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

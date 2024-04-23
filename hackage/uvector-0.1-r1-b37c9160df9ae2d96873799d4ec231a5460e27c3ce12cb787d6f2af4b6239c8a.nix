@@ -21,13 +21,13 @@
       synopsis = "Fast unboxed arrays with a flexible interface";
       description = "Fast unboxed arrays with a flexible interface.\nThe library is built of fusible combinators, as\ndescribed in the paper /Stream Fusion: From Lists to\nStreams to Nothing at All/.\n\nFor best results, compile with your user programs\nwith -O2 -fvia-C -optc-O2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).gt "6.8.2") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

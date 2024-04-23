@@ -21,14 +21,14 @@
       synopsis = "Type level string parser combinators";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."defun-core" or (errorHandler.buildDepError "defun-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

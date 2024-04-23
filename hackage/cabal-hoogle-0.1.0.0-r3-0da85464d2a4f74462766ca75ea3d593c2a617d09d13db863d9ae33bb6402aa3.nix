@@ -21,7 +21,7 @@
       synopsis = "generate hoogle database for cabal project and dependencies";
       description = "Please see the README on GitHub at <https://github.com/kokobd/cabal-hoogle>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal-hoogle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cabal-hoogle" or (errorHandler.buildDepError "cabal-hoogle"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,13 +57,13 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
             (hsPkgs.buildPackages.hoogle.components.exes.hoogle or (pkgs.buildPackages.hoogle or (errorHandler.buildToolDepError "hoogle:hoogle")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

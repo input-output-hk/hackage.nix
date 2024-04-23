@@ -21,18 +21,18 @@
       synopsis = "Get the name of the operating system";
       description = "Please see the README on Github at <https://github.com/ChaosGroup/system-info#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
           (pkgs."oleaut32" or (errorHandler.sysDepError "oleaut32"))
           (pkgs."wbemuuid" or (errorHandler.sysDepError "wbemuuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

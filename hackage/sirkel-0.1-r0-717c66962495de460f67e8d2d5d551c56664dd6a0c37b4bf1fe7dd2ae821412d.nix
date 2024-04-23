@@ -21,7 +21,7 @@
       synopsis = "Sirkel, a Chord DHT";
       description = "An implementation of the Chord DHT with replication and faulth tolerance";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."remote" or (errorHandler.buildDepError "remote"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

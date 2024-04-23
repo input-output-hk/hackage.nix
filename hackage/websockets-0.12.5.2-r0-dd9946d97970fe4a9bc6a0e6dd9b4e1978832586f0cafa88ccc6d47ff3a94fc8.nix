@@ -21,7 +21,7 @@
       synopsis = "A sensible and clean way to write WebSocket-capable servers in Haskell.";
       description = "This library allows you to write WebSocket-capable servers.\n\nAn example server:\n<https://github.com/jaspervdj/websockets/blob/master/example/server.lhs>\n\nAn example client:\n<https://github.com/jaspervdj/websockets/blob/master/example/client.hs>\n\nSee also:\n\n* The specification of the WebSocket protocol:\n<http://www.whatwg.org/specs/web-socket-protocol/>\n\n* The JavaScript API for dealing with WebSockets:\n<http://www.w3.org/TR/websockets/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "websockets-example" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
+        };
         "websockets-autobahn" = {
           depends = [
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
@@ -78,10 +78,10 @@
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
+      };
       tests = {
         "websockets-tests" = {
           depends = [
@@ -104,10 +104,10 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-mask" = {
           depends = [
@@ -125,9 +125,9 @@
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

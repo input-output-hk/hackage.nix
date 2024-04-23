@@ -14,7 +14,7 @@
       pinpon-ring-executable = true;
       test-doctests = true;
       test-hlint = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "pinpon"; version = "0.2.0.1"; };
@@ -27,7 +27,7 @@
       synopsis = "A gateway for various cloud notification services";
       description = "@pinpon@ is a gateway for various cloud notification services, such\nas the Amazon AWS SNS service.\n\nThink of @pinpon@ as a hub for dispatching notifications originating\nfrom multiple notification sources. Clients of the @pinpon@ service\ncreate topics and send notifications via the REST-ish @pinpon@\nservice, and the @pinpon@ server takes care of the per-service\ndetails and communicating with the upstream cloud services.\n\nAdvantages of this approach, compared to programming directly to the\nindividual notification services' interfaces, are:\n\n* A common API for all supported notification services.\n\n* The secret credentials required to communicate with each cloud\nnotification service can be kept in a central location (namely,\nthe @pinpon@ server), rather than being distributed to each\nnotification source host, therefore reducing the attack surface.\n\n* Hosts which send notifications via the @pinpon@ gateway can be\nfirewalled from the public Internet. This is especially useful in\nIoT applications.\n\nCurrently-supported notification services:\n\n* Amazon AWS SNS";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,12 +61,12 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pinpon" = {
-          depends = (pkgs.lib).optionals (!(!flags.pinpon-executable)) [
+          depends = pkgs.lib.optionals (!!flags.pinpon-executable) [
             (hsPkgs."amazonka" or (errorHandler.buildDepError "amazonka"))
             (hsPkgs."amazonka-sns" or (errorHandler.buildDepError "amazonka-sns"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,11 +82,11 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if !flags.pinpon-executable then false else true;
-          };
+        };
         "pinpon-gpio" = {
-          depends = (pkgs.lib).optionals (!(!flags.pinpon-gpio-executable)) [
+          depends = pkgs.lib.optionals (!!flags.pinpon-gpio-executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
@@ -106,11 +106,11 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if !flags.pinpon-gpio-executable then false else true;
-          };
+        };
         "pinpon-ring" = {
-          depends = (pkgs.lib).optionals (!(!flags.pinpon-ring-executable)) [
+          depends = pkgs.lib.optionals (!!flags.pinpon-ring-executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
@@ -127,27 +127,27 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if !flags.pinpon-ring-executable then false else true;
-          };
         };
+      };
       tests = {
         "doctest" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -160,13 +160,13 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."servant-swagger" or (errorHandler.buildDepError "servant-swagger"))
-            ] ++ (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          ] ++ pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
         };
       };
-    }
+    };
+  }

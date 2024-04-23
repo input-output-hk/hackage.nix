@@ -21,7 +21,7 @@
       synopsis = "manipulate `workflow-types:Workflow`'s";
       description = "\nperform some static analysis on a workflow, without executing it (which would be platform-dependent).\n\ndocumention at \"Workflow.Pure\".\n\nsee the source of \"Workflow.Pure.Main\" for an example.\n\ntransitive dependencies:\n\n<<images/workflow-pure.png>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,37 +33,37 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-workflow-pure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-pure" or (errorHandler.buildDepError "workflow-pure"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-pure" or (errorHandler.buildDepError "workflow-pure"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unittest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-pure" or (errorHandler.buildDepError "workflow-pure"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "command" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."workflow-pure" or (errorHandler.buildDepError "workflow-pure"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

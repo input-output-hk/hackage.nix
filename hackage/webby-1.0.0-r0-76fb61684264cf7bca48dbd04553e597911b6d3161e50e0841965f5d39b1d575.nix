@@ -21,7 +21,7 @@
       synopsis = "A super-simple web server framework";
       description = "A super-simple, easy to use web server framework inspired by\nScotty. The goals of the project are: (1) Be easy to use (2) Allow\ngraceful exception handling (3) Parse request parameters easily and\nin a typed manner.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "webby-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."webby" or (errorHandler.buildDepError "webby"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell clone of OpenBSD signify.";
       description = "This program with its corresponding library implements most of (OpenBSD) signify. Missing are GZip-header-embedding of signatures and checksum files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."eccrypto" or (errorHandler.buildDepError "eccrypto"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "signify-hs" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."signify-hs" or (errorHandler.buildDepError "signify-hs"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

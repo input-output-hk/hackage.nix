@@ -21,15 +21,15 @@
       synopsis = "Difference lists instances";
       description = "See the dlist packages.\nThis package is the canonical source for some orphan instances.\nOrphan instances are placed here to avoid dependencies elsewhere.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

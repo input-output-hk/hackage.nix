@@ -21,11 +21,11 @@
       synopsis = "Instances for Applicative";
       description = "Some instances for applicative functors and type-level\ncomposition. Forkable on github.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

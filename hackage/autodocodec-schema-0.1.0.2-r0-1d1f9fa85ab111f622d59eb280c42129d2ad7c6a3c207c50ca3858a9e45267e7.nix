@@ -21,7 +21,7 @@
       synopsis = "Autodocodec interpreters for JSON Schema";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."validity-aeson" or (errorHandler.buildDepError "validity-aeson"))
           (hsPkgs."validity-containers" or (errorHandler.buildDepError "validity-containers"))
           (hsPkgs."validity-text" or (errorHandler.buildDepError "validity-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

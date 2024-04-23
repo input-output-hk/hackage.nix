@@ -6,8 +6,8 @@
         nix = import ../hackage/hinduce-associations-apriori-0.0.0.0-r0-0cd99db66fff3271d4ab159c9893ca82eaa6f9c94a3b341bda04b108985bd510.nix;
         revNum = 0;
         sha256 = "0cd99db66fff3271d4ab159c9893ca82eaa6f9c94a3b341bda04b108985bd510";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

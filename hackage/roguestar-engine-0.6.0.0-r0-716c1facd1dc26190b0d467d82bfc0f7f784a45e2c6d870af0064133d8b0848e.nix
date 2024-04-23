@@ -21,7 +21,7 @@
       synopsis = "Sci-fi roguelike game.  Backend.";
       description = "Requires roguestar and roguestar-glut.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "roguestar-engine" = {
@@ -41,9 +41,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

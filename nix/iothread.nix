@@ -6,8 +6,8 @@
         nix = import ../hackage/iothread-0.1.0.0-r0-2abfb26ad85948320a7dcb56a1b8796b077001342631a6a6e031ab67177fc3ce.nix;
         revNum = 0;
         sha256 = "2abfb26ad85948320a7dcb56a1b8796b077001342631a6a6e031ab67177fc3ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

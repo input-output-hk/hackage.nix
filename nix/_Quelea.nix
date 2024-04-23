@@ -6,8 +6,8 @@
         nix = import ../hackage/Quelea-1.0.0-r0-b06ccbe80dcc0696b9ff85031144baab55cb6f6277172653502f00f50733d13e.nix;
         revNum = 0;
         sha256 = "b06ccbe80dcc0696b9ff85031144baab55cb6f6277172653502f00f50733d13e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Binary instances for histogram-fill package";
       description = "Cereal instances for histogram-fill package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."histogram-fill" or (errorHandler.buildDepError "histogram-fill"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Add ACID guarantees to any serializable Haskell data structure.";
       description = "Use regular Haskell data structures as your database and get stronger ACID guarantees than most RDBMS offer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

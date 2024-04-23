@@ -21,11 +21,11 @@
       synopsis = "A lazy, infinite trie of integers.";
       description = "A simple lazy, infinite trie from integers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

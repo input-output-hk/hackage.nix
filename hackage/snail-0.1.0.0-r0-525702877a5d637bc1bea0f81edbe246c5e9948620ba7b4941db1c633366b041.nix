@@ -21,7 +21,7 @@
       synopsis = "A programming language with no semantics";
       description = "An s-expression parser and abstract syntax tree for a programming language with no semantics. If you wanted to write an interpreter or compiler you convert the AST into your own.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "snail-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."snail" or (errorHandler.buildDepError "snail"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

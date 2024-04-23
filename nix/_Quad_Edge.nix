@@ -6,8 +6,8 @@
         nix = import ../hackage/QuadEdge-0.2-r0-6f40d3fb215bb9af2c3416a2b3614433e23d5f5b57efa24dd95806b87457f98b.nix;
         revNum = 0;
         sha256 = "6f40d3fb215bb9af2c3416a2b3614433e23d5f5b57efa24dd95806b87457f98b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

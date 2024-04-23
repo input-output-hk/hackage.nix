@@ -21,7 +21,7 @@
       synopsis = "BSON lenses";
       description = "Lenses for Data.Bson.Lens";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

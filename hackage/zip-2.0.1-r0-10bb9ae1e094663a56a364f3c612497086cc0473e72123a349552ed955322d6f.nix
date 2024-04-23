@@ -21,7 +21,7 @@
       synopsis = "Operations on zip archives";
       description = "Operations on zip archives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -44,19 +44,19 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ] ++ (pkgs.lib).optional (!flags.disable-bzip2) (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))) ++ (pkgs.lib).optional (!flags.disable-zstd) (hsPkgs."conduit-zstd" or (errorHandler.buildDepError "conduit-zstd"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!flags.disable-bzip2) (hsPkgs."bzlib-conduit" or (errorHandler.buildDepError "bzlib-conduit"))) ++ pkgs.lib.optional (!flags.disable-zstd) (hsPkgs."conduit-zstd" or (errorHandler.buildDepError "conduit-zstd"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "haskell-zip-app" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Convert between different cases";
       description = "Convert Between Snake,Camel and Spinal Case";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

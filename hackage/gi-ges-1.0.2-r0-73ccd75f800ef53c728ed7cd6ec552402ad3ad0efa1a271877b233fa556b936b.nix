@@ -31,8 +31,8 @@
         (hsPkgs.buildPackages.gi-gst or (pkgs.buildPackages.gi-gst or (errorHandler.setupDepError "gi-gst")))
         (hsPkgs.buildPackages.gi-gstpbutils or (pkgs.buildPackages.gi-gstpbutils or (errorHandler.setupDepError "gi-gstpbutils")))
         (hsPkgs.buildPackages.gi-gstvideo or (pkgs.buildPackages.gi-gstvideo or (errorHandler.setupDepError "gi-gstvideo")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -50,11 +50,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."gst-editing-services-1.0" or (errorHandler.pkgConfDepError "gst-editing-services-1.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Reliable, persistent, fast priority queues.";
       description = "A fast, reliable priority queue implementation based on a binomial heap.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

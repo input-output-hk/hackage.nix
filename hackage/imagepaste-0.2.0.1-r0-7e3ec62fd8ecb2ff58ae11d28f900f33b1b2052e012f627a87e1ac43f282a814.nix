@@ -21,7 +21,7 @@
       synopsis = "Command-line image paste utility";
       description = "Command-line utility to paste images to image hosting sites.\nImage hosting sites are internally called engines. Some engines\nsupport pasting not just image files but any files so with\nsome engines the program can be used as a file sharing client.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "imagepaste" = {
@@ -37,9 +37,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."vcs-revision" or (errorHandler.buildDepError "vcs-revision"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

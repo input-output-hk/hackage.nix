@@ -21,7 +21,7 @@
       synopsis = "Free algebras in Haskell.";
       description = "Universal algebra approach to free algebras including higher kinded algebraic structures like functors, applicative functors or monads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."natural-numbers" or (errorHandler.buildDepError "natural-numbers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "free-algebras-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."natural-numbers" or (errorHandler.buildDepError "natural-numbers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Type Safe Web Routing";
       description = "This library is a solution for http-based routing and dispatch. Its\ngoals are similar to the goals of `servant`, however, `trasa` relies\non very different mechanisms to accomplish those goals. All typeclasses\nin this library are optional. All of the real work is accomplished with GADTs,\nuniversal quantification, and plain old haskell data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."quantification" or (errorHandler.buildDepError "quantification"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Turn log file records into JSON.";
       description = "Take an httpd.conf style LogFormat string and parse\nlog files into JSON records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -31,9 +31,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

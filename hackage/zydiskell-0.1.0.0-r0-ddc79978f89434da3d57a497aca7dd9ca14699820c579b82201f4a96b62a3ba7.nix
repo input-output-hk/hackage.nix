@@ -21,7 +21,7 @@
       synopsis = "Haskell language binding for the Zydis library, a x86/x86-64 disassembler.";
       description = "Please see the README on GitHub at <https://github.com/nerded1337/zydiskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zydiskell-tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zydiskell" or (errorHandler.buildDepError "zydiskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

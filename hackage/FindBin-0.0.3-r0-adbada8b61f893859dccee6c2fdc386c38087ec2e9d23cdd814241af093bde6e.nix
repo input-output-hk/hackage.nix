@@ -21,15 +21,15 @@
       synopsis = "Locate directory of original program";
       description = "This module locates the full directory to the running program,\nto allow the use of paths relative to it.\nFindBin supports invocation of Haskell programs via \"ghci\",\nvia \"runhaskell/runghc\", as well as compiled as an executable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

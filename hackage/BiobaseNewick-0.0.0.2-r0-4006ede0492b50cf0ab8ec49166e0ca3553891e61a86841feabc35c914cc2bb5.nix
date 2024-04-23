@@ -21,7 +21,7 @@
       synopsis = "Newick file format parser.";
       description = "This is a simple parser for Newick trees. The parser returns a\nrose tree. Each node is labelled with the node name (or an\nempty string for anonymous nodes) and a distance (0 if not\ngiven).\n\nIncludes conversion to an efficient static forest.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TestForestStructure" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."BiobaseNewick" or (errorHandler.buildDepError "BiobaseNewick"))
             (hsPkgs."ForestStructures" or (errorHandler.buildDepError "ForestStructures"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

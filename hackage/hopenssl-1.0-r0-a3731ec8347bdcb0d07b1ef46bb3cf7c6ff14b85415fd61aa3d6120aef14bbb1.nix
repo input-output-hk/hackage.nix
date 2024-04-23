@@ -21,15 +21,15 @@
       synopsis = "FFI bindings to OpenSSL's EVP digest interface";
       description = "FFI bindings to OpenSSL's EVP digest interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

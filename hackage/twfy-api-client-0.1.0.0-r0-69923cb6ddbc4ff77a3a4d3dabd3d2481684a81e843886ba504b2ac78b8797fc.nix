@@ -21,7 +21,7 @@
       synopsis = "They Work For You API Client Library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "twfy-api-client" = {
           depends = [
@@ -61,18 +61,18 @@
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "twfy-api-client-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."twfy-api-client" or (errorHandler.buildDepError "twfy-api-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

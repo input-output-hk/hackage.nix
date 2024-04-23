@@ -21,7 +21,7 @@
       synopsis = "GHCi based bare bones IDE";
       description = "Bare bones IDE.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghcid" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

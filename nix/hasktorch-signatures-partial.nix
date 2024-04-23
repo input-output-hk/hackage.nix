@@ -6,8 +6,8 @@
         nix = import ../hackage/hasktorch-signatures-partial-0.0.1.0-r0-890fca52f6a153055ae07c6539c84e5ff098769841a23716eca386369b6054d0.nix;
         revNum = 0;
         sha256 = "890fca52f6a153055ae07c6539c84e5ff098769841a23716eca386369b6054d0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

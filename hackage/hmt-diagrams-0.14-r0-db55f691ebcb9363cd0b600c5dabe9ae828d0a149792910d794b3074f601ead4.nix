@@ -21,7 +21,7 @@
       synopsis = "Haskell Music Theory Diagrams";
       description = "Haskell Music Theory Diagrams";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."html-minimalist" or (errorHandler.buildDepError "html-minimalist"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

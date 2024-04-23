@@ -21,7 +21,7 @@
       synopsis = "A small, low-dependency library that provides turn-key file download over HTTP and HTTPS.";
       description = "Please see the Hackage documentation at <http://hackage.haskell.org/package/downloader/docs/Network-HTTP-Download-File.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

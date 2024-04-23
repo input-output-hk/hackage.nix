@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-lucid-0.1-r0-5b7d725000583b192609c01ca3c6a9f8015d6e2a2be2a03125f65b3911ecdf0c.nix;
         revNum = 0;
         sha256 = "5b7d725000583b192609c01ca3c6a9f8015d6e2a2be2a03125f65b3911ecdf0c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

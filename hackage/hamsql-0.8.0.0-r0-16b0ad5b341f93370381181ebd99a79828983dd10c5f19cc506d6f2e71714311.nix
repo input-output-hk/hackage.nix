@@ -21,7 +21,7 @@
       synopsis = "HamSql";
       description = "Interpreter for SQL-structure definitions in Yaml (YamSql)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,26 +41,26 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hamsql" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hamsql" or (errorHandler.buildDepError "hamsql"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hamsql-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hamsql" or (errorHandler.buildDepError "hamsql"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

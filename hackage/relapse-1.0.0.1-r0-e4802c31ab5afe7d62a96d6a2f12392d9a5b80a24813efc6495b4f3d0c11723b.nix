@@ -21,16 +21,16 @@
       synopsis = "Sensible RLP encoding";
       description = "An implementation of RLP as specified in the Ethereum Wiki, using Attoparsec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "relapse-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."include-file" or (errorHandler.buildDepError "include-file"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."relapse" or (errorHandler.buildDepError "relapse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Aeson instances for the Tiled map editor.";
       description = "The mighty Tiled 2d map editor is an open source\napp for creating tile based level maps. This package provides\ntypes and aeson instances to read Tiled json files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aeson-tiled-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson-tiled" or (errorHandler.buildDepError "aeson-tiled"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "aeson-tiled-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."aeson-tiled" or (errorHandler.buildDepError "aeson-tiled"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "PCRE regex wrapper functions";
       description = "search, replace, format String | ByteString with PCRE regex  Utf8-safe";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."regex-do" or (errorHandler.buildDepError "regex-do"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

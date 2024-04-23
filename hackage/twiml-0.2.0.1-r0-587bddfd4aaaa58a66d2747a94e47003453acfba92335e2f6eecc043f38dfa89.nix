@@ -21,7 +21,7 @@
       synopsis = "TwiML library for Haskell";
       description = "TwiML library for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Golden" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."twiml" or (errorHandler.buildDepError "twiml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ShouldNotTypecheck" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,9 +61,9 @@
             (hsPkgs."should-not-typecheck" or (errorHandler.buildDepError "should-not-typecheck"))
             (hsPkgs."twiml" or (errorHandler.buildDepError "twiml"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

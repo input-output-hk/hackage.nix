@@ -21,7 +21,7 @@
       synopsis = "cryptonite conduit";
       description = "Conduit bridge for cryptonite\n\nFor now only provide a conduit version for hash, but\nwith contribution, this could provide cipher conduits too,\nand probably other things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Syntax Macros in the form of an EDSL";
       description = "Library of first-class Syntax Macros";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

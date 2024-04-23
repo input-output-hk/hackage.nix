@@ -6,8 +6,8 @@
         nix = import ../hackage/mancala-0.1-r0-c132407025829a8d25ddf27f226d68f4268cc95ba476ac7c19a7318909aac4ae.nix;
         revNum = 0;
         sha256 = "c132407025829a8d25ddf27f226d68f4268cc95ba476ac7c19a7318909aac4ae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "ID3v2 tag editing-suite";
       description = "ID3v2 tag editing-suite";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,13 +21,13 @@
       synopsis = "Class of types that can be constructed from their text representation";
       description = "This library provides the type class 'HasParser' as a dual to 'Pretty'.\nInstances of this class provide a parser than can be used to construct the\ntype from its text representation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ];
+        ] ++ [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

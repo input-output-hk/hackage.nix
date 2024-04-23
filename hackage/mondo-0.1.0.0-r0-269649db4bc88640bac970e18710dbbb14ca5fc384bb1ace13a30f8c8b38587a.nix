@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the Mondo API";
       description = "Provides Haskell bindings for the Mondo API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

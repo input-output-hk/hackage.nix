@@ -21,7 +21,7 @@
       synopsis = "Haskell wrapper for the cryptocompare API";
       description = "# CryptoCompare\n[![Build Status](https://travis-ci.org/aviaviavi/cryptocompare.svg?branch=master)](https://travis-ci.org/aviaviavi/cryptocompare)\nA Haskell wrapper to the public [CryptoCompare API](https://www.cryptocompare.com/api/), a\nsource of information and pricing of different crypto currencies\n## State\nThis library is usable but not complete. It currently covers a subset of the API.\nBreaking changes will occur if necessary but will be avoided if possible.\n## Contributing\nContributions in any form are always welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cryptocompare-exe" = {
           depends = [
@@ -58,18 +58,18 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cryptocompare-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cryptocompare" or (errorHandler.buildDepError "cryptocompare"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

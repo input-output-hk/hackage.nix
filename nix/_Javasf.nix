@@ -6,8 +6,8 @@
         nix = import ../hackage/Javasf-0.0.1-r0-fd00a65fa2a5546fa3bfe9d9a293539fd21eff7518adb0b097f9707fa5b71eb0.nix;
         revNum = 0;
         sha256 = "fd00a65fa2a5546fa3bfe9d9a293539fd21eff7518adb0b097f9707fa5b71eb0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

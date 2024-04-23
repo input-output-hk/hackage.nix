@@ -21,7 +21,7 @@
       synopsis = "Multi-precision floats via rounded (MPFR)";
       description = "Arbitrary-precision dyadic numbers and safely-rounded interval arithmetic:\n\n* Dyadic:  variable-precision floats with exact ring operations\n\n* MPBall: float ± error bound with field & elementary (interval-like) operations\n\nThere is a plan to add an Integer-only backend so that aern2-mp can\nbe used without MPFR.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
-          ] ++ (pkgs.lib).optional (!flags.usecdar) (hsPkgs."rounded" or (errorHandler.buildDepError "rounded"));
+        ] ++ pkgs.lib.optional (!flags.usecdar) (hsPkgs."rounded" or (errorHandler.buildDepError "rounded"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."aern2-mp" or (errorHandler.buildDepError "aern2-mp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

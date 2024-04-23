@@ -21,7 +21,7 @@
       synopsis = "A wiki-based IDE for literate modeling with Clafer";
       description = "A wiki-based IDE for literate modeling with Clafer. A Plugin for the Gitit wiki which collects code blocks written in Clafer (.clafer), compiles them, renders into HTML and Dot, and replaces the code blocks with the results.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,11 +41,11 @@
           (hsPkgs."gitit" or (errorHandler.buildDepError "gitit"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."clafer" or (errorHandler.buildDepError "clafer"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

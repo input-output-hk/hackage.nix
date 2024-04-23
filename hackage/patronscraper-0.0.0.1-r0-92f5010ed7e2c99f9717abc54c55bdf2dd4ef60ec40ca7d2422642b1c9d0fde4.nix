@@ -21,7 +21,7 @@
       synopsis = "A webpage scraper for Patreon which dumps a list of patrons to a text file.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "patronscraper" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."HandsomeSoup" or (errorHandler.buildDepError "HandsomeSoup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

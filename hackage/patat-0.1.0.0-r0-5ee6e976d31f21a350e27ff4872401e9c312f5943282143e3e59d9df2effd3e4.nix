@@ -21,7 +21,7 @@
       synopsis = "Terminal-based presentations using Pandoc";
       description = "Terminal-based presentations using Pandoc";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "patat" = {
@@ -37,9 +37,9 @@
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

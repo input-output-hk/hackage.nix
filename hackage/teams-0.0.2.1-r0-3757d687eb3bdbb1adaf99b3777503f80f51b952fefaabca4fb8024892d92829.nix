@@ -21,7 +21,7 @@
       synopsis = "Graphical modeling tools for sequential teams";
       description = "Graphical modeling tools for sequential teams";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

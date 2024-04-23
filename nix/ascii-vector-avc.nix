@@ -6,8 +6,8 @@
         nix = import ../hackage/ascii-vector-avc-0.1.0.0-r0-ce9a09a228435ce0388b7e5b30d8416ba1144b99385a073db5ef61a8be57a2b3.nix;
         revNum = 0;
         sha256 = "ce9a09a228435ce0388b7e5b30d8416ba1144b99385a073db5ef61a8be57a2b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

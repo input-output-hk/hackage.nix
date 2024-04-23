@@ -21,7 +21,7 @@
       synopsis = "Read and write Repa arrays in various formats.";
       description = "Read and write Repa arrays in various formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

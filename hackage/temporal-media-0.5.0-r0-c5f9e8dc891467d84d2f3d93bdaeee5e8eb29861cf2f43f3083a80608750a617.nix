@@ -21,15 +21,15 @@
       synopsis = "data types for temporal media";
       description = "An embedded domain-specific language (EDSL) for\ncreating lists of constant time events related in time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

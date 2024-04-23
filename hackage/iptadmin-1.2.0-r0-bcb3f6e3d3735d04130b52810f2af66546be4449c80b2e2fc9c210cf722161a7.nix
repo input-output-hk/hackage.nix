@@ -21,7 +21,7 @@
       synopsis = "web-interface for iptables";
       description = "web-interface for iptables with PAM authorization";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "iptadmin" = {
@@ -52,9 +52,9 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Graphical Interaction Net Evaluator for Optimal Evaluation";
       description = "An experimental evaluator for Interaction Nets that encodes\noptimal and call-by-need strategies based on Lambdascope, with\nan interactive graphical interface based on OpenGL and GLFW.\nSee the README in source for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "LambdaINet" = {
@@ -35,9 +35,9 @@
             (hsPkgs."monad-task" or (errorHandler.buildDepError "monad-task"))
             (hsPkgs."GLFW-task" or (errorHandler.buildDepError "GLFW-task"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

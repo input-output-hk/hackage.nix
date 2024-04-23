@@ -21,7 +21,7 @@
       synopsis = "Numbers that are range representations";
       description = "Numbers that represent ranges of all sorts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."numhask-prelude" or (errorHandler.buildDepError "numhask-prelude"))
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."numhask-range" or (errorHandler.buildDepError "numhask-range"))
             (hsPkgs."numhask-test" or (errorHandler.buildDepError "numhask-test"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

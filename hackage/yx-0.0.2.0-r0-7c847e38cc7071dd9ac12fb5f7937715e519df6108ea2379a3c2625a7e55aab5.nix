@@ -21,16 +21,16 @@
       synopsis = "Row-major coordinates";
       description = "https://github.com/mtth/yx";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yx-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yx" or (errorHandler.buildDepError "yx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

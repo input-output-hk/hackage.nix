@@ -21,11 +21,11 @@
       synopsis = "Error handling for foreign calls to the Windows API.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
-        depends = (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        depends = pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "eDSL for CSS";
       description = "See the \"Css\" module description";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "css-simple-exe" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "css-simple-test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "css-simple-bench" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Shorten a variety of string-like types adding ellipsis";
       description = "A yesod goody, shorten strings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

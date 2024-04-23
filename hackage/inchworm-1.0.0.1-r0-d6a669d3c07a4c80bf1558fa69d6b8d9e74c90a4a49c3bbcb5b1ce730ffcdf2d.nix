@@ -21,11 +21,11 @@
       synopsis = "Inchworm Lexer Framework";
       description = "Parser combinator framework specialized to lexical analysis.\nTokens can be specified via simple fold functions,\nand we include baked in source location handling.\nIf you want to parse expressions instead of tokens then try\ntry the @parsec@ or @attoparsec@ packages, which have more\ngeneral purpose combinators.\nComes with matchers for standard lexemes like integers,\ncomments, and Haskell style strings with escape handling.\nNo dependencies other than the Haskell 'base' library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

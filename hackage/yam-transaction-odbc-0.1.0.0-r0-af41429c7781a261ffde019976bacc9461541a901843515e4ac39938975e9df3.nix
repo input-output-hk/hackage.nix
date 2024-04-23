@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Transaction ODBC Plugin";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HDBC-odbc" or (errorHandler.buildDepError "HDBC-odbc"))
           (hsPkgs."persistent-odbc" or (errorHandler.buildDepError "persistent-odbc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

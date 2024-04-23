@@ -21,7 +21,7 @@
       synopsis = "A library to simplify writing golden tests for encoding types.";
       description = "Please see the README at <https://github.com/NoRedInk/haskell-libraries/tree/trunk/nri-test-encoding>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."servant-auth-server" or (errorHandler.buildDepError "servant-auth-server"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

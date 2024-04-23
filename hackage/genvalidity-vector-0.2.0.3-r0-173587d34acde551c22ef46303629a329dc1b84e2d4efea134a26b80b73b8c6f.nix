@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for vector";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-vector" or (errorHandler.buildDepError "validity-vector"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-vector-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."genvalidity-vector" or (errorHandler.buildDepError "genvalidity-vector"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

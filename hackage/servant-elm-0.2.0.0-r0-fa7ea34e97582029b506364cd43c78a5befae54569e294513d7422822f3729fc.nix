@@ -21,7 +21,7 @@
       synopsis = "Automatically derive Elm functions to query servant webservices.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "books-example" = {
           depends = [
@@ -42,18 +42,18 @@
             (hsPkgs."elm-export" or (errorHandler.buildDepError "elm-export"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-elm" or (errorHandler.buildDepError "servant-elm"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "e2e-tests-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm-export" or (errorHandler.buildDepError "elm-export"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-elm" or (errorHandler.buildDepError "servant-elm"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "giphy-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,19 +61,19 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-elm" or (errorHandler.buildDepError "servant-elm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "readme-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm-export" or (errorHandler.buildDepError "elm-export"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-elm" or (errorHandler.buildDepError "servant-elm"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "servant-elm-test" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-elm" or (errorHandler.buildDepError "servant-elm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

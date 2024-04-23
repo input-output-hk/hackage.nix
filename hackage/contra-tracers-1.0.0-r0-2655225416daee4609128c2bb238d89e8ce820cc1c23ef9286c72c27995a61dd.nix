@@ -21,15 +21,15 @@
       synopsis = "A logging library built on top of contra-tracer to make configuring and declaring multiple tracers easy (via generics).";
       description = "Please see the README on GitHub at <https://github.com/cardanosolutions/ogmios/tree/master/server/modules/contra-tracers>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."contra-tracer" or (errorHandler.buildDepError "contra-tracer"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

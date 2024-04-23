@@ -21,7 +21,7 @@
       synopsis = "A classical web server on WAI/warp";
       description = "A classical web server on WAI/warp.\nStatic files and CGI can be handled.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mighty" = {
@@ -43,13 +43,13 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."http-date" or (errorHandler.buildDepError "http-date"))
             (hsPkgs."hashmap" or (errorHandler.buildDepError "hashmap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mkindex" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

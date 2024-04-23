@@ -21,21 +21,21 @@
       synopsis = "Optics for the `smash` library";
       description = "Optics for the `smash` library using `microlens`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."smash" or (errorHandler.buildDepError "smash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smash-microlens-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/resource-pool-monad-0.1.0.0-r0-080985d2f2b1d0a3311e69f497f25fd8cc3ef7e0932585c6cbd73b0b85e4f335.nix;
         revNum = 0;
         sha256 = "080985d2f2b1d0a3311e69f497f25fd8cc3ef7e0932585c6cbd73b0b85e4f335";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

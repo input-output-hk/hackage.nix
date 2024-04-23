@@ -6,8 +6,8 @@
         nix = import ../hackage/huck-0.0.1-r0-136953a3482d87c6a5ae9c426d77b1053142d37ebc8e48dad2d1a716540fb2d8.nix;
         revNum = 0;
         sha256 = "136953a3482d87c6a5ae9c426d77b1053142d37ebc8e48dad2d1a716540fb2d8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

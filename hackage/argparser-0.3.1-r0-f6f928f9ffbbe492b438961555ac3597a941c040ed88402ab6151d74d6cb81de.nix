@@ -21,15 +21,15 @@
       synopsis = "Command line parsing framework for console applications";
       description = "Provides a combinator library for defining a command line parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestsHTF" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."argparser" or (errorHandler.buildDepError "argparser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

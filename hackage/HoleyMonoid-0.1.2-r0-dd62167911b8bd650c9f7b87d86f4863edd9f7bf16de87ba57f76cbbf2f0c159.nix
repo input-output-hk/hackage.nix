@@ -21,14 +21,14 @@
       synopsis = "Monoids with holes.";
       description = "The 'HoleyMonoid' allows building monoidal values of which certain components are to be filled in later. For example:\n\n> > let holey :: (Show a, Show b) => HoleyMonoid String r (a -> b -> r)\n>       holey = now \"x = \" . later show . now \", y = \" . later show\n>\n> > run holey 3 5\n> \"x = 3, y = 5\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

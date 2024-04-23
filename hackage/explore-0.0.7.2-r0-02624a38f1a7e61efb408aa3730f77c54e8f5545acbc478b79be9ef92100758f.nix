@@ -21,7 +21,7 @@
       synopsis = "Experimental Plot data Reconstructor";
       description = "Very first prototype of a command line tool to\nextract pixel positions matching a given colour\nto help reconstruct plot data. See example.ods\nor example.xls, README and Main.hs on the\nproject homepage to figure out its usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "explore" = {
@@ -30,9 +30,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pngload" or (errorHandler.buildDepError "pngload"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

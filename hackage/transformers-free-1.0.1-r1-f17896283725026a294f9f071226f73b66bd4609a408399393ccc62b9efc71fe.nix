@@ -21,14 +21,14 @@
       synopsis = "Free monad transformers";
       description = "This package is obsolete and all functionality has been merged into the\n@free@ package.\n\nThis library generalizes free monads to free monad transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

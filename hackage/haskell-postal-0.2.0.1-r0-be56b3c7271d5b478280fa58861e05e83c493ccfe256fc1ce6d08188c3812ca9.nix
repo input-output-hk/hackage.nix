@@ -21,7 +21,7 @@
       synopsis = "Haskell binding for the libpostal library";
       description = "Provides an interface for the libpostal NLP library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libpostal" or (errorHandler.pkgConfDepError "libpostal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-postal" = {
           depends = [
@@ -42,12 +42,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."libpostal" or (errorHandler.pkgConfDepError "libpostal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

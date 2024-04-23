@@ -14,7 +14,7 @@
       identifier = {
         name = "uniqueness-periods-vector-examples";
         version = "0.8.0.1";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Usage examples for the uniqueness-periods-vector series of packages";
       description = "Usage examples for the uniqueness-periods-vector series of packages. Several executables are planned to demonstrate the libraries work.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lineVariants" = {
@@ -38,9 +38,9 @@
             (hsPkgs."uniqueness-periods-vector-properties" or (errorHandler.buildDepError "uniqueness-periods-vector-properties"))
             (hsPkgs."print-info" or (errorHandler.buildDepError "print-info"))
             (hsPkgs."phonetic-languages-ukrainian" or (errorHandler.buildDepError "phonetic-languages-ukrainian"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."uniqueness-periods-vector-properties" or (errorHandler.buildDepError "uniqueness-periods-vector-properties"))
             (hsPkgs."print-info" or (errorHandler.buildDepError "print-info"))
             (hsPkgs."phonetic-languages-ukrainian" or (errorHandler.buildDepError "phonetic-languages-ukrainian"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "processText" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."uniqueness-periods-vector-stats" or (errorHandler.buildDepError "uniqueness-periods-vector-stats"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

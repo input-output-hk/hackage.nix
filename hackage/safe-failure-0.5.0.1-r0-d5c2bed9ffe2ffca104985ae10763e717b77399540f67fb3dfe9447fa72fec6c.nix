@@ -21,14 +21,14 @@
       synopsis = "Library for safe functions";
       description = "Partial functions from the base library, such as @head@ and @!!@, modified\nto fail in a @Failure@.\nThese functions can be used to reduce the number of unsafe pattern matches in\nyour code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

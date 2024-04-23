@@ -21,16 +21,16 @@
       synopsis = "Validating an email address against HTML standard";
       description = "The library allows to validate and parse an email address\nas it's defined in <https://html.spec.whatwg.org/multipage/forms.html#valid-e-mail-address HTML standard>.\nNote that HTML specification of a valid email address is a\n'willful violation' of RFC 5322. If you want to validate\nan address against RFC 5322 you should use <https://hackage.haskell.org/package/email-validate email-validate>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
             (hsPkgs."html-email-validate" or (errorHandler.buildDepError "html-email-validate"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."html-email-validate" or (errorHandler.buildDepError "html-email-validate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

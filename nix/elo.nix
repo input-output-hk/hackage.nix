@@ -6,8 +6,8 @@
         nix = import ../hackage/elo-0.1.0-r0-48d7b27403579e60fcab1e562d784c0c890fb663952e984df43f30c32c5eabdb.nix;
         revNum = 0;
         sha256 = "48d7b27403579e60fcab1e562d784c0c890fb663952e984df43f30c32c5eabdb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

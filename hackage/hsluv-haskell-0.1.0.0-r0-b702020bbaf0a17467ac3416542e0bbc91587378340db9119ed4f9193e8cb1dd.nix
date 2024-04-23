@@ -21,15 +21,15 @@
       synopsis = "HSLuv conversion utility.";
       description = "Haskell port of the perceptually-uniform HSLuv colorspace model (http://www.hsluv.org/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hsluv-haskell-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hsluv-haskell" or (errorHandler.buildDepError "hsluv-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

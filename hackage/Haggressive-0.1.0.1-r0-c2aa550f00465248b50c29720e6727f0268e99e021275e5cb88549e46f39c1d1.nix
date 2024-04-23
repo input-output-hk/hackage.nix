@@ -21,7 +21,7 @@
       synopsis = "Aggression analysis for Tweets on Twitter";
       description = "Aggression analysis for Tweets on Twitter";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Haggressive" = {
@@ -41,10 +41,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."tokenize" or (errorHandler.buildDepError "tokenize"))
             (hsPkgs."PSQueue" or (errorHandler.buildDepError "PSQueue"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

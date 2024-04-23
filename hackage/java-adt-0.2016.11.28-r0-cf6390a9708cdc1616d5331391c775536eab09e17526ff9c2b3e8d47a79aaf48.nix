@@ -21,7 +21,7 @@
       synopsis = "Create immutable algebraic data structures for Java.";
       description = "A simple tool to create immutable algebraic data structures and visitors for Java\n(such as abstract syntax trees).  The input syntax is similar to Haskell data types,\nand they will be compiled to Java class hierarchies.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "java-adt" = {
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

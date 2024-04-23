@@ -21,7 +21,7 @@
       synopsis = "Fast heterogeneous data structures";
       description = "Fast heterogeneous data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "criterion" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
             (hsPkgs."hetero-dict" or (errorHandler.buildDepError "hetero-dict"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/workflow-windows-0.0.0-r0-64fad8af40590ccaee54e74284dba1675a551a1eaea38143464c42b898663704.nix;
         revNum = 0;
         sha256 = "64fad8af40590ccaee54e74284dba1675a551a1eaea38143464c42b898663704";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

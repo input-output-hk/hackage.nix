@@ -21,7 +21,7 @@
       synopsis = "Trial helper functions for tomland";
       description = "@Trial@ data structure related helper functions\nfor [tomland](https://hackage.haskell.org/package/tomland).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."trial" or (errorHandler.buildDepError "trial"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Lenses for types in strict package";
       description = "Lenses for types in strict package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

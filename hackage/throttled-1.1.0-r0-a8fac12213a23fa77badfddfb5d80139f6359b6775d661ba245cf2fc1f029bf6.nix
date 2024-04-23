@@ -21,15 +21,15 @@
       synopsis = "Concurrent processing of a Foldable, throttled by CPU count.";
       description = "Concurrent processing of a Foldable, throttled by CPU count. You must compile your executable with @-threaded@ to see any effect.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

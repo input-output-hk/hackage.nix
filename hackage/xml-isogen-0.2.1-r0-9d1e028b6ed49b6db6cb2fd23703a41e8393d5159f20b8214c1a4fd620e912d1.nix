@@ -21,7 +21,7 @@
       synopsis = "Generate XML-isomorphic types";
       description = "TemplateHaskell generators for XML-isomorphic data types, including\ninstances for parsing and rendering. A convenient DSL to define those\ntypes.\nThis is similar to XSD but is Haskell-specific.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-writer" or (errorHandler.buildDepError "xml-conduit-writer"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-conduit-writer" or (errorHandler.buildDepError "xml-conduit-writer"))
             (hsPkgs."xml-isogen" or (errorHandler.buildDepError "xml-isogen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

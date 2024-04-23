@@ -21,7 +21,7 @@
       synopsis = "Shake frontend for Agda blogging";
       description = "Please see the README on GitHub at <https://github.com/isovector/blagda#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blagda" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

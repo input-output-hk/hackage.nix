@@ -21,16 +21,16 @@
       synopsis = "Source code error pretty printing";
       description = "An extremely customizable error pretty printer that can handle many kinds of error formatting.\nIt can handle errors that are connected, disconnected, and those spanning multiple lines.\n\nYou can get started by importing the \"Errata\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "errata-example" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."errata" or (errorHandler.buildDepError "errata"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

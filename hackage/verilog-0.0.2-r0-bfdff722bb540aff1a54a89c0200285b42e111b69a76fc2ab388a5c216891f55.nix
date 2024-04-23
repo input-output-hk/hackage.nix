@@ -21,15 +21,15 @@
       synopsis = "A Verilog parser.";
       description = "This parser supports a very small subset of Verilog-95.\nIt is intended primarly for machine generated, synthesizable code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

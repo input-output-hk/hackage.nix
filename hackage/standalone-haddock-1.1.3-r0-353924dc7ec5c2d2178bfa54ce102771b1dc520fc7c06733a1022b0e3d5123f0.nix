@@ -21,7 +21,7 @@
       synopsis = "Generate standalone haddock documentation for a set of packages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "standalone-haddock" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

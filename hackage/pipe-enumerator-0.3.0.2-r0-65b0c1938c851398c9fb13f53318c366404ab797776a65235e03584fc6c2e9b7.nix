@@ -21,7 +21,7 @@
       synopsis = "A bidirectional bridge between pipes and iteratees";
       description = "This library defines a set of functions that convert between\nthe \"Pipes\" and \"Data.Enumerator\" paradigms. The conversion\nis bidirectional: an appropriately-typed pipe can be converted\ninto an 'Data.Enumerator.Iteratee' and back into a pipe.\nIn addition, a pipe can be fed into an iteratee\n(or, more specifically, 'Data.Enumerator.Step'),\nresulting in an 'Data.Enumerator.Enumerator'.\nThe library has been designed specifically for use with Snap,\nbut I'm sure that many other interesting uses of it exist.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

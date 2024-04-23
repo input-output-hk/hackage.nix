@@ -21,11 +21,11 @@
       synopsis = "Generically derived enumerations.";
       description = "This package provides a way to generically obtain\nevery possible value of a type, provided that the\ngeneric representation of the type is compatible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

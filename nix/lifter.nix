@@ -6,8 +6,8 @@
         nix = import ../hackage/lifter-0.1-r0-7e82cae5cb0402cee6e8190e1e06f78ecef3d57a27fd3ccc87141472635513b9.nix;
         revNum = 0;
         sha256 = "7e82cae5cb0402cee6e8190e1e06f78ecef3d57a27fd3ccc87141472635513b9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

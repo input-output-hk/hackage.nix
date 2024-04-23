@@ -21,7 +21,7 @@
       synopsis = "Reverse proxy HTTP requests, either over raw sockets or with WAI";
       description = "Provides a simple means of reverse-proxying HTTP requests. The raw approach uses the same technique as leveraged by keter, whereas the WAI approach performs full request/response parsing via WAI and http-conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/editpipe-0.1.0.0-r0-1003cfbb000dc7b7249a9db113065961fd6b550b5d1fcfbb05dd68cfd058c24d.nix;
         revNum = 0;
         sha256 = "1003cfbb000dc7b7249a9db113065961fd6b550b5d1fcfbb05dd68cfd058c24d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Approximate dictionary searching";
       description = "Approximate dictionary searching library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."PSQueue" or (errorHandler.buildDepError "PSQueue"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."adict" or (errorHandler.buildDepError "adict"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

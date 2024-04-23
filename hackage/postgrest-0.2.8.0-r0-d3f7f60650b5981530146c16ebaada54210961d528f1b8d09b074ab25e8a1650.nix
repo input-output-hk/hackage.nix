@@ -21,7 +21,7 @@
       synopsis = "REST API for any Postgres database";
       description = "Reads the schema of a PostgreSQL database and creates RESTful routes\nfor the tables and views, supporting all HTTP verbs that security\npermits.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "postgrest" = {
@@ -65,10 +65,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -120,9 +120,9 @@
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."heredoc" or (errorHandler.buildDepError "heredoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

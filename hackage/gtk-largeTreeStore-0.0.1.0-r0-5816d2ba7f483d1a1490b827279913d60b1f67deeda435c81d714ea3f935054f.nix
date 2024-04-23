@@ -21,7 +21,7 @@
       synopsis = "Large TreeStore support for gtk2hs";
       description = "Uses nested set model to store tree iterators and achieves larger data support than the\noriginal gtk2hs implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."nested-sets" or (errorHandler.buildDepError "nested-sets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

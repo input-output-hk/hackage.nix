@@ -6,8 +6,8 @@
         nix = import ../hackage/network-builder-0.1.0-r0-0ceb21daff53264cafb3a4bf9c3e81a36d9e64475f0f40400cfb0c06ed225fe8.nix;
         revNum = 0;
         sha256 = "0ceb21daff53264cafb3a4bf9c3e81a36d9e64475f0f40400cfb0c06ed225fe8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

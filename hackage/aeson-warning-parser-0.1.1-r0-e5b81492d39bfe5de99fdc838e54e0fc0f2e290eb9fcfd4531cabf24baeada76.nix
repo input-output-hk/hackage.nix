@@ -21,7 +21,7 @@
       synopsis = "Library providing JSON parser that warns about unexpected fields in objects.";
       description = "Please see the README on GitHub at <https://github.com/commercialhaskell/aeson-warning-parser#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

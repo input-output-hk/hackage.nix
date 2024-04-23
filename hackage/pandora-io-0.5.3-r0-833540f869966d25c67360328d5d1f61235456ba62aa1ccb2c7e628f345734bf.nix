@@ -21,14 +21,14 @@
       synopsis = "...";
       description = "...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."pandora" or (errorHandler.buildDepError "pandora"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

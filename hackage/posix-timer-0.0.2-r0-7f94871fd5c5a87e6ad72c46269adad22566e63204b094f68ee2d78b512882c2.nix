@@ -21,14 +21,14 @@
       synopsis = "Bindings to POSIX clock and timer functions.";
       description = "This package provides bindings to POSIX clock and timer functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

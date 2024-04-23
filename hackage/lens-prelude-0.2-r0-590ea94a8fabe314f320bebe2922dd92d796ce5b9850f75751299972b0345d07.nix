@@ -21,7 +21,7 @@
       synopsis = "Alternate prelude that exports lens combinators";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

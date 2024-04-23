@@ -21,7 +21,7 @@
       synopsis = "The SQL link in your *NIX chain";
       description = "txt-sushi is a collection of command line utilities for processing\ncomma-separated and tab-delimited files (AKA flat files, spreadsheets).\nThe most important utility (tssql) lets you perform SQL selects on CSV files.\nBy focusing exclusively on processing text files with a tabular structure,\nTxtSushi simplifies common tasks like filtering, joining and transformation\nthat would take more effort to accomplish with a general purpose text\nprocessing language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tssql" = { buildable = true; };
         "csvtotab" = { buildable = true; };
@@ -45,6 +45,6 @@
         "transposecsv" = { buildable = true; };
         "transposetab" = { buildable = true; };
         "csvzip" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

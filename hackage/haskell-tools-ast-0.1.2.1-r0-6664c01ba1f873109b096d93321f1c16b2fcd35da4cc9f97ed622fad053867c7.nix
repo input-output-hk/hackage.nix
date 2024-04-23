@@ -21,7 +21,7 @@
       synopsis = "Haskell AST for efficient tooling";
       description = "A representation of a Haskell Syntax tree that contain source-related and semantic annotations. These annotations help developer tools to work with the defined program. The source information enables refactoring and program transformation tools to change the source code without losing the original format (layout, comments) of the source. Semantic information helps analyzing the program. The representation is different from the GHC's syntax tree. It contains information from all representations in GHC (different version of syntax trees, lexical and module-level information).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."references" or (errorHandler.buildDepError "references"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."structural-traversal" or (errorHandler.buildDepError "structural-traversal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

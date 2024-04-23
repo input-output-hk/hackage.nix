@@ -21,15 +21,15 @@
       synopsis = "Bridge between the monad-coroutine and enumerator packages.";
       description = "This package acts as a bidirectional bridge between two monad transformers: the Data.Enumerator.Iteratee in the\nenumerator package, and the Control.Monad.Coroutine.Coroutine in the monad-coroutine package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monad-coroutine" or (errorHandler.buildDepError "monad-coroutine"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

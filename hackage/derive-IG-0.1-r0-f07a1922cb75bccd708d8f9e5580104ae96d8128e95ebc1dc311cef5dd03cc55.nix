@@ -21,15 +21,15 @@
       synopsis = "Macro to derive instances for Instant-Generics using Template Haskell";
       description = "Macro to derive instances for Instant-Generics using Template Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

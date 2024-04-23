@@ -21,7 +21,7 @@
       synopsis = "Type-safe, feature-complete SQL query and manipulation interface for Haskell";
       description = "Beam is a Haskell library for type-safe querying and manipulation of SQL databases.\nBeam is modular and supports various backends. In order to use beam, you will need to use\n@beam-core@ along with a specific backend (such as @beam-postgres@ or @beam-sqlite@) as\nwell as the corresponding backend.\nFor more information, see the user manual and tutorial on\n<https://tathougies.github.io/beam GitHub pages>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "beam-core-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Core functionality for LTI 1.3";
       description = "A library implementing the core <http://www.imsglobal.org/spec/lti/v1p3/ LTI 1.3> authentication protocol, suitable for use in implementing libraries for any web framework. An example use is <https://hackage.haskell.org/package/yesod-auth-lti13>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."oidc-client" or (errorHandler.buildDepError "oidc-client"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -56,12 +56,12 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

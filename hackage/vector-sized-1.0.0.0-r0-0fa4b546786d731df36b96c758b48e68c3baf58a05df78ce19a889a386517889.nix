@@ -21,7 +21,7 @@
       synopsis = "Size tagged vectors";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."finite-typelits" or (errorHandler.buildDepError "finite-typelits"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.3") (hsPkgs."indexed-list-literals" or (errorHandler.buildDepError "indexed-list-literals"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.3") (hsPkgs."indexed-list-literals" or (errorHandler.buildDepError "indexed-list-literals"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

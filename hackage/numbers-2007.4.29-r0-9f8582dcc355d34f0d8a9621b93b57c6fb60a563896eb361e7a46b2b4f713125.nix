@@ -21,11 +21,11 @@
       synopsis = "Various number types";
       description = "Instances of the numerical classes for a variety of\ndifferent numbers: (computable) real numbers, arbitrary\nprecion fixed numbers, differentiable numbers, symbolic numbers.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

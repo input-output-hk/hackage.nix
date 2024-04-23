@@ -21,14 +21,14 @@
       synopsis = "'Inj' instances for 'base'";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."inj" or (errorHandler.buildDepError "inj"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

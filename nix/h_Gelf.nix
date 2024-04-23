@@ -6,8 +6,8 @@
         nix = import ../hackage/hGelf-0.1-r0-b9a93905d1ae3f81bb09404f9bd52ddeed45fcacb22fc91eabba8f48c9e58d21.nix;
         revNum = 0;
         sha256 = "b9a93905d1ae3f81bb09404f9bd52ddeed45fcacb22fc91eabba8f48c9e58d21";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Common LeanCheck instances";
       description = "Listable instances for types provided by the Haskell Platform.\n\nThe current objective is to include all types supported by quickcheck-instances:\n<https://hackage.haskell.org/package/quickcheck-instances>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "main" = {
           depends = [
@@ -42,18 +42,18 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "text" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."leancheck-instances" or (errorHandler.buildDepError "leancheck-instances"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

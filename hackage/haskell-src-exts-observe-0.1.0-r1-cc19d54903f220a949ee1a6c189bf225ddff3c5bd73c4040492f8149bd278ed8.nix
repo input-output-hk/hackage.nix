@@ -21,15 +21,15 @@
       synopsis = "Observable orphan instances for haskell-src-exts";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."Hoed" or (errorHandler.buildDepError "Hoed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

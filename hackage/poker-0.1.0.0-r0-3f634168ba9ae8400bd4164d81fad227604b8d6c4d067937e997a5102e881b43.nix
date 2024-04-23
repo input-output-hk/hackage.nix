@@ -21,7 +21,7 @@
       synopsis = "Texas holdem hand evaluation and simulation.";
       description = "Please see the README on GitHub at <https://github.com/ghais/poker#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,19 +33,19 @@
           (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
           (hsPkgs."rvar" or (errorHandler.buildDepError "rvar"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "poker-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."poker" or (errorHandler.buildDepError "poker"))
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "evaluate-test" = {
           depends = [
@@ -53,27 +53,27 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."poker" or (errorHandler.buildDepError "poker"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "evaluate-benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."poker" or (errorHandler.buildDepError "poker"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "evaluate-simulate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."poker" or (errorHandler.buildDepError "poker"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

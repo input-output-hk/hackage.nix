@@ -21,12 +21,12 @@
       synopsis = "Like Debug.Trace but writing to files.";
       description = "Debug.Trace like functions to trace to files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "debug-trace-file-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."debug-trace-file" or (errorHandler.buildDepError "debug-trace-file"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

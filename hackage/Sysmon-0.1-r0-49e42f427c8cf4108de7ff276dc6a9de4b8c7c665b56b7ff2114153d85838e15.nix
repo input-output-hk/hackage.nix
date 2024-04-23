@@ -21,7 +21,7 @@
       synopsis = "Sybase 15 sysmon reports processor";
       description = "A library for processing Sysbase 15 sysmon reports.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

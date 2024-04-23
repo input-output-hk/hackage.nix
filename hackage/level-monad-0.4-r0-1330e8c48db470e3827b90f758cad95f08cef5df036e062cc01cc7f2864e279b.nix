@@ -21,14 +21,14 @@
       synopsis = "Non-Determinism Monad for Level-Wise Search";
       description = "This Haskell library provides an implementation of the\nMonadPlus type class that enumerates the levels of the\nsearch space using breadth-first search or iterativ\ndeepening depth-first search.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fmlist" or (errorHandler.buildDepError "fmlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the Sphinx full-text searching deamon.";
       description = "Haskell bindings to the Sphinx full-text searching deamon. Compatible with sphinx version 1.1";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

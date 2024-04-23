@@ -6,8 +6,8 @@
         nix = import ../hackage/loglevel-0.1.0.0-r0-951338d262fb734cc2f06a6ee9fddb7ea998a71a5098011d864f038f4ec7ac2a.nix;
         revNum = 0;
         sha256 = "951338d262fb734cc2f06a6ee9fddb7ea998a71a5098011d864f038f4ec7ac2a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

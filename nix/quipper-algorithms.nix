@@ -6,8 +6,8 @@
         nix = import ../hackage/quipper-algorithms-0.9.0.0-r0-e1096607bf04d9dca5ef89b376e5bd4d1c5fc3b2add7178bcb72eb94dcfb452f.nix;
         revNum = 0;
         sha256 = "e1096607bf04d9dca5ef89b376e5bd4d1c5fc3b2add7178bcb72eb94dcfb452f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

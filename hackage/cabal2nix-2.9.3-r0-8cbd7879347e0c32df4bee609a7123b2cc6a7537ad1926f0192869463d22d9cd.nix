@@ -21,7 +21,7 @@
       synopsis = "Convert Cabal files into Nix build instructions.";
       description = "Convert Cabal files into Nix build instructions. Users of Nix can install the\nlatest version by running:\n\n> nix-env -i cabal2nix";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,17 +48,17 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cabal2nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cabal2nix" or (errorHandler.buildDepError "cabal2nix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackage2nix" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
@@ -78,10 +78,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "regression-test" = {
           depends = [
@@ -97,12 +97,12 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cabal2nix.components.exes.cabal2nix or (pkgs.buildPackages.cabal2nix or (errorHandler.buildToolDepError "cabal2nix:cabal2nix")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

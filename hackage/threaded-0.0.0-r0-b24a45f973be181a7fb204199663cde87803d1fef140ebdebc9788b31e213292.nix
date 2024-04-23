@@ -21,7 +21,7 @@
       synopsis = "Manage concurrently operating threads without having to spark them";
       description = "Please see the README on GitHub at <https://github.com/athanclark/threaded#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."tmapmvar" or (errorHandler.buildDepError "tmapmvar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "threaded-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."threaded" or (errorHandler.buildDepError "threaded"))
             (hsPkgs."tmapmvar" or (errorHandler.buildDepError "tmapmvar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

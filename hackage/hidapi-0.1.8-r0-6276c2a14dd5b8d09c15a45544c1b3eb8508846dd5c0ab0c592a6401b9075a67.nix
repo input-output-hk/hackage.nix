@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to HIDAPI";
       description = "Haskell bindings to the HIDAPI library (<https://github.com/libusb/hidapi>).\n\nNote you need need to have the corresponding low-level\nlibrary installed for your OS, e.g. libudev-dev on Debian/Ubuntu,\nor just udev on distributions that don't split dev libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."setupapi" or (errorHandler.sysDepError "setupapi")) ]
-          else (pkgs.lib).optional (!system.isOsx) (pkgs."udev" or (errorHandler.sysDepError "udev"));
-        frameworks = (pkgs.lib).optionals (!system.isWindows) ((pkgs.lib).optional (system.isOsx) (pkgs."AppKit" or (errorHandler.sysDepError "AppKit")));
+          else pkgs.lib.optional (!system.isOsx) (pkgs."udev" or (errorHandler.sysDepError "udev"));
+        frameworks = pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (system.isOsx) (pkgs."AppKit" or (errorHandler.sysDepError "AppKit")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

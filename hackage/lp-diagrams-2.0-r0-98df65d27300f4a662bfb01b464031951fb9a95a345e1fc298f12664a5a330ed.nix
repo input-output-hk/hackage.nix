@@ -21,7 +21,7 @@
       synopsis = "An EDSL for diagrams based based on linear constraints";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."labeled-tree" or (errorHandler.buildDepError "labeled-tree"))
-          ] ++ (pkgs.lib).optional (flags.graphviz) (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"));
+        ] ++ pkgs.lib.optional (flags.graphviz) (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

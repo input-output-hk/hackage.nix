@@ -21,7 +21,7 @@
       synopsis = "Snap framework snaplet for the AMQP library";
       description = "`snaplet-amqp` is a snaplet for the Snap web framework providing\nconvenience functions and state management for the Haskell AMQP\npackage.\n\nBelow is an incomplete example.\n\n@\nimport           Control.Lens\nimport           Snap\nimport           Snap.Snaplet\nimport           Snap.Snaplet.AMQP\ndata App = App\n{ _amqp    :: Snaplet AmqpState }\nmakeLenses ''App\ninstance HasAmqpConn (Handler b App) where\ngetAmqpConn = with amqp getAmqpConn\napp :: SnapletInit App App\napp = makeSnaplet \"app\" \"An snaplet example application.\" Nothing $ do\na <- nestSnaplet \"amqp\" amqp initAMQP\naddRoutes appRoutes -- Your routes, I haven't defined any here\nreturn $ App a\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

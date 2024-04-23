@@ -21,14 +21,14 @@
       synopsis = "Compatibility shim for the Int/Word internal change in GHC 9.2";
       description = "This package offers a workaround for the breaking change in Word/Int. Import GHC.Word.Compat in place of GHC.Word to take effect.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

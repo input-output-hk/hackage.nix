@@ -6,8 +6,8 @@
         nix = import ../hackage/foreign-storable-asymmetric-0.0.1-r0-541859d05094ce3d0290ec6c4a58dd7a07b7e61440ce7f490dc3fdee46412b96.nix;
         revNum = 0;
         sha256 = "541859d05094ce3d0290ec6c4a58dd7a07b7e61440ce7f490dc3fdee46412b96";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

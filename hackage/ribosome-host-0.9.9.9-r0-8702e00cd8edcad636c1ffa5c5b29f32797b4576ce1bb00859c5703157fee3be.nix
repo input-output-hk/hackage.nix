@@ -21,7 +21,7 @@
       synopsis = "Neovim plugin host for Polysemy";
       description = "See https://hackage.haskell.org/package/ribosome-host/docs/Ribosome-Host.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ribosome-host-unit" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

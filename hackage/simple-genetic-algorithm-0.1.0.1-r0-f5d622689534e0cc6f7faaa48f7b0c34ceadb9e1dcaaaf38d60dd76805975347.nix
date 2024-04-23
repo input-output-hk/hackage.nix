@@ -21,16 +21,16 @@
       synopsis = "Simple parallel genetic algorithm implementation";
       description = "Simple parallel genetic algorithm implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ga-sin-example" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

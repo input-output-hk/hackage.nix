@@ -6,8 +6,8 @@
         nix = import ../hackage/porcupine-http-0.1.0.0-r0-6df823c3c3520ec732e5e6a13345039e0376aac748a0d751ffe86ebe7bb1a220.nix;
         revNum = 0;
         sha256 = "6df823c3c3520ec732e5e6a13345039e0376aac748a0d751ffe86ebe7bb1a220";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

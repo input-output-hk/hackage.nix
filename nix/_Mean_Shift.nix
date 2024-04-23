@@ -6,8 +6,8 @@
         nix = import ../hackage/MeanShift-0.1-r0-a4e91e86d4984dff5f9fdb59179d724c0c4b3b6d38792dcd5b4e93fa255a0d3f.nix;
         revNum = 0;
         sha256 = "a4e91e86d4984dff5f9fdb59179d724c0c4b3b6d38792dcd5b4e93fa255a0d3f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

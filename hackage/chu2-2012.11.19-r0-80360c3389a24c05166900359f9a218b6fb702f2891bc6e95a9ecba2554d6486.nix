@@ -21,7 +21,7 @@
       synopsis = "FFI for Chu2 Agda Web Server Interface";
       description = "FFI for Chu2 Agda Web Server Interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hack2-handler-snap-server" or (errorHandler.buildDepError "hack2-handler-snap-server"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

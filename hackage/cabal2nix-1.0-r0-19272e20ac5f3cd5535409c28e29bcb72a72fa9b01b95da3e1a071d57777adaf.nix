@@ -21,16 +21,16 @@
       synopsis = "Convert Cabal files into Nix build instructions";
       description = "This utility converts Cabal files into Nix build\ninstructions. Run the binary as follows:\n\n> cabal2nix foo.cabal 57ae0330a3d0520bae3d1e447d7d5c88de9ecbf0de133f31f2cc42961c81d47f\n\nThe first argument is the path to the cabal file\nto be converted, the second argument is the\nSHA256 hash of the corresponding source tarball.\n\nThe Nix build instructions will be written to\nstdout.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

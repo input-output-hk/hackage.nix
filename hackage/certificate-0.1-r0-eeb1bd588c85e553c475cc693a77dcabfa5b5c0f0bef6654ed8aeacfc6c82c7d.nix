@@ -21,7 +21,7 @@
       synopsis = "Certificate and Key Reader/Writer";
       description = "Certificate and Key reader/writer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."asn1-data" or (errorHandler.buildDepError "asn1-data"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "certificate" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
             (hsPkgs."hexdump" or (errorHandler.buildDepError "hexdump"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

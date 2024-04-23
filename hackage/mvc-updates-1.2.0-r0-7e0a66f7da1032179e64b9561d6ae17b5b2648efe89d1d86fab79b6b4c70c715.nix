@@ -21,7 +21,7 @@
       synopsis = "Concurrent and combinable updates";
       description = "Use the @mvc-updates@ library to build programs with multiple\ncontinously updating inputs where you can attach listeners to updates.\n\nKey features include:\n\n* @Applicative@ updates,\n\n* a tiny interface, and:\n\n* interoperation with the @mvc@ library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
           (hsPkgs."mvc" or (errorHandler.buildDepError "mvc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

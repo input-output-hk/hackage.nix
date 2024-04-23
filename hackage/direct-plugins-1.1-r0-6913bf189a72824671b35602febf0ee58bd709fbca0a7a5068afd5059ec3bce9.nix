@@ -21,15 +21,15 @@
       synopsis = "Lightweight replacement for Plugins, specific to GHC";
       description = "The Plugins package unfortunately does not work on GHC 6.12, and is at any rate\nrather poorly documented.  This package uses the same general strategy but without\nquite as many options, aiming to be simple and useful rather than complete.  This\nrelease renames load to unsafeLoad and adds loadDynamic, which is type-safe.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

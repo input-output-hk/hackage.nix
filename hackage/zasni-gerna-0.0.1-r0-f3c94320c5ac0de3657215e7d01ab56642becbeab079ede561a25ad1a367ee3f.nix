@@ -21,14 +21,14 @@
       synopsis = "lojban parser (zasni gerna)";
       description = "lojban zasni gerna parser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."papillon" or (errorHandler.buildDepError "papillon"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

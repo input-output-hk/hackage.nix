@@ -21,11 +21,11 @@
       synopsis = "Generic operations on tuples";
       description = "Generic operations on tuples.\n\nI'm not sure that anybody uses this library, so I haven't bothered adding anything I don't need. However, file an issue if you need something to be added to the library and I'll try to respond to it promptly.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/lifted-protolude-0.1.6-r0-acf5cbcec332b47ff40a066b98477d3cbbdf341bac778f628c0bcd89fa462d0f.nix;
         revNum = 0;
         sha256 = "acf5cbcec332b47ff40a066b98477d3cbbdf341bac778f628c0bcd89fa462d0f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

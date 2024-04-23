@@ -15,7 +15,7 @@
       executable = true;
       rts = false;
       warn-as-error = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "darcs"; version = "2.18.1"; };
@@ -34,8 +34,8 @@
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -85,22 +85,22 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."strict-identity" or (errorHandler.buildDepError "strict-identity"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
+          ])) ++ pkgs.lib.optional (flags.terminfo && !system.isWindows) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"));
         buildable = true;
-        };
+      };
       exes = {
         "darcs" = {
           depends = [
             (hsPkgs."darcs" or (errorHandler.buildDepError "darcs"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.executable then false else true;
-          };
         };
+      };
       tests = {
         "darcs-test" = {
           depends = [
@@ -136,12 +136,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           build-tools = [
             (hsPkgs.buildPackages.darcs.components.exes.darcs or (pkgs.buildPackages.darcs or (errorHandler.buildToolDepError "darcs:darcs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

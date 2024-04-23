@@ -21,15 +21,15 @@
       synopsis = "Sunrise and sunset UTC approximations from latitude and longitude coordinates";
       description = "Provides a basic implementation of the sunrise and sunset equations from <https://en.wikipedia.org/wiki/Sunrise_equation this wikipedia page>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."AC-Angle" or (errorHandler.buildDepError "AC-Angle"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

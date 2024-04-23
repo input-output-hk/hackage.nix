@@ -14,7 +14,7 @@
       no-lib = false;
       test = false;
       coverage = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "NaturalSort"; version = "0.2.1"; };
@@ -27,33 +27,33 @@
       synopsis = "Natural sorting for strings";
       description = "A library for sorting strings \"naturally\", i.e. taking numerical\nvalues into account when comparing textual inputs.\n\nE.g., \"1\" < \"10\", and \"10 bottles of beer\" < \"100 bottles of beer\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = if flags.no-lib || flags.test then false else true;
-        };
+      };
       exes = {
         "nsort" = {
           depends = [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.test || !flags.driver && !flags.no-lib
             then false
             else true;
-          };
+        };
         "test" = {
           depends = [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

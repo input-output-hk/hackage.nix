@@ -21,7 +21,7 @@
       synopsis = "Time Library for Pact";
       description = "A minimal time library for usage with the [Pact Smart Contract\nLanguage](https://github.com/kadena-io/pact/).\n\nThe focus of this library is on minimality, performance, and binary level\nstability. Time is represented as 64-bit integral value that counts nominal\nmicro-seconds since the modified Julian date epoch (MJD). The implementation\nignores leap seconds.\n\nWhile the library can parse date-time values with time zones, internally all\ndate-times are represented as UTC and formatting only supports UTC. Only the\ndefault English language locale is supported.\n\nDetails about supported formats can be found in the [Pact Language\nReference](https://pact-language.readthedocs.io/en/stable/pact-reference.html#time-formats).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,14 +36,14 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ] ++ (if flags.with-time
+        ] ++ (if flags.with-time
           then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
           else [
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

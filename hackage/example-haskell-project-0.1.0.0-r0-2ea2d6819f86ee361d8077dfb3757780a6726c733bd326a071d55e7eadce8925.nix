@@ -21,17 +21,17 @@
       synopsis = "Example Haskell Project";
       description = "Example Haskell Project that demostrates how to get a simple project up and running with Circle CI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "example-haskell-project" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,25 +21,25 @@
       synopsis = "Clean up the formatting of 'show' output";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shower" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shower" or (errorHandler.buildDepError "shower"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "shower-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."shower" or (errorHandler.buildDepError "shower"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

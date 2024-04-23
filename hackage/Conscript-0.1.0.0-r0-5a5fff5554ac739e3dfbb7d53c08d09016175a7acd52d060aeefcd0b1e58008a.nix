@@ -21,16 +21,16 @@
       synopsis = "Restart a command on STDIN activity";
       description = "Restart a command on STDIN activity";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "conscript" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

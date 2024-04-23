@@ -21,7 +21,7 @@
       synopsis = "bindings to zeromq";
       description = "Bindings to zeromq (http://zeromq.org)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = if system.isFreebsd
           then [
             (pkgs."zmq" or (errorHandler.sysDepError "zmq"))
             (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-            ]
+          ]
           else [ (pkgs."zmq" or (errorHandler.sysDepError "zmq")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

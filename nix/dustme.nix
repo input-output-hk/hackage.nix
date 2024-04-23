@@ -6,8 +6,8 @@
         nix = import ../hackage/dustme-0.1.0.0-r0-0a5c578aa91548cb662cabcef9d1586547df602ac672f268f83082a1edc4a24b.nix;
         revNum = 0;
         sha256 = "0a5c578aa91548cb662cabcef9d1586547df602ac672f268f83082a1edc4a24b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

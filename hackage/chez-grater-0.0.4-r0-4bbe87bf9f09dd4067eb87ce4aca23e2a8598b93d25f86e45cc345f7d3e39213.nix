@@ -21,7 +21,7 @@
       synopsis = "Parse and scrape recipe blogs";
       description = "Remove the life story! Parse and scrape recipe blogs. Powers https://app.mo-nomz.com/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."scalpel" or (errorHandler.buildDepError "scalpel"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."chez-grater" or (errorHandler.buildDepError "chez-grater"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Initialization and Deinitialization of 'Storable' values.";
       description = "This package provides two typeclasses, 'Initialize' and 'Deinitialize',\nwhich provide a common interface for initializing and deinitializing 'Storable'\ndata backed by a 'Ptr'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

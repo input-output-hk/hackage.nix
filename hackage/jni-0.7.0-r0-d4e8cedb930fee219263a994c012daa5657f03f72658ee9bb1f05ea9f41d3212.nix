@@ -21,7 +21,7 @@
       synopsis = "Complete JNI raw bindings.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,29 +32,29 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ] ++ (if flags.linear-types
+        ] ++ (if flags.linear-types
           then [
             (hsPkgs."linear-base" or (errorHandler.buildDepError "linear-base"))
-            ]
+          ]
           else [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ]);
+          ]);
         libs = [ (pkgs."jvm" or (errorHandler.sysDepError "jvm")) ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."jni" or (errorHandler.buildDepError "jni"))
-            ] ++ (pkgs.lib).optional (!flags.linear-types) (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"));
+          ] ++ pkgs.lib.optional (!flags.linear-types) (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"));
           libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

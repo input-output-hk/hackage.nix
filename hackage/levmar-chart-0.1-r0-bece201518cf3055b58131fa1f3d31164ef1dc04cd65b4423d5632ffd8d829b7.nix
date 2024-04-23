@@ -21,7 +21,7 @@
       synopsis = "Plots the results of the Levenberg-Marquardt algorithm in a chart";
       description = "This package contains a few functions to quicky visualize the\nfitting of a model function on some data with the\nLevenberg-Marquardt algorithm.\n\nPlots can either be shown in a window or written to a file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."levmar" or (errorHandler.buildDepError "levmar"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
             (hsPkgs."levmar" or (errorHandler.buildDepError "levmar"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

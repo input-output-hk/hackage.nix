@@ -21,14 +21,14 @@
       synopsis = "indexed monads for free";
       description = "A free indexed monad";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."indexed" or (errorHandler.buildDepError "indexed"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

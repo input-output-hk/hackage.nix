@@ -21,15 +21,15 @@
       synopsis = "Integer sets with a constant time translate operation.";
       description = "This package implements integer sets with a\nconstant time translate operation, defined as\n@translate x s = map (+x) s@. It is based on\nFinger-Trees storing differences of consecutive\nentries of the ordered sequence of set elements.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "test" = { buildable = false; }; };
       };
-    }
+      exes = { "test" = { buildable = false; }; };
+    };
+  }

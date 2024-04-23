@@ -21,7 +21,7 @@
       synopsis = "Phase vocoder";
       description = "This package is an implementation of phase vocoder frequency domain\nprocessing algorithms. It has minimal dependencies on external\nlibraries. It can be used directly, but for most uses it's more\nconvenient to use a streaming or FRP library wrapper.\nPackages vocoder-conduit and vocoder-dunai are provided for this\npurpose.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-fftw" or (errorHandler.buildDepError "vector-fftw"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

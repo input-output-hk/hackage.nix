@@ -21,7 +21,7 @@
       synopsis = "Build lightweight and composable servers";
       description = "The Core for the mig server library.\nWith library mig we can build lightweight and composable servers.\nThere are only couple of combinators to assemble servers from parts.\nIt supports generic handler functions as servant does. But strives to use more\nsimple model for API. It does not go to describing Server API at type level which\nleads to simpler error messages.\n\n* quick start guide at <https://anton-k.github.io/mig/>\n\n* examples directory for more servers: at <https://github.com/anton-k/mig/tree/main/examples/mig-example-apps#readme>\n\n* reference for the main functions: <https://anton-k.github.io/mig/09-reference.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mig-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."openapi3" or (errorHandler.buildDepError "openapi3"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

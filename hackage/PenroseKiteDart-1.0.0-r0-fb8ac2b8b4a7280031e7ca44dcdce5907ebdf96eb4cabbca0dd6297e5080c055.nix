@@ -21,16 +21,16 @@
       synopsis = "Library to explore Penrose's Kite and Dart Tilings.";
       description = "Library to explore Penrose's Kite and Dart Tilings using Haskell Diagrams. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PenroseKiteDart-test" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "PenroseKiteDart-bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

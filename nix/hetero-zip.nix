@@ -6,8 +6,8 @@
         nix = import ../hackage/hetero-zip-0.1.0.0-r0-04edfe91a27a7230322228952f625472e88be3e9ce8e6c78a8ceee4f122f0900.nix;
         revNum = 0;
         sha256 = "04edfe91a27a7230322228952f625472e88be3e9ce8e6c78a8ceee4f122f0900";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

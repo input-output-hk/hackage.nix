@@ -21,14 +21,14 @@
       synopsis = "Pretty printing class similar to Show.";
       description = "Pretty printing class similar to Show, based on the HughesPJ\npretty printing library.  Provides the pretty printing class\nand instances for the Prelude types.  This upload replaces the\nold pretty-class package (which I believe nobody is using) with\na copy of Lennart's prettyclass package with a small change to\nits Char instance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

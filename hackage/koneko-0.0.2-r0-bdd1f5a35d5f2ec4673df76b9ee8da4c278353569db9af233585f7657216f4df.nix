@@ -21,7 +21,7 @@
       synopsis = "a concatenative not-quite-lisp for kittens";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "koneko" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -96,9 +96,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

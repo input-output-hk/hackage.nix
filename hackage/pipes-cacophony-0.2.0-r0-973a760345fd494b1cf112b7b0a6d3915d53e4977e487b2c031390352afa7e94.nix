@@ -21,7 +21,7 @@
       synopsis = "Pipes for Noise-secured network connections.";
       description = "A set of pipes to secure network connections with the\n<https://github.com/trevp/noise/blob/master/noise.md Noise> protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cacophony" or (errorHandler.buildDepError "cacophony"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "echo-server" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
@@ -52,11 +52,11 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
+        };
         "echo-client" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,18 +71,18 @@
             (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
             (hsPkgs."pipes-parse" or (errorHandler.buildDepError "pipes-parse"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
-        };
-      tests = {
-        "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.hlint)) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
-          buildable = if !flags.hlint then false else true;
-          };
         };
       };
-    }
+      tests = {
+        "hlint" = {
+          depends = pkgs.lib.optionals (!!flags.hlint) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
+          ];
+          buildable = if !flags.hlint then false else true;
+        };
+      };
+    };
+  }

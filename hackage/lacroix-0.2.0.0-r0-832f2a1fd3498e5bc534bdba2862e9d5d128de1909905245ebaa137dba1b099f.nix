@@ -21,11 +21,11 @@
       synopsis = "fizzy n dizzy";
       description = "crack open a cold one with the boys";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

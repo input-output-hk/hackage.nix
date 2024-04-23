@@ -21,7 +21,7 @@
       synopsis = "Haskell Bindings for the AtomSpace.";
       description = "This library defines Haskell Bindings for the AtomSpace.\n\nFor more information on Haskell Bindings:\n<http://wiki.opencog.org/w/Haskell>\n\nGitHub repository:\n<https://github.com/opencog/atomspace/tree/master/opencog/haskell>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,11 +32,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         libs = [
           (pkgs."atomspace-cwrapper" or (errorHandler.sysDepError "atomspace-cwrapper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

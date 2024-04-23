@@ -21,7 +21,7 @@
       synopsis = "A logging system for WAI";
       description = "A logging system for WAI";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."byteorder" or (errorHandler.buildDepError "byteorder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

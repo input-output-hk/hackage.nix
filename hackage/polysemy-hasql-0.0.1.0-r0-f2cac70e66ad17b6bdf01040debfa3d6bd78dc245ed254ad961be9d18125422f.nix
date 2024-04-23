@@ -21,7 +21,7 @@
       synopsis = "Polysemy effects for databases";
       description = "See https://hackage.haskell.org/package/polysemy-hasql/docs/Polysemy-Hasql.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-hasql-integration" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zeugma" or (errorHandler.buildDepError "zeugma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

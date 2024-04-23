@@ -21,16 +21,16 @@
       synopsis = "Library for streamly and bytestring interoperation.";
       description = "Please see the README on GitHub at <https://github.com/psibi/streamly-bytestring#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."streamly-core" or (errorHandler.buildDepError "streamly-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sb-test" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."streamly-bytestring" or (errorHandler.buildDepError "streamly-bytestring"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "sb-benchmark" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."streamly-core" or (errorHandler.buildDepError "streamly-core"))
             (hsPkgs."streamly-bytestring" or (errorHandler.buildDepError "streamly-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

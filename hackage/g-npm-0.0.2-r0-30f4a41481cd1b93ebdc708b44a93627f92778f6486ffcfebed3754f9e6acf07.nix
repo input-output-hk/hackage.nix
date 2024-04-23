@@ -21,7 +21,7 @@
       synopsis = "Generate Gentoo ebuilds from NodeJS/npm packages.";
       description = "Generate Gentoo ebuilds from NodeJS/npm packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "g-npm" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

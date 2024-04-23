@@ -21,7 +21,7 @@
       synopsis = "Declarative graphics for the browser using GHCJS";
       description = "Shine wraps javascript's drawing functions in a declarative API.\nHeavily inspired by Gloss.\n\nRead the README for an overview of the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,26 +32,26 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-shine-animateeverything" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."shine" or (errorHandler.buildDepError "shine"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-shine-simpleinteraction" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."shine" or (errorHandler.buildDepError "shine"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

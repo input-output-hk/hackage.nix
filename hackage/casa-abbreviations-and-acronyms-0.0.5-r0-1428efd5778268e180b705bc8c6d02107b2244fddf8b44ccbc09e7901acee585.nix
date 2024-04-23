@@ -14,7 +14,7 @@
       identifier = {
         name = "casa-abbreviations-and-acronyms";
         version = "0.0.5";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright (C) 2018 Commonwealth Scientific and Industrial Research Organisation (CSIRO)";
       maintainer = "Queensland Functional Programming Lab <oᴉ˙ldɟb@llǝʞsɐɥ>";
@@ -24,7 +24,7 @@
       synopsis = "CASA Abbreviations and Acronyms";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nCASA Abbreviations and Acronyms\n\nhttps://www.casa.gov.au/about-us/standard-page/aviation-abbreviations-and-acronyms";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "casa-abbreviations-and-acronyms" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."casa-abbreviations-and-acronyms" or (errorHandler.buildDepError "casa-abbreviations-and-acronyms"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

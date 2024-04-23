@@ -21,7 +21,7 @@
       synopsis = "Analiza Java source code";
       description = "Application for analyzing Java source code.\n\nCurrently implemented:\n\n* Finding project class paths.\n\n* Line Of Code metric.\n\nCheck <https://github.com/klangner/cantor/blob/master/doc/usage.md documentation> for usage patterns.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cantor" = {
@@ -35,10 +35,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

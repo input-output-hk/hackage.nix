@@ -21,7 +21,7 @@
       synopsis = "Simple terminal GUI for local hoogle.";
       description = "bhoogle is a terminal GUI layer over local hoogle. It provides search ahead and sub-string filtering in addition to the usual type-search.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bhoogle" = {
@@ -42,9 +42,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hoogle" or (errorHandler.buildDepError "hoogle"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

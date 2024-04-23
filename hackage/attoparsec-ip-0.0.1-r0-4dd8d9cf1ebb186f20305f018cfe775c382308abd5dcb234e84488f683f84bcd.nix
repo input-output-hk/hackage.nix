@@ -21,24 +21,24 @@
       synopsis = "Parse IP data types with attoparsec";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "attoparsec-ip-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec-ip" or (errorHandler.buildDepError "attoparsec-ip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

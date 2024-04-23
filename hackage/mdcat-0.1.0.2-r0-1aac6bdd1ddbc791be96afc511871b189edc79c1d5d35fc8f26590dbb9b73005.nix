@@ -21,7 +21,7 @@
       synopsis = "Markdown viewer in your terminal";
       description = "A simple command line tool for viewing markdown in your terminal";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mdcat" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

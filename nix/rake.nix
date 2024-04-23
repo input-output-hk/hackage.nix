@@ -6,8 +6,8 @@
         nix = import ../hackage/rake-0.0.1-r0-3380f6567fb17505d1095b7f32222c0b631fa04126ad39726c84262da99c08b3.nix;
         revNum = 0;
         sha256 = "3380f6567fb17505d1095b7f32222c0b631fa04126ad39726c84262da99c08b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

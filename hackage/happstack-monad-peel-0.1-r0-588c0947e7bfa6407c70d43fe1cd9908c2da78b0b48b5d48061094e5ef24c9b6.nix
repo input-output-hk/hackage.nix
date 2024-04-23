@@ -21,7 +21,7 @@
       synopsis = "monad-peel instances for Happstack types";
       description = "monad-peel instances for Happstack types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monad-peel" or (errorHandler.buildDepError "monad-peel"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

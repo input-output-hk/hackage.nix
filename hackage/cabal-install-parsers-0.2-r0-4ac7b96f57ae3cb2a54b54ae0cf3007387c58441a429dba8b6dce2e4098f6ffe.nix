@@ -21,7 +21,7 @@
       synopsis = "Utilities to work with cabal-install files";
       description = "@cabal-install-parsers@ provides parsers for @cabal-install@ files:\n@cabal.project@ (\"Cabal.Project\"),\n@cabal.config@ (\"Cabal.Config\"),\n@01-index.tar@ (\"Cabal.Index\");\nas well as some other utilities.\n\nThe feature set is mainly motivated by the needs of @haskell-ci@ package.\nThe parsed data is not complete, functionality is added on demand.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."lukko" or (errorHandler.buildDepError "lukko"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.2")) (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"));
         buildable = true;
-        };
+      };
       tests = {
         "cabal-parsers-index" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-parsers-golden" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

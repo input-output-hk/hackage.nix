@@ -6,8 +6,8 @@
         nix = import ../hackage/smartword-0.0.0.5-r0-6aef56b7226888dff9adf9c87808c77ab4a00620c524a291b93665f7603b25ab.nix;
         revNum = 0;
         sha256 = "6aef56b7226888dff9adf9c87808c77ab4a00620c524a291b93665f7603b25ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

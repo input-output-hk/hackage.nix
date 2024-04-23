@@ -21,7 +21,7 @@
       synopsis = "Manipulate and convert strings of characters uniformly and consistently";
       description = "Reduce complexity of Haskell by providing a\n\n- set of uniformly named conversion functions between\n\n- String,\n\n- Text,\n\n- ByteString,\n\n- LazyByteString and\n\n- urlEncoding\n\nwith the most important text manipulation functions for string and text\nwhere the semantic is the same (tested with quickcheck).\nTentatively some infix string manipulations are offered as well.\n\n- 0.1.3 added stack build lts 19.16 for ghc 9.0.2\n- 0.1.3.1 removed dependency on text-icu\n\nPlease see the README on GitHub at <https://github.com/andrewufrank/uniform-strings/readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uniform-algebras" or (errorHandler.buildDepError "uniform-algebras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "strings-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uniform-algebras" or (errorHandler.buildDepError "uniform-algebras"))
             (hsPkgs."uniform-strings" or (errorHandler.buildDepError "uniform-strings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

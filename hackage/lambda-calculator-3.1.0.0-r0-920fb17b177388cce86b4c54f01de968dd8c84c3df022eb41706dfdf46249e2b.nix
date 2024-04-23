@@ -21,7 +21,7 @@
       synopsis = "A lambda calculus interpreter";
       description = "A simple implementation of the Untyped Lambda Calculus";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lambda-calculator" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."repline" or (errorHandler.buildDepError "repline"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lambda-calculus-lint" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambda-calculus-test" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -76,9 +76,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "LISTEN/NOTIFY with hasql";
       description = "LISTEN/NOTIFY with @hasql@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

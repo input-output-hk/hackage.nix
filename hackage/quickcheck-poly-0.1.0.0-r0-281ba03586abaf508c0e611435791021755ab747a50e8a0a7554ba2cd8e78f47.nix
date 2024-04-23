@@ -21,7 +21,7 @@
       synopsis = "Automating QuickCheck for polymorphic and overlaoded properties  in a small world of types";
       description = "Automating QuickCheck for polymorphic and overlaoded properties  in a small world of types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."MonadCatchIO-mtl" or (errorHandler.buildDepError "MonadCatchIO-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

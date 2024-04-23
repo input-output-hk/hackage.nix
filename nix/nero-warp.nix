@@ -6,8 +6,8 @@
         nix = import ../hackage/nero-warp-0.3-r0-2849182a716c9cc0e702c5ce17f7fbda152820b826705c7333cbb03d7858004f.nix;
         revNum = 0;
         sha256 = "2849182a716c9cc0e702c5ce17f7fbda152820b826705c7333cbb03d7858004f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

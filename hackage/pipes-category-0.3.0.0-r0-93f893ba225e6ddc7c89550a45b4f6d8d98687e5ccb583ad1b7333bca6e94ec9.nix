@@ -21,7 +21,7 @@
       synopsis = "Allows instances for Category, Arrow and ArrowChoice for Pipes.";
       description = "Allows Category, Arrow, and ArrowChoice instances for Pipes.Pipe, using newtype wrapper 'Shaft'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-extras" or (errorHandler.buildDepError "pipes-extras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pipes-category-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."pipes-category" or (errorHandler.buildDepError "pipes-category"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

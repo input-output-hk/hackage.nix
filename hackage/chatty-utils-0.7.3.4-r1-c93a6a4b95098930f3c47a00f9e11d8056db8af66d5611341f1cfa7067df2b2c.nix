@@ -21,7 +21,7 @@
       synopsis = "Some utilities every serious chatty-based application may need.";
       description = "Some utilities every serious chatty-based application may need. Includes a graph type, search trees, a None class, a counter and an atom store. Note that the author does not recommend usage in new projects any more. Please use packages that are better suited for your individual need.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

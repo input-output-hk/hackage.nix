@@ -21,7 +21,7 @@
       synopsis = "Library for the Concrete data format.";
       description = "Concrete is a Thrift-based data specification designed for Natural Language Processing (NLP) applications.  This library provides a Haskell interface to code generated from the latest release of Concrete.  It also has a number of utilities for converting various formats (JSON, CSV, XML, etc) to Concrete Communication objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ingest_communications" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."concrete-haskell" or (errorHandler.buildDepError "concrete-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "inspect_communications" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,10 +110,10 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."concrete-haskell" or (errorHandler.buildDepError "concrete-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit_tests" = {
           depends = [
@@ -142,9 +142,9 @@
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."concrete-haskell" or (errorHandler.buildDepError "concrete-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

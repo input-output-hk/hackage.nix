@@ -21,15 +21,15 @@
       synopsis = "API wrapper for Big Huge Thesaurus";
       description = "Get synonyms, antonyms, and other kinds of related words from words.bighugelabs.com";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

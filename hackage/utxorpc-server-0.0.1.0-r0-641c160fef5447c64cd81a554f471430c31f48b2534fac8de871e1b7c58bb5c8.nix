@@ -21,7 +21,7 @@
       synopsis = "An SDK for UTxO RPC services.";
       description = "This SDK includes helper functions for creating a UTxO RPC service with automated logging.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "server-example" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "logged_test_server" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp-grpc" or (errorHandler.buildDepError "warp-grpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

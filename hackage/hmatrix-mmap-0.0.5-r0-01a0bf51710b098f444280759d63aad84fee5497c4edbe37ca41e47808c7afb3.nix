@@ -21,15 +21,15 @@
       synopsis = "Memory map Vector from disk into memory efficiently";
       description = "Memory map Data.Packed.Vector.Vector from disk into memory efficiently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Print Forex quotes in Ledger format";
       description = "Please see the README on GitHub at <https://github.com/gregorias/forex2ledger#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "forex2ledger" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "forex2ledger-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."hspec-expectations-pretty-diff" or (errorHandler.buildDepError "hspec-expectations-pretty-diff"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

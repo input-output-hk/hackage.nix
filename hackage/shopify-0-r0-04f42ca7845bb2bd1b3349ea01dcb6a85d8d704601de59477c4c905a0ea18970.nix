@@ -21,7 +21,7 @@
       synopsis = "A haskell API binding for shopify.com";
       description = "A haskell API binding for shopify.com";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

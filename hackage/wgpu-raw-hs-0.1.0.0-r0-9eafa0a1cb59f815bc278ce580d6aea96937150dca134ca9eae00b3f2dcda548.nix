@@ -21,29 +21,29 @@
       synopsis = "WGPU Raw";
       description = "A very low-level WGPU binding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (flags.glfw) (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))) ++ (pkgs.lib).optional (system.isOsx) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
-        frameworks = (pkgs.lib).optionals (flags.glfw) ((pkgs.lib).optionals (system.isOsx) [
+        ] ++ pkgs.lib.optional (flags.glfw) (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))) ++ pkgs.lib.optional (system.isOsx) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        frameworks = pkgs.lib.optionals (flags.glfw) (pkgs.lib.optionals (system.isOsx) [
           (pkgs."AppKit" or (errorHandler.sysDepError "AppKit"))
           (pkgs."QuartzCore" or (errorHandler.sysDepError "QuartzCore"))
-          ]);
+        ]);
         buildable = true;
-        };
+      };
       exes = {
         "triangle" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.examples) [
+          ] ++ pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."wgpu-raw-hs" or (errorHandler.buildDepError "wgpu-raw-hs"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

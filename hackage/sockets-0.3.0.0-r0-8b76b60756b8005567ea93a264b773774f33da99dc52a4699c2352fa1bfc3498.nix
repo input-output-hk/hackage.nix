@@ -21,7 +21,7 @@
       synopsis = "High-level network sockets";
       description = "This library provides a high-level abstraction for network sockets. It uses\nHaskell2010 (along with GADTs) without typeclasses to ensure that\nconsumers of the API can only call appropriate functions on a socket.\nExceptions are tracked in the types of functions and returned to the caller\nwith `Either`. The caller is free to handle these gracefully or to throw\nthem. This library only throws exceptions when it detects that it has misused\nthe operating system's sockets API (open an issue for this) or when the\ncaller asks for a negatively-sized slice of a buffer (such exceptions are\nunrecoverable and indicate a mistake in the code consuming this API).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,22 +31,22 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sockets-example" = {
-          depends = (pkgs.lib).optionals (flags.example) [
+          depends = pkgs.lib.optionals (flags.example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sockets" or (errorHandler.buildDepError "sockets"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "macro" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

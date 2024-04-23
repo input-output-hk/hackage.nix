@@ -21,7 +21,7 @@
       synopsis = "bamboo-launcher";
       description = "A standalone bamboo launcher to simplify deployment.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bamboo" = {
@@ -37,9 +37,9 @@
             (hsPkgs."bamboo-theme-blueprint" or (errorHandler.buildDepError "bamboo-theme-blueprint"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

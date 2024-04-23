@@ -21,21 +21,21 @@
       synopsis = "GHCi as a Hex Calculator interactive";
       description = "This package defines operations for an interactive hex-caluclator using GHCi.\nThis is a simple and casual interactive tool like Perl and Excel\nfor daily work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ghci-hexcalc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."ghci-hexcalc" or (errorHandler.buildDepError "ghci-hexcalc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

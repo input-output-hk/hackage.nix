@@ -21,7 +21,7 @@
       synopsis = "HAML to ERB translator";
       description = "HAML to ERB translator";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "herbalizer" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

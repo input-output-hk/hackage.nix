@@ -21,14 +21,14 @@
       synopsis = "Explicitly handled object names";
       description = "This tiny package contains the class ObjectName, which corresponds to the\ngeneral notion of explicitly handled identifiers for API objects, e.g. a\ntexture object name in OpenGL or a buffer object name in OpenAL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

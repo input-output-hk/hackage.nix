@@ -21,7 +21,7 @@
       synopsis = "Send metrics to Ganglia, Graphite, and statsd.";
       description = "\nSend metrics directly from Haskell to various monitoring and metrics services.\n\nSupported services are Ganglia, Graphite, and statsd.\n\nPlease see <http://github.com/brendanhay/network-metrics/blob/master/README.md>\nfor further information and usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gmetric-haskell" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

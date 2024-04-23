@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for inference using Gaussian processes";
       description = "A Haskell library implementing algorithms for supervised learning, roughly corresponding to chapters 1 to 5 of \"Gaussian Processes for Machine Learning\" by Carl Rasmussen and Christopher Williams, The MIT Press 2006. In particular, algorithms are provides for regression and for two-class classification using either the Laplace or EP approximation.    ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."hmatrix-special" or (errorHandler.buildDepError "hmatrix-special"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

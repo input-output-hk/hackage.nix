@@ -21,7 +21,7 @@
       synopsis = "Reduced parser for configurator-ng config files";
       description = "This module provides a simplified and updated interface to the\nconfiguration file format of\n<https://hackage.haskell.org/package/configurator configurator> and\n<https://hackage.haskell.org/package/configurator-ng configurator-ng>.\nIts aim is primarily to allow updating programs that depend on\nconfigurator-ng to new versions of GHC without changing the\nconfiguration file format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8") [
           (hsPkgs."fail" or (errorHandler.buildDepError "fail"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

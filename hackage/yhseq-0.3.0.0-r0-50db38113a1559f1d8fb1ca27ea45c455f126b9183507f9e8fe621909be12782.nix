@@ -21,16 +21,16 @@
       synopsis = "Calculation of YH sequence system";
       description = "Please see the README on GitHub at <https://github.com/Hexirp/yhseq#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yhseq" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yhseq" or (errorHandler.buildDepError "yhseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "yhseq-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yhseq" or (errorHandler.buildDepError "yhseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

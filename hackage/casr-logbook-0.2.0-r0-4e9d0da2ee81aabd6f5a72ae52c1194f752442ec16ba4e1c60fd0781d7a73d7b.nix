@@ -21,7 +21,7 @@
       synopsis = "CASR 61.345 Pilot Personal Logbook";
       description = "<<https://i.imgur.com/p6LT40r.png>>\n\nCASR 61.345 Pilot Personal Logbook\n\n<<https://i.imgur.com/Lfhcmtg.png>>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."casr-logbook-reports-html" or (errorHandler.buildDepError "casr-logbook-reports-html"))
           (hsPkgs."casr-logbook-reports-meta" or (errorHandler.buildDepError "casr-logbook-reports-meta"))
           (hsPkgs."casr-logbook-reports-meta-html" or (errorHandler.buildDepError "casr-logbook-reports-meta-html"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/database-study-0.0.1-r0-2c6e1cbd3e1bd8cd2f1d0e4b3f88128441f4393ab920f6779e1edd9c32505679.nix;
         revNum = 0;
         sha256 = "2c6e1cbd3e1bd8cd2f1d0e4b3f88128441f4393ab920f6779e1edd9c32505679";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

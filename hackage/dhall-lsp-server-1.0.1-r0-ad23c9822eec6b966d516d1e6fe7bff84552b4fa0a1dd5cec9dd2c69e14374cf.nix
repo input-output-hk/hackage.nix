@@ -21,7 +21,7 @@
       synopsis = "Language Server Protocol (LSP) server for Dhall";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,19 +48,19 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = if compiler.isEta && true then false else true;
-        };
+      };
       exes = {
         "dhall-lsp-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dhall-lsp-server" or (errorHandler.buildDepError "dhall-lsp-server"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = if compiler.isEta && true then false else true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -68,11 +68,11 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.0"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

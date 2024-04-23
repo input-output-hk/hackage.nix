@@ -21,16 +21,16 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "darcs-graph" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

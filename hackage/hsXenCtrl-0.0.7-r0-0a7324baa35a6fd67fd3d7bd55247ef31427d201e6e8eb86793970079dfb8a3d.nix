@@ -21,7 +21,7 @@
       synopsis = "FFI bindings to the Xen Control library.";
       description = "FFI bindings to xenctrl.h and perhaps more.\nThe System.Xen.CBindings should provide direct access\nto the C API while System.Xen will eventually provide\na higher level abstraction.  This library binding\nallows pure haskell programs to use XenCtrl functions;\nthese can be Haskell versions of xend, xm, and\nvirt-manager but more interesting projects are possible.\nThink about a happs app controlling domains and complex\npolicy controls on resource (CPU, memory, PCI) uses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         libs = [ (pkgs."xenctrl" or (errorHandler.sysDepError "xenctrl")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

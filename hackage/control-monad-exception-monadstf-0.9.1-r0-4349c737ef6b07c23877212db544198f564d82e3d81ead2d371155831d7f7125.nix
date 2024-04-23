@@ -14,7 +14,7 @@
       identifier = {
         name = "control-monad-exception-monadstf";
         version = "0.9.1";
-        };
+      };
       license = "LicenseRef-PublicDomain";
       copyright = "";
       maintainer = "pepeiborra@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Monads-tf instances for the EMT exceptions monad transformer";
       description = "Monads-tf instances for the EMT exceptions monad transformer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Hierarchical tracing for debugging of lazy evaluation";
       description = "Hierarchical tracing (like Debug.Trace.trace but with indentation)\nfor debugging of lazy evaluation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

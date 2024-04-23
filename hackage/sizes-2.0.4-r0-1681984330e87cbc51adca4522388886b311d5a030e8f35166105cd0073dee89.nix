@@ -21,7 +21,7 @@
       synopsis = "Recursively show space (size and i-nodes) used in subdirectories";
       description = "Recursively show space (size and i-nodes) used in subdirectories";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sizes" = {
@@ -38,9 +38,9 @@
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

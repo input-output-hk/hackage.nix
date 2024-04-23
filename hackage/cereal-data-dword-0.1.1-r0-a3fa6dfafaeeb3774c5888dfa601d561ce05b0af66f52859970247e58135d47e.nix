@@ -21,15 +21,15 @@
       synopsis = "Integration of \"cereal\" and \"data-dword\"";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."data-dword" or (errorHandler.buildDepError "data-dword"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

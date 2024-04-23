@@ -21,7 +21,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "This toolbox provides everything you need to get a quick start into web hacking with haskell:\n\n* fast routing\n\n* middleware\n\n* json\n\n* sessions\n\n* cookies\n\n* database helper\n\n* csrf-protection\n\nA tutorial is available at <http://www.spock.li/tutorial/ spock.li>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spocktests" = {
           depends = [
@@ -70,18 +70,18 @@
             (hsPkgs."reroute" or (errorHandler.buildDepError "reroute"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "spock-simple-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Spock" or (errorHandler.buildDepError "Spock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

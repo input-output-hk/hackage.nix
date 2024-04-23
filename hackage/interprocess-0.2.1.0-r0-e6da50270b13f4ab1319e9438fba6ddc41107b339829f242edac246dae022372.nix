@@ -21,38 +21,38 @@
       synopsis = "Shared memory and control structures for IPC";
       description = "Provides portable shared memory allocator and some synchronization primitives.\nCan be used for interprocess communication.\nRefer to README.md for further information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "concurrent-malloc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."interprocess" or (errorHandler.buildDepError "interprocess"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "wait-qsem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."interprocess" or (errorHandler.buildDepError "interprocess"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
+        };
         "wait-mvar" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."interprocess" or (errorHandler.buildDepError "interprocess"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
+      };
       tests = {
         "StoredMVar" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."interprocess" or (errorHandler.buildDepError "interprocess"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

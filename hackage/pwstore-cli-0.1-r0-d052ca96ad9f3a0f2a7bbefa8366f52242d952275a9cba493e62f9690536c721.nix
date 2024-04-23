@@ -21,7 +21,7 @@
       synopsis = "Command line interface for the pwstore library";
       description = "This program provides a command line interface for Peter Scott's\npwstore library.  Specifically, it is possible to generate,\nvalidate, and strengthen passwords hashed in the pwstore format.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pwstore" = {
@@ -30,15 +30,15 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ] ++ (if flags.fast
+          ] ++ (if flags.fast
             then [
               (hsPkgs."pwstore-fast" or (errorHandler.buildDepError "pwstore-fast"))
-              ]
+            ]
             else [
               (hsPkgs."pwstore-purehaskell" or (errorHandler.buildDepError "pwstore-purehaskell"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

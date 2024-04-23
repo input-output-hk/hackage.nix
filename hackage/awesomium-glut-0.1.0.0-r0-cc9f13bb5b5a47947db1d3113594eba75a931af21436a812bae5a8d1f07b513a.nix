@@ -21,7 +21,7 @@
       synopsis = "Utilities for using Awesomium with GLUT.";
       description = "This package contains utilities for integrating\nAwesomium with GLUT (Mainly functions for\nmarshalling input).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."awesomium" or (errorHandler.buildDepError "awesomium"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

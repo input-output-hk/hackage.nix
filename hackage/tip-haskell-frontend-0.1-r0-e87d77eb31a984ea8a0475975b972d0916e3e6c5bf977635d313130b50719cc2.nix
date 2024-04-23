@@ -21,7 +21,7 @@
       synopsis = "Convert from Haskell to Tip";
       description = "Convert from Haskell to Tip";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."geniplate-mirror" or (errorHandler.buildDepError "geniplate-mirror"))
           (hsPkgs."tip-lib" or (errorHandler.buildDepError "tip-lib"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tip-ghc" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tip-lib" or (errorHandler.buildDepError "tip-lib"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

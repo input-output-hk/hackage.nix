@@ -21,7 +21,7 @@
       synopsis = "Kolmogorov distribution and Kolmogorov-Smirnov test.";
       description = "Kolmogorov distribution and Kolmogorov-Smirnov test.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."roots" or (errorHandler.buildDepError "roots"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

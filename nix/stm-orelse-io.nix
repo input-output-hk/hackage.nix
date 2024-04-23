@@ -6,8 +6,8 @@
         nix = import ../hackage/stm-orelse-io-0.1-r0-70dffc9699d2a87d77b35fae3aa30cf91db498d8f98db71be9a90d531630a077.nix;
         revNum = 0;
         sha256 = "70dffc9699d2a87d77b35fae3aa30cf91db498d8f98db71be9a90d531630a077";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

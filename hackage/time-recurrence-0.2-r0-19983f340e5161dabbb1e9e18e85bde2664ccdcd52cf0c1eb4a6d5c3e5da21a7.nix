@@ -21,15 +21,15 @@
       synopsis = "Generate recurring dates.";
       description = "time-recurrence is a library for generating\nrecurring dates.\nIt is based on the iCalendar spec (RFC 5545).\nHowever it makes no attempt to strictly follow\nthe spec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hs-json-rpc-0.0.0.1-r0-1bbcce2812c6e87c3a1af6ebf8cecc212413badaa1c02d2ec3c41e3f1911edf0.nix;
         revNum = 0;
         sha256 = "1bbcce2812c6e87c3a1af6ebf8cecc212413badaa1c02d2ec3c41e3f1911edf0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

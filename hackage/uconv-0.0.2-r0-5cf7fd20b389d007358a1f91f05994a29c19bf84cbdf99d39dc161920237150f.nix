@@ -21,7 +21,7 @@
       synopsis = "String encoding conversion with ICU";
       description = "Provides an interface to ICU's uconv library function\nfor string encoding conversion.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring_in_base
@@ -29,9 +29,9 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
         libs = [ (pkgs."icuuc" or (errorHandler.sysDepError "icuuc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

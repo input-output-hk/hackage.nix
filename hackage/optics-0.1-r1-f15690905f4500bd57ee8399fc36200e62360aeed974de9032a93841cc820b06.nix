@@ -21,7 +21,7 @@
       synopsis = "Optics as an abstract interface";
       description = "This package makes it possible to define and use Lenses, Traversals, Prisms\nand other optics, using an abstract interface. See the main module \"Optics\"\nfor the documentation.\n\nThis is the \"batteries-included\" variant with many dependencies; see the\n@optics-core@ package and other @optics-*@ dependencies if you need a more\nlimited dependency footprint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."optics-extra" or (errorHandler.buildDepError "optics-extra"))
           (hsPkgs."optics-th" or (errorHandler.buildDepError "optics-th"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "optics-tests" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "folds" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."optics" or (errorHandler.buildDepError "optics"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "traversals" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

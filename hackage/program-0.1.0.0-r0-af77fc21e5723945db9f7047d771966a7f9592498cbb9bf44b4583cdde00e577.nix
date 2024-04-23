@@ -21,11 +21,11 @@
       synopsis = "Programs with Environments and Managed Resources";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/program>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

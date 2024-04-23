@@ -21,7 +21,7 @@
       synopsis = "A pure-Haskell (no FFI) module for accessing terminfo databases";
       description = "This module can acquire terminfo databases and query them for terminal\ncapabilities. For details of terminfo, consult the man pages for\nterm(5) and terminfo(5).\nThis package is dead simple, and doesn't do anything fancy with the\ncapabilities themselves. It merely provides a means for accessing them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."terminfo-hs" or (errorHandler.buildDepError "terminfo-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

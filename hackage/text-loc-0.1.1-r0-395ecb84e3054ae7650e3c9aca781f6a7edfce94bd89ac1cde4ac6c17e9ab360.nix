@@ -21,14 +21,14 @@
       synopsis = "Line-column locations within a text.";
       description = "This package provides data types that describe line-column locations\nwithin a text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

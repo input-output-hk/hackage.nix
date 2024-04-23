@@ -21,7 +21,7 @@
       synopsis = "Graph-Theoretic Analysis library.";
       description = "A library to use graph theory to analyse the relationships\ninherent in discrete data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -32,14 +32,14 @@
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."bktrees" or (errorHandler.buildDepError "bktrees"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."bktrees" or (errorHandler.buildDepError "bktrees"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

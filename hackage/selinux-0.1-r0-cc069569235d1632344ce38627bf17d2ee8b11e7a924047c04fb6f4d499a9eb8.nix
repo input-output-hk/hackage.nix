@@ -21,15 +21,15 @@
       synopsis = "SELinux bindings";
       description = "Haskell bindings for the SELinux API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         libs = [ (pkgs."selinux" or (errorHandler.sysDepError "selinux")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

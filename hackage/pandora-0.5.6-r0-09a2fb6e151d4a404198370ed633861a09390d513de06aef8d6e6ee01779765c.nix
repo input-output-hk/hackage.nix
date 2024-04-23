@@ -21,6 +21,6 @@
       synopsis = "A box of patterns and paradigms";
       description = "Humble attempt to define a library for problem solving based on math abstractions.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

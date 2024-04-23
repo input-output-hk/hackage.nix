@@ -6,8 +6,8 @@
         nix = import ../hackage/MonadCatchIO-transformers-foreign-0.1-r0-952e2b5eba034ac028fbc67b1d7fcde832cc6aa537d26b2003f6d3583bc1aacb.nix;
         revNum = 0;
         sha256 = "952e2b5eba034ac028fbc67b1d7fcde832cc6aa537d26b2003f6d3583bc1aacb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Instrument a wai application with various metrics";
       description = "See https://github.com/bitnomial/prometheus-wai-middleware/tree/master/readme.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."prometheus" or (errorHandler.buildDepError "prometheus"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prometheus-wai-middleware-example" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."prometheus-wai-middleware" or (errorHandler.buildDepError "prometheus-wai-middleware"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

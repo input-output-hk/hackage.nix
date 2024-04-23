@@ -21,7 +21,7 @@
       synopsis = "Fast binary serialization";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -61,11 +61,11 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ] ++ (pkgs.lib).optional (!system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (!system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = if !system.isI386 && !system.isX86_64 && !system.isIa64 && !(compiler.isGhcjs && true)
           then false
           else true;
-        };
+      };
       tests = {
         "store-test" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "store-weigh" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -153,10 +153,10 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "store-bench" = {
           depends = [
@@ -198,14 +198,14 @@
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ] ++ (pkgs.lib).optionals (flags.comparison-bench) [
+          ] ++ pkgs.lib.optionals (flags.comparison-bench) [
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

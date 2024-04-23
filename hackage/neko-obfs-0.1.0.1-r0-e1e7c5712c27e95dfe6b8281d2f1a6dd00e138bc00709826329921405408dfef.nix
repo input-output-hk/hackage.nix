@@ -21,7 +21,7 @@
       synopsis = "a TCP tunnel with packet length obfuscation";
       description = "Just another tool that helps accessing the internet";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "neko-obfs" = {
@@ -42,9 +42,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

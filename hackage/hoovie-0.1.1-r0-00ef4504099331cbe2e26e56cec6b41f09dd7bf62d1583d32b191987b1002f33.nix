@@ -21,7 +21,7 @@
       synopsis = "Haskell Media Server";
       description = "Haskell Media Server";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoovie" = {
@@ -51,9 +51,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

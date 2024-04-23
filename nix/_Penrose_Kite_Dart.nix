@@ -6,8 +6,8 @@
         nix = import ../hackage/PenroseKiteDart-1.0.0-r0-fb8ac2b8b4a7280031e7ca44dcdce5907ebdf96eb4cabbca0dd6297e5080c055.nix;
         revNum = 0;
         sha256 = "fb8ac2b8b4a7280031e7ca44dcdce5907ebdf96eb4cabbca0dd6297e5080c055";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

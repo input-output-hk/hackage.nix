@@ -14,7 +14,7 @@
       llvm = false;
       debugdump = false;
       dump-core = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "PrimitiveArray"; version = "0.10.0.0"; };
@@ -27,7 +27,7 @@
       synopsis = "Efficient multidimensional arrays";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nThis library provides efficient multidimensional arrays. Import\n@Data.PrimitiveArray@ for indices, lenses, and arrays.\n\nFor\n<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized ADP>\nusers, the library also provides the machinary to\nfill tables in the correct order required by usual CYK-style\nparsers, or regular grammars (used e.g. in alignment\nalgorithms). This means that unless your grammar requires a\nstrange order in which parsing is to be performed, it will\nmostly \"just work\".\n\nIn general operations do not perform bounds-checking or other\nsanity-checking and are aimed towards efficiency as much as\npossible. Users (like @ADPfusion@) should perform their own\nbounds-checking, outside of code that performs \"loop-like\"\noperations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
           (hsPkgs."OrderedBits" or (errorHandler.buildDepError "OrderedBits"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -85,10 +85,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Lookup" = {
           depends = [
@@ -115,9 +115,9 @@
             (hsPkgs."OrderedBits" or (errorHandler.buildDepError "OrderedBits"))
             (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
+          ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

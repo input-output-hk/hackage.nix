@@ -6,8 +6,8 @@
         nix = import ../hackage/InternedData-0.0.0.1-r0-222a44fd54c1ec6f29dc520f5f2c2380efd6053ef4a33fbb580f7d8f226bce71.nix;
         revNum = 0;
         sha256 = "222a44fd54c1ec6f29dc520f5f2c2380efd6053ef4a33fbb580f7d8f226bce71";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

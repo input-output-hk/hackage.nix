@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter to include CSV files";
       description = "A Pandoc filter that replaces code blocks (that have the class `table`)\nwith tables generated from CSV. The CSV is read from the code block\nand from an optional external CSV file and concatenated. There's a flag\nto enable parsing of inline markdown.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc-placetable" = {
@@ -35,9 +35,9 @@
             (hsPkgs."spreadsheet" or (errorHandler.buildDepError "spreadsheet"))
             (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ] ++ (pkgs.lib).optional (flags.inlinemarkdown) (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"));
+          ] ++ pkgs.lib.optional (flags.inlinemarkdown) (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

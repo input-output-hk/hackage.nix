@@ -21,7 +21,7 @@
       synopsis = "Ordered Reduced Binary Decision Diagrams";
       description = "Construct, combine and query OBDDs;\nan efficient representation for formulas in propositional logic";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

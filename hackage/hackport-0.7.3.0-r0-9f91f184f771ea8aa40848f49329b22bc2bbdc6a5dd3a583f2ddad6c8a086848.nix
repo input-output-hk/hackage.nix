@@ -21,7 +21,7 @@
       synopsis = "Hackage and Portage integration tool";
       description = "A command line tool to manage an overlay of Gentoo ebuilds\nthat are generated from a hackage repo of Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "hackport-external-libs-Cabal" = {
@@ -42,9 +42,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-external-libs-hackage-security" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal"))
@@ -68,9 +68,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-external-libs-cabal-install" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal"))
@@ -106,9 +106,9 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."resolv" or (errorHandler.buildDepError "resolv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hackport-internal" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal"))
@@ -135,10 +135,10 @@
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hackport" = {
           depends = [
@@ -151,10 +151,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-resolve-category" = {
           depends = [
@@ -179,9 +179,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = if !flags.gentoo-tests then false else true;
-          };
+        };
         "test-print-deps" = {
           depends = [
             (hsPkgs."hackport-external-libs" or (errorHandler.buildDepError "hackport-external-libs"))
@@ -203,9 +203,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "test-normalize-deps" = {
           depends = [
             (hsPkgs."hackport-external-libs" or (errorHandler.buildDepError "hackport-external-libs"))
@@ -227,9 +227,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -241,21 +241,21 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = if !flags.cabal-v1 then false else true;
-          };
+        };
         "doctests-v2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."hackport".components.sublibs.hackport-internal or (errorHandler.buildDepError "hackport:hackport-internal"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest.components.exes.doctest or (pkgs.buildPackages.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
             (hsPkgs.buildPackages.hackport.components.exes.hackport or (pkgs.buildPackages.hackport or (errorHandler.buildToolDepError "hackport:hackport")))
-            ];
+          ];
           buildable = if flags.cabal-v1 then false else true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."hackport".components.sublibs.hackport-external-libs-Cabal or (errorHandler.buildDepError "hackport:hackport-external-libs-Cabal"))
@@ -280,12 +280,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

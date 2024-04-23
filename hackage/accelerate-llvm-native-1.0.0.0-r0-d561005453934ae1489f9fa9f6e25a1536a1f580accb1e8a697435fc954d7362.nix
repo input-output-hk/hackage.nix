@@ -13,7 +13,7 @@
       bounds-checks = true;
       unsafe-checks = true;
       internal-checks = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "accelerate-llvm-native"; version = "1.0.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Accelerate backend generating LLVM";
       description = "This library implements a backend for the /Accelerate/ language which\ngenerates LLVM-IR targeting multicore CPUs. For further information, refer\nto the main /Accelerate/ package:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."llvm-hs-pure" or (errorHandler.buildDepError "llvm-hs-pure"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

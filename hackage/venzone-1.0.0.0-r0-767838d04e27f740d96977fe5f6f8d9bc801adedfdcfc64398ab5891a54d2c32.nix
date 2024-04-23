@@ -21,7 +21,7 @@
       synopsis = "ASCII platform-adventure game";
       description = "Steal the Earthquake Hammer from the Orcolat\nand save your valley. Binaries and more info in the\n<http://www.ariis.it/static/articles/venzone/page.html game page>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "venzone" = {
@@ -39,9 +39,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."utf8-light" or (errorHandler.buildDepError "utf8-light"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "packerino" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,10 +50,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."utf8-light" or (errorHandler.buildDepError "utf8-light"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

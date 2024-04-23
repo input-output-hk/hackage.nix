@@ -21,7 +21,7 @@
       synopsis = "Userspace Advanced Configuration and Power Interface\nevent daemon";
       description = "uacpid is a daemon designed to be run in userspace\nthat will monitor the local system's acpid socket\nfor hardware events. These events can then be acted\nupon by handlers with access to the user's\nenvironment.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uacpid" = {
@@ -38,9 +38,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

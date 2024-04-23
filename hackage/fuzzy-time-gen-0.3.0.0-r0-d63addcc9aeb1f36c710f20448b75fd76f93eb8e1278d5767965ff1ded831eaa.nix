@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Generators for fuzzy-time types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."fuzzy-time" or (errorHandler.buildDepError "fuzzy-time"))
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."genvalidity-time" or (errorHandler.buildDepError "genvalidity-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fuzzy-time-test" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fuzzy-time-bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."fuzzy-time" or (errorHandler.buildDepError "fuzzy-time"))
             (hsPkgs."fuzzy-time-gen" or (errorHandler.buildDepError "fuzzy-time-gen"))
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

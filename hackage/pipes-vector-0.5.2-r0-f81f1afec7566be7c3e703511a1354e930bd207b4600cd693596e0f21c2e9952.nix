@@ -21,7 +21,7 @@
       synopsis = "Various proxies for streaming data into vectors";
       description = "Proxies for streaming data into vectors.        ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."monad-primitive" or (errorHandler.buildDepError "monad-primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

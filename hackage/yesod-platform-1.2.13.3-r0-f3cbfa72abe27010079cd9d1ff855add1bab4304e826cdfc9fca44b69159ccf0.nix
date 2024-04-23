@@ -21,7 +21,7 @@
       synopsis = "Meta package for Yesod (deprecated)";
       description = "This is no longer the recommended approach for installing Yesod. Please see <http://www.yesodweb.com/page/quickstart> for more information on how to use Stackage Server <http://www.stackage.org/> instead>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -157,8 +157,8 @@
           (hsPkgs."yesod-routes" or (errorHandler.buildDepError "yesod-routes"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
           (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

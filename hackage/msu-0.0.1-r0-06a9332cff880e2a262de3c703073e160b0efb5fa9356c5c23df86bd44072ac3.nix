@@ -21,7 +21,7 @@
       synopsis = "Monitor Setup Utility";
       description = "Convenient wrapper over xrandr for setting up monitors";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "msu" = {
@@ -33,9 +33,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

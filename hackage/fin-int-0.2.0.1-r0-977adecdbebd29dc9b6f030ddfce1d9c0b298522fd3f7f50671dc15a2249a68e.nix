@@ -21,7 +21,7 @@
       synopsis = "Finite sets of static size";
       description = "This provides a newtype @Fin@ containing an @Int@ with an invariant that\nits value is less than its type-level @Nat@ bound.  It aims to have low\noverhead compared to @Int@s, and is suitable for use as the index type of\nlength-indexed vectors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."portray" or (errorHandler.buildDepError "portray"))
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

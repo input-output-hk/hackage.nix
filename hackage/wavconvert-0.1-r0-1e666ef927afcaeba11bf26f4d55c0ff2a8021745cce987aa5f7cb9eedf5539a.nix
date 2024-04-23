@@ -21,7 +21,7 @@
       synopsis = "Command-line tool for converting audio files and filling in ID3 tags";
       description = "Command-line tool for converting audio files and filling in ID3 tags";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wavconvert" = {
@@ -30,9 +30,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

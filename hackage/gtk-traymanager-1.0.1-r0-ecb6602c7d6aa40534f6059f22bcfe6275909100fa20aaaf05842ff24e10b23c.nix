@@ -21,19 +21,19 @@
       synopsis = "A wrapper around the eggtraymanager library for Linux system trays";
       description = "This package provides a wrapper around the prolific eggtraymanager code.\nNote that it is *NOT* itself a system tray widget, though it is a very\nconvenient utility for implementing one.  This package adopts the style\nof gtk2hs and is designed to work well with it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
           (pkgconfPkgs."x11" or (errorHandler.pkgConfDepError "x11"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

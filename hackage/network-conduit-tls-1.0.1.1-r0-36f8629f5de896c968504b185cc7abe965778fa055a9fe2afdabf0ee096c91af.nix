@@ -21,7 +21,7 @@
       synopsis = "Create TLS-aware network code with conduits";
       description = "Uses the tls package for a pure-Haskell implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."crypto-random-api" or (errorHandler.buildDepError "crypto-random-api"))
           (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

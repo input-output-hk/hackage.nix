@@ -21,7 +21,7 @@
       synopsis = "The ChatWork API in Haskell";
       description = "See README at <https://github.com/matsubara0507/chatwork#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."req" or (errorHandler.buildDepError "req"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sample-exe" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."chatwork" or (errorHandler.buildDepError "chatwork"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

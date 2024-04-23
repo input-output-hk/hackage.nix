@@ -21,7 +21,7 @@
       synopsis = "A Gentoo package query tool.";
       description = "hark is a query tool for the package database of\ninstalled packages on Gentoo Linux systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hark" = {
@@ -35,9 +35,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Library for building C code with shake";
       description = "Facilities for building C libraries and binaries, and depending on C source files. Extends [shake](http://hackage.haskell.org/package/shake).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."cdeps" or (errorHandler.buildDepError "cdeps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

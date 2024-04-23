@@ -21,11 +21,11 @@
       synopsis = "Forward Automatic Differentiation.";
       description = "Forward Automatic Differentiation via overloading to perform\nnonstandard interpretation that replaces original numeric type with\ncorresponding generalized dual number type.\nExistential type \\\"branding\\\" is used to prevent perturbation confusion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

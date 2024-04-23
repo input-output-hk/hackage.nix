@@ -21,7 +21,7 @@
       synopsis = "Functional, expression-oriented data processing language";
       description = "APL meets AWK. A command-line tool for summarizing and reporting, powered by Rust's [regex](https://docs.rs/regex/regex/) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "jacinda-lib" = {
@@ -39,14 +39,14 @@
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."recursion" or (errorHandler.buildDepError "recursion"))
-            ];
-          build-tools = (pkgs.lib).optionals (!flags.cross) [
+          ];
+          build-tools = pkgs.lib.optionals (!flags.cross) [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "ja" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."jacinda".components.sublibs.jacinda-lib or (errorHandler.buildDepError "jacinda:jacinda-lib"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jacinda-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

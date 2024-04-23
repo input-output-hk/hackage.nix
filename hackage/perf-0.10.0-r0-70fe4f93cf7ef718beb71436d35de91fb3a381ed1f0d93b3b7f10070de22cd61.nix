@@ -21,7 +21,7 @@
       synopsis = "Low-level run time measurement.";
       description = "A set of tools to accurately measure time performance of Haskell programs.\nperf aims to be lightweight by having minimal dependencies on standard libraries.\nSee the Perf module for an example and full API documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "perf-explore" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."perf" or (errorHandler.buildDepError "perf"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

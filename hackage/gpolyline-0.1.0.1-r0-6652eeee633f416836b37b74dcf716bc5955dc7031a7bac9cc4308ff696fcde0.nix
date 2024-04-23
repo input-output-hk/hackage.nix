@@ -21,14 +21,14 @@
       synopsis = "Pure module for encoding/decoding Google Polyline";
       description = "Pure module for encoding/decoding Google Polyline";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

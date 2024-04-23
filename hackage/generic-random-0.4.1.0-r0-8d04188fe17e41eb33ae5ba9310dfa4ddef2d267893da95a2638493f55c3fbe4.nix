@@ -21,14 +21,14 @@
       synopsis = "Generic random generators";
       description = "Please see the README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ (pkgs.lib).optional (flags.boltzmann) (hsPkgs."boltzmann-samplers" or (errorHandler.buildDepError "boltzmann-samplers"));
+        ] ++ pkgs.lib.optional (flags.boltzmann) (hsPkgs."boltzmann-samplers" or (errorHandler.buildDepError "boltzmann-samplers"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

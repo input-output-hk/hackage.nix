@@ -21,14 +21,14 @@
       synopsis = "Haskell 98 invariant functors";
       description = "Haskell 98 invariant functors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

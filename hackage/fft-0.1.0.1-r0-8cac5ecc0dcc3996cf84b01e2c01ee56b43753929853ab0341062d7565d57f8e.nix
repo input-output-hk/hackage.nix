@@ -21,16 +21,16 @@
       synopsis = "Bindings to the FFTW library.";
       description = "Bindings to the FFTW library.\n\nProvides high performance discrete fourier transforms in\narbitrary dimensions.  Include transforms of complex data,\nreal data, and real to real transforms.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
-          ];
+        ];
         libs = [ (pkgs."fftw3" or (errorHandler.sysDepError "fftw3")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

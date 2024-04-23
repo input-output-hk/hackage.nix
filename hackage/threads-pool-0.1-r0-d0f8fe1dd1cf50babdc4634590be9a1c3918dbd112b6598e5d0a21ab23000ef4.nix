@@ -21,7 +21,7 @@
       synopsis = "A library to operate with pool of haskell's IO threads";
       description = "This library allows you to create a pool of worker threads,\ngive them tasks using a queue and receive results. Or not receive,\nif you wan't to. Tasks are monadic computations in any monad which\nbelong to special 'Task' typeclass (it basically means that one can\nrun that computation in IO monad, using some argument).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

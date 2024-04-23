@@ -14,7 +14,7 @@
       identifier = {
         name = "numeric-optimization-backprop";
         version = "0.1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright (c) 2023 Masahiro Sakai";
       maintainer = "masahiro.sakai@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Wrapper of numeric-optimization package for using with backprop package";
       description = "Please see the README on GitHub at <https://github.com/msakai/nonlinear-optimization-ad/tree/master/numeric-optimization-backprop#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rosenbrock-backprop" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."numeric-optimization" or (errorHandler.buildDepError "numeric-optimization"))
             (hsPkgs."numeric-optimization-backprop" or (errorHandler.buildDepError "numeric-optimization-backprop"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       tests = {
         "numeric-optimization-backprop-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."numeric-optimization" or (errorHandler.buildDepError "numeric-optimization"))
             (hsPkgs."numeric-optimization-backprop" or (errorHandler.buildDepError "numeric-optimization-backprop"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A memcache protocol library for client and server applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "memcache-sample-client" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."memcache-haskell" or (errorHandler.buildDepError "memcache-haskell"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
+        };
         "memcache-sample-retrieval" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,10 +63,10 @@
             (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
             (hsPkgs."memcache-haskell" or (errorHandler.buildDepError "memcache-haskell"))
-            ];
+          ];
           buildable = if flags.sample then true else false;
-          };
         };
+      };
       tests = {
         "test-memcache" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."memcache-haskell" or (errorHandler.buildDepError "memcache-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

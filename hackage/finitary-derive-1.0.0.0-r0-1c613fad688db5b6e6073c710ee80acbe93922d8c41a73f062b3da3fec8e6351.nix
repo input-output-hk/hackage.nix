@@ -21,7 +21,7 @@
       synopsis = "Easy and efficient Unbox, Storable, Binary and Hashable\ninstances for Finitary types.";
       description = "Provides a wrapper with pre-made instances of Unbox,\nStorable, Binary and Hashable, suitable for use with types that\nhave Finitary instances. Never write Unbox by hand again!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."finitary" or (errorHandler.buildDepError "finitary"))
             (hsPkgs."finite-typelits" or (errorHandler.buildDepError "finite-typelits"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

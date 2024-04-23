@@ -21,7 +21,7 @@
       synopsis = "Poll modern Intel/AMD CPU power consumption on Linux via RAPL.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "intel-powermon" = {
@@ -30,9 +30,9 @@
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."posix-timer" or (errorHandler.buildDepError "posix-timer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

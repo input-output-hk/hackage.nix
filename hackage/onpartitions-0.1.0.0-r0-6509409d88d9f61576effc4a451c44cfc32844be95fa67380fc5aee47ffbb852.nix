@@ -21,11 +21,11 @@
       synopsis = "partition lenses";
       description = "Working over list partitions as a whole";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

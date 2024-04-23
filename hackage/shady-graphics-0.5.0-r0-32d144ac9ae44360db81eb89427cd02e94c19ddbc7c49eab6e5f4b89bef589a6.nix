@@ -21,7 +21,7 @@
       synopsis = "Functional GPU programming - DSEL & compiler";
       description = "Compile functional specifications for GPU execution.\nSee also shady-render, shady-tv, and shady-examples\n\nCopyright 2009-2011 by Conal Elliott; GNU AGPLv3 license (see COPYING).\nThis license is a place-holder.  Let me know if you'd like other terms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."data-treify" or (errorHandler.buildDepError "data-treify"))
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
           (hsPkgs."shady-gen" or (errorHandler.buildDepError "shady-gen"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

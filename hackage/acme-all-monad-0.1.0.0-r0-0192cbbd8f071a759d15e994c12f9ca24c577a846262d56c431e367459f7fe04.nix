@@ -21,14 +21,14 @@
       synopsis = "A monad which is powerful enough to interpret any action";
       description = "This package defines the @‘All’@ monad and the corresponding monad transformer. The @‘All’@ monad is powerful enough to interpret any monadic action, as demonstrated by the @‘MonadAll’@ type class instance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

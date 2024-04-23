@@ -21,7 +21,7 @@
       synopsis = "Translate between binary data and a human-readable\ncollection of words.";
       description = "Translate between binary data and a human-readable\ncollection of words.\n\nThe PGP Word List consists of two phonetic alphabets, each\nwith one word per possible byte value. A string of bytes\nis translated with these alphabets, alternating between\nthem at each byte.\n\nThe PGP words corresponding to the bytes @5B 1D CA 6E@\nare \"erase breakaway spellbind headwaters\", for example.\n\nFor further information, see\n<http://en.wikipedia.org/wiki/PGP_word_list Wikipedia>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -45,16 +45,16 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

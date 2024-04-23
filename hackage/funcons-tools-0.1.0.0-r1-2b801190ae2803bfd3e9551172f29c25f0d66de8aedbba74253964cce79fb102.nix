@@ -21,7 +21,7 @@
       synopsis = "A modular interpreter for executing funcons";
       description = "The PLanCompS project has developed a component-based approach to formal semantics.\nThe semantics of a language is defined by translating its constructs to combinations\nof `fundamental constructs' called /funcons/.\n\nRead more about the project here: <http://plancomps.org>.\nRead more about funcons and their specification in CBS here: <http://plancomps.dreamhosters.com/wp-content/uploads/2016/02/jlamp-16.pdf JLAMP2016>.\n\nThis package provides a collection of highly reusable funcons in \"Funcons.Core\",\nan interpreter for these funcons and means for defining new funcons.\n\nThe executable provided by this package is an interpreter for running terms\nconstructed from the collection of funcons provided by \"Funcons.Core\".\nHow this executable is used is explained in \"Funcons.Tools\".\n\nAdditional funcons can be defined with the helper functions provided by\n\"Funcons.EDSL\". The module \"Funcons.Tools\" provides functions for creating\nexecutables by extending the main interpreter with additional funcons.\n\nPlease contact any of the maintainers when unexpected behaviour is encountered\nor exports appear to be missing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "runfct" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

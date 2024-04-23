@@ -21,13 +21,13 @@
       synopsis = "A Typeable-free implementation of extensible effects";
       description = "A Typeable-free implementation of extensible effects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (flags.mtl) (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"));
+        ] ++ pkgs.lib.optional (flags.mtl) (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compile lhs in bird style to md, html, hs.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lhs2html" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

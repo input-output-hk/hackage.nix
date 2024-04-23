@@ -21,7 +21,7 @@
       synopsis = "Distributed tracing";
       description = "An OpenTracing-compliant, simple, and extensible distributed tracing library.\nThis is a fork of <http://hackage.haskell.org/package/tracing tracing> which\nswitches from <http://hackage.haskell.org/package/unliftio unliftio> to\n<http://hackage.haskell.org/package/monad-control monad-control>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tracing-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."stm-lifted" or (errorHandler.buildDepError "stm-lifted"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tracing-control" or (errorHandler.buildDepError "tracing-control"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

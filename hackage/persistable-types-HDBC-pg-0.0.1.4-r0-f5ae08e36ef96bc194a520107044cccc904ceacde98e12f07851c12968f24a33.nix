@@ -21,7 +21,7 @@
       synopsis = "HDBC and Relational-Record instances of PostgreSQL extended types";
       description = "This package contains HDBC Convertible instances and\nRelational-Record persistable instances of PostgreSQL extended types\nSupported extended types: inet, cidr";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."persistable-record" or (errorHandler.buildDepError "persistable-record"))
           (hsPkgs."relational-query-HDBC" or (errorHandler.buildDepError "relational-query-HDBC"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

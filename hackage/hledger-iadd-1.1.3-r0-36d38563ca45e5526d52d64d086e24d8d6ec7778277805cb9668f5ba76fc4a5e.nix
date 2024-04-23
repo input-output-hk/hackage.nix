@@ -21,7 +21,7 @@
       synopsis = "A terminal UI as drop-in replacement for hledger add";
       description = "This is a terminal UI as drop-in replacement for hledger add.\n\nIt improves in the following ways on hledger's add command:\n\n* Interactive as-you-type completion for\naccount names and descriptions with optional\nfuzzy matching.\n\n* Integrated calculator: Amounts can be written\nas simple sums with real-time feedback on the\nresult.\n\n* All actions while entering a transaction can\nbe undone\n\n* Configurable format for date input. Instead\nof @y\\/m\\/d@ it is also possible to use other\nformats like the german @d.m.y@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger-iadd" = {
           depends = [
@@ -67,10 +67,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

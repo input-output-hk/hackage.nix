@@ -21,19 +21,19 @@
       synopsis = "FFI bindings to libtokyotyrant";
       description = "This package provides a thin FFI binding to the libtokyotyrant\nC library shipped with Mikio Hirabayashi's Tokyo\nTyrant. (<http://tokyocabinet.sourceforge.net/tyrantdoc/>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         libs = [
           (pkgs."tokyocabinet" or (errorHandler.sysDepError "tokyocabinet"))
           (pkgs."tokyotyrant" or (errorHandler.sysDepError "tokyotyrant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

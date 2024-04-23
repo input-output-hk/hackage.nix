@@ -21,7 +21,7 @@
       synopsis = "A barebones textboard for the Gemini protocol";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gemini-textboard" = {
@@ -38,9 +38,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

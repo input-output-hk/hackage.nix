@@ -21,15 +21,15 @@
       synopsis = "Template Haskell based deriver for optimised NFData instances";
       description = "This package provides a Template Haskell based mechanism for\nderiving optimised NFData instances for custom data types. See\ndocumentation in \"Control.DeepSeq.TH\" for more information.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

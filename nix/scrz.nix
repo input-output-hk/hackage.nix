@@ -6,8 +6,8 @@
         nix = import ../hackage/scrz-0.0.0.1-r0-2a7f45274e1830c25677828d6cb33e2af67398f7792278f53db3af268a3a880c.nix;
         revNum = 0;
         sha256 = "2a7f45274e1830c25677828d6cb33e2af67398f7792278f53db3af268a3a880c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

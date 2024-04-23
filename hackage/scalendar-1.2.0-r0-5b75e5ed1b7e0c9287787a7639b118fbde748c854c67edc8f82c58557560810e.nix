@@ -21,7 +21,7 @@
       synopsis = "A library for handling calendars and resource availability over time.";
       description = "scalendar is a library based on the \"top-nodes algorithm\", invented by\nMartin Rayrole <https://en.wikipedia.org/wiki/Top-nodes_algorithm>, and\nset operations, which makes it easy to handle the availability of a set of\nresources over time.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "scalendar-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

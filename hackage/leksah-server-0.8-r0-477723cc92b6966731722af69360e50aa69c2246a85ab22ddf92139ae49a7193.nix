@@ -21,7 +21,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -43,14 +43,14 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."haddock-leksah" or (errorHandler.buildDepError "haddock-leksah"))
-          ]) ++ (if system.isWindows
+        ]) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
         buildable = true;
-        };
+      };
       exes = {
         "leksah-server" = {
           depends = ([
@@ -70,15 +70,15 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."haddock-leksah" or (errorHandler.buildDepError "haddock-leksah"))
-            ]) ++ (if system.isWindows
+          ]) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
           buildable = true;
-          };
-        "leksahecho" = { buildable = true; };
         };
+        "leksahecho" = { buildable = true; };
       };
-    }
+    };
+  }

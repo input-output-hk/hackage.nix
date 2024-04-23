@@ -21,7 +21,7 @@
       synopsis = "Haml-like template files that are compile-time checked";
       description = "Hamlet gives you a type-safe tool for generating HTML code. It works via Quasi-Quoting, and generating extremely efficient output code. The syntax is white-space sensitive, and it helps you avoid cross-site scripting issues and 404 errors. Please see the documentation at <http://www.yesodweb.com/book/shakespearean-templates> for more details.\n\nHere is a quick overview of hamlet html. Due to haddock escaping issues, we can't properly show variable insertion, but we are still going to show some conditionals. Please see <http://www.yesodweb.com/book/shakespearean-templates> for a thorough description\n\n> !!!\n> <html>\n>     <head>\n>         <title>Hamlet Demo\n>     <body>\n>         <h1>Information on John Doe\n>         <h2>\n>             $if isMarried person\n>                 Married\n>             $else\n>                 Not married";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,16 +35,16 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ (if flags.blaze_html_0_5
+        ] ++ (if flags.blaze_html_0_5
           then [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ]
+          ]
           else [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

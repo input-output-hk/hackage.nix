@@ -24,16 +24,16 @@
       setup-depends = [
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "load-font-exe" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."fltkhs" or (errorHandler.buildDepError "fltkhs"))
             (hsPkgs."load-font" or (errorHandler.buildDepError "load-font"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.demo then true else false;
-          };
         };
       };
-    }
+    };
+  }

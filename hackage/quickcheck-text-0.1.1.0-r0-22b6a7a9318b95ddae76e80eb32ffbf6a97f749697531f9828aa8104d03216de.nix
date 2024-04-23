@@ -21,7 +21,7 @@
       synopsis = "Alternative arbitrary instance for Text";
       description = "The usual Arbitrary instance for Text\n(in\n<https://hackage.haskell.org/package/quickcheck-instances quickcheck-instances>)\nonly has single-byte\ninstances and so isn't an ideal representation of a valid UTF-8\ncharacter. This package has generators for one-, two- and three-byte\nUTF-8 characters (all that are currently in use).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

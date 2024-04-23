@@ -21,7 +21,7 @@
       synopsis = "Provides high-level access to webcams.";
       description = "The current state is that the library provides a monad for\ngrabbing images from a webcam under Linux. In the future, more functionality like\nimage processing functions and other input devices may be added.\nIf anyone wants to help, please contact me!\nIt has been pointed out on haskell-cafe that the v4l2 package that\nis needed by this package is not (yet?) on hackage. Therefore\nthis library is not building on hackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."repa-v4l2" or (errorHandler.buildDepError "repa-v4l2"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

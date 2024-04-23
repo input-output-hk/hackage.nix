@@ -6,8 +6,8 @@
         nix = import ../hackage/cookies-0.1.0.0-r0-a095e9e7f451858a831f3d1e0ad2a105f3421a92acb248a8c89aa22dd741600d.nix;
         revNum = 0;
         sha256 = "a095e9e7f451858a831f3d1e0ad2a105f3421a92acb248a8c89aa22dd741600d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

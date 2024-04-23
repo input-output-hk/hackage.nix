@@ -21,7 +21,7 @@
       synopsis = "Sandwich integration with QuickCheck";
       description = "Please see the <https://codedownio.github.io/sandwich/docs/extensions/sandwich-quickcheck documentation>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."sandwich" or (errorHandler.buildDepError "sandwich"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sandwich-quickcheck-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."sandwich" or (errorHandler.buildDepError "sandwich"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

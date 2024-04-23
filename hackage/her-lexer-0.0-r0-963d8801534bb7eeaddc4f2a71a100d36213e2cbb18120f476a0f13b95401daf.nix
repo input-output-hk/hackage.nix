@@ -21,14 +21,14 @@
       synopsis = "A lexer for Haskell source code.";
       description = "This is a simple lexer which converts Haskell source code into tolkins and back to ordinary haskell again.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

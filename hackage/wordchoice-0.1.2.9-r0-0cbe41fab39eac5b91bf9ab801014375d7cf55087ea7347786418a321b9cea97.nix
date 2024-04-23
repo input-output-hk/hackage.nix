@@ -21,7 +21,7 @@
       synopsis = "Get word counts and distributions";
       description = "A command line tool to compute the word distribution from various types of document, converting to text with pandoc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wrd" = {
           depends = [
@@ -55,19 +55,19 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wordchoice" or (errorHandler.buildDepError "wordchoice"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wordchoice-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wordchoice" or (errorHandler.buildDepError "wordchoice"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "wordchoice-bench" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wordchoice" or (errorHandler.buildDepError "wordchoice"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/himg-0.1.0.0-r0-52ee066c922dd0dd1608f2534f74c1948b6809e80e5242a8039c9b41d34791ab.nix;
         revNum = 0;
         sha256 = "52ee066c922dd0dd1608f2534f74c1948b6809e80e5242a8039c9b41d34791ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

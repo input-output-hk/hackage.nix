@@ -21,13 +21,13 @@
       synopsis = "utility for collapsing adjacent writes";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "collapse" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-pinpoint-email-2.0-r0-c2e843dfd961bacb35afe38ed193622c6bd6a0a8e862fbc0d5113c0946d1710b.nix;
         revNum = 0;
         sha256 = "c2e843dfd961bacb35afe38ed193622c6bd6a0a8e862fbc0d5113c0946d1710b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

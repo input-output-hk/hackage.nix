@@ -21,7 +21,7 @@
       synopsis = "convert utility for xoj files";
       description = "convert xoj files into various formats (SVG,SVG+index.html..) ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."xournal-render" or (errorHandler.buildDepError "xournal-render"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xournal-convert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."xournal-convert" or (errorHandler.buildDepError "xournal-convert"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

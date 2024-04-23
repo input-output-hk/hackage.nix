@@ -21,7 +21,7 @@
       synopsis = "arbitrary precision real interval arithmetic";
       description = "A concrete implementation for the refinement-order type classes from AERN-Real in the form\nof interval arithmetic.  The arithmetic supports also anti-consistent\nintervals (ie @[l,r]@ with @l >= r@) and maintains monotonicity in the\nrefinement order so that both inner and outer approximations of exact interval\nexpressions can be safely computed.\n\nThe package AERN-Real-Double makes it possible to use ordinary\nmachine 'Double' values as endpoints, although limited to its fixed granularity (ie precision).\n\nA package AERN-Real-MPFR will be provided in future to facilitate (via package hmpfr)\nthe use of the MPFR arbitrary granularity (ie precision) floating point numbers\nas endpoints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."AERN-Basics" or (errorHandler.buildDepError "AERN-Basics"))
           (hsPkgs."AERN-Real" or (errorHandler.buildDepError "AERN-Real"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

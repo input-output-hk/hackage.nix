@@ -21,7 +21,7 @@
       synopsis = "Leksah tool kit";
       description = "UI Framework used by leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,23 +43,23 @@
           (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
           (hsPkgs."gi-gtk-hs" or (errorHandler.buildDepError "gi-gtk-hs"))
           (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
         pkgconfig = ([
           (pkgconfPkgs."gdk-3.0" or (errorHandler.pkgConfDepError "gdk-3.0"))
-          ] ++ (if flags.gtk-318
+        ] ++ (if flags.gtk-318
           then [
             (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-            ]
+          ]
           else [
             (pkgconfPkgs."gdk-3.0" or (errorHandler.pkgConfDepError "gdk-3.0"))
-            ])) ++ (if flags.gtk-320
+          ])) ++ (if flags.gtk-320
           then [
             (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-            ]
+          ]
           else [
             (pkgconfPkgs."gdk-3.0" or (errorHandler.pkgConfDepError "gdk-3.0"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

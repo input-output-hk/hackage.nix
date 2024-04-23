@@ -21,7 +21,7 @@
       synopsis = "Selects a representative subset of sequences from multiple sequence alignment.";
       description = "SelectSequences is a tool for selection of a representative subset of sequences from a multiple sequence alignment in clustal format.\n\nOptional Dependencies:\n\n* <https://www.tbi.univie.ac.at/~wash/RNAz/ RNAz>\nInstallation via cabal-install:\n\n> cabal install SelectSequencesFromMSA";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text-metrics" or (errorHandler.buildDepError "text-metrics"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SelectSequencesFromMSA" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."SelectSequencesFromMSA" or (errorHandler.buildDepError "SelectSequencesFromMSA"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

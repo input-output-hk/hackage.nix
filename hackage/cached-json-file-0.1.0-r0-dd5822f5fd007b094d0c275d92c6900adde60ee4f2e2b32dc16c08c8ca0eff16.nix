@@ -21,7 +21,7 @@
       synopsis = "Locally cache a json file obtained by http";
       description = "A small library for caching a slow-changing remote json file in\na specified directory (under \"~\\/.cache\\/\").  When the json is requested\nand the cache file is still fresh enough it is read directly from\nthe local cache, otherwise the cached file is refreshed first.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."http-query" or (errorHandler.buildDepError "http-query"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

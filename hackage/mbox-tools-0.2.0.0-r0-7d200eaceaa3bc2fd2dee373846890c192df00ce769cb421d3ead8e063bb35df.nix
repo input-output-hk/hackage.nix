@@ -21,7 +21,7 @@
       synopsis = "A collection of tools to process mbox files";
       description = "A collection of tools to process mbox files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,38 +35,38 @@
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."codec-mbox" or (errorHandler.buildDepError "codec-mbox"))
           (hsPkgs."hsemail" or (errorHandler.buildDepError "hsemail"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mbox-counting" = { buildable = true; };
         "mbox-average-size" = {
           buildable = if !flags.useless then false else true;
-          };
+        };
         "mbox-quoting" = {
           buildable = if !flags.useless then false else true;
-          };
+        };
         "redact-mbox" = {
           depends = [
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !flags.useless then false else true;
-          };
+        };
         "mbox-list" = { buildable = true; };
         "mbox-pick" = { buildable = true; };
         "mbox-partition" = { buildable = true; };
         "mbox-grep" = {
-          depends = (pkgs.lib).optional (flags.use_hutt) (hsPkgs."hutt" or (errorHandler.buildDepError "hutt"));
+          depends = pkgs.lib.optional (flags.use_hutt) (hsPkgs."hutt" or (errorHandler.buildDepError "hutt"));
           buildable = if flags.use_hutt then true else false;
-          };
+        };
         "split-mbox" = { buildable = true; };
         "mbox-iter" = {
           depends = [
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
-        "mbox-from-files" = { buildable = true; };
         };
+        "mbox-from-files" = { buildable = true; };
       };
-    }
+    };
+  }

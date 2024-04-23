@@ -21,7 +21,7 @@
       synopsis = "A flexible job queue with exchangeable backends";
       description = "A flexible job queue with exchangeable backends\n\nCurrent Queue (Persistence) Backends:\n\n* <https://hackage.haskell.org/package/powerqueue-levelmem LevelDB>\n* <https://hackage.haskell.org/package/powerqueue-sqs AWS SQS>\n\nCurrent Worker Backends:\n\n* <https://hackage.haskell.org/package/powerqueue-distributed TCP-Network Distributed>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "powerqueue-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

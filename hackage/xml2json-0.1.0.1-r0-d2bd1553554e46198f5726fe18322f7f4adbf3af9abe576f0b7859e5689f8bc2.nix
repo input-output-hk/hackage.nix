@@ -21,7 +21,7 @@
       synopsis = "translate xml to json";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."blaze-builder-conduit" or (errorHandler.buildDepError "blaze-builder-conduit"))
           (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
           (hsPkgs."tagstream-conduit" or (errorHandler.buildDepError "tagstream-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xml2json" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."blaze-builder-conduit" or (errorHandler.buildDepError "blaze-builder-conduit"))
             (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
             (hsPkgs."tagstream-conduit" or (errorHandler.buildDepError "tagstream-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

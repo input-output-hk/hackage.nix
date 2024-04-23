@@ -21,7 +21,7 @@
       synopsis = "Parsing infrastructure for the pipes ecosystem";
       description = "@pipes-parse@ builds upon the @pipes@ library to provide shared\nparsing idioms and utilities:\n\n* /Perfect Streaming/: Program in a list-like style in constant memory\n\n* /Leftovers/: Save unused input for later consumption\n\n* /Connect and Resume/: Use @StateT@ to save unused input for later\n\n* /Termination Safety/: Detect and recover from end of input\n\n@Pipes.Parse@ contains the full documentation for this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

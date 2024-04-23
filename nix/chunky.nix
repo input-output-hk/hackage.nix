@@ -6,8 +6,8 @@
         nix = import ../hackage/chunky-0.1.0.0-r0-f94d6d7e1035ef88ed6aac6864a0208494652ba0a5014134a143bf36c14c9c90.nix;
         revNum = 0;
         sha256 = "f94d6d7e1035ef88ed6aac6864a0208494652ba0a5014134a143bf36c14c9c90";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

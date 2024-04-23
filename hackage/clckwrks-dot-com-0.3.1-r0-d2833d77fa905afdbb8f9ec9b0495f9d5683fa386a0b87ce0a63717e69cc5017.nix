@@ -21,7 +21,7 @@
       synopsis = "clckwrks.com";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "clckwrks-dot-com-server" = {
@@ -39,20 +39,20 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hsx2hs.components.exes.hsx2hs or (pkgs.buildPackages.hsx2hs or (errorHandler.buildToolDepError "hsx2hs:hsx2hs")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "clckwrks-dot-com-backups" = {
-          depends = (pkgs.lib).optionals (flags.backups) [
+          depends = pkgs.lib.optionals (flags.backups) [
             (hsPkgs."archive" or (errorHandler.buildDepError "archive"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Extra" or (errorHandler.buildDepError "Extra"))
-            ];
+          ];
           buildable = if flags.backups then true else false;
-          };
         };
       };
-    }
+    };
+  }

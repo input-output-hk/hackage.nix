@@ -21,7 +21,7 @@
       synopsis = "Simple parser combinators";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/simple-parser#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-parser-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

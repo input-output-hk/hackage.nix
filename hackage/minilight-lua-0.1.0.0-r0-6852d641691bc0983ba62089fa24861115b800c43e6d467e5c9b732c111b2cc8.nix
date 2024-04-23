@@ -21,7 +21,7 @@
       synopsis = "A binding library of minilight for Lua langauge.";
       description = "This library provides a way to write minilight component in Lua language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix-time" or (errorHandler.buildDepError "unix-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."minilight" or (errorHandler.buildDepError "minilight"))
             (hsPkgs."minilight-lua" or (errorHandler.buildDepError "minilight-lua"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

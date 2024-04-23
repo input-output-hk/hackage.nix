@@ -21,7 +21,7 @@
       synopsis = "A simple interpreter for arrayForth, the language used on GreenArrays chips.";
       description = "This is a package for working with arrayForth. This is a variant of Forth used by GreenArrays chips. This package contains an arrayForth simulator, two different representations of arrayForth programs and some utilities like parsing.\nIt also supports synthesizing arrayForth programs using MCMC. The basic idea is to find arrayForth programs by taking a simple prior distribution of programs and using a randomized hill-climbing algorithm to find a program fulfilling certain tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."OddWord" or (errorHandler.buildDepError "OddWord"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mcmc-demo" = {
           depends = [
@@ -42,19 +42,19 @@
             (hsPkgs."array-forth" or (errorHandler.buildDepError "array-forth"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "array-forth" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."array-forth" or (errorHandler.buildDepError "array-forth"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-array-forth" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."array-forth" or (errorHandler.buildDepError "array-forth"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

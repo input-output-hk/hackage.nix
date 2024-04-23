@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of the Brian's Brain cellular automaton";
       description = "The Brian's Brain cellular automaton implemented in just 49 lines\nof Haskell, with fancy GUI and everything.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "brians-brain" = {
@@ -31,9 +31,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

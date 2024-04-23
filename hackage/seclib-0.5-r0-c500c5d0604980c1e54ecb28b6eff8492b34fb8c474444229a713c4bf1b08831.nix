@@ -21,14 +21,14 @@
       synopsis = "A lightweight library for Information-flow security in Haskell ";
       description = "The library is based on the paper\n/A Library for Light-weight Information-Flow Security in Haskell/ by Alejandro Russo, Koen Claessen\nand John Hughes. In Proceedings of the ACM SIGPLAN 2008 Haskell Symposium, Victoria, British Columbia,\nCanada, September 2008.\n<http://www.cse.chalmers.se/~russo/publications_files/haskell22Ext-russo.pdf>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

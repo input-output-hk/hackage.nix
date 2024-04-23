@@ -6,8 +6,8 @@
         nix = import ../hackage/tilings-0.1-r0-1e42f5ef110a9e2102d9b465239a17a2727a555570e9b41733dd4374c0fcc289.nix;
         revNum = 0;
         sha256 = "1e42f5ef110a9e2102d9b465239a17a2727a555570e9b41733dd4374c0fcc289";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

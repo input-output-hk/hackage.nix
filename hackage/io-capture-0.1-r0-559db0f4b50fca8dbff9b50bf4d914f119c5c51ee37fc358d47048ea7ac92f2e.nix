@@ -21,7 +21,7 @@
       synopsis = "capture IO action's stdout and stderr";
       description = "capture IO action's stdout and stderr";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

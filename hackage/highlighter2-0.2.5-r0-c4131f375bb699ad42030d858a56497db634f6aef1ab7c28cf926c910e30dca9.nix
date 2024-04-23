@@ -21,7 +21,7 @@
       synopsis = "source code highlighting";
       description = "It's fork from original highlighter, with some changes for performance.\nThis version work faster (5 - 10 times) for big files (> 1000 lines of code).\n\nProcesses source code using tons of lexers, tokenizing it and formatting it as e.g. HTML.\n\nVery similar to the Python Pygments library; many lexers directly converted from it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "highlighter" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = if !flags.executable then false else true;
-          };
         };
       };
-    }
+    };
+  }

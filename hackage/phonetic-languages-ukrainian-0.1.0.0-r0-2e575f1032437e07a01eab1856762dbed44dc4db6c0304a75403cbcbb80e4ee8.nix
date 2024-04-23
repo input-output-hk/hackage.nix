@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-ukrainian";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Prepares Ukrainian text to be used as a phonetic language text";
       description = "Prepares Ukrainian text to be used as a phonetic language text. Applies needed minimal grammar connections so that the text afterwards can be processed by dobutokO-poetry related programs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
           (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

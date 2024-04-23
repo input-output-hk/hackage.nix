@@ -21,14 +21,14 @@
       synopsis = "Generator and shrink functions for testing\nUnicode-related software.";
       description = "Generator and shrink functions for testing\nUnicode-related software.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

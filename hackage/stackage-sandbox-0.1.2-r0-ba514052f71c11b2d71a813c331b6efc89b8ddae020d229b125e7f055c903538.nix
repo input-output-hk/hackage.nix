@@ -21,12 +21,12 @@
       synopsis = "Work with shared stackage sandboxes";
       description = "Work with shared stackage sandboxes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage-sandbox" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

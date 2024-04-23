@@ -21,11 +21,11 @@
       synopsis = "Differences lists";
       description = "Differences lists: a list-like type supporting O(1) append";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

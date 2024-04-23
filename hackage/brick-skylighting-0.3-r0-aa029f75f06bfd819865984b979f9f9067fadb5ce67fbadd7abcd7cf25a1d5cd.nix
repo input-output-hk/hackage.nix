@@ -21,7 +21,7 @@
       synopsis = "Show syntax-highlighted text in your Brick UI";
       description = "This package provides a module to use Skylighting to perform\nsyntax highlighting and display the results in Brick-based\ninterfaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."skylighting-core" or (errorHandler.buildDepError "skylighting-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brick-skylighting-demo" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."skylighting-core" or (errorHandler.buildDepError "skylighting-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Data.Map with multiple, unique keys";
       description = "Data.Map with multiple, unique keys. IxSet without the Sets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

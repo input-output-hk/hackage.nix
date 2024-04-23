@@ -21,7 +21,7 @@
       synopsis = "A command line tool to change backlit colors of your MSI\nkeyboards";
       description = "Change the backlit colors of your MSI keyboards!\nFeatures set includes changing colors, intensites and\nmodes.\nYou might need /super user/ rights in order to correctly\nrun the program.\nSuccessfully tested on a **MSI GS60 Ghost Pro 2QE**.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "msi-kb-backlit" = {
@@ -30,9 +30,9 @@
             (hsPkgs."hid" or (errorHandler.buildDepError "hid"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

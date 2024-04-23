@@ -21,7 +21,7 @@
       synopsis = "Ungarble output from several threads or commands";
       description = "Lets multiple threads and external processes concurrently output to the\nconsole, without it getting all garbled up.\n\nBuilt on top of that is a way of defining multiple output regions,\nwhich are automatically laid out on the screen and can be individually\nupdated by concurrent threads. Can be used for progress displays etc.\n\n<<https://joeyh.name/code/concurrent-output/demo2.gif>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (!system.isWasm32) (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (!system.isWasm32) (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

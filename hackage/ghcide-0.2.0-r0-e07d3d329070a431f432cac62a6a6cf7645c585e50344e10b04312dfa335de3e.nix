@@ -21,7 +21,7 @@
       synopsis = "The core of an IDE";
       description = "A library for building Haskell IDE's on top of the GHC API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -60,25 +60,25 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ] ++ (if flags.ghc-lib
+        ] ++ (if flags.ghc-lib
           then [
             (hsPkgs."ghc-lib" or (errorHandler.buildDepError "ghc-lib"))
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ]
+          ]
           else [
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "ghcide-test-preprocessor" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "ghcide" = {
           depends = [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
@@ -109,10 +109,10 @@
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.ghc-lib then false else true;
-          };
         };
+      };
       tests = {
         "ghcide-tests" = {
           depends = [
@@ -143,13 +143,13 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
-            ];
+          ];
           buildable = if flags.ghc-lib then false else true;
-          };
         };
       };
-    }
+    };
+  }

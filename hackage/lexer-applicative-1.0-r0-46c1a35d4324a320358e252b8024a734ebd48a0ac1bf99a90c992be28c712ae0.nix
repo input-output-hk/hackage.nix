@@ -21,16 +21,16 @@
       synopsis = "Simple lexer based on applicative regular expressions";
       description = "Simple lexer based on applicative regular expressions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
           (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
             (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
             (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

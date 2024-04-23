@@ -14,7 +14,7 @@
       identifier = {
         name = "aws-cloudfront-signed-cookies";
         version = "0.2.0.12";
-        };
+      };
       license = "MIT";
       copyright = "2021 Mission Valley Software LLC";
       maintainer = "Chris Martin, Julie Moronuki";
@@ -24,7 +24,7 @@
       synopsis = "Generate signed cookies for AWS CloudFront";
       description = "One way to serve private content through AWS CloudFront\nis to use signed cookies. This package helps you generate signed\ncookies using a custom IAM policy which may include a range of\ntime for which the cookie is valid and an IP address restriction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,18 +44,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aws-cloudfront-signed-cookies" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aws-cloudfront-signed-cookies" or (errorHandler.buildDepError "aws-cloudfront-signed-cookies"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hedgehog" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."aws-cloudfront-signed-cookies" or (errorHandler.buildDepError "aws-cloudfront-signed-cookies"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

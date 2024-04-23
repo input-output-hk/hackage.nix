@@ -21,14 +21,14 @@
       synopsis = "Modular arithmetic via Numeric-Prelude";
       description = "Smart way of calculating long expressions in modular arithmetics.\nWatch examples at the end of a source code.\nUse NoImplicitPrelude language parameter with this module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

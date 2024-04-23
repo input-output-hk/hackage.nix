@@ -21,7 +21,7 @@
       synopsis = "A simple library for SDL+GL games.";
       description = "Gemstone helps you build games.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."stb-image" or (errorHandler.buildDepError "stb-image"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider SoundFile";
       description = "Provide hsc3-sf interface to Stefan\nKersten's hsndfile package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hsndfile" or (errorHandler.buildDepError "hsndfile"))
           (hsPkgs."hsndfile-vector" or (errorHandler.buildDepError "hsndfile-vector"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

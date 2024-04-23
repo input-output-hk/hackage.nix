@@ -6,8 +6,8 @@
         nix = import ../hackage/slim-0.0.1-r0-10d94e347ec197a3461730899acd4ff6045704a771e47efd264a8b8fb39b7a6c.nix;
         revNum = 0;
         sha256 = "10d94e347ec197a3461730899acd4ff6045704a771e47efd264a8b8fb39b7a6c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Simple C-like programming language";
       description = "Parser and AST for Cimple, a simple C-like programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,21 +35,21 @@
           (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cimplefmt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cimple" or (errorHandler.buildDepError "cimple"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dump-ast" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -57,9 +57,9 @@
             (hsPkgs."cimple" or (errorHandler.buildDepError "cimple"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dump-tokens" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,18 +67,18 @@
             (hsPkgs."cimple" or (errorHandler.buildDepError "cimple"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "include-graph" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cimple" or (errorHandler.buildDepError "cimple"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -87,12 +87,12 @@
             (hsPkgs."cimple" or (errorHandler.buildDepError "cimple"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

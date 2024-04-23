@@ -21,7 +21,7 @@
       synopsis = "Useability extras built on top of miss.";
       description = "This package builds on 'miss', providing convinient interfaces for working with git repositories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."miss" or (errorHandler.buildDepError "miss"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."posix-paths" or (errorHandler.buildDepError "posix-paths"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Minimal FRP library";
       description = "Defines minimal FRP library (classical FRP)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,17 +41,17 @@
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."temporal-media" or (errorHandler.buildDepError "temporal-media"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dyna-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dyna" or (errorHandler.buildDepError "dyna"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

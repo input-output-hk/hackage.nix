@@ -21,7 +21,7 @@
       synopsis = "websockets support for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/websockets.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."apiary" or (errorHandler.buildDepError "apiary"))
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Verification of Stripe webhook signatures";
       description = "When <https://stripe.com/ Stripe> sends an event to your webhook, it\nincludes an HTTP header named @Stripe-Signature@. You should use this\nto verify the authenticity of the request to ensure that you are not\nacting upon forged events originating from some source other than\nStripe.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
           (hsPkgs."stripe-concepts" or (errorHandler.buildDepError "stripe-concepts"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."stripe-concepts" or (errorHandler.buildDepError "stripe-concepts"))
             (hsPkgs."stripe-signature" or (errorHandler.buildDepError "stripe-signature"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

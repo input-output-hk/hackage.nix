@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "postgrest-ws" = {
           depends = [
@@ -57,18 +57,18 @@
             (hsPkgs."postgrest" or (errorHandler.buildDepError "postgrest"))
             (hsPkgs."postgrest-ws" or (errorHandler.buildDepError "postgrest-ws"))
             (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "postgrest-ws-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postgrest-ws" or (errorHandler.buildDepError "postgrest-ws"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Datatypes and parsing/printing functions to represent the Gemini markup language";
       description = "This package contains the 'GeminiDocument' datatype, representing a Gemini\n(<https://gemini.circumlunar.space>) document, together with functions for\nparsing and printing Gemini documents to/from 'Text' data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "language" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

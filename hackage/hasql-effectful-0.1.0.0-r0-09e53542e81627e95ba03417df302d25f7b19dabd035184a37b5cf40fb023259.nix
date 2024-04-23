@@ -21,7 +21,7 @@
       synopsis = "Effectful bindings for hasql";
       description = "@<https://hackage.haskell.org/package/effectful Effectful>@ bindings for @<https://hackage.haskell.org/package/hasql hasql>@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."effectful" or (errorHandler.buildDepError "effectful"))
           (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
           (hsPkgs."hasql-pool" or (errorHandler.buildDepError "hasql-pool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasql-effectful-example" = {
           depends = [
@@ -43,18 +43,18 @@
             (hsPkgs."hasql-pool" or (errorHandler.buildDepError "hasql-pool"))
             (hsPkgs."hasql-transaction" or (errorHandler.buildDepError "hasql-transaction"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hasql-effectful-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasql-effectful" or (errorHandler.buildDepError "hasql-effectful"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

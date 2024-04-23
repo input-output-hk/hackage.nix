@@ -21,7 +21,7 @@
       synopsis = "Package manager for ATS";
       description = "A collection of scripts to make building ATS projects easy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,17 +45,17 @@
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "atspkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ats-pkg" or (errorHandler.buildDepError "ats-pkg"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

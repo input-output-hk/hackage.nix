@@ -21,7 +21,7 @@
       synopsis = "A library for more structured concurrent programming, based\non the Actor Model";
       description = "simple-actors is an EDSL-style library for writing\nmore structured concurrent programs, based on the Actor\nModel. Computations are structured as \"Behaviors\" which take a\nsingle input value, perform some 'Action's, and return the\nBehavior to process the next input message it receives.\n\n/CHANGES/ 0.2.1 - 0.3:\n\n- added (@\\<-\\>@) convenience operator, and strict @send'@\n\n- add composition\\/transformation functions for Mailboxes\n\n- drop support for older base and transformers, no more CPP\n\n- depend on chan-split 0.4";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

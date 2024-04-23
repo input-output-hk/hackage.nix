@@ -21,7 +21,7 @@
       synopsis = "Generate bindings for DBus calls by using DBus introspection and dbus-th";
       description = "This package is aimed to simplify writing bindings for DBus interfaces by using\nDBus introspection and dbus-th package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dbus-introspect-hs" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

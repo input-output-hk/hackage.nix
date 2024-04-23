@@ -14,7 +14,7 @@
       identifier = {
         name = "mono-traversable-instances";
         version = "0.1.1.0";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "michael@fpcomplete.com";
@@ -24,7 +24,7 @@
       synopsis = "Extra typeclass instances for mono-traversable";
       description = "See docs and README at <http://www.stackage.org/package/mono-traversable-instance>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

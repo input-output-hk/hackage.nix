@@ -21,15 +21,15 @@
       synopsis = "Provides Boolean instances for the Vec package";
       description = "This package adds instances for the classes IfB and EqB in the Boolean package for the fixed length list data type in the Vec package.\nThese intances are useful for example when using the GPipe package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

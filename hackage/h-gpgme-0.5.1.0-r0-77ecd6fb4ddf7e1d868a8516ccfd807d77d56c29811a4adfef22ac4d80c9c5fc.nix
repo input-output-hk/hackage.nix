@@ -21,7 +21,7 @@
       synopsis = "High Level Binding for GnuPG Made Easy (gpgme)";
       description = "High Level Binding for GnuPG Made Easy (gpgme): A Haskell API for the gpgme C library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

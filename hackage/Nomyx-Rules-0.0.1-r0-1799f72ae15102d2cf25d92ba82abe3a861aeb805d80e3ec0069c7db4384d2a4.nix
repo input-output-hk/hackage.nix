@@ -21,7 +21,7 @@
       synopsis = "Language to express rules for Nomic";
       description = "Provide a DSL to express rules for the Nomic game, with evaluation engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."time-recurrence" or (errorHandler.buildDepError "time-recurrence"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "URI parser / printer using attoparsec";
       description = "Please see the README on GitHub at <https://github.com/githubuser/purescript-iso#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "attoparsec-uri-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

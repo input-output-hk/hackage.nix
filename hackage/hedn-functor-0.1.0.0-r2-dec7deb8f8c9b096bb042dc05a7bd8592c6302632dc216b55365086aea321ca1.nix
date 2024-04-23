@@ -21,7 +21,7 @@
       synopsis = "Base functor for EDN AST";
       description = "Functor encoding for recursion schemes.\n\nMini-tutorial is available on package page: <https://dpwiz.gitlab.io/hedn/05-BaseFunctor.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

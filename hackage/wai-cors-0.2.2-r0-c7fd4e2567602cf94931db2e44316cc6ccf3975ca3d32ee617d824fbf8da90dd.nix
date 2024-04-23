@@ -21,7 +21,7 @@
       synopsis = "CORS for WAI";
       description = "This package provides an implemenation of\nCross-Origin resource sharing (CORS) for\n<http://hackage.haskell.org/package/wai Wai>\nthat aims to be compliant with <http://www.w3.org/TR/cors>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -33,24 +33,24 @@
           (hsPkgs."charset" or (errorHandler.buildDepError "charset"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
-          ] ++ (if flags.wai-1
+        ] ++ (if flags.wai-1
           then [
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-            ]
+          ]
           else [
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ])) ++ (if flags.transformers-3
+          ])) ++ (if flags.transformers-3
           then [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

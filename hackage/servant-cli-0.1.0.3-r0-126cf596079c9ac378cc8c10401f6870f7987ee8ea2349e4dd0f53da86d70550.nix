@@ -21,7 +21,7 @@
       synopsis = "Command line interface for Servant API clients";
       description = "Parse command line arguments into a servant client, from a servant API,\nusing /optparse-applicative/ for parsing, displaying help, and\nauto-completion.\n\nHooks into the annotation system used by /servant-docs/ to provide descriptions\nfor parameters and captures.\n\nSee @example/greet.hs@ for an example usage, and the\n<https://hackage.haskell.org/package/servant-cli README> for a tutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "greet-cli" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Silk Rest Framework Types";
       description = "Silk Rest Framework Types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."rest-stringmap" or (errorHandler.buildDepError "rest-stringmap"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extra servant combinators for full WAI functionality.";
       description = "Servant covers most of the data in a raw WAI request, but misses a few fields. This library aims to let handler authors get all the information about a request they need.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "live-test" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "check" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

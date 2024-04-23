@@ -21,7 +21,7 @@
       synopsis = "Tests for the pure-priority-queue package";
       description = "This package provides a test program for the\npure-priority-queue package.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pure-priority-queue-tests" = {
@@ -32,9 +32,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

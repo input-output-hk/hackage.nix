@@ -21,7 +21,7 @@
       synopsis = "A web interface for Wrecker, the HTTP Performance Benchmarker";
       description = "'wrecker-ui' is a web based interface to visualize performance tests built using the wrecker library and schedule test runs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wrecker-ui" = {
@@ -62,9 +62,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

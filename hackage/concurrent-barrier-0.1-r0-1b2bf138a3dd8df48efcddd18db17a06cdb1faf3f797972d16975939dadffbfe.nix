@@ -21,11 +21,11 @@
       synopsis = "Simple thread barriers";
       description = "A very simple package providing thread barriers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

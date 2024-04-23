@@ -6,8 +6,8 @@
         nix = import ../hackage/Parallel-Arrows-ParMonad-0.1.1.0-r0-44e2e2ec3cef426456d17aec256969b7dbacb554a1cd801445d03a6862632eb7.nix;
         revNum = 0;
         sha256 = "44e2e2ec3cef426456d17aec256969b7dbacb554a1cd801445d03a6862632eb7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

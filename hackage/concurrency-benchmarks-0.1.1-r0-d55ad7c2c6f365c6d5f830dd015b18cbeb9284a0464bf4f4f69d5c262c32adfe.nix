@@ -21,7 +21,7 @@
       synopsis = "Benchmarks to compare concurrency APIs";
       description = "Benchmarks to compare the pure concurrency overhead of various flavors of\nconcurrent @streamly@ streams and the @async@ package.\n\nUse @cabal new-bench@ or @stack bench@ to run the benchmarks. To generate\ncharts, run the benchmarks with @--csv-raw=results.csv@ option and then run\n@makecharts results.csv@. Charts are generated in the @charts@ directory.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "makecharts" = {
@@ -38,10 +38,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."getopt-generics" or (errorHandler.buildDepError "getopt-generics"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

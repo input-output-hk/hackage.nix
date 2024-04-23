@@ -21,7 +21,7 @@
       synopsis = "Creating graphics for pencil puzzles, command line tools.";
       description = "Companion executable to puzzle-draw. Separate to keep\nthe dependency on diagrams-cairo out of the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "drawpuzzle" = {
@@ -33,15 +33,15 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.cairo
+          ] ++ (if flags.cairo
             then [
               (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-              ]
+            ]
             else [
               (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

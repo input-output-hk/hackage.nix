@@ -21,15 +21,15 @@
       synopsis = "An implementation of Luhn's check digit algorithm.";
       description = "An implementation of Luhn's check digit algorithm.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."digits" or (errorHandler.buildDepError "digits"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

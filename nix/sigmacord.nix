@@ -6,8 +6,8 @@
         nix = import ../hackage/sigmacord-1.0.0-r0-47279dd75e4a18074f8785e99ddd40da420c34f62d9ad980ccfd130d910230af.nix;
         revNum = 0;
         sha256 = "47279dd75e4a18074f8785e99ddd40da420c34f62d9ad980ccfd130d910230af";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

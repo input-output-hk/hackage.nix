@@ -21,7 +21,7 @@
       synopsis = "A library for working with anything map related.";
       description = "Naqsha is a library to work with geospatial data types,\nlike latitudes and longitudes, mapping projects like openstreetmap,\nvarious map related file formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "geospatial" = {
@@ -30,10 +30,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."groups" or (errorHandler.buildDepError "groups"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."naqsha".components.sublibs.geospatial or (errorHandler.buildDepError "naqsha:geospatial"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

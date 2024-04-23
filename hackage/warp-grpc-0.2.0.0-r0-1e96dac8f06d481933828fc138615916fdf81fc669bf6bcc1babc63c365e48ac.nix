@@ -21,7 +21,7 @@
       synopsis = "A minimal gRPC server on top of Warp.";
       description = "Please see the README on Github at <https://github.com/haskell-grpc-native/http2-grpc-haskell/blob/master/warp-grpc/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

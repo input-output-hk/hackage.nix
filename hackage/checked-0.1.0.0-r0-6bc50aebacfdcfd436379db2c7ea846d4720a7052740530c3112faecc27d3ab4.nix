@@ -21,14 +21,14 @@
       synopsis = "Bounds-checking integer types.";
       description = "Includes replacements for all of the 'Data.Int' and 'Data.Word' types.\nNo effort has been made towards performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

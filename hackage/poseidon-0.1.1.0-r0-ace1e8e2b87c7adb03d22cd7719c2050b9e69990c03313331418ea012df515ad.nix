@@ -21,7 +21,7 @@
       synopsis = "Simple extensible library to run SQL file against PostgreSQL database.";
       description = "Poseidon provides a Simple and Extensible access to PostgreSQL.\n\nSimple: Poseidon runs a SQL query and returns a set of custom datatype.\n**It is not an ORM.**\n\nExtensible: As a user of the library, you can map your custom PostgreSQL\ntype to your Haskell datatype easily, in a pluggable way (e.g. if you're\nusing postgis, you will be most likely interested by poseidon-postgis,\nthat maps GeoJSON WKT to GeospatialGeometry).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

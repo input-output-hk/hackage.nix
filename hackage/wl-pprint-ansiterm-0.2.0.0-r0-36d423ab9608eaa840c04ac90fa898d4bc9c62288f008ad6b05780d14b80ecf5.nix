@@ -21,7 +21,7 @@
       synopsis = "ANSI Terminal support with wl-pprint-extras";
       description = "ANSI Terminal support with wl-pprint-extras";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

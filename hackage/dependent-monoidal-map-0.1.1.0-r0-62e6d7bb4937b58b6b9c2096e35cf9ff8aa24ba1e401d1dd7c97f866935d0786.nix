@@ -21,7 +21,7 @@
       synopsis = "Dependent map that uses semigroup mappend";
       description = "Data.Dependent.Map variant that appends conflicting entries when merging maps instead of discarding one side of the conflict.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."dependent-sum-aeson-orphans" or (errorHandler.buildDepError "dependent-sum-aeson-orphans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

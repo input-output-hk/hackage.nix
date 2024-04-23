@@ -6,8 +6,8 @@
         nix = import ../hackage/hsverilog-0.1.0-r0-83c904b85746c977c8c154df42c7aee26336febbd76041267395fda0d0168140.nix;
         revNum = 0;
         sha256 = "83c904b85746c977c8c154df42c7aee26336febbd76041267395fda0d0168140";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

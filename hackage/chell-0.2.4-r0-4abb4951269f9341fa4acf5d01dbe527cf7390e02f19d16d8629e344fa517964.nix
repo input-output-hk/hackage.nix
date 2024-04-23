@@ -21,7 +21,7 @@
       synopsis = "A simple and intuitive library for automated testing.";
       description = "Chell is a simple and intuitive library for automated testing. It natively\nsupports assertion-based testing, and can use companion libraries\nsuch as @chell-quickcheck@ to support more complex testing strategies.\n\nAn example test suite, which verifies the behavior of artithmetic operators.\n\n@\n&#x7b;-\\# LANGUAGE OverloadedStrings \\#-&#x7d;\n&#x7b;-\\# LANGUAGE TemplateHaskell \\#-&#x7d;\n\nimport Test.Chell\n\ntest_Math :: Suite\ntest_Math = suite \\\"math\\\" [test_Addition, test_Subtraction]\n\ntest_Addition :: Suite\ntest_Addition = assertions \\\"addition\\\" $ do\n&#x20;   $expect (equal (2 + 1) 3)\n&#x20;   $expect (equal (1 + 2) 3)\n\ntest_Subtraction :: Suite\ntest_Subtraction = assertions \\\"subtraction\\\" $ do\n&#x20;   $expect (equal (2 - 1) 1)\n&#x20;   $expect (equal (1 - 2) (-1))\n\nmain :: IO ()\nmain = defaultMain [test_Math]\n@\n\n@\n$ ghc --make chell-example.hs\n$ ./chell-example\nPASS: 2 tests run, 2 tests passed\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.color-output) (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"));
+        ] ++ pkgs.lib.optional (flags.color-output) (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

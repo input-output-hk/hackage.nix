@@ -21,7 +21,7 @@
       synopsis = "Point-free Haskell as a service.";
       description = "<https://github.com/tfausak/blunt>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blunt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blunt" or (errorHandler.buildDepError "blunt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

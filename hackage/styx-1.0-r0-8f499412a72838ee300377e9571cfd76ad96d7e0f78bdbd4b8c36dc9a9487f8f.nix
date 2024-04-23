@@ -21,7 +21,7 @@
       synopsis = "A generator of nix files";
       description = "Soon to appear.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "styx" = {
@@ -36,9 +36,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

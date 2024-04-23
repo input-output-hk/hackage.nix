@@ -21,7 +21,7 @@
       synopsis = "Structured logging solution (base package)";
       description = "A library that provides a way to record structured log\nmessages. Use this package in conjunction with\n'log-elasticsearch' or 'log-postgres', depending\non which back end you need.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

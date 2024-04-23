@@ -21,7 +21,7 @@
       synopsis = "POSIX Backend for \"Text.Regex\" (regex-base)";
       description = "The POSIX regex backend for <//hackage.haskell.org/package/regex-base regex-base>.\n\nThe main appeal of this backend is that it's very lightweight due to its reliance on the ubiquitous <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/regex.h.html POSIX.2 regex> facility that is provided by the standard C library on most POSIX platforms.\n\nSee also <https://wiki.haskell.org/Regular_expressions> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -30,12 +30,12 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ (if flags._regex-posix-clib
+        ] ++ (if flags._regex-posix-clib
           then [
             (hsPkgs."regex-posix-clib" or (errorHandler.buildDepError "regex-posix-clib"))
-            ]
-          else (pkgs.lib).optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base")))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+          ]
+          else pkgs.lib.optional (system.isWindows) (hsPkgs."base" or (errorHandler.buildDepError "base")))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8")) (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Description";
       description = "Description.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mmark" = {
@@ -40,9 +40,9 @@
             (hsPkgs."stache" or (errorHandler.buildDepError "stache"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

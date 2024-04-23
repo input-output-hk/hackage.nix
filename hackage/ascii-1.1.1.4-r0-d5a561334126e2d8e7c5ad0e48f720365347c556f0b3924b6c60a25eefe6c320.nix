@@ -21,7 +21,7 @@
       synopsis = "The ASCII character set and encoding";
       description = "This package provides a variety of ways to work with ASCII text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."ascii-predicates" or (errorHandler.buildDepError "ascii-predicates"))
           (hsPkgs."ascii-superset" or (errorHandler.buildDepError "ascii-superset"))
           (hsPkgs."ascii-th" or (errorHandler.buildDepError "ascii-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ascii" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ascii" or (errorHandler.buildDepError "ascii"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

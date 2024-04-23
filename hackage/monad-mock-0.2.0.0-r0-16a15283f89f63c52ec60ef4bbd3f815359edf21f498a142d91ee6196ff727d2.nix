@@ -21,7 +21,7 @@
       synopsis = "A monad transformer for mocking mtl-style typeclasses";
       description = "This package provides a monad transformer that helps create “mocks” of\n@mtl@-style typeclasses, intended for use in unit tests. A mock can be\nexecuted by providing a sequence of expected monadic calls and their results,\nand the mock will verify that the computation conforms to the expectation.\n\nFor more information, see the module documentation for \"Control.Monad.Mock\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
-        };
+      };
       tests = {
         "monad-stub-test-suite" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."monad-mock" or (errorHandler.buildDepError "monad-mock"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

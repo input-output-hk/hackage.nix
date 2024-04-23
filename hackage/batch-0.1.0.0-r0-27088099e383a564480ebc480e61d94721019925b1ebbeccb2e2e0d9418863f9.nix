@@ -21,7 +21,7 @@
       synopsis = "Simplify queuing up data and processing it in batch.";
       description = "Simplify queuing up data and processing it in batch.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "batch-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

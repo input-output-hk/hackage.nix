@@ -21,16 +21,16 @@
       synopsis = "Confirm whether an email is valid and probably existant.";
       description = "See README at <https://github.com/qoelet/check-email#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
-          ];
+        ];
         libs = [ (pkgs."resolv" or (errorHandler.sysDepError "resolv")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

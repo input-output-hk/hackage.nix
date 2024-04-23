@@ -21,7 +21,7 @@
       synopsis = "Extends hashtables so that entries added can be expired after a TTL";
       description = "Please see the README on Gitlab at <https://gitlab.com/codemonkeylabs/ttl-hashtables#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ttl-hashtables-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ttl-hashtables" or (errorHandler.buildDepError "ttl-hashtables"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

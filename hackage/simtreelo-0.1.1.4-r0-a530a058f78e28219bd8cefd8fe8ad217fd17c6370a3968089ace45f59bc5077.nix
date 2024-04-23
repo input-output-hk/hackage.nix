@@ -21,14 +21,14 @@
       synopsis = "Load data organized in a tree.";
       description = "This library loads a string or file into a Tree. The hierarchy is given solely by the indentation, meaning that the input is human-readable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

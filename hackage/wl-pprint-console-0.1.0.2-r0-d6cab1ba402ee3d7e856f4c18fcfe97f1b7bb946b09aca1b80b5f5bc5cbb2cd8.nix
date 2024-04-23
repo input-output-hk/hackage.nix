@@ -21,7 +21,7 @@
       synopsis = "Wadler/Leijen pretty printer supporting colorful console output.";
       description = "Wadler/Leijen pretty printer with support for annotations and colorful console output. Additional useful display routines are provided, e.g, for HTML output.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."colorful-monoids" or (errorHandler.buildDepError "colorful-monoids"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wl-pprint-annotated" or (errorHandler.buildDepError "wl-pprint-annotated"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

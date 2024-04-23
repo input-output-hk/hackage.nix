@@ -6,8 +6,8 @@
         nix = import ../hackage/money-0.1.0-r0-a9cbd595a8ba2b20df8f7c8510f6600c5342b924d5d7a12a12003b1af823a5bf.nix;
         revNum = 0;
         sha256 = "a9cbd595a8ba2b20df8f7c8510f6600c5342b924d5d7a12a12003b1af823a5bf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

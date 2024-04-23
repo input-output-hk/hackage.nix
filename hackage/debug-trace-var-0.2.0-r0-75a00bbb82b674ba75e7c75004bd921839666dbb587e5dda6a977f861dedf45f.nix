@@ -21,15 +21,15 @@
       synopsis = "You do not have to write variable names twice in Debug.Trace";
       description = "Please see the README on GitHub at <https://github.com/ncaq/debug-trace-var#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,6 +21,6 @@
       synopsis = "Overloading support for haskell-gi";
       description = "Control overloading support in haskell-gi generated bindings";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

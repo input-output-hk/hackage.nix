@@ -21,7 +21,7 @@
       synopsis = "A version of Hspec which is used to test Hspec itself";
       description = "A stable version of Hspec which is used to test the\nin-development version of Hspec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hspec-meta-discover" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

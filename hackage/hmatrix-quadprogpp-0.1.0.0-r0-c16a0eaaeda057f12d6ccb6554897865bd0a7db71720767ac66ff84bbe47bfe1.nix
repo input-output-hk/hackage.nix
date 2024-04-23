@@ -21,19 +21,19 @@
       synopsis = "Bindings to QuadProg++";
       description = "Bindings to QuadProg++, a C++ library for quadratic programming.\n<http://sourceforge.net/projects/quadprog/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         libs = [
           (pkgs."QuadProgpp" or (errorHandler.sysDepError "QuadProgpp"))
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

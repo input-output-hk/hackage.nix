@@ -21,7 +21,7 @@
       synopsis = "A dependency manager for Xcode (Objective-C) projects";
       description = "A dependency manager for Xcode (Objective-C) projects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kit" = {
@@ -43,9 +43,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

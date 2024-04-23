@@ -21,7 +21,7 @@
       synopsis = "Append only key-list database";
       description = "Please see the README on GitHub at <https://github.com/fumieval/liszt#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liszt" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lisztd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -107,10 +107,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -139,9 +139,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hw-playground-linear-0.1.0.0-r0-756a2c4ce887a7156e1b070d8b1542a674d247c5a061a2e1128ff9969cc72476.nix;
         revNum = 0;
         sha256 = "756a2c4ce887a7156e1b070d8b1542a674d247c5a061a2e1128ff9969cc72476";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

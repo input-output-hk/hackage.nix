@@ -21,7 +21,7 @@
       synopsis = "A modern Haskell based AWK replacement";
       description = "A simple Haskell-based replacement for awk/sed.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hwk" = {
@@ -33,9 +33,9 @@
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

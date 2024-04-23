@@ -6,8 +6,8 @@
         nix = import ../hackage/ety-0.1-r0-41cee6cccdfeca317c883604ce016f4ba18144f7940140c5d4a45f6f22c6702c.nix;
         revNum = 0;
         sha256 = "41cee6cccdfeca317c883604ce016f4ba18144f7940140c5d4a45f6f22c6702c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

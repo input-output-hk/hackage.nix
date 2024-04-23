@@ -21,7 +21,7 @@
       synopsis = "Some functions to aid in the creation of Cabal packages for Quipper.";
       description = "This package provides functions that can be used in custom Setup.hs\nscripts, to aid in creating Cabal packages for Quipper programs.\nSpecifically, this allows Cabal to access the Quipper preprocessor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."quipper-language" or (errorHandler.buildDepError "quipper-language"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

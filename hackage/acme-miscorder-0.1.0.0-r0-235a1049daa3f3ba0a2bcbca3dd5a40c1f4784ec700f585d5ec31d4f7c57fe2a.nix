@@ -21,14 +21,14 @@
       synopsis = "Miscellaneous newtypes for orderings of discutable use.";
       description = "A collection of newtypes with Ord and Eq instances with peculiar behaviours.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

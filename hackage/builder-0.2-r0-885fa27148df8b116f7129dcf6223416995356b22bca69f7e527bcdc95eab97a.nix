@@ -21,7 +21,7 @@
       synopsis = "bounded ByteArray builder type";
       description = "A Builder type for ByteArray. Appending these builders\ncan be cheaper than when appending ByteArray values, since\nonly one buffer allocation is performed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."byte-order" or (errorHandler.buildDepError "byte-order"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-unaligned" or (errorHandler.buildDepError "primitive-unaligned"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

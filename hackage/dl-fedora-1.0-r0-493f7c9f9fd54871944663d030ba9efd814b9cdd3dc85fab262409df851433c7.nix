@@ -21,7 +21,7 @@
       synopsis = "Fedora image download tool";
       description = "Tool to download Fedora and Centos Stream iso and image files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dl-fedora" = {
@@ -45,21 +45,21 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xdg-userdirs" or (errorHandler.buildDepError "xdg-userdirs"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.dl-fedora.components.exes.dl-fedora or (pkgs.buildPackages.dl-fedora or (errorHandler.buildToolDepError "dl-fedora:dl-fedora")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

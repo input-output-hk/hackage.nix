@@ -21,7 +21,7 @@
       synopsis = "Metadata types for Albedo Scanners";
       description = "Metadata types for Albedo Scanners.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

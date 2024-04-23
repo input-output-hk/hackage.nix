@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-codestar-connections-2.0-r0-e094cb91a91d87570304595ec85bfbbff1c18c16eca11e5a95485383c0a6f60c.nix;
         revNum = 0;
         sha256 = "e094cb91a91d87570304595ec85bfbbff1c18c16eca11e5a95485383c0a6f60c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Parser and related tools for ESRI shapefile format";
       description = "A very simple interface for processing data in ESRI\nshapefile format.  Includes functions for reading or\nwriting whole .shp and .shx files, as well as for\ngenerating .shx index files from .shp data files.\nAlso includes an interface to read individual records\non-demand from shapefiles, useful for very large databases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."rwlock" or (errorHandler.buildDepError "rwlock"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

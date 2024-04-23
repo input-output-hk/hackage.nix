@@ -21,7 +21,7 @@
       synopsis = "QuickCheck for Polysemy";
       description = "Please see the README on GitHub at <https://github.com/polysemy-research/polysemy-check#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."kind-generics" or (errorHandler.buildDepError "kind-generics"))
           (hsPkgs."kind-generics-th" or (errorHandler.buildDepError "kind-generics-th"))
           (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,12 +46,12 @@
             (hsPkgs."polysemy" or (errorHandler.buildDepError "polysemy"))
             (hsPkgs."polysemy-check" or (errorHandler.buildDepError "polysemy-check"))
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

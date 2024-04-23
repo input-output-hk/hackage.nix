@@ -21,7 +21,7 @@
       synopsis = "A lightweight golden test runner";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "goldplate" = {
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

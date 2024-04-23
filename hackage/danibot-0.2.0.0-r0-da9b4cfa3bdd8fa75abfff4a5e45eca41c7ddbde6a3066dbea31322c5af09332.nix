@@ -21,7 +21,7 @@
       synopsis = "Basic Slack bot framework.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,18 +44,18 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "danibot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."danibot" or (errorHandler.buildDepError "danibot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/posix-escape-0.1-r0-adbb650397cd8685ea220b40739ee80d4e8329643a98aa2993a6f13a598bd18c.nix;
         revNum = 0;
         sha256 = "adbb650397cd8685ea220b40739ee80d4e8329643a98aa2993a6f13a598bd18c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

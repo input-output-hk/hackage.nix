@@ -21,15 +21,15 @@
       synopsis = "Utilities for bindings to the LLVM compiler toolkit.";
       description = "* Exposing the LLVM.Core.Util from llvm to make llvm-base much easier to use. It's for people where llvm high level interface is not suitable but llvm-base is too low level to use";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."llvm-base" or (errorHandler.buildDepError "llvm-base"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."vecLib" or (errorHandler.sysDepError "vecLib"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."vecLib" or (errorHandler.sysDepError "vecLib"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

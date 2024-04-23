@@ -21,7 +21,7 @@
       synopsis = "Use network sockets together with the pipes library.";
       description = "Use network sockets together with the @pipes@ library.\n\nThis package is organized using the following namespaces:\n\n* \"Pipes.Network.TCP\" exports pipes and utilities for using TCP connections in\na streaming fashion.\n\n* \"Pipes.Network.TCP.Safe\" subsumes \"Pipes.Network.TCP\", exporting pipes and\nfunctions that allow you to safely establish new TCP connections within a\npipeline using the @pipes-safe@ facilities. You only need to use this module\nif you want to safely acquire and release operating system resources within a\npipeline.\n\nSee the @NEWS@ file in the source distribution to learn about any\nimportant changes between version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

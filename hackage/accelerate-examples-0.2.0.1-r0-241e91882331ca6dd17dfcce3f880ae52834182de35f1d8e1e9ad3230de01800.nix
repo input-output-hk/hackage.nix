@@ -21,7 +21,7 @@
       synopsis = "Examples using the Accelerate library";
       description = "Examples using the Accelerate library";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "accelerate-examples" = {
@@ -43,10 +43,10 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ];
+          ];
           libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

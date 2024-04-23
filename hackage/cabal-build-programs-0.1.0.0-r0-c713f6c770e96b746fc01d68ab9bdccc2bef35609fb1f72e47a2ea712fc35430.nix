@@ -21,14 +21,14 @@
       synopsis = "Adds executable dependencies to the Cabal build";
       description = "Please see the README on GitHub at <https://github.com/deech/cabal-build-programs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

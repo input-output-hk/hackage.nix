@@ -21,7 +21,7 @@
       synopsis = "The Haskell base";
       description = "The Haskell base - automatically generated from the opentheory package\nhaskell-1.76";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "opentheory-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

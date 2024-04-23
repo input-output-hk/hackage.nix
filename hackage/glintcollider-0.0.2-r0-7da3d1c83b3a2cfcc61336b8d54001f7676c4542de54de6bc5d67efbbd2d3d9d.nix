@@ -21,7 +21,7 @@
       synopsis = "A simple ray tracer in an early stage of development.";
       description = "A simple ray tracer in an early stage of development.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "glintcollider" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ppm" or (errorHandler.buildDepError "ppm"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

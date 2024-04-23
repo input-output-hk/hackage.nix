@@ -21,13 +21,13 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haddock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (if flags.in-ghc-tree
+          ] ++ (if flags.in-ghc-tree
             then [
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -39,13 +39,13 @@
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-              ]
+            ]
             else [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "html-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "latex-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,9 +64,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

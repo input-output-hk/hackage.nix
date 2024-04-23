@@ -6,8 +6,8 @@
         nix = import ../hackage/looksee-trip-0.6.0-r0-112528a545789dd993d8f3b06102b37c669460b716383be8ea3ea5cb7df80005.nix;
         revNum = 0;
         sha256 = "112528a545789dd993d8f3b06102b37c669460b716383be8ea3ea5cb7df80005";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

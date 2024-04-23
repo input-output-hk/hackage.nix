@@ -21,7 +21,7 @@
       synopsis = "A Haskell library as database client for Clickhouse";
       description = "Clickhouse-Haskell is a library for making connection with the server of\ncolumn-oriented DBMS, Clickhouse. This library supports SELECT, INSERT and other query commands.\nClickhouse-Haskell is also implemented with Haxl, an concurrent data accessing API developed by Facebook,\nfor efficient interaction with the server.\nFor more detail, see: https://github.com/2049foundation/clickhouse-haskell#readme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,9 +64,9 @@
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "clickhouse-haskell-test" = {
           depends = [
@@ -113,9 +113,9 @@
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

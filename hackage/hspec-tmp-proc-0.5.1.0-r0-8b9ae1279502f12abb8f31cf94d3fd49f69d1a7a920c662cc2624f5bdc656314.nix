@@ -21,15 +21,15 @@
       synopsis = "Simplify use of tmp-proc from hspec tests";
       description = "Reduces boilerplate when using tmp-proc with hspec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."tmp-proc" or (errorHandler.buildDepError "tmp-proc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

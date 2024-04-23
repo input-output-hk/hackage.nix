@@ -21,11 +21,11 @@
       synopsis = "Strict concurrency abstractions";
       description = "This package provides strict versions of some standard Haskell\nconcurrency abstractions (MVars,Chans), which provide control\nover where evaluation takes place not offered by the default\nlazy types. This may be useful for deciding when and where\nevaluation occurs, leading to improved time or space use,\ndepending on the circumstances.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parse and render DTD files (deprecated)";
       description = "Parse and render DTD files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

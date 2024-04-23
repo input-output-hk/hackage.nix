@@ -6,8 +6,8 @@
         nix = import ../hackage/tak-0.1.0.0-r0-475f52319dbd21fcb535984676abd7af46d5e79ec0e112f8f4edfdf7293fa3e3.nix;
         revNum = 0;
         sha256 = "475f52319dbd21fcb535984676abd7af46d5e79ec0e112f8f4edfdf7293fa3e3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "GLFW-b demo";
       description = "This is a demonstration of GLFW-b\n(<http://hackage.haskell.org/package/GLFW-b>) allowing the user to interact\nwith colorful spinning gears using cursor keys, mouse, scroll wheel, and\njoystick.\n\nHere's a screenshot: <http://i.imgur.com/JZKwVSu.png>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "GLFW-b-demo" = {
@@ -33,9 +33,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

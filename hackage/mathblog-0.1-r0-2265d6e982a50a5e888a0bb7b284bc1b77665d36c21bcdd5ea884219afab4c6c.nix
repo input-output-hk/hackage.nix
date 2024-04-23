@@ -21,7 +21,7 @@
       synopsis = "A program for creating and managing a\nstatic, mathematically-inclined weblog";
       description = "This package provides a program for creating and\nmanaging a statically-generated, VCS-friendly,\nmathematically-inclined weblog.  If you're\ninterested in managing a blog with few moving\nparts and support for embedded LaTeX math and the\nUNIX editor of your choice, then this is the\nblogging platform for you!  For detailed\ninformation, please see the README.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mb" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

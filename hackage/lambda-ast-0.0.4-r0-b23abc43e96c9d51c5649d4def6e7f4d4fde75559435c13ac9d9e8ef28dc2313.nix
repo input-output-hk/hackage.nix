@@ -21,11 +21,11 @@
       synopsis = "Untyped Lambda Calculus Abstract Syntax Tree";
       description = "An AST for the untyped lambda calculus. The AST is parameterized by symbol type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

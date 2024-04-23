@@ -21,11 +21,11 @@
       synopsis = "Wrappers for n-ary tuples with Traversable and Applicative/Monad instances.";
       description = "Provides @newtype@ wrappers for n-ary homogenous tuples of types @(a,...,a)@ and instances for @Functor@, @Applicative@ (zipping), @Monad@, @Foldable@ and @Traversable@. The package aims to be Haskell98 compliant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

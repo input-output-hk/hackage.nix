@@ -21,7 +21,7 @@
       synopsis = "Build a Delaunay triangulation of a set of points";
       description = "This package provides a single function that builds a Delaunay triangulation of a set of points.\nUse '--ghc-options=-fllvm' for improved performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."AC-Vector" or (errorHandler.buildDepError "AC-Vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "delaunay-testsuite" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."delaunay" or (errorHandler.buildDepError "delaunay"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

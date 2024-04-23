@@ -21,73 +21,73 @@
       synopsis = "Utilities for manipulating XML documents";
       description = "Haskell utilities for parsing, filtering, transforming and\ngenerating XML documents.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Canonicalise" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CanonicaliseLazy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Xtract" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "XtractLazy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Validate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MkOneOf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "DtdToHaskell" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

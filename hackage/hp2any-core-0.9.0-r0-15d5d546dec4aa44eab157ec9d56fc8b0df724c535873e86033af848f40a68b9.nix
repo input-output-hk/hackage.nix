@@ -21,7 +21,7 @@
       synopsis = "Heap profiling helper library";
       description = "This is the core library of the hp2any suite. It makes heap profiles\navailable during runtime through a simple interface, optionally\nmanaging all the data in the background. It can also process\narchived profiler output and present it in a structured form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-trie" or (errorHandler.buildDepError "bytestring-trie"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

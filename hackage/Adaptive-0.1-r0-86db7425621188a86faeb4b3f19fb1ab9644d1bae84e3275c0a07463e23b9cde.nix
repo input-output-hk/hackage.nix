@@ -21,11 +21,11 @@
       synopsis = "Adaptive precision floating-point arithmetic";
       description = "Lazy arithmetic computed with as much precision as demanded ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

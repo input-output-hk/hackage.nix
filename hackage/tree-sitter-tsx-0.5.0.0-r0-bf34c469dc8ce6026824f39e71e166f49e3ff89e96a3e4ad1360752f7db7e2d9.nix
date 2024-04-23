@@ -21,14 +21,14 @@
       synopsis = "Tree-sitter grammar/parser for TSX";
       description = "This package provides a parser for TSX (TypeScript + XML) suitable for use with the tree-sitter package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tree-sitter" or (errorHandler.buildDepError "tree-sitter"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

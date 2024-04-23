@@ -21,7 +21,7 @@
       synopsis = "Auto Korean conjugator/adjustor/adopter/converter";
       description = "Please see the README on GitHub at <https://github.com/QuietJoon/ENIG#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ENIG-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

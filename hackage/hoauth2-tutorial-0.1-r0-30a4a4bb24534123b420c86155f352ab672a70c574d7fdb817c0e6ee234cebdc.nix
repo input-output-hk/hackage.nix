@@ -21,7 +21,7 @@
       synopsis = "Tutorial for using hoauth2";
       description = "Tutorial to demostrate how to use hoauth2 to implement OAuth2 flow in an web Application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hoauth2-tutorial" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hoauth2-tutorial" or (errorHandler.buildDepError "hoauth2-tutorial"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

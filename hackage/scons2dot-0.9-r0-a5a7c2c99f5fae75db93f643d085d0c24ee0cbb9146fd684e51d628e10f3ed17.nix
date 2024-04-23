@@ -21,7 +21,7 @@
       synopsis = "Generates graphviz file of scons dependency information";
       description = "This tool creates a graphviz dot file that represents\nbuild dependencies on a system built with scons.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scons2dot" = {
@@ -30,9 +30,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

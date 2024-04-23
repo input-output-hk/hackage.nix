@@ -6,8 +6,8 @@
         nix = import ../hackage/event-handlers-0.0.0.3-r0-44ea79a6914844ae74e55195bd385faa7d6790865c0d255774fc002264645285.nix;
         revNum = 0;
         sha256 = "44ea79a6914844ae74e55195bd385faa7d6790865c0d255774fc002264645285";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

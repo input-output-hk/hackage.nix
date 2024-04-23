@@ -21,7 +21,7 @@
       synopsis = "CSV streaming support via cassava for the streamly ecosystem";
       description = "Please see the README on GitHub at <https://github.com/litxio/streamly-cassava#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "streamly-cassava-exe" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."streamly-cassava" or (errorHandler.buildDepError "streamly-cassava"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "streamly-cassava-test" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."streamly-cassava" or (errorHandler.buildDepError "streamly-cassava"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "streamly-cassava-bench" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."streamly-cassava" or (errorHandler.buildDepError "streamly-cassava"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/ListWriter-0.1.0.0-r0-50ab5f875feffe1de51b14debca008830338d19f7182dbb018e75ef7e1be72ee.nix;
         revNum = 0;
         sha256 = "50ab5f875feffe1de51b14debca008830338d19f7182dbb018e75ef7e1be72ee";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

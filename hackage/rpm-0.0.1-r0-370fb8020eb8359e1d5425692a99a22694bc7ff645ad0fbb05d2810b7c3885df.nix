@@ -21,7 +21,7 @@
       synopsis = "Cozy little project to question unruly rpm packages.";
       description = "RPM is a decent system for listing dependencies among packages.  In its simplest form it works quite well.  Dependency management can become troublesome if you have a system that provides numerous packages.  Worse yet, if you provide many packages for many different versions of a software application.  This library aims to provide a rich set of combinators to assert the validity of a collection of RPMs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,12 +30,12 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-rpm" = {
-          depends = (pkgs.lib).optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!!flags.tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck" or (errorHandler.buildDepError "test-framework-quickcheck"))
@@ -46,9 +46,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

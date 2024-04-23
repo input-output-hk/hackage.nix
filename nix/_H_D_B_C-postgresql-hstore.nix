@@ -6,8 +6,8 @@
         nix = import ../hackage/HDBC-postgresql-hstore-0.0.1.2-r0-91d5ab0eb4cc3a27689adeaa345e90b50f8d3fc280604fa41553444848aef974.nix;
         revNum = 0;
         sha256 = "91d5ab0eb4cc3a27689adeaa345e90b50f8d3fc280604fa41553444848aef974";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

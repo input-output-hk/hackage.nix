@@ -21,29 +21,29 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-vl" or (errorHandler.buildDepError "free-vl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "free-vl-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-vl" or (errorHandler.buildDepError "free-vl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

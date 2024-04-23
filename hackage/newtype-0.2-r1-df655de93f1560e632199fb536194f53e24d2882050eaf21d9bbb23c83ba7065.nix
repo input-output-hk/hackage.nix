@@ -21,11 +21,11 @@
       synopsis = "A typeclass and set of functions for working with newtypes.";
       description = "Per Conor McBride, the Newtype typeclass represents the packing and unpacking of a newtype, and allows you to operatate under that newtype with functions such as ala.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

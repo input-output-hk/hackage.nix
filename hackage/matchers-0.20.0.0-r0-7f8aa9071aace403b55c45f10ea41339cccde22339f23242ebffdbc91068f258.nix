@@ -21,7 +21,7 @@
       synopsis = "Text matchers";
       description = "Helpers for performing text matches.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."prednote" or (errorHandler.buildDepError "prednote"))
-          ];
+        ];
         libs = [ (pkgs."pcre" or (errorHandler.sysDepError "pcre")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

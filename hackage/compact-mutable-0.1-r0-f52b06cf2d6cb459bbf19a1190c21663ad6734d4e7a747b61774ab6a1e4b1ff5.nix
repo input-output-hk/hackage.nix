@@ -21,7 +21,7 @@
       synopsis = "Mutable arrays living on the compact heap";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."prim-array" or (errorHandler.buildDepError "prim-array"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."ghc-compact" or (errorHandler.buildDepError "ghc-compact"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."compact-mutable" or (errorHandler.buildDepError "compact-mutable"))
             (hsPkgs."ghc-compact" or (errorHandler.buildDepError "ghc-compact"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

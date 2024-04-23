@@ -21,7 +21,7 @@
       synopsis = "Shake build system on-disk caching";
       description = "Please see Development.Shake.Persist and example in source.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ex.shake-persist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shake-persist" or (errorHandler.buildDepError "shake-persist"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

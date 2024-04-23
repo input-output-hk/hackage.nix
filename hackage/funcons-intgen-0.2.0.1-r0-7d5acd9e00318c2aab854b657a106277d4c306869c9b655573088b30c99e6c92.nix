@@ -21,7 +21,7 @@
       synopsis = "Generate Funcons interpreters from CBS description files";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cbsc" = {
@@ -40,9 +40,9 @@
             (hsPkgs."regex-applicative" or (errorHandler.buildDepError "regex-applicative"))
             (hsPkgs."iml-tools" or (errorHandler.buildDepError "iml-tools"))
             (hsPkgs."funcons-values" or (errorHandler.buildDepError "funcons-values"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

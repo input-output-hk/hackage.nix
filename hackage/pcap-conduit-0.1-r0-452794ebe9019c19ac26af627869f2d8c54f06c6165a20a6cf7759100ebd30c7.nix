@@ -21,7 +21,7 @@
       synopsis = "Conduit <-> libpcap";
       description = "Provides a conduit source for reading from pcap files or live network\ndevices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Representing ASCII with refined supersets";
       description = "This package defines classes which describe what subset of a type is valid as ASCII, as well as a type constructor representing a value of a superset that is known to be valid ASCII.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."ascii-char" or (errorHandler.buildDepError "ascii-char"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

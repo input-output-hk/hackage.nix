@@ -21,7 +21,7 @@
       synopsis = "Geek blog engine server";
       description = "A dynamic blog engine, customizable with standard web technology, i.e. HTML, CSS and Javascript (JSON)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."hack2" or (errorHandler.buildDepError "hack2"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "geek" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."hack2" or (errorHandler.buildDepError "hack2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

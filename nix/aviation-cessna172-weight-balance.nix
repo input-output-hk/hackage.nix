@@ -6,8 +6,8 @@
         nix = import ../hackage/aviation-cessna172-weight-balance-0.0.2-r0-00eee306caff78b35decaa78ea3586551ae6c1f6ca685a8ac5085984125522a2.nix;
         revNum = 0;
         sha256 = "00eee306caff78b35decaa78ea3586551ae6c1f6ca685a8ac5085984125522a2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

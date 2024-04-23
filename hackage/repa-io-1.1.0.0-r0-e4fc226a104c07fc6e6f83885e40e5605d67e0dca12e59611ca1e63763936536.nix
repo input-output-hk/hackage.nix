@@ -21,7 +21,7 @@
       synopsis = "Read and write Repa arrays in various formats.";
       description = "NOTE: You must use the GHC head branch > 6.13.20100309 to get decent performance.\nRead and write Repa arrays in various formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."repa-bytestring" or (errorHandler.buildDepError "repa-bytestring"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

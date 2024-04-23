@@ -21,7 +21,7 @@
       synopsis = "Add prefixes to your monad-logger output";
       description = "Add prefixes to your monad-logger output. See README for more info.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "monad-logger-prefix-benchmarks" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."monad-logger-prefix" or (errorHandler.buildDepError "monad-logger-prefix"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

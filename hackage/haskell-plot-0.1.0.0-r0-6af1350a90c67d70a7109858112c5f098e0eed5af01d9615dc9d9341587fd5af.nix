@@ -21,7 +21,7 @@
       synopsis = "A library for generating 2D plots painlessly.";
       description = "Greatly simplify the API of Chart (<http://hackage.haskell.org/package/Chart>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
           (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
           (hsPkgs."Chart-gtk" or (errorHandler.buildDepError "Chart-gtk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

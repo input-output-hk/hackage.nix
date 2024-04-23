@@ -21,7 +21,7 @@
       synopsis = "Extensible exceptions for servant APIs";
       description = "`servant-exceptions` provides a `Throw` combinator to declare what\ntypes of errors an API might throw. The server\nimplementation catches them and allows for a canonical\nencoding using servant content-type machinery.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

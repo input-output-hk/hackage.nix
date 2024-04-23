@@ -21,7 +21,7 @@
       synopsis = "Library to authenticate with OAuth for Haskell web applications.";
       description = "API docs and the README are available at <http://www.stackage.org/package/authenticate-oauth>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

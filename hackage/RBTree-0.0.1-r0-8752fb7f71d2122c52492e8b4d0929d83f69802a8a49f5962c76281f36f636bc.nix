@@ -21,11 +21,11 @@
       synopsis = "Pure haskell Red-Black-Tree implemetation";
       description = "This package implemets Red-Black tree data-structure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Utilities for filtering";
       description = "Some helpers to make using Prelude.filter and similar value selection a bit\neasier. Includes combinators for predicates as well as an operator to match\nthe constructor used for the given value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

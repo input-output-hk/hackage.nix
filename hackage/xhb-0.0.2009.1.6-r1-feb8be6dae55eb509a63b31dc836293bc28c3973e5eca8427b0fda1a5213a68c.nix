@@ -21,7 +21,7 @@
       synopsis = "X Haskell Bindings";
       description = "Provides low-level bindings to the X11 protocol.\n\nSimilar to XCB - the X C Bindings.\n\nThis library is based on version 1.3 of the xcb-proto\npackage.  See http:\\/\\/xcb.freedesktop.org\\/XmlXcb\\/ and\nhttp:\\/\\/xcb.freedesktop.org\\/dist\\/ .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."byteorder" or (errorHandler.buildDepError "byteorder"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

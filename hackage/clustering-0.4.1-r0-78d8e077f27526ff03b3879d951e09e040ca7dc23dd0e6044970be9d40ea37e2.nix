@@ -21,7 +21,7 @@
       synopsis = "High performance clustering algorithms";
       description = "Following clutering methods are included in this library:\n\n1 Agglomerative hierarchical clustering. Complete linkage O(n^2),\nSingle linkage O(n^2), Average linkage O(n^2),\nWeighted linkage O(n^2), Ward's linkage O(n^2).\n\n2 KMeans clustering.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."inline-r" or (errorHandler.buildDepError "inline-r"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."clustering" or (errorHandler.buildDepError "clustering"))
             (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
             (hsPkgs."matrices" or (errorHandler.buildDepError "matrices"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

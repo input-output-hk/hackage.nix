@@ -21,7 +21,7 @@
       synopsis = "ASCII based Diagram drawing in Haskell (Idea based on ditaa)";
       description = "dihaa is a tool which allows converting simple ASCII art\ndrawings of box diagrams to images.\n\nSee documentation of \"Main\" for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dihaa" = {
@@ -31,9 +31,9 @@
             (hsPkgs."Rasterific" or (errorHandler.buildDepError "Rasterific"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

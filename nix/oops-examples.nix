@@ -6,8 +6,8 @@
         nix = import ../hackage/oops-examples-0.2.0.0-r0-88121b23c7290a4600dcebecd3a9e21f4ef11de7270f955e8a7103b09bbb9f12.nix;
         revNum = 0;
         sha256 = "88121b23c7290a4600dcebecd3a9e21f4ef11de7270f955e8a7103b09bbb9f12";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       identifier = {
         name = "unleash-client-haskell-core";
         version = "0.10.0";
-        };
+      };
       license = "MIT";
       copyright = "Copyright © FINN.no AS, Inc. All rights reserved.";
       maintainer = "See README.md";
@@ -24,7 +24,7 @@
       synopsis = "Unleash feature toggle client core";
       description = "This is a library for evaluating [Unleash](https://www.getunleash.io/) feature toggles.\nThe 'Unleash' module provides functions and types for checking feature toggles and variants.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."murmur3" or (errorHandler.buildDepError "murmur3"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unleash-client-haskell-core-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unleash-client-haskell-core" or (errorHandler.buildDepError "unleash-client-haskell-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

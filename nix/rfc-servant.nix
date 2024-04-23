@@ -6,8 +6,8 @@
         nix = import ../hackage/rfc-servant-0.0.0.1-r0-3697b171c90ed7d32b6de60facfd735cb11e437ab8e81ac6e9f495c070932a11.nix;
         revNum = 0;
         sha256 = "3697b171c90ed7d32b6de60facfd735cb11e437ab8e81ac6e9f495c070932a11";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "A collection of monad transformers.";
       description = "A collection of monad transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Collection of functor utilities, providing handy operators, like generalization of (.).";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

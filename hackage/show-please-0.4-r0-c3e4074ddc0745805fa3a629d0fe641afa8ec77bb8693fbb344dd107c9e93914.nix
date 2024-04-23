@@ -21,7 +21,7 @@
       synopsis = "A wrapper type V with improved Show instances";
       description = "Provides Show instances for various types whose official\nShow won't Read. This is particularly intended for exception types,\nwhich can appear unexpectedly and be difficult to track down.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

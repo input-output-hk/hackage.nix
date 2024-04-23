@@ -21,15 +21,15 @@
       synopsis = "Encodes and decodes numbers using Tantek Çelik's New Base 60 number system.";
       description = "Please see the README on GitHub at <https://github.com/astralbijection/newbase60-hs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "newbase60-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."newbase60" or (errorHandler.buildDepError "newbase60"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

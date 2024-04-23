@@ -21,11 +21,11 @@
       synopsis = "C IO.";
       description = "FFI bindings to read(2), write(2), open(2), and close(2).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

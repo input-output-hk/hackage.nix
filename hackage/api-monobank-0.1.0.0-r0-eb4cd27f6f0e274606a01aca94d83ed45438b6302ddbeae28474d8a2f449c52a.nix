@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Api client for popular Ukrainian bank - Monobank";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mnb-app" = {
           depends = [
@@ -45,19 +45,19 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."api-monobank" or (errorHandler.buildDepError "api-monobank"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mnb-app-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hs-coindesk-api" or (errorHandler.buildDepError "hs-coindesk-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

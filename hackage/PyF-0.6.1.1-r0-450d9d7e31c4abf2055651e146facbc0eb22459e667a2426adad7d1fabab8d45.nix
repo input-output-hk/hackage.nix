@@ -21,7 +21,7 @@
       synopsis = "Quasiquotations for a python like interpolated string formater";
       description = "Quasiquotations for a python like interpolated string formater.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pyf-test" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.python3.components.exes.python3 or (pkgs.buildPackages.python3 or (errorHandler.buildToolDepError "python3:python3")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

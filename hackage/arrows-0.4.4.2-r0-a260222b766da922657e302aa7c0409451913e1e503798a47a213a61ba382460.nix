@@ -21,14 +21,14 @@
       synopsis = "Arrow classes and transformers";
       description = "Several classes that extend the Arrow class, and some\ntransformers that implement or lift these classes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Stream" or (errorHandler.buildDepError "Stream"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

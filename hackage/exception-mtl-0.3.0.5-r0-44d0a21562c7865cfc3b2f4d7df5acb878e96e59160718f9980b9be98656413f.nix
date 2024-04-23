@@ -21,7 +21,7 @@
       synopsis = "Exception monad transformer instances for mtl2 classes.";
       description = "This package provides exception monad transformer instances for\nthe classes defined by mtl.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

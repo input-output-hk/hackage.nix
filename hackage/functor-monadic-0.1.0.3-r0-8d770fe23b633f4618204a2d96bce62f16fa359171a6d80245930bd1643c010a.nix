@@ -21,11 +21,11 @@
       synopsis = "Monad-style combinators for functors.";
       description = "Monad's bind (>>=, >=>) allows the infix chaining of monadic\nfunctions, but no analogues exist for functors. This package\nprovides a handful of handy operators that ease the piping\ntogether a functor- and monad-level functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

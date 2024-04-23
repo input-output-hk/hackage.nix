@@ -21,16 +21,16 @@
       synopsis = "Some extra kit for Chans";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "chan-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."chan" or (errorHandler.buildDepError "chan"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

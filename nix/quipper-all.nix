@@ -6,8 +6,8 @@
         nix = import ../hackage/quipper-all-0.9.0.0-r0-d8286a0ce5208751f5cba5637a5003725fcef29172cf4f638b35f371fccf7d76.nix;
         revNum = 0;
         sha256 = "d8286a0ce5208751f5cba5637a5003725fcef29172cf4f638b35f371fccf7d76";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Securely store session data in a client-side cookie.";
       description = "Achieves security through AES-CTR encryption and\nSkein-MAC-512-256 authentication.  Uses Base64\nencoding to avoid any issues with characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."cryptocipher" or (errorHandler.buildDepError "cryptocipher"))
           (hsPkgs."skein" or (errorHandler.buildDepError "skein"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

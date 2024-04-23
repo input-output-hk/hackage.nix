@@ -21,7 +21,7 @@
       synopsis = "Incremental applicative JSON parser";
       description = "Easy to use JSON parser fully supporting incremental parsing.\nParsing grammar in applicative form.\n\nThe parser is compatibile with aeson and its FromJSON class.\nIt is possible to use aeson monadic parsing when appropriate.\n\nThe parser supports constant-space safe incremental parsing regardless\nof the input data. In addition to performance-critical parts written in C,\na lot of performance is gained by being less memory intensive especially\nwhen used for stream parsing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ] ++ (pkgs.lib).optional (flags.conduit) (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"));
+        ] ++ pkgs.lib.optional (flags.conduit) (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"));
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-unicode" or (errorHandler.buildDepError "quickcheck-unicode"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-unicode" or (errorHandler.buildDepError "quickcheck-unicode"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

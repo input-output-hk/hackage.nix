@@ -21,7 +21,7 @@
       synopsis = "Benchmark of hash table implementations";
       description = "This package provides benchmark of several popular\nimplementations of hash table like containers.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hashtable-benchmark" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

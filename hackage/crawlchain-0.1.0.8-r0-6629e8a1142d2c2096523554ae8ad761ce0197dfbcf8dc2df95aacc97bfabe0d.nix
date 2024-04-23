@@ -21,7 +21,7 @@
       synopsis = "Library for simulating user crawl paths (trees) with selectors.";
       description = "Warning: experimental";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

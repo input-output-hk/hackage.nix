@@ -21,7 +21,7 @@
       synopsis = "Yet another Groonga http server.";
       description = "Yet another Groonga http server written in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haroonga-httpd" = {
@@ -37,9 +37,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."haroonga" or (errorHandler.buildDepError "haroonga"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

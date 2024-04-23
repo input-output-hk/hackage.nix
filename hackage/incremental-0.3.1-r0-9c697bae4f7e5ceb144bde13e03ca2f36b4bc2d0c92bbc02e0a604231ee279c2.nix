@@ -21,7 +21,7 @@
       synopsis = "incremental update library";
       description = "Generic interface for incremental updates";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "incremental-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."incremental" or (errorHandler.buildDepError "incremental"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

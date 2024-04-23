@@ -21,7 +21,7 @@
       synopsis = "Tagsoup Navigate";
       description = "Lenses and data types for navigating tagsoup";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."tagsoup-selection" or (errorHandler.buildDepError "tagsoup-selection"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."deriving-compat" or (errorHandler.buildDepError "deriving-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

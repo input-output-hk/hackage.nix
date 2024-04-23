@@ -21,7 +21,7 @@
       synopsis = "Overloaded dynamics literals.";
       description = "This package allow you to write the dynamic marks of standard notation as expressions\noverloaded on result type. This works exactly like numeric literals.\nThis library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

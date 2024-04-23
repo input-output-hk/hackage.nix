@@ -21,7 +21,7 @@
       synopsis = "Build a WAI Application from Webcrank Resources";
       description = "Build a WAI Application from Webcrank Resources.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."wai-lens" or (errorHandler.buildDepError "wai-lens"))
           (hsPkgs."webcrank" or (errorHandler.buildDepError "webcrank"))
           (hsPkgs."webcrank-dispatch" or (errorHandler.buildDepError "webcrank-dispatch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

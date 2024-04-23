@@ -21,7 +21,7 @@
       synopsis = "A curses-style interface for the hledger accounting tool.";
       description = "hledger is a haskell port and friendly fork of John Wiegley's ledger accounting tool.\nThis package provides a simple curses-style console interface as an alternative to the hledger command line interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-vty" = {
@@ -31,9 +31,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

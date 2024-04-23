@@ -21,7 +21,7 @@
       synopsis = "CLI tool for Hackage";
       description = "With @hackage-cli@ you can manage @.cabal@ files,\ne.g. (bulk-)upload revised variants.";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "cabal-revisions" = {
@@ -32,10 +32,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hackage-cli" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cabal-revisions-tests" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

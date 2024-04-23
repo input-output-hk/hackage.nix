@@ -21,7 +21,7 @@
       synopsis = "DepTrack Core types and model.";
       description = "Rather than building and maintaing a dependency tree/graph by hand. DepTrack proposes to _track_ dependencies as a side-effect of a computation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

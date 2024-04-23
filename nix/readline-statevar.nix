@@ -6,8 +6,8 @@
         nix = import ../hackage/readline-statevar-1.0.1.0-r0-ac8c55cd11f9c274084ffd36c55130949c96f66384c0e52de24604d4398a18d1.nix;
         revNum = 0;
         sha256 = "ac8c55cd11f9c274084ffd36c55130949c96f66384c0e52de24604d4398a18d1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

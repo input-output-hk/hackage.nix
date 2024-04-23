@@ -21,7 +21,7 @@
       synopsis = "A command-line FTP client.";
       description = "A command-line FTP client. Type @help@ for a list of commands. Online documentation at the homepage.\n\nChanges from the last version:\n\n* Now, mtl dependency is == 2.0.*.\n\n* Due to the update to mtl-2, now haskeline dependency is >= 0.6.3.2 && < 0.7.\n\n* New feature: Reestablishing of last connection and login.\n\n* Current mode (local or remote) is displayed when switching between them.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "FTPLine" = {
@@ -35,9 +35,9 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

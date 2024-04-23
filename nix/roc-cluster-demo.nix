@@ -6,8 +6,8 @@
         nix = import ../hackage/roc-cluster-demo-0.1.0.0-r0-5c2cc46462c1807971f57668d2d7ded6d1cd348860e70835fefcf079a8d61db5.nix;
         revNum = 0;
         sha256 = "5c2cc46462c1807971f57668d2d7ded6d1cd348860e70835fefcf079a8d61db5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

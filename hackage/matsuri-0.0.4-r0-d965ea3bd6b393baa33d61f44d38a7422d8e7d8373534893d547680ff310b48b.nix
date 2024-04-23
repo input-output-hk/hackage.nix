@@ -21,7 +21,7 @@
       synopsis = "ncurses XMPP client";
       description = "ncurses XMPP client. Read README file before use.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "matsuri" = {
@@ -39,9 +39,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Socket to Socket Data Splicing";
       description = "A library that implements efficient socket to socket\ndata transfer loops for proxy servers.\n\nOn Linux, it uses the zero-copy splice() system call:\n<http://kerneltrap.org/node/6505>.\n\nOn all other operating systems, it currently falls back\nto a portable Haskell implementation that allocates a\nconstant-sized memory buffer before it enters an inner\nloop which then uses hGetBufSome and hPutBuf; this avoids\nlots of tiny allocations as would otherwise be caused by\nrecv and sendAll functions from Network.Socket.ByteString.\n\nThis work has been funded by Corsis Research and is used\nin PortFusion: <http://portfusion.sf.net>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if system.isLinux && !flags.portable
@@ -29,12 +29,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

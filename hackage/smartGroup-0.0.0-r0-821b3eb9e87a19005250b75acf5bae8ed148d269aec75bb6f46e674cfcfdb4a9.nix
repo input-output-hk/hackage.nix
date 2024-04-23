@@ -21,15 +21,15 @@
       synopsis = "group strings by words in common";
       description = "Given a list of strings, smartGroup provides a set of functions\nto group them into smaller lists based on the most common words of the set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."heap" or (errorHandler.buildDepError "heap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

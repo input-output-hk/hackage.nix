@@ -21,11 +21,11 @@
       synopsis = "roots of two shifted jacobi polynomials to double precision";
       description = "This package provides pre-computed roots to the shifted Radau and Legendre polynomials. Roots to order of a few hundred are provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

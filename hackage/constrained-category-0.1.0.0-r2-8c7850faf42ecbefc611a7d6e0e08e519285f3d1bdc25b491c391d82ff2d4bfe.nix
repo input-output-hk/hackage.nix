@@ -21,7 +21,7 @@
       synopsis = "Constrained Categories";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."category" or (errorHandler.buildDepError "category"))
           (hsPkgs."constraint" or (errorHandler.buildDepError "constraint"))
           (hsPkgs."unconstrained" or (errorHandler.buildDepError "unconstrained"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,19 +41,19 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."constrained-category" or (errorHandler.buildDepError "constrained-category"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."constrained-category" or (errorHandler.buildDepError "constrained-category"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

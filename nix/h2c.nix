@@ -6,8 +6,8 @@
         nix = import ../hackage/h2c-1.0.0-r0-32fcb3552fc4ddd3e1336d59dbb0f695e86c12fa8fa28e1c956cc498dafe0fde.nix;
         revNum = 0;
         sha256 = "32fcb3552fc4ddd3e1336d59dbb0f695e86c12fa8fa28e1c956cc498dafe0fde";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

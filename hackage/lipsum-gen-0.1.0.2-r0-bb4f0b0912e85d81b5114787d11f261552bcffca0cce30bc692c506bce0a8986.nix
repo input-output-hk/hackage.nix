@@ -21,14 +21,14 @@
       synopsis = "Generators for random sequences of English-like nonsense\ntext.";
       description = "The generators in this package are based on syllable\nstatistics from ~44000 English words.\nThe words have been split into syllables, which are\ncategorized into initials, intermediates, and finals.\nSingle-syllable words have been removed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

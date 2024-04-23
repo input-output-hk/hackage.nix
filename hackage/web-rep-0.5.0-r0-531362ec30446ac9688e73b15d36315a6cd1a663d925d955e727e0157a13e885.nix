@@ -21,7 +21,7 @@
       synopsis = "representations of a web page";
       description = "An applicative-based, shared-data representation of a web page. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "page-example" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web-rep" or (errorHandler.buildDepError "web-rep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

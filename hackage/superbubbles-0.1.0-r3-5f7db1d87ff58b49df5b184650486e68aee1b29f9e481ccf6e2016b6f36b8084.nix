@@ -21,16 +21,16 @@
       synopsis = "Find \"superbubbles\", as described in https://arxiv.org/abs/1307.7925";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "superbubbles-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."superbubbles" or (errorHandler.buildDepError "superbubbles"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

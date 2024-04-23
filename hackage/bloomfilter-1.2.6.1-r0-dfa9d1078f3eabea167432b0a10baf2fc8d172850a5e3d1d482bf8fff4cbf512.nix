@@ -21,7 +21,7 @@
       synopsis = "Pure and impure Bloom Filter implementations.";
       description = "Pure and impure Bloom Filter implementations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.bytestring-in-base
@@ -29,15 +29,15 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (if flags.split-base
+          ]) ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

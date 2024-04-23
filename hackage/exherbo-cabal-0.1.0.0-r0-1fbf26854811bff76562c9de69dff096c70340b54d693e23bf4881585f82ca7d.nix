@@ -21,7 +21,7 @@
       synopsis = "Exheres generator for cabal packages";
       description = "Generate package description from .cabal files in format\nof exheres-0 for Exherbo Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "exherbo-cabal" = {
@@ -34,9 +34,9 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

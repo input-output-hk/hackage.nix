@@ -21,7 +21,7 @@
       synopsis = "Monadic conversion between complex data structures and unique integers";
       description = "Please see the README on GitHub at <https://github.com/kawu/monad-codec#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."data-lens-light" or (errorHandler.buildDepError "data-lens-light"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

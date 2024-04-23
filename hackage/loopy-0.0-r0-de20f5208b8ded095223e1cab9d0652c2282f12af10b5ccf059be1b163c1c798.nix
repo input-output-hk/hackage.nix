@@ -21,7 +21,7 @@
       synopsis = "Find all biological feedback loops within an ecosystem graph.";
       description = "Find all biological feedback loops within an ecosystem graph.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "loopy" = {
@@ -35,9 +35,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

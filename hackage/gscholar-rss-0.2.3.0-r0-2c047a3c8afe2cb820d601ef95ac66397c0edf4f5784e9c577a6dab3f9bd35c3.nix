@@ -21,7 +21,7 @@
       synopsis = "scrapes google scholar, provides RSS feed";
       description = "A simple Google Scholar scraper, providing RSS/Atom\nfeeds. Check <homepage http://ariis.it/static/articles/gscholar-rss/page.html>\nfor manual and examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gscholar-rss" = {
@@ -32,9 +32,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."uri" or (errorHandler.buildDepError "uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

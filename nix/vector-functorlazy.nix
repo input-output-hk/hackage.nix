@@ -6,8 +6,8 @@
         nix = import ../hackage/vector-functorlazy-0.0.1-r0-27d30e66e20246e8fc73602fee105f680d3b89fee9d3c8a8b8188cde47a7ff8d.nix;
         revNum = 0;
         sha256 = "27d30e66e20246e8fc73602fee105f680d3b89fee9d3c8a8b8188cde47a7ff8d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

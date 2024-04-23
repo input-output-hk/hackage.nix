@@ -21,18 +21,18 @@
       synopsis = "O(ND) diff algorithm in haskell.";
       description = "Basic implementation of the standard diff algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ (if flags.small-base
+        ] ++ (if flags.small-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

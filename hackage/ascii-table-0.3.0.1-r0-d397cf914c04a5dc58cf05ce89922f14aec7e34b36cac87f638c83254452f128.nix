@@ -21,7 +21,7 @@
       synopsis = "ASCII table";
       description = "Draw an ASCII table";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

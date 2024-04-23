@@ -21,15 +21,15 @@
       synopsis = "A library for generating RSS 2.0 feeds.";
       description = "This library allows you to generate RSS 2.0 feeds.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

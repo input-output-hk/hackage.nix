@@ -21,17 +21,17 @@
       synopsis = "Bindings to TagLib, audio meta-data library";
       description = "Bindings to TagLib, audio meta-data library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."tag_c" or (errorHandler.sysDepError "tag_c")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."htaglib" or (errorHandler.buildDepError "htaglib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

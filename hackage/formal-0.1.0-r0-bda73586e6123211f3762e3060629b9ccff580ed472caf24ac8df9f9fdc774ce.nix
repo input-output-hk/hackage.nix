@@ -21,7 +21,7 @@
       synopsis = "A statically typed, functional programming language ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "formal" = {
@@ -46,9 +46,9 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

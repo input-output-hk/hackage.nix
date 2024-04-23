@@ -21,7 +21,7 @@
       synopsis = "JavaScript analysis tools";
       description = "WebBits is a collection of libraries for working with JavaScript embeded in\nHTML files.  Highlights include:\n\n* @WebBits.JavaScript.Crawl@ returns all JavaScript in an HTML page, including\nJavaScript from imported script files (@\\<script src=...\\>@).\n\n* @WebBits.JavaScript.Environment@ annotates JavaScript syntax with its static\nenvironment and returns a list of free identifiers.\n\n* @WebBits.JavaScript.Parser@ is a JavaScript parser that is largely based on\nJavaScript 1.5.\n\n* @WebBits.Html.Parser@ is a permissive HTML parser.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

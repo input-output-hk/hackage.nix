@@ -21,7 +21,7 @@
       synopsis = "Write Haskell source files including C code inline. No FFI required.";
       description = "See <https://github.com/fpco/inline-c/blob/master/README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,26 +37,26 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gsl-ode" = {
-          depends = (pkgs.lib).optionals (flags.gsl-example) [
+          depends = pkgs.lib.optionals (flags.gsl-example) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
-            ];
+          ];
           libs = [
             (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
             (pkgs."gslcblas" or (errorHandler.sysDepError "gslcblas"))
             (pkgs."m" or (errorHandler.sysDepError "m"))
-            ];
+          ];
           buildable = if flags.gsl-example then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

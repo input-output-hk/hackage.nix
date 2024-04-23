@@ -21,15 +21,15 @@
       synopsis = "Strong lax semimonoidal endofunctors (Applicative sans pure)";
       description = "Strong lax semimonoidal endofunctors (Applicative sans pure)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

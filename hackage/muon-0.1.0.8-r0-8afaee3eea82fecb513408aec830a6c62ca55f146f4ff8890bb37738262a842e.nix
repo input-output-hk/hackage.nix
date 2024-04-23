@@ -21,7 +21,7 @@
       synopsis = "Static blog generator";
       description = "Program which takes blog posts and pages written in Markdown and\ncompiles them into a tree of HTML pages which can then be served\nby any web server.\n\nAs of now, Muon supports:\n\n* Generating a site from Markdown and HTML\n\n* Previewing a site locally using happstack-server\n\n* Uploading a site to a server using rsync\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "muon" = {
@@ -37,9 +37,9 @@
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

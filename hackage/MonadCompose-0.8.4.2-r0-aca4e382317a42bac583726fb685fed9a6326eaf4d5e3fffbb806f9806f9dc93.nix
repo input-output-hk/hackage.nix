@@ -21,7 +21,7 @@
       synopsis = "Methods for composing monads.";
       description = "Methods for composing monads.\n\nThe IO monad transformer solves the problem of combining two IO-performing monads, so that both may be transformed separately.\n\nA monad transformer can transform another monad, but if you have two monads both lacking a transformer, one can define an /extended distributive law/ which allows a monad to arise - see Control.Monad.PlusMonad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

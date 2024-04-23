@@ -6,8 +6,8 @@
         nix = import ../hackage/cascading-0.1.0-r0-53e76fce91858546d4eceebaa25d9ce5850506e6ddab39691e42402db6127ce8.nix;
         revNum = 0;
         sha256 = "53e76fce91858546d4eceebaa25d9ce5850506e6ddab39691e42402db6127ce8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

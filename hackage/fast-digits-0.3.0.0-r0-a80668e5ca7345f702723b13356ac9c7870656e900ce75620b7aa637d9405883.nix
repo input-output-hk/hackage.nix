@@ -21,25 +21,25 @@
       synopsis = "Integer-to-digits conversion.";
       description = "Convert an integer to digits and back.\nThis library is both asymptotically (O(n^1.4) vs. O(n^2))\nand practically (2x-40x for typical inputs)\nfaster than \"Data.Digits\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."fast-digits".components.sublibs.fast-digits-internal or (errorHandler.buildDepError "fast-digits:fast-digits-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "fast-digits-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."digits" or (errorHandler.buildDepError "digits"))
             (hsPkgs."fast-digits" or (errorHandler.buildDepError "fast-digits"))
             (hsPkgs."fast-digits".components.sublibs.fast-digits-internal or (errorHandler.buildDepError "fast-digits:fast-digits-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."digits" or (errorHandler.buildDepError "digits"))
             (hsPkgs."fast-digits" or (errorHandler.buildDepError "fast-digits"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

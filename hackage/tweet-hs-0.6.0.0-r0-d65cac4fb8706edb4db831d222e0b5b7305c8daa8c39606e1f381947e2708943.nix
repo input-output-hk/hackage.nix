@@ -13,7 +13,7 @@
       library = false;
       gold = true;
       parallel-gc = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "tweet-hs"; version = "0.6.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Command-line tool for twitter";
       description = "a Command Line Interface Tweeter";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,18 +47,18 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tweet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tweet-hs" or (errorHandler.buildDepError "tweet-hs"))
-            ];
+          ];
           buildable = if flags.library then false else true;
-          };
         };
+      };
       tests = {
         "tweeths-test" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."tweet-hs" or (errorHandler.buildDepError "tweet-hs"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "tweeths-bench" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."tweet-hs" or (errorHandler.buildDepError "tweet-hs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

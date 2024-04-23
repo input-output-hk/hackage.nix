@@ -21,7 +21,7 @@
       synopsis = "XMPP client with 9P and (optionally) GTK interfaces";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hatexmpp" = {
@@ -44,13 +44,13 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optionals (flags.gtk) [
+          ] ++ pkgs.lib.optionals (flags.gtk) [
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
             (hsPkgs."datetime" or (errorHandler.buildDepError "datetime"))
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

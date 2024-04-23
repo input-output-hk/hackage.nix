@@ -21,11 +21,11 @@
       synopsis = "Some extension to the Foldable and Monoid classes.";
       description = "Some extension to the Foldable and Monoid classes. Introduces a new class InsertLeft of the types that can be inserted with values from the left.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "set group and user id before running server";
       description = "> runTLSSocketWithID tlss settings sock (\"user\", \"bob\") app";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
           (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
           (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "testServer" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
             (hsPkgs."crypto-random" or (errorHandler.buildDepError "crypto-random"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

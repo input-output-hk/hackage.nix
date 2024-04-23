@@ -21,11 +21,11 @@
       synopsis = "Helps to create experimental music. Working with frequencies and types.";
       description = "Can be used for applying the SoX \"synth\" effect and frequency modulation. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

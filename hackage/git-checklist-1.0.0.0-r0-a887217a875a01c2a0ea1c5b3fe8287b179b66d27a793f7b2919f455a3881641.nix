@@ -21,7 +21,7 @@
       synopsis = "Maintain per-branch checklists in Git";
       description = "Manage lists of TODO items for private branches\nfrom the command line. No configuration required\nand fast to learn, with human-editable storage\nformat and comprehensive help information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "git-checklist" = {
@@ -33,9 +33,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

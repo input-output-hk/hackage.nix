@@ -21,11 +21,11 @@
       synopsis = "Bit-vectors library";
       description = "Bit-vectors implemented as a wrapper over integers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

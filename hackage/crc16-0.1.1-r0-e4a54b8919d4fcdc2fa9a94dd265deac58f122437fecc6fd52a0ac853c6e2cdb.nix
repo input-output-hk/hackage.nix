@@ -21,14 +21,14 @@
       synopsis = "Calculate the crc16-ccitt.";
       description = "This module provides a method to calculate the crc16-ccitt using the slow bit shift.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

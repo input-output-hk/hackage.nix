@@ -14,7 +14,7 @@
       identifier = {
         name = "servant-auth-token-leveldb";
         version = "0.6.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2017 Anton Gushcha";
       maintainer = "ncrashed@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Leveldb backend for servant-auth-token server";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,8 +50,8 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

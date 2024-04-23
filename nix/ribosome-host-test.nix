@@ -6,8 +6,8 @@
         nix = import ../hackage/ribosome-host-test-0.9.9.9-r0-fad3b30d900f78cdc45ace5aa41cba39b24fa7f54c1f059a46442e51738eb163.nix;
         revNum = 0;
         sha256 = "fad3b30d900f78cdc45ace5aa41cba39b24fa7f54c1f059a46442e51738eb163";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

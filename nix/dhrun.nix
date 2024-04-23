@@ -6,8 +6,8 @@
         nix = import ../hackage/dhrun-1.0.1-r0-3f66fb533a750ba717fb2f47fe5cc959bd14241b77825fe72a66de9953b7edf3.nix;
         revNum = 0;
         sha256 = "3f66fb533a750ba717fb2f47fe5cc959bd14241b77825fe72a66de9953b7edf3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

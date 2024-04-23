@@ -21,15 +21,15 @@
       synopsis = "Can be used to produce the 'uniquenessPeriods' function and related functionality.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

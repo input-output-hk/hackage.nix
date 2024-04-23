@@ -21,7 +21,7 @@
       synopsis = "A simple parser-combinator library, a bit like Parsec but without the frills";
       description = "Parcom provides parser combinator functionality in a string-type-agnostic way;\nit supports strict ByteStrings (with Word8 tokens) and any list type (with\nthe element type as the token type) out-of-the-box, including plain old String.\nAny other stream-of-tokens type can be hooked into the library; unlike Parsec,\nnone of the built-in parsers assumes char-like tokens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

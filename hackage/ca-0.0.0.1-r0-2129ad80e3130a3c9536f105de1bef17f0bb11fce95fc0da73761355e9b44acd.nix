@@ -21,14 +21,14 @@
       synopsis = "Cellular Automata";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."alg" or (errorHandler.buildDepError "alg"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

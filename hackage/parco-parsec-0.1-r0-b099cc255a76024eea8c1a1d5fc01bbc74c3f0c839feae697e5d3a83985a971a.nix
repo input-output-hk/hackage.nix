@@ -21,7 +21,7 @@
       synopsis = "Generalised parser combinators - Parsec interface";
       description = "Parser monad instance for Parsec.  You can easily define this\nyourself, but it is provided here for convenience.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."parco" or (errorHandler.buildDepError "parco"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

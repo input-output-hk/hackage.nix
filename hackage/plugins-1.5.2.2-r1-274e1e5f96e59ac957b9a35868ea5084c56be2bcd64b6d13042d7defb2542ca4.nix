@@ -21,7 +21,7 @@
       synopsis = "Dynamic linking for Haskell and C objects";
       description = "Dynamic linking and runtime evaluation of Haskell,\nand C, including dependency chasing and package resolution.\n\nDescribed in the papers:\n* /Plugging Haskell In/, <http://cgi.cse.unsw.edu.au/~sseefried/files/papers/hs-plugins.pdf>\n* /Dynamic Applications from the Ground Up/, <http://www.cse.unsw.edu.au/~dons/papers/PSSC04.html>\n* /Dynamic Extension of Typed Functional Languages/.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.2") (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.2") (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

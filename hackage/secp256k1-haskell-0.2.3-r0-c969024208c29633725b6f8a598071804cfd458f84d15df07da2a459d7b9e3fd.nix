@@ -13,7 +13,7 @@
       negate = false;
       recovery = false;
       schnorr = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "secp256k1-haskell"; version = "0.2.3"; };
@@ -26,7 +26,7 @@
       synopsis = "Bindings for secp256k1 library from Bitcoin Core";
       description = "Sign and verify signatures using the very fast C secp256k1 library from Pieter Wuille. Has Haskell types and abstractions for keys and signatures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libsecp256k1" or (errorHandler.pkgConfDepError "libsecp256k1"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -62,12 +62,12 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."secp256k1-haskell" or (errorHandler.buildDepError "secp256k1-haskell"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

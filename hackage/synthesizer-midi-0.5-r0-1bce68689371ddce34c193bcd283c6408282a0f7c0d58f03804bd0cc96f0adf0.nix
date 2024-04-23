@@ -21,7 +21,7 @@
       synopsis = "Render audio signals from MIDI files or realtime messages";
       description = "This package allows to read MIDI events\nand to convert them to audio and control signals.\nIncluded is a basic synthesizer that renders MIDI to WAV\n(or other audio signal formats supported by SoX).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,14 +41,14 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "render-midi" = {
           buildable = if !flags.buildexamples then false else true;
-          };
-        "test" = { buildable = if !flags.buildtests then false else true; };
         };
+        "test" = { buildable = if !flags.buildtests then false else true; };
       };
-    }
+    };
+  }

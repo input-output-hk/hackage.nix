@@ -21,7 +21,7 @@
       synopsis = "WAI based library for web api";
       description = "WAI based library for web api         ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."webapi" or (errorHandler.buildDepError "webapi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

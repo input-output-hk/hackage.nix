@@ -6,8 +6,8 @@
         nix = import ../hackage/promise-0.1.0.0-r0-48ba4615453cbd0bf978889b73320a51e276e7c46b762a56b734b4c6b9a9d96d.nix;
         revNum = 0;
         sha256 = "48ba4615453cbd0bf978889b73320a51e276e7c46b762a56b734b4c6b9a9d96d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

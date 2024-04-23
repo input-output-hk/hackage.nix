@@ -21,7 +21,7 @@
       synopsis = "HsQML-based implementation of Nine Men's Morris";
       description = "HsQML-based implementation of Nine Men's Morris";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsqml-morris" = {
@@ -34,9 +34,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."OddWord" or (errorHandler.buildDepError "OddWord"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

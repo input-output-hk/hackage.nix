@@ -21,7 +21,7 @@
       synopsis = "Permutations of finite sets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
             (hsPkgs."permutations" or (errorHandler.buildDepError "permutations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

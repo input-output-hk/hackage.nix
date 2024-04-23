@@ -21,16 +21,16 @@
       synopsis = "Extension of real numbers with positive/negative infinities";
       description = "Extension of real numbers with positive/negative infinities (±∞).\nIt is useful for describing various limiting behaviors in mathematics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestExtendedReal" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."extended-reals" or (errorHandler.buildDepError "extended-reals"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

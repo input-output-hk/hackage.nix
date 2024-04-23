@@ -21,14 +21,14 @@
       synopsis = "Positive numbers.";
       description = "To be written.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."nats" or (errorHandler.buildDepError "nats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

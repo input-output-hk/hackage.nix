@@ -21,7 +21,7 @@
       synopsis = "A functional firewall killer";
       description = "A socks5 proxy using the client / server architecture.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "moesocks" = {
@@ -48,9 +48,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

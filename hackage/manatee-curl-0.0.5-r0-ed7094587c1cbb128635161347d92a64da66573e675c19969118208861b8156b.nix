@@ -21,7 +21,7 @@
       synopsis = "Download Manager extension for Manatee.";
       description = "manatee-curl is multithreads download manager extension for Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nScreenshots at : <http://goo.gl/MkVw>\n\nManual at : <http://haskell.org/haskellwiki/Manatee>\n\nIRC channel: irc.freenode.net 6667 <##manatee>\n\nMailing-List: manatee-user\\@googlegroups.com manatee-develop\\@googlegroups.com\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-curl" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-curl" = { buildable = true; }; };
+    };
+  }

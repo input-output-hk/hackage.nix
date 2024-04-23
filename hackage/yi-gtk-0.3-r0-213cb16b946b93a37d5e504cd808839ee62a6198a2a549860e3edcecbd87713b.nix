@@ -21,6 +21,6 @@
       synopsis = "The Haskell-Scriptable Editor, helper package";
       description = "This is a dummy package: do not install it! \"cabal install yi -fgtk\" is what you want.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

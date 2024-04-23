@@ -21,14 +21,14 @@
       synopsis = "random number library";
       description = "This package provides a basic random number generation\nlibrary, including the ability to split random number\ngenerators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

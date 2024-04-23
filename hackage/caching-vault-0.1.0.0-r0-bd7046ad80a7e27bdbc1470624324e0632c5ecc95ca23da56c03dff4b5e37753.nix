@@ -21,7 +21,7 @@
       synopsis = "A vault-style cache implementation";
       description = "Allows a central cache for arbitrary values with expiry dates";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "caching-vault-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,25 +21,25 @@
       synopsis = "Linear algebra and numerical computations";
       description = "This library provides a purely functional interface to basic linear algebra\nand other numerical computations, internally implemented using\nGSL, BLAS and LAPACK.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
-            ]);
+          ]);
         libs = if flags.mkl
           then if system.isX86_64
             then [
@@ -48,19 +48,19 @@
               (pkgs."mkl_intel_lp64" or (errorHandler.sysDepError "mkl_intel_lp64"))
               (pkgs."mkl_sequential" or (errorHandler.sysDepError "mkl_sequential"))
               (pkgs."mkl_core" or (errorHandler.sysDepError "mkl_core"))
-              ]
+            ]
             else [
               (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
               (pkgs."mkl_lapack" or (errorHandler.sysDepError "mkl_lapack"))
               (pkgs."mkl_intel" or (errorHandler.sysDepError "mkl_intel"))
               (pkgs."mkl_sequential" or (errorHandler.sysDepError "mkl_sequential"))
               (pkgs."mkl_core" or (errorHandler.sysDepError "mkl_core"))
-              ]
+            ]
           else [
             (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

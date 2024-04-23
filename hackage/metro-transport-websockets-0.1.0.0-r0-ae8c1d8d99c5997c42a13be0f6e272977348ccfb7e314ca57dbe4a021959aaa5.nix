@@ -14,7 +14,7 @@
       identifier = {
         name = "metro-transport-websockets";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "MIT";
       maintainer = "lmjubuntu@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Websockets transport for metro";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro/tree/master/metro-transport-websockets#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."metro" or (errorHandler.buildDepError "metro"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

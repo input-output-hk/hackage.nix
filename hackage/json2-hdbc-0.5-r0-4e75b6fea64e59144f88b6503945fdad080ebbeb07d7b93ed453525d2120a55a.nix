@@ -21,7 +21,7 @@
       synopsis = "Support JSON for SQL Database.";
       description = "Library contains instances of ToJson(JSON2) class\nfor SqlValue(HDBC) and functions for manipulation\nJSON.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."json2-types" or (errorHandler.buildDepError "json2-types"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

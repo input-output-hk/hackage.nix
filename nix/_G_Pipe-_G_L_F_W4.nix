@@ -6,8 +6,8 @@
         nix = import ../hackage/GPipe-GLFW4-2.0.0-r0-75e3c0bccb838f598d6ec18b98a91add82826b4b928a14e1414cf9494a9fc685.nix;
         revNum = 0;
         sha256 = "75e3c0bccb838f598d6ec18b98a91add82826b4b928a14e1414cf9494a9fc685";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

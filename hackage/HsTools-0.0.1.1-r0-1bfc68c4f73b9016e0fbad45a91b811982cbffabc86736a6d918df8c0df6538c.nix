@@ -21,14 +21,14 @@
       synopsis = "Haskell helper functions";
       description = "Helper functions for a lot of different libraries. (unstable\nlibrary!)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

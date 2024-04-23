@@ -21,7 +21,7 @@
       synopsis = "Simple cli text processing with Haskell functions";
       description = "A commandline tool for text processing with Haskell functions,\nwhich can used in addition to awk, grep, sed, etc.\nIt applies the function supplied on the commandline using hint\nto lines of standard input and outputs the results.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hwk" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

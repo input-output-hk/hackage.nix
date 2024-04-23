@@ -21,16 +21,16 @@
       synopsis = "Language-specific hyphenation policies for WEditor.";
       description = "This package provides language-specific hyphenation policies for use with\nthe @<http://hackage.haskell.org/package/WEditor WEditor>@ and\n@<http://hackage.haskell.org/package/WEditorBrick WEditorBrick>@ packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hyphenation" or (errorHandler.buildDepError "hyphenation"))
           (hsPkgs."WEditor" or (errorHandler.buildDepError "WEditor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "WEditorHyphen-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hyphenation" or (errorHandler.buildDepError "hyphenation"))
             (hsPkgs."WEditor" or (errorHandler.buildDepError "WEditor"))
             (hsPkgs."WEditorHyphen" or (errorHandler.buildDepError "WEditorHyphen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

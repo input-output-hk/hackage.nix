@@ -21,7 +21,7 @@
       synopsis = "CLI and library to generate QR codes.";
       description = "Generate QR codes from input string. Comes with CLI and as a library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kewar" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."kewar" or (errorHandler.buildDepError "kewar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "kewar-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."kewar" or (errorHandler.buildDepError "kewar"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

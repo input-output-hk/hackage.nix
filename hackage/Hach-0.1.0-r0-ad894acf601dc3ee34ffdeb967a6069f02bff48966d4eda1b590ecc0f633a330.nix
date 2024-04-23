@@ -21,7 +21,7 @@
       synopsis = "Simple chat";
       description = "Simple example of chat application. Consists of 3 components: hach-server, hach-client (simple console client), hach-nclient (vty-ui client).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,22 +29,22 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hach-client" = { buildable = true; };
         "hach-nclient" = {
           depends = [
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."vty-ui" or (errorHandler.buildDepError "vty-ui"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hach-server" = {
           depends = [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Translation cli tool";
       description = "Translation cli tool";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."aeson-lens" or (errorHandler.buildDepError "aeson-lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "translate" = {
           depends = [
@@ -41,19 +41,19 @@
             (hsPkgs."translate-cli" or (errorHandler.buildDepError "translate-cli"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "translate-cli-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."translate-cli" or (errorHandler.buildDepError "translate-cli"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Elm code generate for `json-spec`.";
       description = "Produce elm types, encoders, and decoders from a\n[`json-spec`](https://hackage.haskell.org/package/json-spec) `Specification`.\n\nSee `/test/test.hs` for an example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bound" or (errorHandler.buildDepError "bound"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

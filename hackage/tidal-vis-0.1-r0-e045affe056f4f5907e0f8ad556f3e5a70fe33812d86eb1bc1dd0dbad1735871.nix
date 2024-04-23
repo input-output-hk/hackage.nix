@@ -21,7 +21,7 @@
       synopsis = "Visual rendering for Tidal patterns";
       description = "Tidal is a domain specific language for live coding pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."tidal" or (errorHandler.buildDepError "tidal"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

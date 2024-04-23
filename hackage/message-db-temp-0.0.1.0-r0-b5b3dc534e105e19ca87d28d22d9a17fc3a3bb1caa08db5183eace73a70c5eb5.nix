@@ -21,7 +21,7 @@
       synopsis = "Temporary message-db for integration testing";
       description = "See the readme on github for me info: https://github.com/Disco-Dave/message-db/tree/main/message-db-temp#readme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

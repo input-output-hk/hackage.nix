@@ -6,8 +6,8 @@
         nix = import ../hackage/RESTng-0.1-r0-23cc200b629de21fbc095ce22a1dccbb2b525383e9d468e1e0b1412768d4215a.nix;
         revNum = 0;
         sha256 = "23cc200b629de21fbc095ce22a1dccbb2b525383e9d468e1e0b1412768d4215a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

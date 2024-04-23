@@ -21,7 +21,7 @@
       synopsis = "FAT filesystem sort utility";
       description = "This package provides a utility for sorting files and directories on a FAT\nfilesystem.  Please see the README on GitHub at\n<https://github.com/ExtremaIS/phatsort-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "phatsort" = {
           depends = [
@@ -42,19 +42,19 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."phatsort" or (errorHandler.buildDepError "phatsort"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "seqcp" = {
           depends = [
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."phatsort" or (errorHandler.buildDepError "phatsort"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "phatsort-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6.1") (hsPkgs."HMock" or (errorHandler.buildDepError "HMock"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.6.1") (hsPkgs."HMock" or (errorHandler.buildDepError "HMock"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

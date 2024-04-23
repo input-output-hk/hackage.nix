@@ -21,15 +21,15 @@
       synopsis = "MFunctor instance for CPS style WriterT and RWST";
       description = "MFunctor instance for CPS style WriterT and RWST";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."writer-cps-transformers" or (errorHandler.buildDepError "writer-cps-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "ukrainian-phonetics-basic-array";
         version = "0.2.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A library to work with the basic Ukrainian phonetics and syllable segmentation.";
       description = "A library to work with the basic Ukrainian phonetics and syllable segmentation. Rewritten from the mmsyn6ukr and mmsyn7s packages. Comparing to the ukrainian-phonetics-basic package, all the vector-related functionality removed, it also removed from the dependencies and the mmsyn2 is changed to mmsyn2-array.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mmsyn5" or (errorHandler.buildDepError "mmsyn5"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

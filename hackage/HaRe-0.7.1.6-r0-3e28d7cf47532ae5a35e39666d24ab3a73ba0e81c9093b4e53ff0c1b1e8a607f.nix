@@ -21,7 +21,7 @@
       synopsis = "the Haskell Refactorer.";
       description = "A Haskell 2010 refactoring tool. HaRe supports the full\nHaskell 2010 standard, through making use of the GHC API.\n\nIt is tested against GHC 7.4.x and 7.6.x (via travis-ci.org)\n\nIt currently only has emacs integration built in, community input\nwelcome for others.\n\nWarning: This is alpha code. Always commit code to your version\ncontrol system before refactoring. The developers make no\nwarranties, use at your own risk.\n\nDespite the disclaimer, HaRe attempts to operate in a safe way, by\nfirst writing new files with proposed changes, and only swapping\nthese with the originals when the change is accepted. In the\nprocess the original file is renamed to have the current date/time\nas a suffix. Thus it should be possible to (manually) undo changes.\n\nThe renaming refactoring seems reasonably reliable, as does lifting.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."Strafunski-StrategyLib" or (errorHandler.buildDepError "Strafunski-StrategyLib"))
           (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghc-hare" = {
           depends = [
@@ -78,10 +78,10 @@
             (hsPkgs."Strafunski-StrategyLib" or (errorHandler.buildDepError "Strafunski-StrategyLib"))
             (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
             (hsPkgs."HaRe" or (errorHandler.buildDepError "HaRe"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -115,9 +115,9 @@
             (hsPkgs."Strafunski-StrategyLib" or (errorHandler.buildDepError "Strafunski-StrategyLib"))
             (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
             (hsPkgs."HaRe" or (errorHandler.buildDepError "HaRe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

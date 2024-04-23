@@ -6,10 +6,10 @@
         nix = import ../hackage/zoom-refs-0.0.0.0-r0-bba22cef2d0dfb806d74e199c19d88d740786696458e58df30df6b457ff1c61d.nix;
         revNum = 0;
         sha256 = "bba22cef2d0dfb806d74e199c19d88d740786696458e58df30df6b457ff1c61d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.0.0.1" = {
     sha256 = "743c0ed5e93bedf4207838274df02f2d3406c871ce51c00572b43d709978b32b";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/zoom-refs-0.0.0.1-r0-ba9669ace20d4b4d764fa418c45b29c07c002984987020a19457a085ed2e059b.nix;
         revNum = 0;
         sha256 = "ba9669ace20d4b4d764fa418c45b29c07c002984987020a19457a085ed2e059b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

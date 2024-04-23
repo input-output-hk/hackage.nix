@@ -21,7 +21,7 @@
       synopsis = "Provides main functions using warp-tls for yesod projects";
       description = "This package makes possible to build Yesod web applications that provide SSL support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."fast-logger" or (errorHandler.buildDepError "fast-logger"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

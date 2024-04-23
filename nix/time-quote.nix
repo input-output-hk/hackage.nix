@@ -6,8 +6,8 @@
         nix = import ../hackage/time-quote-1.9.0.0-r0-f7abe2881b56a4993233ee6c7010db8d0d9a5dcb529dcd3902d10f8bef56fbb4.nix;
         revNum = 0;
         sha256 = "f7abe2881b56a4993233ee6c7010db8d0d9a5dcb529dcd3902d10f8bef56fbb4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

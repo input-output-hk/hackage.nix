@@ -21,7 +21,7 @@
       synopsis = "Parsers and types for Well-Known Text data";
       description = "Parsers and types for Well-Known Text data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."parsec-numbers" or (errorHandler.buildDepError "parsec-numbers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

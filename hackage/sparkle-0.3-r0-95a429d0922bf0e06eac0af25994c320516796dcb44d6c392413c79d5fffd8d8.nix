@@ -21,7 +21,7 @@
       synopsis = "Distributed Apache Spark applications in Haskell";
       description = "See README.md";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sparkle" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."sparkle" or (errorHandler.buildDepError "sparkle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

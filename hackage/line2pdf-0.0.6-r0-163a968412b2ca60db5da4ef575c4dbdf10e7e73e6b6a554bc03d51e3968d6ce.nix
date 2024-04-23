@@ -21,7 +21,7 @@
       synopsis = "Simple command-line utility to convert text into PDF";
       description = "Simple command-line utility to convert text into PDF";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small_base
@@ -29,10 +29,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "line2pdf" = {
           depends = if flags.small_base
@@ -40,10 +40,10 @@
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

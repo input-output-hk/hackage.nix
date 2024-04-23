@@ -21,7 +21,7 @@
       synopsis = "A functional embedded language for DSP and parallelism";
       description = "Feldspar (Functional Embedded Language for DSP and PARallelism)\nis an embedded DSL for describing digital signal processing\nalgorithms. This package contains the language front-end and an\ninterpreter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

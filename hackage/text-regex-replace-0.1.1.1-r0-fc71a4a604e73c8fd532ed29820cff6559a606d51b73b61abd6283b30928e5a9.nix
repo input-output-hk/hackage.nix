@@ -21,7 +21,7 @@
       synopsis = "Easy replacement when using text-icu regexes.";
       description = "This provides a convenient API for doing replacements off of a regular\nexpression, similar to what regex libraries in other languages provide.\n\nAt this point, this hasn't been used enough to have any idea of its\nperformance. Caveat emptor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "text-regex-replace-specs" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

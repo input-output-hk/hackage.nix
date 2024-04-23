@@ -21,7 +21,7 @@
       synopsis = "Remove outdated cabal build artefacts from `dist-newstyle`.";
       description = "Simple command line tool to remove cabal build artefacts\nfrom `dist-newstyle/build` that are superseded by newer\nversions of the built package or the Haskell compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-clean" = {
@@ -36,9 +36,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

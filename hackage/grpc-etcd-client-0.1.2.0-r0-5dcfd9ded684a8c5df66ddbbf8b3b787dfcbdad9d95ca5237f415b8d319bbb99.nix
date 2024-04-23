@@ -21,7 +21,7 @@
       synopsis = "gRPC client for etcd";
       description = "Please see the README on GitHub at <https://github.com/lucasdicioccio/etcd-grpc#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."proto-lens" or (errorHandler.buildDepError "proto-lens"))
           (hsPkgs."proto-lens-runtime" or (errorHandler.buildDepError "proto-lens-runtime"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

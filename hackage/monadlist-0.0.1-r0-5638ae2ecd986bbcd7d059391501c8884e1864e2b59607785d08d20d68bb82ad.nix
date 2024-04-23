@@ -21,11 +21,11 @@
       synopsis = "Monadic versions of list functions";
       description = "Monadic versions of list functions seen in Data.List.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

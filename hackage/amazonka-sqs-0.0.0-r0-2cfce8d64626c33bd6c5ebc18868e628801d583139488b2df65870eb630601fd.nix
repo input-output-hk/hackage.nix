@@ -21,14 +21,14 @@
       synopsis = "Amazon Simple Queue Service SDK.";
       description = "Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully\nmanaged message queuing service. SQS makes it simple and cost-effective\nto decouple the components of a cloud application. You can use SQS to\ntransmit any volume of data, at any level of throughput, without losing\nmessages or requiring other services to be always available. With SQS,\nyou can offload the administrative burden of operating and scaling a\nhighly available messaging cluster, while paying a low price for only\nwhat you use.\n\n/See:/ <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

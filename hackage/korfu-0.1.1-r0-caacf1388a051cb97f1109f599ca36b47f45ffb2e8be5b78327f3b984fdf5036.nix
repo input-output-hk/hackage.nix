@@ -21,7 +21,7 @@
       synopsis = "The Korfu ORF Utility";
       description = "Reads nucleotide sequences in FASTA format, and generates\npredicted protein sequences, based on BLASTX hits.\nThe predictions are constructed by merging information from\nmultiple BLAST hits.  Korfu can also also generate all (six-frame)\ntranslations (with the '--all' option)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "korfu" = {
@@ -31,9 +31,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."simpleargs" or (errorHandler.buildDepError "simpleargs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

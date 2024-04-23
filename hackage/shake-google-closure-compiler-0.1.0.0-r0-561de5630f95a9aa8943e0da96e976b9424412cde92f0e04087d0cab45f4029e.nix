@@ -14,7 +14,7 @@
       identifier = {
         name = "shake-google-closure-compiler";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2018 Vanessa McHale";
       maintainer = "vanessa.mchale@iohk.io";
@@ -24,15 +24,15 @@
       synopsis = "Shake rules for the Google closure compiler";
       description = "Build rules for simplified builds with the Google closure compiler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

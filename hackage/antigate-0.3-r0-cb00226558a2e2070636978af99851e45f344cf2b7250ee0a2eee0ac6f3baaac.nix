@@ -21,7 +21,7 @@
       synopsis = "Haskell interface for antigate.com captcha recognition service, and other services which support its API.";
       description = "Haskell interface for antigate.com captcha recognition service, and other services which support its API (e.g. captchabot, decaptcher).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

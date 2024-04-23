@@ -21,7 +21,7 @@
       synopsis = "Retrie integration plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,11 +47,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.8"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -64,11 +64,11 @@
             (hsPkgs."hls-retrie-plugin" or (errorHandler.buildDepError "hls-retrie-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.8"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.8"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

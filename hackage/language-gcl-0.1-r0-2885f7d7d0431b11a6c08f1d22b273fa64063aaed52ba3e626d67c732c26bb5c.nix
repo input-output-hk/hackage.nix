@@ -21,15 +21,15 @@
       synopsis = "Something similar to Dijkstra's guarded command language";
       description = "language-gcl provides the abstract syntax and parsers for\nbasic building blocks for programming languages,\nbased on Edsger W. Dijkstra's guarded command language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

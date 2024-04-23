@@ -21,7 +21,7 @@
       synopsis = "An experimental Utf8 parsing toolkit for enumerated types";
       description = "An experimental Utf8 rendering and parsing toolkit for enumerated types based on enum-text and render-utf8. Please see the README on GitHub at <https://github.com/cdornan/enum-text#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."possibly" or (errorHandler.buildDepError "possibly"))
           (hsPkgs."render-utf8" or (errorHandler.buildDepError "render-utf8"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

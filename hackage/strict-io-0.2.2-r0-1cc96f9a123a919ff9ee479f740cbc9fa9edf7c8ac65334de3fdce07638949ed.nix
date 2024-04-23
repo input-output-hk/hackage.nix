@@ -21,15 +21,15 @@
       synopsis = "A library wrapping standard IO modules to provide strict IO.";
       description = "A thin layer on top standard IO modules like System.IO\nand Data.IORef that re-expose strict functions using the SIO\nmonad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

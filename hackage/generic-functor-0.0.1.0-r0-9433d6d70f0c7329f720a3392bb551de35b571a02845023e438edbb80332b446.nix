@@ -21,20 +21,20 @@
       synopsis = "Deriving generalized functors with GHC.Generics";
       description = "Derive @fmap@, and other @fmap@-like functions where the\nparameter of the functor could occur anywhere.\n\nSee the README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
             (hsPkgs."generic-functor" or (errorHandler.buildDepError "generic-functor"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

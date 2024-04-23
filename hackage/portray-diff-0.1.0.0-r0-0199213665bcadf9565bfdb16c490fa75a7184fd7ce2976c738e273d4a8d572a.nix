@@ -21,7 +21,7 @@
       synopsis = "Visualize the structural differences between two values.";
       description = "This uses @GHC.Generics@ to provide structural diffs between two values in\npretty-printed form.  This is primarily useful for test assertions and manual\ninspection of values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."portray" or (errorHandler.buildDepError "portray"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

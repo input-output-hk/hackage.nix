@@ -21,17 +21,17 @@
       synopsis = "Conduit for character encoding conversion.";
       description = "@conduit-iconv@ provides a Conduit for character encoding\nconversion, based on the iconv library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
-        libs = (pkgs.lib).optional (system.isOsx || system.isFreebsd) (pkgs."iconv" or (errorHandler.sysDepError "iconv"));
+        ];
+        libs = pkgs.lib.optional (system.isOsx || system.isFreebsd) (pkgs."iconv" or (errorHandler.sysDepError "iconv"));
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-iconv" or (errorHandler.buildDepError "conduit-iconv"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Benchmarks" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."conduit-iconv" or (errorHandler.buildDepError "conduit-iconv"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

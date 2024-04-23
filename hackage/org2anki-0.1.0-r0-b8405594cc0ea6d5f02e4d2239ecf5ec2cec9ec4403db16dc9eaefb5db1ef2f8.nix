@@ -21,7 +21,7 @@
       synopsis = "Basic org to anki exporter";
       description = "A basic parser of the markup-related subset of org-mode and an Anki one-side flashcards exporter.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "org2anki" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

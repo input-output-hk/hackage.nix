@@ -21,7 +21,7 @@
       synopsis = "Parser and datatypes for the JSON Resume format";
       description = "The JSON Resume initiative (<http://jsonresume.org>) provides\na standard format for representing resumes/CVs in JSON\nform.  This library encodes that standard in Haskell\ndatatypes, and provides a parser to read a CV in the JSON\nResume format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

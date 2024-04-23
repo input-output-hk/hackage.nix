@@ -21,7 +21,7 @@
       synopsis = "A more secure version of cabal upload which uses HTTPS";
       description = "For more information, see <https://www.stackage.org/package/stackage-upload>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage-upload" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."stackage-upload" or (errorHandler.buildDepError "stackage-upload"))
             (hsPkgs."stackage-cli" or (errorHandler.buildDepError "stackage-cli"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

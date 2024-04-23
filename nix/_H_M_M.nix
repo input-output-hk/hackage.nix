@@ -6,8 +6,8 @@
         nix = import ../hackage/HMM-0.2.1-r0-b67c46b362e2363d6c57f29e1a724045228685cc93a9467c2d27a3ab3d2c8707.nix;
         revNum = 0;
         sha256 = "b67c46b362e2363d6c57f29e1a724045228685cc93a9467c2d27a3ab3d2c8707";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

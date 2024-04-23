@@ -21,7 +21,7 @@
       synopsis = "Scalable anonymous records";
       description = "The @large-anon@ package provides support for anonymous\nrecords in Haskell, with a focus on compile-time (and\nrun-time) scalability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,21 +41,21 @@
           (hsPkgs."typelet" or (errorHandler.buildDepError "typelet"))
           (hsPkgs."large-generics" or (errorHandler.buildDepError "large-generics"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ] ++ (pkgs.lib).optional (flags.debug) (hsPkgs."recover-rtti" or (errorHandler.buildDepError "recover-rtti"));
+        ] ++ pkgs.lib.optional (flags.debug) (hsPkgs."recover-rtti" or (errorHandler.buildDepError "recover-rtti"));
         buildable = true;
-        };
+      };
       exes = {
         "large-anon-testsuite-fourmolu-preprocessor" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fourmolu" or (errorHandler.buildDepError "fourmolu"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "9.2" || flags.disablefourmoluexec
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "9.2" || flags.disablefourmoluexec
             then false
             else true;
-          };
         };
+      };
       tests = {
         "test-large-anon" = {
           depends = [
@@ -81,10 +81,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typelet" or (errorHandler.buildDepError "typelet"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
-          build-tools = (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.2" && !flags.disablefourmoluexec) (hsPkgs.buildPackages.large-anon.components.exes.large-anon-testsuite-fourmolu-preprocessor or (pkgs.buildPackages.large-anon-testsuite-fourmolu-preprocessor or (errorHandler.buildToolDepError "large-anon:large-anon-testsuite-fourmolu-preprocessor")));
+          ];
+          build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.2" && !flags.disablefourmoluexec) (hsPkgs.buildPackages.large-anon.components.exes.large-anon-testsuite-fourmolu-preprocessor or (pkgs.buildPackages.large-anon-testsuite-fourmolu-preprocessor or (errorHandler.buildToolDepError "large-anon:large-anon-testsuite-fourmolu-preprocessor")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

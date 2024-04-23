@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter to extract only the links.";
       description = "For more information and a tutorial on how to use this package,\nplease see the README at <https://codeberg.org/mhwombat/pandoc-query#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Multipath TCP path manager";
       description = "Multipath TCP (www.multipath-tcp.org) starting from version 0.95 provides a\nnetlink path manager module. This package implements the userspace component\nin charge of controlling MPTCP subflow establishement and various behaviors.\nIt contains a set of function that is also used in [mptcpanalyzer](https://hackage.haskell.org/packages/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,12 +46,12 @@
           (hsPkgs."aeson-extra" or (errorHandler.buildDepError "aeson-extra"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
+        ] ++ pkgs.lib.optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mptcp-manager" = {
           depends = [
@@ -77,10 +77,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (pkgs.lib).optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
+          ] ++ pkgs.lib.optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tcp" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."mptcp-pm" or (errorHandler.buildDepError "mptcp-pm"))
             (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

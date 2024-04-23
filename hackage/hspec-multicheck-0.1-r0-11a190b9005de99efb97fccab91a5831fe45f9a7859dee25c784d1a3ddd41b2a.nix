@@ -21,7 +21,7 @@
       synopsis = "A testing framework for Haskell using Hspec";
       description = "Hspec Multicheck is an extension to the framework Hspec for\nHaskell. It enables execution of all defined tests using multiple\ndifferent testing libraries while avoiding code duplication.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,18 +30,18 @@
           (hsPkgs."hspec-smallcheck" or (errorHandler.buildDepError "hspec-smallcheck"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-multicheck" or (errorHandler.buildDepError "hspec-multicheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

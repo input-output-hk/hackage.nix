@@ -6,8 +6,8 @@
         nix = import ../hackage/DnaProteinAlignment-0.0.0.1-r0-cd80b1c6833c510992513618a67f4f883ea24869e10ccfdc411ecd7162309d10.nix;
         revNum = 0;
         sha256 = "cd80b1c6833c510992513618a67f4f883ea24869e10ccfdc411ecd7162309d10";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

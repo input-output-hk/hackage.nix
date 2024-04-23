@@ -21,7 +21,7 @@
       synopsis = "X.509 collection accessing and storing methods";
       description = "X.509 collection accessing and storing methods for certificate, crl, exception list";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
           (hsPkgs."crypton" or (errorHandler.buildDepError "crypton"))
           (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-x509-store" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."crypton-x509" or (errorHandler.buildDepError "crypton-x509"))
             (hsPkgs."crypton-x509-store" or (errorHandler.buildDepError "crypton-x509-store"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

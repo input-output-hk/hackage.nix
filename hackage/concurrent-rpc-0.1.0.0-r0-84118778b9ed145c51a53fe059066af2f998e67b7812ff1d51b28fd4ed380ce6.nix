@@ -21,11 +21,11 @@
       synopsis = "An abstraction for inter-thread RPC based on MVars";
       description = "This library is small wrapper around `Control.Concurrent.MVar.MVar`s that can\nbe used to implement request-response communication between different threads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

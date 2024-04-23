@@ -21,7 +21,7 @@
       synopsis = "Jsonnet implementaton in pure Haskell";
       description = "Please see the README on GitHub at <https://github.com/moleike/jsonnet-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."unbound-generics" or (errorHandler.buildDepError "unbound-generics"))
           (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-jsonnet" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jsonnet-test" = {
           depends = [
@@ -80,10 +80,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "jsonnet-bench" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "WAI middleware for brotli compression";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-middleware-brotli-server" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."wai-middleware-brotli" or (errorHandler.buildDepError "wai-middleware-brotli"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wai-middleware-brotli-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-brotli" or (errorHandler.buildDepError "wai-middleware-brotli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

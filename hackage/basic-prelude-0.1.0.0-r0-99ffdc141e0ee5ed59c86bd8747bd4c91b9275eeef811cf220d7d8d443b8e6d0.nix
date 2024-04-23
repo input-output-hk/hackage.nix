@@ -21,7 +21,7 @@
       synopsis = "An enhanced core prelude, meant for building up more complete preludes on top of.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

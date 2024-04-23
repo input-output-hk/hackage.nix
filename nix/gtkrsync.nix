@@ -6,8 +6,8 @@
         nix = import ../hackage/gtkrsync-1.0.4-r0-0bc7215e0e09e210722af7d8d415580f3d3e4da70b4203a54eded3f0470a233d.nix;
         revNum = 0;
         sha256 = "0bc7215e0e09e210722af7d8d415580f3d3e4da70b4203a54eded3f0470a233d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

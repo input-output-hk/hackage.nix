@@ -21,7 +21,7 @@
       synopsis = "duplicate file finder";
       description = "takedouble is a fast duplicate file finder that filters by file size, first and last 4k chunks before checking the full contents of files that pass the filter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "takedouble" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."takedouble" or (errorHandler.buildDepError "takedouble"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "takedouble-tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."takedouble" or (errorHandler.buildDepError "takedouble"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

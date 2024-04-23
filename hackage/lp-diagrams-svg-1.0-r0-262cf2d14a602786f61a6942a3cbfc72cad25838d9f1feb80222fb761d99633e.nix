@@ -21,7 +21,7 @@
       synopsis = "SVG Backend for lp-diagrams";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."FontyFruity" or (errorHandler.buildDepError "FontyFruity"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lp-diagrams-svg-example" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."FontyFruity" or (errorHandler.buildDepError "FontyFruity"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

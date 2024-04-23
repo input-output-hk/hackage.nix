@@ -21,13 +21,13 @@
       synopsis = "DOM library that supports both GHCJS and WebKitGTK using jsaddle";
       description = "Documentent Object Model (DOM) functions that work with\nGHCJS, but can also be used with GHC and WebKitGTK.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."jsaddle-dom" or (errorHandler.buildDepError "jsaddle-dom"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "detect mismatches between compile-time and run-time versions of the ghc api";
       description = "detect mismatches between compile-time and run-time versions of the ghc api";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-compat" or (errorHandler.buildDepError "th-compat"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.2") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.2") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

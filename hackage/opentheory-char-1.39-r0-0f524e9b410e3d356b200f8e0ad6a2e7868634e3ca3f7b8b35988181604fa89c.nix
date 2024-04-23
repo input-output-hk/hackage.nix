@@ -21,7 +21,7 @@
       synopsis = "Unicode characters";
       description = "Unicode characters - automatically generated from the opentheory package\nhaskell-char-1.39";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-parser" or (errorHandler.buildDepError "opentheory-parser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "opentheory-char-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."opentheory-primitive" or (errorHandler.buildDepError "opentheory-primitive"))
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
             (hsPkgs."opentheory-parser" or (errorHandler.buildDepError "opentheory-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

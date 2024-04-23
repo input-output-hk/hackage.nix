@@ -21,7 +21,7 @@
       synopsis = "Configuration management";
       description = "A configuration management library which supports:\n\n* name-value bindings,\n\n* required or optional imports,\n\n* comments.\n\nFor details of the configuration file format, see\n<http://hackage.haskell.org/packages/archive/config-manager/latest/doc/html/Data-ConfigManager.html>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-config-manager" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

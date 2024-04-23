@@ -14,7 +14,7 @@
       identifier = {
         name = "r-glpk-phonetic-languages-ukrainian-durations";
         version = "0.4.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Can be used to calculate the durations of the approximations of the Ukrainian phonemes.";
       description = "Can be used to calculate the durations of the approximations of the Ukrainian phonemes using some prepared text with its correct (at least mostly) pronunciation. The prepared text is located in the same directory and contains lines --- the Ukrainian word and its duration in seconds separated with whitespace.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
           (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
           (hsPkgs."foldable-ix" or (errorHandler.buildDepError "foldable-ix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pldUkr" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."ukrainian-phonetics-basic-array" or (errorHandler.buildDepError "ukrainian-phonetics-basic-array"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
             (hsPkgs."foldable-ix" or (errorHandler.buildDepError "foldable-ix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

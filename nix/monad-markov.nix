@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-markov-0.1.0.0-r0-c8d6dfa63b1416650ea012510739d42f674dc9c972cf4be8153ea651c477d8fd.nix;
         revNum = 0;
         sha256 = "c8d6dfa63b1416650ea012510739d42f674dc9c972cf4be8153ea651c477d8fd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

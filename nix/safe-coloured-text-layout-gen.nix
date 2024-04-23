@@ -6,8 +6,8 @@
         nix = import ../hackage/safe-coloured-text-layout-gen-0.0.0.0-r0-a579800927a7df843e74466740c64509acb06ae6845765e1a0fc611ff52c2803.nix;
         revNum = 0;
         sha256 = "a579800927a7df843e74466740c64509acb06ae6845765e1a0fc611ff52c2803";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

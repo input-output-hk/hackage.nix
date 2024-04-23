@@ -14,7 +14,7 @@
       identifier = {
         name = "haskell-tools-builtin-refactorings";
         version = "1.0.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "nboldi@elte.hu";
@@ -24,7 +24,7 @@
       synopsis = "Refactoring Tool for Haskell";
       description = "Contains a set of refactorings based on the Haskell-Tools framework to easily transform a Haskell program. For the descriptions of the implemented refactorings, see the homepage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."haskell-tools-rewrite" or (errorHandler.buildDepError "haskell-tools-rewrite"))
           (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
           (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-tools-builtin-refactorings-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."haskell-tools-builtin-refactorings" or (errorHandler.buildDepError "haskell-tools-builtin-refactorings"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ht-extension-organizer-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
             (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
             (hsPkgs."haskell-tools-builtin-refactorings" or (errorHandler.buildDepError "haskell-tools-builtin-refactorings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

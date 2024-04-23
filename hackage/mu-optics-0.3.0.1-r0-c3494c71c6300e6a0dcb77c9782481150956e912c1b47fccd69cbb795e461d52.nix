@@ -21,7 +21,7 @@
       synopsis = "Optics for @mu-schema@ terms";
       description = "With @mu-schema@ you can describe schemas using type-level constructs, and derive serializers from those. This package provides convenient access using @optics@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mu-schema" or (errorHandler.buildDepError "mu-schema"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

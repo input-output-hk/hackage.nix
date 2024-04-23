@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-frauddetector-2.0-r0-a3508b55796ce3f4328d8ad801d58f0bcb452be233a1adc3c63983fa00532fb1.nix;
         revNum = 0;
         sha256 = "a3508b55796ce3f4328d8ad801d58f0bcb452be233a1adc3c63983fa00532fb1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

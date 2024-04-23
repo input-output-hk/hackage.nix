@@ -21,7 +21,7 @@
       synopsis = "Cocodataset with cocoapi";
       description = "Haskell binding for the cocoapi in c";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,12 +50,12 @@
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
           (hsPkgs."fei-dataiter" or (errorHandler.buildDepError "fei-dataiter"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mask" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."JuicyPixels-repa" or (errorHandler.buildDepError "JuicyPixels-repa"))
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "profiling" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,9 +82,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tracking of system metrics";
       description = "This library lets you defined and track system metrics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,24 +30,24 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "counter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "distribution" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

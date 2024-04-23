@@ -21,7 +21,7 @@
       synopsis = "Monad transformers that can be run and resumed later, conserving their context.";
       description = "Given an inner monad and a transformer:\n> (Monad m, MonadTrans t)\nIf 't' is an interruptible transformer, it becomes possible to intercalate executions\non the 't' context with executions over the inner monad 'm' by breaking the execution\non 't' and resuming it later.\n\nInterruptible monads implement the 'runI' function so that, given 'f :: a -> t m b' and\n'g :: b -> t m c', 'resume (f >>= g)' is equivalent to '\\x -> resume f x >>= resume g'.\n\nThat makes it possible to intercalate the execution of different monads, and even to\nreturn a monadic context for another function to resume it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "all" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."interruptible" or (errorHandler.buildDepError "interruptible"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

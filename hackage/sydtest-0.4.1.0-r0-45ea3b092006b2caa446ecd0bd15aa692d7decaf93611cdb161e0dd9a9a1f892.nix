@@ -21,7 +21,7 @@
       synopsis = "A modern testing framework for Haskell with good defaults and advanced testing features.";
       description = "A modern testing framework for Haskell with good defaults and advanced testing features. Sydtest aims to make the common easy and the hard possible. See https://github.com/NorfairKing/sydtest#readme for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."yamlparse-applicative" or (errorHandler.buildDepError "yamlparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-output-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."safe-coloured-text-terminfo" or (errorHandler.buildDepError "safe-coloured-text-terminfo"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sydtest-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -77,12 +77,12 @@
             (hsPkgs."safe-coloured-text" or (errorHandler.buildDepError "safe-coloured-text"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

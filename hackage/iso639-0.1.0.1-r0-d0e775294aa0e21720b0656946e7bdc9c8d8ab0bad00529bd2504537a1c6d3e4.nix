@@ -21,11 +21,11 @@
       synopsis = "ISO-639-1 language codes mapping to Haskell datatypes from the official site (http://www.loc.gov/standards/iso639-2/php/English_list.php)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

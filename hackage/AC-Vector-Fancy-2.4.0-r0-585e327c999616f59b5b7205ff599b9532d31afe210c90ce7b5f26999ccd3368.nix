@@ -21,15 +21,15 @@
       synopsis = "Fancy type-system stuff for AC-Vector";
       description = "Adds various type-system tricks to AC-Vector.\n(Requires several language extensions, including\ntype families.)\nAdded missing @Vector Point@ constraint to @HasSpace@\nclass. Consequently removed @HasSpace Range@ instance.\nAdded @unions@ method to @BoundingBox@ class. Added\n@axis_range@ function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."AC-Angle" or (errorHandler.buildDepError "AC-Angle"))
           (hsPkgs."AC-Vector" or (errorHandler.buildDepError "AC-Vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Monad transformer library with type indexes,\nproviding 'free' copies.";
       description = "A monad transformer library with type indexes, which allows the\nprogrammer to get a distinct copy of one of the monads without\nreproducing definitions and instances.  It doesn't currently\nsupport Error or List monads.  Inspired by the original mtl.  That\nlibrary was inspired by the paper /Functional Programming with\nOverloading and Higher-Order Polymorphism/, by Mark P Jones\n(<http://web.cecs.pdx.edu/~mpj/pubs/springschool.html>), Advanced\nSchool of Functional Programming, 1995.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

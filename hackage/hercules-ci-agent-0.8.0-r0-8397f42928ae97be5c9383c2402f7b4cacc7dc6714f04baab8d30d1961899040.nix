@@ -21,7 +21,7 @@
       synopsis = "Runs Continuous Integration tasks on your machines";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,9 +64,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hercules-ci-agent" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hercules-ci-agent-worker" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -173,20 +173,20 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           libs = [
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
             (pkgs."boost_context" or (errorHandler.sysDepError "boost_context"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."nix-store" or (errorHandler.pkgConfDepError "nix-store"))
             (pkgconfPkgs."nix-expr" or (errorHandler.pkgConfDepError "nix-expr"))
             (pkgconfPkgs."nix-main" or (errorHandler.pkgConfDepError "nix-main"))
             (pkgconfPkgs."bdw-gc" or (errorHandler.pkgConfDepError "bdw-gc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hercules-test" = {
           depends = [
@@ -216,9 +216,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

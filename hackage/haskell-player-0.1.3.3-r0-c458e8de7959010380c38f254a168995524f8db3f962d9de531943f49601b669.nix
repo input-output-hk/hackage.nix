@@ -21,7 +21,7 @@
       synopsis = "A terminal music player based on afplay";
       description = "A minimal graphical interface on top of afplay and afinfo\nbuilt using brick.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,26 +39,26 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-player" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-player" or (errorHandler.buildDepError "haskell-player"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskell-player-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-player" or (errorHandler.buildDepError "haskell-player"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

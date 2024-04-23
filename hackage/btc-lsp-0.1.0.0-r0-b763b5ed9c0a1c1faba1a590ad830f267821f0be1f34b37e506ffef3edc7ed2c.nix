@@ -21,7 +21,7 @@
       synopsis = "Lightning service provider";
       description = "You can find documentation at <https://hackage.haskell.org/package/btc-lsp>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -96,14 +96,14 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "btc-lsp-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (if flags.ghcid
+          ] ++ (if flags.ghcid
             then [
               (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
               (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
@@ -176,12 +176,12 @@
               (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
               (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
               (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-              ]
+            ]
             else [
               (hsPkgs."btc-lsp" or (errorHandler.buildDepError "btc-lsp"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "btc-lsp-integration" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -196,7 +196,7 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
-            ] ++ (if flags.ghcid
+          ] ++ (if flags.ghcid
             then [
               (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
               (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
@@ -269,16 +269,16 @@
               (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
               (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
               (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-              ]
+            ]
             else [
               (hsPkgs."btc-lsp" or (errorHandler.buildDepError "btc-lsp"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "btc-lsp-prof" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (if flags.ghcid
+          ] ++ (if flags.ghcid
             then [
               (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
               (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
@@ -351,13 +351,13 @@
               (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
               (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
               (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-              ]
+            ]
             else [
               (hsPkgs."btc-lsp" or (errorHandler.buildDepError "btc-lsp"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "btc-lsp-test" = {
           depends = [
@@ -373,7 +373,7 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
-            ] ++ (if flags.ghcid
+          ] ++ (if flags.ghcid
             then [
               (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
               (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
@@ -446,12 +446,12 @@
               (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
               (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
               (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-              ]
+            ]
             else [
               (hsPkgs."btc-lsp" or (errorHandler.buildDepError "btc-lsp"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

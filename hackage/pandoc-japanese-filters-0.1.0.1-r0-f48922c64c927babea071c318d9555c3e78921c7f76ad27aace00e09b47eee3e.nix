@@ -21,7 +21,7 @@
       synopsis = "Japanese-specific markup filters for pandoc.";
       description = "Japanese-specific markup filters for pandoc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tate-math-to-svg-filter" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."effin" or (errorHandler.buildDepError "effin"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "math-to-svg-filter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,9 +51,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."effin" or (errorHandler.buildDepError "effin"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "japanese-filter" = {
           depends = [
             (hsPkgs."HaTeX" or (errorHandler.buildDepError "HaTeX"))
@@ -65,9 +65,9 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "env-to-div-filter" = {
           depends = [
             (hsPkgs."HaTeX" or (errorHandler.buildDepError "HaTeX"))
@@ -79,9 +79,9 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

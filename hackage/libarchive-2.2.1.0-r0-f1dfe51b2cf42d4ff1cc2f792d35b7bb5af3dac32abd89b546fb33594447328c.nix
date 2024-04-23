@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.chs-cabal or (pkgs.buildPackages.chs-cabal or (errorHandler.setupDepError "chs-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -38,13 +38,13 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libarchive" or (errorHandler.pkgConfDepError "libarchive"))
-          ];
-        build-tools = (pkgs.lib).optional (!flags.cross) (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")));
+        ];
+        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")));
         buildable = true;
-        };
+      };
       tests = {
         "libarchive-test" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."dir-traverse" or (errorHandler.buildDepError "dir-traverse"))
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
             (hsPkgs."pathological-bytestrings" or (errorHandler.buildDepError "pathological-bytestrings"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "libarchive-bench" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

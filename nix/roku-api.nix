@@ -6,8 +6,8 @@
         nix = import ../hackage/roku-api-0.1.0.0-r0-8a5bf556fc28f743b22f5c88433788780cda46a4fb4e5ef4daeb71bb391a63c4.nix;
         revNum = 0;
         sha256 = "8a5bf556fc28f743b22f5c88433788780cda46a4fb4e5ef4daeb71bb391a63c4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

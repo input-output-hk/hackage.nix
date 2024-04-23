@@ -21,7 +21,7 @@
       synopsis = "xmonad wallpaper extension";
       description = "Designed for xmonad users relies on feh to setup wallpaper. It allows user to setup a random image as the wallpaper choosed from user specified image directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."magic" or (errorHandler.buildDepError "magic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

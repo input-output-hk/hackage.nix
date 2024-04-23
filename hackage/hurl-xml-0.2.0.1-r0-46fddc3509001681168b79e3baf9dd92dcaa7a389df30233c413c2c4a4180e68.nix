@@ -21,7 +21,7 @@
       synopsis = "Fetch parsed XML & possibly CSS for a URL based on MIMEtype.";
       description = "API bindings between HURL, XML-Conduit, & Haskell Stylist. Supports HTML, XML, Gemini, TSV, CSV, or plaintext files. Can automatically extract & apply CSS stylesheets if Haskell Stylist is used, in which case CSS files cause the previous page to get restyled.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."css-syntax" or (errorHandler.buildDepError "css-syntax"))
           (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
           (hsPkgs."xml-conduit-stylist" or (errorHandler.buildDepError "xml-conduit-stylist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

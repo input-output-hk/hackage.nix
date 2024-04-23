@@ -21,15 +21,15 @@
       synopsis = "Binding group analysis in Template Haskell";
       description = "th-sccs exposes Template Haskell functions for computing the\nmutually recursive binding groups for data and type synonym\ndeclarations, excluding those that use type families.\nThis includes a convenient type class for gathering the type\nconstructor names that occur within a TH @Info@\\/@Dec@\\/@Type@\nvalue.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

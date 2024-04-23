@@ -21,7 +21,7 @@
       synopsis = "Lawful list and set monad transformers based on free monads";
       description = "This package provides a lawful @ListT@ implementation based on free monads.\nIt also provides an _Applicative_ list transformer, which is a lawful @Applicative@,\nand isomorphic to the old @ListT@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "free-listt-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-listt" or (errorHandler.buildDepError "free-listt"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

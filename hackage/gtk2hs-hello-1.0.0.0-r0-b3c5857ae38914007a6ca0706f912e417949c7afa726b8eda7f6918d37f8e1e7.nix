@@ -21,7 +21,7 @@
       synopsis = "Gtk2Hs Hello World, an example package";
       description = "This is an implementation of the classic \"Hello World\" program in\nHaskell using Gtk2Hs, as an example of how to create a minimal Gtk2Hs\napplication.  Please submit any suggestions and improvements.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gtk2hs-hello" = {
@@ -30,9 +30,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

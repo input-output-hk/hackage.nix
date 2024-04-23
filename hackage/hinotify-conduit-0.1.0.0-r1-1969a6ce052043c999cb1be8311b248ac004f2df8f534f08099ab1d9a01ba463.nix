@@ -21,7 +21,7 @@
       synopsis = "inotify conduit sources";
       description = "Please see the README on GitHub at <https://github.com/j1r1k/hinotify-conduit#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hinotify-conduit-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
             (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

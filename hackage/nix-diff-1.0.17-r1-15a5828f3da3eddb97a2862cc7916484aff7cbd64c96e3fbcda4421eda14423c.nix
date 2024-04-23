@@ -21,7 +21,7 @@
       synopsis = "Explain why two Nix derivations differ";
       description = "This package provides a @nix-diff@ executable which\nexplains why two Nix derivations (i.e. @*.drv@ files)\ndiffer";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nix-diff" = {
@@ -40,9 +40,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

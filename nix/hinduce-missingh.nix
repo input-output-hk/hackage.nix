@@ -6,8 +6,8 @@
         nix = import ../hackage/hinduce-missingh-0.0.0.0-r0-fbc489f2374eedb7f52daba3929ec57effad8eae1dfbd1fc727098a75912b503.nix;
         revNum = 0;
         sha256 = "fbc489f2374eedb7f52daba3929ec57effad8eae1dfbd1fc727098a75912b503";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

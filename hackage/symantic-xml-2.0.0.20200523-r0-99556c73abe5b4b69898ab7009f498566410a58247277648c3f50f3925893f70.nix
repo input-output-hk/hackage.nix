@@ -21,7 +21,7 @@
       synopsis = "Library for reading, validating and writing XML.";
       description = "Symantics for XML (eXtensible Markup Language)\nand RNC (RelaxNG Compact).\n\nDISCLAIMER: This is an experimental library, use at your own risks.\n\nMotivation: Writing a schema using Haskell combinators\nand deriving automatically a reader, a writer\nand a documentation from it.\n\nExample:\n\n* <symantic-atom https://hackage.haskell.org/package/symantic-atom>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."treeseq" or (errorHandler.buildDepError "treeseq"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "symantic-xml-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."treeseq" or (errorHandler.buildDepError "treeseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

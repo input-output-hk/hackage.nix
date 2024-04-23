@@ -21,20 +21,20 @@
       synopsis = "Binary and Hashable instances for TypeRep";
       description = "Binary and Hashable instances for TypeRep";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ] ++ (if flags.new-typerep
+        ] ++ (if flags.new-typerep
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Modern and extensible testing framework";
       description = "See <http://documentup.com/feuerbach/tasty>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ] ++ (pkgs.lib).optional (flags.colors) (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"));
+        ] ++ pkgs.lib.optional (flags.colors) (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

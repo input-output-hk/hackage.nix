@@ -21,14 +21,14 @@
       synopsis = "An implementation of the MurmurHash3 algorithm";
       description = "The Murmur3 hash algorithm is a published, high-performance,\nnon-cryptographic hash.  This implementation of it should be decently fast.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A basic console snake game.";
       description = "A basic console snake game with rudimentary ASCII-based graphics and minimal dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "snake" = {
@@ -30,9 +30,9 @@
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

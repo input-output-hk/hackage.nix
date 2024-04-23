@@ -21,7 +21,7 @@
       synopsis = "A Haskell pre-processor";
       description = "@hpp@ is a Haskell pre-processor that is also a\nC89/C90-compatible pre-processor (with the addition of a\n@--cpp@ flag). It is packaged as both a library and\nan executable.\n\nTo use as a Haskell preprocessor for resolving @#ifdef@\nconditionals and simple macro expansion while still\nallowing multi-line string literals, an invocation might\nlook like,\n\n@\nhpp -DDEBUG Foo.hs\n@\n\nTo use as a C preprocessor, an invocation might look\nlike,\n\n@\nhpp -DDEBUG --cpp foo.c\n@\n\nTo have GHC use @hpp@ as the C pre-processor, add this\nline to the top of a Haskell source file that makes use\nof the @CPP@ @LANGUAGE@ pragma.\n\n@\n&#123;-\\# OPTIONS_GHC -cpp -pgmPhpp -optP\\-\\-cpp \\#-&#125;\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
         buildable = true;
-        };
+      };
       exes = {
         "hpp" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

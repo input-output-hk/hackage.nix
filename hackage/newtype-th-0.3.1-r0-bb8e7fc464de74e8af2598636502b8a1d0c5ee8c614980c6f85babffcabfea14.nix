@@ -21,7 +21,7 @@
       synopsis = "A template haskell deriver to create Control.Newtype instances.";
       description = "Provides a template haskell based mechanism for\nderiving instances of djahandarie's Control.Newtype class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

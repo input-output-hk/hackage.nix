@@ -21,7 +21,7 @@
       synopsis = "MTL class instances for the CHP library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."chp" or (errorHandler.buildDepError "chp"))
           (hsPkgs."chp-plus" or (errorHandler.buildDepError "chp-plus"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

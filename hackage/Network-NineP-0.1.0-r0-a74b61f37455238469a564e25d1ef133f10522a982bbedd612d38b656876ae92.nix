@@ -21,7 +21,7 @@
       synopsis = "High-level abstraction over 9P protocol";
       description = "A library providing one with a somewhat higher level interface to 9P2000 protocol than existing implementations. Designed to facilitate rapid development of synthetic filesystems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."mstate" or (errorHandler.buildDepError "mstate"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "test" = { buildable = true; }; };
       };
-    }
+      exes = { "test" = { buildable = true; }; };
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Third-party extensions to hbro.";
       description = "Cf README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Changing Haskell's Read Implementation Such That by Mainpulating Abstract Syntax Trees it Reads Expressions Efficiently";
       description = "Alternative approach of 'read' that composes grammars instead of parsers. It reads data in linear time, while the function 'read' has an exponential behavior in some cases of data types with infix operators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."TTTAS" or (errorHandler.buildDepError "TTTAS"))
           (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

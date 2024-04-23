@@ -21,7 +21,7 @@
       synopsis = "Containers with monoidal accumulation";
       description = "Containers with monoidal accumulation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

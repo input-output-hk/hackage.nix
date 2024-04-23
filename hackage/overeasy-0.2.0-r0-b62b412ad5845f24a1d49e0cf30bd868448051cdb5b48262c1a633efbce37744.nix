@@ -21,7 +21,7 @@
       synopsis = "A purely functional E-Graph library";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/overeasy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unfree" or (errorHandler.buildDepError "unfree"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "overeasy-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unfree" or (errorHandler.buildDepError "unfree"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

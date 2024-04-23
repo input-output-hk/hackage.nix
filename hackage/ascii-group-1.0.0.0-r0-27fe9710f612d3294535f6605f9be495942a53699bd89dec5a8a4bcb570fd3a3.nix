@@ -21,15 +21,15 @@
       synopsis = "ASCII character groups";
       description = "This package defines a @Group@ type that describes the two varieties of ASCII character, and provides some functions for classifying characters by group.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ascii-char" or (errorHandler.buildDepError "ascii-char"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

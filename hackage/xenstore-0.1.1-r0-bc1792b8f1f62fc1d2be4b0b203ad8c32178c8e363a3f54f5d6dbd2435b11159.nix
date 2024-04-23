@@ -21,7 +21,7 @@
       synopsis = "Xenstore client access";
       description = "Xenstore client access";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,11 +30,11 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xenstore" = { buildable = if flags.executable then true else false; };
-        };
       };
-    }
+    };
+  }

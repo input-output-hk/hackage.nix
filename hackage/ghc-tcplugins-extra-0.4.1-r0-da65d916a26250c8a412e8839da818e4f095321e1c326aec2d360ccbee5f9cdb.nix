@@ -21,14 +21,14 @@
       synopsis = "Utilities for writing GHC type-checker plugins";
       description = "Utilities for writing GHC type-checker plugins, such as\ncreating constraints, with a stable API covering multiple\nGHC releases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

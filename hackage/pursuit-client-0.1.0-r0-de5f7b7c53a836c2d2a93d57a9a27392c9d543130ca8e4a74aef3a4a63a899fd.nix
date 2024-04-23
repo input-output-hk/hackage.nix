@@ -21,7 +21,7 @@
       synopsis = "A cli client for pursuit";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."taggy-lens" or (errorHandler.buildDepError "taggy-lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pursuit-search" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."pursuit-client" or (errorHandler.buildDepError "pursuit-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

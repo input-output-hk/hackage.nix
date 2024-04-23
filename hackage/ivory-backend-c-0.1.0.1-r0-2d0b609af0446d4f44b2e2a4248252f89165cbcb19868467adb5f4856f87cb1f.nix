@@ -21,7 +21,7 @@
       synopsis = "Ivory C backend.";
       description = "Ivory compiler, to a subset of C99.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."cmdlib" or (errorHandler.buildDepError "cmdlib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

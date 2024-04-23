@@ -21,7 +21,7 @@
       synopsis = "A Tutorial Program for The Programming Language Egison";
       description = "A tutorial program for the programming language Egison.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "egison-tutorial" = {
@@ -43,9 +43,9 @@
             (hsPkgs."strict-io" or (errorHandler.buildDepError "strict-io"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

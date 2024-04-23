@@ -21,7 +21,7 @@
       synopsis = "Simple modular utilities for CGI/FastCGI (sessions, etc.)";
       description = "Simple modular utilities for CGI/FastCGI that one tends to always need including sessions state.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

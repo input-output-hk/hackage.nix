@@ -21,7 +21,7 @@
       synopsis = "Basic ECDSA signing implementation";
       description = "Wraps the stuff in hecc to do ECDSA.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hecc" or (errorHandler.buildDepError "hecc"))
           (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

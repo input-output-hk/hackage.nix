@@ -21,7 +21,7 @@
       synopsis = "An adapter to convert attoparsec Parsers into blazing-fast Iteratees";
       description = "An adapter to convert attoparsec Parsers into blazing-fast Iteratees";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."iteratee" or (errorHandler.buildDepError "iteratee"))
           (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

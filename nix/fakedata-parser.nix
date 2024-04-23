@@ -6,8 +6,8 @@
         nix = import ../hackage/fakedata-parser-0.1.0.0-r0-6de870a2c21624aa4516f7ee28fc0076b3b19f3c32d23c969f8f0d7de47c606a.nix;
         revNum = 0;
         sha256 = "6de870a2c21624aa4516f7ee28fc0076b3b19f3c32d23c969f8f0d7de47c606a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

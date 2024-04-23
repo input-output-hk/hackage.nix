@@ -21,7 +21,7 @@
       synopsis = "j2hs";
       description = "j2hs";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "j2hs" = {
@@ -43,9 +43,9 @@
             (hsPkgs."strings" or (errorHandler.buildDepError "strings"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

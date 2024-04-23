@@ -13,7 +13,7 @@
       use-http-client-tls = true;
       cross = false;
       network-tests = true;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "dhall"; version = "1.41.2"; };
@@ -26,7 +26,7 @@
       synopsis = "A configuration language guaranteed to terminate";
       description = "Dhall is an explicitly typed configuration language that is not Turing\ncomplete.  Despite being Turing incomplete, Dhall is a real programming\nlanguage with a type-checker and evaluator.\n\nUse this library to parse, type-check, evaluate, and pretty-print the Dhall\nconfiguration language.  This package also includes an executable which\ntype-checks a Dhall file and reduces the file to a fully evaluated normal\nform.\n\nRead \"Dhall.Tutorial\" to learn how to use this library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -79,19 +79,19 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-xhr" or (errorHandler.buildDepError "ghcjs-xhr"))
-            ]
+          ]
           else [
             (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
-            ] ++ (pkgs.lib).optionals (flags.with-http) ([
+          ] ++ pkgs.lib.optionals (flags.with-http) ([
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ] ++ (pkgs.lib).optional (flags.use-http-client-tls) (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))));
+          ] ++ pkgs.lib.optional (flags.use-http-client-tls) (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))));
         buildable = true;
-        };
+      };
       exes = {
         "dhall" = {
           depends = [
@@ -145,10 +145,10 @@
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -218,9 +218,9 @@
             (hsPkgs."tasty-silver" or (errorHandler.buildDepError "tasty-silver"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -274,10 +274,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
+      };
       benchmarks = {
         "dhall-parser" = {
           depends = [
@@ -332,9 +332,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "deep-nested-large-record" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -388,9 +388,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

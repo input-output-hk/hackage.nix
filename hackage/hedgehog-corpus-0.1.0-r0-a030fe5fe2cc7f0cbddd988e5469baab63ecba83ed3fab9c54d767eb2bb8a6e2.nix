@@ -21,11 +21,11 @@
       synopsis = "hedgehog-corpus";
       description = "Collection of strings for testing things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

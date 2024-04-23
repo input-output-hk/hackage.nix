@@ -21,7 +21,7 @@
       synopsis = "Bindings to the Vulkan graphics API.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,23 +30,23 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."vulkan-1" or (errorHandler.sysDepError "vulkan-1")) ]
           else [ (pkgs."vulkan" or (errorHandler.sysDepError "vulkan")) ];
         buildable = true;
-        };
+      };
       exes = {
         "info" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."vulkan" or (errorHandler.buildDepError "vulkan"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
+        };
         "sdl-triangle" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) [
+          depends = pkgs.lib.optionals (flags.build-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
@@ -58,9 +58,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vulkan" or (errorHandler.buildDepError "vulkan"))
-            ];
+          ];
           buildable = if flags.build-examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-route53-recovery-cluster-2.0-r0-ca869278ebd6f90177ffde71bf53f445e9c84b10308ef07abc598dd1ca922d57.nix;
         revNum = 0;
         sha256 = "ca869278ebd6f90177ffde71bf53f445e9c84b10308ef07abc598dd1ca922d57";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

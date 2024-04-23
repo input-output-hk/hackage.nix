@@ -21,6 +21,6 @@
       synopsis = "bzip2 C sources";
       description = "Bundled C sources for use with various bzip2 Haskell bindings.";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

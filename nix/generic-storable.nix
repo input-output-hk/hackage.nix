@@ -6,8 +6,8 @@
         nix = import ../hackage/generic-storable-0.1.0.0-r0-c2b05478dd12dad12c8a368b8e44466b6e660a34c6a5efe2137c5d3b571996d3.nix;
         revNum = 0;
         sha256 = "c2b05478dd12dad12c8a368b8e44466b6e660a34c6a5efe2137c5d3b571996d3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

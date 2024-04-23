@@ -21,7 +21,7 @@
       synopsis = "Unicode normalization using the ICU library";
       description = "Unicode normalization using the ICU library";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
@@ -29,13 +29,13 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."compact-string" or (errorHandler.buildDepError "compact-string"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."compact-string" or (errorHandler.buildDepError "compact-string"))
-            ];
+          ];
         libs = [ (pkgs."icuuc" or (errorHandler.sysDepError "icuuc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

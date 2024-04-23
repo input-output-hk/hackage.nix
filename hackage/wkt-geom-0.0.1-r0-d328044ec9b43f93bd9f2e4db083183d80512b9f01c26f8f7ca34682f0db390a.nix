@@ -21,7 +21,7 @@
       synopsis = "A parser of WKT, WKB and eWKB.";
       description = "Well Known Text (WKT), Well Known Binary and the Postgresql extension Extended Well Know Binary (eWKB) are vector geometry representations.\n\nThe text or binary representations are parsed and turned into their GeoJSON representations.  The binary representations use vectors throughout\nwhereas the text representation still uses a list and then is converted to a vector representation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wkt-geom-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wkt-geom" or (errorHandler.buildDepError "wkt-geom"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

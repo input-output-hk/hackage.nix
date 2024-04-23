@@ -21,7 +21,7 @@
       synopsis = "Support for deriving PathInfo using Template Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
             (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

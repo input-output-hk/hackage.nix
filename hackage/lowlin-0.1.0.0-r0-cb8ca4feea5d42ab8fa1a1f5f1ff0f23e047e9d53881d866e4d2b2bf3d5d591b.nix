@@ -21,20 +21,20 @@
       synopsis = "Low dimensional linear algebra";
       description = "\nLowlin is a library for linear algebra in vector spaces up to a dimension of 4.\n\nSimple Tuples can be used as vectors and nested tuples as matrices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "lowlin-test" = {
           depends = [
             (hsPkgs."lowlin" or (errorHandler.buildDepError "lowlin"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a tool to access the OSX keychain";
       description = "skeleton is a command line tool used to quickly access passwords\nstored in the OSX keychain. You can search by account, server\nname or any other available attribute and get a list of fuzzy\nmatched result. The first match is be copied to the clipbdoard.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "skeleton" = {
@@ -35,9 +35,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."argparser" or (errorHandler.buildDepError "argparser"))
             (hsPkgs."posix-escape" or (errorHandler.buildDepError "posix-escape"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

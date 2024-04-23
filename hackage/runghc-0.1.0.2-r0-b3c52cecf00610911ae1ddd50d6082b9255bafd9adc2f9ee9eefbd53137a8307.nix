@@ -21,7 +21,7 @@
       synopsis = "runghc replacement for fast repeated runs";
       description = "This is a replacement for runghc which keeps compiled files\nfor fast runtimes when nothing has changed\n\n@\nUsage: runghc [options] [ghc-options] file [file-arguments]\nOptions:\n-! --compile-only  Do not run the script, just compile it\ndefault=<scr-dir>/.compile\ndefault=<exe-dir>/<basename>-intermediate-files\n-? --help          Display this help message\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "runghc" = {
@@ -32,9 +32,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

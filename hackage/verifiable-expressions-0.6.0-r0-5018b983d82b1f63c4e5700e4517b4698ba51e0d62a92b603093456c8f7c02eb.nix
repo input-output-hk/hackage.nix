@@ -21,7 +21,7 @@
       synopsis = "An intermediate language for Hoare logic style verification.";
       description = "A typed intermediate language for Hoare logic style verification. It defines the intermediate language and combinators to interact it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."union" or (errorHandler.buildDepError "union"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

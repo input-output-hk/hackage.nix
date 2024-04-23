@@ -14,7 +14,7 @@
       identifier = {
         name = "hierarchical-spectral-clustering";
         version = "0.4.0.2";
-        };
+      };
       license = "GPL-3.0-only";
       copyright = "2019 Gregory W. Schwartz";
       maintainer = "gsch@pennmedicine.upenn.edu";
@@ -24,7 +24,7 @@
       synopsis = "Hierarchical spectral clustering of a graph.";
       description = "Generate a tree of hierarchical spectral clustering using Newman-Girvan modularity as a stopping criteria.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tree-fun" or (errorHandler.buildDepError "tree-fun"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cluster-tree" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

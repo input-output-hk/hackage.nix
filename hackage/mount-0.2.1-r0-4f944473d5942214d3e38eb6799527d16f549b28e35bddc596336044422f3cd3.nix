@@ -21,14 +21,14 @@
       synopsis = "Mounts and umounts filesystems";
       description = "This package is obsolete. Use <http://hackage.haskell.org/package/linux-mount> instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

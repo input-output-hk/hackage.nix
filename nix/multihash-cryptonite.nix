@@ -6,8 +6,8 @@
         nix = import ../hackage/multihash-cryptonite-0.1.0.0-r0-300a463286f1dae58b383eca4f7acca0f10d77a4cdaf2a7f7aea3b369bf396f4.nix;
         revNum = 0;
         sha256 = "300a463286f1dae58b383eca4f7acca0f10d77a4cdaf2a7f7aea3b369bf396f4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

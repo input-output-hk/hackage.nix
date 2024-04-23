@@ -21,11 +21,11 @@
       synopsis = "A library to process command line arguments in some more convenient way.";
       description = "A strict version of the cli-arguments package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

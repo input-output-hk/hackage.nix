@@ -21,7 +21,7 @@
       synopsis = "The GHC API";
       description = "GHC's functionality can be useful for more things than just\ncompiling Haskell programs. Important use cases are programs\nthat analyse (and perhaps transform) Haskell code. Others\ninclude loading Haskell code dynamically in a GHCi-like manner.\nFor this reason, a lot of GHC's functionality is made available\nthrough this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -41,16 +41,16 @@
           (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
-          ] ++ (pkgs.lib).optional (!(system.isLinux && system.isX86_64 && (compiler.isGhc && (compiler.version).eq "8.4.3"))) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!flags.buildable) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (if system.isWindows
+        ] ++ pkgs.lib.optional (!(system.isLinux && system.isX86_64 && (compiler.isGhc && compiler.version.eq "8.4.3"))) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (!flags.buildable) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
+          ] ++ pkgs.lib.optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")));
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

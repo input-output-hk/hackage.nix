@@ -21,7 +21,7 @@
       synopsis = "Foscam File format";
       description = "Sort Foscam Files into directories";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "foscam-sort" = {
@@ -34,10 +34,10 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."foscam-filename" or (errorHandler.buildDepError "foscam-filename"))
             (hsPkgs."foscam-directory" or (errorHandler.buildDepError "foscam-directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

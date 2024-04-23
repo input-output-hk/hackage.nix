@@ -21,7 +21,7 @@
       synopsis = "Session store based on clientsession";
       description = "Provides a session store for use with wai-session.\n\nSee example/Main.hs in git for example usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

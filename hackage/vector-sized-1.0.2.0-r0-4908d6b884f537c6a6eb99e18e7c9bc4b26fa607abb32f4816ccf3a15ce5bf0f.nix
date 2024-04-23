@@ -21,7 +21,7 @@
       synopsis = "Size tagged vectors";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."indexed-list-literals" or (errorHandler.buildDepError "indexed-list-literals"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

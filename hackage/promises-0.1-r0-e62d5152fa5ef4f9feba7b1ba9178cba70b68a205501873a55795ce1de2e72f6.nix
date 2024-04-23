@@ -21,14 +21,14 @@
       synopsis = "Lazy demand-driven promises";
       description = "Lazy demand-driven promises";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monad-st" or (errorHandler.buildDepError "monad-st"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

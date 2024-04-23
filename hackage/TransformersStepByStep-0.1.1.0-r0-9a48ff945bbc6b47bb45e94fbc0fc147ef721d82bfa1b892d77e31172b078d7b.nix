@@ -21,7 +21,7 @@
       synopsis = "Tutorial on monad transformers.";
       description = "In this tutorial, we describe how to use monad\ntransformers in order to incrementally add\nfunctionality to Haskell programs.  It is not a\npaper about implementing transformers, but about\nusing them to write elegant, clean and powerful\nprograms in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "TransformersStepByStep" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

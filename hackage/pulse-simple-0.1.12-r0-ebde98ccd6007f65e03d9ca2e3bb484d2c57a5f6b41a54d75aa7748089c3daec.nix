@@ -21,17 +21,17 @@
       synopsis = "binding to Simple API of pulseaudio";
       description = "Binding to simple version of client API for the pulseaudio soundserver.\nAlthough it does not provide advanced features and some not-so-adavanced features like\nvolume control, it should be enough for simple applications.\nConfirmed to work on linux(both 32 bit and 64 bit) with ghc 6.8 or 6.10.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."pulse-simple" or (errorHandler.sysDepError "pulse-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

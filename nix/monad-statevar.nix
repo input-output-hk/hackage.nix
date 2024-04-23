@@ -6,8 +6,8 @@
         nix = import ../hackage/monad-statevar-0.1-r0-44d867214b28f7611414cdb228726189ae1962901450ca571b1b186a31c1310b.nix;
         revNum = 0;
         sha256 = "44d867214b28f7611414cdb228726189ae1962901450ca571b1b186a31c1310b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

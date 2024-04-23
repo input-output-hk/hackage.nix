@@ -21,15 +21,15 @@
       synopsis = "Fast combinatorics.";
       description = "Fast combinatorics code with a high level of safety guaranteed by writing it in ATS.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fast-combinatorics-test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."combinatorics" or (errorHandler.buildDepError "combinatorics"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-combinatorics-bench" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."fast-combinatorics" or (errorHandler.buildDepError "fast-combinatorics"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."combinatorics" or (errorHandler.buildDepError "combinatorics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

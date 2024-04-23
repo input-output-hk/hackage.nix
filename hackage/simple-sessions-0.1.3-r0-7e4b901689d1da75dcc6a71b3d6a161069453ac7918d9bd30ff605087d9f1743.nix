@@ -21,15 +21,15 @@
       synopsis = "A simple implementation of session types";
       description = "This library is based on the session types implementation\nfrom \\\"Haskell Session Types with (Almost) No Class,\\\" from\nthe 2008 Haskell Symposium.  For a full-featured session types\nlibrary, see the sessions package\n(<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/sessions>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."indexed" or (errorHandler.buildDepError "indexed"))
           (hsPkgs."synchronous-channels" or (errorHandler.buildDepError "synchronous-channels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

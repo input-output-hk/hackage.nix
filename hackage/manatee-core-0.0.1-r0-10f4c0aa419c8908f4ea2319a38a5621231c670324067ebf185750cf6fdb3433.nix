@@ -21,7 +21,7 @@
       synopsis = "The core of Manatee.";
       description = "manatee-core is core package of Manatee (Haskell/Gtk+ Integrated Live Environment)\nTo provide basic communication protocol and toolkit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,8 +58,8 @@
           (hsPkgs."gconf" or (errorHandler.buildDepError "gconf"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

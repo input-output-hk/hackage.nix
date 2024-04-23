@@ -21,11 +21,11 @@
       synopsis = "Differences lists: lists supporting efficient append";
       description = "Differences lists: lists supporting efficient append";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

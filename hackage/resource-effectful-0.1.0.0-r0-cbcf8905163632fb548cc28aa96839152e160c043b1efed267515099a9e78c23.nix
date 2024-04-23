@@ -21,15 +21,15 @@
       synopsis = "A region-based resource effect for the effectful ecosystem.";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/resource-effectful#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."effectful-core" or (errorHandler.buildDepError "effectful-core"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

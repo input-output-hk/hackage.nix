@@ -21,11 +21,11 @@
       synopsis = "Discrete Intervals";
       description = "A 'Data.Interval' is a closed, convex set of discrete values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

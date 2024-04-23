@@ -21,7 +21,7 @@
       synopsis = "Bridge between encoding and typed-encoding packages";
       description = "Please see the README on GitHub at <https://github.com/rpeszek/typed-encoding-encoding#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."encoding" or (errorHandler.buildDepError "encoding"))
           (hsPkgs."typed-encoding" or (errorHandler.buildDepError "typed-encoding"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typed-encoding-encoding-doctest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."encoding" or (errorHandler.buildDepError "encoding"))
             (hsPkgs."typed-encoding" or (errorHandler.buildDepError "typed-encoding"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "typed-encoding-encoding-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -56,9 +56,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."typed-encoding" or (errorHandler.buildDepError "typed-encoding"))
             (hsPkgs."typed-encoding-encoding" or (errorHandler.buildDepError "typed-encoding-encoding"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

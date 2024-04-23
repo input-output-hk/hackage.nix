@@ -21,7 +21,7 @@
       synopsis = "'Asteroids' arcade games.";
       description = "A collection of clones of the arcade game 'Asteroids'.\nThere are two demos for moving around ('asteroids-space', 'asteroids-aufgabe');\nthere is a basic Asteroids game ('asteroids-basic'); and then there is a full\nelaborate one ('asteroids-haskelly').";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "asteroids-space" = {
@@ -29,33 +29,33 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "asteroids-aufgabe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "asteroids-basic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "asteroids-haskelly" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

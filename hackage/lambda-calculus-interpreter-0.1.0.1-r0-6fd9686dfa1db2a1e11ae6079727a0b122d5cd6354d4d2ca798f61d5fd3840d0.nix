@@ -14,7 +14,7 @@
       identifier = {
         name = "lambda-calculus-interpreter";
         version = "0.1.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2018 Author name here";
       maintainer = "example@example.com";
@@ -24,21 +24,21 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/githubuser/lambda-calculus-interpreter#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "lci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lambda-calculus-interpreter" or (errorHandler.buildDepError "lambda-calculus-interpreter"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lambda-calculus-interpreter-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."lambda-calculus-interpreter" or (errorHandler.buildDepError "lambda-calculus-interpreter"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

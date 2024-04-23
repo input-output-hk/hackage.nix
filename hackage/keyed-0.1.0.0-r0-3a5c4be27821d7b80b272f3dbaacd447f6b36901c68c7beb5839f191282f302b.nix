@@ -21,15 +21,15 @@
       synopsis = "Generic indexing for many data structures";
       description = "This library provides generic indexing for a number of data structures, so that we can overload (!) in the same way we overload length with Foldable or (f)map with Functor.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

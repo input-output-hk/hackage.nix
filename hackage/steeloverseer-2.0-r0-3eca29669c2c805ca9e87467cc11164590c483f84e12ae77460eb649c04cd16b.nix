@@ -21,7 +21,7 @@
       synopsis = "A file watcher and development tool.";
       description = "A command line tool that responds to filesystem events.\nAllows the user to automatically execute commands after\nfiles are added or updated. Watches files using regular\nexpressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sos" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."steeloverseer" or (errorHandler.buildDepError "steeloverseer"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

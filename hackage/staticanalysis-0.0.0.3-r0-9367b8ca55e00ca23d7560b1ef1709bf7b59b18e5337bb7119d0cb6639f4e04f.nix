@@ -21,14 +21,14 @@
       synopsis = "Reusable static analysis interfaces and modules.";
       description = "Reusable static analysis interfaces and modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

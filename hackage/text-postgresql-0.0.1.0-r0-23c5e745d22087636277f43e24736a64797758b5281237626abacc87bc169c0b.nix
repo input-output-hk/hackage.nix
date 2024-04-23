@@ -21,16 +21,16 @@
       synopsis = "Parser and Printer of PostgreSQL extended types";
       description = "This package involves parser and printer for\ntext expressions of PostgreSQL extended types.\n- inet type, cidr type";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pp" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-simple" or (errorHandler.buildDepError "quickcheck-simple"))
             (hsPkgs."text-postgresql" or (errorHandler.buildDepError "text-postgresql"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

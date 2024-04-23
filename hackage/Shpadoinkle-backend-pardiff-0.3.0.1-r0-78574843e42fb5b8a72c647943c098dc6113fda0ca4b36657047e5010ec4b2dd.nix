@@ -14,7 +14,7 @@
       identifier = {
         name = "Shpadoinkle-backend-pardiff";
         version = "0.3.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "isaac.shapira@platonic.systems";
@@ -24,7 +24,7 @@
       synopsis = "A Virtual Dom in pure Haskell, based on Html as an Alignable Functor.";
       description = "Virtual DOM diffing in pure Haskell. The diffing is a lawful usage of\n@alignWith@ from the @Data.These@ package. This implementation stores a\nreference to the @RawNode@ for each node in the virtual tree, merging\nkeyed and unkeyed virtual DOM techniques.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

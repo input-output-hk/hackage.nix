@@ -21,12 +21,12 @@
       synopsis = "Type level Key-Value list.";
       description = "This library provides a brief implementation for extensible records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."type-level-kv-list" or (errorHandler.buildDepError "type-level-kv-list"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "JSON to JSON Schema";
       description = "A JSON Schema Draft 4 Generator from JSON Instances";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jsons-to-schema-exe" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hjsonschema" or (errorHandler.buildDepError "hjsonschema"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jsons-to-schema-test" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

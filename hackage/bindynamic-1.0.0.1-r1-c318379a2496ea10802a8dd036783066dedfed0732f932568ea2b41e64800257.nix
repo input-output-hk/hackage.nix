@@ -21,7 +21,7 @@
       synopsis = "A variation of Data.Dynamic.Dynamic with a Binary instance";
       description = "This Dynamic is instance Binary by encapsulating only\nvalues of types that are Binary. It is a bit more\nefficient than something similar to (ByteString, TypeRep)\nas it avoids unnecessary encode/decoding round-trips.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."rank1dynamic" or (errorHandler.buildDepError "rank1dynamic"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

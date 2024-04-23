@@ -6,8 +6,8 @@
         nix = import ../hackage/ige-0.1.0.0-r0-f23ff823a0afc99173ac8c06bd551b18d62215c22d6fbefce193098ce45fc343.nix;
         revNum = 0;
         sha256 = "f23ff823a0afc99173ac8c06bd551b18d62215c22d6fbefce193098ce45fc343";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

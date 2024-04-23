@@ -21,7 +21,7 @@
       synopsis = "Use easytensor with vulkan-api.";
       description = "Use easytensor DataFrame types with vulkan-api. This package provides an orphan instance of PrimBytes for Vulkan structures, so they can be used as elements of DataFrames. In addition, it provides a few helper functions for working with array-like structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
           (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
           (hsPkgs."vulkan-api" or (errorHandler.buildDepError "vulkan-api"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

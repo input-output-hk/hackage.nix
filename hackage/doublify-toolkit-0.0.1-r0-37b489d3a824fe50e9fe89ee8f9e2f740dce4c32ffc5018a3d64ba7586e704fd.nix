@@ -21,11 +21,11 @@
       synopsis = "Doublify API toolkit for Haskell";
       description = "Doublify API toolkit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

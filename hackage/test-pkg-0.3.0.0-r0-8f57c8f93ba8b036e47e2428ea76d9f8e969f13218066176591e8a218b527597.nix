@@ -21,11 +21,11 @@
       synopsis = "Just tests Hackage";
       description = "Hackage does not have documentation,\nso we have to test things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

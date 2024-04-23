@@ -21,7 +21,7 @@
       synopsis = "Empirical Mode Decomposition and Hilbert-Huang Transform";
       description = "Please see the README on GitHub at <https://github.com/mstksg/emd#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."typelits-witnesses" or (errorHandler.buildDepError "typelits-witnesses"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "emd-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."emd" or (errorHandler.buildDepError "emd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

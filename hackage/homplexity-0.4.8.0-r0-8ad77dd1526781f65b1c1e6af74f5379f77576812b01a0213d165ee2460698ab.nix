@@ -21,7 +21,7 @@
       synopsis = "Haskell code quality tool";
       description = "Homplexity aims to measure code complexity,\nwarning about fragments that might have higher defect probability\ndue to bad coding style on-the-large:\n\n* too large functions\n\n* too deeply nested conditions\n\n* too few comments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -36,14 +36,14 @@
           (hsPkgs."hflags" or (errorHandler.buildDepError "hflags"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ]) ++ (pkgs.lib).optionals (flags.html) [
+        ]) ++ pkgs.lib.optionals (flags.html) [
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "homplexity-cli" = {
           depends = [
@@ -59,13 +59,13 @@
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
-            ] ++ (pkgs.lib).optionals (flags.html) [
+          ] ++ pkgs.lib.optionals (flags.html) [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "homplexity-tests" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ] ++ [ (hsPkgs."hspec" or (errorHandler.buildDepError "hspec")) ];
+          ] ++ [ (hsPkgs."hspec" or (errorHandler.buildDepError "hspec")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

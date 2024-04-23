@@ -21,11 +21,11 @@
       synopsis = "GADT type witnesses for Peano-style natural numbers.";
       description = "Witnesses for Peano naturals are unary natural numbers paired with a natural number type index. These terms act as witnesses of a particular natural; we can recover the type information by examining the terms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

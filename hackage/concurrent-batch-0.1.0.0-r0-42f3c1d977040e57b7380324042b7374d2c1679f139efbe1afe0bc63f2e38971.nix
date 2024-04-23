@@ -21,15 +21,15 @@
       synopsis = "Concurrent batching queue based on STM with timeout.";
       description = "Please see the README on GitHub at <https://github.com/harporoeder/concurrent-batch#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

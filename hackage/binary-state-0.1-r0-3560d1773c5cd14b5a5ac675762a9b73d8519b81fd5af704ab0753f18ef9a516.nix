@@ -21,7 +21,7 @@
       synopsis = "Simple wrapper around Data.Binary, which adds StateT to Get/Put monads.";
       description = "This package declares BinaryState type class, which is similar to\nData.Binary.Binary, but Get/Put monads can track state.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hsc3-forth-0.15-r0-61e66d39db933771af9cceb3deb106ca84a46276bdb32ed57c6cf872f7b4c802.nix;
         revNum = 0;
         sha256 = "61e66d39db933771af9cceb3deb106ca84a46276bdb32ed57c6cf872f7b4c802";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

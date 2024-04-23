@@ -21,14 +21,14 @@
       synopsis = "Some special functions to work with lists (with zip).";
       description = "Uses normalizitions inside for the tuples. Can be used to generate data for 2D function points.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."foldable-ix" or (errorHandler.buildDepError "foldable-ix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

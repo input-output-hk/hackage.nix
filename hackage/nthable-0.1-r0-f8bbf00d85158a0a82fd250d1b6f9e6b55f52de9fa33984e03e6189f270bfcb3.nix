@@ -21,14 +21,14 @@
       synopsis = "";
       description = "Generalization of 'fst', 'snd', etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

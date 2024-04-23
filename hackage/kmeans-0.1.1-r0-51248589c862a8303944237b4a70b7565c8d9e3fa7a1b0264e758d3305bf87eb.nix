@@ -21,11 +21,11 @@
       synopsis = "K-means clustering algorithm";
       description = "A simple library for k-means clustering";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/secrm-0.0-r0-7bd34a329b41633c1506948c822bdf90543d47ab3dca19eac383e7d940178190.nix;
         revNum = 0;
         sha256 = "7bd34a329b41633c1506948c822bdf90543d47ab3dca19eac383e7d940178190";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

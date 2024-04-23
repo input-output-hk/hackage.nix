@@ -21,7 +21,7 @@
       synopsis = "Non-empty values of `Data.Text`.";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nNon-empty values of `Data.Text`.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."papa" or (errorHandler.buildDepError "papa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

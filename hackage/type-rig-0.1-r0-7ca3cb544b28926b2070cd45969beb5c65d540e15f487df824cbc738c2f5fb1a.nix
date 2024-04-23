@@ -21,14 +21,14 @@
       synopsis = "Classes for the rig (sums and products) of types";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

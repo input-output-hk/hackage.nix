@@ -21,7 +21,7 @@
       synopsis = "Core CMS extension for Yesod apps";
       description = "LambdaCms is a Content Management System (CMS) in Haskell\nusing Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."lists" or (errorHandler.buildDepError "lists"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."esqueleto" or (errorHandler.buildDepError "esqueleto"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/gibberish-3.0.0.0-r0-c96231cef1c7b7005c10925be174dfa74f8fd2d48e412ddc2d3a80169351cc9d.nix;
         revNum = 0;
         sha256 = "c96231cef1c7b7005c10925be174dfa74f8fd2d48e412ddc2d3a80169351cc9d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

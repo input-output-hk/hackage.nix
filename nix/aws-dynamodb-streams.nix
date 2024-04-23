@@ -6,8 +6,8 @@
         nix = import ../hackage/aws-dynamodb-streams-0.1.0.0-r0-58caf0c82240e165f8695e5a35d2aa99ac4dfa8fe24d5f3b6ffe2f64790492f3.nix;
         revNum = 0;
         sha256 = "58caf0c82240e165f8695e5a35d2aa99ac4dfa8fe24d5f3b6ffe2f64790492f3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

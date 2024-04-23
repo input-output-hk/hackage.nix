@@ -21,7 +21,7 @@
       synopsis = "Listen for Stripe webhook events with Scotty";
       description = "This package provides support for writing a\n<https://stripe.com/ Stripe> webhook server using\n<https://hackage.haskell.org/package/scotty Scotty>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."stripe-signature" or (errorHandler.buildDepError "stripe-signature"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

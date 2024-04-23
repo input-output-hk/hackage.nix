@@ -21,11 +21,11 @@
       synopsis = "Generating all n-tuples without getting stuck in one infinity";
       description = "Generating tuples like this: [(x, y) | x <- [1..], y <- [1..]] generates tuples that change only in the second position. This library uses an automata to generate all tuples whose sum of digits is constant. This constant is increased and thereby all tuples are generated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

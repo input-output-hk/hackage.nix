@@ -21,7 +21,7 @@
       synopsis = "B+-tree implementation in Haskell.";
       description = "This package provides two B+-tree implementations. The first one is a pure\nB+-tree of a specific order, while the second one is an impure one backed\nby a page allocator.\n\nFor more information on how to use this package, visit\n<https://github.com/haskell-haskey/haskey-btree>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskey-btree-properties" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."haskey-btree" or (errorHandler.buildDepError "haskey-btree"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haskey-btree-integration" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."haskey-btree" or (errorHandler.buildDepError "haskey-btree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

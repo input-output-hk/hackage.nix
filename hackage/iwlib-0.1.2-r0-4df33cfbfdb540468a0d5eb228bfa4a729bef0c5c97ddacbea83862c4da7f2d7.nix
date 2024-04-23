@@ -21,12 +21,12 @@
       synopsis = "Bindings for the iw C library";
       description = "A binding to the iw library for getting info about the current WiFi connection.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."iw" or (errorHandler.sysDepError "iw")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

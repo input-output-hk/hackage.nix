@@ -21,7 +21,7 @@
       synopsis = "Implementation of Bitcoin script parsing and evaluation";
       description = "This package provides functions for parsing and evaluating bitcoin\ntransaction scripts. Data types are provided for building and\ndeconstructing all of the standard input and output script types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."haskoin-crypto" or (errorHandler.buildDepError "haskoin-crypto"))
           (hsPkgs."haskoin-util" or (errorHandler.buildDepError "haskoin-util"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-haskoin-script" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automate keyboard\\/mouse\\/clipboard\\/application interaction.";
       description = "\na platform-independent interface for scripting your manual computer workflows.\n\ndocumention at \"Workflow.Core\".\n\nsee the source of \"Workflow.Example\" for an example.\n\ntransitive dependencies:\n\n<<workflow-types.png>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-workflow-types" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-types" or (errorHandler.buildDepError "workflow-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

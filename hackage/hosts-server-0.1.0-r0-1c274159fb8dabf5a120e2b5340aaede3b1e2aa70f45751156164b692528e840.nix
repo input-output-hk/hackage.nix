@@ -21,7 +21,7 @@
       synopsis = "An dns server which is extremely easy to config.";
       description = "An dns server which is extremely easy to config, you can config it like your hosts file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hosts-server" = {
@@ -33,9 +33,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
             (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

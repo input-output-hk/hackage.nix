@@ -6,8 +6,8 @@
         nix = import ../hackage/GeomPredicates-0.1-r0-18991a548f1a7b42f8f1209901a4c692b36c03b78534d61be551891e0d61d397.nix;
         revNum = 0;
         sha256 = "18991a548f1a7b42f8f1209901a4c692b36c03b78534d61be551891e0d61d397";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

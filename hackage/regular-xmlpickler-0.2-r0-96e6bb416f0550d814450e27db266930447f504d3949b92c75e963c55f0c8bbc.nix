@@ -21,7 +21,7 @@
       synopsis = "Generic generation of HXT XmlPickler instances using Regular.";
       description = "Generic generation of HXT XmlPickler instances using Regular.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."regular" or (errorHandler.buildDepError "regular"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

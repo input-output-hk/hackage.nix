@@ -21,7 +21,7 @@
       synopsis = "flatten a latex multi-file latex document";
       description = "flatten a latex multi-file latex document:\nexpand all \\input statements and remove all comments";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "flat-tex" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

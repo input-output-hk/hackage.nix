@@ -21,7 +21,7 @@
       synopsis = "lightweight loader of GHC-based modules or packages";
       description = "This package allows the linking against GHC-compiled\nobject files and shared libraries. Specialized modules\nare provided for navigating directory structure and\ndependency checking.\n\nNo attempt at type-safe loading of symbols is made.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

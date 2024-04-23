@@ -21,7 +21,7 @@
       synopsis = "Quasiquoter, and Arbitrary helpers for the lambda calculus.";
       description = "CHANGES -- 0.0.0.2 added \\\"anti\\\" expressions for the quasiquoter to capture variables from the environment. Also added a pattern quasiquoter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

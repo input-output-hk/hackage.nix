@@ -21,7 +21,7 @@
       synopsis = "Graphs";
       description = "Graphs toolkit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."uni-events" or (errorHandler.buildDepError "uni-events"))
           (hsPkgs."uni-reactor" or (errorHandler.buildDepError "uni-reactor"))
           (hsPkgs."uni-htk" or (errorHandler.buildDepError "uni-htk"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

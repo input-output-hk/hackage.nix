@@ -21,7 +21,7 @@
       synopsis = "Show keys pressed with an on-screen display (Linux only)";
       description = "This program uses the xinput program to get a stream of key presses\nand uses the libnotify library to display them on-screen.\n\nCurrently supported display notations are: Emacs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,18 +34,18 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "osdkeys" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."osdkeys" or (errorHandler.buildDepError "osdkeys"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

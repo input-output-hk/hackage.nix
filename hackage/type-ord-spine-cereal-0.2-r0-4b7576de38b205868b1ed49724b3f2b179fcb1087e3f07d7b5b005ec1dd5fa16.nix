@@ -21,7 +21,7 @@
       synopsis = "Generic type-level comparison of types";
       description = "Generic type-level comparison of @type-spine@- and\n@type-cereal@-enabled types. See the @yoko@ package's \\\"Data.Yoko.HCompos\\\"\nand \\\"Data.Yoko.TH\\\" modules for a (rather large) use case.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."type-spine" or (errorHandler.buildDepError "type-spine"))
           (hsPkgs."type-cereal" or (errorHandler.buildDepError "type-cereal"))
           (hsPkgs."type-ord" or (errorHandler.buildDepError "type-ord"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

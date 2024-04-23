@@ -21,11 +21,11 @@
       synopsis = "Can be used to coordinate the printing output.";
       description = "Can be used to coordinate the printing output.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "JSON encoding/decoding for dependent-sum";
       description = "Newtype wrappers around [Data.Dependent.Sum.DSum](https://hackage.haskell.org/package/dependent-sum),\nfor use with @-XDerivingVia@. These wrappers are helpful when\nparsing JSON objects where certain keys determine the type of the\ndeserialised value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-dependent-sum-tests" = {
           depends = [
@@ -48,12 +48,12 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

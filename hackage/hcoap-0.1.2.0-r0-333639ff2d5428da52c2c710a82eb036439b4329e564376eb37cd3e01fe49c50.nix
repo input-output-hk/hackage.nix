@@ -21,7 +21,7 @@
       synopsis = "CoAP implementation for Haskell.";
       description = "CoAP library for writing CoAP clients, servers or just for decoding and encoding\nCoAP messages. The Network.CoAP.Server and Network.CoAP.Client modules allows\nbuilding CoAP servers and clients on top of a messaging layer which provides\nreliable transport of CoAP requests/responses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
           (hsPkgs."dns" or (errorHandler.buildDepError "dns"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hcoap-example-server" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."hcoap" or (errorHandler.buildDepError "hcoap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hcoap-example-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,10 +58,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."hcoap" or (errorHandler.buildDepError "hcoap"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hcoap-test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/crem-0.1.0.0-r0-59802923990f768b089c5593e86b3ecf268545717514c88850ad1db015c51baf.nix;
         revNum = 0;
         sha256 = "59802923990f768b089c5593e86b3ecf268545717514c88850ad1db015c51baf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

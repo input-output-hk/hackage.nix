@@ -21,14 +21,14 @@
       synopsis = "STM's TChan split into sending and receiving halves.";
       description = "STM's TChan split into sending and receiving halves.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

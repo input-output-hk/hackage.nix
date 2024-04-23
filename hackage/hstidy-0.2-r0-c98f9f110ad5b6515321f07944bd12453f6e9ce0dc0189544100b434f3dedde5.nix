@@ -21,16 +21,16 @@
       synopsis = "Takes haskell source on stdin, parses it, then\nprettyprints it to stdout.";
       description = "@hstidy@ reads haskell source from stdin, then\nparses and prettyprints it to stdout. @hstidy@ accepts not\nonly modules as a parseable unit, but expressions\nand patterns as well. Haddock docs are located at\n<http://code.haskell.org/~morrow/code/haskell/hstidy/docs/>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hstidy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A module allowing to write Hakyll blog posts in Rmd ";
       description = "This package declares a Compiler for Rmd posts, which allows to include R code in Rmd and have them rendered (for example as plots).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

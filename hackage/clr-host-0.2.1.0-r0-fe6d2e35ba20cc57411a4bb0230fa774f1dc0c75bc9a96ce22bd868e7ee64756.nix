@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.transformers or (pkgs.buildPackages.transformers or (errorHandler.setupDepError "transformers")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -37,32 +37,32 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."clr-marshal" or (errorHandler.buildDepError "clr-marshal"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
-        libs = ((pkgs.lib).optionals (flags.enable_dotnet) [
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+        libs = (pkgs.lib.optionals (flags.enable_dotnet) [
           (pkgs."oleaut32" or (errorHandler.sysDepError "oleaut32"))
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
-          ] ++ (pkgs.lib).optionals (flags.enable_mono) [
+        ] ++ pkgs.lib.optionals (flags.enable_mono) [
           (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
           (pkgs."mono-2.0" or (errorHandler.sysDepError "mono-2.0"))
-          ]) ++ (pkgs.lib).optionals (!flags.enable_dotnet && !flags.enable_mono) (if system.isWindows
+        ]) ++ pkgs.lib.optionals (!flags.enable_dotnet && !flags.enable_mono) (if system.isWindows
           then [
             (pkgs."oleaut32" or (errorHandler.sysDepError "oleaut32"))
             (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
-            ]
+          ]
           else [
             (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
             (pkgs."mono-2.0" or (errorHandler.sysDepError "mono-2.0"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "clr-host-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clr-host" or (errorHandler.buildDepError "clr-host"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

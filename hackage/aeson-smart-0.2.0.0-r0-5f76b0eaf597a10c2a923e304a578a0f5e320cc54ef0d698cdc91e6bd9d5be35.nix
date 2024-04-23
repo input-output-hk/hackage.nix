@@ -21,7 +21,7 @@
       synopsis = "Smart derivation of Aeson instances";
       description = "Aeson-smart generates ToJSON and FromJSON instances that ignore extra fields\nand fill in missing fields with default values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

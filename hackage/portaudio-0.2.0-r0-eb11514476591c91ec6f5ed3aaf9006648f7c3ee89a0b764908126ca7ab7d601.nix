@@ -21,14 +21,14 @@
       synopsis = "Haskell bindings for the PortAudio library.";
       description = "Bindings to the cross platform PortAudio library. Version 0.0.1 excludes the callback model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         libs = [ (pkgs."portaudio" or (errorHandler.sysDepError "portaudio")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A GHC linker wrapper tool to workaround a GHC >8.2 bug";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clr-win-linker" = {
@@ -31,9 +31,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Defunctionalization helpers: lists";
       description = "This package provides term definitions for type families in \"DeFun.List\"\nusing 'NP' type from @sop-core@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."defun-core" or (errorHandler.buildDepError "defun-core"))
           (hsPkgs."sop-core" or (errorHandler.buildDepError "sop-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

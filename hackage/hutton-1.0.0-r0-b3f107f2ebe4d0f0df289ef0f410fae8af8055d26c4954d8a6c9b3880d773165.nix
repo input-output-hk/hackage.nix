@@ -21,7 +21,7 @@
       synopsis = "A program for the button on Reddit.";
       description = "Hutton is a program for <https://www.reddit.com/r/thebutton the button> on\nReddit.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hutton" = {
@@ -42,9 +42,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

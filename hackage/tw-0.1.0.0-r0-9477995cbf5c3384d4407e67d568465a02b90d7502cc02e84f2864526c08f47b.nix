@@ -21,16 +21,16 @@
       synopsis = "Trailing Whitespace";
       description = "Command-line utility to detect trailing whitespace";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tw" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

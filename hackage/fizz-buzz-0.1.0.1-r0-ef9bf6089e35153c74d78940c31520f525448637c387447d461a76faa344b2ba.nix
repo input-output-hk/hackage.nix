@@ -21,11 +21,11 @@
       synopsis = "Functional Fizz/Buzz ";
       description = "Convert Numbers to their respective Fizz and or Buzz representations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

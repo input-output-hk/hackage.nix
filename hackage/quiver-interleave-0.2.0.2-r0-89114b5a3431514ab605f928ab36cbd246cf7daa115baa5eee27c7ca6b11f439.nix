@@ -21,15 +21,15 @@
       synopsis = "Interleave values from multiple Quivers";
       description = "Combine multiple Quivers into one.  Useful when merging\nvalues from multiple source.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."quiver" or (errorHandler.buildDepError "quiver"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "interleave-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."quiver" or (errorHandler.buildDepError "quiver"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

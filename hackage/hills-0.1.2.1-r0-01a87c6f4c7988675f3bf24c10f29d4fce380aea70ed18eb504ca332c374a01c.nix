@@ -21,7 +21,7 @@
       synopsis = "Generate STL models from SRTM elevation data.";
       description = "This program generates 3D models of areas of the\nearth's surface.\n\nIt uses the SRTM 90m elevation data from\nCGIAR-CSI which is downloadable free of charge\n(see <http://srtm.csi.cgiar.org/>).  It outputs STL.\n\nConsult README.md for full instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hills" = {
@@ -34,9 +34,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

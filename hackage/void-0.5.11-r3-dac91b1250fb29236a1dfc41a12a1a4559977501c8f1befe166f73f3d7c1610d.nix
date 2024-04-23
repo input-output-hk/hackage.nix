@@ -21,15 +21,15 @@
       synopsis = "A Haskell 98 logically uninhabited data type";
       description = "A Haskell 98 logically uninhabited data type, used to indicate that a given term should not exist.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

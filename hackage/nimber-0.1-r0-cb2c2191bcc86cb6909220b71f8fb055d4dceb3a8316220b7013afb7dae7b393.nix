@@ -21,15 +21,15 @@
       synopsis = "An implementation of (finite) nimbers";
       description = "This library provides a method to do arithmetic on\nnimbers, which may be considered an alternative field\nover the non-negative integers (the general case of\ntransfinite ordinal nimbers is not implementented.)\nNote that division is extremely slow at this point,\ndue to the lack of a closed-form implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-memocombinators" or (errorHandler.buildDepError "data-memocombinators"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

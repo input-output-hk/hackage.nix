@@ -21,7 +21,7 @@
       synopsis = "An HTTP client engine, intended as a base layer for more user-friendly packages.";
       description = "This codebase has been refactored from http-conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."publicsuffixlist" or (errorHandler.buildDepError "publicsuffixlist"))
           (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

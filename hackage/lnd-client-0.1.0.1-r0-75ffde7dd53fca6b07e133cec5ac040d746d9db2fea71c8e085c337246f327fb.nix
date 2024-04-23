@@ -21,7 +21,7 @@
       synopsis = "Lightning Network Daemon (LND) client library for Haskell";
       description = "You can find documentation at <https://hackage.haskell.org/package/lnd-client>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -65,9 +65,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "lnd-client-tkit" = {
           depends = [
@@ -75,10 +75,10 @@
             (hsPkgs."http2-client-grpc" or (errorHandler.buildDepError "http2-client-grpc"))
             (hsPkgs."lnd-client" or (errorHandler.buildDepError "lnd-client"))
             (hsPkgs."network-bitcoin" or (errorHandler.buildDepError "network-bitcoin"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "lnd-client-prof" = {
           depends = [
@@ -86,7 +86,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lnd-client" or (errorHandler.buildDepError "lnd-client"))
             (hsPkgs."lnd-client".components.sublibs.lnd-client-tkit or (errorHandler.buildDepError "lnd-client:lnd-client-tkit"))
-            ] ++ (if flags.ghcid
+          ] ++ (if flags.ghcid
             then [
               (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
               (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -128,14 +128,14 @@
               (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
               (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
               (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-              ]
+            ]
             else [
               (hsPkgs."lnd-client" or (errorHandler.buildDepError "lnd-client"))
               (hsPkgs."lnd-client".components.sublibs.lnd-client-tkit or (errorHandler.buildDepError "lnd-client:lnd-client-tkit"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "lnd-client-test" = {
           depends = [
@@ -144,7 +144,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ] ++ (if flags.ghcid
+          ] ++ (if flags.ghcid
             then [
               (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
               (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -186,13 +186,13 @@
               (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
               (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
               (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-              ]
+            ]
             else [
               (hsPkgs."lnd-client" or (errorHandler.buildDepError "lnd-client"))
               (hsPkgs."lnd-client".components.sublibs.lnd-client-tkit or (errorHandler.buildDepError "lnd-client:lnd-client-tkit"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

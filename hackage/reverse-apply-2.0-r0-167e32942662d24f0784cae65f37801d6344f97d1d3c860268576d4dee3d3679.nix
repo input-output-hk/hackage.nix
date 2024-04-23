@@ -21,11 +21,11 @@
       synopsis = "Standard version of the reverse apply operator.";
       description = "Provides a standard version of the reverse apply operator.\nIts definition is simply @(&) = flip ($)@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

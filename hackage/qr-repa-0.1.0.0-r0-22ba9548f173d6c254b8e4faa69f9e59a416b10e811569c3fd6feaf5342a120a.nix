@@ -21,7 +21,7 @@
       synopsis = "Library to generate QR codes from bytestrings and objects and scale image files";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,18 +36,18 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."repa-devil" or (errorHandler.buildDepError "repa-devil"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "qrpipe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."qr-repa" or (errorHandler.buildDepError "qr-repa"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

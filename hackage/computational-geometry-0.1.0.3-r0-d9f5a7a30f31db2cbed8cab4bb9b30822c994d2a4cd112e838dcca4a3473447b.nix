@@ -21,7 +21,7 @@
       synopsis = "Collection of algorithms in Computational Geometry.";
       description = "Collection of algorithms in Computational Geometry.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Replication backend for acid-state";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Simple" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SlaveUpdates" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CRCFail" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CheckpointSync" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "OrderingRandom" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "NReplication" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -107,9 +107,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "UpdateError" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -118,9 +118,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SyncTimeout" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,10 +129,10 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Local" = {
           depends = [
@@ -142,9 +142,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MasterOnly" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -154,9 +154,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MasterSlave" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -166,9 +166,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Slave" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -178,9 +178,9 @@
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."acid-state-dist" or (errorHandler.buildDepError "acid-state-dist"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

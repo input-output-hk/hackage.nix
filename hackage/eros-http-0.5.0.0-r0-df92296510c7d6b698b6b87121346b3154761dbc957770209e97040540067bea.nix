@@ -21,7 +21,7 @@
       synopsis = "JSON HTTP interface to Eros.";
       description = "This is a small program that runs an HTTP server.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "eros-http" = {
@@ -37,9 +37,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-responsible" or (errorHandler.buildDepError "wai-responsible"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

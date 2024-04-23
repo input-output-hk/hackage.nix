@@ -21,7 +21,7 @@
       synopsis = "OpenGL support for Gtk-based GUIs for Tangible Values";
       description = "GtkGLTV adds OpenGL support to GtkTV, which is a Gtk back-end for\ntangible values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bitmap" or (errorHandler.buildDepError "bitmap"))
           (hsPkgs."bitmap-opengl" or (errorHandler.buildDepError "bitmap-opengl"))
           (hsPkgs."stb-image" or (errorHandler.buildDepError "stb-image"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

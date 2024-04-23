@@ -6,8 +6,8 @@
         nix = import ../hackage/deptrack-dot-0.1.0.0-r0-dc94451225ec6b5cdead473df5f1849f6d71e27c940d84ffd9b9928309cd90e4.nix;
         revNum = 0;
         sha256 = "dc94451225ec6b5cdead473df5f1849f6d71e27c940d84ffd9b9928309cd90e4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

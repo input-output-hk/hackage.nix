@@ -21,7 +21,7 @@
       synopsis = "A fast alternative to Purescript's `psc-bundle` to be used during development";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "psc-bundle-fast" = {
@@ -33,9 +33,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

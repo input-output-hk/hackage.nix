@@ -21,11 +21,11 @@
       synopsis = "Haskell operator\n`g ... f = \\x1 .. xn -> g (f x1 .. xn)`.";
       description = "Haskell operator\n`g ... f = \\x1 .. xn -> g (f x1 .. xn)`.\nCompose functions such that all arguments are\napplied. Obviates `(.).(.)` and similar patterns in\nsome cases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

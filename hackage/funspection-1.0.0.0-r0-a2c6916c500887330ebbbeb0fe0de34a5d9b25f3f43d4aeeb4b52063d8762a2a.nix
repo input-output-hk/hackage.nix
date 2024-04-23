@@ -21,11 +21,11 @@
       synopsis = "Type-level function utilities";
       description = "Type-level function utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

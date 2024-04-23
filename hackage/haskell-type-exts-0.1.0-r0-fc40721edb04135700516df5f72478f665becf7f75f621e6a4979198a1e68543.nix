@@ -21,15 +21,15 @@
       synopsis = "A type checker for Haskell/haskell-src-exts";
       description = "Haskell Types with Extensions (HTE, haskell-type-exts)\nis (an embryo of) a type checker for Haskell as embodied\nsyntactically by the haskell-src-exts (HSE) package.\nAt this point the type checker only handles a limited\nnumber of extensions, both regarding the various syntactic\nextensions handled by HSE, and the various type-level\nextensions implemented in e.g. GHC. The goal is to\ncover the full range of known Haskell extensions,\nbut every path starts with a first step.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

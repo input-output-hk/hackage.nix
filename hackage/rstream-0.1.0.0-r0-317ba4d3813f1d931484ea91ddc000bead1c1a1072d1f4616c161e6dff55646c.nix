@@ -21,14 +21,14 @@
       synopsis = "stream-fusion framework from vector";
       description = "wanted to rip the stream-fusion framework from vector\nwithout depending on vector, and possibly make tweaks.\nthis package is primarily for playground use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

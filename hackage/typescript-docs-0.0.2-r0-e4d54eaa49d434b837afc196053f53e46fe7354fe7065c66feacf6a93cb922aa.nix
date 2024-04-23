@@ -21,7 +21,7 @@
       synopsis = "A documentation generator for TypeScript Definition files";
       description = "A documentation generator for TypeScript Definition files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "typescript-docs" = {
@@ -37,9 +37,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-typescript" or (errorHandler.buildDepError "language-typescript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

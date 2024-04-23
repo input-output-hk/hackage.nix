@@ -21,7 +21,7 @@
       synopsis = "Haskell EDSL for Souffle";
       description = "Haskell EDSL for Souffle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,10 +36,10 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
         buildable = true;
-        };
+      };
       tests = {
         "souffle-dsl-test" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
-            ];
-          libs = (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
+          ];
+          libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

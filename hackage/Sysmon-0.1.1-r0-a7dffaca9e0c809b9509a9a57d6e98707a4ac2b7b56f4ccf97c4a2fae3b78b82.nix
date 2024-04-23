@@ -21,7 +21,7 @@
       synopsis = "Sybase 15 sysmon reports processor";
       description = "A library for processing Sysbase 15 sysmon reports.\nSysmon parses and stores the reports in the interval map.\nThe interval is defined by the report's time range.\nThe library main features are parsing sysmon reports, querying the\ntime interval, aggregating the multiple sysmon reports covered by the\nrequested time interval, providing some hints. The hints properties are\nconfigured.\nSee the Log.hs for the exported functions and examples/Sample.hs for the\nusage example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

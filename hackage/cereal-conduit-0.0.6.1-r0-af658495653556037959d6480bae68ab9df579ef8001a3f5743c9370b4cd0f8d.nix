@@ -21,7 +21,7 @@
       synopsis = "Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits";
       description = "Turn Data.Serialize Gets and Puts into Sources, Sinks, and Conduits";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."exception-transformers" or (errorHandler.buildDepError "exception-transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cereal-conduit" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

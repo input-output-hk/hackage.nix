@@ -21,6 +21,6 @@
       synopsis = "Svg Icons and more";
       description = "DEPRECATED. Please go to [svg-icons](https://hackage.haskell.org/package/svg-icons)";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

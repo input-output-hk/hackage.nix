@@ -21,7 +21,7 @@
       synopsis = "A pleasant PostgreSQL layer";
       description = "A PostgreSQL layer to safely expand your SQL queries with a lightweight eDSL.\nRead the tutorial at https://hackage.haskell.org/package/pg-entity/src/docs/book/index.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "book" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = if !flags.book then false else true;
-          };
         };
+      };
       tests = {
         "entity-test" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

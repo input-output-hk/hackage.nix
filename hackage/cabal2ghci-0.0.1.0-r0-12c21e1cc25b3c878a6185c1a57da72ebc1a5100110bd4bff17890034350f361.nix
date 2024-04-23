@@ -21,7 +21,7 @@
       synopsis = "A tool to generate .ghci file from .cabal";
       description = "This is the tool to automatically generate `.ghci` file and `.stylish-haskell.yaml` file from `.cabal`. It currently supports to handle Language Pragmas and hs-src-dirs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2ghci" = {
@@ -35,9 +35,9 @@
             (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

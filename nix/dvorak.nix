@@ -6,8 +6,8 @@
         nix = import ../hackage/dvorak-0.1.0.0-r0-a388df66f7f48ca1d27d4a345b3c89ec604f3fb9d63338aaaa559ec7d678f0f5.nix;
         revNum = 0;
         sha256 = "a388df66f7f48ca1d27d4a345b3c89ec604f3fb9d63338aaaa559ec7d678f0f5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

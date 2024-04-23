@@ -21,7 +21,7 @@
       synopsis = "Utils for text";
       description = "Utils for text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."strict-data" or (errorHandler.buildDepError "strict-data"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."util-plus" or (errorHandler.buildDepError "util-plus"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "text-plus-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-plus" or (errorHandler.buildDepError "text-plus"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Network filtering exploration tools that rely on pcap";
       description = "A set of tools for exploring network filtering";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "replay-convert" = {
@@ -44,9 +44,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "update" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "export" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,9 +88,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "show" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."pcap" or (errorHandler.buildDepError "pcap"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

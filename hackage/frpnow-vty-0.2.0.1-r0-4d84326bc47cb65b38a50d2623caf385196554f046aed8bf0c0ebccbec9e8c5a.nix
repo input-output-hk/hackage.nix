@@ -21,16 +21,16 @@
       synopsis = "Program terminal applications with vty and frpnow!";
       description = "This package allows you to create vty terminal\napplications using frpnow's frp interface.\n\nA demo executable is also included to show how to\nuse this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."frpnow" or (errorHandler.buildDepError "frpnow"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "frpnow-vty-demo" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."frpnow" or (errorHandler.buildDepError "frpnow"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

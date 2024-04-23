@@ -21,7 +21,7 @@
       synopsis = "WAI Middleware to cache things";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-caching-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wai-middleware-caching" or (errorHandler.buildDepError "wai-middleware-caching"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

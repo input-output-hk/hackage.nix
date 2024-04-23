@@ -21,11 +21,11 @@
       synopsis = "Basic symantics for writing Embedded Domain-Specific Languages (EDSL).";
       description = "A collection of basic tagless-final combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

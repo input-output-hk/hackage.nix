@@ -21,7 +21,7 @@
       synopsis = "Tutorials on ffmpeg usage to play video/audio";
       description = "A set of tutorials with raising complexity";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tutorial01" = {
@@ -29,18 +29,18 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."hs-ffmpeg" or (errorHandler.buildDepError "hs-ffmpeg"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tutorial02" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."hs-ffmpeg" or (errorHandler.buildDepError "hs-ffmpeg"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tutorial03" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -49,9 +49,9 @@
             (hsPkgs."hs-ffmpeg" or (errorHandler.buildDepError "hs-ffmpeg"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

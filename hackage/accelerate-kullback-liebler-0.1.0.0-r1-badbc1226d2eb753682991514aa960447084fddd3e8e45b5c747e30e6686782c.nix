@@ -14,7 +14,7 @@
       identifier = {
         name = "accelerate-kullback-liebler";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Copyright: (c) 2019 Vanessa McHale";
       maintainer = "vamchale@gmail.com";
@@ -24,25 +24,25 @@
       synopsis = "Kullback-Liebler divergence";
       description = "Kullback-Liebler divergence using accelerate";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "accelerate-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mwc-random-accelerate" or (errorHandler.buildDepError "mwc-random-accelerate"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "accelerate-kullback-liebler-test" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
             (hsPkgs."accelerate-kullback-liebler".components.sublibs.accelerate-test or (errorHandler.buildDepError "accelerate-kullback-liebler:accelerate-test"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
-            ] ++ (pkgs.lib).optional (flags.gpu) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
+          ] ++ pkgs.lib.optional (flags.gpu) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "accelerate-kullback-liebler-bench" = {
           depends = [
@@ -68,12 +68,12 @@
             (hsPkgs."accelerate-llvm-native" or (errorHandler.buildDepError "accelerate-llvm-native"))
             (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (pkgs.lib).optional (flags.gpu) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
+          ] ++ pkgs.lib.optional (flags.gpu) (hsPkgs."accelerate-llvm-ptx" or (errorHandler.buildDepError "accelerate-llvm-ptx"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

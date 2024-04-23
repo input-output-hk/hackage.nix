@@ -13,7 +13,7 @@
       test-doctests = true;
       optimize = false;
       llvm = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "sparse"; version = "0.6"; };
@@ -26,7 +26,7 @@
       synopsis = "A playground of sparse linear algebra primitives using Morton ordering";
       description = "A playground of sparse linear algebra primitives using Morton ordering\n\nThe design of this library is describe in the following articles on FP Complete's School of Haskell.\n\n1. <https://www.fpcomplete.com/user/edwardk/revisiting-matrix-multiplication-part-1>\n\n2. <https://www.fpcomplete.com/user/edwardk/revisiting-matrix-multiplication-part-2>\n\n3. <https://www.fpcomplete.com/user/edwardk/revisiting-matrix-multiplication-part-3>\n\n4. <https://www.fpcomplete.com/user/edwardk/revisiting-matrix-multiplication-part-4>\n\n5. <https://www.fpcomplete.com/user/edwardk/revisiting-matrix-multiplication-part-5>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!!flags.test-properties) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hybrid-vectors" or (errorHandler.buildDepError "hybrid-vectors"))
@@ -57,11 +57,11 @@
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.test-properties then false else true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doctests)) [
+          depends = pkgs.lib.optionals (!!flags.test-doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -72,10 +72,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."simple-reflect" or (errorHandler.buildDepError "simple-reflect"))
-            ];
+          ];
           buildable = if !flags.test-doctests then false else true;
-          };
         };
+      };
       benchmarks = {
         "mm" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."sparse" or (errorHandler.buildDepError "sparse"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

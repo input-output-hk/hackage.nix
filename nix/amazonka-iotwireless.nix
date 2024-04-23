@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-iotwireless-2.0-r0-599dd8b9990291f04c8e605998a90172eacbd66f216b3607fba3afc39ab8b219.nix;
         revNum = 0;
         sha256 = "599dd8b9990291f04c8e605998a90172eacbd66f216b3607fba3afc39ab8b219";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Instances for using gsl-random with random-fu";
       description = "Instances for using gsl-random's RNG type as a\nrandom-fu RandomSource.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gsl-random" or (errorHandler.buildDepError "gsl-random"))
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

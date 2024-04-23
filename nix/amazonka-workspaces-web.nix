@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-workspaces-web-2.0-r0-c8892692c2e89b7032e7822f5f57448b9f7b1ff643e172b4378e1e0112d68d8f.nix;
         revNum = 0;
         sha256 = "c8892692c2e89b7032e7822f5f57448b9f7b1ff643e172b4378e1e0112d68d8f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

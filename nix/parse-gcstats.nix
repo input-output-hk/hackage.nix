@@ -6,8 +6,8 @@
         nix = import ../hackage/parse-gcstats-0.1.0.0-r0-709a95edbfe4b8abbfb2d72d5b040756a20b7118bd2dae07aea495d26f870931.nix;
         revNum = 0;
         sha256 = "709a95edbfe4b8abbfb2d72d5b040756a20b7118bd2dae07aea495d26f870931";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

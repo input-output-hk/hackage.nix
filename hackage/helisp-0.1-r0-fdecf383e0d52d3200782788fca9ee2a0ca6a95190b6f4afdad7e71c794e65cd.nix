@@ -21,7 +21,7 @@
       synopsis = "An incomplete Elisp compiler";
       description = "This is an incomplete compiler for Emacs Lisp;\nthe source might be of interest to others.\n\nThe Darcs repository can be found at\n<http://projects.codersbase.com/repos/helisp>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "helisp" = {
@@ -31,9 +31,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

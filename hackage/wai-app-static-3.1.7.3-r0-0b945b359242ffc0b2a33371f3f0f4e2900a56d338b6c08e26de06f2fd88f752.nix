@@ -21,7 +21,7 @@
       synopsis = "WAI application for static serving";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-app-static>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,17 +48,17 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ] ++ (if flags.cryptonite
+        ] ++ (if flags.cryptonite
           then [
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ]
+          ]
           else [
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
             (hsPkgs."cryptohash-md5" or (errorHandler.buildDepError "cryptohash-md5"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "warp" = {
           depends = [
@@ -69,10 +69,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."mockery" or (errorHandler.buildDepError "mockery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

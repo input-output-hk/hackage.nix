@@ -10588,6 +10588,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "microbase" = import ./nix/microbase.nix;
   "microbench" = import ./nix/microbench.nix;
   "microc" = import ./nix/microc.nix;
+  "microdns" = import ./nix/microdns.nix;
   "microformats2-parser" = import ./nix/microformats2-parser.nix;
   "microformats2-types" = import ./nix/microformats2-types.nix;
   "microgroove" = import ./nix/microgroove.nix;
@@ -12818,6 +12819,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "procstat" = import ./nix/procstat.nix;
   "proctest" = import ./nix/proctest.nix;
   "prodapi" = import ./nix/prodapi.nix;
+  "prodapi-proxy" = import ./nix/prodapi-proxy.nix;
+  "prodapi-userauth" = import ./nix/prodapi-userauth.nix;
   "producer" = import ./nix/producer.nix;
   "product" = import ./nix/product.nix;
   "product-isomorphic" = import ./nix/product-isomorphic.nix;
@@ -16374,6 +16377,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-unary" = import ./nix/type-unary.nix;
   "typeable-mock" = import ./nix/typeable-mock.nix;
   "typeable-th" = import ./nix/typeable-th.nix;
+  "typeably" = import ./nix/typeably.nix;
   "typechain" = import ./nix/typechain.nix;
   "typecheck-plugin-nat-simple" = import ./nix/typecheck-plugin-nat-simple.nix;
   "typed-admin" = import ./nix/typed-admin.nix;

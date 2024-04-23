@@ -21,14 +21,14 @@
       synopsis = "Google Cloud Trace SDK.";
       description = "Send and retrieve trace data from Google Cloud Trace. Data is generated\nand available by default for all App Engine applications. Data from\nother applications can be written to Cloud Trace for display, reporting,\nand analysis.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @v1@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Store a stable pointer in a foreign context to be retrieved later.";
       description = "Store a stable pointer in a foreign context to be retrieved later. Persists through GHCi reloads.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

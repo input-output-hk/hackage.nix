@@ -21,7 +21,7 @@
       synopsis = "Compression and decompression in the gzip and zlib formats";
       description = "This package provides a pure interface for compressing and\ndecompressing streams of data represented as lazy\n'ByteString's. It uses the zlib C library so it has high\nperformance. It supports the \\\"zlib\\\", \\\"gzip\\\" and \\\"raw\\\"\ncompression formats.\n\nIt provides a convenient high level api suitable for most\ntasks and for the few cases where more control is needed it\nprovides access to the full zlib feature set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.bytestring-in-base
@@ -29,9 +29,9 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."z" or (errorHandler.sysDepError "z"));
+          ];
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."z" or (errorHandler.sysDepError "z"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

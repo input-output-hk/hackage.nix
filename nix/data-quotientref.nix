@@ -6,8 +6,8 @@
         nix = import ../hackage/data-quotientref-0.1-r0-78084c41b66ccc89dee24342cdaa8b2ab0728613baac74a917bc2b7f245f2663.nix;
         revNum = 0;
         sha256 = "78084c41b66ccc89dee24342cdaa8b2ab0728613baac74a917bc2b7f245f2663";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

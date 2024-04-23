@@ -21,11 +21,11 @@
       synopsis = "Supports the automatic undoing of IO operations when an exception is thrown.";
       description = "This module provides facilities for building transactions out of 'IO' actions in such a way that, if one 'IO' action in a transaction throws an exception, the effects of previous actions will be undone.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

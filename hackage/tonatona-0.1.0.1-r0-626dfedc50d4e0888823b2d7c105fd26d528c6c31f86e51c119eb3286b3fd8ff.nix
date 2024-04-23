@@ -21,16 +21,16 @@
       synopsis = "meta application framework";
       description = "Tonatona is a **meta** application framework. It handles lots of boring tasks that are needed for real-world development such as reading in values defined in environment variables, setting up logging, sending emails, accessing databases, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -39,18 +39,18 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."tonaparser" or (errorHandler.buildDepError "tonaparser"))
             (hsPkgs."tonatona" or (errorHandler.buildDepError "tonatona"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

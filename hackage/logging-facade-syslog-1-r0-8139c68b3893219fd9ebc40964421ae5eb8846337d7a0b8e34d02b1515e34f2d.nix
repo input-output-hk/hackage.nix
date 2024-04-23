@@ -21,15 +21,15 @@
       synopsis = "A logging back-end to syslog(3) for the logging-facade library";
       description = "A simple \"System.Logging.Facade\" back-end for @syslog(3)@ as specified in <http://pubs.opengroup.org/onlinepubs/9699919799/functions/syslog.html POSIX.1-2008>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."logging-facade" or (errorHandler.buildDepError "logging-facade"))
           (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

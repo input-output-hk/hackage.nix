@@ -6,8 +6,8 @@
         nix = import ../hackage/hexpat-conduit-0.0.1-r0-85f551982dc6a59b165f130695f23b020d17b9e6fa3b041e057728c52153b26f.nix;
         revNum = 0;
         sha256 = "85f551982dc6a59b165f130695f23b020d17b9e6fa3b041e057728c52153b26f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

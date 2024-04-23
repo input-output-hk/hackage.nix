@@ -21,7 +21,7 @@
       synopsis = "Simple, visual, functional language for learning about recursion.";
       description = "Sifflet is a visual, functional programming language.\nIt is intended as an aid for learning about recursion.\nSifflet users can make programs by drawing diagrams\nto connect functions and other units.\nSifflet shows the intermediate steps of the computation\non the diagram, and can expand function calls to show further details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,18 +38,18 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "sifflet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sifflet" or (errorHandler.buildDepError "sifflet"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."sifflet" or (errorHandler.buildDepError "sifflet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

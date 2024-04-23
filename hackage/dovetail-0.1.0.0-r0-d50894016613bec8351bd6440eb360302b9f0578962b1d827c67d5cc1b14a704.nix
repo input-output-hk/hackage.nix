@@ -21,7 +21,7 @@
       synopsis = "A PureScript interpreter with a Haskell FFI.";
       description = "Dovetail is a general-purpose PureScript corefn interpreter with an FFI to Haskell. Please see the README on GitHub at <https://github.com/paf31/dovetail#readme>, or check out the examples directory, to learn how to use the library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dovetail-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

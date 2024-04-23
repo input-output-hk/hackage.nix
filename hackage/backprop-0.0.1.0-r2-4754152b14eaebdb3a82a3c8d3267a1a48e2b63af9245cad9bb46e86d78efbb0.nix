@@ -21,7 +21,7 @@
       synopsis = "Heterogeneous, type-safe automatic backpropagation in Haskell";
       description = "See <https://github.com/mstksg/backprop#readme README.md>.\n\nAt the moment this project is in **pre-alpha** (*v0.0.1.0*), and is\npublished/put up on Hackage as a call for comments and thoughts.  It has 100%\ndocumentation coverage at the moment.  Performance was not yet a priority\nbefore this, but will be from now on.  (Previously, highest priority was\nAPI/usability). See <https://github.com/mstksg/backprop#todo the todos section>\nin the README for more information on what's missing, and how one would be able\nto contribute!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."type-combinators" or (errorHandler.buildDepError "type-combinators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "backprop-monotest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."backprop" or (errorHandler.buildDepError "backprop"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "backprop-neuraltest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."type-combinators" or (errorHandler.buildDepError "type-combinators"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "backprop-mnist" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Compiling and serving assets";
       description = "Small wai library and command line tool for compiling and serving assets (e.g. through ghcjs, elm, sass)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wai-make-assets" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."wai-make-assets" or (errorHandler.buildDepError "wai-make-assets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

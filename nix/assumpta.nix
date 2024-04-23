@@ -6,8 +6,8 @@
         nix = import ../hackage/assumpta-0.1.0.0-r0-72500c90728681abcb545ff25ce31835a464838c52a7ca89d4cfdbe2e183ca64.nix;
         revNum = 0;
         sha256 = "72500c90728681abcb545ff25ce31835a464838c52a7ca89d4cfdbe2e183ca64";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

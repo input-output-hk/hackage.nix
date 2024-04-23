@@ -21,7 +21,7 @@
       synopsis = "A simple library to call Alloy given a specification";
       description = "Please see the README on GitHub at <https://github.com/marcellussiegburg/call-alloy#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,11 +36,11 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "call-alloy-test" = {
           depends = [
@@ -57,11 +57,11 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

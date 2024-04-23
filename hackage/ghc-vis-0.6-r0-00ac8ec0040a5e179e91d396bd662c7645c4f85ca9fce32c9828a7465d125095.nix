@@ -21,7 +21,7 @@
       synopsis = "Live visualization of data structures in GHCi";
       description = "Visualize live data structures in GHCi. Evaluation is not\nforced and you can interact with the visualized data\nstructures. This allows seeing Haskell's lazy evaluation\nand sharing in action.\n\nSee <http://felsin9.de/nnis/ghc-vis/#basic-usage> for the\nbasic usage of ghc-vis or watch a short video demonstrating\nhow it can be used with GHCi's debugger:\n<http://felsin9.de/nnis/ghc-vis/#combined-debugger>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -34,14 +34,14 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."ghc-heap-view" or (errorHandler.buildDepError "ghc-heap-view"))
-          ] ++ (pkgs.lib).optionals (flags.graph) [
+        ] ++ pkgs.lib.optionals (flags.graph) [
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."xdot" or (errorHandler.buildDepError "xdot"))
-          ]) ++ (pkgs.lib).optional (flags.full) (hsPkgs."svgcairo" or (errorHandler.buildDepError "svgcairo"))) ++ (pkgs.lib).optionals (flags.sdl) [
+        ]) ++ pkgs.lib.optional (flags.full) (hsPkgs."svgcairo" or (errorHandler.buildDepError "svgcairo"))) ++ pkgs.lib.optionals (flags.sdl) [
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

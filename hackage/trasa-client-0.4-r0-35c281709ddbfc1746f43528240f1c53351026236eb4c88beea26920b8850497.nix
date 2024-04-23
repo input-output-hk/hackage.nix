@@ -21,7 +21,7 @@
       synopsis = "Type safe http requests";
       description = "http-client integration for trasa";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."trasa" or (errorHandler.buildDepError "trasa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

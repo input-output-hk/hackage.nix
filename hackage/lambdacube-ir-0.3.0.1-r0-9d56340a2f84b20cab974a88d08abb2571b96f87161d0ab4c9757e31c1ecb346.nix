@@ -21,7 +21,7 @@
       synopsis = "LambdaCube 3D intermediate representation of 3D graphics pipelines";
       description = "LambdaCube 3D intermediate representation of 3D graphics pipelines";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

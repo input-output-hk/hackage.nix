@@ -21,7 +21,7 @@
       synopsis = "SAT encoding monad";
       description = "Encoding for boolean and integral constraints into CNF-SAT.\nThe encoder is provided as a State monad\n(hence the \"mo\" in \"satchmo\").";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,42 +39,42 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PP" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Ramsey" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Spaceship" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Oscillator" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

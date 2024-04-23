@@ -13,7 +13,7 @@
       pedantic = false;
       test-exe = true;
       executable = true;
-      };
+    };
     package = {
       specVersion = "3.4";
       identifier = { name = "ghcide"; version = "2.7.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "The core of an IDE";
       description = "A library for building Haskell IDE's on top of the GHC API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -96,16 +96,16 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optionals (flags.ekg) [
+          ])) ++ pkgs.lib.optionals (flags.ekg) [
           (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
           (hsPkgs."ekg-wai" or (errorHandler.buildDepError "ekg-wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "ghcide-test-utils" = {
           depends = [
@@ -124,15 +124,15 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "ghcide-test-preprocessor" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if !flags.test-exe then false else true;
-          };
+        };
         "ghcide" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -144,10 +144,10 @@
             (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = if !flags.executable then false else true;
-          };
         };
+      };
       tests = {
         "ghcide-tests" = {
           depends = [
@@ -188,14 +188,14 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-rope" or (errorHandler.buildDepError "text-rope"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "9.3") (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "9.3") (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"));
           build-tools = [
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
             (hsPkgs.buildPackages.implicit-hie.components.exes.gen-hie or (pkgs.buildPackages.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

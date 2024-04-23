@@ -6,8 +6,8 @@
         nix = import ../hackage/urbit-airlock-0.1.0.0-r0-05768c1271f9b95f16b7f936888ec7cdd5f2a9d05911ddae724eecd9c6049b24.nix;
         revNum = 0;
         sha256 = "05768c1271f9b95f16b7f936888ec7cdd5f2a9d05911ddae724eecd9c6049b24";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

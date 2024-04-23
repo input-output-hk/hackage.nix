@@ -21,7 +21,7 @@
       synopsis = "hmatrix interface to sundials";
       description = "An interface to the solving suite SUNDIALS. Currently, it\nmimics the solving interface in hmstrix-gsl but\nprovides more diagnostic information and the\nButcher Tableaux (for Runge-Kutta methods).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,13 +33,13 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         libs = [
           (pkgs."sundials_arkode" or (errorHandler.sysDepError "sundials_arkode"))
           (pkgs."sundials_cvode" or (errorHandler.sysDepError "sundials_cvode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hmatrix-sundials-testsuite" = {
           depends = [
@@ -57,14 +57,14 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hmatrix-sundials" or (errorHandler.buildDepError "hmatrix-sundials"))
-            ];
+          ];
           libs = [
             (pkgs."sundials_arkode" or (errorHandler.sysDepError "sundials_arkode"))
             (pkgs."sundials_cvode" or (errorHandler.sysDepError "sundials_cvode"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmark" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

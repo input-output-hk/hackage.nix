@@ -21,24 +21,24 @@
       synopsis = "Lift substacks of monad transformer stacks";
       description = "Lift substacks of monad transformer stacks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "stm-actor-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."mtl-uplift" or (errorHandler.buildDepError "mtl-uplift"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

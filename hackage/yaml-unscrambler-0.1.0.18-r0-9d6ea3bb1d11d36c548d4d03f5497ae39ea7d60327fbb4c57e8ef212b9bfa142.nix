@@ -21,7 +21,7 @@
       synopsis = "Flexible declarative YAML parsing toolkit";
       description = "Very flexible declarative YAML parsing toolkit with extensive error detalization capabilities and expected schema generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."yaml-unscrambler" or (errorHandler.buildDepError "yaml-unscrambler"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Wrapper for data that can be unbounded";
       description = "Limit n is like Maybe n, with (Bounded n) in place of (Just n)\nand Unbounded in place of Nothing. The only difference is that\n∀n. Unbounded >= Bounded n, which makes Limit a good data type\nto deal with numbers that can become unbounded.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

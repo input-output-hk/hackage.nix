@@ -21,7 +21,7 @@
       synopsis = "Attoparsec parser for the SRT format.";
       description = "Attoparsec parser for the SRT format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."simple-media-timestamp-attoparsec" or (errorHandler.buildDepError "simple-media-timestamp-attoparsec"))
           (hsPkgs."srt" or (errorHandler.buildDepError "srt"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

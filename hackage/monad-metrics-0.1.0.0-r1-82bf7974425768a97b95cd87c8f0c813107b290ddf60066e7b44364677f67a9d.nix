@@ -21,7 +21,7 @@
       synopsis = "A convenient wrapper around EKG metrics";
       description = "A convenient wrapper for collecting application metrics. Please see the README.md for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "monad-metrics-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."monad-metrics" or (errorHandler.buildDepError "monad-metrics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

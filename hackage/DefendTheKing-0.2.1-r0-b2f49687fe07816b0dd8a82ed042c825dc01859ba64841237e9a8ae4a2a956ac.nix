@@ -21,7 +21,7 @@
       synopsis = "A simple RTS game";
       description = "Defend the King from the Forces of Different:\n(work in progress)\nA simple fast-paced multiplayer RTS game\ninspired by Bughouse-Chess and Starcraft.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "defend" = {
@@ -41,18 +41,18 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "defendFontEdit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."peakachu" or (errorHandler.buildDepError "peakachu"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

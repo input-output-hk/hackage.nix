@@ -21,7 +21,7 @@
       synopsis = "Lets you embed Objective-C code into Haskell.";
       description = "Utilities to inline Objective-C code into Haskell using inline-c.  See\ntests for example on how to build.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
             (hsPkgs."inline-c-objc" or (errorHandler.buildDepError "inline-c-objc"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
-          frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Foundation" or (errorHandler.sysDepError "Foundation"));
+          ];
+          frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Foundation" or (errorHandler.sysDepError "Foundation"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

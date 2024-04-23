@@ -21,15 +21,15 @@
       synopsis = "Parser and writer for Les-Houches event files";
       description = "This package implements a parser and writer for the Les-Houches event file format as described in hep-ph/0609017";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell2010" or (errorHandler.buildDepError "haskell2010"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

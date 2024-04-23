@@ -6,8 +6,8 @@
         nix = import ../hackage/sendgrid-haskell-1.0-r0-aaad9ddb587a81e9e8554b6294920e23115c4eb15f324d8f318f529abc60e6e2.nix;
         revNum = 0;
         sha256 = "aaad9ddb587a81e9e8554b6294920e23115c4eb15f324d8f318f529abc60e6e2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

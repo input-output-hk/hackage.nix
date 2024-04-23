@@ -21,7 +21,7 @@
       synopsis = "Hydrogen Data";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "h" = {
@@ -31,9 +31,9 @@
             (hsPkgs."hydrogen-parsing" or (errorHandler.buildDepError "hydrogen-parsing"))
             (hsPkgs."hydrogen-prelude" or (errorHandler.buildDepError "hydrogen-prelude"))
             (hsPkgs."hydrogen-syntax" or (errorHandler.buildDepError "hydrogen-syntax"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

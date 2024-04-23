@@ -21,14 +21,14 @@
       synopsis = "System management tooling.";
       description = "For now, this is a playground for systems programming\nwith the intent of building a set of libraries and\ntools for managing my Unix systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Binary-to-text encodings (e.g. base64)";
       description = "This package provides a simple and convenient API to encode and\ndecode binary data in the popular binary-to-text \\\"base\\\" encoding\nfamily as described in [RFC 4648](https://tools.ietf.org/html/rfc4648) et al.\n\nCurrently, the following encodings are supported:\n\n- base16 (RFC4648)\n- base64 (RFC4648)\n- base64url (RFC4648)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

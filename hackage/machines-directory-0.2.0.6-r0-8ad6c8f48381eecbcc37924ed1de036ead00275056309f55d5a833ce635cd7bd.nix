@@ -21,7 +21,7 @@
       synopsis = "Directory (system) utilities for the machines library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
           (hsPkgs."machines-io" or (errorHandler.buildDepError "machines-io"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

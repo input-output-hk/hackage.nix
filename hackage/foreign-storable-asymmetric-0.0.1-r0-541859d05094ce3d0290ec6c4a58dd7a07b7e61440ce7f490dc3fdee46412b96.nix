@@ -21,14 +21,14 @@
       synopsis = "Types and instances for implementing a Storable with different peek and poke";
       description = "Utilities useful for working with unioned data structures, where you want to use a different peek and poke. This is particularly useful for use with the ioctl package if you have an ioctl that provides output of a different type to the input.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

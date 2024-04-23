@@ -21,7 +21,7 @@
       synopsis = "Generates a servant API module";
       description = "A preprocessor which will parse a psuedo-haskell module with imports and generate a module with exports an Api type and a server function";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -37,9 +37,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

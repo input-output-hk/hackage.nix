@@ -21,7 +21,7 @@
       synopsis = "Parse webforms & render to interactive hypertext";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bureaucromancy" = {
           depends = [
@@ -53,18 +53,18 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."html-conduit" or (errorHandler.buildDepError "html-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "bureaucromancy-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bureaucromancy" or (errorHandler.buildDepError "bureaucromancy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

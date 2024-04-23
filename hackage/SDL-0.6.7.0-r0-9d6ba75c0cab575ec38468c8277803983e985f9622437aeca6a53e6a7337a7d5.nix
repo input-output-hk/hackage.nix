@@ -24,14 +24,14 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        libs = (pkgs.lib).optional (!system.isOsx) (pkgs."SDL" or (errorHandler.sysDepError "SDL"));
+        libs = pkgs.lib.optional (!system.isOsx) (pkgs."SDL" or (errorHandler.sysDepError "SDL"));
         frameworks = [ (pkgs."AppKit" or (errorHandler.sysDepError "AppKit")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

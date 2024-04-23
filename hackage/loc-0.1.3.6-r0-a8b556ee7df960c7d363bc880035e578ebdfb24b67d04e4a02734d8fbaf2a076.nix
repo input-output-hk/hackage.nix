@@ -21,7 +21,7 @@
       synopsis = "Types representing line and column positions and ranges in text files.";
       description = "The package name /loc/ stands for “location” and is also an allusion to the\nacronym for “lines of code”.\n\nThe @Loc@ type represents a caret position in a text file, the @Span@ type\nis a nonempty range between two @Loc@s, and the @Area@ type is a set of\nnon-touching @Span@s.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."loc" or (errorHandler.buildDepError "loc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hedgehog" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."loc" or (errorHandler.buildDepError "loc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "FFI bindings to the CUDA CUBLAS and CUSPARSE libraries";
       description = "This package provides FFI bindings to the NVIDIA CUDA CUBLAS and CUSPARSE\nlinear algebra GPU BLAS implementations. The modules\n@Foreign.CUDA.Cublas@ and @Foreign.CUDA.Cusparse@ are probably the most\nuseful.\n\nIf you have trouble installing this package, it may help to view this\nwebpage: <http://github.com/bmsherman/cublas>";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,15 +31,15 @@
           (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
-          ];
+        ];
         libs = [
           (pkgs."cublas" or (errorHandler.sysDepError "cublas"))
           (pkgs."cusparse" or (errorHandler.sysDepError "cusparse"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

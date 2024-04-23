@@ -21,7 +21,7 @@
       synopsis = "A Haskell backend kernel for the IPython project.";
       description = "IHaskell is a Haskell backend kernel for the IPython project. This allows using Haskell via\na console or notebook interface. Additional packages may be installed to provide richer data visualizations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -59,9 +59,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
-          ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+        ] ++ pkgs.lib.optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.0") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
+      };
       exes = {
         "ihaskell" = {
           depends = [
@@ -78,10 +78,10 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ipython-kernel" or (errorHandler.buildDepError "ipython-kernel"))
-            ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"));
+          ] ++ pkgs.lib.optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
-            ] ++ (pkgs.lib).optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"));
+          ] ++ pkgs.lib.optional (flags.binpkgdb) (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "OpenTelemetry API for use by libraries for direct instrumentation or wrapper packages.";
       description = "Please see the README on GitHub at <https://github.com/iand675/hs-opentelemetry/tree/main/api#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-opentelemetry-api-test" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "reflex host methods for testing without external events";
       description = "Please see the README on GitHub at <https://github.com/pdlla/reflex-test-host#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reflex-test-host-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."reflex-test-host" or (errorHandler.buildDepError "reflex-test-host"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

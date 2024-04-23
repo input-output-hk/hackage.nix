@@ -21,7 +21,7 @@
       synopsis = "TOML format parser compliant with v1.0.0.";
       description = "TOML format parser compliant with v1.0.0. See README.md for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "parser-validator" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."toml-reader" or (errorHandler.buildDepError "toml-reader"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "toml-reader-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."toml-reader" or (errorHandler.buildDepError "toml-reader"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

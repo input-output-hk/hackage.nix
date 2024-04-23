@@ -21,7 +21,7 @@
       synopsis = "Simple interface for shell scripting in Haskell.";
       description = "Monadic EDSL for writing cross-platform shell scripts in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ] ++ (pkgs.lib).optional (flags.with-posix || !system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (flags.with-posix || !system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

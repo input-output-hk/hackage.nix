@@ -21,7 +21,7 @@
       synopsis = "Commonly useful extensions for MMark markdown processor";
       description = "Commonly useful extensions for MMark markdown processor.\nClick on \"Text.MMark.Extension.Common\" to get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."modern-uri" or (errorHandler.buildDepError "modern-uri"))
           (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."mmark" or (errorHandler.buildDepError "mmark"))
             (hsPkgs."mmark-ext" or (errorHandler.buildDepError "mmark-ext"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

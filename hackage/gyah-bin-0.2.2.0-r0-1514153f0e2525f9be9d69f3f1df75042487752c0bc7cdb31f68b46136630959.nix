@@ -21,7 +21,7 @@
       synopsis = "A binary version of GiveYouAHead";
       description = "GiveYouAHead  binary";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gyah" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."GiveYouAHead" or (errorHandler.buildDepError "GiveYouAHead"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

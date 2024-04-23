@@ -21,7 +21,7 @@
       synopsis = "Low level filesystem operations for polysemy.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio-path" or (errorHandler.buildDepError "unliftio-path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

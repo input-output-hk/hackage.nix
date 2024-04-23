@@ -21,7 +21,7 @@
       synopsis = "A framework for pre-commit checks.";
       description = "Make your Haskell git repositories fashionable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "git-vogue" = {
           depends = [
@@ -47,17 +47,17 @@
             (hsPkgs."git-vogue" or (errorHandler.buildDepError "git-vogue"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "git-vogue-cabal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."git-vogue" or (errorHandler.buildDepError "git-vogue"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "git-vogue-hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,17 +68,17 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "git-vogue-packunused" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."git-vogue" or (errorHandler.buildDepError "git-vogue"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "git-vogue-stylish" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,18 +86,18 @@
             (hsPkgs."git-vogue" or (errorHandler.buildDepError "git-vogue"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "git-vogue-ghc-mod" = {
-          depends = (pkgs.lib).optionals (flags.ghc-mod) [
+          depends = pkgs.lib.optionals (flags.ghc-mod) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-mod" or (errorHandler.buildDepError "ghc-mod"))
             (hsPkgs."git-vogue" or (errorHandler.buildDepError "git-vogue"))
-            ];
+          ];
           buildable = if flags.ghc-mod then true else false;
-          };
         };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -109,12 +109,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.git.components.exes.git or (pkgs.buildPackages.git or (errorHandler.buildToolDepError "git:git")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

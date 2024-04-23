@@ -21,15 +21,15 @@
       synopsis = "ReaderT transformer pattern for higher kinded composite data.";
       description = "ReaderT transformer pattern for higher kinded composite data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-base" or (errorHandler.buildDepError "composite-base"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

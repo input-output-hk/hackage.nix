@@ -21,7 +21,7 @@
       synopsis = "A binary representation of the historical dictionary of Polish";
       description = "The library provides a binary representation of the historical\ndictionary of Polish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."dawg" or (errorHandler.buildDepError "dawg"))
           (hsPkgs."hist-pl-types" or (errorHandler.buildDepError "hist-pl-types"))
           (hsPkgs."hist-pl-dawg" or (errorHandler.buildDepError "hist-pl-dawg"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

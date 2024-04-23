@@ -21,15 +21,15 @@
       synopsis = "Simple evolutionary algorithm framework.";
       description = "Simple framework for running an evolutionary algorithm by\nproviding selection, recombination, and mutation operators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

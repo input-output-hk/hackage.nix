@@ -21,7 +21,7 @@
       synopsis = "Terminal emulator over websockets.";
       description = "wshterm wraps google's hterm library and allows you to run\nterminal applications in a browser.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wshterm" = {
@@ -38,9 +38,9 @@
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

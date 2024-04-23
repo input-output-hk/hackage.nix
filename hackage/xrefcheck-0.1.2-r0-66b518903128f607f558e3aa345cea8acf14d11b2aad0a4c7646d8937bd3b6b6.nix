@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/serokell/xrefcheck#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,9 +57,9 @@
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xrefcheck" = {
           depends = [
@@ -96,10 +96,10 @@
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
             (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "xrefcheck-tests" = {
           depends = [
@@ -138,12 +138,12 @@
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
             (hsPkgs."xrefcheck" or (errorHandler.buildDepError "xrefcheck"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

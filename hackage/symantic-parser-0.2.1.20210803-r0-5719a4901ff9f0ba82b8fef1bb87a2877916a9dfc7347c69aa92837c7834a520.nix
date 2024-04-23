@@ -21,7 +21,7 @@
       synopsis = "Parser combinators statically optimized and staged via typed meta-programming";
       description = "This is a work-in-progress experimental library to generate parsers,\nleveraging Tagless-Final interpreters and Typed Template Haskell staging.\n\nThis is an alternative but less powerful/reviewed\nimplementation of [ParsleyHaskell](https://github.com/J-mie6/ParsleyHaskell).\nSee the paper by Jamie Willis, Nicolas Wu, and Matthew Pickering,\nadmirably well presented at ICFP-2020: [Staged Selective Parser Combinators](https://icfp20.sigplan.org/details/icfp-2020-papers/20/Staged-Selective-Parser-Combinators).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "parsers" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "symantic-parser-tests" = {
           depends = [
@@ -90,11 +90,11 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
-          build-tools = (pkgs.lib).optional (!flags.disable-ormolu-check) (hsPkgs.buildPackages.ormolu.components.exes.ormolu or (pkgs.buildPackages.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")));
+          ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
+          build-tools = pkgs.lib.optional (!flags.disable-ormolu-check) (hsPkgs.buildPackages.ormolu.components.exes.ormolu or (pkgs.buildPackages.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "symantic-parser-benchmark" = {
           depends = [
@@ -111,9 +111,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

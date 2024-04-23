@@ -21,7 +21,7 @@
       synopsis = "Some useful preludes for the Music Suite.";
       description = "Some useful preludes for the Music Suite.\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."music-parts" or (errorHandler.buildDepError "music-parts"))
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

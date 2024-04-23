@@ -16,7 +16,7 @@
       avx2 = false;
       linux-getrandom = false;
       liquidhaskell = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "raaz"; version = "0.2.0"; };
@@ -29,7 +29,7 @@
       synopsis = "The raaz cryptographic library.";
       description = "Raaz is a cryptographic library for Haskell. The library\nis designed with a special emphasis on using the type system of\nHaskell to eliminate a large set of vulnerabilities like buffer\noverflows, timing attacks etc. It also strives to achieve this\nsafety with no compromise on performance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,24 +37,24 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
           (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
-          ];
-        build-tools = (pkgs.lib).optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        ];
+        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
-        };
+      };
       exes = {
         "raaz" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."raaz" or (errorHandler.buildDepError "raaz"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -67,20 +67,20 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."raaz" or (errorHandler.buildDepError "raaz"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "liquidspec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.liquidhaskell) [
+          ] ++ pkgs.lib.optionals (flags.liquidhaskell) [
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if flags.liquidhaskell then true else false;
-          };
         };
+      };
       benchmarks = {
         "blaze-vs-write" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."raaz" or (errorHandler.buildDepError "raaz"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-ciphers" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."raaz" or (errorHandler.buildDepError "raaz"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "primitives" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -110,9 +110,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."raaz" or (errorHandler.buildDepError "raaz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

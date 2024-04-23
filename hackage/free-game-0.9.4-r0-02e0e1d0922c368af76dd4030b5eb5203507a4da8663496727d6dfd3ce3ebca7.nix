@@ -21,7 +21,7 @@
       synopsis = "Cross-platform GUI library based on free monads";
       description = "free-game is a library that abstracts graphical applications with simple interfaces. Twitter: #hs_free_game";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."colors" or (errorHandler.buildDepError "colors"))
           (hsPkgs."control-bool" or (errorHandler.buildDepError "control-bool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

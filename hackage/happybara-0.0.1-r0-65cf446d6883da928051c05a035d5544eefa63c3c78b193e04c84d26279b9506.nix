@@ -21,7 +21,7 @@
       synopsis = "Acceptance test framework for web applications";
       description = "/About/\n\nHappybara is an acceptance test framework inspired by the popular Ruby library\n\\\"Capybara\\\". A short example of Happybara's expressive DSL:\n\n>visit \"http://happybara-is-awesome.com\"\n>within $ xpath \"//form[@id='vote-for-happybara']\" $ do\n>   fillIn (fillableField \"First Name\" [ ]) \"Bob\"\n>   fillIn (fillableField \"Last Name\"  [ ]) \"Smith\"\n>\n>   click $ button \"Vote!\" [ disabled False ]\n\n/Learning Happybara/\n\nI would suggest start with these resources (in order):\n\n* <https://github.com/cstrahan/happybara/ The Happybara Readme>\n\n* <http://hackage.haskell.org/package/happybara/docs/Happybara.html The Happybara Module docs>\n\nHappy web testing!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

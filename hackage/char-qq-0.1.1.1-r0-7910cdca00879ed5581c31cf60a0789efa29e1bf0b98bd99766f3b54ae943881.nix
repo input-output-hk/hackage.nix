@@ -21,14 +21,14 @@
       synopsis = "Quasiquoters for characters and codepoints";
       description = "A set of quasiquoters providing compile-time conversions between characters and codepoints.\n\nSolves such problems as when you'd rather refer to a codepoint by a char,\nbut don't want to waste your runtime computation cycles on the \"ord\" operation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "See README for synopsis";
       description = "See README for description";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ldap-scim-bridge" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
             (hsPkgs."ldap-scim-bridge" or (errorHandler.buildDepError "ldap-scim-bridge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

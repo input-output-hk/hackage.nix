@@ -21,7 +21,7 @@
       synopsis = "A better error monad transformer";
       description = "This package provides automated lifting of operations via functional\ndependencies for the @transformers-abort@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,13 +30,13 @@
           (hsPkgs."transformers-abort" or (errorHandler.buildDepError "transformers-abort"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "7.7"
+        ] ++ (if compiler.isGhc && compiler.version.ge "7.7"
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

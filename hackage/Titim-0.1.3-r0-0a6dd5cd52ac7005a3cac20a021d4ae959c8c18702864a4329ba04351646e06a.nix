@@ -21,7 +21,7 @@
       synopsis = "Game for Lounge Marmelade";
       description = "Game for Lounge Marmelade";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "titim" = {
@@ -30,9 +30,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

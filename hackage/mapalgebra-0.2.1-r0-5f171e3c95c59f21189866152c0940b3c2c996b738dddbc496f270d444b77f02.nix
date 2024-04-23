@@ -21,7 +21,7 @@
       synopsis = "Efficient, polymorphic Map Algebra.";
       description = "Efficient, polymorphic Map Algebra.\n\nThis library is an implementation of /Map Algebra/ as described in the book\n/GIS and Cartographic Modeling/ by Dana Tomlin. The fundamental type, the\n`Raster`, is typesafe. Rasters of different size and projection are considered\ndifferent types, and so cannot be combined mistakenly in any way.\n\nAlso featured are op fusion (i.e. \"lazy Rasters\"), extremely fast Focal\nOperations, and typesafe NoData handling. Please see the main module for a\nmore detailed introduction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."massiv-io" or (errorHandler.buildDepError "massiv-io"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mapalgebra-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Library for generating grids of hexagons and pentagons mapped to a sphere.";
       description = "Defines functions for dealing with a type of hexagon grid wrapped around a sphere.  The full grid is composed of 20 smaller trianglular grids of hexagons, that fit together as an icosahedron with pentagons at the corners.  Each grid cell is assigned an integer value, and we can get a list of the neighbors of a particular cell.  We can also ask for a vector in 3d space that is the center of a particular cell.  This would be well suited for a game played on a spherical world or a planetary environment simulator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."GlomeVec" or (errorHandler.buildDepError "GlomeVec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

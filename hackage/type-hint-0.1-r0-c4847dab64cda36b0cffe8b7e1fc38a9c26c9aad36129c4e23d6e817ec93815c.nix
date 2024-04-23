@@ -21,13 +21,13 @@
       synopsis = "Guide type inference with proxy values";
       description = "This package provides 'Proxy' values for various types from the @base@\nlibrary and functions to use these values as hints for type inference.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.7")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.7")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

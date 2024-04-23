@@ -21,14 +21,14 @@
       synopsis = "Simple code hotswapping.";
       description = "A simple, high-level interface to plugins.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simple tool for visualising differences in Criterion benchmark results";
       description = "Create a html file containing a quick comparison of results for the input files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "criterion-compare" = {
@@ -41,9 +41,9 @@
             (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

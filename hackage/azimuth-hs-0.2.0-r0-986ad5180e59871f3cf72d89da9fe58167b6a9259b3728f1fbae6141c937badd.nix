@@ -21,7 +21,7 @@
       synopsis = "Interact with Azimuth from Haskell";
       description = "Haskell bindings for Azimuth (https://github.com/urbit/azimuth)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."urbit-hob" or (errorHandler.buildDepError "urbit-hob"))
           (hsPkgs."web3" or (errorHandler.buildDepError "web3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,17 +46,17 @@
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."urbit-hob" or (errorHandler.buildDepError "urbit-hob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."azimuth-hs" or (errorHandler.buildDepError "azimuth-hs"))
             (hsPkgs."urbit-hob" or (errorHandler.buildDepError "urbit-hob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

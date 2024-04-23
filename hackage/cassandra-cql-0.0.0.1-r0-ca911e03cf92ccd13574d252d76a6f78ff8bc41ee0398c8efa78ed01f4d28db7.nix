@@ -21,7 +21,7 @@
       synopsis = "Haskell client for Cassandra's CQL protocol";
       description = "Haskell client for Cassandra's CQL protocol";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

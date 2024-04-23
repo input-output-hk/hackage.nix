@@ -21,7 +21,7 @@
       synopsis = "Declarative configuration spec for Haskell projects";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -36,12 +36,12 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optionals (flags.extra) [
+        ] ++ pkgs.lib.optionals (flags.extra) [
           (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
           (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"))
-          ]) ++ (pkgs.lib).optional (flags.cli) (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))) ++ (pkgs.lib).optional (flags.yaml) (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"));
+        ]) ++ pkgs.lib.optional (flags.cli) (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))) ++ pkgs.lib.optional (flags.yaml) (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"));
         buildable = true;
-        };
+      };
       tests = {
         "etc-testsuite" = {
           depends = (([
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."etc" or (errorHandler.buildDepError "etc"))
-            ] ++ (pkgs.lib).optional (flags.cli) (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))) ++ (pkgs.lib).optional (flags.yaml) (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))) ++ (pkgs.lib).optional (flags.extra) (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"));
+          ] ++ pkgs.lib.optional (flags.cli) (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))) ++ pkgs.lib.optional (flags.yaml) (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))) ++ pkgs.lib.optional (flags.extra) (hsPkgs."edit-distance" or (errorHandler.buildDepError "edit-distance"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

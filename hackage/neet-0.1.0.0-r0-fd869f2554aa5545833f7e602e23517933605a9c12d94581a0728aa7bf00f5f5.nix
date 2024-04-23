@@ -21,7 +21,7 @@
       synopsis = "A NEAT library for Haskell";
       description = "This package provides functions for creating, training, and using NEAT neural\nnetworks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."multimap" or (errorHandler.buildDepError "multimap"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

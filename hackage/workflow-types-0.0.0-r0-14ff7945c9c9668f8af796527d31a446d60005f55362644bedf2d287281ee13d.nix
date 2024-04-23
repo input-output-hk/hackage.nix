@@ -21,7 +21,7 @@
       synopsis = "Automate keyboard\\/mouse\\/clipboard\\/application interaction.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,17 +36,17 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."Earley" or (errorHandler.buildDepError "Earley"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "workflow-types-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-types" or (errorHandler.buildDepError "workflow-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

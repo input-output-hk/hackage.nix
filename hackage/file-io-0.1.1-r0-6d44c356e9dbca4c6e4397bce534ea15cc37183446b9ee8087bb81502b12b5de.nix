@@ -21,27 +21,27 @@
       synopsis = "Basic file IO operations via 'OsPath'";
       description = "Basic file IO operations like Prelude, but for 'OsPath'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if flags.os-string
+          ])) ++ (if flags.os-string
           then [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."os-string" or (errorHandler.buildDepError "os-string"))
-            ]
+          ]
           else [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "T15" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."file-io" or (errorHandler.buildDepError "file-io"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           buildable = true;
-          };
+        };
         "T15Win" = {
           depends = if system.isWindows
             then [
@@ -64,19 +64,19 @@
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
               (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "T14" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."file-io" or (errorHandler.buildDepError "file-io"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "T8" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,18 +84,18 @@
             (hsPkgs."file-io" or (errorHandler.buildDepError "file-io"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CLC237" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."file-io" or (errorHandler.buildDepError "file-io"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Properties" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."file-io" or (errorHandler.buildDepError "file-io"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

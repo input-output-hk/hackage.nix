@@ -21,7 +21,7 @@
       synopsis = "PostgreSQL backend for the Selda database EDSL.";
       description = "PostgreSQL backend for the Selda database EDSL.\nRequires the PostgreSQL @libpq@ development libraries to be\ninstalled.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."selda" or (errorHandler.buildDepError "selda"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optionals (!flags.haste) [
+        ] ++ pkgs.lib.optionals (!flags.haste) [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

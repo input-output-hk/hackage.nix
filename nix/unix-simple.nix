@@ -6,8 +6,8 @@
         nix = import ../hackage/unix-simple-0.1.0.0-r0-cfaee18afb4326176b06e78b9ed1204055d8c9ef0ac1c809ad2a6cb7817d604d.nix;
         revNum = 0;
         sha256 = "cfaee18afb4326176b06e78b9ed1204055d8c9ef0ac1c809ad2a6cb7817d604d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

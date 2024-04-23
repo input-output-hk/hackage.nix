@@ -21,7 +21,7 @@
       synopsis = "http, attoparsec and pipes utilities for streaming and streaming-bytestring";
       description = "Experimental http-client, attoparsec and pipes utilities for use with\nthe <http://hackage.haskell.org/package/streaming streaming> and\n<http://hackage.haskell.org/package/streaming-bytestring streaming bytestring> libraries.\nOther modules are planned.\n\nThis package of course heaps together a number of dependencies.\nPlease raise an issue if this is a problem.\n\nQuestions about usage can be raised as issues, or addressed to the\n<https://groups.google.com/forum/#!forum/haskell-pipes pipes list>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."json-stream" or (errorHandler.buildDepError "json-stream"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

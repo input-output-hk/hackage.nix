@@ -21,23 +21,23 @@
       synopsis = "Unambiguous choice";
       description = "unamb contains the \"unambiguous choice\" operator \"unamb\", which\nwraps thread racing up in a purely functional, semantically simple\nwrapper.  Originally a part of Reactive, I moved unamb to its own\npackage in order to encourage experimentation.\n\nProject wiki page: <http://haskell.org/haskellwiki/unamb>\n\n&#169; 2008 by Conal Elliott; BSD3 license.\n\nContributions from: Luke Palmer, Spencer Janssen, Sterling Clover,\nBertram Felgenhauer, Peter Verswyvelen, Svein Ove Aas, and Edward Kmett.\nPlease let me know if I've forgotten to list you.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tag-bits" or (errorHandler.buildDepError "tag-bits"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-unamb" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
         };
       };
-    }
+    };
+  }

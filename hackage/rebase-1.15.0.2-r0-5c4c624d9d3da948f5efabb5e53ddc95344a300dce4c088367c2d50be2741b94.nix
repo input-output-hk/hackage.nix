@@ -21,7 +21,7 @@
       synopsis = "A more progressive alternative to the \"base\" package";
       description = "This package is intended for those who are tired of keeping\nlong lists of dependencies to the same essential libraries in each package\nas well as the endless imports of the same APIs all over again.\nIt also supports the modern tendencies in the language.\n\nTo solve those problems this package does the following:\n\n* Reexport the original APIs under the \\\"Rebase\\\" namespace.\n\n* Export all the possible non-conflicting symbols from the \\\"Rebase.Prelude\\\" module.\n\n* Give priority to the modern practices in the conflicting cases.\n\nThe policy behind the package is only to reexport the non-ambiguous\nand non-controversial APIs, which the community has obviously settled on.\nThe package is intended to rapidly evolve with the contribution from the community,\nwith the missing features being added with pull-requests.\n\nIf you don\\'t need the \\\"Rebase\\\" namespace and want to import modules\nfrom the reexported packages as they are check out\n<https://hackage.haskell.org/package/rerebase the \"rerebase\" package>\nwhich simply reexports the original symbols in the original namespace.\nThus it simply lets you depend on all the de-facto default packages,\nby yourself having to maintain only the dependency on \\\"rerebase\\\".\nAlso it comes packed with a prelude as rich as here.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,8 +52,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-instances" or (errorHandler.buildDepError "vector-instances"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

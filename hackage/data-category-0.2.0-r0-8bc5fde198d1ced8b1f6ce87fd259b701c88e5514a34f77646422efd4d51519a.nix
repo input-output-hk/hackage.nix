@@ -21,11 +21,11 @@
       synopsis = "Restricted categories";
       description = "Data-category is a collection of categories, and some categorical constructions on them.\n\nYou can restrict the types of the objects of your category by using a GADT for the arrow type.\nTo be able to proof to the compiler that a type is an object in some category, objects also need to be represented at the value level.\nTherefore the 'Category' class has an associated data type 'Obj'. This which will often also be a GADT.\n\nSee the 'Monoid', 'Boolean' and 'Product' categories for some examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

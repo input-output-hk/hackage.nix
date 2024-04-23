@@ -21,20 +21,20 @@
       synopsis = "Bindings to OpenSSL HMAC.";
       description = "Bindings to OpenSSL HMAC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
           (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

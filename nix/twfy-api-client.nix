@@ -6,8 +6,8 @@
         nix = import ../hackage/twfy-api-client-0.1.0.0-r0-69923cb6ddbc4ff77a3a4d3dabd3d2481684a81e843886ba504b2ac78b8797fc.nix;
         revNum = 0;
         sha256 = "69923cb6ddbc4ff77a3a4d3dabd3d2481684a81e843886ba504b2ac78b8797fc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

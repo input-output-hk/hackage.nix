@@ -21,7 +21,7 @@
       synopsis = "WSJT-X UDP protocol";
       description = "Utilities for the WSJT-X UDP protocol.\nEncoding and decoding USP packages to binary and JSON and a UDP server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."binary-parsers" or (errorHandler.buildDepError "binary-parsers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wsjtx-dump-udp" = {
-          depends = (pkgs.lib).optionals (!(compiler.isGhcjs && true)) [
+          depends = pkgs.lib.optionals (!(compiler.isGhcjs && true)) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wsjtx-udp" or (errorHandler.buildDepError "wsjtx-udp"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

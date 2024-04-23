@@ -21,14 +21,14 @@
       synopsis = "pbc for HsLua";
       description = "pbc wrapper for HsLua";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

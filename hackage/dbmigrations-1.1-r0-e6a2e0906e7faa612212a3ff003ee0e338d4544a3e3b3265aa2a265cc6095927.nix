@@ -21,7 +21,7 @@
       synopsis = "An implementation of relational database \"migrations\"";
       description = "A library and program for the creation,\nmanagement, and installation of schema updates\n(called /migrations/) for a relational database.\nIn particular, this package lets the migration\nauthor express explicit dependencies between\nmigrations and the management tool automatically\ninstalls or reverts migrations accordingly, using\ntransactions for safety.\nThis package is written to support any\nHDBC-supported database. This package supports\nSQLite, PostgreSQL, and MySQL. Please see MOO.TXT\nfor warnings about MySQL!\nTo get started, see the included 'README.md' and\n'MOO.TXT' files and the usage output for the\n'moo' command.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,19 +44,19 @@
           (hsPkgs."mysql" or (errorHandler.buildDepError "mysql"))
           (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "moo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."dbmigrations" or (errorHandler.buildDepError "dbmigrations"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dbmigrations-tests" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
             (hsPkgs."mysql" or (errorHandler.buildDepError "mysql"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

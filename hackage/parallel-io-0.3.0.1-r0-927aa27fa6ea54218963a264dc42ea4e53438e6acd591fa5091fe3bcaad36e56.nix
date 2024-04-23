@@ -21,7 +21,7 @@
       synopsis = "Combinators for executing IO actions in parallel on a thread pool.";
       description = "This package provides combinators for sequencing IO actions onto a thread pool. The\nthread pool is guaranteed to contain no more unblocked threads than a user-specified upper limit, thus\nminimizing contention.\n\nFurthermore, the parallel combinators can be used reentrantly - your parallel\nactions can spawn more parallel actions - without violating this property of the thread pool.\n\nThe package is heavily inspired by the thread <http://thread.gmane.org/gmane.comp.lang.haskell.cafe/56499/focus=56521>.\nThanks to Neil Mitchell and Bulat Ziganshin for the code this package is based on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,22 +29,22 @@
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "benchmark" = {
-          depends = (pkgs.lib).optionals (!(!flags.benchmark)) [
+          depends = pkgs.lib.optionals (!!flags.benchmark) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if !flags.benchmark then false else true;
-          };
+        };
         "tests" = {
-          depends = (pkgs.lib).optionals (!(!flags.tests)) [
+          depends = pkgs.lib.optionals (!!flags.tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -52,9 +52,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

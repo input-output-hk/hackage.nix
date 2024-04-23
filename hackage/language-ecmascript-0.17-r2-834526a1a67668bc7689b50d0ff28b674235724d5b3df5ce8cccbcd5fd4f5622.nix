@@ -21,7 +21,7 @@
       synopsis = "JavaScript parser and pretty-printer library";
       description = "Tools for working with ECMAScript 3 (popularly known as JavaScript).\nIncludes a parser, pretty-printer, tools for working with source tree\nannotations and an arbitrary instance. See CHANGELOG for a summary of\nchanges. Note that the package versions follow Semantic Versioning model (semver.org).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
           (hsPkgs."testing-feat" or (errorHandler.buildDepError "testing-feat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."language-ecmascript" or (errorHandler.buildDepError "language-ecmascript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "For representing musical tempi";
       description = "A Haskell library for representing musical tempi, with a basic representation consisting of three orthogonal components (frequency,time,count of elapsed cycles/beats). Basic purpose is to allow multiple Haskell-based live coding languages to share a common representation of tempo.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

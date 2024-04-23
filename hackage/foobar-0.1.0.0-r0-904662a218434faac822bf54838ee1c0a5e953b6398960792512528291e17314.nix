@@ -21,29 +21,29 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "foobar-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."foobar" or (errorHandler.buildDepError "foobar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "foobar-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."foobar" or (errorHandler.buildDepError "foobar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

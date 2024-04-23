@@ -21,12 +21,12 @@
       synopsis = "Pretty-printing library, with scoping, based on pretty-1.0.0.0";
       description = "This package contains a pretty-printing library, with scoping.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
-      exes = { "test" = { buildable = false; }; };
       };
-    }
+      exes = { "test" = { buildable = false; }; };
+    };
+  }

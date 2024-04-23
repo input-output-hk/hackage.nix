@@ -21,7 +21,7 @@
       synopsis = "The tamarin prover for security protocol analysis.";
       description = "The @tamarin@ prover is a tool for the analysis of security protocols. It\nimplements a constraint solving algorithm that supports both falsification\nand verification of security protocols with respect to an unbounded number\nof sessions. The underlying security protocol model uses multiset\nrewriting to specify protocols and adversary capabilities, a guarded\nfragment of first-order logic to specify security properties, and\nequational theories to model the algebraic properties of cryptographic\noperators.\n\nThe paper describing the theory underlying the @tamarin@ prover is\ncurrently under submission to CSF 2012. Drop us (simon.meier\\@inf.ethz.ch\nor benedikt.schmidt\\@inf.ethz.ch) a mail, if you would like to obtain a\ncopy of the paper.\n\nThe @tamarin@ prover supports both a batch analysis mode and the\ninteractive construction of security proofs using a GUI. Example protocols\nand the user guide are installed together with the prover. Just call the\n@tamarin-prover@ executable without any arguments to get more information.\n\nThe @tamarin@ prover uses maude (<http://maude.cs.uiuc.edu/>) as a\nunification backend and GraphViz (<http://www.graphviz.org/>) to visualize\nconstraint systems. Detailed instructions for installing the `tamarin`\nprover are given here:\n<http://www.infsec.ethz.ch/research/software#TAMARIN>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tamarin-prover" = {
@@ -62,13 +62,13 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."tamarin-prover-utils" or (errorHandler.buildDepError "tamarin-prover-utils"))
             (hsPkgs."tamarin-prover-term" or (errorHandler.buildDepError "tamarin-prover-term"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.2") [
+          ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.2") [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

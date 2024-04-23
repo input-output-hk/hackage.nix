@@ -21,17 +21,17 @@
       synopsis = "Rpoku spoken word programming language";
       description = "Rpoku spoken word programming language compilers or translators";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rpokuToAssembler" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "rpokuToLanguage" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

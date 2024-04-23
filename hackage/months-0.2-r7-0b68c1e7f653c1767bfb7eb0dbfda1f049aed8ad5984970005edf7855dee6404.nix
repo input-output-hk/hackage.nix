@@ -21,7 +21,7 @@
       synopsis = "MonthName";
       description = "Month and Quarter enumerations and some basic function and instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -33,8 +33,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."time-compat" or (errorHandler.buildDepError "time-compat"))
-          ] ++ (pkgs.lib).optional (flags.aeson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.intervals) (hsPkgs."intervals" or (errorHandler.buildDepError "intervals"));
+        ] ++ pkgs.lib.optional (flags.aeson) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ pkgs.lib.optional (flags.intervals) (hsPkgs."intervals" or (errorHandler.buildDepError "intervals"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

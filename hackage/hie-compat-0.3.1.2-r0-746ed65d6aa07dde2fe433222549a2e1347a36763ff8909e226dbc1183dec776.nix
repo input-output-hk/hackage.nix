@@ -21,7 +21,7 @@
       synopsis = "HIE files for GHC 8.8 and other HIE file backports";
       description = "Backports for HIE files to GHC 8.8, along with a few other backports\nof HIE file related fixes for ghcide.\nTHIS DOES NOT LET YOU READ HIE FILES WITH MISMATCHED VERSIONS OF GHC";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

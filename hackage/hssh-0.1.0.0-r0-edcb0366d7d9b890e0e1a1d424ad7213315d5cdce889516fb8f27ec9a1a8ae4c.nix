@@ -21,7 +21,7 @@
       synopsis = "SSH protocol implementation";
       description = "Please see the README on Github at <https://github.com/lpeterse/haskell-ssh#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hssh-demo" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."socket" or (errorHandler.buildDepError "socket"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = if flags.demo then true else false;
-          };
         };
+      };
       tests = {
         "hssh-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

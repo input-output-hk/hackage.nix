@@ -6,8 +6,8 @@
         nix = import ../hackage/haskell-mpfr-0.1-r0-58aa5f24f18d20dad19bf0eb33b64343e8bdd3d75d6a19738f35a42778e3f32d.nix;
         revNum = 0;
         sha256 = "58aa5f24f18d20dad19bf0eb33b64343e8bdd3d75d6a19738f35a42778e3f32d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

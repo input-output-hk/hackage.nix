@@ -21,7 +21,7 @@
       synopsis = "A library for lattice cryptography.";
       description = "Λ ⚬ λ (Lol) is a general-purpose library for ring-based lattice cryptography.  For a detailed description of interfaces and functionality, see <https://eprint.iacr.org/2015/1134 Λ ⚬ λ: Functional Lattice Cryptography>. The main backend for the library is <https://hackage.haskell.org/package/lol-cpp lol-cpp> (<https://hackage.haskell.org/package/lol-repa lol-repa> is currently out of date). For example cryptographic applications, see <https://hackage.haskell.org/package/lol-apps lol-apps>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,18 +54,18 @@
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lol" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lol" or (errorHandler.buildDepError "lol"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

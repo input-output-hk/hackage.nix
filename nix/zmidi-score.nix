@@ -6,8 +6,8 @@
         nix = import ../hackage/zmidi-score-0.3.0.0-r0-447a749f1b698c2bddc9441d42e7878bb248ea1fcdb97880b3f488c5dc0fe851.nix;
         revNum = 0;
         sha256 = "447a749f1b698c2bddc9441d42e7878bb248ea1fcdb97880b3f488c5dc0fe851";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

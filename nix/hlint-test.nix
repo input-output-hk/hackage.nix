@@ -6,8 +6,8 @@
         nix = import ../hackage/hlint-test-0.1.0.0-r0-e427c0593433205fc629fb05b74c6b1deb1de72d1571f26142de008f0d5ee7a9.nix;
         revNum = 0;
         sha256 = "e427c0593433205fc629fb05b74c6b1deb1de72d1571f26142de008f0d5ee7a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

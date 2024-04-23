@@ -21,7 +21,7 @@
       synopsis = "Nonresumable byte parser";
       description = "Parse bytes as fast as possible. This is a nonresumable parser\nthat aggresively uses `UnboxedSums` to avoid performing any\nallocations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."byte-order" or (errorHandler.buildDepError "byte-order"))
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."bytesmith" or (errorHandler.buildDepError "bytesmith"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Start and stop a temporary postgres for testing";
       description = "This module provides functions greating a temporary postgres instance on a random port for testing.\n\n>\n> result <- 'start' []\n> case result of\n>   Left err -> print err\n>   Right tempDB -> do\n>     -- Do stuff\n>     'stop' tempDB\n\nThe are few different methods for starting @postgres@ which provide different\nmethods of dealing with @stdout@ and @stderr@.\n\nThe start methods use a config based on the one used by [pg_tmp](http://ephemeralpg.org/), but can be overriden\nby in different values to the first argument of the start functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tmp-postgres-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

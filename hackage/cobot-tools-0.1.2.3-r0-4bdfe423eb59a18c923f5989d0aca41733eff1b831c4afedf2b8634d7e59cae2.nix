@@ -21,7 +21,7 @@
       synopsis = "Biological data file formats and IO";
       description = "Please see the README on GitHub at <https://github.com/less-wrong/cobot-tools#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,10 +37,10 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."RNA" or (errorHandler.sysDepError "RNA")) ];
         buildable = true;
-        };
+      };
       tests = {
         "cobot-tools-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

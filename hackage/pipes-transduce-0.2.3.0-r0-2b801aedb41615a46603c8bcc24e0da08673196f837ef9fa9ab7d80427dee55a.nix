@@ -21,7 +21,7 @@
       synopsis = "Interfacing pipes with foldl folds.";
       description = "Grab-bag of functions for interfacing pipes with foldl folds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."conceit" or (errorHandler.buildDepError "conceit"))
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
           (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-transduce" or (errorHandler.buildDepError "pipes-transduce"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

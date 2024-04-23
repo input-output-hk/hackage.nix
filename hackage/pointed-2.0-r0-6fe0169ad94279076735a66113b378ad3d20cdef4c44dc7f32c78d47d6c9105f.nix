@@ -21,7 +21,7 @@
       synopsis = "Haskell 98 Pointed and copointed data";
       description = "Haskell 98 Pointed and copointed data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

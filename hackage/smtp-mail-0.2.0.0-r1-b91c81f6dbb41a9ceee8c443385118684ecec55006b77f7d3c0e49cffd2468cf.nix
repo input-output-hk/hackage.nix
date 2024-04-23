@@ -21,7 +21,7 @@
       synopsis = "Simple email sending via SMTP";
       description = "This packages provides a simple interface for mail over SMTP. PLease see the README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

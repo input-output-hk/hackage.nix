@@ -21,7 +21,7 @@
       synopsis = "Rasa Ext managing rendering styles";
       description = "Rasa Ext managing rendering styles";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."rasa" or (errorHandler.buildDepError "rasa"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

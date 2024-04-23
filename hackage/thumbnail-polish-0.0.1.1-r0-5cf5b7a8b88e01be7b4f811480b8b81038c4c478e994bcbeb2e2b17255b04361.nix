@@ -21,7 +21,7 @@
       synopsis = "Image thumbnail creation";
       description = "Image thumbnail creation with cropping, upscaling, aspect\nratio preservation and nonce suffixing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."nonce" or (errorHandler.buildDepError "nonce"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A tetris-like game (works with GHC 6.8.3 and Gtk2hs 0.9.13)";
       description = "A tetris-like game implemented in Haskell and making use of Gtkh2s (works with GHC 6.8.3 and Gtk2hs 0.9.13)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "4Blocks" = {
@@ -32,9 +32,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

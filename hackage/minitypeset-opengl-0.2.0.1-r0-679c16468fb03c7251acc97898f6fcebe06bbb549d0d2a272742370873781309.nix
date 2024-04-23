@@ -21,7 +21,7 @@
       synopsis = "Layout and render text with TrueType fonts using OpenGL ";
       description = "This is a library to render text with OpenGL.\nTrueType (and OpenType) fonts are supported; glyph rendering\nis via @stb_truetype@. The rendered glyphs are stored in\nOpenGL textures (built up lazily).\nA simple typesetting\\/layouting engine is included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."stb-truetype" or (errorHandler.buildDepError "stb-truetype"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

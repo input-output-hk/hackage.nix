@@ -21,7 +21,7 @@
       synopsis = "Display images in Gloss using libdevil for decoding";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."repa-devil" or (errorHandler.buildDepError "repa-devil"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

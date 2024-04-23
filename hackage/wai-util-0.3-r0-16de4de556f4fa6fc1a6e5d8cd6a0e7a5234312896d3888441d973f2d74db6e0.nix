@@ -21,7 +21,7 @@
       synopsis = "Collection of utility functions for use with WAI";
       description = "Utility functions for use with WAI that haven't found another home\nyet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."http-accept" or (errorHandler.buildDepError "http-accept"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

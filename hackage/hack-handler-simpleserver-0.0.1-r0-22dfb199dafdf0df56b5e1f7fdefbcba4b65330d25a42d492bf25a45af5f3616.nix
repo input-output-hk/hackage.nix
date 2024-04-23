@@ -21,7 +21,7 @@
       synopsis = "A simplistic HTTP server handler for Hack.";
       description = "FIXME";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

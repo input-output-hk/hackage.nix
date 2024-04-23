@@ -21,7 +21,7 @@
       synopsis = "A small prelude.";
       description = "A sensible set of defaults for writing custom Preludes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
-          ] ++ [ (hsPkgs."safe" or (errorHandler.buildDepError "safe")) ];
+        ] ++ [ (hsPkgs."safe" or (errorHandler.buildDepError "safe")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

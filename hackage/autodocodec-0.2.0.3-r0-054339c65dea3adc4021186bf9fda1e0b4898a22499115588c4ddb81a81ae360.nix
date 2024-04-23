@@ -21,7 +21,7 @@
       synopsis = "Self-documenting encoder and decoder";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,19 +38,19 @@
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-scientific" or (errorHandler.buildDepError "validity-scientific"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "autodocodec-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "9.0"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "9.0"
             then true
             else false;
-          };
         };
       };
-    }
+    };
+  }

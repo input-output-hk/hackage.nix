@@ -21,24 +21,24 @@
       synopsis = "Carry evidence of constraints around";
       description = "Please see the README on GitHub at <https://github.com/parsonsmatt/some-dict-of#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "discover-instances-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
             (hsPkgs."some-dict-of" or (errorHandler.buildDepError "some-dict-of"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

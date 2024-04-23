@@ -21,22 +21,22 @@
       synopsis = "A haskell binding to Apache Zookeeper C library(mt) using Haskell Z project.";
       description = "Please see the README on Github at <https://github.com/ZHaskell/zoovisitor#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
           (hsPkgs."Z-IO" or (errorHandler.buildDepError "Z-IO"))
-          ];
+        ];
         libs = [
           (pkgs."zookeeper_mt" or (errorHandler.sysDepError "zookeeper_mt"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zoovisitor-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
             (hsPkgs."zoovisitor" or (errorHandler.buildDepError "zoovisitor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Trace bitmap images to paths using potrace";
       description = "Trace bitmap images to paths using the potrace library. Helpers for\ngenerating bitmap images from functions or JuicyPixel images.\n\nSee <https://github.com/diagrams/potrace-diagrams/ potrace-diagrams>\nfor an implimentation for the diagrams library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

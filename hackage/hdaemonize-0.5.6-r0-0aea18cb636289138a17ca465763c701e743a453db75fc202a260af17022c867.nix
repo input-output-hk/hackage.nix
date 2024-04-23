@@ -21,7 +21,7 @@
       synopsis = "Library to handle the details of writing daemons for UNIX";
       description = "Provides functions that help writing better UNIX daemons,\ndaemonize and serviced/serviced': daemonize does what\na daemon should do (forking and closing descriptors),\nwhile serviced does that and more (syslog interface,\nPID file writing, start-stop-restart command line\nhandling, dropping privileges).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

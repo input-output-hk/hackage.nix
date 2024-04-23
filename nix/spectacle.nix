@@ -6,8 +6,8 @@
         nix = import ../hackage/spectacle-1.0.0-r0-6681a516404790eef33c3c91c9f1da5f91ed44b41912ed585b7479918a8e855f.nix;
         revNum = 0;
         sha256 = "6681a516404790eef33c3c91c9f1da5f91ed44b41912ed585b7479918a8e855f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

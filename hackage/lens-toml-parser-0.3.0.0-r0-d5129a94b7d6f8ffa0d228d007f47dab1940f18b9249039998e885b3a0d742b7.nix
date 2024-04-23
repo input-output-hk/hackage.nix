@@ -21,7 +21,7 @@
       synopsis = "Lenses for toml-parser";
       description = "This library provides lenses for toml-parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
             (hsPkgs."lens-toml-parser" or (errorHandler.buildDepError "lens-toml-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

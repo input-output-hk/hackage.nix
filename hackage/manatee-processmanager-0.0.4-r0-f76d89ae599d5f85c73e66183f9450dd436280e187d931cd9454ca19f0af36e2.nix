@@ -21,7 +21,7 @@
       synopsis = "Process manager extension for Manatee.";
       description = "manatee-processmanager is process manager extension for Manatee (Haskell/Gtk+ Integrated Live Environment)\n\nScreenshots at : <http://goo.gl/MkVw>\n\nManual at : <http://haskell.org/haskellwiki/Manatee>\n\nIRC channel: irc.freenode.net 6667 <##manatee>\n\nMailing-List: manatee-user@googlegroups.com manatee-develop@googlegroups.com\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."proc" or (errorHandler.buildDepError "proc"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-processmanager" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-processmanager" = { buildable = true; }; };
+    };
+  }

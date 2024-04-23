@@ -21,7 +21,7 @@
       synopsis = "Reasonable default import";
       description = "Reasonable default import";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."papa-bifunctors-export" or (errorHandler.buildDepError "papa-bifunctors-export"))
           (hsPkgs."papa-lens-export" or (errorHandler.buildDepError "papa-lens-export"))
           (hsPkgs."papa-semigroupoids-export" or (errorHandler.buildDepError "papa-semigroupoids-export"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

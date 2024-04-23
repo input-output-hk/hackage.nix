@@ -21,7 +21,7 @@
       synopsis = "Route Wai middlewares based on HTTP verbs";
       description = "Please see the README on Github at <https://git.localcooking.com/tooling/wai-middleware-verbs#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

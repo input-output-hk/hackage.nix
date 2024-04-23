@@ -21,7 +21,7 @@
       synopsis = "Types isomorphic to Fin, and Tables indexed by them.";
       description = "This provides a class `Finite` for types isomorphic to some `Fin n`, and\nuses it to implement array-backed total maps (`Table`s) indexed by them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."short-vec-lens" or (errorHandler.buildDepError "short-vec-lens"))
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
           (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Finite-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."wrapped" or (errorHandler.buildDepError "wrapped"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

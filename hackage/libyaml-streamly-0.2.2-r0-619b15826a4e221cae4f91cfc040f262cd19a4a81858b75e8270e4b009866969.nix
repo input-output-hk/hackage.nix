@@ -21,7 +21,7 @@
       synopsis = "Low-level, streaming YAML interface via streamly.";
       description = "Rewrite of libyaml in streamly";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."directory" or (errorHandler.buildDepError "directory"));
-        libs = (pkgs.lib).optional (!(!flags.system-libyaml)) (pkgs."yaml" or (errorHandler.sysDepError "yaml"));
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."directory" or (errorHandler.buildDepError "directory"));
+        libs = pkgs.lib.optional (!!flags.system-libyaml) (pkgs."yaml" or (errorHandler.sysDepError "yaml"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

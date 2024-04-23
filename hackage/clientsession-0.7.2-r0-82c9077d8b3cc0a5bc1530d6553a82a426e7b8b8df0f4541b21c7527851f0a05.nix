@@ -21,7 +21,7 @@
       synopsis = "Store session data in a cookie.";
       description = "Achieves security through AES-CBC encryption and\nHMAC-SHA256 authentication.  Uses Base64\nencoding to avoid any issues with characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."cryptocipher" or (errorHandler.buildDepError "cryptocipher"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."clientsession" or (errorHandler.buildDepError "clientsession"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

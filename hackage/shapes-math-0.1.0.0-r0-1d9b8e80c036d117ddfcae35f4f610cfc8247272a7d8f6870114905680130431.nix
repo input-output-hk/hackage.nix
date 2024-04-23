@@ -21,7 +21,7 @@
       synopsis = "faster vector/matrix math using unboxed numbers and Template Haskell";
       description = "Please see the README on Github at <https://github.com/ublubu/shapes#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "math-bench" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."shapes-math" or (errorHandler.buildDepError "shapes-math"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "math-spec" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."shapes-math" or (errorHandler.buildDepError "shapes-math"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

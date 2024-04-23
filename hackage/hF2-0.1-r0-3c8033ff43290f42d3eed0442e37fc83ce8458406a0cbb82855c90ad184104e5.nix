@@ -21,15 +21,15 @@
       synopsis = "F(2^e) math for cryptography";
       description = "A timing attack resistant F(2^e) backend, all operations on little-endian data in unboxed bit vectors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

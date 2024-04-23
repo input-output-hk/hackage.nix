@@ -16,7 +16,7 @@
       threaded = true;
       unboxedarrays = false;
       unix = true;
-      };
+    };
     package = {
       specVersion = "2.0";
       identifier = { name = "bishbosh"; version = "0.1.0.0"; };
@@ -29,7 +29,7 @@
       synopsis = "Plays chess.";
       description = "A chess-game which can be rendered in a terminal (emulator) in raw ASCII, or used as an engine by xboard.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -47,15 +47,15 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-          ] ++ (if flags.polyparse
+        ] ++ (if flags.polyparse
           then [
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ]
+          ]
           else [
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ])) ++ (pkgs.lib).optional (flags.threaded) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"));
+          ])) ++ pkgs.lib.optional (flags.threaded) (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"));
         buildable = true;
-        };
+      };
       exes = {
         "bishbosh" = {
           depends = ([
@@ -74,9 +74,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ] ++ (pkgs.lib).optional (flags.hxtrelaxng) (hsPkgs."hxt-relaxng" or (errorHandler.buildDepError "hxt-relaxng"))) ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (flags.hxtrelaxng) (hsPkgs."hxt-relaxng" or (errorHandler.buildDepError "hxt-relaxng"))) ++ pkgs.lib.optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "duel" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,10 +85,10 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hunit-tests" = {
           depends = [
@@ -102,15 +102,15 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ] ++ (if flags.polyparse
+          ] ++ (if flags.polyparse
             then [
               (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-              ]
+            ]
             else [
               (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "quickcheck-tests" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -125,15 +125,15 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."toolshed" or (errorHandler.buildDepError "toolshed"))
-            ] ++ (if flags.polyparse
+          ] ++ (if flags.polyparse
             then [
               (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-              ]
+            ]
             else [
               (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

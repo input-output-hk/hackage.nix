@@ -21,21 +21,21 @@
       synopsis = "Provides a @getHiddenChar@ function that works on Windows, Linux and macOS";
       description = "This package provides a @getHiddenChar@ function which works reasonably consistently across the Windows, Linux and macOS platforms. @getHiddenChar@ yields a single character from the standard input device with buffering and echoing to standard output disabled.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "hidden-char-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hidden-char" or (errorHandler.buildDepError "hidden-char"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

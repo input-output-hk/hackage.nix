@@ -21,7 +21,7 @@
       synopsis = "Parallel rendering of raster images.";
       description = "Parallel rendering of raster images.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."gloss-rendering" or (errorHandler.buildDepError "gloss-rendering"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

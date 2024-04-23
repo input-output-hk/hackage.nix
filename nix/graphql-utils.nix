@@ -6,8 +6,8 @@
         nix = import ../hackage/graphql-utils-0.1.0.0-r0-2b0bd4e98035abd3a4ed4da78904d24c644b09a3d7b9c7c7c569d41c0c77f105.nix;
         revNum = 0;
         sha256 = "2b0bd4e98035abd3a4ed4da78904d24c644b09a3d7b9c7c7c569d41c0c77f105";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Haskell API for Tor anonymous networking";
       description = "This library providess an API that wraps around the Tor control port\nto create ad-hoc hidden services";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."base32string" or (errorHandler.buildDepError "base32string"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tor-relay" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."splice" or (errorHandler.buildDepError "splice"))
             (hsPkgs."network-anonymous-tor" or (errorHandler.buildDepError "network-anonymous-tor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."hspec-attoparsec" or (errorHandler.buildDepError "hspec-attoparsec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
             (hsPkgs."network-anonymous-tor" or (errorHandler.buildDepError "network-anonymous-tor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

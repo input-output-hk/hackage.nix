@@ -21,7 +21,7 @@
       synopsis = "Utility to manage secure file-based package repositories";
       description = "This utility can be used to manage secure file-based\nrepositories (creating TUF metadata as well as a Hackage\nindex tarball). Currently it also provides various\nlower level utilities for creating and signing TUF files.\n\nThis is part of the Hackage Security infrastructure.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackage-repo-tool" = {
@@ -38,16 +38,16 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
-            ] ++ (if flags.use-network-uri
+          ] ++ (if flags.use-network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

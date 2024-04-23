@@ -21,15 +21,15 @@
       synopsis = "Simplified interface to the GHC API.";
       description = "The GHC API is a great tool for working with Haskell code.\nUnfortunately, it's also fairly opaque and hard to get\nstarted with. This library abstracts away the intricacies\nof working with the GHC API, giving a general, no-nonsense\nway to extract highly optimized (or not, depending on your\nuse case) Core, STG, custom intermediate code, and other\ninformation from Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

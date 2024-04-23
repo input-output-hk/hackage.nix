@@ -21,25 +21,25 @@
       synopsis = "Shows a sorted list of the Ukrainian sounds representations that can be used by mmsyn7 series of programs";
       description = "A program and a library that show a sorted list of the Ukrainian sounds representations that can be used by mmsyn7 series of programs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn7s" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

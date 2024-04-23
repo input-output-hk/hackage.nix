@@ -21,7 +21,7 @@
       synopsis = "Applies some basic redirect rules to get cleaner paths.";
       description = "Forces request to have a trailing slash (unless there is a\nfile extension) and ensures there are no doubled slashes.\nTakes the idea from Django.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

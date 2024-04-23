@@ -6,8 +6,8 @@
         nix = import ../hackage/morphisms-functors-inventory-0.1.0-r0-d8f351b41284a01c453acab672ba55387d215d85ace2910ce571740b012a3b52.nix;
         revNum = 0;
         sha256 = "d8f351b41284a01c453acab672ba55387d215d85ace2910ce571740b012a3b52";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

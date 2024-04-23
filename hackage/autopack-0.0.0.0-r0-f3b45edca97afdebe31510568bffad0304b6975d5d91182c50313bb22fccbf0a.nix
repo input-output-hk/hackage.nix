@@ -21,7 +21,7 @@
       synopsis = "Custom Setup to automate package modules discovery";
       description = "Custom Setup to automate package modules discovery.\nSee README for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."dir-traverse" or (errorHandler.buildDepError "dir-traverse"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

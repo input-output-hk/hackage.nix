@@ -21,7 +21,7 @@
       synopsis = "Combines multiple GHC Core modules into a single module";
       description = "Combines multiple GHC Core modules into a single module";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "linkcore" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Core components of \"strelka\"";
       description = "This library is only intended for the internal usage\nby the \\\"strelka\\\" ecosystem.\nIt exposes the components,\nwhich may be needed by both the \\\"strelka\\\" library and\nthe server drivers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

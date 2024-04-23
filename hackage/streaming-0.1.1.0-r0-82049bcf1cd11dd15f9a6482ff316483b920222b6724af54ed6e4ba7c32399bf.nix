@@ -21,7 +21,7 @@
       synopsis = "an elementary streaming prelude and a general monad transformer for streaming applications.";
       description = "@Streaming.Prelude@ exports an elementary streaming prelude; @Streaming@ exports a free monad transformer\noptimized for streaming applications and replacing @FreeT@. See the\n<https://hackage.haskell.org/package/streaming#readme readme> below\nfor an explanation. Elementary usage can be divined from the ghci examples in\n@Streaming.Prelude@\n\nNote also the\n<https://hackage.haskell.org/package/streaming-bytestring streaming bytestring>\nand\n<https://hackage.haskell.org/package/streaming-utils streaming utils>\npackages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

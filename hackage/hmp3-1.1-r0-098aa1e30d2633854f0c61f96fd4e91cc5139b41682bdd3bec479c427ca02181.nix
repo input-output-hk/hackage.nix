@@ -21,7 +21,7 @@
       synopsis = "";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "hmp3" = {
@@ -29,10 +29,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-            ];
+          ];
           libs = [ (pkgs."curses" or (errorHandler.sysDepError "curses")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

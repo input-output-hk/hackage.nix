@@ -21,7 +21,7 @@
       synopsis = "A simple markup document preview (markdown, textile, reStructuredText)";
       description = "A GUI application that renders the markup documents (markdown, textile, reStructuredText) into\nHTML and presents them into a web view. It also reloads the content automatically when the source\nfile changes.\n\nChanges from 0.1.0.0:\n\n* Added command line options e.g. markup file can be specified when starting the program.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "markup-preview" = {
@@ -39,9 +39,9 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

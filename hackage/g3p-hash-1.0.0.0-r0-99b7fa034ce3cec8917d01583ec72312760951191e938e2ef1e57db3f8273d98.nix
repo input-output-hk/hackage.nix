@@ -21,7 +21,7 @@
       synopsis = "Global Password Prehash Protocol";
       description = "A password hash and key derivation function that provides\nembedded attributions in order to support self-documenting\ndeployments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."Stream" or (errorHandler.buildDepError "Stream"))
           (hsPkgs."tuplehash-utils" or (errorHandler.buildDepError "tuplehash-utils"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Scalable anonymous records";
       description = "The @large-anon@ package provides support for anonymous\nrecords in Haskell, with a focus on compile-time (and\nrun-time) scalability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."typelet" or (errorHandler.buildDepError "typelet"))
           (hsPkgs."large-generics" or (errorHandler.buildDepError "large-generics"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ] ++ (pkgs.lib).optional (flags.debug) (hsPkgs."recover-rtti" or (errorHandler.buildDepError "recover-rtti"));
+        ] ++ pkgs.lib.optional (flags.debug) (hsPkgs."recover-rtti" or (errorHandler.buildDepError "recover-rtti"));
         buildable = true;
-        };
+      };
       tests = {
         "test-large-anon" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."typelet" or (errorHandler.buildDepError "typelet"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
             (hsPkgs."record-hasfield" or (errorHandler.buildDepError "record-hasfield"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

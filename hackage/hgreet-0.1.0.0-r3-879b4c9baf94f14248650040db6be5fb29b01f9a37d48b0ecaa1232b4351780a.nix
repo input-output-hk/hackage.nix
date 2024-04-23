@@ -21,7 +21,7 @@
       synopsis = "Haskell module to interact with the greetd daemon trough it's IPC protocol.";
       description = "This package provides a Haskell module to interact with the greetd daemon.\nIt is intended as a simple abstraction layer for the IPC protocol, and is NOT a greeter in and of itself.\nFor an example of a working greeter based on this, see @hgreet-example@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

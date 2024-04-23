@@ -21,7 +21,7 @@
       synopsis = "Horizon Stable Package Set Type Definitions";
       description = "This package contains the type definitions for the Horizon stable package set (https://horizon-haskell.net). This is a schema used to define package sets sourcing from hackage and git.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-dhall-instance" or (errorHandler.buildDepError "path-dhall-instance"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "horizon-spec-tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

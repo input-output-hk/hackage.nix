@@ -21,7 +21,7 @@
       synopsis = "a haskell implementation of Game 2048";
       description = "a haskell implementation of Game 2048,\nbased on <https://github.com/gabrielecirulli/2048>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."vty-ui" or (errorHandler.buildDepError "vty-ui"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "h2048-simple" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."h2048" or (errorHandler.buildDepError "h2048"))
-            ];
+          ];
           buildable = if !flags.exe then false else true;
-          };
+        };
         "h2048-vty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,10 +56,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."h2048" or (errorHandler.buildDepError "h2048"))
-            ];
+          ];
           buildable = if !flags.exe || !flags.vty then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."h2048" or (errorHandler.buildDepError "h2048"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

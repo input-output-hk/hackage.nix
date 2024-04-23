@@ -21,7 +21,7 @@
       synopsis = "Easy REPL driven development using ComponentM";
       description = "This library enhances the componentm with auto-reloading\ncapabilites for your application, allowing to ensure cleanup\nof resources when doing REPL driven development, or when using\nghcid";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."foreign-store" or (errorHandler.buildDepError "foreign-store"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."teardown" or (errorHandler.buildDepError "teardown"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

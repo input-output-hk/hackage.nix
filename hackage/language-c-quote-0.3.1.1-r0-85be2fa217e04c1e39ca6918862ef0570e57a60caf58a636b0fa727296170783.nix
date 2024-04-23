@@ -21,7 +21,7 @@
       synopsis = "C/CUDA/OpenCL quasiquoting library.";
       description = "This package provides a general parser for the C language, including most GCC\nextensions and some CUDA and OpenCL extensions.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -38,9 +38,9 @@
           (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.0" && (compiler.isGhc && (compiler.version).lt "7.2")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.4" && (compiler.isGhc && (compiler.version).lt "7.6")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.0" && (compiler.isGhc && compiler.version.lt "7.2")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.4" && (compiler.isGhc && compiler.version.lt "7.6")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"))
             (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

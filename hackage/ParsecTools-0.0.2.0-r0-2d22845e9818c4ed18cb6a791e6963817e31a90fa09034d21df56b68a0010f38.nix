@@ -21,14 +21,14 @@
       synopsis = "Parsec combinators for more complex objects.";
       description = "Combined parsers for complex objects: floating point, and\nintegral numbers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

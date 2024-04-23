@@ -21,7 +21,7 @@
       synopsis = "Simple package that implements timers.";
       description = "Simple package that implements timers. Both \"one-shot\" and \"repeating\" timers are implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."suspend" or (errorHandler.buildDepError "suspend"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

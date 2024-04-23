@@ -21,14 +21,14 @@
       synopsis = "Fast, packed and strict strings with Unicode support, based on bytestrings.";
       description = "Fast, packed, strict strings with a list interface.\nBased on \"Data.ByteString\".\nMultiple encodings are supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

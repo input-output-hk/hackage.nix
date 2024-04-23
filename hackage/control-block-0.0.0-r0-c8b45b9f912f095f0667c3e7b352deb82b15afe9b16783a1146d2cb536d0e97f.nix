@@ -21,15 +21,15 @@
       synopsis = "Higher-order functions with their function arguments at the end";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

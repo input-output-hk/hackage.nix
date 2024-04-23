@@ -21,7 +21,7 @@
       synopsis = "An approach to managing composable effects, ala mtl/transformers/extensible-effects/Eff";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."list-transformer" or (errorHandler.buildDepError "list-transformer"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "oleg" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

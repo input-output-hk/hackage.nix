@@ -21,11 +21,11 @@
       synopsis = "Loads a list of items with fields";
       description = "Descrilo is a library that loads a INI-like file as a list of 'Description'S, allowing repeated elements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

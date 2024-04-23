@@ -21,11 +21,11 @@
       synopsis = "Groups";
       description = "A group is a monoid with invertibility.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A libary for generating low-level sounds with high-level combinators";
       description = "'lambdasound' can generate all kinds of sounds, play them and save them as wav or pcm data.\nSound can be manipulated in both a low and high-level way. It is possible to \noperate on the samples of a sound. However, there are also higher-level combinators \nfor various tasks, e.g. to facilitate sequential and parallel playing of sounds or to change the duration of a sound.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,32 +43,32 @@
           (hsPkgs."proteaaudio-sdl" or (errorHandler.buildDepError "proteaaudio-sdl"))
           (hsPkgs."wave" or (errorHandler.buildDepError "wave"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lambdasound" or (errorHandler.buildDepError "lambdasound"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lambdasound" or (errorHandler.buildDepError "lambdasound"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambdasound-profile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lambdasound" or (errorHandler.buildDepError "lambdasound"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lambdasound-test" = {
           depends = [
@@ -78,10 +78,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."falsify" or (errorHandler.buildDepError "falsify"))
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "lambdasound-bench" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
             (hsPkgs."massiv" or (errorHandler.buildDepError "massiv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

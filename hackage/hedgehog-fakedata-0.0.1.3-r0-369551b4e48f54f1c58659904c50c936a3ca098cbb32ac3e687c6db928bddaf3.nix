@@ -21,7 +21,7 @@
       synopsis = "Use 'fakedata' with 'hedgehog'";
       description = "Please see the README on GitHub at <https://github.com/parsonsmatt/hedgehog-fakedata#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."fakedata" or (errorHandler.buildDepError "fakedata"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "specs" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."fakedata" or (errorHandler.buildDepError "fakedata"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

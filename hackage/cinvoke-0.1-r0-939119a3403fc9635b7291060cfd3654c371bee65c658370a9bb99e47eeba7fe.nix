@@ -21,15 +21,15 @@
       synopsis = "A binding to cinvoke.";
       description = "A binding to cinvoke, allowing C functions of types only known at runtime to be called from Haskell.\nSee \"Foreign.CInvoke\" to get started.\nThe C library used can be found at <http://www.nongnu.org/cinvoke/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."cinvoke" or (errorHandler.sysDepError "cinvoke")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

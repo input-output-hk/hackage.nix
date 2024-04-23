@@ -21,7 +21,7 @@
       synopsis = "Some monad transformers and typeclasses for abstraction of global dependencies.";
       description = "Some monad transformers and typeclasses abstracting global dependencies, like Text in- and output (incl. here-strings, pipes, recorders and file-redirections on a per-function scope),\nprocess spawning, time and random number retrieval.\nNote that the author does not recommend using this package for new projects. Please use packages better suited for individual purpose.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."chatty-utils" or (errorHandler.buildDepError "chatty-utils"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

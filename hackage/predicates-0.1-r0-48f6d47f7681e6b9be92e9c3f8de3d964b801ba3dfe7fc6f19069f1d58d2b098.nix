@@ -21,11 +21,11 @@
       synopsis = "A couple of convenience functions for forming predicates.";
       description = "A couple of convenience functions for forming predicates (currently 'is', 'isn't', and 'equals'). Also my first library as a test ;)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,22 +21,22 @@
       synopsis = "Turn WAI applications into standalone GUIs using QtWebkit.";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-handler-webkit>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ];
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."QtCore4" or (errorHandler.sysDepError "QtCore4"))
           (pkgs."QtGui4" or (errorHandler.sysDepError "QtGui4"))
           (pkgs."QtNetwork4" or (errorHandler.sysDepError "QtNetwork4"))
           (pkgs."QtWebKit4" or (errorHandler.sysDepError "QtWebKit4"))
-          ];
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."QtWebKit" or (errorHandler.pkgConfDepError "QtWebKit"));
+        ];
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."QtWebKit" or (errorHandler.pkgConfDepError "QtWebKit"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

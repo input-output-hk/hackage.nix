@@ -21,7 +21,7 @@
       synopsis = "Snap framework snaplet for the Mandrill API library.";
       description = "<<https://travis-ci.org/ixmatus/snaplet-mandrill.svg?branch=master>>\n\n`snaplet-mandrill` is a snaplet for the Snap web framework providing\nconvenience functions and state management for the Haskell Mandrill\npackage.\n\nPlease refer to the README for an example - Cabal descriptions don't\nmake it easy to do so.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

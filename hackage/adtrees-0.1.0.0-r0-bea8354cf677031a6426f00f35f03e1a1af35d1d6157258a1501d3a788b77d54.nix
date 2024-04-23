@@ -21,11 +21,11 @@
       synopsis = "Modelling, rendering and quantitative analysis on attack defense trees";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

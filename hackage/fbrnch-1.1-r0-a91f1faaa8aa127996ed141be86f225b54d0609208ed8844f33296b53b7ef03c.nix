@@ -21,7 +21,7 @@
       synopsis = "Build and create Fedora package repos and branches";
       description = "fbrnch (fedora branch) is a convenient packaging tool for\nFedora Packagers, with integration for Bugzilla, Koji, and Bodhi.\n\nFeatures include:\n\n- merging and building a package across release branches\n\n- automated parallel builds of sets of packages in dependency order\n\n- creating, updating and listing one's package reviews\n\n- requesting repos for new approved packages and branch requests\n\n- import srpms from package reviews\n\n- progressive copr builds\n\nand many more commands.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fbrnch" = {
@@ -58,9 +58,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.3") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.3") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

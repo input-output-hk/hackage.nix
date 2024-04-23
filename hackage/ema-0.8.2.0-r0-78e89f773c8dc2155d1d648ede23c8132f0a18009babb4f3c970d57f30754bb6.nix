@@ -21,7 +21,7 @@
       synopsis = "Static site generator library with hot reload";
       description = "Ema is a next-gen Haskell library for building jamstack-style static sites.\nEma sites are change-aware; in addition to good ol’ static site generation,\nit provides a live server supporting fast hot-reload in the browser on code\nor data change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -58,19 +58,19 @@
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ] ++ (pkgs.lib).optionals (flags.with-examples) [
+        ] ++ pkgs.lib.optionals (flags.with-examples) [
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ]) ++ (pkgs.lib).optionals (flags.with-extra) [
+        ]) ++ pkgs.lib.optionals (flags.with-extra) [
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unionmount" or (errorHandler.buildDepError "unionmount"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-type-errors" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."url-slug" or (errorHandler.buildDepError "url-slug"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

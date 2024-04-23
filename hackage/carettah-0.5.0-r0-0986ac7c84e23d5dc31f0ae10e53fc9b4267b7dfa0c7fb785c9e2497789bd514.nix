@@ -21,7 +21,7 @@
       synopsis = "A presentation tool written with Haskell.";
       description = "A presentation tool written with Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "_carettah_main_" = {
@@ -39,17 +39,17 @@
             (hsPkgs."hcwiid" or (errorHandler.buildDepError "hcwiid"))
             (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
             (hsPkgs."gtk2hs-buildtools" or (errorHandler.buildDepError "gtk2hs-buildtools"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "carettah" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/clipper-0.0.1-r0-2393f132e17af274633dec2acd93cc35ef21072dce5aee8f20cd5fb2ddc850b3.nix;
         revNum = 0;
         sha256 = "2393f132e17af274633dec2acd93cc35ef21072dce5aee8f20cd5fb2ddc850b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

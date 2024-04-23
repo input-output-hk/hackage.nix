@@ -21,7 +21,7 @@
       synopsis = "DEPRECATED in favor of webex-teams-api";
       description = "Please see the README on Github at <https://github.com/nshimaza/webex-teams-api#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bitset-word8" or (errorHandler.buildDepError "bitset-word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cisco-spark-api-exe" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."cisco-spark-api" or (errorHandler.buildDepError "cisco-spark-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "cisco-spark-api-test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."cisco-spark-api" or (errorHandler.buildDepError "cisco-spark-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

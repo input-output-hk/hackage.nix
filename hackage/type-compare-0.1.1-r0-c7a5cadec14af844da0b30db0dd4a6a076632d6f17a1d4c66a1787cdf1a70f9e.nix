@@ -21,11 +21,11 @@
       synopsis = "Type-level Ord compatibility layer";
       description = "In @base-4.16.0.0@, an open type family @Compare@ was added as a type-level\nanalog of @Ord@.  This package provides a compatible interface on earlier\nversions of @base@, and re-exports the canonical one with later versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

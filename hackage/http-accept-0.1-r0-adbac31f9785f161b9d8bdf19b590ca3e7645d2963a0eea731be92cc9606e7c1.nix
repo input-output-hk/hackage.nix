@@ -21,14 +21,14 @@
       synopsis = "Functions for working with HTTP Accept headers";
       description = "Functions for working with HTTP Accept headers.  You may also want\ncheck out parseHttpAccept from wai-extra:Network.Wai.Parse (it is\nnot tied to WAI in any way and some similar may make it into this\npackage eventually).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Nomic game in haskell";
       description = "A Nomic game in Haskell, with a dedicated language to create new rules.\n\nNomyx is a fabulous and strange game where you have the right to change the rules in the middle of the game!\nIndeed, changing the rules is the goal of the game. Changing a rule is considered as a move. Of course even that could be changed!";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nomyx-server" = {
@@ -43,19 +43,19 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nomyx-server" or (errorHandler.buildDepError "nomyx-server"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

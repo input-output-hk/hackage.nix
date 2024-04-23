@@ -21,11 +21,11 @@
       synopsis = "Events and Channels as in Concurrent ML";
       description = "Implementation of Events and Channels as in CML\n(extended with communication guards).\nSee /A Concurrent ML Library in Concurrent Haskell/ by Avik Chaudhuri\n(avik\\@cs.ucsc.edu) for details. The original code as well as the papers can\nbe found at <http://www.cs.umd.edu/~Eavik/projects/cmllch/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

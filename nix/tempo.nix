@@ -6,8 +6,8 @@
         nix = import ../hackage/tempo-0.1.0.0-r0-ceb2e179f1abad53d56aebd9d4c62af2a6e021af849e52a49ccb33ac44432689.nix;
         revNum = 0;
         sha256 = "ceb2e179f1abad53d56aebd9d4c62af2a6e021af849e52a49ccb33ac44432689";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

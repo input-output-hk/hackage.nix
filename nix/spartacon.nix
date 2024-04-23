@@ -6,8 +6,8 @@
         nix = import ../hackage/spartacon-0.1.0.0-r0-9c6d791ffb9dd912efe1436a22def7f1dd11ea4f317668ad918a01b2cde3ab43.nix;
         revNum = 0;
         sha256 = "9c6d791ffb9dd912efe1436a22def7f1dd11ea4f317668ad918a01b2cde3ab43";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

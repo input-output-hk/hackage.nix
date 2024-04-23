@@ -21,15 +21,15 @@
       synopsis = "Replaces/Enhances Text.Regex";
       description = "One module layer over regex-posix to replace Text.Regex";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

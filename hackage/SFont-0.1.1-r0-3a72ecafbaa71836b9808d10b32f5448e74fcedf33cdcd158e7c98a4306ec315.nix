@@ -21,7 +21,7 @@
       synopsis = "SFont SDL Bitmap Fonts";
       description = "A haskell port of Karl Bartel's bitmap SFont library. Haddock documentation is available from the homepage";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
           (hsPkgs."Sprig" or (errorHandler.buildDepError "Sprig"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Paint an L-System Grammar";
       description = "Paint an L-System Grammar";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lsystem" = {
@@ -31,9 +31,9 @@
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

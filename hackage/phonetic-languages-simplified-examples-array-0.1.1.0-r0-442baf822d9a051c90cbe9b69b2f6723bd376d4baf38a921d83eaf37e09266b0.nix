@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-examples-array";
         version = "0.1.1.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2020-2021 Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Simplified and somewhat optimized version of the phonetic-languages-examples.";
       description = "Is intended to use more functionality of lists and subG package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."phonetic-languages-constraints-array" or (errorHandler.buildDepError "phonetic-languages-constraints-array"))
           (hsPkgs."phonetic-languages-simplified-examples-common" or (errorHandler.buildDepError "phonetic-languages-simplified-examples-common"))
           (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariantsG3" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."phonetic-languages-permutations-array" or (errorHandler.buildDepError "phonetic-languages-permutations-array"))
             (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
             (hsPkgs."phonetic-languages-simplified-examples-common" or (errorHandler.buildDepError "phonetic-languages-simplified-examples-common"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoemG3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,9 +85,9 @@
             (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
             (hsPkgs."phonetic-languages-simplified-examples-common" or (errorHandler.buildDepError "phonetic-languages-simplified-examples-common"))
             (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propertiesTextG3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -106,9 +106,9 @@
             (hsPkgs."phonetic-languages-constraints-array" or (errorHandler.buildDepError "phonetic-languages-constraints-array"))
             (hsPkgs."phonetic-languages-simplified-examples-common" or (errorHandler.buildDepError "phonetic-languages-simplified-examples-common"))
             (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

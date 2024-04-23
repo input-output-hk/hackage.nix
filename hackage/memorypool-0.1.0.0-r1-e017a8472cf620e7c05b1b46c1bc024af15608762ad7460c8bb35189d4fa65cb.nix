@@ -21,7 +21,7 @@
       synopsis = "basic memory pool outside of haskell heap/GC";
       description = "See Readme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unsafe" or (errorHandler.buildDepError "unsafe"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.10") (hsPkgs."void" or (errorHandler.buildDepError "void"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.10") (hsPkgs."void" or (errorHandler.buildDepError "void"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -51,49 +51,49 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && (compiler.version).ge "8.2"
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && compiler.version.ge "8.2"
           then [
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
             (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
             (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-            ]
-          else if compiler.isGhc && (compiler.version).ge "8.0"
+          ]
+          else if compiler.isGhc && compiler.version.ge "8.0"
             then [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
               (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-              ]
-            else if compiler.isGhc && (compiler.version).ge "7.10"
+            ]
+            else if compiler.isGhc && compiler.version.ge "7.10"
               then [
                 (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
                 (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
                 (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))
-                ]
-              else if compiler.isGhc && (compiler.version).ge "7.8"
+              ]
+              else if compiler.isGhc && compiler.version.ge "7.8"
                 then [
                   (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-                  ]
+                ]
                 else [
                   (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-                  ])) ++ (if system.isWindows
+                ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if flags.network-uri
+          ])) ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+          ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
           (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
           (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "leksah-server" = {
           depends = ((([
@@ -123,49 +123,49 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."leksah-server" or (errorHandler.buildDepError "leksah-server"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && (compiler.version).ge "8.2"
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if compiler.isGhc && compiler.version.ge "8.2"
             then [
               (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
               (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-              ]
-            else if compiler.isGhc && (compiler.version).ge "8.0"
+            ]
+            else if compiler.isGhc && compiler.version.ge "8.0"
               then [
                 (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
                 (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
                 (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-                ]
-              else if compiler.isGhc && (compiler.version).ge "7.10"
+              ]
+              else if compiler.isGhc && compiler.version.ge "7.10"
                 then [
                   (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
                   (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
                   (hsPkgs."bin-package-db" or (errorHandler.buildDepError "bin-package-db"))
-                  ]
-                else if compiler.isGhc && (compiler.version).ge "7.8"
+                ]
+                else if compiler.isGhc && compiler.version.ge "7.8"
                   then [
                     (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-                    ]
+                  ]
                   else [
                     (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-                    ])) ++ (if system.isWindows
+                  ])) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (if flags.network-uri
+            ])) ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ])) ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
-          libs = (pkgs.lib).optionals (system.isWindows) [
+            ])) ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"));
+          libs = pkgs.lib.optionals (system.isWindows) [
             (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"))
             (pkgs."pango-1.0" or (errorHandler.sysDepError "pango-1.0"))
             (pkgs."glib-2.0" or (errorHandler.sysDepError "glib-2.0"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "leksahecho" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -180,14 +180,14 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."leksah-server" or (errorHandler.buildDepError "leksah-server"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
+        };
         "leksahtrue" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-tool" = {
           depends = [
@@ -203,9 +203,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhcjs && true)) (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

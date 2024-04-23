@@ -21,7 +21,7 @@
       synopsis = "Partial implementation of the Bitcoin protocol (as of 2013)";
       description = "Partial but self-contained implementation of the Bitcoin protocol (as of 2013). Use at your own risk!";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,12 +41,12 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bitcoin-hs-tests" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

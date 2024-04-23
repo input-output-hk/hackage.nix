@@ -29,16 +29,16 @@
         (hsPkgs.buildPackages.tar or (pkgs.buildPackages.tar or (errorHandler.setupDepError "tar")))
         (hsPkgs.buildPackages.zlib or (pkgs.buildPackages.zlib or (errorHandler.setupDepError "zlib")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fast-combinatorics-test" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."combinatorics" or (errorHandler.buildDepError "combinatorics"))
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-combinatorics-bench" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."fast-combinatorics" or (errorHandler.buildDepError "fast-combinatorics"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."combinatorics" or (errorHandler.buildDepError "combinatorics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

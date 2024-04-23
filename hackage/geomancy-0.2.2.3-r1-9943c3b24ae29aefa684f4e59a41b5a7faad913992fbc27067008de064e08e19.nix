@@ -21,15 +21,15 @@
       synopsis = "Geometry and matrix manipulation";
       description = "Sometimes it is unavoidable you have to do stuff on CPU.\nLet's at least do it faster.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "geomancy-test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."geomancy" or (errorHandler.buildDepError "geomancy"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "geomancy-bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."geomancy" or (errorHandler.buildDepError "geomancy"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

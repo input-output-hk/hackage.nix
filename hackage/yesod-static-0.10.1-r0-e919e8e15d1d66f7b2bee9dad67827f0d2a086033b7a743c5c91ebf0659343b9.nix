@@ -21,7 +21,7 @@
       synopsis = "Static file serving subsite for Yesod Web Framework.";
       description = "Static file serving subsite for Yesod Web Framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."crypto-conduit" or (errorHandler.buildDepError "crypto-conduit"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."crypto-conduit" or (errorHandler.buildDepError "crypto-conduit"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

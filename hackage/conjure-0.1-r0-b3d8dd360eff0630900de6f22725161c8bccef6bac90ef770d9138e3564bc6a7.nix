@@ -21,7 +21,7 @@
       synopsis = "A BitTorrent client";
       description = "Conjure is a Bittorrent client written in the functional, pure, lazy\nlanguage of Haskell. The primary point of Conjure is to show the\nfeasibility of Haskell with respect to heavy network applications. In\nparticular, we are using the STM (Software Transactional Memory)\nframework to provide us with concurrency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "conjure" = { buildable = true; }; };
       };
-    }
+      exes = { "conjure" = { buildable = true; }; };
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Cross-platform interface to the PC speaker.";
       description = "A unified, cross-platform interface to the PC speaker.\n\nBeep to your heart's content!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

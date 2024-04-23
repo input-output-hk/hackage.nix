@@ -21,7 +21,7 @@
       synopsis = "Yesod integration for the battlenet package";
       description = "Yesod integration for the battlenet package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."battlenet" or (errorHandler.buildDepError "battlenet"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

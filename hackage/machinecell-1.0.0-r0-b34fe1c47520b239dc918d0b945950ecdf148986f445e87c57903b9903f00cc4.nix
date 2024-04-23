@@ -21,7 +21,7 @@
       synopsis = "Arrow based stream transducers";
       description = "Stream processing library similar to pipe, couduit, machines. With support of arrow combinatins, or the arrow notation. AFRP-like utilities are also available.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."machinecell" or (errorHandler.buildDepError "machinecell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

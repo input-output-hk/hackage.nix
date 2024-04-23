@@ -21,14 +21,14 @@
       synopsis = "A buffer compatible with Data.Vector.Storable";
       description = "A buffer type that can easily be converted to a Data.Vector.Storable vector\nfrom the vector package and compatible with hmatrix.\n\nElements are pushed into the buffer.  When the buffer is converted to a read-only\nvector, the last-pushed element occurs at the end.\n\nMonadic map functions also operate so that the last-pushed element is treated last.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

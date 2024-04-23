@@ -21,7 +21,7 @@
       synopsis = "Simple String-based process commands";
       description = "Simple wrappers over System.Process\n(readProcess, readProcessWithExitCode, rawSystem, and createProcess).\nThe idea is to provide some common idioms for calling out to commands\nfrom programs.  For more advanced shell-scripting or streaming\nuse turtle, shelly, shake, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

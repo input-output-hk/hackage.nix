@@ -21,7 +21,7 @@
       synopsis = "Library and tool for parsing .eventlog files from GHC";
       description = "Parses @.eventlog@ files emitted by GHC 6.12.1 and later.\nIncludes the @ghc-events@ tool which dumps an event log file\nas text.\n\nChanges in 0.4.0.1:\n\n* compiles with GHC 7.6.1";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ghc-events" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-versions" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

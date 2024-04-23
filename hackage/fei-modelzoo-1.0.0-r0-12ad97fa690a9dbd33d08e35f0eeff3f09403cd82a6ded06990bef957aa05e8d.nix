@@ -21,7 +21,7 @@
       synopsis = "A collection of standard models";
       description = "A collection of standard models";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
           (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

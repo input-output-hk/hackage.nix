@@ -21,7 +21,7 @@
       synopsis = "The Simple Javascript Wrench";
       description = "SJW is a very simple tool to pack several JS modules into a single script.\nIt doesn't really do proper compilation work (yet) except resolving the\nmodules dependencies and detecting import loops but it provides each module\nwith an independent execution context in the resulting script.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sjw" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."SJW" or (errorHandler.buildDepError "SJW"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."SJW" or (errorHandler.buildDepError "SJW"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "big-src" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."SJW" or (errorHandler.buildDepError "SJW"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

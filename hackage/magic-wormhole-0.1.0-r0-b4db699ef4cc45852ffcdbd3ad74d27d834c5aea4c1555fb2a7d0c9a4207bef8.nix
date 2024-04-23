@@ -21,7 +21,7 @@
       synopsis = "Interact with Magic Wormhole";
       description = "Client library for interacting with a Magic Wormhole server.\n\nMagic Wormhole is a technology for getting things from one computer to another, safely.\nIt does this by using a server to locate peers, and then using SPAKE2 encryption to\nnegotiate a secure connection to a peer. It is especially useful for sending files\nand short messages to other humans.\n\nYou can learn more about Magic Wormhole by exploring the documentation on\nthe [canonical, Python\nimplementation](https://github.com/warner/magic-wormhole).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hocus-pocus" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."magic-wormhole" or (errorHandler.buildDepError "magic-wormhole"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

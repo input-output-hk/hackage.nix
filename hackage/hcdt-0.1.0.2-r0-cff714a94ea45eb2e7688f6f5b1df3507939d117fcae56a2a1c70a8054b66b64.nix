@@ -21,16 +21,16 @@
       synopsis = "2d Delaunay triangulation";
       description = "This library performs the constrained or unconstrained 2d Delaunay triangulation.\n\nIt uses the C++ library 'CDT'.\n\nFor examples, look the README file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

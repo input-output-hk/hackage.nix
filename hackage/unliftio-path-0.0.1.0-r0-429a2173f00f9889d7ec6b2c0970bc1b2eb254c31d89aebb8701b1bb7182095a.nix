@@ -21,7 +21,7 @@
       synopsis = "UnliftIO using well-typed Paths.";
       description = "UnliftIO using well-typed Paths.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "servant-aeson-generics-typescript";
         version = "0.0.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2023";
       maintainer = "info@Platonic.Systems";
@@ -24,7 +24,7 @@
       synopsis = "Generates a TypeScript client for Servant APIs";
       description = "This project leveratges aeson-generics-typescript to generate type safe API bindings in TypeScript for a given Servant API.\nIncluded here are tests that round trip by compling the TypeScript with tsc, running the client in nodejs, and checking that request response round trips with the Servant server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

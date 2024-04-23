@@ -21,7 +21,7 @@
       synopsis = "support Bulma form for Yesod";
       description = "Please see the README on Github at <https://github.com/waddlaw/yesod-form-bulma#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-form-bulma" or (errorHandler.buildDepError "yesod-form-bulma"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "showcase" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,10 +58,10 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-form-bulma" or (errorHandler.buildDepError "yesod-form-bulma"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "yesod-form-bulma-test" = {
           depends = [
@@ -72,9 +72,9 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
             (hsPkgs."yesod-form-bulma" or (errorHandler.buildDepError "yesod-form-bulma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

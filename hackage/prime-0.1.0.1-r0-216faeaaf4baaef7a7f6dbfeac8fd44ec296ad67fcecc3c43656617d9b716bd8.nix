@@ -21,21 +21,21 @@
       synopsis = "prime number tools";
       description = "Please see the README on GitHub at <https://github.com/jlamothe/prime#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "prime-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."prime" or (errorHandler.buildDepError "prime"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert Pandoc Markdown-style footnotes into sidenotes";
       description = "Convert Pandoc Markdown-style footnotes into sidenotes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."monad-gen" or (errorHandler.buildDepError "monad-gen"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-sidenote" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-sidenote" or (errorHandler.buildDepError "pandoc-sidenote"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

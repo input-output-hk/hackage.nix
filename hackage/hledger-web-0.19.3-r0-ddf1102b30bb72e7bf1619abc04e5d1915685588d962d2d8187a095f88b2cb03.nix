@@ -13,7 +13,7 @@
       blaze_html_0_5 = true;
       dev = false;
       library-only = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "hledger-web"; version = "0.19.3"; };
@@ -26,7 +26,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -70,16 +70,16 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (if flags.blaze_html_0_5
+        ] ++ (if flags.blaze_html_0_5
           then [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ]
+          ]
           else [
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hledger-web" = {
           depends = [
@@ -115,17 +115,17 @@
             (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ] ++ (if flags.blaze_html_0_5
+          ] ++ (if flags.blaze_html_0_5
             then [
               (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
               (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-              ]
+            ]
             else [
               (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-              ]);
+            ]);
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -134,9 +134,9 @@
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

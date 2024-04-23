@@ -21,11 +21,11 @@
       synopsis = "Digital Signal Processing";
       description = "Digital Signal Processing, Fourier Transform, Filter design, Frequency estimation, Interpolation, Linear Algebra, Polynomials";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

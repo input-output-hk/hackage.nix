@@ -21,14 +21,14 @@
       synopsis = "TH fold generator";
       description = "Very rough-around-the-edges template haskell\nfunction for generating basic catamorphisms for\nalgebraic data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

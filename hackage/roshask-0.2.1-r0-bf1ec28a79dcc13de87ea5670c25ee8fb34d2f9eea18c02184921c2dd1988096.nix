@@ -21,7 +21,7 @@
       synopsis = "Haskell support for the ROS robotics framework.";
       description = "Tools for working with ROS in Haskell.\n\nROS (<http://www.ros.org>) is a software\nframework that provides a standard software\narchitecture for robotic systems. The main idea\nof the framework is to support the development\nand execution of loosely coupled /Node/s\nconnected by typed /Topic/s. Each Node represents\na locus of processing, ideally with a minimal\ninterface specified in terms of the types of\nTopics it takes as input and offers as output.\n\nThis package provides libraries for creating new\nROS Nodes in Haskell, along with the @roshask@\nexecutable for creating new ROS packages and\ngenerating Haskell code from message definition\nfiles (see the ROS documentation for information\non message types).\n\nSee\n<http://github.com/acowley/roshask/wiki> for more\ninformation on getting started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -51,9 +51,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ] ++ (pkgs.lib).optional (flags.logging) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (flags.logging) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "roshask" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."data-default-generics" or (errorHandler.buildDepError "data-default-generics"))
             (hsPkgs."roshask" or (errorHandler.buildDepError "roshask"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testexe" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "servicetest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -109,9 +109,9 @@
             (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
             (hsPkgs."data-default-generics" or (errorHandler.buildDepError "data-default-generics"))
             (hsPkgs."testpack" or (errorHandler.buildDepError "testpack"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

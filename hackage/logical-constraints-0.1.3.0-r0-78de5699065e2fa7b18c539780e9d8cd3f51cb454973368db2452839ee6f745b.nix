@@ -21,11 +21,11 @@
       synopsis = "Simple logical constraints 'syntax-sugar' writing library.";
       description = "Some library functions and data to simplify the writing of the simple logical constraints of Ord class data instances so that it represents point-wise and interval-based logics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

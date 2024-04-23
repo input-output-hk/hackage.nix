@@ -6,8 +6,8 @@
         nix = import ../hackage/LTS-0.1.0.0-r0-995dddb46ebdd2b85109e7bf2bd4e6aab70144992a09e359c5ebfe12bf5bfb03.nix;
         revNum = 0;
         sha256 = "995dddb46ebdd2b85109e7bf2bd4e6aab70144992a09e359c5ebfe12bf5bfb03";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

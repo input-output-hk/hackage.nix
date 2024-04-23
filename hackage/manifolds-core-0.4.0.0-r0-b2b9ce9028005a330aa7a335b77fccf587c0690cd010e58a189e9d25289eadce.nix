@@ -21,15 +21,15 @@
       synopsis = "The basic classes for the manifolds hierarchy.";
       description = "The basic classes for the\n<http://hackage.haskell.org/package/manifolds manifolds> hierarchy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

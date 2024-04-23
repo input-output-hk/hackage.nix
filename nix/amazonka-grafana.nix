@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-grafana-2.0-r0-2802c82538cb75320711d7399ccd05598d1a5d0df476e0a490160c54d07efb36.nix;
         revNum = 0;
         sha256 = "2802c82538cb75320711d7399ccd05598d1a5d0df476e0a490160c54d07efb36";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

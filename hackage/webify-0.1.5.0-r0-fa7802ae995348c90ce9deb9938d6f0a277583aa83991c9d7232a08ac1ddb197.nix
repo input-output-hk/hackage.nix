@@ -21,7 +21,7 @@
       synopsis = "webfont generator";
       description = "A command line tool to convert ttf file to woff, eot & svg files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "webify" = {
@@ -38,9 +38,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hopfli" or (errorHandler.buildDepError "hopfli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

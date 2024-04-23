@@ -6,8 +6,8 @@
         nix = import ../hackage/postcodes-0.1.1-r0-f92f789fc076f686efcb0a32d564a73587323971c1aee9457f480031b37388c5.nix;
         revNum = 0;
         sha256 = "f92f789fc076f686efcb0a32d564a73587323971c1aee9457f480031b37388c5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

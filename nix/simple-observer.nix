@@ -6,8 +6,8 @@
         nix = import ../hackage/simple-observer-0.0.1-r0-10f6735b350b52ed045a8b7520f581fca534cd2941f5cfe9a3b45b609654baf7.nix;
         revNum = 0;
         sha256 = "10f6735b350b52ed045a8b7520f581fca534cd2941f5cfe9a3b45b609654baf7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "Class for interpolation of values";
       description = "Class for interpolation of values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

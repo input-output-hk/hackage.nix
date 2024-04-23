@@ -21,11 +21,11 @@
       synopsis = "Pure haskell implementation of xorshift128plus random number generator.";
       description = "This package contains pure haskell implementation of\nxorshift128+ random number generator which is extremely fast.\n\nThe random number generator's inner state is just 128bit memory block\nso that which is not encapusulated for simplicity.\n\nPlease see <http://xorshift.di.unimi.it/xorshift128plus.c original C implementation>\nand <http://xorshift.di.unimi.it/ comparison of other algorithms>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/rosso-1.0-r0-b76eb733ed59bbc610ed962d0400bc4e0e05f71baac207c2fcba99d502a4a015.nix;
         revNum = 0;
         sha256 = "b76eb733ed59bbc610ed962d0400bc4e0e05f71baac207c2fcba99d502a4a015";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

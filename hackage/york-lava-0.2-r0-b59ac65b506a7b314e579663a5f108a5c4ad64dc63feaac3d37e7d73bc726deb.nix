@@ -21,15 +21,15 @@
       synopsis = "A library for digital circuit description.";
       description = "York Lava is library for describing digital circuits. Descriptions\ncan be simulated in Hugs or GHC, and converted to VHDL compatible with\nXST, the Xilinx Synthesis Tool.  It is similar to Chalmers\nLava, but omits some features and offers a few new ones.\nSee the top-level module \"Lava\" for pointers to futher information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

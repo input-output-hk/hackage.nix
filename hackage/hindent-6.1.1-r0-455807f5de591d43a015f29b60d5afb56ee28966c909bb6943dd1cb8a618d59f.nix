@@ -21,7 +21,7 @@
       synopsis = "Extensible Haskell pretty printer";
       description = "Extensible Haskell pretty printer. Both a library and an executable.\nSee the GitHub page for usage \\/ explanation: <https://github.com/mihaimaruseac/hindent>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "hindent-internal" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hindent" = {
           depends = [
@@ -103,10 +103,10 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hindent-test" = {
           depends = [
@@ -135,10 +135,10 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "hindent-bench" = {
           depends = [
@@ -167,9 +167,9 @@
             (hsPkgs."unicode-show" or (errorHandler.buildDepError "unicode-show"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

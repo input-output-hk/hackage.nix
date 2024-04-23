@@ -21,6 +21,6 @@
       synopsis = "Null constraint";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

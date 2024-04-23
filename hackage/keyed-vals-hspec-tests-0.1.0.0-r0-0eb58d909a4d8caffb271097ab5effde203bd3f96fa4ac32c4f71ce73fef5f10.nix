@@ -21,7 +21,7 @@
       synopsis = "Validate a keyed-vals Handle";
       description = "Provides a Hspec fixture for testing implementations of the abstract\nHandle defined in the keyed-vals package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."keyed-vals" or (errorHandler.buildDepError "keyed-vals"))
           (hsPkgs."benri-hspec" or (errorHandler.buildDepError "benri-hspec"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

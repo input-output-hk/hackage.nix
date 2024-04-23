@@ -21,7 +21,7 @@
       synopsis = "Online XML parsing with polyparse and tagsoup";
       description = "The library provides combinators for lazy, incremental XML parsing.\nParsing results are generated lazily and the input is read on demand.\n\nIt is built on top of the tagsoup library, which is responsible for\npreliminary tokenization of an XML input, and the polyparse library,\nwhich provides primitives for lazy and incremental parsing.\n\nTo use the library import the \"Text.XML.PolySoup\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

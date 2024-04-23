@@ -21,7 +21,7 @@
       synopsis = "Construct a Dec the ancestor list.";
       description = "This package provides the ability to pass in a name for a type and it will\nreturn all of the Dec's that are necessary for the type and its ancestors to be\nconstructed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
             (hsPkgs."th-instances" or (errorHandler.buildDepError "th-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

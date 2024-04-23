@@ -21,7 +21,7 @@
       synopsis = "A Haskell implementation of the Accentuate.us API.";
       description = "A Haskell implementation of the Accentuate.us API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

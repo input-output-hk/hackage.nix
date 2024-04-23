@@ -6,8 +6,8 @@
         nix = import ../hackage/tcache-AWS-0.0.1-r0-6cce9dff383ceef01d26453adcd55f9996519129ae09345cf5d69bf52396754d.nix;
         revNum = 0;
         sha256 = "6cce9dff383ceef01d26453adcd55f9996519129ae09345cf5d69bf52396754d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A wget-like utility for retrieving files from XDCC bots on\nIRC";
       description = "XDCC (eXtended DCC) is a protocol used by IRC bots to make\nfiles available for transfer. This utility can be used to\nretrieve such files.\n\nSee <https://de.wikipedia.org/wiki/XDCC> for\nmore details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xdcc" = {
@@ -50,9 +50,9 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

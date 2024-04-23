@@ -21,7 +21,7 @@
       synopsis = "IRC server written in Haskell.";
       description = "An IRC server with (mandatory) server authentication, log recall, bumping.\nIntended for private business use or hobby work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."monad-extras" or (errorHandler.buildDepError "monad-extras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hulk" = {
           depends = [
@@ -73,13 +73,13 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."monad-extras" or (errorHandler.buildDepError "monad-extras"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hulk-generate-pass" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

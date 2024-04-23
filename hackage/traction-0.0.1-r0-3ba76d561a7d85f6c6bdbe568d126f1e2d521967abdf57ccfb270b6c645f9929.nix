@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A few tools for using postgresql-simple.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-either" or (errorHandler.buildDepError "transformers-either"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."traction" or (errorHandler.buildDepError "traction"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

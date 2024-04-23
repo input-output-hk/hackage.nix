@@ -21,7 +21,7 @@
       synopsis = "A Memory-like (Concentration, Pairs, ...) game for tones";
       description = "This is a game like Memory but with tones instead of images.\n\nThere is a grid of buttons and each button plays a tone when pressed.\nEvery tone is connected to two buttons.\nThe players must find the pairs of buttons with equal tones.\nThe two players alternatingly test pairs of buttons.\nIf one selects a pair of buttons with equal tones,\nthen his score is increased by one\nand he is allowed to perform another attempt.\n\nIn order to play the tones\nyou must connect it to a hardware or software synthesizer\nlike Timidity or FluidSynth.\n\n> timidity -A300 -iA -B4,4\n\nThen start the midimory game and connect the game to the synthesizer:\n\n> midimory --connect-to TiMidity\n\nor alternatively:\n\n> midimory &\n> aconnect Midimory TiMidity";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "midimory" = {
@@ -37,11 +37,11 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "midimory-reactive" = {
-          depends = (pkgs.lib).optionals (flags.reactive) [
+          depends = pkgs.lib.optionals (flags.reactive) [
             (hsPkgs."reactive-banana-wx" or (errorHandler.buildDepError "reactive-banana-wx"))
             (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
@@ -55,9 +55,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.reactive then true else false;
-          };
         };
       };
-    }
+    };
+  }

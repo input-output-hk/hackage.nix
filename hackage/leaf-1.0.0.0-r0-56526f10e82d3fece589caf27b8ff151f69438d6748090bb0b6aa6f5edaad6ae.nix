@@ -21,7 +21,7 @@
       synopsis = "A simple portfolio generator";
       description = "leaf is a simple genererator with easy getting started and full support of Markdown.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "leaf" = {
@@ -32,9 +32,9 @@
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

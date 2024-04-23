@@ -21,7 +21,7 @@
       synopsis = "Diff and patch module";
       description = "A library for creating and applying diffs. Diffs can be manipulated in code in between creation and application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
           (hsPkgs."Zora" or (errorHandler.buildDepError "Zora"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-filediff" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."filediff" or (errorHandler.buildDepError "filediff"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

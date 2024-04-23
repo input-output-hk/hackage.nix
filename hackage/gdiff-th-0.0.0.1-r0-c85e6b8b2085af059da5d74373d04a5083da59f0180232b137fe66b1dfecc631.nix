@@ -21,7 +21,7 @@
       synopsis = "Generate gdiff GADTs and Instances.";
       description = "Generate gdiff GADTs and Instances. Very Alpha. Does not yet support GADTs among other this I'm sure.       ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."universe-th" or (errorHandler.buildDepError "universe-th"))
           (hsPkgs."type-sub-th" or (errorHandler.buildDepError "type-sub-th"))
           (hsPkgs."gdiff" or (errorHandler.buildDepError "gdiff"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."type-sub-th" or (errorHandler.buildDepError "type-sub-th"))
             (hsPkgs."gdiff" or (errorHandler.buildDepError "gdiff"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Generate string for sort key";
       description = "Please see the README on GitHub at <https://github.com/b123400/sortee#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "sortee-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."sortee" or (errorHandler.buildDepError "sortee"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

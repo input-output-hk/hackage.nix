@@ -21,7 +21,7 @@
       synopsis = "Wai dispatch middleware";
       description = "\\\"Just enough\\\" helpers for use @yesod-routes@ with @WAI@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."yesod-routes" or (errorHandler.buildDepError "yesod-routes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-test" or (errorHandler.buildDepError "wai-test"))
             (hsPkgs."wai-middleware-route" or (errorHandler.buildDepError "wai-middleware-route"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "The server for ProveEverywhere";
       description = "This is the server for ProveEverywhere project.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "prove-everywhere-server" = {
@@ -41,9 +41,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

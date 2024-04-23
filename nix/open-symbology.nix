@@ -6,8 +6,8 @@
         nix = import ../hackage/open-symbology-0.1-r0-5fc58eeb2688f6e47463f5affa5d5fb609e85fbcf03f2334dec5e7f526a35afd.nix;
         revNum = 0;
         sha256 = "5fc58eeb2688f6e47463f5affa5d5fb609e85fbcf03f2334dec5e7f526a35afd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

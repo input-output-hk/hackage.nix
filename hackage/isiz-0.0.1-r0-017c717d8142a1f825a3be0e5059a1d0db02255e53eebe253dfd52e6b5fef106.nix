@@ -21,16 +21,16 @@
       synopsis = "A program to show the size of image and whether suitable for wallpaper.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "isiz" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

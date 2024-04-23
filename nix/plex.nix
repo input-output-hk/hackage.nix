@@ -6,8 +6,8 @@
         nix = import ../hackage/plex-0.2.0.0-r0-e34d1810acbcae7dd731bd1c3e68190ada715436f5074034dd771d14e827c196.nix;
         revNum = 0;
         sha256 = "e34d1810acbcae7dd731bd1c3e68190ada715436f5074034dd771d14e827c196";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

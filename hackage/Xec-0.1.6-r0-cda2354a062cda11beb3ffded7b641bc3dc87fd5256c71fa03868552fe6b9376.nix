@@ -21,7 +21,7 @@
       synopsis = "Gtk command launcher with identicon";
       description = "Xec (pron. exec) is a launcher with identicon. It's originally intended to be used with xmonad,\nbut you can use it anywhere gtk is available. Hit enter twice in a row to run the command as-is.\nHit enter once to complete the command with highlited one.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Xec" = {
@@ -38,9 +38,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

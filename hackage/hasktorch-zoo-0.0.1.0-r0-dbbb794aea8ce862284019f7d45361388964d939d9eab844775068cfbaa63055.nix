@@ -21,7 +21,7 @@
       synopsis = "Neural architectures in hasktorch";
       description = "Neural architectures, data loading packages, initializations, and common tensor abstractions in hasktorch.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,12 +43,12 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if flags.gd
+        ] ++ (if flags.gd
           then [ (hsPkgs."gd" or (errorHandler.buildDepError "gd")) ]
           else [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

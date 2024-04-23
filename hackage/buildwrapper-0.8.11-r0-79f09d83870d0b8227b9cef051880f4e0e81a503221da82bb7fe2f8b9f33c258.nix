@@ -21,7 +21,7 @@
       synopsis = "A library and an executable that provide an easy API for a Haskell IDE";
       description = "Buildwrapper is an alternative to scion.\nIt provides services to configure, build and give information on source files to help IDEs manage Haskell projects.\nYou can use buildwrapper to build project and retrieve errors, get outline for each module source, get the type of something inside a source file, get lexer tokens, etc.\nBuildwrapper is used in the EclipseFP project (Eclipse plugins for Haskell development)";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc-pkg-lib" or (errorHandler.buildDepError "ghc-pkg-lib"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (errorHandler.buildDepError "time"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") (hsPkgs."time" or (errorHandler.buildDepError "time"));
         buildable = true;
-        };
+      };
       exes = {
         "buildwrapper" = {
           depends = [
@@ -79,10 +79,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ghc-pkg-lib" or (errorHandler.buildDepError "ghc-pkg-lib"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (errorHandler.buildDepError "time"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") (hsPkgs."time" or (errorHandler.buildDepError "time"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "buildwrapper-test" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."ghc-pkg-lib" or (errorHandler.buildDepError "ghc-pkg-lib"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6") (hsPkgs."time" or (errorHandler.buildDepError "time"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6") (hsPkgs."time" or (errorHandler.buildDepError "time"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

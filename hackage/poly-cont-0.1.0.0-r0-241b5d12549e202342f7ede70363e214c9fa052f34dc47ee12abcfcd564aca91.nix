@@ -21,15 +21,15 @@
       synopsis = "Poly-kinded continuations";
       description = "Poly-kinded versions of @Cont@ and @ContT@ from\n\"Control.Monad.Trans.Cont\". Currently, @Cont@ is\nnot defined in terms of \"ContT\". When unlifted\nnewtypes become available, that may change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

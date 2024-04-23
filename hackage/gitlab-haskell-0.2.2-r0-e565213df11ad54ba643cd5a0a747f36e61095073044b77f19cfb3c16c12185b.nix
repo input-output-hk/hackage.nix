@@ -21,7 +21,7 @@
       synopsis = "A Haskell library for the GitLab web API";
       description = "This Haskell library queries and updates the database of a GitLab instance using the GitLab web API: <https://docs.gitlab.com/ee/api/>\n\nIt also features an API for writing Gitlab file hook applications\n\nRun all GitLab actions with `runGitLab`:\n\n> runGitLab :: (MonadUnliftIO m, MonadIO m)\n>  => GitLabServerConfig -- ^ the GitLab server details\n>  -> GitLab m a         -- ^ the GitLab action\n>  -> m a\n\nFor example:\n\n> myProjects <- runGitLab\n>      (defaultGitLabServer\n>          { url = \"https://gitlab.example.com\"\n>          , token=\"my_token\"} )\n>      (searchUser \"joe\" >>= userProjects . fromJust)\n\nWhich uses the functions:\n\n> searchUser   :: Text -> GitLab m (Maybe User)\n> userProjects :: User -> GitLab m (Maybe [Project])\n\nThis library can also be used to develop rule based GitLab file hooks that react in real time to GitLab events with:\n\n> receive :: [Rule] -> GitLab ()\n\n> class (FromJSON a) => SystemHook a where\n>   match   :: String -> (a -> GitLab ()) -> Rule\n>   matchIf :: String -> (a -> GitLab Bool) -> (a -> GitLab ()) -> Rule\n\nFor more details about the file hooks support: <https://www.macs.hw.ac.uk/~rs46/posts/2020-06-06-gitlab-system-hooks.html>\n\nUnsurprisingly, this library is maintained on GitLab: <https://gitlab.com/robstewart57/gitlab-haskell>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-gitlab-haskell" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."gitlab-haskell" or (errorHandler.buildDepError "gitlab-haskell"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

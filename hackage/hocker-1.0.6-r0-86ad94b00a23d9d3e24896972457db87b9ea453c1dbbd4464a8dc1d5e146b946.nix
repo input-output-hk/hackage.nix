@@ -21,7 +21,7 @@
       synopsis = "Interact with the docker registry and generate nix build instructions";
       description = "@hocker@ is a suite of command line utilities and a library for:\n\n* fetching a docker image\n* fetching a layer of an image\n* fetching an image's configuration\n* fetching a docker registry image manifest\n* generating nix build instructions from a registry image manifest\n\nThe motivation for this tool came from a need to fetch docker\nimage artifacts from a docker registry without the stock docker\ntooling that is designed to only work with the docker daemon.\n\nThese tools /only/ work with version 2 of the docker registry and\ndocker version (>=) 1.10.\n\nFor a complete set of usage examples please see the project's <https://github.com/awakesecurity/hocker#readme README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -69,9 +69,9 @@
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."nix-paths" or (errorHandler.buildDepError "nix-paths"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hocker-image" = {
           depends = [
@@ -87,9 +87,9 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hocker-layer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hocker-config" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -122,9 +122,9 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hocker-manifest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -139,9 +139,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optional-args" or (errorHandler.buildDepError "optional-args"))
             (hsPkgs."hocker" or (errorHandler.buildDepError "hocker"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "docker2nix" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -158,10 +158,10 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hocker-tests" = {
           depends = [
@@ -183,9 +183,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generate todo lists from source code";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."diff-parse" or (errorHandler.buildDepError "diff-parse"))
           (hsPkgs."highlighting-kate" or (errorHandler.buildDepError "highlighting-kate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "all-todos" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."difftodo" or (errorHandler.buildDepError "difftodo"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "fixme-tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."difftodo" or (errorHandler.buildDepError "difftodo"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

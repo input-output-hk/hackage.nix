@@ -6,8 +6,8 @@
         nix = import ../hackage/aern2-mfun-0.2.9.0-r0-2efead698c11e905e990279353d11f254ed98550f4e0058d9ba770b04ec4ae9b.nix;
         revNum = 0;
         sha256 = "2efead698c11e905e990279353d11f254ed98550f4e0058d9ba770b04ec4ae9b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

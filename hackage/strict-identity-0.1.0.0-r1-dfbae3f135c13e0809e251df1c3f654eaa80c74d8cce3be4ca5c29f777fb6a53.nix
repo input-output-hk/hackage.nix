@@ -21,11 +21,11 @@
       synopsis = "Strict Identity Monad, handy for writing fast code!";
       description = "strict Identity monad for writing strict performant code sanely";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }
